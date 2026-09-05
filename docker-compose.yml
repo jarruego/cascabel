@@ -1,0 +1,35 @@
+services:
+  web:
+    build:
+      context: .
+      target: dev
+    command: sh -c "npm install && npm run dev"
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  # Herramientas de contenido: music21, validador y conversion a MusicXML/MIDI.
+  contenido:
+    build:
+      context: ./tools
+    volumes:
+      - .:/work
+    working_dir: /work
+    profiles: ["tools"]
+    command: python3 tools/validar.py content/actividades
+
+  # Solo para comprobar el build de produccion en local: http://localhost:8080
+  prod:
+    build:
+      context: .
+      target: prod
+    ports:
+      - "8080:8080"
+    profiles: ["prod"]
+
+volumes:
+  node_modules:

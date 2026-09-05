@@ -1,0 +1,292 @@
+#!/usr/bin/env python3
+"""
+Validador de actividades de Cascabel.
+
+Comprueba dos cosas que ningún humano debería comprobar a mano:
+
+  1. Que el JSON cumple schemas/actividad.schema.json.
+  2. Que la música tiene sentido para la edad declarada: compases que cuadran,
+     ámbito dentro de la tesitura infantil, saltos razonables y figuras
+     coherentes con el curso.
+
+Se ejecuta sobre una tanda entera de contenido generado con IA. Lo que no pasa
+se descarta y se regenera; así la revisión humana es corta y dirigida.
+
+Uso:
+    python tools/validar.py content/actividades
+    python tools/validar.py content/actividades/inf-01-semaforo.json --estricto
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+from dataclasses import dataclass, field
+from pathlib import Path
+
+RAIZ = Path(__file__).resolve().parent.parent
+ESQUEMA = RAIZ / "schemas" / "actividad.schema.json"
+
+# ---------------------------------------------------------------------------
+# Reglas pedagógicas. Fuente: práctica habitual documentada en programaciones
+# didácticas españolas, NO normativa. Ver docs/03-CURRICULO.md.
+# ---------------------------------------------------------------------------
+
+# Tesitura cómoda de canto por etapa, en notas científicas.
+TESITURA = {
+    "infantil": ("D4", "A4"),
+    "primaria-c1": ("C4", "C5"),
+    "primaria-c2": ("B3", "D5"),
+    "primaria-c3": ("A3", "E5"),
+}
+
+# Salto melódico máximo aceptable, en semitonos.
+SALTO_MAX = {
+    "infantil": 5,       # cuarta justa
+    "primaria-c1": 7,    # quinta justa
+    "primaria-c2": 9,    # sexta mayor
+    "primaria-c3": 12,   # octava
+}
+
+# Figuras que se consideran introducidas en cada etapa (acumulativo).
+FIGURAS_ETAPA = {
+    "infantil": {"negra", "corchea", "silencio-negra"},
+    "primaria-c1": {"negra", "corchea", "semicorchea", "blanca",
+                    "silencio-negra", "silencio-blanca"},
+    "primaria-c2": {"redonda", "blanca", "negra", "corchea", "semicorchea",
+                    "puntillo", "ligadura", "sincopa",
+                    "silencio-redonda", "silencio-blanca", "silencio-negra",
+                    "silencio-corchea"},
+    "primaria-c3": None,  # todas
+}
+
+# Número máximo de objetos simultáneos en pantalla (UX infantil, NN/g).
+MAX_OBJETOS = {"infantil": 4, "primaria-c1": 6, "primaria-c2": 8, "primaria-c3": 9}
+
+
+@dataclass
+class Resultado:
+    fichero: Path
+    errores: list[str] = field(default_factory=list)
+    avisos: list[str] = field(default_factory=list)
+
+    @property
+    def ok(self) -> bool:
+        return not self.errores
+
+
+def cargar_esquema() -> dict:
+    if not ESQUEMA.exists():
+        sys.exit(f"No encuentro el esquema en {ESQUEMA}")
+    return json.loads(ESQUEMA.read_text(encoding="utf-8"))
+
+
+def validar_esquema(datos: dict, esquema: dict, r: Resultado) -> None:
+    try:
+        import jsonschema
+    except ImportError:
+        r.avisos.append("jsonschema no instalado: me salto la validación de esquema")
+        return
+    validador = jsonschema.Draft202012Validator(esquema)
+    for err in sorted(validador.iter_errors(datos), key=lambda e: list(e.path)):
+        ruta = "/".join(str(p) for p in err.path) or "(raíz)"
+        r.errores.append(f"esquema · {ruta}: {err.message}")
+
+
+def validar_musica(datos: dict, r: Resultado) -> None:
+    """Parsea el ABC con music21 y comprueba lo que un maestro miraría primero."""
+    abc = (datos.get("musica") or {}).get("abc")
+    if not abc:
+        return
+
+    try:
+        from music21 import converter, interval, note, pitch
+    except ImportError:
+        r.avisos.append("music21 no instalado: me salto la validación musical")
+        return
+
+    try:
+        pieza = converter.parse(abc, format="abc")
+    except Exception as exc:  # noqa: BLE001 - queremos el mensaje tal cual
+        r.errores.append(f"música · el ABC no se puede parsear: {exc}")
+        return
+
+    # 1. ¿Cuadran los compases? El ABC ya viene dividido por barras; si no lo
+    #    estuviera, makeMeasures lo divide. Llamarlo dos veces revienta music21.
+    try:
+        compases = list(pieza.recurse().getElementsByClass("Measure"))
+        if not compases:
+            compases = list(pieza.makeMeasures().recurse().getElementsByClass("Measure"))
+        # music21 parte un compás desbordado en trozos y ajusta su barDuration,
+        # así que comparar cada compás consigo mismo nunca falla. Hay que medir
+        # contra la indicación de compás de la pieza.
+        ts = pieza.recurse().getElementsByClass("TimeSignature").first()
+        esperado = ts.barDuration.quarterLength if ts else None
+        if esperado:
+            for i, compas in enumerate(compases):
+                real = compas.duration.quarterLength
+                # Primer y último compás pueden ser anacrusa y su complemento.
+                if i in (0, len(compases) - 1) and real < esperado:
+                    continue
+                if abs(real - esperado) > 1e-6:
+                    r.errores.append(
+                        f"música · el compás {i + 1} dura {real} negras y "
+                        f"deberían ser {esperado} ({ts.ratioString})"
+                    )
+    except Exception as exc:  # noqa: BLE001
+        r.errores.append(f"música · no se puede dividir en compases: {exc}")
+
+    notas = [n for n in pieza.recurse().notes if isinstance(n, note.Note)]
+    if not notas:
+        return
+
+    etapa = datos.get("etapa", "primaria-c2")
+
+    # 2. Ámbito dentro de la tesitura de la edad.
+    if etapa in TESITURA:
+        bajo, alto = (pitch.Pitch(p) for p in TESITURA[etapa])
+        grave = min(notas, key=lambda n: n.pitch.ps).pitch
+        agudo = max(notas, key=lambda n: n.pitch.ps).pitch
+        if grave.ps < bajo.ps:
+            r.errores.append(
+                f"música · nota más grave {grave.nameWithOctave} por debajo de "
+                f"la tesitura de {etapa} ({bajo.nameWithOctave})"
+            )
+        if agudo.ps > alto.ps:
+            r.errores.append(
+                f"música · nota más aguda {agudo.nameWithOctave} por encima de "
+                f"la tesitura de {etapa} ({alto.nameWithOctave})"
+            )
+
+    # 3. Saltos melódicos.
+    limite = SALTO_MAX.get(etapa, 12)
+    for anterior, siguiente in zip(notas, notas[1:]):
+        salto = abs(interval.Interval(anterior.pitch, siguiente.pitch).semitones)
+        if salto > limite:
+            r.errores.append(
+                f"música · salto de {salto} semitonos "
+                f"({anterior.nameWithOctave}→{siguiente.nameWithOctave}); "
+                f"el máximo para {etapa} es {limite}"
+            )
+
+    # 4. Coherencia de figuras con la etapa declarada.
+    permitidas = FIGURAS_ETAPA.get(etapa)
+    declaradas = set((datos.get("practica") or {}).get("figuras") or [])
+    if permitidas is not None and declaradas - permitidas:
+        r.avisos.append(
+            f"práctica · figuras poco habituales en {etapa}: "
+            f"{sorted(declaradas - permitidas)}"
+        )
+
+
+def validar_producto(datos: dict, r: Resultado) -> None:
+    """Reglas de producto que están en CLAUDE.md y que nadie recuerda a las 2 de la mañana."""
+    etapa = datos.get("etapa", "")
+    entrada = datos.get("entrada") or {}
+    evaluacion = datos.get("evaluacion") or {}
+    contenido = datos.get("contenido") or {}
+
+    if entrada.get("modo", "").startswith("microfono") and entrada.get("alternativa") in (None, "ninguna"):
+        r.errores.append(
+            "producto · una actividad de micrófono necesita alternativa por toque "
+            "(accesibilidad y aulas con 25 micrófonos abiertos)"
+        )
+
+    if etapa == "infantil" and entrada.get("modo") == "arrastre":
+        r.errores.append("producto · por debajo de 6 años solo tap, nunca arrastrar")
+
+    opciones = contenido.get("opciones")
+    if isinstance(opciones, list) and etapa in MAX_OBJETOS:
+        if len(opciones) > MAX_OBJETOS[etapa]:
+            r.errores.append(
+                f"producto · {len(opciones)} objetos en pantalla; el máximo para "
+                f"{etapa} es {MAX_OBJETOS[etapa]}"
+            )
+
+    for prohibido in ("vidas", "tiempo_limite_s", "racha", "clasificacion"):
+        if prohibido in evaluacion or prohibido in contenido:
+            r.errores.append(f"producto · '{prohibido}' está prohibido: el error nunca castiga")
+
+    if "locucion" not in datos:
+        r.avisos.append("producto · sin locución: los niños de 3-8 años no leen el enunciado")
+
+    tol = evaluacion.get("tolerancia_ms")
+    if tol:
+        esperado = {
+            "infantil": 150,
+            "primaria-c1": 100,
+            "primaria-c2": 100,
+            "primaria-c3": 70,
+        }.get(etapa)
+        if esperado and tol.get("perfecto", 0) < esperado:
+            r.avisos.append(
+                f"producto · tolerancia de {tol.get('perfecto')} ms demasiado dura "
+                f"para {etapa} (referencia: {esperado} ms)"
+            )
+    if tol and "desvio_medio_con_signo" not in (evaluacion.get("reporta") or []):
+        r.avisos.append(
+            "producto · una actividad rítmica debería reportar el desvío medio con signo: "
+            "un niño desfasado pero regular tiene buen pulso"
+        )
+
+
+def validar_fichero(ruta: Path, esquema: dict) -> Resultado:
+    r = Resultado(fichero=ruta)
+    try:
+        datos = json.loads(ruta.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        r.errores.append(f"json · {exc}")
+        return r
+
+    if ruta.stem != datos.get("id"):
+        r.avisos.append(f"El id '{datos.get('id')}' no coincide con el nombre del fichero")
+
+    validar_esquema(datos, esquema, r)
+    validar_producto(datos, r)
+    validar_musica(datos, r)
+    return r
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description="Valida actividades de Cascabel")
+    ap.add_argument("ruta", type=Path, help="Fichero .json o carpeta")
+    ap.add_argument("--estricto", action="store_true", help="Los avisos también fallan")
+    args = ap.parse_args()
+
+    ficheros = (
+        sorted(args.ruta.glob("**/*.json")) if args.ruta.is_dir() else [args.ruta]
+    )
+    if not ficheros:
+        print(f"No hay actividades en {args.ruta}")
+        return 0
+
+    esquema = cargar_esquema()
+    resultados = [validar_fichero(f, esquema) for f in ficheros]
+
+    fallos = 0
+    for r in resultados:
+        nombre = r.fichero.relative_to(RAIZ) if RAIZ in r.fichero.parents else r.fichero
+        if r.errores:
+            fallos += 1
+            print(f"\n✗ {nombre}")
+            for e in r.errores:
+                print(f"    ERROR   {e}")
+            for a in r.avisos:
+                print(f"    aviso   {a}")
+        elif r.avisos:
+            if args.estricto:
+                fallos += 1
+            print(f"\n! {nombre}")
+            for a in r.avisos:
+                print(f"    aviso   {a}")
+        else:
+            print(f"✓ {nombre}")
+
+    total = len(resultados)
+    print(f"\n{total - fallos}/{total} actividades correctas.")
+    return 1 if fallos else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

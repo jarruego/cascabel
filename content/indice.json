@@ -1,0 +1,57 @@
+{
+  "generado": "2026-09-05",
+  "total": 3,
+  "actividades": [
+    {
+      "id": "c1-02-palmea-el-ritmo",
+      "titulo": "Palmea el ritmo: negra y dos corcheas",
+      "etapa": "primaria-c1",
+      "eje": "pulso",
+      "tipo": "tocar-a-tiempo",
+      "lugar": "pantalla",
+      "microfono": true,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Práctica instrumental, vocal y corporal"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c2-01-coloca-la-nota",
+      "titulo": "Coloca la nota en el pentagrama",
+      "etapa": "primaria-c2",
+      "eje": "notacion",
+      "tipo": "pentagrama",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes musicales: aplicación de sus conceptos básicos"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "inf-01-semaforo-del-sonido",
+      "titulo": "El semáforo del sonido",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 4,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE3",
+        "criterio": "3.5",
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador"
+    }
+  ]
+}

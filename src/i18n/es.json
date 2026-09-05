@@ -1,0 +1,23 @@
+{
+  "app.nombre": "Cascabel",
+  "app.lema": "Música para Infantil y Primaria. Gratis, sin cuentas y sin anuncios.",
+  "comun.empezar": "¡Empezar!",
+  "comun.repetir": "Escuchar otra vez",
+  "comun.atras": "Atrás",
+  "comun.siguiente": "Siguiente",
+  "comun.bien": "¡Muy bien!",
+  "comun.casi": "Casi. Escucha otra vez.",
+  "comun.sinMicrofono": "Prefiero tocar en la pantalla",
+  "microfono.permiso.titulo": "Vamos a escuchar",
+  "microfono.permiso.texto": "Vamos a escuchar tu voz para ver si cantas la nota. Tu voz se queda en este ordenador: nadie más la oye y no se guarda en ningún sitio.",
+  "actividad.inf01.enunciado": "Toca el círculo verde mientras oigas el sonido. Cuando haya silencio, suéltalo.",
+  "actividad.inf01.consigna": "¿Suena o hay silencio?",
+  "actividad.inf01.pista1": "Escucha con atención. El silencio también es música.",
+  "actividad.c102.enunciado": "Escucha el ritmo y después repítelo con las palmas.",
+  "actividad.c102.consigna": "Palmea igual que el personaje",
+  "actividad.c102.pista1": "Escucha primero. Ahora tú.",
+  "actividad.c102.pista2": "Marca el pulso con el pie mientras palmeas.",
+  "actividad.c201.enunciado": "Coloca la nota en su sitio del pentagrama.",
+  "actividad.c201.consigna": "¿Dónde va esta nota?",
+  "actividad.c201.pista1": "Cuenta las líneas desde abajo."
+}

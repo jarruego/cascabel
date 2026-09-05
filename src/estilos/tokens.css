@@ -1,0 +1,132 @@
+/*
+ * Tokens de diseño. Ningún componente escribe un color, un tamaño táctil ni una
+ * tipografía a mano: todo sale de aquí.
+ *
+ * Las tipografías se sirven desde /fuentes (public/fuentes). NUNCA desde Google
+ * Fonts: eso transmitiría la IP del niño a un tercero, y ya hay condena judicial
+ * en Alemania por ello. Ver docs/08-LEGAL.md.
+ */
+
+@font-face {
+  font-family: 'Andika';
+  src: url('/fuentes/Andika-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bravura';
+  src: url('/fuentes/Bravura.woff2') format('woff2');
+  font-display: block;
+}
+
+:root {
+  /* Color */
+  --papel: #f2f3ef;
+  --superficie: #fbfbf9;
+  --tinta: #171c2b;
+  --tinta-2: #4a5266;
+  --linea: #dbddd4;
+  --acento: #bf3b26;
+  --acento-2: #2c6e63;
+  --ok: #2f6b4f;
+
+  /* Ejes del catálogo. El color codifica, nunca informa solo. */
+  --eje-pulso: #b44214;
+  --eje-altura: #1d6485;
+  --eje-timbre: #6c4e9e;
+  --eje-notacion: #2f6b4f;
+  --eje-cuerpo: #a63c64;
+  --eje-creacion: #8f6706;
+  --eje-cultura: #4a5266;
+
+  /* Tipografía. Andika está diseñada para lectores nóveles: 'a' y 'g' de un piso. */
+  --f-texto: 'Andika', system-ui, sans-serif;
+  --f-musica: 'Bravura', serif;
+  --t-infantil: 24px;
+  --t-c1: 20px;
+  --t-c3: 18px;
+
+  /* Objetivos táctiles. WCAG 2.2 AA pide 24 px; con niños es un suelo, no una meta. */
+  --objetivo-infantil: 75px;
+  --objetivo-c1: 60px;
+  --objetivo-c2: 60px;
+  --objetivo-c3: 48px;
+  --separacion-infantil: 24px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema='claro']) {
+    --papel: #131519;
+    --superficie: #1a1d23;
+    --tinta: #e8eae5;
+    --tinta-2: #afb6c0;
+    --linea: #2b303a;
+    --acento: #ec7156;
+    --acento-2: #5aae9f;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--f-texto);
+  font-size: var(--t-c1);
+  line-height: 1.5;
+}
+
+/* Un niño de 4 años tarda 8 segundos en decidir dónde tocar: sin prisas y sin sustos. */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.boton-actividad {
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  padding: 16px;
+  border: 3px solid var(--linea);
+  border-radius: 18px;
+  background: var(--superficie);
+  color: var(--tinta);
+  font: inherit;
+  cursor: pointer;
+}
+.boton-actividad:focus-visible {
+  outline: 4px solid var(--acento);
+  outline-offset: 3px;
+}
+
+.opciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--separacion-infantil);
+  margin: 24px 0;
+}
+
+.boton-repetir {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 2px solid var(--linea);
+  background: var(--superficie);
+  color: var(--tinta);
+  font: inherit;
+  cursor: pointer;
+}
+
+.feedback {
+  min-height: 2em; /* Reservado siempre: que el mensaje no empuje los botones. */
+  font-size: 1.1em;
+  color: var(--ok);
+}

@@ -1,0 +1,85 @@
+# Arquitectura
+
+## La decisión de la que depende todo
+
+**No se programan actividades: se describen.** Hay ~10 *tipos* de actividad implementados
+como componentes genéricos, y cada actividad concreta es un fichero JSON validado.
+
+Consecuencias, que son el motivo de la decisión:
+
+- Añadir una actividad deja de ser programar. Son minutos, no días.
+- La IA puede generar contenido válido, porque el formato está acotado y es **validable
+  por máquina**.
+- Una profesora de música puede revisar un fichero legible sin tocar código.
+- El día que exista el «configurador de actividades», ya está casi hecho: es un formulario
+  que escribe ese mismo JSON.
+
+Es el modelo de JClic y de LIM, que sobrevivieron veinte años exactamente por esto.
+
+```
+content/actividades/*.json          ← la fuente de verdad del contenido
+        │  validado por
+        ▼
+schemas/actividad.schema.json  +  tools/validar.py (music21)
+        │  cargado por
+        ▼
+src/datos/cargar.ts  →  src/motor/registro.ts  →  src/motor/tipos/<Tipo>.tsx
+                                                        │
+                              ┌─────────────────────────┼──────────────────────┐
+                              ▼                         ▼                      ▼
+                       src/audio (Tone.js,      src/escucha (worklets    src/ui (botones
+                       sampler, metrónomo)      de tono y palmadas)      grandes, feedback)
+```
+
+## Los diez tipos
+
+| Tipo | Mecánica | Actividades del catálogo |
+|---|---|---|
+| `eleccion` | Suena o se muestra algo; se elige entre 2–4 opciones grandes | 10 |
+| `guia-aula` | Pantalla del maestro: consigna, pulso, coreografía, ficha | 10 |
+| `lienzo` | Creación libre sin evaluación | 8 |
+| `rejilla` | Cuadrícula altura × tiempo | 5 |
+| `seguir` | Reproducción con cursor sincronizado | 5 |
+| `tocar-a-tiempo` | Golpear en el momento correcto | 4 |
+| `emparejar` | Dos conjuntos, toque de dos en dos | 3 |
+| `ordenar` | Secuencia por altura, duración o forma | 3 |
+| `pentagrama` | Colocar o leer sobre pauta real | 3 |
+| `cantar` | Detección de altura con retorno visual | 3 |
+
+**Antes de crear un tipo nuevo**, comprueba que el caso no cabe en uno existente. Casi
+siempre cabe.
+
+## Por qué el formato fuente NO es MusicXML
+
+Una actividad educativa **no es una partitura**. Una partitura no puede expresar el tipo de
+ejercicio, la locución del enunciado, la tolerancia de evaluación, los prerrequisitos, las
+pistas ni el rango vocal objetivo por edad. Metiendo eso en MusicXML acabas con campos
+personalizados y pierdes la ventaja de usar un estándar.
+
+JSON propio + música embebida en **notación ABC**:
+
+- Cuatro compases son ~200 bytes de texto que un modelo escribe casi sin equivocarse,
+  frente a 8–30 KB de XML verboso donde falla con `<divisions>` y `<backup>`.
+- Se puede **validar semánticamente** con `music21`.
+- El diff en git es legible.
+- 500 actividades ocupan ~500 KB en vez de ~8 MB → **la biblioteca entera cabe en el
+  service worker** y funciona sin conexión.
+
+MusicXML se **genera** cuando hace falta (PDF, intercambio) y se **importa** solo para
+traer repertorio de terceros. Nunca es la fuente.
+
+## Reglas de dependencias
+
+- Un componente de actividad **no toca el `AudioContext`**: usa el motor de audio.
+- `src/datos/cargar.ts` es el **único** sitio que hace `fetch`, y solo a rutas relativas.
+- Los worklets viven en `public/worklets/` porque se cargan por URL, no por import.
+- Nada de estado global salvo el imprescindible (audio y preferencias) en Zustand.
+
+## Decisiones registradas
+
+Ver `docs/adr/`. Las cuatro que más condicionan el código:
+
+1. Motor genérico + contenido declarativo
+2. Formato fuente JSON+ABC, no MusicXML
+3. Procesamiento de micrófono exclusivamente local
+4. PWA primero, nativo solo con razón de negocio

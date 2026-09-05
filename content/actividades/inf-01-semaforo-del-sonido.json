@@ -1,0 +1,51 @@
+{
+  "id": "inf-01-semaforo-del-sonido",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "El semáforo del sonido",
+  "descripcion": "Suena o no suena. El niño mantiene el dedo en el círculo mientras hay sonido y lo suelta en el silencio.",
+  "etapa": "infantil",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 4,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": "CE3",
+    "criterio": "3.5",
+    "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "metodo": ["willems", "dalcroze"]
+  },
+  "entrada": { "modo": "toque" },
+  "contenido": {
+    "consigna": "actividad.inf01.consigna",
+    "rondas": 6,
+    "opciones": [
+      { "clave": "suena", "icono": "altavoz", "color": "verde" },
+      { "clave": "silencio", "icono": "silencio", "color": "azul" }
+    ],
+    "estimulos": [
+      { "audio": "muestras/pandero-golpe.opus", "respuesta": "suena" },
+      { "audio": "muestras/silencio-2s.opus", "respuesta": "silencio" },
+      { "audio": "muestras/triangulo-largo.opus", "respuesta": "suena" },
+      { "audio": "muestras/silencio-2s.opus", "respuesta": "silencio" },
+      { "audio": "muestras/voz-la.opus", "respuesta": "suena" },
+      { "audio": "muestras/silencio-2s.opus", "respuesta": "silencio" }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": ["completado"]
+  },
+  "locucion": {
+    "enunciado": "actividad.inf01.enunciado",
+    "audio": "es/inf-01-semaforo-del-sonido.opus"
+  },
+  "pistas": ["actividad.inf01.pista1"],
+  "creditos": [
+    { "obra": "Pandero, triángulo", "autor": "Versilian Community Sample Library", "fuente": "VCSL", "licencia": "CC0" }
+  ],
+  "estado": "borrador"
+}
