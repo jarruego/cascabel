@@ -1,6 +1,13 @@
-/** Nombre en clave. Cambiarlo aquí lo cambia en toda la app. */
+/**
+ * Identidad del producto. Cambiarla aquí la cambia en toda la app.
+ *
+ * `Cascabel` es la aplicación; `cocomusic` es el proyecto pedagógico del que forma
+ * parte. Son dos marcas distintas y ninguna de las dos está cubierta por las licencias
+ * del código ni de los contenidos: ver TRADEMARK.md.
+ */
 export const APP = {
   nombre: 'Cascabel',
+  proyecto: 'cocomusic',
   idiomaPorDefecto: 'es',
   versionEsquemaActividad: 1,
   /** Rutas relativas siempre: la CSP prohíbe cualquier origen que no sea el nuestro. */

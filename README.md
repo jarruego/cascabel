@@ -3,6 +3,8 @@
 **Biblioteca libre de actividades de música para Educación Infantil y Primaria.**
 Gratis, sin registro, sin publicidad y sin enviar datos a ningún sitio.
 
+Cascabel es la aplicación; forma parte del proyecto pedagógico **cocomusic**.
+
 > Estado: **fase 0**. Andamiaje del proyecto listo; el producto está por construir.
 > La cola de trabajo está en [`docs/07-ROADMAP.md`](docs/07-ROADMAP.md).
 
@@ -14,10 +16,9 @@ Un maestro entra, filtra por curso y por criterio curricular LOMLOE, y usa la ac
 necesita. No hay itinerario obligatorio, ni desbloqueos, ni cuentas. Se abre y funciona.
 
 Lo que no existe hoy en el mercado español: hay juguetes musicales excelentes sin secuencia
-didáctica (Chrome Music Lab), plataformas con secuencia didáctica pero cerradas, de pago y
-atadas a un libro con ISBN (AulaVirtualMúsica), y recursos en español con publicidad servida
-a menores (Aprendo Música). **Nadie ofrece las tres cosas a la vez: buenas actividades,
-cosidas al currículo, libres.**
+didáctica, plataformas con secuencia didáctica pero cerradas, de pago y atadas a un libro
+con ISBN, y recursos gratuitos en español que se financian con publicidad servida a menores.
+**Nadie ofrece las tres cosas a la vez: buenas actividades, cosidas al currículo, libres.**
 
 ## Las cinco reglas del proyecto
 
@@ -98,6 +99,7 @@ prompts/               prompts de generación de contenido y de sesión con Clau
 | [docs/06-PIPELINE-IA.md](docs/06-PIPELINE-IA.md) | Generar contenido con IA y validarlo con código |
 | [docs/07-ROADMAP.md](docs/07-ROADMAP.md) | **La cola de trabajo.** Tareas con criterio de aceptación |
 | [docs/08-LEGAL.md](docs/08-LEGAL.md) | RGPD y menores, micrófono, accesibilidad, licencias, repertorio |
+| [docs/09-DOSIER.md](docs/09-DOSIER.md) | Investigación de producto y mercado (foto de 09/2026) |
 | [docs/adr/](docs/adr/) | Decisiones de arquitectura, con sus consecuencias |
 
 ## Trabajar con Claude Code
@@ -123,7 +125,8 @@ Una actividad es un fichero JSON. No hace falta programar:
 - **Código**: [Apache-2.0](LICENSE)
 - **Contenidos**: [CC BY-SA 4.0](LICENSE-CONTENT.md)
 - **Esquemas y datos**: CC0
-- **Nombre y logotipo**: excluidos de las anteriores ([TRADEMARK.md](TRADEMARK.md))
+- **Nombres y logotipos** (*Cascabel* y *cocomusic*): excluidos de las anteriores
+  ([TRADEMARK.md](TRADEMARK.md))
 
 Material de terceros inventariado en [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
 

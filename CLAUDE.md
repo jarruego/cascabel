@@ -8,8 +8,9 @@ antes de escribir código.
 
 ## 1. Qué estamos construyendo
 
-**Cascabel** es una biblioteca libre de actividades de música para **Educación Infantil
-(3–6 años) y Primaria (6–12)** en España, alineada con el currículo LOMLOE.
+**Cascabel**, del proyecto **cocomusic**, es una biblioteca libre de actividades de música
+para **Educación Infantil (3–6 años) y Primaria (6–12)** en España, alineada con el
+currículo LOMLOE.
 
 - **Gratuita, sin registro, sin publicidad y sin enviar datos a nadie.** Esto no es un
   eslogan: es una restricción de arquitectura que aparece en casi todas las decisiones.
@@ -21,8 +22,11 @@ antes de escribir código.
   requiera criterio musical, dilo explícitamente y propón la opción convencional
   documentada, citando de dónde sale.
 
-Nombre en clave provisional: `cascabel`. Vive en `src/config.ts` como una constante; cambiarlo
-es una sola edición.
+**Los nombres son definitivos.** `Cascabel` es esta aplicación; **cocomusic** es el
+proyecto pedagógico mayor del que forma parte. Ambos viven en `APP` de `src/config.ts`
+(`nombre` y `proyecto`) y no son un nombre en clave: no los cambies ni propongas
+alternativas. Ninguno de los dos está cubierto por las licencias del código ni de los
+contenidos — ver `TRADEMARK.md`, que cubre las dos marcas.
 
 ---
 
@@ -187,6 +191,31 @@ un porcentaje le diría que ha fallado.
 
 ## 8. Micrófono: la lista de minas
 
+**Regla previa a todas las demás: el micrófono es un accesorio, nunca un requisito.**
+Ante *cualquier* fallo —permiso denegado, `NotAllowedError`, `NotFoundError`, el
+`AudioWorklet` que no carga, un navegador sin `getUserMedia`, o el bug de iOS en PWA
+instalada— la actividad **degrada a la vía de toque y continúa**. Nunca una pantalla de
+error, nunca un callejón sin salida, nunca una actividad que no se puede terminar.
+Concretamente:
+
+- Todo código de micrófono va envuelto en `try/catch` y devuelve un resultado, no una
+  excepción que suba hasta el componente.
+- El cambio a toque es **silencioso para el niño**: como mucho, un aviso discreto pensado
+  para el adulto («no hemos podido usar el micrófono; puedes tocar en la pantalla»).
+  Al niño no se le explica un fallo técnico: se le ofrece el botón.
+- La vía de toque no es un modo degradado de segunda: es una forma legítima de hacer la
+  actividad y tiene que estar completa antes de que se escriba el detector.
+- No se pide el permiso al entrar. Se pide cuando hace falta, tras la pantalla ilustrada,
+  y si se deniega no se vuelve a insistir en esa sesión.
+- Nada de detección de navegador para decidir si se ofrece el micrófono. Se intenta y se
+  cae con elegancia: los *user agents* mienten y las versiones cambian.
+
+Esto no es sólo accesibilidad (§6, «toda actividad de micrófono tiene alternativa por
+toque»): es lo que mantiene el riesgo de iOS acotado a un defecto en vez de a un cambio de
+arquitectura. Ver `docs/adr/0004-pwa-primero.md`.
+
+Y ahora las minas propiamente dichas:
+
 - `getUserMedia` con `echoCancellation: false`, `noiseSuppression: false`,
   `autoGainControl: false`, `channelCount: 1`. El procesado de voz del navegador está hecho
   para llamadas y destroza la música.
@@ -196,7 +225,10 @@ un porcentaje le diría que ha fallado.
   onsets por las reflexiones de la sala.
 - **iOS**: `getUserMedia` redirige la salida de audio (baja el volumen); `echoCancellation`
   se ignora; hay bugs recurrentes de `AudioWorklet`; y el bug WebKit 185448 hace que
-  `getUserMedia` falle en PWA instalada en pantalla de inicio. **Prueba siempre en iPad real.**
+  `getUserMedia` falle en PWA instalada en pantalla de inicio. **No tenemos ningún
+  dispositivo iOS**, así que nada de esto está verificado: es riesgo abierto, y por eso la
+  degradación a toque de arriba no es opcional. Si algún día hay un iPad a mano, pruébalo
+  en el aparato real — el simulador miente. Ver `docs/adr/0004-pwa-primero.md` y T0.1.
 - Permiso tardío y contextual, tras una pantalla explicativa ilustrada. La pantalla de
   "permiso denegado, ve a Ajustes" se diseña **para el adulto**.
 - `track.stop()` al salir de la actividad, para que el indicador del navegador se apague.

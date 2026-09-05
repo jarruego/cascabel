@@ -39,9 +39,9 @@ export default tseslint.config(
     },
   },
 
-  // Herramientas de línea de comandos: Node.
+  // Herramientas de línea de comandos y hooks de Claude Code: Node.
   {
-    files: ['tools/**/*.mjs', '*.config.{js,ts}'],
+    files: ['tools/**/*.mjs', '.claude/hooks/**/*.mjs', '*.config.{js,ts}'],
     languageOptions: { ecmaVersion: 2022, sourceType: 'module', globals: globals.node },
   },
 

@@ -2,6 +2,37 @@
 
 Objetivo: **WCAG 2.2 AA**. Para niños es un suelo, no una meta.
 
+## Los tres carriles
+
+La app es una sola, pero se presenta en **tres carriles visualmente distintos**. La decisión
+y su justificación están en [`adr/0005-una-app-tres-carriles.md`](adr/0005-una-app-tres-carriles.md);
+aquí está lo que hay que saber para dibujar.
+
+**El carril no es la etapa.** `etapa` es la capa normativa (ciclos LOMLOE, para etiquetar
+currículo); `carril` es la capa de presentación. El 2.º ciclo (3.º–4.º) queda partido entre
+los dos carriles de Primaria. Regla: **el carril manda en la presentación, la etapa manda en
+el currículo.**
+
+### Qué cambia entre carriles
+
+| | **Infantil** (3–6) | **Primeros lectores** (1.º–3.º) | **Autónomos** (4.º–6.º) |
+|---|---|---|---|
+| **Texto** | Ninguno. Cero palabras en la interfaz | Icono **más** palabra; la lectura apoya, no condiciona | Texto normal, vocabulario musical correcto |
+| **Tipografía** | Andika, 20–24 px | Andika o la del sistema, 18 px | 17 px |
+| **Objetivo táctil** | 75 × 75 px, separación ≥ 24 | 60 × 60 px, separación ≥ 16 | 48 × 48 px, separación ≥ 12 |
+| **Objetos a la vez** | 2–4 | 4–6 | 6–9 |
+| **Iconografía** | Objetos y personajes dibujados: un tambor, no una corchea | El mismo icono concreto, con su palabra al lado | Símbolo musical real. Estética **no** infantilizada |
+| **Recompensa** | Que suene y se mueva. Sin puntuación, sin final, sin progreso visible | Cierre de sesión corto y completo; el resultado suena entero al terminar | Autoría: crear, compartir por URL, ver que funciona |
+| **Entrada** | Solo *tap* | *Tap*; arrastre siempre con alternativa | *Tap*; arrastre siempre con alternativa |
+| **Navegación** | Un botón atrás, con icono | Un botón atrás, icono y palabra | Un botón atrás, icono y palabra |
+
+Lo que **no** cambia entre carriles: el motor, el esquema de actividad, el audio, la escucha,
+la persistencia, y las cinco reglas de `CLAUDE.md` — incluida la 4, que prohíbe vidas,
+rachas, cronómetros por defecto y clasificaciones **en los tres carriles**.
+
+El modelo de Infantil es Loopimal / Toca Band: la animación *es* la notación. El de
+autónomos es lo contrario del elogio genérico, que a los 11 años ya suena falso.
+
 ## Tamaños
 
 | Etapa | Objetivo táctil | Separación | Objetos simultáneos | Cuerpo de texto |
@@ -12,6 +43,10 @@ Objetivo: **WCAG 2.2 AA**. Para niños es un suelo, no una meta.
 
 WCAG 2.5.8 pide 24 × 24 px, pensado para adultos. Los niños de 3 a 5 años no tienen
 control motor fino.
+
+> **Ojo**: `OBJETIVO_TACTIL` y `MAX_OBJETOS` de `src/config.ts` siguen indexados por `Etapa`,
+> con `primaria-c1` y `primaria-c2` compartiendo 60 px. Para 4.º eso contradice la tabla de
+> arriba (48 px). Está anotado como pendiente en el ADR 0005 y en el roadmap.
 
 **Truco imprescindible en pentagramas**: dibuja la nota pequeña, tipográficamente correcta,
 y pon encima un hitbox transparente de 60 px. VexFlow te da control total para hacerlo.

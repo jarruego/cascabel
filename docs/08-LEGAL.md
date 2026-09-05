@@ -107,17 +107,36 @@ Audio: **VSCO 2 CE** y **VCSL** (CC0), Freesound filtrando CC0, Kenney.nl (CC0).
 Bravura y Andika (OFL). Evita Pixabay, Pexels y Freepik: sus licencias no son libres y no se
 pueden sublicenciar.
 
-## Frontera con AulaVirtualMúsica
+## Frontera con las plataformas educativas comerciales
 
-**Sí se puede**: replicar funcionalidades genéricas (dictado rítmico, panel de progreso,
-ejercicios autocorregidos), seguir el mismo currículo (el art. 13 TRLPI excluye las
-disposiciones legales de la protección) y usar el mismo repertorio de dominio público con
-arreglo propio.
+Existen plataformas de música escolar de pago, cerradas y ligadas a libros de texto. Coincidir
+con ellas en un currículo público es inevitable y perfectamente lícito; lo que sigue marca
+dónde está la raya, y este apartado se escribe **antes** de diseñar, no después.
 
-**No se puede**: copiar sus textos, ilustraciones, locuciones, arreglos concretos o PDFs;
-extraer una parte sustancial de su banco de ejercicios (**derecho *sui generis* sobre bases
-de datos**, arts. 133-137 TRLPI); reproducir su identidad visual (Ley 3/1991 de Competencia
-Desleal); ni usar su nombre o uno confundible.
+**Sí se puede.** Replicar *funcionalidades*, porque ninguna es apropiable: dictado rítmico y
+melódico, lectura de notas, identificación de intervalos, seguimiento del progreso, panel del
+profesor, ejercicios autocorregidos. Adoptar la secuencia pedagógica general, que es didáctica
+estándar de cualquier manual. Y seguir el mismo currículo oficial: los reales decretos son
+disposiciones legales y el **art. 13 TRLPI** las excluye expresamente de la protección, así
+que competencias, criterios y saberes básicos se pueden copiar literalmente — de hecho hay que
+hacerlo, porque parafrasear el BOE introduce errores.
 
-**Protocolo**: no descargar nada de su sitio, tomar notas con palabras propias y fecha, y
-diseñar partiendo del currículo y de los métodos (Orff, Kodály, Dalcroze), no de su pantalla.
+**No se puede.** Copiar textos, enunciados o consignas ajenas, ni siquiera parafraseando de
+cerca (obra literaria protegida). Ilustraciones, personajes, iconos o animaciones. Audio,
+grabaciones y locuciones (fonograma **más** derechos de intérprete, que son derechos
+distintos). Partituras y arreglos concretos: aunque la melodía sea de dominio público, la
+armonización ajena es obra derivada protegida. Fichas y PDF con ISBN. Extraer una parte
+sustancial de un banco de ejercicios ajeno, protegido por el **derecho *sui generis* sobre
+bases de datos** (arts. 133-137 TRLPI) aunque ningún ítem suelto fuese original. Y reproducir
+una identidad visual característica: la **Ley 3/1991 de Competencia Desleal** sanciona los
+actos de confusión y el aprovechamiento de la reputación ajena.
+
+**Protocolo limpio, y es el que seguimos.** No se descarga nada de sitios ajenos. El análisis
+de mercado se toma con palabras propias y fecha, y ese documento se guarda como prueba de que
+se trabajó desde ideas y no desde material ajeno. Se deja pasar tiempo entre analizar y
+diseñar. Y se diseña partiendo del currículo y de los métodos (Orff, Kodály, Dalcroze), nunca
+de la pantalla de otro. La diferenciación visual es deliberada: otra paleta, otros personajes,
+otro nombre y otra voz.
+
+> Este apartado es la razón por la que conviene conservarlo aunque no se nombre a nadie: es el
+> registro fechado de que la frontera se estudió antes de escribir la primera actividad.

@@ -11,24 +11,66 @@ se cumple, la tarea no está hecha, aunque el código compile.
 ## Fase 0 — Reducir incertidumbre (una semana)
 
 > El objetivo de esta fase no es construir: es **descubrir si algo importante no funciona**
-> antes de haber invertido meses. Son tres tareas y ninguna produce código que se quede.
+> antes de haber invertido meses. Son tres tareas y casi nada de lo que producen se queda
+> — la excepción es la ruta `/diagnostico` de T0.1, que sobrevive precisamente porque el
+> riesgo que iba a medir no se ha podido cerrar.
 
-### T0.1 — Prueba de riesgo del micrófono en iPad `⚠️ HAZLO PRIMERO`
+### T0.1 — Prueba de riesgo del micrófono `⚠️ HAZLO PRIMERO`
 
-Una página HTML mínima que abra el micrófono con el worklet de tono y pinte la frecuencia
-en pantalla, grande.
+Una ruta `/diagnostico` dentro de la app que abra el micrófono con el worklet de tono,
+pinte la frecuencia en grande y, debajo, un informe del entorno. Es código desechable en
+cuanto a la parte de prueba, pero la ruta se queda: es la que nos dará el dato de iOS.
 
-- [ ] Funciona en Chrome de escritorio
-- [ ] Funciona en Safari de iPad
-- [ ] **Funciona en la PWA instalada en la pantalla de inicio del iPad** ← el dato que importa
-- [ ] Funciona en Chrome de Android
+**No tenemos iOS.** Sólo Windows y Android. Por eso la tarea se parte en dos: lo que
+podemos medir nosotros hoy, y el instrumento que recogerá el dato que no podemos medir.
 
-**Por qué**: el bug 185448 de WebKit ha roto `getUserMedia` en modo *standalone* varias
-veces. Si falla, cambia toda la estrategia de distribución (habría que empaquetar con
-Capacitor). Es la información más valiosa que puedes conseguir ahora mismo y cuesta un día.
+#### (a) Lo que probamos nosotros
 
-**Criterio de aceptación**: una tabla en `docs/pruebas/microfono.md` con dispositivo,
-sistema, navegador, modo (pestaña / instalada) y resultado. Con capturas.
+Con el **reenvío de puertos de `chrome://inspect`** (pestaña *Port forwarding*, `5173` →
+`localhost:5173`), el Android ve el servidor de desarrollo como `http://localhost:5173`.
+Eso cuenta como *secure context*, así que `getUserMedia` funciona sin montar HTTPS ni
+certificados ni túneles a terceros.
+
+- [ ] Chrome de escritorio en Windows, pestaña normal
+- [ ] Edge de escritorio en Windows (motor Chromium, pero política de permisos propia)
+- [ ] Firefox de escritorio en Windows
+- [ ] Chrome de Android por reenvío de puertos, pestaña normal
+- [ ] Chrome de Android, **PWA instalada** ← requiere HTTPS real, no vale el reenvío
+
+El último punto es la excepción honesta: una PWA lanzada desde la pantalla de inicio no
+pasa por el túnel de DevTools, así que el modo *standalone* en Android sólo se puede
+comprobar contra el despliegue de T1.10. Marca la casilla cuando exista.
+
+De paso, y porque cuesta cero: el diagnóstico mide **cuánto tarda cada análisis del
+worklet**. El NSDF es O(N²) con ventana de 1024 y solape del 50 %; el comentario del
+worklet estima un 1–4 % de un núcleo, y conviene saber si eso se sostiene en un móvil
+real antes de llegar a T2.5.
+
+#### (b) El instrumento para iOS
+
+La ruta `/diagnostico` informa, en texto seleccionable:
+
+- [ ] Sistema operativo y versión, navegador y versión (de `userAgent`, sin más)
+- [ ] Modo de visualización: pestaña o `standalone` (`display-mode` por `matchMedia`)
+- [ ] `sampleRate` del `AudioContext`, antes y después de abrir el micrófono
+- [ ] `baseLatency`, `outputLatency` y la latencia total que usaría `latenciaMs()`
+- [ ] Estado del micrófono: concedido, denegado, o el error exacto con su `name`
+- [ ] Botón **«Copiar informe»** al portapapeles, y un enlace de *Abrir incidencia*
+
+**Por qué**: el bug 185448 de WebKit ha roto `getUserMedia` en modo *standalone* en iOS
+varias veces, y si está roto la estrategia de distribución cambia entera (habría que
+empaquetar con Capacitor sólo para iOS). No podemos verificarlo, así que la alternativa
+es dejar preparado el sitio donde ese dato aterrizará el día que un maestro con iPad abra
+la app. Un informe copiado y pegado en una incidencia vale tanto como una prueba nuestra.
+
+Mientras tanto, iOS queda como **riesgo abierto no verificado** en `docs/adr/0004-pwa-primero.md`,
+y el código de micrófono degrada a toque ante cualquier fallo (regla 8 de `CLAUDE.md`), de
+modo que un iOS roto empeora la experiencia pero no impide usar ninguna actividad.
+
+**Criterio de aceptación**: `docs/pruebas/microfono.md` con una tabla de dispositivo,
+sistema, navegador, modo (pestaña / instalada), resultado y coste del análisis, rellena
+para todas las filas de (a) que no dependan del despliegue. Y `/diagnostico` desplegada,
+copiando un informe legible de una sola pulsación.
 
 ### T0.2 — Una actividad completa de punta a punta
 
@@ -53,12 +95,28 @@ minutos aquí valen más que un mes de planificación.
 
 ## Fase 1 — Biblioteca mínima usable (4–8 semanas)
 
+### T1.0 — Carriles en `tokens.css` y en `config.ts`
+
+Consecuencia directa de [`adr/0005-una-app-tres-carriles.md`](adr/0005-una-app-tres-carriles.md).
+Va **antes** que los tipos de actividad: parametrizar por carril componentes que ya asumen
+tamaños fijos es un refactor caro, y el ADR lo dice explícitamente.
+
+- [ ] Tipo `Carril = 'infantil' | 'lectores' | 'autonomos'` en `src/config.ts`
+- [ ] `OBJETIVO_TACTIL` y `MAX_OBJETOS` reindexados **por carril**, no por etapa
+      (hoy `primaria-c1` y `primaria-c2` comparten 60 px, y eso deja 4.º mal)
+- [ ] Función explícita `carrilDe(etapa, curso)`, porque el 2.º ciclo LOMLOE se parte
+- [ ] Tokens por carril en `estilos/tokens.css`: tamaño táctil, separación, cuerpo de texto
+- [ ] Quitar de `docs/04-DISENO-UI.md` el aviso de que config y la tabla se contradicen
+
+**Criterio de aceptación**: ningún componente lee un tamaño táctil de `Etapa`. Un test que
+compruebe que `carrilDe` manda 3.º a `lectores` y 4.º a `autonomos`.
+
 ### T1.1 — Motor: tipo `eleccion` terminado
 
 - [ ] Componente genérico que ejecuta cualquier JSON de tipo `eleccion`
 - [ ] Estados: estímulo, acierto, «casi» con pista, actividad completada
 - [ ] Sin cronómetro, sin vidas, sin puntuación visible durante el juego
-- [ ] Objetivo táctil correcto por etapa (75 / 60 / 48 px)
+- [ ] Objetivo táctil correcto **por carril** (75 / 60 / 48 px), vía T1.0
 - [ ] Operable solo con teclado
 - [ ] Test de que un fallo **no** termina la actividad
 
@@ -127,6 +185,25 @@ Las marcadas con `"esfuerzo": "S"` en `content/catalogo.json`.
 - [ ] Dominio propio con HTTPS
 - [ ] `public/_headers` aplicándose de verdad (compruébalo en la respuesta real)
 - [ ] Analítica: Umami autoalojado o nada. **Nunca Google Analytics**
+
+---
+
+### T1.11 — `npm run verificar` tiene que pasar en Windows
+
+Detectado el 2026-09-06. **La puerta de commit no funciona en la máquina del autor**, así
+que hoy «verificado» no significa nada:
+
+- [ ] `contenido:validar` invoca `python3`, que en Windows es el alias de la Microsoft
+      Store y falla. Ahí sólo hay `python` (3.10.6)
+- [ ] Ni `jsonschema` ni `music21` están instalados: el validador se salta **toda** la
+      comprobación de esquema y de música, avisa, y aun así termina con «3/3 correctas»
+- [ ] Decidir la vía: intérprete detectado en un script, o `docker compose --profile tools`
+      como camino único y documentado
+- [ ] El validador debe **fallar**, no avisar, si le faltan sus dependencias en modo estricto
+
+**Criterio de aceptación**: `npm run verificar` pasa en Windows sin Docker, o falla con un
+mensaje que diga exactamente qué instalar. Y una actividad con un compás mal cuadrado hace
+que el comando devuelva un código distinto de cero.
 
 ---
 
