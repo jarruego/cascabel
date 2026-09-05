@@ -1,4 +1,5 @@
 import { obtenerContexto } from './AudioEngine';
+import { cargarBinario } from '@/datos/cargar';
 
 /**
  * Sampler mínimo: 5-7 muestras Opus por instrumento (una por octava) y el resto
@@ -37,7 +38,7 @@ export class Sampler {
 
     await Promise.all(
       this.muestras.map(async ({ nota, url }) => {
-        const datos = await fetch(url).then((r) => r.arrayBuffer());
+        const datos = await cargarBinario(url);
         this.buffers.set(aMidi(nota), await ctx.decodeAudioData(datos));
       }),
     );

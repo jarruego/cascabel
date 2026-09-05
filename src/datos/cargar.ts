@@ -24,3 +24,11 @@ export function cargarActividad(id: string) {
   if (!/^[a-z0-9-]+$/.test(id)) throw new Error(`Id de actividad inválido: ${id}`);
   return pedir<Actividad>(`${APP.rutaContenido}/actividades/${id}.json`);
 }
+
+/** Descarga binaria (muestras de audio, fuentes). Mismo origen, mismas reglas. */
+export async function cargarBinario(ruta: string): Promise<ArrayBuffer> {
+  if (!ruta.startsWith('/')) throw new Error(`Ruta no relativa: ${ruta}`);
+  const respuesta = await fetch(ruta, { credentials: 'omit', referrerPolicy: 'no-referrer' });
+  if (!respuesta.ok) throw new Error(`No se pudo cargar ${ruta} (${respuesta.status})`);
+  return respuesta.arrayBuffer();
+}

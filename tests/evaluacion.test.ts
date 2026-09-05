@@ -34,7 +34,11 @@ describe('evaluación rítmica', () => {
   });
 
   it('usa tolerancias más generosas en Infantil que en tercer ciclo', () => {
+    // 130 ms: en Infantil aún es un acierto pleno; en 5.º-6.º ya no lo es.
     expect(calidadDe(130, 'infantil')).toBe('perfecto');
-    expect(calidadDe(130, 'primaria-c3')).toBe('casi');
+    expect(calidadDe(130, 'primaria-c3')).toBe('bien');
+    // 200 ms: separa claramente las dos etapas.
+    expect(calidadDe(200, 'infantil')).toBe('bien');
+    expect(calidadDe(200, 'primaria-c3')).toBe('casi');
   });
 });

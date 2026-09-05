@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["ES2022", "DOM", "DOM.Iterable", "WebWorker"],
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable",
+      "WebWorker"
+    ],
     "module": "ESNext",
     "moduleResolution": "bundler",
     "jsx": "react-jsx",
@@ -16,7 +21,19 @@
     "skipLibCheck": true,
     "noEmit": true,
     "baseUrl": ".",
-    "paths": { "@/*": ["src/*"] }
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "types": [
+      "node"
+    ]
   },
-  "include": ["src", "tests", "vite.config.ts"]
+  "include": [
+    "src",
+    "tests",
+    "vite.config.ts",
+    "vitest.config.ts"
+  ]
 }
