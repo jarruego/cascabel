@@ -52,6 +52,15 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
   const [evaluacion, setEvaluacion] = useState<EvaluacionRitmica | null>(null);
   /** Se acabó el tiempo sin que el niño tocara nada. No es un fallo: es que no empezó. */
   const [sinRespuesta, setSinRespuesta] = useState(false);
+  /**
+   * Por dónde entró la primera respuesta de la ronda: palmada o toque.
+   *
+   * **Y a partir de ahí solo vale esa.** Con las dos vías abiertas a la vez, una palmada
+   * dada mientras se toca el botón cuenta dos veces y el ritmo sale al doble. Decide la
+   * primera respuesta, que es lo natural: el niño ya ha elegido con qué lo va a hacer.
+   */
+  const via = useRef<'palmada' | 'toque' | null>(null);
+  const [viaVisible, setViaVisible] = useState<'palmada' | 'toque' | null>(null);
   const [pulsoActual, setPulsoActual] = useState(-1);
 
   const sampler = useRef<Sampler | null>(null);
@@ -125,7 +134,7 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
           Se le pasa el instante del onset y no el reloj de ahora: el detector sabe cuándo
           sonó la palmada mejor que el momento en que nos avisa.
         */
-        tocarRef.current?.(onset.tiempo * 1000);
+        tocarRef.current?.(onset.tiempo * 1000, 'palmada');
       });
       detector.current = d;
       setConMicrofono(true);
@@ -201,6 +210,8 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
     esperados.current = [];
     origen.current = null;
     golpes.current = [];
+    via.current = null;
+    setViaVisible(null);
     setSinRespuesta(false);
     setMarcas(patronEnPulsos.current.map(() => 'pendiente'));
 
@@ -261,8 +272,14 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
     setFase('resultado');
   }, [carril]);
 
-  const tocar = useCallback((instanteMs?: number) => {
+  const tocar = useCallback((instanteMs?: number, desde: 'palmada' | 'toque' = 'toque') => {
     if (fase !== 'respondiendo') return;
+
+    // La primera respuesta elige la vía; después se ignora la otra.
+    via.current ??= desde;
+    if (via.current !== desde) return;
+    setViaVisible(via.current);
+
     const ahora = instanteMs ?? obtenerContexto().currentTime * 1000;
     const msPorPulso = 60000 / bpm;
 
@@ -309,9 +326,19 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
       *ganar algo*, nunca perderlo. La regla 4 prohíbe el sonido desagradable de fallo, y
       esta es la forma de dar retorno sin romperla.
     */
-    clicYa(false);
+    /*
+      **Con palmadas no sonamos nosotros.** El altavoz sonando mientras el micrófono
+      escucha monta un lazo: nuestro clic entra por el micrófono, el detector lo toma por
+      una palmada y eso dispara otro clic. Cada vuelta pasa de los 110 ms del periodo
+      refractario, así que el refractario no puede pararlo — no son ecos de una palmada,
+      son palmadas nuevas que nos inventamos.
+
+      Y no hace falta: una palmada ya se oye. El clic estaba para el camino del dedo, que
+      es silencioso. Con micrófono, el retorno lo dan los círculos.
+    */
+    if (desde === 'toque') clicYa(false);
     if (mejor >= 0) {
-      sampler.current?.tocar('C5', undefined, 0.9);
+      if (desde === 'toque') sampler.current?.tocar('C5', undefined, 0.9);
       setMarcas((m) => {
         if (m[mejor] === 'acertado') return m;
         const n = [...m];
@@ -327,7 +354,9 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
     la primera palmada usaría un `tocar` con la fase congelada en 'escuchando' y no haría
     nada, que es un fallo que solo se ve por micrófono.
   */
-  const tocarRef = useRef<((ms?: number) => void) | null>(null);
+  const tocarRef = useRef<
+    ((ms?: number, desde?: 'palmada' | 'toque') => void) | null
+  >(null);
   tocarRef.current = tocar;
 
   // Los golpes que ya han pasado sin respuesta se apagan en GRIS, no en rojo: la regla 4
@@ -421,9 +450,21 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
           <p aria-live="polite">{conMicrofono ? t('tocar.palmea') : t('tocar.toca')}</p>
           {/* El botón grande existe SIEMPRE, también con micrófono: un niño que prefiere
               tocar no tiene por qué explicarle a nadie por qué. */}
-          <button type="button" className="boton-actividad tocar__diana" onPointerDown={() => tocar()}>
-            {t('tocar.diana')}
-          </button>
+          {/* El botón desaparece si la ronda ya se está haciendo con palmadas: dejarlo
+              ahí invitaría a un doble conteo, y quitarlo dice sin palabras «esta vuelta va
+              de palmas». Vuelve a estar en la siguiente. */}
+          {viaVisible !== 'palmada' && (
+            <button
+              type="button"
+              className="boton-actividad tocar__diana"
+              onPointerDown={() => tocar(undefined, 'toque')}
+            >
+              {t('tocar.diana')}
+            </button>
+          )}
+          {viaVisible === 'palmada' && (
+            <p className="pista-fija">{t('tocar.vaDePalmas')}</p>
+          )}
         </>
       )}
 
