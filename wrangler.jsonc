@@ -14,6 +14,10 @@
     // La app es una SPA: /actividad/inf-01-... y /diagnostico no son ficheros, los
     // resuelve el router del cliente. Sin esto darían 404 al abrirlos directos, que es
     // exactamente como se abren desde la pantalla de inicio en una PWA instalada.
+    //
+    // AQUÍ y no en public/_redirects. Un `/* /index.html 200` haría lo mismo en Cloudflare
+    // Pages, pero en Workers convive con esta opción y Cloudflare lo rechaza por bucle
+    // infinito (código 100324). Si algún día se vuelve a Pages, hay que recuperarlo.
     "not_found_handling": "single-page-application"
   }
 

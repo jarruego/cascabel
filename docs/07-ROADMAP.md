@@ -350,6 +350,14 @@ el navegador cae en silencio a la tipografía del sistema. Consecuencias reales:
 
 ### T1.10 — Despliegue
 
+> **Ojo con el flujo elegido.** Se ha usado el de **Workers** (`npx wrangler deploy`), no
+> el de Pages. Consecuencias que ya han mordido: el fallback de SPA se configura en
+> `wrangler.jsonc` y **no** con `public/_redirects` —tener los dos hace que Cloudflare
+> rechace el despliegue por bucle infinito, código 100324— y wrangler intenta reconfigurar
+> el proyecto solo si no encuentra `wrangler.jsonc` en el repositorio. Por eso está ahí.
+
+
+
 - [ ] Cloudflare Pages conectado a `main` de `github.com/jarruego/cascabel`
 - [ ] Dominio propio con HTTPS
 - [ ] `public/_headers` aplicándose de verdad (compruébalo en la respuesta real)
