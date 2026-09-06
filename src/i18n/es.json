@@ -728,5 +728,6 @@
   "actividad.c304.enunciado": "Esta melodía tiene cuatro frases. Tres son la misma —la A— y una es distinta. Fíjate en cuál.",
   "actividad.c304.pista1": "Los bloques del mismo color son la misma música. Se ve antes de oírse, y eso es lo que hace un mapa.",
   "actividad.c304.pista2": "A-A-B-A es de las formas más repetidas que hay: la tercera frase se va a otro sitio y la cuarta vuelve a casa.",
-  "nav.instrumentos": "Instrumentos"
+  "nav.instrumentos": "Instrumentos",
+  "retos.aTocar": "¡A tocar!"
 }

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { t } from '@/i18n';
+import { Icono } from '@/ui/Icono';
+import { Modal } from '@/ui/Modal';
 
 /**
  * Propuestas para un instrumento.
@@ -11,11 +13,15 @@ import { t } from '@/i18n';
  * hace valioso, que es que no hay respuesta correcta— sino **dándole ideas que pueda
  * ignorar**.
  *
- * De ahí las dos reglas de este componente:
+ * De ahí las tres reglas de este componente:
  *
- *  1. **Una sola propuesta a la vez.** Una lista de diez es un menú, y un menú vuelve a
+ *  1. **Es un botón, no un cartel.** La primera versión mostraba la propuesta siempre
+ *     visible encima del instrumento, y eso le quitaba sitio al instrumento en la pantalla
+ *     donde menos sobra. Como botón ocupa lo que ocupa un botón, se abre cuando se quiere,
+ *     y dentro del modal la letra cabe al tamaño al que de verdad se lee.
+ *  2. **Una sola propuesta a la vez.** Una lista de diez es un menú, y un menú vuelve a
  *     pedir una decisión que era justo lo que faltaba. Una sola es una invitación.
- *  2. **Nunca se comprueba nada.** No hay acierto, no hay final y no hay forma de hacerlo
+ *  3. **Nunca se comprueba nada.** No hay acierto, no hay final y no hay forma de hacerlo
  *     mal. Si el niño hace otra cosa, ha hecho lo correcto.
  *
  * Las mejores son las que tienen una respuesta que el niño quiere enseñar: «¿cómo suena tu
@@ -28,22 +34,45 @@ interface Props {
 }
 
 export function Retos({ retos }: Props) {
+  const [abierto, setAbierto] = useState(false);
   const [i, setI] = useState(0);
   if (retos.length === 0) return null;
 
   return (
-    <aside className="retos">
-      <p className="retos__titulo">{t('retos.pruebaA')}</p>
-      {/* aria-live: al cambiar de propuesta hay que anunciarla sin robar el foco, que
-          sigue en el botón de «otra idea» por si quiere seguir mirando. */}
-      <p className="retos__texto" aria-live="polite">
-        {t(retos[i % retos.length]!)}
-      </p>
-      {retos.length > 1 && (
-        <button type="button" className="retos__otra" onClick={() => setI((n) => n + 1)}>
-          {t('retos.otra')}
-        </button>
-      )}
-    </aside>
+    <>
+      <button
+        type="button"
+        className="boton-repetir retos__boton"
+        onClick={() => setAbierto(true)}
+      >
+        <Icono nombre="bombilla" tamano={26} />
+        {t('retos.pruebaA')}
+      </button>
+
+      <Modal
+        abierto={abierto}
+        alCerrar={() => setAbierto(false)}
+        titulo={t('retos.pruebaA')}
+        tono="normal"
+      >
+        <Icono nombre="bombilla" tamano={72} />
+        <p className="retos__texto">{t(retos[i % retos.length]!)}</p>
+
+        <div className="modal__acciones">
+          {retos.length > 1 && (
+            <button type="button" className="boton-repetir" onClick={() => setI((n) => n + 1)}>
+              {t('retos.otra')}
+            </button>
+          )}
+          <button
+            type="button"
+            className="boton-actividad modal__empezar"
+            onClick={() => setAbierto(false)}
+          >
+            {t('retos.aTocar')}
+          </button>
+        </div>
+      </Modal>
+    </>
   );
 }

@@ -2567,14 +2567,7 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
    grabadora de verdad. El de grabar se marca en rojo cuando está grabando —es el único
    sitio del proyecto donde el rojo dice algo, y aquí no significa error sino «en marcha»,
    que es el código universal de cualquier grabadora. */
-.teclado__grabadora {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--e-3);
-  justify-content: center;
-  margin: var(--e-4) 0;
-}
-.teclado__grabadora [data-grabando] {
+.teclado__barra [data-grabando] {
   color: var(--papel);
   background: var(--vivo-rojo);
   border-color: var(--vivo-rojo);
@@ -2596,37 +2589,29 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 }
 
 /* ── propuestas de un instrumento ──────────────────────────────────────────
-   Una sola a la vez, y con aspecto de sugerencia, no de enunciado. Si pareciera una
-   consigna, un niño creería que hay que hacerla, y entonces el instrumento habría dejado
-   de ser un instrumento. */
-.retos {
-  max-width: 42ch;
-  margin: 0 auto var(--e-4);
-  padding: var(--e-3) var(--e-4);
-  background: var(--suave-amarillo);
-  border-left: 5px solid var(--vivo-naranja);
-  border-radius: 0 var(--r-m) var(--r-m) 0;
-  color: var(--tinta);
-  text-align: left;
+   Es un botón y no un cartel. La primera versión mostraba la propuesta siempre visible
+   encima del instrumento, y eso le quitaba sitio al instrumento justo en la pantalla donde
+   menos sobra. Como botón ocupa lo que ocupa un botón, y dentro del modal la letra cabe al
+   tamaño al que de verdad se lee. */
+.retos__boton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
 }
-.retos__titulo {
-  margin: 0;
-  font-size: var(--t-xs);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--tinta-2);
+.retos__texto {
+  max-width: 26ch;
+  margin: var(--e-3) auto 0;
+  font-size: var(--t-m);
+  line-height: 1.4;
 }
-.retos__texto { margin: var(--e-1) 0 0; font-size: var(--t-s); line-height: 1.4; }
-.retos__otra {
-  margin-top: var(--e-2);
-  padding: 0;
-  font: inherit;
-  font-size: var(--t-xs);
-  color: var(--acento-2);
-  background: none;
-  border: none;
-  border-bottom: 2px solid currentColor;
-  cursor: pointer;
+
+/* Todo lo que no es teclado, en una fila. En la pantalla de un instrumento, cada línea que
+   no sea teclado es teclado que se pierde. */
+.teclado__barra {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+  align-items: center;
+  justify-content: center;
+  margin: var(--e-3) 0;
 }
-.retos__otra:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }

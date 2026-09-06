@@ -179,8 +179,6 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
     <section className="actividad lienzo" data-carril={carril} aria-labelledby="consigna">
       <h1 id="consigna">{t(contenido.consigna)}</h1>
 
-      {contenido.retos && <Retos retos={contenido.retos} />}
-
       <div
         ref={lienzo}
         className="lienzo__area"
@@ -254,7 +252,10 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
         ))}
       </div>
 
+      {/* Propuestas y acciones en la misma fila: en un lienzo, cada línea que no sea
+          lienzo es lienzo que se pierde. */}
       <div className="lienzo__acciones">
+        {contenido.retos && <Retos retos={contenido.retos} />}
         <button type="button" className="boton-repetir" onClick={() => setTrazos([])}>
           {t('lienzo.limpiar')}
         </button>
