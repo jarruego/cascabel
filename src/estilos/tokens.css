@@ -2594,3 +2594,39 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   font-size: var(--t-xs);
   color: var(--tinta-2);
 }
+
+/* ── propuestas de un instrumento ──────────────────────────────────────────
+   Una sola a la vez, y con aspecto de sugerencia, no de enunciado. Si pareciera una
+   consigna, un niño creería que hay que hacerla, y entonces el instrumento habría dejado
+   de ser un instrumento. */
+.retos {
+  max-width: 42ch;
+  margin: 0 auto var(--e-4);
+  padding: var(--e-3) var(--e-4);
+  background: var(--suave-amarillo);
+  border-left: 5px solid var(--vivo-naranja);
+  border-radius: 0 var(--r-m) var(--r-m) 0;
+  color: var(--tinta);
+  text-align: left;
+}
+.retos__titulo {
+  margin: 0;
+  font-size: var(--t-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tinta-2);
+}
+.retos__texto { margin: var(--e-1) 0 0; font-size: var(--t-s); line-height: 1.4; }
+.retos__otra {
+  margin-top: var(--e-2);
+  padding: 0;
+  font: inherit;
+  font-size: var(--t-xs);
+  color: var(--acento-2);
+  background: none;
+  border: none;
+  border-bottom: 2px solid currentColor;
+  cursor: pointer;
+}
+.retos__otra:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }

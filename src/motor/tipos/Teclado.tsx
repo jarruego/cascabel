@@ -7,6 +7,7 @@ import { muestrasDe } from '@/audio/instrumentos';
 import { colorDe, nombreDe } from '@/ui/coloresNota';
 import { GrabadorDeEventos, reproducir, type Grabacion } from '../grabacionEventos';
 import { letraDeNota, notaDeTecla, type Disposicion } from '@/ui/tecladoQwerty';
+import { Retos } from '@/ui/Retos';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -50,6 +51,8 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
     instrumento?: string;
     /** Botones de grabar y reproducir. Se pueden quitar donde estorben. */
     grabable?: boolean;
+    /** Propuestas de qué hacer. Ver `ui/Retos.tsx`: son ideas, no tareas. */
+    retos?: string[];
   };
 
   const carril = useCarril(actividad.etapa);
@@ -217,6 +220,8 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
   return (
     <section className="actividad teclado" data-carril={carril} aria-labelledby="consigna">
       <h1 id="consigna">{t(contenido.consigna)}</h1>
+
+      {contenido.retos && <Retos retos={contenido.retos} />}
 
       {/* La nota que suena, grande. Es lo que convierte el piano en algo de lo que se
           aprende: se toca, suena y se ve cómo se llama. */}

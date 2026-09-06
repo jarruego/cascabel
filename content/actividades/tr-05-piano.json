@@ -34,7 +34,17 @@
     "desde": 4,
     "octavas": 2,
     "soloBlancas": false,
-    "nombres": "latino"
+    "nombres": "latino",
+    "retos": [
+      "reto.piano1",
+      "reto.piano2",
+      "reto.piano3",
+      "reto.piano4",
+      "reto.piano5",
+      "reto.piano6",
+      "reto.piano7",
+      "reto.piano8"
+    ]
   },
   "evaluacion": {
     "autocorrectiva": false,

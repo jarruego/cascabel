@@ -31,6 +31,16 @@
       "A4",
       "G4",
       "E4"
+    ],
+    "retos": [
+      "reto.lienzo1",
+      "reto.lienzo2",
+      "reto.lienzo3",
+      "reto.lienzo4",
+      "reto.lienzo5",
+      "reto.lienzo6",
+      "reto.lienzo7",
+      "reto.lienzo8"
     ]
   },
   "evaluacion": {
