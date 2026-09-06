@@ -1801,3 +1801,63 @@ body {
   justify-content: center;
   margin-top: 14px;
 }
+
+/* El nombre de la nota que acabas de acertar, subiendo y desvaneciéndose.
+   Es la única animación puramente decorativa del proyecto, y se gana el sitio: convierte
+   «he acertado» en «he acertado un SOL». Con prefers-reduced-motion no se mueve, pero SIGUE
+   apareciendo: la información no está en el movimiento, está en el nombre. */
+.karaoke__aviso {
+  position: absolute;
+  margin-left: -6px;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--tinta);
+  text-shadow: 0 0 6px var(--superficie), 0 0 6px var(--superficie);
+  pointer-events: none;
+  animation: karaoke-sube 1s ease-out forwards;
+}
+@keyframes karaoke-sube {
+  0%   { opacity: 0; transform: translateY(0) scale(0.7); }
+  25%  { opacity: 1; transform: translateY(-16px) scale(1.15); }
+  100% { opacity: 0; transform: translateY(-56px) scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .karaoke__aviso {
+    animation: karaoke-aparece 1s steps(2, end) forwards;
+  }
+  @keyframes karaoke-aparece {
+    0%, 99% { opacity: 1; }
+    100%    { opacity: 0; }
+  }
+}
+
+/* El caso escrito de las actividades de licencias. Texto grande y con aire: es lo que hay
+   que leer con calma, no un pie de foto. */
+.eleccion__caso {
+  max-width: 46ch;
+  margin: 16px auto;
+  padding: 16px 20px;
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--tinta);
+  background: var(--suave-amarillo);
+  border-left: 6px solid var(--vivo-naranja);
+  border-radius: var(--radio);
+  text-align: left;
+}
+
+/* La letra del teclado del ordenador que toca cada nota. Pequeña y en gris: es una ayuda
+   para quien está delante de un ordenador, no información que haga falta para tocar. */
+.teclado__qwerty {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--tinta-suave);
+  opacity: 0.7;
+  pointer-events: none;
+}
+.teclado__negra .teclado__qwerty { color: var(--superficie); opacity: 0.85; }

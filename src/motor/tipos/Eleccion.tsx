@@ -26,7 +26,14 @@ import {
  */
 
 interface Estimulo {
-  audio: string;
+  /** Muestra que suena. Opcional: hay estímulos que se leen, no se oyen. */
+  audio?: string;
+  /**
+   * Enunciado escrito, como clave de i18n. Lo usan las actividades de ética del bloque B
+   * (licencias y derechos de autor, 5.º-6.º), donde el estímulo **es** un caso escrito: no
+   * hay nada que sonar, y leerlo es justamente lo que se practica.
+   */
+  texto?: string;
   respuesta: string;
 }
 interface Opcion {
@@ -58,7 +65,7 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
   const yaTerminada = useRef(false);
 
   const reproducir = useCallback(() => {
-    if (!estimulo) return;
+    if (!estimulo?.audio) return;
     audioRef.current?.pause();
     const a = new Audio(`/audio/${estimulo.audio}`);
     audioRef.current = a;
@@ -101,7 +108,17 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
     <section className="actividad" data-carril={carril} aria-labelledby="consigna">
       <h1 id="consigna">{t(contenido.consigna)}</h1>
 
-      <BotonRepetir onClick={reproducir} />
+      {/* El botón de repetir solo tiene sentido si hay algo que repetir. Cuando no lo hay
+          desaparece entero, en vez de quedarse ahí sin hacer nada: un botón muerto es peor
+          que ningún botón, y ya nos pasó una vez con el «Escuchar» de la modal. */}
+      {estimulo?.audio && <BotonRepetir onClick={reproducir} />}
+
+      {/* El caso escrito. Va en aria-live porque cambia sin que se mueva el foco. */}
+      {estimulo?.texto && (
+        <p className="eleccion__caso" aria-live="polite">
+          {t(estimulo.texto)}
+        </p>
+      )}
 
       <div className="opciones" role="group" aria-label={t(contenido.consigna)}>
         {contenido.opciones.map((o) => (

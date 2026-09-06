@@ -1,0 +1,60 @@
+{
+  "id": "tr-04-creditos-de-donde-sale-esto",
+  "version": 1,
+  "tipo": "guia-aula",
+  "titulo": "Créditos: de dónde sale esto",
+  "descripcion": "La página de créditos de la propia aplicación, convertida en clase: cada sonido, cada icono y cada tipografía con su licencia y su porqué.",
+  "etapa": "primaria-c3",
+  "eje": "cultura",
+  "lugar": "hibrida",
+  "duracion_min": 25,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE2",
+    "criterio": "2.2",
+    "saber": "B. Ética: licencias, plagio y derechos de autor"
+  },
+  "entrada": {
+    "modo": "ninguna"
+  },
+  "contenido": {
+    "consigna": "actividad.tr04.consigna",
+    "pasos": [
+      {
+        "titulo": "actividad.tr04.p1",
+        "detalle": "actividad.tr04.p1d",
+        "duracion": "5 min"
+      },
+      {
+        "titulo": "actividad.tr04.p2",
+        "detalle": "actividad.tr04.p2d",
+        "duracion": "7 min"
+      },
+      {
+        "titulo": "actividad.tr04.p3",
+        "detalle": "actividad.tr04.p3d",
+        "duracion": "8 min"
+      },
+      {
+        "titulo": "actividad.tr04.p4",
+        "detalle": "actividad.tr04.p4d",
+        "duracion": "5 min"
+      }
+    ],
+    "materiales": [
+      "actividad.tr04.m1"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.tr04.enunciado"
+  },
+  "creditos": [
+    {
+      "obra": "Los propios créditos de Cascabel",
+      "autor": "Proyecto cocomusic",
+      "fuente": "THIRD-PARTY-NOTICES.md y la ruta /creditos",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}
