@@ -274,15 +274,36 @@ así que `emparejar` y `ordenar` pasaban sin que se contara nada. Ahora cuenta s
 comprueba que las parejas apunten a elementos que existen, que `orden` y `elementos` tengan
 las mismas claves, y rechaza `entrada.modo: arrastre` en cualquier actividad.
 
-### T1.3 — Motor: tipo `guia-aula`
+### T1.3 — Motor: tipo `guia-aula` `[x]`
 
-El más barato de construir y el más valioso en el aula española real, donde hay **una sola
-pantalla y 25 niños**. Es la pantalla del maestro: consigna grande, pulso visible,
-coreografía paso a paso, ficha imprimible.
+Cerrada el 2026-09-06. Es la pantalla del maestro, y el dosier la señala como lo más
+valioso en el aula española real: **un proyector y veinticinco niños sin dispositivo** es la
+norma, no la excepción.
 
-- [ ] Modo proyector: tipografía enorme, alto contraste, legible a 8 metros
-- [ ] Pulso visual sincronizado con el metrónomo
-- [ ] Botón de imprimir ficha (CSS `@media print`)
+- [x] Modo proyector: tipografía enorme, alto contraste, legible a 8 metros
+- [x] Pulso visual sincronizado con el metrónomo
+- [x] Botón de imprimir ficha (CSS `@media print`)
+
+**Los tamaños de esta pantalla NO salen del carril**, y es deliberado. En el resto de la
+app el carril manda porque el usuario es el niño que tiene el dispositivo delante; aquí el
+usuario es un adulto de pie al fondo del aula. Se usa `clamp()` contra el ancho de la
+pantalla, no contra la edad.
+
+**El pulso visual existe para que la actividad se pueda hacer mirando.** Es el criterio
+1.1.1 de `docs/04-DISENO-UI.md`: un alumno sordo tiene que poder participar. El primer
+pulso del compás se distingue por **tamaño de borde** además de por color, y se respeta
+`prefers-reduced-motion`.
+
+**La ficha impresa no es la pantalla en papel**: fuera controles, fuera fondos de color, y
+**todos** los pasos visibles en vez de solo el actual. En pantalla es una presentación; en
+papel es una ficha que el maestro se lleva al aula.
+
+`tests/metronomo.test.ts` protege la parte que es fácil de romper sin darse cuenta: que no
+se use `setInterval`, que se programe contra el reloj de audio y no contra `Date.now`, y
+que lo visual se consuma desde `requestAnimationFrame` y no dentro del planificador.
+Comprobado que el test falla de verdad si alguien mete un `setInterval`.
+
+Actividad de ejemplo: **INF-08 «Camina, corre, para»**, Dalcroze, del catálogo.
 
 ### T1.4 — Navegación y catálogo `[x]`
 
@@ -336,7 +357,8 @@ competencia y ciclo, y probablemente buscar por texto.
       de «perfecto» de 9–12 años, y Firefox declara `baseLatency = 0` —que es un dato
       ausente, no una latencia buena—, así que `latenciaMs()` compensa de menos ahí.
       Las cifras del navegador son el punto de partida; la calibración es la verdad
-- [ ] Test de que el metrónomo no usa `setInterval`
+- [x] Test de que el metrónomo no usa `setInterval` — hecho en T1.3,
+      `tests/metronomo.test.ts`
 
 ### T1.8 — Veinte actividades de esfuerzo S
 

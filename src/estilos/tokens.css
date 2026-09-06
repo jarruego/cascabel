@@ -407,3 +407,145 @@ body {
 .emparejar__ficha[aria-disabled='true'] {
   opacity: 0.5;
 }
+
+/* ── guía de aula: la pantalla del maestro ─────────────────────────────────
+   Un proyector y veinticinco niños sin dispositivo es la norma en el aula
+   española de música, no la excepción. Todo aquí se lee a ocho metros, así que
+   los tamaños NO salen del carril: el usuario es un adulto de pie al fondo. */
+.guia {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 32px 64px;
+}
+.guia__consigna {
+  margin: 0 0 24px;
+  font-size: clamp(32px, 6vw, 88px);
+  line-height: 1.1;
+  /* Alto contraste: tinta sobre papel, sin grises intermedios. */
+  color: var(--tinta);
+}
+
+/* Pulso visual. Existe para que la actividad se pueda hacer MIRANDO: un alumno
+   sordo tiene que poder participar (criterio 1.1.1 de docs/04-DISENO-UI.md). */
+.guia__pulso {
+  display: flex;
+  gap: clamp(12px, 3vw, 40px);
+  margin: 24px 0 32px;
+}
+.guia__punto {
+  width: clamp(48px, 9vw, 120px);
+  height: clamp(48px, 9vw, 120px);
+  border: 6px solid var(--linea);
+  border-radius: 50%;
+  background: var(--superficie);
+  transition: transform 60ms linear, background-color 60ms linear;
+}
+.guia__punto[data-acentuado='true'] {
+  /* El primer pulso del compás se distingue por TAMAÑO además de por color. */
+  border-color: var(--tinta-2);
+  border-width: 10px;
+}
+.guia__punto[data-activo='true'] {
+  background: var(--acento);
+  border-color: var(--acento);
+  transform: scale(1.18);
+}
+@media (prefers-reduced-motion: reduce) {
+  .guia__punto[data-activo='true'] {
+    transform: none;
+  }
+}
+
+.guia__controles,
+.guia__navegacion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin: 24px 0;
+  font-size: 1.2em;
+}
+.guia__tempo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.guia__tempo input {
+  min-width: 180px;
+  min-height: 44px;
+}
+
+.guia__pasos {
+  margin: 32px 0;
+  padding-left: 1.4em;
+  font-size: clamp(18px, 2.4vw, 32px);
+}
+.guia__paso {
+  margin-bottom: 20px;
+  opacity: 0.45;
+}
+.guia__paso[data-actual='true'] {
+  opacity: 1;
+}
+.guia__paso h2 {
+  margin: 0 0 6px;
+  font-size: 1em;
+}
+.guia__paso p {
+  margin: 0;
+  font-size: 0.8em;
+  color: var(--tinta-2);
+}
+.guia__duracion {
+  font-variant-numeric: tabular-nums;
+}
+.guia__materiales {
+  padding: 20px 24px;
+  border: 3px solid var(--linea);
+  border-radius: 18px;
+  background: var(--superficie);
+}
+
+.solo-imprimir {
+  display: none;
+}
+
+/* ── ficha imprimible ──────────────────────────────────────────────────────
+   El maestro imprime la guía y la lleva al aula. Fuera controles, fuera
+   colores de fondo, todos los pasos visibles y tipografía de papel. */
+@media print {
+  .no-imprimir,
+  .atras,
+  .guia__pulso {
+    display: none !important;
+  }
+  .solo-imprimir {
+    display: block;
+  }
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 12pt;
+  }
+  .guia {
+    max-width: none;
+    padding: 0;
+  }
+  .guia__consigna {
+    font-size: 20pt;
+  }
+  .guia__pasos {
+    font-size: 12pt;
+  }
+  /* En papel se ven TODOS los pasos, no solo el actual: es una ficha, no una
+     presentación. */
+  .guia__paso {
+    opacity: 1;
+    break-inside: avoid;
+  }
+  .guia__materiales {
+    border: 1pt solid #000;
+    background: none;
+    break-inside: avoid;
+  }
+}

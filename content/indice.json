@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-06",
-  "total": 5,
+  "total": 6,
   "actividades": [
     {
       "id": "c1-02-palmea-el-ritmo",
@@ -67,6 +67,23 @@
         "competencia": "CE3",
         "criterio": "3.5",
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "inf-08-camina-corre-para",
+      "titulo": "Camina, corre, para",
+      "etapa": "infantil",
+      "eje": "cuerpo",
+      "tipo": "guia-aula",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE3",
+        "criterio": "3.6",
+        "saber": "H. Interés e iniciativa en la participación en manifestaciones artísticas y corporales"
       },
       "estado": "borrador"
     },
