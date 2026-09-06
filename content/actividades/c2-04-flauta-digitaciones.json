@@ -1,0 +1,107 @@
+{
+  "id": "c2-04-flauta-digitaciones",
+  "version": 1,
+  "tipo": "emparejar",
+  "titulo": "Flauta dulce: si, la y sol",
+  "descripcion": "Empareja cada nota con su digitación. Las tres primeras notas de la flauta, que se tapan una detrás de otra.",
+  "etapa": "primaria-c2",
+  "eje": "notacion",
+  "lugar": "hibrida",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "flauta",
+    "tempo": 80
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c204.consigna",
+    "izquierda": [
+      {
+        "clave": "si",
+        "etiqueta": "nota.si",
+        "nota": "B4"
+      },
+      {
+        "clave": "la",
+        "etiqueta": "nota.la",
+        "nota": "A4"
+      },
+      {
+        "clave": "sol",
+        "etiqueta": "nota.sol",
+        "nota": "G4"
+      }
+    ],
+    "derecha": [
+      {
+        "clave": "dig-si",
+        "imagen": "/digitaciones/flauta-si.svg",
+        "alt": "digitacion.si",
+        "nota": "B4"
+      },
+      {
+        "clave": "dig-la",
+        "imagen": "/digitaciones/flauta-la.svg",
+        "alt": "digitacion.la",
+        "nota": "A4"
+      },
+      {
+        "clave": "dig-sol",
+        "imagen": "/digitaciones/flauta-sol.svg",
+        "alt": "digitacion.sol",
+        "nota": "G4"
+      }
+    ],
+    "parejas": [
+      {
+        "izquierda": "si",
+        "derecha": "dig-si"
+      },
+      {
+        "izquierda": "la",
+        "derecha": "dig-la"
+      },
+      {
+        "izquierda": "sol",
+        "derecha": "dig-sol"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "aciertos"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c204.enunciado"
+  },
+  "pistas": [
+    "actividad.c204.pista1",
+    "actividad.c204.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Diagramas de digitación",
+      "autor": "Proyecto cocomusic",
+      "fuente": "tools/digitaciones.py",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Marimba",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

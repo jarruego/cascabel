@@ -1,4 +1,7 @@
 import { APP } from '@/config';
+import { despertarAudio } from '@/audio/AudioEngine';
+import { Sampler } from '@/audio/sampler';
+import { muestrasDe } from '@/audio/instrumentos';
 
 /**
  * Reproduce una muestra corta de `public/audio/`.
@@ -25,5 +28,33 @@ export async function sonarSeguidos(rutas: string[], separacionMs = 450): Promis
     if (i < rutas.length - 1) {
       await new Promise((r) => setTimeout(r, separacionMs));
     }
+  }
+}
+
+/**
+ * Suena una nota concreta, del instrumento que sea.
+ *
+ * Existe porque el banco tiene **seis muestras de marimba**, no una por nota: pedir
+ * `muestras/marimba/a4.opus` devuelve un 404 y un silencio, que es exactamente el fallo que
+ * se coló en la actividad de digitaciones de flauta. El `Sampler` interpola desde la muestra
+ * más cercana, así que cualquier nota suena.
+ *
+ * El sampler se reutiliza entre llamadas: cargarlo son seis descargas y decodificarlas, y
+ * hacerlo en cada toque se notaría.
+ */
+let sampler: Sampler | null = null;
+let cargando: Promise<void> | null = null;
+
+export async function sonarNota(nota: string, instrumento?: string): Promise<void> {
+  try {
+    await despertarAudio();
+    if (!sampler) {
+      sampler = new Sampler(muestrasDe(instrumento));
+      cargando = sampler.cargar();
+    }
+    await cargando;
+    sampler.tocar(nota, undefined, 1.4);
+  } catch {
+    // Sin audio la actividad sigue funcionando por la vía visual. Nunca se corta nada.
   }
 }

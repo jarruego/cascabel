@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 260" role="img" aria-label="Digitación de sol en flauta dulce soprano">
+<title>Digitación de sol</title>
+<rect x="30" y="10" width="44" height="230" rx="22" fill="#fbfbf9" stroke="#171c2b" stroke-width="3"/>
+<path d="M30 24 h44" stroke="#171c2b" stroke-width="3"/>
+<line x1="20" y1="44" x2="34" y2="44" stroke="#171c2b" stroke-width="2" stroke-dasharray="3 3"/>
+<circle cx="12" cy="44" r="9" fill="#171c2b" stroke="#171c2b" stroke-width="3"/>
+<text x="12" y="30" text-anchor="middle" font-size="11" font-family="system-ui, sans-serif" fill="#4a5266">pulgar</text>
+<circle cx="52" cy="62" r="11" fill="#171c2b" stroke="#171c2b" stroke-width="3"/>
+<circle cx="52" cy="88" r="11" fill="#171c2b" stroke="#171c2b" stroke-width="3"/>
+<circle cx="52" cy="114" r="11" fill="#171c2b" stroke="#171c2b" stroke-width="3"/>
+<circle cx="52" cy="140" r="11" fill="none" stroke="#171c2b" stroke-width="2"/>
+<circle cx="52" cy="166" r="11" fill="none" stroke="#171c2b" stroke-width="2"/>
+<circle cx="52" cy="192" r="11" fill="none" stroke="#171c2b" stroke-width="2"/>
+<circle cx="52" cy="218" r="11" fill="none" stroke="#171c2b" stroke-width="2"/>
+</svg>
