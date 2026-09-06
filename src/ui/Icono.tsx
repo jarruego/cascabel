@@ -84,6 +84,3 @@ export function Icono({ nombre, tamano = 48, alt = '' }: Props) {
   );
 }
 
-export function iconoExiste(nombre: string): boolean {
-  return DISPONIBLES.has(ALIAS[nombre] ?? nombre);
-}

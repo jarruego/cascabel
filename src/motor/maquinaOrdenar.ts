@@ -57,9 +57,6 @@ export function inicial(total: number): EstadoOrdenar {
   };
 }
 
-/** Compatibilidad: el estado inicial de una secuencia vacía. */
-export const INICIAL_ORDENAR: EstadoOrdenar = inicial(0);
-
 export function reducirOrdenar(
   estado: EstadoOrdenar,
   accion: AccionOrdenar,
