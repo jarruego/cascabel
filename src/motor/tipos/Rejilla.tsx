@@ -3,6 +3,7 @@ import { OBJETIVO_TACTIL } from '@/config';
 import { useCarril } from '@/app/preferencias';
 import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { MARIMBA, Sampler } from '@/audio/sampler';
+import { aMidiSMF, aMusicXML, descargar, type NotaExportable } from '@/datos/exportar';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
@@ -41,6 +42,15 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
     tempo?: number;
     /** Solo en dictado: celdas «fila,columna» de la respuesta. */
     solucion?: string[];
+    /**
+     * Botones para llevarse la composición en MIDI y MusicXML.
+     *
+     * **Es lo que separa componer de jugar a componer.** Un MIDI y un MusicXML se abren en
+     * MuseScore, en Sibelius o en cualquier editor: lo que el niño ha hecho se puede seguir
+     * trabajando, imprimir en papel pautado o tocar con otro instrumento. Sin exportar, la
+     * composición se muere en la pantalla donde nació.
+     */
+    exportable?: boolean;
   };
 
   const carril = useCarril(actividad.etapa);
@@ -115,6 +125,34 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
     );
   }, [sonando, bpm, columnas, estado.encendidas, notas]);
 
+  /**
+   * Las celdas encendidas, como notas con instante y duración.
+   *
+   * **Las celdas contiguas de la misma fila se funden en una nota larga**, y eso no es una
+   * optimización: en la rejilla, tres casillas seguidas se ven y se oyen como un sonido
+   * largo, así que exportarlas como tres negras repetidas escribiría en la partitura algo
+   * distinto de lo que el niño compuso.
+   */
+  const notasExportables = useCallback((): NotaExportable[] => {
+    const salida: NotaExportable[] = [];
+    for (let fila = 0; fila < filas; fila++) {
+      let desde: number | null = null;
+      for (let col = 0; col <= columnas; col++) {
+        const encendida = col < columnas && estado.encendidas.has(clave(fila, col));
+        if (encendida && desde === null) desde = col;
+        if (!encendida && desde !== null) {
+          salida.push({
+            nota: notas[fila] ?? 'C4',
+            inicio: desde,
+            duracion: col - desde,
+          });
+          desde = null;
+        }
+      }
+    }
+    return salida.sort((a, b) => a.inicio - b.inicio);
+  }, [estado.encendidas, filas, columnas, notas]);
+
   // Referencia estable para que el bucle pueda llamarse a sí mismo sin ciclos de deps.
   const reproducirRef = useRef<(() => Promise<void>) | null>(null);
   reproducirRef.current = reproducir;
@@ -178,6 +216,42 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
         <button type="button" className="boton-repetir" onClick={() => void reproducir()}>
           <Icono nombre="reproducir" tamano={26} /> {t('rejilla.reproducir')}
         </button>
+
+        {/* Exportar. Todo se construye en memoria y se descarga con un enlace: no hay
+            servidor, no hay subida y no viaja nada. Es la única forma de exportar que
+            cumple la regla 1 sin excepciones. */}
+        {contenido.exportable && (
+          <>
+            <button
+              type="button"
+              className="boton-repetir"
+              aria-disabled={estado.encendidas.size === 0 || undefined}
+              onClick={() =>
+                descargar(
+                  `${actividad.id}.mid`,
+                  aMidiSMF(notasExportables(), bpm),
+                  'audio/midi',
+                )
+              }
+            >
+              {t('rejilla.midi')}
+            </button>
+            <button
+              type="button"
+              className="boton-repetir"
+              aria-disabled={estado.encendidas.size === 0 || undefined}
+              onClick={() =>
+                descargar(
+                  `${actividad.id}.musicxml`,
+                  aMusicXML(notasExportables(), bpm, actividad.titulo),
+                  'application/vnd.recordare.musicxml+xml',
+                )
+              }
+            >
+              {t('rejilla.musicxml')}
+            </button>
+          </>
+        )}
 
         <button
           type="button"

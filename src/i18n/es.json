@@ -738,5 +738,11 @@
   "instrumento.flauta": "Flauta",
   "instrumento.guitarra": "Guitarra",
   "instrumento.violin": "Violín",
-  "instrumento.voz": "Voz"
+  "instrumento.voz": "Voz",
+  "rejilla.midi": "Guardar MIDI",
+  "rejilla.musicxml": "Guardar partitura",
+  "actividad.c303e.consigna": "Compón tu melodía y llévatela",
+  "actividad.c303e.enunciado": "Toca las casillas para escribir tu melodía. Cuando te guste, puedes guardarla y abrirla en un programa de partituras para seguir trabajándola.",
+  "actividad.c303e.pista1": "Casillas seguidas en la misma fila son una nota larga, no varias notas iguales. Así se escriben también en la partitura.",
+  "actividad.c303e.pista2": "El fichero se guarda en tu dispositivo. No se envía a ningún sitio ni lo ve nadie más."
 }
