@@ -18,7 +18,7 @@ resultado en la tabla.
 | PC del autor | Windows 11 | Edge 152 | pestaña | **sí** | 48000 Hz | 52 ms | *no medible* | 2026-09-06 |
 | PC del autor | Windows 11 | Firefox 146 | pestaña | **sí** | 48000 Hz | **34 ms** | *no medible* | 2026-09-06 |
 | Android 10 (armv81) | Android 10 | Chrome 151 | pestaña (HTTPS real) | **sí** | 48000 Hz | **27 ms** | *no medible* | 2026-09-06 |
-| *(pendiente)* | Android | Chrome | **instalada** | | | | | |
+| Android 10 (armv81) | Android 10 | Chrome 151 | **instalada (WebAPK)** | **sí** | 48000 Hz | **28 ms** | *no medible* | 2026-09-06 |
 | *(sin dispositivo)* | iOS / iPadOS | Safari | pestaña | — | — | — | — | — |
 | *(sin dispositivo)* | iOS / iPadOS | Safari | **instalada** | — | — | — | — | — |
 
@@ -140,6 +140,28 @@ outputLatency 23 ms
 latencia total 27 ms
 calibración 0 ms
 coste del análisis no medible
+
+
+Cascabel (cocomusic) · informe de diagnóstico
+fecha 2026-09-06T11:13:52.999Z
+
+userAgent Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Mobile Safari/537.36
+plataforma Linux armv81
+idioma en-GB
+modo standalone
+contexto seguro sí
+
+getUserMedia sí
+AudioWorklet sí
+micrófono concedido, escuchando
+
+sampleRate 48000 Hz
+estado contexto running
+baseLatency 4 ms
+outputLatency 24 ms
+latencia total 28 ms
+calibración 0 ms
+coste del análisis no medible
 ```
 
 ### Qué sale de los tres informes de escritorio
@@ -204,16 +226,35 @@ al HTTPS de Cloudflare.
 
 ### Lo que queda por probar
 
-- **Android, PWA instalada**. Es la única fila que queda al alcance, y es la que más vale:
-  es el modo en el que el bug 185448 de WebKit rompe iOS, y saber que en Android va bien
-  acota el riesgo. Verificado el 2026-09-06 que producción sirve los tres iconos como PNG
-  reales y que el manifiesto declara `display: standalone`, así que Chrome ya debería
-  ofrecer «Instalar aplicación».
+- **iOS**: si algún día hay dispositivo. Es lo único que queda.
 
-  **Cómo saber que la prueba es válida**: el informe tiene que decir `modo standalone`. Si
-  dice `browser`, se abrió desde el navegador y no cuenta. Si Chrome sigue ofreciendo
-  «Añadir a pantalla de inicio» en vez de «Instalar aplicación», tiene el manifiesto viejo
-  en caché: hay que quitar el icono, borrar los datos del sitio y volver a instalar.
-- **iOS**: si algún día hay dispositivo.
+Todo lo demás está cerrado.
 
-El escritorio está cerrado.
+### El resultado que buscábamos: PWA instalada en Android
+
+**El micrófono funciona en la app instalada.** `modo standalone`, permiso concedido,
+`AudioWorklet` cargado, 48 kHz, contexto seguro. Es la prueba que llevábamos toda la
+semana persiguiendo y la que más pesa de todas.
+
+**Qué cambia esto.** El riesgo abierto del [ADR 0004](../adr/0004-pwa-primero.md) era que
+`getUserMedia` no funcionase en una PWA instalada en la pantalla de inicio (bug 185448 de
+WebKit). Ahora sabemos que **en Android sí funciona**. Eso no prueba nada sobre iOS —son
+motores distintos y el bug es específico de WebKit— pero convierte una incógnita amplia en
+una acotada: si algún día falla en iOS, será un problema de WebKit y no de cómo hemos
+montado la aplicación. La arquitectura PWA queda validada en todo lo que podemos probar.
+
+**Y no hay penalización por estar instalada**: 28 ms de latencia frente a los 27 de la
+pestaña. Un milisegundo, que es ruido de medida.
+
+Lo que costó llegar aquí, por si le sirve a alguien:
+
+1. `public/_redirects` rompía el despliegue por bucle infinito, porque en el flujo de
+   Workers ese trabajo lo hace `not_found_handling` (T1.10).
+2. El manifiesto declaraba dos iconos que **no existían**, así que Chrome no ofrecía
+   instalar. Y no se veía, porque el *fallback* de SPA devolvía 200 con el `index.html`
+   en vez de 404 (T1.9c).
+3. Workbox estaba en un fichero aparte, así que el `addEventListener('fetch')` se
+   registraba dentro de una promesa. Chrome exige que sea en la evaluación inicial del
+   service worker, y sin eso tampoco ofrece instalar.
+
+Ninguno de los tres daba error. Los tres fallaban en silencio.

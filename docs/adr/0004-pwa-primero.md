@@ -1,6 +1,6 @@
 # ADR 0004 — PWA primero; nativo solo con razón de negocio
 
-**Estado**: aceptada, con un riesgo abierto SIN VERIFICAR · **Fecha**: 2026-09 · **Revisada**: 2026-09-06
+**Estado**: aceptada · riesgo **acotado**, abierto sólo para iOS · **Fecha**: 2026-09 · **Revisada**: 2026-09-06
 
 ## Decisión
 
@@ -16,7 +16,25 @@ Además, las políticas infantiles de Apple (§1.3 Kids Category) y de Google (F
 la analítica de terceros esencialmente inviable — algo que ya cumplimos por diseño, pero que
 significa que ir a las tiendas no aportaría capacidades, solo requisitos.
 
-## Riesgo abierto: iOS, sin verificar
+## Lo que sí se ha verificado (2026-09-06)
+
+**El micrófono funciona en una PWA instalada.** Probado sobre el despliegue real, en
+Chrome 151 de Android 10, con la app instalada como WebAPK y abierta desde el icono:
+`modo standalone`, permiso concedido, `AudioWorklet` cargado, 48 kHz, detección de tono
+respondiendo. Y sin penalización de latencia: 28 ms instalada frente a 27 en pestaña.
+
+Esto **no** prueba nada sobre iOS —son motores distintos y el bug es específico de
+WebKit—, pero cambia la naturaleza del riesgo. Ya no es «¿funciona nuestra arquitectura en
+modo standalone?», que era una duda sobre nosotros. Es «¿tiene WebKit este bug hoy?», que
+es una duda sobre Apple. La diferencia importa: la primera se arregla rediseñando, la
+segunda esperando o empaquetando.
+
+Los tres obstáculos que hubo que quitar para llegar aquí están documentados en
+`docs/pruebas/microfono.md`, y los tres **fallaban en silencio**: un `_redirects` que
+rompía el despliegue, dos iconos declarados que no existían, y el manejador de `fetch` del
+service worker registrándose demasiado tarde para que Chrome considerara instalable la app.
+
+## Riesgo que sigue abierto: iOS
 
 El bug 185448 de WebKit rompe `getUserMedia` en PWA instalada en la pantalla de inicio de
 iOS. Se ha arreglado y ha reaparecido varias veces. Si está roto hoy, la consecuencia es
@@ -27,9 +45,9 @@ dispositivo iOS a mano, y el simulador de iOS requiere un Mac y además miente s
 micrófono. La tarea T0.1 del roadmap decía «pruébalo en un iPad real antes que ninguna otra
 cosa»; eso ya no es ejecutable, y fingir que sí lo es sería peor que admitirlo.
 
-Así que este riesgo queda **abierto y no verificado por tiempo indefinido**, y la decisión
-de seguir con PWA se toma *sabiendo* que el dato falta. Lo que sí hacemos es acotar el daño
-por tres vías:
+Así que este riesgo queda **abierto para iOS por tiempo indefinido**, y la decisión de
+seguir con PWA se toma sabiendo que falta ese dato — pero ya no a ciegas: el escenario
+equivalente funciona en Android. El daño se acota además por tres vías:
 
 1. **Degradación obligatoria a toque.** Toda actividad con micrófono tiene alternativa por
    toque, y cualquier fallo al abrir el micrófono cae a ella en silencio, sin bloquear.
