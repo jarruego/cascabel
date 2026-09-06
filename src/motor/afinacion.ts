@@ -46,12 +46,43 @@ export function desviacionEnCents(midi: number, midiObjetivo: number): number {
   return plegado * 100;
 }
 
-/** Un semitono son 100 cents. Estas ventanas salen de práctica coral infantil. */
-export const VENTANAS_CENTS = {
-  /** Dentro de esto, para un niño, está afinado. Un adulto entrenado afina a ±10. */
-  afinado: 50,
-  casi: 100,
+/**
+ * Un semitono son 100 cents. Estas ventanas salen de práctica coral infantil.
+ *
+ * **Y ahora van por carril**, porque el autor probó la actividad y la encontró difícil. La
+ * pregunta era si acortar el tiempo que hay que mantener la nota o ensanchar la ventana, y
+ * la respuesta es lo segundo, por dos motivos:
+ *
+ *  - **La ventana es lo que estaba mal calibrado.** Medio semitono es generoso para un
+ *    adulto y estrecho para un niño: una voz infantil es inestable por construcción, y un
+ *    niño de seis años que canta 70 cents bajo **ha encontrado la nota** —no está cantando
+ *    otra—. Penalizarlo mide su control muscular, no su oído.
+ *  - **El tiempo es lo que enseña.** Los 800 ms son ya poco más que una nota cómoda.
+ *    Bajarlos dejaría que un barrido de voz que pasa por encima de la altura contara como
+ *    acierto, y entonces el «¡la has cazado!» sería mentira.
+ *
+ * **El techo es 100 y no se toca.** A ±100 cents estás a un semitono: eso ya es otra nota,
+ * y darla por buena enseñaría algo falso. Por eso ni el carril más generoso llega ahí.
+ *
+ * PENDIENTE DE REVISIÓN PEDAGÓGICA: los tres números salen de que la precisión de canto
+ * infantil mejora con la edad, que es lo convencional en la literatura coral, pero **dónde
+ * poner cada uno lo dice una maestra oyendo a un niño**, no un desarrollador.
+ */
+export const VENTANAS_POR_CARRIL = {
+  infantil: { afinado: 90, casi: 100 },
+  lectores: { afinado: 70, casi: 100 },
+  autonomos: { afinado: 50, casi: 100 },
 } as const;
+
+/** Ventana por defecto, para quien no declare carril. Es la del tramo de en medio. */
+export const VENTANAS_CENTS = VENTANAS_POR_CARRIL.lectores;
+
+export function ventanasDe(carril: keyof typeof VENTANAS_POR_CARRIL): {
+  afinado: number;
+  casi: number;
+} {
+  return VENTANAS_POR_CARRIL[carril] ?? VENTANAS_CENTS;
+}
 
 /** Por debajo de esto no cantó lo suficiente como para evaluar nada. */
 const COBERTURA_MINIMA = 0.35;
@@ -61,7 +92,18 @@ const DESVIACION_MAXIMA = 45;
 /**
  * @param lecturas cents respecto a la nota objetivo; `null` donde no había señal
  */
-export function evaluarAfinacion(lecturas: Array<number | null>): EvaluacionAfinacion {
+export function evaluarAfinacion(
+  lecturas: Array<number | null>,
+  /**
+   * Carril del niño. **No es un detalle**: la misma desviación significa cosas distintas
+   * según la edad. Setenta cents bajo y clavado es «afinado» en Infantil —la voz de un niño
+   * de cuatro años no da más precisión— y es «estable pero transportado» en 5.º y 6.º, donde
+   * eso ya se puede corregir. Sin el carril, la evaluación miente para dos tercios de los
+   * usuarios.
+   */
+  carril: keyof typeof VENTANAS_POR_CARRIL = 'lectores',
+): EvaluacionAfinacion {
+  const ventanas = ventanasDe(carril);
   const validas = lecturas.filter((c): c is number => c !== null);
   const cobertura = lecturas.length ? validas.length / lecturas.length : 0;
 
@@ -90,9 +132,9 @@ export function evaluarAfinacion(lecturas: Array<number | null>): EvaluacionAfin
   const estable = desviacionCents <= DESVIACION_MAXIMA;
 
   const calidad: CalidadAfinacion =
-    abs <= VENTANAS_CENTS.afinado && estable
+    abs <= ventanas.afinado && estable
       ? 'afinado'
-      : abs <= VENTANAS_CENTS.casi || estable
+      : abs <= ventanas.casi || estable
         ? 'casi'
         : 'lejos';
 
@@ -102,7 +144,7 @@ export function evaluarAfinacion(lecturas: Array<number | null>): EvaluacionAfin
     cobertura,
     calidad,
     // Estable pero fuera de la ventana: sabe sostener y solo está transportando.
-    establePeroTransportado: estable && abs > VENTANAS_CENTS.afinado,
+    establePeroTransportado: estable && abs > ventanas.afinado,
   };
 }
 

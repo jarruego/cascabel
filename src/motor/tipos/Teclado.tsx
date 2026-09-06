@@ -133,6 +133,7 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
   }, [desde, octavas, soloBlancas, sonar, disposicion]);
 
   const anchoBlanca = Math.max(36, Math.round(OBJETIVO_TACTIL[carril] * 0.85));
+  const blancas = 7 * octavas;
   const teclas: Array<{ nota: string; negra: boolean; indice: number }> = [];
   for (let o = 0; o < octavas; o++) {
     BLANCAS.forEach((letra, i) => {
@@ -165,59 +166,70 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
           deslizando.current = true;
         }}
       >
-        {teclas.map((k) => {
-          const letra = k.nota[0]!;
-          const etiqueta = nombres === 'ninguno' ? '' : nombreDe(letra, nombres);
-          const qwerty = letrasQwerty && !k.negra ? letraDeNota(k.nota, desde, disposicion) : '';
-          const suena = sonando.has(k.nota);
-          return (
-            <button
-              key={k.nota}
-              type="button"
-              data-nota={k.nota}
-              className={k.negra ? 'teclado__negra' : 'teclado__blanca'}
-              data-sonando={suena || undefined}
-              style={
-                k.negra
-                  ? {
-                      left: (k.indice + 1) * anchoBlanca - anchoBlanca * 0.3,
-                      width: anchoBlanca * 0.6,
-                      // Al pulsarla, la negra también se tiñe de su color.
-                      background: suena ? colorDe(letra) : undefined,
-                    }
-                  : {
-                      width: anchoBlanca,
-                      // Una franja del color del grado en la parte baja de la tecla: se
-                      // ve sin que la tecla deje de parecer una tecla de piano. Al
-                      // pulsarla se tiñe entera, para que el color y el sonido lleguen
-                      // juntos y el niño ate uno al otro.
-                      borderBottom: `10px solid ${colorDe(letra)}`,
-                      background: suena ? colorDe(letra) : undefined,
-                    }
-              }
-              aria-label={`${etiqueta || letra}${k.negra ? ' sostenido' : ''} ${aMidi(k.nota)}`}
-              onPointerDown={() => {
-                ultima.current = k.nota;
-                void sonar(k.nota);
-              }}
-              /* onClick además de onPointerDown: es lo que hace que Enter funcione
-                 desde el teclado del ordenador sin escribir nada más. */
-              onClick={() => {
-                if (!deslizando.current) void sonar(k.nota);
-              }}
-            >
-              {!k.negra && (etiqueta || qwerty) && (
-                <span className="teclado__nombre">
-                  {etiqueta}
-                  {/* La letra del ordenador va DEBAJO del nombre, no encima de la tecla, y
-                      solo en las blancas: en una negra no cabe sin taparla. Las negras se
-                      explican en el texto de abajo. */}
-                  {qwerty && <span className="teclado__qwerty">{qwerty}</span>}
-                </span>
-              )}
-            </button>
-          );
-        })}
+        {/*
+          Contenedor interior de ancho EXACTO, y es el que se centra.
+
+          Las teclas negras van con `position: absolute` y su `left` sale del índice de la
+          blanca a la que acompañan. Si el elemento que centra las blancas no es el mismo que
+          sirve de origen a las negras, al ensanchar la ventana las blancas se mueven y las
+          negras no: se descolocan más cuanto más ancha es la pantalla. Con este contenedor
+          los dos comparten origen y la deriva no puede ocurrir.
+        */}
+        <div className="teclado__teclas" style={{ width: blancas * anchoBlanca }}>
+          {teclas.map((k) => {
+            const letra = k.nota[0]!;
+            const etiqueta = nombres === 'ninguno' ? '' : nombreDe(letra, nombres);
+            const qwerty = letrasQwerty && !k.negra ? letraDeNota(k.nota, desde, disposicion) : '';
+            const suena = sonando.has(k.nota);
+            return (
+              <button
+                key={k.nota}
+                type="button"
+                data-nota={k.nota}
+                className={k.negra ? 'teclado__negra' : 'teclado__blanca'}
+                data-sonando={suena || undefined}
+                style={
+                  k.negra
+                    ? {
+                        left: (k.indice + 1) * anchoBlanca - anchoBlanca * 0.3,
+                        width: anchoBlanca * 0.6,
+                        // Al pulsarla, la negra también se tiñe de su color.
+                        background: suena ? colorDe(letra) : undefined,
+                      }
+                    : {
+                        width: anchoBlanca,
+                        // Una franja del color del grado en la parte baja de la tecla: se
+                        // ve sin que la tecla deje de parecer una tecla de piano. Al
+                        // pulsarla se tiñe entera, para que el color y el sonido lleguen
+                        // juntos y el niño ate uno al otro.
+                        borderBottom: `10px solid ${colorDe(letra)}`,
+                        background: suena ? colorDe(letra) : undefined,
+                      }
+                }
+                aria-label={`${etiqueta || letra}${k.negra ? ' sostenido' : ''} ${aMidi(k.nota)}`}
+                onPointerDown={() => {
+                  ultima.current = k.nota;
+                  void sonar(k.nota);
+                }}
+                /* onClick además de onPointerDown: es lo que hace que Enter funcione
+                   desde el teclado del ordenador sin escribir nada más. */
+                onClick={() => {
+                  if (!deslizando.current) void sonar(k.nota);
+                }}
+              >
+                {!k.negra && (etiqueta || qwerty) && (
+                  <span className="teclado__nombre">
+                    {etiqueta}
+                    {/* La letra del ordenador va DEBAJO del nombre, no encima de la tecla, y
+                        solo en las blancas: en una negra no cabe sin taparla. Las negras se
+                        explican en el texto de abajo. */}
+                    {qwerty && <span className="teclado__qwerty">{qwerty}</span>}
+                  </span>
+                )}
+                </button>
+              );
+            })}
+        </div>
       </div>
 
       <p className="pista-fija">

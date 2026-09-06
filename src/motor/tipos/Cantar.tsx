@@ -5,8 +5,8 @@ import { Sampler, aMidi } from '@/audio/sampler';
 import { muestrasDe } from '@/audio/instrumentos';
 import { DetectorDeTono } from '@/escucha/tono';
 import {
-  VENTANAS_CENTS,
   desviacionEnCents,
+  ventanasDe,
   evaluarAfinacion,
   mensajeAfinacion,
   type EvaluacionAfinacion,
@@ -67,7 +67,14 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
     niño cuando afina, y sostenerla ya viene después. Pedirle que la aguante afinada durante
     toda la escucha convertía un ejercicio de oído en uno de respiración.
   */
-  const msParaCazar = contenido.msParaCazar ?? 800;
+  const ventanas = ventanasDe(carril);
+  /*
+    El tiempo baja un poco con la edad, pero poco: la palanca principal es la ventana, no
+    esto. Por debajo de medio segundo un barrido de voz que pasa por encima de la nota
+    contaría como acierto, y el «la has cazado» dejaría de ser verdad.
+  */
+  const msParaCazar =
+    contenido.msParaCazar ?? (carril === 'infantil' ? 600 : carril === 'lectores' ? 800 : 1000);
   const sistema = contenido.nombres ?? 'latino';
 
   const [fase, setFase] = useState<Fase>('listo');
@@ -167,7 +174,7 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
             Se cuenta con el reloj y no con el número de lecturas porque el detector no va a
             un ritmo fijo: contar lecturas mediría otra cosa según el dispositivo.
           */
-          if (Math.abs(suavizado) <= VENTANAS_CENTS.afinado) {
+          if (Math.abs(suavizado) <= ventanas.afinado) {
             const ahora = performance.now();
             dentroDesde.current ??= ahora;
             if (ahora - dentroDesde.current >= msParaCazar) {
@@ -193,7 +200,7 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
     setFase('escuchando');
 
     finDeEscucha.current = window.setTimeout(() => {
-      if (escuchando) setEvaluacion(evaluarAfinacion(lecturas.current));
+      if (escuchando) setEvaluacion(evaluarAfinacion(lecturas.current, carril));
       setFase('resultado');
       setCents(null);
     }, segundos * 1000);
@@ -207,7 +214,7 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
     if (!cazada || fase !== 'escuchando') return;
     if (finDeEscucha.current !== null) window.clearTimeout(finDeEscucha.current);
     const id = window.setTimeout(() => {
-      setEvaluacion(evaluarAfinacion(lecturas.current));
+      setEvaluacion(evaluarAfinacion(lecturas.current, carril));
       setFase('resultado');
       setCents(null);
     }, 700);
@@ -252,7 +259,7 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
           className="cantar__marca"
           data-activa={cents !== null || undefined}
           data-dentro={
-            (cents !== null && Math.abs(cents) <= VENTANAS_CENTS.afinado) || undefined
+            (cents !== null && Math.abs(cents) <= ventanas.afinado) || undefined
           }
           style={{ transform: `translateX(${posicion * 1.4}px)` }}
         />
@@ -270,8 +277,8 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
         {fase === 'escuchando' && (
           cazada ? t('cantar.cazada')
           : cents === null ? t('cantar.noTeOigo')
-          : Math.abs(cents) <= VENTANAS_CENTS.afinado ? t('cantar.ahi')
-          : Math.abs(cents) <= VENTANAS_CENTS.casi
+          : Math.abs(cents) <= ventanas.afinado ? t('cantar.ahi')
+          : Math.abs(cents) <= ventanas.casi
             ? t(cents > 0 ? 'cantar.bajaPoco' : 'cantar.subePoco')
             : t(cents > 0 ? 'cantar.baja' : 'cantar.sube')
         )}

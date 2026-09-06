@@ -1961,8 +1961,10 @@ p {
    Sin librería de piano: sobre el Sampler que ya existe son cien líneas, y
    cualquier librería traería su propia gestión de audio, que chocaría con la
    regla de un solo AudioContext. */
+/* La caja solo centra y desplaza. El origen de las teclas es `.teclado__teclas`, que tiene
+   el ancho exacto: si el elemento que centra las blancas no fuera el mismo que sirve de
+   origen a las negras, éstas derivarían al ensanchar la ventana. */
 .teclado__caja {
-  position: relative;
   display: flex;
   justify-content: center;
   height: min(38vh, 260px);
@@ -1972,6 +1974,12 @@ p {
   overflow-x: auto;
 }
 .teclado__blanca,
+.teclado__teclas {
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  height: 100%;
+}
 .teclado__negra {
   padding: 0;
   cursor: pointer;
@@ -2395,3 +2403,76 @@ p {
   background: var(--vivo-verde);
   box-shadow: 0 0 0 8px color-mix(in srgb, var(--vivo-verde) 22%, transparent);
 }
+
+/* ── modo lienzo ───────────────────────────────────────────────────────────
+   La actividad ocupa la pantalla y desaparece todo lo demás.
+
+   Un piano rodeado de título, enunciado, botón de atrás y barra de navegación es un piano
+   pequeño con muchas cosas alrededor. En una pizarra digital eso es el problema entero: lo
+   que se ve desde el fondo del aula es lo grande, y todo lo que no es la actividad le está
+   quitando sitio.
+
+   Se aplica por CSS y no solo con la API de pantalla completa, porque `requestFullscreen()`
+   no existe para elementos cualesquiera en Safari de iOS —solo para vídeo— y ahí es donde
+   más falta hace. La API se intenta además, para ganar también la barra del navegador. */
+.lienzo { position: relative; }
+
+.lienzo__boton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  color: var(--tinta-2);
+  background: var(--superficie);
+  border: 2px solid var(--linea);
+  border-radius: var(--r-s);
+  cursor: pointer;
+  transition: color var(--transicion), border-color var(--transicion);
+}
+.lienzo__boton:hover { color: var(--tinta); border-color: var(--tinta-2); }
+.lienzo__boton:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
+
+.lienzo[data-ampliado] {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-content: center;
+  padding: var(--e-4);
+  overflow: auto;
+  background: var(--papel);
+}
+/* El botón se queda flotando en la esquina, y en modo ampliado se aparta del contenido. */
+.lienzo[data-ampliado] .lienzo__boton {
+  position: fixed;
+  top: var(--e-3);
+  right: var(--e-3);
+  z-index: 51;
+}
+
+/*
+  Lo que se esconde al ampliar.
+
+  Se esconde lo que EXPLICA, no lo que se usa: título, enunciado, pistas fijas, progreso y
+  cualquier cosa de navegación. Se queda lo que se toca y lo que da retorno inmediato — el
+  teclado, las bandas, el pentagrama, la aguja, el resultado —, porque sin eso no habría
+  actividad que ampliar.
+
+  El resultado final NO se esconde: es donde el niño ve qué tal le ha ido, y hacerle salir
+  de pantalla completa para leerlo sería absurdo.
+*/
+.lienzo[data-ampliado] :is(h1, .pista-fija, progress, .actividad__barra, .cantar__cifras) {
+  display: none;
+}
+.lienzo[data-ampliado] .actividad { margin: 0; }
+/* Y todo un poco más grande, que es de lo que se trataba. */
+.lienzo[data-ampliado] .karaoke__pauta[data-orientacion='vertical'] { height: min(70vh, 560px); }
+.lienzo[data-ampliado] .teclado__caja { height: min(62vh, 420px); }
+
+/* Con la barra de navegación fuera de la vista, el hueco que le deja también sobra. */
+.lienzo[data-ampliado] ~ *,
+body:has(.lienzo[data-ampliado]) .nav { display: none; }
