@@ -84,6 +84,25 @@ sistema, navegador, modo (pestaña / instalada), resultado y coste del análisis
 para todas las filas de (a) que no dependan del despliegue. Y `/diagnostico` desplegada,
 copiando un informe legible de una sola pulsación.
 
+### T0.4 — Medir el coste del NSDF de otra forma
+
+Abierta el 2026-09-06 por lo que dijo el primer informe de `/diagnostico`.
+
+**Chrome no expone `performance` dentro del `AudioWorkletGlobalScope`**, así que la
+medición prevista en T0.1 devuelve «no medible» y seguimos sin saber lo que cuesta el
+detector de tono. El NSDF es O(N²) con ventana de 1024 y solape del 50 %: en un PC no se
+nota, y en la tablet de aula puede no caber. Es la incógnita que sostiene T2.5.
+
+- [ ] Banco de pruebas en el hilo principal: correr el mismo NSDF sobre un buffer
+      sintético con `performance.now()` y publicar el resultado en `/diagnostico`
+- [ ] Etiquetarlo como **estimación**, no como medida del hilo de audio: no es lo mismo,
+      y decir lo contrario sería mentir en el informe
+- [ ] Comprobar si Firefox sí expone `performance` en el worklet; si lo hace, usar la
+      medida real ahí y la estimación en el resto
+
+**Criterio de aceptación**: `/diagnostico` da un número de milisegundos por análisis en
+Chrome de escritorio y en Chrome de Android, con su etiqueta de cómo se obtuvo.
+
 ### T0.2 — Una actividad completa de punta a punta
 
 Coge `content/actividades/inf-01-semaforo-del-sonido.json` y haz que funcione de verdad:
