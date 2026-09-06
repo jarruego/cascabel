@@ -15,36 +15,67 @@
     "saber": "D. Práctica instrumental, vocal y corporal"
   },
   "practica": {
-    "figuras": ["negra", "corchea", "silencio-negra"],
+    "figuras": [
+      "negra",
+      "corchea",
+      "silencio-negra"
+    ],
     "compas": "2/4",
     "tempo": 72,
     "secuencia": "ninguna",
-    "metodo": ["orff", "kodaly"]
+    "metodo": [
+      "orff",
+      "kodaly"
+    ]
   },
   "musica": {
     "abc": "X:1\nT:Eco de palmas\nM:2/4\nL:1/4\nQ:1/4=72\nK:C\nz2 | c c | c/c/ c | z2 |",
     "acompanamiento": "bases/base-2-4-72.opus"
   },
-  "entrada": { "modo": "microfono-palmada", "alternativa": "toque" },
+  "entrada": {
+    "modo": "microfono-palmada",
+    "alternativa": "toque"
+  },
   "contenido": {
     "consigna": "actividad.c102.consigna",
     "compases_escucha": 2,
     "compases_respuesta": 2,
     "repeticiones": 3,
-    "silabas": ["ta", "ta", "ti-ti", "ta"]
+    "silabas": [
+      "ta",
+      "ta",
+      "ti-ti",
+      "ta"
+    ],
+    "tempo": 84
   },
   "evaluacion": {
     "autocorrectiva": true,
-    "tolerancia_ms": { "perfecto": 100, "bien": 180, "casi": 300 },
-    "reporta": ["aciertos", "desvio_medio_con_signo", "desviacion_tipica"]
+    "tolerancia_ms": {
+      "perfecto": 100,
+      "bien": 180,
+      "casi": 300
+    },
+    "reporta": [
+      "aciertos",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
   },
   "locucion": {
     "enunciado": "actividad.c102.enunciado",
     "audio": "es/c1-02-palmea-el-ritmo.opus"
   },
-  "pistas": ["actividad.c102.pista1", "actividad.c102.pista2"],
+  "pistas": [
+    "actividad.c102.pista1",
+    "actividad.c102.pista2"
+  ],
   "creditos": [
-    { "obra": "Base rítmica 2/4", "autor": "Propia", "licencia": "Propia" }
+    {
+      "obra": "Base rítmica 2/4",
+      "autor": "Propia",
+      "licencia": "Propia"
+    }
   ],
   "estado": "borrador"
 }

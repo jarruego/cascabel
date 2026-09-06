@@ -636,7 +636,32 @@ detectarlo habría que medir las barras del ABC en crudo, y no compensa hoy.
 - [ ] T2.1 — Tipo `rejilla` (dictado rítmico, dictado melódico, constructor de ritmos)
 - [ ] T2.2 — Tipo `pentagrama` con VexFlow y hitbox de 60 px sobre nota pequeña
 - [ ] T2.3 — Tipo `seguir` (musicograma y karaoke) con cursor sincronizado con abcjs
-- [ ] T2.4 — Tipo `tocar-a-tiempo` con el detector de palmadas y `evaluarRitmo`
+- [x] **T2.4 — Tipo `tocar-a-tiempo`** `[x]` — cerrado el 2026-09-06. Escucha el patrón,
+      lo repites con palmadas o tocando, y se evalúa con compensación de latencia.
+      `c1-02-palmea-el-ritmo` ya funciona.
+
+      **El resultado nunca es un porcentaje.** Se muestran desvío medio **con signo** y
+      desviación típica por separado, porque un niño que da todas las palmadas 120 ms tarde
+      con 20 ms de desviación tiene un pulso excelente y solo desfasado — y un porcentaje le
+      diría que ha fallado. El mensaje sale de esos dos números, no de los aciertos.
+
+      **El micrófono degrada a toque en silencio** (regla 8). El botón grande está siempre,
+      también cuando el micrófono funciona: un niño que prefiere tocar no tiene por qué
+      explicárselo a nadie. Y en clase entera el toque no es el plan B: veinticinco
+      micrófonos abiertos son inutilizables.
+
+      **El patrón se ve además de oírse**, con las sílabas de Kodály iluminándose al pulso.
+      Criterio 1.1.1: un alumno sordo tiene que poder hacer la actividad mirando. El
+      silencio (`sh`) se distingue por forma —borde discontinuo—, no solo por color.
+
+      `tests/rejillaRitmica.test.ts` fija el signo de la compensación de latencia, que es
+      donde este tipo de código se rompe sin que se note: si se resta en vez de sumarse, el
+      error se duplica en lugar de anularse. Hay un caso con los 52 ms reales medidos en
+      Chromium que comprueba que un niño puntual sale puntual.
+
+      `tests/degradacion.test.ts` vigila la regla 8 en todo el repositorio: que ningún
+      componente arranque el micrófono fuera de un `try`, que toda actividad de micrófono
+      declare alternativa, y que ninguna use arrastre.
 - [ ] T2.5 — Tipo `cantar` con el detector de tono y retorno visual de afinación
       (desbloqueada: T2.0 dejó el detector en el 1,78 % de un núcleo)
 - [ ] T2.6 — **Estado en la URL**: compartir una creación sin cuenta ni servidor
