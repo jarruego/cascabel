@@ -150,3 +150,38 @@ describe('figuras', () => {
     expect(new Set(figuras).size).toBe(duraciones.length);
   });
 });
+
+describe('carriles con alteraciones', () => {
+  // Salió de un fallo real: la primera versión quitaba la alteración antes de agrupar, con
+  // lo que re sostenido y re compartían banda. Lo destapó el motivo de la Quinta, que es
+  // justamente re, mi bemol, fa y sol: cuatro alturas de las que dos comparten letra.
+  it('un sostenido NO comparte carril con su nota natural', () => {
+    const carriles = carrilesDe([
+      { nota: 'D4', pulsos: 1 },
+      { nota: 'D#4', pulsos: 1 },
+      { nota: 'F4', pulsos: 1 },
+      { nota: 'G4', pulsos: 1 },
+    ]);
+    expect(carriles).toHaveLength(4);
+    expect(carriles).toEqual(['D4', 'D#4', 'F4', 'G4']);
+  });
+
+  it('el motivo de la Quinta da exactamente cuatro bandas', () => {
+    const motivo: NotaMusicograma[] = [
+      { nota: 'G4', pulsos: 0.5 }, { nota: 'G4', pulsos: 0.5 }, { nota: 'G4', pulsos: 0.5 },
+      { nota: 'D#4', pulsos: 2 },
+      { nota: 'F4', pulsos: 0.5 }, { nota: 'F4', pulsos: 0.5 }, { nota: 'F4', pulsos: 0.5 },
+      { nota: 'D4', pulsos: 2 },
+    ];
+    expect(carrilesDe(motivo)).toEqual(['D4', 'D#4', 'F4', 'G4']);
+  });
+
+  it('ordena por altura real y no por letra', () => {
+    // Si se ordenara por letra, el do de la octava de arriba caería antes que el si.
+    expect(carrilesDe([
+      { nota: 'C5', pulsos: 1 },
+      { nota: 'B4', pulsos: 1 },
+      { nota: 'A#4', pulsos: 1 },
+    ])).toEqual(['A#4', 'B4', 'C5']);
+  });
+});

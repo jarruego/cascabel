@@ -35,6 +35,7 @@
  * maestra, no un desarrollador.
  */
 
+import { aMidi } from '@/audio/sampler';
 import { alturaEnPauta, type Clave } from './alturaEnPauta';
 
 export type Representacion = 'pentagrama' | 'color' | 'silaba' | 'figura' | 'icono';
@@ -60,16 +61,21 @@ export function representaAltura(r: Representacion): boolean {
   return r === 'pentagrama' || r === 'color';
 }
 
-/** Los grados distintos que aparecen, de grave a agudo. Son los carriles de `color`. */
+/**
+ * Las notas distintas que aparecen, de grave a agudo. Son los carriles de `color`.
+ *
+ * **Por nota exacta, no por grado.** La primera versión quitaba la alteración antes de
+ * agrupar, con lo que un re sostenido caía en el mismo carril que el re: dos alturas
+ * distintas compartiendo banda, y la melodía dejando de verse subir donde subía. Se destapó
+ * con el motivo de la Quinta, que es re, mi bemol, fa y sol — cuatro notas de las que dos
+ * comparten letra.
+ *
+ * Y se ordena por número MIDI en vez de por letra, que es lo que hace que un do de la octava
+ * siguiente quede por encima del si de la anterior y no debajo.
+ */
 export function carrilesDe(notas: NotaMusicograma[]): string[] {
-  const vistos = new Map<string, number>();
-  for (const n of notas) {
-    const letra = n.nota[0]!.toUpperCase();
-    const octava = Number(n.nota.replace(/[^0-9]/g, '') || '4');
-    const orden = octava * 12 + 'C D EF G A B'.indexOf(letra);
-    vistos.set(n.nota.replace('#', ''), orden);
-  }
-  return [...vistos.entries()].sort((a, b) => a[1] - b[1]).map(([k]) => k);
+  const vistos = new Set(notas.map((n) => n.nota));
+  return [...vistos].sort((a, b) => aMidi(a) - aMidi(b));
 }
 
 export interface Geometria {

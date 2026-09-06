@@ -2129,11 +2129,12 @@ p {
 }
 /* Horizontal: ancho completo, alto fijo. El tiempo corre de derecha a izquierda. */
 .karaoke__pauta[data-orientacion='horizontal'] { width: 100%; height: 160px; }
-/* Vertical: alto generoso y ancho acotado. Caer necesita recorrido, y un recuadro tan
-   ancho como la pantalla dejaría las figuras perdidas en el centro. */
+/* Vertical: alto generoso. El ANCHO lo pone el componente por estilo en línea, con el
+   mismo número sobre el que reparte las bandas: si lo fijara aquí, las bandas y los botones
+   de abajo dejarían de cuadrar en cuanto uno de los dos cambiara. */
 .karaoke__pauta[data-orientacion='vertical'] {
-  width: min(100%, 200px);
   height: min(58vh, 380px);
+  margin-inline: auto;
 }
 
 .karaoke__linea { position: absolute; background: var(--linea); }
@@ -2317,18 +2318,21 @@ p {
 
 /* Un botón por banda. Van en fila y en el mismo orden que las bandas de arriba, así que
    cada botón queda debajo de su banda y no hay que aprenderse ninguna correspondencia. */
+/* Los botones miden exactamente lo que su banda y van pegados, así que cada uno queda
+   justo debajo de la suya. Con hueco entre botones la correspondencia se pierde: el tercer
+   botón deja de estar bajo la tercera banda y hay que buscarlo. */
 .karaoke__botones {
   display: flex;
-  gap: var(--e-2);
-  justify-content: center;
-  width: 100%;
-  max-width: 420px;
+  gap: 0;
   margin: 0 auto;
 }
 .karaoke__banda {
   flex: 1 1 0;
   min-width: 0;
   min-height: 88px;
+  /* Sin redondear por dentro: los botones se tocan, y cuatro cápsulas separadas volverían
+     a romper la alineación con las bandas. Solo se redondean los dos extremos. */
+  border-radius: 0;
   padding: var(--e-2);
   font-size: var(--t-s);
   font-weight: 700;
@@ -2340,6 +2344,8 @@ p {
   border-radius: var(--r-m);
   box-shadow: var(--sombra-1);
 }
+.karaoke__banda:first-child { border-start-start-radius: var(--r-m); border-end-start-radius: var(--r-m); }
+.karaoke__banda:last-child { border-start-end-radius: var(--r-m); border-end-end-radius: var(--r-m); }
 .karaoke__banda:active { box-shadow: none; transform: translateY(2px); }
 @media (prefers-reduced-motion: reduce) {
   .karaoke__banda:active { transform: none; }

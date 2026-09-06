@@ -164,8 +164,22 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
   // ataque, un golpe algo tardío en la última nota se perdería.
   const duracionTotal = duracionDe(notas, bpm, ENTRADA_S) + 2;
 
-  /** Tamaño del recuadro en el eje que NO es el del tiempo. */
-  const TRANSVERSAL = 160;
+  /**
+   * Tamaño del recuadro en el eje que NO es el del tiempo, en píxeles.
+   *
+   * **Y es el ancho de verdad del recuadro, no una aproximación.** Se aplica también por
+   * estilo en línea, porque la geometría reparte las bandas sobre este número: si el CSS
+   * dibujara el recuadro de otro ancho, las bandas no llegarían a los bordes y los botones
+   * de abajo no cuadrarían con ellas. Tenerlo en dos sitios era un desajuste esperando.
+   *
+   * Con bandas se ensancha —80 px por banda— porque el botón de abajo tiene que medir lo
+   * mismo que su banda, y una banda estrecha da un botón difícil de acertar.
+   */
+  const TRANSVERSAL = vertical
+    ? porCarril
+      ? Math.min(88 * carriles.length, 360)
+      : 200
+    : 160;
 
   const opciones = useMemo(
     () => ({
@@ -262,7 +276,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
     let mejor = -1;
     let mejorError = Infinity;
     instantes.current.forEach((esperado, i) => {
-      if (banda !== null && carriles.indexOf(notas[i]!.nota.replace('#', '')) !== banda) return;
+      if (banda !== null && carriles.indexOf(notas[i]!.nota) !== banda) return;
       const error = Math.abs(ms - esperado);
       if (error < mejorError && error <= limite) {
         mejorError = error;
@@ -276,7 +290,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
     // en «he acertado un SOL»: la recompensa y el contenido son la misma cosa.
     const id = siguienteAviso.current++;
     const g = geometriaDe(
-      notas[mejor]!, 0, carriles.indexOf(notas[mejor]!.nota.replace('#', '')),
+      notas[mejor]!, 0, carriles.indexOf(notas[mejor]!.nota),
       carriles.length, opciones,
     );
     const n = notas[mejor]!;
@@ -328,6 +342,8 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
         className="karaoke__pauta"
         data-orientacion={orientacion}
         data-representacion={representacion}
+        /* El ancho sale del mismo número que usa la geometría: ver TRANSVERSAL. */
+        style={vertical ? { width: TRANSVERSAL, maxWidth: '100%' } : undefined}
         role="img"
         aria-label={t(`karaoke.pauta.${representacion}`)}
       >
@@ -380,7 +396,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
           const falta = tiempos[i]! - ahora;
           // Fuera de la ventana visible no se dibuja: no hay que animar treinta figuras.
           if (falta > ANTICIPACION_S || falta < -1.2) return null;
-          const indice = conAltura ? carriles.indexOf(n.nota.replace('#', '')) : 0;
+          const indice = conAltura ? carriles.indexOf(n.nota) : 0;
           const g = geometriaDe(n, falta, indice, carriles.length, opciones);
           const apagada = pasadas.has(i) && !acertadas.has(i);
 
@@ -463,7 +479,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
           {porCarril ? (
             /* Un botón por banda, en el mismo orden y con el mismo color que las bandas de
                arriba: el botón está debajo de su banda, así que no hay que aprenderse nada. */
-            <div className="karaoke__botones">
+            <div className="karaoke__botones" style={{ width: TRANSVERSAL, maxWidth: '100%' }}>
               {carriles.map((nota, i) => (
                 <button
                   key={nota}

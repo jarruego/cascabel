@@ -1,11 +1,11 @@
 {
   "id": "c2-16-cuatro-bandas",
-  "version": 1,
+  "version": 2,
   "tipo": "karaoke",
   "titulo": "Cuatro bandas",
-  "descripcion": "Cuatro carriles con su propio botón. Ya no basta con acertar cuándo: hay que acertar también cuál.",
+  "descripcion": "El motivo más conocido de la historia en cuatro bandas de color, cada una con su botón justo debajo. Tres cortas y una larga, dos veces.",
   "etapa": "primaria-c2",
-  "eje": "altura",
+  "eje": "pulso",
   "lugar": "pantalla",
   "duracion_min": 10,
   "curriculo": {
@@ -15,13 +15,17 @@
     "saber": "D. Lenguajes y práctica musical"
   },
   "practica": {
-    "secuencia": "vocal-kodaly",
-    "compas": "4/4",
-    "tempo": 72,
+    "secuencia": "ninguna",
+    "compas": "2/4",
+    "tempo": 84,
     "figuras": [
-      "negra",
-      "blanca"
+      "corchea",
+      "blanca",
+      "silencio-corchea"
     ]
+  },
+  "musica": {
+    "abc": "X:1\nT:Quinta sinfonía, motivo\nC:Ludwig van Beethoven (1770-1827)\nM:2/4\nL:1/8\nK:Cm\nz G G G | _E4 | z F F F | D4 | z G G G | _E4 | z F F F | D4 |]"
   },
   "entrada": {
     "modo": "toque"
@@ -31,82 +35,70 @@
     "orientacion": "vertical",
     "representacion": "color",
     "botonesPorCarril": true,
-    "tempo": 72,
+    "tempo": 84,
     "notas": [
       {
-        "nota": "C4",
-        "pulsos": 1
-      },
-      {
-        "nota": "E4",
-        "pulsos": 1
+        "nota": "G4",
+        "pulsos": 0.5
       },
       {
         "nota": "G4",
-        "pulsos": 1
-      },
-      {
-        "nota": "C5",
-        "pulsos": 1
+        "pulsos": 0.5
       },
       {
         "nota": "G4",
-        "pulsos": 1
+        "pulsos": 0.5
       },
       {
-        "nota": "E4",
-        "pulsos": 1
+        "nota": "D#4",
+        "pulsos": 2.5
       },
       {
-        "nota": "C4",
+        "nota": "F4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "F4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "F4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "D4",
+        "pulsos": 2.5
+      },
+      {
+        "nota": "G4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "G4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "G4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "D#4",
         "pulsos": 2
       },
       {
-        "nota": "C4",
-        "pulsos": 1
+        "nota": "F4",
+        "pulsos": 0.5
       },
       {
-        "nota": "G4",
-        "pulsos": 1
+        "nota": "F4",
+        "pulsos": 0.5
       },
       {
-        "nota": "E4",
-        "pulsos": 1
+        "nota": "F4",
+        "pulsos": 0.5
       },
       {
-        "nota": "C5",
-        "pulsos": 1
-      },
-      {
-        "nota": "E4",
-        "pulsos": 1
-      },
-      {
-        "nota": "C4",
-        "pulsos": 1
-      },
-      {
-        "nota": "G4",
-        "pulsos": 2
-      },
-      {
-        "nota": "C5",
-        "pulsos": 1
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1
-      },
-      {
-        "nota": "E4",
-        "pulsos": 1
-      },
-      {
-        "nota": "C4",
-        "pulsos": 1
-      },
-      {
-        "nota": "C4",
+        "nota": "D4",
         "pulsos": 4
       }
     ]
@@ -127,6 +119,12 @@
     "actividad.c216.pista2"
   ],
   "creditos": [
+    {
+      "obra": "Motivo inicial de la Sinfonía n.º 5",
+      "autor": "Ludwig van Beethoven (1770-1827)",
+      "fuente": "Dominio público: el autor murió en 1827, muy por encima de los 80 años que exige la disposición transitoria de la ley española.",
+      "licencia": "Dominio público"
+    },
     {
       "obra": "Marimba",
       "autor": "Versilian Studios y colaboradores",
