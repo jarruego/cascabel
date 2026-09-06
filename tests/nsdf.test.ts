@@ -86,6 +86,22 @@ describe('detección de tono (NSDF)', () => {
     expect(analizarNsdf(x, TASA)).toEqual({ hz: 0, claridad: 0 });
   });
 
+  // El hallazgo de T2.0: el filtro paso bajo del diezmado no solo acelera, quita el
+  // ruido agudo que hacía que el detector inventase notas. Sin diezmar, con ruido al
+  // 30 % el error llegaba a 3367 cents declarando claridad 0,871 — por encima del
+  // umbral de 0,85, así que ese disparate llegaba al niño como si fuese su nota.
+  it.each([0.05, 0.15, 0.3])('aguanta ruido blanco al %d sin inventarse notas', (ruido) => {
+    for (const hz of casos) {
+      for (let semilla = 1; semilla <= 5; semilla++) {
+        const x = señalSintetica(hz, TASA, VENTANA, ruido, semilla * 7919);
+        const { hz: medido, claridad } = analizarNsdf(x, TASA);
+        if (claridad < 0.85) continue; // Descartada por el filtro de claridad: correcto.
+        const cents = Math.abs(1200 * Math.log2(medido / hz));
+        expect(cents, `${hz} Hz con ruido ${ruido}, semilla ${semilla}`).toBeLessThan(15);
+      }
+    }
+  });
+
   it('el worklet real y la copia del hilo principal dan lo mismo', () => {
     for (const hz of casos) {
       const x = señalSintetica(hz, TASA, VENTANA);

@@ -112,29 +112,37 @@ un factor de tres a diez, **y esto es un PC de sobremesa**. Una tablet de aula t
 tres o cuatro veces más lenta: 40-50 % de un núcleo, en un hilo que además tiene que
 reproducir sonido sin cortes. Corregido en el worklet y abierto T2.0.
 
-### T2.0 — Bajar el coste del detector de tono `⚠️ bloquea T2.5`
+### T2.0 — Bajar el coste del detector de tono `[x]`
 
-Sale de T0.4. Con 12,5 % de un núcleo en escritorio, el detector no cabe en la tablet de un
-aula, y T2.5 (`cantar`) se apoya entero en él.
+Abierta y cerrada el 2026-09-06, a partir de la medida de T0.4.
 
-El NSDF es O(N²): con ventana de 1024 son ~262.000 multiplicaciones y sumas por análisis.
-Dos caminos, y el segundo es el bueno:
+- [x] **Diezmar a 12 kHz antes de analizar**, con un FIR sinc-Hann de 25 coeficientes.
+      La ventana pasa de 1024 a 256 muestras para el mismo tramo de tiempo
+- [x] No hizo falta la FFT: con el diezmado ya sobra
+- [x] Vuelto a medir con el banco de T0.4
+- [x] `tests/nsdf.test.ts` sigue pasando, y se le añade una batería con ruido
 
-- [ ] **Diezmar antes de analizar.** La voz infantil no pasa de 600 Hz de fundamental, así
-      que no hacen falta 48 kHz para hallar el periodo. Bajando a 12 kHz la ventana pasa de
-      1024 a 256 muestras para el mismo tramo de tiempo, y el coste cae ~16 veces. Es la
-      solución convencional y la de mejor relación esfuerzo/resultado
-- [ ] Alternativa si no bastara: autocorrelación por FFT, O(N log N)
-- [ ] Volver a medir con `/diagnostico` y actualizar la tabla de T0.4
-- [ ] `tests/nsdf.test.ts` tiene que seguir pasando: la precisión no se negocia a cambio
-      de velocidad
+| | Antes | Después |
+|---|---|---|
+| Coste por análisis | 1,33 ms | **0,19 ms** |
+| Fracción de un núcleo | 12,5 % | **1,78 %** |
+| Error máximo (señal limpia) | 0,05 cents | 0,49 cents |
+| Error máximo (ruido al 30 %) | **3367 cents** | **5,2 cents** |
 
-**Criterio de aceptación**: por debajo del 3 % de un núcleo en el PC del autor, y el test
-de precisión sigue dando menos de 5 cents de error entre 220 y 600 Hz.
+**Y aquí está lo que no buscábamos.** El objetivo era el coste, pero el filtro paso bajo
+arregló de paso **un fallo de corrección**: sin diezmar, con ruido blanco al 30 % el
+detector inventaba notas con errores de miles de cents *y declaraba claridad 0,871*, por
+encima del umbral de 0,85 que las deja pasar. Es decir, le habría dicho a un niño que ha
+cantado una nota que no cantó, en un aula ruidosa, que es justo el escenario real. La
+optimización valía siete veces el coste; el arreglo de corrección vale más.
 
-**Pendiente de revisión pedagógica**: el límite de 600 Hz sale de la tesitura declarada en
-`tools/validar.py` (hasta E5 ≈ 659 Hz en 3.er ciclo). Si una maestra dice que hay que
-cubrir voces más agudas, el factor de diezmado cambia.
+**Criterio de aceptación**: cumplido — 1,78 % frente al 3 % exigido, y el test de precisión
+sigue por debajo de 5 cents entre 220 y 660 Hz.
+
+**Pendiente de revisión pedagógica**: el factor 4 deja Nyquist en 6 kHz, dimensionado para
+una fundamental que no pasa de 660 Hz (E5, techo de la tesitura de 3.er ciclo en
+`tools/validar.py`). Si una maestra dice que hay que cubrir voces más agudas, el factor
+cambia — y con él la tabla de arriba.
 
 ### T0.2 — Una actividad completa de punta a punta
 
@@ -291,6 +299,7 @@ detectarlo habría que medir las barras del ABC en crudo, y no compensa hoy.
 - [ ] T2.3 — Tipo `seguir` (musicograma y karaoke) con cursor sincronizado con abcjs
 - [ ] T2.4 — Tipo `tocar-a-tiempo` con el detector de palmadas y `evaluarRitmo`
 - [ ] T2.5 — Tipo `cantar` con el detector de tono y retorno visual de afinación
+      (desbloqueada: T2.0 dejó el detector en el 1,78 % de un núcleo)
 - [ ] T2.6 — **Estado en la URL**: compartir una creación sin cuenta ni servidor
 - [ ] T2.7 — **Códigos de verificación**: el maestro evalúa sin cuentas de alumno
 - [ ] T2.8 — Fichas imprimibles en PDF generadas desde el mismo JSON
