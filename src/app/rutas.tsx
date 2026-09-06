@@ -13,6 +13,7 @@ import { AvisoActualizacion } from './AvisoActualizacion';
 const Diagnostico = lazy(() => import('./Diagnostico'));
 const Actividad = lazy(() => import('./Actividad'));
 const Ajustes = lazy(() => import('./Ajustes'));
+const Calibracion = lazy(() => import('./Calibracion'));
 
 export function Rutas() {
   return (
@@ -22,6 +23,7 @@ export function Rutas() {
         <Route path="/" element={<Catalogo />} />
         <Route path="/actividad/:id" element={<Actividad />} />
         <Route path="/ajustes" element={<Ajustes />} />
+        <Route path="/calibracion" element={<Calibracion />} />
         <Route path="/diagnostico" element={<Diagnostico />} />
       </Routes>
     </Suspense>

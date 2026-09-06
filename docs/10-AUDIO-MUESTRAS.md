@@ -2,7 +2,22 @@
 
 Dónde viven: `public/audio/`.
 
-## `muestras/` — PROVISIONALES
+## `muestras/marimba/` — REALES
+
+Seis notas de marimba de la **Versilian Community Sample Library (CC0)**, de F3 a C6, unos
+64 KB en total. El resto de notas se interpolan con `playbackRate`, que funciona porque la
+marimba es percusiva: estirarla dos o tres semitonos no delata. Un piano estirado igual
+suena mal enseguida.
+
+Las procesa `tools/muestras-instrumento.py`, que normaliza el pico a −3 dBFS. Eso importa:
+las crudas van de −29 a −39 dBFS según la nota, y diez decibelios de diferencia entre notas
+del mismo instrumento no suenan a matiz, suenan a error.
+
+```bash
+python tools/muestras-instrumento.py <carpeta-con-wav> marimba
+```
+
+## `muestras/` (raíz) — PROVISIONALES
 
 Estos ficheros están **sintetizados**, no grabados, y los genera
 `tools/muestras-provisionales.py`. Existen para desbloquear T0.2 —que una actividad se

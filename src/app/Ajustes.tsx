@@ -109,6 +109,14 @@ export default function Ajustes() {
       </section>
 
       <section>
+        <h2>{t('ajustes.calibracion')}</h2>
+        <p>{t('ajustes.calibracionTexto')}</p>
+        <Link to="/calibracion" className="boton-repetir">
+          {t('ajustes.irCalibracion')}
+        </Link>
+      </section>
+
+      <section>
         <h2>{t('ajustes.privacidad')}</h2>
         <p>{t('ajustes.privacidadTexto')}</p>
       </section>

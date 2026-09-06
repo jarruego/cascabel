@@ -395,17 +395,36 @@ no es «no uses fetch», es «que nadie pueda pedir algo a un tercero sin que se
 fichero». Ahora `tests/sinConexion.test.ts` lo comprueba automáticamente, junto con que no
 haya ninguna URL absoluta en `src/` y que la CSP siga prohibiendo otros orígenes.
 
-### T1.7 — Sampler y metrónomo reales
+### T1.7 — Sampler y metrónomo reales `[x]`
 
-- [ ] Grabar o localizar 5–7 muestras CC0 por instrumento (marimba, xilófono, campanas)
-- [ ] Convertir a Opus 48 kbps mono, ~70 KB por instrumento
-- [ ] Calibración de latencia («da tres palmadas al ritmo»), guardada en el dispositivo.
-      **No es opcional**: Chromium mide 52 ms en un PC de sobremesa, el 74 % de la ventana
-      de «perfecto» de 9–12 años, y Firefox declara `baseLatency = 0` —que es un dato
-      ausente, no una latencia buena—, así que `latenciaMs()` compensa de menos ahí.
-      Las cifras del navegador son el punto de partida; la calibración es la verdad
-- [x] Test de que el metrónomo no usa `setInterval` — hecho en T1.3,
-      `tests/metronomo.test.ts`
+Cerrada el 2026-09-06.
+
+- [x] 6 muestras CC0 de marimba (F3, C4, G4, B4, F5, C6) de la Versilian Community
+      Sample Library
+- [x] Opus 48 kbps mono, **63,6 KB el instrumento entero** — el objetivo eran ~70 KB
+- [x] Calibración de latencia («da tres palmadas al ritmo»), guardada en el dispositivo
+- [x] Test de que el metrónomo no usa `setInterval` — hecho en T1.3
+
+**El hallazgo que explica parte de «los sonidos son raros»**: las muestras crudas de VCSL
+van de **−29 a −39 dBFS** según la nota. Diez decibelios de diferencia entre notas del
+mismo instrumento no suenan a matiz, suenan a error: el niño oye que unas notas «funcionan»
+y otras no. `tools/muestras-instrumento.py` normaliza el pico a −3 dBFS antes de codificar.
+
+**Y un error que costó dos intentos**: el recorte de silencio con umbral absoluto se comía
+enteras las notas agudas, que son más flojas — C6 pasaba de 1,7 s a 0,12 s. El umbral tiene
+que ser **relativo al pico de cada muestra**. La herramienta ahora falla si una muestra sale
+de menos de un cuarto de segundo, para que no vuelva a colarse.
+
+**La calibración mide el bucle completo**: salida de audio, altavoz, aire, oído, mano y
+pantalla. Ninguna API del navegador conoce eso entero, y las que hay no bastan — Chromium
+declara 52 ms en un PC de sobremesa y **Firefox declara `baseLatency = 0`**, que no es una
+latencia buena sino un dato ausente. Se descartan los dos primeros pulsos, porque nadie
+acierta el ritmo antes de haberlo oído, y se rechaza la medida si la desviación típica pasa
+de 60 ms: eso no es latencia, es que la persona no estaba marcando el pulso.
+
+`tests/sampler.test.ts` protege lo que desafinaría todo el proyecto sin que nadie lo note:
+que el `playbackRate` sea la razón correcta, que se elija siempre la muestra más cercana y
+que dentro de la tesitura infantil (C4–E5) nunca se estire más de tres semitonos.
 
 ### T1.8 — Veinte actividades de esfuerzo S
 
