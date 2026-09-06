@@ -426,14 +426,47 @@ de 60 ms: eso no es latencia, es que la persona no estaba marcando el pulso.
 que el `playbackRate` sea la razón correcta, que se elija siempre la muestra más cercana y
 que dentro de la tesitura infantil (C4–E5) nunca se estire más de tres semitonos.
 
-### T1.8 — Veinte actividades de esfuerzo S
+### T1.8 — Actividades de esfuerzo S `[~] 14 de 20`
 
-Las marcadas con `"esfuerzo": "S"` en `content/catalogo.json`.
+Trabajada el 2026-09-06. **No están las veinte, y no por falta de tiempo.**
 
-- [ ] JSON generado con el prompt de `prompts/`
-- [ ] `npm run contenido:validar --estricto` pasa
-- [ ] Revisión visual en lote
+- [x] JSON generado y validado: **15 actividades** en `content/actividades/`
+- [x] `npm run contenido:validar` pasa 15/15
+- [ ] Revisión visual en lote — pendiente, ver T1.12
 - [ ] Revisión pedagógica (las tres preguntas de `docs/06-PIPELINE-IA.md`)
+
+**De las 20 de esfuerzo S, 14 tienen un motor que exista.** Las otras 6 son de tipos que
+son de la Fase 2: tres `lienzo`, dos `seguir` y una `pentagrama`. No se pueden escribir
+todavía porque el motor que las ejecutaría no está.
+
+De esas 14, están hechas 12. Las **dos que faltan se dejan a propósito**:
+
+| | Por qué no |
+|---|---|
+| **C3-08 «¿De quién es esta música?»** | Necesita repertorio real y atribuible. Toda canción se verifica contra una fuente de dominio público **antes** de entrar (`CLAUDE.md` §10), y el plazo español son 70 años, **u 80 si el autor murió antes del 7-12-1987**. No es contenido que se pueda improvisar |
+| **C2-12 «Canon a dos voces»** | Lo mismo: hace falta un canon de dominio público verificado, con su fuente documentada |
+
+**El sonido y el aspecto son andamiaje**, y así consta en T1.12. Las actividades de timbre
+usan la marimba CC0 real; las de tempo y de acorde usan síntesis propia. Suenan a lo que
+son: a placeholder.
+
+**Pendiente de revisión pedagógica, y son decisiones que ha tomado un desarrollador:**
+
+- Los tempos de C2-09 (adagio 66, andante 92, allegro 138) son los convencionales de
+  diccionario, pero los rangos varían según la fuente. A esta edad lo que importa es que
+  se distingan, no la precisión.
+- La dificultad de C3-05 «¿Mayor o menor?». Musicalmente no hay nada que inventar —mayor
+  es [0,4,7] y menor [0,3,7], y lo único que cambia es la tercera— pero **si eso es
+  discriminable en 5.º y 6.º lo dice una maestra, no yo**.
+- Las coreografías de INF-12 y los pasos de C1-10 son secuencias didácticas convencionales.
+
+**Un fallo de etiquetado que cazó el propio validador.** El esquema limitaba `duracion_min`
+a 20 y dos guías de aula duran 35 y 45 minutos. El límite era correcto pero estaba en el
+sitio equivocado: **20 minutos es el tope de PANTALLA para un niño, no el tope de una
+sesión de clase**. Se sube el máximo del esquema a 60 y la regla real pasa a
+`tools/validar.py`, que la aplica solo cuando `lugar: pantalla`. Al hacerlo, el validador
+destapó que TR-02 estaba mal etiquetada: es un metrónomo proyectado, así que el aula lo
+mira pero ningún niño está delante de una pantalla 45 minutos. Corregida a `hibrida`.
 
 ### T1.9 — Legal y créditos
 

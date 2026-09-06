@@ -1,0 +1,69 @@
+{
+  "id": "inf-12-danza-de-corro",
+  "version": 1,
+  "tipo": "guia-aula",
+  "titulo": "Danza de corro",
+  "descripcion": "Coreografía simple proyectada paso a paso con contador visual.",
+  "etapa": "infantil",
+  "eje": "cuerpo",
+  "lugar": "hibrida",
+  "duracion_min": 20,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": "CE3",
+    "criterio": "3.6",
+    "saber": "H. Interés e iniciativa en la participación en manifestaciones artísticas y corporales"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 96,
+    "metodo": [
+      "dalcroze",
+      "orff"
+    ]
+  },
+  "entrada": {
+    "modo": "ninguna"
+  },
+  "contenido": {
+    "consigna": "actividad.inf12.consigna",
+    "tempo": 96,
+    "pulsosPorCompas": 4,
+    "pasos": [
+      {
+        "titulo": "actividad.inf12.p1",
+        "detalle": "actividad.inf12.p1d",
+        "duracion": "2 min"
+      },
+      {
+        "titulo": "actividad.inf12.p2",
+        "detalle": "actividad.inf12.p2d",
+        "duracion": "5 min"
+      },
+      {
+        "titulo": "actividad.inf12.p3",
+        "detalle": "actividad.inf12.p3d",
+        "duracion": "5 min"
+      },
+      {
+        "titulo": "actividad.inf12.p4",
+        "detalle": "actividad.inf12.p4d",
+        "duracion": "8 min"
+      }
+    ],
+    "materiales": [
+      "actividad.inf12.m1"
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.inf12.enunciado"
+  },
+  "estado": "borrador"
+}

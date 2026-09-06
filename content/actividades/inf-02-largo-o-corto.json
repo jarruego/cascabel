@@ -1,0 +1,77 @@
+{
+  "id": "inf-02-largo-o-corto",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Largo o corto?",
+  "descripcion": "Serpiente u hormiga. Suena un sonido y el niño elige. La duración se ve, se oye y se dibuja.",
+  "etapa": "infantil",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 5,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": "CE2",
+    "criterio": "2.1",
+    "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.inf02.consigna",
+    "opciones": [
+      {
+        "clave": "largo",
+        "icono": "triangulo",
+        "color": "azul"
+      },
+      {
+        "clave": "corto",
+        "icono": "tambor",
+        "color": "rojo"
+      }
+    ],
+    "estimulos": [
+      {
+        "audio": "muestras/sonido-corto.opus",
+        "respuesta": "corto"
+      },
+      {
+        "audio": "muestras/sonido-largo.opus",
+        "respuesta": "largo"
+      },
+      {
+        "audio": "muestras/sonido-largo.opus",
+        "respuesta": "largo"
+      },
+      {
+        "audio": "muestras/sonido-corto.opus",
+        "respuesta": "corto"
+      },
+      {
+        "audio": "muestras/triangulo-largo.opus",
+        "respuesta": "largo"
+      },
+      {
+        "audio": "muestras/pandero-golpe.opus",
+        "respuesta": "corto"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.inf02.enunciado"
+  },
+  "estado": "borrador",
+  "pistas": [
+    "actividad.inf02.pista1"
+  ]
+}

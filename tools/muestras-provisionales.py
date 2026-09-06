@@ -124,6 +124,49 @@ def campana(fundamental: float, dur: float = 1.8) -> list[float]:
     return salida
 
 
+def acorde(fundamental: float, semitonos: list[int], dur: float = 2.0) -> list[float]:
+    """
+    Acorde de tres notas con timbre de lámina. Sirve para «mayor o menor».
+
+    Las razones son las del temperamento igual: 2**(n/12). Mayor es [0, 4, 7] y menor
+    [0, 3, 7]; lo único que cambia es la tercera, y esa es exactamente la discriminación
+    que se está pidiendo. No hay criterio musical que inventar aquí, es teoría básica.
+    """
+    n_muestras = int(dur * TASA)
+    env = envolvente(n_muestras, 0.004, 0.6)
+    frecuencias = [fundamental * (2 ** (st / 12)) for st in semitonos]
+    salida = []
+    for i in range(n_muestras):
+        t = i / TASA
+        v = 0.0
+        for f in frecuencias:
+            # Dos parciales: la fundamental y la cuarta armónica, que es lo que da el
+            # color de lámina sin llegar a campana.
+            v += math.sin(2 * math.pi * f * t) + 0.3 * math.sin(2 * math.pi * 4 * f * t)
+        salida.append(v / (len(frecuencias) * 1.3) * env[i] * 0.9)
+    return salida
+
+
+def pulso_a(bpm: float, golpes: int = 8, hz: float = 660.0) -> list[float]:
+    """
+    Una serie de golpes a un tempo. Sirve para «adagio, andante, allegro».
+
+    Los tempos son los convencionales de los diccionarios de música: adagio 66, andante 92
+    y allegro 138 pulsos por minuto. PENDIENTE DE REVISIÓN PEDAGÓGICA: los rangos varían
+    según la fuente y a esta edad lo que importa es que se distingan, no la precisión.
+    """
+    periodo = 60.0 / bpm
+    total = int(periodo * golpes * TASA)
+    salida = [0.0] * total
+    for g in range(golpes):
+        inicio = int(g * periodo * TASA)
+        largo = min(int(0.09 * TASA), total - inicio)
+        for i in range(largo):
+            t = i / TASA
+            salida[inicio + i] += math.sin(2 * math.pi * hz * t) * math.exp(-t / 0.02) * 0.85
+    return salida
+
+
 PIEZAS = {
     "pandero-golpe": pandero,
     "triangulo-largo": triangulo,
@@ -134,6 +177,18 @@ PIEZAS = {
     "campana-grave": lambda: campana(293.66),
     "campana-media": lambda: campana(440.0),
     "campana-aguda": lambda: campana(659.26),
+    # Para «mayor o menor»: mismo acorde salvo la tercera, que es la discriminación pedida.
+    "acorde-mayor-do": lambda: acorde(261.63, [0, 4, 7]),
+    "acorde-menor-do": lambda: acorde(261.63, [0, 3, 7]),
+    "acorde-mayor-sol": lambda: acorde(392.00, [0, 4, 7]),
+    "acorde-menor-sol": lambda: acorde(392.00, [0, 3, 7]),
+    # Para «adagio, andante, allegro»: tempos convencionales de diccionario.
+    "tempo-adagio": lambda: pulso_a(66),
+    "tempo-andante": lambda: pulso_a(92),
+    "tempo-allegro": lambda: pulso_a(138),
+    # Para «largo o corto»: el contraste más básico de todos.
+    "sonido-corto": lambda: pandero(0.28),
+    "sonido-largo": lambda: triangulo(2.6),
 }
 
 

@@ -1,0 +1,66 @@
+{
+  "id": "c1-10-construye-un-cotidiofono",
+  "version": 1,
+  "tipo": "guia-aula",
+  "titulo": "Construye un cotidiáfono",
+  "descripcion": "Ficha imprimible y vídeo para construir un instrumento con materiales del entorno.",
+  "etapa": "primaria-c1",
+  "eje": "timbre",
+  "lugar": "hibrida",
+  "duracion_min": 35,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE4",
+    "criterio": "4.2",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "ninguna"
+  },
+  "contenido": {
+    "consigna": "actividad.c110.consigna",
+    "tempo": 80,
+    "pulsosPorCompas": 4,
+    "pasos": [
+      {
+        "titulo": "actividad.c110.p1",
+        "detalle": "actividad.c110.p1d",
+        "duracion": "5 min"
+      },
+      {
+        "titulo": "actividad.c110.p2",
+        "detalle": "actividad.c110.p2d",
+        "duracion": "5 min"
+      },
+      {
+        "titulo": "actividad.c110.p3",
+        "detalle": "actividad.c110.p3d",
+        "duracion": "15 min"
+      },
+      {
+        "titulo": "actividad.c110.p4",
+        "detalle": "actividad.c110.p4d",
+        "duracion": "10 min"
+      }
+    ],
+    "materiales": [
+      "actividad.c110.m1",
+      "actividad.c110.m2",
+      "actividad.c110.m3",
+      "actividad.c110.m4"
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c110.enunciado"
+  },
+  "estado": "borrador"
+}

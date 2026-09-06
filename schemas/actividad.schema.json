@@ -4,7 +4,17 @@
   "title": "Actividad de Cascabel",
   "description": "Descripción declarativa de una actividad. El motor la ejecuta; nadie programa una actividad a mano.",
   "type": "object",
-  "required": ["id", "version", "tipo", "titulo", "etapa", "eje", "curriculo", "entrada", "contenido"],
+  "required": [
+    "id",
+    "version",
+    "tipo",
+    "titulo",
+    "etapa",
+    "eje",
+    "curriculo",
+    "entrada",
+    "contenido"
+  ],
   "additionalProperties": false,
   "properties": {
     "id": {
@@ -12,7 +22,10 @@
       "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
       "description": "Identificador estable. Nunca se reutiliza ni se renombra: puede estar en una URL compartida."
     },
-    "version": { "type": "integer", "minimum": 1 },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
     "tipo": {
       "type": "string",
       "enum": [
@@ -28,29 +41,59 @@
         "guia-aula"
       ]
     },
-    "titulo": { "type": "string", "minLength": 3, "maxLength": 70 },
-    "descripcion": { "type": "string", "maxLength": 400 },
+    "titulo": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 70
+    },
+    "descripcion": {
+      "type": "string",
+      "maxLength": 400
+    },
     "etapa": {
       "type": "string",
-      "enum": ["infantil", "primaria-c1", "primaria-c2", "primaria-c3"],
+      "enum": [
+        "infantil",
+        "primaria-c1",
+        "primaria-c2",
+        "primaria-c3"
+      ],
       "description": "infantil = 3-6; c1 = 1.º-2.º; c2 = 3.º-4.º; c3 = 5.º-6.º"
     },
     "eje": {
       "type": "string",
-      "enum": ["pulso", "altura", "timbre", "notacion", "cuerpo", "creacion", "cultura"]
+      "enum": [
+        "pulso",
+        "altura",
+        "timbre",
+        "notacion",
+        "cuerpo",
+        "creacion",
+        "cultura"
+      ]
     },
     "lugar": {
       "type": "string",
-      "enum": ["pantalla", "hibrida", "fuera"],
+      "enum": [
+        "pantalla",
+        "hibrida",
+        "fuera"
+      ],
       "default": "pantalla",
       "description": "hibrida = pantalla del maestro + cuerpo; fuera = la pantalla solo guía."
     },
-    "duracion_min": { "type": "integer", "minimum": 1, "maximum": 20 },
-
+    "duracion_min": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 60,
+      "description": "Minutos que dura la actividad. El tope de 60 es para una sesion de aula completa (guia-aula). Para una actividad de pantalla el limite real es de 20 minutos y lo comprueba tools/validar.py, porque es una regla de producto sobre tiempo de pantalla infantil y no una restriccion de formato."
+    },
     "curriculo": {
       "type": "object",
       "description": "CAPA NORMATIVA. Solo etiquetas literales del real decreto. Si no estás seguro, null.",
-      "required": ["competencia"],
+      "required": [
+        "competencia"
+      ],
       "additionalProperties": false,
       "properties": {
         "area": {
@@ -62,17 +105,35 @@
           ]
         },
         "competencia": {
-          "type": ["string", "null"],
-          "enum": ["CE1", "CE2", "CE3", "CE4", "CE5", null]
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "CE1",
+            "CE2",
+            "CE3",
+            "CE4",
+            "CE5",
+            null
+          ]
         },
         "criterio": {
-          "type": ["string", "null"],
+          "type": [
+            "string",
+            "null"
+          ],
           "pattern": "^[1-5]\\.[1-7]$"
         },
-        "saber": { "type": ["string", "null"], "maxLength": 160 }
+        "saber": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 160
+        }
       }
     },
-
     "practica": {
       "type": "object",
       "description": "CAPA DE PRÁCTICA. Convención pedagógica, NO currículo. El RD nunca nombra una figura.",
@@ -101,147 +162,276 @@
         },
         "notas": {
           "type": "array",
-          "items": { "type": "string", "pattern": "^(do|re|mi|fa|sol|la|si)('|,)?(#|b)?$" }
+          "items": {
+            "type": "string",
+            "pattern": "^(do|re|mi|fa|sol|la|si)('|,)?(#|b)?$"
+          }
         },
         "secuencia": {
           "type": "string",
-          "enum": ["vocal-kodaly", "flauta", "laminas", "ninguna"],
+          "enum": [
+            "vocal-kodaly",
+            "flauta",
+            "laminas",
+            "ninguna"
+          ],
           "description": "Las progresiones vocal y de flauta NO coinciden. No las mezcles."
         },
-        "compas": { "type": "string", "enum": ["2/4", "3/4", "4/4", "6/8", "libre"] },
-        "tempo": { "type": "integer", "minimum": 40, "maximum": 180 },
+        "compas": {
+          "type": "string",
+          "enum": [
+            "2/4",
+            "3/4",
+            "4/4",
+            "6/8",
+            "libre"
+          ]
+        },
+        "tempo": {
+          "type": "integer",
+          "minimum": 40,
+          "maximum": 180
+        },
         "tesitura": {
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "min": { "type": "string" },
-            "max": { "type": "string" }
+            "min": {
+              "type": "string"
+            },
+            "max": {
+              "type": "string"
+            }
           }
         },
         "metodo": {
           "type": "array",
-          "items": { "type": "string", "enum": ["orff", "kodaly", "dalcroze", "willems", "montessori", "bapne"] }
+          "items": {
+            "type": "string",
+            "enum": [
+              "orff",
+              "kodaly",
+              "dalcroze",
+              "willems",
+              "montessori",
+              "bapne"
+            ]
+          }
         }
       }
     },
-
     "musica": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "abc": { "type": "string", "description": "Notación ABC. Es lo que se renderiza y lo que valida music21." },
-        "audio": { "type": "string", "pattern": "^[a-z0-9/_-]+\\.opus$" },
-        "acompanamiento": { "type": "string", "pattern": "^[a-z0-9/_-]+\\.opus$" }
+        "abc": {
+          "type": "string",
+          "description": "Notación ABC. Es lo que se renderiza y lo que valida music21."
+        },
+        "audio": {
+          "type": "string",
+          "pattern": "^[a-z0-9/_-]+\\.opus$"
+        },
+        "acompanamiento": {
+          "type": "string",
+          "pattern": "^[a-z0-9/_-]+\\.opus$"
+        }
       }
     },
-
     "entrada": {
       "type": "object",
-      "required": ["modo"],
+      "required": [
+        "modo"
+      ],
       "additionalProperties": false,
       "properties": {
         "modo": {
           "type": "string",
-          "enum": ["toque", "toque-secuencial", "arrastre", "microfono-voz", "microfono-palmada", "ninguna"]
+          "enum": [
+            "toque",
+            "toque-secuencial",
+            "arrastre",
+            "microfono-voz",
+            "microfono-palmada",
+            "ninguna"
+          ]
         },
         "alternativa": {
           "type": "string",
-          "enum": ["toque", "toque-secuencial", "ninguna"],
+          "enum": [
+            "toque",
+            "toque-secuencial",
+            "ninguna"
+          ],
           "description": "OBLIGATORIA si el modo usa micrófono o arrastre. Accesibilidad y realidad del aula."
         }
       },
       "allOf": [
         {
           "if": {
-            "properties": { "modo": { "enum": ["microfono-voz", "microfono-palmada", "arrastre"] } }
+            "properties": {
+              "modo": {
+                "enum": [
+                  "microfono-voz",
+                  "microfono-palmada",
+                  "arrastre"
+                ]
+              }
+            }
           },
-          "then": { "required": ["alternativa"] }
+          "then": {
+            "required": [
+              "alternativa"
+            ]
+          }
         }
       ]
     },
-
     "contenido": {
       "type": "object",
       "description": "Carga útil específica del tipo. El motor la interpreta.",
       "minProperties": 1
     },
-
     "evaluacion": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "autocorrectiva": { "type": "boolean", "default": true },
+        "autocorrectiva": {
+          "type": "boolean",
+          "default": true
+        },
         "tolerancia_ms": {
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "perfecto": { "type": "integer", "minimum": 40, "maximum": 200 },
-            "bien": { "type": "integer", "minimum": 60, "maximum": 300 },
-            "casi": { "type": "integer", "minimum": 100, "maximum": 500 }
+            "perfecto": {
+              "type": "integer",
+              "minimum": 40,
+              "maximum": 200
+            },
+            "bien": {
+              "type": "integer",
+              "minimum": 60,
+              "maximum": 300
+            },
+            "casi": {
+              "type": "integer",
+              "minimum": 100,
+              "maximum": 500
+            }
           }
         },
-        "tolerancia_cents": { "type": "integer", "minimum": 20, "maximum": 150 },
+        "tolerancia_cents": {
+          "type": "integer",
+          "minimum": 20,
+          "maximum": 150
+        },
         "reporta": {
           "type": "array",
           "items": {
             "type": "string",
-            "enum": ["aciertos", "desvio_medio_con_signo", "desviacion_tipica", "afinacion_media", "completado"]
+            "enum": [
+              "aciertos",
+              "desvio_medio_con_signo",
+              "desviacion_tipica",
+              "afinacion_media",
+              "completado"
+            ]
           }
         }
       }
     },
-
     "locucion": {
       "type": "object",
-      "required": ["enunciado"],
+      "required": [
+        "enunciado"
+      ],
       "additionalProperties": false,
       "properties": {
-        "enunciado": { "type": "string", "description": "Clave de i18n, nunca texto literal." },
-        "audio": { "type": "string", "pattern": "^[a-z]{2}/[a-z0-9/_-]+\\.opus$" }
+        "enunciado": {
+          "type": "string",
+          "description": "Clave de i18n, nunca texto literal."
+        },
+        "audio": {
+          "type": "string",
+          "pattern": "^[a-z]{2}/[a-z0-9/_-]+\\.opus$"
+        }
       }
     },
-
     "pistas": {
       "type": "array",
       "maxItems": 3,
-      "items": { "type": "string", "description": "Clave de i18n. Reparadoras, nunca punitivas." }
+      "items": {
+        "type": "string",
+        "description": "Clave de i18n. Reparadoras, nunca punitivas."
+      }
     },
-
     "creditos": {
       "type": "array",
       "description": "Todo material de terceros usado por esta actividad. Alimenta CREDITS.md.",
       "items": {
         "type": "object",
-        "required": ["obra", "licencia"],
+        "required": [
+          "obra",
+          "licencia"
+        ],
         "additionalProperties": false,
         "properties": {
-          "obra": { "type": "string" },
-          "autor": { "type": "string" },
-          "fuente": { "type": "string" },
+          "obra": {
+            "type": "string"
+          },
+          "autor": {
+            "type": "string"
+          },
+          "fuente": {
+            "type": "string"
+          },
           "licencia": {
             "type": "string",
-            "enum": ["CC0", "CC BY 4.0", "CC BY-SA 4.0", "OFL-1.1", "Apache-2.0", "MIT", "Dominio público", "Propia"]
+            "enum": [
+              "CC0",
+              "CC BY 4.0",
+              "CC BY-SA 4.0",
+              "OFL-1.1",
+              "Apache-2.0",
+              "MIT",
+              "Dominio público",
+              "Propia"
+            ]
           }
         }
       }
     },
-
     "estado": {
       "type": "string",
-      "enum": ["borrador", "revision-pedagogica", "publicada"],
+      "enum": [
+        "borrador",
+        "revision-pedagogica",
+        "publicada"
+      ],
       "default": "borrador"
     }
   },
-
   "allOf": [
     {
-      "if": { "properties": { "etapa": { "const": "infantil" } }, "required": ["etapa"] },
+      "if": {
+        "properties": {
+          "etapa": {
+            "const": "infantil"
+          }
+        },
+        "required": [
+          "etapa"
+        ]
+      },
       "then": {
         "properties": {
           "entrada": {
             "properties": {
               "modo": {
-                "not": { "const": "arrastre" },
+                "not": {
+                  "const": "arrastre"
+                },
                 "description": "Por debajo de 6 años, solo tap. WCAG 2.5.7 y motricidad fina."
               }
             }
