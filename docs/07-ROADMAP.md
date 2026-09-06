@@ -34,7 +34,8 @@ certificados ni túneles a terceros.
 - [x] Chrome de escritorio en Windows, pestaña normal — 52 ms, 48 kHz
 - [x] Edge de escritorio en Windows — idéntico a Chrome hasta el milisegundo
 - [x] Firefox de escritorio en Windows — 34 ms, y declara `baseLatency = 0`
-- [ ] Chrome de Android por reenvío de puertos, pestaña normal
+- [x] Chrome de Android, pestaña — **micrófono funciona**. 27 ms de latencia, 48 kHz.
+      Se probó contra el despliegue real, que además es mejor que el reenvío de puertos
 - [ ] Chrome de Android, **PWA instalada** ← requiere HTTPS real, no vale el reenvío
 
 **El escritorio está cerrado** (2026-09-06): los tres navegadores conceden el micrófono,

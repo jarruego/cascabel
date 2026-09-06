@@ -17,7 +17,7 @@ resultado en la tabla.
 | PC del autor | Windows 11 | Chrome 152 | pestaña | **sí** | 48000 Hz | 52 ms | *no medible* | 2026-09-06 |
 | PC del autor | Windows 11 | Edge 152 | pestaña | **sí** | 48000 Hz | 52 ms | *no medible* | 2026-09-06 |
 | PC del autor | Windows 11 | Firefox 146 | pestaña | **sí** | 48000 Hz | **34 ms** | *no medible* | 2026-09-06 |
-| Android 10 (armv81) | Android 10 | Chrome 151 | pestaña (HTTPS real) | *sin probar* | 48000 Hz | **27 ms** | *no medible* | 2026-09-06 |
+| Android 10 (armv81) | Android 10 | Chrome 151 | pestaña (HTTPS real) | **sí** | 48000 Hz | **27 ms** | *no medible* | 2026-09-06 |
 | *(pendiente)* | Android | Chrome | **instalada** | | | | | |
 | *(sin dispositivo)* | iOS / iPadOS | Safari | pestaña | — | — | — | — | — |
 | *(sin dispositivo)* | iOS / iPadOS | Safari | **instalada** | — | — | — | — | — |
@@ -118,8 +118,10 @@ latencia total     34 ms
 calibración        0 ms
 coste del análisis no medible
 
+
+
 Cascabel (cocomusic) · informe de diagnóstico
-fecha 2026-09-06T10:47:07.023Z
+fecha 2026-09-06T10:52:01.427Z
 
 userAgent Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Mobile Safari/537.36
 plataforma Linux armv81
@@ -129,7 +131,7 @@ contexto seguro sí
 
 getUserMedia sí
 AudioWorklet sí
-micrófono sin pedir todavía
+micrófono concedido, escuchando
 
 sampleRate 48000 Hz
 estado contexto running
@@ -179,9 +181,13 @@ motor. Para las pruebas que vengan, con probar uno de los dos basta.
 
 Tomado el 2026-09-06 sobre el despliegue real de Cloudflare, en pestaña de Chrome 151.
 
-**El dato que importa NO se recogió.** El informe dice `micrófono sin pedir todavía`: se
-copió antes de pulsar «Empezar a escuchar», así que no sabemos si el micrófono funciona en
-Android. Hay que repetirlo, y el procedimiento está arriba, en el paso 3.
+**El micrófono funciona en Android.** Permiso concedido, `AudioWorklet` cargado, detección
+respondiendo, contexto seguro por el HTTPS de Cloudflare. Con esto, los cuatro escenarios
+en pestaña —Windows con tres navegadores y Android— quedan cerrados: **el micrófono
+funciona en todo lo que hemos podido probar**.
+
+Lo que sigue abierto es el modo *standalone*, y no por falta de intentarlo: el informe dice
+`modo browser`, así que la app se abrió desde el navegador y no desde el icono instalado.
 
 Lo que sí quedó medido, y es interesante:
 
@@ -198,11 +204,16 @@ al HTTPS de Cloudflare.
 
 ### Lo que queda por probar
 
-- **Android, pestaña**: repetir pulsando «Empezar a escuchar» y cantando, para saber si el
-  micrófono concede permiso y detecta tono.
-- **Android, PWA instalada**: no era posible hasta hoy, porque el manifiesto declaraba dos
-  iconos que no existían y Chrome no ofrecía «Instalar aplicación» (ver T1.9c). Ya están;
-  hace falta volver a desplegar y entonces sí se puede instalar y repetir.
+- **Android, PWA instalada**. Es la única fila que queda al alcance, y es la que más vale:
+  es el modo en el que el bug 185448 de WebKit rompe iOS, y saber que en Android va bien
+  acota el riesgo. Verificado el 2026-09-06 que producción sirve los tres iconos como PNG
+  reales y que el manifiesto declara `display: standalone`, así que Chrome ya debería
+  ofrecer «Instalar aplicación».
+
+  **Cómo saber que la prueba es válida**: el informe tiene que decir `modo standalone`. Si
+  dice `browser`, se abrió desde el navegador y no cuenta. Si Chrome sigue ofreciendo
+  «Añadir a pantalla de inicio» en vez de «Instalar aplicación», tiene el manifiesto viejo
+  en caché: hay que quitar el icono, borrar los datos del sitio y volver a instalar.
 - **iOS**: si algún día hay dispositivo.
 
 El escritorio está cerrado.
