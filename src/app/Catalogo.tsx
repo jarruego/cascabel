@@ -129,19 +129,19 @@ export default function Catalogo() {
           <li key={e.id}>
             <Link
               to={`/actividad/${e.id}`}
-              className={`ficha ficha--${e.eje}`}
+              className={`tarjeta tarjeta--${e.eje}`}
               /* El AudioContext nace suspendido y solo se reanuda DENTRO de un gesto.
                  Este clic es el gesto: para cuando la actividad se monte, ya no lo hay.
                  Si falla, la actividad se abre igual y el sonido lo intenta después. */
               onClick={() => void despertarAudio().catch(() => {})}
             >
-              <span className="ficha__titulo">{e.titulo}</span>
+              <span className="tarjeta__titulo">{e.titulo}</span>
               {hechas.has(e.id) && (
-                <span className="ficha__hecha" aria-label={t('catalogo.yaHecha')}>
+                <span className="tarjeta__hecha" aria-label={t('catalogo.yaHecha')}>
                   ✓
                 </span>
               )}
-              <span className="ficha__meta">
+              <span className="tarjeta__meta">
                 {t(`eje.${e.eje}`)} · {e.tipo}
                 {e.curriculo?.criterio ? ` · crit. ${e.curriculo.criterio}` : ''}
               </span>

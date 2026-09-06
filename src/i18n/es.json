@@ -633,5 +633,8 @@
   "ficha.ind3": "Sin ayuda",
   "ficha.notas": "Notas",
   "ficha.leyenda": "Código sugerido: ✓ conseguido · ~ en proceso · (en blanco) no observado. Deliberadamente no hay casilla de «no conseguido»: lo no observado y lo no logrado no son lo mismo.",
-  "ficha.avisoDatos": "Este papel es tuyo. La aplicación no recoge, guarda ni envía ningún dato de ningún niño: si escribes nombres aquí, viven en esta hoja y en ningún otro sitio."
+  "ficha.avisoDatos": "Este papel es tuyo. La aplicación no recoge, guarda ni envía ningún dato de ningún niño: si escribes nombres aquí, viven en esta hoja y en ningún otro sitio.",
+  "ficha.hoja1": "Cómo llevarla al aula",
+  "ficha.hoja2": "Referencia curricular",
+  "ficha.hoja3": "Hoja de seguimiento"
 }

@@ -1142,6 +1142,48 @@ para que **el dato que salta ocupe todo el ancho él solo** en vez de partirse e
 renglones estrechos, y cuerpo y espaciado reducidos para que no se corten las páginas. Al
 imprimir el cuerpo va en **puntos y no en píxeles**, que es la unidad del papel.
 
+### T2.17 — El borde de la ficha impresa: una colisión de nombres `[x]`
+
+Cerrada el 2026-09-06. El autor avisó de que al imprimir seguía saliendo un borde gris
+alrededor de toda la hoja.
+
+**No venía de la hoja: `.ficha` nombraba dos cosas distintas.** Era a la vez la **tarjeta del
+catálogo** —con `border: 2px`, `border-radius` y fondo— y la **hoja imprimible**. En
+castellano las dos son «una ficha», así que el nombre parecía correcto en los dos sitios. La
+hoja redefinía `padding` y `max-width`, con lo que *parecía* que mandaba, y el borde de la
+tarjeta se colaba por debajo sin que nada avisara.
+
+Se arregla **por el nombre y no tapándolo**: la tarjeta pasa a `.tarjeta`. Poner
+`border: none` en la hoja habría hecho desaparecer el síntoma dejando las dos reglas peleando
+para siempre.
+
+**Y había un segundo ladrón de espacio en la misma zona**: `.catalogo, .ajustes, .legal,
+.ficha { padding-bottom: 96px }`, el hueco para la barra de navegación. Al imprimir, la barra
+se oculta pero **ese hueco seguía**, y como esa regla va después del bloque `@media print` y
+tiene la misma especificidad, ganaba: casi tres centímetros de blanco al pie de cada hoja.
+
+**Test que lo caza**, en `tests/tokens.test.ts`: ninguna clase puede declarar caja —`border`
+o `background`— en dos reglas de primer nivel distintas. Se probó reintroduciendo la colisión
+a propósito, y **la primera versión del test pasó en verde con el fallo puesto**: el
+comentario que precede a cada regla quedaba pegado al selector, así que `'.ficha'` nunca
+coincidía. Corregido quitando los comentarios antes de analizar, y vuelto a probar.
+
+**Cabecera y pie pasan a ser marcas de agua** en el margen de la página, también a petición
+del autor. Repetir tres veces el título y la atribución costaba casi cuatro centímetros de
+alto en un documento donde el alto es justo lo que escasea. Ahora se colocan con
+`position: fixed` y desplazamiento negativo, así que **caen dentro del margen de `@page`**:
+se ven en todas las páginas y no gastan ni una línea. `position: fixed` es lo que hace que un
+elemento se repita en cada página impresa, y por eso las marcas viven en el `<main>` y no
+dentro de cada hoja — si estuvieran dentro de los tres `<article>` se apilarían las tres.
+
+> La atribución sigue impresa: la CC BY-SA obliga también en papel. Que no ocupe sitio no
+> significa que pueda faltar.
+
+Y de paso se corrige algo que no se había visto: **la cabecera repetía un `<h1>` en cada
+hoja**. Son tres páginas de un documento, no tres documentos, y tres `h1` le dicen lo
+contrario a un lector de pantalla. Ahora la hoja 1 lleva el `h1` y las otras dos un `h2` con
+el nombre de la hoja, que además es más útil que repetir el título de la actividad.
+
 ### T3.5 — Revisar los tamaños contra la investigación de NN/g `⚠️`
 
 Abierta el 2026-09-06 con la investigación de

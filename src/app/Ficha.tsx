@@ -89,29 +89,57 @@ export default function Ficha() {
   const carril = carrilPorDefecto(actividad.etapa);
   const conMicrofono = actividad.entrada.modo.startsWith('microfono');
 
-  const cabecera = (hoja: number) => (
+  /**
+   * Identidad de la actividad y atribución, como **marca de agua en el margen** de cada
+   * página impresa.
+   *
+   * Estaban dentro de cada hoja, y repetir tres veces el mismo título y la misma atribución
+   * costaba casi cuatro centímetros de alto en un documento donde el alto es justo lo que
+   * escasea. Al imprimir se colocan con `position: fixed` y desplazamiento negativo, así que
+   * **caen dentro del margen de `@page`**: se ven en todas las páginas y no ocupan ni una
+   * línea del contenido.
+   *
+   * La atribución tiene que ir impresa igualmente: la CC BY-SA obliga también en papel, y es
+   * lo que permite que otro maestro sepa de dónde salió la hoja. Que no ocupe sitio no
+   * significa que pueda faltar.
+   */
+  const marcas = (
+    <>
+      <p className="ficha__marca ficha__marca--sup">
+        {t(ETAPA[actividad.etapa] ?? '')} · {t(`eje.${actividad.eje}`)} · {actividad.titulo}
+      </p>
+      <p className="ficha__marca ficha__marca--inf">
+        <span>
+          {APP.nombre} · {APP.proyecto} · CC BY-SA 4.0
+        </span>
+        <span>{actividad.id}</span>
+      </p>
+    </>
+  );
+
+  /**
+   * Título de cada hoja. Solo la primera lleva `h1`: el documento es uno, aunque se imprima
+   * en tres páginas, y tres `h1` le dicen a un lector de pantalla que hay tres documentos.
+   */
+  const tituloHoja = (hoja: number, clave: string) => (
     <header className="ficha__cabecera">
       <div>
-        <p className="ficha__sobretitulo">
-          {t(ETAPA[actividad.etapa] ?? '')} · {t(`eje.${actividad.eje}`)}
-        </p>
-        <h1>{actividad.titulo}</h1>
+        {hoja === 1 ? (
+          <>
+            <p className="ficha__sobretitulo">
+              {t(ETAPA[actividad.etapa] ?? '')} · {t(`eje.${actividad.eje}`)}
+            </p>
+            <h1>{actividad.titulo}</h1>
+            <p className="ficha__subtitulo">{t(clave)}</p>
+          </>
+        ) : (
+          <h2 className="ficha__tituloHoja">{t(clave)}</h2>
+        )}
       </div>
       <p className="ficha__hojaNum" aria-hidden="true">
         {hoja}/3
       </p>
     </header>
-  );
-
-  const pie = (
-    <footer className="ficha__pie">
-      {/* La atribución va impresa: la CC BY-SA obliga también en papel, y es lo que permite
-          que otro maestro sepa de dónde salió esta hoja. */}
-      <span>
-        {APP.nombre} · {APP.proyecto} · CC BY-SA 4.0
-      </span>
-      <span>{actividad.id}</span>
-    </footer>
   );
 
   return (
@@ -126,9 +154,11 @@ export default function Ficha() {
         <p className="ficha__consejo">{t('ficha.consejo')}</p>
       </div>
 
+      {marcas}
+
       {/* ───────────── Hoja 1: cómo llevarla al aula ───────────── */}
       <article className="ficha__hoja">
-        {cabecera(1)}
+        {tituloHoja(1, 'ficha.hoja1')}
 
         {/*
           Lo primero es lo que hay que decidir antes de entrar en clase, no la explicación.
@@ -215,12 +245,11 @@ export default function Ficha() {
           </section>
         )}
 
-        {pie}
       </article>
 
       {/* ───────────── Hoja 2: currículo ───────────── */}
       <article className="ficha__hoja">
-        {cabecera(2)}
+        {tituloHoja(2, 'ficha.hoja2')}
 
         <section>
           <h2>{t('ficha.curriculo')}</h2>
@@ -308,12 +337,11 @@ export default function Ficha() {
           </section>
         )}
 
-        {pie}
       </article>
 
       {/* ───────────── Hoja 3: seguimiento ───────────── */}
       <article className="ficha__hoja">
-        {cabecera(3)}
+        {tituloHoja(3, 'ficha.hoja3')}
 
         <section>
           <h2>{t('ficha.seguimiento')}</h2>
@@ -363,7 +391,6 @@ export default function Ficha() {
           <p className="ficha__aclaracion">{t('ficha.avisoDatos')}</p>
         </section>
 
-        {pie}
       </article>
     </main>
   );
