@@ -25,6 +25,25 @@ export function cargarActividad(id: string) {
   return pedir<Actividad>(`${APP.rutaContenido}/actividades/${id}.json`);
 }
 
+/**
+ * Respuesta cruda, para meterla en la Cache API sin parsear.
+ *
+ * Existe porque la descarga para uso sin conexión necesita el `Response` entero, no un
+ * JSON ya interpretado. Pasa por aquí igualmente para que la comprobación de origen siga
+ * estando en un solo sitio: la regla no es «no uses fetch», es «que nadie pueda pedir algo
+ * a un tercero sin que se vea en este fichero».
+ */
+export async function pedirRespuesta(ruta: string, recargar = false): Promise<Response> {
+  if (!ruta.startsWith('/')) {
+    throw new Error(`Ruta no relativa: ${ruta}. Nada de orígenes externos.`);
+  }
+  return fetch(ruta, {
+    credentials: 'omit',
+    referrerPolicy: 'no-referrer',
+    cache: recargar ? 'reload' : 'default',
+  });
+}
+
 /** Descarga binaria (muestras de audio, fuentes). Mismo origen, mismas reglas. */
 export async function cargarBinario(ruta: string): Promise<ArrayBuffer> {
   if (!ruta.startsWith('/')) throw new Error(`Ruta no relativa: ${ruta}`);

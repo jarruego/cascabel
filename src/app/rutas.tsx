@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router';
 import Catalogo from './Catalogo';
+import { AvisoActualizacion } from './AvisoActualizacion';
 
 /**
  * Router mínimo, deliberadamente.
@@ -11,13 +12,16 @@ import Catalogo from './Catalogo';
  */
 const Diagnostico = lazy(() => import('./Diagnostico'));
 const Actividad = lazy(() => import('./Actividad'));
+const Ajustes = lazy(() => import('./Ajustes'));
 
 export function Rutas() {
   return (
     <Suspense fallback={null}>
+      <AvisoActualizacion />
       <Routes>
         <Route path="/" element={<Catalogo />} />
         <Route path="/actividad/:id" element={<Actividad />} />
+        <Route path="/ajustes" element={<Ajustes />} />
         <Route path="/diagnostico" element={<Diagnostico />} />
       </Routes>
     </Suspense>

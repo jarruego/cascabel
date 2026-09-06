@@ -153,6 +153,8 @@ export default function Catalogo() {
       {visibles.length === 0 && <p>{t('catalogo.vacio')}</p>}
 
       <p className="catalogo__pie">
+        <Link to="/ajustes">{t('catalogo.ajustes')}</Link>
+        {' · '}
         <Link to="/diagnostico">{t('catalogo.diagnostico')}</Link>
       </p>
     </main>
