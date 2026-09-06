@@ -38,8 +38,10 @@
         "tocar-a-tiempo",
         "cantar",
         "lienzo",
-        "guia-aula"
-      ]
+        "guia-aula",
+        "teclado"
+      ],
+      "description": ". 'teclado' se anadio el 2026-09-06 tras la investigacion de docs/11-RECURSOS-Y-REFERENTES.md: es un piano en pantalla sobre el Sampler que ya existe."
     },
     "titulo": {
       "type": "string",

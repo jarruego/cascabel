@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-06",
-  "total": 43,
+  "total": 45,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -219,6 +219,23 @@
         "area": "Educación Artística",
         "competencia": "CE3",
         "criterio": "3.2",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c1-14-notas-que-caen",
+      "titulo": "Sigue las notas que caen",
+      "etapa": "primaria-c1",
+      "eje": "pulso",
+      "tipo": "seguir",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador"
@@ -730,6 +747,23 @@
         "competencia": null,
         "criterio": null,
         "saber": null
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "tr-05-piano",
+      "titulo": "Piano",
+      "etapa": "primaria-c1",
+      "eje": "altura",
+      "tipo": "teclado",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Práctica instrumental, vocal y corporal"
       },
       "estado": "borrador"
     }

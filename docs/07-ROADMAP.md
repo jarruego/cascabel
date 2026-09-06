@@ -832,7 +832,7 @@ detectarlo habría que medir las barras del ABC en crudo, y no compensa hoy.
 
       | Motivo | Cuáles |
       |---|---|
-      | **Repertorio verificado** | C3-08 «¿De quién es esta música?», C2-12 «Canon a dos voces», C3-04 «Mapa de una obra». Toda pieza se verifica contra fuente de dominio público **antes** de entrar; el plazo español son 70 años, **u 80 si el autor murió antes del 7-12-1987** |
+      | **Repertorio verificado** | C3-08 «¿De quién es esta música?», C2-12 «Canon a dos voces», C3-04 «Mapa de una obra». **La investigación del 2026-09-06 encontró PDMX: 250 000 partituras MusicXML, todas CC0** (ver `11-RECURSOS-Y-REFERENTES.md`). Eso desbloquea la vía, pero **no elimina la verificación**: CC0 se refiere a la transcripción, y la obra subyacente sigue sujeta a los 70 años españoles, **u 80 si el autor murió antes del 7-12-1987** |
       | **Material que no tenemos** | C2-04 y C2-05, digitaciones de flauta dulce: hacen falta diagramas de posiciones. C2-11 «Instrumentos del mundo», que necesita timbres que no están en VCSL |
       | **Mecánica distinta** | C2-06 «Pon las barras de compás» y C3-01 «Tonos y semitonos» piden un pentagrama que se edita, no uno donde se coloca una nota |
       | **Grabación** | C2-13 «Graba tu paisaje sonoro» usa `MediaRecorder`, que `docs/08-LEGAL.md` restringe a un botón explícito y almacenamiento local con borrado a un clic. Es una tarea con implicaciones, no una actividad más |
@@ -876,6 +876,58 @@ Era la promesa del ADR 0001 y ya se puede cumplir.
 Falta el tipo `lienzo` en su versión completa —hoy es un lienzo de altura, y el catálogo
 prevé también dibujo libre sobre sonido y cuento sonoro— pero el motor existe y esas son
 variantes de contenido, no de código.
+
+### T2.11 — Navegación, piano y musicograma que cae `[x]`
+
+Cerrada el 2026-09-06.
+
+**Barra de navegación permanente**, abajo como una app de móvil. Va abajo y no arriba por
+una razón física: **el pulgar de un niño no llega a la parte superior de una tablet** que
+sostiene con las dos manos. Tres destinos y ni uno más —actividades, códigos, ajustes—
+porque la regla 8 pide una sola navegación. **Se esconde dentro de una actividad**: un niño
+a mitad de un ejercicio no necesita ver botones que le saquen de él.
+
+**Piano en pantalla** (`tipo: teclado`). Sin librería: se miraron `x-piano`,
+`Open-Web-Piano` y `virtual-keyboard-display`, y todas traen su propia gestión de audio, lo
+que chocaría con la regla del `AudioContext` único. Sobre el `Sampler` que ya existe son cien
+líneas. Las **teclas negras se pueden quitar** —en Infantil estorban: el niño busca el do y
+se encuentra un bosque— y **se puede tocar deslizando el dedo**, que es lo primero que hace
+un niño con un piano.
+
+**Musicograma que cae** (`seguir` en `modo: 'cae'`). La parte difícil ya estaba hecha: el
+cursor sincronizado por `requestAnimationFrame` y separado del planificador de audio.
+
+> **Y una decisión que importa**: la mecánica de Guitar Hero entra **sin marcador, sin combo
+> y sin poder fallar**. Lo que aporta es hacer visible que la música avanza en el tiempo; el
+> marcador es exactamente lo que el dosier llama la mitad tóxica de Duolingo y lo que
+> prohíbe la regla 4. Es un musicograma que se mueve, no un juego de puntos.
+
+### T3.5 — Revisar los tamaños contra la investigación de NN/g `⚠️`
+
+Abierta el 2026-09-06 con la investigación de
+[`11-RECURSOS-Y-REFERENTES.md`](11-RECURSOS-Y-REFERENTES.md).
+
+Nielsen Norman Group, con tres rondas de estudios de laboratorio y más de 80 sitios probados
+por niños, **confirma dos decisiones nuestras y contradice cuatro cifras**:
+
+Confirma que hay que separar tramos de edad (es el ADR 0005) y que **los menores de 5 años
+no manejan arrastrar y soltar**, siendo *tap-and-tap* lo que funciona — que es literalmente
+lo que hace `maquinaOrdenar.ts`.
+
+Contradice esto:
+
+| NN/g | Nosotros |
+|---|---|
+| Objetivo táctil de **2 × 2 cm** (~76 px) | 75 px en Infantil ✓, pero **60 y 48** en Primaria |
+| Separación de **64 px** | **24, 16 y 12 px** |
+| Iconos de **60–80 px** | ~46 px en Infantil |
+| Texto de **24 pt** (~32 px) | 24, 20 y 18 px |
+
+- [ ] Decidir si se suben los tokens
+
+**Es decisión de producto, no técnica, y por eso no se ha ejecutado.** WCAG es el mínimo
+legal; NN/g mide lo que funciona con niños de verdad. Pero subir los tamaños afecta a las 45
+actividades y a cuántos objetos caben en pantalla, así que lo decide el autor.
 
 ## Fase 3 — Crecer sin traicionarse (cuando alguien lo pida)
 

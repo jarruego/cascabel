@@ -1,0 +1,63 @@
+{
+  "id": "tr-05-piano",
+  "version": 1,
+  "tipo": "teclado",
+  "titulo": "Piano",
+  "descripcion": "Un piano en la pantalla. Se toca tecla a tecla o deslizando el dedo.",
+  "etapa": "primaria-c1",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Práctica instrumental, vocal y corporal"
+  },
+  "practica": {
+    "secuencia": "laminas",
+    "notas": [
+      "do",
+      "re",
+      "mi",
+      "fa",
+      "sol",
+      "la",
+      "si"
+    ]
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.tr05.consigna",
+    "desde": 4,
+    "octavas": 2,
+    "soloBlancas": false,
+    "nombres": "latino"
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.tr05.enunciado"
+  },
+  "creditos": [
+    {
+      "obra": "Marimba",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}
