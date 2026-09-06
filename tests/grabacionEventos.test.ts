@@ -117,3 +117,48 @@ describe('transportar', () => {
     expect(transportar(grabacion, 0).eventos).toEqual(grabacion.eventos);
   });
 });
+
+describe('grabando: el estado que el botón consulta', () => {
+  /*
+    Este bloque existe por un fallo real que los tests anteriores no cogían porque llamaban
+    a `anotar` directamente, sin preguntar antes si estaba grabando. `grabando` se deducía
+    del instante de la primera nota, que no se fija hasta que hay una nota; y quien llama
+    comprueba `grabando` antes de anotar. Nunca había primera nota, así que nunca empezaba
+    a grabar, así que nunca había primera nota. El botón se encendía y no guardaba nada.
+  */
+  it('está grabando desde que se pulsa, aunque todavía no haya sonado nada', () => {
+    const g = new GrabadorDeEventos();
+    expect(g.grabando).toBe(false);
+    g.empezar();
+    expect(g.grabando).toBe(true);
+  });
+
+  it('graba de verdad cuando quien llama comprueba `grabando` antes', () => {
+    // La secuencia exacta que hace el piano, que es donde se rompía.
+    const g = new GrabadorDeEventos();
+    g.empezar();
+    for (const [nota, ms] of [['C4', 100], ['E4', 600]] as const) {
+      if (g.grabando) g.anotar(nota, ms);
+    }
+    const grabacion = g.terminar();
+    expect(grabacion.eventos.map((e) => e.nota)).toEqual(['C4', 'E4']);
+    expect(grabacion.eventos.map((e) => e.ms)).toEqual([0, 500]);
+  });
+
+  it('deja de grabar al terminar', () => {
+    const g = new GrabadorDeEventos();
+    g.empezar();
+    g.anotar('C4', 0);
+    g.terminar();
+    expect(g.grabando).toBe(false);
+    // Y lo que se toque después ya no entra.
+    g.anotar('D4', 1000);
+    expect(g.vacia).toBe(false);
+  });
+
+  it('anotar sin haber empezado no guarda nada', () => {
+    const g = new GrabadorDeEventos();
+    g.anotar('C4', 0);
+    expect(g.vacia).toBe(true);
+  });
+});

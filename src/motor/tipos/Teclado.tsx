@@ -39,6 +39,17 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
     consigna: string;
     /** Octava más grave que se muestra. */
     desde?: number;
+    /**
+     * Cuántas octavas pide la actividad.
+     *
+     * **Se declara por actividad porque es una decisión pedagógica, no de pantalla.** Una
+     * de Infantil pide una: con más, el niño busca el do y se encuentra un bosque. Una de
+     * reconocimiento de intervalos pide dos, para que quepan. El instrumento libre pide
+     * tres, porque ahí lo que sobra no estorba.
+     *
+     * Lo que no quepa se recorta al dibujar —ver `octavasVisibles`—, así que pedir tres no
+     * rompe nada en un móvil: se ven las que entren, y girando la pantalla entran más.
+     */
     octavas?: number;
     soloBlancas?: boolean;
     /** Nombres bajo cada tecla: 'latino' (do re mi), 'ingles' (C D E) o 'ninguno'. */
@@ -168,8 +179,16 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
 
   /** Ancho ideal de tecla, del contrato táctil del carril. */
   const anchoIdeal = Math.max(36, Math.round(OBJETIVO_TACTIL[carril] * 0.85));
-  /** Suelo por debajo del cual una tecla deja de ser acertable con un dedo. */
-  const anchoMinimo = 30;
+  /**
+   * Suelo por debajo del cual una tecla deja de ser acertable con un dedo, **por carril**.
+   *
+   * Era 30 px para todos, y eso dejaba el piano en una sola octava en cualquier móvil: dos
+   * octavas son catorce blancas, que en 360 px salen a 25,7. Pero 26 px es perfectamente
+   * acertable para un niño de diez años y no lo es para uno de cuatro, así que el suelo
+   * tiene que ir por edad como todo lo demás aquí. Sigue siendo un suelo: por debajo se
+   * quitan octavas, nunca se encoge más.
+   */
+  const anchoMinimo = { infantil: 42, lectores: 32, autonomos: 26 }[carril];
 
   const octavasVisibles = (() => {
     if (!anchoCaja) return octavas;

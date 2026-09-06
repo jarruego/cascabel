@@ -36,7 +36,26 @@ export function Lienzo({ children }: Props) {
     try {
       if (siguiente) {
         await caja.current?.requestFullscreen?.();
+        /*
+          Y se pide apaisado.
+
+          Un piano es ancho por definición: en vertical, un móvil no da para dos octavas
+          por mucho que se ajusten los tamaños, y un musicograma horizontal se queda sin
+          recorrido. Girar la pantalla es lo que convierte «cabe una octava» en «caben dos».
+
+          Va dentro del mismo `try` y sin comprobar nada antes: `screen.orientation.lock`
+          no existe en Safari de iOS ni en el escritorio, y **eso no es un error**. Si
+          falla, la pantalla se queda como estaba y el modo lienzo ya ha ganado el espacio
+          del navegador, que era la mitad del objetivo. Misma regla que con el micrófono:
+          se intenta y se cae con elegancia.
+        */
+        await (
+          screen.orientation as ScreenOrientation & {
+            lock?: (orientacion: string) => Promise<void>;
+          }
+        ).lock?.('landscape');
       } else if (document.fullscreenElement) {
+        (screen.orientation as ScreenOrientation & { unlock?: () => void }).unlock?.();
         await document.exitFullscreen();
       }
     } catch {
