@@ -791,8 +791,25 @@ detectarlo habría que medir las barras del ABC en crudo, y no compensa hoy.
       **Detalle de iOS**: la nota suena ANTES de abrir el micrófono, nunca a la vez.
       `getUserMedia` redirige la salida de audio y baja el volumen, así que hacerlo a la
       vez dejaría al niño sin oír la referencia que tiene que imitar.
-- [ ] T2.6 — **Estado en la URL**: compartir una creación sin cuenta ni servidor
-- [ ] T2.7 — **Códigos de verificación**: el maestro evalúa sin cuentas de alumno
+- [x] **T2.6 — Estado en la URL** `[x]` — cerrado el 2026-09-06. `aParametro` y
+      `desdeParametro` en `src/datos/compartir.ts`, con base64 **url-safe**: sin convertir
+      `+` y `/` en `-` y `_` y quitar el relleno, la mitad de los enlaces se rompen al
+      pegarlos en WhatsApp o en un correo. Una URL manipulada devuelve `null` y la
+      actividad se abre vacía, en vez de romper la app.
+- [x] **T2.7 — Códigos de verificación** `[x]` — cerrado el 2026-09-06. El patrón de
+      musictheory.net que el dosier manda copiar literalmente: el alumno termina, recibe un
+      código de siete caracteres y se lo enseña; el maestro lo teclea en `/comprobar`.
+      **Evaluación con evidencia, sin cuentas de alumno.**
+
+      **El alfabeto no tiene `I`, `O`, `0` ni `1`.** Los códigos los copia a mano un niño de
+      ocho años, y confundir cero con o es el error más frecuente que existe. Lleva además
+      un dígito de control ponderado por posición, que detecta tanto una letra cambiada como
+      dos intercambiadas.
+
+      **No identifica a nadie**, y el test lo fija con una lista blanca: el código dice que
+      *alguien* completó *esa* actividad con *esos* aciertos *ese* día. Quién se lo enseña
+      lo sabe el maestro porque lo tiene delante — es como un sello en una libreta, y por
+      eso no hay nada que declarar.
 - [ ] T2.8 — Fichas imprimibles en PDF generadas desde el mismo JSON
 - [ ] T2.9 — Catálogo completo hasta las 54 actividades
 - [ ] T2.10 — Auditoría de accesibilidad con teclado y lector de pantalla

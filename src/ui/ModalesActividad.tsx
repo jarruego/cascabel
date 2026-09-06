@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { Modal } from './Modal';
 import { Icono } from './Icono';
 import { t } from '@/i18n';
-import type { Actividad } from '@/motor/tipos';
+import type { Actividad, ResultadoActividad } from '@/motor/tipos';
+import { diaDeHoy, generarCodigo } from '@/datos/compartir';
 
 /**
  * Los dos modales que rodean a toda actividad: el que explica antes y el que celebra
@@ -82,18 +83,39 @@ export function ModalExplicacion({
  */
 export function ModalExito({
   abierto,
+  resultado,
   alRepetir,
   alVolver,
 }: {
   abierto: boolean;
+  resultado: ResultadoActividad | null;
   alRepetir: () => void;
   alVolver: () => void;
 }) {
+  // Código de verificación: el maestro lo comprueba en /comprobar y ve qué se hizo, sin
+  // cuentas de alumno y sin tratar un dato personal. Es el patrón de musictheory.net.
+  const codigo =
+    resultado && resultado.completada
+      ? generarCodigo({
+          actividadId: resultado.actividadId,
+          aciertos: resultado.aciertos ?? 0,
+          intentos: resultado.intentos ?? 0,
+          dia: diaDeHoy(),
+        })
+      : null;
+
   return (
     <Modal abierto={abierto} alCerrar={alVolver} titulo={t('comun.completada')} tono="celebracion">
       <Icono nombre="chispas" tamano={88} />
       <h2>{t('comun.completada')}</h2>
       <p className="modal__texto">{t('modal.exitoTexto')}</p>
+
+      {codigo && (
+        <p className="modal__codigo">
+          <span className="modal__codigoEtiqueta">{t('modal.codigo')}</span>
+          <strong>{codigo.slice(0, 3)} {codigo.slice(3, 6)} {codigo.slice(6)}</strong>
+        </p>
+      )}
 
       <div className="modal__acciones">
         <button type="button" className="boton-repetir" onClick={alRepetir}>
