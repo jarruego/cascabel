@@ -23,6 +23,29 @@ export interface EvaluacionAfinacion {
   establePeroTransportado: boolean;
 }
 
+/**
+ * Desviación en cents respecto a la nota pedida, **plegada a la octava más cercana**.
+ *
+ * Esto no es un refinamiento, es corregir un fallo: sin plegar, un adulto que canta la
+ * nota correcta una octava por debajo —que es lo natural en una voz masculina— daba
+ * −1200 cents y la aguja se iba al tope. Musicalmente estaba cantando la nota; el código
+ * decía que no.
+ *
+ * Y con niños pasa igual en el otro sentido: una voz infantil sube con facilidad a la
+ * octava de arriba sin querer. **Cantar la nota en tu octava es cantar la nota.** Lo que
+ * se evalúa aquí es la altura dentro de la octava, no en qué registro cae.
+ *
+ * El resultado queda siempre en [-600, +600): más de seis semitonos de distancia significa
+ * que la octava de al lado está más cerca.
+ */
+export function desviacionEnCents(midi: number, midiObjetivo: number): number {
+  const semitonos = midi - midiObjetivo;
+  // Resto positivo: el % de JavaScript conserva el signo del dividendo y aquí estorba.
+  const dentroDeOctava = ((semitonos % 12) + 12) % 12;
+  const plegado = dentroDeOctava > 6 ? dentroDeOctava - 12 : dentroDeOctava;
+  return plegado * 100;
+}
+
 /** Un semitono son 100 cents. Estas ventanas salen de práctica coral infantil. */
 export const VENTANAS_CENTS = {
   /** Dentro de esto, para un niño, está afinado. Un adulto entrenado afina a ±10. */

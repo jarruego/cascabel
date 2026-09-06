@@ -603,6 +603,46 @@ los lectores de pantalla. Reimplementar eso a mano es donde se hacen inaccesible
 todos los modales. Y **el de éxito no lleva puntuación, ni porcentaje, ni racha, ni
 estrellas**: la regla 4 lo prohíbe, y el dosier lo llama la mitad tóxica de Duolingo.
 
+### T1.13 — Estética de tablero, y tres fallos que salieron probando `[x]`
+
+Cerrada el 2026-09-06, a partir de la segunda prueba real del autor. Los tres fallos que
+encontró **eran defectos míos** y ninguno lo había cazado un test.
+
+**1. El modal de éxito era ilegible en modo oscuro.** Añadí los tokens `--suave-*` como
+fondos claros **solo en `:root`**, sin su pareja en el bloque de modo oscuro. Ahí `--tinta`
+pasa a ser clara: texto claro sobre fondo claro. Arreglada la paleta entera y añadido
+`tests/tokens.test.ts`, que exige que **todo token de fondo tenga versión en los dos
+esquemas** y que **toda superficie de color declare su color de texto**. Ese test encontró
+de paso una segunda superficie con el mismo problema que se me había escapado.
+
+**2. La aguja del afinador se disparaba a la izquierda.** Sin plegar por octavas, un adulto
+que canta la nota correcta **una octava por debajo** —lo natural en una voz masculina— daba
+**−1200 cents** y saturaba la aguja. Musicalmente estaba cantando la nota; el código decía
+que no. Ahora se pliega a la octava más cercana: **cantar la nota en tu octava es cantarla**.
+Y la aguja muestra la mediana de las últimas cinco lecturas, porque hablar produce alturas
+que van y vienen y sin suavizar parece rota.
+
+**3. El botón «Escuchar» del modal no hacía nada.** Aparecía siempre, deshabilitado, porque
+no hay locuciones grabadas todavía. Un botón que no hace nada es peor que no tenerlo: el
+niño lo toca y concluye que la app está rota. Ahora solo existe si hay algo que escuchar.
+
+**Estética.** 47 ilustraciones de OpenMoji en 128 KB, con personajes, animales e
+instrumentos y no solo iconos pequeños. Las tarjetas de opción llevan **fondo de color** y
+la ilustración ocupa el 62 % del botón: lo que se toca es el dibujo, y para un niño que no
+lee el texto sencillamente no está.
+
+**Cuenta atrás** antes de las actividades de ritmo y canto. No es un cronómetro —la regla 6
+los prohíbe— y no mide lo que tardas: solo dice cuándo se empieza. Sin ella, la mitad de las
+palmadas se perdían mientras el niño todavía miraba la pantalla, y en clase entera hacen
+falta veinticinco arranques a la vez. Se puede saltar tocando.
+
+**Modo pizarra digital**, en Ajustes. Escala los tokens desde `<html>`, así que **agranda
+todas las pantallas sin rediseñar ninguna** y sube el contraste, porque un proyector con luz
+ambiente se come los grises. Se activa a mano: una tablet no debe agrandarse sola.
+
+**Pendiente**: las ilustraciones son emoji, que resuelven «concreto y reconocible» pero no
+dan identidad propia. Los personajes del proyecto siguen siendo decisión de producto.
+
 ### T1.10 — Despliegue
 
 > **Ojo con el flujo elegido.** Se ha usado el de **Workers** (`npx wrangler deploy`), no

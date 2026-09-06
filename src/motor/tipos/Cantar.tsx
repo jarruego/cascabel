@@ -3,10 +3,16 @@ import { useCarril } from '@/app/preferencias';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { MARIMBA, Sampler, aMidi } from '@/audio/sampler';
 import { DetectorDeTono } from '@/escucha/tono';
-import { evaluarAfinacion, mensajeAfinacion, type EvaluacionAfinacion } from '../afinacion';
+import {
+  desviacionEnCents,
+  evaluarAfinacion,
+  mensajeAfinacion,
+  type EvaluacionAfinacion,
+} from '../afinacion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
+import { CuentaAtras } from '@/ui/CuentaAtras';
 
 /**
  * Tipo «cantar»: suena una nota, el niño la canta y ve si está afinando.
@@ -25,7 +31,7 @@ import { Icono } from '@/ui/Icono';
  * la nota se toca ANTES de abrir el micrófono, nunca a la vez.
  */
 
-type Fase = 'listo' | 'sonando' | 'escuchando' | 'resultado';
+type Fase = 'listo' | 'cuenta' | 'sonando' | 'escuchando' | 'resultado';
 
 export default function Cantar({ actividad, alTerminar }: PropsActividad) {
   const contenido = actividad.contenido as {
@@ -49,6 +55,7 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
   const detector = useRef<DetectorDeTono | null>(null);
   const sampler = useRef<Sampler | null>(null);
   const lecturas = useRef<Array<number | null>>([]);
+  const recientes = useRef<number[]>([]);
   const yaTerminada = useRef(false);
 
   const objetivo = contenido.notas[indice] ?? contenido.notas[0]!;
@@ -91,6 +98,7 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
     setEvaluacion(null);
     setCents(null);
     lecturas.current = [];
+    recientes.current = [];
 
     // La nota suena PRIMERO y el micrófono se abre DESPUÉS. En iOS, abrir el micrófono
     // redirige la salida de audio y baja el volumen: si se hicieran a la vez, el niño no
@@ -106,12 +114,21 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
         await d.arrancar((lectura) => {
           if (!lectura) {
             lecturas.current.push(null);
+            recientes.current = [];
             setCents(null);
             return;
           }
-          const desviacion = (lectura.midi - midiObjetivo) * 100;
+          // Plegado a la octava más cercana: cantar la nota en tu octava es cantarla.
+          const desviacion = desviacionEnCents(lectura.midi, midiObjetivo);
           lecturas.current.push(desviacion);
-          setCents(desviacion);
+
+          // La aguja muestra la MEDIANA de las últimas lecturas, no la última. Hablar
+          // produce alturas que van y vienen; sin suavizar, la aguja salta como loca y
+          // parece rota. El detector ya filtra por claridad; esto filtra lo que pasa.
+          recientes.current.push(desviacion);
+          if (recientes.current.length > 5) recientes.current.shift();
+          const orden = [...recientes.current].sort((a, b) => a - b);
+          setCents(orden[Math.floor(orden.length / 2)]!);
         });
         detector.current = d;
         escuchando = true;
@@ -183,10 +200,16 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
       </p>
 
       {fase === 'listo' && (
-        <button type="button" className="boton-actividad cantar__empezar" onClick={() => void empezar()}>
+        <button
+          type="button"
+          className="boton-actividad cantar__empezar"
+          onClick={() => setFase('cuenta')}
+        >
           <Icono nombre="voz" tamano={40} /> {t('cantar.empezar')}
         </button>
       )}
+
+      {fase === 'cuenta' && <CuentaAtras alTerminar={() => void empezar()} />}
       {fase === 'sonando' && <p aria-live="polite">{t('cantar.escuchaLaNota')}</p>}
       {fase === 'escuchando' && <p aria-live="polite">{t('cantar.ahoraTu')}</p>}
 

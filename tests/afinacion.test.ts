@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { evaluarAfinacion, mensajeAfinacion } from '../src/motor/afinacion';
+import { desviacionEnCents, evaluarAfinacion, mensajeAfinacion } from '../src/motor/afinacion';
 
 /**
  * La misma idea que protege `tests/evaluacion.test.ts` para el ritmo, aplicada a la voz:
@@ -75,5 +75,46 @@ describe('evaluación de afinación', () => {
   it('informa de la cobertura: cuánto tiempo cantó de verdad', () => {
     const e = evaluarAfinacion([...repetir(0, 6), null, null, null, null]);
     expect(e.cobertura).toBeCloseTo(0.6, 2);
+  });
+});
+
+describe('plegado por octavas', () => {
+  // Sin esto, un adulto que canta la nota correcta una octava por debajo daba -1200
+  // cents y la aguja se iba al tope izquierdo. El autor lo detectó probándolo: «a nada
+  // que hablo o canto se dispara hacia la izquierda».
+  const G4 = 67;
+
+  it('la misma nota en otra octava es la misma nota', () => {
+    expect(desviacionEnCents(G4, G4)).toBe(0);
+    expect(desviacionEnCents(G4 - 12, G4)).toBe(0); // una octava abajo
+    expect(desviacionEnCents(G4 + 12, G4)).toBe(0); // una octava arriba
+    expect(desviacionEnCents(G4 - 24, G4)).toBe(0); // dos octavas abajo
+  });
+
+  it('conserva la desviación pequeña dentro de la octava', () => {
+    expect(desviacionEnCents(G4 + 0.4, G4)).toBeCloseTo(40, 5);
+    expect(desviacionEnCents(G4 - 0.4, G4)).toBeCloseTo(-40, 5);
+  });
+
+  it('la desviación pequeña se conserva también a una octava de distancia', () => {
+    // Un adulto que canta G3 un pelín bajo: sigue siendo «un pelín bajo», no -1240.
+    expect(desviacionEnCents(G4 - 12.4, G4)).toBeCloseTo(-40, 5);
+  });
+
+  it('siempre elige la octava más cercana', () => {
+    // Siete semitonos arriba está más cerca por abajo: son cinco por el otro lado.
+    expect(desviacionEnCents(G4 + 7, G4)).toBe(-500);
+    expect(desviacionEnCents(G4 + 5, G4)).toBe(500);
+    // El resultado nunca se sale de media octava.
+    for (let d = -30; d <= 30; d += 0.5) {
+      expect(Math.abs(desviacionEnCents(G4 + d, G4))).toBeLessThanOrEqual(600);
+    }
+  });
+
+  it('una voz hablada grave ya no satura la aguja', () => {
+    // 120 Hz frente a un G4: antes daban -2049 cents. Ahora cae donde le toca dentro
+    // de la octava, y el filtro de estabilidad se encarga del resto.
+    const midi120 = 69 + 12 * Math.log2(120 / 440);
+    expect(Math.abs(desviacionEnCents(midi120, G4))).toBeLessThanOrEqual(600);
   });
 });

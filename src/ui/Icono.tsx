@@ -28,10 +28,16 @@ interface Props {
 
 /** Iconos disponibles en `public/iconos`. Si se añade uno, va aquí. */
 const DISPONIBLES = new Set([
-  'altavoz', 'andando', 'campana', 'caracol', 'chispas', 'conejo', 'diana', 'elefante',
-  'fin', 'hola', 'luna', 'lupa', 'mano', 'nota-musical', 'oso', 'pajaro', 'pausa',
-  'pulgar', 'raton', 'reproducir', 'silencio', 'sol', 'tambor', 'teclado', 'tortuga',
-  'trompeta', 'voz',
+  'abeja', 'altavoz', 'andando', 'arbol', 'arcoiris',
+  'campana', 'cantante', 'caracol', 'chispas', 'conejo',
+  'delfin', 'diana', 'dino', 'elefante', 'estrella',
+  'fiesta', 'fin', 'gato', 'guitarra', 'hola',
+  'kalimba', 'leon', 'luna', 'lupa', 'mano',
+  'mono', 'nino', 'nota-musical', 'oso', 'pajaro',
+  'partitura', 'pausa', 'perro', 'pulgar', 'rana',
+  'raton', 'reproducir', 'silencio', 'sol', 'tambor',
+  'tambor-grande', 'teclado', 'tortuga', 'trompeta', 'unicornio',
+  'violin', 'voz',
 ]);
 
 /** Nombres antiguos que ya se usaban en los JSON de contenido. */

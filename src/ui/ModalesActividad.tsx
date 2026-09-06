@@ -43,18 +43,24 @@ export function ModalExplicacion({
       {actividad.locucion?.enunciado && <p className="modal__texto">{t(actividad.locucion.enunciado)}</p>}
 
       <div className="modal__acciones">
-        <button
-          type="button"
-          className="boton-repetir"
-          aria-disabled={!hayLocucion || undefined}
-          title={hayLocucion ? undefined : t('modal.sinLocucion')}
-          onClick={() => {
-            if (!hayLocucion) return;
-            void new Audio(`/audio/${actividad.locucion!.audio!}`).play().catch(() => {});
-          }}
-        >
-          <Icono nombre="altavoz" tamano={28} /> {t('modal.escuchar')}
-        </button>
+        {/*
+          El botón solo existe si HAY algo que escuchar. Antes aparecía siempre,
+          deshabilitado y sin explicación: un botón que no hace nada es peor que no
+          tenerlo, porque el niño lo toca y concluye que la app está rota.
+
+          Cuando haya locuciones grabadas —voz humana, nunca síntesis— volverá a salir.
+        */}
+        {hayLocucion && (
+          <button
+            type="button"
+            className="boton-repetir"
+            onClick={() => {
+              void new Audio(`/audio/${actividad.locucion!.audio!}`).play().catch(() => {});
+            }}
+          >
+            <Icono nombre="altavoz" tamano={28} /> {t('modal.escucharConsigna')}
+          </button>
+        )}
 
         <button type="button" className="boton-actividad modal__empezar" onClick={cerrar}>
           {t('comun.empezar')}

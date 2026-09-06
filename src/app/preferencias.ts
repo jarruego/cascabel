@@ -15,11 +15,21 @@ import { carrilPorDefecto, type Carril, type Etapa } from '@/config';
 interface EstadoPreferencias {
   carril: Carril | null;
   ponerCarril: (c: Carril) => void;
+  /** Modo pizarra digital: escala toda la interfaz para verse desde el fondo del aula. */
+  pizarra: boolean;
+  ponerPizarra: (v: boolean) => void;
 }
 
 export const usePreferencias = create<EstadoPreferencias>((set) => ({
   carril: null,
   ponerCarril: (carril) => set({ carril }),
+  pizarra: false,
+  ponerPizarra: (pizarra) => {
+    // El atributo va en <html> porque los tokens que escala están en :root. Es la única
+    // forma de que TODAS las pantallas crezcan sin rediseñar ninguna.
+    document.documentElement.dataset.pizarra = pizarra ? 'true' : 'false';
+    set({ pizarra });
+  },
 }));
 
 /**
