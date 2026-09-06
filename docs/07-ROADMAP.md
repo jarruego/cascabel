@@ -468,12 +468,37 @@ sesión de clase**. Se sube el máximo del esquema a 60 y la regla real pasa a
 destapó que TR-02 estaba mal etiquetada: es un metrónomo proyectado, así que el aula lo
 mira pero ningún niño está delante de una pantalla 45 minutos. Corregida a `hibrida`.
 
-### T1.9 — Legal y créditos
+### T1.9 — Legal y créditos `[x]`
 
-- [ ] Aviso legal y política de privacidad, más versión para niños con pictogramas
-- [ ] Pantalla de créditos generada desde el campo `creditos` de cada actividad
-- [ ] Hoja de trazabilidad de assets al día
-- [ ] CSP verificada en producción (DevTools: cero peticiones fuera del origen)
+Cerrada el 2026-09-06.
+
+- [x] Aviso legal y política de privacidad, **más versión para niños con pictogramas**
+- [x] Pantalla de créditos generada desde el campo `creditos` de cada actividad
+- [x] Hoja de trazabilidad de assets al día (`THIRD-PARTY-NOTICES.md`)
+- [x] CSP verificada **en producción**, no en local
+
+**La versión para niños no es un extra amable: es el art. 12 del RGPD**, que exige que la
+información dirigida a menores esté en lenguaje que puedan entender. Cumplir eso con un
+texto de abogado en cuerpo 10 no lo cumple. Son cuatro frases, cada una con su pictograma,
+y **es la que se ve primero**. El dibujo acompaña al texto y nunca lo sustituye: un
+pictograma solo se interpreta mal, y un texto solo no lo lee un niño de cinco años.
+
+**Los créditos se generan, no se escriben.** Salen del campo `creditos` de cada actividad y
+se agrupan por obra. Una lista mantenida aparte se desincroniza el día que alguien añade
+una actividad con prisa, y entonces estaríamos atribuyendo mal material ajeno, que es
+exactamente lo que su licencia prohíbe.
+
+**Cada promesa dice dónde comprobarla.** La política no dice «respetamos tu privacidad»,
+dice que la CSP incluye `connect-src 'self'`, que eso impide técnicamente enviar nada a
+otro servidor, y que se puede ver en las cabeceras de la respuesta con las herramientas del
+navegador. Es la diferencia entre afirmar y demostrar.
+
+**`npm run comprobar:produccion`** hace esa comprobación automática contra el despliegue
+real: las cinco directivas de CSP que no se negocian, las cabeceras de seguridad, que los
+ficheros declarados existan **mirando el `Content-Type` y no el código de estado** —con
+`not_found_handling: single-page-application` un fichero que falta devuelve 200 con el
+`index.html`, y así se colaron los iconos y las tipografías durante meses— y que las rutas
+del router respondan. Ejecutado el 2026-09-06 contra producción: **todo correcto**.
 
 ### T1.9c — Iconos de la PWA `[x]`
 
