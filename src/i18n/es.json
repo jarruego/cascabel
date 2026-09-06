@@ -661,7 +661,7 @@
   "actividad.c216.pista2": "En el ordenador puedes usar las teclas 1, 2, 3 y 4.",
   "actividad.c119.consigna": "Toca los círculos al llegar a la línea y descubre quién era",
   "actividad.c119.enunciado": "Los círculos bajan vacíos. Si tocas a tiempo, aparece el animal que llevaban dentro.",
-  "actividad.c119.pista1": "No mires el círculo: mira la línea. Lo que hay que acertar es el momento, no el dibujo.",
+  "actividad.c119.pista1": "Hay tiempo de sobra entre uno y otro. Mira la línea, no el círculo: lo que hay que acertar es el momento.",
   "digitacion.si": "Digitación de si: pulgar y primer agujero tapados",
   "digitacion.la": "Digitación de la: pulgar y dos primeros agujeros tapados",
   "digitacion.sol": "Digitación de sol: pulgar y tres primeros agujeros tapados",
@@ -710,5 +710,15 @@
   "reto.piano5": "Graba algo y escúchalo. ¿Suena como pensabas?",
   "reto.piano6": "Toca dos teclas a la vez. Busca dos que suenen bien juntas.",
   "reto.piano7": "Inventa una canción de cuatro notas y tócala tres veces igual.",
-  "reto.piano8": "Que alguien toque una nota sin que la veas y búscala tú."
+  "reto.piano8": "Que alguien toque una nota sin que la veas y búscala tú.",
+  "opcion.sitar": "Sitar (India)",
+  "opcion.koto": "Koto (Japón)",
+  "opcion.kalimba": "Kalimba (África)",
+  "opcion.gaita": "Gaita (Galicia, Asturias, Escocia)",
+  "opcion.banjo": "Banjo (Estados Unidos)",
+  "opcion.tambor-metalico": "Tambor metálico (Trinidad y Tobago)",
+  "actividad.c211m.consigna": "¿Qué instrumento está sonando?",
+  "actividad.c211m.enunciado": "Seis instrumentos de seis sitios del mundo. Escucha y elige cuál es; cada uno suena dos veces, en dos notas distintas.",
+  "actividad.c211m.pista1": "Fíjate en de qué está hecho: si suena a cuerda pulsada, a metal, a madera o a aire.",
+  "actividad.c211m.pista2": "El sitar y el koto son los dos de cuerda, pero el koto suena más seco y el sitar deja un zumbido detrás."
 }

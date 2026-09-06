@@ -88,8 +88,20 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
 
   useEffect(() => parar, [parar]);
 
-  const arrancar = useCallback(async () => {
-    if (sonando) return;
+  /**
+   * @param continuando lo llama el propio bucle al acabar una vuelta.
+   *
+   * La guarda de «ya está sonando» existe para que dos toques seguidos en el botón no
+   * arranquen dos reproducciones a la vez. Pero el bucle **también** llama aquí, y ahí sí
+   * está sonando: sin distinguirlo, la vuelta siguiente se salía en la primera línea y la
+   * música simplemente paraba. Ese era el fallo.
+   */
+  const arrancar = useCallback(async (continuando = false) => {
+    if (sonando && !continuando) return;
+    // El metrónomo de la vuelta anterior sigue vivo: hay que pararlo antes de crear otro,
+    // o se acumula uno por vuelta y el pulso se convierte en un redoble.
+    metronomo.current?.parar();
+    metronomo.current = null;
     await despertarAudio();
     if (!sampler.current) {
       try {
@@ -175,7 +187,7 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
             porque la vuelta siguiente se programa medio segundo por delante, igual que la
             primera.
           */
-          void arrancarRef.current?.();
+          void arrancarRef.current?.(true);
           return;
         }
         parar();
@@ -192,7 +204,7 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
 
   // El bucle necesita llamarse a sí mismo, y una función no puede referenciarse dentro de
   // su propia definición sin esto.
-  const arrancarRef = useRef<(() => Promise<void>) | null>(null);
+  const arrancarRef = useRef<((continuando?: boolean) => Promise<void>) | null>(null);
   arrancarRef.current = arrancar;
 
   return (

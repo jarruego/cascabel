@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-06",
-  "total": 59,
+  "total": 60,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -445,6 +445,23 @@
       "estado": "borrador"
     },
     {
+      "id": "c2-11-instrumentos-del-mundo",
+      "titulo": "Instrumentos del mundo",
+      "etapa": "primaria-c2",
+      "eje": "timbre",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 12,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador"
+    },
+    {
       "id": "c2-12-canon-a-dos-voces",
       "titulo": "Canon a dos voces",
       "etapa": "primaria-c2",
@@ -826,7 +843,7 @@
       "tipo": "seguir",
       "lugar": "hibrida",
       "microfono": false,
-      "duracion_min": 5,
+      "duracion_min": 6,
       "curriculo": {
         "area": "Comunicación y Representación de la Realidad",
         "competencia": "CE3",

@@ -1,0 +1,128 @@
+{
+  "id": "c2-11-instrumentos-del-mundo",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "Instrumentos del mundo",
+  "descripcion": "Seis instrumentos de seis sitios distintos. Se escucha uno y se dice cuál es: sitar, koto, kalimba, gaita, banjo o tambor metálico.",
+  "etapa": "primaria-c2",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 12,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.2",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c211m.consigna",
+    "opciones": [
+      {
+        "clave": "sitar",
+        "icono": "guitarra",
+        "color": "morado"
+      },
+      {
+        "clave": "koto",
+        "icono": "guitarra",
+        "color": "azul"
+      },
+      {
+        "clave": "kalimba",
+        "icono": "kalimba",
+        "color": "verde"
+      },
+      {
+        "clave": "gaita",
+        "icono": "trompeta",
+        "color": "rojo"
+      },
+      {
+        "clave": "banjo",
+        "icono": "guitarra",
+        "color": "amarillo"
+      },
+      {
+        "clave": "tambor-metalico",
+        "icono": "tambor",
+        "color": "turquesa"
+      }
+    ],
+    "estimulos": [
+      {
+        "audio": "muestras/sitar/c4.opus",
+        "respuesta": "sitar"
+      },
+      {
+        "audio": "muestras/koto/c4.opus",
+        "respuesta": "koto"
+      },
+      {
+        "audio": "muestras/kalimba/c4.opus",
+        "respuesta": "kalimba"
+      },
+      {
+        "audio": "muestras/gaita/c4.opus",
+        "respuesta": "gaita"
+      },
+      {
+        "audio": "muestras/banjo/c4.opus",
+        "respuesta": "banjo"
+      },
+      {
+        "audio": "muestras/tambor-metalico/c4.opus",
+        "respuesta": "tambor-metalico"
+      },
+      {
+        "audio": "muestras/sitar/a4.opus",
+        "respuesta": "sitar"
+      },
+      {
+        "audio": "muestras/koto/a4.opus",
+        "respuesta": "koto"
+      },
+      {
+        "audio": "muestras/kalimba/a4.opus",
+        "respuesta": "kalimba"
+      },
+      {
+        "audio": "muestras/gaita/a4.opus",
+        "respuesta": "gaita"
+      },
+      {
+        "audio": "muestras/banjo/a4.opus",
+        "respuesta": "banjo"
+      },
+      {
+        "audio": "muestras/tambor-metalico/a4.opus",
+        "respuesta": "tambor-metalico"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "aciertos"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c211m.enunciado"
+  },
+  "pistas": [
+    "actividad.c211m.pista1",
+    "actividad.c211m.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Sitar, koto, kalimba, gaita, banjo y tambor metálico",
+      "autor": "Frank Wen, soundfont FluidR3_GM (2000-2008)",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    }
+  ],
+  "estado": "borrador"
+}

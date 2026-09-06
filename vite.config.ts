@@ -165,6 +165,12 @@ export default defineConfig({
           'audio/muestras/glockenspiel/**',
           'audio/muestras/trompeta/**',
           'audio/muestras/marimba-gm/**',
+          'audio/muestras/sitar/**',
+          'audio/muestras/koto/**',
+          'audio/muestras/kalimba/**',
+          'audio/muestras/gaita/**',
+          'audio/muestras/banjo/**',
+          'audio/muestras/tambor-metalico/**',
         ],
         // Presupuesto de precache: por debajo de 10 MB (límite práctico de iOS).
         maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,

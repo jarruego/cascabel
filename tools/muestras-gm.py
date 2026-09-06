@@ -66,6 +66,15 @@ INSTRUMENTOS = {
     # Programa 53 de GM. Es la voz humana muestreada que sustituye a la sintetizada.
     "voz": "voice_oohs",
     "coro": "choir_aahs",
+    # Instrumentos del mundo, para C2-11. La selección es de sitios lejanos entre sí y de
+    # familias distintas —cuerda pulsada, viento, percusión de láminas y de metal—, porque
+    # la actividad pide situarlos en un mapa y también reconocer de qué están hechos.
+    "sitar": "sitar",            # India
+    "koto": "koto",              # Japón
+    "kalimba": "kalimba",        # África oriental
+    "gaita": "bagpipe",          # Escocia, y también Galicia y Asturias
+    "banjo": "banjo",            # Estados Unidos
+    "tambor-metalico": "steel_drums",  # Trinidad y Tobago
 }
 
 POR_DEFECTO = ["piano", "xilofono", "flauta", "guitarra", "violin", "voz"]
