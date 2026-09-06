@@ -495,7 +495,7 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Diagrama de flauta soprano y nota en el pentagrama. Secuencia si-la-sol.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C2-05",
@@ -586,7 +586,7 @@
       "esfuerzo": "M",
       "curriculo": "CE1 · crit. 1.2 · saber A",
       "descripcion": "Escucha un instrumento y sitúalo en el mapa. Material CC0 de la VCSL.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C2-12",
@@ -703,7 +703,7 @@
       "esfuerzo": "M",
       "curriculo": "CE1 · crit. 1.2 y 2.3 · saber A",
       "descripcion": "Obra de dominio público con su estructura formal marcada mientras suena.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C3-05",

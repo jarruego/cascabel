@@ -1,8 +1,9 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useCarril } from '@/app/preferencias';
 import { OBJETIVO_TACTIL } from '@/config';
 import { despertarAudio } from '@/audio/AudioEngine';
-import { MARIMBA, Sampler } from '@/audio/sampler';
+import { Sampler } from '@/audio/sampler';
+import { muestrasDe, sostiene } from '@/audio/instrumentos';
 import { Retos } from '@/ui/Retos';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
@@ -38,6 +39,14 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
     colores?: string[];
     /** Propuestas de qué dibujar. Ver `ui/Retos.tsx`: son ideas, no tareas. */
     retos?: string[];
+    /**
+     * Timbre. **Cambia lo que se puede dibujar**, no solo cómo suena.
+     *
+     * Con un instrumento que sostiene —flauta, violín, voz— una raya horizontal es una nota
+     * larga, que es lo que un niño espera al dibujarla. Con uno percusivo no puede serlo, y
+     * entonces la raya se convierte en un trémolo. Ver `audio/instrumentos.ts`.
+     */
+    instrumento?: string;
   };
 
   const carril = useCarril(actividad.etapa);
@@ -53,19 +62,54 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
   const dibujando = useRef(false);
   const ultimaFila = useRef(-1);
 
+  const instrumento = contenido.instrumento ?? 'flauta';
+  const puedeSostener = sostiene(instrumento);
+  /** Función que suelta la nota que se está manteniendo, si hay alguna. */
+  const soltar = useRef<(() => void) | null>(null);
+
+  const preparar = useCallback(async () => {
+    await despertarAudio();
+    if (!sampler.current) {
+      const s = new Sampler(muestrasDe(instrumento));
+      await s.cargar();
+      sampler.current = s;
+    }
+    return sampler.current;
+  }, [instrumento]);
+
+  /**
+   * Empieza una nota.
+   *
+   * Con un instrumento que sostiene, la nota se **mantiene** hasta que se cambia de fila o
+   * se levanta el dedo: una raya horizontal es un sonido largo, que es lo que cualquiera
+   * espera al dibujarla. Con uno percusivo eso no se puede —una marimba se golpea y se
+   * apaga—, así que la raya se convierte en repeticiones, que es el trémolo y es el gesto
+   * que hace un percusionista de verdad para mantener una nota.
+   */
   const sonar = useCallback(async (fila: number) => {
     try {
-      await despertarAudio();
-      if (!sampler.current) {
-        const s = new Sampler(MARIMBA);
-        await s.cargar();
-        sampler.current = s;
+      const s = await preparar();
+      const nota = notas[fila] ?? 'C4';
+      if (puedeSostener) {
+        soltar.current?.();
+        soltar.current = s.sostener(nota, 0.9);
+      } else {
+        s.tocar(nota, undefined, 0.9);
       }
-      sampler.current.tocar(notas[fila] ?? 'C4', undefined, 0.9);
     } catch {
       // Sin sonido se sigue dibujando. Media actividad es visual.
     }
-  }, [notas]);
+  }, [notas, preparar, puedeSostener]);
+
+  /** Al levantar el dedo se suelta lo que estuviera sonando. */
+  const callar = useCallback(() => {
+    soltar.current?.();
+    soltar.current = null;
+  }, []);
+
+  // Y al salir de la actividad también: una nota sostenida que sobrevive a la pantalla es
+  // de las cosas más desconcertantes que puede hacer una aplicación de música.
+  useEffect(() => callar, [callar]);
 
   /**
    * Cuanto más arriba se dibuja, más aguda es la nota. Es la metáfora que usan todos los
@@ -84,18 +128,51 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
     [notas.length],
   );
 
+  /**
+   * Cada cuántos píxeles recorridos se vuelve a atacar la misma nota.
+   *
+   * **Antes una línea horizontal sonaba una sola vez, igual que un punto**, así que el
+   * dibujo más largo y el más corto producían exactamente el mismo sonido. Eso rompe lo
+   * único que la actividad promete: que lo que dibujas es lo que se oye.
+   *
+   * Se repite el ataque, y no es un apaño: una marimba **no puede sostener una nota**. Para
+   * mantenerla se repite el golpe, que es el trémolo, y es literalmente lo que hace un niño
+   * con una lámina Orff cuando quiere un sonido largo. Así que repetir es el gesto
+   * auténtico del instrumento, no un sustituto de uno mejor.
+   *
+   * Se mide en píxeles y no en tiempo: así el sonido depende del DIBUJO y no de lo deprisa
+   * que se dibuje, que es lo que permite volver a hacer el mismo trazo y que suene igual.
+   */
+  const PASO_PX = 34;
+  /** Y aun así, un mínimo de tiempo: un barrido rápido no puede convertirse en metralla. */
+  const MINIMO_MS = 85;
+
+  const ultimoX = useRef<number | null>(null);
+  const ultimoSonido = useRef(0);
+
   const anadir = useCallback(
     (clientX: number, clientY: number) => {
       const p = puntoDe(clientX, clientY);
       if (!p) return;
       setTrazos((t) => [...t, p]);
-      // Suena solo al CAMBIAR de fila: si sonara en cada píxel sería una ametralladora.
-      if (p.fila !== ultimaFila.current) {
+
+      const ahora = performance.now();
+      const cambioDeFila = p.fila !== ultimaFila.current;
+      const recorrido =
+        ultimoX.current === null ? Infinity : Math.abs(clientX - ultimoX.current);
+      // Repetir por distancia solo tiene sentido si el instrumento NO sostiene: si
+      // sostiene, la nota ya está sonando y volver a atacarla la partiría en trozos.
+      const tocaRepetir =
+        !puedeSostener && recorrido >= PASO_PX && ahora - ultimoSonido.current >= MINIMO_MS;
+
+      if (cambioDeFila || tocaRepetir) {
         ultimaFila.current = p.fila;
+        ultimoX.current = clientX;
+        ultimoSonido.current = ahora;
         void sonar(p.fila);
       }
     },
-    [puntoDe, sonar],
+    [puntoDe, sonar, puedeSostener],
   );
 
   return (
@@ -112,6 +189,7 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
         onPointerDown={(e) => {
           dibujando.current = true;
           ultimaFila.current = -1;
+          ultimoX.current = null;
           e.currentTarget.setPointerCapture(e.pointerId);
           anadir(e.clientX, e.clientY);
         }}
@@ -120,9 +198,11 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
         }}
         onPointerUp={() => {
           dibujando.current = false;
+          callar();
         }}
         onPointerCancel={() => {
           dibujando.current = false;
+          callar();
         }}
       >
         {/* Franjas de altura: se ven, así que el niño sabe dónde está cada sonido antes

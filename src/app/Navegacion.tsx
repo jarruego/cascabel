@@ -9,9 +9,15 @@ import { Icono } from '@/ui/Icono';
  * superior de una tablet que sostiene con las dos manos. Es la misma razón por la que todas
  * las apps móviles serias movieron la navegación abajo hace años.
  *
- * **Tres destinos y ni uno más.** La regla 8 de `docs/04-DISENO-UI.md` dice «una sola
- * navegación», y las navegaciones múltiples confunden a los niños mucho más que a los
- * adultos. Aquí: actividades, comprobar y ajustes. Todo lo demás cuelga de esas tres.
+ * **Cuatro destinos**: actividades, instrumentos, comprobar y ajustes. Todo lo demás cuelga
+ * de esos cuatro.
+ *
+ * Fueron tres hasta el 2026-09-07, leyendo la regla 8 de `docs/04-DISENO-UI.md` —«una sola
+ * navegación»— como un tope de tres. No lo es: lo que prohíbe esa regla es tener **varias
+ * navegaciones compitiendo**, no contar. Y los instrumentos se ganaron el sitio por una
+ * razón de uso: **el catálogo es la pantalla del maestro y los instrumentos son la del
+ * niño**, y un niño que quiere tocar el piano no puede tener que bajar por sesenta
+ * actividades y sus filtros curriculares para llegar.
  *
  * **Se esconde dentro de una actividad.** Un niño en mitad de un ejercicio no necesita ver
  * botones que le saquen de él, y el botón «atrás» de la actividad ya existe y está siempre
@@ -20,6 +26,7 @@ import { Icono } from '@/ui/Icono';
 
 const DESTINOS = [
   { a: '/', icono: 'nota-musical', clave: 'nav.actividades' },
+  { a: '/instrumentos', icono: 'teclado', clave: 'nav.instrumentos' },
   { a: '/comprobar', icono: 'lupa', clave: 'nav.comprobar' },
   { a: '/ajustes', icono: 'diana', clave: 'nav.ajustes' },
 ] as const;

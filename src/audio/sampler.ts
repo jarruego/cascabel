@@ -80,6 +80,62 @@ export class Sampler {
   }
 
   /** @param cuando instante del AudioContext; si se omite, suena ya. */
+  /**
+   * Empieza una nota y la mantiene hasta que se suelte.
+   *
+   * **Solo tiene sentido en instrumentos que sostienen de verdad.** Una marimba se golpea y
+   * se apaga: mantenerla artificialmente suena a lo que es, a una muestra en bucle. Una
+   * flauta, un violín o una voz sí sostienen, y ahí repetir el ataque suena a error porque
+   * el instrumento real no hace eso. Quién puede y quién no lo declara `audio/instrumentos.ts`.
+   *
+   * Se hace con `loop` sobre el tramo central de la muestra, que es donde el sonido ya se ha
+   * estabilizado: el ataque queda fuera del bucle —repetirlo sonaría a tartamudeo— y la
+   * caída también, porque es justo lo que no queremos que pase mientras se sostiene.
+   *
+   * PENDIENTE DE ESCUCHA: si el punto de bucle «canta», hay que moverlo. Eso no se decide
+   * mirando el código.
+   *
+   * @returns una función para soltar la nota. Llamarla dos veces no hace daño.
+   */
+  sostener(nota: string, volumen = 1): () => void {
+    const ctx = obtenerContexto();
+    if (!this.salida) throw new Error('El sampler no está cargado');
+
+    const objetivo = aMidi(nota);
+    const { origen, velocidad } = elegirMuestra([...this.buffers.keys()], objetivo);
+    const buffer = this.buffers.get(origen);
+    if (!buffer) return () => {};
+
+    const t = ctx.currentTime;
+    const fuente = ctx.createBufferSource();
+    fuente.buffer = buffer;
+    fuente.playbackRate.value = velocidad;
+    fuente.loop = true;
+    // El tramo central: del 35 % al 75 % de la muestra. Fuera queda el ataque, que
+    // repetido sonaría a tartamudeo, y la caída, que es lo que no debe pasar mientras dura.
+    fuente.loopStart = buffer.duration * 0.35;
+    fuente.loopEnd = buffer.duration * 0.75;
+
+    const env = ctx.createGain();
+    env.gain.setValueAtTime(0.0001, t);
+    env.gain.exponentialRampToValueAtTime(volumen, t + 0.02);
+
+    fuente.connect(env).connect(this.salida);
+    fuente.start(t);
+
+    let soltada = false;
+    return () => {
+      if (soltada) return;
+      soltada = true;
+      const ahora = ctx.currentTime;
+      // Caída corta al soltar: sin ella, cortar el bucle produce un chasquido.
+      env.gain.cancelScheduledValues(ahora);
+      env.gain.setValueAtTime(Math.max(env.gain.value, 0.0001), ahora);
+      env.gain.exponentialRampToValueAtTime(0.0001, ahora + 0.12);
+      fuente.stop(ahora + 0.2);
+    };
+  }
+
   tocar(nota: string, cuando?: number, duracion = 1.2, volumen = 1): void {
     const ctx = obtenerContexto();
     if (!this.salida) throw new Error('El sampler no está cargado');
