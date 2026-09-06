@@ -20,7 +20,9 @@ export type TipoActividad =
   /** Piano en pantalla. Añadido tras la investigación de docs/11. */
   | 'teclado'
   /** Musicograma horizontal sobre pentagrama, con toque a tiempo. Ver Karaoke.tsx. */
-  | 'karaoke';
+  | 'karaoke'
+  /** Poner las barras de compás a una línea de figuras. Ver Compases.tsx. */
+  | 'compases';
 
 export type Eje = 'pulso' | 'altura' | 'timbre' | 'notacion' | 'cuerpo' | 'creacion' | 'cultura';
 

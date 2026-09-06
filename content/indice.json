@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-06",
-  "total": 63,
+  "total": 64,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -385,6 +385,23 @@
       "lugar": "hibrida",
       "microfono": true,
       "duracion_min": 15,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c2-06-pon-las-barras",
+      "titulo": "Pon las barras de compás",
+      "etapa": "primaria-c2",
+      "eje": "notacion",
+      "tipo": "compases",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 12,
       "curriculo": {
         "area": "Educación Artística",
         "competencia": "CE3",
