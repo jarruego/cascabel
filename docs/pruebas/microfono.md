@@ -15,8 +15,8 @@ resultado en la tabla.
 | Dispositivo | Sistema | Navegador | Modo | Micrófono | sampleRate | Latencia total | Coste análisis | Fecha |
 |---|---|---|---|---|---|---|---|---|
 | PC del autor | Windows 11 | Chrome 152 | pestaña | **sí** | 48000 Hz | 52 ms | *no medible* | 2026-09-06 |
-| *(pendiente)* | Windows 11 | Edge | pestaña | | | | | |
-| *(pendiente)* | Windows 11 | Firefox | pestaña | | | | | |
+| PC del autor | Windows 11 | Edge 152 | pestaña | **sí** | 48000 Hz | 52 ms | *no medible* | 2026-09-06 |
+| PC del autor | Windows 11 | Firefox 146 | pestaña | **sí** | 48000 Hz | **34 ms** | *no medible* | 2026-09-06 |
 | *(pendiente)* | Android | Chrome | pestaña (reenvío) | | | | | |
 | *(pendiente)* | Android | Chrome | **instalada** | | | | | |
 | *(sin dispositivo)* | iOS / iPadOS | Safari | pestaña | — | — | — | — | — |
@@ -53,7 +53,7 @@ Pega aquí el texto del botón «Copiar informe», uno por bloque, sin editarlo.
 
 ```
 Cascabel (cocomusic) · informe de diagnóstico
-fecha              2026-09-06T06:11:26.794Z
+fecha              2026-09-06T06:33:38.156Z
 
 userAgent          Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36
 plataforma         Win32
@@ -63,7 +63,7 @@ contexto seguro    sí
 
 getUserMedia       sí
 AudioWorklet       sí
-micrófono          funciona
+micrófono          concedido, escuchando
 
 sampleRate         48000 Hz
 estado contexto    running
@@ -72,24 +72,86 @@ outputLatency      42 ms
 latencia total     52 ms
 calibración        0 ms
 coste del análisis no medible
+
+
+
+Cascabel (cocomusic) · informe de diagnóstico
+fecha              2026-09-06T06:35:53.229Z
+
+userAgent          Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36 Edg/152.0.0.0
+plataforma         Win32
+idioma             es
+modo               browser
+contexto seguro    sí
+
+getUserMedia       sí
+AudioWorklet       sí
+micrófono          concedido, escuchando
+
+sampleRate         48000 Hz
+estado contexto    running
+baseLatency        10 ms
+outputLatency      42 ms
+latencia total     52 ms
+calibración        0 ms
+coste del análisis no medible
+
+
+Cascabel (cocomusic) · informe de diagnóstico
+fecha              2026-09-06T06:36:55.098Z
+
+userAgent          Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0
+plataforma         Win32
+idioma             es-ES
+modo               browser
+contexto seguro    sí
+
+getUserMedia       sí
+AudioWorklet       sí
+micrófono          concedido, escuchando
+
+sampleRate         48000 Hz
+estado contexto    running
+baseLatency        0 ms
+outputLatency      34 ms
+latencia total     34 ms
+calibración        0 ms
+coste del análisis no medible
 ```
 
-### Qué sale de este primer informe
+### Qué sale de los tres informes de escritorio
 
-**1. `coste del análisis: no medible`.** Chrome **no expone `performance` dentro del
-`AudioWorkletGlobalScope`**, así que la medición que preveía T0.1 no se puede hacer desde
-dentro del worklet. El coste del NSDF sigue sin conocerse, y era el dato que iba a decirnos
-si el detector de tono se sostiene en una tablet de aula antes de construir T2.5 encima.
-Hay alternativa (ver T0.4 en el roadmap), pero no es la misma medida.
+Los tres navegadores de Windows funcionan: permiso concedido, `AudioWorklet` cargado,
+detección de tono respondiendo, contexto seguro y 48 kHz en los tres. Eso despeja el
+escenario de escritorio por completo. Lo interesante está en lo que no coincide.
 
-**2. 52 ms de latencia total en un PC de escritorio.** 10 ms de `baseLatency` más 42 de
-`outputLatency`. Es mucho más de lo que parece: la ventana de «perfecto» para 9–12 años es
-de ±70 ms, así que **sin compensar, la latencia se come el 74 % del margen** y un niño con
-pulso excelente saldría como fallo. Confirma que la compensación de `CLAUDE.md` §7 no es un
-refinamiento opcional, y que la calibración manual de T1.7 hace falta de verdad. Si en un
-PC de escritorio son 52 ms, en una tablet barata con Bluetooth serán bastantes más.
+**1. Ningún navegador expone `performance` dentro del `AudioWorkletGlobalScope`.**
+Chrome, Edge y Firefox dan los tres «no medible». Esto **cierra una de las preguntas
+abiertas de T0.4**: no había que comprobar si Firefox lo hacía mejor, no lo hace. El banco
+de pruebas en el hilo principal deja de ser el plan B y pasa a ser el único plan.
 
-> **Nota de procedimiento**: en el informe de arriba, la línea del micrófono dice
-> «funciona»; la aplicación escribe «concedido, escuchando». Pega el texto **sin retocarlo**:
-> cuando algo falle, la cadena exacta lleva el `name` del error, que es justo el dato que no
-> se puede reconstruir después.
+**2. Firefox declara `baseLatency = 0`, y eso casi con seguridad es que no lo implementa.**
+Chromium reporta 10 ms de `baseLatency` en la misma máquina, con la misma tarjeta y la misma
+frecuencia de muestreo. Un cero exacto no es una latencia buena, es un dato ausente. Importa
+porque `latenciaMs()` de `AudioEngine.ts` suma `baseLatency + outputLatency`: en Firefox
+estaríamos **compensando de menos**, y el sesgo iría a parar entero a la evaluación rítmica
+del niño. Es un argumento más para que la calibración manual de T1.7 sea la fuente de
+verdad y las cifras del navegador solo el punto de partida.
+
+**3. Firefox tiene 34 ms de latencia total frente a los 52 de Chromium**, un 35 % menos en
+el mismo equipo. Con la reserva del punto anterior: parte de esa diferencia puede ser
+simplemente el `baseLatency` que Firefox no cuenta.
+
+**4. Chromium: 52 ms de latencia en un PC de escritorio.** La ventana de «perfecto» para
+9–12 años es de ±70 ms, así que **sin compensar, la latencia se come el 74 % del margen** y
+un niño con pulso excelente saldría como fallo. Confirma con números que la compensación de
+`CLAUDE.md` §7 es estructural. Y si un PC de sobremesa da 52 ms, una tablet de aula con
+altavoz Bluetooth dará bastantes más.
+
+**5. Edge y Chrome son idénticos hasta el milisegundo**, como era de esperar del mismo
+motor. Para las pruebas que vengan, con probar uno de los dos basta.
+
+### Lo que queda por probar
+
+Android (pestaña por reenvío de puertos, e instalada tras el despliegue de T1.10), y iOS
+si algún día hay dispositivo. El escritorio está cerrado.

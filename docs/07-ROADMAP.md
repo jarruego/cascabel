@@ -31,11 +31,14 @@ Con el **reenvío de puertos de `chrome://inspect`** (pestaña *Port forwarding*
 Eso cuenta como *secure context*, así que `getUserMedia` funciona sin montar HTTPS ni
 certificados ni túneles a terceros.
 
-- [ ] Chrome de escritorio en Windows, pestaña normal
-- [ ] Edge de escritorio en Windows (motor Chromium, pero política de permisos propia)
-- [ ] Firefox de escritorio en Windows
+- [x] Chrome de escritorio en Windows, pestaña normal — 52 ms, 48 kHz
+- [x] Edge de escritorio en Windows — idéntico a Chrome hasta el milisegundo
+- [x] Firefox de escritorio en Windows — 34 ms, y declara `baseLatency = 0`
 - [ ] Chrome de Android por reenvío de puertos, pestaña normal
 - [ ] Chrome de Android, **PWA instalada** ← requiere HTTPS real, no vale el reenvío
+
+**El escritorio está cerrado** (2026-09-06): los tres navegadores conceden el micrófono,
+cargan el `AudioWorklet` y detectan tono. Resultados y análisis en `docs/pruebas/microfono.md`.
 
 El último punto es la excepción honesta: una PWA lanzada desde la pantalla de inicio no
 pasa por el túnel de DevTools, así que el modo *standalone* en Android sólo se puede
@@ -97,8 +100,9 @@ nota, y en la tablet de aula puede no caber. Es la incógnita que sostiene T2.5.
       sintético con `performance.now()` y publicar el resultado en `/diagnostico`
 - [ ] Etiquetarlo como **estimación**, no como medida del hilo de audio: no es lo mismo,
       y decir lo contrario sería mentir en el informe
-- [ ] Comprobar si Firefox sí expone `performance` en el worklet; si lo hace, usar la
-      medida real ahí y la estimación en el resto
+- [x] ~~Comprobar si Firefox sí expone `performance` en el worklet~~ — **no lo hace**.
+      Chrome, Edge y Firefox dan los tres «no medible», así que el banco en el hilo
+      principal deja de ser el plan B y pasa a ser el único plan
 
 **Criterio de aceptación**: `/diagnostico` da un número de milisegundos por análisis en
 Chrome de escritorio y en Chrome de Android, con su etiqueta de cómo se obtuvo.
@@ -191,7 +195,11 @@ coreografía paso a paso, ficha imprimible.
 
 - [ ] Grabar o localizar 5–7 muestras CC0 por instrumento (marimba, xilófono, campanas)
 - [ ] Convertir a Opus 48 kbps mono, ~70 KB por instrumento
-- [ ] Calibración de latencia («da tres palmadas al ritmo»), guardada en el dispositivo
+- [ ] Calibración de latencia («da tres palmadas al ritmo»), guardada en el dispositivo.
+      **No es opcional**: Chromium mide 52 ms en un PC de sobremesa, el 74 % de la ventana
+      de «perfecto» de 9–12 años, y Firefox declara `baseLatency = 0` —que es un dato
+      ausente, no una latencia buena—, así que `latenciaMs()` compensa de menos ahí.
+      Las cifras del navegador son el punto de partida; la calibración es la verdad
 - [ ] Test de que el metrónomo no usa `setInterval`
 
 ### T1.8 — Veinte actividades de esfuerzo S
