@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { OBJETIVO_TACTIL } from '@/config';
+import { useCarril } from '@/app/preferencias';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Boton } from '@/ui/Boton';
@@ -33,6 +34,10 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
     estimulos: Estimulo[];
   };
 
+  // El tamaño sale del CARRIL, no de la etapa: un niño de 4.º y uno de 3.º comparten
+  // ciclo curricular y no comparten motricidad. Ver ADR 0005.
+  const carril = useCarril(actividad.etapa);
+
   const [indice, setIndice] = useState(0);
   const [aciertos, setAciertos] = useState(0);
   const [intentos, setIntentos] = useState(0);
@@ -40,7 +45,7 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const estimulo = contenido.estimulos[indice];
-  const tam = OBJETIVO_TACTIL[actividad.etapa];
+  const tam = OBJETIVO_TACTIL[carril];
 
   const reproducir = useCallback(() => {
     if (!estimulo) return;
@@ -87,7 +92,7 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
   }
 
   return (
-    <section className="actividad" aria-labelledby="consigna">
+    <section className="actividad" data-carril={carril} aria-labelledby="consigna">
       <h1 id="consigna">{t(contenido.consigna)}</h1>
 
       <BotonRepetir onClick={reproducir} />

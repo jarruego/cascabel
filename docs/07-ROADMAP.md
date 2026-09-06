@@ -167,21 +167,34 @@ minutos aquí valen más que un mes de planificación.
 
 ## Fase 1 — Biblioteca mínima usable (4–8 semanas)
 
-### T1.0 — Carriles en `tokens.css` y en `config.ts`
+### T1.0 — Carriles en `tokens.css` y en `config.ts` `[x]`
 
-Consecuencia directa de [`adr/0005-una-app-tres-carriles.md`](adr/0005-una-app-tres-carriles.md).
-Va **antes** que los tipos de actividad: parametrizar por carril componentes que ya asumen
-tamaños fijos es un refactor caro, y el ADR lo dice explícitamente.
+Cerrada el 2026-09-06. Consecuencia directa de
+[`adr/0005-una-app-tres-carriles.md`](adr/0005-una-app-tres-carriles.md), hecha **antes**
+que los tipos de actividad para no tener que refactorizar componentes con tamaños fijos.
 
-- [ ] Tipo `Carril = 'infantil' | 'lectores' | 'autonomos'` en `src/config.ts`
-- [ ] `OBJETIVO_TACTIL` y `MAX_OBJETOS` reindexados **por carril**, no por etapa
-      (hoy `primaria-c1` y `primaria-c2` comparten 60 px, y eso deja 4.º mal)
-- [ ] Función explícita `carrilDe(etapa, curso)`, porque el 2.º ciclo LOMLOE se parte
-- [ ] Tokens por carril en `estilos/tokens.css`: tamaño táctil, separación, cuerpo de texto
-- [ ] Quitar de `docs/04-DISENO-UI.md` el aviso de que config y la tabla se contradicen
+- [x] Tipo `Carril = 'infantil' | 'lectores' | 'autonomos'` en `src/config.ts`
+- [x] `OBJETIVO_TACTIL`, `MAX_OBJETOS` y `SEPARACION` reindexados **por carril**
+- [x] `carrilDe(curso)`, `etapaDe(curso)`, `carrilesDe(etapa)` y `carrilPorDefecto(etapa)`
+- [x] Tokens `--objetivo`, `--separacion` y `--t-carril` en `estilos/tokens.css`, tomados
+      del `data-carril` del ancestro: un componente pide `var(--objetivo)` y ya está
+- [x] `src/app/preferencias.ts` (Zustand): el carril lo elige quien usa la app, no la
+      actividad. Una de `primaria-c2` la puede abrir un niño de 3.º o uno de 4.º
+- [x] `tools/validar.py` aplica el **carril más estricto** que pueda abrir la actividad:
+      si cabe en el de primeros lectores cabe en el de autónomos, nunca al revés
+- [x] Retirado el aviso de contradicción de `docs/04-DISENO-UI.md`
+- [x] `tests/carriles.test.ts`: 3.º va a `lectores` y 4.º a `autonomos` pese a compartir
+      ciclo, más las invariantes de tamaño de WCAG
 
-**Criterio de aceptación**: ningún componente lee un tamaño táctil de `Etapa`. Un test que
-compruebe que `carrilDe` manda 3.º a `lectores` y 4.º a `autonomos`.
+**Criterio de aceptación**: cumplido. Ningún componente lee un tamaño táctil de `Etapa` —
+el compilador lo impide, porque los mapas ya no aceptan una etapa como índice.
+
+**Queda una decisión sin tomar, y a propósito.** `TOLERANCIA_MS` sigue indexada por etapa.
+La tabla de `CLAUDE.md` §7 está escrita por edades (3-5, 6-8, 9-12), que es forma de
+carril; pero la consume `evaluacion.ts` desde la actividad, que solo declara etapa.
+Reindexarla obliga a responder: **¿qué tolerancia rítmica se le aplica a una actividad de
+`primaria-c2` abierta desde el carril de autónomos, la de 3.º o la de 4.º?** Es criterio
+pedagógico, no técnico, y no se adivina. Pendiente de la revisión de la maestra.
 
 ### T1.1 — Motor: tipo `eleccion` terminado
 
