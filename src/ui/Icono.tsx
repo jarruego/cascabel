@@ -1,112 +1,83 @@
 /**
  * Iconos de actividad.
  *
- * Regla 3 de `docs/04-DISENO-UI.md`: **iconos concretos**. Un tambor dibujado vale más que
- * un icono de corchea, y este más que la palabra «ritmo». Nada de metáforas de oficina: el
- * disquete de «guardar» no significa nada para alguien nacido en 2020.
+ * Son **OpenMoji** (CC BY-SA 4.0), el mismo licenciamiento que nuestros contenidos, así que
+ * no añaden ninguna obligación nueva. Se sirven desde `/iconos`, nunca desde un CDN: la
+ * regla 1 del proyecto prohíbe cualquier petición fuera de nuestro origen.
  *
- * Van como SVG en línea y no como fuente de iconos ni imagen externa: la regla 1 del
- * proyecto prohíbe cualquier petición fuera de nuestro origen, y así además heredan el
- * color del texto y escalan sin pixelarse.
+ * **Por qué a color y no monocromos.** La regla 3 de `docs/04-DISENO-UI.md` pide iconos
+ * *concretos*: un tambor dibujado vale más que un pictograma abstracto, y ese más que la
+ * palabra «ritmo». Un niño de cuatro años reconoce un elefante de colores; no reconoce una
+ * silueta gris que podría ser cualquier cosa.
  *
- * La forma nunca es lo único que distingue a dos opciones — siempre forma + color + sonido
- * (regla 4). Por eso «suena» y «silencio» no son el mismo dibujo en dos colores.
+ * **El color nunca informa solo** (regla 4). El icono siempre va acompañado de su etiqueta
+ * y, cuando distingue dos opciones, las dos tienen dibujos DISTINTOS y no el mismo en dos
+ * colores. Un 8 % de los niños no distinguiría la diferencia.
+ *
+ * Van como `<img>` y no en línea: pesan 68 KB entre los veintisiete, se cachean solos, no
+ * engordan el bundle y el service worker los precachea para el modo sin conexión.
  */
 
 interface Props {
   nombre: string;
   tamano?: number;
+  /** Texto alternativo. Vacío por defecto porque el icono suele ir junto a su etiqueta:
+   *  repetirlo haría que un lector de pantalla lo leyera dos veces. */
+  alt?: string;
 }
 
-export function Icono({ nombre, tamano = 48 }: Props) {
-  const comun = {
-    width: tamano,
-    height: tamano,
-    viewBox: '0 0 48 48',
-    fill: 'none',
-    stroke: 'currentColor',
-    strokeWidth: 3,
-    strokeLinecap: 'round' as const,
-    strokeLinejoin: 'round' as const,
-    'aria-hidden': true,
-    focusable: false,
-  };
+/** Iconos disponibles en `public/iconos`. Si se añade uno, va aquí. */
+const DISPONIBLES = new Set([
+  'altavoz', 'andando', 'campana', 'caracol', 'chispas', 'conejo', 'diana', 'elefante',
+  'fin', 'hola', 'luna', 'lupa', 'mano', 'nota-musical', 'oso', 'pajaro', 'pausa',
+  'pulgar', 'raton', 'reproducir', 'silencio', 'sol', 'tambor', 'teclado', 'tortuga',
+  'trompeta', 'voz',
+]);
 
-  switch (nombre) {
-    // Altavoz con ondas: algo está sonando.
-    case 'altavoz':
-      return (
-        <svg {...comun}>
-          <path d="M6 19h7l9-7v24l-9-7H6z" fill="currentColor" fillOpacity="0.18" />
-          <path d="M29 17c2.6 2 2.6 12 0 14" />
-          <path d="M35 12c5 4.5 5 19.5 0 24" />
-        </svg>
-      );
+/** Nombres antiguos que ya se usaban en los JSON de contenido. */
+const ALIAS: Record<string, string> = {
+  triangulo: 'campana',
+  musica: 'nota-musical',
+};
 
-    // Altavoz tachado: silencio. La barra diagonal es la diferencia de FORMA, no de color.
-    case 'silencio':
-      return (
-        <svg {...comun}>
-          <path d="M6 19h7l9-7v24l-9-7H6z" fill="currentColor" fillOpacity="0.18" />
-          <path d="M30 19l10 10M40 19L30 29" />
-        </svg>
-      );
+export function Icono({ nombre, tamano = 48, alt = '' }: Props) {
+  const real = ALIAS[nombre] ?? nombre;
 
-    case 'tambor':
-      return (
-        <svg {...comun}>
-          <ellipse cx="24" cy="17" rx="15" ry="6" />
-          <path d="M9 17v14c0 3.3 6.7 6 15 6s15-2.7 15-6V17" />
-          <path d="M12 21l24 6M36 21l-24 6" />
-        </svg>
-      );
-
-    // Triángulo de percusión, con la baqueta. Se distingue del tambor por la forma,
-    // no por el color: regla 4.
-    case 'triangulo':
-      return (
-        <svg {...comun}>
-          <path d="M24 9L41 37H7L24 9z" />
-          <path d="M20 37h8" strokeWidth="5" />
-          <path d="M33 12l6-4" />
-        </svg>
-      );
-
-    // Boca cantando: para un no lector, «voz» es una boca abierta con notas saliendo.
-    case 'voz':
-      return (
-        <svg {...comun}>
-          <path d="M10 20c0-5 5-8 9-8s9 3 9 8-4 14-9 14-9-9-9-14z" />
-          <path d="M15 20h8" />
-          <path d="M35 11v11a4 4 0 11-3-3.9" />
-          <path d="M35 11l6 2" />
-        </svg>
-      );
-
-    // Campana: la del cascabel del logotipo, para que la marca y el contenido rimen.
-    case 'campana':
-      return (
-        <svg {...comun}>
-          <path d="M12 32c0-9 5-16 12-16s12 7 12 16z" />
-          <path d="M9 32h30" />
-          <path d="M20 10h8v5h-8z" />
-          <circle cx="24" cy="38" r="3" />
-        </svg>
-      );
-
-    case 'mano':
-      return (
-        <svg {...comun}>
-          <path d="M17 24V12a3 3 0 016 0v10V9a3 3 0 016 0v13V13a3 3 0 016 0v18c0 5.5-4.5 10-10 10h-3c-5 0-8-3-10-7l-5-9a3 3 0 015-3l2 3" />
-        </svg>
-      );
-
-    default:
-      // Nunca se deja un hueco: un círculo es mejor que nada, y se ve en revisión.
-      return (
-        <svg {...comun}>
-          <circle cx="24" cy="24" r="14" />
-        </svg>
-      );
+  if (!DISPONIBLES.has(real)) {
+    // Nunca un hueco: un círculo se ve y se detecta en revisión. Un icono que falta en
+    // silencio deja al niño sin la información que le tocaba.
+    return (
+      <svg
+        width={tamano}
+        height={tamano}
+        viewBox="0 0 48 48"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={3}
+        aria-hidden={alt === '' ? true : undefined}
+        role={alt ? 'img' : undefined}
+        aria-label={alt || undefined}
+      >
+        <circle cx="24" cy="24" r="14" />
+      </svg>
+    );
   }
+
+  return (
+    <img
+      src={`/iconos/${real}.svg`}
+      width={tamano}
+      height={tamano}
+      alt={alt}
+      draggable={false}
+      className="icono"
+      /* Los iconos no aportan nada hasta que se ven, y son 27: que el navegador decida. */
+      loading="lazy"
+      decoding="async"
+    />
+  );
+}
+
+export function iconoExiste(nombre: string): boolean {
+  return DISPONIBLES.has(ALIAS[nombre] ?? nombre);
 }

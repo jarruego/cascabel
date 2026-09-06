@@ -25,12 +25,12 @@
     "opciones": [
       {
         "clave": "mayor",
-        "icono": "campana",
+        "icono": "sol",
         "color": "amarillo"
       },
       {
         "clave": "menor",
-        "icono": "campana",
+        "icono": "luna",
         "color": "azul"
       }
     ],
@@ -74,5 +74,19 @@
   "pistas": [
     "actividad.c305.pista1",
     "actividad.c305.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Percusión y láminas (pandero, claves, campanilla, glockenspiel, marimba)",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
   ]
 }

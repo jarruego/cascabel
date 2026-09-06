@@ -25,12 +25,12 @@
     "opciones": [
       {
         "clave": "largo",
-        "icono": "triangulo",
+        "icono": "caracol",
         "color": "azul"
       },
       {
         "clave": "corto",
-        "icono": "tambor",
+        "icono": "conejo",
         "color": "rojo"
       }
     ],
@@ -73,5 +73,19 @@
   "estado": "borrador",
   "pistas": [
     "actividad.inf02.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Percusión y láminas (pandero, claves, campanilla, glockenspiel, marimba)",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
   ]
 }

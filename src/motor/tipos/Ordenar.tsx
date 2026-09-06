@@ -5,6 +5,7 @@ import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
 import { sonarMuestra } from '../sonarMuestra';
+import { permiteArrastre, propsArrastre, zonaBajoPunto } from '@/ui/arrastrable';
 import {
   INICIAL_ORDENAR,
   pendientes,
@@ -74,6 +75,9 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
   }, [estado.fase, estado.intentos, actividad.id, alTerminar, contenido.orden.length]);
 
   const listo = estado.colocadas.length === contenido.orden.length;
+  // El arrastre es una vía ADICIONAL: en Infantil no existe, y en el resto el toque
+  // sucesivo sigue funcionando exactamente igual. WCAG 2.5.7 y regla 9 del diseño.
+  const arrastrable = permiteArrastre(carril);
 
   function ficha(clave: string, i: number | null) {
     const e = porClave(clave);
@@ -85,7 +89,19 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
         className="boton-actividad ordenar__ficha"
         style={{ minWidth: tam, minHeight: tam }}
         data-estado={mal ? 'fuera-de-sitio' : 'normal'}
+        data-arrastrable={i === null && arrastrable ? 'true' : undefined}
         aria-disabled={estado.fase !== 'colocando' || undefined}
+        {...(i === null
+          ? propsArrastre({
+              carril,
+              clave,
+              zonaEn: (x, y) => zonaBajoPunto(x, y),
+              alSoltar: (c) => {
+                if (e?.audio) sonarMuestra(e.audio);
+                despachar({ tipo: 'colocar', clave: c });
+              },
+            })
+          : {})}
         onClick={() => {
           if (e?.audio) sonarMuestra(e.audio);
           if (i === null) despachar({ tipo: 'colocar', clave });
@@ -101,7 +117,7 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
     <section className="actividad ordenar" data-carril={carril} aria-labelledby="consigna">
       <h1 id="consigna">{t(contenido.consigna)}</h1>
 
-      <ol className="ordenar__fila" aria-label={t('ordenar.colocadas')}>
+      <ol className="ordenar__fila" data-zona="fila" aria-label={t('ordenar.colocadas')}>
         {estado.colocadas.map((clave, i) => (
           <li key={clave}>{ficha(clave, i)}</li>
         ))}
@@ -111,6 +127,8 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
       <div className="ordenar__banco" role="group" aria-label={t('ordenar.pordolocar')}>
         {sinColocar.map((clave) => ficha(clave, null))}
       </div>
+
+      {arrastrable && <p className="ordenar__truco">{t('ordenar.tambienArrastrando')}</p>}
 
       <div className="ordenar__acciones">
         <button
