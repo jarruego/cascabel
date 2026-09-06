@@ -398,31 +398,34 @@ fila de «PWA instalada» de `docs/pruebas/microfono.md` era imposible de rellen
 delataba que llegaba `text/html` donde debía llegar un PNG. Esta clase de fallo es
 invisible por diseño, y por eso ahora la comprueba el build y no el ojo.
 
-### T1.9b — Las tipografías no están en el repositorio `⚠️`
+### T1.9b — Las tipografías `[x]`
 
-Detectado el 2026-09-06 en el primer despliegue, por un aviso del build.
+Detectada el 2026-09-06 en el primer despliegue y cerrada el mismo día. `tokens.css`
+declaraba dos `@font-face` cuyos ficheros **no existían desde el andamiaje**: daban 404 y
+el navegador caía en silencio a la tipografía del sistema.
 
-`src/estilos/tokens.css` declara `@font-face` para `/fuentes/Andika-Regular.woff2` y
-`/fuentes/Bravura.woff2`, pero **`public/fuentes/` está vacío**. Los dos ficheros dan 404 y
-el navegador cae en silencio a la tipografía del sistema. Consecuencias reales:
+- [x] Andika 7.000 (SIL, OFL 1.1) y Bravura (Steinberg, OFL 1.1), de sus repositorios
+      oficiales
+- [x] Anotadas en `THIRD-PARTY-NOTICES.md` con fichero, obra, autor, URL, licencia, fecha
+      y cómo se comprobó
+- [x] Andika entra en el precache; Bravura **no** (ver abajo)
+- [x] El build falla si faltan: `tools/comprobar-dist.mjs`, ya sin excepciones pendientes
 
-- **Andika no se está usando.** Es la que `docs/04-DISENO-UI.md` exige para Infantil, por
-  estar diseñada para lectores nóveles: la «a» y la «g» de un solo piso, que es como se
-  enseñan a escribir. Ahora mismo un niño de 4 años ve la fuente del sistema.
-- **Bravura tampoco.** Es la de símbolos musicales (SMuFL). Cuando llegue T2.2 no habrá con
-  qué dibujar un pentagrama.
-- El fallo es **silencioso**: no rompe nada, solo empeora sin avisar.
+**Andika va recortada de 289 KB a 40 KB**, un 86 % menos, con `tools/fuentes.py`. El
+paquete completo cubre cirílico, griego y AFI; nosotros necesitamos latino con sus
+suplementos, que llega para castellano y para las lenguas cooficiales de T3.2. Verificado
+que conserva `áéíóúüñ¿¡çàèòŀ€`, las comillas tipográficas y el kerning.
 
-- [ ] Descargar Andika (SIL, OFL) y Bravura (Steinberg, OFL) en `.woff2`
-- [ ] Anotarlas en `THIRD-PARTY-NOTICES.md` con su licencia — la OFL obliga a conservar
-      el aviso y prohíbe vender las fuentes por separado
-- [ ] Comprobar que entran en el precache de la PWA (hoy `includeAssets` ya las contempla)
-- [x] Que el build **falle** si faltan, en vez de avisar: hecho en `tools/comprobar-dist.mjs`.
-      Ahora mismo las dos fuentes están en su lista de `PENDIENTES`, con esta tarea como
-      motivo; en cuanto se añadan los ficheros hay que quitarlas de ahí
+**Bravura no se recorta y no se precachea.** No se recorta porque sus glifos viven en el
+Área de Uso Privado según SMuFL y recortar por rangos la rompe. No se precachea porque son
+316 KB que no usa nada hasta T2.2: se descargarán el día que aparezca un pentagrama, no en
+la primera visita de todos los niños. El precache sube de 446 a 486 KB, solo lo de Andika.
 
-**Criterio de aceptación**: la respuesta de `/fuentes/Andika-Regular.woff2` es 200 con
-`font/woff2`, y `docs/04-DISENO-UI.md` deja de prometer algo que no ocurre.
+**Sobre la OFL, que es fácil de incumplir sin querer**: permite modificar y redistribuir, y
+exige conservar el aviso de licencia —está por partida doble, en `Andika-OFL.txt` y dentro
+de la tabla `name` de la propia fuente—. Prohíbe vender las fuentes por separado y usar los
+Nombres Reservados en una versión modificada. El recorte no cambia el nombre porque no
+altera ningún trazo, solo elimina glifos; si algún día se retocan, hay que renombrar.
 
 ### T1.10 — Despliegue
 
