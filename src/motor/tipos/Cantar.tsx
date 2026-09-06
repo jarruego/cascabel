@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useCarril } from '@/app/preferencias';
 import { despertarAudio } from '@/audio/AudioEngine';
-import { MARIMBA, Sampler, aMidi } from '@/audio/sampler';
+import { Sampler, aMidi } from '@/audio/sampler';
+import { muestrasDe } from '@/audio/instrumentos';
 import { DetectorDeTono } from '@/escucha/tono';
 import {
+  VENTANAS_CENTS,
   desviacionEnCents,
   evaluarAfinacion,
   mensajeAfinacion,
@@ -12,6 +14,7 @@ import {
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
+import { nombreDe } from '@/ui/coloresNota';
 import { CuentaAtras } from '@/ui/CuentaAtras';
 
 /**
@@ -38,12 +41,34 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
     consigna: string;
     /** Notas que se piden, en notación científica. */
     notas: string[];
-    /** Segundos que se escucha al niño en cada intento. */
+    /**
+     * Segundos que se escucha al niño en cada intento.
+     *
+     * Ocho y no cuatro. Un niño no ataca la nota: la BUSCA, y buscarla lleva sus segundos.
+     * Con una ventana corta se acaba el tiempo mientras todavía está subiendo, y el
+     * resultado dice que ha fallado cuando lo que ha pasado es que no le ha dado tiempo.
+     * Además ahora se puede acabar antes: en cuanto la caza, se termina.
+     */
     segundos?: number;
+    /** Milisegundos que hay que mantenerla dentro de la ventana para darla por cazada. */
+    msParaCazar?: number;
+    /** Sistema de nombres: 'latino' (do re mi) por defecto, o 'ingles'. */
+    nombres?: 'latino' | 'ingles';
+    /** Timbre de la nota de referencia. */
+    instrumento?: string;
   };
 
   const carril = useCarril(actividad.etapa);
-  const segundos = contenido.segundos ?? 4;
+  const segundos = contenido.segundos ?? 8;
+  /*
+    Ochocientos milisegundos, no cuatro segundos.
+
+    La actividad no es «sostén una nota», es «encuentra una nota»: eso es lo que hace un
+    niño cuando afina, y sostenerla ya viene después. Pedirle que la aguante afinada durante
+    toda la escucha convertía un ejercicio de oído en uno de respiración.
+  */
+  const msParaCazar = contenido.msParaCazar ?? 800;
+  const sistema = contenido.nombres ?? 'latino';
 
   const [fase, setFase] = useState<Fase>('listo');
   const [indice, setIndice] = useState(0);
@@ -51,6 +76,10 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
   const [avisoMicro, setAvisoMicro] = useState<string | null>(null);
   const [cents, setCents] = useState<number | null>(null);
   const [evaluacion, setEvaluacion] = useState<EvaluacionAfinacion | null>(null);
+  /** true en cuanto la ha mantenido dentro de la ventana el tiempo pedido. */
+  const [cazada, setCazada] = useState(false);
+  const dentroDesde = useRef<number | null>(null);
+  const finDeEscucha = useRef<number | null>(null);
 
   const detector = useRef<DetectorDeTono | null>(null);
   const sampler = useRef<Sampler | null>(null);
@@ -84,7 +113,7 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
     await despertarAudio();
     if (!sampler.current) {
       try {
-        const s = new Sampler(MARIMBA);
+        const s = new Sampler(muestrasDe(contenido.instrumento));
         await s.cargar();
         sampler.current = s;
       } catch {
@@ -97,6 +126,8 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
   const empezar = useCallback(async () => {
     setEvaluacion(null);
     setCents(null);
+    setCazada(false);
+    dentroDesde.current = null;
     lecturas.current = [];
     recientes.current = [];
 
@@ -128,7 +159,23 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
           recientes.current.push(desviacion);
           if (recientes.current.length > 5) recientes.current.shift();
           const orden = [...recientes.current].sort((a, b) => a - b);
-          setCents(orden[Math.floor(orden.length / 2)]!);
+          const suavizado = orden[Math.floor(orden.length / 2)]!;
+          setCents(suavizado);
+
+          /*
+            Cazar la nota: mantenerla dentro de la ventana durante `msParaCazar` seguidos.
+            Se cuenta con el reloj y no con el número de lecturas porque el detector no va a
+            un ritmo fijo: contar lecturas mediría otra cosa según el dispositivo.
+          */
+          if (Math.abs(suavizado) <= VENTANAS_CENTS.afinado) {
+            const ahora = performance.now();
+            dentroDesde.current ??= ahora;
+            if (ahora - dentroDesde.current >= msParaCazar) {
+              setCazada(true);
+            }
+          } else {
+            dentroDesde.current = null;
+          }
         });
         detector.current = d;
         escuchando = true;
@@ -145,12 +192,27 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
 
     setFase('escuchando');
 
-    window.setTimeout(() => {
+    finDeEscucha.current = window.setTimeout(() => {
       if (escuchando) setEvaluacion(evaluarAfinacion(lecturas.current));
       setFase('resultado');
       setCents(null);
     }, segundos * 1000);
-  }, [midiObjetivo, segundos, sonarNota]);
+  }, [midiObjetivo, segundos, sonarNota, msParaCazar]);
+
+  /*
+    En cuanto la caza, se acaba. Esperar a que se agote el reloj después de haber acertado
+    solo sirve para que el niño la pierda y acabe con peor resultado del que ya tenía.
+  */
+  useEffect(() => {
+    if (!cazada || fase !== 'escuchando') return;
+    if (finDeEscucha.current !== null) window.clearTimeout(finDeEscucha.current);
+    const id = window.setTimeout(() => {
+      setEvaluacion(evaluarAfinacion(lecturas.current));
+      setFase('resultado');
+      setCents(null);
+    }, 700);
+    return () => window.clearTimeout(id);
+  }, [cazada, fase]);
 
   const siguiente = useCallback(() => {
     if (indice + 1 >= contenido.notas.length) {
@@ -176,7 +238,10 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
     <section className="actividad cantar" data-carril={carril} aria-labelledby="consigna">
       <h1 id="consigna">{t(contenido.consigna)}</h1>
 
-      <p className="cantar__nota">{objetivo}</p>
+      {/* El nombre que usa la escuela española, no la notación científica: a un niño de
+          ocho años «sol» le dice algo y «G4» no le dice nada. La octava tampoco se enseña:
+          la actividad pliega a la octava más cercana, así que cantarla en la tuya vale. */}
+      <p className="cantar__nota">{nombreDe(objetivo, sistema)}</p>
 
       {/* Retorno visual de afinación. Existe para que la actividad se pueda hacer
           MIRANDO además de oyendo, y para que un niño vea hacia dónde moverse en vez de
@@ -186,16 +251,29 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
         <span
           className="cantar__marca"
           data-activa={cents !== null || undefined}
+          data-dentro={
+            (cents !== null && Math.abs(cents) <= VENTANAS_CENTS.afinado) || undefined
+          }
           style={{ transform: `translateX(${posicion * 1.4}px)` }}
         />
       </div>
-      <p className="cantar__lectura" aria-live="polite">
-        {fase === 'escuchando' && cents === null && t('cantar.noTeOigo')}
-        {fase === 'escuchando' && cents !== null && (
-          <>
-            {cents > 0 ? '+' : ''}
-            {cents.toFixed(0)} cents
-          </>
+      {/*
+        Guía en vivo, en palabras.
+
+        La aguja ya dice hacia dónde, pero **solo si sabes leer una aguja**, y un niño de
+        ocho años no tiene por qué. «Sube un poco» se entiende sin explicación, y es lo que
+        convierte el ejercicio en una búsqueda con pistas en vez de un intento a ciegas.
+
+        Y las cifras en cents desaparecen de aquí: eran para el maestro y ya salen al final.
+      */}
+      <p className="cantar__guia" aria-live="polite" data-cazada={cazada || undefined}>
+        {fase === 'escuchando' && (
+          cazada ? t('cantar.cazada')
+          : cents === null ? t('cantar.noTeOigo')
+          : Math.abs(cents) <= VENTANAS_CENTS.afinado ? t('cantar.ahi')
+          : Math.abs(cents) <= VENTANAS_CENTS.casi
+            ? t(cents > 0 ? 'cantar.bajaPoco' : 'cantar.subePoco')
+            : t(cents > 0 ? 'cantar.baja' : 'cantar.sube')
         )}
       </p>
 

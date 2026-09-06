@@ -291,7 +291,9 @@ def validar_producto(datos: dict, r: Resultado) -> None:
         sin_audio = [
             e.get("clave")
             for e in (contenido.get("derecha") or [])
-            if not e.get("audio")
+            # Suena por muestra suelta o por nota transportada: las dos valen, la
+            # regla es que suene.
+            if not e.get("audio") and not e.get("nota")
         ]
         if sin_audio:
             r.avisos.append(

@@ -2358,3 +2358,31 @@ p {
   background: var(--superficie);
   color: transparent;
 }
+
+/* Diagrama dentro de una tarjeta de emparejar. Alto fijo y ancho automático: lo que hay
+   que comparar entre dos diagramas es qué agujeros están tapados, y para eso los dos
+   tienen que verse a la misma escala. */
+.emparejar__imagen {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto var(--e-1);
+}
+
+/* Guía en vivo mientras se canta. Grande y clara: es lo que el niño está leyendo mientras
+   busca la nota, así que compite con la aguja y tiene que ganarle. */
+.cantar__guia {
+  min-height: 1.6em;
+  margin: var(--e-2) 0 var(--e-4);
+  font-size: var(--t-m);
+  font-weight: 700;
+  text-align: center;
+  color: var(--tinta-2);
+  transition: color var(--transicion);
+}
+.cantar__guia[data-cazada] { color: var(--vivo-verde); font-size: var(--t-l); }
+/* La aguja se ilumina al entrar en la ventana. Color Y grosor: el color no informa solo. */
+.cantar__marca[data-dentro] {
+  background: var(--vivo-verde);
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--vivo-verde) 22%, transparent);
+}

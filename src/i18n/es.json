@@ -662,5 +662,18 @@
   "actividad.c216.pista2": "En el ordenador puedes usar las teclas 1, 2, 3 y 4.",
   "actividad.c119.consigna": "Toca los círculos al llegar a la línea y descubre quién era",
   "actividad.c119.enunciado": "Los círculos bajan vacíos. Si tocas a tiempo, aparece el animal que llevaban dentro.",
-  "actividad.c119.pista1": "No mires el círculo: mira la línea. Lo que hay que acertar es el momento, no el dibujo."
+  "actividad.c119.pista1": "No mires el círculo: mira la línea. Lo que hay que acertar es el momento, no el dibujo.",
+  "digitacion.si": "Digitación de si: pulgar y primer agujero tapados",
+  "digitacion.la": "Digitación de la: pulgar y dos primeros agujeros tapados",
+  "digitacion.sol": "Digitación de sol: pulgar y tres primeros agujeros tapados",
+  "actividad.c204.consigna": "Empareja cada nota con su digitación",
+  "actividad.c204.enunciado": "Toca una nota para oírla y después busca su digitación. Los círculos negros son los agujeros que hay que tapar.",
+  "actividad.c204.pista1": "Cuenta los agujeros negros: si tapa uno, la tapa dos y sol tapa tres. Cada nota que baja añade un dedo.",
+  "actividad.c204.pista2": "El círculo de la izquierda es el agujero de detrás, el del pulgar. En estas tres notas siempre va tapado.",
+  "cantar.sube": "Más agudo ↑",
+  "cantar.subePoco": "Sube un poquito ↑",
+  "cantar.baja": "Más grave ↓",
+  "cantar.bajaPoco": "Baja un poquito ↓",
+  "cantar.ahi": "¡Ahí! Mantenla…",
+  "cantar.cazada": "¡La has cazado!"
 }

@@ -4,7 +4,7 @@ import { useCarril } from '@/app/preferencias';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
-import { sonarMuestra, sonarSeguidos } from '../sonarMuestra';
+import { sonarMuestra, sonarNota, sonarSeguidos } from '../sonarMuestra';
 import {
   INICIAL_EMPAREJAR,
   reducirEmparejar,
@@ -27,6 +27,20 @@ interface Elemento {
   icono?: string;
   etiqueta?: string;
   audio?: string;
+  /**
+   * Nota que suena al tocar este elemento, en notación científica. Alternativa a `audio`
+   * cuando lo que hay que oír es una altura y no una muestra concreta: el sampler la
+   * transporta, así que no hace falta un fichero por nota.
+   */
+  nota?: string;
+  /**
+   * Imagen propia, servida desde nuestro origen. La usan los diagramas de digitación de
+   * flauta, que no son iconos: un icono es un símbolo pequeño y esto es un dibujo que hay
+   * que leer, con siete agujeros que se distinguen o no se distinguen.
+   */
+  imagen?: string;
+  /** Texto alternativo de esa imagen. Obligatorio si hay imagen: si no, no se pone. */
+  alt?: string;
 }
 
 export default function Emparejar({ actividad, alTerminar }: PropsActividad) {
@@ -94,10 +108,21 @@ export default function Emparejar({ actividad, alTerminar }: PropsActividad) {
                 data-estado={resuelta ? 'resuelta' : elegida ? 'elegida' : 'libre'}
                 onClick={() => {
                   // Suena al tocarlo: así el primer toque ya da información.
-                  if (e.audio && !resuelta) sonarMuestra(e.audio);
+                  if (!resuelta) {
+                    if (e.audio) sonarMuestra(e.audio);
+                    else if (e.nota) void sonarNota(e.nota);
+                  }
                   despachar({ tipo: 'tocar', clave: e.clave, lado });
                 }}
               >
+                {e.imagen && (
+                  <img
+                    className="emparejar__imagen"
+                    src={e.imagen}
+                    alt={e.alt ? t(e.alt) : ''}
+                    height={Math.round(tam * 1.5)}
+                  />
+                )}
                 {e.icono && <Icono nombre={e.icono} tamano={Math.round(tam * 0.45)} />}
                 <span className="boton__texto">{e.etiqueta ? t(e.etiqueta) : ''}</span>
               </button>
