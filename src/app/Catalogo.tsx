@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router';
 import { cargarIndice } from '@/datos/cargar';
 import { despertarAudio } from '@/audio/AudioEngine';
+import { leerTodo } from '@/datos/progreso';
 import { t } from '@/i18n';
 import type { Eje, TipoActividad } from '@/motor/tipos';
 import type { Etapa } from '@/config';
@@ -39,6 +40,13 @@ export default function Catalogo() {
   const [etapa, setEtapa] = useState<Etapa | ''>('');
   const [eje, setEje] = useState<Eje | ''>('');
   const [criterio, setCriterio] = useState('');
+  const [hechas, setHechas] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    // Marcar lo ya hecho es orientación para el maestro, NO una recompensa para el niño:
+    // no hay puntos, ni racha, ni porcentaje. Solo «esto ya lo abriste».
+    void leerTodo().then((r) => setHechas(new Set(r.filter((x) => x.completada).map((x) => x.actividadId))));
+  }, []);
 
   useEffect(() => {
     let vivo = true;
@@ -128,6 +136,11 @@ export default function Catalogo() {
               onClick={() => void despertarAudio().catch(() => {})}
             >
               <span className="ficha__titulo">{e.titulo}</span>
+              {hechas.has(e.id) && (
+                <span className="ficha__hecha" aria-label={t('catalogo.yaHecha')}>
+                  ✓
+                </span>
+              )}
               <span className="ficha__meta">
                 {t(`eje.${e.eje}`)} · {e.tipo}
                 {e.curriculo?.criterio ? ` · crit. ${e.curriculo.criterio}` : ''}
