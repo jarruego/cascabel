@@ -63,7 +63,6 @@
   "comun.escuchaOtraVez": "Escucha otra vez los dos.",
   "ordenar.colocadas": "Lo que llevas colocado",
   "ordenar.pordolocar": "Lo que queda por colocar",
-  "ordenar.deshacer": "Quitar el último",
   "ordenar.comprobar": "Ya está",
   "ordenar.casi": "Casi. Los que se mueven es que van en otro sitio.",
   "actividad.inf05.consigna": "¿Qué suena en cada dibujo?",
@@ -677,5 +676,9 @@
   "cantar.ahi": "¡Ahí! Mantenla…",
   "cantar.cazada": "¡La has cazado!",
   "lienzo.ampliar": "Ver a pantalla completa",
-  "lienzo.restaurar": "Salir de pantalla completa"
+  "lienzo.restaurar": "Salir de pantalla completa",
+  "ordenar.casilla": "Casilla",
+  "ordenar.tocaParaOir": "Toca un sonido para oírlo. Puedes escucharlos todas las veces que quieras.",
+  "ordenar.ahoraCasilla": "Ahora toca la casilla donde quieres ponerlo. Si tocas otro sonido, cambias de idea.",
+  "ordenar.todasPuestas": "Ya están todas colocadas. Toca una para cambiarla de sitio."
 }

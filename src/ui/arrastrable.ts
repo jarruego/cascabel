@@ -7,19 +7,26 @@ import type { Carril } from '@/config';
  * de `docs/04-DISENO-UI.md` prohíbe el arrastre por debajo de 6 años, donde la motricidad
  * fina no da para soltar con precisión.
  *
- * De ahí las dos reglas de este módulo:
+ * De ahí la regla de este módulo, que es **una sola y no admite excepción**:
  *
- *  1. **En el carril `infantil` no se activa nunca.** No es configurable.
- *  2. **El toque sucesivo sigue funcionando siempre**, en los tres carriles. Quien arrastra
- *     lo hace porque quiere; quien va con el dedo, con teclado o con un ratón que se le
- *     resiste, toca. Ninguna interacción existe solo en la versión arrastrable.
+ * **El toque sucesivo funciona siempre, en los tres carriles.** Quien arrastra lo hace
+ * porque quiere; quien va con el dedo, con teclado o con un ratón que se le resiste, toca.
+ * Ninguna interacción existe solo en la versión arrastrable.
+ *
+ * **Y se ofrece también en Infantil**, por decisión del autor del 2026-09-06. Antes estaba
+ * vetado ahí por el hallazgo de NN/g de que los menores de cinco años no manejan arrastrar
+ * y soltar. Ese hallazgo sigue siendo cierto y sigue siendo la razón de que **jamás** sea la
+ * única vía; pero dice que no *pueden*, no que ofrecerlo estorbe. Un niño de cuatro años que
+ * lo intenta y no lo consigue simplemente toca, que es lo que iba a hacer de todos modos.
+ * Se cambió también `CLAUDE.md` §6 y `docs/04-DISENO-UI.md`, que decían «solo tap por debajo
+ * de 6 años».
  *
  * Se usan eventos de puntero y no la API de arrastre de HTML5: `dragstart`/`drop` no
  * funciona con dedo en móvil sin polyfill, y el móvil es la mitad del parque.
  */
 
-export function permiteArrastre(carril: Carril): boolean {
-  return carril !== 'infantil';
+export function permiteArrastre(_carril: Carril): boolean {
+  return true;
 }
 
 export interface OpcionesArrastre {

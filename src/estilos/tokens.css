@@ -2476,3 +2476,73 @@ p {
 /* Con la barra de navegación fuera de la vista, el hueco que le deja también sobra. */
 .lienzo[data-ampliado] ~ *,
 body:has(.lienzo[data-ampliado]) .nav { display: none; }
+
+/* ── ordenar: casillas numeradas ───────────────────────────────────────────
+   Las casillas se ven vacías desde el principio. Eso convierte «tengo que acordarme de
+   cuántas van» en «quedan dos», y permite colocar la tercera antes que la primera, que es
+   como se ordena de verdad cuando estás comparando sonidos. */
+.ordenar__casillas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--separacion);
+  justify-content: center;
+  padding: 0;
+  margin: var(--e-4) 0;
+  list-style: none;
+}
+.ordenar__casillas li {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.ordenar__numero {
+  position: absolute;
+  top: -10px;
+  left: -6px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  font-size: var(--t-xs);
+  font-weight: 700;
+  color: var(--papel);
+  background: var(--tinta-2);
+  border-radius: var(--r-redondo);
+}
+/* Casilla vacía: punteada, como un hueco que espera. No parece un botón apagado, que es
+   lo que la haría parecer inaccesible. */
+.ordenar__casilla {
+  background: none;
+  border: 3px dashed var(--linea);
+  border-radius: var(--r-m);
+  cursor: pointer;
+  transition: border-color var(--transicion), background-color var(--transicion);
+}
+.ordenar__casilla:hover,
+/* Con algo cogido, las casillas libres se marcan: dicen dónde se puede soltar. */
+.ordenar__casilla:not([aria-disabled]) {
+  border-color: var(--acento-2);
+}
+.ordenar__casilla:not([aria-disabled]):hover {
+  background: color-mix(in srgb, var(--acento-2) 12%, transparent);
+}
+.ordenar__casilla:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
+
+/* La ficha elegida se levanta y se marca. Borde Y sombra Y desplazamiento: el color no
+   informa solo, y aquí saber cuál está cogida es toda la mecánica. */
+.ordenar__ficha[data-elegida] {
+  border-color: var(--acento-2);
+  box-shadow: var(--sombra-2), 0 0 0 4px color-mix(in srgb, var(--acento-2) 30%, transparent);
+  transform: translateY(-4px) scale(1.04);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ordenar__ficha[data-elegida] { transform: none; border-width: 5px; }
+}
+.ordenar__banco {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--separacion);
+  justify-content: center;
+  min-height: 40px;
+}

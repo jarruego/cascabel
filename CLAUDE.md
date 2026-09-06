@@ -154,7 +154,9 @@ Objetivo **WCAG 2.2 AA**, y para niños es un suelo, no una meta.
 - El color nunca informa solo: siempre color + forma + sonido.
 - Toda actividad de ritmo debe poder hacerse **mirando** (pulso visual + `navigator.vibrate()`).
 - Toda actividad de micrófono tiene alternativa por toque.
-- Solo `tap` por debajo de 6 años. Nada de arrastrar como única vía (WCAG 2.5.7).
+- **Nada de arrastrar como ÚNICA vía, a ninguna edad** (WCAG 2.5.7). Arrastrar se
+  ofrece en los tres carriles como camino adicional; el toque sucesivo —tocar el
+  elemento y después su destino— funciona siempre y es el que se diseña primero.
 - Respeta `prefers-reduced-motion`. Nada parpadea más de 3 veces por segundo.
 - Tipografías: Andika para Infantil, Atkinson Hyperlegible y OpenDyslexic conmutables.
 
