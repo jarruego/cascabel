@@ -96,3 +96,23 @@ describe('paso a milisegundos', () => {
     expect(errores.every((e) => Math.abs(e) < 1e-9)).toBe(true);
   });
 });
+
+describe('sílabas de tercer ciclo', () => {
+  it('la síncopa pone el golpe donde no cae el pulso', () => {
+    // ti-ta-ti: corchea, negra, corchea. El acento del medio cae a contratiempo, que es
+    // justo lo que hay que sentir para entender la síncopa.
+    const r = rejillaDesdeSilabas(['ti-ta-ti']);
+    expect(r.golpes).toEqual([0, 0.5, 1.5]);
+    expect(r.pulsos).toBe(2);
+  });
+
+  it('el contratiempo suena en la mitad del pulso, no al principio', () => {
+    const r = rejillaDesdeSilabas(['ta', 'sh-ti', 'ta']);
+    expect(r.golpes).toEqual([0, 1.5, 2]);
+  });
+
+  it('la negra con puntillo ocupa pulso y medio', () => {
+    const r = rejillaDesdeSilabas(['ta-i-ti', 'ta']);
+    expect(r.golpes).toEqual([0, 1.5, 2]);
+  });
+});

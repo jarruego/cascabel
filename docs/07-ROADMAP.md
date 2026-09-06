@@ -822,7 +822,24 @@ detectarlo habría que medir las barras del ABC en crudo, y no compensa hoy.
       interacción que revele las opciones— y sitio para escribir. Las líneas para escribir
       se imprimen en negro, porque el gris de pantalla desaparece en una impresora de
       colegio. La atribución CC BY-SA va impresa: la licencia obliga también en papel.
-- [ ] T2.9 — Catálogo completo hasta las 54 actividades
+- [~] **T2.9 — Catálogo** `43 de 54` — segundo lote el 2026-09-06. De 20 a **43
+      actividades**, todas validando. Reparto: 16 de Infantil, 14 de 1.er ciclo, 8 de 2.º y
+      5 de 3.º; ocho de `eleccion`, ocho de `lienzo`, ocho de `guia-aula`, cuatro de
+      `rejilla`, cuatro de `tocar-a-tiempo`, tres de `seguir`, tres de `ordenar`, dos de
+      `emparejar`, dos de `cantar` y una de `pentagrama`.
+
+      **Las once que faltan no se hacen por una razón concreta**, no por falta de tiempo:
+
+      | Motivo | Cuáles |
+      |---|---|
+      | **Repertorio verificado** | C3-08 «¿De quién es esta música?», C2-12 «Canon a dos voces», C3-04 «Mapa de una obra». Toda pieza se verifica contra fuente de dominio público **antes** de entrar; el plazo español son 70 años, **u 80 si el autor murió antes del 7-12-1987** |
+      | **Material que no tenemos** | C2-04 y C2-05, digitaciones de flauta dulce: hacen falta diagramas de posiciones. C2-11 «Instrumentos del mundo», que necesita timbres que no están en VCSL |
+      | **Mecánica distinta** | C2-06 «Pon las barras de compás» y C3-01 «Tonos y semitonos» piden un pentagrama que se edita, no uno donde se coloca una nota |
+      | **Grabación** | C2-13 «Graba tu paisaje sonoro» usa `MediaRecorder`, que `docs/08-LEGAL.md` restringe a un botón explícito y almacenamiento local con borrado a un clic. Es una tarea con implicaciones, no una actividad más |
+
+      **Pendiente de revisión pedagógica**, y son decisiones de un desarrollador: las
+      sílabas de síncopa y contratiempo (`ti-ta-ti`, `sh-ti`), la selección pentatónica de
+      C2-07, las coreografías de las ocho `guia-aula` y las duraciones de sus pasos.
 - [x] **T2.10 — Auditoría de accesibilidad** `[x]` — cerrado el 2026-09-06, y hecha con
       **tests y no con una revisión manual**: una auditoría es una foto que caduca con el
       siguiente commit.

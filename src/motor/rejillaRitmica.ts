@@ -25,6 +25,13 @@ const SILABAS: Record<string, { pulsos: number; golpes: number[] }> = {
   'ti-ri-ti-ri': { pulsos: 1, golpes: [0, 0.25, 0.5, 0.75] },
   // Silencio de negra: ocupa pulso y NO lleva golpe. Es media asignatura.
   sh: { pulsos: 1, golpes: [] },
+  // Síncopa: corchea, negra, corchea dentro de dos pulsos. El acento cae donde no toca,
+  // que es justo lo que hay que sentir.
+  'ti-ta-ti': { pulsos: 2, golpes: [0, 0.5, 1.5] },
+  // Contratiempo: silencio en el pulso y golpe en la mitad.
+  'sh-ti': { pulsos: 1, golpes: [0.5] },
+  // Negra con puntillo más corchea.
+  'ta-i-ti': { pulsos: 2, golpes: [0, 1.5] },
 };
 
 export interface RejillaRitmica {

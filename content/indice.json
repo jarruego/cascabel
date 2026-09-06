@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-06",
-  "total": 20,
+  "total": 43,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -37,6 +37,23 @@
       "estado": "borrador"
     },
     {
+      "id": "c1-03-el-pulso-escondido",
+      "titulo": "El pulso escondido",
+      "etapa": "primaria-c1",
+      "eje": "pulso",
+      "tipo": "tocar-a-tiempo",
+      "lugar": "pantalla",
+      "microfono": true,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
       "id": "c1-04-constructor-de-ritmos",
       "titulo": "Constructor de ritmos",
       "etapa": "primaria-c1",
@@ -49,6 +66,40 @@
         "area": "Educación Artística",
         "competencia": "CE3",
         "criterio": "3.2",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c1-05-musicograma-a-b",
+      "titulo": "Musicograma A-B",
+      "etapa": "primaria-c1",
+      "eje": "cultura",
+      "tipo": "seguir",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c1-06-la-escalera-de-notas",
+      "titulo": "La escalera de notas",
+      "etapa": "primaria-c1",
+      "eje": "altura",
+      "tipo": "ordenar",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador"
@@ -88,6 +139,23 @@
       "estado": "borrador"
     },
     {
+      "id": "c1-09-percusion-corporal",
+      "titulo": "Percusión corporal a cuatro planos",
+      "etapa": "primaria-c1",
+      "eje": "cuerpo",
+      "tipo": "guia-aula",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 25,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
       "id": "c1-10-construye-un-cotidiofono",
       "titulo": "Construye un cotidiáfono",
       "etapa": "primaria-c1",
@@ -100,6 +168,57 @@
         "area": "Educación Artística",
         "competencia": "CE4",
         "criterio": "4.2",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c1-11-el-mando-del-director",
+      "titulo": "El mando del director",
+      "etapa": "primaria-c1",
+      "eje": "cultura",
+      "tipo": "lienzo",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.2",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c1-12-la-rueda-del-compas",
+      "titulo": "La rueda del compás",
+      "etapa": "primaria-c1",
+      "eje": "pulso",
+      "tipo": "rejilla",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c1-13-pregunta-y-respuesta",
+      "titulo": "Pregunta y respuesta",
+      "etapa": "primaria-c1",
+      "eje": "creacion",
+      "tipo": "lienzo",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.2",
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador"
@@ -139,6 +258,57 @@
       "estado": "borrador"
     },
     {
+      "id": "c2-03-dictado-melodico",
+      "titulo": "Dictado melódico en rejilla",
+      "etapa": "primaria-c2",
+      "eje": "altura",
+      "tipo": "rejilla",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c2-07-improvisa-en-pentatonica",
+      "titulo": "Improvisa en pentatónica",
+      "etapa": "primaria-c2",
+      "eje": "creacion",
+      "tipo": "lienzo",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.2",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c2-08-ordena-el-rondo",
+      "titulo": "Ordena el rondó",
+      "etapa": "primaria-c2",
+      "eje": "cultura",
+      "tipo": "ordenar",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 7,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador"
+    },
+    {
       "id": "c2-09-adagio-andante-allegro",
       "titulo": "Adagio, andante, allegro",
       "etapa": "primaria-c2",
@@ -156,6 +326,40 @@
       "estado": "borrador"
     },
     {
+      "id": "c2-10-ostinato-a-dos-planos",
+      "titulo": "Ostinato a dos planos",
+      "etapa": "primaria-c2",
+      "eje": "creacion",
+      "tipo": "guia-aula",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 25,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE4",
+        "criterio": "4.2",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c3-02-sincopa-y-contratiempo",
+      "titulo": "Síncopa y contratiempo",
+      "etapa": "primaria-c3",
+      "eje": "pulso",
+      "tipo": "tocar-a-tiempo",
+      "lugar": "pantalla",
+      "microfono": true,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
       "id": "c3-05-mayor-o-menor",
       "titulo": "¿Mayor o menor?",
       "etapa": "primaria-c3",
@@ -169,6 +373,57 @@
         "competencia": "CE1",
         "criterio": "1.1",
         "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c3-06-el-seis-por-ocho",
+      "titulo": "El 6/8 con el cuerpo",
+      "etapa": "primaria-c3",
+      "eje": "pulso",
+      "tipo": "guia-aula",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 20,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c3-07-componed-un-rondo",
+      "titulo": "Componed un rondó",
+      "etapa": "primaria-c3",
+      "eje": "creacion",
+      "tipo": "guia-aula",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 40,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE4",
+        "criterio": "4.1",
+        "saber": null
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c3-09-la-serie-armonica",
+      "titulo": "La serie armónica",
+      "etapa": "primaria-c3",
+      "eje": "timbre",
+      "tipo": "lienzo",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE2",
+        "criterio": "2.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador"
     },
@@ -241,6 +496,40 @@
       "estado": "borrador"
     },
     {
+      "id": "inf-05-paisaje-sonoro",
+      "titulo": "Paisaje sonoro: ¿qué suena?",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE2",
+        "criterio": "2.1",
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "inf-06-dibuja-el-sonido",
+      "titulo": "Dibuja el sonido",
+      "etapa": "infantil",
+      "eje": "creacion",
+      "tipo": "lienzo",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE3",
+        "criterio": "4.1",
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador"
+    },
+    {
       "id": "inf-07-el-caracol-sube-y-baja",
       "titulo": "El caracol: sube y baja",
       "etapa": "infantil",
@@ -271,6 +560,57 @@
         "competencia": "CE3",
         "criterio": "3.6",
         "saber": "H. Interés e iniciativa en la participación en manifestaciones artísticas y corporales"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "inf-09-eco-de-palmas",
+      "titulo": "Eco de palmas",
+      "etapa": "infantil",
+      "eje": "pulso",
+      "tipo": "tocar-a-tiempo",
+      "lugar": "hibrida",
+      "microfono": true,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE3",
+        "criterio": "3.5",
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "inf-10-cajas-de-sonidos",
+      "titulo": "Las cajas de los sonidos",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "tipo": "emparejar",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 4,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE2",
+        "criterio": "2.1",
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "inf-11-cancion-con-pictogramas",
+      "titulo": "Canción con pictogramas",
+      "etapa": "infantil",
+      "eje": "altura",
+      "tipo": "seguir",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE3",
+        "criterio": "3.5",
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador"
     },
@@ -309,6 +649,23 @@
       "estado": "borrador"
     },
     {
+      "id": "inf-14-el-cuento-sonoro",
+      "titulo": "El cuento sonoro",
+      "etapa": "infantil",
+      "eje": "creacion",
+      "tipo": "lienzo",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE3",
+        "criterio": "3.5",
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador"
+    },
+    {
       "id": "inf-15-de-grave-a-agudo",
       "titulo": "De grave a agudo",
       "etapa": "infantil",
@@ -326,6 +683,23 @@
       "estado": "borrador"
     },
     {
+      "id": "tr-01-afinador-visual",
+      "titulo": "Afinador visual",
+      "etapa": "primaria-c2",
+      "eje": "altura",
+      "tipo": "cantar",
+      "lugar": "pantalla",
+      "microfono": true,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": null,
+        "criterio": null,
+        "saber": null
+      },
+      "estado": "borrador"
+    },
+    {
       "id": "tr-02-metronomo-y-calibrador",
       "titulo": "Metrónomo y calibrador",
       "etapa": "primaria-c1",
@@ -336,6 +710,23 @@
       "duracion_min": 45,
       "curriculo": {
         "area": "Educación Artística",
+        "competencia": null,
+        "criterio": null,
+        "saber": null
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "tr-03-caja-de-sonidos",
+      "titulo": "Caja de sonidos del aula",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "tipo": "lienzo",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
         "competencia": null,
         "criterio": null,
         "saber": null

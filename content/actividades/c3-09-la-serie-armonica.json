@@ -1,0 +1,58 @@
+{
+  "id": "c3-09-la-serie-armonica",
+  "version": 1,
+  "tipo": "lienzo",
+  "titulo": "La serie armónica",
+  "descripcion": "Cuerdas de distinta longitud y proporciones 1:2, 2:3, 3:4. Conecta con fracciones.",
+  "etapa": "primaria-c3",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE2",
+    "criterio": "2.2",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c309.consigna",
+    "notas": [
+      "G5",
+      "E5",
+      "C5",
+      "G4",
+      "C4",
+      "F3"
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c309.enunciado"
+  },
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

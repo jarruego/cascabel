@@ -1,0 +1,99 @@
+{
+  "id": "inf-11-cancion-con-pictogramas",
+  "version": 1,
+  "tipo": "seguir",
+  "titulo": "Canción con pictogramas",
+  "descripcion": "Canción tradicional de ámbito sol-mi con la letra en pictogramas resaltados.",
+  "etapa": "infantil",
+  "eje": "altura",
+  "lugar": "hibrida",
+  "duracion_min": 5,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": "CE3",
+    "criterio": "3.5",
+    "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+  },
+  "practica": {
+    "secuencia": "vocal-kodaly",
+    "notas": [
+      "sol",
+      "mi",
+      "la"
+    ],
+    "tempo": 84,
+    "metodo": [
+      "kodaly"
+    ]
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.inf11.consigna",
+    "tempo": 84,
+    "notas": [
+      "G4",
+      "G4",
+      "E4",
+      "E4",
+      "A4",
+      "A4",
+      "G4"
+    ],
+    "bloques": [
+      {
+        "icono": "sol",
+        "color": "altura"
+      },
+      {
+        "icono": "sol",
+        "color": "altura"
+      },
+      {
+        "icono": "arbol",
+        "color": "cuerpo"
+      },
+      {
+        "icono": "arbol",
+        "color": "cuerpo"
+      },
+      {
+        "icono": "pajaro",
+        "color": "creacion"
+      },
+      {
+        "icono": "pajaro",
+        "color": "creacion"
+      },
+      {
+        "icono": "sol",
+        "color": "altura"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.inf11.enunciado"
+  },
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

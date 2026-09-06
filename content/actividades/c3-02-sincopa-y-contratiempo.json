@@ -1,0 +1,71 @@
+{
+  "id": "c3-02-sincopa-y-contratiempo",
+  "version": 1,
+  "tipo": "tocar-a-tiempo",
+  "titulo": "Síncopa y contratiempo",
+  "descripcion": "Palmear fuera del pulso, con el pulso siempre de fondo.",
+  "etapa": "primaria-c3",
+  "eje": "pulso",
+  "lugar": "pantalla",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 92,
+    "figuras": [
+      "negra",
+      "corchea",
+      "sincopa"
+    ]
+  },
+  "entrada": {
+    "modo": "microfono-palmada",
+    "alternativa": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c302.consigna",
+    "silabas": [
+      "ta",
+      "ti-ta-ti",
+      "ta"
+    ],
+    "repeticiones": 3,
+    "tempo": 92
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c302.enunciado"
+  },
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador",
+  "pistas": [
+    "actividad.c302.pista1",
+    "actividad.c302.pista2"
+  ]
+}

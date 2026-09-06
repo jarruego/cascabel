@@ -1,0 +1,86 @@
+{
+  "id": "c1-06-la-escalera-de-notas",
+  "version": 1,
+  "tipo": "ordenar",
+  "titulo": "La escalera de notas",
+  "descripcion": "Sol, mi y la como escalones; se tocan para reconstruir la melodía oída.",
+  "etapa": "primaria-c1",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque-secuencial",
+    "alternativa": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c106.consigna",
+    "elementos": [
+      {
+        "clave": "g4",
+        "icono": "campana",
+        "etiqueta": "nota.sol",
+        "audio": "muestras/marimba/g4.opus"
+      },
+      {
+        "clave": "c6",
+        "icono": "campana",
+        "etiqueta": "nota.do",
+        "audio": "muestras/marimba/c6.opus"
+      },
+      {
+        "clave": "c4",
+        "icono": "campana",
+        "etiqueta": "nota.do",
+        "audio": "muestras/marimba/c4.opus"
+      },
+      {
+        "clave": "b4",
+        "icono": "campana",
+        "etiqueta": "nota.si",
+        "audio": "muestras/marimba/b4.opus"
+      }
+    ],
+    "orden": [
+      "c4",
+      "g4",
+      "b4",
+      "c6"
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c106.enunciado"
+  },
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador",
+  "pistas": [
+    "actividad.c106.pista1"
+  ]
+}
