@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useCarril } from '@/app/preferencias';
 import { despertarAudio, latenciaMs, obtenerContexto } from '@/audio/AudioEngine';
-import { MARIMBA, Sampler } from '@/audio/sampler';
+import { Sampler } from '@/audio/sampler';
+import { muestrasDe } from '@/audio/instrumentos';
 import { TOLERANCIA_MS } from '@/config';
 import { evaluarRitmo, type EvaluacionRitmica } from '../evaluacion';
 import { yDeLinea } from '../alturaEnPauta';
@@ -44,17 +45,21 @@ import type { PropsActividad } from '../tipos';
 type Fase = 'listo' | 'cuenta' | 'sonando' | 'resultado';
 
 
-/** Segundos de melodía visibles a la derecha de la línea. Menos no da tiempo a prepararse. */
-const ANTICIPACION_S = 3.2;
 /**
- * Margen antes de la primera nota.
+ * Segundos de recorrido visible antes de la línea, y **también** el margen antes de la
+ * primera nota. Son el mismo número a propósito, y esa igualdad es la regla:
  *
- * Sin esto la melodía arranca en el instante cero y **la primera nota nace justo encima de
- * la línea**: no se puede anticipar, solo reaccionar, y se falla siempre. Con dos segundos
- * la primera nota entra por la derecha y se ve venir como todas las demás. La cuenta atrás
- * no basta, porque termina y la nota ya está ahí.
+ * toda nota entra por el borde del recuadro y tarda `VENTANA_S` en llegar a la línea. Si el
+ * margen inicial fuera menor, **la primera nota nacería ya empezado el recorrido y tendría
+ * menos aviso que todas las demás**. Con dos segundos frente a una ventana de 3,2 nacía a un
+ * tercio del camino: se notaba, y el autor lo notó.
+ *
+ * Que sea una sola constante y no dos que casualmente coinciden es lo que impide que alguien
+ * las separe sin darse cuenta.
  */
-const ENTRADA_S = 2;
+const VENTANA_S = 3.2;
+const ANTICIPACION_S = VENTANA_S;
+const ENTRADA_S = VENTANA_S;
 /** Dónde está la línea del presente, en porcentaje del ancho. */
 const LINEA_PCT = 22;
 /** Separación entre líneas del pentagrama, en píxeles. */
@@ -72,6 +77,34 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
     orientacion?: Orientacion;
     /** Qué se dibuja: pentagrama, color, sílaba rítmica, figura o icono. Ver musicograma.ts */
     representacion?: Representacion;
+    /**
+     * Un botón por banda en vez de uno solo.
+     *
+     * Cambia lo que se practica: con un botón único basta con acertar **cuándo**; con uno
+     * por banda hay que acertar además **cuál**, que es coordinación y lectura de altura a
+     * la vez. Y es lo que abre la puerta a los acordes: dos notas en el mismo instante y en
+     * bandas distintas se tocan con dos dedos, sin que el motor necesite nada más.
+     */
+    botonesPorCarril?: boolean;
+    /**
+     * Qué aparece al acertar.
+     *
+     * Por defecto lo que corresponda a la representación, que es casi siempre lo correcto:
+     * enseñar «sol» en una actividad de animales no aporta nada —el niño no está trabajando
+     * el nombre de las notas— y encima mete un dato que sobra. Con `'ninguno'` no aparece
+     * nada, que a veces es lo mejor.
+     */
+    avisoAlAcertar?: 'nota' | 'silaba' | 'icono' | 'ninguno';
+    /**
+     * Las figuras bajan como círculos neutros y su dibujo **aparece al acertarlas**.
+     *
+     * Cambia lo que se mira: sin revelar, el niño reconoce el dibujo mientras baja; con
+     * revelar, tiene que atender al momento, y el dibujo es la recompensa. Sirve para hacer
+     * más difícil la misma actividad sin tocar el tempo ni el número de figuras.
+     */
+    revelar?: boolean;
+    /** Timbre. Ver `audio/instrumentos.ts`: hoy solo hay marimba. */
+    instrumento?: string;
   };
 
   const carril = useCarril(actividad.etapa);
@@ -89,6 +122,20 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
   const vertical = orientacion === 'vertical';
   const conAltura = representaAltura(representacion);
   const carriles = useMemo(() => (conAltura ? carrilesDe(notas) : []), [notas, conAltura]);
+  // Un botón por banda solo tiene sentido si hay bandas: con una sola sería el mismo botón
+  // con otro nombre.
+  const porCarril = (contenido.botonesPorCarril ?? false) && carriles.length > 1;
+  const revelar = contenido.revelar ?? false;
+  /*
+    El aviso sigue a la representación salvo que se diga otra cosa. Es el mismo criterio que
+    el resto del fichero: enseñar el nombre de la nota solo tiene sentido donde la altura es
+    lo que se trabaja.
+  */
+  const aviso =
+    contenido.avisoAlAcertar ??
+    (representacion === 'silaba' ? 'silaba' :
+     representacion === 'icono' ? 'icono' :
+     representacion === 'figura' ? 'ninguno' : 'nota');
 
   const [fase, setFase] = useState<Fase>('listo');
   const [ahora, setAhora] = useState(0);
@@ -100,7 +147,9 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
    * índice de la nota porque hay que poder repetir la misma nota: si dos «mi» seguidos
    * compartieran clave, React reutilizaría el nodo y la animación no volvería a arrancar.
    */
-  const [avisos, setAvisos] = useState<Array<{ id: number; nombre: string; cruce: number }>>([]);
+  const [avisos, setAvisos] = useState<
+    Array<{ id: number; texto: string; icono?: string; cruce: number }>
+  >([]);
   const siguienteAviso = useRef(0);
 
   const sampler = useRef<Sampler | null>(null);
@@ -143,7 +192,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
     await despertarAudio();
     if (!sampler.current) {
       try {
-        const s = new Sampler(MARIMBA);
+        const s = new Sampler(muestrasDe(contenido.instrumento));
         await s.cargar();
         sampler.current = s;
       } catch {
@@ -195,9 +244,16 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
       rafId.current = requestAnimationFrame(bucle);
     };
     rafId.current = requestAnimationFrame(bucle);
-  }, [bpm, carril, notas, duracionTotal, parar, tiempos]);
+  }, [bpm, carril, notas, duracionTotal, parar, tiempos, contenido.instrumento]);
 
-  const tocar = useCallback(() => {
+  /**
+   * @param banda índice de la banda tocada, o `null` cuando hay un único botón.
+   *
+   * Con bandas, un toque **solo puede acertar notas de su banda**. Es lo que hace que la
+   * actividad exija acertar cuál además de cuándo, y lo que permitirá los acordes: dos notas
+   * simultáneas en bandas distintas se resuelven con dos toques independientes.
+   */
+  const tocar = useCallback((banda: number | null = null) => {
     if (fase !== 'sonando') return;
     const ms = obtenerContexto().currentTime * 1000;
     golpes.current.push(ms);
@@ -206,6 +262,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
     let mejor = -1;
     let mejorError = Infinity;
     instantes.current.forEach((esperado, i) => {
+      if (banda !== null && carriles.indexOf(notas[i]!.nota.replace('#', '')) !== banda) return;
       const error = Math.abs(ms - esperado);
       if (error < mejorError && error <= limite) {
         mejorError = error;
@@ -222,23 +279,43 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
       notas[mejor]!, 0, carriles.indexOf(notas[mejor]!.nota.replace('#', '')),
       carriles.length, opciones,
     );
-    setAvisos((previos) => [...previos, { id, nombre: nombreDe(notas[mejor]!.nota), cruce: g.cruce }]);
-    window.setTimeout(() => setAvisos((p) => p.filter((a) => a.id !== id)), 1000);
-  }, [fase, carril, notas, carriles, opciones]);
+    const n = notas[mejor]!;
+    const texto =
+      aviso === 'nota' ? nombreDe(n.nota) :
+      aviso === 'silaba' ? (n.silaba ?? '') : '';
+    if (aviso !== 'ninguno') {
+      setAvisos((previos) => [
+        ...previos,
+        { id, texto, icono: aviso === 'icono' ? n.icono : undefined, cruce: g.cruce },
+      ]);
+      window.setTimeout(() => setAvisos((p) => p.filter((a) => a.id !== id)), 1000);
+    }
+  }, [fase, carril, notas, carriles, opciones, aviso]);
 
   // La barra espaciadora vale como toque: en el ordenador del aula es lo natural, y de paso
   // deja la actividad accesible sin ratón.
   useEffect(() => {
     if (fase !== 'sonando') return;
     const alPulsar = (e: KeyboardEvent) => {
-      if (e.code === 'Space') {
+      if (e.repeat) return;
+      if (!porCarril && e.code === 'Space') {
         e.preventDefault();
         tocar();
+        return;
+      }
+      // Con bandas, las teclas 1 a 4. Es lo que hace que la versión de varias bandas se
+      // pueda tocar con las dos manos en un ordenador, que es donde de verdad se disfruta.
+      if (porCarril) {
+        const n = Number(e.code.replace('Digit', ''));
+        if (e.code.startsWith('Digit') && n >= 1 && n <= carriles.length) {
+          e.preventDefault();
+          tocar(n - 1);
+        }
       }
     };
     window.addEventListener('keydown', alPulsar);
     return () => window.removeEventListener('keydown', alPulsar);
-  }, [fase, tocar]);
+  }, [fase, tocar, porCarril, carriles.length]);
 
   const total = notas.length;
   const porcentaje = total ? Math.round((acertadas.size / total) * 100) : 0;
@@ -327,6 +404,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
               data-forma={representacion}
               data-acertada={acertadas.has(i) || undefined}
               data-apagada={apagada || undefined}
+              data-oculta={revelar && !acertadas.has(i) || undefined}
               style={{
                 ...posicion,
                 // La duración se ve como tamaño en el eje del tiempo: una nota que dura el
@@ -338,8 +416,13 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
               }}
               aria-hidden="true"
             >
-              {representacion === 'icono' && n.icono && <Icono nombre={n.icono} tamano={38} />}
-              {contenidoFigura}
+              {/* Con `revelar`, la figura baja vacía y su dibujo solo aparece al acertarla. */}
+              {(!revelar || acertadas.has(i)) && (
+                <>
+                  {representacion === 'icono' && n.icono && <Icono nombre={n.icono} tamano={38} />}
+                  {contenidoFigura}
+                </>
+              )}
             </span>
           );
         })}
@@ -355,14 +438,14 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
             }
             aria-hidden="true"
           >
-            {a.nombre}
+            {a.icono ? <Icono nombre={a.icono} tamano={44} /> : a.texto}
           </span>
         ))}
       </div>
 
       {/* El nombre también en texto vivo, para quien no puede ver la animación. */}
       <p className="visualmente-oculto" aria-live="polite">
-        {avisos.length ? avisos[avisos.length - 1]!.nombre : ''}
+        {avisos.length ? avisos[avisos.length - 1]!.texto : ''}
       </p>
 
       {fase === 'listo' && (
@@ -372,14 +455,37 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
       )}
 
       {/* La cuenta atrás va justo antes de que empiece a contar lo que haces. */}
-      {fase === 'cuenta' && <CuentaAtras desde={3} alTerminar={() => void arrancar()} />}
+      {fase === 'cuenta' && <CuentaAtras desde={3} bpm={bpm} alTerminar={() => void arrancar()} />}
 
       {fase === 'sonando' && (
         <>
-          <p className="pista-fija">{t('karaoke.toca')}</p>
-          <button type="button" className="boton-actividad karaoke__diana" onPointerDown={tocar}>
-            {t('karaoke.diana')}
-          </button>
+          <p className="pista-fija">{t(porCarril ? 'karaoke.tocaBanda' : 'karaoke.toca')}</p>
+          {porCarril ? (
+            /* Un botón por banda, en el mismo orden y con el mismo color que las bandas de
+               arriba: el botón está debajo de su banda, así que no hay que aprenderse nada. */
+            <div className="karaoke__botones">
+              {carriles.map((nota, i) => (
+                <button
+                  key={nota}
+                  type="button"
+                  className="boton-actividad karaoke__banda"
+                  style={{ borderColor: colorDe(nota), background: colorDe(nota) }}
+                  onPointerDown={() => tocar(i)}
+                  aria-label={`${nombreDe(nota)} · ${i + 1}`}
+                >
+                  {nombreDe(nota)}
+                </button>
+              ))}
+            </div>
+          ) : (
+            <button
+              type="button"
+              className="boton-actividad karaoke__diana"
+              onPointerDown={() => tocar()}
+            >
+              {t('karaoke.diana')}
+            </button>
+          )}
         </>
       )}
 

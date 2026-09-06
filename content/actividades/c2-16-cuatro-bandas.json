@@ -1,0 +1,138 @@
+{
+  "id": "c2-16-cuatro-bandas",
+  "version": 1,
+  "tipo": "karaoke",
+  "titulo": "Cuatro bandas",
+  "descripcion": "Cuatro carriles con su propio botón. Ya no basta con acertar cuándo: hay que acertar también cuál.",
+  "etapa": "primaria-c2",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "vocal-kodaly",
+    "compas": "4/4",
+    "tempo": 72,
+    "figuras": [
+      "negra",
+      "blanca"
+    ]
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c216.consigna",
+    "orientacion": "vertical",
+    "representacion": "color",
+    "botonesPorCarril": true,
+    "tempo": 72,
+    "notas": [
+      {
+        "nota": "C4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1
+      },
+      {
+        "nota": "C5",
+        "pulsos": 1
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "C4",
+        "pulsos": 2
+      },
+      {
+        "nota": "C4",
+        "pulsos": 1
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "C5",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "C4",
+        "pulsos": 1
+      },
+      {
+        "nota": "G4",
+        "pulsos": 2
+      },
+      {
+        "nota": "C5",
+        "pulsos": 1
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "C4",
+        "pulsos": 1
+      },
+      {
+        "nota": "C4",
+        "pulsos": 4
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c216.enunciado"
+  },
+  "pistas": [
+    "actividad.c216.pista1",
+    "actividad.c216.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Marimba",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

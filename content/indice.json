@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-06",
-  "total": 56,
+  "total": 58,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -292,6 +292,23 @@
       "estado": "borrador"
     },
     {
+      "id": "c1-19-adivina-quien-baja",
+      "titulo": "Adivina quién baja",
+      "etapa": "primaria-c1",
+      "eje": "pulso",
+      "tipo": "karaoke",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
       "id": "c2-01-coloca-la-nota",
       "titulo": "Coloca la nota en el pentagrama",
       "etapa": "primaria-c2",
@@ -449,6 +466,23 @@
       "titulo": "Lee las figuras",
       "etapa": "primaria-c2",
       "eje": "notacion",
+      "tipo": "karaoke",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c2-16-cuatro-bandas",
+      "titulo": "Cuatro bandas",
+      "etapa": "primaria-c2",
+      "eje": "altura",
       "tipo": "karaoke",
       "lugar": "pantalla",
       "microfono": false,
@@ -860,7 +894,7 @@
       "tipo": "karaoke",
       "lugar": "pantalla",
       "microfono": false,
-      "duracion_min": 5,
+      "duracion_min": 6,
       "curriculo": {
         "area": "Comunicación y Representación de la Realidad",
         "competencia": null,

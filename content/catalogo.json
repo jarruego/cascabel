@@ -1,7 +1,7 @@
 {
   "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa.",
   "generado": "2026-09-05",
-  "total": 64,
+  "total": 66,
   "actividades": [
     {
       "id": "INF-01",
@@ -433,6 +433,19 @@
       "estado": "hecha"
     },
     {
+      "id": "C1-19",
+      "titulo": "Adivina quién baja",
+      "etapa": "primaria-c1",
+      "eje": "pulso",
+      "lugar": "pantalla",
+      "tipo": "karaoke",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 . crit. 3.1 . saber D",
+      "descripcion": "Bajan círculos vacíos y el animal solo aparece si lo tocas a tiempo. La misma actividad que la de Infantil, con una vuelta más.",
+      "estado": "hecha"
+    },
+    {
       "id": "C2-01",
       "titulo": "Coloca la nota",
       "etapa": "primaria-c2",
@@ -625,6 +638,19 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Negras, blancas y corcheas vienen de la derecha y se tocan al cruzar la línea. Cada figura ocupa lo que dura.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C2-16",
+      "titulo": "Cuatro bandas",
+      "etapa": "primaria-c2",
+      "eje": "altura",
+      "lugar": "pantalla",
+      "tipo": "karaoke",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 . crit. 3.1 . saber D",
+      "descripcion": "Cuatro carriles con su propio botón. Ya no basta con acertar cuándo: hay que acertar también cuál.",
       "estado": "hecha"
     },
     {

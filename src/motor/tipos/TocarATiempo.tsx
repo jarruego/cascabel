@@ -261,7 +261,7 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
         uno hace, y eso es después del ejemplo.
       */}
       {fase === 'cuenta' && (
-        <CuentaAtras desde={2} alTerminar={() => setFase('respondiendo')} />
+        <CuentaAtras desde={2} bpm={bpm} alTerminar={() => setFase('respondiendo')} />
       )}
 
       {fase === 'escuchando' && <p aria-live="polite">{t('tocar.escucha')}</p>}
