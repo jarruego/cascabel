@@ -335,11 +335,34 @@ de la actividad — que es el último gesto real antes de que suene nada.
 índice. Con tres actividades es suficiente; con doscientas habrá que agrupar por
 competencia y ciclo, y probablemente buscar por texto.
 
-### T1.5 — Persistencia local
+### T1.5 — Persistencia local `[x]`
 
-- [ ] Progreso en IndexedDB (no `localStorage`: es síncrono y se llena)
-- [ ] Funciona si el almacenamiento está bloqueado (modo privado)
-- [ ] **Cero datos personales.** Ni nombre, ni edad, ni curso nominal
+Cerrada el 2026-09-06.
+
+- [x] Progreso en IndexedDB (no `localStorage`: es síncrono y se llena)
+- [x] Funciona si el almacenamiento está bloqueado (modo privado)
+- [x] **Cero datos personales.** Ni nombre, ni edad, ni curso nominal
+
+**El caso del almacenamiento bloqueado no es un añadido, es la mitad del trabajo.** En modo
+privado, con cookies bloqueadas o en un iOS que decida limpiar el origen, hay navegadores
+que **lanzan al solo leer `window.indexedDB`**, no al usarlo — por eso el acceso va dentro
+del `try`. Y el modo privado de Firefox deja la petición colgada sin error ni éxito, así
+que hay un tiempo límite de 3 s. En todos esos casos se cae a memoria y la actividad se
+juega igual: lo único que se pierde es recordar que se jugó, y eso nunca justifica una
+pantalla de error.
+
+**El test de «cero datos personales» es una lista blanca explícita**, no una comprobación
+de que falten campos concretos. Si alguien añade uno, el test falla y le obliga a pasar por
+ahí y preguntarse si sigue siendo verdad que no identificamos a nadie. La fecha se redondea
+al día: saber a qué hora exacta jugó un niño no aporta nada pedagógico y sí acerca el dato
+a ser identificativo.
+
+**En el catálogo se marca lo ya hecho, y solo eso.** Un tick del tamaño del texto. Sin
+puntos, sin racha, sin porcentaje: es orientación para el maestro, no recompensa para el
+niño. Regla 4 de `CLAUDE.md`.
+
+`borrarTodo()` existe desde el principio aunque aún no tenga botón: es lo que permitirá
+decirle a una familia «puedes borrarlo todo tú, ahora, sin pedírnoslo».
 
 ### T1.6 — PWA y modo sin conexión
 
@@ -426,6 +449,41 @@ exige conservar el aviso de licencia —está por partida doble, en `Andika-OFL.
 de la tabla `name` de la propia fuente—. Prohíbe vender las fuentes por separado y usar los
 Nombres Reservados en una versión modificada. El recorte no cambia el nombre porque no
 altera ningún trazo, solo elimina glifos; si algún día se retocan, hay que renombrar.
+
+### T1.12 — Aspecto y sonido: pasar de «funciona» a «da gusto» `⚠️`
+
+Abierta el 2026-09-06 tras la primera prueba real del autor con las actividades montadas:
+
+> «Las actividades son funcionales pero son muy feas, poco usables, con sonidos raros.»
+
+Es la observación más importante que ha salido hasta ahora, y no es cosmética. El dosier ya
+avisaba de que el riesgo más subestimado del proyecto es que **el contenido sea correcto y
+soso**: el validador comprueba corrección, no gracia. Una actividad que un niño no quiere
+volver a abrir ha fallado aunque pase todos los tests.
+
+Lo que hay hoy es andamiaje deliberado: iconos SVG dibujados a mano por un desarrollador y
+sonidos sintetizados con cincuenta líneas de Python. Sirvieron para desbloquear T0.2 y T1.2,
+y no dan para más.
+
+- [ ] **Sonido**: sustituir la síntesis por muestras reales CC0. Candidatas ya
+      identificadas en `docs/08-LEGAL.md`: **VCSL** y **VSCO 2 CE**, ambas CC0, con
+      timbres percusivos que toleran el *pitch-shifting*. Es parte de T1.7
+- [ ] **Iconos**: buscar un juego vectorial libre y coherente, no dibujarlos uno a uno.
+      Requisitos: licencia MIT/CC0/OFL, SVG, sin peticiones externas (se empaquetan),
+      y **concretos** — un tambor dibujado, no un pictograma abstracto (regla 3 de
+      `docs/04-DISENO-UI.md`). Candidatas a evaluar: Kenney.nl (CC0, muy orientado a
+      juego infantil), openclipart, Twemoji (CC-BY, obliga a atribuir)
+- [ ] **Personajes**: el dosier señala que la identidad propia es lo que separa una
+      biblioteca de una hoja de ejercicios. Decisión de producto, no técnica
+- [ ] **Revisar la usabilidad con las tres preguntas** de `docs/06-PIPELINE-IA.md`:
+      ¿es cantable a esta edad?, ¿se entiende sin leer?, ¿lo haría en clase?
+
+**Criterio de aceptación**: un niño abre una actividad y quiere abrir otra. No hay test que
+mida eso; lo mide T0.3.
+
+**Nota**: no se ataca antes de T1.8 a propósito. Cambiar el aspecto con seis actividades
+es barato; con veinte, no. Pero tampoco después, porque generar veinte actividades feas es
+generar veinte actividades que habrá que rehacer.
 
 ### T1.10 — Despliegue
 

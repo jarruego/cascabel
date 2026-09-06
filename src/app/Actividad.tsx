@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router';
 import { cargarActividad } from '@/datos/cargar';
 import { componenteDe } from '@/motor/registro';
+import { anotar } from '@/datos/progreso';
 import { t } from '@/i18n';
 import type { Actividad as TipoActividad, ResultadoActividad } from '@/motor/tipos';
 
@@ -68,7 +69,15 @@ export default function Actividad() {
           </Link>
         </section>
       ) : Componente ? (
-        <Componente actividad={actividad} alTerminar={setResultado} />
+        <Componente
+          actividad={actividad}
+          alTerminar={(r) => {
+            setResultado(r);
+            // Si el almacenamiento está bloqueado esto no hace nada y no pasa nada:
+            // la actividad ya se ha jugado, que es lo que importa.
+            void anotar(r);
+          }}
+        />
       ) : (
         // No es un error del niño ni del maestro: es que ese tipo de motor aún no existe.
         // Ver docs/07-ROADMAP.md; el registro dice cuáles hay.

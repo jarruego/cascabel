@@ -5,8 +5,8 @@ con licencia libre. La lista completa y auditable está en `THIRD-PARTY-NOTICES.
 
 ## Autoría
 
-- Desarrollo: Jose Alberto
-- Validación pedagógica: profesorado de música
+- Desarrollo: Jose Alberto Arruego
+- Validación pedagógica: Esther Martínez
 
 ## Marco curricular
 

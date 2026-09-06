@@ -566,3 +566,11 @@ body {
     break-inside: avoid;
   }
 }
+
+/* Marca de «ya hecha». Es orientación, no recompensa: sin puntos, sin racha y sin
+   porcentaje. Un tick discreto y verde, del tamaño del texto y no del de un trofeo. */
+.ficha__hecha {
+  float: right;
+  color: var(--ok);
+  font-weight: 700;
+}
