@@ -126,9 +126,12 @@ detección de tono respondiendo, contexto seguro y 48 kHz en los tres. Eso despe
 escenario de escritorio por completo. Lo interesante está en lo que no coincide.
 
 **1. Ningún navegador expone `performance` dentro del `AudioWorkletGlobalScope`.**
-Chrome, Edge y Firefox dan los tres «no medible». Esto **cierra una de las preguntas
-abiertas de T0.4**: no había que comprobar si Firefox lo hacía mejor, no lo hace. El banco
-de pruebas en el hilo principal deja de ser el plan B y pasa a ser el único plan.
+Chrome, Edge y Firefox dan los tres «no medible», así que el banco de pruebas en el hilo
+principal dejó de ser el plan B y pasó a ser el único. Ya está hecho (T0.4), y **el
+resultado obliga a rehacer el detector antes de T2.5**: 1,33 ms por análisis sobre un
+presupuesto de 10,67, es decir el **12,5 % de un núcleo en un PC de sobremesa**. El
+comentario del worklet decía «1-4 % en una tablet media» y era optimista por un factor de
+entre tres y diez. Ver T2.0.
 
 **2. Firefox declara `baseLatency = 0`, y eso casi con seguridad es que no lo implementa.**
 Chromium reporta 10 ms de `baseLatency` en la misma máquina, con la misma tarjeta y la misma

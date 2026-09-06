@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { t } from '@/i18n';
-import { despertarAudio } from '@/audio/AudioEngine';
+import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { DetectorDeTono, type LecturaTono } from '@/escucha/tono';
+import { medirCosteNsdf, type CosteNsdf } from '@/escucha/banco';
 import { aTexto, recoger, type EstadoMicrofono, type Informe } from './informe';
 
 /**
@@ -20,15 +21,31 @@ export default function Diagnostico() {
   const [lectura, setLectura] = useState<LecturaTono | null>(null);
   const [informe, setInforme] = useState<Informe>(() => recoger({ fase: 'sin-pedir' }, null));
   const [copiado, setCopiado] = useState(false);
+  const [coste, setCoste] = useState<CosteNsdf | null>(null);
   const detector = useRef<DetectorDeTono | null>(null);
 
   // El informe se refresca solo: sampleRate y las latencias cambian al abrir el micro.
   useEffect(() => {
     const id = window.setInterval(() => {
-      setInforme(recoger(micro, detector.current?.costeMedioMs() ?? null));
+      setInforme(recoger(micro, detector.current?.costeMedioMs() ?? null, coste));
     }, 500);
     return () => window.clearInterval(id);
-  }, [micro]);
+  }, [micro, coste]);
+
+  // El banco de medida bloquea el hilo unas décimas de segundo. Se lanza después del
+  // primer pintado para que la página aparezca ya, y una sola vez.
+  useEffect(() => {
+    const id = window.setTimeout(() => {
+      let tasa = 48000;
+      try {
+        tasa = obtenerContexto().sampleRate;
+      } catch {
+        // Sin AudioContext usable, medimos contra la tasa habitual y se nota en el informe.
+      }
+      setCoste(medirCosteNsdf(tasa));
+    }, 300);
+    return () => window.clearTimeout(id);
+  }, []);
 
   // track.stop() al salir, para que el indicador del navegador se apague.
   useEffect(() => () => detector.current?.parar(), []);
@@ -103,6 +120,13 @@ export default function Diagnostico() {
       {(micro.fase === 'denegado' || micro.fase === 'error') && (
         <p className="diagnostico__fallo" role="status">
           {t('diagnostico.fallo')} <code>{micro.detalle}</code>
+        </p>
+      )}
+
+      {coste && (
+        <p className="diagnostico__coste">
+          {t('diagnostico.coste')} <strong>{coste.msPorAnalisis.toFixed(3)} ms</strong>{' '}
+          ({(coste.fraccionNucleo * 100).toFixed(1)} % · {t('diagnostico.costeEstimacion')})
         </p>
       )}
 
