@@ -36,10 +36,13 @@ certificados ni túneles a terceros.
 - [x] Firefox de escritorio en Windows — 34 ms, y declara `baseLatency = 0`
 - [x] Chrome de Android, pestaña — **micrófono funciona**. 27 ms de latencia, 48 kHz.
       Se probó contra el despliegue real, que además es mejor que el reenvío de puertos
-- [ ] Chrome de Android, **PWA instalada** ← requiere HTTPS real, no vale el reenvío
+- [x] Chrome de Android, **PWA instalada** — **el micrófono funciona en standalone**.
+      28 ms de latencia, sin penalización frente a la pestaña
 
-**El escritorio está cerrado** (2026-09-06): los tres navegadores conceden el micrófono,
-cargan el `AudioWorklet` y detectan tono. Resultados y análisis en `docs/pruebas/microfono.md`.
+**(a) CERRADA del todo el 2026-09-06.** Los tres navegadores de escritorio y Android, en
+pestaña y en app instalada, conceden el micrófono, cargan el `AudioWorklet` y detectan
+tono. Resultados y análisis en `docs/pruebas/microfono.md`. Lo único que queda sin probar
+es iOS, y es por no tener dispositivo, no por no haberlo intentado.
 
 El último punto es la excepción honesta: una PWA lanzada desde la pantalla de inicio no
 pasa por el túnel de DevTools, así que el modo *standalone* en Android sólo se puede
