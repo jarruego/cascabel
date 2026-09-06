@@ -71,7 +71,22 @@ FIGURAS_ETAPA = {
 }
 
 # Número máximo de objetos simultáneos en pantalla (UX infantil, NN/g).
-MAX_OBJETOS = {"infantil": 4, "primaria-c1": 6, "primaria-c2": 8, "primaria-c3": 9}
+#
+# El límite es POR CARRIL, no por etapa (ver docs/adr/0005-una-app-tres-carriles.md), y una
+# actividad solo declara etapa. El 2.º ciclo se ve desde los dos carriles de Primaria, así
+# que se aplica el MÁS ESTRICTO de los que puedan abrirla: si cabe en el carril de los
+# primeros lectores, cabe en el de los autónomos, y nunca al revés.
+MAX_OBJETOS_CARRIL = {"infantil": 4, "lectores": 6, "autonomos": 9}
+CARRILES_DE_ETAPA = {
+    "infantil": ["infantil"],
+    "primaria-c1": ["lectores"],
+    "primaria-c2": ["lectores", "autonomos"],
+    "primaria-c3": ["autonomos"],
+}
+MAX_OBJETOS = {
+    etapa: min(MAX_OBJETOS_CARRIL[c] for c in carriles)
+    for etapa, carriles in CARRILES_DE_ETAPA.items()
+}
 
 
 # Con --permisivo, la falta de jsonschema o music21 degrada a aviso en vez de
@@ -243,7 +258,8 @@ def validar_producto(datos: dict, r: Resultado) -> None:
         if len(opciones) > MAX_OBJETOS[etapa]:
             r.errores.append(
                 f"producto · {len(opciones)} objetos en pantalla; el máximo para "
-                f"{etapa} es {MAX_OBJETOS[etapa]}"
+                f"{etapa} es {MAX_OBJETOS[etapa]} (carril más estricto que puede abrirla: "
+                f"{min(CARRILES_DE_ETAPA[etapa], key=lambda c: MAX_OBJETOS_CARRIL[c])})"
             )
 
     for prohibido in ("vidas", "tiempo_limite_s", "racha", "clasificacion"):

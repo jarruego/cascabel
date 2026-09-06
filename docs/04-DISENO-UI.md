@@ -35,18 +35,19 @@ autónomos es lo contrario del elogio genérico, que a los 11 años ya suena fal
 
 ## Tamaños
 
-| Etapa | Objetivo táctil | Separación | Objetos simultáneos | Cuerpo de texto |
+| Carril | Objetivo táctil | Separación | Objetos simultáneos | Cuerpo de texto |
 |---|---|---|---|---|
-| Infantil (3–6) | 75 × 75 px | ≥ 24 px | 2–4 | 20–24 px |
-| 1.º–3.º (6–8) | 60 × 60 px | ≥ 16 px | 4–6 | 18 px |
-| 4.º–6.º (9–12) | 48 × 48 px | ≥ 12 px | 6–9 | 17 px |
+| `infantil` (3–6) | 75 × 75 px | ≥ 24 px | 2–4 | 20–24 px |
+| `lectores` (1.º–3.º, 6–8) | 60 × 60 px | ≥ 16 px | 4–6 | 18 px |
+| `autonomos` (4.º–6.º, 9–12) | 48 × 48 px | ≥ 12 px | 6–9 | 17 px |
 
 WCAG 2.5.8 pide 24 × 24 px, pensado para adultos. Los niños de 3 a 5 años no tienen
 control motor fino.
 
-> **Ojo**: `OBJETIVO_TACTIL` y `MAX_OBJETOS` de `src/config.ts` siguen indexados por `Etapa`,
-> con `primaria-c1` y `primaria-c2` compartiendo 60 px. Para 4.º eso contradice la tabla de
-> arriba (48 px). Está anotado como pendiente en el ADR 0005 y en el roadmap.
+Estos números viven en `src/config.ts` (`OBJETIVO_TACTIL`, `MAX_OBJETOS`, `SEPARACION`)
+indexados **por carril**, y en `estilos/tokens.css` como `--objetivo` y `--separacion`, que
+toman su valor del `data-carril` del ancestro. Un componente no necesita saber en qué carril
+está: pide `var(--objetivo)`.
 
 **Truco imprescindible en pentagramas**: dibuja la nota pequeña, tipográficamente correcta,
 y pon encima un hitbox transparente de 60 px. VexFlow te da control total para hacerlo.

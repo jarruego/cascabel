@@ -46,12 +46,44 @@
   --t-c1: 20px;
   --t-c3: 18px;
 
-  /* Objetivos táctiles. WCAG 2.2 AA pide 24 px; con niños es un suelo, no una meta. */
+  /*
+   * Objetivos táctiles POR CARRIL, no por etapa. WCAG 2.2 AA pide 24 px; con niños es un
+   * suelo, no una meta. Los nombres antiguos (--objetivo-c1/c2/c3) se han retirado: eran
+   * ciclos LOMLOE, y un ciclo no dice nada sobre el tamaño de un botón.
+   * Ver docs/adr/0005-una-app-tres-carriles.md.
+   */
   --objetivo-infantil: 75px;
-  --objetivo-c1: 60px;
-  --objetivo-c2: 60px;
-  --objetivo-c3: 48px;
+  --objetivo-lectores: 60px;
+  --objetivo-autonomos: 48px;
+
   --separacion-infantil: 24px;
+  --separacion-lectores: 16px;
+  --separacion-autonomos: 12px;
+
+  /* Valores del carril activo. Los sobrescribe [data-carril] más abajo. */
+  --objetivo: var(--objetivo-lectores);
+  --separacion: var(--separacion-lectores);
+  --t-carril: var(--t-c1);
+}
+
+/*
+ * El carril se marca en un ancestro con data-carril y todo lo de dentro hereda sus
+ * tamaños. Así un componente no necesita saber en qué carril está: pide var(--objetivo).
+ */
+[data-carril='infantil'] {
+  --objetivo: var(--objetivo-infantil);
+  --separacion: var(--separacion-infantil);
+  --t-carril: var(--t-infantil);
+}
+[data-carril='lectores'] {
+  --objetivo: var(--objetivo-lectores);
+  --separacion: var(--separacion-lectores);
+  --t-carril: var(--t-c1);
+}
+[data-carril='autonomos'] {
+  --objetivo: var(--objetivo-autonomos);
+  --separacion: var(--separacion-autonomos);
+  --t-carril: var(--t-c3);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -107,7 +139,7 @@ body {
 .opciones {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--separacion-infantil);
+  gap: var(--separacion);
   margin: 24px 0;
 }
 
