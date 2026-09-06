@@ -1,5 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { desviacionEnCents, evaluarAfinacion, mensajeAfinacion } from '../src/motor/afinacion';
+import {
+  VENTANAS_POR_CARRIL,
+  desviacionEnCents,
+  evaluarAfinacion,
+  mensajeAfinacion,
+} from '../src/motor/afinacion';
 
 /**
  * La misma idea que protege `tests/evaluacion.test.ts` para el ritmo, aplicada a la voz:
@@ -18,10 +23,28 @@ describe('evaluación de afinación', () => {
 
   it('detecta al que canta ESTABLE pero transportado, y no lo trata como un fallo', () => {
     // 70 cents bajo, pero clavado: sabe sostener la nota, solo está en otra altura.
-    const e = evaluarAfinacion(repetir(-70));
+    // Se evalúa como 5.º-6.º, donde la ventana es de 50 cents y eso ya se puede corregir.
+    const e = evaluarAfinacion(repetir(-70), 'autonomos');
     expect(e.establePeroTransportado).toBe(true);
     expect(e.desviacionCents).toBeLessThan(5);
     expect(mensajeAfinacion(e)).toBe('cantar.establePeroBajo');
+  });
+
+  it('la MISMA desviación es afinada en Infantil y transportada en 5.º y 6.º', () => {
+    // Es la razón de que la ventana vaya por carril. Setenta cents bajo y clavado, en un
+    // niño de cuatro años, es haber encontrado la nota: su voz no da más precisión, y
+    // decirle que ha fallado mide su control muscular, no su oído.
+    const lecturas = repetir(-70);
+    expect(evaluarAfinacion(lecturas, 'infantil').calidad).toBe('afinado');
+    expect(evaluarAfinacion(lecturas, 'autonomos').calidad).not.toBe('afinado');
+  });
+
+  it('ninguna ventana llega al semitono', () => {
+    // A 100 cents estás en otra nota. Darla por buena enseñaría algo falso, así que ni el
+    // carril más generoso puede llegar ahí.
+    for (const c of ['infantil', 'lectores', 'autonomos'] as const) {
+      expect(VENTANAS_POR_CARRIL[c].afinado).toBeLessThan(100);
+    }
   });
 
   it('distingue eso de quien no sostiene la nota', () => {

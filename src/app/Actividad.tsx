@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router';
 import { cargarActividad } from '@/datos/cargar';
 import { componenteDe } from '@/motor/registro';
+import { Lienzo } from '@/ui/Lienzo';
 import { anotar } from '@/datos/progreso';
 import { ModalExito, ModalExplicacion } from '@/ui/ModalesActividad';
 import { t } from '@/i18n';
@@ -89,17 +90,21 @@ export default function Actividad() {
         alVolver={() => navegar('/')}
       />
 
+      {/* La actividad va dentro del lienzo: es lo que le da el botón de ampliar y lo que
+          permite que, al ampliarla, desaparezca todo lo que no es la actividad. */}
       {!empezada ? null : Componente ? (
-        <Componente
-          key={intento}
-          actividad={actividad}
-          alTerminar={(r) => {
-            setResultado(r);
-            // Si el almacenamiento está bloqueado esto no hace nada y no pasa nada:
-            // la actividad ya se ha jugado, que es lo que importa.
-            void anotar(r);
-          }}
-        />
+        <Lienzo>
+          <Componente
+            key={intento}
+            actividad={actividad}
+            alTerminar={(r) => {
+              setResultado(r);
+              // Si el almacenamiento está bloqueado esto no hace nada y no pasa nada:
+              // la actividad ya se ha jugado, que es lo que importa.
+              void anotar(r);
+            }}
+          />
+        </Lienzo>
       ) : (
         // No es un error del niño ni del maestro: es que ese tipo de motor aún no existe.
         // Ver docs/07-ROADMAP.md; el registro dice cuáles hay.

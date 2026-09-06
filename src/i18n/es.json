@@ -675,5 +675,7 @@
   "cantar.baja": "Más grave ↓",
   "cantar.bajaPoco": "Baja un poquito ↓",
   "cantar.ahi": "¡Ahí! Mantenla…",
-  "cantar.cazada": "¡La has cazado!"
+  "cantar.cazada": "¡La has cazado!",
+  "lienzo.ampliar": "Ver a pantalla completa",
+  "lienzo.restaurar": "Salir de pantalla completa"
 }
