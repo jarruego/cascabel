@@ -107,10 +107,21 @@ export default defineConfig({
         display: 'standalone',
         background_color: '#F2F3EF',
         theme_color: '#BF3B26',
+        // Los genera tools/iconos.py con la geometría de public/favicon.svg. Chrome de
+        // Android EXIGE 192 y 512 para ofrecer «Instalar aplicación»: sin ellos no se
+        // puede probar el micrófono en modo instalado, que es media T0.1.
         icons: [
-          { src: '/icono-192.png', sizes: '192x192', type: 'image/png' },
-          { src: '/icono-512.png', sizes: '512x512', type: 'image/png' },
-          { src: '/icono-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+          { src: '/icono-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+          { src: '/icono-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+          // El maskable es un fichero DISTINTO, con un 20 % de margen por lado. Android
+          // recorta en círculo, gota o cuadrado según el fabricante, y reutilizar aquí el
+          // icono normal le corta la anilla del cascabel.
+          {
+            src: '/icono-512-maskable.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable',
+          },
         ],
       },
       workbox: {

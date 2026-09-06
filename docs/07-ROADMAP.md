@@ -323,6 +323,28 @@ Las marcadas con `"esfuerzo": "S"` en `content/catalogo.json`.
 - [ ] Hoja de trazabilidad de assets al día
 - [ ] CSP verificada en producción (DevTools: cero peticiones fuera del origen)
 
+### T1.9c — Iconos de la PWA `[x]`
+
+Cerrado el 2026-09-06, en el primer despliegue real.
+
+`manifest.webmanifest` declaraba `/icono-192.png` y `/icono-512.png`, y **ninguno de los
+dos existía**. Chrome de Android exige ambos para ofrecer «Instalar aplicación», así que la
+fila de «PWA instalada» de `docs/pruebas/microfono.md` era imposible de rellenar.
+
+- [x] `tools/iconos.py` los genera con la misma geometría que `public/favicon.svg`, para
+      que la marca no se desincronice: si cambia el favicon, se cambian las mismas cinco
+      formas y se vuelve a ejecutar
+- [x] El `maskable` es un fichero **distinto**, con 20 % de margen por lado. Android
+      recorta en círculo, gota o cuadrado según el fabricante, y reutilizar ahí el icono
+      normal le cortaba la anilla del cascabel
+- [x] `tools/comprobar-dist.mjs` rompe el build si vuelve a faltar
+
+**Por qué no se vio antes, y es lo importante**: `not_found_handling:
+"single-page-application"` hace que **cualquier fichero que falte devuelva 200 con el
+`index.html`**. Un `curl -w '%{http_code}'` decía «200» y mentía; solo el `Content-Type`
+delataba que llegaba `text/html` donde debía llegar un PNG. Esta clase de fallo es
+invisible por diseño, y por eso ahora la comprueba el build y no el ojo.
+
 ### T1.9b — Las tipografías no están en el repositorio `⚠️`
 
 Detectado el 2026-09-06 en el primer despliegue, por un aviso del build.
@@ -342,8 +364,9 @@ el navegador cae en silencio a la tipografía del sistema. Consecuencias reales:
 - [ ] Anotarlas en `THIRD-PARTY-NOTICES.md` con su licencia — la OFL obliga a conservar
       el aviso y prohíbe vender las fuentes por separado
 - [ ] Comprobar que entran en el precache de la PWA (hoy `includeAssets` ya las contempla)
-- [ ] Que el build **falle** si faltan, en vez de avisar: un aviso en 200 líneas de log no
-      lo ve nadie, y esto ha estado roto desde el andamiaje
+- [x] Que el build **falle** si faltan, en vez de avisar: hecho en `tools/comprobar-dist.mjs`.
+      Ahora mismo las dos fuentes están en su lista de `PENDIENTES`, con esta tarea como
+      motivo; en cuanto se añadan los ficheros hay que quitarlas de ahí
 
 **Criterio de aceptación**: la respuesta de `/fuentes/Andika-Regular.woff2` es 200 con
 `font/woff2`, y `docs/04-DISENO-UI.md` deja de prometer algo que no ocurre.
