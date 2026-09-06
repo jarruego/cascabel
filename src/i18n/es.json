@@ -244,5 +244,12 @@
   "tocar.masRegular": "Escucha otra vez y marca el pulso con el pie mientras tocas.",
   "tocar.sinMicrofono": "No se ha podido usar el micrófono en este dispositivo. La actividad funciona igual tocando el botón.",
   "tocar.sinPermiso": "No se ha dado permiso para el micrófono. La actividad funciona igual tocando el botón; si quieres usar palmadas, hay que permitirlo en los ajustes del navegador.",
-  "actividad.contenidoInvalido": "Esta actividad tiene un ritmo que todavía no sabemos tocar. No es culpa tuya."
+  "actividad.contenidoInvalido": "Esta actividad tiene un ritmo que todavía no sabemos tocar. No es culpa tuya.",
+  "nota.do": "do",
+  "nota.re": "re",
+  "nota.mi": "mi",
+  "nota.fa": "fa",
+  "nota.sol": "sol",
+  "nota.la": "la",
+  "nota.si": "si"
 }

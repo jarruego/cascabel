@@ -780,3 +780,65 @@ body {
   font-size: 0.9em;
   font-variant-numeric: tabular-nums;
 }
+
+/* ── pentagrama ────────────────────────────────────────────────────────────
+   El truco de docs/04-DISENO-UI.md: la nota se dibuja PEQUEÑA y correcta, y
+   encima va un hitbox transparente del tamaño táctil del carril. Un dedo de
+   siete años no acierta un espacio de doce píxeles, y agrandar la pauta la
+   haría dejar de parecer una partitura. */
+.pentagrama__lienzo {
+  position: relative;
+  margin: 16px auto;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.pentagrama__pedida {
+  font-size: clamp(28px, 7vw, 56px);
+  font-weight: 700;
+  color: var(--acento-2);
+  min-height: 1.2em;
+  margin: 8px 0;
+}
+.pentagrama__sitio {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 2px dashed transparent;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+}
+/* El hitbox se hace visible al enfocar o pasar por encima: invisible para quien no
+   lo necesita, evidente para quien navega con teclado. */
+.pentagrama__sitio:focus-visible {
+  outline: 4px solid var(--acento);
+  outline-offset: 2px;
+}
+.pentagrama__sitio:hover {
+  border-color: var(--linea);
+}
+.pentagrama__sitio[aria-disabled="true"] {
+  cursor: default;
+}
+/* La cabeza de nota: del tamaño que tendría de verdad en la pauta, no del hitbox. */
+.pentagrama__nota {
+  width: 16px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--tinta);
+  transform: rotate(-20deg);
+}
+.pentagrama__etiqueta {
+  margin-top: 2px;
+  font-size: 0.75em;
+  color: var(--tinta-2);
+}
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
