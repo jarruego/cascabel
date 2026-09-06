@@ -28,7 +28,9 @@ export type TipoActividad =
   /** Grabar sonidos del entorno. La ÚNICA que guarda audio. Ver Paisaje.tsx. */
   | 'paisaje'
   /** Componer con varias voces a la vez. Ver Pistas.tsx. */
-  | 'pistas';
+  | 'pistas'
+  /** Percusión corporal: pitos, palmas, muslos y pies. Ver Cuerpo.tsx. */
+  | 'cuerpo';
 
 export type Eje = 'pulso' | 'altura' | 'timbre' | 'notacion' | 'cuerpo' | 'creacion' | 'cultura';
 

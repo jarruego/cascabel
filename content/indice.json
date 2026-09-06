@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-06",
-  "total": 67,
+  "total": 70,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -322,6 +322,24 @@
         "competencia": "CE3",
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c1-20-manos-y-pies",
+      "titulo": "Manos y pies",
+      "etapa": "primaria-c1",
+      "eje": "cuerpo",
+      "tipo": "cuerpo",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Práctica instrumental, vocal y corporal"
       },
       "estado": "borrador",
       "herramienta": false
@@ -831,6 +849,24 @@
       "herramienta": true
     },
     {
+      "id": "c3-13-los-cuatro-sonidos",
+      "titulo": "Los cuatro sonidos",
+      "etapa": "primaria-c3",
+      "eje": "cuerpo",
+      "tipo": "cuerpo",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 12,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Práctica instrumental, vocal y corporal"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
       "id": "inf-01-semaforo-del-sonido",
       "titulo": "El semáforo del sonido",
       "etapa": "infantil",
@@ -1114,6 +1150,24 @@
         "competencia": null,
         "criterio": "3.5",
         "saber": "F. Lenguaje y expresión musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "inf-17-palmas-y-rodillas",
+      "titulo": "Palmas y rodillas",
+      "etapa": "infantil",
+      "eje": "cuerpo",
+      "tipo": "cuerpo",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE3",
+        "criterio": "3.6",
+        "saber": "H. Interés e iniciativa en la participación en manifestaciones artísticas y corporales"
       },
       "estado": "borrador",
       "herramienta": false

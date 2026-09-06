@@ -884,11 +884,12 @@ detectarlo habría que medir las barras del ABC en crudo, y no compensa hoy.
       si un niño con motricidad reducida llega a los botones— sigue necesitando a una
       persona con el dispositivo delante. Va con T0.3.
 
-### Los diez tipos de motor, terminados `[x]`
+### El motor base, terminado `[x]`
 
-Cerrado el 2026-09-06. `src/motor/registro.ts` tiene los diez tipos que
-`docs/01-ARQUITECTURA.md` planteaba: `eleccion`, `emparejar`, `ordenar`, `guia-aula`,
-`tocar-a-tiempo`, `pentagrama`, `rejilla`, `cantar`, `seguir` y `lienzo`.
+Cerrado el 2026-09-06 con los tipos que `docs/01-ARQUITECTURA.md` planteaba al principio:
+`eleccion`, `emparejar`, `ordenar`, `guia-aula`, `tocar-a-tiempo`, `pentagrama`, `rejilla`,
+`cantar`, `seguir` y `lienzo`. Después se añadieron más; la lista viva está en
+`docs/01-ARQUITECTURA.md` y `tests/documentacion.test.ts` la mantiene sincronizada.
 
 **A partir de aquí, añadir una actividad no toca código.** Es escribir un JSON y validarlo.
 Era la promesa del ADR 0001 y ya se puede cumplir.
@@ -1068,7 +1069,7 @@ Tres hojas, cada una con un lector y un momento distintos:
 
 **La guía viene del TIPO de actividad, no de cada actividad.** Es la misma idea que el motor
 aplica a los componentes: escribir 53 dosieres a mano habría envejecido igual de mal que
-escribir 53 componentes. Cada uno de los doce tipos trae su «cómo funciona», su versión sin
+escribir 53 componentes. Cada tipo de motor trae su «cómo funciona», su versión sin
 dispositivos, su ampliación, su refuerzo, qué observar y tres indicadores; y una actividad
 concreta puede sobreescribir cualquiera de ellos desde el bloque `ficha` de su JSON.
 
@@ -1395,7 +1396,7 @@ actividades y a cuántos objetos caben en pantalla, así que lo decide el autor.
 
 ### Estado a 2026-09-07
 
-**El catálogo previsto está entero: 67 actividades y 16 tipos de motor.** Lo que queda no es
+**El catálogo previsto está entero.** Lo que queda no es
 terminar, es depurar y ampliar, y eso lo marca el uso real.
 
 | | |

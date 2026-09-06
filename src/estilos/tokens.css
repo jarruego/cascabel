@@ -2882,3 +2882,107 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   margin: var(--e-4) 0;
 }
 .pistas__acciones button { display: inline-flex; align-items: center; gap: var(--e-2); }
+
+/* ---------------------------------------------------------------------------
+ * Percusión corporal (tipo «cuerpo»).
+ *
+ * Cuatro filas, y el orden vertical NO es decorativo: de arriba abajo va del sonido más
+ * agudo al más grave y a la vez de las manos arriba a los pies en el suelo. Las dos escalas
+ * coinciden, y por eso un niño no tiene que aprenderse el dibujo.
+ *
+ * El color nunca informa solo (§6): cada zona lleva además su etiqueta escrita, su altura
+ * en la rejilla y una FORMA distinta —del círculo pequeño de los pitos a la barra ancha de
+ * los pies—, que va de menudo a grande igual que va el sonido de agudo a grave.
+ * ------------------------------------------------------------------------ */
+.cuerpo__rejilla {
+  margin: var(--e-5) 0;
+  overflow-x: auto;
+}
+.cuerpo__fila {
+  display: flex;
+  align-items: center;
+  gap: var(--e-2);
+  margin-bottom: var(--e-2);
+}
+.cuerpo__etiqueta {
+  flex: 0 0 auto;
+  width: 5.5rem;
+  padding-right: var(--e-2);
+  font-size: var(--t-s);
+  font-weight: 700;
+  color: var(--color-zona, var(--tinta-2));
+  text-align: right;
+}
+.cuerpo__golpes {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 3px;
+  min-width: 22rem;
+}
+
+.cuerpo__fila[data-zona='pitos'] { --color-zona: var(--vivo-amarillo); --forma: 50%; --alto: 26%; }
+.cuerpo__fila[data-zona='palmas'] { --color-zona: var(--vivo-naranja); --forma: 50%; --alto: 52%; }
+.cuerpo__fila[data-zona='muslos'] { --color-zona: var(--vivo-turquesa); --forma: var(--r-s); --alto: 74%; }
+.cuerpo__fila[data-zona='pies'] { --color-zona: var(--vivo-azul); --forma: var(--r-s); --alto: 100%; }
+/* Los pies llevan además la raya del suelo: es lo que los separa de los muslos cuando la
+   forma redondeada ya no da para más, y es literalmente contra lo que se golpea. */
+.cuerpo__fila[data-zona='pies'] .cuerpo__golpe[data-puesto] {
+  border-bottom: var(--e-1) solid var(--tinta);
+}
+
+.cuerpo__golpe {
+  flex: 1 1 0;
+  height: 3.25rem;
+  border-radius: var(--r-s);
+  /* La fila vacía se ve, pero apenas: tiene que quedar claro que el pulso pasa por ahí
+     aunque esa zona no suene. */
+  background: color-mix(in srgb, var(--linea) 40%, transparent);
+}
+.cuerpo__golpe[data-puesto] {
+  /* El blob no llena la casilla: se centra dentro, con el alto y la forma de su zona. */
+  background:
+    linear-gradient(var(--color-zona), var(--color-zona)) center / 100% var(--alto) no-repeat,
+    color-mix(in srgb, var(--linea) 40%, transparent);
+  border-radius: var(--forma);
+}
+/* Un compás de silencio no es un hueco: es tiempo que hay que contar. Rayado, no vacío. */
+.cuerpo__golpe[data-silencio] {
+  background: repeating-linear-gradient(
+    45deg,
+    transparent 0 5px,
+    color-mix(in srgb, var(--tinta-2) 22%, transparent) 5px 10px
+  );
+}
+/* La columna que suena ahora, marcada en las cuatro filas a la vez: así forma una línea
+   vertical que se sigue de un vistazo desde el fondo de la clase. */
+.cuerpo__golpe[data-aqui] {
+  box-shadow: inset 0 0 0 3px var(--tinta);
+}
+
+.cuerpo__silabas { margin-top: var(--e-3); }
+.cuerpo__silaba {
+  flex: 1 1 0;
+  padding: var(--e-1) 0;
+  border-radius: var(--r-s);
+  font-size: var(--t-s);
+  font-weight: 700;
+  color: var(--tinta-2);
+  text-align: center;
+}
+.cuerpo__silaba[data-aqui] {
+  background: var(--suave-amarillo);
+  color: var(--tinta);
+}
+
+.cuerpo__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+  justify-content: center;
+  margin: var(--e-4) 0;
+}
+.cuerpo__acciones button { display: inline-flex; align-items: center; gap: var(--e-2); }
+
+/* Proyectada en clase, cuanto más grande mejor: es lo que mira el grupo entero. */
+.lienzo[data-ampliado] .cuerpo__golpe { height: 5rem; }
