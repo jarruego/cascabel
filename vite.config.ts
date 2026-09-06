@@ -97,7 +97,7 @@ export default defineConfig({
     contenido(),
     VitePWA({
       registerType: 'prompt',
-      includeAssets: ['favicon.svg', 'fuentes/**/*', 'audio/**/*'],
+      includeAssets: ['favicon.svg', 'fuentes/Andika-Regular.woff2', 'audio/**/*'],
       manifest: {
         name: 'Cascabel · Música para Infantil y Primaria',
         short_name: 'Cascabel',
@@ -139,7 +139,10 @@ export default defineConfig({
         // worker no sabe servir la start_url sin conexión, que es otro de los requisitos.
         navigateFallback: 'index.html',
         navigateFallbackDenylist: [/^\/content\//, /^\/audio\//, /^\/worklets\//],
-        globPatterns: ['**/*.{js,css,html,svg,png,woff2,opus,json}'],
+        globPatterns: ['**/*.{js,css,html,svg,png,opus,json}', 'fuentes/Andika-Regular.woff2'],
+        // Bravura queda FUERA del precache a propósito: 316 KB que no usa nada hasta
+        // T2.2. Se descarga el día que aparezca un pentagrama, no en la primera visita.
+        globIgnores: ['fuentes/Bravura.woff2', '**/*OFL.txt'],
         // Presupuesto de precache: por debajo de 10 MB (límite práctico de iOS).
         maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,
         runtimeCaching: [

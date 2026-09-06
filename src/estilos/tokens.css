@@ -7,12 +7,29 @@
  * en Alemania por ello. Ver docs/08-LEGAL.md.
  */
 
+/*
+ * Andika recortada a 40 KB por tools/fuentes.py. El paquete completo son 289 KB porque
+ * cubre cirílico, griego y AFI; nosotros solo necesitamos latino con sus suplementos,
+ * que llega para castellano y para las lenguas cooficiales de T3.2.
+ *
+ * `swap` y no `block`: mientras carga se lee con la del sistema. Un niño esperando a que
+ * aparezca el texto es peor que un niño leyendo otra tipografía durante 200 ms.
+ */
 @font-face {
   font-family: 'Andika';
   src: url('/fuentes/Andika-Regular.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
 }
+/*
+ * Bravura entera, 316 KB, y NO se recorta: sus glifos viven en el Área de Uso Privado
+ * según SMuFL y recortar por rangos es una forma fiable de romperla.
+ *
+ * `block` porque un símbolo musical mal sustituido no se lee mal, se lee AL REVÉS: una
+ * clave de sol reemplazada por un cuadrado vacío es mejor que por una letra cualquiera.
+ * Y no entra en el precache: no la usa nada hasta T2.2, así que se descarga el día que
+ * haga falta y no en la primera visita de todos los niños.
+ */
 @font-face {
   font-family: 'Bravura';
   src: url('/fuentes/Bravura.woff2') format('woff2');

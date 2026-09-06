@@ -23,10 +23,7 @@ const DIST = fileURLToPath(new URL('../dist', import.meta.url));
  * Referencias que sabemos que faltan y tienen tarea abierta. Estar aquí es una decisión
  * consciente y con fecha, no un descuido: si añades una entrada, pon la tarea.
  */
-const PENDIENTES = new Map([
-  ['/fuentes/Andika-Regular.woff2', 'T1.9b — tipografías sin añadir al repositorio'],
-  ['/fuentes/Bravura.woff2', 'T1.9b — tipografías sin añadir al repositorio'],
-]);
+const PENDIENTES = new Map();
 
 const referencias = new Map(); // ruta -> de dónde sale
 

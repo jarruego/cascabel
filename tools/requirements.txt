@@ -1,2 +1,6 @@
 music21==10.5.0
 jsonschema==4.23.0
+# Para tools/fuentes.py: subconjunto de tipografías. fontTools ya venía
+# arrastrado por music21, pero se declara porque lo usamos directamente.
+fonttools==4.64.0
+brotli
