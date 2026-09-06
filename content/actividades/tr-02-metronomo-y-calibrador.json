@@ -1,0 +1,56 @@
+{
+  "id": "tr-02-metronomo-y-calibrador",
+  "version": 1,
+  "tipo": "guia-aula",
+  "titulo": "Metrónomo y calibrador",
+  "descripcion": "Metrónomo de aula con acento visual y calibración de latencia de 20 segundos. Se proyecta: el niño no está delante de una pantalla, la mira el aula entera.",
+  "etapa": "primaria-c1",
+  "eje": "pulso",
+  "lugar": "hibrida",
+  "duracion_min": 45,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": null,
+    "criterio": null,
+    "saber": null
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "ninguna"
+  },
+  "contenido": {
+    "consigna": "actividad.tr02.consigna",
+    "tempo": 84,
+    "pulsosPorCompas": 4,
+    "pasos": [
+      {
+        "titulo": "actividad.tr02.p1",
+        "detalle": "actividad.tr02.p1d",
+        "duracion": "1 min"
+      },
+      {
+        "titulo": "actividad.tr02.p2",
+        "detalle": "actividad.tr02.p2d",
+        "duracion": "1 min"
+      },
+      {
+        "titulo": "actividad.tr02.p3",
+        "detalle": "actividad.tr02.p3d",
+        "duracion": "el resto"
+      }
+    ],
+    "materiales": []
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.tr02.enunciado"
+  },
+  "estado": "borrador"
+}

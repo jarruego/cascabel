@@ -1,0 +1,82 @@
+{
+  "id": "inf-13-quien-ha-sonado",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Quién ha sonado?",
+  "descripcion": "Tres instrumentos de pequeña percusión; suena uno y hay que señalarlo.",
+  "etapa": "infantil",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 5,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": "CE1",
+    "criterio": "1.1",
+    "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.inf13.consigna",
+    "opciones": [
+      {
+        "clave": "tambor",
+        "icono": "tambor",
+        "color": "rojo"
+      },
+      {
+        "clave": "triangulo",
+        "icono": "triangulo",
+        "color": "amarillo"
+      },
+      {
+        "clave": "voz",
+        "icono": "voz",
+        "color": "verde"
+      }
+    ],
+    "estimulos": [
+      {
+        "audio": "muestras/pandero-golpe.opus",
+        "respuesta": "tambor"
+      },
+      {
+        "audio": "muestras/triangulo-largo.opus",
+        "respuesta": "triangulo"
+      },
+      {
+        "audio": "muestras/voz-la.opus",
+        "respuesta": "voz"
+      },
+      {
+        "audio": "muestras/triangulo-largo.opus",
+        "respuesta": "triangulo"
+      },
+      {
+        "audio": "muestras/voz-la.opus",
+        "respuesta": "voz"
+      },
+      {
+        "audio": "muestras/pandero-golpe.opus",
+        "respuesta": "tambor"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.inf13.enunciado"
+  },
+  "estado": "borrador",
+  "pistas": [
+    "actividad.inf13.pista1"
+  ]
+}

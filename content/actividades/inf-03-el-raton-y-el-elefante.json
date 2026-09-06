@@ -1,0 +1,77 @@
+{
+  "id": "inf-03-el-raton-y-el-elefante",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "El ratón y el elefante",
+  "descripcion": "Intensidad: fuerte o suave. Mismo sonido a dos volúmenes.",
+  "etapa": "infantil",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 5,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": "CE2",
+    "criterio": "2.1",
+    "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.inf03.consigna",
+    "opciones": [
+      {
+        "clave": "raton",
+        "icono": "campana",
+        "color": "amarillo"
+      },
+      {
+        "clave": "elefante",
+        "icono": "tambor",
+        "color": "azul"
+      }
+    ],
+    "estimulos": [
+      {
+        "audio": "muestras/marimba/c6.opus",
+        "respuesta": "raton"
+      },
+      {
+        "audio": "muestras/marimba/f3.opus",
+        "respuesta": "elefante"
+      },
+      {
+        "audio": "muestras/marimba/f5.opus",
+        "respuesta": "raton"
+      },
+      {
+        "audio": "muestras/marimba/f3.opus",
+        "respuesta": "elefante"
+      },
+      {
+        "audio": "muestras/marimba/c6.opus",
+        "respuesta": "raton"
+      },
+      {
+        "audio": "muestras/marimba/c4.opus",
+        "respuesta": "elefante"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.inf03.enunciado"
+  },
+  "estado": "borrador",
+  "pistas": [
+    "actividad.inf03.pista1"
+  ]
+}

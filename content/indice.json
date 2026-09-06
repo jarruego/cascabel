@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-06",
-  "total": 6,
+  "total": 15,
   "actividades": [
     {
       "id": "c1-02-palmea-el-ritmo",
@@ -37,6 +37,23 @@
       "estado": "borrador"
     },
     {
+      "id": "c1-10-construye-un-cotidiofono",
+      "titulo": "Construye un cotidiáfono",
+      "etapa": "primaria-c1",
+      "eje": "timbre",
+      "tipo": "guia-aula",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 35,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE4",
+        "criterio": "4.2",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
       "id": "c2-01-coloca-la-nota",
       "titulo": "Coloca la nota en el pentagrama",
       "etapa": "primaria-c2",
@@ -54,6 +71,40 @@
       "estado": "borrador"
     },
     {
+      "id": "c2-09-adagio-andante-allegro",
+      "titulo": "Adagio, andante, allegro",
+      "etapa": "primaria-c2",
+      "eje": "cultura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": null
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c3-05-mayor-o-menor",
+      "titulo": "¿Mayor o menor?",
+      "etapa": "primaria-c3",
+      "eje": "altura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
       "id": "inf-01-semaforo-del-sonido",
       "titulo": "El semáforo del sonido",
       "etapa": "infantil",
@@ -66,6 +117,57 @@
         "area": "Comunicación y Representación de la Realidad",
         "competencia": "CE3",
         "criterio": "3.5",
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "inf-02-largo-o-corto",
+      "titulo": "¿Largo o corto?",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE2",
+        "criterio": "2.1",
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "inf-03-el-raton-y-el-elefante",
+      "titulo": "El ratón y el elefante",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE2",
+        "criterio": "2.1",
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "inf-04-el-pajaro-y-el-oso",
+      "titulo": "El pájaro y el oso",
+      "etapa": "infantil",
+      "eje": "altura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE2",
+        "criterio": "2.1",
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador"
@@ -88,6 +190,40 @@
       "estado": "borrador"
     },
     {
+      "id": "inf-12-danza-de-corro",
+      "titulo": "Danza de corro",
+      "etapa": "infantil",
+      "eje": "cuerpo",
+      "tipo": "guia-aula",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 20,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE3",
+        "criterio": "3.6",
+        "saber": "H. Interés e iniciativa en la participación en manifestaciones artísticas y corporales"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "inf-13-quien-ha-sonado",
+      "titulo": "¿Quién ha sonado?",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador"
+    },
+    {
       "id": "inf-15-de-grave-a-agudo",
       "titulo": "De grave a agudo",
       "etapa": "infantil",
@@ -101,6 +237,23 @@
         "competencia": "CE2",
         "criterio": "2.1",
         "saber": "F. Lenguaje y expresión musical — el sonido y sus cualidades"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "tr-02-metronomo-y-calibrador",
+      "titulo": "Metrónomo y calibrador",
+      "etapa": "primaria-c1",
+      "eje": "pulso",
+      "tipo": "guia-aula",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 45,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": null,
+        "criterio": null,
+        "saber": null
       },
       "estado": "borrador"
     }

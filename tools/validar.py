@@ -312,6 +312,18 @@ def validar_producto(datos: dict, r: Resultado) -> None:
             "y la motricidad fina infantil no da. Usa 'toque-secuencial'"
         )
 
+    # Tiempo de pantalla. El esquema permite hasta 60 minutos porque una guia-aula es una
+    # sesión de clase entera; pero una actividad en la que el niño está DELANTE de la
+    # pantalla no debe pasar de 20. La distinción la marca `lugar`, no el tipo: una
+    # `guia-aula` mal etiquetada como `pantalla` tiene el mismo problema.
+    duracion = datos.get("duracion_min")
+    lugar = datos.get("lugar", "pantalla")
+    if isinstance(duracion, int) and lugar == "pantalla" and duracion > 20:
+        r.errores.append(
+            f"producto · {duracion} min delante de la pantalla; el máximo es 20. "
+            f"Si es una sesión de aula, marca lugar: hibrida o fuera"
+        )
+
     if "locucion" not in datos:
         r.avisos.append("producto · sin locución: los niños de 3-8 años no leen el enunciado")
 

@@ -1,0 +1,77 @@
+{
+  "id": "inf-04-el-pajaro-y-el-oso",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "El pájaro y el oso",
+  "descripcion": "Agudo o grave con el mismo instrumento en dos registros. No cambiar de timbre a la vez.",
+  "etapa": "infantil",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 5,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": "CE2",
+    "criterio": "2.1",
+    "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.inf04.consigna",
+    "opciones": [
+      {
+        "clave": "agudo",
+        "icono": "campana",
+        "color": "verde"
+      },
+      {
+        "clave": "grave",
+        "icono": "tambor",
+        "color": "azul"
+      }
+    ],
+    "estimulos": [
+      {
+        "audio": "muestras/campana-aguda.opus",
+        "respuesta": "agudo"
+      },
+      {
+        "audio": "muestras/campana-grave.opus",
+        "respuesta": "grave"
+      },
+      {
+        "audio": "muestras/marimba/c6.opus",
+        "respuesta": "agudo"
+      },
+      {
+        "audio": "muestras/marimba/f3.opus",
+        "respuesta": "grave"
+      },
+      {
+        "audio": "muestras/campana-aguda.opus",
+        "respuesta": "agudo"
+      },
+      {
+        "audio": "muestras/marimba/c4.opus",
+        "respuesta": "grave"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.inf04.enunciado"
+  },
+  "estado": "borrador",
+  "pistas": [
+    "actividad.inf04.pista1"
+  ]
+}

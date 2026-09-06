@@ -1,0 +1,78 @@
+{
+  "id": "c3-05-mayor-o-menor",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Mayor o menor?",
+  "descripcion": "La misma melodía en los dos modos. El contraste es inmediatamente audible.",
+  "etapa": "primaria-c3",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c305.consigna",
+    "opciones": [
+      {
+        "clave": "mayor",
+        "icono": "campana",
+        "color": "amarillo"
+      },
+      {
+        "clave": "menor",
+        "icono": "campana",
+        "color": "azul"
+      }
+    ],
+    "estimulos": [
+      {
+        "audio": "muestras/acorde-mayor-do.opus",
+        "respuesta": "mayor"
+      },
+      {
+        "audio": "muestras/acorde-menor-do.opus",
+        "respuesta": "menor"
+      },
+      {
+        "audio": "muestras/acorde-menor-sol.opus",
+        "respuesta": "menor"
+      },
+      {
+        "audio": "muestras/acorde-mayor-sol.opus",
+        "respuesta": "mayor"
+      },
+      {
+        "audio": "muestras/acorde-mayor-do.opus",
+        "respuesta": "mayor"
+      },
+      {
+        "audio": "muestras/acorde-menor-sol.opus",
+        "respuesta": "menor"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c305.enunciado"
+  },
+  "estado": "borrador",
+  "pistas": [
+    "actividad.c305.pista1",
+    "actividad.c305.pista2"
+  ]
+}
