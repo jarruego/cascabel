@@ -99,3 +99,30 @@ export function aMilisegundos(
   const msPorPulso = 60000 / bpm;
   return rejilla.golpes.map((g) => inicioMs + g * msPorPulso + latenciaMs);
 }
+
+/**
+ * Despliega el patrón a partir del **primer golpe del niño**, no de un reloj externo.
+ *
+ * Es la diferencia entre pedir «repite este ritmo» y pedir «repite este ritmo empezando
+ * exactamente aquí». Son dos habilidades, y medirlas juntas hacía que fallar la entrada
+ * arruinara todo lo demás aunque el ritmo fuera perfecto.
+ *
+ * El primer instante devuelto es siempre el propio golpe: no puede estar desplazado
+ * respecto a sí mismo. Lo que queda por evaluar —y lo único que tiene sentido evaluar en
+ * este modelo— es el resto.
+ *
+ * **Y esto vuelve innecesaria la compensación de latencia.** El retardo de salida desplaza
+ * por igual al primer golpe y a los demás, así que se cancela solo. Sigue haciendo falta
+ * allí donde se compara contra un reloj externo, como en el musicograma.
+ *
+ * @param primerGolpeMs instante del primer golpe, en el reloj del `AudioContext`
+ */
+export function anclarEn(
+  rejilla: RejillaRitmica,
+  primerGolpeMs: number,
+  bpm: number,
+): number[] {
+  const msPorPulso = 60000 / bpm;
+  const primero = rejilla.golpes[0] ?? 0;
+  return rejilla.golpes.map((g) => primerGolpeMs + (g - primero) * msPorPulso);
+}
