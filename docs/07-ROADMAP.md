@@ -50,12 +50,24 @@ real antes de llegar a T2.5.
 
 La ruta `/diagnostico` informa, en texto seleccionable:
 
-- [ ] Sistema operativo y versión, navegador y versión (de `userAgent`, sin más)
-- [ ] Modo de visualización: pestaña o `standalone` (`display-mode` por `matchMedia`)
-- [ ] `sampleRate` del `AudioContext`, antes y después de abrir el micrófono
-- [ ] `baseLatency`, `outputLatency` y la latencia total que usaría `latenciaMs()`
-- [ ] Estado del micrófono: concedido, denegado, o el error exacto con su `name`
-- [ ] Botón **«Copiar informe»** al portapapeles, y un enlace de *Abrir incidencia*
+- [x] Sistema operativo y versión, navegador y versión (de `userAgent`, sin más)
+- [x] Modo de visualización: pestaña o `standalone` (`display-mode` por `matchMedia`,
+      con la vía de `navigator.standalone` que Safari necesitó durante años)
+- [x] `sampleRate` del `AudioContext`, antes y después de abrir el micrófono
+- [x] `baseLatency`, `outputLatency` y la latencia total que usaría `latenciaMs()`
+- [x] Estado del micrófono: concedido, denegado, o el error exacto con su `name`
+- [x] Botón **«Copiar informe»** al portapapeles; si está bloqueado, el `<pre>` sigue
+      siendo seleccionable a mano, que es la vía que nunca falla
+- [x] Coste del análisis del worklet en ms, o «no medible» si el navegador no expone
+      `performance` dentro del `AudioWorklet`
+
+Hecho el 2026-09-06: ruta `/diagnostico`, router mínimo de dos rutas (`src/app/rutas.tsx`,
+que **no** es T1.4) y `public/_redirects` para que la ruta exista al abrirla directa.
+`docs/pruebas/microfono.md` tiene la tabla lista y las instrucciones del reenvío de puertos.
+
+**Pendiente y sólo lo puedes hacer tú**: las cinco filas de (a). Y comprobar que la página
+se ve bien: se verificó que compila, que el servidor la sirve y que el *fallback* de SPA
+funciona, pero no se pudo abrir en un navegador real desde la sesión.
 
 **Por qué**: el bug 185448 de WebKit ha roto `getUserMedia` en modo *standalone* en iOS
 varias veces, y si está roto la estrategia de distribución cambia entera (habría que

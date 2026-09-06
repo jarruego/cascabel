@@ -19,6 +19,13 @@ class TonoProcessor extends AudioWorkletProcessor {
     // Umbral de energía: por debajo, es silencio o ruido de sala. Evita que el
     // detector invente notas cuando el niño no está cantando.
     this.rmsMinimo = 0.01;
+    // Coste de cada analisis, para T0.1. performance no esta garantizado en el
+    // ambito de un AudioWorklet, asi que se usa solo si existe.
+    this.reloj =
+      typeof performance !== 'undefined' && typeof performance.now === 'function'
+        ? () => performance.now()
+        : null;
+    this.msAnalisis = null;
   }
 
   process(entradas) {
@@ -38,6 +45,12 @@ class TonoProcessor extends AudioWorkletProcessor {
   }
 
   analizar() {
+    const t0 = this.reloj ? this.reloj() : 0;
+    this.analizarNucleo();
+    if (this.reloj) this.msAnalisis = this.reloj() - t0;
+  }
+
+  analizarNucleo() {
     const x = this.buffer;
     const N = this.N;
 
@@ -45,7 +58,7 @@ class TonoProcessor extends AudioWorkletProcessor {
     for (let i = 0; i < N; i++) suma += x[i] * x[i];
     const rms = Math.sqrt(suma / N);
     if (rms < this.rmsMinimo) {
-      this.port.postMessage({ hz: 0, claridad: 0 });
+      this.port.postMessage({ hz: 0, claridad: 0, msAnalisis: this.msAnalisis });
       return;
     }
 
@@ -78,7 +91,7 @@ class TonoProcessor extends AudioWorkletProcessor {
     }
 
     if (mejorTau < 0 || mejorValor < 0.5) {
-      this.port.postMessage({ hz: 0, claridad: 0 });
+      this.port.postMessage({ hz: 0, claridad: 0, msAnalisis: this.msAnalisis });
       return;
     }
 
@@ -89,7 +102,11 @@ class TonoProcessor extends AudioWorkletProcessor {
     const ajuste = (0.5 * (y0 - y2)) / (y0 - 2 * y1 + y2 || 1);
     const tauFinal = mejorTau + ajuste;
 
-    this.port.postMessage({ hz: sampleRate / tauFinal, claridad: mejorValor });
+    this.port.postMessage({
+      hz: sampleRate / tauFinal,
+      claridad: mejorValor,
+      msAnalisis: this.msAnalisis,
+    });
   }
 }
 
