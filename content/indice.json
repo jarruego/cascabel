@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-06",
-  "total": 15,
+  "total": 17,
   "actividades": [
     {
       "id": "c1-02-palmea-el-ritmo",
@@ -16,6 +16,23 @@
         "competencia": "CE3",
         "criterio": "3.1",
         "saber": "D. Práctica instrumental, vocal y corporal"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c1-04-constructor-de-ritmos",
+      "titulo": "Constructor de ritmos",
+      "etapa": "primaria-c1",
+      "eje": "creacion",
+      "tipo": "rejilla",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.2",
+        "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador"
     },
@@ -67,6 +84,23 @@
         "competencia": "CE3",
         "criterio": "3.1",
         "saber": "D. Lenguajes musicales: aplicación de sus conceptos básicos"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c2-02-dictado-ritmico",
+      "titulo": "Dictado rítmico",
+      "etapa": "primaria-c2",
+      "eje": "notacion",
+      "tipo": "rejilla",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador"
     },

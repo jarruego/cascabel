@@ -258,5 +258,17 @@
   "modal.otraVez": "Otra vez",
   "modal.volver": "Ir a otra actividad",
   "paso.vas": "Vas por el",
-  "ordenar.tambienArrastrando": "Puedes tocarlos en orden o arrastrarlos a la fila. Como prefieras."
+  "ordenar.tambienArrastrando": "Puedes tocarlos en orden o arrastrarlos a la fila. Como prefieras.",
+  "rejilla.pulso": "pulso",
+  "rejilla.reproducir": "Escuchar lo que has puesto",
+  "rejilla.limpiar": "Empezar de nuevo",
+  "rejilla.comprobar": "Ya está",
+  "rejilla.seguirEditando": "Seguir colocando",
+  "rejilla.revisa": "Casi. Las que parpadean sobran, y donde hay un hueco marcado falta una.",
+  "rejilla.libre": "Coloca lo que quieras y escúchalo. Aquí no hay respuesta correcta.",
+  "actividad.c104.consigna": "Construye tu ritmo",
+  "actividad.c104.enunciado": "Toca los cuadros para poner sonidos y después escúchalo. Todo lo que hagas suena bien.",
+  "actividad.c202.consigna": "Escucha y coloca el ritmo",
+  "actividad.c202.enunciado": "Escucha el ritmo y colócalo en la cuadrícula.",
+  "actividad.c202.pista1": "Cuenta los pulsos: uno, dos, tres, cuatro."
 }

@@ -650,7 +650,20 @@ detectarlo habría que medir las barras del ABC en crudo, y no compensa hoy.
 
 ## Fase 2 — El producto real (2–3 meses)
 
-- [ ] T2.1 — Tipo `rejilla` (dictado rítmico, dictado melódico, constructor de ritmos)
+- [x] **T2.1 — Tipo `rejilla`** `[x]` — cerrado el 2026-09-06. Cuadrícula altura × tiempo,
+      con dos modos que cambian el diseño entero.
+
+      **En modo `libre` no existe el error**: no hay solución, no hay botón de comprobar y
+      no se puede fallar. Es un lienzo, y es la regla de Incredibox que el dosier señala
+      como el mejor modelo de motivación infantil del sector. En `dictado` sí hay solución,
+      y **lo que sobra y lo que falta se señalan distinto**, porque poner de más y poner de
+      menos no son el mismo error y al niño hay que decírselo de otra manera.
+
+      Lo que sobra parpadea y lo que falta lleva borde discontinuo: **forma, no color**. Con
+      `prefers-reduced-motion` el parpadeo se sustituye por un borde doble.
+
+      Dos actividades del catálogo: **C1-04 «Constructor de ritmos»** (libre) y
+      **C2-02 «Dictado rítmico»**.
 - [x] **T2.2 — Tipo `pentagrama`** `[x]` — cerrado el 2026-09-06. VexFlow dibuja la pauta
       y la clave; encima van hitboxes transparentes del tamaño táctil del carril.
       `c2-01-coloca-la-nota` ya funciona.
