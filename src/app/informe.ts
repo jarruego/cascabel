@@ -1,5 +1,6 @@
 import { obtenerContexto, latenciaMs, calibracionActualMs } from '@/audio/AudioEngine';
 import { APP } from '@/config';
+import type { CosteNsdf } from '@/escucha/banco';
 
 /**
  * Recoge el estado del entorno para /diagnostico.
@@ -37,7 +38,11 @@ export interface Informe {
   latenciaTotalMs: number | null;
   calibracionMs: number;
   microfono: EstadoMicrofono;
+  /** Medido DENTRO del worklet. Null en todo navegador conocido: ninguno expone
+   *  `performance` en el AudioWorkletGlobalScope. */
   costeAnalisisMs: number | null;
+  /** Estimación en el hilo principal. No es lo mismo, y el informe lo dice. */
+  costeEstimado: CosteNsdf | null;
 }
 
 /** Pestaña, instalada en la pantalla de inicio, o presentación. */
@@ -53,7 +58,11 @@ export function modoVisualizacion(): string {
   return 'desconocido';
 }
 
-export function recoger(micro: EstadoMicrofono, costeAnalisisMs: number | null): Informe {
+export function recoger(
+  micro: EstadoMicrofono,
+  costeAnalisisMs: number | null,
+  costeEstimado: CosteNsdf | null = null,
+): Informe {
   // Si el contexto no existe todavía no lo creamos solo para medir: nacería
   // suspendido y con una sampleRate que cambia al abrir el micrófono.
   let ctx: AudioContext | null = null;
@@ -82,6 +91,7 @@ export function recoger(micro: EstadoMicrofono, costeAnalisisMs: number | null):
     calibracionMs: calibracionActualMs(),
     microfono: micro,
     costeAnalisisMs,
+    costeEstimado,
   };
 }
 

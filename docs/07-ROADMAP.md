@@ -87,25 +87,54 @@ sistema, navegador, modo (pestaña / instalada), resultado y coste del análisis
 para todas las filas de (a) que no dependan del despliegue. Y `/diagnostico` desplegada,
 copiando un informe legible de una sola pulsación.
 
-### T0.4 — Medir el coste del NSDF de otra forma
+### T0.4 — Medir el coste del NSDF `[x]`
 
-Abierta el 2026-09-06 por lo que dijo el primer informe de `/diagnostico`.
+Abierta y cerrada el 2026-09-06. Ningún navegador expone `performance` dentro del
+`AudioWorkletGlobalScope` —Chrome 152, Edge 152 y Firefox 146 dan los tres «no medible»—,
+así que se mide el mismo algoritmo en el hilo principal.
 
-**Chrome no expone `performance` dentro del `AudioWorkletGlobalScope`**, así que la
-medición prevista en T0.1 devuelve «no medible» y seguimos sin saber lo que cuesta el
-detector de tono. El NSDF es O(N²) con ventana de 1024 y solape del 50 %: en un PC no se
-nota, y en la tablet de aula puede no caber. Es la incógnita que sostiene T2.5.
+- [x] Banco en `src/escucha/banco.ts`, publicado en `/diagnostico`
+- [x] Etiquetado como **estimación**, no como medida del hilo de audio
+- [x] `src/escucha/nsdf.ts` extrae el algoritmo, y `tests/nsdf.test.ts` carga el worklet
+      **real** y comprueba que las dos copias dan lo mismo, para que no se separen
+- [x] De paso, primer test del detector: acierta a menos de 5 cents entre 220 y 600 Hz
 
-- [ ] Banco de pruebas en el hilo principal: correr el mismo NSDF sobre un buffer
-      sintético con `performance.now()` y publicar el resultado en `/diagnostico`
-- [ ] Etiquetarlo como **estimación**, no como medida del hilo de audio: no es lo mismo,
-      y decir lo contrario sería mentir en el informe
-- [x] ~~Comprobar si Firefox sí expone `performance` en el worklet~~ — **no lo hace**.
-      Chrome, Edge y Firefox dan los tres «no medible», así que el banco en el hilo
-      principal deja de ser el plan B y pasa a ser el único plan
+**El resultado, y no es el que esperábamos:**
 
-**Criterio de aceptación**: `/diagnostico` da un número de milisegundos por análisis en
-Chrome de escritorio y en Chrome de Android, con su etiqueta de cómo se obtuvo.
+| | |
+|---|---|
+| Coste por análisis | **1,33 ms** (mediana; p95 1,42) |
+| Presupuesto | 10,67 ms (cada 512 muestras a 48 kHz) |
+| Fracción de un núcleo | **12,5 %** |
+
+El comentario del worklet decía «1-4 % de un núcleo en una tablet media». Era optimista por
+un factor de tres a diez, **y esto es un PC de sobremesa**. Una tablet de aula típica va
+tres o cuatro veces más lenta: 40-50 % de un núcleo, en un hilo que además tiene que
+reproducir sonido sin cortes. Corregido en el worklet y abierto T2.0.
+
+### T2.0 — Bajar el coste del detector de tono `⚠️ bloquea T2.5`
+
+Sale de T0.4. Con 12,5 % de un núcleo en escritorio, el detector no cabe en la tablet de un
+aula, y T2.5 (`cantar`) se apoya entero en él.
+
+El NSDF es O(N²): con ventana de 1024 son ~262.000 multiplicaciones y sumas por análisis.
+Dos caminos, y el segundo es el bueno:
+
+- [ ] **Diezmar antes de analizar.** La voz infantil no pasa de 600 Hz de fundamental, así
+      que no hacen falta 48 kHz para hallar el periodo. Bajando a 12 kHz la ventana pasa de
+      1024 a 256 muestras para el mismo tramo de tiempo, y el coste cae ~16 veces. Es la
+      solución convencional y la de mejor relación esfuerzo/resultado
+- [ ] Alternativa si no bastara: autocorrelación por FFT, O(N log N)
+- [ ] Volver a medir con `/diagnostico` y actualizar la tabla de T0.4
+- [ ] `tests/nsdf.test.ts` tiene que seguir pasando: la precisión no se negocia a cambio
+      de velocidad
+
+**Criterio de aceptación**: por debajo del 3 % de un núcleo en el PC del autor, y el test
+de precisión sigue dando menos de 5 cents de error entre 220 y 600 Hz.
+
+**Pendiente de revisión pedagógica**: el límite de 600 Hz sale de la tesitura declarada en
+`tools/validar.py` (hasta E5 ≈ 659 Hz en 3.er ciclo). Si una maestra dice que hay que
+cubrir voces más agudas, el factor de diezmado cambia.
 
 ### T0.2 — Una actividad completa de punta a punta
 

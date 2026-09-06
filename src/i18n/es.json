@@ -29,5 +29,7 @@
   "diagnostico.sinSenal": "Sin señal. Canta o silba cerca del micrófono.",
   "diagnostico.fallo": "No se pudo abrir el micrófono. Ese dato también nos sirve:",
   "diagnostico.informe": "Informe",
-  "diagnostico.pie": "Si algo ha fallado, copia el informe y pégalo en una incidencia del proyecto. Es la forma de que lo arreglemos sin tener tu dispositivo delante."
+  "diagnostico.pie": "Si algo ha fallado, copia el informe y pégalo en una incidencia del proyecto. Es la forma de que lo arreglemos sin tener tu dispositivo delante.",
+  "diagnostico.coste": "Coste de cada análisis de tono:",
+  "diagnostico.costeEstimacion": "estimado en el hilo principal, no en el de audio"
 }

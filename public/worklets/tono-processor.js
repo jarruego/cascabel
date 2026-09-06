@@ -6,8 +6,13 @@
  * algoritmo son sesenta líneas. Si algún día quieres pitchy tal cual, empaquétalo
  * como worklet independiente; la interfaz del puerto es la misma.
  *
- * Corre en el hilo de audio en bloques de 128 muestras. Coste: 1-4 % de un núcleo en
- * una tablet media con ventana de 1024, que es de sobra para 250-600 Hz.
+ * Corre en el hilo de audio en bloques de 128 muestras.
+ *
+ * COSTE MEDIDO (2026-09-06, T0.4): 1,33 ms por análisis en un PC de sobremesa, sobre un
+ * presupuesto de 10,67 ms. Son el 12,5 % de un núcleo, no el 1-4 % que decía antes este
+ * comentario. En una tablet de aula, tres o cuatro veces más lenta, serían del orden del
+ * 40-50 %, y eso NO cabe en un hilo de audio que además tiene que reproducir sonido.
+ * Antes de construir T2.5 hay que bajarlo: ver T2.0 en docs/07-ROADMAP.md.
  */
 class TonoProcessor extends AudioWorkletProcessor {
   constructor(opciones) {
