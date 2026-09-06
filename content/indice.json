@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-06",
-  "total": 65,
+  "total": 66,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -508,6 +508,23 @@
         "area": "Educación Artística",
         "competencia": "CE4",
         "criterio": "4.2",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c2-13-graba-tu-paisaje-sonoro",
+      "titulo": "Graba tu paisaje sonoro",
+      "etapa": "primaria-c2",
+      "eje": "creacion",
+      "tipo": "paisaje",
+      "lugar": "fuera",
+      "microfono": true,
+      "duracion_min": 30,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.2",
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador"

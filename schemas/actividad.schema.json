@@ -42,9 +42,10 @@
         "teclado",
         "karaoke",
         "compases",
-        "escala"
+        "escala",
+        "paisaje"
       ],
-      "description": ". 'teclado' se anadio el 2026-09-06 tras la investigacion de docs/11-RECURSOS-Y-REFERENTES.md: es un piano en pantalla sobre el Sampler que ya existe. 'karaoke' se anadio el mismo dia: musicograma que avanza de derecha a izquierda sobre un pentagrama y se toca a tiempo. 'compases' se anadio el 2026-09-07: poner las divisorias a una linea de figuras, que es de lo poco del lenguaje musical que se comprueba solo. 'escala' se anadio el 2026-09-07: teclado y pentagrama enlazados para construir una escala y ver donde caen los semitonos."
+      "description": ". 'teclado' se anadio el 2026-09-06 tras la investigacion de docs/11-RECURSOS-Y-REFERENTES.md: es un piano en pantalla sobre el Sampler que ya existe. 'karaoke' se anadio el mismo dia: musicograma que avanza de derecha a izquierda sobre un pentagrama y se toca a tiempo. 'compases' se anadio el 2026-09-07: poner las divisorias a una linea de figuras, que es de lo poco del lenguaje musical que se comprueba solo. 'escala' se anadio el 2026-09-07: teclado y pentagrama enlazados para construir una escala y ver donde caen los semitonos. 'paisaje' se anadio el 2026-09-07: es la UNICA que guarda audio, con las cuatro condiciones de docs/08-LEGAL.md."
     },
     "titulo": {
       "type": "string",
@@ -266,9 +267,10 @@
           "enum": [
             "toque",
             "toque-secuencial",
+            "sin-grabar",
             "ninguna"
           ],
-          "description": "OBLIGATORIA si el modo usa micrófono o arrastre. Accesibilidad y realidad del aula."
+          "description": "Que se hace cuando no hay microfono. 'toque' y 'toque-secuencial' son la misma actividad por otra via. 'sin-grabar' es para las actividades cuyo producto ES una grabacion: ahi no hay toque que la sustituya, pero la actividad se hace igual sin grabar, que es la parte que ensena a escuchar. 'ninguna' significa que no hay salida, y eso solo vale si la actividad no usa microfono."
         }
       },
       "allOf": [

@@ -508,7 +508,7 @@
       "esfuerzo": "L",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "La partitura avanza y el micrófono comprueba la nota tocada.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C2-06",
@@ -516,12 +516,12 @@
       "etapa": "primaria-c2",
       "eje": "notacion",
       "lugar": "pantalla",
-      "tipo": "pentagrama",
+      "tipo": "compases",
       "microfono": false,
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Línea de figuras sin dividir y cifra de compás; colocar las divisorias.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C2-07",
@@ -607,12 +607,12 @@
       "etapa": "primaria-c2",
       "eje": "creacion",
       "lugar": "fuera",
-      "tipo": "guia-aula",
+      "tipo": "paisaje",
       "microfono": false,
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.2 · saber D",
       "descripcion": "Guion guiado para grabar y montar sonidos del entorno.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C2-14",
@@ -659,12 +659,12 @@
       "etapa": "primaria-c3",
       "eje": "notacion",
       "lugar": "pantalla",
-      "tipo": "pentagrama",
+      "tipo": "escala",
       "microfono": false,
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Teclado y pentagrama enlazados; alteraciones y construcción de la escala.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C3-02",
@@ -690,7 +690,7 @@
       "esfuerzo": "L",
       "curriculo": "CE3 · crit. 3.2 · saber D",
       "descripcion": "Componer sobre pentagrama con escala restringida. Exporta MusicXML, MIDI y PDF.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C3-04",
