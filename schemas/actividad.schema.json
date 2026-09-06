@@ -41,9 +41,10 @@
         "guia-aula",
         "teclado",
         "karaoke",
-        "compases"
+        "compases",
+        "escala"
       ],
-      "description": ". 'teclado' se anadio el 2026-09-06 tras la investigacion de docs/11-RECURSOS-Y-REFERENTES.md: es un piano en pantalla sobre el Sampler que ya existe. 'karaoke' se anadio el mismo dia: musicograma que avanza de derecha a izquierda sobre un pentagrama y se toca a tiempo. 'compases' se anadio el 2026-09-07: poner las divisorias a una linea de figuras, que es de lo poco del lenguaje musical que se comprueba solo."
+      "description": ". 'teclado' se anadio el 2026-09-06 tras la investigacion de docs/11-RECURSOS-Y-REFERENTES.md: es un piano en pantalla sobre el Sampler que ya existe. 'karaoke' se anadio el mismo dia: musicograma que avanza de derecha a izquierda sobre un pentagrama y se toca a tiempo. 'compases' se anadio el 2026-09-07: poner las divisorias a una linea de figuras, que es de lo poco del lenguaje musical que se comprueba solo. 'escala' se anadio el 2026-09-07: teclado y pentagrama enlazados para construir una escala y ver donde caen los semitonos."
     },
     "titulo": {
       "type": "string",

@@ -22,7 +22,9 @@ export type TipoActividad =
   /** Musicograma horizontal sobre pentagrama, con toque a tiempo. Ver Karaoke.tsx. */
   | 'karaoke'
   /** Poner las barras de compás a una línea de figuras. Ver Compases.tsx. */
-  | 'compases';
+  | 'compases'
+  /** Construir una escala en el teclado viendo cómo se escribe. Ver Escala.tsx. */
+  | 'escala';
 
 export type Eje = 'pulso' | 'altura' | 'timbre' | 'notacion' | 'cuerpo' | 'creacion' | 'cultura';
 

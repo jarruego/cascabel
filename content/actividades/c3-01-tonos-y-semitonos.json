@@ -1,0 +1,55 @@
+{
+  "id": "c3-01-tonos-y-semitonos",
+  "version": 1,
+  "tipo": "escala",
+  "titulo": "Tonos y semitonos",
+  "descripcion": "Construir la escala de sol mayor en el teclado viendo cómo se escribe. Se empieza en sol a propósito: es la que obliga a un sostenido.",
+  "etapa": "primaria-c3",
+  "eje": "notacion",
+  "lugar": "pantalla",
+  "duracion_min": 15,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "laminas",
+    "tempo": 80
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c301.consigna",
+    "tonica": "G4",
+    "desde": 4,
+    "octavas": 2,
+    "instrumento": "piano"
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "aciertos"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c301.enunciado"
+  },
+  "pistas": [
+    "actividad.c301.pista1",
+    "actividad.c301.pista2",
+    "actividad.c301.pista3"
+  ],
+  "creditos": [
+    {
+      "obra": "Piano",
+      "autor": "Frank Wen, soundfont FluidR3_GM",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    }
+  ],
+  "estado": "borrador"
+}
