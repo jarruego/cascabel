@@ -14,6 +14,8 @@ const Diagnostico = lazy(() => import('./Diagnostico'));
 const Actividad = lazy(() => import('./Actividad'));
 const Ajustes = lazy(() => import('./Ajustes'));
 const Calibracion = lazy(() => import('./Calibracion'));
+const Privacidad = lazy(() => import('./Privacidad'));
+const Creditos = lazy(() => import('./Creditos'));
 
 export function Rutas() {
   return (
@@ -24,6 +26,8 @@ export function Rutas() {
         <Route path="/actividad/:id" element={<Actividad />} />
         <Route path="/ajustes" element={<Ajustes />} />
         <Route path="/calibracion" element={<Calibracion />} />
+        <Route path="/privacidad" element={<Privacidad />} />
+        <Route path="/creditos" element={<Creditos />} />
         <Route path="/diagnostico" element={<Diagnostico />} />
       </Routes>
     </Suspense>
