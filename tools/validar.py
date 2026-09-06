@@ -253,7 +253,15 @@ def validar_producto(datos: dict, r: Resultado) -> None:
     if etapa == "infantil" and entrada.get("modo") == "arrastre":
         r.errores.append("producto · por debajo de 6 años solo tap, nunca arrastrar")
 
-    opciones = contenido.get("opciones")
+    # Objetos simultáneos en pantalla, contados según el tipo. Antes solo se miraba
+    # "opciones", así que emparejar y ordenar se colaban sin contar nada.
+    if datos.get("tipo") == "emparejar":
+        opciones = (contenido.get("izquierda") or []) + (contenido.get("derecha") or [])
+    elif datos.get("tipo") == "ordenar":
+        opciones = contenido.get("elementos")
+    else:
+        opciones = contenido.get("opciones")
+
     if isinstance(opciones, list) and etapa in MAX_OBJETOS:
         if len(opciones) > MAX_OBJETOS[etapa]:
             r.errores.append(
@@ -265,6 +273,44 @@ def validar_producto(datos: dict, r: Resultado) -> None:
     for prohibido in ("vidas", "tiempo_limite_s", "racha", "clasificacion"):
         if prohibido in evaluacion or prohibido in contenido:
             r.errores.append(f"producto · '{prohibido}' está prohibido: el error nunca castiga")
+
+    tipo = datos.get("tipo")
+    if tipo == "emparejar":
+        claves = {e.get("clave") for e in (contenido.get("izquierda") or [])} | {
+            e.get("clave") for e in (contenido.get("derecha") or [])
+        }
+        for par in contenido.get("parejas") or []:
+            for lado in ("izquierda", "derecha"):
+                if par.get(lado) not in claves:
+                    r.errores.append(
+                        f"contenido · la pareja apunta a '{par.get(lado)}', que no existe "
+                        f"entre los elementos"
+                    )
+        sin_audio = [
+            e.get("clave")
+            for e in (contenido.get("derecha") or [])
+            if not e.get("audio")
+        ]
+        if sin_audio:
+            r.avisos.append(
+                f"contenido · elementos sin audio en la columna derecha: {sin_audio}. "
+                f"La autocorrección de 'emparejar' es por el oído; sin sonido no la hay"
+            )
+
+    if tipo == "ordenar":
+        claves = [e.get("clave") for e in (contenido.get("elementos") or [])]
+        orden = contenido.get("orden") or []
+        if sorted(claves) != sorted(orden):
+            r.errores.append(
+                f"contenido · 'orden' y 'elementos' no contienen las mismas claves: "
+                f"{sorted(orden)} frente a {sorted(claves)}"
+            )
+
+    if datos.get("entrada", {}).get("modo") == "arrastre":
+        r.errores.append(
+            "producto · el arrastre no se usa en ningún tipo: WCAG 2.5.7 exige alternativa "
+            "y la motricidad fina infantil no da. Usa 'toque-secuencial'"
+        )
 
     if "locucion" not in datos:
         r.avisos.append("producto · sin locución: los niños de 3-8 años no leen el enunciado")

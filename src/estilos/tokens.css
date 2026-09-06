@@ -333,3 +333,77 @@ body {
   min-height: 2.5em;
   font-size: 1.15em;
 }
+
+/* ── emparejar ─────────────────────────────────────────────────────────────
+   Dos columnas y toque sucesivo. Nada arrastrable: WCAG 2.5.7, y por debajo de
+   6 años la motricidad fina no da para arrastrar con precisión. */
+.emparejar__tablero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--separacion);
+  margin: 24px 0;
+}
+.emparejar__columna {
+  display: grid;
+  gap: var(--separacion);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.emparejar__ficha[data-estado='elegida'] {
+  border-color: var(--acento);
+  border-width: 5px;
+}
+/* Resuelta: cambia el color Y la opacidad Y aparece un borde continuo. Tres señales,
+   porque un 8 % de los niños no distingue la primera. */
+.emparejar__ficha[data-estado='resuelta'] {
+  border-color: var(--ok);
+  opacity: 0.55;
+}
+.emparejar__ficha[aria-disabled='true'] {
+  cursor: default;
+}
+
+/* ── ordenar ───────────────────────────────────────────────────────────────
+   La fila de arriba es lo colocado; el banco de abajo, lo que queda. */
+.ordenar__fila,
+.ordenar__banco {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--separacion);
+  padding: 0;
+  margin: 20px 0;
+  list-style: none;
+}
+.ordenar__fila {
+  min-height: calc(var(--objetivo) + 24px);
+  align-items: center;
+  padding: 12px;
+  border: 3px dashed var(--linea);
+  border-radius: 18px;
+}
+.ordenar__hueco {
+  width: 100%;
+  text-align: center;
+  color: var(--tinta-2);
+}
+/* Fuera de sitio: se mueve. El movimiento es la señal, no el rojo, porque el rojo
+   dice «has fallado» y la regla 7 lo prohíbe. */
+.ordenar__ficha[data-estado='fuera-de-sitio'] {
+  border-color: var(--acento);
+  animation: temblor 0.6s ease-in-out 2;
+}
+@keyframes temblor {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+.ordenar__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.ordenar__acciones [aria-disabled='true'],
+.emparejar__ficha[aria-disabled='true'] {
+  opacity: 0.5;
+}

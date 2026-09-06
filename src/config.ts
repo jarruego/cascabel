@@ -12,6 +12,7 @@ export const APP = {
   versionEsquemaActividad: 1,
   /** Rutas relativas siempre: la CSP prohíbe cualquier origen que no sea el nuestro. */
   rutaContenido: '/content',
+  rutaAudio: '/audio',
 } as const;
 
 export type Etapa = 'infantil' | 'primaria-c1' | 'primaria-c2' | 'primaria-c3';

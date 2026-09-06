@@ -1,0 +1,78 @@
+{
+  "id": "inf-15-de-grave-a-agudo",
+  "version": 1,
+  "tipo": "ordenar",
+  "titulo": "De grave a agudo",
+  "descripcion": "Tres campanas que hay que ordenar tocándolas, de la más grave a la más aguda. El catálogo preveía cinco; se dejan en tres porque el máximo de objetos simultáneos en Infantil es cuatro.",
+  "etapa": "infantil",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 4,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": "CE2",
+    "criterio": "2.1",
+    "saber": "F. Lenguaje y expresión musical — el sonido y sus cualidades"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "metodo": [
+      "montessori",
+      "willems"
+    ]
+  },
+  "entrada": {
+    "modo": "toque-secuencial",
+    "alternativa": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c103.consigna",
+    "elementos": [
+      {
+        "clave": "media",
+        "icono": "campana",
+        "etiqueta": "opcion.medio",
+        "audio": "muestras/campana-media.opus"
+      },
+      {
+        "clave": "aguda",
+        "icono": "campana",
+        "etiqueta": "opcion.agudo",
+        "audio": "muestras/campana-aguda.opus"
+      },
+      {
+        "clave": "grave",
+        "icono": "campana",
+        "etiqueta": "opcion.grave",
+        "audio": "muestras/campana-grave.opus"
+      }
+    ],
+    "orden": [
+      "grave",
+      "media",
+      "aguda"
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c103.enunciado",
+    "audio": "es/inf-15-de-grave-a-agudo.opus"
+  },
+  "pistas": [
+    "actividad.c103.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Campanas afinadas (re4, la4, mi5)",
+      "autor": "Proyecto cocomusic",
+      "fuente": "Sintetizadas con tools/muestras-provisionales.py",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

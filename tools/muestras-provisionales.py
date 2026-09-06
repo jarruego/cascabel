@@ -101,11 +101,39 @@ def silencio(dur: float = 2.0) -> list[float]:
     return [0.0] * int(dur * TASA)
 
 
+def campana(fundamental: float, dur: float = 1.8) -> list[float]:
+    """
+    Campana afinada. Los parciales inarmónicos son lo que la hace sonar a metal y no a
+    flauta; las razones vienen del modelo clásico de campana tubular.
+
+    PENDIENTE DE REVISIÓN PEDAGÓGICA: se usan tres campanas separadas por quintas justas
+    (relación 3:2) porque la diferencia de altura tiene que ser inconfundible para un niño
+    de 3 a 6 años. Es la opción convencional en material Montessori de campanas, donde se
+    empieza por intervalos grandes antes de afinar el oído a los pequeños. Una maestra
+    puede querer terceras o la escala pentatónica.
+    """
+    n = int(dur * TASA)
+    env = envolvente(n, 0.002, 0.55)
+    # Razones de parciales de campana tubular, redondeadas.
+    parciales = [(1.0, 1.0), (2.0, 0.5), (3.0, 0.3), (4.2, 0.18), (5.4, 0.1)]
+    salida = []
+    for i in range(n):
+        t = i / TASA
+        v = sum(a * math.sin(2 * math.pi * fundamental * r * t) for r, a in parciales)
+        salida.append(v / len(parciales) * env[i] * 1.5)
+    return salida
+
+
 PIEZAS = {
     "pandero-golpe": pandero,
     "triangulo-largo": triangulo,
     "voz-la": voz_la,
     "silencio-2s": silencio,
+    # Tres campanas separadas por quintas justas: 293,7 Hz (re4), 440 (la4), 659,3 (mi5).
+    # El ámbito cabe en la tesitura de Infantil que declara este mismo fichero.
+    "campana-grave": lambda: campana(293.66),
+    "campana-media": lambda: campana(440.0),
+    "campana-aguda": lambda: campana(659.26),
 }
 
 

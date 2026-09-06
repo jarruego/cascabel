@@ -61,6 +61,39 @@ export function Icono({ nombre, tamano = 48 }: Props) {
         </svg>
       );
 
+    // Triángulo de percusión, con la baqueta. Se distingue del tambor por la forma,
+    // no por el color: regla 4.
+    case 'triangulo':
+      return (
+        <svg {...comun}>
+          <path d="M24 9L41 37H7L24 9z" />
+          <path d="M20 37h8" strokeWidth="5" />
+          <path d="M33 12l6-4" />
+        </svg>
+      );
+
+    // Boca cantando: para un no lector, «voz» es una boca abierta con notas saliendo.
+    case 'voz':
+      return (
+        <svg {...comun}>
+          <path d="M10 20c0-5 5-8 9-8s9 3 9 8-4 14-9 14-9-9-9-14z" />
+          <path d="M15 20h8" />
+          <path d="M35 11v11a4 4 0 11-3-3.9" />
+          <path d="M35 11l6 2" />
+        </svg>
+      );
+
+    // Campana: la del cascabel del logotipo, para que la marca y el contenido rimen.
+    case 'campana':
+      return (
+        <svg {...comun}>
+          <path d="M12 32c0-9 5-16 12-16s12 7 12 16z" />
+          <path d="M9 32h30" />
+          <path d="M20 10h8v5h-8z" />
+          <circle cx="24" cy="38" r="3" />
+        </svg>
+      );
+
     case 'mano':
       return (
         <svg {...comun}>
