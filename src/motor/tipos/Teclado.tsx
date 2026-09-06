@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useCarril } from '@/app/preferencias';
-import { OBJETIVO_TACTIL } from '@/config';
 import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { Sampler, aMidi } from '@/audio/sampler';
 import { muestrasDe } from '@/audio/instrumentos';
@@ -177,8 +176,17 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
     return () => ro.disconnect();
   }, []);
 
-  /** Ancho ideal de tecla, del contrato táctil del carril. */
-  const anchoIdeal = Math.max(36, Math.round(OBJETIVO_TACTIL[carril] * 0.85));
+  /**
+   * Tope de ancho por tecla: 88 px, que es lo que mide una tecla blanca de piano real
+   * (23 mm a la densidad habitual de una pantalla).
+   *
+   * **Por encima de eso, más ancho es peor.** La mano deja de poder colocarse como se coloca
+   * en un piano de verdad, y entonces lo que se aprende aquí no sirve allí. Es el único
+   * sitio del proyecto donde un objetivo táctil tiene techo, y lo tiene por eso.
+   */
+  const ANCHO_TECLA_REAL = 88;
+  /** Aire a los lados para que el teclado no quede pegado al borde de la pantalla. */
+  const MARGEN_LATERAL = 16;
   /**
    * Suelo por debajo del cual una tecla deja de ser acertable con un dedo, **por carril**.
    *
@@ -190,19 +198,26 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
    */
   const anchoMinimo = { infantil: 42, lectores: 32, autonomos: 26 }[carril];
 
+  const anchoUtil = Math.max(0, anchoCaja - MARGEN_LATERAL * 2);
+
   const octavasVisibles = (() => {
-    if (!anchoCaja) return octavas;
+    if (!anchoUtil) return octavas;
     // Se van quitando octavas hasta que las teclas caben por encima del suelo.
     for (let o = octavas; o > 1; o--) {
-      if (anchoCaja / (7 * o) >= anchoMinimo) return o;
+      if (anchoUtil / (7 * o) >= anchoMinimo) return o;
     }
     return 1;
   })();
 
   const blancas = 7 * octavasVisibles;
-  const anchoBlanca = anchoCaja
-    ? Math.max(anchoMinimo, Math.min(anchoIdeal, Math.floor(anchoCaja / blancas)))
-    : anchoIdeal;
+  /*
+    Las teclas LLENAN el hueco. Antes estaban acotadas por el objetivo táctil del carril
+    —unos 60 px—, y en una pantalla ancha el teclado se quedaba chico y centrado con medio
+    monitor vacío al lado, cuando lo que hace fácil acertar una tecla es que sea grande.
+  */
+  const anchoBlanca = anchoUtil
+    ? Math.max(anchoMinimo, Math.min(ANCHO_TECLA_REAL, Math.floor(anchoUtil / blancas)))
+    : 60;
   /*
    * Tocar con el teclado del ordenador.
    *
@@ -239,8 +254,6 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
   return (
     <section className="actividad teclado" data-carril={carril} aria-labelledby="consigna">
       <h1 id="consigna">{t(contenido.consigna)}</h1>
-
-      {contenido.retos && <Retos retos={contenido.retos} />}
 
       {/* La nota que suena, grande. Es lo que convierte el piano en algo de lo que se
           aprende: se toca, suena y se ve cómo se llama. */}
@@ -327,8 +340,14 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
         </div>
       </div>
 
-      {grabable && (
-        <div className="teclado__grabadora">
+      {/* Una sola fila con todo lo que no es el teclado: propuestas, grabadora y salir.
+          En la pantalla de un instrumento, cada línea que no sea teclado es teclado que se
+          pierde. */}
+      <div className="teclado__barra">
+        {contenido.retos && <Retos retos={contenido.retos} />}
+
+        {grabable && (
+          <>
           <button
             type="button"
             className="boton-repetir"
@@ -376,21 +395,22 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
           >
             {t(reproduciendo ? 'teclado.sonando' : 'teclado.reproducir')}
           </button>
-        </div>
-      )}
+          </>
+        )}
+
+        <button
+          type="button"
+          className="boton-repetir"
+          onClick={() => alTerminar({ actividadId: actividad.id, completada: true })}
+        >
+          {t('lienzo.terminar')}
+        </button>
+      </div>
 
       <p className="pista-fija">
         {t('teclado.libre')}
         {letrasQwerty && ` ${t('teclado.qwerty')}`}
       </p>
-
-      <button
-        type="button"
-        className="boton-repetir"
-        onClick={() => alTerminar({ actividadId: actividad.id, completada: true })}
-      >
-        {t('lienzo.terminar')}
-      </button>
     </section>
   );
 }
