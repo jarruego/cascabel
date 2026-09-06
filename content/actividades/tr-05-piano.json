@@ -31,8 +31,8 @@
   },
   "contenido": {
     "consigna": "actividad.tr05.consigna",
-    "desde": 4,
-    "octavas": 2,
+    "desde": 3,
+    "octavas": 3,
     "soloBlancas": false,
     "nombres": "latino",
     "retos": [

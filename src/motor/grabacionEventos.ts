@@ -42,10 +42,22 @@ const COLA_MS = 600;
 export class GrabadorDeEventos {
   private eventos: EventoTocado[] = [];
   private inicio: number | null = null;
+  /**
+   * Si está grabando, separado de si ya ha empezado a sonar algo.
+   *
+   * **Tenerlo en una sola variable era un bloqueo mutuo.** `grabando` se deducía de
+   * `inicio`, que no se fija hasta la primera nota; y quien llama comprueba `grabando`
+   * antes de anotar. Resultado: nunca había primera nota, así que nunca empezaba a grabar,
+   * así que nunca había primera nota. El botón se encendía y no guardaba nada.
+   *
+   * Son dos preguntas distintas —«¿está el dedo en el botón rojo?» y «¿ha sonado ya algo?»—
+   * y juntarlas en un campo fue lo que las hizo dependerse la una de la otra.
+   */
+  private activo = false;
 
   /** ¿Está grabando ahora mismo? */
   get grabando(): boolean {
-    return this.inicio !== null;
+    return this.activo;
   }
 
   get vacia(): boolean {
@@ -63,12 +75,14 @@ export class GrabadorDeEventos {
   empezar(): void {
     this.eventos = [];
     this.inicio = null;
+    this.activo = true;
   }
 
   /** Anota una nota tocada. Sin efecto si no se está grabando. */
   anotar(nota: string, ahoraMs: number, duracion?: number): void {
-    if (this.eventos.length === 0) this.inicio = ahoraMs;
-    if (this.inicio === null) return;
+    if (!this.activo) return;
+    // La primera nota fija el origen: ver `empezar()`.
+    if (this.inicio === null) this.inicio = ahoraMs;
     this.eventos.push({ nota, ms: ahoraMs - this.inicio, duracion });
   }
 
@@ -76,6 +90,7 @@ export class GrabadorDeEventos {
   terminar(): Grabacion {
     const eventos = this.eventos;
     this.inicio = null;
+    this.activo = false;
     const ultimo = eventos[eventos.length - 1];
     return {
       eventos,
