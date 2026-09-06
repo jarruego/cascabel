@@ -188,22 +188,31 @@ Las marcadas con `"esfuerzo": "S"` en `content/catalogo.json`.
 
 ---
 
-### T1.11 — `npm run verificar` tiene que pasar en Windows
+### T1.11 — `npm run verificar` tiene que pasar en Windows `[x]`
 
-Detectado el 2026-09-06. **La puerta de commit no funciona en la máquina del autor**, así
-que hoy «verificado» no significa nada:
+Detectado y cerrado el 2026-09-06. La puerta de commit no comprobaba nada:
 
-- [ ] `contenido:validar` invoca `python3`, que en Windows es el alias de la Microsoft
-      Store y falla. Ahí sólo hay `python` (3.10.6)
-- [ ] Ni `jsonschema` ni `music21` están instalados: el validador se salta **toda** la
-      comprobación de esquema y de música, avisa, y aun así termina con «3/3 correctas»
-- [ ] Decidir la vía: intérprete detectado en un script, o `docker compose --profile tools`
-      como camino único y documentado
-- [ ] El validador debe **fallar**, no avisar, si le faltan sus dependencias en modo estricto
+- [x] `contenido:validar` invocaba `python3`, que en Windows es el alias de la Microsoft
+      Store. Ahora pasa por `tools/validar.mjs`, que resuelve el intérprete de verdad
+- [x] Faltaban `jsonschema` y `music21`: el validador se saltaba **toda** la comprobación,
+      avisaba, y aun así terminaba con «3/3 correctas». Ahora eso es un error, no un aviso
+      (`--permisivo` lo degrada a aviso a propósito, y nunca debe usarse en CI)
+- [x] Vía elegida: intérprete detectado por `tools/interprete.mjs`, con `.venv` primero.
+      `npm run contenido:preparar` lo monta. Docker sigue siendo la alternativa
+- [x] La consola de Windows (cp1252) reventaba al imprimir `✓` después de validar bien
+- [x] **La comprobación de compases no funcionaba**: el parser de ABC de music21 parte un
+      compás desbordado en dos trozos que miden bien por separado, así que cinco negras en
+      un 4/4 pasaban. Se sustituye por tres reglas: total múltiplo del compás, anacrusa que
+      complementa al último compás, e interiores completos
+- [x] `tests/validador.test.ts` con seis actividades de referencia
 
-**Criterio de aceptación**: `npm run verificar` pasa en Windows sin Docker, o falla con un
-mensaje que diga exactamente qué instalar. Y una actividad con un compás mal cuadrado hace
-que el comando devuelva un código distinto de cero.
+**Nota**: `requirements.txt` fija `music21==10.5.0`, que exige **Python ≥ 3.11**. En esta
+máquina `python` es 3.10 y `py -3` es 3.11; por eso el resolver prueba varios candidatos en
+vez de fiarse del primero.
+
+**Limitación conocida**: un error que se compensa a sí mismo (un compás de 3 seguido de uno
+de 5 en un 4/4) es indistinguible de una anacrusa de 3 con final de 1, y pasa. Para
+detectarlo habría que medir las barras del ABC en crudo, y no compensa hoy.
 
 ---
 

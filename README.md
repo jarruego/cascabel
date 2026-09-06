@@ -45,8 +45,14 @@ docker compose up web          # http://localhost:5173
 ```bash
 nvm use                        # Node 22
 npm install
+npm run contenido:preparar     # Python 3.11+ para el validador de contenido
 npm run dev
 ```
+
+> El validador necesita **Python 3.11 o superior** (lo exige `music21`). En Windows,
+> `python3` es el alias de la Microsoft Store y no sirve: usa `py -3`, o deja que
+> `npm run contenido:preparar` lo resuelva. Si no quieres instalar Python,
+> `docker compose --profile tools run contenido` hace lo mismo.
 
 ### Con VS Code
 
@@ -59,6 +65,7 @@ extensiones recomendadas. El esquema de actividades queda enganchado al editor, 
 ```bash
 npm run dev                 # servidor de desarrollo (0.0.0.0:5173)
 npm run verificar           # typecheck + lint + tests + validación de contenido
+npm run contenido:preparar  # crea .venv e instala music21 y jsonschema (una vez)
 npm run contenido:validar   # esquema + música (music21) + reglas de producto
 npm run contenido:indice    # regenera content/indice.json
 npm run build && npm run preview
