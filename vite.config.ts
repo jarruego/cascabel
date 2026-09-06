@@ -1,7 +1,47 @@
-import { defineConfig } from 'vite';
+import { defineConfig, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
+import { cpSync, existsSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { fileURLToPath, URL } from 'node:url';
+
+/**
+ * Sirve y publica `content/`.
+ *
+ * El contenido no vive en `public/` a propósito: es la fuente de verdad del proyecto, la
+ * revisa una maestra y la valida `tools/validar.py`; meterlo en `public/` lo mezclaría con
+ * los assets. Pero entonces `vite build` no lo copia, y en desarrollo funcionaba solo por
+ * casualidad —Vite sirve la raíz del proyecto—, así que la biblioteca entera habría dado
+ * 404 el día del despliegue y no antes.
+ */
+function contenido(): Plugin {
+  const origen = fileURLToPath(new URL('./content', import.meta.url));
+  return {
+    name: 'cascabel-contenido',
+    configureServer(servidor) {
+      // Explícito a propósito: en desarrollo funcionaba porque Vite sirve la raíz del
+      // proyecto, que es una casualidad y no un contrato. Así dev y producción sirven
+      // el contenido por el mismo camino.
+      servidor.middlewares.use((peticion, respuesta, siguiente) => {
+        const url = peticion.url ?? '';
+        if (!url.startsWith('/content/')) return siguiente();
+        const relativa = decodeURIComponent(url.split('?')[0]!).slice('/content/'.length);
+        if (relativa.includes('..')) {
+          respuesta.statusCode = 400;
+          return respuesta.end();
+        }
+        const fichero = join(origen, relativa);
+        if (!existsSync(fichero)) return siguiente();
+        respuesta.setHeader('Content-Type', 'application/json; charset=utf-8');
+        respuesta.end(readFileSync(fichero));
+      });
+    },
+    closeBundle() {
+      const destino = fileURLToPath(new URL('./dist/content', import.meta.url));
+      cpSync(origen, destino, { recursive: true });
+    },
+  };
+}
 
 export default defineConfig({
   resolve: {
@@ -31,6 +71,7 @@ export default defineConfig({
   },
   plugins: [
     react(),
+    contenido(),
     VitePWA({
       registerType: 'prompt',
       includeAssets: ['favicon.svg', 'fuentes/**/*', 'audio/**/*'],

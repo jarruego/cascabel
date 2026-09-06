@@ -1,22 +1,23 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router';
-import App from '../App';
+import Catalogo from './Catalogo';
 
 /**
  * Router mínimo, deliberadamente.
  *
- * La navegación de verdad —índice, filtros por criterio curricular, /actividad/:id—
- * es T1.4 y no se adelanta aquí. Esto existe sólo porque /diagnostico (T0.1) tiene
- * que ser una ruta real: hay que poder instalarla como PWA y abrirla en modo
- * standalone, y eso no se puede hacer mirando location.pathname a mano.
+ * El índice es la raíz porque **la vista del maestro es el catálogo**, no una portada.
+ * /diagnostico y las actividades van en carga diferida: la primera pantalla no debe
+ * arrastrar el motor de actividades ni el banco de medida.
  */
 const Diagnostico = lazy(() => import('./Diagnostico'));
+const Actividad = lazy(() => import('./Actividad'));
 
 export function Rutas() {
   return (
     <Suspense fallback={null}>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<Catalogo />} />
+        <Route path="/actividad/:id" element={<Actividad />} />
         <Route path="/diagnostico" element={<Diagnostico />} />
       </Routes>
     </Suspense>

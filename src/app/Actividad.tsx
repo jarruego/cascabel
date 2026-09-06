@@ -1,0 +1,79 @@
+import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router';
+import { cargarActividad } from '@/datos/cargar';
+import { componenteDe } from '@/motor/registro';
+import { t } from '@/i18n';
+import type { Actividad as TipoActividad, ResultadoActividad } from '@/motor/tipos';
+
+/**
+ * Ruta /actividad/:id. Carga el JSON y se lo entrega al componente del tipo que declare.
+ *
+ * Aquí se ve por qué el proyecto está montado así: este fichero no sabe nada de música ni
+ * de pedagogía. Busca el tipo en el registro y delega. Añadir una actividad no lo toca.
+ */
+export default function Actividad() {
+  const { id = '' } = useParams();
+  const [actividad, setActividad] = useState<TipoActividad | null>(null);
+  const [fallo, setFallo] = useState<string | null>(null);
+  const [resultado, setResultado] = useState<ResultadoActividad | null>(null);
+
+  useEffect(() => {
+    let vivo = true;
+    setActividad(null);
+    setFallo(null);
+    setResultado(null);
+    cargarActividad(id)
+      .then((a) => vivo && setActividad(a))
+      .catch((e: Error) => vivo && setFallo(e.message));
+    return () => {
+      vivo = false;
+    };
+  }, [id]);
+
+  // Un solo botón «atrás», siempre en el mismo sitio. Regla 8 de docs/04-DISENO-UI.md:
+  // las navegaciones múltiples confunden a los niños mucho más que a los adultos.
+  const atras = (
+    <Link to="/" className="atras">
+      {t('comun.atras')}
+    </Link>
+  );
+
+  if (fallo) {
+    return (
+      <main className="actividad-marco">
+        {atras}
+        <p role="alert">{t('actividad.noEncontrada')}</p>
+      </main>
+    );
+  }
+  if (!actividad) {
+    return (
+      <main className="actividad-marco">
+        {atras}
+        <p>{t('catalogo.cargando')}</p>
+      </main>
+    );
+  }
+
+  const Componente = componenteDe(actividad.tipo);
+
+  return (
+    <main className="actividad-marco">
+      {atras}
+      {resultado ? (
+        <section className="fin">
+          <h1>{t('comun.completada')}</h1>
+          <Link to="/" className="boton-repetir">
+            {t('comun.volverAlIndice')}
+          </Link>
+        </section>
+      ) : Componente ? (
+        <Componente actividad={actividad} alTerminar={setResultado} />
+      ) : (
+        // No es un error del niño ni del maestro: es que ese tipo de motor aún no existe.
+        // Ver docs/07-ROADMAP.md; el registro dice cuáles hay.
+        <p role="status">{t('actividad.tipoPendiente')}</p>
+      )}
+    </main>
+  );
+}
