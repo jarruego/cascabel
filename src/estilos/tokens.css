@@ -2805,3 +2805,80 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   color: var(--tinta-2);
   font-size: var(--t-xs);
 }
+
+/* ── editor por pistas ─────────────────────────────────────────────────────
+   Cuatro voces a la vez. Cada pista es un bloque con su cabecera, y la cuadrícula desplaza
+   en horizontal si hace falta: dieciséis columnas no caben en un móvil sin encoger las
+   casillas por debajo de lo acertable, y encoger sería peor. */
+.pistas__tabla { display: grid; gap: var(--e-3); margin: var(--e-4) 0; }
+.pistas__pista {
+  padding: var(--e-2);
+  background: var(--superficie);
+  border: 2px solid var(--linea);
+  border-radius: var(--r-m);
+}
+/* Una pista silenciada se ve apagada pero SIGUE VIÉNDOSE con sus casillas: si desapareciera,
+   silenciar sería borrar y no serviría para comparar, que es para lo único que sirve. */
+.pistas__pista[data-muda] { opacity: 0.55; border-style: dashed; }
+.pistas__cabecera {
+  display: flex;
+  align-items: center;
+  gap: var(--e-2);
+  margin-bottom: var(--e-2);
+}
+.pistas__nombre { flex: 1; font-weight: 700; font-size: var(--t-s); }
+.pistas__mudo,
+.pistas__limpiar {
+  padding: var(--e-1) var(--e-2);
+  font: inherit;
+  font-size: var(--t-xs);
+  color: var(--tinta-2);
+  background: var(--fondo);
+  border: 2px solid var(--linea);
+  border-radius: var(--r-s);
+  cursor: pointer;
+}
+.pistas__mudo[aria-pressed='true'] {
+  color: var(--papel);
+  background: var(--tinta-2);
+  border-color: var(--tinta-2);
+}
+.pistas__mudo:focus-visible,
+.pistas__limpiar:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
+
+.pistas__rejilla { overflow-x: auto; }
+.pistas__fila { display: flex; align-items: center; gap: 2px; margin-bottom: 2px; }
+.pistas__etiqueta {
+  flex: 0 0 auto;
+  width: 74px;
+  font-size: var(--t-xs);
+  color: var(--tinta-2);
+  text-align: right;
+  padding-right: var(--e-2);
+}
+.pistas__celda {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background: var(--fondo);
+  border: 1px solid var(--linea);
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* La primera casilla de cada compás lleva marca: sin esa referencia, dieciséis casillas
+   iguales son imposibles de contar. */
+.pistas__celda[data-compas] { border-left: 3px solid var(--tinta-2); }
+.pistas__celda[data-on] { border-color: var(--tinta); background: var(--acento-2); }
+/* La columna que suena ahora. Solo un halo: rellenarla taparía lo que hay escrito. */
+.pistas__celda[data-aqui] { box-shadow: inset 0 0 0 2px var(--acento); }
+.pistas__celda:focus-visible { outline: var(--foco); outline-offset: 1px; }
+
+.pistas__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+  justify-content: center;
+  margin: var(--e-4) 0;
+}
+.pistas__acciones button { display: inline-flex; align-items: center; gap: var(--e-2); }

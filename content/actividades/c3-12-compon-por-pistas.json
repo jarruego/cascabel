@@ -1,0 +1,110 @@
+{
+  "id": "c3-12-compon-por-pistas",
+  "version": 1,
+  "tipo": "pistas",
+  "titulo": "Compón por pistas",
+  "descripcion": "Cuatro voces a la vez: flauta, piano, bajo y percusión. Se puede silenciar cada una para oír qué aporta.",
+  "etapa": "primaria-c3",
+  "eje": "creacion",
+  "lugar": "pantalla",
+  "duracion_min": 20,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE4",
+    "criterio": "4.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 92,
+    "figuras": [
+      "negra",
+      "blanca"
+    ]
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c312.consigna",
+    "columnas": 16,
+    "tempo": 92,
+    "pulsosPorCasilla": 1,
+    "exportable": true,
+    "pistas": [
+      {
+        "clave": "flauta",
+        "clase": "melodica",
+        "instrumento": "flauta",
+        "filas": [
+          "C6",
+          "A5",
+          "G5",
+          "E5",
+          "C5"
+        ]
+      },
+      {
+        "clave": "piano",
+        "clase": "melodica",
+        "instrumento": "piano",
+        "filas": [
+          "G4",
+          "F4",
+          "E4",
+          "D4",
+          "C4"
+        ]
+      },
+      {
+        "clave": "bajo",
+        "clase": "melodica",
+        "instrumento": "guitarra",
+        "filas": [
+          "G3",
+          "E3",
+          "C3"
+        ]
+      },
+      {
+        "clave": "percusion",
+        "clase": "percusion",
+        "filas": [
+          "charles",
+          "caja",
+          "bombo"
+        ]
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c312.enunciado"
+  },
+  "pistas": [
+    "actividad.c312.pista1",
+    "actividad.c312.pista2",
+    "actividad.c312.pista3"
+  ],
+  "creditos": [
+    {
+      "obra": "Flauta, piano y guitarra",
+      "autor": "Frank Wen, soundfont FluidR3_GM",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Percusión",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}
