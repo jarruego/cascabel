@@ -100,6 +100,8 @@ class Resultado:
     fichero: Path
     errores: list[str] = field(default_factory=list)
     avisos: list[str] = field(default_factory=list)
+    # El JSON ya parseado, para las comprobaciones que miran el conjunto y no un fichero.
+    datos: dict | None = None
 
     @property
     def ok(self) -> bool:
@@ -355,6 +357,7 @@ def validar_fichero(ruta: Path, esquema: dict) -> Resultado:
         r.errores.append(f"json · {exc}")
         return r
 
+    r.datos = datos
     if ruta.stem != datos.get("id"):
         r.avisos.append(f"El id '{datos.get('id')}' no coincide con el nombre del fichero")
 
@@ -362,6 +365,66 @@ def validar_fichero(ruta: Path, esquema: dict) -> Resultado:
     validar_producto(datos, r)
     validar_musica(datos, r)
     return r
+
+
+def validar_catalogo(resultados: list[Resultado]) -> list[str]:
+    """
+    Comprueba que ninguna actividad se sienta encima de un codigo que el catalogo tiene
+    reservado para otra cosa.
+
+    Esto salio de un fallo real: tres actividades escritas en la misma sesion cogieron los
+    codigos C2-11, C3-03 y C3-04, que el catalogo reservaba para «Instrumentos del mundo»,
+    «Editor de melodias» y «Mapa de una obra». No dio ningun sintoma —cada JSON era valido
+    por separado— y el catalogo paso a decir una cosa distinta de lo que habia en disco.
+
+    El id es estable y no se renombra (puede estar en una URL compartida), asi que el unico
+    momento barato para detectar la colision es antes de que exista.
+    """
+    ruta = RAIZ / "content" / "catalogo.json"
+    if not ruta.exists():
+        return []
+
+    catalogo = json.loads(ruta.read_text(encoding="utf-8")).get("actividades", [])
+    titulos = {}
+    for entrada in catalogo:
+        codigo = (entrada.get("id") or entrada.get("codigo") or "").upper()
+        if codigo:
+            titulos[codigo] = entrada.get("titulo", "")
+
+    problemas = []
+    vistos: dict[str, str] = {}
+    for r in resultados:
+        datos = r.datos
+        if not datos:
+            continue
+        partes = str(datos.get("id", "")).split("-")
+        if len(partes) < 2:
+            continue
+        codigo = f"{partes[0]}-{partes[1]}".upper()
+
+        if codigo in vistos:
+            problemas.append(
+                f"El codigo {codigo} lo usan dos actividades: '{vistos[codigo]}' y '{datos['id']}'"
+            )
+        vistos[codigo] = datos["id"]
+
+        previsto = titulos.get(codigo)
+        if previsto is None:
+            continue
+        # Se comparan las palabras significativas, no la cadena entera: el titulo del
+        # catalogo es un apunte de backlog y se afina al escribir la actividad.
+        palabras = {
+            p.strip("¿?¡!,.:").lower()
+            for p in previsto.split()
+            if len(p) > 4
+        }
+        real = datos.get("titulo", "").lower()
+        if palabras and not any(p in real for p in palabras):
+            problemas.append(
+                f"El codigo {codigo} esta reservado en el catalogo para "
+                f"'{previsto}', pero lo usa '{datos.get('titulo')}' ({datos['id']})"
+            )
+    return problemas
 
 
 def main() -> int:
@@ -407,9 +470,18 @@ def main() -> int:
         else:
             print(f"✓ {nombre}")
 
+    problemas = validar_catalogo(resultados)
+    if problemas:
+        print("")
+        print("✗ catalogo")
+        for p in problemas:
+            print(f"    ERROR   {p}")
+
     total = len(resultados)
     print(f"\n{total - fallos}/{total} actividades correctas.")
-    return 1 if fallos else 0
+    if problemas:
+        print(f"El catalogo y las actividades no cuadran: {len(problemas)} problema(s).")
+    return 1 if (fallos or problemas) else 0
 
 
 if __name__ == "__main__":

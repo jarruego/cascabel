@@ -1,5 +1,5 @@
 {
-  "id": "c2-11-himno-de-la-alegria",
+  "id": "c2-14-himno-de-la-alegria",
   "version": 1,
   "tipo": "karaoke",
   "titulo": "El himno de la alegría",
@@ -32,7 +32,7 @@
     "modo": "toque"
   },
   "contenido": {
-    "consigna": "actividad.c211.consigna",
+    "consigna": "actividad.c214.consigna",
     "tempo": 100,
     "clave": "sol",
     "notas": [
@@ -167,11 +167,11 @@
     ]
   },
   "locucion": {
-    "enunciado": "actividad.c211.enunciado"
+    "enunciado": "actividad.c214.enunciado"
   },
   "pistas": [
-    "actividad.c211.pista1",
-    "actividad.c211.pista2"
+    "actividad.c214.pista1",
+    "actividad.c214.pista2"
   ],
   "creditos": [
     {

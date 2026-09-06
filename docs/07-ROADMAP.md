@@ -840,6 +840,26 @@ detectarlo habría que medir las barras del ABC en crudo, y no compensa hoy.
       **Pendiente de revisión pedagógica**, y son decisiones de un desarrollador: las
       sílabas de síncopa y contratiempo (`ti-ta-ti`, `sh-ti`), la selección pentatónica de
       C2-07, las coreografías de las ocho `guia-aula` y las duraciones de sus pasos.
+- [x] **T2.9b — El catálogo y las actividades se habían desincronizado** `[x]` — cerrado el
+      2026-09-06. **Tres actividades escritas el mismo día se sentaron encima de códigos que
+      el catálogo tenía reservados para otra cosa**: C2-11 era «Instrumentos del mundo»,
+      C3-03 «Editor de melodías» y C3-04 «Mapa de una obra». Cada JSON era válido por
+      separado y el validador pasaba en verde: **el fallo no daba ningún síntoma**, y el
+      catálogo pasó a decir una cosa distinta de la que había en disco.
+
+      Renombradas a C2-14, C3-10 y C3-11. El esquema dice que un id **no se renombra nunca**
+      porque puede estar en una URL compartida, y esa regla sigue en pie: se pudo hacer aquí
+      solo porque tenían un día de vida y nadie las ha usado todavía. Con un mes más, la
+      salida habría sido dejar el catálogo mintiendo.
+
+      **Lo que arregla el fallo no es el renombrado, es la puerta**: `tools/validar.py`
+      comprueba ahora que ninguna actividad ocupe un código reservado ni que dos compartan
+      código, y **falla con salida 1**. Se probó introduciendo la colisión a propósito antes
+      de darla por buena — y esa prueba pilló que el parche había escrito la función pero no
+      la llamaba desde `main()`. Una comprobación que no se ha visto fallar no está hecha.
+
+      Y el catálogo pasa a listar también lo entregado fuera de plan (C1-14, C1-15, C1-16 y
+      TR-05): un backlog que no dice lo que ya existe no puede detectar este fallo.
 - [x] **T2.10 — Auditoría de accesibilidad** `[x]` — cerrado el 2026-09-06, y hecha con
       **tests y no con una revisión manual**: una auditoría es una foto que caduca con el
       siguiente commit.

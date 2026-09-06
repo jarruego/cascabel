@@ -1,5 +1,5 @@
 {
-  "id": "c3-03-ritmo-de-doce",
+  "id": "c3-10-ritmo-de-doce",
   "version": 1,
   "tipo": "tocar-a-tiempo",
   "titulo": "Ritmo de doce",
@@ -30,7 +30,7 @@
     "alternativa": "toque"
   },
   "contenido": {
-    "consigna": "actividad.c303.consigna",
+    "consigna": "actividad.c310.consigna",
     "silabas": [
       "ta",
       "ti-ti",
@@ -57,10 +57,10 @@
     ]
   },
   "locucion": {
-    "enunciado": "actividad.c303.enunciado"
+    "enunciado": "actividad.c310.enunciado"
   },
   "pistas": [
-    "actividad.c303.pista1"
+    "actividad.c310.pista1"
   ],
   "creditos": [
     {

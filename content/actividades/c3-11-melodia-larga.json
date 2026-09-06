@@ -1,5 +1,5 @@
 {
-  "id": "c3-04-melodia-larga",
+  "id": "c3-11-melodia-larga",
   "version": 1,
   "tipo": "rejilla",
   "titulo": "Compón una melodía larga",
@@ -33,7 +33,7 @@
     "modo": "toque"
   },
   "contenido": {
-    "consigna": "actividad.c304.consigna",
+    "consigna": "actividad.c311.consigna",
     "modo": "libre",
     "filas": 8,
     "columnas": 16,
@@ -56,7 +56,7 @@
     ]
   },
   "locucion": {
-    "enunciado": "actividad.c304.enunciado"
+    "enunciado": "actividad.c311.enunciado"
   },
   "creditos": [
     {
