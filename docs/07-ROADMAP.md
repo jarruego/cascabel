@@ -1034,6 +1034,71 @@ botón muerto es peor que ningún botón, y ya nos pasó una vez.
   justo cuando la nota ya está ahí. Ahora vive en `melodiaEnTiempo.ts`, con test: lo
   encontró el autor probando y no un test, así que ahora hay test.
 
+### T2.14 — La ficha imprimible se rehace como dosier del maestro `[x]`
+
+Cerrada el 2026-09-06, a petición del autor, y **corrige un error de enfoque de T2.8**.
+
+La ficha imprimía la actividad en papel. **Eso era imprimir lo que sobra**: lo que hace
+valiosa a una actividad de pantalla es justo lo que no se puede fotocopiar —que suena, que
+responde y que se autocorrige—. Lo que sí se traslada al papel, y lo que un maestro necesita
+de verdad, es el **criterio**: cómo llevarla al aula, qué proponer después, qué mirar
+mientras la hacen y qué parte del currículo cubre para poder justificarla.
+
+Tres hojas, cada una con un lector y un momento distintos:
+
+1. **Cómo llevarla al aula.** Se lee de pie y con prisa antes de clase, así que va primero
+   la ficha técnica —duración, si hace falta micrófono, si se puede sin dispositivos,
+   agrupamiento— y después las propuestas: **sin dispositivos, para ampliar, para reforzar y
+   qué observar**.
+2. **Currículo**, con las **dos capas separadas** de `CLAUDE.md` §9 y dicho por escrito en la
+   propia hoja: lo normativo literal arriba, la práctica («negra», «4/4») abajo y marcada
+   como convención. Un campo sin confirmar se imprime en blanco, nunca inventado.
+3. **Hoja de seguimiento**, con fecha y grupo pero **sin casilla de nombre del niño en la
+   ficha**, tres indicadores y espacio para notas.
+
+> **Dos decisiones de la hoja de seguimiento.** **Tres indicadores y no cinco**: una rejilla
+> que no se puede rellenar dando clase no se rellena nunca. Y **no hay casilla de «no
+> conseguido»**, solo conseguido, en proceso y en blanco: lo no observado y lo no logrado no
+> son lo mismo, y una casilla que los confunde produce evaluaciones falsas.
+
+> **Sobre los datos.** La hoja tiene columna de nombres y eso **no contradice la regla 3**:
+> ese papel es del maestro, se escribe a mano y no entra en la aplicación jamás. La regla
+> prohíbe que *nosotros* tratemos datos de un menor, no que un maestro tome notas. Va
+> impreso en la propia hoja, para que se sepa quién custodia ese papel.
+
+**La guía viene del TIPO de actividad, no de cada actividad.** Es la misma idea que el motor
+aplica a los componentes: escribir 53 dosieres a mano habría envejecido igual de mal que
+escribir 53 componentes. Cada uno de los doce tipos trae su «cómo funciona», su versión sin
+dispositivos, su ampliación, su refuerzo, qué observar y tres indicadores; y una actividad
+concreta puede sobreescribir cualquiera de ellos desde el bloque `ficha` de su JSON.
+
+**Y hay un test nuevo que vigila los textos**, `tests/textos.test.ts`. Un texto que falta no
+da ningún error: `t()` devuelve la clave y todo lo demás sigue funcionando. En pantalla se
+vería enseguida; **en una hoja que alguien manda a imprimir para el aula, no**. Comprueba
+que toda clave literal exista, que ninguna traducción esté vacía y que **ningún tipo del
+registro se quede sin guía**. Se probó rompiéndolo a propósito antes de darlo por bueno.
+
+### T2.15 — El piano se toca en horizontal `[x]`
+
+Cerrada el 2026-09-06. La primera versión usaba la disposición **apilada** de Ableton, FL
+Studio y GarageBand: dos octavas partidas en dos mitades, `ZXCVBNM` abajo y `QWERTYU` arriba.
+Es la convención más extendida y **el autor la encontró antinatural**, con razón: tener la
+segunda octava encima de la primera en vez de a su derecha tiene sentido para quien piensa en
+un secuenciador, no en un piano.
+
+Ahora por defecto es **horizontal**: las blancas seguidas por la fila de la `A` y las negras
+justo encima, en la fila de la `Q`. Y encajan exactamente — la `W` cae físicamente entre la
+`A` y la `S`, igual que el do sostenido cae entre el do y el re, y **la `R` y la `I` no suenan
+porque ahí el piano tampoco tiene negra**. El teclado del ordenador dibuja el piano.
+
+> **Llega a do–fa′, una octava y media, y no a dos octavas.** No es una decisión: catorce
+> blancas seguidas necesitarían catorce letras contiguas en una fila y la fila central tiene
+> once. Es el límite físico del teclado. Quien quiera las dos octavas completas puede pedir
+> `disposicionTeclado: 'apilada'` desde el JSON, y se sigue soportando.
+
+Las letras se pintan **solo en las blancas y debajo del nombre de la nota**: encima de una
+tecla negra no caben sin taparla, y las negras se explican en el texto de ayuda.
+
 ### T3.5 — Revisar los tamaños contra la investigación de NN/g `⚠️`
 
 Abierta el 2026-09-06 con la investigación de

@@ -4,7 +4,7 @@ import { OBJETIVO_TACTIL } from '@/config';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { MARIMBA, Sampler, aMidi } from '@/audio/sampler';
 import { colorDe, nombreDe } from '@/ui/coloresNota';
-import { letraDeNota, notaDeTecla } from '@/ui/tecladoQwerty';
+import { letraDeNota, notaDeTecla, type Disposicion } from '@/ui/tecladoQwerty';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -42,6 +42,8 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
     nombres?: 'latino' | 'ingles' | 'ninguno';
     /** Enseñar qué tecla del ordenador toca cada nota. Estorba donde no hay teclado. */
     letrasQwerty?: boolean;
+    /** 'horizontal' imita el piano; 'apilada' da dos octavas partidas en dos filas. */
+    disposicionTeclado?: Disposicion;
   };
 
   const carril = useCarril(actividad.etapa);
@@ -51,6 +53,7 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
   const nombres = contenido.nombres ?? (carril === 'autonomos' ? 'ingles' : 'latino');
   // En Infantil no se enseñan: se toca con el dedo, y una letra más en cada tecla es ruido.
   const letrasQwerty = contenido.letrasQwerty ?? carril !== 'infantil';
+  const disposicion = contenido.disposicionTeclado ?? 'horizontal';
 
   const sampler = useRef<Sampler | null>(null);
   const deslizando = useRef(false);
@@ -116,7 +119,7 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
   useEffect(() => {
     const pulsar = (e: KeyboardEvent) => {
       if (e.repeat || e.ctrlKey || e.altKey || e.metaKey) return;
-      const nota = notaDeTecla(e.code, desde);
+      const nota = notaDeTecla(e.code, desde, disposicion);
       if (!nota) return;
       if (soloBlancas && nota.includes('#')) return;
       // Fuera del rango dibujado no suena nada: lo que se oye es lo que se ve.
@@ -127,7 +130,7 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
     };
     window.addEventListener('keydown', pulsar);
     return () => window.removeEventListener('keydown', pulsar);
-  }, [desde, octavas, soloBlancas, sonar]);
+  }, [desde, octavas, soloBlancas, sonar, disposicion]);
 
   const anchoBlanca = Math.max(36, Math.round(OBJETIVO_TACTIL[carril] * 0.85));
   const teclas: Array<{ nota: string; negra: boolean; indice: number }> = [];
@@ -165,7 +168,7 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
         {teclas.map((k) => {
           const letra = k.nota[0]!;
           const etiqueta = nombres === 'ninguno' ? '' : nombreDe(letra, nombres);
-          const qwerty = letrasQwerty ? letraDeNota(k.nota, desde) : '';
+          const qwerty = letrasQwerty && !k.negra ? letraDeNota(k.nota, desde, disposicion) : '';
           const suena = sonando.has(k.nota);
           return (
             <button
@@ -203,8 +206,15 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
                 if (!deslizando.current) void sonar(k.nota);
               }}
             >
-              {qwerty && <span className="teclado__qwerty">{qwerty}</span>}
-              {!k.negra && etiqueta && <span className="teclado__nombre">{etiqueta}</span>}
+              {!k.negra && (etiqueta || qwerty) && (
+                <span className="teclado__nombre">
+                  {etiqueta}
+                  {/* La letra del ordenador va DEBAJO del nombre, no encima de la tecla, y
+                      solo en las blancas: en una negra no cabe sin taparla. Las negras se
+                      explican en el texto de abajo. */}
+                  {qwerty && <span className="teclado__qwerty">{qwerty}</span>}
+                </span>
+              )}
             </button>
           );
         })}

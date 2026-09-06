@@ -413,6 +413,45 @@
         "publicada"
       ],
       "default": "borrador"
+    },
+    "ficha": {
+      "type": "object",
+      "description": "Textos propios del dosier imprimible. Opcional: sin esto se usa la guia generica del tipo de actividad.",
+      "additionalProperties": false,
+      "properties": {
+        "comoFunciona": {
+          "type": "string",
+          "maxLength": 600
+        },
+        "sinPantalla": {
+          "type": "string",
+          "maxLength": 600
+        },
+        "ampliacion": {
+          "type": "string",
+          "maxLength": 600
+        },
+        "refuerzo": {
+          "type": "string",
+          "maxLength": 600
+        },
+        "observar": {
+          "type": "string",
+          "maxLength": 600
+        },
+        "indicador1": {
+          "type": "string",
+          "maxLength": 600
+        },
+        "indicador2": {
+          "type": "string",
+          "maxLength": 600
+        },
+        "indicador3": {
+          "type": "string",
+          "maxLength": 600
+        }
+      }
     }
   },
   "allOf": [
