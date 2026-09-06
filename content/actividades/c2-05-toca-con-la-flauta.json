@@ -1,0 +1,74 @@
+{
+  "id": "c2-05-toca-con-la-flauta",
+  "version": 1,
+  "tipo": "cantar",
+  "titulo": "Toca con la flauta",
+  "descripcion": "Si, la y sol con la flauta dulce. El micrófono comprueba si la nota sale afinada; si no hay micrófono, la actividad se hace igual.",
+  "etapa": "primaria-c2",
+  "eje": "altura",
+  "lugar": "hibrida",
+  "duracion_min": 15,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "flauta",
+    "tempo": 72
+  },
+  "entrada": {
+    "modo": "microfono-voz",
+    "alternativa": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c205.consigna",
+    "notas": [
+      "B4",
+      "A4",
+      "G4",
+      "A4",
+      "B4",
+      "G4"
+    ],
+    "nombres": "latino",
+    "segundos": 10,
+    "instrumento": "flauta",
+    "digitaciones": {
+      "B4": "/digitaciones/flauta-si.svg",
+      "A4": "/digitaciones/flauta-la.svg",
+      "G4": "/digitaciones/flauta-sol.svg"
+    }
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "afinacion_media"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c205.enunciado"
+  },
+  "pistas": [
+    "actividad.c205.pista1",
+    "actividad.c205.pista2",
+    "actividad.c205.pista3"
+  ],
+  "creditos": [
+    {
+      "obra": "Diagramas de digitación",
+      "autor": "Proyecto cocomusic",
+      "fuente": "tools/digitaciones.py",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Flauta",
+      "autor": "Frank Wen, soundfont FluidR3_GM",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    }
+  ],
+  "estado": "borrador"
+}

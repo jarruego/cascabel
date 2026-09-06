@@ -56,6 +56,15 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
     nombres?: 'latino' | 'ingles';
     /** Timbre de la nota de referencia. */
     instrumento?: string;
+    /**
+     * Diagrama que se enseña con cada nota, por si se toca con un instrumento.
+     *
+     * **Se ve mientras se toca, no se esconde.** Esta actividad no es «adivina qué nota
+     * es», es «toca esta nota y comprueba que suena bien»: esconder la digitación
+     * convertiría un ejercicio de instrumento en uno de memoria, que es otra cosa y de otro
+     * día.
+     */
+    digitaciones?: Record<string, string>;
   };
 
   const carril = useCarril(actividad.etapa);
@@ -249,6 +258,15 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
           ocho años «sol» le dice algo y «G4» no le dice nada. La octava tampoco se enseña:
           la actividad pliega a la octava más cercana, así que cantarla en la tuya vale. */}
       <p className="cantar__nota">{nombreDe(objetivo, sistema)}</p>
+
+      {contenido.digitaciones?.[objetivo] && (
+        <img
+          className="cantar__digitacion"
+          src={contenido.digitaciones[objetivo]}
+          alt={t(`digitacion.${nombreDe(objetivo, 'latino')}`)}
+          height={190}
+        />
+      )}
 
       {/* Retorno visual de afinación. Existe para que la actividad se pueda hacer
           MIRANDO además de oyendo, y para que un niño vea hacia dónde moverse en vez de
