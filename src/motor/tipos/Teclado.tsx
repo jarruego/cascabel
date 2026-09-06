@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useCarril } from '@/app/preferencias';
 import { OBJETIVO_TACTIL } from '@/config';
-import { despertarAudio } from '@/audio/AudioEngine';
-import { MARIMBA, Sampler, aMidi } from '@/audio/sampler';
+import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
+import { Sampler, aMidi } from '@/audio/sampler';
+import { muestrasDe } from '@/audio/instrumentos';
 import { colorDe, nombreDe } from '@/ui/coloresNota';
+import { GrabadorDeEventos, reproducir, type Grabacion } from '../grabacionEventos';
 import { letraDeNota, notaDeTecla, type Disposicion } from '@/ui/tecladoQwerty';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
@@ -44,6 +46,10 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
     letrasQwerty?: boolean;
     /** 'horizontal' imita el piano; 'apilada' da dos octavas partidas en dos filas. */
     disposicionTeclado?: Disposicion;
+    /** Timbre. Ver `audio/instrumentos.ts`. */
+    instrumento?: string;
+    /** Botones de grabar y reproducir. Se pueden quitar donde estorben. */
+    grabable?: boolean;
   };
 
   const carril = useCarril(actividad.etapa);
@@ -54,6 +60,18 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
   // En Infantil no se enseñan: se toca con el dedo, y una letra más en cada tecla es ruido.
   const letrasQwerty = contenido.letrasQwerty ?? carril !== 'infantil';
   const disposicion = contenido.disposicionTeclado ?? 'horizontal';
+  const grabable = contenido.grabable ?? true;
+
+  /*
+    Grabar sin grabar audio: se anota QUÉ nota y CUÁNDO, y reproducir es volver a tocarlas.
+    Ver `motor/grabacionEventos.ts` para las cuatro razones de que así sea más sencillo Y
+    mejor que un `MediaRecorder`. La principal, aquí: no hay micrófono, así que no hay
+    permiso que pedir ni riesgo de grabar a un niño.
+  */
+  const grabador = useRef(new GrabadorDeEventos());
+  const [grabando, setGrabando] = useState(false);
+  const [grabacion, setGrabacion] = useState<Grabacion | null>(null);
+  const [reproduciendo, setReproduciendo] = useState(false);
 
   const sampler = useRef<Sampler | null>(null);
   const deslizando = useRef(false);
@@ -65,6 +83,9 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
   const sonar = useCallback(async (nota: string) => {
     setSonando((s) => new Set(s).add(nota));
     setUltimaTocada(nota);
+    if (grabador.current.grabando) {
+      grabador.current.anotar(nota, obtenerContexto().currentTime * 1000);
+    }
     window.setTimeout(() => setSonando((s) => {
       const n = new Set(s);
       n.delete(nota);
@@ -73,7 +94,7 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
     try {
       await despertarAudio();
       if (!sampler.current) {
-        const s = new Sampler(MARIMBA);
+        const s = new Sampler(muestrasDe(contenido.instrumento));
         await s.cargar();
         sampler.current = s;
       }
@@ -281,6 +302,58 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
             })}
         </div>
       </div>
+
+      {grabable && (
+        <div className="teclado__grabadora">
+          <button
+            type="button"
+            className="boton-repetir"
+            data-grabando={grabando || undefined}
+            aria-pressed={grabando}
+            onClick={() => {
+              if (grabando) {
+                setGrabacion(grabador.current.terminar());
+                setGrabando(false);
+              } else {
+                grabador.current.empezar();
+                setGrabacion(null);
+                setGrabando(true);
+              }
+            }}
+          >
+            {t(grabando ? 'teclado.parar' : 'teclado.grabar')}
+          </button>
+
+          <button
+            type="button"
+            className="boton-repetir"
+            aria-disabled={!grabacion || grabacion.eventos.length === 0 || grabando || undefined}
+            onClick={async () => {
+              if (!grabacion || grabando) return;
+              await despertarAudio();
+              if (!sampler.current) {
+                try {
+                  const s = new Sampler(muestrasDe(contenido.instrumento));
+                  await s.cargar();
+                  sampler.current = s;
+                } catch {
+                  return;
+                }
+              }
+              setReproduciendo(true);
+              const ctx = obtenerContexto();
+              reproducir(
+                grabacion,
+                (nota, cuando) => sampler.current?.tocar(nota, cuando, 1.1),
+                ctx.currentTime + 0.15,
+              );
+              window.setTimeout(() => setReproduciendo(false), grabacion.duracionMs + 300);
+            }}
+          >
+            {t(reproduciendo ? 'teclado.sonando' : 'teclado.reproducir')}
+          </button>
+        </div>
+      )}
 
       <p className="pista-fija">
         {t('teclado.libre')}

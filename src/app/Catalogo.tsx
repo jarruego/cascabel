@@ -95,6 +95,20 @@ export default function Catalogo() {
     return aguja.split(/\s+/).every((palabra) => pajar.includes(palabra));
   });
 
+  /*
+    Las herramientas van aparte.
+
+    Un piano, un afinador o un metrónomo no son actividades: no tienen consigna, ni
+    solución, ni final. Mezclarlos en la misma lista obliga a un maestro que busca algo que
+    hacer en clase a descartarlos uno a uno.
+
+    Se reconocen por el prefijo `tr-` del identificador, que es lo que el catálogo ya usaba
+    para agruparlas. No hace falta un campo nuevo en 59 ficheros para algo que el id ya dice.
+  */
+  const esHerramienta = (e: Entrada) => e.id.startsWith('tr-');
+  const actividades = visibles.filter((e) => !esHerramienta(e));
+  const herramientas = visibles.filter(esHerramienta);
+
   if (fallo) return <main className="catalogo"><p role="alert">{t('catalogo.fallo')}</p></main>;
   if (!entradas) return <main className="catalogo"><p>{t('catalogo.cargando')}</p></main>;
 
@@ -190,8 +204,9 @@ export default function Catalogo() {
           : `${visibles.length} ${t('catalogo.de')} ${entradas.length} ${t('catalogo.actividades')}`}
       </p>
 
+      <h2 className="catalogo__seccion">{t('catalogo.seccionActividades')}</h2>
       <ul className="catalogo__lista">
-        {visibles.map((e) => (
+        {actividades.map((e) => (
           <li key={e.id}>
             <Link
               to={`/actividad/${e.id}`}
@@ -216,7 +231,35 @@ export default function Catalogo() {
         ))}
       </ul>
 
-      {visibles.length === 0 && <p>{t('catalogo.vacio')}</p>}
+      {actividades.length === 0 && <p>{t('catalogo.vacio')}</p>}
+
+      {/* Los instrumentos, al final: se buscan cuando se buscan, y quien viene a preparar
+          una clase quiere ver primero lo que puede llevar al aula. */}
+      {herramientas.length > 0 && (
+        <>
+          <h2 className="catalogo__seccion">{t('catalogo.seccionHerramientas')}</h2>
+          <p className="catalogo__aclaracion">{t('catalogo.herramientasQueSon')}</p>
+          <ul className="catalogo__lista">
+            {herramientas.map((e) => (
+              <li key={e.id}>
+                <Link
+                  to={`/actividad/${e.id}`}
+                  className={`tarjeta tarjeta--${e.eje}`}
+                  onClick={() => void despertarAudio().catch(() => {})}
+                >
+                  <span className="tarjeta__titulo">{e.titulo}</span>
+                  {hechas.has(e.id) && (
+                    <span className="tarjeta__hecha" aria-label={t('catalogo.yaHecha')}>
+                      ✓
+                    </span>
+                  )}
+                  <span className="tarjeta__meta">{t(`eje.${e.eje}`)}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
 
       <p className="catalogo__pie">
         <Link to="/privacidad">{t('catalogo.privacidad')}</Link>

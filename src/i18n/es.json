@@ -684,5 +684,13 @@
   "campana.grave": "Campana azul, con un círculo",
   "campana.media": "Campana verde, con un cuadrado",
   "campana.aguda": "Campana naranja, con un triángulo",
-  "ordenar.escuchar": "Escuchar cómo queda"
+  "ordenar.escuchar": "Escuchar cómo queda",
+  "teclado.grabar": "Grabar lo que toco",
+  "teclado.parar": "Parar de grabar",
+  "teclado.reproducir": "Escuchar lo grabado",
+  "teclado.sonando": "Sonando…",
+  "catalogo.seccionActividades": "Actividades",
+  "catalogo.seccionHerramientas": "Instrumentos y herramientas",
+  "catalogo.herramientasQueSon": "No son actividades: son instrumentos para tocar y herramientas para el aula. No tienen solución ni final.",
+  "tocar.noHasTocado": "No he recogido ninguna palmada ni ningún toque. Prueba otra vez: puedes empezar cuando quieras."
 }
