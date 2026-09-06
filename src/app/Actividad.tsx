@@ -41,9 +41,16 @@ export default function Actividad() {
   // Un solo botón «atrás», siempre en el mismo sitio. Regla 8 de docs/04-DISENO-UI.md:
   // las navegaciones múltiples confunden a los niños mucho más que a los adultos.
   const atras = (
-    <Link to="/" className="atras">
-      {t('comun.atras')}
-    </Link>
+    <div className="actividad__barra">
+      <Link to="/" className="atras">
+        {t('comun.atras')}
+      </Link>
+      {/* La ficha es para el maestro: el aula sin dispositivos es el escenario más
+          probable de todos, según el dosier. */}
+      <Link to={`/ficha/${id}`} className="actividad__ficha no-imprimir">
+        {t('actividad.verFicha')}
+      </Link>
+    </div>
   );
 
   if (fallo) {

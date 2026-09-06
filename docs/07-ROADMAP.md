@@ -810,9 +810,42 @@ detectarlo habría que medir las barras del ABC en crudo, y no compensa hoy.
       *alguien* completó *esa* actividad con *esos* aciertos *ese* día. Quién se lo enseña
       lo sabe el maestro porque lo tiene delante — es como un sello en una libreta, y por
       eso no hay nada que declarar.
-- [ ] T2.8 — Fichas imprimibles en PDF generadas desde el mismo JSON
+- [x] **T2.8 — Fichas imprimibles** `[x]` — cerrado el 2026-09-06. Ruta `/ficha/:id`,
+      generada **desde el mismo JSON** que ejecuta la actividad.
+
+      **Sin librería de PDF.** El navegador ya sabe imprimir a PDF; meter jsPDF serían
+      trescientos kilobytes en el bundle para hacer peor lo que el sistema hace bien. Lo
+      que faltaba no era un generador, era una vista pensada para papel.
+
+      **Una ficha no es la pantalla en papel**: en pantalla hay un ejercicio interactivo, y
+      en papel hacen falta el enunciado, **todo** el contenido desplegado —en papel no hay
+      interacción que revele las opciones— y sitio para escribir. Las líneas para escribir
+      se imprimen en negro, porque el gris de pantalla desaparece en una impresora de
+      colegio. La atribución CC BY-SA va impresa: la licencia obliga también en papel.
 - [ ] T2.9 — Catálogo completo hasta las 54 actividades
-- [ ] T2.10 — Auditoría de accesibilidad con teclado y lector de pantalla
+- [x] **T2.10 — Auditoría de accesibilidad** `[x]` — cerrado el 2026-09-06, y hecha con
+      **tests y no con una revisión manual**: una auditoría es una foto que caduca con el
+      siguiente commit.
+
+      `tests/accesibilidad.test.ts` vigila once invariantes en todo el repositorio: que nada
+      interactivo se construya sobre un `div`, que ningún botón use `disabled` a media
+      actividad —le arrebata el foco a quien navega con teclado—, que toda imagen declare
+      `alt`, que los avisos cambiantes lleven `aria-live`, que el movimiento respete
+      `prefers-reduced-motion`, que nada que se repita pase de 3 Hz, que **el color nunca
+      sea lo único** que distingue dos estados, y que haya un solo `h1` por pantalla.
+
+      **Encontró dos fallos reales**: `Privacidad.tsx` tenía dos `h1` —uno por versión, y
+      aunque solo se pinte uno es frágil— y en `Lienzo.tsx` había una pista fija marcada
+      como `feedback`, que es un nombre equivocado y no una falta de accesibilidad.
+
+      Y **dos de mis propios tests estaban mal planteados**: uno buscaba `<img>` dentro de
+      comentarios, y el otro aplicaba el límite de 3 Hz a transiciones que ocurren **una
+      sola vez**. El criterio 2.3.1 habla de parpadeo repetido; un modal que aparece en
+      180 ms no parpadea por rápido que sea.
+
+      **Lo que ningún test puede comprobar** —si un lector de pantalla lo lee con sentido,
+      si un niño con motricidad reducida llega a los botones— sigue necesitando a una
+      persona con el dispositivo delante. Va con T0.3.
 
 ### Los diez tipos de motor, terminados `[x]`
 

@@ -322,5 +322,15 @@
   "comprobar.hoy": "Hecho hoy",
   "comprobar.hace": "Hecho hace",
   "comprobar.dias": "días",
-  "comprobar.privacidad": "El código no dice quién es el alumno: dice que alguien completó esa actividad, con esos aciertos, ese día. Quién te lo enseña lo sabes tú porque lo tienes delante. Por eso esto no trata ningún dato personal."
+  "comprobar.privacidad": "El código no dice quién es el alumno: dice que alguien completó esa actividad, con esos aciertos, ese día. Quién te lo enseña lo sabes tú porque lo tienes delante. Por eso esto no trata ningún dato personal.",
+  "actividad.verFicha": "Ficha para imprimir",
+  "ficha.imprimir": "Imprimir o guardar en PDF",
+  "ficha.consejo": "En el diálogo de impresión, elige «Guardar como PDF» si no quieres gastar papel.",
+  "ficha.nombre": "Nombre:",
+  "ficha.fecha": "Fecha:",
+  "ficha.opciones": "Lo que hay que reconocer",
+  "ficha.ritmo": "El ritmo",
+  "ficha.pasos": "Cómo se hace",
+  "ficha.escribe": "Para escribir o dibujar",
+  "ficha.criterio": "criterio"
 }

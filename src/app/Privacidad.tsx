@@ -44,6 +44,11 @@ export default function Privacidad() {
         </button>
       </div>
 
+      {/* El h1 vive aquí y no en cada versión: dos h1 en el mismo fichero es frágil
+          aunque solo se pinte uno, y romper la jerarquía de encabezados desorienta a
+          quien navega con lector de pantalla. */}
+      <h1>{paraAdultos ? t('legal.titulo') : t('legal.nino.titulo')}</h1>
+
       {paraAdultos ? <ParaAdultos /> : <ParaNinos />}
     </main>
   );
@@ -60,7 +65,6 @@ function ParaNinos() {
 
   return (
     <section className="legal__ninos">
-      <h1>{t('legal.nino.titulo')}</h1>
       <ul>
         {puntos.map((p) => (
           <li key={p.clave}>
@@ -80,8 +84,6 @@ function ParaNinos() {
 function ParaAdultos() {
   return (
     <section className="legal__adultos">
-      <h1>{t('legal.titulo')}</h1>
-
       <h2>{t('legal.responsable')}</h2>
       <p>{t('legal.responsableTexto')}</p>
 
