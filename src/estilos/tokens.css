@@ -2653,3 +2653,11 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   border-radius: var(--r-s);
 }
 .lienzo__instrumento select:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
+
+/* Diagrama de digitación junto a la nota que hay que tocar. Se ve mientras se toca: la
+   actividad es «toca esta nota», no «adivina cuál es». */
+.cantar__digitacion {
+  display: block;
+  width: auto;
+  margin: 0 auto var(--e-3);
+}

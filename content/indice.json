@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-06",
-  "total": 62,
+  "total": 63,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -368,6 +368,23 @@
       "lugar": "hibrida",
       "microfono": false,
       "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c2-05-toca-con-la-flauta",
+      "titulo": "Toca con la flauta",
+      "etapa": "primaria-c2",
+      "eje": "altura",
+      "tipo": "cantar",
+      "lugar": "hibrida",
+      "microfono": true,
+      "duracion_min": 15,
       "curriculo": {
         "area": "Educación Artística",
         "competencia": "CE3",

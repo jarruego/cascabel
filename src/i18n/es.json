@@ -744,5 +744,10 @@
   "actividad.c303e.consigna": "Compón tu melodía y llévatela",
   "actividad.c303e.enunciado": "Toca las casillas para escribir tu melodía. Cuando te guste, puedes guardarla y abrirla en un programa de partituras para seguir trabajándola.",
   "actividad.c303e.pista1": "Casillas seguidas en la misma fila son una nota larga, no varias notas iguales. Así se escriben también en la partitura.",
-  "actividad.c303e.pista2": "El fichero se guarda en tu dispositivo. No se envía a ningún sitio ni lo ve nadie más."
+  "actividad.c303e.pista2": "El fichero se guarda en tu dispositivo. No se envía a ningún sitio ni lo ve nadie más.",
+  "actividad.c205.consigna": "Toca esta nota con la flauta",
+  "actividad.c205.enunciado": "Mira la digitación, tapa los agujeros y sopla suave. El micrófono te dirá si la nota sale afinada.",
+  "actividad.c205.pista1": "Sopla flojo y seguido. Si soplas fuerte la nota sube, y eso no se arregla con los dedos.",
+  "actividad.c205.pista2": "Tapa los agujeros con la yema, no con la punta del dedo: la yema es más blanda y cierra mejor.",
+  "actividad.c205.pista3": "Si no tienes flauta a mano, canta la nota: la actividad funciona igual."
 }
