@@ -3,6 +3,7 @@ import { useCarril } from '@/app/preferencias';
 import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { MARIMBA, Sampler } from '@/audio/sampler';
 import { Metronomo } from '@/audio/metronomo';
+import { clic } from '@/audio/clic';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
@@ -49,6 +50,14 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
     modo?: 'tira' | 'cae';
     /** Sílabas rítmicas si el musicograma es de ritmo; si no, se usa `pulsos` por bloque. */
     silabas?: string[];
+    /**
+     * Repetir sin parar hasta que se pulse «parar».
+     *
+     * Un patrón de cuatro pulsos dura tres segundos: se acaba antes de que un niño se haya
+     * enterado. En bucle, el ritmo deja de ser algo que pasa y se convierte en algo que
+     * está ahí, que es lo que permite mirarlo, decirlo en voz alta y palmearlo encima.
+     */
+    bucle?: boolean;
     /** Nota que suena en cada bloque, si se quiere sonido melódico. */
     notas?: string[];
   };
@@ -97,11 +106,18 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
     const msPorPulso = 60000 / bpm;
     const inicio = ctx.currentTime * 1000 + 500;
 
-    // Cada bloque empieza donde acaba el anterior. Si hay sílabas rítmicas se usan sus
-    // duraciones; si no, cada bloque dura lo que declare, y por defecto un pulso.
-    const duraciones = contenido.silabas
-      ? rejillaDesdeSilabas(contenido.silabas).golpes.map((_, i, a) =>
-          i + 1 < a.length ? a[i + 1]! - a[i]! : 1,
+    /*
+      Cada bloque empieza donde acaba el anterior.
+
+      **Las duraciones salen de las SÍLABAS, no de los golpes**, y confundirlos era el
+      fallo: con `ta ta ti-ti ta` hay cuatro bloques y cinco golpes, así que salían cinco
+      duraciones para cuatro bloques y encima equivocadas —el bloque «ti-ti» duraba medio
+      pulso cuando dura uno entero—.
+    */
+    const rejilla = contenido.silabas ? rejillaDesdeSilabas(contenido.silabas) : null;
+    const duraciones = rejilla
+      ? rejilla.inicios.map((ini, i, a) =>
+          i + 1 < a.length ? a[i + 1]! - ini : rejilla.pulsos - ini,
         )
       : bloques.map((b) => b.pulsos ?? 1);
 
@@ -118,7 +134,20 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
       if (nota) sampler.current?.tocar(nota, ms / 1000, msPorPulso / 1000);
     });
 
-    const m = new Metronomo(bpm, 4, !contenido.notas);
+    /*
+      **El ritmo suena, golpe a golpe.** Antes, sin `notas` declaradas no se programaba
+      ningún sonido: solo corría el metrónomo marcando negras, así que se leía «ti-ti» y se
+      oía «ta». El ritmo hay que oírlo, que es toda la actividad.
+
+      Y entonces el metrónomo va EN SILENCIO. Un clic en cada negra sonando a la vez que el
+      ritmo hace que un niño no distinga cuál es cuál; el pulso se sigue viendo, que es para
+      lo que estaba.
+    */
+    if (rejilla && !contenido.notas) {
+      rejilla.golpes.forEach((g) => clic(inicio / 1000 + (g * msPorPulso) / 1000, g === 0));
+    }
+
+    const m = new Metronomo(bpm, 4, !contenido.notas && !rejilla);
     metronomo.current = m;
     m.arrancar();
     setSonando(true);
@@ -136,6 +165,19 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
 
       const fin = inicio + acumulado * msPorPulso;
       if (ahora >= fin) {
+        if (contenido.bucle) {
+          /*
+            Vuelta a empezar sin cortar el sonido.
+
+            Se relanza `arrancar()` en vez de acumular vueltas por adelantado: programar
+            veinte repeticiones de golpe llenaría la cola de audio de eventos que quizá
+            nadie va a oír, porque el niño puede parar en la primera. Y el salto no se nota
+            porque la vuelta siguiente se programa medio segundo por delante, igual que la
+            primera.
+          */
+          void arrancarRef.current?.();
+          return;
+        }
         parar();
         if (!yaTerminada.current) {
           yaTerminada.current = true;
@@ -146,7 +188,12 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
       rafId.current = requestAnimationFrame(seguirCursor);
     };
     rafId.current = requestAnimationFrame(seguirCursor);
-  }, [sonando, bpm, bloques, contenido.silabas, contenido.notas, modo, parar, actividad.id, alTerminar]);
+  }, [sonando, bpm, bloques, contenido.silabas, contenido.notas, contenido.bucle, modo, parar, actividad.id, alTerminar]);
+
+  // El bucle necesita llamarse a sí mismo, y una función no puede referenciarse dentro de
+  // su propia definición sin esto.
+  const arrancarRef = useRef<(() => Promise<void>) | null>(null);
+  arrancarRef.current = arrancar;
 
   return (
     <section className="actividad seguir" data-carril={carril} aria-labelledby="consigna">

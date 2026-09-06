@@ -25,18 +25,41 @@ interface Props {
 export function Modal({ abierto, alCerrar, titulo, children, tono = 'normal' }: Props) {
   const ref = useRef<HTMLDialogElement | null>(null);
 
+  /**
+   * Cierre propio contra cierre del usuario, y por qué hay que distinguirlos.
+   *
+   * `<dialog>` lanza el evento `close` **también cuando lo cierra el código**, no solo
+   * cuando lo cierra la persona. Sin distinguirlos pasaba esto: pulsar «otra vez» ponía
+   * `abierto` a false, el efecto llamaba a `d.close()`, saltaba `close`, y `close` estaba
+   * conectado a `alCerrar`... que en el modal de éxito es «volver al menú». **Resultado: el
+   * botón de repetir sacaba de la actividad, en todos los modales.** No fallaba nada y no
+   * había forma de verlo leyendo ninguno de los dos ficheros por separado.
+   *
+   * Esta bandera dice «este cierre lo he provocado yo», y entonces no se avisa a nadie.
+   */
+  const cerrandoNosotros = useRef(false);
+
   useEffect(() => {
     const d = ref.current;
     if (!d) return;
     if (abierto && !d.open) d.showModal();
-    if (!abierto && d.open) d.close();
+    if (!abierto && d.open) {
+      cerrandoNosotros.current = true;
+      d.close();
+    }
   }, [abierto]);
 
   // `close` cubre Escape además del botón, así que el estado no se queda descolgado.
   useEffect(() => {
     const d = ref.current;
     if (!d) return;
-    const alCerrarNativo = () => alCerrar();
+    const alCerrarNativo = () => {
+      if (cerrandoNosotros.current) {
+        cerrandoNosotros.current = false;
+        return;
+      }
+      alCerrar();
+    };
     d.addEventListener('close', alCerrarNativo);
     return () => d.removeEventListener('close', alCerrarNativo);
   }, [alCerrar]);

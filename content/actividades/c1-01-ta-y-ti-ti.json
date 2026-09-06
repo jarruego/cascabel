@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "seguir",
   "titulo": "Ta y ti-ti",
-  "descripcion": "Musicograma rítmico: el cursor recorre las sílabas mientras suena el pulso.",
+  "descripcion": "Musicograma rítmico en bucle: el cursor recorre las sílabas y el ritmo suena de verdad, no solo el pulso.",
   "etapa": "primaria-c1",
   "eje": "pulso",
   "lugar": "pantalla",
@@ -52,7 +52,8 @@
         "texto": "silaba.ta",
         "color": "pulso"
       }
-    ]
+    ],
+    "bucle": true
   },
   "evaluacion": {
     "autocorrectiva": false,

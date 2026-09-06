@@ -2546,3 +2546,19 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   justify-content: center;
   min-height: 40px;
 }
+
+/* Distintivo de ficha: color Y forma. El color solo no vale —regla 6— y aquí distinguir
+   una ficha de otra es toda la mecánica. La forma es arbitraria a propósito: círculo,
+   cuadrado y triángulo no sugieren ningún orden, que es lo que sí hacían las palabras. */
+.ordenar__forma {
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin-top: var(--e-1);
+}
+.ordenar__forma[data-forma='circulo'] { border-radius: var(--r-redondo); }
+.ordenar__forma[data-forma='cuadrado'] { border-radius: 3px; }
+.ordenar__forma[data-forma='triangulo'] {
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  border-radius: 0;
+}
