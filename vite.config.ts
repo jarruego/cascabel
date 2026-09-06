@@ -140,9 +140,13 @@ export default defineConfig({
         navigateFallback: 'index.html',
         navigateFallbackDenylist: [/^\/content\//, /^\/audio\//, /^\/worklets\//],
         globPatterns: ['**/*.{js,css,html,svg,png,opus,json}', 'fuentes/Andika-Regular.woff2'],
-        // Bravura queda FUERA del precache a propósito: 316 KB que no usa nada hasta
-        // T2.2. Se descarga el día que aparezca un pentagrama, no en la primera visita.
-        globIgnores: ['fuentes/Bravura.woff2', '**/*OFL.txt'],
+        // Fuera del precache a propósito:
+        //  - Bravura (316 KB) y el chunk `partitura` con VexFlow y abcjs (691 KB gzip).
+        //    Los usa UNA actividad de las quince. Precachearlos triplicaría la primera
+        //    descarga de todos los niños de un colegio para algo que la mayoría no abre.
+        //    Se bajan el día que se abre un pentagrama, y entonces se quedan cacheados.
+        //  - Los .txt de licencia, que son para humanos y no para la app.
+        globIgnores: ['fuentes/Bravura.woff2', '**/*OFL.txt', 'assets/partitura-*.js'],
         // Presupuesto de precache: por debajo de 10 MB (límite práctico de iOS).
         maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,
         runtimeCaching: [

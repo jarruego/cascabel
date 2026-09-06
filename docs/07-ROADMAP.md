@@ -634,7 +634,29 @@ detectarlo habría que medir las barras del ABC en crudo, y no compensa hoy.
 ## Fase 2 — El producto real (2–3 meses)
 
 - [ ] T2.1 — Tipo `rejilla` (dictado rítmico, dictado melódico, constructor de ritmos)
-- [ ] T2.2 — Tipo `pentagrama` con VexFlow y hitbox de 60 px sobre nota pequeña
+- [x] **T2.2 — Tipo `pentagrama`** `[x]` — cerrado el 2026-09-06. VexFlow dibuja la pauta
+      y la clave; encima van hitboxes transparentes del tamaño táctil del carril.
+      `c2-01-coloca-la-nota` ya funciona.
+
+      **El truco es el de `docs/04-DISENO-UI.md`**: la nota se dibuja pequeña y
+      tipográficamente correcta, y el hitbox mide 75, 60 o 48 px según el carril. Un dedo de
+      siete años no acierta un espacio de doce píxeles, y agrandar la pauta la haría dejar
+      de parecer una partitura. El hitbox se hace visible al enfocar con teclado: invisible
+      para quien no lo necesita, evidente para quien navega con Tab.
+
+      **Reutiliza la máquina de `eleccion`.** Las reglas son las mismas —un fallo repite y
+      da pista, nunca termina— y duplicarlas habría duplicado la posibilidad de romperlas.
+
+      `tests/pentagrama.test.ts` fija lo que es fácil implementar con un signo cambiado:
+      que la segunda línea sea SOL en clave de sol, que los espacios deletreen FA-LA-DO-MI,
+      y que la coordenada Y se invierta bien —la música cuenta hacia arriba y el DOM crece
+      hacia abajo—. Con el signo al revés todo aparece reflejado sin que falle nada.
+
+      **Una regresión que casi se cuela**: al añadir VexFlow, el precache pasó de 785 KB a
+      **1891 KB**, porque el patrón lo pillaba. Eso son 1,9 MB que se bajaría todo niño en
+      su primera visita, sobre el wifi de un colegio, para una librería que usa UNA
+      actividad de quince. Excluido del precache, como Bravura: se carga cuando se abre un
+      pentagrama. `tests/presupuesto.test.ts` vigila que no vuelva a entrar.
 - [ ] T2.3 — Tipo `seguir` (musicograma y karaoke) con cursor sincronizado con abcjs
 - [x] **T2.4 — Tipo `tocar-a-tiempo`** `[x]` — cerrado el 2026-09-06. Escucha el patrón,
       lo repites con palmadas o tocando, y se evalúa con compensación de latencia.
