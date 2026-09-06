@@ -1184,6 +1184,52 @@ hoja**. Son tres páginas de un documento, no tres documentos, y tres `h1` le di
 contrario a un lector de pantalla. Ahora la hoja 1 lleva el `h1` y las otras dos un `h2` con
 el nombre de la hoja, que además es más útil que repetir el título de la actividad.
 
+### T2.18 — El musicograma, en dos orientaciones y cinco representaciones `[x]`
+
+Cerrada el 2026-09-06, a petición del autor: quería variedad y pidió que se valorara
+pedagógicamente. **La valoración es la parte que importa**, y sale de una pregunta: ¿qué
+puede significar el eje que no es el del tiempo?
+
+| Representación | Qué enseña | Eje transversal | Edad orientativa |
+|---|---|---|---|
+| `icono` | que un sonido tiene un referente concreto | **ninguno** | Infantil |
+| `color` | altura relativa, sin leer nada | **altura**, en carriles de color | Infantil y 1.º–2.º |
+| `silaba` | duración (ta, ti-ti) | **ninguno** | 1.º–3.º |
+| `figura` | duración escrita (♩ ♫) | **ninguno** | 3.º–4.º |
+| `pentagrama` | altura y duración escritas | **la pauta** | 4.º–6.º |
+
+> **Las representaciones de duración van en un solo carril, y eso no es negociable.** Una
+> sílaba rítmica o una negra no dicen nada de la altura: colocarlas a alturas distintas le
+> enseñaría al niño una relación que no existe, y de la forma más difícil de desaprender,
+> que es sin decirlo. Está en `src/motor/musicograma.ts` con test.
+
+**Y la orientación.** `vertical` —caen— no exige ningún sentido de lectura, así que sirve
+antes de saber leer y es la natural para el ritmo. `horizontal` —vienen de la derecha—
+reproduce cómo se recorre una partitura, así que corresponde cuando lo que se aprende es
+justamente a leerla. El valor por defecto lo decide la representación, no hay que declararlo.
+
+**PENDIENTE DE REVISIÓN PEDAGÓGICA**: la correspondencia entre edades y representaciones es
+la convención habitual —Kodály para las sílabas, código Boomwhacker para los colores— pero
+**dónde está el salto de una a otra lo dice una maestra**, no un desarrollador.
+
+**«Sigue las notas que caen» pasa de `seguir` a `karaoke`.** Era un musicograma que solo se
+miraba; el autor pidió que fuera como el del Himno de la alegría pero en vertical, o sea que
+se toque. Con eso `seguir` se queda como lo que dice ser —mirar sin responder, sin evaluación
+y sin poder fallar— y `karaoke` como lo que se toca. El id no cambia: puede estar compartido.
+
+Tres actividades nuevas para que la variedad se vea, una por tramo:
+
+- **INF-16 «Los animales que bajan»**: iconos, un solo carril, ocho pulsos a 60. Sin figuras,
+  sin alturas y sin nada que leer.
+- **C1-18 «La escalera que cae»**: cinco carriles de color, uno por nota. Aquí la altura **sí**
+  significa algo, y la escalera sube y baja para que se vea moverse.
+- **C2-15 «Lee las figuras»**: negras, blancas y corcheas en horizontal, y **cada figura ocupa
+  lo que dura**, que es exactamente lo que dice la notación.
+
+La pauta girada de la orientación vertical no es convencional —no existe en papel— pero
+mantiene lo que importa: una nota más aguda queda más lejos en el mismo sentido en el que se
+cuenta, y va a la derecha, como en un piano.
+
 ### T3.5 — Revisar los tamaños contra la investigación de NN/g `⚠️`
 
 Abierta el 2026-09-06 con la investigación de

@@ -1,13 +1,13 @@
 {
   "id": "c1-14-notas-que-caen",
   "version": 1,
-  "tipo": "seguir",
-  "titulo": "Sigue las notas que caen",
-  "descripcion": "Musicograma en movimiento: los dibujos bajan hasta la línea y ahí es cuando suenan. Sin puntuación y sin poder fallar.",
+  "tipo": "karaoke",
+  "titulo": "Toca las notas que caen",
+  "descripcion": "Las figuras caen hasta la línea y ahí es cuando suenan. Se tocan al llegar. Sin puntuación durante el juego y sin poder perder.",
   "etapa": "primaria-c1",
   "eje": "pulso",
   "lugar": "pantalla",
-  "duracion_min": 5,
+  "duracion_min": 8,
   "curriculo": {
     "area": "Educación Artística",
     "competencia": "CE3",
@@ -28,43 +28,68 @@
   },
   "contenido": {
     "consigna": "actividad.c114.consigna",
-    "modo": "cae",
+    "orientacion": "vertical",
+    "representacion": "silaba",
     "tempo": 80,
-    "silabas": [
-      "ta",
-      "ta",
-      "ti-ti",
-      "ta"
-    ],
     "notas": [
-      "C5",
-      "G4",
-      "E4",
-      "G4",
-      "C5"
-    ],
-    "bloques": [
       {
-        "icono": "estrella"
+        "nota": "G4",
+        "pulsos": 1,
+        "silaba": "ta"
       },
       {
-        "icono": "estrella"
+        "nota": "G4",
+        "pulsos": 1,
+        "silaba": "ta"
       },
       {
-        "icono": "chispas"
+        "nota": "G4",
+        "pulsos": 0.5,
+        "silaba": "ti"
       },
       {
-        "icono": "chispas"
+        "nota": "G4",
+        "pulsos": 0.5,
+        "silaba": "ti"
       },
       {
-        "icono": "estrella"
+        "nota": "G4",
+        "pulsos": 1,
+        "silaba": "ta"
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1,
+        "silaba": "ta"
+      },
+      {
+        "nota": "G4",
+        "pulsos": 0.5,
+        "silaba": "ti"
+      },
+      {
+        "nota": "G4",
+        "pulsos": 0.5,
+        "silaba": "ti"
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1,
+        "silaba": "ta"
+      },
+      {
+        "nota": "G4",
+        "pulsos": 2,
+        "silaba": "taa"
       }
     ]
   },
   "evaluacion": {
-    "autocorrectiva": false,
+    "autocorrectiva": true,
     "reporta": [
-      "completado"
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
     ]
   },
   "locucion": {

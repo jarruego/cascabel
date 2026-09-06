@@ -1930,72 +1930,115 @@ body {
    informa sola: cada tecla lleva su nombre debajo y su sitio en el teclado. */
 .teclado__blanca { border-bottom-width: 10px; }
 
-/* ── karaoke: musicograma horizontal sobre pentagrama ──────────────────────
-   Las notas se colocan por posición absoluta y se mueven cambiando `left` en cada
-   fotograma. No hay transición CSS a propósito: la posición ya la calcula el
+/* ── musicograma que avanza, en las dos orientaciones ─────────────────────
+   Las figuras se colocan por posición absoluta y se mueven cambiando `left` o `top` en
+   cada fotograma. No hay transición CSS a propósito: la posición ya la calcula el
    requestAnimationFrame a partir del reloj del AudioContext, y una transición encima
    añadiría un retardo propio que desincronizaría el dibujo del sonido. */
 .karaoke__pauta {
   position: relative;
-  width: 100%;
-  height: 160px;
-  margin: 12px 0 20px;
   overflow: hidden;
+  margin: 12px auto 20px;
   background: var(--superficie);
   border: 2px solid var(--linea);
   border-radius: var(--radio);
 }
-.karaoke__linea,
-.karaoke__adicional {
-  position: absolute;
-  height: 2px;
-  background: var(--linea);
+/* Horizontal: ancho completo, alto fijo. El tiempo corre de derecha a izquierda. */
+.karaoke__pauta[data-orientacion='horizontal'] { width: 100%; height: 160px; }
+/* Vertical: alto generoso y ancho acotado. Caer necesita recorrido, y un recuadro tan
+   ancho como la pantalla dejaría las figuras perdidas en el centro. */
+.karaoke__pauta[data-orientacion='vertical'] {
+  width: min(100%, 200px);
+  height: min(58vh, 380px);
 }
-.karaoke__linea {
-  left: 0;
-  right: 0;
+
+.karaoke__linea { position: absolute; background: var(--linea); }
+[data-orientacion='horizontal'] .karaoke__linea { left: 0; right: 0; height: 2px; }
+[data-orientacion='vertical'] .karaoke__linea { top: 0; bottom: 0; width: 2px; }
+
+/* Carriles de color: una franja por grado. El borde y no el fondo, para que la figura que
+   pasa por encima siga leyéndose. */
+.karaoke__carril { position: absolute; opacity: 0.5; }
+[data-orientacion='horizontal'] .karaoke__carril {
+  left: 0; right: 0; border-top: 3px dashed;
 }
-/* Línea adicional: solo el trozo que cruza la cabeza de la nota, como en una partitura. */
-.karaoke__adicional {
-  width: 30px;
-  margin-left: -6px;
+[data-orientacion='vertical'] .karaoke__carril {
+  top: 0; bottom: 0; border-left: 3px dashed;
 }
-/* La línea del presente. Va marcada también con un triángulo abajo, para que no dependa
-   del color: el pentagrama entero es gris y esto tiene que verse a tres metros. */
+
+/* La línea del presente. Lleva un halo además del color: el recuadro entero es gris y esto
+   tiene que verse a tres metros, en una pizarra digital. */
 .karaoke__ahora {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  margin-left: -2px;
   background: var(--vivo-turquesa);
   box-shadow: 0 0 0 6px color-mix(in srgb, var(--vivo-turquesa) 18%, transparent);
 }
-.karaoke__nota {
+[data-orientacion='horizontal'] .karaoke__ahora {
+  top: 0; bottom: 0; width: 4px; margin-left: -2px;
+}
+[data-orientacion='vertical'] .karaoke__ahora {
+  left: 0; right: 0; height: 4px; margin-top: -2px;
+}
+
+.karaoke__figura {
   position: absolute;
-  height: 14px;
-  margin-left: -7px;
-  background: var(--vivo-azul);
+  display: grid;
+  place-items: center;
   border: 2px solid var(--tinta);
   border-radius: 8px;
+  line-height: 1;
+  /* El desplazamiento centra la figura en su punto: sin esto, la nota «llega» a la línea
+     medio ancho tarde y el niño toca sistemáticamente tarde por culpa del dibujo. */
+  transform: translate(-50%, -50%);
 }
-/* Al acertar, la nota crece y cambia de forma y de color a la vez: nunca solo color. */
-.karaoke__nota[data-acertada] {
+/* En pentagrama y color la figura es una cabeza de nota: alargada en el eje del tiempo. */
+.karaoke__figura[data-forma='pentagrama'],
+.karaoke__figura[data-forma='color'] { border-radius: 8px; }
+[data-orientacion='horizontal'] .karaoke__figura[data-forma='pentagrama'],
+[data-orientacion='horizontal'] .karaoke__figura[data-forma='color'] { height: 14px; }
+[data-orientacion='vertical'] .karaoke__figura[data-forma='pentagrama'],
+[data-orientacion='vertical'] .karaoke__figura[data-forma='color'] { width: 14px; }
+
+/* Sílaba, figura e icono llevan contenido dentro, así que necesitan caja. Fondo neutro y
+   borde del color de la nota: el color acompaña, y lo que se lee es el símbolo. */
+.karaoke__figura[data-forma='silaba'],
+.karaoke__figura[data-forma='figura'],
+.karaoke__figura[data-forma='icono'] {
+  min-width: 62px;
+  min-height: 54px;
+  padding: 4px 10px;
+  background: var(--superficie);
+  border-width: 3px;
+  border-radius: 14px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--tinta);
+}
+.karaoke__figura[data-forma='figura'] { font-family: 'Bravura', serif; font-size: 34px; }
+
+/* Al acertar: crece, se ilumina y cambia de borde. Nunca solo color. */
+.karaoke__figura[data-acertada] {
   background: var(--vivo-verde);
   border-color: var(--vivo-verde);
-  transform: scale(1.5);
+  color: var(--papel);
+  transform: translate(-50%, -50%) scale(1.4);
   box-shadow: 0 0 0 8px color-mix(in srgb, var(--vivo-verde) 22%, transparent);
 }
 /* Y si se va sin tocarla, se apaga en gris. Nunca rojo: regla 4. */
-.karaoke__nota[data-apagada] {
+.karaoke__figura[data-apagada] {
   background: transparent;
   border-style: dashed;
   border-color: var(--linea);
+  color: var(--tinta-2);
   opacity: 0.45;
 }
 @media (prefers-reduced-motion: reduce) {
-  .karaoke__nota[data-acertada] { transform: none; border-width: 5px; }
+  .karaoke__figura[data-acertada] {
+    transform: translate(-50%, -50%);
+    border-width: 6px;
+  }
 }
+
 /* La diana ocupa el ancho: a esta edad se toca sin mirar dónde se toca. */
 .karaoke__diana {
   width: 100%;
@@ -2036,7 +2079,7 @@ body {
    apareciendo: la información no está en el movimiento, está en el nombre. */
 .karaoke__aviso {
   position: absolute;
-  margin-left: -6px;
+  transform: translateX(-50%);
   font-size: 30px;
   font-weight: 700;
   line-height: 1;

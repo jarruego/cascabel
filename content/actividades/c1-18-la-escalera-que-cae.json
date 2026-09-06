@@ -1,0 +1,100 @@
+{
+  "id": "c1-18-la-escalera-que-cae",
+  "version": 1,
+  "tipo": "karaoke",
+  "titulo": "La escalera que cae",
+  "descripcion": "Cinco carriles de color, uno por nota. Lo agudo cae por la derecha y lo grave por la izquierda, así que la melodía se ve subir y bajar.",
+  "etapa": "primaria-c1",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "vocal-kodaly",
+    "compas": "4/4",
+    "tempo": 76,
+    "figuras": [
+      "negra",
+      "blanca"
+    ]
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c118.consigna",
+    "orientacion": "vertical",
+    "representacion": "color",
+    "tempo": 76,
+    "notas": [
+      {
+        "nota": "C4",
+        "pulsos": 1
+      },
+      {
+        "nota": "D4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "F4",
+        "pulsos": 1
+      },
+      {
+        "nota": "G4",
+        "pulsos": 2
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1
+      },
+      {
+        "nota": "F4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "D4",
+        "pulsos": 1
+      },
+      {
+        "nota": "C4",
+        "pulsos": 2
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c118.enunciado"
+  },
+  "pistas": [
+    "actividad.c118.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Marimba",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}
