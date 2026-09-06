@@ -1412,3 +1412,80 @@ body {
   border-left-color: var(--acento);
 }
 .comprobar__cuando { color: var(--tinta-2); font-size: 0.9em; }
+
+/* ── ficha imprimible ──────────────────────────────────────────────────────
+   Una ficha NO es la pantalla en papel: en pantalla hay un ejercicio
+   interactivo, y en papel hacen falta el enunciado, todo el contenido
+   desplegado y sitio para escribir. */
+.ficha {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+.ficha__barra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.ficha__consejo { flex: 1 1 240px; color: var(--tinta-2); font-size: 0.85em; margin: 0; }
+.ficha__hoja {
+  padding: 28px;
+  border: 2px solid var(--linea);
+  border-radius: 12px;
+  background: var(--superficie);
+  color: var(--tinta);
+}
+.ficha__cabecera { border-bottom: 2px solid var(--linea); padding-bottom: 12px; }
+.ficha__cabecera h1 { margin: 0 0 10px; font-size: 1.5em; }
+.ficha__datos { display: flex; flex-wrap: wrap; gap: 24px; color: var(--tinta-2); }
+.ficha__enunciado { font-size: 1.05em; }
+.ficha__hoja h2 { margin: 22px 0 8px; font-size: 1em; text-transform: uppercase; letter-spacing: 0.06em; color: var(--tinta-2); }
+.ficha__opciones { display: flex; flex-wrap: wrap; gap: 20px; padding: 0; list-style: none; }
+.ficha__opciones li { display: grid; justify-items: center; gap: 4px; }
+.ficha__ritmo { font-size: 1.6em; letter-spacing: 0.1em; }
+.ficha__pasos { padding-left: 1.3em; }
+.ficha__pasos li { margin-bottom: 10px; }
+.ficha__duracion { color: var(--tinta-2); }
+.ficha__pauta { display: grid; gap: 26px; margin-top: 10px; }
+.ficha__pauta span { display: block; border-bottom: 1px solid var(--linea); }
+.ficha__pie {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 26px;
+  padding-top: 10px;
+  border-top: 2px solid var(--linea);
+  color: var(--tinta-2);
+  font-size: 0.8em;
+}
+.actividad__barra { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.actividad__ficha { color: var(--acento-2); font-size: 0.9em; }
+
+@media print {
+  .ficha { max-width: none; padding: 0; }
+  .ficha__hoja {
+    border: none;
+    padding: 0;
+    background: none;
+    color: #000;
+  }
+  /* Las líneas para escribir tienen que verse en papel: el gris claro de pantalla
+     desaparece en una impresora láser de colegio. */
+  .ficha__pauta span { border-bottom: 1px solid #000; }
+  .ficha__cabecera,
+  .ficha__pie { border-color: #000; }
+  .ficha__hoja h2 { color: #000; }
+  .ficha__datos,
+  .ficha__duracion,
+  .ficha__pie { color: #333; }
+  .ficha__opciones li,
+  .ficha__pasos li { break-inside: avoid; }
+}
+
+.pista-fija {
+  color: var(--tinta-2);
+  font-size: 0.9em;
+}
