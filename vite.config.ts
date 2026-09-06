@@ -146,7 +146,26 @@ export default defineConfig({
         //    descarga de todos los niños de un colegio para algo que la mayoría no abre.
         //    Se bajan el día que se abre un pentagrama, y entonces se quedan cacheados.
         //  - Los .txt de licencia, que son para humanos y no para la app.
-        globIgnores: ['fuentes/Bravura.woff2', '**/*OFL.txt', 'assets/partitura-*.js'],
+        //  - Los instrumentos que NO son el de por defecto. Son 1,9 MB entre piano,
+        //    xilófono, flauta, guitarra, violín y voz, y una actividad usa uno. Meterlos
+        //    en el precache multiplicaría por tres la primera descarga de todo un colegio
+        //    para bajar cinco instrumentos que ese niño no va a abrir. Se cachean al
+        //    usarlos, con la regla de abajo, y a partir de ahí funcionan sin conexión.
+        globIgnores: [
+          'fuentes/Bravura.woff2',
+          '**/*OFL.txt',
+          'assets/partitura-*.js',
+          'audio/muestras/piano/**',
+          'audio/muestras/xilofono/**',
+          'audio/muestras/flauta/**',
+          'audio/muestras/guitarra/**',
+          'audio/muestras/violin/**',
+          'audio/muestras/voz/**',
+          'audio/muestras/coro/**',
+          'audio/muestras/glockenspiel/**',
+          'audio/muestras/trompeta/**',
+          'audio/muestras/marimba-gm/**',
+        ],
         // Presupuesto de precache: por debajo de 10 MB (límite práctico de iOS).
         maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,
         runtimeCaching: [
@@ -154,6 +173,22 @@ export default defineConfig({
             urlPattern: /\/content\/.*\.json$/,
             handler: 'StaleWhileRevalidate',
             options: { cacheName: 'contenido-actividades' },
+          },
+          {
+            /*
+              Instrumentos a demanda. `CacheFirst` y no `StaleWhileRevalidate`: una muestra
+              de audio no cambia nunca —si cambiara sería otro fichero—, así que revalidar
+              sería una petición de red por nota y por sesión a cambio de nada.
+
+              Lo que esto compra: el primer día que un niño abre la actividad del piano se
+              bajan sus muestras, y a partir de ahí funciona sin conexión igual que el resto.
+            */
+            urlPattern: /\/audio\/muestras\/[^/]+\/.*\.opus$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'instrumentos',
+              expiration: { maxEntries: 200, maxAgeSeconds: 60 * 60 * 24 * 180 },
+            },
           },
         ],
       },

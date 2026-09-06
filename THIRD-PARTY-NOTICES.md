@@ -73,6 +73,7 @@ cosa. Ver `docs/08-LEGAL.md`.
 | `content/actividades/c2-14-himno-de-la-alegria.json` | Tema del cuarto movimiento de la Sinfonía n.º 9 («Himno de la alegría»), melodía sola | Ludwig van Beethoven (1770-1827) | transcripción propia a notación ABC, verificada con `music21` | **Dominio público** | 2026-09-06 | el autor murió en 1827; incluso con los 80 años de la disposición transitoria española el plazo venció en 1907 |
 | `content/actividades/c2-12-canon-a-dos-voces.json` e `inf-16-animales-que-bajan.json` | Melodía del canon «Frère Jacques» («Frère Blaise» en su fuente más antigua), transportada a fa mayor | Anónima francesa del siglo XVIII; se ha propuesto la autoría de Jean-Philippe Rameau (1683-1764) | manuscrito «Recueil de Timbres de Vaudevilles», BnF, fechado hacia 1775-1785 | **Dominio público** | 2026-09-06 | fuente conocida más antigua de 1780; el único autor que se le ha atribuido murió en 1764. La letra en español es nuestra, escrita para la actividad |
 | `content/actividades/c2-16-cuatro-bandas.json` | Motivo inicial de la Sinfonía n.º 5, melodía sola | Ludwig van Beethoven (1770-1827) | transcripción propia a notación ABC, verificada con `music21` | **Dominio público** | 2026-09-06 | el autor murió en 1827; ni con los 80 años de la disposición transitoria española llegaría a 1907 |
+| `public/audio/muestras/{piano,xilofono,flauta,guitarra,violin,voz}/*.opus` (78) y `voz-la.opus` | Instrumentos de General MIDI: piano, xilófono, flauta, guitarra de nailon, violín y voz («Voice Oohs») | Frank Wen, soundfont **FluidR3_GM** (2000-2008); renderizado nota a nota por `gleitz/midi-js-soundfonts` | https://github.com/gleitz/midi-js-soundfonts | **MIT** | 2026-09-06 | ambos repositorios declaran MIT; la MIT **exige conservar el aviso de copyright también en el audio derivado**, y por eso esta fila existe |
 | `public/iconos/*.svg` (27) | Iconos de actividad | OpenMoji · HfG Schwäbisch Gmünd | https://openmoji.org | **CC BY-SA 4.0** | 2026-09-06 | licencia en `LICENSE.txt` del repositorio oficial |
 
 Las de VCSL van **procesadas** por `tools/muestras-instrumento.py`: pico normalizado a
@@ -114,3 +115,21 @@ las tres actividades donde se usa lo que el niño tiene que reconocer es *una vo
 
 `tools/muestras-voz.py` convierte una grabación de móvil en muestra del banco: recorta
 silencios, mide la altura y avisa si no coincide con la nota declarada, normaliza y codifica.
+
+**Aviso de FluidR3, requerido por la MIT.** Copyright © 2000-2008 Frank Wen. Se concede
+permiso, libre de cargo, para usar, copiar, modificar y distribuir el material sin
+restricciones, conservando este aviso. Nuestras muestras son cortes normalizados y
+recodificados de ese material, hechos por `tools/muestras-gm.py`, y siguen amparados y
+obligados por la misma licencia.
+
+**Y la voz sintetizada ya no existe.** `voz-la.opus` era lo único del banco que no era una
+grabación; ahora es el programa 53 de General MIDI, una voz humana muestreada. Se verificó
+midiendo el espectro antes de darla por buena: fundamental en 438,7 Hz y **un pico
+secundario hacia 1,2 kHz después de un valle**, que es la firma de un formante. Un tono
+sintetizado decae de forma monótona y no hace eso. La síntesis de formantes se **borró** de
+`tools/muestras-provisionales.py` en vez de dejarla comentada: código muerto que haría dudar
+de cuál de los dos era el bueno.
+
+Sigue pendiente lo que `CLAUDE.md` §6 pide para las **locuciones**: alguien diciendo la
+consigna en voz alta. Eso no lo da ningún banco y hay que grabarlo, con
+`tools/muestras-voz.py`.
