@@ -228,5 +228,21 @@
   "creditos.softwareTexto": "React, Vite, Workbox, Tone.js, abcjs, VexFlow y Zustand, todos con licencia MIT. music21 (BSD) se usa solo en las herramientas y no se distribuye con la app.",
   "creditos.tipografias": "Tipografías",
   "creditos.tipografiasTexto": "Andika, de SIL International, y Bravura, de Steinberg Media Technologies. Ambas con licencia SIL Open Font License 1.1 y servidas desde este mismo sitio.",
-  "creditos.inventario": "El inventario completo y auditable está en THIRD-PARTY-NOTICES.md, en el repositorio del proyecto."
+  "creditos.inventario": "El inventario completo y auditable está en THIRD-PARTY-NOTICES.md, en el repositorio del proyecto.",
+  "tocar.patron": "El ritmo que hay que repetir",
+  "tocar.empezar": "Escuchar el ritmo",
+  "tocar.escucha": "Escucha…",
+  "tocar.palmea": "¡Ahora tú! Da palmadas.",
+  "tocar.toca": "¡Ahora tú! Toca el botón.",
+  "tocar.diana": "Toca aquí",
+  "tocar.otraVez": "Otra vez",
+  "tocar.desvio": "Vas:",
+  "tocar.regularidad": "regularidad:",
+  "tocar.bien": "¡Muy bien! Has seguido el ritmo.",
+  "tocar.regularTarde": "Tu pulso es muy regular, solo vas un poquito por detrás. Prueba a empezar antes.",
+  "tocar.regularPronto": "Tu pulso es muy regular, solo vas un poquito por delante. Espera un pelín más.",
+  "tocar.masRegular": "Escucha otra vez y marca el pulso con el pie mientras tocas.",
+  "tocar.sinMicrofono": "No se ha podido usar el micrófono en este dispositivo. La actividad funciona igual tocando el botón.",
+  "tocar.sinPermiso": "No se ha dado permiso para el micrófono. La actividad funciona igual tocando el botón; si quieres usar palmadas, hay que permitirlo en los ajustes del navegador.",
+  "actividad.contenidoInvalido": "Esta actividad tiene un ritmo que todavía no sabemos tocar. No es culpa tuya."
 }

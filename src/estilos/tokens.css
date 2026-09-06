@@ -723,3 +723,60 @@ body {
   font-size: 0.85em;
   word-break: break-word;
 }
+
+/* ── tocar a tiempo ────────────────────────────────────────────────────────
+   El patrón se VE además de oírse: criterio 1.1.1, un alumno sordo tiene que
+   poder hacer la actividad mirando. */
+.tocar__patron {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--separacion);
+  padding: 0;
+  margin: 24px 0;
+  list-style: none;
+}
+.tocar__patron li {
+  min-width: var(--objetivo);
+  min-height: var(--objetivo);
+  display: grid;
+  place-items: center;
+  padding: 8px 14px;
+  border: 3px solid var(--linea);
+  border-radius: 14px;
+  background: var(--superficie);
+  font-size: 1.2em;
+  font-variant-numeric: tabular-nums;
+}
+.tocar__patron li[data-activo="true"] {
+  border-color: var(--acento);
+  background: var(--acento);
+  color: var(--papel);
+}
+/* El silencio se ve distinto en FORMA, no solo en color. */
+.tocar__patron li[data-silaba="sh"] {
+  border-style: dashed;
+  opacity: 0.7;
+}
+.tocar__diana {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  min-height: 180px;
+  margin: 20px 0;
+  font-size: 1.3em;
+}
+.tocar__aviso {
+  padding: 12px 16px;
+  border-left: 4px solid var(--tinta-2);
+  background: var(--superficie);
+  font-size: 0.9em;
+}
+.tocar__mensaje {
+  font-size: 1.25em;
+}
+/* Las cifras son para el maestro, no para el niño: van pequeñas y en gris. */
+.tocar__cifras {
+  color: var(--tinta-2);
+  font-size: 0.9em;
+  font-variant-numeric: tabular-nums;
+}
