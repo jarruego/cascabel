@@ -1,0 +1,93 @@
+{
+  "id": "c2-08-ordena-el-rondo",
+  "version": 1,
+  "tipo": "ordenar",
+  "titulo": "Ordena el rondó",
+  "descripcion": "Pieza troceada en secciones; reconstruir el orden ABACA.",
+  "etapa": "primaria-c2",
+  "eje": "cultura",
+  "lugar": "pantalla",
+  "duracion_min": 7,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.2",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque-secuencial",
+    "alternativa": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c208.consigna",
+    "elementos": [
+      {
+        "clave": "a1",
+        "icono": "sol",
+        "etiqueta": "forma.a",
+        "audio": "muestras/marimba/c4.opus"
+      },
+      {
+        "clave": "b",
+        "icono": "luna",
+        "etiqueta": "forma.b",
+        "audio": "muestras/marimba/g4.opus"
+      },
+      {
+        "clave": "a2",
+        "icono": "sol",
+        "etiqueta": "forma.a",
+        "audio": "muestras/marimba/c4.opus"
+      },
+      {
+        "clave": "c",
+        "icono": "estrella",
+        "etiqueta": "forma.c",
+        "audio": "muestras/marimba/c6.opus"
+      },
+      {
+        "clave": "a3",
+        "icono": "sol",
+        "etiqueta": "forma.a",
+        "audio": "muestras/marimba/c4.opus"
+      }
+    ],
+    "orden": [
+      "a1",
+      "b",
+      "a2",
+      "c",
+      "a3"
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c208.enunciado"
+  },
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador",
+  "pistas": [
+    "actividad.c208.pista1"
+  ]
+}

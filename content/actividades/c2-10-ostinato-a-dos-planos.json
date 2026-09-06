@@ -1,0 +1,80 @@
+{
+  "id": "c2-10-ostinato-a-dos-planos",
+  "version": 1,
+  "tipo": "guia-aula",
+  "titulo": "Ostinato a dos planos",
+  "descripcion": "Dos patrones simultáneos proyectados como partitura de colores.",
+  "etapa": "primaria-c2",
+  "eje": "creacion",
+  "lugar": "hibrida",
+  "duracion_min": 25,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE4",
+    "criterio": "4.2",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 92,
+    "metodo": [
+      "orff"
+    ]
+  },
+  "entrada": {
+    "modo": "ninguna"
+  },
+  "contenido": {
+    "consigna": "actividad.c210.consigna",
+    "tempo": 92,
+    "pulsosPorCompas": 4,
+    "pasos": [
+      {
+        "titulo": "actividad.c210.p1",
+        "detalle": "actividad.c210.p1d",
+        "duracion": "5 min"
+      },
+      {
+        "titulo": "actividad.c210.p2",
+        "detalle": "actividad.c210.p2d",
+        "duracion": "5 min"
+      },
+      {
+        "titulo": "actividad.c210.p3",
+        "detalle": "actividad.c210.p3d",
+        "duracion": "8 min"
+      },
+      {
+        "titulo": "actividad.c210.p4",
+        "detalle": "actividad.c210.p4d",
+        "duracion": "5 min"
+      }
+    ],
+    "materiales": []
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c210.enunciado"
+  },
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

@@ -1,0 +1,64 @@
+{
+  "id": "tr-01-afinador-visual",
+  "version": 1,
+  "tipo": "cantar",
+  "titulo": "Afinador visual",
+  "descripcion": "Canta o toca y ve la nota. Primer contacto con el micrófono, sin nada que perder.",
+  "etapa": "primaria-c2",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": null,
+    "criterio": null,
+    "saber": null
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "microfono-voz",
+    "alternativa": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.tr01.consigna",
+    "notas": [
+      "C4",
+      "D4",
+      "E4",
+      "G4",
+      "A4",
+      "C5"
+    ],
+    "segundos": 6
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "afinacion_media"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.tr01.enunciado"
+  },
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador",
+  "pistas": [
+    "actividad.tr01.pista1"
+  ]
+}

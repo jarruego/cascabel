@@ -1,0 +1,72 @@
+{
+  "id": "c2-03-dictado-melodico",
+  "version": 1,
+  "tipo": "rejilla",
+  "titulo": "Dictado melódico en rejilla",
+  "descripcion": "Cuadrícula de altura por tiempo, sin necesidad de saber notación.",
+  "etapa": "primaria-c2",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c203.consigna",
+    "modo": "dictado",
+    "filas": 5,
+    "columnas": 6,
+    "tempo": 88,
+    "notas": [
+      "C6",
+      "B4",
+      "G4",
+      "F3",
+      "C4"
+    ],
+    "solucion": [
+      "2,0",
+      "1,1",
+      "2,2",
+      "4,3",
+      "2,4",
+      "1,5"
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c203.enunciado"
+  },
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador",
+  "pistas": [
+    "actividad.c203.pista1"
+  ]
+}

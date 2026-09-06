@@ -1,0 +1,85 @@
+{
+  "id": "inf-10-cajas-de-sonidos",
+  "version": 1,
+  "tipo": "emparejar",
+  "titulo": "Las cajas de los sonidos",
+  "descripcion": "Emparejamiento auditivo autocorrectivo al modo Montessori. Se tocan de dos en dos.",
+  "etapa": "infantil",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 4,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": "CE2",
+    "criterio": "2.1",
+    "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque-secuencial",
+    "alternativa": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.inf10.consigna",
+    "izquierda": [
+      {
+        "clave": "caja-a",
+        "icono": "tambor",
+        "etiqueta": "opcion.tambor"
+      },
+      {
+        "clave": "caja-b",
+        "icono": "campana",
+        "etiqueta": "opcion.campana"
+      }
+    ],
+    "derecha": [
+      {
+        "clave": "son-b",
+        "icono": "altavoz",
+        "audio": "muestras/campana-media.opus"
+      },
+      {
+        "clave": "son-a",
+        "icono": "altavoz",
+        "audio": "muestras/pandero-golpe.opus"
+      }
+    ],
+    "parejas": [
+      {
+        "izquierda": "caja-a",
+        "derecha": "son-a"
+      },
+      {
+        "izquierda": "caja-b",
+        "derecha": "son-b"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.inf10.enunciado"
+  },
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

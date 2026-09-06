@@ -1,0 +1,82 @@
+{
+  "id": "c3-07-componed-un-rondo",
+  "version": 1,
+  "tipo": "guia-aula",
+  "titulo": "Componed un rondó",
+  "descripcion": "Proyecto por grupos: estribillo común y una copla por equipo.",
+  "etapa": "primaria-c3",
+  "eje": "creacion",
+  "lugar": "hibrida",
+  "duracion_min": 40,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE4",
+    "criterio": "4.1",
+    "saber": null
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 96,
+    "metodo": [
+      "orff"
+    ]
+  },
+  "entrada": {
+    "modo": "ninguna"
+  },
+  "contenido": {
+    "consigna": "actividad.c307.consigna",
+    "tempo": 96,
+    "pulsosPorCompas": 4,
+    "pasos": [
+      {
+        "titulo": "actividad.c307.p1",
+        "detalle": "actividad.c307.p1d",
+        "duracion": "8 min"
+      },
+      {
+        "titulo": "actividad.c307.p2",
+        "detalle": "actividad.c307.p2d",
+        "duracion": "12 min"
+      },
+      {
+        "titulo": "actividad.c307.p3",
+        "detalle": "actividad.c307.p3d",
+        "duracion": "12 min"
+      },
+      {
+        "titulo": "actividad.c307.p4",
+        "detalle": "actividad.c307.p4d",
+        "duracion": "8 min"
+      }
+    ],
+    "materiales": [
+      "actividad.c307.m1"
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c307.enunciado"
+  },
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

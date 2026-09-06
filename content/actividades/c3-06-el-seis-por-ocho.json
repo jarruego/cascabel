@@ -1,0 +1,75 @@
+{
+  "id": "c3-06-el-seis-por-ocho",
+  "version": 1,
+  "tipo": "guia-aula",
+  "titulo": "El 6/8 con el cuerpo",
+  "descripcion": "Subdivisión ternaria vivida antes que leída, en dos grupos.",
+  "etapa": "primaria-c3",
+  "eje": "pulso",
+  "lugar": "hibrida",
+  "duracion_min": 20,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "6/8",
+    "tempo": 108,
+    "metodo": [
+      "dalcroze"
+    ]
+  },
+  "entrada": {
+    "modo": "ninguna"
+  },
+  "contenido": {
+    "consigna": "actividad.c306.consigna",
+    "tempo": 108,
+    "pulsosPorCompas": 6,
+    "pasos": [
+      {
+        "titulo": "actividad.c306.p1",
+        "detalle": "actividad.c306.p1d",
+        "duracion": "4 min"
+      },
+      {
+        "titulo": "actividad.c306.p2",
+        "detalle": "actividad.c306.p2d",
+        "duracion": "6 min"
+      },
+      {
+        "titulo": "actividad.c306.p3",
+        "detalle": "actividad.c306.p3d",
+        "duracion": "8 min"
+      }
+    ],
+    "materiales": []
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c306.enunciado"
+  },
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

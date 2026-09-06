@@ -1,0 +1,69 @@
+{
+  "id": "inf-09-eco-de-palmas",
+  "version": 1,
+  "tipo": "tocar-a-tiempo",
+  "titulo": "Eco de palmas",
+  "descripcion": "El personaje hace dos o tres palmadas y el niño las repite.",
+  "etapa": "infantil",
+  "eje": "pulso",
+  "lugar": "hibrida",
+  "duracion_min": 5,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": "CE3",
+    "criterio": "3.5",
+    "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 76,
+    "figuras": [
+      "negra"
+    ]
+  },
+  "entrada": {
+    "modo": "microfono-palmada",
+    "alternativa": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.inf09.consigna",
+    "silabas": [
+      "ta",
+      "ta",
+      "ta",
+      "ta"
+    ],
+    "repeticiones": 3,
+    "tempo": 76
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.inf09.enunciado"
+  },
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador",
+  "pistas": [
+    "actividad.inf09.pista1"
+  ]
+}

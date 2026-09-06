@@ -1,0 +1,95 @@
+{
+  "id": "c1-05-musicograma-a-b",
+  "version": 1,
+  "tipo": "seguir",
+  "titulo": "Musicograma A-B",
+  "descripcion": "Audición activa con partitura gráfica avanzando (metodología Wuytack).",
+  "etapa": "primaria-c1",
+  "eje": "cultura",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.1",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c105.consigna",
+    "tempo": 96,
+    "notas": [
+      "C5",
+      "C5",
+      "G4",
+      "G4",
+      "C5",
+      "C5",
+      "G4",
+      "G4"
+    ],
+    "bloques": [
+      {
+        "texto": "forma.a",
+        "color": "altura"
+      },
+      {
+        "texto": "forma.a",
+        "color": "altura"
+      },
+      {
+        "texto": "forma.b",
+        "color": "creacion"
+      },
+      {
+        "texto": "forma.b",
+        "color": "creacion"
+      },
+      {
+        "texto": "forma.a",
+        "color": "altura"
+      },
+      {
+        "texto": "forma.a",
+        "color": "altura"
+      },
+      {
+        "texto": "forma.b",
+        "color": "creacion"
+      },
+      {
+        "texto": "forma.b",
+        "color": "creacion"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c105.enunciado"
+  },
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

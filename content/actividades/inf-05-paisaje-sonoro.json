@@ -1,0 +1,96 @@
+{
+  "id": "inf-05-paisaje-sonoro",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "Paisaje sonoro: ¿qué suena?",
+  "descripcion": "Sonidos del entorno sobre una ilustración; tocas donde crees que está el sonido.",
+  "etapa": "infantil",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 5,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": "CE2",
+    "criterio": "2.1",
+    "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.inf05b.consigna",
+    "opciones": [
+      {
+        "clave": "campana",
+        "icono": "campana",
+        "color": "amarillo"
+      },
+      {
+        "clave": "tambor",
+        "icono": "tambor",
+        "color": "rojo"
+      },
+      {
+        "clave": "madera",
+        "icono": "arbol",
+        "color": "verde"
+      }
+    ],
+    "estimulos": [
+      {
+        "audio": "muestras/campana-media.opus",
+        "respuesta": "campana"
+      },
+      {
+        "audio": "muestras/sonido-corto.opus",
+        "respuesta": "madera"
+      },
+      {
+        "audio": "muestras/pandero-golpe.opus",
+        "respuesta": "tambor"
+      },
+      {
+        "audio": "muestras/campana-aguda.opus",
+        "respuesta": "campana"
+      },
+      {
+        "audio": "muestras/pandero-golpe.opus",
+        "respuesta": "tambor"
+      },
+      {
+        "audio": "muestras/sonido-corto.opus",
+        "respuesta": "madera"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.inf05.enunciado"
+  },
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador",
+  "pistas": [
+    "actividad.inf05b.pista1"
+  ]
+}
