@@ -39,9 +39,10 @@
         "cantar",
         "lienzo",
         "guia-aula",
-        "teclado"
+        "teclado",
+        "karaoke"
       ],
-      "description": ". 'teclado' se anadio el 2026-09-06 tras la investigacion de docs/11-RECURSOS-Y-REFERENTES.md: es un piano en pantalla sobre el Sampler que ya existe."
+      "description": ". 'teclado' se anadio el 2026-09-06 tras la investigacion de docs/11-RECURSOS-Y-REFERENTES.md: es un piano en pantalla sobre el Sampler que ya existe. 'karaoke' se anadio el mismo dia: musicograma que avanza de derecha a izquierda sobre un pentagrama y se toca a tiempo."
     },
     "titulo": {
       "type": "string",

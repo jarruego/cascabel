@@ -1,0 +1,191 @@
+{
+  "id": "c2-11-himno-de-la-alegria",
+  "version": 1,
+  "tipo": "karaoke",
+  "titulo": "El himno de la alegría",
+  "descripcion": "La melodía avanza de derecha a izquierda sobre el pentagrama. Hay que tocar cada nota cuando cruza la línea.",
+  "etapa": "primaria-c2",
+  "eje": "pulso",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 100,
+    "figuras": [
+      "negra",
+      "blanca",
+      "puntillo",
+      "corchea"
+    ]
+  },
+  "musica": {
+    "abc": "X:1\nT:Himno de la alegría\nC:Ludwig van Beethoven (1770-1827)\nM:4/4\nL:1/4\nK:C\nE E F G | G F E D | C C D E | E3/2 D/2 D2 |\nE E F G | G F E D | C C D E | D3/2 C/2 C2 |]"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c211.consigna",
+    "tempo": 100,
+    "clave": "sol",
+    "notas": [
+      {
+        "nota": "E4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "F4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "F4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "D4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "C4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "C4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "D4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1.5
+      },
+      {
+        "nota": "D4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "D4",
+        "pulsos": 2.0
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "F4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "F4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "D4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "C4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "C4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "D4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1.0
+      },
+      {
+        "nota": "D4",
+        "pulsos": 1.5
+      },
+      {
+        "nota": "C4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "C4",
+        "pulsos": 2.0
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c211.enunciado"
+  },
+  "pistas": [
+    "actividad.c211.pista1",
+    "actividad.c211.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Himno de la alegría (tema del cuarto movimiento de la Sinfonía n.º 9)",
+      "autor": "Ludwig van Beethoven (1770-1827)",
+      "fuente": "Dominio público: el autor murió en 1827, muy por encima de los 80 años que exige la disposición transitoria de la ley española.",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "Marimba",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

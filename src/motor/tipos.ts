@@ -18,7 +18,9 @@ export type TipoActividad =
   | 'lienzo'
   | 'guia-aula'
   /** Piano en pantalla. Añadido tras la investigación de docs/11. */
-  | 'teclado';
+  | 'teclado'
+  /** Musicograma horizontal sobre pentagrama, con toque a tiempo. Ver Karaoke.tsx. */
+  | 'karaoke';
 
 export type Eje = 'pulso' | 'altura' | 'timbre' | 'notacion' | 'cuerpo' | 'creacion' | 'cultura';
 

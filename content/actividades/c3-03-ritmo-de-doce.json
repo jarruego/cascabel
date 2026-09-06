@@ -1,0 +1,74 @@
+{
+  "id": "c3-03-ritmo-de-doce",
+  "version": 1,
+  "tipo": "tocar-a-tiempo",
+  "titulo": "Ritmo de doce",
+  "descripcion": "Doce pulsos en tres grupos de cuatro, con síncopa y silencio. En bucle.",
+  "etapa": "primaria-c3",
+  "eje": "pulso",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Práctica instrumental, vocal y corporal"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 92,
+    "figuras": [
+      "negra",
+      "corchea",
+      "sincopa",
+      "silencio-negra"
+    ]
+  },
+  "entrada": {
+    "modo": "microfono-palmada",
+    "alternativa": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c303.consigna",
+    "silabas": [
+      "ta",
+      "ti-ti",
+      "ta",
+      "sh",
+      "ti-ta-ti",
+      "ti-ti",
+      "ta",
+      "ta",
+      "sh-ti",
+      "ta",
+      "ti-ti",
+      "ta"
+    ],
+    "repeticiones": 4,
+    "tempo": 92
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c303.enunciado"
+  },
+  "pistas": [
+    "actividad.c303.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Marimba",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}
