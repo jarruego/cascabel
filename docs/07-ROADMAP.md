@@ -242,12 +242,35 @@ coreografía paso a paso, ficha imprimible.
 - [ ] Pulso visual sincronizado con el metrónomo
 - [ ] Botón de imprimir ficha (CSS `@media print`)
 
-### T1.4 — Navegación y catálogo
+### T1.4 — Navegación y catálogo `[x]`
 
-- [ ] Índice cargado desde `content/indice.json`
-- [ ] Filtros por etapa, eje y criterio curricular ← **esta es la vista del maestro**
-- [ ] Ruta `/actividad/:id`
-- [ ] Un solo botón «atrás», siempre en el mismo sitio
+Cerrada el 2026-09-06.
+
+- [x] Índice cargado desde `content/indice.json`
+- [x] Filtros por etapa, eje y criterio curricular ← **esta es la vista del maestro**
+- [x] Ruta `/actividad/:id`
+- [x] Un solo botón «atrás», siempre en el mismo sitio
+
+**Un fallo latente que salió al hacerlo, y que solo se habría visto al desplegar**:
+`content/` no está dentro de `public/`, así que `vite build` **no lo copiaba a `dist/`**. En
+desarrollo funcionaba de casualidad, porque Vite sirve la raíz del proyecto. La biblioteca
+entera habría dado 404 en producción el día de T1.10. Arreglado con un plugin propio de
+veinte líneas en `vite.config.ts` —sin dependencias nuevas— que sirve `content/` en
+desarrollo de forma explícita y lo copia al construir. Comprobado sobre el `dist` real:
+`/`, `/actividad/:id`, `/diagnostico` y los JSON responden 200.
+
+**El catálogo es la raíz.** No hay portada: el maestro llega buscando «qué trabajo el
+criterio 3.1 en 2.º», y eso es lo primero que ve. Es el antídoto contra el riesgo que el
+dosier llama «cincuenta juguetes sueltos».
+
+**El gesto de audio se movió.** Vivía en la pantalla provisional `App.tsx`, que se ha
+borrado por quedar huérfana. El `AudioContext` nace suspendido y solo se reanuda dentro de
+un gesto del usuario, así que ahora `despertarAudio()` se llama en el clic sobre la ficha
+de la actividad — que es el último gesto real antes de que suene nada.
+
+**Pendiente**: el filtro por criterio se construye con los criterios presentes en el
+índice. Con tres actividades es suficiente; con doscientas habrá que agrupar por
+competencia y ciclo, y probablemente buscar por texto.
 
 ### T1.5 — Persistencia local
 
