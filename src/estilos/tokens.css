@@ -617,8 +617,8 @@ p {
 }
 
 /* ── ordenar ───────────────────────────────────────────────────────────────
-   La fila de arriba es lo colocado; el banco de abajo, lo que queda. */
-.ordenar__fila,
+   El banco de abajo es lo que queda por colocar; las casillas, más abajo, tienen su
+   propio bloque. */
 .ordenar__banco {
   display: flex;
   flex-wrap: wrap;
@@ -626,18 +626,6 @@ p {
   padding: 0;
   margin: var(--e-5) 0;
   list-style: none;
-}
-.ordenar__fila {
-  min-height: calc(var(--objetivo) + 24px);
-  align-items: center;
-  padding: var(--e-3);
-  border: 3px dashed var(--linea);
-  border-radius: var(--r-m);
-}
-.ordenar__hueco {
-  width: 100%;
-  text-align: center;
-  color: var(--tinta-2);
 }
 /* Fuera de sitio: se mueve. El movimiento es la señal, no el rojo, porque el rojo
    dice «has fallado» y la regla 7 lo prohíbe. */
@@ -1220,13 +1208,6 @@ p {
   opacity: 0.85;
   box-shadow: var(--sombra-3);
 }
-.ordenar__truco {
-  color: var(--tinta-2);
-  font-size: 0.85em;
-}
-.ordenar__fila[data-zona] {
-  transition: border-color 120ms ease, background-color 120ms ease;
-}
 
 /* ── rejilla: altura × tiempo ──────────────────────────────────────────────
    Las columnas son pulsos y las filas alturas. Es la mejor interfaz que existe
@@ -1337,11 +1318,6 @@ p {
 .cantar__marca[data-activa] {
   background: var(--acento);
   opacity: 1;
-}
-.cantar__lectura {
-  min-height: 1.6em;
-  color: var(--tinta-2);
-  font-variant-numeric: tabular-nums;
 }
 .cantar__empezar {
   display: inline-flex;
@@ -1790,18 +1766,6 @@ p {
 .ficha__colNombre { width: 28%; }
 .ficha__colNotas { width: 26%; }
 .ficha__leyenda { margin: var(--e-3) 0 0; font-size: 0.85em; color: var(--tinta-2); }
-
-.ficha__pie {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: var(--e-3);
-  margin-top: var(--e-5);
-  padding-top: var(--e-2);
-  border-top: 1px solid var(--linea);
-  color: var(--tinta-2);
-  font-size: 0.76em;
-}
 .actividad__barra { display: flex; flex-wrap: wrap; gap: var(--e-3); align-items: center; }
 .actividad__ficha { color: var(--acento-2); font-size: 0.9em; }
 
@@ -1850,8 +1814,7 @@ p {
   .ficha__duracion,
   .ficha__leyenda,
   .ficha__aclaracion,
-  .ficha__datos,
-  .ficha__pie { color: #333; }
+  .ficha__datos { color: #333; }
 
   /* Los fondos suaves desaparecen o salen sucios en una impresora de colegio: se
      sustituyen por un borde, que sí imprime. */
@@ -2572,16 +2535,6 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   background: var(--vivo-rojo);
   border-color: var(--vivo-rojo);
 }
-
-/* Títulos de sección del catálogo. Separan actividades de instrumentos, que es una
-   distinción que el maestro necesita y que la lista mezclada le escondía. */
-.catalogo__seccion {
-  margin: var(--e-6) 0 var(--e-2);
-  font-size: var(--t-m);
-  border-bottom: 2px solid var(--linea);
-  padding-bottom: var(--e-1);
-}
-.catalogo__seccion:first-of-type { margin-top: var(--e-4); }
 .catalogo__aclaracion {
   margin: 0 0 var(--e-3);
   font-size: var(--t-xs);

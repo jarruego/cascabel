@@ -1,10 +1,11 @@
-import { useCallback, useEffect, useReducer, useRef } from 'react';
+import { useCallback, useEffect, useReducer, useRef, useState } from 'react';
 import { OBJETIVO_TACTIL } from '@/config';
 import { useCarril } from '@/app/preferencias';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Boton } from '@/ui/Boton';
 import { BotonRepetir } from '@/ui/BotonRepetir';
+import { PasoEntreEjercicios } from '@/ui/ModalesActividad';
 import {
   ESTADO_INICIAL,
   esperaMs,
@@ -79,13 +80,29 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
     if (estado.fase === 'estimulo') reproducir();
   }, [estado.fase, estado.indice, reproducir]);
 
-  // El feedback se muestra un rato y luego la máquina sigue. Un solo temporizador, y se
-  // cancela al desmontar: si el niño sale a mitad, no queremos que salte después.
+  /*
+    El feedback se muestra un rato y después viene la pausa entre ejercicios.
+
+    **La pausa existía hecha y sin conectar.** `PasoEntreEjercicios` estaba escrito, con sus
+    estilos y sus textos, desde que el autor pidió «pausas o indicadores entre subejercicios»,
+    y no lo usaba nadie: lo destapó la auditoría del 2026-09-07. Un componente construido y
+    sin enchufar es peor que código muerto, porque parece que la funcionalidad está.
+
+    Y hace falta: sin ella, seis estímulos se encadenan y el niño no se entera de que ha
+    cambiado la pregunta. No es un cronómetro —se salta tocando—, así que no choca con la
+    regla 4.
+  */
+  const [enPausa, setEnPausa] = useState(false);
+
   useEffect(() => {
     if (estado.fase !== 'bien' && estado.fase !== 'casi') return;
-    const id = window.setTimeout(() => despachar({ tipo: 'seguir' }), esperaMs(estado.fase));
+    const id = window.setTimeout(() => {
+      // En el último no hay pausa: lo que viene después no es otro ejercicio, es el final.
+      if (estado.indice + 1 < total) setEnPausa(true);
+      else despachar({ tipo: 'seguir' });
+    }, esperaMs(estado.fase));
     return () => window.clearTimeout(id);
-  }, [estado.fase, estado.intentos]);
+  }, [estado.fase, estado.intentos, estado.indice, total]);
 
   // El aviso de fin va en su propio efecto para que no dependa del orden de los otros.
   useEffect(() => {
@@ -101,7 +118,7 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
 
   useEffect(() => () => audioRef.current?.pause(), []);
 
-  const bloqueado = estado.fase !== 'estimulo';
+  const bloqueado = estado.fase !== 'estimulo' || enPausa;
   const pista = pistaPara(actividad.pistas, estado.fallosAqui);
 
   return (
@@ -111,6 +128,17 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
       {/* El botón de repetir solo tiene sentido si hay algo que repetir. Cuando no lo hay
           desaparece entero, en vez de quedarse ahí sin hacer nada: un botón muerto es peor
           que ningún botón, y ya nos pasó una vez con el «Escuchar» de la modal. */}
+      {enPausa && (
+        <PasoEntreEjercicios
+          actual={estado.indice + 1}
+          total={total}
+          alSeguir={() => {
+            setEnPausa(false);
+            despachar({ tipo: 'seguir' });
+          }}
+        />
+      )}
+
       {estimulo?.audio && <BotonRepetir onClick={reproducir} />}
 
       {/* El caso escrito. Va en aria-live porque cambia sin que se mueva el foco. */}

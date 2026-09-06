@@ -1,11 +1,18 @@
 import es from './es.json';
 
 const diccionarios: Record<string, Record<string, string>> = { es };
-let idioma = 'es';
 
-export function ponerIdioma(codigo: string) {
-  if (diccionarios[codigo]) idioma = codigo;
-}
+/**
+ * Idioma activo.
+ *
+ * Es una constante mientras solo haya un diccionario. Había un `ponerIdioma()` para
+ * cambiarlo y se quitó en la auditoría del 2026-09-07 por lo que era: código que nadie
+ * llamaba. **La estructura multiidioma sí se queda** —el mapa de diccionarios y la búsqueda
+ * con respaldo en español—, que es lo que hace que T3.2 sea añadir ficheros y una línea
+ * aquí, no un refactor. Guardar el setter «por si acaso» no adelantaba ese trabajo ni un
+ * minuto.
+ */
+const idioma = 'es';
 
 /**
  * Ningún texto vive en un componente. Es lo que convierte «traducir a valenciano»
