@@ -721,5 +721,12 @@
   "actividad.c211m.enunciado": "Seis instrumentos de seis sitios del mundo. Escucha y elige cuál es; cada uno suena dos veces, en dos notas distintas.",
   "actividad.c211m.pista1": "Fíjate en de qué está hecho: si suena a cuerda pulsada, a metal, a madera o a aire.",
   "actividad.c211m.pista2": "El sitar y el koto son los dos de cuerda, pero el koto suena más seco y el sitar deja un zumbido detrás.",
-  "tocar.vaDePalmas": "Esta vuelta va de palmas. Sigue dando palmadas hasta el final."
+  "tocar.vaDePalmas": "Esta vuelta va de palmas. Sigue dando palmadas hasta el final.",
+  "forma.A": "A",
+  "forma.B": "B",
+  "actividad.c304.consigna": "Mira la forma de la obra mientras suena",
+  "actividad.c304.enunciado": "Esta melodía tiene cuatro frases. Tres son la misma —la A— y una es distinta. Fíjate en cuál.",
+  "actividad.c304.pista1": "Los bloques del mismo color son la misma música. Se ve antes de oírse, y eso es lo que hace un mapa.",
+  "actividad.c304.pista2": "A-A-B-A es de las formas más repetidas que hay: la tercera frase se va a otro sitio y la cuarta vuelve a casa.",
+  "nav.instrumentos": "Instrumentos"
 }

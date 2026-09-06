@@ -159,6 +159,21 @@ export const INSTRUMENTOS: Record<string, Muestra[]> = {
   voz: VOZ,
 };
 
+/**
+ * Qué instrumentos sostienen una nota y cuáles se apagan solos.
+ *
+ * No es un detalle técnico: es **la diferencia entre un instrumento de percusión y uno de
+ * aire o de cuerda frotada**, y decide qué se puede hacer con él. Una marimba no puede
+ * mantener una nota —se golpea y se apaga—, así que para sostenerla se repite el golpe, que
+ * es el trémolo y es lo que hace un niño con una lámina Orff. Una flauta sí la mantiene, y
+ * ahí repetir el ataque suena a error.
+ */
+export const SOSTIENEN = new Set(['flauta', 'violin', 'voz', 'coro', 'gaita']);
+
+export function sostiene(nombre: string | undefined): boolean {
+  return SOSTIENEN.has(nombre ?? 'marimba');
+}
+
 /** Las muestras de un instrumento. Si no existe, marimba: la actividad tiene que sonar. */
 export function muestrasDe(nombre: string | undefined): Muestra[] {
   return (nombre && INSTRUMENTOS[nombre]) || MARIMBA;

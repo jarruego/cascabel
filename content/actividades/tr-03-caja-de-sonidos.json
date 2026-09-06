@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "lienzo",
   "titulo": "Caja de sonidos del aula",
-  "descripcion": "Rejilla de instrumentos grandes que suenan al tocarlos.",
+  "descripcion": "Se dibuja y suena. Con flauta, una raya larga es una nota larga: lo que se dibuja es lo que se oye, también en la duración.",
   "etapa": "infantil",
   "eje": "timbre",
   "lugar": "pantalla",
@@ -41,7 +41,8 @@
       "reto.lienzo6",
       "reto.lienzo7",
       "reto.lienzo8"
-    ]
+    ],
+    "instrumento": "flauta"
   },
   "evaluacion": {
     "autocorrectiva": false,

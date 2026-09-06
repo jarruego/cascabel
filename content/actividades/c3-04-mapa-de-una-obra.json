@@ -1,0 +1,109 @@
+{
+  "id": "c3-04-mapa-de-una-obra",
+  "version": 1,
+  "tipo": "seguir",
+  "titulo": "Mapa de una obra",
+  "descripcion": "El tema de la Novena de Beethoven con su forma marcada: A, A, B, A. Se ve la estructura antes de oírla.",
+  "etapa": "primaria-c3",
+  "eje": "cultura",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.2",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 96
+  },
+  "musica": {
+    "abc": "X:1\nT:Himno de la alegría\nC:Ludwig van Beethoven (1770-1827)\nM:4/4\nL:1/4\nK:C\nE E F G | G F E D | C C D E | E3/2 D/2 D2 | E E F G | G F E D | C C D E | D3/2 C/2 C2 |]"
+  },
+  "entrada": {
+    "modo": "ninguna"
+  },
+  "contenido": {
+    "consigna": "actividad.c304.consigna",
+    "tempo": 96,
+    "bloques": [
+      {
+        "texto": "forma.A",
+        "color": "altura",
+        "pulsos": 8
+      },
+      {
+        "texto": "forma.A",
+        "color": "altura",
+        "pulsos": 8.0
+      },
+      {
+        "texto": "forma.B",
+        "color": "creacion",
+        "pulsos": 8
+      },
+      {
+        "texto": "forma.A",
+        "color": "altura",
+        "pulsos": 8.0
+      }
+    ],
+    "notas": [
+      "E4",
+      "E4",
+      "F4",
+      "G4",
+      "G4",
+      "F4",
+      "E4",
+      "D4",
+      "C4",
+      "C4",
+      "D4",
+      "E4",
+      "E4",
+      "D4",
+      "D4",
+      "E4",
+      "E4",
+      "F4",
+      "G4",
+      "G4",
+      "F4",
+      "E4",
+      "D4",
+      "C4",
+      "C4",
+      "D4",
+      "E4",
+      "D4",
+      "C4",
+      "C4"
+    ],
+    "bucle": true
+  },
+  "locucion": {
+    "enunciado": "actividad.c304.enunciado"
+  },
+  "pistas": [
+    "actividad.c304.pista1",
+    "actividad.c304.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Tema del cuarto movimiento de la Sinfonía n.º 9",
+      "autor": "Ludwig van Beethoven (1770-1827)",
+      "fuente": "Dominio público: el autor murió en 1827, muy por encima de los 80 años que exige la disposición transitoria de la ley española.",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "Marimba",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

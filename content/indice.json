@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-06",
-  "total": 60,
+  "total": 61,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -543,6 +543,23 @@
         "competencia": "CE3",
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c3-04-mapa-de-una-obra",
+      "titulo": "Mapa de una obra",
+      "etapa": "primaria-c3",
+      "eje": "cultura",
+      "tipo": "seguir",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador"
     },
