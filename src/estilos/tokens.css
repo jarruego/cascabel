@@ -2726,3 +2726,68 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   border-right: 6px solid var(--tinta);
 }
 .compases__acciones { display: flex; justify-content: center; margin-top: var(--e-4); }
+
+/* ── construir una escala ──────────────────────────────────────────────────
+   Pauta arriba, distancias en medio, teclado abajo. Ese orden importa: se lee de arriba
+   abajo lo mismo que se hace de abajo arriba, así que la nota que se toca sube por la
+   pantalla hasta escribirse, que es la relación que la actividad enseña. */
+.escala__pauta {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  margin: var(--e-4) 0 var(--e-2);
+  overflow-x: auto;
+  background: var(--superficie);
+  border: 2px solid var(--linea);
+  border-radius: var(--r-m);
+}
+.escala__linea { position: absolute; left: 0; right: 0; height: 2px; background: var(--linea); }
+.escala__adicional { position: absolute; width: 26px; height: 2px; margin-left: -5px; background: var(--linea); }
+.escala__nota {
+  position: absolute;
+  width: 16px;
+  height: 12px;
+  margin-left: -8px;
+  border: 2px solid var(--tinta);
+  border-radius: 8px;
+}
+.escala__alteracion {
+  position: absolute;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--tinta);
+}
+/* Un tono se dibuja el DOBLE de largo que un semitono: la palabra dice qué es y el tamaño
+   dice cuánto mide. Sin esa diferencia, «tono» y «semitono» son dos etiquetas cualquiera. */
+.escala__distancias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-1);
+  justify-content: center;
+  padding: 0;
+  margin: 0 0 var(--e-4);
+  list-style: none;
+}
+.escala__distancias li {
+  padding: var(--e-1) var(--e-2);
+  font-size: var(--t-xs);
+  border-radius: var(--r-s);
+  background: var(--fondo);
+  border: 2px solid var(--linea);
+}
+.escala__distancias li[data-distancia='tono'] { min-width: 92px; text-align: center; border-color: var(--vivo-azul); }
+.escala__distancias li[data-distancia='semitono'] { min-width: 46px; text-align: center; border-color: var(--vivo-naranja); }
+.escala__distancias li[data-distancia='otra'] { border-style: dashed; color: var(--tinta-2); }
+
+.escala__teclado {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: min(30vh, 200px);
+  overflow-x: auto;
+}
+.escala__teclado .teclado__blanca[data-usada],
+.escala__teclado .teclado__negra[data-usada] {
+  box-shadow: inset 0 0 0 3px var(--acento-2);
+}
+.escala__acciones { display: flex; justify-content: center; margin-top: var(--e-3); }

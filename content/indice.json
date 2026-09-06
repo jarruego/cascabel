@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-06",
-  "total": 64,
+  "total": 65,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -555,6 +555,23 @@
       "lugar": "pantalla",
       "microfono": false,
       "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c3-01-tonos-y-semitonos",
+      "titulo": "Tonos y semitonos",
+      "etapa": "primaria-c3",
+      "eje": "notacion",
+      "tipo": "escala",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 15,
       "curriculo": {
         "area": "Educación Artística",
         "competencia": "CE3",
