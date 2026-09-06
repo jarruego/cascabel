@@ -337,7 +337,12 @@ body {
   padding: 0;
   list-style: none;
 }
-.ficha {
+/* Tarjeta de actividad del catálogo.
+   Se llamaba `.ficha`, igual que la hoja imprimible, y eran dos cosas distintas: el borde
+   gris de esta tarjeta se colaba alrededor del dosier del maestro y salía impreso. Dos
+   componentes sin relación no pueden compartir nombre de clase, por mucho que en castellano
+   los dos se llamen «ficha». */
+.tarjeta {
   display: grid;
   gap: 4px;
   padding: 16px;
@@ -350,19 +355,19 @@ body {
   text-decoration: none;
   min-height: 60px;
 }
-.ficha:focus-visible {
+.tarjeta:focus-visible {
   outline: 4px solid var(--acento);
   outline-offset: 3px;
 }
-.ficha--pulso { border-left-color: var(--eje-pulso); }
-.ficha--altura { border-left-color: var(--eje-altura); }
-.ficha--timbre { border-left-color: var(--eje-timbre); }
-.ficha--notacion { border-left-color: var(--eje-notacion); }
-.ficha--cuerpo { border-left-color: var(--eje-cuerpo); }
-.ficha--creacion { border-left-color: var(--eje-creacion); }
-.ficha--cultura { border-left-color: var(--eje-cultura); }
-.ficha__titulo { font-weight: 700; }
-.ficha__meta { font-size: 0.85em; color: var(--tinta-2); }
+.tarjeta--pulso { border-left-color: var(--eje-pulso); }
+.tarjeta--altura { border-left-color: var(--eje-altura); }
+.tarjeta--timbre { border-left-color: var(--eje-timbre); }
+.tarjeta--notacion { border-left-color: var(--eje-notacion); }
+.tarjeta--cuerpo { border-left-color: var(--eje-cuerpo); }
+.tarjeta--creacion { border-left-color: var(--eje-creacion); }
+.tarjeta--cultura { border-left-color: var(--eje-cultura); }
+.tarjeta__titulo { font-weight: 700; }
+.tarjeta__meta { font-size: 0.85em; color: var(--tinta-2); }
 
 /* Un solo botón atrás, siempre en el mismo sitio. Regla 8 de docs/04-DISENO-UI.md. */
 .atras {
@@ -615,7 +620,7 @@ body {
 
 /* Marca de «ya hecha». Es orientación, no recompensa: sin puntos, sin racha y sin
    porcentaje. Un tick discreto y verde, del tamaño del texto y no del de un trofeo. */
-.ficha__hecha {
+.tarjeta__hecha {
   float: right;
   color: var(--ok);
   font-weight: 700;
@@ -1466,6 +1471,36 @@ body {
   color: var(--tinta-2);
 }
 .ficha__hojaNum { margin: 0; color: var(--tinta-2); font-size: 0.85em; white-space: nowrap; }
+.ficha__subtitulo {
+  margin: 4px 0 0;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--tinta-2);
+}
+.ficha__tituloHoja {
+  margin: 0;
+  font-size: 1.2em;
+  /* Sin las mayúsculas ni el filete de los h2 de sección: este encabeza la hoja entera. */
+  text-transform: none;
+  letter-spacing: 0;
+  border: none;
+  padding: 0;
+  color: var(--tinta);
+}
+
+/* Marca de agua: identidad de la actividad arriba, atribución abajo.
+   En pantalla es una línea gris discreta; al imprimir se va al margen de la página. */
+.ficha__marca {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 0 10px;
+  font-size: 0.76em;
+  letter-spacing: 0.04em;
+  color: var(--tinta-2);
+}
+.ficha__marca--inf { display: none; }
 
 /* Ficha técnica: lo que hay que decidir antes de entrar en clase. Va primero y en rejilla
    porque se lee de un vistazo, no en orden. */
@@ -1588,10 +1623,23 @@ body {
 
 @media print {
   /* Márgenes de la propia página: sin esto, el navegador deja los suyos y el diseño se
-     descuadra según quién imprima. */
-  @page { margin: 15mm 14mm; }
+     descuadra según quién imprima. Arriba y abajo van más holgados que a los lados porque
+     ahí es donde viven las marcas de agua, colocadas DENTRO del margen. */
+  @page { margin: 17mm 14mm 16mm; }
 
-  .ficha { max-width: none; padding: 0; }
+  /* Nada de cajas en el papel. Va explícito y con `all` para el borde: una caja impresa
+     no aporta nada y roba dos centímetros de ancho por hoja. */
+  .ficha,
+  .ficha__hoja,
+  .ficha__hoja + .ficha__hoja,
+  .ficha article,
+  .ficha section {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: none;
+  }
+  .ficha { max-width: none; padding: 0; margin: 0; }
   .ficha__hoja,
   .ficha__hoja + .ficha__hoja {
     border: none;
@@ -1609,8 +1657,8 @@ body {
   .ficha__hoja:last-child { break-after: auto; }
 
   .ficha__cabecera,
-  .ficha__pie,
   .ficha__hoja h2 { border-color: #000; }
+  .ficha__tituloHoja { border: none; }
   .ficha__hoja h2 { color: #000; }
   .ficha__sobretitulo,
   .ficha__hojaNum,
@@ -1634,6 +1682,28 @@ body {
   .ficha__dosColumnas div,
   .ficha__seguimiento tr { break-inside: avoid; }
   .ficha__hoja h2 { break-after: avoid; }
+
+  /*
+    Las marcas se sacan del flujo y se colocan con desplazamiento negativo, de modo que
+    caen DENTRO del margen de `@page`: se repiten en todas las páginas y no gastan ni una
+    línea de contenido, que era justo el problema —repetir título y atribución tres veces
+    costaba casi cuatro centímetros de alto.
+
+    `position: fixed` es lo que hace que un elemento se repita en cada página al imprimir.
+    Por eso las marcas viven en el `<main>` y no dentro de cada hoja: si estuvieran dentro
+    de los tres `<article>`, se apilarían las tres en cada página.
+  */
+  .ficha__marca {
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0;
+    font-size: 7.5pt;
+    line-height: 1;
+    color: #777;
+  }
+  .ficha__marca--sup { top: -11mm; }
+  .ficha__marca--inf { bottom: -10mm; display: flex; }
 }
 
 .pista-fija {
@@ -1694,6 +1764,13 @@ body {
 }
 @media print {
   .nav { display: none; }
+  /* Y con la barra fuera, ese hueco sobra. Esta regla va DESPUÉS de la de arriba a
+     propósito: las dos tienen la misma especificidad, así que gana la última, y sin ella
+     cada hoja impresa arrastraba casi tres centímetros de blanco al pie. */
+  .catalogo,
+  .ajustes,
+  .legal,
+  .ficha { padding-bottom: 0; }
 }
 
 /* ── teclado ───────────────────────────────────────────────────────────────

@@ -70,3 +70,81 @@ describe('tokens de color', () => {
     expect(css).toMatch(/font-size:\s*15\d%/);
   });
 });
+
+/**
+ * Dos componentes distintos no pueden compartir nombre de clase.
+ *
+ * Salió de un fallo real: `.ficha` era a la vez la **tarjeta del catálogo** y la **hoja
+ * imprimible**. En castellano las dos son «una ficha», así que el nombre parecía correcto
+ * en los dos sitios. El resultado fue que el borde gris de la tarjeta se dibujaba alrededor
+ * del dosier del maestro y salía impreso, robando ancho en cada hoja.
+ *
+ * No dio ningún error: la hoja redefinía `padding` y `max-width`, así que **parecía** que
+ * mandaba, y el `border` de la otra regla se colaba por debajo sin que nada avisara.
+ */
+describe('colisiones de nombres de clase', () => {
+  /**
+   * Bloques de primer nivel: se descartan los que están dentro de una arroba.
+   *
+   * Se quitan antes los comentarios. Sin eso, el comentario que precede a una regla queda
+   * pegado al selector y `'.ficha'` nunca coincide — que es exactamente lo que pasó la
+   * primera vez que se escribió esta comprobación: pasaba en verde con la colisión puesta
+   * a propósito.
+   */
+  function bloquesDePrimerNivel(bruto: string): Array<{ selector: string; cuerpo: string }> {
+    const texto = bruto.replace(/\/\*[\s\S]*?\*\//g, ' ');
+    const bloques: Array<{ selector: string; cuerpo: string }> = [];
+    let profundidad = 0;
+    let inicio = 0;
+    let selector = '';
+    for (let i = 0; i < texto.length; i++) {
+      if (texto[i] === '{') {
+        if (profundidad === 0) {
+          selector = texto.slice(inicio, i).trim();
+          inicio = i + 1;
+        }
+        profundidad++;
+      } else if (texto[i] === '}') {
+        profundidad--;
+        if (profundidad === 0) {
+          // Una arroba (@media, @supports) contiene otras reglas: se ignora su envoltorio,
+          // y sus reglas interiores no cuentan como definición de primer nivel.
+          if (!selector.startsWith('@')) {
+            bloques.push({ selector, cuerpo: texto.slice(inicio, i) });
+          }
+          inicio = i + 1;
+        }
+      }
+    }
+    return bloques;
+  }
+
+  it('ninguna clase define caja en dos reglas distintas', () => {
+    const CAJA = /(^|[;{\s])(border|background)\s*:/;
+    const porClase = new Map<string, string[]>();
+
+    for (const { selector, cuerpo } of bloquesDePrimerNivel(css)) {
+      if (!CAJA.test(cuerpo)) continue;
+      for (const parte of selector.split(',')) {
+        // Solo el selector de una única clase, sin descendientes ni pseudoclases: `.foo`.
+        const m = parte.trim().match(/^\.([a-z0-9_-]+)$/i);
+        if (m) porClase.set(m[1]!, [...(porClase.get(m[1]!) ?? []), selector]);
+      }
+    }
+
+    const chocan = [...porClase.entries()]
+      .filter(([, donde]) => donde.length > 1)
+      .map(([clase, donde]) => `.${clase} se define con caja ${donde.length} veces`);
+
+    expect(chocan, `dos componentes comparten nombre:\n${chocan.join('\n')}`).toEqual([]);
+  });
+
+  it('la hoja imprimible no hereda caja de nadie', () => {
+    // La comprobación concreta del fallo: `.ficha` es la hoja y nada más.
+    const conCaja = bloquesDePrimerNivel(css).filter(
+      (b) => b.selector.split(',').some((p) => p.trim() === '.ficha') &&
+        /(^|[;{\s])border\s*:/.test(b.cuerpo),
+    );
+    expect(conCaja.map((b) => b.selector)).toEqual([]);
+  });
+});
