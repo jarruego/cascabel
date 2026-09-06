@@ -4,6 +4,7 @@ import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { Sampler, aMidi } from '@/audio/sampler';
 import { muestrasDe } from '@/audio/instrumentos';
 import { colorDe, nombreDe } from '@/ui/coloresNota';
+import { IconoGrabar, IconoParar, IconoTocar } from '@/ui/Transporte';
 import { GrabadorDeEventos, reproducir, type Grabacion } from '../grabacionEventos';
 import { letraDeNota, notaDeTecla, type Disposicion } from '@/ui/tecladoQwerty';
 import { Retos } from '@/ui/Retos';
@@ -74,6 +75,17 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
   const letrasQwerty = contenido.letrasQwerty ?? carril !== 'infantil';
   const disposicion = contenido.disposicionTeclado ?? 'horizontal';
   const grabable = contenido.grabable ?? true;
+
+  /**
+   * Octavas elegidas por quien está tocando, que mandan sobre lo que quepa.
+   *
+   * El ajuste automático de abajo quita octavas cuando las teclas quedarían demasiado
+   * pequeñas, y eso está bien como valor de partida. Pero **una elección explícita no se
+   * discute**: si alguien pide tres octavas en un móvil, se le dan tres y el teclado se
+   * desplaza. Decidir por él «esto no te cabe» es lo que hacía que el piano se quedara en
+   * una octava sin explicar por qué.
+   */
+  const [octavasElegidas, setOctavasElegidas] = useState<number | null>(null);
 
   /*
     Grabar sin grabar audio: se anota QUÉ nota y CUÁNDO, y reproducir es volver a tocarlas.
@@ -201,6 +213,8 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
   const anchoUtil = Math.max(0, anchoCaja - MARGEN_LATERAL * 2);
 
   const octavasVisibles = (() => {
+    // La elección explícita manda: se dibujan y, si no caben, la caja desplaza.
+    if (octavasElegidas !== null) return octavasElegidas;
     if (!anchoUtil) return octavas;
     // Se van quitando octavas hasta que las teclas caben por encima del suelo.
     for (let o = octavas; o > 1; o--) {
@@ -218,6 +232,9 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
   const anchoBlanca = anchoUtil
     ? Math.max(anchoMinimo, Math.min(ANCHO_TECLA_REAL, Math.floor(anchoUtil / blancas)))
     : 60;
+  // `anchoMinimo` es un suelo de verdad: si las octavas pedidas no caben a ese ancho, el
+  // teclado sale más ancho que la caja y ésta desplaza. Nunca teclas impracticables.
+  const desplaza = anchoBlanca * blancas > anchoUtil;
   /*
    * Tocar con el teclado del ordenador.
    *
@@ -268,6 +285,7 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
       <div
         ref={caja}
         className="teclado__caja"
+        data-desplaza={desplaza || undefined}
         role="group"
         aria-label={t('teclado.teclas')}
         onPointerDown={() => {
@@ -344,6 +362,23 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
           En la pantalla de un instrumento, cada línea que no sea teclado es teclado que se
           pierde. */}
       <div className="teclado__barra">
+        {/* Cuántas octavas. Un grupo de tres botones y no un desplegable: son tres
+            opciones, se ven las tres, y a esta edad abrir un desplegable es un paso más. */}
+        <div className="teclado__octavas" role="group" aria-label={t('teclado.octavas')}>
+          {[1, 2, 3].map((n) => (
+            <button
+              key={n}
+              type="button"
+              className="boton-repetir"
+              aria-pressed={octavasVisibles === n}
+              data-elegida={octavasVisibles === n || undefined}
+              onClick={() => setOctavasElegidas(n)}
+            >
+              {n}
+            </button>
+          ))}
+        </div>
+
         {contenido.retos && <Retos retos={contenido.retos} />}
 
         {grabable && (
@@ -364,6 +399,7 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
               }
             }}
           >
+            {grabando ? <IconoParar /> : <IconoGrabar />}
             {t(grabando ? 'teclado.parar' : 'teclado.grabar')}
           </button>
 
@@ -393,6 +429,7 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
               window.setTimeout(() => setReproduciendo(false), grabacion.duracionMs + 300);
             }}
           >
+            <IconoTocar />
             {t(reproduciendo ? 'teclado.sonando' : 'teclado.reproducir')}
           </button>
           </>

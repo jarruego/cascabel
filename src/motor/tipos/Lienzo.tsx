@@ -3,7 +3,7 @@ import { useCarril } from '@/app/preferencias';
 import { OBJETIVO_TACTIL } from '@/config';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { Sampler } from '@/audio/sampler';
-import { muestrasDe, sostiene } from '@/audio/instrumentos';
+import { instrumentosDisponibles, muestrasDe, sostiene } from '@/audio/instrumentos';
 import { Retos } from '@/ui/Retos';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
@@ -62,13 +62,31 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
   const dibujando = useRef(false);
   const ultimaFila = useRef(-1);
 
-  const instrumento = contenido.instrumento ?? 'flauta';
+  /**
+   * Instrumento elegido.
+   *
+   * **Cambiarlo cambia lo que se puede dibujar, no solo cómo suena.** Con flauta o violín
+   * una raya horizontal es una nota larga; con marimba no puede serlo, y esa misma raya se
+   * convierte en un trémolo. Que el niño pueda cambiarlo y oír la diferencia es media
+   * lección sobre qué distingue a un instrumento de otro.
+   */
+  const [instrumento, setInstrumento] = useState(contenido.instrumento ?? 'flauta');
   const puedeSostener = sostiene(instrumento);
   /** Función que suelta la nota que se está manteniendo, si hay alguna. */
   const soltar = useRef<(() => void) | null>(null);
 
+  const cargado = useRef<string | null>(null);
+
   const preparar = useCallback(async () => {
     await despertarAudio();
+    // Si ha cambiado el instrumento, el sampler anterior ya no sirve: sus muestras son
+    // otras. Se suelta lo que esté sonando antes, o quedaría una nota huérfana.
+    if (cargado.current !== instrumento) {
+      soltar.current?.();
+      soltar.current = null;
+      sampler.current = null;
+      cargado.current = instrumento;
+    }
     if (!sampler.current) {
       const s = new Sampler(muestrasDe(instrumento));
       await s.cargar();
@@ -255,6 +273,19 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
       {/* Propuestas y acciones en la misma fila: en un lienzo, cada línea que no sea
           lienzo es lienzo que se pierde. */}
       <div className="lienzo__acciones">
+        {/* Elegir instrumento. Va con `select` nativo y no con botones porque son ocho y no
+            tres: ocho botones serían una barra más larga que el propio lienzo. */}
+        <label className="lienzo__instrumento">
+          <span className="visualmente-oculto">{t('lienzo.instrumento')}</span>
+          <select value={instrumento} onChange={(e) => setInstrumento(e.target.value)}>
+            {instrumentosDisponibles().map((n) => (
+              <option key={n} value={n}>
+                {t(`instrumento.${n}`)}
+              </option>
+            ))}
+          </select>
+        </label>
+
         {contenido.retos && <Retos retos={contenido.retos} />}
         <button type="button" className="boton-repetir" onClick={() => setTrazos([])}>
           {t('lienzo.limpiar')}
