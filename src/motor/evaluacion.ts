@@ -1,4 +1,4 @@
-import { TOLERANCIA_MS, type Etapa } from '@/config';
+import { TOLERANCIA_MS, toleranciaDeEtapa, type Carril, type Etapa } from '@/config';
 
 /**
  * Evaluación rítmica.
@@ -21,8 +21,19 @@ export interface EvaluacionRitmica {
   regularPeroDesfasado: boolean;
 }
 
-export function calidadDe(errorMs: number, etapa: Etapa): Calidad {
-  const t = TOLERANCIA_MS[etapa];
+/**
+ * La tolerancia va por CARRIL (edad), no por etapa (ciclo LOMLOE): mide control motor.
+ * Se admite una etapa por comodidad, y entonces se usa la ventana más generosa de los
+ * carriles que puedan abrirla. Ver la decisión en `src/config.ts`.
+ */
+function ventana(quien: Carril | Etapa) {
+  return quien in TOLERANCIA_MS
+    ? TOLERANCIA_MS[quien as Carril]
+    : toleranciaDeEtapa(quien as Etapa);
+}
+
+export function calidadDe(errorMs: number, quien: Carril | Etapa): Calidad {
+  const t = ventana(quien);
   const abs = Math.abs(errorMs);
   if (abs <= t.perfecto) return 'perfecto';
   if (abs <= t.bien) return 'bien';
@@ -37,10 +48,10 @@ export function calidadDe(errorMs: number, etapa: Etapa): Calidad {
 export function evaluarRitmo(
   esperadosMs: number[],
   realesMs: number[],
-  etapa: Etapa,
+  quien: Carril | Etapa,
 ): EvaluacionRitmica {
   const disponibles = [...realesMs];
-  const limite = TOLERANCIA_MS[etapa].casi;
+  const limite = ventana(quien).casi;
 
   const emparejados = esperadosMs.map((esperado) => {
     let mejorIndice = -1;
@@ -60,7 +71,7 @@ export function evaluarRitmo(
       esperadoMs: esperado,
       realMs: real,
       errorMs: mejorError,
-      calidad: calidadDe(mejorError, etapa),
+      calidad: calidadDe(mejorError, quien),
     };
   });
 
@@ -76,7 +87,7 @@ export function evaluarRitmo(
     : 0;
   const desviacionTipicaMs = Math.sqrt(varianza);
 
-  const t = TOLERANCIA_MS[etapa];
+  const t = ventana(quien);
   return {
     emparejados,
     aciertos: emparejados.filter((e) => e.calidad === 'perfecto' || e.calidad === 'bien').length,

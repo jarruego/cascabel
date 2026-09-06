@@ -57,5 +57,7 @@
   "eje.cultura": "Cultura musical",
   "actividad.noEncontrada": "No encuentro esa actividad.",
   "actividad.tipoPendiente": "Este tipo de actividad todavía no está construido.",
-  "comun.volverAlIndice": "Volver a las actividades"
+  "comun.volverAlIndice": "Volver a las actividades",
+  "opcion.suena": "Suena",
+  "opcion.silencio": "Silencio"
 }
