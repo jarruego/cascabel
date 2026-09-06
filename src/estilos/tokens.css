@@ -2615,3 +2615,41 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   justify-content: center;
   margin: var(--e-3) 0;
 }
+
+/* Selector de octavas: tres botones pequeños y pegados, como un conmutador. Se ven las tres
+   opciones a la vez, que a esta edad vale más que un desplegable con dos pasos. */
+.teclado__octavas { display: flex; gap: 2px; }
+.teclado__octavas button {
+  min-width: 44px;
+  padding: var(--e-2);
+  border-radius: 0;
+}
+.teclado__octavas button:first-child { border-radius: var(--r-s) 0 0 var(--r-s); }
+.teclado__octavas button:last-child { border-radius: 0 var(--r-s) var(--r-s) 0; }
+.teclado__octavas button[data-elegida] {
+  color: var(--papel);
+  background: var(--acento-2);
+  border-color: var(--acento-2);
+  font-weight: 700;
+}
+/* Cuando las octavas pedidas no caben, la caja desplaza en vez de encoger las teclas por
+   debajo de lo acertable. El borde punteado a los lados dice que hay más teclado ahí. */
+.teclado__caja[data-desplaza] {
+  justify-content: flex-start;
+  border-left: 2px dashed var(--linea);
+  border-right: 2px dashed var(--linea);
+}
+/* Botones de transporte: icono y palabra juntos. */
+.teclado__barra button { display: inline-flex; align-items: center; gap: var(--e-2); }
+
+.lienzo__instrumento select {
+  min-height: 44px;
+  padding: var(--e-2) var(--e-3);
+  font: inherit;
+  font-size: var(--t-s);
+  color: var(--tinta);
+  background: var(--superficie);
+  border: 2px solid var(--linea);
+  border-radius: var(--r-s);
+}
+.lienzo__instrumento select:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
