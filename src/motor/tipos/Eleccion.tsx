@@ -1,20 +1,28 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useReducer, useRef } from 'react';
 import { OBJETIVO_TACTIL } from '@/config';
 import { useCarril } from '@/app/preferencias';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Boton } from '@/ui/Boton';
 import { BotonRepetir } from '@/ui/BotonRepetir';
+import {
+  ESTADO_INICIAL,
+  esperaMs,
+  pistaPara,
+  reducir,
+  type AccionEleccion,
+  type EstadoEleccion,
+} from '../maquinaEleccion';
 
 /**
  * Tipo «elección»: suena o se muestra un estímulo y el niño elige entre 2-4 opciones.
  * Cubre 10 de las 54 actividades del catálogo (¿largo o corto?, agudo o grave,
  * ¿quién ha sonado?, adagio/andante/allegro, mayor o menor...).
  *
- * Reglas que se aplican aquí y no se negocian:
- *  - Sin cronómetro, sin vidas, sin puntuación visible durante la actividad.
- *  - El fallo repite el estímulo y ofrece una pista. No hay pantalla de error.
- *  - Objetivo táctil según la etapa (75 px en Infantil).
+ * Las reglas de producto NO están aquí: viven en `../maquinaEleccion.ts`, que es puro y
+ * está cubierto por `tests/eleccion.test.ts`. Este fichero solo pinta y programa
+ * temporizadores. Si vas a cambiar cuándo se avanza o qué cuenta como intento, se cambia
+ * allí, donde hay un test que lo vigila.
  */
 
 interface Estimulo {
@@ -37,15 +45,17 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
   // El tamaño sale del CARRIL, no de la etapa: un niño de 4.º y uno de 3.º comparten
   // ciclo curricular y no comparten motricidad. Ver ADR 0005.
   const carril = useCarril(actividad.etapa);
+  const total = contenido.estimulos.length;
 
-  const [indice, setIndice] = useState(0);
-  const [aciertos, setAciertos] = useState(0);
-  const [intentos, setIntentos] = useState(0);
-  const [feedback, setFeedback] = useState<'ninguno' | 'bien' | 'casi'>('ninguno');
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [estado, despachar] = useReducer(
+    (e: EstadoEleccion, a: AccionEleccion) => reducir(e, a, total),
+    ESTADO_INICIAL,
+  );
 
-  const estimulo = contenido.estimulos[indice];
+  const estimulo = contenido.estimulos[estado.indice];
   const tam = OBJETIVO_TACTIL[carril];
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const yaTerminada = useRef(false);
 
   const reproducir = useCallback(() => {
     if (!estimulo) return;
@@ -57,39 +67,35 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
     });
   }, [estimulo]);
 
+  // Suena al llegar a cada estímulo nuevo, y al volver a él tras un fallo.
   useEffect(() => {
-    reproducir();
-  }, [reproducir]);
+    if (estado.fase === 'estimulo') reproducir();
+  }, [estado.fase, estado.indice, reproducir]);
 
-  function elegir(clave: string) {
-    if (!estimulo) return;
-    setIntentos((n) => n + 1);
+  // El feedback se muestra un rato y luego la máquina sigue. Un solo temporizador, y se
+  // cancela al desmontar: si el niño sale a mitad, no queremos que salte después.
+  useEffect(() => {
+    if (estado.fase !== 'bien' && estado.fase !== 'casi') return;
+    const id = window.setTimeout(() => despachar({ tipo: 'seguir' }), esperaMs(estado.fase));
+    return () => window.clearTimeout(id);
+  }, [estado.fase, estado.intentos]);
 
-    if (clave === estimulo.respuesta) {
-      setAciertos((n) => n + 1);
-      setFeedback('bien');
-      window.setTimeout(() => {
-        setFeedback('ninguno');
-        if (indice + 1 >= contenido.estimulos.length) {
-          alTerminar({
-            actividadId: actividad.id,
-            completada: true,
-            aciertos: aciertos + 1,
-            intentos: intentos + 1,
-          });
-        } else {
-          setIndice((i) => i + 1);
-        }
-      }, 900);
-    } else {
-      // Nunca «has fallado»: se repite el estímulo y se ofrece la pista.
-      setFeedback('casi');
-      window.setTimeout(() => {
-        setFeedback('ninguno');
-        reproducir();
-      }, 1200);
-    }
-  }
+  // El aviso de fin va en su propio efecto para que no dependa del orden de los otros.
+  useEffect(() => {
+    if (estado.fase !== 'completada' || yaTerminada.current) return;
+    yaTerminada.current = true;
+    alTerminar({
+      actividadId: actividad.id,
+      completada: true,
+      aciertos: estado.aciertos,
+      intentos: estado.intentos,
+    });
+  }, [estado.fase, estado.aciertos, estado.intentos, actividad.id, alTerminar]);
+
+  useEffect(() => () => audioRef.current?.pause(), []);
+
+  const bloqueado = estado.fase !== 'estimulo';
+  const pista = pistaPara(actividad.pistas, estado.fallosAqui);
 
   return (
     <section className="actividad" data-carril={carril} aria-labelledby="consigna">
@@ -105,21 +111,35 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
             color={o.color}
             tamano={tam}
             etiqueta={t(`opcion.${o.clave}`)}
-            onClick={() => elegir(o.clave)}
+            /* aria-disabled y no `disabled`: deshabilitar de verdad le quitaría el foco
+               a quien navega con teclado justo cuando aparece el feedback. */
+            inactivo={bloqueado}
+            onClick={() =>
+              despachar({
+                tipo: 'elegir',
+                clave: o.clave,
+                respuesta: estimulo?.respuesta ?? '',
+              })
+            }
           />
         ))}
       </div>
 
-      {/* aria-live para que un lector de pantalla anuncie el resultado. */}
+      {/* aria-live para que un lector de pantalla anuncie el resultado sin robar el foco. */}
       <p className="feedback" aria-live="polite">
-        {feedback === 'bien' && t('comun.bien')}
-        {feedback === 'casi' && (actividad.pistas?.[0] ? t(actividad.pistas[0]) : t('comun.casi'))}
+        {estado.fase === 'bien' && t('comun.bien')}
+        {estado.fase === 'casi' && (pista ? t(pista) : t('comun.casi'))}
+        {estado.fase === 'completada' && t('comun.completada')}
       </p>
 
+      {/*
+        El progreso se muestra, pero NO la puntuación: cuántas van de cuántas es
+        orientación, y cuántas has fallado es un castigo. Ver CLAUDE.md §4.
+      */}
       <progress
-        value={indice}
-        max={contenido.estimulos.length}
-        aria-label="Progreso de la actividad"
+        value={estado.indice}
+        max={total}
+        aria-label={t('comun.progreso')}
       />
     </section>
   );

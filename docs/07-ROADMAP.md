@@ -196,14 +196,35 @@ Reindexarla obliga a responder: **¿qué tolerancia rítmica se le aplica a una 
 `primaria-c2` abierta desde el carril de autónomos, la de 3.º o la de 4.º?** Es criterio
 pedagógico, no técnico, y no se adivina. Pendiente de la revisión de la maestra.
 
-### T1.1 — Motor: tipo `eleccion` terminado
+### T1.1 — Motor: tipo `eleccion` terminado `[x]`
 
-- [ ] Componente genérico que ejecuta cualquier JSON de tipo `eleccion`
-- [ ] Estados: estímulo, acierto, «casi» con pista, actividad completada
-- [ ] Sin cronómetro, sin vidas, sin puntuación visible durante el juego
-- [ ] Objetivo táctil correcto **por carril** (75 / 60 / 48 px), vía T1.0
-- [ ] Operable solo con teclado
-- [ ] Test de que un fallo **no** termina la actividad
+Cerrada el 2026-09-06.
+
+- [x] Componente genérico que ejecuta cualquier JSON de tipo `eleccion`
+- [x] Estados: estímulo, acierto, «casi» con pista, actividad completada
+- [x] Sin cronómetro, sin vidas, sin puntuación visible durante el juego
+- [x] Objetivo táctil correcto **por carril** (75 / 60 / 48 px), vía T1.0
+- [x] Operable solo con teclado
+- [x] Test de que un fallo **no** termina la actividad
+
+**Las reglas se sacaron del componente.** Viven en `src/motor/maquinaEleccion.ts`, que es
+una función pura, y `tests/eleccion.test.ts` las vigila. El motivo: «el error nunca
+castiga» es una promesa que se le hace a un maestro, y una promesa repartida entre
+manejadores de eventos no se puede demostrar. Ahora hay un test que falla si alguien
+la rompe.
+
+**Un fallo que tenía y que con niños era seguro**: no había bloqueo mientras se mostraba
+el feedback. Un niño de cuatro años da tres toques seguidos por costumbre, y eso contaba
+tres intentos y encadenaba tres avances. Ahora una respuesta fuera de la fase de estímulo
+no cuenta para nada, y hay test.
+
+**Teclado**: los botones son `<button>` nativos, así que Tab y Enter funcionan solos. Lo
+que hubo que cuidar es el bloqueo: se marca con `aria-disabled`, **no** con `disabled`,
+porque deshabilitar de verdad le arrebata el foco a quien navega con teclado justo en el
+momento en que aparece el feedback.
+
+**Pistas progresivas**: cada fallo en el mismo estímulo trae la siguiente pista del JSON, y
+a partir de ahí se repite la última. Nunca se queda sin pista y nunca dice «has fallado».
 
 ### T1.2 — Motor: tipos `emparejar` y `ordenar`
 
