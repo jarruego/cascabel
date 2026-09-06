@@ -289,5 +289,19 @@
   "cantar.sinPermiso": "No se ha dado permiso para el micrófono. Puedes cantar igual; si quieres ver si afinas, hay que permitirlo en los ajustes del navegador.",
   "actividad.c107.consigna": "Canta la nota que suena",
   "actividad.c107.enunciado": "Escucha la nota, cántala y mantenla. La aguja te dice si estás encima.",
-  "actividad.c107.pista1": "Respira antes de empezar y canta con la boca bien abierta."
+  "actividad.c107.pista1": "Respira antes de empezar y canta con la boca bien abierta.",
+  "seguir.empezar": "Poner la música",
+  "seguir.parar": "Parar",
+  "seguir.sigue": "Sigue el dibujo con el dedo mientras suena.",
+  "seguir.listo": "Toca para empezar y sigue el dibujo.",
+  "lienzo.notas": "Sonidos, del más agudo al más grave",
+  "lienzo.limpiar": "Borrar y empezar otra vez",
+  "lienzo.terminar": "Ya está",
+  "lienzo.libre": "Aquí no hay respuesta correcta: haz lo que quieras y escúchalo.",
+  "actividad.c101.consigna": "Ta y ti-ti",
+  "actividad.c101.enunciado": "Sigue el ritmo con el dedo mientras suena. Ta es un sonido largo y ti-ti son dos cortitos.",
+  "actividad.inf07.consigna": "El caracol: sube y baja",
+  "actividad.inf07.enunciado": "Dibuja con el dedo. Arriba suena agudo y abajo suena grave.",
+  "silaba.ta": "ta",
+  "silaba.titi": "ti-ti"
 }

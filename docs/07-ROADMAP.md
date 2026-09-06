@@ -687,7 +687,17 @@ detectarlo habría que medir las barras del ABC en crudo, y no compensa hoy.
       su primera visita, sobre el wifi de un colegio, para una librería que usa UNA
       actividad de quince. Excluido del precache, como Bravura: se carga cuando se abre un
       pentagrama. `tests/presupuesto.test.ts` vigila que no vuelva a entrar.
-- [ ] T2.3 — Tipo `seguir` (musicograma y karaoke) con cursor sincronizado con abcjs
+- [x] **T2.3 — Tipo `seguir`** `[x]` — cerrado el 2026-09-06. Musicograma con cursor.
+      El niño no responde nada: mira y sigue. Es la actividad más pasiva del catálogo y a
+      la vez de las más útiles, porque es donde se aprende que la música avanza en el
+      tiempo y que lo que suena se puede dibujar.
+
+      **El cursor va por `requestAnimationFrame`, no por el planificador de audio.** Animar
+      dentro del planificador adelanta el destello hasta cien milisegundos respecto al
+      sonido, y a esta edad esa es la diferencia entre entender el pulso y no entenderlo.
+
+      El bloque activo crece **además de** cambiar de color, y con `prefers-reduced-motion`
+      engorda el borde en vez de escalar. Actividad: **C1-01 «Ta y ti-ti»**.
 - [x] **T2.4 — Tipo `tocar-a-tiempo`** `[x]` — cerrado el 2026-09-06. Escucha el patrón,
       lo repites con palmadas o tocando, y se evalúa con compensación de latencia.
       `c1-02-palmea-el-ritmo` ya funciona.
@@ -746,6 +756,19 @@ detectarlo habría que medir las barras del ABC en crudo, y no compensa hoy.
 - [ ] T2.8 — Fichas imprimibles en PDF generadas desde el mismo JSON
 - [ ] T2.9 — Catálogo completo hasta las 54 actividades
 - [ ] T2.10 — Auditoría de accesibilidad con teclado y lector de pantalla
+
+### Los diez tipos de motor, terminados `[x]`
+
+Cerrado el 2026-09-06. `src/motor/registro.ts` tiene los diez tipos que
+`docs/01-ARQUITECTURA.md` planteaba: `eleccion`, `emparejar`, `ordenar`, `guia-aula`,
+`tocar-a-tiempo`, `pentagrama`, `rejilla`, `cantar`, `seguir` y `lienzo`.
+
+**A partir de aquí, añadir una actividad no toca código.** Es escribir un JSON y validarlo.
+Era la promesa del ADR 0001 y ya se puede cumplir.
+
+Falta el tipo `lienzo` en su versión completa —hoy es un lienzo de altura, y el catálogo
+prevé también dibujo libre sobre sonido y cuento sonoro— pero el motor existe y esas son
+variantes de contenido, no de código.
 
 ## Fase 3 — Crecer sin traicionarse (cuando alguien lo pida)
 
