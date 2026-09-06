@@ -110,6 +110,57 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
   }, [sonar]);
 
   /*
+    El teclado se adapta al ancho que hay, y si no cabe **quita octavas antes que
+    encoger las teclas**.
+
+    Encoger sin límite convierte un piano en una fila de rayas imposible de acertar: es
+    peor que enseñar menos notas. Así que hay un suelo por tecla, y cuando ni con una
+    octava se llega a ese suelo —una pantalla muy estrecha— se deja desbordar y la caja
+    desplaza, que al menos mantiene las teclas usables.
+
+    El ancho se MIDE, no se supone. Calcularlo de `window.innerWidth` habría fallado en
+    cuanto algo más ocupara sitio al lado, y el modo lienzo cambia el espacio disponible
+    sin que cambie la ventana.
+  */
+  const caja = useRef<HTMLDivElement | null>(null);
+  const [anchoCaja, setAnchoCaja] = useState(0);
+
+  useEffect(() => {
+    const el = caja.current;
+    if (!el) return;
+    // ResizeObserver y no el evento `resize` de la ventana: esto tiene que reaccionar
+    // también cuando cambia el contenedor sin cambiar la ventana, que es justo lo que pasa
+    // al entrar y salir del modo lienzo.
+    if (typeof ResizeObserver === 'undefined') {
+      setAnchoCaja(el.clientWidth);
+      return;
+    }
+    const ro = new ResizeObserver(([entrada]) => {
+      setAnchoCaja(entrada?.contentRect.width ?? 0);
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  /** Ancho ideal de tecla, del contrato táctil del carril. */
+  const anchoIdeal = Math.max(36, Math.round(OBJETIVO_TACTIL[carril] * 0.85));
+  /** Suelo por debajo del cual una tecla deja de ser acertable con un dedo. */
+  const anchoMinimo = 30;
+
+  const octavasVisibles = (() => {
+    if (!anchoCaja) return octavas;
+    // Se van quitando octavas hasta que las teclas caben por encima del suelo.
+    for (let o = octavas; o > 1; o--) {
+      if (anchoCaja / (7 * o) >= anchoMinimo) return o;
+    }
+    return 1;
+  })();
+
+  const blancas = 7 * octavasVisibles;
+  const anchoBlanca = anchoCaja
+    ? Math.max(anchoMinimo, Math.min(anchoIdeal, Math.floor(anchoCaja / blancas)))
+    : anchoIdeal;
+  /*
    * Tocar con el teclado del ordenador.
    *
    * Se ignora `e.repeat` porque al mantener una tecla el sistema la repite decenas de veces
@@ -124,18 +175,16 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
       if (soloBlancas && nota.includes('#')) return;
       // Fuera del rango dibujado no suena nada: lo que se oye es lo que se ve.
       const octavaNota = Number(nota.replace(/[^0-9]/g, ''));
-      if (octavaNota < desde || octavaNota >= desde + octavas) return;
+      if (octavaNota < desde || octavaNota >= desde + octavasVisibles) return;
       e.preventDefault();
       void sonar(nota);
     };
     window.addEventListener('keydown', pulsar);
     return () => window.removeEventListener('keydown', pulsar);
-  }, [desde, octavas, soloBlancas, sonar, disposicion]);
+  }, [desde, octavasVisibles, soloBlancas, sonar, disposicion]);
 
-  const anchoBlanca = Math.max(36, Math.round(OBJETIVO_TACTIL[carril] * 0.85));
-  const blancas = 7 * octavas;
   const teclas: Array<{ nota: string; negra: boolean; indice: number }> = [];
-  for (let o = 0; o < octavas; o++) {
+  for (let o = 0; o < octavasVisibles; o++) {
     BLANCAS.forEach((letra, i) => {
       teclas.push({ nota: `${letra}${desde + o}`, negra: false, indice: o * 7 + i });
       if (!soloBlancas && CON_NEGRA[i]) {
@@ -159,6 +208,7 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
       </p>
 
       <div
+        ref={caja}
         className="teclado__caja"
         role="group"
         aria-label={t('teclado.teclas')}

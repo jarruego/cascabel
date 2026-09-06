@@ -22,6 +22,14 @@ import { CuentaAtras } from '@/ui/CuentaAtras';
  * la vez son inutilizables. El toque no es el plan B, es el plan A en clase entera.
  */
 
+/**
+ * Pulsos de entrada entre el ejemplo y la respuesta: un compás.
+ *
+ * Es lo que da un director y lo que un niño necesita para colocarse. Menos no da tiempo, y
+ * más deja al grupo sin saber si ya ha empezado.
+ */
+const CUENTA_PULSOS = 4;
+
 type Fase = 'listo' | 'cuenta' | 'escuchando' | 'respondiendo' | 'resultado';
 
 export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) {
@@ -117,29 +125,59 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
     // Fase de escucha: suena el patrón.
     setFase('escuchando');
     setPulsoActual(-1);
+    // El sonido va por GOLPES: «ti-ti» son dos.
     const golpesEscucha = aMilisegundos(rejilla!, inicio, bpm);
-    golpesEscucha.forEach((ms, i) => {
+    golpesEscucha.forEach((ms) => {
       sampler.current?.tocar('C5', ms / 1000, 0.9);
+    });
+
+    // Y el cursor va por SÍLABAS, que es lo que hay escrito en pantalla. Mezclarlos es lo
+    // que hacía que a partir del primer «ti-ti» se iluminara la casilla equivocada.
+    rejilla!.inicios.forEach((pulso, i) => {
+      const ms = inicio + pulso * msPorPulso;
       temporizadores.current.push(
         window.setTimeout(() => setPulsoActual(i), ms - ctx.currentTime * 1000),
       );
     });
 
-    // Fase de respuesta: empieza un compás después del final del patrón.
-    const inicioRespuesta = inicio + (rejilla!.pulsos + 1) * msPorPulso;
+    /*
+      Fase de respuesta: empieza tras UN COMPÁS ENTERO de entrada, como la da un director.
+
+      Antes empezaba un solo pulso después del patrón, y la cuenta atrás dura más que eso:
+      a 84 ppm son casi dos segundos frente a 0,7. Los primeros golpes esperados caían con
+      la cuenta todavía en pantalla, y `tocar()` los descartaba porque la fase aún no era
+      'respondiendo'. El niño no podía acertar el principio hiciera lo que hiciera.
+    */
+    const finPatron = inicio + rejilla!.pulsos * msPorPulso;
+    const inicioRespuesta = finPatron + CUENTA_PULSOS * msPorPulso;
     // La latencia se SUMA a lo esperado: el niño responde a lo que OYE, y lo oye tarde.
     esperados.current = aMilisegundos(rejilla!, inicioRespuesta, bpm, latenciaMs());
     golpes.current = [];
     setMarcas(esperados.current.map(() => 'pendiente'));
 
-    // Al acabar el ejemplo entra la cuenta atrás; ella pasa a 'respondiendo'.
+    // Al acabar el ejemplo entra la cuenta.
     temporizadores.current.push(
       window.setTimeout(
         () => {
           setFase('cuenta');
           setPulsoActual(-1);
         },
-        inicio + rejilla!.pulsos * msPorPulso - ctx.currentTime * 1000,
+        finPatron - ctx.currentTime * 1000,
+      ),
+    );
+
+    /*
+      Y la fase de respuesta la marca EL RELOJ, no el final de la cuenta atrás.
+
+      Encadenarla al callback de un componente ataba un instante musical a una cadena de
+      `setTimeout` de React. Medio pulso de margen por delante para que un golpe algo
+      adelantado en la primera nota cuente: entrar un poco antes es lo normal, y descartarlo
+      sería castigar precisamente al que ha anticipado bien.
+    */
+    temporizadores.current.push(
+      window.setTimeout(
+        () => setFase('respondiendo'),
+        inicioRespuesta - msPorPulso * 0.5 - ctx.currentTime * 1000,
       ),
     );
 
@@ -261,7 +299,10 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
         uno hace, y eso es después del ejemplo.
       */}
       {fase === 'cuenta' && (
-        <CuentaAtras desde={2} bpm={bpm} alTerminar={() => setFase('respondiendo')} />
+        /* La cuenta ya no cambia la fase: eso lo hace el reloj. Aquí solo cuenta, en
+           tempo, con su clic por número. Un compás menos el «¡ya!», que cae encima del
+           primer golpe. */
+        <CuentaAtras desde={CUENTA_PULSOS - 1} bpm={bpm} alTerminar={() => {}} />
       )}
 
       {fase === 'escuchando' && <p aria-live="polite">{t('tocar.escucha')}</p>}

@@ -37,6 +37,16 @@ const SILABAS: Record<string, { pulsos: number; golpes: number[] }> = {
 export interface RejillaRitmica {
   /** Instantes de golpe, en pulsos desde el inicio. */
   golpes: number[];
+  /**
+   * Instante en que empieza cada SÍLABA, en pulsos. Uno por sílaba escrita.
+   *
+   * No es lo mismo que `golpes` y confundirlos fue un fallo real: «ti-ti» es **una** sílaba
+   * con **dos** golpes, así que en `ta ti-ti ta ta` hay cuatro sílabas y cinco golpes. El
+   * cursor que recorre el patrón se movía con el índice del golpe sobre una lista de
+   * sílabas, de modo que a partir del primer «ti-ti» iluminaba la casilla equivocada y se
+   * salía del final. Quien lo mirara veía el ritmo mal escrito sin que nada fallara.
+   */
+  inicios: number[];
   /** Duración total en pulsos. */
   pulsos: number;
 }
@@ -52,6 +62,7 @@ export function silabasConocidas(): string[] {
  */
 export function rejillaDesdeSilabas(silabas: string[]): RejillaRitmica {
   const golpes: number[] = [];
+  const inicios: number[] = [];
   let pulso = 0;
 
   for (const s of silabas) {
@@ -61,11 +72,12 @@ export function rejillaDesdeSilabas(silabas: string[]): RejillaRitmica {
         `Sílaba rítmica desconocida: «${s}». Conocidas: ${silabasConocidas().join(', ')}`,
       );
     }
+    inicios.push(pulso);
     for (const g of def.golpes) golpes.push(pulso + g);
     pulso += def.pulsos;
   }
 
-  return { golpes, pulsos: pulso };
+  return { golpes, inicios, pulsos: pulso };
 }
 
 /**

@@ -14,6 +14,7 @@ describe('rejilla rítmica desde sílabas', () => {
   it('«ta» es un golpe por pulso', () => {
     expect(rejillaDesdeSilabas(['ta', 'ta', 'ta', 'ta'])).toEqual({
       golpes: [0, 1, 2, 3],
+      inicios: [0, 1, 2, 3],
       pulsos: 4,
     });
   });
@@ -114,5 +115,39 @@ describe('sílabas de tercer ciclo', () => {
   it('la negra con puntillo ocupa pulso y medio', () => {
     const r = rejillaDesdeSilabas(['ta-i-ti', 'ta']);
     expect(r.golpes).toEqual([0, 1.5, 2]);
+  });
+});
+
+describe('sílabas y golpes no son lo mismo', () => {
+  /*
+    Salió de un fallo real. «ti-ti» es UNA sílaba con DOS golpes, así que en `ta ti-ti ta ta`
+    hay cuatro sílabas y cinco golpes. El cursor que recorre el patrón en pantalla se movía
+    con el índice del golpe sobre una lista de sílabas: desde el primer «ti-ti» iluminaba la
+    casilla equivocada y se salía del final. No fallaba nada, solo se veía el ritmo mal.
+  */
+  it('hay un inicio por sílaba escrita, no por golpe', () => {
+    const r = rejillaDesdeSilabas(['ta', 'ti-ti', 'ta', 'ta']);
+    expect(r.inicios).toHaveLength(4);
+    expect(r.golpes).toHaveLength(5);
+  });
+
+  it('cada sílaba empieza donde acaba la anterior', () => {
+    const r = rejillaDesdeSilabas(['ta', 'ti-ti', 'ta-a', 'ta']);
+    expect(r.inicios).toEqual([0, 1, 2, 4]);
+    expect(r.pulsos).toBe(5);
+  });
+
+  it('los dos golpes de «ti-ti» caben dentro de su sílaba', () => {
+    const r = rejillaDesdeSilabas(['ta', 'ti-ti']);
+    expect(r.inicios).toEqual([0, 1]);
+    // El segundo golpe cae a mitad del segundo pulso, no en el tercero.
+    expect(r.golpes).toEqual([0, 1, 1.5]);
+  });
+
+  it('un silencio ocupa sílaba e inicio aunque no tenga golpe', () => {
+    // Es lo que evita que el cursor se salte la casilla del silencio al recorrer el patrón.
+    const r = rejillaDesdeSilabas(['ta', 'sh', 'ta']);
+    expect(r.inicios).toEqual([0, 1, 2]);
+    expect(r.golpes).toEqual([0, 2]);
   });
 });
