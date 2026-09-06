@@ -1099,6 +1099,49 @@ porque ahí el piano tampoco tiene negra**. El teclado del ordenador dibuja el p
 Las letras se pintan **solo en las blancas y debajo del nombre de la nota**: encima de una
 tecla negra no caben sin taparla, y las negras se explican en el texto de ayuda.
 
+### T2.16 — La voz sintética, y la ficha más compacta `[~]`
+
+Trabajada el 2026-09-06. **Queda abierta a propósito**: el cierre depende de una grabación.
+
+El autor avisó de que la muestra de voz «no es una voz, es un sonido muy raro». Tenía razón
+y estaba documentado como deuda: era lo único del banco sintetizado, y se usa en **tres
+actividades de reconocimiento de timbre** donde lo que hay que identificar es *una voz*.
+
+**Se buscó una alternativa libre y no existe la que hace falta.** VCSL no tiene voz —su
+catálogo va por Hornbostel-Sachs y no hay categoría vocal—; la colección de la Universidad de
+Iowa tampoco, y además no declara licencia; el coro de VSCO 2 está en la versión de pago y un
+«aah» coral no es lo que se necesita; Commons tiene obras enteras, no notas sueltas. Queda
+Freesound con filtro CC0, donde **sí** hay material, pero elegir una muestra vocal es un
+juicio de oído y ese no se delega. Todo anotado en `11-RECURSOS-Y-REFERENTES.md` para no
+repetir la búsqueda.
+
+**Mientras tanto, síntesis de formantes.** Es lo que separa una voz de un tono: un formante
+es una resonancia **fija** del tracto vocal, así que la envolvente del espectro se queda donde
+está aunque cambie la nota. Lo que había eran cuatro armónicos de amplitud fija, cuya
+envolvente sube y baja con la altura: eso es un órgano suave. Se le añaden además las tres
+cosas que el oído usa para detectar a una máquina: **vibrato de entrada retardada** —una
+persona ataca recta y el vibrato aparece después—, **jitter y shimmer** —ninguna voz sostiene
+una nota perfectamente estable— y **aire** filtrado por los propios formantes.
+
+> **Sigue siendo una imitación.** `CLAUDE.md` §6 pide voz humana grabada, y esto no lo es.
+> Por eso la tarea queda abierta.
+
+- [ ] Grabar un «laaa» de dos segundos y pasarlo por `tools/muestras-voz.py`
+
+`tools/muestras-voz.py` convierte una grabación de móvil en muestra del banco: acepta lo que
+acepte ffmpeg, recorta los silencios por energía en ventanas de 10 ms —no muestra a muestra,
+que cortaría en cualquier cruce por cero—, **mide la altura por autocorrelación y avisa si no
+coincide con la nota declarada** —el sampler transporta desde esa nota, así que una muestra
+mal etiquetada desafina todo lo que se construya encima—, normaliza el pico a −3 dBFS como el
+resto del banco y codifica a Opus. Probado con dos ficheros de altura conocida antes de darlo
+por bueno: mide 440,4 Hz donde hay un la4 y 262,3 Hz donde hay un do4, y avisa del desajuste.
+
+**Y la ficha, más compacta**, también a petición del autor: fuera el marco decorativo —no
+decía nada que no dijera ya el blanco—, la ficha técnica en una sola línea con `flex-grow`
+para que **el dato que salta ocupe todo el ancho él solo** en vez de partirse en dos
+renglones estrechos, y cuerpo y espaciado reducidos para que no se corten las páginas. Al
+imprimir el cuerpo va en **puntos y no en píxeles**, que es la unidad del papel.
+
 ### T3.5 — Revisar los tamaños contra la investigación de NN/g `⚠️`
 
 Abierta el 2026-09-06 con la investigación de

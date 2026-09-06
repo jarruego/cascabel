@@ -62,6 +62,23 @@ actividades a mano, y las dos son CC0 o compatibles.
 | **ZapSplat** | Efectos, sección CC0 | CC0 en parte del catálogo | Solo la parte marcada CC0, y comprobándolo |
 | **OpenGameArt** | Assets de juego | CC0 en parte | Menor volumen, pero limpio |
 
+### Voz cantada: se buscó y no está
+
+El 2026-09-06 se buscó una muestra libre de **una voz cantando una nota**, que es lo que
+piden tres actividades de reconocimiento de timbre. Resultado, para no repetir la búsqueda:
+
+| Fuente | Qué se comprobó | Veredicto |
+|---|---|---|
+| **VCSL** | Su catálogo se organiza por la clasificación de Hornbostel-Sachs: aerófonos, cordófonos, electrófonos, idiófonos y membranófonos. **No hay categoría vocal**, y dentro de los aerófonos libres solo hay armónicas y una sirena | **No tiene voz** |
+| **Universidad de Iowa (Electronic Music Studios)** | Maderas, metales, cuerda, percusión, piano y objetos encontrados | **No tiene voz**, y además **no declara licencia** en ninguna parte de su web, así que estaba descartada de todos modos |
+| **VSCO 2 CE** | CC0, pero es orquestal; el coro está en la versión de pago | No sirve. Y un «aah» de coro no es lo que hace falta: un niño tiene que reconocer *una* voz, no una masa coral |
+| **Wikimedia Commons** | Tiene grabaciones vocales, pero son obras completas, no notas aisladas | No sirve para muestrear |
+| **Freesound (filtro CC0)** | Sí hay material vocal CC0 | **Vía abierta, pero exige escuchar.** Elegir una muestra vocal es un juicio de oído, y ese no se delega |
+
+**Conclusión: hay que grabarla.** Son treinta segundos con un móvil, sale CC0 o CC BY-SA
+según se quiera, y encaja con lo que este mismo documento ya decía abajo. `tools/muestras-voz.py`
+hace el resto: recorta, mide la altura, avisa si no es la nota declarada, normaliza y codifica.
+
 **Lo que falta de verdad no es material, son las locuciones.** Toda instrucción tiene que
 existir en audio con **voz humana grabada**, nunca sintetizada (regla 1 de `04-DISENO-UI.md`),
 y eso no está en ningún repositorio: hay que grabarlo. Es la única dependencia del proyecto
