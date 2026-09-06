@@ -107,6 +107,15 @@ export interface Actividad {
     indicador2?: string;
     indicador3?: string;
   };
+  /**
+   * Es también un instrumento o una herramienta de aula: algo que se usa libremente, sin
+   * solución ni final. Sale en la pantalla de Instrumentos.
+   *
+   * **Y una que además tenga criterio curricular sale también en el catálogo.** No es
+   * duplicar: el editor de melodías es un instrumento *y* una actividad del criterio 4.1, y
+   * quien lo busca por una vía no lo busca por la otra.
+   */
+  herramienta?: boolean;
   estado?: 'borrador' | 'revision-pedagogica' | 'publicada';
 }
 

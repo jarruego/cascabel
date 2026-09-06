@@ -17,7 +17,8 @@
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c1-02-palmea-el-ritmo",
@@ -34,7 +35,8 @@
         "criterio": "3.1",
         "saber": "D. Práctica instrumental, vocal y corporal"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c1-03-el-pulso-escondido",
@@ -51,7 +53,8 @@
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c1-04-constructor-de-ritmos",
@@ -68,7 +71,8 @@
         "criterio": "3.2",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c1-05-musicograma-a-b",
@@ -85,7 +89,8 @@
         "criterio": "1.1",
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c1-06-la-escalera-de-notas",
@@ -102,7 +107,8 @@
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c1-07-canta-la-nota",
@@ -119,7 +125,8 @@
         "criterio": "3.1",
         "saber": "D. Práctica instrumental, vocal y corporal"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c1-08-memory-de-instrumentos",
@@ -136,7 +143,8 @@
         "criterio": "1.1",
         "saber": "D. Escucha y percepción: cualidades del sonido y familias instrumentales"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c1-09-percusion-corporal",
@@ -153,7 +161,8 @@
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c1-10-construye-un-cotidiofono",
@@ -170,7 +179,8 @@
         "criterio": "4.2",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c1-11-el-mando-del-director",
@@ -187,7 +197,8 @@
         "criterio": "3.2",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c1-12-la-rueda-del-compas",
@@ -204,7 +215,8 @@
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c1-13-pregunta-y-respuesta",
@@ -221,7 +233,8 @@
         "criterio": "3.2",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c1-14-notas-que-caen",
@@ -238,7 +251,8 @@
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c1-15-ritmo-de-ocho",
@@ -255,7 +269,8 @@
         "criterio": "3.1",
         "saber": "D. Práctica instrumental, vocal y corporal"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c1-16-compon-con-la-escala",
@@ -272,7 +287,8 @@
         "criterio": "4.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c1-18-la-escalera-que-cae",
@@ -289,7 +305,8 @@
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c1-19-adivina-quien-baja",
@@ -306,7 +323,8 @@
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c2-01-coloca-la-nota",
@@ -323,7 +341,8 @@
         "criterio": "3.1",
         "saber": "D. Lenguajes musicales: aplicación de sus conceptos básicos"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c2-02-dictado-ritmico",
@@ -340,7 +359,8 @@
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c2-03-dictado-melodico",
@@ -357,7 +377,8 @@
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c2-04-flauta-digitaciones",
@@ -374,7 +395,8 @@
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c2-05-toca-con-la-flauta",
@@ -391,7 +413,8 @@
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c2-06-pon-las-barras",
@@ -408,7 +431,8 @@
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c2-07-improvisa-en-pentatonica",
@@ -425,7 +449,8 @@
         "criterio": "3.2",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c2-08-ordena-el-rondo",
@@ -442,7 +467,8 @@
         "criterio": "1.2",
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c2-09-adagio-andante-allegro",
@@ -459,7 +485,8 @@
         "criterio": "1.1",
         "saber": null
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c2-10-ostinato-a-dos-planos",
@@ -476,7 +503,8 @@
         "criterio": "4.2",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c2-11-instrumentos-del-mundo",
@@ -493,7 +521,8 @@
         "criterio": "1.2",
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c2-12-canon-a-dos-voces",
@@ -510,7 +539,8 @@
         "criterio": "4.2",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c2-13-graba-tu-paisaje-sonoro",
@@ -527,7 +557,8 @@
         "criterio": "3.2",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c2-14-himno-de-la-alegria",
@@ -544,7 +575,8 @@
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c2-15-lee-las-figuras",
@@ -561,7 +593,8 @@
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c2-16-cuatro-bandas",
@@ -578,7 +611,8 @@
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c3-01-tonos-y-semitonos",
@@ -595,7 +629,8 @@
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c3-02-sincopa-y-contratiempo",
@@ -612,7 +647,8 @@
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c3-03-editor-de-melodias",
@@ -629,7 +665,8 @@
         "criterio": "4.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": true
     },
     {
       "id": "c3-04-mapa-de-una-obra",
@@ -646,7 +683,8 @@
         "criterio": "1.2",
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c3-05-mayor-o-menor",
@@ -663,7 +701,8 @@
         "criterio": "1.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c3-06-el-seis-por-ocho",
@@ -680,7 +719,8 @@
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c3-07-componed-un-rondo",
@@ -697,7 +737,8 @@
         "criterio": "4.1",
         "saber": null
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c3-08-de-quien-es-esta-musica",
@@ -714,7 +755,8 @@
         "criterio": "2.2",
         "saber": "B. Ética: licencias, plagio y derechos de autor"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c3-09-la-serie-armonica",
@@ -731,7 +773,8 @@
         "criterio": "2.2",
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c3-10-ritmo-de-doce",
@@ -748,7 +791,8 @@
         "criterio": "3.1",
         "saber": "D. Práctica instrumental, vocal y corporal"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c3-11-melodia-larga",
@@ -765,7 +809,8 @@
         "criterio": "4.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "c3-12-compon-por-pistas",
@@ -782,7 +827,8 @@
         "criterio": "4.1",
         "saber": "D. Lenguajes y práctica musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": true
     },
     {
       "id": "inf-01-semaforo-del-sonido",
@@ -799,7 +845,8 @@
         "criterio": "3.5",
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "inf-02-largo-o-corto",
@@ -816,7 +863,8 @@
         "criterio": "2.1",
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "inf-03-el-raton-y-el-elefante",
@@ -833,7 +881,8 @@
         "criterio": "2.1",
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "inf-04-el-pajaro-y-el-oso",
@@ -850,7 +899,8 @@
         "criterio": "2.1",
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "inf-05-paisaje-sonoro",
@@ -867,7 +917,8 @@
         "criterio": "2.1",
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "inf-06-dibuja-el-sonido",
@@ -884,7 +935,8 @@
         "criterio": "4.1",
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "inf-07-el-caracol-sube-y-baja",
@@ -901,7 +953,8 @@
         "criterio": "3.5",
         "saber": "F. Lenguaje y expresión musical — el sonido y sus cualidades"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "inf-08-camina-corre-para",
@@ -918,7 +971,8 @@
         "criterio": "3.6",
         "saber": "H. Interés e iniciativa en la participación en manifestaciones artísticas y corporales"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "inf-09-eco-de-palmas",
@@ -935,7 +989,8 @@
         "criterio": "3.5",
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "inf-10-cajas-de-sonidos",
@@ -952,7 +1007,8 @@
         "criterio": "2.1",
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "inf-11-cancion-con-pictogramas",
@@ -969,7 +1025,8 @@
         "criterio": "3.5",
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "inf-12-danza-de-corro",
@@ -986,7 +1043,8 @@
         "criterio": "3.6",
         "saber": "H. Interés e iniciativa en la participación en manifestaciones artísticas y corporales"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "inf-13-quien-ha-sonado",
@@ -1003,7 +1061,8 @@
         "criterio": "1.1",
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "inf-14-el-cuento-sonoro",
@@ -1020,7 +1079,8 @@
         "criterio": "3.5",
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "inf-15-de-grave-a-agudo",
@@ -1037,7 +1097,8 @@
         "criterio": "2.1",
         "saber": "F. Lenguaje y expresión musical — el sonido y sus cualidades"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "inf-16-animales-que-bajan",
@@ -1054,7 +1115,8 @@
         "criterio": "3.5",
         "saber": "F. Lenguaje y expresión musical"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": false
     },
     {
       "id": "tr-01-afinador-visual",
@@ -1071,7 +1133,8 @@
         "criterio": null,
         "saber": null
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": true
     },
     {
       "id": "tr-02-metronomo-y-calibrador",
@@ -1088,7 +1151,8 @@
         "criterio": null,
         "saber": null
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": true
     },
     {
       "id": "tr-03-caja-de-sonidos",
@@ -1105,7 +1169,8 @@
         "criterio": null,
         "saber": null
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": true
     },
     {
       "id": "tr-04-creditos-de-donde-sale-esto",
@@ -1122,7 +1187,8 @@
         "criterio": "2.2",
         "saber": "B. Ética: licencias, plagio y derechos de autor"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": true
     },
     {
       "id": "tr-05-piano",
@@ -1139,7 +1205,8 @@
         "criterio": "3.1",
         "saber": "D. Práctica instrumental, vocal y corporal"
       },
-      "estado": "borrador"
+      "estado": "borrador",
+      "herramienta": true
     }
   ]
 }

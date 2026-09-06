@@ -457,6 +457,10 @@
           "maxLength": 600
         }
       }
+    },
+    "herramienta": {
+      "type": "boolean",
+      "description": "Si esta actividad es tambien un instrumento o una herramienta de aula: algo que se usa libremente, sin solucion ni final. Aparece en la pantalla de Instrumentos. Una que ademas tenga criterio curricular sale tambien en el catalogo, y eso no es duplicar: es que es las dos cosas."
     }
   },
   "allOf": [
