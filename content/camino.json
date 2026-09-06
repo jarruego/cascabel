@@ -1,0 +1,243 @@
+{
+  "$comment": "El camino sugerido. NO es un itinerario obligatorio y no bloquea nada: cualquier actividad se puede abrir desde el primer dia, este o no marcada como hecha, y el orden es una recomendacion del maestro, no una condicion del programa (CLAUDE.md §1: «es una biblioteca, no un metodo cerrado»). Solo lista actividades que existen en content/actividades; tests/camino.test.ts lo comprueba.",
+  "generado": "2026-09-07",
+  "caminos": [
+    {
+      "etapa": "infantil",
+      "titulo": "Infantil, de 3 a 6 años",
+      "resumen": "Antes de leer una nota hay que oírla. Todo este camino va de escuchar, moverse y jugar con el sonido; no aparece ni un pentagrama.",
+      "pasos": [
+        {
+          "titulo": "¿Suena o no suena?",
+          "idea": "Lo primero que se aprende no es un sonido: es el silencio, y que se puede estar callado a propósito.",
+          "actividades": [
+            "inf-01-semaforo-del-sonido",
+            "inf-02-largo-o-corto"
+          ]
+        },
+        {
+          "titulo": "Grave y agudo",
+          "idea": "El ratón y el elefante. Grave y agudo se entienden por el tamaño del animal mucho antes que por la palabra.",
+          "actividades": [
+            "inf-03-el-raton-y-el-elefante",
+            "inf-04-el-pajaro-y-el-oso",
+            "inf-15-de-grave-a-agudo"
+          ]
+        },
+        {
+          "titulo": "¿Quién ha sonado?",
+          "idea": "Reconocer un instrumento con los ojos cerrados. Es la primera vez que escuchar es una tarea y no algo que pasa de fondo.",
+          "actividades": [
+            "inf-13-quien-ha-sonado",
+            "inf-05-paisaje-sonoro",
+            "inf-10-cajas-de-sonidos",
+            "inf-18-cuatro-instrumentos"
+          ]
+        },
+        {
+          "titulo": "El pulso está en el cuerpo",
+          "idea": "El pulso no se explica, se camina. A esta edad va en los pies y en las manos, nunca en un dibujo.",
+          "actividades": [
+            "inf-09-eco-de-palmas",
+            "inf-08-camina-corre-para",
+            "inf-17-palmas-y-rodillas",
+            "inf-12-danza-de-corro"
+          ]
+        },
+        {
+          "titulo": "Sube y baja",
+          "idea": "La melodía como una línea que sube y baja. Es la idea de la que saldrá el pentagrama dentro de dos años.",
+          "actividades": [
+            "inf-07-el-caracol-sube-y-baja",
+            "inf-11-cancion-con-pictogramas",
+            "inf-16-animales-que-bajan"
+          ]
+        },
+        {
+          "titulo": "Inventar",
+          "idea": "Sin respuesta correcta y sin prisa. Aquí lo que se practica es atreverse.",
+          "actividades": [
+            "inf-06-dibuja-el-sonido",
+            "inf-14-el-cuento-sonoro",
+            "tr-03-caja-de-sonidos"
+          ]
+        }
+      ]
+    },
+    {
+      "etapa": "primaria-c1",
+      "titulo": "Primer ciclo, 1.º y 2.º",
+      "resumen": "Aparecen las figuras y los nombres de las notas, pero siempre después de haberlas hecho con el cuerpo o con la voz. Primero se hace, luego se escribe.",
+      "pasos": [
+        {
+          "titulo": "Ta y ti-ti",
+          "idea": "Poner nombre a lo que ya se sabía hacer. La negra y las dos corcheas son un modo de decir un ritmo, no un dibujo que memorizar.",
+          "actividades": [
+            "c1-01-ta-y-ti-ti",
+            "c1-02-palmea-el-ritmo",
+            "c1-03-el-pulso-escondido"
+          ]
+        },
+        {
+          "titulo": "El compás",
+          "idea": "Por qué los pulsos van de dos en dos o de cuatro en cuatro. El acento es lo que se oye; la barra de compás solo lo escribe.",
+          "actividades": [
+            "c1-12-la-rueda-del-compas",
+            "c1-15-ritmo-de-ocho",
+            "tr-02-metronomo-y-calibrador"
+          ]
+        },
+        {
+          "titulo": "El ritmo con el cuerpo",
+          "idea": "Cuatro sonidos que siempre se llevan encima. Es lo que permite trabajar ritmo con treinta niños sin repartir nada.",
+          "actividades": [
+            "c1-20-manos-y-pies",
+            "c1-09-percusion-corporal"
+          ]
+        },
+        {
+          "titulo": "Las notas suben y bajan",
+          "idea": "De la línea que sube y baja de Infantil a notas con nombre y sitio propio.",
+          "actividades": [
+            "c1-06-la-escalera-de-notas",
+            "c1-18-la-escalera-que-cae",
+            "c1-07-canta-la-nota"
+          ]
+        },
+        {
+          "titulo": "Tocar lo que llega",
+          "idea": "Leer con el tiempo encima. Cuesta más que leer parado, y es lo que hace falta para tocar en grupo.",
+          "actividades": [
+            "c1-14-notas-que-caen",
+            "c1-19-adivina-quien-baja",
+            "tr-05-piano"
+          ]
+        },
+        {
+          "titulo": "Timbres",
+          "idea": "De qué está hecho un sonido. Con el kit y con un cotidiáfono construido en clase, que suele enseñar más que el kit.",
+          "actividades": [
+            "c1-08-memory-de-instrumentos",
+            "tr-06-kit-de-percusion",
+            "c1-10-construye-un-cotidiofono"
+          ]
+        },
+        {
+          "titulo": "Inventar con lo que ya se sabe",
+          "idea": "Componer con cuatro figuras y cinco notas. Con menos opciones sale antes algo que suena bien, y eso es lo que hace que se quiera seguir.",
+          "actividades": [
+            "c1-04-constructor-de-ritmos",
+            "c1-16-compon-con-la-escala",
+            "c1-13-pregunta-y-respuesta",
+            "c1-11-el-mando-del-director",
+            "c1-05-musicograma-a-b"
+          ]
+        }
+      ]
+    },
+    {
+      "etapa": "primaria-c2",
+      "titulo": "Segundo ciclo, 3.º y 4.º",
+      "resumen": "El ciclo del pentagrama y de la flauta. Es donde más se pierde gente, así que cada paso llega después de haberlo oído y cantado.",
+      "pasos": [
+        {
+          "titulo": "El pentagrama de verdad",
+          "idea": "Cinco líneas y cuatro espacios. Antes de escribir en él hay que poder leer una nota sin contar desde abajo cada vez.",
+          "actividades": [
+            "c2-01-coloca-la-nota",
+            "c2-15-lee-las-figuras"
+          ]
+        },
+        {
+          "titulo": "Escribir lo que se oye",
+          "idea": "El dictado es la prueba de que se está escuchando de verdad. Empieza por el ritmo, que es más fácil de retener que la altura.",
+          "actividades": [
+            "c2-02-dictado-ritmico",
+            "c2-03-dictado-melodico",
+            "c2-06-pon-las-barras"
+          ]
+        },
+        {
+          "titulo": "La flauta",
+          "idea": "Si, la y sol, y nada más durante bastante tiempo. Tres notas bien dan más música que ocho regular.",
+          "actividades": [
+            "c2-04-flauta-digitaciones",
+            "c2-05-toca-con-la-flauta",
+            "tr-01-afinador-visual"
+          ]
+        },
+        {
+          "titulo": "Tocar melodías enteras",
+          "idea": "Una pieza que se reconoce al oírla. Es la recompensa de todo lo anterior y conviene no retrasarla más de la cuenta.",
+          "actividades": [
+            "c2-14-himno-de-la-alegria",
+            "c2-16-cuatro-bandas"
+          ]
+        },
+        {
+          "titulo": "Forma y carácter",
+          "idea": "Que una obra tiene partes, y que la velocidad cambia lo que cuenta.",
+          "actividades": [
+            "c2-08-ordena-el-rondo",
+            "c2-09-adagio-andante-allegro",
+            "c2-11-instrumentos-del-mundo"
+          ]
+        },
+        {
+          "titulo": "Crear y grabar",
+          "idea": "Improvisar sin poder equivocarse: en pentatónica no hay nota mala, y eso cambia por completo quién se atreve.",
+          "actividades": [
+            "c2-07-improvisa-en-pentatonica",
+            "c2-10-ostinato-a-dos-planos",
+            "c2-12-canon-a-dos-voces",
+            "c2-13-graba-tu-paisaje-sonoro"
+          ]
+        }
+      ]
+    },
+    {
+      "etapa": "primaria-c3",
+      "titulo": "Tercer ciclo, 5.º y 6.º",
+      "resumen": "Ya hay oficio suficiente para hablar de tonos, de síncopas y de compositores. Y para componer algo largo, que es lo que de verdad demuestra que se ha entendido.",
+      "pasos": [
+        {
+          "titulo": "Tonos y semitonos",
+          "idea": "La distancia entre dos notas explica por qué una escala suena alegre y otra triste. Es la primera idea abstracta del camino.",
+          "actividades": [
+            "c3-01-tonos-y-semitonos",
+            "c3-05-mayor-o-menor"
+          ]
+        },
+        {
+          "titulo": "Ritmos que cuestan",
+          "idea": "Síncopa, contratiempo y el 6/8. Se hacen con el cuerpo primero, igual que en primero, porque siguen sin entrar por los ojos.",
+          "actividades": [
+            "c3-02-sincopa-y-contratiempo",
+            "c3-10-ritmo-de-doce",
+            "c3-13-los-cuatro-sonidos",
+            "c3-06-el-seis-por-ocho"
+          ]
+        },
+        {
+          "titulo": "Escuchar una obra entera",
+          "idea": "Seguir cinco minutos de música sabiendo dónde se está. Es la escucha que pide el criterio 1.2 y la que no se practica casi nunca.",
+          "actividades": [
+            "c3-04-mapa-de-una-obra",
+            "c3-08-de-quien-es-esta-musica",
+            "c3-09-la-serie-armonica"
+          ]
+        },
+        {
+          "titulo": "Componer de verdad",
+          "idea": "Ocho compases con principio y final, y varias voces a la vez. Aquí se ve todo lo que se ha aprendido, o lo que falta.",
+          "actividades": [
+            "c3-03-editor-de-melodias",
+            "c3-11-melodia-larga",
+            "c3-12-compon-por-pistas",
+            "c3-07-componed-un-rondo"
+          ]
+        }
+      ]
+    }
+  ]
+}

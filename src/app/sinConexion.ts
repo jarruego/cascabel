@@ -28,7 +28,10 @@ async function rutasDeContenido(): Promise<string[]> {
     actividades: Array<{ id: string }>;
   };
 
-  const rutas = new Set<string>([`${APP.rutaContenido}/indice.json`]);
+  const rutas = new Set<string>([
+    `${APP.rutaContenido}/indice.json`,
+    `${APP.rutaContenido}/camino.json`,
+  ]);
   for (const a of indice.actividades) {
     const ruta = `${APP.rutaContenido}/actividades/${a.id}.json`;
     rutas.add(ruta);

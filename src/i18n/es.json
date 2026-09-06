@@ -906,5 +906,9 @@
   "ficha.tipo.pads.observar": "Si el niño distingue las familias por el sonido y no solo por el dibujo, y si con el pulso puesto ajusta él solo. El ajuste espontáneo es la señal de que está escuchando y no solo tocando.",
   "ficha.tipo.pads.indicador1": "Distingue las familias de oído",
   "ficha.tipo.pads.indicador2": "Toca a tiempo con el pulso",
-  "ficha.tipo.pads.indicador3": "Repite un patrón sin perderlo"
+  "ficha.tipo.pads.indicador3": "Repite un patrón sin perderlo",
+  "nav.camino": "Camino",
+  "camino.noBloquea": "Un orden sugerido, no obligatorio. Nada está bloqueado: puedes abrir cualquier actividad hoy mismo y empezar por donde quieras.",
+  "camino.hecha": "Ya la abriste",
+  "camino.paraElMaestro": "Este orden es una propuesta, no una programación. Cada paso agrupa actividades que se apoyan unas en otras; el ritmo lo pone la clase."
 }

@@ -3087,3 +3087,104 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   .pads__pad { transition: none; }
   .pads__pad[data-sonando] { transform: none; }
 }
+
+/* ---------------------------------------------------------------------------
+ * El camino (pantalla /camino).
+ *
+ * Se parece a un itinerario de app de idiomas y no lo es: no hay candados, ni barra de
+ * progreso, ni racha. Lo único que cambia con lo hecho es una etiqueta de «ya la abriste»,
+ * que lleva TEXTO además de color, porque el color no informa solo (§6).
+ * ------------------------------------------------------------------------ */
+.camino__etapa { margin: var(--e-5) 0; }
+.camino__etapa h2 { margin: 0; }
+
+.camino__cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e-3);
+  width: 100%;
+  min-height: var(--objetivo);
+  padding: var(--e-3) var(--e-4);
+  font: inherit;
+  font-size: var(--t-l);
+  font-weight: 700;
+  color: var(--tinta);
+  text-align: left;
+  background: var(--superficie);
+  border: 2px solid var(--linea);
+  border-radius: var(--r-m);
+  cursor: pointer;
+}
+.camino__cabecera:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
+.camino__flecha { color: var(--tinta-2); }
+
+.camino__resumen {
+  margin: var(--e-3) var(--e-2);
+  color: var(--tinta-2);
+  max-width: 62ch;
+}
+
+.camino__pasos {
+  margin: var(--e-4) 0;
+  padding: 0;
+  list-style: none;
+}
+.camino__paso {
+  display: flex;
+  gap: var(--e-3);
+  padding: var(--e-3) 0;
+  /* La línea vertical que une los pasos: es lo que hace que se lea como un recorrido y no
+     como cuatro listas sueltas. */
+  border-left: 3px solid var(--linea);
+  padding-left: var(--e-4);
+  margin-left: var(--e-3);
+}
+.camino__numero {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin-left: calc(var(--e-4) * -1 - 1rem - 1.5px);
+  font-weight: 700;
+  color: var(--papel);
+  background: var(--tinta-2);
+  border-radius: var(--r-redondo);
+}
+.camino__cuerpo { flex: 1; min-width: 0; }
+.camino__titulo { margin: 0 0 var(--e-1); font-size: var(--t-m); }
+.camino__idea { margin: 0 0 var(--e-2); color: var(--tinta-2); max-width: 62ch; }
+
+.camino__actividades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.camino__enlace {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+  min-height: var(--objetivo);
+  padding: var(--e-2) var(--e-3);
+  color: var(--tinta);
+  text-decoration: none;
+  background: var(--superficie);
+  border: 2px solid var(--linea);
+  border-radius: var(--r-s);
+}
+.camino__enlace:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
+.camino__enlace[data-hecha] { border-color: var(--vivo-verde); }
+.camino__hecha {
+  padding: var(--e-0) var(--e-2);
+  font-size: var(--t-xs);
+  color: var(--papel);
+  background: var(--vivo-verde);
+  border-radius: var(--r-redondo);
+}
+
+/* Cinco destinos en la barra: el rótulo tiene que poder partirse sin desbordar. */
+.nav__enlace span { text-align: center; line-height: 1.1; }
