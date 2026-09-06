@@ -95,18 +95,38 @@ export const SEPARACION: Record<Carril, number> = {
 };
 
 /**
- * Ventanas de acierto rítmico en milisegundos. Un adulto entrenado acierta a ±30 ms; un
- * niño no.
+ * Ventanas de acierto rítmico en milisegundos, POR CARRIL. Un adulto entrenado acierta a
+ * ±30 ms; un niño no.
  *
- * Sigue indexado por ETAPA, no por carril, y es una decisión provisional: la tabla de
- * CLAUDE.md §7 está escrita por edades (3-5, 6-8, 9-12), que es forma de carril, no de
- * ciclo. Pero la tolerancia la consume `evaluacion.ts` a partir de la actividad, que solo
- * declara etapa. Reindexarlo obliga a decidir qué tolerancia aplica a una actividad de
- * `primaria-c2` abierta desde cada carril. Anotado en el roadmap; no se adivina aquí.
+ * DECISIÓN (2026-09-06, delegada por el autor). Va por carril y no por etapa porque la
+ * tabla de la que sale —`CLAUDE.md` §7 y el dosier— **está escrita por edades** (3-5, 6-8,
+ * 9-12), y una edad es forma de carril, no de ciclo LOMLOE. Lo que mide una tolerancia es
+ * control motor, y el control motor va con la edad del niño, no con el curso en el que el
+ * BOE coloca un saber básico.
+ *
+ * Consecuencia práctica: una misma actividad de `primaria-c2` se evalúa con 100 ms para un
+ * niño de 3.º y con 70 para uno de 4.º. Eso es lo correcto: el feedback tiene que ajustarse
+ * al niño que lo recibe, no al fichero. Y no incumple la regla 4 de `CLAUDE.md`, porque una
+ * ventana más estrecha no castiga: cambia la pista, nunca termina la actividad.
+ *
+ * **Pendiente de revisión pedagógica.** Las cifras son las convencionales que ya estaban
+ * documentadas; lo que se decide aquí es el eje por el que se indexan.
  */
-export const TOLERANCIA_MS: Record<Etapa, { perfecto: number; bien: number; casi: number }> = {
+export const TOLERANCIA_MS: Record<Carril, { perfecto: number; bien: number; casi: number }> = {
   infantil: { perfecto: 150, bien: 250, casi: 400 },
-  'primaria-c1': { perfecto: 100, bien: 180, casi: 300 },
-  'primaria-c2': { perfecto: 100, bien: 180, casi: 300 },
-  'primaria-c3': { perfecto: 70, bien: 130, casi: 220 },
+  lectores: { perfecto: 100, bien: 180, casi: 300 },
+  autonomos: { perfecto: 70, bien: 130, casi: 220 },
 };
+
+/**
+ * Tolerancia cuando solo se conoce la etapa y no quién está delante.
+ *
+ * Devuelve la MÁS GENEROSA de los carriles que pueden abrir esa etapa. Ante la duda nunca
+ * se aprieta: equivocarse hacia el lado ancho hace que un niño se sienta capaz, y hacia el
+ * estrecho hace que uno con buen pulso se sienta torpe. Las dos equivocaciones no cuestan
+ * lo mismo.
+ */
+export function toleranciaDeEtapa(etapa: Etapa) {
+  const candidatos = carrilesDe(etapa).map((c) => TOLERANCIA_MS[c]);
+  return candidatos.reduce((a, b) => (a.perfecto >= b.perfecto ? a : b));
+}

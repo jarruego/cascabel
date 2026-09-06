@@ -318,3 +318,18 @@ body {
   outline: 4px solid var(--acento);
   outline-offset: 3px;
 }
+
+.boton__icono {
+  display: grid;
+  place-items: center;
+}
+/* El color del eje llega al icono por currentColor, y siempre acompaña a una forma. */
+.boton--verde { color: var(--ok); border-color: var(--ok); }
+.boton--azul { color: var(--eje-altura); border-color: var(--eje-altura); }
+.boton--rojo { color: var(--acento); border-color: var(--acento); }
+.boton--amarillo { color: var(--eje-creacion); border-color: var(--eje-creacion); }
+.boton__texto { color: var(--tinta); font-weight: 700; }
+.feedback {
+  min-height: 2.5em;
+  font-size: 1.15em;
+}

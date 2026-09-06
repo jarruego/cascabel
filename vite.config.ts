@@ -1,7 +1,7 @@
 import { defineConfig, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
-import { cpSync, existsSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath, URL } from 'node:url';
 
@@ -16,8 +16,22 @@ import { fileURLToPath, URL } from 'node:url';
  */
 function contenido(): Plugin {
   const origen = fileURLToPath(new URL('./content', import.meta.url));
+
+  /** Todos los ficheros de content/, con su ruta relativa en POSIX. */
+  function listar(dir: string, prefijo = ''): Array<{ relativa: string; absoluta: string }> {
+    const salida: Array<{ relativa: string; absoluta: string }> = [];
+    for (const entrada of readdirSync(dir, { withFileTypes: true })) {
+      const absoluta = join(dir, entrada.name);
+      const relativa = prefijo ? `${prefijo}/${entrada.name}` : entrada.name;
+      if (entrada.isDirectory()) salida.push(...listar(absoluta, relativa));
+      else salida.push({ relativa, absoluta });
+    }
+    return salida;
+  }
+
   return {
     name: 'cascabel-contenido',
+
     configureServer(servidor) {
       // Explícito a propósito: en desarrollo funcionaba porque Vite sirve la raíz del
       // proyecto, que es una casualidad y no un contrato. Así dev y producción sirven
@@ -36,9 +50,18 @@ function contenido(): Plugin {
         respuesta.end(readFileSync(fichero));
       });
     },
-    closeBundle() {
-      const destino = fileURLToPath(new URL('./dist/content', import.meta.url));
-      cpSync(origen, destino, { recursive: true });
+
+    // Se emite como parte del bundle en vez de copiarlo a mano después. Así lo escribe
+    // Rollup con el resto, entra en el manifiesto —y por tanto en el precache de la PWA—
+    // y no hay carrera con ficheros que Windows tenga bloqueados.
+    generateBundle() {
+      for (const { relativa, absoluta } of listar(origen)) {
+        this.emitFile({
+          type: 'asset',
+          fileName: `content/${relativa}`,
+          source: readFileSync(absoluta),
+        });
+      }
     },
   };
 }

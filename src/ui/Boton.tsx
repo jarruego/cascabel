@@ -1,3 +1,5 @@
+import { Icono } from './Icono';
+
 interface Props {
   icono: string;
   color: string;
@@ -26,7 +28,9 @@ export function Boton({ icono, color, tamano, etiqueta, inactivo = false, onClic
       onClick={inactivo ? undefined : onClick}
       aria-label={etiqueta}
     >
-      <span className="boton__icono" aria-hidden="true" data-icono={icono} />
+      <span className="boton__icono" aria-hidden="true">
+        <Icono nombre={icono} tamano={Math.round(tamano * 0.5)} />
+      </span>
       <span className="boton__texto">{etiqueta}</span>
     </button>
   );

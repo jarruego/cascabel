@@ -16,36 +16,76 @@
   },
   "practica": {
     "secuencia": "ninguna",
-    "metodo": ["willems", "dalcroze"]
+    "metodo": [
+      "willems",
+      "dalcroze"
+    ]
   },
-  "entrada": { "modo": "toque" },
+  "entrada": {
+    "modo": "toque"
+  },
   "contenido": {
     "consigna": "actividad.inf01.consigna",
     "rondas": 6,
     "opciones": [
-      { "clave": "suena", "icono": "altavoz", "color": "verde" },
-      { "clave": "silencio", "icono": "silencio", "color": "azul" }
+      {
+        "clave": "suena",
+        "icono": "altavoz",
+        "color": "verde"
+      },
+      {
+        "clave": "silencio",
+        "icono": "silencio",
+        "color": "azul"
+      }
     ],
     "estimulos": [
-      { "audio": "muestras/pandero-golpe.opus", "respuesta": "suena" },
-      { "audio": "muestras/silencio-2s.opus", "respuesta": "silencio" },
-      { "audio": "muestras/triangulo-largo.opus", "respuesta": "suena" },
-      { "audio": "muestras/silencio-2s.opus", "respuesta": "silencio" },
-      { "audio": "muestras/voz-la.opus", "respuesta": "suena" },
-      { "audio": "muestras/silencio-2s.opus", "respuesta": "silencio" }
+      {
+        "audio": "muestras/pandero-golpe.opus",
+        "respuesta": "suena"
+      },
+      {
+        "audio": "muestras/silencio-2s.opus",
+        "respuesta": "silencio"
+      },
+      {
+        "audio": "muestras/triangulo-largo.opus",
+        "respuesta": "suena"
+      },
+      {
+        "audio": "muestras/silencio-2s.opus",
+        "respuesta": "silencio"
+      },
+      {
+        "audio": "muestras/voz-la.opus",
+        "respuesta": "suena"
+      },
+      {
+        "audio": "muestras/silencio-2s.opus",
+        "respuesta": "silencio"
+      }
     ]
   },
   "evaluacion": {
     "autocorrectiva": true,
-    "reporta": ["completado"]
+    "reporta": [
+      "completado"
+    ]
   },
   "locucion": {
     "enunciado": "actividad.inf01.enunciado",
     "audio": "es/inf-01-semaforo-del-sonido.opus"
   },
-  "pistas": ["actividad.inf01.pista1"],
+  "pistas": [
+    "actividad.inf01.pista1"
+  ],
   "creditos": [
-    { "obra": "Pandero, triángulo", "autor": "Versilian Community Sample Library", "fuente": "VCSL", "licencia": "CC0" }
+    {
+      "obra": "Muestras de pandero, triángulo y voz",
+      "autor": "Proyecto cocomusic",
+      "fuente": "Sintetizadas con tools/muestras-provisionales.py",
+      "licencia": "CC0"
+    }
   ],
   "estado": "borrador"
 }

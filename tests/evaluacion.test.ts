@@ -42,3 +42,28 @@ describe('evaluación rítmica', () => {
     expect(calidadDe(200, 'primaria-c3')).toBe('casi');
   });
 });
+
+/**
+ * La tolerancia se indexa por CARRIL (edad) y no por etapa (ciclo LOMLOE), porque lo que
+ * mide es control motor. Decisión del 2026-09-06, documentada en src/config.ts.
+ */
+describe('tolerancia por carril', () => {
+  it('un mismo desfase es «bien» para un niño de 3.º y «casi» para uno de 4.º', () => {
+    // 90 ms de error: dentro de la ventana de «perfecto» de lectores (100), fuera de la
+    // de autónomos (70). La misma actividad, dos niños de edades distintas.
+    expect(calidadDe(90, 'lectores')).toBe('perfecto');
+    expect(calidadDe(90, 'autonomos')).toBe('bien');
+  });
+
+  it('sin saber quién está delante, usa la ventana más ANCHA de esa etapa', () => {
+    // primaria-c2 la abren lectores (100 ms) y autónomos (70). Ante la duda, la ancha:
+    // que un niño con buen pulso se sienta torpe cuesta más que lo contrario.
+    expect(calidadDe(90, 'primaria-c2')).toBe('perfecto');
+    expect(calidadDe(90, 'primaria-c3')).toBe('bien');
+  });
+
+  it('Infantil es la más generosa de todas', () => {
+    expect(calidadDe(140, 'infantil')).toBe('perfecto');
+    expect(calidadDe(140, 'lectores')).toBe('bien');
+  });
+});

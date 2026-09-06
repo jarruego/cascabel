@@ -107,6 +107,7 @@ prompts/               prompts de generación de contenido y de sesión con Clau
 | [docs/07-ROADMAP.md](docs/07-ROADMAP.md) | **La cola de trabajo.** Tareas con criterio de aceptación |
 | [docs/08-LEGAL.md](docs/08-LEGAL.md) | RGPD y menores, micrófono, accesibilidad, licencias, repertorio |
 | [docs/09-DOSIER.md](docs/09-DOSIER.md) | Investigación de producto y mercado (foto de 09/2026) |
+| [docs/10-AUDIO-MUESTRAS.md](docs/10-AUDIO-MUESTRAS.md) | De dónde sale el audio, y qué es provisional |
 | [docs/adr/](docs/adr/) | Decisiones de arquitectura, con sus consecuencias |
 
 ## Trabajar con Claude Code

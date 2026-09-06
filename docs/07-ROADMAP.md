@@ -144,16 +144,27 @@ una fundamental que no pasa de 660 Hz (E5, techo de la tesitura de 3.er ciclo en
 `tools/validar.py`). Si una maestra dice que hay que cubrir voces más agudas, el factor
 cambia — y con él la tabla de arriba.
 
-### T0.2 — Una actividad completa de punta a punta
+### T0.2 — Una actividad completa de punta a punta `[x]`
 
-Coge `content/actividades/inf-01-semaforo-del-sonido.json` y haz que funcione de verdad:
-audio real, botones grandes, feedback. Fea, sin menús, sin diseño, sin router.
+Cerrada el 2026-09-06. `inf-01-semaforo-del-sonido` se juega entera.
 
-- [ ] Se puede jugar entera en el navegador
-- [ ] El audio suena tras el gesto de «¡Empezar!»
-- [ ] No hay ningún texto escrito en el componente (todo por `t()`)
+- [x] Se puede jugar entera en el navegador
+- [x] El audio suena tras el gesto del usuario
+- [x] No hay ningún texto escrito en el componente (todo por `t()`)
 
-**Criterio de aceptación**: un niño de 4 años la completa sin ayuda verbal de un adulto.
+Faltaban tres cosas distintas y ninguna era el motor: los textos de las opciones, los
+iconos y el audio.
+
+- **Iconos**: `src/ui/Icono.tsx`, SVG en línea. Ni fuente de iconos ni imagen externa, que
+  la regla 1 lo prohíbe. «Suena» y «silencio» se distinguen por **forma** (altavoz con
+  ondas / altavoz tachado) además de por color, que es la regla 4.
+- **Audio**: sintetizado por `tools/muestras-provisionales.py`, 39 KB los cuatro. Son
+  **provisionales**: T1.7 los sustituye por material CC0 real. Ventaja lateral mientras
+  tanto: al ser nuestros, no arrastran licencia de terceros, y los créditos lo dicen.
+- **Textos**: `opcion.suena` y `opcion.silencio` en `es.json`.
+
+**Criterio de aceptación pendiente**: «un niño de 4 años la completa sin ayuda verbal de un
+adulto». Eso es T0.3 y no lo puede firmar un test.
 
 ### T0.3 — Probarla con tres niños de edades distintas
 
