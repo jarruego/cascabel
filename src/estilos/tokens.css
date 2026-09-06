@@ -1489,3 +1489,166 @@ body {
   color: var(--tinta-2);
   font-size: 0.9em;
 }
+
+/* ── barra de navegación permanente ────────────────────────────────────────
+   Abajo y no arriba por una razón física: el pulgar de un niño no llega a la
+   parte de arriba de una tablet que sostiene con las dos manos. Es la misma
+   razón por la que todas las apps móviles serias la movieron abajo. */
+.nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  padding: 6px 8px;
+  /* El área segura de iOS: sin esto, la barra queda debajo del indicador de inicio. */
+  padding-bottom: max(6px, env(safe-area-inset-bottom));
+  border-top: 3px solid var(--linea);
+  background: var(--superficie);
+}
+.nav__enlace {
+  display: grid;
+  place-items: center;
+  gap: 2px;
+  flex: 1 1 0;
+  max-width: 160px;
+  /* 56 px de alto: por encima del mínimo de WCAG y cómodo para un pulgar. */
+  min-height: 56px;
+  padding: 4px;
+  border-radius: 14px;
+  color: var(--tinta-2);
+  text-decoration: none;
+  font-size: 0.78em;
+}
+.nav__enlace:focus-visible {
+  outline: 3px solid var(--acento);
+  outline-offset: -3px;
+}
+/* La sección actual se marca por color Y por fondo Y por grosor de texto: tres
+   señales, porque el color solo no lo distingue un 8 % de los niños. */
+.nav__enlace[aria-current='page'] {
+  color: var(--acento-2);
+  background: var(--suave-azul);
+  font-weight: 700;
+}
+/* Sitio para que la barra no tape el final del contenido. */
+.catalogo,
+.ajustes,
+.legal,
+.ficha {
+  padding-bottom: 96px;
+}
+@media print {
+  .nav { display: none; }
+}
+
+/* ── teclado ───────────────────────────────────────────────────────────────
+   Sin librería de piano: sobre el Sampler que ya existe son cien líneas, y
+   cualquier librería traería su propia gestión de audio, que chocaría con la
+   regla de un solo AudioContext. */
+.teclado__caja {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: min(38vh, 260px);
+  margin: 20px 0;
+  padding: 0 8px;
+  touch-action: none;
+  overflow-x: auto;
+}
+.teclado__blanca,
+.teclado__negra {
+  padding: 0;
+  cursor: pointer;
+  border-radius: 0 0 10px 10px;
+}
+.teclado__blanca {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 12px;
+  border: 2px solid var(--tinta-2);
+  background: var(--superficie);
+  color: var(--tinta);
+}
+.teclado__negra {
+  position: absolute;
+  top: 0;
+  height: 62%;
+  z-index: 2;
+  border: 2px solid var(--tinta);
+  background: var(--tinta);
+}
+.teclado__blanca[data-sonando] { background: var(--vivo-turquesa); }
+/* La negra que suena cambia de color Y encoge un poco: dos señales, y sobre negro
+   el color solo se distingue mal. */
+.teclado__negra[data-sonando] {
+  background: var(--vivo-morado);
+  height: 58%;
+}
+.teclado__blanca:focus-visible,
+.teclado__negra:focus-visible {
+  outline: 4px solid var(--acento);
+  outline-offset: -4px;
+  z-index: 3;
+}
+.teclado__nombre {
+  font-size: 0.8em;
+  color: var(--tinta-2);
+  pointer-events: none;
+}
+
+/* ── musicograma que cae ───────────────────────────────────────────────────
+   La mecánica de Guitar Hero SIN marcador, sin combo y sin poder fallar: lo
+   que aporta es hacer visible que la música avanza en el tiempo, y el marcador
+   es lo que el dosier llama la mitad tóxica de Duolingo. */
+.seguir__pista {
+  position: relative;
+  height: min(52vh, 420px);
+  margin: 20px 0;
+  border: 3px solid var(--linea);
+  border-radius: 18px;
+  background: var(--superficie);
+  overflow: hidden;
+}
+/* La línea de acierto es donde el dibujo se encuentra con el sonido. */
+.seguir__linea {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12%;
+  height: 5px;
+  background: var(--acento);
+  box-shadow: 0 0 0 1px var(--papel);
+}
+.seguir__cayendo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  padding: 10px 16px;
+  border: 3px solid var(--vivo-azul);
+  border-radius: 16px;
+  background: var(--suave-azul);
+  color: var(--tinta);
+  font-size: 1.1em;
+  /* Sin transición: la posición la calcula requestAnimationFrame cada fotograma, y
+     una transición encima la retrasaría respecto al sonido. */
+}
+/* Al llegar a la línea crece y cambia de color: tamaño además de color. */
+.seguir__cayendo[data-acertando] {
+  border-color: var(--acento);
+  background: var(--suave-amarillo);
+  transform: translateX(-50%) scale(1.15);
+}
+@media (prefers-reduced-motion: reduce) {
+  .seguir__cayendo[data-acertando] {
+    transform: translateX(-50%);
+    border-width: 6px;
+  }
+}

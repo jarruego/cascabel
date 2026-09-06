@@ -16,7 +16,9 @@ export type TipoActividad =
   | 'tocar-a-tiempo'
   | 'cantar'
   | 'lienzo'
-  | 'guia-aula';
+  | 'guia-aula'
+  /** Piano en pantalla. Añadido tras la investigación de docs/11. */
+  | 'teclado';
 
 export type Eje = 'pulso' | 'altura' | 'timbre' | 'notacion' | 'cuerpo' | 'creacion' | 'cultura';
 

@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router';
 import Catalogo from './Catalogo';
 import { AvisoActualizacion } from './AvisoActualizacion';
+import { Navegacion } from './Navegacion';
 
 /**
  * Router mínimo, deliberadamente.
@@ -34,6 +35,7 @@ export function Rutas() {
         <Route path="/ficha/:id" element={<Ficha />} />
         <Route path="/diagnostico" element={<Diagnostico />} />
       </Routes>
+      <Navegacion />
     </Suspense>
   );
 }

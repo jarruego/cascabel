@@ -10,6 +10,7 @@ import Rejilla from './tipos/Rejilla';
 import Cantar from './tipos/Cantar';
 import Seguir from './tipos/Seguir';
 import Lienzo from './tipos/Lienzo';
+import Teclado from './tipos/Teclado';
 
 /**
  * Mapa tipo de actividad -> componente.
@@ -29,6 +30,7 @@ export const REGISTRO: Partial<Record<TipoActividad, ComponentType<PropsActivida
   cantar: Cantar,
   seguir: Seguir,
   lienzo: Lienzo,
+  teclado: Teclado,
   // Los diez tipos de docs/01-ARQUITECTURA.md están implementados.
   // Añadir una actividad NO toca este fichero: se escribe un JSON.
   // rejilla, pentagrama, seguir, 'tocar-a-tiempo' -> fase 2

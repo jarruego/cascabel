@@ -422,5 +422,15 @@
   "actividad.tr01.pista1": "Respira hondo antes de empezar y sostén la nota sin apretar.",
   "actividad.tr01.enunciado": "Herramienta de afinación: suena una nota y ves si la cantas encima.",
   "actividad.tr03.consigna": "Caja de sonidos",
-  "actividad.tr03.enunciado": "Una caja de sonidos para tocar libremente en clase."
+  "actividad.tr03.enunciado": "Una caja de sonidos para tocar libremente en clase.",
+  "nav.titulo": "Secciones",
+  "nav.actividades": "Actividades",
+  "nav.comprobar": "Códigos",
+  "nav.ajustes": "Ajustes",
+  "teclado.teclas": "Teclas del piano",
+  "teclado.libre": "Toca las teclas o desliza el dedo. Aquí no hay nada que acertar.",
+  "actividad.tr05.consigna": "Piano",
+  "actividad.tr05.enunciado": "Un piano para tocar. Puedes ir tecla a tecla o deslizar el dedo.",
+  "actividad.c114.consigna": "Sigue las notas que caen",
+  "actividad.c114.enunciado": "Los dibujos bajan hasta la línea. Cuando llegan, es cuando suena."
 }

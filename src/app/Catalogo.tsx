@@ -153,13 +153,9 @@ export default function Catalogo() {
       {visibles.length === 0 && <p>{t('catalogo.vacio')}</p>}
 
       <p className="catalogo__pie">
-        <Link to="/comprobar">{t('catalogo.comprobar')}</Link>
-        {' · '}
         <Link to="/privacidad">{t('catalogo.privacidad')}</Link>
         {' · '}
         <Link to="/creditos">{t('catalogo.creditos')}</Link>
-        {' · '}
-        <Link to="/ajustes">{t('catalogo.ajustes')}</Link>
         {' · '}
         <Link to="/diagnostico">{t('catalogo.diagnostico')}</Link>
       </p>

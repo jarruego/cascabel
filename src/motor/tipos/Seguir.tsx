@@ -37,6 +37,16 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
     consigna: string;
     bloques: Bloque[];
     tempo?: number;
+    /**
+     * `tira`: los bloques en fila y se ilumina el que toca.
+     * `cae`: los bloques bajan hacia una línea de acierto, como en Guitar Hero.
+     *
+     * **`cae` NO puntúa, no encadena combos y no se puede fallar.** La mecánica de notas
+     * que caen hace visible que la música avanza en el tiempo, que es lo que queremos; el
+     * marcador es lo que el dosier llama la mitad tóxica de Duolingo. Es un musicograma
+     * que se mueve, no un juego de puntos.
+     */
+    modo?: 'tira' | 'cae';
     /** Sílabas rítmicas si el musicograma es de ritmo; si no, se usa `pulsos` por bloque. */
     silabas?: string[];
     /** Nota que suena en cada bloque, si se quiere sonido melódico. */
@@ -47,8 +57,11 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
   const bpm = contenido.tempo ?? actividad.practica?.tempo ?? 92;
   const bloques = contenido.bloques;
 
+  const modo = contenido.modo ?? 'tira';
   const [sonando, setSonando] = useState(false);
   const [actual, setActual] = useState(-1);
+  /** Segundos que faltan para cada bloque. Negativo = ya ha pasado. Solo en modo `cae`. */
+  const [restantes, setRestantes] = useState<number[]>([]);
   const sampler = useRef<Sampler | null>(null);
   const metronomo = useRef<Metronomo | null>(null);
   const rafId = useRef<number | null>(null);
@@ -117,6 +130,9 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
         if (ahora >= hitos.current[i]!) indice = i;
       }
       setActual(indice);
+      if (modo === 'cae') {
+        setRestantes(hitos.current.map((ms) => (ms - ahora) / 1000));
+      }
 
       const fin = inicio + acumulado * msPorPulso;
       if (ahora >= fin) {
@@ -130,7 +146,7 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
       rafId.current = requestAnimationFrame(seguirCursor);
     };
     rafId.current = requestAnimationFrame(seguirCursor);
-  }, [sonando, bpm, bloques, contenido.silabas, contenido.notas, parar, actividad.id, alTerminar]);
+  }, [sonando, bpm, bloques, contenido.silabas, contenido.notas, modo, parar, actividad.id, alTerminar]);
 
   return (
     <section className="actividad seguir" data-carril={carril} aria-labelledby="consigna">
@@ -138,20 +154,46 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
 
       {/* El musicograma. Cada bloque se ilumina cuando le toca: es lo que enseña que la
           música avanza en el tiempo y que lo que suena se puede dibujar. */}
-      <ol className="seguir__tira" aria-label={t(contenido.consigna)}>
-        {bloques.map((b, i) => (
-          <li
-            key={`${b.texto ?? b.icono ?? i}-${i}`}
-            className="seguir__bloque"
-            data-actual={i === actual || undefined}
-            data-pasado={i < actual || undefined}
-            style={b.color ? { borderColor: `var(--eje-${b.color})` } : undefined}
-          >
-            {b.icono && <Icono nombre={b.icono} tamano={44} />}
-            {b.texto && <span className="seguir__texto">{t(b.texto)}</span>}
-          </li>
-        ))}
-      </ol>
+      {modo === 'tira' ? (
+        <ol className="seguir__tira" aria-label={t(contenido.consigna)}>
+          {bloques.map((b, i) => (
+            <li
+              key={`${b.texto ?? b.icono ?? i}-${i}`}
+              className="seguir__bloque"
+              data-actual={i === actual || undefined}
+              data-pasado={i < actual || undefined}
+              style={b.color ? { borderColor: `var(--eje-${b.color})` } : undefined}
+            >
+              {b.icono && <Icono nombre={b.icono} tamano={44} />}
+              {b.texto && <span className="seguir__texto">{t(b.texto)}</span>}
+            </li>
+          ))}
+        </ol>
+      ) : (
+        <div className="seguir__pista" aria-label={t(contenido.consigna)}>
+          {/* La línea de acierto: donde el bloque se encuentra con el sonido. */}
+          <div className="seguir__linea" aria-hidden="true" />
+          {bloques.map((b, i) => {
+            const seg = restantes[i];
+            // Solo se dibujan los bloques que están cerca: los demás no se ven y
+            // mantenerlos en el DOM cuesta memoria en una tablet vieja.
+            if (seg === undefined || seg > 4 || seg < -0.9) return null;
+            return (
+              <div
+                key={`${b.texto ?? b.icono ?? i}-${i}`}
+                className="seguir__cayendo"
+                data-acertando={Math.abs(seg) < 0.18 || undefined}
+                /* 0 % es la línea de acierto y 100 % es arriba del todo. Cuatro segundos
+                   de anticipación: menos no da tiempo a prepararse, y más satura. */
+                style={{ bottom: `${Math.max(-12, (seg / 4) * 100)}%` }}
+              >
+                {b.icono && <Icono nombre={b.icono} tamano={40} />}
+                {b.texto && <span>{t(b.texto)}</span>}
+              </div>
+            );
+          })}
+        </div>
+      )}
 
       <div className="seguir__acciones">
         <button
