@@ -17,6 +17,7 @@ import Escala from './tipos/Escala';
 import Paisaje from './tipos/Paisaje';
 import Pistas from './tipos/Pistas';
 import Cuerpo from './tipos/Cuerpo';
+import Pads from './tipos/Pads';
 
 /**
  * Mapa tipo de actividad -> componente.
@@ -43,6 +44,7 @@ export const REGISTRO: Partial<Record<TipoActividad, ComponentType<PropsActivida
   paisaje: Paisaje,
   pistas: Pistas,
   cuerpo: Cuerpo,
+  pads: Pads,
   // Los diez tipos de docs/01-ARQUITECTURA.md están implementados.
   // Añadir una actividad NO toca este fichero: se escribe un JSON.
   // rejilla, pentagrama, seguir, 'tocar-a-tiempo' -> fase 2

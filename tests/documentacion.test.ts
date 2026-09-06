@@ -36,6 +36,26 @@ describe('documentación', () => {
     expect([...documentados].sort()).toEqual([...registrados].sort());
   });
 
+  it('la columna de cuántas actividades usa cada tipo dice la verdad', () => {
+    // Sin esto la tabla queda medio bien: los tipos correctos con cifras de hace un mes,
+    // que es exactamente el tipo de mentira que nadie revisa.
+    const reales: Record<string, number> = {};
+    const dir = join(RAIZ, 'content', 'actividades');
+    for (const f of readdirSync(dir)) {
+      if (!f.endsWith('.json')) continue;
+      const tipo = (JSON.parse(readFileSync(join(dir, f), 'utf-8')) as { tipo: string }).tipo;
+      reales[tipo] = (reales[tipo] ?? 0) + 1;
+    }
+
+    const doc = leer('docs/01-ARQUITECTURA.md');
+    const tabla = doc.slice(doc.indexOf('## Los tipos de motor'), doc.indexOf('**Antes de crear'));
+    const escritos: Record<string, number> = {};
+    for (const m of tabla.matchAll(/^\| `([a-z-]+)` \|[^|]*\| (\d+) \|/gm)) {
+      escritos[m[1]!] = Number(m[2]);
+    }
+    expect(escritos).toEqual(reales);
+  });
+
   it('no queda ningún «los N tipos» a mano, que es justo lo que se queda obsoleto', () => {
     const numeros =
       /\b(diez|once|doce|trece|catorce|quince|dieciséis|diecisiete|dieciocho|\d+) tipos\b/i;

@@ -30,7 +30,9 @@ export type TipoActividad =
   /** Componer con varias voces a la vez. Ver Pistas.tsx. */
   | 'pistas'
   /** Percusión corporal: pitos, palmas, muslos y pies. Ver Cuerpo.tsx. */
-  | 'cuerpo';
+  | 'cuerpo'
+  /** El kit de percusión, para tocarlo con el dedo. Ver Pads.tsx. */
+  | 'pads';
 
 export type Eje = 'pulso' | 'altura' | 'timbre' | 'notacion' | 'cuerpo' | 'creacion' | 'cultura';
 

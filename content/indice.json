@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-06",
-  "total": 70,
+  "total": 72,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -1173,6 +1173,24 @@
       "herramienta": false
     },
     {
+      "id": "inf-18-cuatro-instrumentos",
+      "titulo": "Cuatro instrumentos para probar",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "tipo": "pads",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE3",
+        "criterio": "3.5",
+        "saber": "F. Lenguaje y expresión musical – el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
       "id": "tr-01-afinador-visual",
       "titulo": "Afinador visual",
       "etapa": "primaria-c2",
@@ -1253,6 +1271,24 @@
       "lugar": "pantalla",
       "microfono": false,
       "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Práctica instrumental, vocal y corporal"
+      },
+      "estado": "borrador",
+      "herramienta": true
+    },
+    {
+      "id": "tr-06-kit-de-percusion",
+      "titulo": "Kit de percusión",
+      "etapa": "primaria-c1",
+      "eje": "timbre",
+      "tipo": "pads",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 10,
       "curriculo": {
         "area": "Educación Artística",
         "competencia": "CE3",

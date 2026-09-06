@@ -2986,3 +2986,104 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 
 /* Proyectada en clase, cuanto más grande mejor: es lo que mira el grupo entero. */
 .lienzo[data-ampliado] .cuerpo__golpe { height: 5rem; }
+
+/* ---------------------------------------------------------------------------
+ * El kit de percusión (tipo «pads»).
+ *
+ * La FORMA la da la familia, no el gusto: círculo lleno el parche, aro el metal y
+ * rectángulo la madera. Es lo que permite que el color no informe solo (§6) y de paso
+ * enseña la clasificación sin una sola frase explicándola.
+ *
+ * Los pads llenan el ancho que haya. Un instrumento con la mitad del monitor vacío al lado
+ * es un instrumento peor: lo que hace fácil acertar un pad es que sea grande.
+ * ------------------------------------------------------------------------ */
+.pads__rejilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  gap: var(--e-3);
+  margin: var(--e-5) 0;
+  padding: var(--e-3);
+  border: 3px solid transparent;
+  border-radius: var(--r-m);
+  transition: border-color 90ms;
+}
+/* El borde late con el pulso del metrónomo: es el pulso VISIBLE que pide §6, para que una
+   actividad de ritmo se pueda hacer mirando. */
+.pads__rejilla[data-pulso] { border-color: var(--acento); }
+
+.pads__pad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e-1);
+  /* Cuadrado: el pad es el objetivo táctil más grande que quepa, y ninguna dimensión manda
+     sobre la otra. */
+  aspect-ratio: 1;
+  min-height: var(--objetivo);
+  padding: var(--e-2);
+  font: inherit;
+  font-size: var(--t-s);
+  font-weight: 700;
+  color: var(--tinta);
+  background: var(--superficie);
+  border: 4px solid var(--color-familia, var(--linea));
+  cursor: pointer;
+  box-shadow: var(--sombra-1);
+  transition: transform 60ms, background-color 60ms;
+}
+.pads__pad:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
+
+/* Parche: círculo lleno, como el parche que es. */
+.pads__pad[data-familia='parche'] {
+  --color-familia: var(--vivo-rojo);
+  border-radius: var(--r-redondo);
+}
+/* Metal: aro. Doble borde y centro hueco, que es lo que se ve mirando un plato de canto. */
+.pads__pad[data-familia='metal'] {
+  --color-familia: var(--vivo-amarillo);
+  border-radius: var(--r-redondo);
+  box-shadow: var(--sombra-1), inset 0 0 0 6px var(--superficie),
+    inset 0 0 0 9px var(--color-familia);
+}
+/* Madera: rectángulo, como una caja o un par de claves. */
+.pads__pad[data-familia='madera'] {
+  --color-familia: var(--vivo-verde);
+  border-radius: var(--r-s);
+}
+
+/* Al golpear, el pad se tiñe de su familia y se hunde. El hundimiento importa tanto como el
+   color: es la respuesta que confirma el golpe cuando el sonido aún no ha llegado. */
+.pads__pad[data-sonando] {
+  background: var(--color-familia);
+  transform: scale(0.94);
+}
+
+.pads__nombre { line-height: 1.1; text-align: center; }
+.pads__letra {
+  font-size: var(--t-xs);
+  font-weight: 400;
+  color: var(--tinta-2);
+}
+.pads__pad[data-sonando] .pads__letra { color: var(--tinta); }
+
+.pads__barra {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+  align-items: center;
+  justify-content: center;
+  margin: var(--e-4) 0;
+}
+.pads__barra button { display: inline-flex; align-items: center; gap: var(--e-2); }
+.pads__tempos { display: flex; gap: var(--e-1); }
+
+/* Proyectado o a pantalla completa caben pads más grandes, y aquí más grande es mejor. */
+.lienzo[data-ampliado] .pads__rejilla {
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pads__pad { transition: none; }
+  .pads__pad[data-sonando] { transform: none; }
+}
