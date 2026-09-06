@@ -2791,3 +2791,64 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   box-shadow: inset 0 0 0 3px var(--acento-2);
 }
 .escala__acciones { display: flex; justify-content: center; margin-top: var(--e-3); }
+
+/* ── paisaje sonoro: la única actividad que guarda audio ───────────────────
+   El botón de grabar es el más grande de la pantalla y el único rojo. Aquí el rojo no
+   significa error —la regla 4 prohíbe eso— sino «en marcha», que es el código universal de
+   cualquier grabadora desde antes que la informática. */
+.paisaje__buscar {
+  max-width: 44ch;
+  margin: var(--e-4) auto;
+  padding-left: 1.2em;
+  text-align: left;
+}
+.paisaje__buscar li { margin-bottom: var(--e-2); }
+.paisaje__acciones { display: flex; justify-content: center; margin: var(--e-5) 0; }
+.paisaje__grabar {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-3);
+  min-height: 88px;
+  padding: var(--e-3) var(--e-6);
+  font-size: var(--t-m);
+}
+.paisaje__grabar[data-grabando] {
+  color: var(--papel);
+  background: var(--vivo-rojo);
+  border-color: var(--vivo-rojo);
+}
+.paisaje__enMarcha {
+  font-size: var(--t-s);
+  font-weight: 700;
+  color: var(--vivo-rojo);
+}
+.paisaje__titulo { font-size: var(--t-m); margin-top: var(--e-6); }
+.paisaje__lista { padding: 0; margin: 0 0 var(--e-4); list-style: none; }
+.paisaje__lista li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+  justify-content: center;
+  margin-bottom: var(--e-2);
+}
+.paisaje__lista button { display: inline-flex; align-items: center; gap: var(--e-2); }
+.paisaje__duracion { color: var(--tinta-2); font-size: var(--t-xs); }
+.paisaje__borrar { color: var(--acento); }
+/* La promesa, en la pantalla y no solo en la política: quien tiene que entenderla es el
+   niño y el maestro que está a su lado, no un abogado. */
+.paisaje__promesa {
+  max-width: 44ch;
+  margin: var(--e-5) auto;
+  padding: var(--e-3);
+  font-size: var(--t-xs);
+  color: var(--tinta-2);
+  background: var(--fondo);
+  border-left: 4px solid var(--acento-2);
+  border-radius: 0 var(--r-s) var(--r-s) 0;
+}
+.paisaje__aviso {
+  max-width: 44ch;
+  margin: var(--e-3) auto;
+  color: var(--tinta-2);
+  font-size: var(--t-xs);
+}

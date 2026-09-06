@@ -37,13 +37,23 @@ describe('el micrófono nunca bloquea', () => {
     }
   });
 
-  it('las actividades de micrófono declaran alternativa por toque', () => {
+  it('las actividades de micrófono declaran SIEMPRE una alternativa', () => {
     const dir = join(RAIZ, 'content', 'actividades');
     for (const f of readdirSync(dir).filter((x) => x.endsWith('.json'))) {
       const a = JSON.parse(readFileSync(join(dir, f), 'utf8')) as {
         entrada: { modo: string; alternativa?: string };
       };
       if (!a.entrada.modo.startsWith('microfono')) continue;
+      /*
+        La regla es que **el micrófono nunca deje una actividad sin hacer**, no que la
+        alternativa sea forzosamente de toque.
+
+        En casi todas, tocar un botón hace lo mismo que dar una palmada. Pero en el paisaje
+        sonoro el PRODUCTO es una grabación: ahí no hay toque que la sustituya, y la
+        alternativa es hacerla sin grabar —salir, callarse un minuto y anotar lo que se
+        oye—, que además es la parte que enseña a escuchar. Por eso vale `sin-grabar`, y
+        sigue sin valer `ninguna`, que significa que no hay salida.
+      */
       expect(a.entrada.alternativa, `${f} no declara alternativa`).toBeTruthy();
       expect(a.entrada.alternativa, `${f} declara alternativa "ninguna"`).not.toBe('ninguna');
     }

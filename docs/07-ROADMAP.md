@@ -1305,6 +1305,67 @@ REVISIÓN PEDAGÓGICA**: que convenga ser tan literal a los 3 años lo dice una 
 
 Nuevas: **C1-19 «Adivina quién baja»** (círculos que se abren) y **C2-16 «Cuatro bandas»**.
 
+### T2.20 a T3.4 — El catálogo entero, y cuatro tipos nuevos `[x]`
+
+Cerrado el 2026-09-07. **66 de 66 actividades del catálogo.**
+
+Lo que quedaba estaba bloqueado por cinco motivos distintos, y cuatro se resolvieron
+haciendo el trabajo que los desbloqueaba en vez de esperar a que alguien lo hiciera.
+
+**C2-04 y C2-05, la flauta.** El bloqueo decía «material que no tenemos» y el bloqueo real
+era otro: la flauta soprano tiene **dos sistemas de digitación**, barroco y alemán, y elegir
+uno no me corresponde. Pero **si, la y sol se digitan igual en los dos** —lo que los separa
+es la familia del fa—, así que son exactamente las tres notas que se pueden enseñar sin
+preguntar qué flauta hay en el aula. Por eso son la secuencia con la que empiezan todos los
+métodos. Los diagramas los genera `tools/digitaciones.py`: no hay banco CC0 de esto y lo que
+circula son escaneos de métodos con derechos.
+
+**C2-11, instrumentos del mundo.** La desbloqueó FluidR3: sitar, koto, kalimba, gaita, banjo
+y tambor metálico. Dos notas por instrumento, no una — reconocer un timbre es reconocerlo
+suene la nota que suene, y con una sola se puede acertar memorizando la altura.
+
+**C3-03, editor de melodías.** El editor ya existía como `rejilla`; lo que faltaba era
+**exportar**, y eso es lo que separa componer de jugar a componer. MIDI y MusicXML escritos a
+mano, sin dependencias, y verificados abriéndolos con `music21` — que destapó un fallo que
+nuestros tests no podían ver: el `<direction>` del tempo sin `<direction-type>` dentro es XML
+válido y MusicXML inválido, así que el fichero se abría sin protestar **y el tempo se
+perdía**.
+
+**C3-04, mapa de una obra.** La obra se eligió por su FORMA, no por bonita: el tema de la
+Novena es A-A-B-A, y las dos A comparten color, así que la estructura **se ve antes de
+oírse**.
+
+**C2-06, poner las barras de compás** → tipo nuevo `compases`. Es de las poquísimas cosas
+del lenguaje musical que **se comprueban solas**: una divisoria está bien puesta o no lo
+está, y no depende del criterio de nadie. Sin VexFlow: aquí no hay pauta ni alturas, solo
+figuras en fila, y traer un renderizador de partituras habría sido traer una imprenta para
+escribir una postal.
+
+**C3-01, tonos y semitonos** → tipo nuevo `escala`. Enlaza teclado y pauta porque **ninguno
+de los dos lo explica solo**: en el pentagrama do-re-mi-fa se ven igual de separados y no lo
+están, y eso se ve en el piano porque entre mi y fa no hay tecla negra; pero en el piano no
+se ve que mi y fa son grados contiguos, y en la pauta sí. Empieza en **sol y no en do** a
+propósito: en do el patrón se acierta andando por las blancas sin entenderlo.
+
+**C2-13, paisaje sonoro** → tipo nuevo `paisaje`, y **es la única actividad que guarda
+audio**. Cumple las cuatro condiciones de `docs/08-LEGAL.md` una por una: nunca graba sola,
+va a IndexedDB local y a ningún otro sitio, se borra a un clic y sin confirmación disuasoria,
+y suelta el micrófono al salir con `track.stop()` en **todas** las pistas. La promesa se dice
+**en la pantalla**, no solo en la política: quien tiene que entenderla es el niño y el maestro
+que está a su lado, no un abogado.
+
+> **Y una regla que hubo que afinar.** El test de degradación marcó la actividad por declarar
+> `alternativa: 'ninguna'`, y tenía razón en marcarla. Pero aquí la alternativa no puede ser
+> el toque: el **producto** es una grabación, y sin micrófono no hay botón que la sustituya.
+> Lo que sí hay es hacerla sin grabar —salir, callarse un minuto y anotar lo que se oye—, que
+> además es la parte que enseña a escuchar. Se añadió `sin-grabar` al esquema. La regla de
+> fondo no cambia: **el micrófono nunca puede dejar una actividad sin hacer**.
+
+**Y una grabadora que no graba audio**, en `motor/grabacionEventos.ts`: el piano guarda QUÉ
+nota y CUÁNDO, y reproducir es volver a tocarlas. Gana al `MediaRecorder` en todo lo que
+importa aquí —sin permiso, sin riesgo, sin peso, y transformable— y por eso el audio de
+verdad se ha quedado solo donde no hay otra forma.
+
 ### T3.5 — Revisar los tamaños contra la investigación de NN/g `⚠️`
 
 Abierta el 2026-09-06 con la investigación de

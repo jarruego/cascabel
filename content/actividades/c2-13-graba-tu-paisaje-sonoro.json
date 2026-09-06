@@ -1,0 +1,47 @@
+{
+  "id": "c2-13-graba-tu-paisaje-sonoro",
+  "version": 1,
+  "tipo": "paisaje",
+  "titulo": "Graba tu paisaje sonoro",
+  "descripcion": "Salir, escuchar y grabar los sonidos del sitio donde estáis. Todo se queda en el dispositivo y se borra a un clic.",
+  "etapa": "primaria-c2",
+  "eje": "creacion",
+  "lugar": "fuera",
+  "duracion_min": 30,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.2",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "entrada": {
+    "modo": "microfono-palmada",
+    "alternativa": "sin-grabar"
+  },
+  "contenido": {
+    "consigna": "actividad.c213.consigna",
+    "buscar": [
+      "actividad.c213.buscar1",
+      "actividad.c213.buscar2",
+      "actividad.c213.buscar3",
+      "actividad.c213.buscar4",
+      "actividad.c213.buscar5",
+      "actividad.c213.buscar6"
+    ],
+    "maximoSegundos": 15
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c213.enunciado"
+  },
+  "pistas": [
+    "actividad.c213.pista1",
+    "actividad.c213.pista2"
+  ],
+  "estado": "borrador"
+}

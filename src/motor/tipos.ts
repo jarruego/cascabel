@@ -24,7 +24,9 @@ export type TipoActividad =
   /** Poner las barras de compás a una línea de figuras. Ver Compases.tsx. */
   | 'compases'
   /** Construir una escala en el teclado viendo cómo se escribe. Ver Escala.tsx. */
-  | 'escala';
+  | 'escala'
+  /** Grabar sonidos del entorno. La ÚNICA que guarda audio. Ver Paisaje.tsx. */
+  | 'paisaje';
 
 export type Eje = 'pulso' | 'altura' | 'timbre' | 'notacion' | 'cuerpo' | 'creacion' | 'cultura';
 
@@ -68,7 +70,15 @@ export interface Actividad {
   curriculo: Curriculo;
   practica?: Practica;
   musica?: { abc?: string; audio?: string; acompanamiento?: string };
-  entrada: { modo: ModoEntrada; alternativa?: 'toque' | 'toque-secuencial' | 'ninguna' };
+  entrada: {
+    modo: ModoEntrada;
+    /**
+     * Qué se hace sin micrófono. `sin-grabar` es para las actividades cuyo producto ES una
+     * grabación: ahí no hay toque que la sustituya, pero la actividad se hace igual sin
+     * grabar. `ninguna` significa que no hay salida, y solo vale sin micrófono.
+     */
+    alternativa?: 'toque' | 'toque-secuencial' | 'sin-grabar' | 'ninguna';
+  };
   contenido: Record<string, unknown>;
   evaluacion?: {
     autocorrectiva?: boolean;
