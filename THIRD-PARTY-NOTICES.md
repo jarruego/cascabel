@@ -69,7 +69,7 @@ cosa. Ver `docs/08-LEGAL.md`.
 | `public/audio/muestras/marimba/*.opus` (6) | Marimba, notas F3 C4 G4 B4 F5 C6, golpe medio | Versilian Studios y colaboradores | https://github.com/sgossner/VCSL | CC0 1.0 | 2026-09-06 | `LICENSE` del repositorio dice «CC0 1.0 Universal»; la API de GitHub declara `CC0-1.0` |
 | `public/audio/muestras/*.opus` | Pandero (frame drum), claves, campanilla nepalí y glockenspiel G4/C5/C6 | Versilian Studios y colaboradores | https://github.com/sgossner/VCSL | CC0 1.0 | 2026-09-06 | `LICENSE` del repositorio: «CC0 1.0 Universal» |
 | `public/audio/muestras/tempo-*.opus`, `acorde-*.opus` | Derivados: la claves repetida al pulso, y tres glockenspiel transpuestos y mezclados | Versilian Studios (material) · Proyecto cocomusic (montaje) | `tools/muestras-derivadas.py` | CC0 1.0 | 2026-09-06 | CC0 permite cualquier transformación sin condiciones |
-| `public/audio/muestras/voz-la.opus` | Un «la» cantado | Proyecto cocomusic | `tools/muestras-provisionales.py` | CC0 | 2026-09-06 | sintetizada; es la única que queda por sustituir |
+| `public/audio/muestras/voz-la.opus` | Un «la» cantado | Proyecto cocomusic | `tools/muestras-provisionales.py` | CC0 | 2026-09-06 | **sintetizada por formantes; es la única que queda por sustituir por una grabación real** |
 | `content/actividades/c2-14-himno-de-la-alegria.json` | Tema del cuarto movimiento de la Sinfonía n.º 9 («Himno de la alegría»), melodía sola | Ludwig van Beethoven (1770-1827) | transcripción propia a notación ABC, verificada con `music21` | **Dominio público** | 2026-09-06 | el autor murió en 1827; incluso con los 80 años de la disposición transitoria española el plazo venció en 1907 |
 | `content/actividades/c2-12-canon-a-dos-voces.json` | Melodía del canon «Frère Jacques» («Frère Blaise» en su fuente más antigua), transportada a fa mayor | Anónima francesa del siglo XVIII; se ha propuesto la autoría de Jean-Philippe Rameau (1683-1764) | manuscrito «Recueil de Timbres de Vaudevilles», BnF, fechado hacia 1775-1785 | **Dominio público** | 2026-09-06 | fuente conocida más antigua de 1780; el único autor que se le ha atribuido murió en 1764. La letra en español es nuestra, escrita para la actividad |
 | `public/iconos/*.svg` (27) | Iconos de actividad | OpenMoji · HfG Schwäbisch Gmünd | https://openmoji.org | **CC BY-SA 4.0** | 2026-09-06 | licencia en `LICENSE.txt` del repositorio oficial |
@@ -96,3 +96,20 @@ y el fonograma es un derecho aparte del de la obra. Aquí los dos están limpios
 murió en 1827, y **no se usa grabación ajena ninguna** —la melodía se sintetiza con las
 muestras de marimba CC0 que ya están en el proyecto—. La transcripción a ABC es propia y se
 pasó por `music21` antes de generar el JSON.
+
+**Sobre la voz, y por qué sigue sintetizada.** Es la única muestra del banco que no es una
+grabación, y no por falta de haberlo intentado. Se comprobó el 2026-09-06: **VCSL no tiene
+voz** —su catálogo se organiza por la clasificación de Hornbostel-Sachs, y no hay categoría
+vocal: solo aerófonos, cordófonos, electrófonos, idiófonos y membranófonos—; la colección de
+la **Universidad de Iowa tampoco la tiene**, y además no declara licencia en ninguna parte;
+y en **Freesound** sí hay material vocal CC0, pero elegir uno exige escucharlo, que es
+justamente lo que no se puede delegar.
+
+Se ha mejorado por **síntesis de formantes**, que es lo que separa una voz de un tono: un
+formante es una resonancia fija del tracto vocal y se queda donde está aunque cambie la nota,
+así que la envolvente del espectro no se mueve con la altura. La versión anterior eran cuatro
+armónicos de amplitud fija, que es un órgano suave. Aun así sigue siendo una imitación, y en
+las tres actividades donde se usa lo que el niño tiene que reconocer es *una voz*.
+
+`tools/muestras-voz.py` convierte una grabación de móvil en muestra del banco: recorta
+silencios, mide la altura y avisa si no coincide con la nota declarada, normaliza y codifica.

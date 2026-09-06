@@ -1431,26 +1431,32 @@ body {
 }
 .ficha__consejo { flex: 1 1 240px; color: var(--tinta-2); font-size: 0.85em; margin: 0; }
 
-/* Cada hoja es una página impresa. En pantalla se ven las tres seguidas, con aire entre
-   ellas para que se entienda que son hojas separadas y no un documento continuo. */
+/* Cada hoja es una página impresa. Sin marco: el recuadro no decía nada que no dijera ya
+   el espacio en blanco, y en una hoja densa un borde solo añade ruido. Lo que separa una
+   hoja de la siguiente en pantalla es un filete fino y aire, que es lo justo.
+
+   El cuerpo baja a 15px. La ficha no la lee un niño a un metro: la lee un adulto con la
+   hoja en la mano, y a ese tamaño cabe una sección más por página, que es lo que evita que
+   un bloque se parta por la mitad al imprimir. */
 .ficha__hoja {
-  padding: 40px 44px 32px;
-  margin-bottom: 28px;
-  border: 2px solid var(--linea);
-  border-radius: 12px;
-  background: var(--superficie);
+  padding: 0 0 26px;
+  margin-bottom: 30px;
+  font-size: 15px;
+  line-height: 1.45;
+  background: none;
   color: var(--tinta);
 }
+.ficha__hoja + .ficha__hoja { border-top: 1px solid var(--linea); padding-top: 30px; }
 .ficha__cabecera {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
-  padding-bottom: 14px;
-  margin-bottom: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 16px;
   border-bottom: 2px solid var(--linea);
 }
-.ficha__cabecera h1 { margin: 0; font-size: 1.6em; line-height: 1.2; }
+.ficha__cabecera h1 { margin: 0; font-size: 1.45em; line-height: 1.2; }
 .ficha__sobretitulo {
   margin: 0 0 4px;
   font-size: 0.8em;
@@ -1463,16 +1469,20 @@ body {
 
 /* Ficha técnica: lo que hay que decidir antes de entrar en clase. Va primero y en rejilla
    porque se lee de un vistazo, no en orden. */
+/* Los cuatro datos en UNA línea mientras quepan. Es flex y no grid a propósito: con
+   `flex-grow: 1` el dato que no cabe salta de línea y **ocupa todo el ancho él solo**, así
+   que su texto no se corta en dos renglones estrechos. Una rejilla habría mantenido las
+   columnas y partido la palabra. */
 .ficha__ficha-tecnica {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 14px 20px;
-  margin: 0 0 20px;
-  padding: 16px 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin: 0 0 16px;
+  padding: 12px 14px;
   background: var(--fondo);
   border-radius: var(--radio);
 }
-.ficha__ficha-tecnica div { margin: 0; }
+.ficha__ficha-tecnica div { flex: 1 1 auto; margin: 0; }
 .ficha__ficha-tecnica dt {
   font-size: 0.75em;
   font-weight: 700;
@@ -1480,33 +1490,33 @@ body {
   text-transform: uppercase;
   color: var(--tinta-2);
 }
-.ficha__ficha-tecnica dd { margin: 2px 0 0; font-size: 0.95em; }
+.ficha__ficha-tecnica dd { margin: 1px 0 0; font-size: 0.95em; white-space: nowrap; }
 
-.ficha__entradilla { font-size: 1.02em; color: var(--tinta-2); margin: 0 0 18px; }
+.ficha__entradilla { color: var(--tinta-2); margin: 0 0 14px; }
 .ficha__hoja h2 {
-  margin: 24px 0 8px;
-  font-size: 0.85em;
+  margin: 18px 0 6px;
+  font-size: 0.82em;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--tinta-2);
   border-bottom: 1px solid var(--linea);
-  padding-bottom: 4px;
+  padding-bottom: 3px;
 }
-.ficha__hoja h3 { margin: 0 0 4px; font-size: 0.95em; }
-.ficha__hoja p { line-height: 1.5; }
-.ficha__consigna { padding-left: 14px; border-left: 3px solid var(--linea); }
+.ficha__hoja h3 { margin: 0 0 2px; font-size: 0.95em; }
+.ficha__hoja p { margin: 0 0 8px; }
+.ficha__consigna { padding-left: 12px; border-left: 3px solid var(--linea); }
 
 /* Las cuatro propuestas en dos columnas: caben en media página y se comparan de un vistazo,
    que es como se decide qué hacer con el grupo que va más rápido. */
 .ficha__dosColumnas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px 28px;
+  gap: 12px 26px;
 }
-.ficha__dosColumnas p { margin: 0; font-size: 0.95em; }
+.ficha__dosColumnas p { margin: 0; font-size: 0.94em; }
 
-.ficha__pasos { padding-left: 1.3em; }
-.ficha__pasos li { margin-bottom: 12px; }
+.ficha__pasos { padding-left: 1.2em; margin: 0; }
+.ficha__pasos li { margin-bottom: 9px; }
 .ficha__duracion { color: var(--tinta-2); }
 .ficha__materiales, .ficha__practica, .ficha__creditos { padding-left: 1.2em; margin: 0; }
 .ficha__materiales li, .ficha__practica li, .ficha__creditos li { margin-bottom: 6px; }
@@ -1514,20 +1524,20 @@ body {
 
 .ficha__tabla { width: 100%; border-collapse: collapse; }
 .ficha__tabla th, .ficha__tabla td {
-  padding: 8px 10px;
+  padding: 6px 10px 6px 0;
   text-align: left;
   vertical-align: top;
   border-bottom: 1px solid var(--linea);
 }
-.ficha__tabla th { width: 190px; font-weight: 600; color: var(--tinta-2); }
+.ficha__tabla th { width: 180px; font-weight: 600; color: var(--tinta-2); }
 
 /* Las aclaraciones que separan currículo de práctica. Van en pequeño pero NO se esconden:
    son lo que evita que alguien cite como normativo algo que no lo es. */
 .ficha__aclaracion {
-  margin: 10px 0 0;
-  padding: 10px 12px;
+  margin: 8px 0 0;
+  padding: 8px 11px;
   font-size: 0.82em;
-  line-height: 1.45;
+  line-height: 1.4;
   color: var(--tinta-2);
   background: var(--fondo);
   border-left: 3px solid var(--linea);
@@ -1538,7 +1548,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
-  margin: 16px 0 18px;
+  margin: 12px 0 14px;
   color: var(--tinta-2);
 }
 
@@ -1557,7 +1567,7 @@ body {
   color: var(--tinta-2);
   vertical-align: bottom;
 }
-.ficha__seguimiento tbody td { height: 30px; }
+.ficha__seguimiento tbody td { height: 27px; }
 .ficha__colNombre { width: 28%; }
 .ficha__colNotas { width: 26%; }
 .ficha__leyenda { margin: 10px 0 0; font-size: 0.85em; color: var(--tinta-2); }
@@ -1567,11 +1577,11 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 12px;
-  margin-top: 26px;
-  padding-top: 10px;
-  border-top: 2px solid var(--linea);
+  margin-top: 20px;
+  padding-top: 8px;
+  border-top: 1px solid var(--linea);
   color: var(--tinta-2);
-  font-size: 0.78em;
+  font-size: 0.76em;
 }
 .actividad__barra { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .actividad__ficha { color: var(--acento-2); font-size: 0.9em; }
@@ -1582,8 +1592,13 @@ body {
   @page { margin: 15mm 14mm; }
 
   .ficha { max-width: none; padding: 0; }
-  .ficha__hoja {
+  .ficha__hoja,
+  .ficha__hoja + .ficha__hoja {
     border: none;
+    /* En puntos y no en píxeles: el punto es la unidad del papel, y así el resultado no
+       depende de a cuántos píxeles decida imprimir cada navegador. */
+    font-size: 10.5pt;
+    line-height: 1.4;
     padding: 0;
     margin: 0;
     background: none;
