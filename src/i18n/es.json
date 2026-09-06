@@ -118,5 +118,20 @@
   "catalogo.ajustes": "Ajustes y uso sin conexión",
   "actualizacion.hay": "Hay una versión nueva.",
   "actualizacion.aplicar": "Actualizar ahora",
-  "comun.ahoraNo": "Ahora no"
+  "comun.ahoraNo": "Ahora no",
+  "ajustes.calibracion": "Ajustar el retraso del sonido",
+  "ajustes.calibracionTexto": "Cada dispositivo tarda un poco distinto en sacar el sonido por el altavoz. Ajustarlo hace que las actividades de ritmo midan bien. Se hace una vez por dispositivo y tarda medio minuto.",
+  "ajustes.irCalibracion": "Ajustar ahora",
+  "calibracion.titulo": "Ajustar el retraso del sonido",
+  "calibracion.texto": "Va a sonar un pulso. Toca el botón grande, o pulsa la barra espaciadora, a la vez que cada clic. No pasa nada si no sale a la primera: puedes repetirlo.",
+  "calibracion.empezar": "Empezar",
+  "calibracion.golpea": "Toca a la vez que el clic",
+  "calibracion.desvio": "Vas por delante o por detrás:",
+  "calibracion.regularidad": "regularidad:",
+  "calibracion.hecha": "Medido. Puedes guardarlo.",
+  "calibracion.irregular": "Los toques han salido muy dispares, así que la medida no es de fiar. Prueba otra vez con el pulso más metido en el cuerpo.",
+  "calibracion.pocosGolpes": "Hacen falta al menos tres toques.",
+  "calibracion.guardar": "Guardar este ajuste",
+  "calibracion.guardada": "Guardado. Ajuste aplicado:",
+  "calibracion.actual": "Ajuste guardado ahora mismo:"
 }

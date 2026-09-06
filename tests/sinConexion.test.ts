@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 
@@ -15,7 +15,6 @@ const leer = (...p: string[]) => readFileSync(join(RAIZ, ...p), 'utf8');
  */
 describe('un solo punto de red', () => {
   function ficherosDe(dir: string, ext: string[]): string[] {
-    const { readdirSync } = require('node:fs') as typeof import('node:fs');
     const salida: string[] = [];
     for (const e of readdirSync(join(RAIZ, dir), { withFileTypes: true })) {
       const rel = `${dir}/${e.name}`;

@@ -64,7 +64,16 @@ cosa. Ver `docs/08-LEGAL.md`.
 
 ## Audio, imágenes y partituras
 
-_(Vacío por ahora. Una fila por asset a medida que entren.)_
+| Fichero | Obra | Autor | Fuente | Licencia | Fecha | Comprobación |
+|---|---|---|---|---|---|---|
+| `public/audio/muestras/marimba/*.opus` (6) | Marimba, notas F3 C4 G4 B4 F5 C6, golpe medio | Versilian Studios y colaboradores | https://github.com/sgossner/VCSL | CC0 1.0 | 2026-09-06 | `LICENSE` del repositorio dice «CC0 1.0 Universal»; la API de GitHub declara `CC0-1.0` |
+| `public/audio/muestras/*.opus` (7) | Pandero, triángulo, voz, silencio y tres campanas | Proyecto cocomusic | `tools/muestras-provisionales.py` | CC0 | 2026-09-06 | sintetizadas por nosotros; **provisionales**, ver T1.12 |
 
-| Fichero | Obra | Autor | Fuente | Licencia | Fecha |
-|---|---|---|---|---|---|
+Las de VCSL van **procesadas** por `tools/muestras-instrumento.py`: pico normalizado a
+−3 dBFS, silencio inicial recortado y codificadas a Opus 48 kbps mono. La CC0 permite
+cualquier transformación sin condiciones; se documenta el proceso por trazabilidad, no por
+obligación.
+
+**Por qué se normaliza el pico**: las muestras crudas de VCSL van de −29 a −39 dBFS según la
+nota. Diez decibelios de diferencia entre notas del mismo instrumento no suenan a matiz,
+suenan a error.

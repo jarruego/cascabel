@@ -629,3 +629,16 @@ body {
     display: none;
   }
 }
+
+.calibracion__diana {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  min-height: 160px;
+  margin: 24px 0;
+  font-size: 1.2em;
+}
+.ajustes__nota {
+  margin-top: 32px;
+  font-size: 0.9em;
+}
