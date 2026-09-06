@@ -3,6 +3,7 @@ import { useCarril } from '@/app/preferencias';
 import { OBJETIVO_TACTIL } from '@/config';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { MARIMBA, Sampler } from '@/audio/sampler';
+import { Retos } from '@/ui/Retos';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
@@ -35,6 +36,8 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
     notas?: string[];
     /** Colores por fila, para que el dibujo tenga sentido visual además de sonoro. */
     colores?: string[];
+    /** Propuestas de qué dibujar. Ver `ui/Retos.tsx`: son ideas, no tareas. */
+    retos?: string[];
   };
 
   const carril = useCarril(actividad.etapa);
@@ -98,6 +101,8 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
   return (
     <section className="actividad lienzo" data-carril={carril} aria-labelledby="consigna">
       <h1 id="consigna">{t(contenido.consigna)}</h1>
+
+      {contenido.retos && <Retos retos={contenido.retos} />}
 
       <div
         ref={lienzo}
