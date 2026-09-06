@@ -1,0 +1,23 @@
+{
+  // Configuración del despliegue en Cloudflare (flujo de Workers con assets estáticos).
+  //
+  // Sin este fichero, `npx wrangler deploy` tiene que adivinar qué publicar y cómo tratar
+  // las rutas que no son ficheros. Con él queda escrito en el repositorio, que es donde
+  // debe estar: el despliegue es parte del proyecto, no ajuste de un panel.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cascabel",
+  "compatibility_date": "2026-09-06",
+
+  "assets": {
+    "directory": "./dist",
+
+    // La app es una SPA: /actividad/inf-01-... y /diagnostico no son ficheros, los
+    // resuelve el router del cliente. Sin esto darían 404 al abrirlos directos, que es
+    // exactamente como se abren desde la pantalla de inicio en una PWA instalada.
+    "not_found_handling": "single-page-application"
+  }
+
+  // Nota: las cabeceras siguen viniendo de public/_headers, que Workers respeta igual que
+  // Pages. Ahí está la CSP con connect-src 'self', que es lo que hace técnicamente
+  // imposible exfiltrar el audio del micrófono. Ver docs/08-LEGAL.md.
+}

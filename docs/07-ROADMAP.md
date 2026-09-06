@@ -323,6 +323,31 @@ Las marcadas con `"esfuerzo": "S"` en `content/catalogo.json`.
 - [ ] Hoja de trazabilidad de assets al día
 - [ ] CSP verificada en producción (DevTools: cero peticiones fuera del origen)
 
+### T1.9b — Las tipografías no están en el repositorio `⚠️`
+
+Detectado el 2026-09-06 en el primer despliegue, por un aviso del build.
+
+`src/estilos/tokens.css` declara `@font-face` para `/fuentes/Andika-Regular.woff2` y
+`/fuentes/Bravura.woff2`, pero **`public/fuentes/` está vacío**. Los dos ficheros dan 404 y
+el navegador cae en silencio a la tipografía del sistema. Consecuencias reales:
+
+- **Andika no se está usando.** Es la que `docs/04-DISENO-UI.md` exige para Infantil, por
+  estar diseñada para lectores nóveles: la «a» y la «g» de un solo piso, que es como se
+  enseñan a escribir. Ahora mismo un niño de 4 años ve la fuente del sistema.
+- **Bravura tampoco.** Es la de símbolos musicales (SMuFL). Cuando llegue T2.2 no habrá con
+  qué dibujar un pentagrama.
+- El fallo es **silencioso**: no rompe nada, solo empeora sin avisar.
+
+- [ ] Descargar Andika (SIL, OFL) y Bravura (Steinberg, OFL) en `.woff2`
+- [ ] Anotarlas en `THIRD-PARTY-NOTICES.md` con su licencia — la OFL obliga a conservar
+      el aviso y prohíbe vender las fuentes por separado
+- [ ] Comprobar que entran en el precache de la PWA (hoy `includeAssets` ya las contempla)
+- [ ] Que el build **falle** si faltan, en vez de avisar: un aviso en 200 líneas de log no
+      lo ve nadie, y esto ha estado roto desde el andamiaje
+
+**Criterio de aceptación**: la respuesta de `/fuentes/Andika-Regular.woff2` es 200 con
+`font/woff2`, y `docs/04-DISENO-UI.md` deja de prometer algo que no ocurre.
+
 ### T1.10 — Despliegue
 
 - [ ] Cloudflare Pages conectado a `main` de `github.com/jarruego/cascabel`
