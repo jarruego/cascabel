@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { despertarAudio, latenciaMs, obtenerContexto } from '@/audio/AudioEngine';
+import { clicYa } from '@/audio/clic';
+import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { TOLERANCIA_MS } from '@/config';
 import { MARIMBA, Sampler } from '@/audio/sampler';
 import { DetectorDePalmadas } from '@/escucha/palmadas';
 import { useCarril } from '@/app/preferencias';
 import { evaluarRitmo, type EvaluacionRitmica } from '../evaluacion';
-import { aMilisegundos, rejillaDesdeSilabas } from '../rejillaRitmica';
+import { aMilisegundos, anclarEn, rejillaDesdeSilabas } from '../rejillaRitmica';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { CuentaAtras } from '@/ui/CuentaAtras';
@@ -55,6 +56,30 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
   const detector = useRef<DetectorDePalmadas | null>(null);
   const golpes = useRef<number[]>([]);
   const esperados = useRef<number[]>([]);
+  /*
+   * NOTA SOBRE LA LATENCIA, que aquí desapareció y conviene que se sepa por qué.
+   *
+   * Antes había que compensar `outputLatency`: el niño responde a lo que OYE, lo oye tarde,
+   * y sin compensar salía sistemáticamente tarde contra una rejilla absoluta. Con el patrón
+   * anclado a su primer golpe, **eso deja de existir**: el origen y los golpes siguientes se
+   * miden con el mismo reloj y el retardo de salida los desplaza a todos por igual, así que
+   * se cancela solo. Lo mismo por micrófono, donde la latencia de entrada afecta igual al
+   * primer golpe que a los demás.
+   *
+   * No es que se haya olvidado la compensación: es que anclar la hace innecesaria. Sigue
+   * haciendo falta en el musicograma, donde las notas SÍ caen contra un reloj externo.
+   */
+
+  /**
+   * Compases del patrón en pulsos, ya sin tempo. Es lo que se ancla al primer golpe.
+   *
+   * Se guarda aparte de `esperados` porque hasta que el niño no toca por primera vez **no
+   * existe ningún instante esperado**: existe la forma del ritmo, y nada más.
+   */
+  const patronEnPulsos = useRef<number[]>([]);
+  /** Instante del primer golpe de la respuesta. `null` hasta que el niño empieza. */
+  const origen = useRef<number | null>(null);
+  const cierre = useRef<number | null>(null);
   const temporizadores = useRef<number[]>([]);
 
   /** Estado de cada golpe esperado mientras el niño responde. */
@@ -150,10 +175,20 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
     */
     const finPatron = inicio + rejilla!.pulsos * msPorPulso;
     const inicioRespuesta = finPatron + CUENTA_PULSOS * msPorPulso;
-    // La latencia se SUMA a lo esperado: el niño responde a lo que OYE, y lo oye tarde.
-    esperados.current = aMilisegundos(rejilla!, inicioRespuesta, bpm, latenciaMs());
+
+    /*
+      **Los instantes esperados no se calculan aquí.** Se calculan cuando el niño da su
+      primer golpe, porque es ese golpe el que fija el origen.
+
+      Lo que sí se guarda ahora es la forma del ritmo en pulsos, relativa a su primer golpe.
+      Anclar el patrón a un reloj ajeno obligaba a acertar el patrón Y la entrada a la vez,
+      y fallar la entrada arruinaba todo lo demás aunque el ritmo fuera perfecto.
+    */
+    patronEnPulsos.current = rejilla!.golpes.map((g) => g - rejilla!.golpes[0]!);
+    esperados.current = [];
+    origen.current = null;
     golpes.current = [];
-    setMarcas(esperados.current.map(() => 'pendiente'));
+    setMarcas(patronEnPulsos.current.map(() => 'pendiente'));
 
     // Al acabar el ejemplo entra la cuenta.
     temporizadores.current.push(
@@ -181,28 +216,56 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
       ),
     );
 
-    // Cierre: un pulso de margen después del último golpe esperado.
-    const fin = esperados.current[esperados.current.length - 1]! + msPorPulso * 1.5;
+    /*
+      Cierre de seguridad: si el niño no llega a tocar nada, la actividad tiene que
+      terminar igualmente. El cierre de verdad lo programa el primer golpe.
+
+      Se da margen de sobra —el patrón entero más cuatro pulsos— porque aquí no hay prisa
+      que valga: quedarse esperando es mejor que cortarle a un niño que estaba pensando.
+    */
     temporizadores.current.push(
       window.setTimeout(
-        () => {
-          const r = evaluarRitmo(esperados.current, golpes.current, carril);
-          setEvaluacion(r);
-          setFase('resultado');
-        },
-        fin - ctx.currentTime * 1000,
+        () => terminar(),
+        inicioRespuesta + (rejilla!.pulsos + 4) * msPorPulso - ctx.currentTime * 1000,
       ),
     );
   }, [actividad.entrada.modo, bpm, carril, intentarMicrofono, rejilla]);
 
+  const terminar = useCallback(() => {
+    if (cierre.current !== null) window.clearTimeout(cierre.current);
+    cierre.current = null;
+    setEvaluacion(evaluarRitmo(esperados.current, golpes.current, carril));
+    setFase('resultado');
+  }, [carril]);
+
   const tocar = useCallback(() => {
     if (fase !== 'respondiendo') return;
     const ahora = obtenerContexto().currentTime * 1000;
+    const msPorPulso = 60000 / bpm;
+
+    /*
+      **El primer golpe fija el origen.** A partir de él se despliega el patrón, y desde ese
+      momento sí hay instantes que esperar.
+
+      El primero cuenta siempre como acierto, y eso no es hacer trampa: es que ese golpe
+      *define* el origen, así que no puede estar desplazado respecto a sí mismo. Lo que se
+      evalúa es lo que viene después, que es el patrón.
+    */
+    if (origen.current === null) {
+      origen.current = ahora;
+      esperados.current = anclarEn(rejilla!, ahora, bpm);
+      const ultimo = esperados.current[esperados.current.length - 1]!;
+      cierre.current = window.setTimeout(
+        terminar,
+        ultimo + msPorPulso * 1.5 - obtenerContexto().currentTime * 1000,
+      );
+    }
+
     golpes.current.push(ahora);
 
-    // Se marca en verde el golpe esperado más cercano, si cae dentro de la ventana
-    // «casi» del carril. Es retorno inmediato: el niño ve que ha entrado sin esperar al
-    // final, y eso es lo que le deja corregir en la siguiente vuelta.
+    // Se marca en verde el golpe esperado más cercano, si cae dentro de la ventana «casi»
+    // del carril. Es retorno inmediato: el niño ve que ha entrado sin esperar al final, y
+    // eso es lo que le deja corregir dentro de la misma vuelta.
     const limite = TOLERANCIA_MS[carril].casi;
     let mejor = -1;
     let mejorError = Infinity;
@@ -213,7 +276,19 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
         mejor = i;
       }
     });
+
+    /*
+      **Todo golpe suena; el acierto suena MÁS.**
+
+      El clic va siempre, porque oír el propio golpe es lo que permite corregirse: quitarlo
+      cuando fallas te deja tocando a ciegas justo cuando más falta hace oírte. Lo que
+      distingue al acierto es que además suena la nota del modelo, así que la diferencia es
+      *ganar algo*, nunca perderlo. La regla 4 prohíbe el sonido desagradable de fallo, y
+      esta es la forma de dar retorno sin romperla.
+    */
+    clicYa(false);
     if (mejor >= 0) {
+      sampler.current?.tocar('C5', undefined, 0.9);
       setMarcas((m) => {
         if (m[mejor] === 'acertado') return m;
         const n = [...m];
@@ -221,13 +296,15 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
         return n;
       });
     }
-  }, [fase, carril]);
+  }, [fase, carril, bpm, terminar, rejilla]);
 
   // Los golpes que ya han pasado sin respuesta se apagan en GRIS, no en rojo: la regla 4
   // prohíbe el rojo, y apagarse dice «este se fue» sin decir «has fallado».
   useEffect(() => {
     if (fase !== 'respondiendo') return;
     const id = window.setInterval(() => {
+      // Sin origen todavía no hay nada que envejecer: el niño aún no ha empezado.
+      if (origen.current === null) return;
       const ahora = obtenerContexto().currentTime * 1000;
       const limite = TOLERANCIA_MS[carril].casi;
       setMarcas((m) =>

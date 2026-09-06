@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   aMilisegundos,
+  anclarEn,
   rejillaDesdeSilabas,
   silabasConocidas,
 } from '../src/motor/rejillaRitmica';
@@ -149,5 +150,43 @@ describe('sílabas y golpes no son lo mismo', () => {
     const r = rejillaDesdeSilabas(['ta', 'sh', 'ta']);
     expect(r.inicios).toEqual([0, 1, 2]);
     expect(r.golpes).toEqual([0, 2]);
+  });
+});
+
+describe('anclar el patrón en el primer golpe del niño', () => {
+  /*
+    Lo pidió el autor y separa dos habilidades que se estaban midiendo juntas: reproducir un
+    patrón y entrar a tiempo. Antes, fallar la entrada arruinaba todo lo que venía detrás
+    aunque el ritmo fuera perfecto.
+  */
+  const rejilla = rejillaDesdeSilabas(['ta', 'ti-ti', 'ta']);
+
+  it('el primer instante esperado ES el primer golpe', () => {
+    // No puede estar desplazado respecto a sí mismo: es el que define el origen.
+    expect(anclarEn(rejilla, 5000, 60)[0]).toBe(5000);
+  });
+
+  it('conserva la FORMA del ritmo, no los instantes absolutos', () => {
+    const a = anclarEn(rejilla, 0, 60);
+    const b = anclarEn(rejilla, 12345, 60);
+    const forma = (x: number[]) => x.map((v) => v - x[0]!);
+    expect(forma(b)).toEqual(forma(a));
+  });
+
+  it('escala con el tempo', () => {
+    expect(anclarEn(rejilla, 0, 60)).toEqual([0, 1000, 1500, 2000]);
+    expect(anclarEn(rejilla, 0, 120)).toEqual([0, 500, 750, 1000]);
+  });
+
+  it('funciona con un patrón que empieza en silencio', () => {
+    // `sh ta ta`: el primer golpe cae en el segundo pulso, no en el cero. Anclar tiene que
+    // restar ese desplazamiento, o el niño tendría que esperar un pulso fantasma.
+    const conSilencio = rejillaDesdeSilabas(['sh', 'ta', 'ta']);
+    expect(conSilencio.golpes).toEqual([1, 2]);
+    expect(anclarEn(conSilencio, 1000, 60)).toEqual([1000, 2000]);
+  });
+
+  it('un patrón sin golpes no revienta', () => {
+    expect(anclarEn(rejillaDesdeSilabas(['sh', 'sh']), 500, 60)).toEqual([]);
   });
 });
