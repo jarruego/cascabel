@@ -293,6 +293,7 @@ del 7-12-1987**. Y el fonograma es un derecho aparte: nunca se usa audio ajeno.
 ```bash
 npm run dev                 # servidor de desarrollo en 0.0.0.0:5173
 npm run verificar           # typecheck + lint + tests + validación de contenido
+npm run contenido:preparar  # crea .venv con music21 y jsonschema (Python 3.11+)
 npm run contenido:validar   # solo el validador de actividades
 npm run contenido:indice    # regenera content/indice.json desde las actividades
 npm run build && npm run preview

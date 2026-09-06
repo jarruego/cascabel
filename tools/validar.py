@@ -28,6 +28,15 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parent.parent
 ESQUEMA = RAIZ / "schemas" / "actividad.schema.json"
 
+# La consola de Windows es cp1252 por defecto y revienta con los simbolos que
+# usamos para el informe. Sin esto, el validador se cae despues de haber hecho
+# bien todo el trabajo, que es la peor forma posible de fallar.
+for flujo in (sys.stdout, sys.stderr):
+    try:
+        flujo.reconfigure(encoding="utf-8", errors="replace")
+    except (AttributeError, ValueError):
+        pass
+
 # ---------------------------------------------------------------------------
 # Reglas pedagógicas. Fuente: práctica habitual documentada en programaciones
 # didácticas españolas, NO normativa. Ver docs/03-CURRICULO.md.
@@ -65,6 +74,12 @@ FIGURAS_ETAPA = {
 MAX_OBJETOS = {"infantil": 4, "primaria-c1": 6, "primaria-c2": 8, "primaria-c3": 9}
 
 
+# Con --permisivo, la falta de jsonschema o music21 degrada a aviso en vez de
+# fallar. Existe sólo para poder inspeccionar contenido sin el entorno montado;
+# NUNCA debe usarse en npm run verificar.
+PERMISIVO = False
+
+
 @dataclass
 class Resultado:
     fichero: Path
@@ -86,7 +101,10 @@ def validar_esquema(datos: dict, esquema: dict, r: Resultado) -> None:
     try:
         import jsonschema
     except ImportError:
-        r.avisos.append("jsonschema no instalado: me salto la validación de esquema")
+        # Un aviso aquí haría que una tanda entera pasase sin validar NADA y aun
+        # así dijese "correctas". Es un error, y en modo permisivo un aviso.
+        mensaje = "jsonschema no instalado: NO se ha validado el esquema"
+        (r.avisos if PERMISIVO else r.errores).append(mensaje)
         return
     validador = jsonschema.Draft202012Validator(esquema)
     for err in sorted(validador.iter_errors(datos), key=lambda e: list(e.path)):
@@ -103,7 +121,8 @@ def validar_musica(datos: dict, r: Resultado) -> None:
     try:
         from music21 import converter, interval, note, pitch
     except ImportError:
-        r.avisos.append("music21 no instalado: me salto la validación musical")
+        mensaje = "music21 no instalado: NO se ha validado la música"
+        (r.avisos if PERMISIVO else r.errores).append(mensaje)
         return
 
     try:
@@ -123,16 +142,39 @@ def validar_musica(datos: dict, r: Resultado) -> None:
         # contra la indicación de compás de la pieza.
         ts = pieza.recurse().getElementsByClass("TimeSignature").first()
         esperado = ts.barDuration.quarterLength if ts else None
-        if esperado:
-            for i, compas in enumerate(compases):
-                real = compas.duration.quarterLength
-                # Primer y último compás pueden ser anacrusa y su complemento.
-                if i in (0, len(compases) - 1) and real < esperado:
+        if esperado and compases:
+            duraciones = [c.duration.quarterLength for c in compases]
+            total = sum(duraciones)
+
+            # (a) La pieza entera tiene que ser un múltiplo del compás. Es la regla
+            #     fuerte: el parser de ABC de music21 PARTE un compás desbordado en
+            #     dos trozos que miden bien por separado, así que mirar compás a
+            #     compás deja pasar cinco negras en un 4/4. El total, no.
+            resto = total % esperado
+            if min(resto, esperado - resto) > 1e-6:
+                r.errores.append(
+                    f"música · la pieza dura {total} negras, que no es múltiplo de "
+                    f"{esperado} ({ts.ratioString}): sobra o falta parte de un compás"
+                )
+
+            # (b) Si el primero es corto es una anacrusa, y entonces el último tiene
+            #     que completarlo exactamente. Si no, no era una anacrusa.
+            if len(duraciones) > 1 and duraciones[0] < esperado - 1e-6:
+                suma = duraciones[0] + duraciones[-1]
+                if abs(suma - esperado) > 1e-6:
+                    r.errores.append(
+                        f"música · el primer compás dura {duraciones[0]} negras y el "
+                        f"último {duraciones[-1]}; si es anacrusa deben sumar {esperado}"
+                    )
+
+            # (c) Los compases interiores, completos siempre.
+            for i, real in enumerate(duraciones):
+                if i in (0, len(duraciones) - 1):
                     continue
                 if abs(real - esperado) > 1e-6:
                     r.errores.append(
-                        f"música · el compás {i + 1} dura {real} negras y "
-                        f"deberían ser {esperado} ({ts.ratioString})"
+                        f"música · el compás {i + 1} dura {real} negras y deberían "
+                        f"ser {esperado} ({ts.ratioString})"
                     )
     except Exception as exc:  # noqa: BLE001
         r.errores.append(f"música · no se puede dividir en compases: {exc}")
@@ -252,7 +294,15 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="Valida actividades de Cascabel")
     ap.add_argument("ruta", type=Path, help="Fichero .json o carpeta")
     ap.add_argument("--estricto", action="store_true", help="Los avisos también fallan")
+    ap.add_argument(
+        "--permisivo",
+        action="store_true",
+        help="Si faltan jsonschema o music21, avisa en vez de fallar (no usar en CI)",
+    )
     args = ap.parse_args()
+
+    global PERMISIVO
+    PERMISIVO = args.permisivo
 
     ficheros = (
         sorted(args.ruta.glob("**/*.json")) if args.ruta.is_dir() else [args.ruta]

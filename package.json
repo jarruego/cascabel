@@ -17,7 +17,8 @@
     "typecheck": "tsc -b --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "contenido:validar": "python3 tools/validar.py content/actividades",
+    "contenido:preparar": "node tools/preparar.mjs",
+    "contenido:validar": "node tools/validar.mjs content/actividades",
     "contenido:indice": "node tools/indice.mjs",
     "verificar": "npm run typecheck && npm run lint && npm run test && npm run contenido:validar"
   },

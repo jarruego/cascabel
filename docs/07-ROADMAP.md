@@ -31,11 +31,14 @@ Con el **reenvío de puertos de `chrome://inspect`** (pestaña *Port forwarding*
 Eso cuenta como *secure context*, así que `getUserMedia` funciona sin montar HTTPS ni
 certificados ni túneles a terceros.
 
-- [ ] Chrome de escritorio en Windows, pestaña normal
-- [ ] Edge de escritorio en Windows (motor Chromium, pero política de permisos propia)
-- [ ] Firefox de escritorio en Windows
+- [x] Chrome de escritorio en Windows, pestaña normal — 52 ms, 48 kHz
+- [x] Edge de escritorio en Windows — idéntico a Chrome hasta el milisegundo
+- [x] Firefox de escritorio en Windows — 34 ms, y declara `baseLatency = 0`
 - [ ] Chrome de Android por reenvío de puertos, pestaña normal
 - [ ] Chrome de Android, **PWA instalada** ← requiere HTTPS real, no vale el reenvío
+
+**El escritorio está cerrado** (2026-09-06): los tres navegadores conceden el micrófono,
+cargan el `AudioWorklet` y detectan tono. Resultados y análisis en `docs/pruebas/microfono.md`.
 
 El último punto es la excepción honesta: una PWA lanzada desde la pantalla de inicio no
 pasa por el túnel de DevTools, así que el modo *standalone* en Android sólo se puede
@@ -50,12 +53,24 @@ real antes de llegar a T2.5.
 
 La ruta `/diagnostico` informa, en texto seleccionable:
 
-- [ ] Sistema operativo y versión, navegador y versión (de `userAgent`, sin más)
-- [ ] Modo de visualización: pestaña o `standalone` (`display-mode` por `matchMedia`)
-- [ ] `sampleRate` del `AudioContext`, antes y después de abrir el micrófono
-- [ ] `baseLatency`, `outputLatency` y la latencia total que usaría `latenciaMs()`
-- [ ] Estado del micrófono: concedido, denegado, o el error exacto con su `name`
-- [ ] Botón **«Copiar informe»** al portapapeles, y un enlace de *Abrir incidencia*
+- [x] Sistema operativo y versión, navegador y versión (de `userAgent`, sin más)
+- [x] Modo de visualización: pestaña o `standalone` (`display-mode` por `matchMedia`,
+      con la vía de `navigator.standalone` que Safari necesitó durante años)
+- [x] `sampleRate` del `AudioContext`, antes y después de abrir el micrófono
+- [x] `baseLatency`, `outputLatency` y la latencia total que usaría `latenciaMs()`
+- [x] Estado del micrófono: concedido, denegado, o el error exacto con su `name`
+- [x] Botón **«Copiar informe»** al portapapeles; si está bloqueado, el `<pre>` sigue
+      siendo seleccionable a mano, que es la vía que nunca falla
+- [x] Coste del análisis del worklet en ms, o «no medible» si el navegador no expone
+      `performance` dentro del `AudioWorklet`
+
+Hecho el 2026-09-06: ruta `/diagnostico`, router mínimo de dos rutas (`src/app/rutas.tsx`,
+que **no** es T1.4) y `public/_redirects` para que la ruta exista al abrirla directa.
+`docs/pruebas/microfono.md` tiene la tabla lista y las instrucciones del reenvío de puertos.
+
+**Pendiente y sólo lo puedes hacer tú**: las cinco filas de (a). Y comprobar que la página
+se ve bien: se verificó que compila, que el servidor la sirve y que el *fallback* de SPA
+funciona, pero no se pudo abrir en un navegador real desde la sesión.
 
 **Por qué**: el bug 185448 de WebKit ha roto `getUserMedia` en modo *standalone* en iOS
 varias veces, y si está roto la estrategia de distribución cambia entera (habría que
@@ -71,6 +86,26 @@ modo que un iOS roto empeora la experiencia pero no impide usar ninguna activida
 sistema, navegador, modo (pestaña / instalada), resultado y coste del análisis, rellena
 para todas las filas de (a) que no dependan del despliegue. Y `/diagnostico` desplegada,
 copiando un informe legible de una sola pulsación.
+
+### T0.4 — Medir el coste del NSDF de otra forma
+
+Abierta el 2026-09-06 por lo que dijo el primer informe de `/diagnostico`.
+
+**Chrome no expone `performance` dentro del `AudioWorkletGlobalScope`**, así que la
+medición prevista en T0.1 devuelve «no medible» y seguimos sin saber lo que cuesta el
+detector de tono. El NSDF es O(N²) con ventana de 1024 y solape del 50 %: en un PC no se
+nota, y en la tablet de aula puede no caber. Es la incógnita que sostiene T2.5.
+
+- [ ] Banco de pruebas en el hilo principal: correr el mismo NSDF sobre un buffer
+      sintético con `performance.now()` y publicar el resultado en `/diagnostico`
+- [ ] Etiquetarlo como **estimación**, no como medida del hilo de audio: no es lo mismo,
+      y decir lo contrario sería mentir en el informe
+- [x] ~~Comprobar si Firefox sí expone `performance` en el worklet~~ — **no lo hace**.
+      Chrome, Edge y Firefox dan los tres «no medible», así que el banco en el hilo
+      principal deja de ser el plan B y pasa a ser el único plan
+
+**Criterio de aceptación**: `/diagnostico` da un número de milisegundos por análisis en
+Chrome de escritorio y en Chrome de Android, con su etiqueta de cómo se obtuvo.
 
 ### T0.2 — Una actividad completa de punta a punta
 
@@ -160,7 +195,11 @@ coreografía paso a paso, ficha imprimible.
 
 - [ ] Grabar o localizar 5–7 muestras CC0 por instrumento (marimba, xilófono, campanas)
 - [ ] Convertir a Opus 48 kbps mono, ~70 KB por instrumento
-- [ ] Calibración de latencia («da tres palmadas al ritmo»), guardada en el dispositivo
+- [ ] Calibración de latencia («da tres palmadas al ritmo»), guardada en el dispositivo.
+      **No es opcional**: Chromium mide 52 ms en un PC de sobremesa, el 74 % de la ventana
+      de «perfecto» de 9–12 años, y Firefox declara `baseLatency = 0` —que es un dato
+      ausente, no una latencia buena—, así que `latenciaMs()` compensa de menos ahí.
+      Las cifras del navegador son el punto de partida; la calibración es la verdad
 - [ ] Test de que el metrónomo no usa `setInterval`
 
 ### T1.8 — Veinte actividades de esfuerzo S
@@ -188,22 +227,31 @@ Las marcadas con `"esfuerzo": "S"` en `content/catalogo.json`.
 
 ---
 
-### T1.11 — `npm run verificar` tiene que pasar en Windows
+### T1.11 — `npm run verificar` tiene que pasar en Windows `[x]`
 
-Detectado el 2026-09-06. **La puerta de commit no funciona en la máquina del autor**, así
-que hoy «verificado» no significa nada:
+Detectado y cerrado el 2026-09-06. La puerta de commit no comprobaba nada:
 
-- [ ] `contenido:validar` invoca `python3`, que en Windows es el alias de la Microsoft
-      Store y falla. Ahí sólo hay `python` (3.10.6)
-- [ ] Ni `jsonschema` ni `music21` están instalados: el validador se salta **toda** la
-      comprobación de esquema y de música, avisa, y aun así termina con «3/3 correctas»
-- [ ] Decidir la vía: intérprete detectado en un script, o `docker compose --profile tools`
-      como camino único y documentado
-- [ ] El validador debe **fallar**, no avisar, si le faltan sus dependencias en modo estricto
+- [x] `contenido:validar` invocaba `python3`, que en Windows es el alias de la Microsoft
+      Store. Ahora pasa por `tools/validar.mjs`, que resuelve el intérprete de verdad
+- [x] Faltaban `jsonschema` y `music21`: el validador se saltaba **toda** la comprobación,
+      avisaba, y aun así terminaba con «3/3 correctas». Ahora eso es un error, no un aviso
+      (`--permisivo` lo degrada a aviso a propósito, y nunca debe usarse en CI)
+- [x] Vía elegida: intérprete detectado por `tools/interprete.mjs`, con `.venv` primero.
+      `npm run contenido:preparar` lo monta. Docker sigue siendo la alternativa
+- [x] La consola de Windows (cp1252) reventaba al imprimir `✓` después de validar bien
+- [x] **La comprobación de compases no funcionaba**: el parser de ABC de music21 parte un
+      compás desbordado en dos trozos que miden bien por separado, así que cinco negras en
+      un 4/4 pasaban. Se sustituye por tres reglas: total múltiplo del compás, anacrusa que
+      complementa al último compás, e interiores completos
+- [x] `tests/validador.test.ts` con seis actividades de referencia
 
-**Criterio de aceptación**: `npm run verificar` pasa en Windows sin Docker, o falla con un
-mensaje que diga exactamente qué instalar. Y una actividad con un compás mal cuadrado hace
-que el comando devuelva un código distinto de cero.
+**Nota**: `requirements.txt` fija `music21==10.5.0`, que exige **Python ≥ 3.11**. En esta
+máquina `python` es 3.10 y `py -3` es 3.11; por eso el resolver prueba varios candidatos en
+vez de fiarse del primero.
+
+**Limitación conocida**: un error que se compensa a sí mismo (un compás de 3 seguido de uno
+de 5 en un 4/4) es indistinguible de una anacrusa de 3 con final de 1, y pasa. Para
+detectarlo habría que medir las barras del ABC en crudo, y no compensa hoy.
 
 ---
 

@@ -130,3 +130,68 @@ body {
   font-size: 1.1em;
   color: var(--ok);
 }
+
+/*
+ * /diagnostico (T0.1). Es un instrumento de medida, no una pantalla de producto:
+ * prioriza legibilidad del dato sobre cualquier otra cosa. La frecuencia va enorme
+ * porque hay que poder leerla desde el otro lado de la mesa mientras cantas.
+ */
+.diagnostico {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+.diagnostico__intro,
+.diagnostico__pie {
+  color: var(--tinta-2);
+  font-size: 0.9em;
+}
+.diagnostico__tono {
+  margin: 24px 0;
+  padding: 24px 16px;
+  border: 3px solid var(--linea);
+  border-radius: 18px;
+  background: var(--superficie);
+  text-align: center;
+}
+.diagnostico__hz {
+  margin: 0;
+  font-size: clamp(40px, 14vw, 88px);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+  color: var(--acento-2);
+}
+.diagnostico__nota {
+  margin: 8px 0 0;
+  color: var(--tinta-2);
+  font-variant-numeric: tabular-nums;
+}
+.diagnostico__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.diagnostico__fallo {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-left: 4px solid var(--acento);
+  background: var(--superficie);
+}
+.diagnostico__fallo code {
+  display: block;
+  margin-top: 6px;
+  word-break: break-word;
+}
+.diagnostico__informe {
+  padding: 16px;
+  border: 1px solid var(--linea);
+  border-radius: 12px;
+  background: var(--superficie);
+  font-size: 13px;
+  line-height: 1.45;
+  /* Que se pueda seleccionar a mano es la vía que nunca falla si el
+     portapapeles está bloqueado por falta de contexto seguro. */
+  user-select: text;
+  overflow-x: auto;
+  white-space: pre;
+}

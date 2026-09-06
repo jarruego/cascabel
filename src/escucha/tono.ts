@@ -31,6 +31,18 @@ export class DetectorDeTono {
   private sesion: SesionMicrofono | null = null;
   private nodo: AudioWorkletNode | null = null;
   private historico: number[] = [];
+  private costes: number[] = [];
+
+  /**
+   * Milisegundos que cuesta cada análisis en el hilo de audio, o null si el
+   * navegador no expone `performance` dentro del worklet. Lo consume /diagnostico:
+   * el NSDF es O(N²) y conviene saber si se sostiene en un móvil real antes de
+   * apoyar T2.5 encima. Ver T0.1 en docs/07-ROADMAP.md.
+   */
+  costeMedioMs(): number | null {
+    if (this.costes.length === 0) return null;
+    return this.costes.reduce((a, b) => a + b, 0) / this.costes.length;
+  }
 
   async arrancar(alLeer: (lectura: LecturaTono | null) => void): Promise<void> {
     const ctx = obtenerContexto();
@@ -42,7 +54,16 @@ export class DetectorDeTono {
     });
 
     this.nodo.port.onmessage = (ev: MessageEvent) => {
-      const { hz, claridad } = ev.data as { hz: number; claridad: number };
+      const { hz, claridad, msAnalisis } = ev.data as {
+        hz: number;
+        claridad: number;
+        msAnalisis: number | null;
+      };
+      if (typeof msAnalisis === 'number') {
+        this.costes.push(msAnalisis);
+        // Ventana corta: nos interesa el coste actual, no el histórico de la sesión.
+        if (this.costes.length > 100) this.costes.shift();
+      }
       if (!hz || claridad < CLARIDAD_MINIMA) {
         this.historico = [];
         alLeer(null);
@@ -71,6 +92,7 @@ export class DetectorDeTono {
     this.sesion?.cerrar();
     this.sesion = null;
     this.historico = [];
+    this.costes = [];
   }
 }
 

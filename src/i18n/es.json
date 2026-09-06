@@ -19,5 +19,15 @@
   "actividad.c102.pista2": "Marca el pulso con el pie mientras palmeas.",
   "actividad.c201.enunciado": "Coloca la nota en su sitio del pentagrama.",
   "actividad.c201.consigna": "¿Dónde va esta nota?",
-  "actividad.c201.pista1": "Cuenta las líneas desde abajo."
+  "actividad.c201.pista1": "Cuenta las líneas desde abajo.",
+  "diagnostico.titulo": "Diagnóstico del dispositivo",
+  "diagnostico.intro": "Esta pantalla comprueba si el micrófono y el audio funcionan en tu dispositivo. No envía nada a ningún sitio: el informe se queda aquí hasta que tú lo copies.",
+  "diagnostico.escuchar": "Empezar a escuchar",
+  "diagnostico.parar": "Dejar de escuchar",
+  "diagnostico.copiar": "Copiar informe",
+  "diagnostico.copiado": "¡Copiado!",
+  "diagnostico.sinSenal": "Sin señal. Canta o silba cerca del micrófono.",
+  "diagnostico.fallo": "No se pudo abrir el micrófono. Ese dato también nos sirve:",
+  "diagnostico.informe": "Informe",
+  "diagnostico.pie": "Si algo ha fallado, copia el informe y pégalo en una incidencia del proyecto. Es la forma de que lo arreglemos sin tener tu dispositivo delante."
 }

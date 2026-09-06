@@ -1,0 +1,5 @@
+# SPA: cualquier ruta la resuelve el router del cliente.
+# Sin esto, abrir /diagnostico directamente da 404 — y así es exactamente como se
+# abre desde la pantalla de inicio en modo standalone, que es el caso que T0.1
+# necesita poder probar.
+/*    /index.html   200
