@@ -2661,3 +2661,68 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   width: auto;
   margin: 0 auto var(--e-3);
 }
+
+/* ── poner las barras de compás ────────────────────────────────────────────
+   Las figuras se escriben con Bravura, que ya está en el proyecto: aquí no hay pauta ni
+   alturas, solo figuras en fila, y traer un renderizador de partituras para dibujar ocho
+   negras sería traer una imprenta para escribir una postal. */
+.compases__cifra {
+  display: inline-grid;
+  margin: var(--e-4) auto;
+  font-family: var(--f-musica), serif;
+  font-size: 34px;
+  line-height: 0.95;
+  text-align: center;
+}
+.compases__linea {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 0;
+  margin: var(--e-4) 0;
+  list-style: none;
+}
+.compases__hueco { display: flex; align-items: center; }
+.compases__figura {
+  display: block;
+  min-width: 34px;
+  font-family: var(--f-musica), serif;
+  font-size: 44px;
+  line-height: 1;
+  text-align: center;
+}
+/* El hueco es un botón alto y estrecho: alto para poder acertarlo, estrecho para que se
+   lea como el sitio donde va una raya y no como un botón más. */
+.compases__barra {
+  width: 22px;
+  height: 64px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-left: 3px dashed var(--linea);
+  cursor: pointer;
+}
+.compases__barra:hover { border-left-color: var(--tinta-2); }
+.compases__barra:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
+/* Puesta: raya entera y gruesa, como una divisoria de verdad. */
+.compases__barra[data-puesta] { border-left: 4px solid var(--tinta); }
+/* Sobra: se marca con trazo doble, no con rojo. Regla 4. */
+.compases__barra[data-sobra] {
+  border-left: 4px double var(--vivo-naranja);
+  background: color-mix(in srgb, var(--vivo-naranja) 14%, transparent);
+}
+/* Falta: se enseña dónde estaba, en verde y punteada. Enseñar la respuesta es enseñar. */
+.compases__barra[data-falta] {
+  border-left: 4px dotted var(--vivo-verde);
+  background: color-mix(in srgb, var(--vivo-verde) 14%, transparent);
+}
+/* La barra final: siempre puesta, nunca tocable. */
+.compases__final {
+  width: 8px;
+  height: 64px;
+  border-left: 3px solid var(--tinta);
+  border-right: 6px solid var(--tinta);
+}
+.compases__acciones { display: flex; justify-content: center; margin-top: var(--e-4); }

@@ -749,5 +749,22 @@
   "actividad.c205.enunciado": "Mira la digitación, tapa los agujeros y sopla suave. El micrófono te dirá si la nota sale afinada.",
   "actividad.c205.pista1": "Sopla flojo y seguido. Si soplas fuerte la nota sube, y eso no se arregla con los dedos.",
   "actividad.c205.pista2": "Tapa los agujeros con la yema, no con la punta del dedo: la yema es más blanda y cierra mejor.",
-  "actividad.c205.pista3": "Si no tienes flauta a mano, canta la nota: la actividad funciona igual."
+  "actividad.c205.pista3": "Si no tienes flauta a mano, canta la nota: la actividad funciona igual.",
+  "compases.linea": "Línea de figuras",
+  "compases.barraTras": "Poner barra después de la figura",
+  "compases.sobran": "Alguna barra está donde el compás todavía no ha terminado.",
+  "compases.faltan": "Falta alguna barra: hay un sitio donde el compás ya se había completado.",
+  "compases.sobranYFaltan": "Alguna sobra y alguna falta. Vuelve a contar los pulsos desde el principio.",
+  "actividad.c206.consigna": "¿Dónde van las barras de compás?",
+  "actividad.c206.enunciado": "Toca entre dos figuras para poner una barra. Va donde los pulsos suman exactamente un compás.",
+  "actividad.c206.pista1": "Cuenta pulsos, no figuras: una blanca vale por dos negras, así que no todos los compases tienen el mismo número de figuras.",
+  "actividad.c206.pista2": "La cifra de arriba dice cuántos pulsos entran en cada compás. Aquí son cuatro.",
+  "ficha.tipo.compases.comoFunciona": "Una fila de figuras sin dividir y una cifra de compás. Se toca entre dos figuras para poner una divisoria, y va donde los pulsos suman exactamente un compás. Se corrige sola, y distingue lo que sobra de lo que falta: no es el mismo error.",
+  "ficha.tipo.compases.sinPantalla": "Escribe la fila en la pizarra y que salgan a poner las barras con tiza. Contar en voz alta mientras se señala es la mitad del ejercicio, y en la pizarra lo hace todo el grupo.",
+  "ficha.tipo.compases.ampliacion": "La misma fila en otro compás: en 2/4 y en 3/4 las barras caen en otro sitio sin que cambie ninguna figura. Es lo que demuestra que la cifra no es un adorno.",
+  "ficha.tipo.compases.refuerzo": "Empieza con figuras todas iguales, donde contar figuras y contar pulsos da lo mismo. Las duraciones desiguales son el salto, y conviene darlo cuando lo anterior esté firme.",
+  "ficha.tipo.compases.observar": "Si cuentan FIGURAS en vez de PULSOS. Es el error de fondo, y se ve porque ponen las barras cada cuatro símbolos aunque haya blancas de por medio.",
+  "ficha.tipo.compases.indicador1": "Cuenta pulsos",
+  "ficha.tipo.compases.indicador2": "Sitúa la barra",
+  "ficha.tipo.compases.indicador3": "Se corrige solo"
 }

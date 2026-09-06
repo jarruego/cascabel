@@ -1,0 +1,64 @@
+{
+  "id": "c2-06-pon-las-barras",
+  "version": 1,
+  "tipo": "compases",
+  "titulo": "Pon las barras de compás",
+  "descripcion": "Una línea de figuras sin dividir y una cifra de compás. Hay que decidir dónde van las divisorias contando duraciones, no figuras.",
+  "etapa": "primaria-c2",
+  "eje": "notacion",
+  "lugar": "pantalla",
+  "duracion_min": 12,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "figuras": [
+      "negra",
+      "blanca"
+    ]
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c206.consigna",
+    "duraciones": [
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      2
+    ],
+    "pulsosPorCompas": 4,
+    "figuraDelCompas": 4
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "aciertos"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c206.enunciado"
+  },
+  "pistas": [
+    "actividad.c206.pista1",
+    "actividad.c206.pista2"
+  ],
+  "estado": "borrador"
+}
