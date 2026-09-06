@@ -124,8 +124,22 @@ export default defineConfig({
           },
         ],
       },
+      // Workbox va DENTRO de sw.js en vez de en un fichero aparte.
+      //
+      // No es cosmético: Chrome solo considera instalable una PWA si el service worker
+      // registra su manejador de `fetch` durante la evaluación inicial del script. Con el
+      // runtime en un fichero aparte, sw.js lo cargaba y el addEventListener('fetch')
+      // acababa ejecutándose dentro de una promesa, después. Resultado: Chrome de Android
+      // ofrecía «Añadir a pantalla de inicio» en vez de «Instalar aplicación», y sin
+      // instalación de verdad no se puede probar el micrófono en modo standalone (T0.1).
+      injectRegister: 'auto',
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,woff2,opus,json}'],
+        inlineWorkboxRuntime: true,
+        // Una navegación a / la resuelve el index.html precacheado. Sin esto, el service
+        // worker no sabe servir la start_url sin conexión, que es otro de los requisitos.
+        navigateFallback: 'index.html',
+        navigateFallbackDenylist: [/^\/content\//, /^\/audio\//, /^\/worklets\//],
+        globPatterns: ['**/*.{js,css,html,svg,png,woff2,opus,json}'],
         // Presupuesto de precache: por debajo de 10 MB (límite práctico de iOS).
         maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,
         runtimeCaching: [
