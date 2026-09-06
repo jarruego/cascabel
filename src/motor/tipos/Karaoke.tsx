@@ -5,7 +5,9 @@ import { MARIMBA, Sampler } from '@/audio/sampler';
 import { TOLERANCIA_MS } from '@/config';
 import { evaluarRitmo, type EvaluacionRitmica } from '../evaluacion';
 import { alturaEnPauta, yDeLinea } from '../alturaEnPauta';
+import { duracionDe, instantesDe } from '../melodiaEnTiempo';
 import { CuentaAtras } from '@/ui/CuentaAtras';
+import { colorDe, nombreDe } from '@/ui/coloresNota';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -40,6 +42,15 @@ interface NotaKaraoke {
 
 /** Segundos de melodía visibles a la derecha de la línea. Menos no da tiempo a prepararse. */
 const ANTICIPACION_S = 3.2;
+/**
+ * Margen antes de la primera nota.
+ *
+ * Sin esto la melodía arranca en el instante cero y **la primera nota nace justo encima de
+ * la línea**: no se puede anticipar, solo reaccionar, y se falla siempre. Con dos segundos
+ * la primera nota entra por la derecha y se ve venir como todas las demás. La cuenta atrás
+ * no basta, porque termina y la nota ya está ahí.
+ */
+const ENTRADA_S = 2;
 /** Dónde está la línea del presente, en porcentaje del ancho. */
 const LINEA_PCT = 22;
 /** Separación entre líneas del pentagrama, en píxeles. */
@@ -65,24 +76,25 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
   const [acertadas, setAcertadas] = useState<Set<number>>(new Set());
   const [pasadas, setPasadas] = useState<Set<number>>(new Set());
   const [evaluacion, setEvaluacion] = useState<EvaluacionRitmica | null>(null);
+  /**
+   * Nombres de nota que suben flotando al acertar. Se guardan con un id propio y no con el
+   * índice de la nota porque hay que poder repetir la misma nota: si dos «mi» seguidos
+   * compartieran clave, React reutilizaría el nodo y la animación no volvería a arrancar.
+   */
+  const [avisos, setAvisos] = useState<Array<{ id: number; nombre: string; x: number; y: number }>>([]);
+  const siguienteAviso = useRef(0);
 
   const sampler = useRef<Sampler | null>(null);
   const rafId = useRef<number | null>(null);
   const instantes = useRef<number[]>([]);
   const golpes = useRef<number[]>([]);
 
-  /** Instante de cada nota, en segundos desde el principio de la melodía. */
-  const tiempos = useMemo(() => {
-    const segundosPorPulso = 60 / bpm;
-    let acumulado = 0;
-    return notas.map((n) => {
-      const cuando = acumulado;
-      acumulado += n.pulsos * segundosPorPulso;
-      return cuando;
-    });
-  }, [notas, bpm]);
+  /** Instante de cada nota, en segundos desde el arranque. Incluye el margen de entrada. */
+  const tiempos = useMemo(() => instantesDe(notas, bpm, ENTRADA_S), [notas, bpm]);
 
-  const duracionTotal = (tiempos[tiempos.length - 1] ?? 0) + 2;
+  // Un par de segundos de cola tras la última nota: si la evaluación llegara justo al
+  // ataque, un golpe algo tardío en la última nota se perdería.
+  const duracionTotal = duracionDe(notas, bpm, ENTRADA_S) + 2;
 
   /** Altura de cada nota en la pauta, con sus líneas adicionales si se sale. */
   const alturas = useMemo(
@@ -171,8 +183,18 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
         mejor = i;
       }
     });
-    if (mejor >= 0) setAcertadas((a) => new Set(a).add(mejor));
-  }, [fase, carril]);
+    if (mejor < 0) return;
+    setAcertadas((a) => new Set(a).add(mejor));
+
+    // El nombre de la nota, subiendo y desvaneciéndose. Es lo que convierte «he acertado»
+    // en «he acertado un SOL»: la recompensa y el contenido son la misma cosa.
+    const id = siguienteAviso.current++;
+    setAvisos((previos) => [
+      ...previos,
+      { id, nombre: nombreDe(notas[mejor]!.nota), x: LINEA_PCT, y: alturas[mejor]!.y },
+    ]);
+    window.setTimeout(() => setAvisos((p) => p.filter((a) => a.id !== id)), 1000);
+  }, [fase, carril, notas, alturas]);
 
   // La barra espaciadora vale como toque: en el ordenador del aula es lo natural, y de paso
   // deja la actividad accesible sin ratón.
@@ -224,12 +246,34 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
                 className="karaoke__nota"
                 data-acertada={acertadas.has(i) || undefined}
                 data-apagada={apagada || undefined}
-                style={{ left: `${x}%`, top: alto.y - SEP / 2, width: Math.max(SEP, n.pulsos * 20) }}
+                style={{
+                  left: `${x}%`,
+                  top: alto.y - SEP / 2,
+                  width: Math.max(SEP, n.pulsos * 20),
+                  // Color Boomwhacker por grado. Nunca informa solo: la nota está además a
+                  // su altura en la pauta, y al acertarla aparece escrita.
+                  background: apagada ? undefined : colorDe(n.nota),
+                }}
               />
             </span>
           );
         })}
+        {avisos.map((a) => (
+          <span
+            key={a.id}
+            className="karaoke__aviso"
+            style={{ left: `${a.x}%`, top: a.y }}
+            aria-hidden="true"
+          >
+            {a.nombre}
+          </span>
+        ))}
       </div>
+
+      {/* El nombre también en texto vivo, para quien no puede ver la animación. */}
+      <p className="visualmente-oculto" aria-live="polite">
+        {avisos.length ? avisos[avisos.length - 1]!.nombre : ''}
+      </p>
 
       {fase === 'listo' && (
         <button type="button" className="boton-repetir" onClick={() => setFase('cuenta')}>

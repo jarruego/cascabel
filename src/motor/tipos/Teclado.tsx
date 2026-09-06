@@ -3,6 +3,8 @@ import { useCarril } from '@/app/preferencias';
 import { OBJETIVO_TACTIL } from '@/config';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { MARIMBA, Sampler, aMidi } from '@/audio/sampler';
+import { colorDe, nombreDe } from '@/ui/coloresNota';
+import { letraDeNota, notaDeTecla } from '@/ui/tecladoQwerty';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -38,6 +40,8 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
     soloBlancas?: boolean;
     /** Nombres bajo cada tecla: 'latino' (do re mi), 'ingles' (C D E) o 'ninguno'. */
     nombres?: 'latino' | 'ingles' | 'ninguno';
+    /** Enseñar qué tecla del ordenador toca cada nota. Estorba donde no hay teclado. */
+    letrasQwerty?: boolean;
   };
 
   const carril = useCarril(actividad.etapa);
@@ -45,6 +49,8 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
   const octavas = contenido.octavas ?? (carril === 'infantil' ? 1 : 2);
   const soloBlancas = contenido.soloBlancas ?? carril === 'infantil';
   const nombres = contenido.nombres ?? (carril === 'autonomos' ? 'ingles' : 'latino');
+  // En Infantil no se enseñan: se toca con el dedo, y una letra más en cada tecla es ruido.
+  const letrasQwerty = contenido.letrasQwerty ?? carril !== 'infantil';
 
   const sampler = useRef<Sampler | null>(null);
   const deslizando = useRef(false);
@@ -100,6 +106,29 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
     };
   }, [sonar]);
 
+  /*
+   * Tocar con el teclado del ordenador.
+   *
+   * Se ignora `e.repeat` porque al mantener una tecla el sistema la repite decenas de veces
+   * por segundo, y eso no es un trémolo: es una ametralladora. Y se ignora cuando hay una
+   * tecla modificadora pulsada, para no secuestrar los atajos del navegador.
+   */
+  useEffect(() => {
+    const pulsar = (e: KeyboardEvent) => {
+      if (e.repeat || e.ctrlKey || e.altKey || e.metaKey) return;
+      const nota = notaDeTecla(e.code, desde);
+      if (!nota) return;
+      if (soloBlancas && nota.includes('#')) return;
+      // Fuera del rango dibujado no suena nada: lo que se oye es lo que se ve.
+      const octavaNota = Number(nota.replace(/[^0-9]/g, ''));
+      if (octavaNota < desde || octavaNota >= desde + octavas) return;
+      e.preventDefault();
+      void sonar(nota);
+    };
+    window.addEventListener('keydown', pulsar);
+    return () => window.removeEventListener('keydown', pulsar);
+  }, [desde, octavas, soloBlancas, sonar]);
+
   const anchoBlanca = Math.max(36, Math.round(OBJETIVO_TACTIL[carril] * 0.85));
   const teclas: Array<{ nota: string; negra: boolean; indice: number }> = [];
   for (let o = 0; o < octavas; o++) {
@@ -111,35 +140,18 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
     });
   }
 
-  const LATINO: Record<string, string> = {
-    C: 'do', D: 're', E: 'mi', F: 'fa', G: 'sol', A: 'la', B: 'si',
-  };
-
-  /**
-   * Un color por grado de la escala.
-   *
-   * No es decoración: es el código de color de los tubos **Boomwhacker**, que es el
-   * estándar de facto en aulas de Primaria y el que una maestra reconoce sin que se lo
-   * expliquen. Do rojo, re naranja, mi amarillo, fa verde, sol turquesa, la azul, si
-   * morado. Además, con siete colores distintos el niño localiza el do sin leer.
-   *
-   * El color NUNCA va solo: cada tecla lleva su nombre debajo y su posición en el teclado.
-   */
-  const COLOR: Record<string, string> = {
-    C: 'vivo-rojo', D: 'vivo-naranja', E: 'vivo-amarillo', F: 'vivo-verde',
-    G: 'vivo-turquesa', A: 'vivo-azul', B: 'vivo-morado',
-  };
-
   return (
     <section className="actividad teclado" data-carril={carril} aria-labelledby="consigna">
       <h1 id="consigna">{t(contenido.consigna)}</h1>
 
       {/* La nota que suena, grande. Es lo que convierte el piano en algo de lo que se
           aprende: se toca, suena y se ve cómo se llama. */}
-      <p className="teclado__ultima" aria-live="polite">
-        {ultimaTocada
-          ? `${nombres === 'ingles' ? ultimaTocada[0] : LATINO[ultimaTocada[0]!]}${ultimaTocada.includes('#') ? '♯' : ''}`
-          : ''}
+      <p
+        className="teclado__ultima"
+        aria-live="polite"
+        style={ultimaTocada ? { color: colorDe(ultimaTocada) } : undefined}
+      >
+        {ultimaTocada ? nombreDe(ultimaTocada, nombres === 'ingles' ? 'ingles' : 'latino') : ''}
       </p>
 
       <div
@@ -152,23 +164,32 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
       >
         {teclas.map((k) => {
           const letra = k.nota[0]!;
-          const etiqueta =
-            nombres === 'latino' ? LATINO[letra] : nombres === 'ingles' ? letra : '';
+          const etiqueta = nombres === 'ninguno' ? '' : nombreDe(letra, nombres);
+          const qwerty = letrasQwerty ? letraDeNota(k.nota, desde) : '';
+          const suena = sonando.has(k.nota);
           return (
             <button
               key={k.nota}
               type="button"
               data-nota={k.nota}
               className={k.negra ? 'teclado__negra' : 'teclado__blanca'}
-              data-sonando={sonando.has(k.nota) || undefined}
+              data-sonando={suena || undefined}
               style={
                 k.negra
-                  ? { left: (k.indice + 1) * anchoBlanca - anchoBlanca * 0.3, width: anchoBlanca * 0.6 }
+                  ? {
+                      left: (k.indice + 1) * anchoBlanca - anchoBlanca * 0.3,
+                      width: anchoBlanca * 0.6,
+                      // Al pulsarla, la negra también se tiñe de su color.
+                      background: suena ? colorDe(letra) : undefined,
+                    }
                   : {
                       width: anchoBlanca,
                       // Una franja del color del grado en la parte baja de la tecla: se
-                      // ve sin que la tecla deje de parecer una tecla de piano.
-                      borderBottom: `10px solid var(--${COLOR[letra] ?? 'linea'})`,
+                      // ve sin que la tecla deje de parecer una tecla de piano. Al
+                      // pulsarla se tiñe entera, para que el color y el sonido lleguen
+                      // juntos y el niño ate uno al otro.
+                      borderBottom: `10px solid ${colorDe(letra)}`,
+                      background: suena ? colorDe(letra) : undefined,
                     }
               }
               aria-label={`${etiqueta || letra}${k.negra ? ' sostenido' : ''} ${aMidi(k.nota)}`}
@@ -182,13 +203,17 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
                 if (!deslizando.current) void sonar(k.nota);
               }}
             >
+              {qwerty && <span className="teclado__qwerty">{qwerty}</span>}
               {!k.negra && etiqueta && <span className="teclado__nombre">{etiqueta}</span>}
             </button>
           );
         })}
       </div>
 
-      <p className="pista-fija">{t('teclado.libre')}</p>
+      <p className="pista-fija">
+        {t('teclado.libre')}
+        {letrasQwerty && ` ${t('teclado.qwerty')}`}
+      </p>
 
       <button
         type="button"

@@ -1,0 +1,81 @@
+{
+  "id": "c2-12-canon-a-dos-voces",
+  "version": 1,
+  "tipo": "guia-aula",
+  "titulo": "Canon a dos voces",
+  "descripcion": "La clase se parte en dos y la segunda voz entra dos compases después. La pantalla del maestro lleva el pulso y marca las entradas.",
+  "etapa": "primaria-c2",
+  "eje": "creacion",
+  "lugar": "hibrida",
+  "duracion_min": 30,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE4",
+    "criterio": "4.2",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "vocal-kodaly",
+    "compas": "4/4",
+    "tempo": 96,
+    "figuras": [
+      "negra",
+      "blanca",
+      "corchea"
+    ]
+  },
+  "musica": {
+    "abc": "X:1\nT:Canon del campanero\nC:Melodía anónima francesa, siglo XVIII («Frère Blaise», ms. de 1780)\nM:4/4\nL:1/4\nK:F\nF G A F | F G A F | A B c2 | A B c2 | c/2d/2c/2B/2 A F | c/2d/2c/2B/2 A F | F C F2 | F C F2 |]"
+  },
+  "entrada": {
+    "modo": "ninguna"
+  },
+  "contenido": {
+    "consigna": "actividad.c212.consigna",
+    "tempo": 96,
+    "pulsosPorCompas": 4,
+    "pasos": [
+      {
+        "titulo": "actividad.c212.p1",
+        "detalle": "actividad.c212.p1d",
+        "duracion": "8 min"
+      },
+      {
+        "titulo": "actividad.c212.p2",
+        "detalle": "actividad.c212.p2d",
+        "duracion": "5 min"
+      },
+      {
+        "titulo": "actividad.c212.p3",
+        "detalle": "actividad.c212.p3d",
+        "duracion": "10 min"
+      },
+      {
+        "titulo": "actividad.c212.p4",
+        "detalle": "actividad.c212.p4d",
+        "duracion": "7 min"
+      }
+    ],
+    "materiales": [
+      "actividad.c212.m1"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c212.enunciado"
+  },
+  "creditos": [
+    {
+      "obra": "Melodía del canon («Frère Jacques» / «Frère Blaise»)",
+      "autor": "Anónima francesa del siglo XVIII; se ha propuesto la autoría de Jean-Philippe Rameau (1683-1764)",
+      "fuente": "Fuente conocida más antigua: manuscrito «Recueil de Timbres de Vaudevilles», BnF, fechado hacia 1775-1785",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "Letra en español",
+      "autor": "Proyecto cocomusic",
+      "fuente": "escrita para esta actividad",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

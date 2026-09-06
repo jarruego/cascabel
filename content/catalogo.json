@@ -14,7 +14,7 @@
       "esfuerzo": "S",
       "curriculo": "CE3 · crit. 3.5 · saber F",
       "descripcion": "Suena o no suena. El niño toca el círculo verde mientras hay sonido y lo suelta en el silencio.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "INF-02",
@@ -27,7 +27,7 @@
       "esfuerzo": "S",
       "curriculo": "CE2 · crit. 2.1 · saber F",
       "descripcion": "Serpiente u hormiga. Suena un sonido y el niño elige. La duración se ve, se oye y se dibuja.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "INF-03",
@@ -40,7 +40,7 @@
       "esfuerzo": "S",
       "curriculo": "CE2 · crit. 2.1 · saber F",
       "descripcion": "Intensidad: fuerte o suave. Mismo sonido a dos volúmenes.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "INF-04",
@@ -53,7 +53,7 @@
       "esfuerzo": "S",
       "curriculo": "CE2 · crit. 2.1 · saber F",
       "descripcion": "Agudo o grave con el mismo instrumento en dos registros. No cambiar de timbre a la vez.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "INF-05",
@@ -66,7 +66,7 @@
       "esfuerzo": "M",
       "curriculo": "CE2 · crit. 2.1 · saber F",
       "descripcion": "Sonidos del entorno sobre una ilustración; tocas donde crees que está el sonido.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "INF-06",
@@ -79,7 +79,7 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 4.1 · saber F",
       "descripcion": "Lienzo libre donde cada trazo suena. Grafía no convencional, sin evaluación.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "INF-07",
@@ -92,7 +92,7 @@
       "esfuerzo": "S",
       "curriculo": "CE3 · crit. 3.5 · saber F",
       "descripcion": "Glissando continuo con el dedo, como la flauta de émbolo de Willems.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "INF-08",
@@ -105,7 +105,7 @@
       "esfuerzo": "S",
       "curriculo": "CE3 · crit. 3.6 · saber H",
       "descripcion": "Dalcroze: la música cambia de tempo y el grupo responde con el cuerpo.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "INF-09",
@@ -118,7 +118,7 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.5 · saber F",
       "descripcion": "El personaje hace dos o tres palmadas y el niño las repite.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "INF-10",
@@ -131,7 +131,7 @@
       "esfuerzo": "M",
       "curriculo": "CE2 · crit. 2.1 · saber F",
       "descripcion": "Emparejamiento auditivo autocorrectivo al modo Montessori. Se tocan de dos en dos.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "INF-11",
@@ -144,7 +144,7 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.5 · saber F",
       "descripcion": "Canción tradicional de ámbito sol-mi con la letra en pictogramas resaltados.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "INF-12",
@@ -157,7 +157,7 @@
       "esfuerzo": "S",
       "curriculo": "CE3 · crit. 3.6 · saber H",
       "descripcion": "Coreografía simple proyectada paso a paso con contador visual.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "INF-13",
@@ -170,7 +170,7 @@
       "esfuerzo": "S",
       "curriculo": "CE1 · crit. 1.1 · saber F",
       "descripcion": "Tres instrumentos de pequeña percusión; suena uno y hay que señalarlo.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "INF-14",
@@ -183,7 +183,7 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.5 · saber F",
       "descripcion": "Cuento locutado con huecos: el grupo elige y ejecuta un sonido en cada uno.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "INF-15",
@@ -196,7 +196,7 @@
       "esfuerzo": "M",
       "curriculo": "CE2 · crit. 2.1 · saber F",
       "descripcion": "Cinco campanas que hay que ordenar tocándolas de más grave a más aguda.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C1-01",
@@ -209,7 +209,7 @@
       "esfuerzo": "S",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Lectura rítmica con sílabas Kodály: la figura se ilumina mientras se dice.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C1-02",
@@ -222,7 +222,7 @@
       "esfuerzo": "L",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Cuatro compases sobre base real. Mide desvío medio con signo y desviación típica.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C1-03",
@@ -235,7 +235,7 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Marcar el pulso de una canción. Distingue pulso de ritmo.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C1-04",
@@ -248,7 +248,7 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.2 · saber D",
       "descripcion": "Cuatro casillas con negra, dos corcheas o silencio, en bucle sobre una base.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C1-05",
@@ -261,7 +261,7 @@
       "esfuerzo": "M",
       "curriculo": "CE1 · crit. 1.1 · saber A",
       "descripcion": "Audición activa con partitura gráfica avanzando (metodología Wuytack).",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C1-06",
@@ -274,7 +274,7 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Sol, mi y la como escalones; se tocan para reconstruir la melodía oída.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C1-07",
@@ -287,7 +287,7 @@
       "esfuerzo": "L",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Nota de referencia y barra en tiempo real de si va alto o bajo.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C1-08",
@@ -300,7 +300,7 @@
       "esfuerzo": "S",
       "curriculo": "CE1 · crit. 1.1 · saber D",
       "descripcion": "Emparejar imagen del instrumento con su sonido, por familias.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C1-09",
@@ -313,7 +313,7 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Pies, rodillas, palmas y chasquidos como trigrama de colores que avanza.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C1-10",
@@ -326,7 +326,7 @@
       "esfuerzo": "S",
       "curriculo": "CE4 · crit. 4.2 · saber D",
       "descripcion": "Ficha imprimible y vídeo para construir un instrumento con materiales del entorno.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C1-11",
@@ -339,7 +339,7 @@
       "esfuerzo": "S",
       "curriculo": "CE3 · crit. 3.2 · saber D",
       "descripcion": "Dos deslizadores, tempo y dinámica, sobre una pieza real.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C1-12",
@@ -352,7 +352,7 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "El compás dibujado en círculo: se ve que es cíclico y forma una figura geométrica.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C1-13",
@@ -365,7 +365,7 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.2 · saber D",
       "descripcion": "La app hace una frase rítmica y el niño inventa la respuesta.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C1-14",
@@ -417,7 +417,7 @@
       "esfuerzo": "S",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Pentagrama real y una nota que hay que situar. Hitbox de 60 px sobre nota pequeña.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C2-02",
@@ -430,7 +430,7 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Dos a cuatro compases: se escucha y se completa colocando figuras.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C2-03",
@@ -443,7 +443,7 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Cuadrícula de altura por tiempo, sin necesidad de saber notación.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C2-04",
@@ -495,7 +495,7 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.2 · saber D",
       "descripcion": "Cinco láminas sobre base con bordón. Sin semitonos, todo suena bien.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C2-08",
@@ -508,7 +508,7 @@
       "esfuerzo": "M",
       "curriculo": "CE1 · crit. 1.2 · saber A",
       "descripcion": "Pieza troceada en secciones; reconstruir el orden ABACA.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C2-09",
@@ -521,7 +521,7 @@
       "esfuerzo": "S",
       "curriculo": "CE1 · crit. 1.1 · saber A",
       "descripcion": "Misma melodía a tres velocidades: la variable es solo el tempo.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C2-10",
@@ -534,7 +534,7 @@
       "esfuerzo": "M",
       "curriculo": "CE4 · crit. 4.2 · saber D",
       "descripcion": "Dos patrones simultáneos proyectados como partitura de colores.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C2-11",
@@ -560,7 +560,7 @@
       "esfuerzo": "S",
       "curriculo": "CE4 · crit. 4.2 · saber D",
       "descripcion": "Letra, entrada de cada voz y pulso visible en la pantalla del maestro.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C2-13",
@@ -612,7 +612,7 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Palmear fuera del pulso, con el pulso siempre de fondo.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C3-03",
@@ -651,7 +651,7 @@
       "esfuerzo": "S",
       "curriculo": "CE1 · crit. 1.1 · saber D",
       "descripcion": "La misma melodía en los dos modos. El contraste es inmediatamente audible.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C3-06",
@@ -664,7 +664,7 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Subdivisión ternaria vivida antes que leída, en dos grupos.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C3-07",
@@ -677,7 +677,7 @@
       "esfuerzo": "M",
       "curriculo": "CE4 · crit. 4.1, 4.2 y 4.3 · saber B",
       "descripcion": "Proyecto por grupos: estribillo común y una copla por equipo.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C3-08",
@@ -690,7 +690,7 @@
       "esfuerzo": "S",
       "curriculo": "CE2 · crit. 2.2 · saber B",
       "descripcion": "Casos reales de licencias: qué puedes usar en un vídeo y qué no.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C3-09",
@@ -703,7 +703,7 @@
       "esfuerzo": "M",
       "curriculo": "CE2 · crit. 2.2 · saber A",
       "descripcion": "Cuerdas de distinta longitud y proporciones 1:2, 2:3, 3:4. Conecta con fracciones.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "C3-10",
@@ -742,7 +742,7 @@
       "esfuerzo": "M",
       "curriculo": "Herramienta",
       "descripcion": "Canta o toca y ve la nota. Primer contacto con el micrófono, sin nada que perder.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "TR-02",
@@ -755,7 +755,7 @@
       "esfuerzo": "S",
       "curriculo": "Herramienta",
       "descripcion": "Metrónomo de aula con acento visual y calibración de latencia de 20 segundos.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "TR-03",
@@ -768,7 +768,7 @@
       "esfuerzo": "S",
       "curriculo": "Herramienta",
       "descripcion": "Rejilla de instrumentos grandes que suenan al tocarlos.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "TR-04",
@@ -776,12 +776,12 @@
       "etapa": "primaria-c3",
       "eje": "cultura",
       "lugar": "pantalla",
-      "tipo": "seguir",
+      "tipo": "guia-aula",
       "microfono": false,
       "esfuerzo": "S",
       "curriculo": "CE2 · crit. 2.2 · saber B",
       "descripcion": "La página de créditos convertida en actividad: cada asset con su licencia.",
-      "estado": "pendiente"
+      "estado": "hecha"
     },
     {
       "id": "TR-05",

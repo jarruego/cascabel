@@ -1,0 +1,97 @@
+{
+  "id": "c3-08-de-quien-es-esta-musica",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿De quién es esta música?",
+  "descripcion": "Ocho casos reales de licencias, sacados de los créditos de esta misma aplicación: qué puedes usar en un vídeo y qué no.",
+  "etapa": "primaria-c3",
+  "eje": "cultura",
+  "lugar": "pantalla",
+  "duracion_min": 15,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE2",
+    "criterio": "2.2",
+    "saber": "B. Ética: licencias, plagio y derechos de autor"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c308.consigna",
+    "opciones": [
+      {
+        "clave": "libre",
+        "icono": "pulgar",
+        "color": "verde"
+      },
+      {
+        "clave": "citando",
+        "icono": "lupa",
+        "color": "amarillo"
+      },
+      {
+        "clave": "no",
+        "icono": "silencio",
+        "color": "morado"
+      }
+    ],
+    "estimulos": [
+      {
+        "texto": "actividad.c308.caso1",
+        "respuesta": "libre"
+      },
+      {
+        "texto": "actividad.c308.caso2",
+        "respuesta": "citando"
+      },
+      {
+        "texto": "actividad.c308.caso3",
+        "respuesta": "no"
+      },
+      {
+        "texto": "actividad.c308.caso4",
+        "respuesta": "no"
+      },
+      {
+        "texto": "actividad.c308.caso5",
+        "respuesta": "libre"
+      },
+      {
+        "texto": "actividad.c308.caso6",
+        "respuesta": "no"
+      },
+      {
+        "texto": "actividad.c308.caso7",
+        "respuesta": "citando"
+      },
+      {
+        "texto": "actividad.c308.caso8",
+        "respuesta": "no"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "aciertos"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c308.enunciado"
+  },
+  "pistas": [
+    "actividad.c308.pista1",
+    "actividad.c308.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Los propios créditos de Cascabel",
+      "autor": "Proyecto cocomusic",
+      "fuente": "THIRD-PARTY-NOTICES.md",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

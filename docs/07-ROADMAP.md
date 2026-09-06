@@ -978,6 +978,62 @@ lleva 13 tests, incluido uno que comprueba que los dos módulos no divergen.
 carril) es la adecuada para tocar una melodía entera, y no solo un ritmo de cuatro golpes.
 Eso no se decide midiendo, se decide viendo a un niño hacerlo.
 
+### T2.13 — Ética del bloque B, el canon, y dos arreglos del musicograma `[x]`
+
+Cerrada el 2026-09-06.
+
+**Tres actividades que estaban mal clasificadas como bloqueadas.** El roadmap decía que
+C3-08 «¿De quién es esta música?» esperaba repertorio verificado. **No era verdad**: el
+catálogo dice que va de *licencias*, no de compositores, y su material —casos reales de
+CC0, CC BY-SA, CC BY-NC y dominio público— **ya estaba escrito en nuestro propio
+`THIRD-PARTY-NOTICES.md`**. Estuvo bloqueada por un motivo copiado, no comprobado.
+
+- **C3-08**, ocho casos reales de licencias, todos sacados de los créditos de esta misma
+  aplicación. Incluye la distinción que casi nadie hace: la **obra** y la **grabación** son
+  dos permisos distintos, y por eso puedes usar la melodía de Beethoven pero no el disco de
+  una orquesta actual.
+- **TR-04**, la página de créditos convertida en clase, para el maestro. El catálogo la
+  preveía de tipo `seguir`; `seguir` es un musicograma y aquí no hay nada que seguir, así
+  que va de `guia-aula`. El catálogo se ha corregido con el tipo real.
+- **C2-12, canon a dos voces.** La melodía es la de «Frère Jacques», cuya fuente conocida
+  más antigua es un manuscrito de la BnF de hacia 1780 donde aparece como «Frère Blaise»;
+  la única autoría que se le ha propuesto es la de Rameau, muerto en **1764**. Por
+  cualquiera de las dos vías, dominio público con siglos de margen. **La letra en español
+  es nuestra**: las traducciones escolares que circulan no tienen fuente comprobable, y no
+  merece la pena arriesgar una letra pudiendo escribirla.
+
+> **Y el validador volvió a hacer su trabajo**: el canon se escribió en do mayor y avisó de
+> que el sol3 del «din, don, dan» queda por debajo de la tesitura de segundo ciclo. Se
+> transportó a fa mayor —ámbito do4–re5, justo dentro— en vez de discutir con la máquina.
+
+**El tipo `eleccion` acepta ahora estímulos escritos.** Era de solo audio, y las actividades
+de ética no tienen nada que sonar: el estímulo *es* un caso escrito, y leerlo es justamente
+lo que se practica. Se extendió el tipo existente en vez de crear uno nuevo, que es lo que
+pide `CLAUDE.md` §11. De paso, el botón de repetir **desaparece cuando no hay audio**: un
+botón muerto es peor que ningún botón, y ya nos pasó una vez.
+
+**Dos arreglos del musicograma que salieron probando**, los dos del autor:
+
+- **Color Boomwhacker por nota**, y el nombre de la nota **subiendo y desvaneciéndose** al
+  acertar. El color y el nombre se extrajeron a `ui/coloresNota.ts`, que ahora comparten el
+  piano y el musicograma. Con `prefers-reduced-motion` el nombre **sigue apareciendo**, solo
+  que sin moverse: la información está en el nombre, no en el movimiento.
+- **El piano se toca con el teclado del ordenador.** No hay estándar formal, pero sí una
+  convención de facto que comparten Ableton Live, FL Studio, GarageBand y casi todos los
+  pianos web: dos octavas apiladas, `ZXCVBNM` como blancas graves y `SDGHJ` como sus negras,
+  `QWERTYU` y `2356 7` para la octava de arriba. El dibujo del teclado del ordenador
+  **reproduce el del piano**, huecos de mi-fa y si-do incluidos. Se indexa por
+  `KeyboardEvent.code` y no por `key`: `code` es la **posición física**, así que funciona
+  igual en un teclado español, en uno inglés y en un AZERTY. Hay un test que lo vigila,
+  porque cambiarlo a letras rompería los AZERTY sin que nadie se entere aquí.
+- **Al pulsar, la tecla se tiñe de su color** y el nombre de la nota aparece en ese mismo
+  color: el color y el sonido llegan juntos, que es lo que hace que uno se ate al otro.
+- **Dos segundos de margen antes de la primera nota.** Sin ellos la melodía arrancaba en el
+  instante cero y la primera nota **nacía justo encima de la línea**: no se podía anticipar,
+  solo reaccionar, y se fallaba siempre. La cuenta atrás no lo arreglaba, porque termina
+  justo cuando la nota ya está ahí. Ahora vive en `melodiaEnTiempo.ts`, con test: lo
+  encontró el autor probando y no un test, así que ahora hay test.
+
 ### T3.5 — Revisar los tamaños contra la investigación de NN/g `⚠️`
 
 Abierta el 2026-09-06 con la investigación de

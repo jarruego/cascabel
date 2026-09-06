@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-06",
-  "total": 50,
+  "total": 53,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -394,6 +394,23 @@
       "estado": "borrador"
     },
     {
+      "id": "c2-12-canon-a-dos-voces",
+      "titulo": "Canon a dos voces",
+      "etapa": "primaria-c2",
+      "eje": "creacion",
+      "tipo": "guia-aula",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 30,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE4",
+        "criterio": "4.2",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
       "id": "c2-14-himno-de-la-alegria",
       "titulo": "El himno de la alegría",
       "etapa": "primaria-c2",
@@ -475,6 +492,23 @@
         "competencia": "CE4",
         "criterio": "4.1",
         "saber": null
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c3-08-de-quien-es-esta-musica",
+      "titulo": "¿De quién es esta música?",
+      "etapa": "primaria-c3",
+      "eje": "cultura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 15,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE2",
+        "criterio": "2.2",
+        "saber": "B. Ética: licencias, plagio y derechos de autor"
       },
       "estado": "borrador"
     },
@@ -832,6 +866,23 @@
         "competencia": null,
         "criterio": null,
         "saber": null
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "tr-04-creditos-de-donde-sale-esto",
+      "titulo": "Créditos: de dónde sale esto",
+      "etapa": "primaria-c3",
+      "eje": "cultura",
+      "tipo": "guia-aula",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 25,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE2",
+        "criterio": "2.2",
+        "saber": "B. Ética: licencias, plagio y derechos de autor"
       },
       "estado": "borrador"
     },
