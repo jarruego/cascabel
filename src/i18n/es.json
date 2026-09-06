@@ -31,5 +31,7 @@
   "diagnostico.informe": "Informe",
   "diagnostico.pie": "Si algo ha fallado, copia el informe y pégalo en una incidencia del proyecto. Es la forma de que lo arreglemos sin tener tu dispositivo delante.",
   "diagnostico.coste": "Coste de cada análisis de tono:",
-  "diagnostico.costeEstimacion": "estimado en el hilo principal, no en el de audio"
+  "diagnostico.costeEstimacion": "estimado en el hilo principal, no en el de audio",
+  "comun.completada": "¡Ya está! Lo has hecho entero.",
+  "comun.progreso": "Por dónde vas"
 }
