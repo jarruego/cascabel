@@ -1010,3 +1010,63 @@ body {
 .ordenar__fila[data-zona] {
   transition: border-color 120ms ease, background-color 120ms ease;
 }
+
+/* ── rejilla: altura × tiempo ──────────────────────────────────────────────
+   Las columnas son pulsos y las filas alturas. Es la mejor interfaz que existe
+   para escribir música sin saber notación. */
+.rejilla__cuadricula {
+  display: grid;
+  gap: 4px;
+  justify-content: center;
+  margin: 20px auto;
+  padding: 10px;
+  border: 3px solid var(--linea);
+  border-radius: 16px;
+  background: var(--superficie);
+  overflow-x: auto;
+}
+.rejilla__celda {
+  padding: 0;
+  border: 2px solid var(--linea);
+  border-radius: 8px;
+  background: var(--papel);
+  cursor: pointer;
+}
+.rejilla__celda[data-encendida] {
+  background: var(--vivo-turquesa);
+  border-color: var(--vivo-turquesa);
+}
+/* La columna que suena se resalta: así el niño VE el pulso además de oírlo. */
+.rejilla__celda[data-columna-activa] {
+  outline: 3px solid var(--acento);
+  outline-offset: -3px;
+}
+/* Sobra y falta se distinguen por FORMA, no por color: una parpadea y la otra
+   lleva un aspa. Un 8 % de los niños no vería la diferencia de color. */
+.rejilla__celda[data-marca='sobra'] {
+  animation: parpadeo 900ms ease-in-out 3;
+}
+.rejilla__celda[data-marca='falta'] {
+  border-style: dashed;
+  border-width: 3px;
+  border-color: var(--acento);
+}
+@keyframes parpadeo {
+  50% { opacity: 0.35; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rejilla__celda[data-marca='sobra'] {
+    animation: none;
+    border: 3px double var(--acento);
+  }
+}
+.rejilla__celda:focus-visible {
+  outline: 3px solid var(--acento);
+  outline-offset: 2px;
+}
+.rejilla__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}

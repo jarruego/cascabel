@@ -1,0 +1,65 @@
+{
+  "id": "c2-02-dictado-ritmico",
+  "version": 1,
+  "tipo": "rejilla",
+  "titulo": "Dictado rítmico",
+  "descripcion": "Se escucha un ritmo y se coloca en la cuadrícula.",
+  "etapa": "primaria-c2",
+  "eje": "notacion",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 96
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c202.consigna",
+    "modo": "dictado",
+    "filas": 2,
+    "columnas": 8,
+    "tempo": 92,
+    "notas": [
+      "G4",
+      "C4"
+    ],
+    "solucion": [
+      "1,0",
+      "1,2",
+      "0,3",
+      "1,4",
+      "1,6",
+      "0,7"
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c202.enunciado"
+  },
+  "creditos": [
+    {
+      "obra": "Marimba",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador",
+  "pistas": [
+    "actividad.c202.pista1"
+  ]
+}
