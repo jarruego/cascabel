@@ -1142,3 +1142,98 @@ body {
   background: var(--superficie);
   font-size: 0.9em;
 }
+
+/* ── seguir: musicograma con cursor ────────────────────────────────────────
+   El cursor va por requestAnimationFrame y no por el planificador de audio:
+   animar dentro del planificador adelanta el destello hasta cien milisegundos
+   respecto al sonido, y a esta edad esa es la diferencia entre entender el
+   pulso y no entenderlo. */
+.seguir__tira {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  padding: 0;
+  margin: 24px 0;
+  list-style: none;
+}
+.seguir__bloque {
+  display: grid;
+  place-items: center;
+  gap: 6px;
+  min-width: 96px;
+  min-height: 96px;
+  padding: 12px;
+  border: 4px solid var(--linea);
+  border-radius: 18px;
+  background: var(--superficie);
+  font-size: 1.3em;
+  transition: transform 90ms ease, background-color 90ms ease;
+}
+/* El bloque actual crece Y cambia de fondo: tamaño además de color. */
+.seguir__bloque[data-actual] {
+  background: var(--suave-amarillo);
+  transform: scale(1.12);
+  border-color: var(--acento);
+}
+.seguir__bloque[data-pasado] {
+  opacity: 0.5;
+}
+@media (prefers-reduced-motion: reduce) {
+  .seguir__bloque[data-actual] { transform: none; border-width: 7px; }
+}
+.seguir__acciones { display: flex; justify-content: center; }
+.seguir__play {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 72px;
+  padding: 12px 28px;
+  font-size: 1.15em;
+}
+
+/* ── lienzo: creación libre ────────────────────────────────────────────────
+   No hay respuesta correcta, no hay comprobación y no se puede fallar. Es la
+   regla de Incredibox: que explorar sea más divertido que acertar. */
+.lienzo__area {
+  position: relative;
+  width: 100%;
+  height: min(46vh, 340px);
+  margin: 16px 0;
+  border: 4px solid var(--linea);
+  border-radius: 20px;
+  overflow: hidden;
+  touch-action: none;
+  cursor: crosshair;
+}
+.lienzo__franja {
+  position: absolute;
+  left: 0;
+  right: 0;
+  opacity: 0.55;
+}
+.lienzo__dibujo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+/* Teclas: la vía por TOQUE, para quien no puede o no quiere arrastrar el dedo.
+   Es lo que hace que el lienzo cumpla WCAG 2.5.7. */
+.lienzo__teclas {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.lienzo__tecla {
+  border: 3px solid var(--linea);
+  border-radius: 12px;
+  cursor: pointer;
+}
+.lienzo__tecla:focus-visible {
+  outline: 4px solid var(--acento);
+  outline-offset: 2px;
+}
+.lienzo__acciones { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }

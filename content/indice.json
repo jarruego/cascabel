@@ -1,7 +1,24 @@
 {
   "generado": "2026-09-06",
-  "total": 18,
+  "total": 20,
   "actividades": [
+    {
+      "id": "c1-01-ta-y-ti-ti",
+      "titulo": "Ta y ti-ti",
+      "etapa": "primaria-c1",
+      "eje": "pulso",
+      "tipo": "seguir",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
     {
       "id": "c1-02-palmea-el-ritmo",
       "titulo": "Palmea el ritmo: negra y dos corcheas",
@@ -220,6 +237,23 @@
         "competencia": "CE2",
         "criterio": "2.1",
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "inf-07-el-caracol-sube-y-baja",
+      "titulo": "El caracol: sube y baja",
+      "etapa": "infantil",
+      "eje": "altura",
+      "tipo": "lienzo",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE3",
+        "criterio": "3.5",
+        "saber": "F. Lenguaje y expresión musical — el sonido y sus cualidades"
       },
       "estado": "borrador"
     },
