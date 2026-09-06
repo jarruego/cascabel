@@ -364,12 +364,36 @@ niño. Regla 4 de `CLAUDE.md`.
 `borrarTodo()` existe desde el principio aunque aún no tenga botón: es lo que permitirá
 decirle a una familia «puedes borrarlo todo tú, ahora, sin pedírnoslo».
 
-### T1.6 — PWA y modo sin conexión
+### T1.6 — PWA y modo sin conexión `[x]`
 
-- [ ] Precache del *app shell*, muestras de audio y fuentes
-- [ ] Botón explícito «Descargar para usar sin conexión» con barra de progreso y aviso de MB
-- [ ] Comprobador de actualización al recuperar el foco
-- [ ] Presupuesto: `npm run build && node tools/presupuesto.mjs` pasa
+Cerrada el 2026-09-06.
+
+- [x] Precache del *app shell*, muestras de audio y fuentes — 44 entradas, 495 KB
+- [x] Botón explícito «Descargar para usar sin conexión» con barra de progreso y aviso de MB
+- [x] Comprobador de actualización al recuperar el foco
+- [x] Presupuesto: `npm run build && node tools/presupuesto.mjs` pasa (86 KB gzip de 400)
+
+**La descarga es explícita a propósito.** El service worker precachea el armazón, pero el
+contenido lo descarga el maestro cuando lo pide y sabiendo cuántos megas son. Bajar decenas
+de megas sin avisar, en la tarifa de datos de alguien que abrió la app en el patio, sería
+un abuso. La barra de progreso cuenta ficheros reales, no es una animación.
+
+**La actualización no se aplica sola.** `registerType: 'prompt'`: aparece un aviso que se
+puede cerrar con «ahora no». Una app que se recarga sola a mitad de actividad, delante de
+veinticinco niños, es peor que una app desactualizada. Se comprueba al recuperar el foco y
+como mucho cada dos minutos, porque un aula la usa en ráfagas de quince.
+
+**Pantalla `/ajustes`, y es para el adulto**: descarga, espacio ocupado, cuántas actividades
+hay registradas, y el botón de borrar el progreso a la vista y no escondido tras tres menús.
+Dice además, con todas las letras, qué se guarda: es lo que permite que un maestro se lo
+explique a una familia sin tener que creerse nada.
+
+**Un fallo mío que atrapó el linter.** `sinConexion.ts` llamaba a `fetch` directamente y la
+regla de ESLint lo rechazó: `src/datos/cargar.ts` es el único sitio que habla con la red.
+La respuesta correcta no era eximirlo sino añadir `pedirRespuesta()` allí, porque la regla
+no es «no uses fetch», es «que nadie pueda pedir algo a un tercero sin que se vea en ese
+fichero». Ahora `tests/sinConexion.test.ts` lo comprueba automáticamente, junto con que no
+haya ninguna URL absoluta en `src/` y que la CSP siga prohibiendo otros orígenes.
 
 ### T1.7 — Sampler y metrónomo reales
 

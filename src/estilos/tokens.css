@@ -574,3 +574,58 @@ body {
   color: var(--ok);
   font-weight: 700;
 }
+
+/* ── ajustes y aviso de actualización ──────────────────────────────────────
+   Pantalla para el ADULTO: densidad normal, texto corriente, sin botones de
+   75 px. Aquí no juega nadie. */
+.ajustes {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+.ajustes section {
+  margin: 32px 0;
+  padding-top: 24px;
+  border-top: 2px solid var(--linea);
+}
+.ajustes h2 {
+  margin: 0 0 8px;
+  font-size: 1.15em;
+}
+.ajustes p {
+  color: var(--tinta-2);
+}
+.ajustes progress {
+  width: 100%;
+  max-width: 320px;
+}
+.enlace-boton {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--acento-2);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.enlace-boton:focus-visible {
+  outline: 3px solid var(--acento);
+  outline-offset: 2px;
+}
+
+/* El aviso NO tapa la actividad: se apoya arriba y se puede ignorar. Una app que se
+   recarga sola delante de 25 niños es peor que una app desactualizada. */
+.aviso-actualizacion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border-bottom: 3px solid var(--acento-2);
+  background: var(--superficie);
+}
+@media print {
+  .aviso-actualizacion {
+    display: none;
+  }
+}
