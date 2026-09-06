@@ -23,7 +23,7 @@ el currículo.**
 | **Objetos a la vez** | 2–4 | 4–6 | 6–9 |
 | **Iconografía** | Objetos y personajes dibujados: un tambor, no una corchea | El mismo icono concreto, con su palabra al lado | Símbolo musical real. Estética **no** infantilizada |
 | **Recompensa** | Que suene y se mueva. Sin puntuación, sin final, sin progreso visible | Cierre de sesión corto y completo; el resultado suena entero al terminar | Autoría: crear, compartir por URL, ver que funciona |
-| **Entrada** | Solo *tap* | *Tap*; arrastre siempre con alternativa | *Tap*; arrastre siempre con alternativa |
+| **Entrada** | *Tap*; arrastre siempre con alternativa | *Tap*; arrastre siempre con alternativa | *Tap*; arrastre siempre con alternativa |
 | **Navegación** | Un botón atrás, con icono | Un botón atrás, icono y palabra | Un botón atrás, icono y palabra |
 
 Lo que **no** cambia entre carriles: el motor, el esquema de actividad, el audio, la escucha,
@@ -69,7 +69,13 @@ y pon encima un hitbox transparente de 60 px. VexFlow te da control total para h
 8. **Una sola navegación.** Un botón «atrás», siempre igual, siempre en el mismo sitio. Las
    navegaciones múltiples confunden a los niños mucho más que a los adultos.
 9. **Solo *tap* por debajo de 6 años.** Para ordenar: «toca el primero, toca el segundo»,
-   nunca arrastrar.
+   nunca arrastrar COMO ÚNICA VÍA.
+
+   Arrastrar se ofrece también en Infantil desde el 2026-09-06, por decisión del autor. El
+   hallazgo de NN/g de que los menores de cinco años no manejan arrastrar y soltar sigue en
+   pie y sigue siendo la razón de que jamás sea el único camino; pero dice que no *pueden*,
+   no que ofrecerlo estorbe. Un niño que lo intenta y no lo consigue toca, que es lo que iba
+   a hacer de todas formas.
 10. **Tipografía grande y legible.** Andika (SIL, OFL) para Infantil; Atkinson Hyperlegible
     y OpenDyslexic como opción conmutable.
 

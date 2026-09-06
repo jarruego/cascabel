@@ -1,85 +1,162 @@
 import { describe, expect, it } from 'vitest';
 import {
-  INICIAL_ORDENAR,
+  inicial,
   pendientes,
   reducirOrdenar,
   type EstadoOrdenar,
 } from '../src/motor/maquinaOrdenar';
 
+/**
+ * El orden correcto de la actividad de ejemplo: tres sonidos de grave a agudo.
+ */
 const CORRECTO = ['grave', 'medio', 'agudo'];
-const p = (e: EstadoOrdenar, a: Parameters<typeof reducirOrdenar>[1]) =>
-  reducirOrdenar(e, a, CORRECTO);
-const colocar = (e: EstadoOrdenar, clave: string) => p(e, { tipo: 'colocar', clave });
-const comprobar = (e: EstadoOrdenar) => p(e, { tipo: 'comprobar' });
-const seguir = (e: EstadoOrdenar) => p(e, { tipo: 'seguir' });
 
-describe('máquina de ordenar', () => {
-  it('coloca tocando en secuencia, sin arrastrar', () => {
-    let e = colocar(colocar(colocar(INICIAL_ORDENAR, 'grave'), 'medio'), 'agudo');
-    expect(e.colocadas).toEqual(CORRECTO);
-    e = comprobar(e);
+const desde = (...acciones: Parameters<typeof reducirOrdenar>[1][]): EstadoOrdenar =>
+  acciones.reduce((e, a) => reducirOrdenar(e, a, CORRECTO), inicial(CORRECTO.length));
+
+describe('elegir antes de colocar', () => {
+  /*
+    Es la corrección que pidió el autor: antes, tocar un elemento lo colocaba en el acto, así
+    que había que decidir con el mismo gesto con el que escuchabas. En una actividad donde
+    hay que COMPARAR sonidos eso hacía imposible la mitad del ejercicio.
+  */
+  it('tocar un elemento no lo coloca, solo lo elige', () => {
+    const e = desde({ tipo: 'elegir', clave: 'medio' });
+    expect(e.elegida).toBe('medio');
+    expect(e.casillas).toEqual([null, null, null]);
+  });
+
+  it('tocar otro elemento cambia la elección y no coloca nada', () => {
+    const e = desde({ tipo: 'elegir', clave: 'medio' }, { tipo: 'elegir', clave: 'agudo' });
+    expect(e.elegida).toBe('agudo');
+    expect(e.casillas).toEqual([null, null, null]);
+  });
+
+  it('tocar lo ya elegido lo suelta: arrepentirse es gratis', () => {
+    const e = desde({ tipo: 'elegir', clave: 'medio' }, { tipo: 'elegir', clave: 'medio' });
+    expect(e.elegida).toBeNull();
+  });
+
+  it('una casilla sin nada elegido no hace nada', () => {
+    expect(desde({ tipo: 'colocar', indice: 0 }).casillas).toEqual([null, null, null]);
+  });
+
+  it('coloca en la casilla que se toca, no al final', () => {
+    // Poder colocar la tercera antes que la primera es lo que permite ordenar comparando.
+    const e = desde({ tipo: 'elegir', clave: 'agudo' }, { tipo: 'colocar', indice: 2 });
+    expect(e.casillas).toEqual([null, null, 'agudo']);
+    expect(e.elegida).toBeNull();
+  });
+});
+
+describe('recoger lo ya colocado', () => {
+  it('tocar un colocado lo devuelve a la mano y lo deja elegido', () => {
+    const e = desde(
+      { tipo: 'elegir', clave: 'grave' },
+      { tipo: 'colocar', indice: 0 },
+      { tipo: 'elegir', clave: 'grave' },
+    );
+    expect(e.casillas).toEqual([null, null, null]);
+    expect(e.elegida).toBe('grave');
+  });
+
+  it('se puede recoger cualquiera, no solo el último', () => {
+    // Es lo que sustituye al «deshacer», que solo dejaba corregir en orden inverso.
+    const e = desde(
+      { tipo: 'elegir', clave: 'grave' },
+      { tipo: 'colocar', indice: 0 },
+      { tipo: 'elegir', clave: 'medio' },
+      { tipo: 'colocar', indice: 1 },
+      { tipo: 'elegir', clave: 'grave' },
+    );
+    expect(e.casillas).toEqual([null, 'medio', null]);
+    expect(e.elegida).toBe('grave');
+  });
+
+  it('colocar sobre una casilla ocupada devuelve lo que había a la mano', () => {
+    // Nada se pierde por tocar donde no era: lo desalojado queda cogido y se recoloca.
+    const e = desde(
+      { tipo: 'elegir', clave: 'grave' },
+      { tipo: 'colocar', indice: 0 },
+      { tipo: 'elegir', clave: 'agudo' },
+      { tipo: 'colocar', indice: 0 },
+    );
+    expect(e.casillas).toEqual(['agudo', null, null]);
+    expect(e.elegida).toBe('grave');
+  });
+});
+
+describe('colocar mal no se impide', () => {
+  it('se deja colocar en el orden equivocado', () => {
+    // Rechazar el toque en el momento convertiría esto en un cerrojo que hay que adivinar.
+    const e = desde(
+      { tipo: 'elegir', clave: 'agudo' },
+      { tipo: 'colocar', indice: 0 },
+      { tipo: 'elegir', clave: 'grave' },
+      { tipo: 'colocar', indice: 1 },
+    );
+    expect(e.casillas).toEqual(['agudo', 'grave', null]);
+    expect(e.fase).toBe('colocando');
+  });
+});
+
+describe('comprobar', () => {
+  const lleno = (orden: string[]) =>
+    orden.reduce(
+      (e, clave, i) =>
+        reducirOrdenar(
+          reducirOrdenar(e, { tipo: 'elegir', clave }, CORRECTO),
+          { tipo: 'colocar', indice: i },
+          CORRECTO,
+        ),
+      inicial(CORRECTO.length),
+    );
+
+  it('no comprueba si falta alguna casilla', () => {
+    const e = desde({ tipo: 'elegir', clave: 'grave' }, { tipo: 'colocar', indice: 0 });
+    expect(reducirOrdenar(e, { tipo: 'comprobar' }, CORRECTO).fase).toBe('colocando');
+  });
+
+  it('el orden correcto completa la actividad', () => {
+    const e = reducirOrdenar(lleno(CORRECTO), { tipo: 'comprobar' }, CORRECTO);
     expect(e.fase).toBe('completada');
+    expect(e.fueraDeSitio).toEqual([]);
   });
 
-  it('NO rechaza un elemento colocado fuera de sitio', () => {
-    // Rechazar el toque convertiría la actividad en un cerrojo que hay que adivinar.
-    const e = colocar(INICIAL_ORDENAR, 'agudo');
-    expect(e.colocadas).toEqual(['agudo']);
-  });
-
-  it('conserva el prefijo correcto y devuelve el resto', () => {
-    let e = colocar(colocar(colocar(INICIAL_ORDENAR, 'grave'), 'agudo'), 'medio');
-    e = comprobar(e);
+  it('señala qué casillas están fuera de sitio', () => {
+    const e = reducirOrdenar(lleno(['agudo', 'medio', 'grave']), { tipo: 'comprobar' }, CORRECTO);
     expect(e.fase).toBe('revisando');
-    expect(e.fueraDeSitio).toEqual([1, 2]);
-    e = seguir(e);
-    // «grave» estaba bien y en su sitio: no se le vuelve a preguntar lo que ya sabía.
-    expect(e.colocadas).toEqual(['grave']);
-    expect(e.fase).toBe('colocando');
+    expect(e.fueraDeSitio).toEqual([0, 2]);
   });
+});
 
-  it('NO conserva un acierto suelto que quedaría descolocado', () => {
-    // Coloca [agudo, medio, grave]: «medio» está en su sitio, pero el primero falla.
-    // Si conserváramos «medio» a secas pasaría a ocupar la posición 0, que no es la suya:
-    // un acierto convertido en error sin que el niño toque nada. Se devuelve todo.
-    let e = colocar(colocar(colocar(INICIAL_ORDENAR, 'agudo'), 'medio'), 'grave');
-    e = seguir(comprobar(e));
-    expect(e.colocadas).toEqual([]);
-  });
-
-  it('deshacer es gratis y no cuenta como intento', () => {
-    let e = colocar(colocar(INICIAL_ORDENAR, 'grave'), 'agudo');
-    e = p(e, { tipo: 'deshacer' });
-    expect(e.colocadas).toEqual(['grave']);
-    expect(e.intentos).toBe(0);
-  });
-
-  it('no comprueba hasta que están todas colocadas', () => {
-    const e = comprobar(colocar(INICIAL_ORDENAR, 'grave'));
-    expect(e.fase).toBe('colocando');
-    expect(e.intentos).toBe(0);
-  });
-
-  it('un fallo no termina la actividad, por muchas veces que ocurra', () => {
-    let e = INICIAL_ORDENAR;
-    for (let i = 0; i < 15; i++) {
-      // Orden en el que NINGUNA posición acierta, así que cada vuelta deja el tablero
-      // vacío y la siguiente es idéntica. Quince fallos seguidos.
-      e = comprobar(colocar(colocar(colocar(e, 'medio'), 'agudo'), 'grave'));
-      expect(e.fase).toBe('revisando');
-      expect(e.fueraDeSitio).toEqual([0, 1, 2]);
-      e = seguir(e);
-      expect(e.colocadas).toEqual([]);
+describe('seguir tras un fallo', () => {
+  it('vacía SOLO las casillas equivocadas y respeta los aciertos sueltos', () => {
+    /*
+      Con la lista compacta de antes esto no se podía hacer: quitar el primero le cambiaba
+      el índice al segundo y convertía un acierto en un error sin que el niño tocara nada.
+      Con casillas numeradas, un acierto en la segunda sigue en la segunda pase lo que pase.
+    */
+    let e = inicial(3);
+    for (const [i, clave] of ['agudo', 'medio', 'grave'].entries()) {
+      e = reducirOrdenar(e, { tipo: 'elegir', clave }, CORRECTO);
+      e = reducirOrdenar(e, { tipo: 'colocar', indice: i }, CORRECTO);
     }
-    expect(e.intentos).toBe(15);
-    // Y a la dieciseisava se completa igual que si fuera la primera.
-    e = comprobar(colocar(colocar(colocar(e, 'grave'), 'medio'), 'agudo'));
-    expect(e.fase).toBe('completada');
+    e = reducirOrdenar(e, { tipo: 'comprobar' }, CORRECTO);
+    e = reducirOrdenar(e, { tipo: 'seguir' }, CORRECTO);
+
+    expect(e.fase).toBe('colocando');
+    expect(e.casillas).toEqual([null, 'medio', null]);
+    expect(e.elegida).toBeNull();
+  });
+});
+
+describe('los que quedan en la mano', () => {
+  it('excluye los colocados', () => {
+    expect(pendientes(CORRECTO, [null, 'medio', null])).toEqual(['grave', 'agudo']);
   });
 
-
-
-  it('pendientes devuelve lo que queda por colocar', () => {
-    expect(pendientes(CORRECTO, ['medio'])).toEqual(['grave', 'agudo']);
+  it('con todo colocado no queda ninguno', () => {
+    expect(pendientes(CORRECTO, ['grave', 'medio', 'agudo'])).toEqual([]);
   });
 });

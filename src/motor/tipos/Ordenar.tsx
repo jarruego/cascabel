@@ -4,10 +4,10 @@ import { useCarril } from '@/app/preferencias';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
-import { sonarMuestra } from '../sonarMuestra';
-import { permiteArrastre, propsArrastre, zonaBajoPunto } from '@/ui/arrastrable';
+import { sonarMuestra, sonarNota } from '../sonarMuestra';
+import { propsArrastre, zonaBajoPunto } from '@/ui/arrastrable';
 import {
-  INICIAL_ORDENAR,
+  inicial,
   pendientes,
   reducirOrdenar,
   type AccionOrdenar,
@@ -17,9 +17,15 @@ import {
 /**
  * Tipo «ordenar»: colocar una secuencia por altura, duración o forma.
  *
- * Se toca en secuencia; no se arrastra nada. Cada elemento suena al tocarlo, así que la
- * comparación la hace el oído. Y colocar mal NO se impide: se coloca, y al comprobar se
- * devuelve lo que estaba fuera de sitio. Impedirlo convertiría esto en un cerrojo.
+ * **Elegir y luego colocar.** Se toca un elemento —suena, y queda elegido—, y después se
+ * toca la casilla donde va. Tocar otro elemento antes de colocar suena el otro y cambia la
+ * elección: **escuchar todas las veces que haga falta no compromete nada**, y en una
+ * actividad donde hay que comparar sonidos eso es la mitad del ejercicio. La versión
+ * anterior colocaba al final con un solo toque, o sea que obligaba a decidir con el mismo
+ * gesto con el que escuchabas.
+ *
+ * Un elemento ya colocado se recoge tocándolo, así que se puede reordenar cualquiera y no
+ * hace falta ningún «deshacer» que solo dejaba corregir en orden inverso.
  *
  * Reglas en `../maquinaOrdenar.ts`, vigiladas por `tests/ordenar.test.ts`.
  */
@@ -29,6 +35,8 @@ interface Elemento {
   icono?: string;
   etiqueta?: string;
   audio?: string;
+  /** Nota que suena, para cuando lo que se compara es una altura y no una muestra. */
+  nota?: string;
 }
 
 export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
@@ -46,17 +54,22 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
 
   const [estado, despachar] = useReducer(
     (e: EstadoOrdenar, a: AccionOrdenar) => reducirOrdenar(e, a, contenido.orden),
-    INICIAL_ORDENAR,
+    contenido.orden.length,
+    inicial,
   );
 
-  const porClave = (clave: string) => contenido.elementos.find((e) => e.clave === clave);
+  const porClave = (c: string) => contenido.elementos.find((e) => e.clave === c);
   const sinColocar = pendientes(
     contenido.elementos.map((e) => e.clave),
-    estado.colocadas,
+    estado.casillas,
   );
 
-  // Tras enseñar lo que estaba fuera de sitio, se vuelve solo. Hay tiempo de sobra para
-  // mirarlo: meter prisa a un niño que acaba de equivocarse es lo que CLAUDE.md §4 prohíbe.
+  const sonar = (clave: string) => {
+    const e = porClave(clave);
+    if (e?.audio) sonarMuestra(e.audio);
+    else if (e?.nota) void sonarNota(e.nota);
+  };
+
   useEffect(() => {
     if (estado.fase !== 'revisando') return;
     const id = window.setTimeout(() => despachar({ tipo: 'seguir' }), 2200);
@@ -74,37 +87,39 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
     });
   }, [estado.fase, estado.intentos, actividad.id, alTerminar, contenido.orden.length]);
 
-  const listo = estado.colocadas.length === contenido.orden.length;
-  // El arrastre es una vía ADICIONAL: en Infantil no existe, y en el resto el toque
-  // sucesivo sigue funcionando exactamente igual. WCAG 2.5.7 y regla 9 del diseño.
-  const arrastrable = permiteArrastre(carril);
+  const listo = estado.casillas.every((c) => c !== null);
 
-  function ficha(clave: string, i: number | null) {
+  /** Una ficha, esté en la mano o colocada. */
+  function ficha(clave: string, casilla: number | null) {
     const e = porClave(clave);
-    const mal = i !== null && estado.fueraDeSitio.includes(i);
+    const mal = casilla !== null && estado.fueraDeSitio.includes(casilla);
+    const elegida = estado.elegida === clave;
     return (
       <button
-        key={clave}
         type="button"
         className="boton-actividad ordenar__ficha"
         style={{ minWidth: tam, minHeight: tam }}
         data-estado={mal ? 'fuera-de-sitio' : 'normal'}
-        data-arrastrable={i === null && arrastrable ? 'true' : undefined}
+        data-elegida={elegida || undefined}
+        /* aria-pressed: para un lector de pantalla esto es un interruptor —está cogido o
+           no lo está—, y decirlo así es lo que hace comprensible el «elegir y colocar». */
+        aria-pressed={elegida}
         aria-disabled={estado.fase !== 'colocando' || undefined}
-        {...(i === null
-          ? propsArrastre({
-              carril,
-              clave,
-              zonaEn: (x, y) => zonaBajoPunto(x, y),
-              alSoltar: (c) => {
-                if (e?.audio) sonarMuestra(e.audio);
-                despachar({ tipo: 'colocar', clave: c });
-              },
-            })
-          : {})}
+        {...propsArrastre({
+          carril,
+          clave,
+          zonaEn: (x, y) => zonaBajoPunto(x, y),
+          alSoltar: (c, destino) => {
+            const indice = Number(destino);
+            if (Number.isNaN(indice)) return;
+            sonar(c);
+            despachar({ tipo: 'elegir', clave: c });
+            despachar({ tipo: 'colocar', indice });
+          },
+        })}
         onClick={() => {
-          if (e?.audio) sonarMuestra(e.audio);
-          if (i === null) despachar({ tipo: 'colocar', clave });
+          sonar(clave);
+          despachar({ tipo: 'elegir', clave });
         }}
       >
         {e?.icono && <Icono nombre={e.icono} tamano={Math.round(tam * 0.45)} />}
@@ -117,28 +132,47 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
     <section className="actividad ordenar" data-carril={carril} aria-labelledby="consigna">
       <h1 id="consigna">{t(contenido.consigna)}</h1>
 
-      <ol className="ordenar__fila" data-zona="fila" aria-label={t('ordenar.colocadas')}>
-        {estado.colocadas.map((clave, i) => (
-          <li key={clave}>{ficha(clave, i)}</li>
+      {/*
+        Las casillas van numeradas y visibles desde el principio. Ver los huecos vacíos es
+        lo que convierte «tengo que acordarme de cuántos van» en «quedan dos», y permite
+        colocar la tercera antes que la primera, que es como se ordena de verdad cuando se
+        está comparando.
+      */}
+      <ol className="ordenar__casillas" aria-label={t('ordenar.colocadas')}>
+        {estado.casillas.map((clave, i) => (
+          <li key={i}>
+            <span className="ordenar__numero" aria-hidden="true">
+              {i + 1}
+            </span>
+            {clave ? (
+              ficha(clave, i)
+            ) : (
+              <button
+                type="button"
+                className="ordenar__casilla"
+                data-zona={String(i)}
+                style={{ minWidth: tam, minHeight: tam }}
+                aria-label={`${t('ordenar.casilla')} ${i + 1}`}
+                aria-disabled={!estado.elegida || undefined}
+                onClick={() => despachar({ tipo: 'colocar', indice: i })}
+              />
+            )}
+          </li>
         ))}
-        {estado.colocadas.length === 0 && <li className="ordenar__hueco" aria-hidden="true" />}
       </ol>
 
       <div className="ordenar__banco" role="group" aria-label={t('ordenar.pordolocar')}>
-        {sinColocar.map((clave) => ficha(clave, null))}
+        {sinColocar.map((clave) => (
+          <span key={clave}>{ficha(clave, null)}</span>
+        ))}
+        {sinColocar.length === 0 && <p className="pista-fija">{t('ordenar.todasPuestas')}</p>}
       </div>
 
-      {arrastrable && <p className="ordenar__truco">{t('ordenar.tambienArrastrando')}</p>}
+      <p className="pista-fija">
+        {estado.elegida ? t('ordenar.ahoraCasilla') : t('ordenar.tocaParaOir')}
+      </p>
 
       <div className="ordenar__acciones">
-        <button
-          type="button"
-          className="boton-repetir"
-          aria-disabled={estado.colocadas.length === 0 || estado.fase !== 'colocando' || undefined}
-          onClick={() => despachar({ tipo: 'deshacer' })}
-        >
-          {t('ordenar.deshacer')}
-        </button>
         <button
           type="button"
           className="boton-repetir"
@@ -155,7 +189,7 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
       </p>
 
       <progress
-        value={estado.colocadas.length}
+        value={estado.casillas.filter(Boolean).length}
         max={contenido.orden.length}
         aria-label={t('comun.progreso')}
       />
