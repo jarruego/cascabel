@@ -117,6 +117,27 @@ outputLatency      34 ms
 latencia total     34 ms
 calibración        0 ms
 coste del análisis no medible
+
+Cascabel (cocomusic) · informe de diagnóstico
+fecha 2026-09-06T10:47:07.023Z
+
+userAgent Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Mobile Safari/537.36
+plataforma Linux armv81
+idioma en-GB
+modo browser
+contexto seguro sí
+
+getUserMedia sí
+AudioWorklet sí
+micrófono sin pedir todavía
+
+sampleRate 48000 Hz
+estado contexto running
+baseLatency 4 ms
+outputLatency 23 ms
+latencia total 27 ms
+calibración 0 ms
+coste del análisis no medible
 ```
 
 ### Qué sale de los tres informes de escritorio
