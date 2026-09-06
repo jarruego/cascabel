@@ -109,6 +109,7 @@ prompts/               prompts de generación de contenido y de sesión con Clau
 | [docs/09-DOSIER.md](docs/09-DOSIER.md) | Investigación de producto y mercado (foto de 09/2026) |
 | [docs/10-AUDIO-MUESTRAS.md](docs/10-AUDIO-MUESTRAS.md) | De dónde sale el audio, y qué es provisional |
 | [docs/11-RECURSOS-Y-REFERENTES.md](docs/11-RECURSOS-Y-REFERENTES.md) | Recursos libres con licencia y veredicto, e investigación de interfaz infantil |
+| [docs/12-IDEAS-Y-AMPLIACIONES.md](docs/12-IDEAS-Y-AMPLIACIONES.md) | Qué hay libre que se pueda aprovechar, qué construir y **qué no hacer** |
 | [docs/adr/](docs/adr/) | Decisiones de arquitectura, con sus consecuencias |
 
 ## Trabajar con Claude Code

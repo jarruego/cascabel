@@ -1393,6 +1393,35 @@ Contradice esto:
 legal; NN/g mide lo que funciona con niños de verdad. Pero subir los tamaños afecta a las 45
 actividades y a cuántos objetos caben en pantalla, así que lo decide el autor.
 
+### Estado a 2026-09-07
+
+**El catálogo previsto está entero: 67 actividades y 16 tipos de motor.** Lo que queda no es
+terminar, es depurar y ampliar, y eso lo marca el uso real.
+
+| | |
+|---|---|
+| Actividades | 67, todas validando esquema y música |
+| Tipos de motor | 16 |
+| Tests | 337 |
+| Precache | 1229 KiB (el resto del audio se cachea al usarse) |
+| Código | ~11 800 líneas en `src`, ~3 500 en `tests` |
+
+**Lo que de verdad falta**, y ninguna de las tres es programación:
+
+1. **T0.3, probarlo con niños.** Sigue sin hacerse y es lo único que puede decir si las
+   decisiones de dificultad son correctas. Hay ocho o nueve marcadas como PENDIENTE DE
+   REVISIÓN PEDAGÓGICA esperando exactamente eso.
+2. **Las locuciones.** `CLAUDE.md` §6 pide voz humana grabada y no la hay. `tools/muestras-voz.py`
+   deja el trabajo en grabar, no en programar.
+3. **La revisión de una maestra.** Las correspondencias edad-dificultad, la secuencia
+   didáctica y las coreografías las ha decidido un desarrollador leyendo la convención.
+
+Y una cuarta que sí es de producto: **T3.5**, subir o no los tamaños táctiles según NN/g.
+Sigue sin decidirse porque afecta a las 67 actividades y la decide el autor.
+
+Las ideas de ampliación, con veredicto y con lo que NO conviene hacer, están en
+[`docs/12-IDEAS-Y-AMPLIACIONES.md`](12-IDEAS-Y-AMPLIACIONES.md).
+
 ## Fase 3 — Crecer sin traicionarse (cuando alguien lo pida)
 
 - [ ] T3.1 — Configurador de actividades: un formulario que escribe el JSON

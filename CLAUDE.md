@@ -93,19 +93,38 @@ src/
   app/                  Rutas, layout, proveedor de audio
   motor/
     tipos.ts            Tipos TypeScript derivados del JSON Schema
-    registro.ts         Mapa tipo-de-actividad -> componente
-    tipos/              Un componente por tipo: Eleccion.tsx, Emparejar.tsx, ...
+    registro.ts         Mapa tipo-de-actividad -> componente. 16 tipos
+    tipos/              Un componente por tipo: Eleccion.tsx, Karaoke.tsx, Pistas.tsx...
+    maquina*.ts         Reglas de producto puras, con test. NO viven en el componente
+    escala.ts           Tonos, semitonos y construcción de escalas
+    rejillaRitmica.ts   Sílabas Kodály -> instantes. `inicios` (sílabas) != `golpes`
+    melodiaEnTiempo.ts  Instantes de una melodía, con el margen de entrada
+    musicograma.ts      Qué puede significar el eje transversal según la representación
+    alturaEnPauta.ts    Nota -> altura en el pentagrama, con líneas adicionales
+    grabacionEventos.ts Grabar QUÉ y CUÁNDO, no audio
   audio/
     AudioEngine.ts      AudioContext único, resume por gesto, latencia
     metronomo.ts        Lookahead scheduling (nunca setInterval)
-    sampler.ts          Muestras Opus + playbackRate + ADSR
+    clic.ts             El clic del pulso. Un oscilador, compartido
+    sampler.ts          Muestras Opus + playbackRate + ADSR, y `sostener()`
+    percusion.ts        Golpes sin altura, con round robin. NO es el sampler
+    instrumentos.ts     Qué instrumentos hay y cuáles sostienen
   escucha/
     microfono.ts        getUserMedia con el procesado de voz DESACTIVADO
     tono.ts             Puente al worklet de pitchy
     palmadas.ts         Puente al worklet de onsets
+    grabadora.ts        MediaRecorder. Lo ÚNICO que captura voz. Ver §8 y 08-LEGAL
   worklets/             Código que corre en el hilo de audio (JS plano, no TS)
-  datos/cargar.ts       Único punto que hace fetch. Solo rutas relativas
+  datos/
+    cargar.ts           Único punto que hace fetch. Solo rutas relativas
+    progreso.ts         IndexedDB con degradación a memoria
+    grabaciones.ts      Audio del niño. Base APARTE de la del progreso, a propósito
+    exportar.ts         MIDI y MusicXML escritos a mano, sin dependencias
+    compartir.ts        Estado en la URL y códigos de verificación
   ui/                   Botones grandes, iconos, retroalimentación
+    Lienzo.tsx          Modo pantalla completa. CSS siempre + API nativa si la hay
+    coloresNota.ts      Código Boomwhacker, compartido por piano y musicograma
+    tecladoQwerty.ts    Tocar con el teclado del ordenador, por posición física
   i18n/                 es.json y futuros idiomas. NINGÚN texto en el código
   estilos/tokens.css    Colores, tipografías, tamaños táctiles por edad
 content/
@@ -173,9 +192,19 @@ Objetivo **WCAG 2.2 AA**, y para niños es un suelo, no una meta.
 - **Compensa `outputLatency` + `baseLatency`** antes de comparar el golpe del niño con la
   rejilla esperada. Hay una calibración manual guardada en el dispositivo.
 - No fijes 44100 en el código: lee `audioContext.sampleRate` (cambia al abrir el micrófono).
-- Muestras: 5–7 por instrumento (una por octava), Opus 48 kbps mono, ~70 KB por instrumento.
-  Timbres percusivos (marimba, xilófono, glockenspiel, campanas) porque toleran el
-  *pitch-shifting*.
+- Muestras: **una cada tres semitonos** en los instrumentos sostenidos y 5–7 por octava en
+  los percusivos, Opus 48 kbps mono. La marimba aguanta el estirado porque es percusiva;
+  `playbackRate` cambia la altura **y la duración**, así que una flauta estirada tres
+  semitonos suena a flauta acelerada.
+- **Los instrumentos que no son el de por defecto NO van al precache.** Son casi 2 MB entre
+  todos, y meterlos multiplicaría por tres la primera descarga de un colegio entero para
+  bajar instrumentos que ese niño no va a abrir. `vite.config.ts` los excluye y los cachea
+  al usarlos con `CacheFirst`.
+- **La percusión no pasa por el sampler.** Un bombo no tiene altura que interpolar, y
+  estirarlo lo convierte en otro instrumento. Ver `audio/percusion.ts`.
+- **Anclar al primer golpe hace innecesaria la compensación de latencia**, porque el retardo
+  desplaza por igual al origen y a los demás. Sigue haciendo falta donde se compara contra
+  un reloj externo, como en el musicograma.
 
 Tolerancias de evaluación rítmica, por edad:
 
@@ -285,6 +314,14 @@ del 7-12-1987**. Y el fonograma es un derecho aparte: nunca se usa audio ajeno.
   un tipo existente. Casi siempre sí.
 - **Escribe el test cuando el comportamiento sea temporal o musical** (tolerancias,
   scheduling, validación de contenido). No hace falta test para maquetación.
+- **Las reglas de producto no viven en el componente.** Van en un módulo puro —`maquina*.ts`,
+  `escala.ts`, `musicograma.ts`— con su test. Un componente pinta y programa temporizadores;
+  si hay que cambiar cuándo se avanza o qué cuenta como acierto, se cambia allí, donde hay
+  un test que lo vigila. Es lo que ha permitido reescribir tres veces la interfaz de
+  «ordenar» sin tocar ni una regla.
+- **Un fallo que se ha visto una vez se convierte en test.** No siempre es posible —jsdom no
+  implementa `dialog.show()`, por ejemplo—, y entonces **no se escribe un test falso**: se
+  documenta en el código por qué no lo hay.
 - **Verifica antes de decir que has terminado**: `npm run verificar`.
 - Si una tarea requiere criterio musical que no tengo, **no lo adivines en silencio**:
   propón la opción convencional, di de dónde sale, y márcala como pendiente de revisión.
