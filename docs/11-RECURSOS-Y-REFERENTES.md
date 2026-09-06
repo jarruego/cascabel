@@ -62,6 +62,38 @@ actividades a mano, y las dos son CC0 o compatibles.
 | **ZapSplat** | Efectos, sección CC0 | CC0 en parte del catálogo | Solo la parte marcada CC0, y comprobándolo |
 | **OpenGameArt** | Assets de juego | CC0 en parte | Menor volumen, pero limpio |
 
+### Soundfonts General MIDI: donde sí estaba todo
+
+**La primera búsqueda se equivocó de sitio, y conviene dejar dicho en qué.** Miró bancos de
+muestras *orquestales* —VCSL, VSCO 2, Universidad de Iowa, Philharmonia— y de ahí concluyó
+que no había voz. La conclusión era correcta para esos bancos y falsa en general: el sitio
+donde está todo son los **soundfonts General MIDI**, que llevan veinte años siendo el
+material con el que suena cualquier reproductor de MIDI y traen los 128 instrumentos del
+estándar, voz incluida.
+
+| Recurso | Qué es | Licencia | Veredicto |
+|---|---|---|---|
+| **FluidR3_GM** | Soundfont de Frank Wen, 2000-2008, los 128 instrumentos de General MIDI | **MIT** | **Lo que faltaba.** MIT está en las cuatro que admite `CLAUDE.md` §3 |
+| **gleitz/midi-js-soundfonts** | FluidR3 y MusyngKite **ya renderizados nota a nota**, 88 ficheros MP3 y OGG por instrumento | **MIT** | Ahorra sintetizar el `.sf2`. Es de donde bajamos |
+| **MuseScore General** | Soundfont de MuseScore, más moderno y pesado | MIT | Alternativa si algún día hace falta más calidad |
+| **Salamander Grand Piano** | Piano de cola con 16 capas de velocidad | CC BY 3.0 | Excelente para piano solo, pero **son cientos de megas** y CC BY obliga a atribuir |
+| **FreePats** | Parches libres sueltos | Mezcla de dominio público y GPL | **Hay que mirar pieza a pieza.** La GPL no nos vale en el front |
+| **Philharmonia Orchestra** | Muestras orquestales de descarga gratuita | Términos propios, no libres | **Descartada.** Gratis no es libre |
+
+**Lo que entró**: piano, xilófono, flauta, guitarra de nailon, violín y **voz**. Seis
+instrumentos, 78 muestras, **1,9 MB**.
+
+> **Y por eso no van en el precache.** 1,9 MB multiplicarían por tres la primera descarga de
+> un colegio entero para bajar cinco instrumentos que ese niño no va a abrir. `vite.config.ts`
+> los excluye del precache y los cachea al usarlos con `CacheFirst`: el primer día que se
+> abre la actividad del piano se bajan sus muestras y a partir de ahí funciona sin conexión.
+> `CacheFirst` y no `StaleWhileRevalidate` porque una muestra de audio no cambia nunca.
+
+**Una muestra cada tres semitonos, y no seis por instrumento.** La marimba de VCSL tiene seis
+en tres octavas porque es percusiva y aguanta el estirado. Un sostenido no: `playbackRate`
+cambia la altura **y la duración**, así que una flauta estirada tres semitonos suena a flauta
+acelerada. Con esta densidad el estirado máximo es de semitono y medio, que no delata.
+
 ### Voz cantada: se buscó y no está
 
 El 2026-09-06 se buscó una muestra libre de **una voz cantando una nota**, que es lo que
@@ -75,7 +107,9 @@ piden tres actividades de reconocimiento de timbre. Resultado, para no repetir l
 | **Wikimedia Commons** | Tiene grabaciones vocales, pero son obras completas, no notas aisladas | No sirve para muestrear |
 | **Freesound (filtro CC0)** | Sí hay material vocal CC0 | **Vía abierta, pero exige escuchar.** Elegir una muestra vocal es un juicio de oído, y ese no se delega |
 
-**Conclusión: hay que grabarla.** Son treinta segundos con un móvil, sale CC0 o CC BY-SA
+**RESUELTO EL 2026-09-06 POR OTRA VÍA** (ver el apartado de soundfonts GM, arriba): el programa 53 de FluidR3 es una voz humana muestreada y con licencia MIT. Lo que sigue valiendo de este apartado es el mapa de dónde NO buscar.
+
+Para las **locuciones** —alguien diciendo la consigna— la conclusión no cambia: **hay que grabarlas**. Son treinta segundos con un móvil, sale CC0 o CC BY-SA
 según se quiera, y encaja con lo que este mismo documento ya decía abajo. `tools/muestras-voz.py`
 hace el resto: recorta, mide la altura, avisa si no es la nota declarada, normaliza y codifica.
 
