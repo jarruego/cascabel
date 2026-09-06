@@ -50,6 +50,8 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
   const [conMicrofono, setConMicrofono] = useState(false);
   const [avisoMicro, setAvisoMicro] = useState<string | null>(null);
   const [evaluacion, setEvaluacion] = useState<EvaluacionRitmica | null>(null);
+  /** Se acabó el tiempo sin que el niño tocara nada. No es un fallo: es que no empezó. */
+  const [sinRespuesta, setSinRespuesta] = useState(false);
   const [pulsoActual, setPulsoActual] = useState(-1);
 
   const sampler = useRef<Sampler | null>(null);
@@ -112,7 +114,18 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
     try {
       const d = new DetectorDePalmadas();
       await d.arrancar((onset) => {
-        golpes.current.push(onset.tiempo * 1000);
+        /*
+          **Una palmada entra por la misma puerta que un toque.**
+
+          Antes se empujaba aquí mismo en `golpes.current`, saltándose `tocar()`. Con el
+          patrón anclado al primer golpe eso dejaba la actividad muerta por micrófono: la
+          palmada no fijaba el origen, no marcaba ningún círculo y no sonaba. Dos caminos
+          para lo mismo siempre acaban así, con uno de los dos quedándose atrás.
+
+          Se le pasa el instante del onset y no el reloj de ahora: el detector sabe cuándo
+          sonó la palmada mejor que el momento en que nos avisa.
+        */
+        tocarRef.current?.(onset.tiempo * 1000);
       });
       detector.current = d;
       setConMicrofono(true);
@@ -188,6 +201,7 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
     esperados.current = [];
     origen.current = null;
     golpes.current = [];
+    setSinRespuesta(false);
     setMarcas(patronEnPulsos.current.map(() => 'pendiente'));
 
     // Al acabar el ejemplo entra la cuenta.
@@ -234,13 +248,22 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
   const terminar = useCallback(() => {
     if (cierre.current !== null) window.clearTimeout(cierre.current);
     cierre.current = null;
+    /*
+      Si no se ha tocado nada, no se evalúa nada.
+
+      El cierre de seguridad saltaba igual, y una lista vacía de golpes da desviación cero,
+      que el mensaje leía como «pulso muy regular». Decirle «muy bien» a un niño que no ha
+      tocado no es solo un fallo de cálculo: es lo único capaz de hacer que deje de fiarse
+      de lo que le dice la pantalla.
+    */
+    setSinRespuesta(golpes.current.length === 0);
     setEvaluacion(evaluarRitmo(esperados.current, golpes.current, carril));
     setFase('resultado');
   }, [carril]);
 
-  const tocar = useCallback(() => {
+  const tocar = useCallback((instanteMs?: number) => {
     if (fase !== 'respondiendo') return;
-    const ahora = obtenerContexto().currentTime * 1000;
+    const ahora = instanteMs ?? obtenerContexto().currentTime * 1000;
     const msPorPulso = 60000 / bpm;
 
     /*
@@ -297,6 +320,15 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
       });
     }
   }, [fase, carril, bpm, terminar, rejilla]);
+
+  /*
+    El detector de palmadas se arranca una vez y su callback se queda con el `tocar` que
+    hubiera entonces. Esta referencia es lo que hace que siempre llame al actual: sin ella,
+    la primera palmada usaría un `tocar` con la fase congelada en 'escuchando' y no haría
+    nada, que es un fallo que solo se ve por micrófono.
+  */
+  const tocarRef = useRef<((ms?: number) => void) | null>(null);
+  tocarRef.current = tocar;
 
   // Los golpes que ya han pasado sin respuesta se apagan en GRIS, no en rojo: la regla 4
   // prohíbe el rojo, y apagarse dice «este se fue» sin decir «has fallado».
@@ -389,7 +421,7 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
           <p aria-live="polite">{conMicrofono ? t('tocar.palmea') : t('tocar.toca')}</p>
           {/* El botón grande existe SIEMPRE, también con micrófono: un niño que prefiere
               tocar no tiene por qué explicarle a nadie por qué. */}
-          <button type="button" className="boton-actividad tocar__diana" onPointerDown={tocar}>
+          <button type="button" className="boton-actividad tocar__diana" onPointerDown={() => tocar()}>
             {t('tocar.diana')}
           </button>
         </>
@@ -401,7 +433,17 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
         </p>
       )}
 
-      {fase === 'resultado' && evaluacion && (
+      {fase === 'resultado' && sinRespuesta && (
+        <section className="tocar__resultado" aria-live="polite">
+          {/* Ni felicitación ni reproche: solo lo que ha pasado y la puerta abierta. */}
+          <p className="tocar__mensaje">{t('tocar.noHasTocado')}</p>
+          <button type="button" className="boton-repetir" onClick={() => void empezar()}>
+            {t('tocar.otraVez')}
+          </button>
+        </section>
+      )}
+
+      {fase === 'resultado' && !sinRespuesta && evaluacion && (
         <Resultado
           evaluacion={evaluacion}
           ronda={ronda}

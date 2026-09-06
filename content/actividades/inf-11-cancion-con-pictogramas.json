@@ -3,11 +3,11 @@
   "version": 1,
   "tipo": "seguir",
   "titulo": "Canción con pictogramas",
-  "descripcion": "Canción tradicional de ámbito sol-mi con la letra en pictogramas resaltados.",
+  "descripcion": "Cuatro frases sobre sol-mi-la, en bucle. Cada dibujo suena siempre en la misma nota, así que se acaba sabiendo qué viene antes de oírlo.",
   "etapa": "infantil",
   "eje": "altura",
   "lugar": "hibrida",
-  "duracion_min": 5,
+  "duracion_min": 6,
   "curriculo": {
     "area": "Comunicación y Representación de la Realidad",
     "competencia": "CE3",
@@ -36,10 +36,27 @@
       "G4",
       "G4",
       "E4",
+      "A4",
+      "G4",
+      "E4",
+      "G4",
+      "G4",
+      "E4",
+      "A4",
+      "G4",
       "E4",
       "A4",
       "A4",
-      "G4"
+      "G4",
+      "G4",
+      "E4",
+      "E4",
+      "G4",
+      "G4",
+      "E4",
+      "A4",
+      "G4",
+      "E4"
     ],
     "bloques": [
       {
@@ -55,8 +72,42 @@
         "color": "cuerpo"
       },
       {
+        "icono": "pajaro",
+        "color": "creacion"
+      },
+      {
+        "icono": "sol",
+        "color": "altura"
+      },
+      {
+        "icono": "arbol",
+        "color": "cuerpo",
+        "pulsos": 2
+      },
+      {
+        "icono": "sol",
+        "color": "altura"
+      },
+      {
+        "icono": "sol",
+        "color": "altura"
+      },
+      {
         "icono": "arbol",
         "color": "cuerpo"
+      },
+      {
+        "icono": "pajaro",
+        "color": "creacion"
+      },
+      {
+        "icono": "sol",
+        "color": "altura"
+      },
+      {
+        "icono": "arbol",
+        "color": "cuerpo",
+        "pulsos": 2
       },
       {
         "icono": "pajaro",
@@ -69,8 +120,47 @@
       {
         "icono": "sol",
         "color": "altura"
+      },
+      {
+        "icono": "sol",
+        "color": "altura"
+      },
+      {
+        "icono": "arbol",
+        "color": "cuerpo"
+      },
+      {
+        "icono": "arbol",
+        "color": "cuerpo",
+        "pulsos": 2
+      },
+      {
+        "icono": "sol",
+        "color": "altura"
+      },
+      {
+        "icono": "sol",
+        "color": "altura"
+      },
+      {
+        "icono": "arbol",
+        "color": "cuerpo"
+      },
+      {
+        "icono": "pajaro",
+        "color": "creacion"
+      },
+      {
+        "icono": "sol",
+        "color": "altura"
+      },
+      {
+        "icono": "arbol",
+        "color": "cuerpo",
+        "pulsos": 2
       }
-    ]
+    ],
+    "bucle": true
   },
   "evaluacion": {
     "autocorrectiva": false,

@@ -2562,3 +2562,35 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   clip-path: polygon(50% 0, 100% 100%, 0 100%);
   border-radius: 0;
 }
+
+/* Grabadora del piano. Dos botones y ni uno más: grabar y escuchar, que es lo que hace una
+   grabadora de verdad. El de grabar se marca en rojo cuando está grabando —es el único
+   sitio del proyecto donde el rojo dice algo, y aquí no significa error sino «en marcha»,
+   que es el código universal de cualquier grabadora. */
+.teclado__grabadora {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-3);
+  justify-content: center;
+  margin: var(--e-4) 0;
+}
+.teclado__grabadora [data-grabando] {
+  color: var(--papel);
+  background: var(--vivo-rojo);
+  border-color: var(--vivo-rojo);
+}
+
+/* Títulos de sección del catálogo. Separan actividades de instrumentos, que es una
+   distinción que el maestro necesita y que la lista mezclada le escondía. */
+.catalogo__seccion {
+  margin: var(--e-6) 0 var(--e-2);
+  font-size: var(--t-m);
+  border-bottom: 2px solid var(--linea);
+  padding-bottom: var(--e-1);
+}
+.catalogo__seccion:first-of-type { margin-top: var(--e-4); }
+.catalogo__aclaracion {
+  margin: 0 0 var(--e-3);
+  font-size: var(--t-xs);
+  color: var(--tinta-2);
+}
