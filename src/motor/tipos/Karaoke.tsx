@@ -366,7 +366,17 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
             );
           })}
 
-        {/* Carriles de color: una franja por grado, para orientarse sin leer. */}
+        {/* Carriles de color: una franja por grado, para orientarse sin leer.
+
+            **Y la banda entera se toca**, no solo el botón de abajo. Es el blanco más grande
+            que hay en pantalla, está justo donde el niño está mirando, y tocar donde está la
+            nota es más directo que buscar un botón. Ley de Fitts en estado puro.
+
+            Va con `aria-hidden` y sin foco a propósito: el mismo gesto ya lo ofrecen los
+            botones de abajo, que sí tienen nombre accesible y sí entran en el orden de
+            tabulación. Duplicarlo aquí haría que un lector de pantalla anunciara cada banda
+            dos veces sin añadir nada. Puntero, la banda o el botón; teclado y lector, el
+            botón. */}
         {representacion === 'color' &&
           carriles.map((nota, i) => {
             const g = geometriaDe({ nota, pulsos: 1 }, 0, i, carriles.length, opciones);
@@ -375,11 +385,13 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
               <span
                 key={nota}
                 className="karaoke__carril"
+                data-tocable={porCarril || undefined}
                 style={{
                   ...(vertical ? { left: g.cruce - grosor / 2 } : { top: g.cruce - grosor / 2 }),
                   ...(vertical ? { width: grosor } : { height: grosor }),
                   borderColor: colorDe(nota),
                 }}
+                onPointerDown={porCarril ? () => tocar(i) : undefined}
                 aria-hidden="true"
               />
             );
@@ -473,36 +485,43 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
       {/* La cuenta atrás va justo antes de que empiece a contar lo que haces. */}
       {fase === 'cuenta' && <CuentaAtras desde={3} bpm={bpm} alTerminar={() => void arrancar()} />}
 
-      {fase === 'sonando' && (
-        <>
-          <p className="pista-fija">{t(porCarril ? 'karaoke.tocaBanda' : 'karaoke.toca')}</p>
-          {porCarril ? (
-            /* Un botón por banda, en el mismo orden y con el mismo color que las bandas de
-               arriba: el botón está debajo de su banda, así que no hay que aprenderse nada. */
-            <div className="karaoke__botones" style={{ width: TRANSVERSAL, maxWidth: '100%' }}>
-              {carriles.map((nota, i) => (
-                <button
-                  key={nota}
-                  type="button"
-                  className="boton-actividad karaoke__banda"
-                  style={{ borderColor: colorDe(nota), background: colorDe(nota) }}
-                  onPointerDown={() => tocar(i)}
-                  aria-label={`${nombreDe(nota)} · ${i + 1}`}
-                >
-                  {nombreDe(nota)}
-                </button>
-              ))}
-            </div>
-          ) : (
+      {/*
+        Los botones se ven DESDE EL PRINCIPIO y pegados al recuadro, sin nada entre medias.
+        Antes aparecían al empezar y con una línea de texto en medio: el niño se encontraba
+        la pantalla cambiando justo cuando empezaba a caer la primera figura, y la
+        correspondencia entre banda y botón se perdía por culpa de esa línea. Estando desde
+        el principio, además, se pueden colocar los dedos antes de que empiece.
+      */}
+      {porCarril ? (
+        <div className="karaoke__botones" style={{ width: TRANSVERSAL, maxWidth: '100%' }}>
+          {carriles.map((nota, i) => (
             <button
+              key={nota}
               type="button"
-              className="boton-actividad karaoke__diana"
-              onPointerDown={() => tocar()}
+              className="boton-actividad karaoke__banda"
+              style={{ borderColor: colorDe(nota), background: colorDe(nota) }}
+              onPointerDown={() => tocar(i)}
+              aria-label={`${nombreDe(nota)} · ${i + 1}`}
             >
-              {t('karaoke.diana')}
+              {nombreDe(nota)}
             </button>
-          )}
-        </>
+          ))}
+        </div>
+      ) : (
+        fase === 'sonando' && (
+          <button
+            type="button"
+            className="boton-actividad karaoke__diana"
+            onPointerDown={() => tocar()}
+          >
+            {t('karaoke.diana')}
+          </button>
+        )
+      )}
+
+      {/* La consigna va DEBAJO de los botones, no entre ellos y el recuadro. */}
+      {fase === 'sonando' && (
+        <p className="pista-fija">{t(porCarril ? 'karaoke.tocaBanda' : 'karaoke.toca')}</p>
       )}
 
       {fase === 'resultado' && evaluacion && (

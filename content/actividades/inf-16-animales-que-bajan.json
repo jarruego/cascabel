@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "karaoke",
   "titulo": "Los animales que bajan",
-  "descripcion": "Los animales bajan hasta la línea y se tocan al llegar. Los grandes duran más y suenan más graves que los pequeños.",
+  "descripcion": "Una melodía de verdad, con un animal por nota: el oso es el más grave y el pájaro el más agudo. Despacio, para tocar sin agobio.",
   "etapa": "infantil",
   "eje": "pulso",
   "lugar": "pantalla",
@@ -17,11 +17,7 @@
   "practica": {
     "secuencia": "ninguna",
     "compas": "4/4",
-    "tempo": 60,
-    "figuras": [
-      "negra",
-      "blanca"
-    ]
+    "tempo": 52
   },
   "entrada": {
     "modo": "toque"
@@ -30,92 +26,77 @@
     "consigna": "actividad.inf16.consigna",
     "orientacion": "vertical",
     "representacion": "icono",
-    "tempo": 60,
+    "tempo": 52,
     "notas": [
       {
-        "nota": "E4",
-        "pulsos": 2,
+        "nota": "D4",
+        "pulsos": 1,
         "icono": "oso"
       },
       {
-        "nota": "G4",
+        "nota": "E4",
+        "pulsos": 1,
+        "icono": "gato"
+      },
+      {
+        "nota": "F#4",
+        "pulsos": 1,
+        "icono": "conejo"
+      },
+      {
+        "nota": "D4",
+        "pulsos": 1,
+        "icono": "oso"
+      },
+      {
+        "nota": "D4",
+        "pulsos": 1,
+        "icono": "oso"
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1,
+        "icono": "gato"
+      },
+      {
+        "nota": "F#4",
+        "pulsos": 1,
+        "icono": "conejo"
+      },
+      {
+        "nota": "D4",
+        "pulsos": 1,
+        "icono": "oso"
+      },
+      {
+        "nota": "F#4",
         "pulsos": 1,
         "icono": "conejo"
       },
       {
         "nota": "G4",
-        "pulsos": 1,
-        "icono": "conejo"
-      },
-      {
-        "nota": "A4",
-        "pulsos": 1,
-        "icono": "pajaro"
-      },
-      {
-        "nota": "A4",
-        "pulsos": 1,
-        "icono": "pajaro"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "icono": "gato"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "icono": "gato"
-      },
-      {
-        "nota": "A4",
         "pulsos": 1,
         "icono": "raton"
       },
       {
-        "nota": "D4",
-        "pulsos": 3,
-        "icono": "elefante"
-      },
-      {
-        "nota": "E4",
+        "nota": "A4",
         "pulsos": 2,
-        "icono": "oso"
+        "icono": "pajaro"
       },
       {
-        "nota": "G4",
+        "nota": "F#4",
         "pulsos": 1,
         "icono": "conejo"
       },
       {
         "nota": "G4",
         "pulsos": 1,
-        "icono": "conejo"
+        "icono": "raton"
       },
       {
         "nota": "A4",
-        "pulsos": 1,
-        "icono": "pajaro"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "icono": "gato"
-      },
-      {
-        "nota": "A4",
-        "pulsos": 1,
-        "icono": "pajaro"
-      },
-      {
-        "nota": "E4",
         "pulsos": 2,
-        "icono": "oso"
-      },
-      {
-        "nota": "D4",
-        "pulsos": 3,
-        "icono": "elefante"
+        "icono": "pajaro"
       }
     ],
     "avisoAlAcertar": "icono"
@@ -134,6 +115,12 @@
   ],
   "creditos": [
     {
+      "obra": "Melodía del Campanero («Frère Jacques» / «Frère Blaise»)",
+      "autor": "Anónima francesa del siglo XVIII; se ha propuesto la autoría de Jean-Philippe Rameau (1683-1764)",
+      "fuente": "Fuente conocida más antigua: manuscrito «Recueil de Timbres de Vaudevilles», BnF, fechado hacia 1775-1785",
+      "licencia": "Dominio público"
+    },
+    {
       "obra": "Marimba",
       "autor": "Versilian Studios y colaboradores",
       "fuente": "https://github.com/sgossner/VCSL",
@@ -146,5 +133,8 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "musica": {
+    "abc": "X:1\nT:Campanero\nC:Anónima francesa del siglo XVIII («Frère Blaise», ms. de 1780)\nM:4/4\nL:1/4\nK:D\nD E F D | D E F D | F G A2 | F G A2 |]"
+  }
 }
