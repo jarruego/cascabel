@@ -1,0 +1,64 @@
+{
+  "id": "c1-07-canta-la-nota",
+  "version": 1,
+  "tipo": "cantar",
+  "titulo": "Canta la nota",
+  "descripcion": "Suena una nota, el niño la canta y ve en una aguja si está encima. Sin micrófono se puede cantar igual, sin medición.",
+  "etapa": "primaria-c1",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Práctica instrumental, vocal y corporal"
+  },
+  "practica": {
+    "secuencia": "vocal-kodaly",
+    "notas": [
+      "sol",
+      "mi",
+      "la"
+    ],
+    "metodo": [
+      "kodaly"
+    ]
+  },
+  "entrada": {
+    "modo": "microfono-voz",
+    "alternativa": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c107.consigna",
+    "notas": [
+      "G4",
+      "E4",
+      "A4"
+    ],
+    "segundos": 4
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "tolerancia_cents": 50,
+    "reporta": [
+      "completado",
+      "afinacion_media"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c107.enunciado"
+  },
+  "pistas": [
+    "actividad.c107.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Marimba",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

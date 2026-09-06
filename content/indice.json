@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-06",
-  "total": 17,
+  "total": 18,
   "actividades": [
     {
       "id": "c1-02-palmea-el-ritmo",
@@ -33,6 +33,23 @@
         "competencia": "CE3",
         "criterio": "3.2",
         "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c1-07-canta-la-nota",
+      "titulo": "Canta la nota",
+      "etapa": "primaria-c1",
+      "eje": "altura",
+      "tipo": "cantar",
+      "lugar": "pantalla",
+      "microfono": true,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Práctica instrumental, vocal y corporal"
       },
       "estado": "borrador"
     },

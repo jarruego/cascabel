@@ -714,8 +714,33 @@ detectarlo habría que medir las barras del ABC en crudo, y no compensa hoy.
       `tests/degradacion.test.ts` vigila la regla 8 en todo el repositorio: que ningún
       componente arranque el micrófono fuera de un `try`, que toda actividad de micrófono
       declare alternativa, y que ninguna use arrastre.
-- [ ] T2.5 — Tipo `cantar` con el detector de tono y retorno visual de afinación
-      (desbloqueada: T2.0 dejó el detector en el 1,78 % de un núcleo)
+- [x] **T2.5 — Tipo `cantar`** `[x]` — cerrado el 2026-09-06, sobre el detector que T2.0
+      dejó en el 1,78 % de un núcleo.
+
+      **La aguja de afinación se mueve mientras se canta**, no al final: el niño ve hacia
+      dónde moverse cuando todavía puede hacer algo. La franja central de «afinado» se ve,
+      así que el objetivo es un sitio al que llegar y no un número abstracto.
+
+      `src/motor/afinacion.ts` separa **promedio y estabilidad**, igual que la evaluación
+      rítmica separa desvío y desviación típica. Un niño que canta 70 cents bajo pero
+      clavado sabe sostener la nota y solo está transportando; uno que oscila 80 arriba y
+      abajo acierta la media y no sostiene. Decirles lo mismo a los dos es mentirles a los
+      dos. Se usa **mediana y no media**, porque un error de octava son 1200 cents y con
+      media se llevaría el resultado por delante.
+
+      **La ventana de «afinado» es de ±50 cents**, no de ±10. Un adulto entrenado afina a
+      diez; exigírselo a un niño de siete años sería decirle que desafina siempre.
+      *Pendiente de revisión pedagógica*: la cifra sale de práctica coral infantil
+      documentada, pero la ha fijado un desarrollador.
+
+      **Sin micrófono no se cierra la actividad**: cae a un modo de escucha en el que suena
+      la nota y el niño canta sin que nadie le mida. Cantar sin que te evalúen sigue siendo
+      cantar, y una pantalla de error delante de un niño con mutismo selectivo sería lo
+      contrario de lo que este proyecto promete.
+
+      **Detalle de iOS**: la nota suena ANTES de abrir el micrófono, nunca a la vez.
+      `getUserMedia` redirige la salida de audio y baja el volumen, así que hacerlo a la
+      vez dejaría al niño sin oír la referencia que tiene que imitar.
 - [ ] T2.6 — **Estado en la URL**: compartir una creación sin cuenta ni servidor
 - [ ] T2.7 — **Códigos de verificación**: el maestro evalúa sin cuentas de alumno
 - [ ] T2.8 — Fichas imprimibles en PDF generadas desde el mismo JSON

@@ -1070,3 +1070,75 @@ body {
   gap: 12px;
   justify-content: center;
 }
+
+/* ── cantar: retorno visual de afinación ───────────────────────────────────
+   La aguja existe para que la actividad se pueda hacer MIRANDO, y para que el
+   niño vea hacia dónde moverse mientras canta, en vez de que se lo digan al
+   final cuando ya no puede hacer nada. */
+.cantar__nota {
+  font-size: clamp(40px, 12vw, 96px);
+  font-weight: 700;
+  margin: 8px 0;
+  color: var(--vivo-turquesa);
+}
+.cantar__aguja {
+  position: relative;
+  height: 72px;
+  max-width: 320px;
+  margin: 16px auto;
+  border: 3px solid var(--linea);
+  border-radius: 999px;
+  background: var(--superficie);
+  overflow: hidden;
+}
+/* La franja central es la zona de «afinado». Se ve, así que el objetivo no es
+   un número abstracto sino un sitio al que llegar. */
+.cantar__centro {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 70px;
+  height: 100%;
+  transform: translateX(-50%);
+  background: var(--suave-verde);
+  border-left: 2px dashed var(--vivo-verde);
+  border-right: 2px dashed var(--vivo-verde);
+}
+.cantar__marca {
+  position: absolute;
+  left: 50%;
+  top: 8px;
+  width: 14px;
+  height: calc(100% - 16px);
+  margin-left: -7px;
+  border-radius: 999px;
+  background: var(--tinta-2);
+  opacity: 0.25;
+  transition: transform 90ms linear;
+}
+.cantar__marca[data-activa] {
+  background: var(--acento);
+  opacity: 1;
+}
+.cantar__lectura {
+  min-height: 1.6em;
+  color: var(--tinta-2);
+  font-variant-numeric: tabular-nums;
+}
+.cantar__empezar {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 72px;
+  padding: 12px 28px;
+  font-size: 1.15em;
+}
+.cantar__mensaje { font-size: 1.2em; }
+.cantar__cifras { color: var(--tinta-2); font-size: 0.85em; font-variant-numeric: tabular-nums; }
+.cantar__acciones { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.cantar__aviso {
+  padding: 12px 16px;
+  border-left: 4px solid var(--tinta-2);
+  background: var(--superficie);
+  font-size: 0.9em;
+}

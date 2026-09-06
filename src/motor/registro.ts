@@ -7,6 +7,7 @@ import GuiaAula from './tipos/GuiaAula';
 import TocarATiempo from './tipos/TocarATiempo';
 import Pentagrama from './tipos/Pentagrama';
 import Rejilla from './tipos/Rejilla';
+import Cantar from './tipos/Cantar';
 
 /**
  * Mapa tipo de actividad -> componente.
@@ -23,6 +24,7 @@ export const REGISTRO: Partial<Record<TipoActividad, ComponentType<PropsActivida
   'tocar-a-tiempo': TocarATiempo,
   pentagrama: Pentagrama,
   rejilla: Rejilla,
+  cantar: Cantar,
   // Pendientes, en este orden (ver docs/07-ROADMAP.md):
   // rejilla, pentagrama, seguir, 'tocar-a-tiempo' -> fase 2
   // cantar, lienzo -> fase 2/3
