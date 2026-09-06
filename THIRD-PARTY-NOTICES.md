@@ -70,6 +70,7 @@ cosa. Ver `docs/08-LEGAL.md`.
 | `public/audio/muestras/*.opus` | Pandero (frame drum), claves, campanilla nepalí y glockenspiel G4/C5/C6 | Versilian Studios y colaboradores | https://github.com/sgossner/VCSL | CC0 1.0 | 2026-09-06 | `LICENSE` del repositorio: «CC0 1.0 Universal» |
 | `public/audio/muestras/tempo-*.opus`, `acorde-*.opus` | Derivados: la claves repetida al pulso, y tres glockenspiel transpuestos y mezclados | Versilian Studios (material) · Proyecto cocomusic (montaje) | `tools/muestras-derivadas.py` | CC0 1.0 | 2026-09-06 | CC0 permite cualquier transformación sin condiciones |
 | `public/audio/muestras/voz-la.opus` | Un «la» cantado | Proyecto cocomusic | `tools/muestras-provisionales.py` | CC0 | 2026-09-06 | sintetizada; es la única que queda por sustituir |
+| `content/actividades/c2-11-himno-de-la-alegria.json` | Tema del cuarto movimiento de la Sinfonía n.º 9 («Himno de la alegría»), melodía sola | Ludwig van Beethoven (1770-1827) | transcripción propia a notación ABC, verificada con `music21` | **Dominio público** | 2026-09-06 | el autor murió en 1827; incluso con los 80 años de la disposición transitoria española el plazo venció en 1907 |
 | `public/iconos/*.svg` (27) | Iconos de actividad | OpenMoji · HfG Schwäbisch Gmünd | https://openmoji.org | **CC BY-SA 4.0** | 2026-09-06 | licencia en `LICENSE.txt` del repositorio oficial |
 
 Las de VCSL van **procesadas** por `tools/muestras-instrumento.py`: pico normalizado a
@@ -86,3 +87,11 @@ contenidos (`LICENSE-CONTENT.md`), así que no añade ninguna obligación nueva:
 hace en la pantalla de créditos y aquí— y compartir igual, que ya hacemos. Los iconos son
 **contenido**, no código: el código sigue siendo Apache-2.0 y la ShareAlike no lo alcanza.
 Si algún día se modifican los dibujos, la versión modificada también será CC BY-SA 4.0.
+
+**Sobre el Himno de la alegría.** Es el único caso de repertorio ajeno que ha entrado hasta
+ahora, y conviene dejar dicho por qué se pudo. No basta con que una melodía «sea muy antigua»:
+el plazo español son 70 años desde la muerte del autor, **u 80 si murió antes del 7-12-1987**,
+y el fonograma es un derecho aparte del de la obra. Aquí los dos están limpios: Beethoven
+murió en 1827, y **no se usa grabación ajena ninguna** —la melodía se sintetiza con las
+muestras de marimba CC0 que ya están en el proyecto—. La transcripción a ABC es propia y se
+pasó por `music21` antes de generar el JSON.

@@ -1,0 +1,68 @@
+{
+  "id": "c1-15-ritmo-de-ocho",
+  "version": 1,
+  "tipo": "tocar-a-tiempo",
+  "titulo": "Ritmo de ocho",
+  "descripcion": "Ocho pulsos con negras y corcheas, en bucle de cuatro repeticiones.",
+  "etapa": "primaria-c1",
+  "eje": "pulso",
+  "lugar": "pantalla",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Práctica instrumental, vocal y corporal"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 84,
+    "figuras": [
+      "negra",
+      "corchea"
+    ]
+  },
+  "entrada": {
+    "modo": "microfono-palmada",
+    "alternativa": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c115.consigna",
+    "silabas": [
+      "ta",
+      "ti-ti",
+      "ta",
+      "ta",
+      "ti-ti",
+      "ti-ti",
+      "ta",
+      "ta"
+    ],
+    "repeticiones": 4,
+    "tempo": 84
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c115.enunciado"
+  },
+  "pistas": [
+    "actividad.c115.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Marimba",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

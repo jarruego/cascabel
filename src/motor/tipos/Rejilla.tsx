@@ -57,6 +57,9 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
   );
   const [sonando, setSonando] = useState(false);
   const [columnaActual, setColumnaActual] = useState(-1);
+  /** Repetir sin parar. Componer es probar, y parar cada cuatro compases lo corta. */
+  const [bucle, setBucle] = useState(false);
+  const bucleRef = useRef(false);
   const sampler = useRef<Sampler | null>(null);
   const yaTerminada = useRef(false);
 
@@ -103,10 +106,18 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
       () => {
         setColumnaActual(-1);
         setSonando(false);
+        // El bucle se relanza al terminar la vuelta en vez de programar cien compases por
+        // delante: así, si el niño cambia una celda a mitad, la vuelta siguiente ya suena
+        // con el cambio. Componer es probar, y esperar al final rompe el hilo.
+        if (bucleRef.current) window.setTimeout(() => void reproducirRef.current?.(), 120);
       },
       (inicio + columnas * paso - ctx.currentTime) * 1000,
     );
   }, [sonando, bpm, columnas, estado.encendidas, notas]);
+
+  // Referencia estable para que el bucle pueda llamarse a sí mismo sin ciclos de deps.
+  const reproducirRef = useRef<(() => Promise<void>) | null>(null);
+  reproducirRef.current = reproducir;
 
   const tocarCelda = useCallback(
     async (fila: number, columna: number) => {
@@ -166,6 +177,20 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
       <div className="rejilla__acciones">
         <button type="button" className="boton-repetir" onClick={() => void reproducir()}>
           <Icono nombre="reproducir" tamano={26} /> {t('rejilla.reproducir')}
+        </button>
+
+        <button
+          type="button"
+          className="boton-repetir"
+          aria-pressed={bucle}
+          onClick={() => {
+            const v = !bucle;
+            setBucle(v);
+            bucleRef.current = v;
+            if (v && !sonando) void reproducir();
+          }}
+        >
+          {bucle ? t('rejilla.pararBucle') : t('rejilla.bucle')}
         </button>
 
         <button

@@ -902,6 +902,62 @@ cursor sincronizado por `requestAnimationFrame` y separado del planificador de a
 > marcador es exactamente lo que el dosier llama la mitad tóxica de Duolingo y lo que
 > prohíbe la regla 4. Es un musicograma que se mueve, no un juego de puntos.
 
+### T2.12 — Ritmos largos, piano con colores y musicograma sobre pentagrama `[x]`
+
+Cerrada el 2026-09-06, a partir de las pruebas del autor.
+
+**La cuenta atrás se movió de sitio.** Estaba antes de escuchar el ritmo, que es justo cuando
+no hace falta: escuchar no requiere prepararse. Ahora va **antes de responder**, que es lo que
+pide un músico y lo que pedía el autor.
+
+**Marcas de golpe en vivo**, verdes al entrar y **grises al pasar de largo**. El autor pidió
+rojo para el fallo; la regla 4 lo prohíbe literalmente, y «apagado» transmite que ese golpe se
+fue sin decirle al niño que ha fallado. Se distinguen además por tamaño y por borde, no solo
+por color.
+
+**Ritmos de 8 y de 12 pulsos en bucle**, y **composición con la octava completa**, con opción
+de escucha en bucle que **relanza cada pasada** para que lo que se edita se oiga en la vuelta
+siguiente.
+
+**Piano con el código de color Boomwhacker** —do rojo, re naranja, mi amarillo, fa verde, sol
+turquesa, la azul, si morado— que es el estándar de facto en aulas de Primaria y el que una
+maestra reconoce sin explicación. El color nunca va solo: cada tecla lleva su nombre debajo, y
+la nota que suena aparece en grande.
+
+**Musicograma horizontal sobre pentagrama** (`tipo: karaoke`), que es lo que pidió el autor:
+las notas vienen **de derecha a izquierda sobre una pauta real** y se tocan al cruzar la línea
+del presente.
+
+> **Por qué es un tipo nuevo y no un modo de `seguir`.** En `seguir` el niño no responde:
+> mira. Esa regla es la que permite que aquel componente no tenga evaluación ni solución, y
+> meterle una mecánica interactiva la habría roto.
+
+> **Por qué sobre pentagrama y no sobre carriles de colores.** Un juego de notas que caen
+> enseña ritmo; sobre una pauta real enseña además que ese ritmo se escribe y que lo que sube
+> en el dibujo sube al oído. Sale gratis: la nota tiene que estar a alguna altura.
+
+**El repertorio, verificado.** El tema del cuarto movimiento de la Novena de Beethoven, que
+el autor propuso. **Beethoven murió en 1827**: incluso aplicando los 80 años de la disposición
+transitoria española, el plazo venció en 1907. Dominio público sin discusión posible. La
+melodía se transcribió a ABC y se pasó por `music21` antes de escribir el JSON: **8 compases,
+30 notas, ámbito do4–sol4, salto máximo de 2 semitonos**. El JSON se generó desde esa fuente
+verificada, no a mano.
+
+**Y se cambió de ciclo por lo que dijo el validador.** Se escribió para primer ciclo y
+`npm run contenido:validar` avisó de que el puntillo de los compases 4 y 8 es poco habitual a
+esa edad. Es cierto y es del propio Beethoven: no se puede simplificar sin falsear una melodía
+conocida. Se movió a **segundo ciclo**, que es donde la convención sitúa el ritmo con puntillo.
+
+**Un módulo con test para colocar notas fuera del pentagrama.** `alturaEnPauta.ts`, aparte de
+`pentagramaPosiciones.ts` porque hace el camino contrario y sí necesita salirse de las cinco
+líneas: la melodía baja a **do4**, que en clave de sol va en línea adicional. Una nota dibujada
+a la altura equivocada **no da ningún síntoma** —se ve bien, suena bien y es mentira—, así que
+lleva 13 tests, incluido uno que comprueba que los dos módulos no divergen.
+
+**Lo que hay que probar en el aula**: si la ventana de acierto (la tolerancia `casi` del
+carril) es la adecuada para tocar una melodía entera, y no solo un ritmo de cuatro golpes.
+Eso no se decide midiendo, se decide viendo a un niño hacerlo.
+
 ### T3.5 — Revisar los tamaños contra la investigación de NN/g `⚠️`
 
 Abierta el 2026-09-06 con la investigación de

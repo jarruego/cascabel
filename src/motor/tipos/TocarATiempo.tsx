@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { despertarAudio, latenciaMs, obtenerContexto } from '@/audio/AudioEngine';
+import { TOLERANCIA_MS } from '@/config';
 import { MARIMBA, Sampler } from '@/audio/sampler';
 import { DetectorDePalmadas } from '@/escucha/palmadas';
 import { useCarril } from '@/app/preferencias';
@@ -47,6 +48,9 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
   const golpes = useRef<number[]>([]);
   const esperados = useRef<number[]>([]);
   const temporizadores = useRef<number[]>([]);
+
+  /** Estado de cada golpe esperado mientras el niño responde. */
+  const [marcas, setMarcas] = useState<Array<'pendiente' | 'acertado' | 'pasado'>>([]);
 
   const rejilla = (() => {
     try {
@@ -126,14 +130,16 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
     // La latencia se SUMA a lo esperado: el niño responde a lo que OYE, y lo oye tarde.
     esperados.current = aMilisegundos(rejilla!, inicioRespuesta, bpm, latenciaMs());
     golpes.current = [];
+    setMarcas(esperados.current.map(() => 'pendiente'));
 
+    // Al acabar el ejemplo entra la cuenta atrás; ella pasa a 'respondiendo'.
     temporizadores.current.push(
       window.setTimeout(
         () => {
-          setFase('respondiendo');
+          setFase('cuenta');
           setPulsoActual(-1);
         },
-        inicioRespuesta - ctx.currentTime * 1000 - msPorPulso,
+        inicio + rejilla!.pulsos * msPorPulso - ctx.currentTime * 1000,
       ),
     );
 
@@ -153,8 +159,49 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
 
   const tocar = useCallback(() => {
     if (fase !== 'respondiendo') return;
-    golpes.current.push(obtenerContexto().currentTime * 1000);
-  }, [fase]);
+    const ahora = obtenerContexto().currentTime * 1000;
+    golpes.current.push(ahora);
+
+    // Se marca en verde el golpe esperado más cercano, si cae dentro de la ventana
+    // «casi» del carril. Es retorno inmediato: el niño ve que ha entrado sin esperar al
+    // final, y eso es lo que le deja corregir en la siguiente vuelta.
+    const limite = TOLERANCIA_MS[carril].casi;
+    let mejor = -1;
+    let mejorError = Infinity;
+    esperados.current.forEach((e, i) => {
+      const err = Math.abs(ahora - e);
+      if (err < mejorError && err <= limite) {
+        mejorError = err;
+        mejor = i;
+      }
+    });
+    if (mejor >= 0) {
+      setMarcas((m) => {
+        if (m[mejor] === 'acertado') return m;
+        const n = [...m];
+        n[mejor] = 'acertado';
+        return n;
+      });
+    }
+  }, [fase, carril]);
+
+  // Los golpes que ya han pasado sin respuesta se apagan en GRIS, no en rojo: la regla 4
+  // prohíbe el rojo, y apagarse dice «este se fue» sin decir «has fallado».
+  useEffect(() => {
+    if (fase !== 'respondiendo') return;
+    const id = window.setInterval(() => {
+      const ahora = obtenerContexto().currentTime * 1000;
+      const limite = TOLERANCIA_MS[carril].casi;
+      setMarcas((m) =>
+        m.map((v, i) =>
+          v === 'pendiente' && ahora > (esperados.current[i] ?? Infinity) + limite
+            ? 'pasado'
+            : v,
+        ),
+      );
+    }, 60);
+    return () => window.clearInterval(id);
+  }, [fase, carril]);
 
   // Barra espaciadora además del toque: se puede hacer entera con teclado.
   useEffect(() => {
@@ -191,15 +238,31 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
         ))}
       </ol>
 
+      {/* Un punto por golpe esperado. Verde al entrar, gris al pasar de largo. Nunca
+          rojo: «apagado» dice que ese se fue, «rojo» diría que has fallado. */}
+      {(fase === 'respondiendo' || fase === 'resultado') && marcas.length > 0 && (
+        <ol className="tocar__marcas" aria-label={t('tocar.marcas')}>
+          {marcas.map((m, i) => (
+            <li key={i} data-marca={m} />
+          ))}
+        </ol>
+      )}
+
       {fase === 'listo' && (
-        <button type="button" className="boton-repetir" onClick={() => setFase('cuenta')}>
+        <button type="button" className="boton-repetir" onClick={() => void empezar()}>
           {t('tocar.empezar')}
         </button>
       )}
 
-      {/* La cuenta atrás va ANTES de que suene nada: sin ella, la mitad de las palmadas
-          se pierden mientras el niño todavía está mirando la pantalla. */}
-      {fase === 'cuenta' && <CuentaAtras alTerminar={() => void empezar()} />}
+      {/*
+        La cuenta atrás va justo antes de RESPONDER, no antes de escuchar.
+        Estaba mal: avisaba de cuándo empezaba a sonar el ejemplo, que es cuando el niño
+        solo tiene que escuchar. Lo que hace falta saber es cuándo empieza a contar lo que
+        uno hace, y eso es después del ejemplo.
+      */}
+      {fase === 'cuenta' && (
+        <CuentaAtras desde={2} alTerminar={() => setFase('respondiendo')} />
+      )}
 
       {fase === 'escuchando' && <p aria-live="polite">{t('tocar.escucha')}</p>}
 

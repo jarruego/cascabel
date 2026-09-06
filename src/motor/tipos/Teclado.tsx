@@ -50,9 +50,12 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
   const deslizando = useRef(false);
   const ultima = useRef<string | null>(null);
   const [sonando, setSonando] = useState<Set<string>>(new Set());
+  /** Nota que se acaba de tocar, para enseñarla grande encima del teclado. */
+  const [ultimaTocada, setUltimaTocada] = useState<string | null>(null);
 
   const sonar = useCallback(async (nota: string) => {
     setSonando((s) => new Set(s).add(nota));
+    setUltimaTocada(nota);
     window.setTimeout(() => setSonando((s) => {
       const n = new Set(s);
       n.delete(nota);
@@ -112,9 +115,32 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
     C: 'do', D: 're', E: 'mi', F: 'fa', G: 'sol', A: 'la', B: 'si',
   };
 
+  /**
+   * Un color por grado de la escala.
+   *
+   * No es decoración: es el código de color de los tubos **Boomwhacker**, que es el
+   * estándar de facto en aulas de Primaria y el que una maestra reconoce sin que se lo
+   * expliquen. Do rojo, re naranja, mi amarillo, fa verde, sol turquesa, la azul, si
+   * morado. Además, con siete colores distintos el niño localiza el do sin leer.
+   *
+   * El color NUNCA va solo: cada tecla lleva su nombre debajo y su posición en el teclado.
+   */
+  const COLOR: Record<string, string> = {
+    C: 'vivo-rojo', D: 'vivo-naranja', E: 'vivo-amarillo', F: 'vivo-verde',
+    G: 'vivo-turquesa', A: 'vivo-azul', B: 'vivo-morado',
+  };
+
   return (
     <section className="actividad teclado" data-carril={carril} aria-labelledby="consigna">
       <h1 id="consigna">{t(contenido.consigna)}</h1>
+
+      {/* La nota que suena, grande. Es lo que convierte el piano en algo de lo que se
+          aprende: se toca, suena y se ve cómo se llama. */}
+      <p className="teclado__ultima" aria-live="polite">
+        {ultimaTocada
+          ? `${nombres === 'ingles' ? ultimaTocada[0] : LATINO[ultimaTocada[0]!]}${ultimaTocada.includes('#') ? '♯' : ''}`
+          : ''}
+      </p>
 
       <div
         className="teclado__caja"
@@ -138,7 +164,12 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
               style={
                 k.negra
                   ? { left: (k.indice + 1) * anchoBlanca - anchoBlanca * 0.3, width: anchoBlanca * 0.6 }
-                  : { width: anchoBlanca }
+                  : {
+                      width: anchoBlanca,
+                      // Una franja del color del grado en la parte baja de la tecla: se
+                      // ve sin que la tecla deje de parecer una tecla de piano.
+                      borderBottom: `10px solid var(--${COLOR[letra] ?? 'linea'})`,
+                    }
               }
               aria-label={`${etiqueta || letra}${k.negra ? ' sostenido' : ''} ${aMidi(k.nota)}`}
               onPointerDown={() => {

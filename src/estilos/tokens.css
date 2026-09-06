@@ -1652,3 +1652,152 @@ body {
     border-width: 6px;
   }
 }
+
+/* ── marcas de golpe en vivo ───────────────────────────────────────────────
+   Verde al entrar, GRIS al pasar de largo. Nunca rojo: la regla 4 lo prohíbe
+   literalmente, y «apagado» dice que ese golpe se fue sin decir que has
+   fallado. Se distinguen además por tamaño y por borde, no solo por color. */
+.tocar__marcas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 0;
+  margin: 16px 0;
+  list-style: none;
+}
+.tocar__marcas li {
+  width: 26px;
+  height: 26px;
+  border: 3px solid var(--linea);
+  border-radius: 50%;
+  background: var(--superficie);
+  transition: transform 120ms ease, background-color 120ms ease;
+}
+.tocar__marcas li[data-marca='acertado'] {
+  background: var(--vivo-verde);
+  border-color: var(--vivo-verde);
+  transform: scale(1.25);
+}
+.tocar__marcas li[data-marca='pasado'] {
+  border-style: dashed;
+  opacity: 0.4;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tocar__marcas li[data-marca='acertado'] { transform: none; border-width: 7px; }
+}
+
+/* La nota que acaba de sonar, grande. Es lo que convierte el piano en algo de lo que se
+   aprende: se toca, suena y se ve cómo se llama. */
+.teclado__ultima {
+  min-height: 1.3em;
+  margin: 4px 0;
+  font-size: clamp(32px, 9vw, 64px);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--vivo-turquesa);
+  text-align: center;
+}
+/* Franja de color por grado, con el código Boomwhacker que se usa en las aulas. Nunca
+   informa sola: cada tecla lleva su nombre debajo y su sitio en el teclado. */
+.teclado__blanca { border-bottom-width: 10px; }
+
+/* ── karaoke: musicograma horizontal sobre pentagrama ──────────────────────
+   Las notas se colocan por posición absoluta y se mueven cambiando `left` en cada
+   fotograma. No hay transición CSS a propósito: la posición ya la calcula el
+   requestAnimationFrame a partir del reloj del AudioContext, y una transición encima
+   añadiría un retardo propio que desincronizaría el dibujo del sonido. */
+.karaoke__pauta {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  margin: 12px 0 20px;
+  overflow: hidden;
+  background: var(--superficie);
+  border: 2px solid var(--linea);
+  border-radius: var(--radio);
+}
+.karaoke__linea,
+.karaoke__adicional {
+  position: absolute;
+  height: 2px;
+  background: var(--linea);
+}
+.karaoke__linea {
+  left: 0;
+  right: 0;
+}
+/* Línea adicional: solo el trozo que cruza la cabeza de la nota, como en una partitura. */
+.karaoke__adicional {
+  width: 30px;
+  margin-left: -6px;
+}
+/* La línea del presente. Va marcada también con un triángulo abajo, para que no dependa
+   del color: el pentagrama entero es gris y esto tiene que verse a tres metros. */
+.karaoke__ahora {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  margin-left: -2px;
+  background: var(--vivo-turquesa);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--vivo-turquesa) 18%, transparent);
+}
+.karaoke__nota {
+  position: absolute;
+  height: 14px;
+  margin-left: -7px;
+  background: var(--vivo-azul);
+  border: 2px solid var(--tinta);
+  border-radius: 8px;
+}
+/* Al acertar, la nota crece y cambia de forma y de color a la vez: nunca solo color. */
+.karaoke__nota[data-acertada] {
+  background: var(--vivo-verde);
+  border-color: var(--vivo-verde);
+  transform: scale(1.5);
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--vivo-verde) 22%, transparent);
+}
+/* Y si se va sin tocarla, se apaga en gris. Nunca rojo: regla 4. */
+.karaoke__nota[data-apagada] {
+  background: transparent;
+  border-style: dashed;
+  border-color: var(--linea);
+  opacity: 0.45;
+}
+@media (prefers-reduced-motion: reduce) {
+  .karaoke__nota[data-acertada] { transform: none; border-width: 5px; }
+}
+/* La diana ocupa el ancho: a esta edad se toca sin mirar dónde se toca. */
+.karaoke__diana {
+  width: 100%;
+  min-height: 96px;
+  font-size: 24px;
+}
+.karaoke__resultado {
+  margin-top: 16px;
+  padding: 16px;
+  background: var(--suave-verde);
+  border: 2px solid var(--vivo-verde);
+  border-radius: var(--radio);
+  /* El texto se fija SIEMPRE junto al fondo: --suave-verde cambia con el esquema de color
+     y heredar el texto es lo que dejó el modal de éxito ilegible en modo oscuro. */
+  color: var(--tinta);
+  text-align: center;
+}
+.karaoke__mensaje {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.karaoke__cifras {
+  margin: 4px 0;
+  font-variant-numeric: tabular-nums;
+}
+.karaoke__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 14px;
+}
