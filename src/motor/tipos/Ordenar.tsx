@@ -37,6 +37,19 @@ interface Elemento {
   audio?: string;
   /** Nota que suena, para cuando lo que se compara es una altura y no una muestra. */
   nota?: string;
+  /** Token de color, sin el `--`. Sirve para distinguir fichas, no para informar. */
+  color?: string;
+  /**
+   * Forma del distintivo: círculo, cuadrado o triángulo.
+   *
+   * Va junto al color y no en su lugar. El color solo no valdría —regla 6— y aquí
+   * distinguir una ficha de otra es toda la mecánica: hay que poder decir «la del cuadrado
+   * va primera» sin verle el color. Y la forma es **arbitraria a propósito**: no sugiere
+   * ningún orden, que es justo lo que sí hacían las palabras «grave, medio, agudo».
+   */
+  forma?: 'circulo' | 'cuadrado' | 'triangulo';
+  /** Nombre accesible cuando no hay etiqueta. Describe lo que se VE, nunca la respuesta. */
+  alt?: string;
 }
 
 export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
@@ -98,9 +111,14 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
       <button
         type="button"
         className="boton-actividad ordenar__ficha"
-        style={{ minWidth: tam, minHeight: tam }}
         data-estado={mal ? 'fuera-de-sitio' : 'normal'}
         data-elegida={elegida || undefined}
+        style={{
+          minWidth: tam,
+          minHeight: tam,
+          ...(e?.color ? { borderColor: `var(--${e.color})`, borderWidth: 4 } : {}),
+        }}
+        aria-label={e?.alt ? t(e.alt) : undefined}
         /* aria-pressed: para un lector de pantalla esto es un interruptor —está cogido o
            no lo está—, y decirlo así es lo que hace comprensible el «elegir y colocar». */
         aria-pressed={elegida}
@@ -123,7 +141,15 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
         }}
       >
         {e?.icono && <Icono nombre={e.icono} tamano={Math.round(tam * 0.45)} />}
-        <span className="boton__texto">{e?.etiqueta ? t(e.etiqueta) : ''}</span>
+        {e?.forma && (
+          <span
+            className="ordenar__forma"
+            data-forma={e.forma}
+            style={e.color ? { background: `var(--${e.color})` } : undefined}
+            aria-hidden="true"
+          />
+        )}
+        {e?.etiqueta && <span className="boton__texto">{t(e.etiqueta)}</span>}
       </button>
     );
   }
@@ -173,6 +199,21 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
       </p>
 
       <div className="ordenar__acciones">
+        {/* Escuchar lo colocado, en orden y seguido. Es lo que convierte «creo que va así»
+            en «ahora lo oigo»: comparar de dos en dos no dice si la serie entera sube. */}
+        <button
+          type="button"
+          className="boton-repetir"
+          aria-disabled={estado.casillas.every((c) => c === null) || undefined}
+          onClick={() => {
+            const puestas = estado.casillas.filter((c): c is string => c !== null);
+            puestas.forEach((clave, i) => {
+              window.setTimeout(() => sonar(clave), i * 700);
+            });
+          }}
+        >
+          {t('ordenar.escuchar')}
+        </button>
         <button
           type="button"
           className="boton-repetir"

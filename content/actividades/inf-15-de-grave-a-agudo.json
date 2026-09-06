@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "ordenar",
   "titulo": "De grave a agudo",
-  "descripcion": "Tres campanas que hay que ordenar tocándolas, de la más grave a la más aguda. El catálogo preveía cinco; se dejan en tres porque el máximo de objetos simultáneos en Infantil es cuatro.",
+  "descripcion": "Tres campanas de colores. Se escuchan las veces que haga falta y se colocan de la más grave a la más aguda; nada dice cuál es cuál.",
   "etapa": "infantil",
   "eje": "altura",
   "lugar": "pantalla",
@@ -31,20 +31,26 @@
       {
         "clave": "media",
         "icono": "campana",
-        "etiqueta": "opcion.medio",
-        "audio": "muestras/campana-media.opus"
+        "audio": "muestras/campana-media.opus",
+        "color": "vivo-verde",
+        "forma": "cuadrado",
+        "alt": "campana.media"
       },
       {
         "clave": "aguda",
         "icono": "campana",
-        "etiqueta": "opcion.agudo",
-        "audio": "muestras/campana-aguda.opus"
+        "audio": "muestras/campana-aguda.opus",
+        "color": "vivo-naranja",
+        "forma": "triangulo",
+        "alt": "campana.aguda"
       },
       {
         "clave": "grave",
         "icono": "campana",
-        "etiqueta": "opcion.grave",
-        "audio": "muestras/campana-grave.opus"
+        "audio": "muestras/campana-grave.opus",
+        "color": "vivo-azul",
+        "forma": "circulo",
+        "alt": "campana.grave"
       }
     ],
     "orden": [

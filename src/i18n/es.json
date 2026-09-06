@@ -63,7 +63,7 @@
   "comun.escuchaOtraVez": "Escucha otra vez los dos.",
   "ordenar.colocadas": "Lo que llevas colocado",
   "ordenar.pordolocar": "Lo que queda por colocar",
-  "ordenar.comprobar": "Ya está",
+  "ordenar.comprobar": "Comprobar",
   "ordenar.casi": "Casi. Los que se mueven es que van en otro sitio.",
   "actividad.inf05.consigna": "¿Qué suena en cada dibujo?",
   "actividad.inf05.enunciado": "Toca un dibujo y luego el sonido que le va. Sonarán los dos.",
@@ -680,5 +680,9 @@
   "ordenar.casilla": "Casilla",
   "ordenar.tocaParaOir": "Toca un sonido para oírlo. Puedes escucharlos todas las veces que quieras.",
   "ordenar.ahoraCasilla": "Ahora toca la casilla donde quieres ponerlo. Si tocas otro sonido, cambias de idea.",
-  "ordenar.todasPuestas": "Ya están todas colocadas. Toca una para cambiarla de sitio."
+  "ordenar.todasPuestas": "Ya están todas colocadas. Toca una para cambiarla de sitio.",
+  "campana.grave": "Campana azul, con un círculo",
+  "campana.media": "Campana verde, con un cuadrado",
+  "campana.aguda": "Campana naranja, con un triángulo",
+  "ordenar.escuchar": "Escuchar cómo queda"
 }
