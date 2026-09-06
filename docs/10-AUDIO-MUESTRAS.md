@@ -43,3 +43,52 @@ python tools/muestras-provisionales.py    # necesita ffmpeg en el PATH
 Vacío todavía. Van aquí las locuciones de los enunciados, y son **voz humana grabada,
 nunca síntesis**: la voz sintética suena antinatural a los pequeños y les cuesta
 procesarla (regla 1 de `docs/04-DISENO-UI.md`).
+
+---
+
+## Al día del 2026-09-07
+
+El banco ha crecido mucho y conviene dejar el mapa claro, porque **vienen de tres sitios
+distintos y por tres motivos distintos**.
+
+| De dónde | Qué | Licencia | Por qué de ahí |
+|---|---|---|---|
+| **VCSL** | Marimba (6 notas) y el **kit de percusión** (10 golpes × 2 grabaciones) | CC0 | Grabaciones de instrumento suelto, con varias intensidades y **round robin**. Para percusión no hay nada mejor: aquí el golpe *es* la actividad |
+| **FluidR3_GM** vía `midi-js-soundfonts` | Piano, xilófono, flauta, guitarra, violín, **voz** y seis del mundo | MIT | 128 instrumentos afinados y ya renderizados nota a nota. Es donde estaba la voz que se buscó durante días en bancos orquestales |
+| **Síntesis propia** | Acordes, tempos, campanas, silencio | CC0 (nuestra) | Material que no existe grabado: un pulso a 92 ppm o un acorde menor de do no son una grabación de nada |
+
+### Lo que ya no está
+
+**La voz sintetizada por formantes murió el 2026-09-06.** Era lo único del banco que no era
+una grabación, y se sustituyó por el programa 53 de General MIDI, que es una voz humana
+muestreada. Se verificó midiendo el espectro antes de darla por buena: fundamental en
+438,7 Hz y un pico secundario hacia 1,2 kHz **después de un valle**, que es la firma de un
+formante. Un tono sintetizado decae de forma monótona y no hace eso.
+
+La síntesis se **borró** en vez de dejarla comentada: código muerto que haría dudar de cuál
+de los dos era el bueno.
+
+### Densidad de muestreo, y por qué no es la misma para todos
+
+- **Percusivos** (marimba): 5–7 en tres octavas. Aguantan el estirado.
+- **Sostenidos** (flauta, violín, voz): **una cada tres semitonos**. `playbackRate` cambia la
+  altura *y la duración*, así que una flauta estirada tres semitonos suena a flauta
+  acelerada. Con esta densidad el estirado máximo es de semitono y medio, que no delata.
+- **Percusión sin altura**: dos grabaciones del mismo golpe, alternadas. No hay nada que
+  interpolar, y lo que hay que evitar es que dos golpes suenen idénticos.
+
+### Peso y precache
+
+Solo la marimba y las muestras sueltas van al precache. **El resto se cachea al usarse**
+(`CacheFirst` en `vite.config.ts`): son casi 2 MB entre todos, y meterlos multiplicaría por
+tres la primera descarga de un colegio entero para bajar instrumentos que ese niño no va a
+abrir. El primer día que se abre la actividad del piano se bajan sus muestras, y desde
+entonces funciona sin conexión igual que el resto.
+
+### Lo único que sigue pendiente
+
+**Las locuciones.** `CLAUDE.md` §6 pide voz humana grabada para las instrucciones, y eso no
+lo da ningún banco: hay que grabarlo. `tools/muestras-voz.py` convierte una grabación de
+móvil en muestra del banco —recorta, mide la altura, avisa si no coincide con la nota
+declarada, normaliza y codifica—, así que lo que falta son treinta segundos de alguien
+hablando, no programación.
