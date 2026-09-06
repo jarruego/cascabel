@@ -4,10 +4,20 @@ import { despertarAudio, latenciaMs, obtenerContexto } from '@/audio/AudioEngine
 import { MARIMBA, Sampler } from '@/audio/sampler';
 import { TOLERANCIA_MS } from '@/config';
 import { evaluarRitmo, type EvaluacionRitmica } from '../evaluacion';
-import { alturaEnPauta, yDeLinea } from '../alturaEnPauta';
+import { yDeLinea } from '../alturaEnPauta';
+import {
+  carrilesDe,
+  figuraDe,
+  geometriaDe,
+  representaAltura,
+  type NotaMusicograma,
+  type Orientacion,
+  type Representacion,
+} from '../musicograma';
 import { duracionDe, instantesDe } from '../melodiaEnTiempo';
 import { CuentaAtras } from '@/ui/CuentaAtras';
 import { colorDe, nombreDe } from '@/ui/coloresNota';
+import { Icono } from '@/ui/Icono';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -33,12 +43,6 @@ import type { PropsActividad } from '../tipos';
 
 type Fase = 'listo' | 'cuenta' | 'sonando' | 'resultado';
 
-interface NotaKaraoke {
-  /** Notación científica, p. ej. «E4». */
-  nota: string;
-  /** Duración en pulsos. */
-  pulsos: number;
-}
 
 /** Segundos de melodía visibles a la derecha de la línea. Menos no da tiempo a prepararse. */
 const ANTICIPACION_S = 3.2;
@@ -61,15 +65,30 @@ const MARGEN_ARRIBA = 46;
 export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
   const contenido = actividad.contenido as {
     consigna: string;
-    notas: NotaKaraoke[];
+    notas: NotaMusicograma[];
     tempo?: number;
     clave?: 'sol' | 'fa';
+    /** 'vertical' cae de arriba abajo; 'horizontal' viene de la derecha. */
+    orientacion?: Orientacion;
+    /** Qué se dibuja: pentagrama, color, sílaba rítmica, figura o icono. Ver musicograma.ts */
+    representacion?: Representacion;
   };
 
   const carril = useCarril(actividad.etapa);
   const bpm = contenido.tempo ?? actividad.practica?.tempo ?? 100;
   const clave = contenido.clave ?? 'sol';
   const notas = contenido.notas;
+  const representacion = contenido.representacion ?? 'pentagrama';
+  /*
+    Vertical por defecto cuando NO se lee una pauta. Caer no exige ningún sentido de lectura,
+    así que sirve antes de saber leer; venir de la derecha reproduce cómo se recorre una
+    partitura, y eso solo aporta cuando lo que se aprende es justamente a leerla.
+  */
+  const orientacion: Orientacion =
+    contenido.orientacion ?? (representacion === 'pentagrama' ? 'horizontal' : 'vertical');
+  const vertical = orientacion === 'vertical';
+  const conAltura = representaAltura(representacion);
+  const carriles = useMemo(() => (conAltura ? carrilesDe(notas) : []), [notas, conAltura]);
 
   const [fase, setFase] = useState<Fase>('listo');
   const [ahora, setAhora] = useState(0);
@@ -81,7 +100,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
    * índice de la nota porque hay que poder repetir la misma nota: si dos «mi» seguidos
    * compartieran clave, React reutilizaría el nodo y la animación no volvería a arrancar.
    */
-  const [avisos, setAvisos] = useState<Array<{ id: number; nombre: string; x: number; y: number }>>([]);
+  const [avisos, setAvisos] = useState<Array<{ id: number; nombre: string; cruce: number }>>([]);
   const siguienteAviso = useRef(0);
 
   const sampler = useRef<Sampler | null>(null);
@@ -96,11 +115,21 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
   // ataque, un golpe algo tardío en la última nota se perdería.
   const duracionTotal = duracionDe(notas, bpm, ENTRADA_S) + 2;
 
-  /** Altura de cada nota en la pauta, con sus líneas adicionales si se sale. */
-  const alturas = useMemo(
-    () =>
-      notas.map((n) => alturaEnPauta(n.nota, clave, SEP, MARGEN_ARRIBA)),
-    [notas, clave],
+  /** Tamaño del recuadro en el eje que NO es el del tiempo. */
+  const TRANSVERSAL = 160;
+
+  const opciones = useMemo(
+    () => ({
+      representacion,
+      orientacion,
+      clave,
+      lineaPct: LINEA_PCT,
+      anticipacionS: ANTICIPACION_S,
+      transversalPx: TRANSVERSAL,
+      separacion: SEP,
+      margen: MARGEN_ARRIBA,
+    }),
+    [representacion, orientacion, clave],
   );
 
   const parar = useCallback(() => {
@@ -189,12 +218,13 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
     // El nombre de la nota, subiendo y desvaneciéndose. Es lo que convierte «he acertado»
     // en «he acertado un SOL»: la recompensa y el contenido son la misma cosa.
     const id = siguienteAviso.current++;
-    setAvisos((previos) => [
-      ...previos,
-      { id, nombre: nombreDe(notas[mejor]!.nota), x: LINEA_PCT, y: alturas[mejor]!.y },
-    ]);
+    const g = geometriaDe(
+      notas[mejor]!, 0, carriles.indexOf(notas[mejor]!.nota.replace('#', '')),
+      carriles.length, opciones,
+    );
+    setAvisos((previos) => [...previos, { id, nombre: nombreDe(notas[mejor]!.nota), cruce: g.cruce }]);
     window.setTimeout(() => setAvisos((p) => p.filter((a) => a.id !== id)), 1000);
-  }, [fase, carril, notas, alturas]);
+  }, [fase, carril, notas, carriles, opciones]);
 
   // La barra espaciadora vale como toque: en el ordenador del aula es lo natural, y de paso
   // deja la actividad accesible sin ratón.
@@ -217,52 +247,112 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
     <section className="actividad karaoke" data-carril={carril} aria-labelledby="consigna">
       <h1 id="consigna">{t(contenido.consigna)}</h1>
 
-      <div className="karaoke__pauta" role="img" aria-label={t('karaoke.pauta')}>
-        {[1, 2, 3, 4, 5].map((linea) => (
-          <span
-            key={linea}
-            className="karaoke__linea"
-            style={{ top: yDeLinea(linea, SEP, MARGEN_ARRIBA) }}
-            aria-hidden="true"
-          />
-        ))}
+      <div
+        className="karaoke__pauta"
+        data-orientacion={orientacion}
+        data-representacion={representacion}
+        role="img"
+        aria-label={t(`karaoke.pauta.${representacion}`)}
+      >
+        {/*
+          El pentagrama, si lo hay. En vertical se pone de lado: las cinco líneas pasan a ser
+          columnas, y la nota sube hacia la derecha en vez de hacia arriba. La pauta girada
+          no es convencional —no existe en papel— pero mantiene la relación que importa:
+          una nota más aguda está más lejos en el mismo sentido en el que se cuentan.
+        */}
+        {representacion === 'pentagrama' &&
+          [1, 2, 3, 4, 5].map((linea) => {
+            const d = yDeLinea(linea, SEP, MARGEN_ARRIBA);
+            return (
+              <span
+                key={linea}
+                className="karaoke__linea"
+                style={vertical ? { left: TRANSVERSAL - d } : { top: d }}
+                aria-hidden="true"
+              />
+            );
+          })}
 
-        {/* La línea del presente: donde la nota se encuentra con su sonido. */}
-        <span className="karaoke__ahora" style={{ left: `${LINEA_PCT}%` }} aria-hidden="true" />
+        {/* Carriles de color: una franja por grado, para orientarse sin leer. */}
+        {representacion === 'color' &&
+          carriles.map((nota, i) => {
+            const g = geometriaDe({ nota, pulsos: 1 }, 0, i, carriles.length, opciones);
+            const grosor = TRANSVERSAL / carriles.length;
+            return (
+              <span
+                key={nota}
+                className="karaoke__carril"
+                style={{
+                  ...(vertical ? { left: g.cruce - grosor / 2 } : { top: g.cruce - grosor / 2 }),
+                  ...(vertical ? { width: grosor } : { height: grosor }),
+                  borderColor: colorDe(nota),
+                }}
+                aria-hidden="true"
+              />
+            );
+          })}
+
+        {/* La línea del presente: donde la figura se encuentra con su sonido. */}
+        <span
+          className="karaoke__ahora"
+          style={vertical ? { top: `${100 - LINEA_PCT}%` } : { left: `${LINEA_PCT}%` }}
+          aria-hidden="true"
+        />
 
         {notas.map((n, i) => {
           const falta = tiempos[i]! - ahora;
-          // Fuera de la ventana visible no se dibuja: no hay que animar treinta notas a la vez.
+          // Fuera de la ventana visible no se dibuja: no hay que animar treinta figuras.
           if (falta > ANTICIPACION_S || falta < -1.2) return null;
-          const x = LINEA_PCT + (falta / ANTICIPACION_S) * (100 - LINEA_PCT);
-          const alto = alturas[i]!;
+          const indice = conAltura ? carriles.indexOf(n.nota.replace('#', '')) : 0;
+          const g = geometriaDe(n, falta, indice, carriles.length, opciones);
           const apagada = pasadas.has(i) && !acertadas.has(i);
+
+          // El avance es siempre «cuánto falta»; el eje al que se aplica es lo único que
+          // cambia entre las dos orientaciones. En vertical se invierte para que lo que
+          // está por venir aparezca ARRIBA y baje hacia la línea.
+          const posicion = vertical
+            ? { top: `${100 - g.avance}%`, left: g.cruce }
+            : { left: `${g.avance}%`, top: g.cruce };
+
+          const largo = Math.max(SEP, n.pulsos * 20);
+          const contenidoFigura =
+            representacion === 'silaba' ? (n.silaba ?? '') :
+            representacion === 'figura' ? figuraDe(n.pulsos) :
+            representacion === 'icono' ? null : null;
+
           return (
-            <span key={`${n.nota}-${i}`} aria-hidden="true">
-              {alto.adicionales.map((y) => (
-                <span key={y} className="karaoke__adicional" style={{ left: `${x}%`, top: y }} />
-              ))}
-              <span
-                className="karaoke__nota"
-                data-acertada={acertadas.has(i) || undefined}
-                data-apagada={apagada || undefined}
-                style={{
-                  left: `${x}%`,
-                  top: alto.y - SEP / 2,
-                  width: Math.max(SEP, n.pulsos * 20),
-                  // Color Boomwhacker por grado. Nunca informa solo: la nota está además a
-                  // su altura en la pauta, y al acertarla aparece escrita.
-                  background: apagada ? undefined : colorDe(n.nota),
-                }}
-              />
+            <span
+              key={`${n.nota}-${i}`}
+              className="karaoke__figura"
+              data-forma={representacion}
+              data-acertada={acertadas.has(i) || undefined}
+              data-apagada={apagada || undefined}
+              style={{
+                ...posicion,
+                // La duración se ve como tamaño en el eje del tiempo: una nota que dura el
+                // doble ocupa el doble, que es exactamente lo que dice la notación.
+                ...(vertical ? { height: largo } : { width: largo }),
+                ...(representacion === 'pentagrama' || representacion === 'color'
+                  ? { background: apagada ? undefined : colorDe(n.nota) }
+                  : { borderColor: apagada ? undefined : colorDe(n.nota) }),
+              }}
+              aria-hidden="true"
+            >
+              {representacion === 'icono' && n.icono && <Icono nombre={n.icono} tamano={38} />}
+              {contenidoFigura}
             </span>
           );
         })}
+
         {avisos.map((a) => (
           <span
             key={a.id}
             className="karaoke__aviso"
-            style={{ left: `${a.x}%`, top: a.y }}
+            style={
+              vertical
+                ? { top: `${100 - LINEA_PCT}%`, left: a.cruce }
+                : { left: `${LINEA_PCT}%`, top: a.cruce }
+            }
             aria-hidden="true"
           >
             {a.nombre}

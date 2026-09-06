@@ -1,0 +1,103 @@
+{
+  "id": "inf-16-animales-que-bajan",
+  "version": 1,
+  "tipo": "karaoke",
+  "titulo": "Los animales que bajan",
+  "descripcion": "Los animales bajan despacio hasta la línea. Se toca cuando llegan. Ocho pulsos lentos, sin figuras que leer.",
+  "etapa": "infantil",
+  "eje": "pulso",
+  "lugar": "pantalla",
+  "duracion_min": 5,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": null,
+    "criterio": "3.5",
+    "saber": "F. Lenguaje y expresión musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 60,
+    "figuras": [
+      "negra"
+    ]
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.inf16.consigna",
+    "orientacion": "vertical",
+    "representacion": "icono",
+    "tempo": 60,
+    "notas": [
+      {
+        "nota": "C5",
+        "pulsos": 1,
+        "icono": "conejo"
+      },
+      {
+        "nota": "C5",
+        "pulsos": 1,
+        "icono": "pajaro"
+      },
+      {
+        "nota": "C5",
+        "pulsos": 1,
+        "icono": "gato"
+      },
+      {
+        "nota": "C5",
+        "pulsos": 1,
+        "icono": "perro"
+      },
+      {
+        "nota": "C5",
+        "pulsos": 1,
+        "icono": "conejo"
+      },
+      {
+        "nota": "C5",
+        "pulsos": 1,
+        "icono": "pajaro"
+      },
+      {
+        "nota": "C5",
+        "pulsos": 1,
+        "icono": "elefante"
+      },
+      {
+        "nota": "C5",
+        "pulsos": 2,
+        "icono": "oso"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.inf16.enunciado"
+  },
+  "pistas": [
+    "actividad.inf16.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Marimba",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos de animales",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

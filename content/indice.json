@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-06",
-  "total": 53,
+  "total": 56,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -225,13 +225,13 @@
     },
     {
       "id": "c1-14-notas-que-caen",
-      "titulo": "Sigue las notas que caen",
+      "titulo": "Toca las notas que caen",
       "etapa": "primaria-c1",
       "eje": "pulso",
-      "tipo": "seguir",
+      "tipo": "karaoke",
       "lugar": "pantalla",
       "microfono": false,
-      "duracion_min": 5,
+      "duracion_min": 8,
       "curriculo": {
         "area": "Educación Artística",
         "competencia": "CE3",
@@ -270,6 +270,23 @@
         "area": "Educación Artística",
         "competencia": "CE4",
         "criterio": "4.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c1-18-la-escalera-que-cae",
+      "titulo": "La escalera que cae",
+      "etapa": "primaria-c1",
+      "eje": "altura",
+      "tipo": "karaoke",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador"
@@ -415,6 +432,23 @@
       "titulo": "El himno de la alegría",
       "etapa": "primaria-c2",
       "eje": "pulso",
+      "tipo": "karaoke",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c2-15-lee-las-figuras",
+      "titulo": "Lee las figuras",
+      "etapa": "primaria-c2",
+      "eje": "notacion",
       "tipo": "karaoke",
       "lugar": "pantalla",
       "microfono": false,
@@ -815,6 +849,23 @@
         "competencia": "CE2",
         "criterio": "2.1",
         "saber": "F. Lenguaje y expresión musical — el sonido y sus cualidades"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "inf-16-animales-que-bajan",
+      "titulo": "Los animales que bajan",
+      "etapa": "infantil",
+      "eje": "pulso",
+      "tipo": "karaoke",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": null,
+        "criterio": "3.5",
+        "saber": "F. Lenguaje y expresión musical"
       },
       "estado": "borrador"
     },

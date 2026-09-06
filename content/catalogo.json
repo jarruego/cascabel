@@ -1,7 +1,7 @@
 {
   "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa.",
   "generado": "2026-09-05",
-  "total": 61,
+  "total": 64,
   "actividades": [
     {
       "id": "INF-01",
@@ -199,6 +199,19 @@
       "estado": "hecha"
     },
     {
+      "id": "INF-16",
+      "titulo": "Los animales que bajan",
+      "etapa": "infantil",
+      "eje": "pulso",
+      "lugar": "pantalla",
+      "tipo": "karaoke",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "— · crit. 3.5 · saber F",
+      "descripcion": "Los animales bajan despacio hasta la línea. Se toca cuando llegan. Ocho pulsos lentos, sin figuras que leer.",
+      "estado": "hecha"
+    },
+    {
       "id": "C1-01",
       "titulo": "Ta y ti-ti",
       "etapa": "primaria-c1",
@@ -373,7 +386,7 @@
       "etapa": "primaria-c1",
       "eje": "pulso",
       "lugar": "pantalla",
-      "tipo": "seguir",
+      "tipo": "karaoke",
       "microfono": false,
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
@@ -404,6 +417,19 @@
       "esfuerzo": "M",
       "curriculo": "CE4 · crit. 4.1 · saber D",
       "descripcion": "Cuadrícula libre con la octava entera de do a do y ocho pulsos. Con bucle.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C1-18",
+      "titulo": "La escalera que cae",
+      "etapa": "primaria-c1",
+      "eje": "altura",
+      "lugar": "pantalla",
+      "tipo": "karaoke",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Cinco carriles de color, uno por nota. Lo agudo cae por la derecha y lo grave por la izquierda, así que la melodía se ve subir y bajar.",
       "estado": "hecha"
     },
     {
@@ -586,6 +612,19 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "La melodía avanza de derecha a izquierda sobre el pentagrama. Hay que tocar cada nota cuando cruza la línea.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C2-15",
+      "titulo": "Lee las figuras",
+      "etapa": "primaria-c2",
+      "eje": "notacion",
+      "lugar": "pantalla",
+      "tipo": "karaoke",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Negras, blancas y corcheas vienen de la derecha y se tocan al cruzar la línea. Cada figura ocupa lo que dura.",
       "estado": "hecha"
     },
     {

@@ -1,0 +1,109 @@
+{
+  "id": "c2-15-lee-las-figuras",
+  "version": 1,
+  "tipo": "karaoke",
+  "titulo": "Lee las figuras",
+  "descripcion": "Negras, blancas y corcheas vienen de la derecha y se tocan al cruzar la línea. Cada figura ocupa lo que dura.",
+  "etapa": "primaria-c2",
+  "eje": "notacion",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 88,
+    "figuras": [
+      "negra",
+      "blanca",
+      "corchea"
+    ]
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c215.consigna",
+    "orientacion": "horizontal",
+    "representacion": "figura",
+    "tempo": 88,
+    "notas": [
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "E4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 2
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "E4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 2
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c215.enunciado"
+  },
+  "pistas": [
+    "actividad.c215.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Marimba",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}
