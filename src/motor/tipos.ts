@@ -75,6 +75,22 @@ export interface Actividad {
   locucion?: { enunciado: string; audio?: string };
   pistas?: string[];
   creditos?: Array<{ obra: string; autor?: string; fuente?: string; licencia: string }>;
+  /**
+   * Textos propios del dosier imprimible. Todo es opcional: sin esto, la ficha usa la guía
+   * genérica del TIPO de actividad, que es lo que hace que las 53 tengan dosier útil sin
+   * haber escrito 53 dosieres. Se rellena solo cuando una actividad concreta pide un matiz
+   * que su tipo no cubre.
+   */
+  ficha?: {
+    comoFunciona?: string;
+    sinPantalla?: string;
+    ampliacion?: string;
+    refuerzo?: string;
+    observar?: string;
+    indicador1?: string;
+    indicador2?: string;
+    indicador3?: string;
+  };
   estado?: 'borrador' | 'revision-pedagogica' | 'publicada';
 }
 
