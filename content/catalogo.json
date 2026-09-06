@@ -1,7 +1,7 @@
 {
-  "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema.",
+  "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa.",
   "generado": "2026-09-05",
-  "total": 54,
+  "total": 61,
   "actividades": [
     {
       "id": "INF-01",
@@ -368,6 +368,45 @@
       "estado": "pendiente"
     },
     {
+      "id": "C1-14",
+      "titulo": "Sigue las notas que caen",
+      "etapa": "primaria-c1",
+      "eje": "pulso",
+      "lugar": "pantalla",
+      "tipo": "seguir",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Musicograma en movimiento: los dibujos bajan hasta la línea y ahí es cuando suenan. Sin puntuación y sin poder fallar.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C1-15",
+      "titulo": "Ritmo de ocho",
+      "etapa": "primaria-c1",
+      "eje": "pulso",
+      "lugar": "pantalla",
+      "tipo": "tocar-a-tiempo",
+      "microfono": true,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Ocho pulsos con negras y corcheas, en bucle de cuatro repeticiones.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C1-16",
+      "titulo": "Compón con toda la escala",
+      "etapa": "primaria-c1",
+      "eje": "creacion",
+      "lugar": "pantalla",
+      "tipo": "rejilla",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE4 · crit. 4.1 · saber D",
+      "descripcion": "Cuadrícula libre con la octava entera de do a do y ocho pulsos. Con bucle.",
+      "estado": "hecha"
+    },
+    {
       "id": "C2-01",
       "titulo": "Coloca la nota",
       "etapa": "primaria-c2",
@@ -537,6 +576,19 @@
       "estado": "pendiente"
     },
     {
+      "id": "C2-14",
+      "titulo": "El himno de la alegría",
+      "etapa": "primaria-c2",
+      "eje": "pulso",
+      "lugar": "pantalla",
+      "tipo": "karaoke",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "La melodía avanza de derecha a izquierda sobre el pentagrama. Hay que tocar cada nota cuando cruza la línea.",
+      "estado": "hecha"
+    },
+    {
       "id": "C3-01",
       "titulo": "Tonos y semitonos",
       "etapa": "primaria-c3",
@@ -654,6 +706,32 @@
       "estado": "pendiente"
     },
     {
+      "id": "C3-10",
+      "titulo": "Ritmo de doce",
+      "etapa": "primaria-c3",
+      "eje": "pulso",
+      "lugar": "pantalla",
+      "tipo": "tocar-a-tiempo",
+      "microfono": true,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Doce pulsos en tres grupos de cuatro, con síncopa y silencio. En bucle.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C3-11",
+      "titulo": "Compón una melodía larga",
+      "etapa": "primaria-c3",
+      "eje": "creacion",
+      "lugar": "pantalla",
+      "tipo": "rejilla",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE4 · crit. 4.1 · saber D",
+      "descripcion": "Octava completa y dieciséis pulsos, para frases de verdad. Con bucle.",
+      "estado": "hecha"
+    },
+    {
       "id": "TR-01",
       "titulo": "Afinador visual",
       "etapa": "primaria-c2",
@@ -704,6 +782,19 @@
       "curriculo": "CE2 · crit. 2.2 · saber B",
       "descripcion": "La página de créditos convertida en actividad: cada asset con su licencia.",
       "estado": "pendiente"
+    },
+    {
+      "id": "TR-05",
+      "titulo": "Piano",
+      "etapa": "primaria-c1",
+      "eje": "altura",
+      "lugar": "pantalla",
+      "tipo": "teclado",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Un piano en la pantalla. Se toca tecla a tecla o deslizando el dedo.",
+      "estado": "hecha"
     }
   ]
 }

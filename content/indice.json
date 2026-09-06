@@ -394,7 +394,7 @@
       "estado": "borrador"
     },
     {
-      "id": "c2-11-himno-de-la-alegria",
+      "id": "c2-14-himno-de-la-alegria",
       "titulo": "El himno de la alegría",
       "etapa": "primaria-c2",
       "eje": "pulso",
@@ -423,40 +423,6 @@
         "area": "Educación Artística",
         "competencia": "CE3",
         "criterio": "3.1",
-        "saber": "D. Lenguajes y práctica musical"
-      },
-      "estado": "borrador"
-    },
-    {
-      "id": "c3-03-ritmo-de-doce",
-      "titulo": "Ritmo de doce",
-      "etapa": "primaria-c3",
-      "eje": "pulso",
-      "tipo": "tocar-a-tiempo",
-      "lugar": "pantalla",
-      "microfono": true,
-      "duracion_min": 10,
-      "curriculo": {
-        "area": "Educación Artística",
-        "competencia": "CE3",
-        "criterio": "3.1",
-        "saber": "D. Práctica instrumental, vocal y corporal"
-      },
-      "estado": "borrador"
-    },
-    {
-      "id": "c3-04-melodia-larga",
-      "titulo": "Compón una melodía larga",
-      "etapa": "primaria-c3",
-      "eje": "creacion",
-      "tipo": "rejilla",
-      "lugar": "pantalla",
-      "microfono": false,
-      "duracion_min": 12,
-      "curriculo": {
-        "area": "Educación Artística",
-        "competencia": "CE4",
-        "criterio": "4.1",
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador"
@@ -526,6 +492,40 @@
         "competencia": "CE2",
         "criterio": "2.2",
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c3-10-ritmo-de-doce",
+      "titulo": "Ritmo de doce",
+      "etapa": "primaria-c3",
+      "eje": "pulso",
+      "tipo": "tocar-a-tiempo",
+      "lugar": "pantalla",
+      "microfono": true,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Práctica instrumental, vocal y corporal"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c3-11-melodia-larga",
+      "titulo": "Compón una melodía larga",
+      "etapa": "primaria-c3",
+      "eje": "creacion",
+      "tipo": "rejilla",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 12,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE4",
+        "criterio": "4.1",
+        "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador"
     },
