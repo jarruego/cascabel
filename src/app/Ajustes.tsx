@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { t } from '@/i18n';
 import { borrarTodo, leerTodo } from '@/datos/progreso';
+import { usePreferencias } from './preferencias';
 import {
   borrarDescarga,
   descargarTodo,
@@ -31,6 +32,8 @@ export default function Ajustes() {
   const [ocupado, setOcupado] = useState(0);
   const [actividades, setActividades] = useState(0);
   const [borrado, setBorrado] = useState(false);
+  const pizarra = usePreferencias((e) => e.pizarra);
+  const ponerPizarra = usePreferencias((e) => e.ponerPizarra);
 
   const refrescar = useCallback(() => {
     void tamanoDescargado().then(setOcupado);
@@ -106,6 +109,19 @@ export default function Ajustes() {
           {t('ajustes.borrarProgreso')}
         </button>
         {borrado && <p aria-live="polite">{t('ajustes.borradoHecho')}</p>}
+      </section>
+
+      <section>
+        <h2>{t('ajustes.pizarra')}</h2>
+        <p>{t('ajustes.pizarraTexto')}</p>
+        <button
+          type="button"
+          className="boton-repetir"
+          aria-pressed={pizarra}
+          onClick={() => ponerPizarra(!pizarra)}
+        >
+          {pizarra ? t('ajustes.pizarraDesactivar') : t('ajustes.pizarraActivar')}
+        </button>
       </section>
 
       <section>

@@ -133,6 +133,31 @@
     --linea: #2b303a;
     --acento: #ec7156;
     --acento-2: #5aae9f;
+
+    /*
+     * Los vivos se aclaran: los tonos de modo claro están pensados para contrastar
+     * contra papel blanco y sobre fondo oscuro se apagan.
+     */
+    --vivo-rojo: #ff8b78;
+    --vivo-naranja: #f0a659;
+    --vivo-amarillo: #e0bc5c;
+    --vivo-verde: #62c795;
+    --vivo-turquesa: #57bcc7;
+    --vivo-azul: #79aef5;
+    --vivo-morado: #b795e8;
+    --vivo-rosa: #ef86b4;
+
+    /*
+     * Y los SUAVES se oscurecen. Esto era un fallo real: los definí solo en :root, así
+     * que en modo oscuro quedaban claros mientras --tinta pasaba a ser clara. Texto claro
+     * sobre fondo claro: el modal de éxito se volvía ilegible. Cualquier token de fondo
+     * que se añada aquí tiene que tener su pareja en los dos esquemas.
+     */
+    --suave-rojo: #3a201d;
+    --suave-verde: #163024;
+    --suave-azul: #172538;
+    --suave-amarillo: #322a17;
+    --suave-morado: #2a2038;
   }
 }
 
@@ -913,8 +938,11 @@ body {
   color: var(--vivo-verde);
 }
 /* La celebración se distingue por color Y por el icono de chispas: nunca solo color. */
+/* Toda superficie de color declara su color de texto explícitamente. Heredarlo es
+   lo que hizo que este modal fuera ilegible en modo oscuro. */
 .modal[data-tono='celebracion'] .modal__caja {
   background: var(--suave-verde);
+  color: var(--tinta);
   border-radius: 24px;
 }
 @media (prefers-reduced-motion: no-preference) {
@@ -1101,6 +1129,7 @@ body {
   height: 100%;
   transform: translateX(-50%);
   background: var(--suave-verde);
+  color: var(--tinta);
   border-left: 2px dashed var(--vivo-verde);
   border-right: 2px dashed var(--vivo-verde);
 }
@@ -1237,3 +1266,93 @@ body {
   outline-offset: 2px;
 }
 .lienzo__acciones { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+
+/* ── cuenta atrás ──────────────────────────────────────────────────────────
+   No es un cronómetro: no mide lo que tardas, solo dice cuándo se empieza.
+   Existe porque sin aviso la mitad de las respuestas se pierden mientras el
+   niño todavía está mirando la pantalla, y porque veinticinco niños tienen
+   que arrancar a la vez. */
+.cuenta {
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 260px;
+  padding: 24px;
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.cuenta__numero {
+  font-size: clamp(96px, 26vw, 220px);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--acento);
+  font-variant-numeric: tabular-nums;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .cuenta__numero {
+    animation: late 700ms ease-out;
+  }
+}
+@keyframes late {
+  0% { transform: scale(0.55); opacity: 0; }
+  55% { transform: scale(1.12); opacity: 1; }
+  100% { transform: scale(1); }
+}
+.cuenta__pista {
+  color: var(--tinta-2);
+  font-size: 0.95em;
+}
+
+/* ── tarjetas de opción, estilo tablero ────────────────────────────────────
+   Lo que se toca es el DIBUJO, no una etiqueta con un iconito al lado. Para un
+   niño que todavía no lee, el texto sencillamente no está. */
+.opciones {
+  gap: var(--separacion);
+}
+.boton-actividad {
+  border-width: 4px;
+  border-radius: 22px;
+  padding: 14px;
+}
+.boton__texto {
+  font-size: 1.05em;
+  letter-spacing: 0.01em;
+}
+/* Los colores de opción pintan el FONDO además del borde: mucho más presente,
+   y el texto declara siempre su color para que el contraste no dependa de nada. */
+.boton--verde { background: var(--suave-verde); border-color: var(--vivo-verde); color: var(--tinta); }
+.boton--azul { background: var(--suave-azul); border-color: var(--vivo-azul); color: var(--tinta); }
+.boton--rojo { background: var(--suave-rojo); border-color: var(--vivo-rojo); color: var(--tinta); }
+.boton--amarillo { background: var(--suave-amarillo); border-color: var(--vivo-amarillo); color: var(--tinta); }
+.boton--morado { background: var(--suave-morado); border-color: var(--vivo-morado); color: var(--tinta); }
+
+/* ── modo pizarra digital ──────────────────────────────────────────────────
+   El aula española de música tiene un proyector y ningún dispositivo por niño:
+   el dosier lo marca como riesgo de probabilidad «muy alta, es la norma». Este
+   modo escala TODO, así que no hay que rediseñar cada pantalla. Se activa a
+   mano, porque una tablet no debe agrandarse sola. */
+:root[data-pizarra='true'] {
+  --objetivo: calc(var(--objetivo-infantil) * 1.6);
+  --separacion: 32px;
+  font-size: 156%;
+}
+:root[data-pizarra='true'] .catalogo,
+:root[data-pizarra='true'] .actividad,
+:root[data-pizarra='true'] .guia {
+  max-width: none;
+}
+:root[data-pizarra='true'] .icono {
+  width: auto;
+  height: auto;
+  min-width: 96px;
+  min-height: 96px;
+}
+/* En pizarra sube el contraste: un proyector con luz ambiente pierde los grises. */
+:root[data-pizarra='true'] {
+  --tinta-2: var(--tinta);
+  --linea: var(--tinta-2);
+}

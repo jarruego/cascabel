@@ -252,8 +252,6 @@
   "nota.sol": "sol",
   "nota.la": "la",
   "nota.si": "si",
-  "modal.escuchar": "Escuchar",
-  "modal.sinLocucion": "Todavía no hay voz grabada para esta actividad",
   "modal.exitoTexto": "Has terminado la actividad entera.",
   "modal.otraVez": "Otra vez",
   "modal.volver": "Ir a otra actividad",
@@ -303,5 +301,12 @@
   "actividad.inf07.consigna": "El caracol: sube y baja",
   "actividad.inf07.enunciado": "Dibuja con el dedo. Arriba suena agudo y abajo suena grave.",
   "silaba.ta": "ta",
-  "silaba.titi": "ti-ti"
+  "silaba.titi": "ti-ti",
+  "modal.escucharConsigna": "Oír la explicación",
+  "cuenta.ya": "¡Ya!",
+  "cuenta.saltar": "Toca para empezar ya",
+  "ajustes.pizarra": "Modo pizarra digital",
+  "ajustes.pizarraTexto": "Agranda todo para verse desde el fondo del aula. Actívalo cuando proyectes en la pizarra digital y déjalo apagado en tablets.",
+  "ajustes.pizarraActivar": "Activar modo pizarra",
+  "ajustes.pizarraDesactivar": "Volver al tamaño normal"
 }

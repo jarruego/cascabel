@@ -29,7 +29,12 @@ export function Boton({ icono, color, tamano, etiqueta, inactivo = false, onClic
       aria-label={etiqueta}
     >
       <span className="boton__icono" aria-hidden="true">
-        <Icono nombre={icono} tamano={Math.round(tamano * 0.5)} />
+        {/*
+          La ilustración ocupa el 62 % del botón y no el 50 %. Es lo que separa un icono
+          de una tarjeta: en Kahoot lo que se toca es el dibujo, y el texto solo confirma.
+          Para un niño que no lee, el texto no está: solo hay dibujo.
+        */}
+        <Icono nombre={icono} tamano={Math.round(tamano * 0.62)} />
       </span>
       <span className="boton__texto">{etiqueta}</span>
     </button>

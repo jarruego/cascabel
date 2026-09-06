@@ -7,6 +7,7 @@ import { evaluarRitmo, type EvaluacionRitmica } from '../evaluacion';
 import { aMilisegundos, rejillaDesdeSilabas } from '../rejillaRitmica';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
+import { CuentaAtras } from '@/ui/CuentaAtras';
 
 /**
  * Tipo «tocar a tiempo»: se escucha un patrón y se repite, con palmadas o tocando.
@@ -20,7 +21,7 @@ import type { PropsActividad } from '../tipos';
  * la vez son inutilizables. El toque no es el plan B, es el plan A en clase entera.
  */
 
-type Fase = 'listo' | 'escuchando' | 'respondiendo' | 'resultado';
+type Fase = 'listo' | 'cuenta' | 'escuchando' | 'respondiendo' | 'resultado';
 
 export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) {
   const contenido = actividad.contenido as {
@@ -191,10 +192,14 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
       </ol>
 
       {fase === 'listo' && (
-        <button type="button" className="boton-repetir" onClick={() => void empezar()}>
+        <button type="button" className="boton-repetir" onClick={() => setFase('cuenta')}>
           {t('tocar.empezar')}
         </button>
       )}
+
+      {/* La cuenta atrás va ANTES de que suene nada: sin ella, la mitad de las palmadas
+          se pierden mientras el niño todavía está mirando la pantalla. */}
+      {fase === 'cuenta' && <CuentaAtras alTerminar={() => void empezar()} />}
 
       {fase === 'escuchando' && <p aria-live="polite">{t('tocar.escucha')}</p>}
 
