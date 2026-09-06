@@ -1,0 +1,70 @@
+{
+  "id": "c3-03-editor-de-melodias",
+  "version": 1,
+  "tipo": "rejilla",
+  "titulo": "Editor de melodías",
+  "descripcion": "Componer con la escala completa y llevarse la melodía en MIDI o MusicXML para seguir trabajándola en un editor de partituras.",
+  "etapa": "primaria-c3",
+  "eje": "creacion",
+  "lugar": "pantalla",
+  "duracion_min": 20,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE4",
+    "criterio": "4.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 96,
+    "figuras": [
+      "negra",
+      "blanca",
+      "redonda"
+    ]
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c303e.consigna",
+    "modo": "libre",
+    "filas": 8,
+    "columnas": 16,
+    "tempo": 96,
+    "notas": [
+      "C6",
+      "B4",
+      "A4",
+      "G4",
+      "F4",
+      "E4",
+      "D4",
+      "C4"
+    ],
+    "exportable": true
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c303e.enunciado"
+  },
+  "pistas": [
+    "actividad.c303e.pista1",
+    "actividad.c303e.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Marimba",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}
