@@ -251,5 +251,12 @@
   "nota.fa": "fa",
   "nota.sol": "sol",
   "nota.la": "la",
-  "nota.si": "si"
+  "nota.si": "si",
+  "modal.escuchar": "Escuchar",
+  "modal.sinLocucion": "Todavía no hay voz grabada para esta actividad",
+  "modal.exitoTexto": "Has terminado la actividad entera.",
+  "modal.otraVez": "Otra vez",
+  "modal.volver": "Ir a otra actividad",
+  "paso.vas": "Vas por el",
+  "ordenar.tambienArrastrando": "Puedes tocarlos en orden o arrastrarlos a la fila. Como prefieras."
 }

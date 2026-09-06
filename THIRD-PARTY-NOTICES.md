@@ -67,7 +67,10 @@ cosa. Ver `docs/08-LEGAL.md`.
 | Fichero | Obra | Autor | Fuente | Licencia | Fecha | Comprobación |
 |---|---|---|---|---|---|---|
 | `public/audio/muestras/marimba/*.opus` (6) | Marimba, notas F3 C4 G4 B4 F5 C6, golpe medio | Versilian Studios y colaboradores | https://github.com/sgossner/VCSL | CC0 1.0 | 2026-09-06 | `LICENSE` del repositorio dice «CC0 1.0 Universal»; la API de GitHub declara `CC0-1.0` |
-| `public/audio/muestras/*.opus` (7) | Pandero, triángulo, voz, silencio y tres campanas | Proyecto cocomusic | `tools/muestras-provisionales.py` | CC0 | 2026-09-06 | sintetizadas por nosotros; **provisionales**, ver T1.12 |
+| `public/audio/muestras/*.opus` | Pandero (frame drum), claves, campanilla nepalí y glockenspiel G4/C5/C6 | Versilian Studios y colaboradores | https://github.com/sgossner/VCSL | CC0 1.0 | 2026-09-06 | `LICENSE` del repositorio: «CC0 1.0 Universal» |
+| `public/audio/muestras/tempo-*.opus`, `acorde-*.opus` | Derivados: la claves repetida al pulso, y tres glockenspiel transpuestos y mezclados | Versilian Studios (material) · Proyecto cocomusic (montaje) | `tools/muestras-derivadas.py` | CC0 1.0 | 2026-09-06 | CC0 permite cualquier transformación sin condiciones |
+| `public/audio/muestras/voz-la.opus` | Un «la» cantado | Proyecto cocomusic | `tools/muestras-provisionales.py` | CC0 | 2026-09-06 | sintetizada; es la única que queda por sustituir |
+| `public/iconos/*.svg` (27) | Iconos de actividad | OpenMoji · HfG Schwäbisch Gmünd | https://openmoji.org | **CC BY-SA 4.0** | 2026-09-06 | licencia en `LICENSE.txt` del repositorio oficial |
 
 Las de VCSL van **procesadas** por `tools/muestras-instrumento.py`: pico normalizado a
 −3 dBFS, silencio inicial recortado y codificadas a Opus 48 kbps mono. La CC0 permite
@@ -77,3 +80,9 @@ obligación.
 **Por qué se normaliza el pico**: las muestras crudas de VCSL van de −29 a −39 dBFS según la
 nota. Diez decibelios de diferencia entre notas del mismo instrumento no suenan a matiz,
 suenan a error.
+
+**Sobre OpenMoji y la CC BY-SA 4.0.** Es la misma licencia que ya tienen nuestros
+contenidos (`LICENSE-CONTENT.md`), así que no añade ninguna obligación nueva: atribuir —se
+hace en la pantalla de créditos y aquí— y compartir igual, que ya hacemos. Los iconos son
+**contenido**, no código: el código sigue siendo Apache-2.0 y la ShareAlike no lo alcanza.
+Si algún día se modifican los dibujos, la versión modificada también será CC BY-SA 4.0.

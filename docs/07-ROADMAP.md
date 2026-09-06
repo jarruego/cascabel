@@ -551,40 +551,57 @@ de la tabla `name` de la propia fuente—. Prohíbe vender las fuentes por separ
 Nombres Reservados en una versión modificada. El recorte no cambia el nombre porque no
 altera ningún trazo, solo elimina glifos; si algún día se retocan, hay que renombrar.
 
-### T1.12 — Aspecto y sonido: pasar de «funciona» a «da gusto» `⚠️`
+### T1.12 — Aspecto y sonido `[x]`
 
-Abierta el 2026-09-06 tras la primera prueba real del autor con las actividades montadas:
+Abierta y cerrada el 2026-09-06, a partir de la primera prueba real del autor:
 
 > «Las actividades son funcionales pero son muy feas, poco usables, con sonidos raros.»
 
-Es la observación más importante que ha salido hasta ahora, y no es cosmética. El dosier ya
-avisaba de que el riesgo más subestimado del proyecto es que **el contenido sea correcto y
-soso**: el validador comprueba corrección, no gracia. Una actividad que un niño no quiere
-volver a abrir ha fallado aunque pase todos los tests.
+- [x] **Sonido**: todo el audio del proyecto son ya muestras **reales CC0** de la Versilian
+      Community Sample Library. Solo queda sintética `voz-la.opus`
+- [x] **Iconos**: **OpenMoji** (CC BY-SA 4.0), 27 iconos en 68 KB
+- [x] **Color**: paleta viva, con contraste comprobado
+- [x] **Modales** de explicación previa y de celebración, e indicador entre ejercicios
+- [x] **Arrastrar y soltar** como vía adicional
+- [ ] **Personajes**: sigue siendo decisión de producto, no técnica
+- [ ] Revisión con las tres preguntas de `docs/06-PIPELINE-IA.md` — es T0.3
 
-Lo que hay hoy es andamiaje deliberado: iconos SVG dibujados a mano por un desarrollador y
-sonidos sintetizados con cincuenta líneas de Python. Sirvieron para desbloquear T0.2 y T1.2,
-y no dan para más.
+**OpenMoji es CC BY-SA 4.0, la misma licencia que ya tienen nuestros contenidos**, así que
+no añade ninguna obligación nueva: atribuir, que se hace en la pantalla de créditos, y
+compartir igual, que ya hacíamos. Y son iconos **concretos**, que es la regla 3: un niño de
+cuatro años reconoce un elefante dibujado, no reconoce una silueta gris. Donde antes había
+abstracciones ahora hay lo que la actividad significa — tortuga, persona andando y conejo
+para adagio/andante/allegro; ratón y elefante para agudo/grave; caracol y conejo para
+largo/corto.
 
-- [ ] **Sonido**: sustituir la síntesis por muestras reales CC0. Candidatas ya
-      identificadas en `docs/08-LEGAL.md`: **VCSL** y **VSCO 2 CE**, ambas CC0, con
-      timbres percusivos que toleran el *pitch-shifting*. Es parte de T1.7
-- [ ] **Iconos**: buscar un juego vectorial libre y coherente, no dibujarlos uno a uno.
-      Requisitos: licencia MIT/CC0/OFL, SVG, sin peticiones externas (se empaquetan),
-      y **concretos** — un tambor dibujado, no un pictograma abstracto (regla 3 de
-      `docs/04-DISENO-UI.md`). Candidatas a evaluar: Kenney.nl (CC0, muy orientado a
-      juego infantil), openclipart, Twemoji (CC-BY, obliga a atribuir)
-- [ ] **Personajes**: el dosier señala que la identidad propia es lo que separa una
-      biblioteca de una hoja de ejercicios. Decisión de producto, no técnica
-- [ ] **Revisar la usabilidad con las tres preguntas** de `docs/06-PIPELINE-IA.md`:
-      ¿es cantable a esta edad?, ¿se entiende sin leer?, ¿lo haría en clase?
+**Los sonidos sintetizados se han ido casi todos.** Pandero real (*frame drum*), claves,
+campanilla nepalí y glockenspiel. Los tempos son una claves de verdad repetida al pulso, y
+los acordes de mayor/menor son tres glockenspiel transpuestos y mezclados: un seno con
+envolvente no suena a percusión, suena a pitido de microondas, y el niño lo nota aunque no
+sepa decir por qué.
 
-**Criterio de aceptación**: un niño abre una actividad y quiere abrir otra. No hay test que
-mida eso; lo mide T0.3.
+**Y un fallo que solo se ve escuchando**: las muestras crudas de percusión afinada duran
+**siete segundos** porque la lámina sigue vibrando. En una actividad de discriminación eso
+es una eternidad — el niño espera siete segundos por estímulo y abandona. Recortadas a 2,5 s
+con desvanecido. El audio entero del proyecto son 333 KB.
 
-**Nota**: no se ataca antes de T1.8 a propósito. Cambiar el aspecto con seis actividades
-es barato; con veinte, no. Pero tampoco después, porque generar veinte actividades feas es
-generar veinte actividades que habrá que rehacer.
+**El arrastre, y por qué se puede.** `CLAUDE.md` §6 dice «nada de arrastrar **como única
+vía**», y WCAG 2.5.7 exige alternativa, no prohíbe arrastrar. Así que:
+
+- En el carril **`infantil` no existe**, y no es configurable: a los cuatro años la
+  motricidad fina no da para soltar con precisión.
+- En los otros dos es **adicional**: el toque sucesivo sigue funcionando exactamente igual,
+  y quien va con teclado o con el dedo no pierde nada.
+- Hay un umbral de 8 px antes de considerar que es un arrastre. Sin él, un niño que toca
+  con el dedo apoyado dispara arrastres sin querer.
+- Se usan eventos de puntero y no la API de arrastre de HTML5, que no funciona con dedo en
+  móvil sin *polyfill*.
+
+**Los modales van sobre `<dialog>` nativo**, no sobre un `<div>` con `role="dialog"`: el
+navegador ya atrapa el foco, lo devuelve al cerrar, cierra con Escape y oculta el resto a
+los lectores de pantalla. Reimplementar eso a mano es donde se hacen inaccesibles casi
+todos los modales. Y **el de éxito no lleva puntuación, ni porcentaje, ni racha, ni
+estrellas**: la regla 4 lo prohíbe, y el dosier lo llama la mitad tóxica de Duolingo.
 
 ### T1.10 — Despliegue
 

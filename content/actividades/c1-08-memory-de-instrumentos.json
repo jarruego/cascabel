@@ -34,7 +34,7 @@
       },
       {
         "clave": "triangulo",
-        "icono": "triangulo",
+        "icono": "campana",
         "etiqueta": "opcion.triangulo"
       },
       {
@@ -90,10 +90,16 @@
   ],
   "creditos": [
     {
-      "obra": "Pandero, triángulo y voz",
-      "autor": "Proyecto cocomusic",
-      "fuente": "Sintetizadas con tools/muestras-provisionales.py",
+      "obra": "Percusión y láminas (pandero, claves, campanilla, glockenspiel, marimba)",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
       "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
     }
   ],
   "estado": "borrador"

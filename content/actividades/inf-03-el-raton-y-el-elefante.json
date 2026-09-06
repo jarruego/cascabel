@@ -25,12 +25,12 @@
     "opciones": [
       {
         "clave": "raton",
-        "icono": "campana",
+        "icono": "raton",
         "color": "amarillo"
       },
       {
         "clave": "elefante",
-        "icono": "tambor",
+        "icono": "elefante",
         "color": "azul"
       }
     ],
@@ -73,5 +73,19 @@
   "estado": "borrador",
   "pistas": [
     "actividad.inf03.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Percusión y láminas (pandero, claves, campanilla, glockenspiel, marimba)",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
   ]
 }

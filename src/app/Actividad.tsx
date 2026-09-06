@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router';
+import { Link, useNavigate, useParams } from 'react-router';
 import { cargarActividad } from '@/datos/cargar';
 import { componenteDe } from '@/motor/registro';
 import { anotar } from '@/datos/progreso';
+import { ModalExito, ModalExplicacion } from '@/ui/ModalesActividad';
 import { t } from '@/i18n';
 import type { Actividad as TipoActividad, ResultadoActividad } from '@/motor/tipos';
 
@@ -14,15 +15,21 @@ import type { Actividad as TipoActividad, ResultadoActividad } from '@/motor/tip
  */
 export default function Actividad() {
   const { id = '' } = useParams();
+  const navegar = useNavigate();
   const [actividad, setActividad] = useState<TipoActividad | null>(null);
   const [fallo, setFallo] = useState<string | null>(null);
   const [resultado, setResultado] = useState<ResultadoActividad | null>(null);
+  // La explicación se muestra antes de montar la actividad: si no, empieza a sonar
+  // detrás del modal y el niño oye algo que no ve.
+  const [empezada, setEmpezada] = useState(false);
+  const [intento, setIntento] = useState(0);
 
   useEffect(() => {
     let vivo = true;
     setActividad(null);
     setFallo(null);
     setResultado(null);
+    setEmpezada(false);
     cargarActividad(id)
       .then((a) => vivo && setActividad(a))
       .catch((e: Error) => vivo && setFallo(e.message));
@@ -61,15 +68,22 @@ export default function Actividad() {
   return (
     <main className="actividad-marco">
       {atras}
-      {resultado ? (
-        <section className="fin">
-          <h1>{t('comun.completada')}</h1>
-          <Link to="/" className="boton-repetir">
-            {t('comun.volverAlIndice')}
-          </Link>
-        </section>
-      ) : Componente ? (
+      {!empezada && <ModalExplicacion actividad={actividad} alEmpezar={() => setEmpezada(true)} />}
+
+      <ModalExito
+        abierto={Boolean(resultado)}
+        alRepetir={() => {
+          // Cambiar la clave remonta el componente desde cero: es más fiable que pedirle
+          // a cada motor que sepa reiniciarse, y son seis motores distintos.
+          setResultado(null);
+          setIntento((n) => n + 1);
+        }}
+        alVolver={() => navegar('/')}
+      />
+
+      {!empezada ? null : Componente ? (
         <Componente
+          key={intento}
           actividad={actividad}
           alTerminar={(r) => {
             setResultado(r);

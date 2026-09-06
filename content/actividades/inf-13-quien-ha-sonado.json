@@ -30,7 +30,7 @@
       },
       {
         "clave": "triangulo",
-        "icono": "triangulo",
+        "icono": "campana",
         "color": "amarillo"
       },
       {
@@ -78,5 +78,19 @@
   "estado": "borrador",
   "pistas": [
     "actividad.inf13.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Percusión y láminas (pandero, claves, campanilla, glockenspiel, marimba)",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
   ]
 }
