@@ -40,6 +40,7 @@ export default function Catalogo() {
   const [etapa, setEtapa] = useState<Etapa | ''>('');
   const [eje, setEje] = useState<Eje | ''>('');
   const [criterio, setCriterio] = useState('');
+  const [busqueda, setBusqueda] = useState('');
   const [hechas, setHechas] = useState<Set<string>>(new Set());
 
   useEffect(() => {
@@ -68,12 +69,31 @@ export default function Catalogo() {
     [entradas],
   );
 
-  const visibles = (entradas ?? []).filter(
-    (e) =>
-      (!etapa || e.etapa === etapa) &&
-      (!eje || e.eje === eje) &&
-      (!criterio || e.curriculo?.criterio === criterio),
-  );
+  /**
+   * Búsqueda por texto.
+   *
+   * Sin retardo: son unas decenas de actividades y filtrar es instantáneo, así que meter
+   * un `debounce` solo añadiría una espera que no hace falta.
+   *
+   * Se normaliza quitando los acentos por los dos lados. Un maestro con prisa escribe
+   * «ritmico» sin tilde, y que eso no encuentre «rítmico» es exactamente el tipo de detalle
+   * que hace pensar que el buscador está roto.
+   */
+  const normalizar = (x: string) =>
+    x.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+  const aguja = normalizar(busqueda.trim());
+  const visibles = (entradas ?? []).filter((e) => {
+    if (etapa && e.etapa !== etapa) return false;
+    if (eje && e.eje !== eje) return false;
+    if (criterio && e.curriculo?.criterio !== criterio) return false;
+    if (!aguja) return true;
+    // Se busca también por eje y por criterio: «pulso» o «3.1» son búsquedas legítimas.
+    const pajar = normalizar(
+      `${e.titulo} ${t(`eje.${e.eje}`)} ${e.tipo} ${e.curriculo?.criterio ?? ''}`,
+    );
+    return aguja.split(/\s+/).every((palabra) => pajar.includes(palabra));
+  });
 
   if (fallo) return <main className="catalogo"><p role="alert">{t('catalogo.fallo')}</p></main>;
   if (!entradas) return <main className="catalogo"><p>{t('catalogo.cargando')}</p></main>;
@@ -82,46 +102,92 @@ export default function Catalogo() {
     <main className="catalogo">
       <h1>{t('catalogo.titulo')}</h1>
 
+      {/*
+        Filtros sin etiqueta visible: **la opción «todos» se llama como la categoría**, así
+        que el propio desplegable dice de qué es cuando no hay nada elegido, y cuando lo hay
+        muestra el valor. Ahorra una línea de texto por filtro, que en la pantalla del
+        maestro es donde más se agradece.
+
+        Pero el `aria-label` NO se quita. Sin él, un lector de pantalla anuncia «cuadro
+        combinado, 3.º y 4.º» sin decir de qué es: se ve bien y deja de ser usable para quien
+        no ve. Es la parte del patrón que casi todo el mundo se salta.
+      */}
       <div className="filtros">
-        <label>
-          {t('filtro.etapa')}
-          <select value={etapa} onChange={(ev) => setEtapa(ev.target.value as Etapa | '')}>
-            <option value="">{t('filtro.todas')}</option>
-            {ETAPAS.map((e) => (
-              <option key={e.valor} value={e.valor}>
-                {t(e.clave)}
-              </option>
-            ))}
-          </select>
-        </label>
+        <input
+          type="search"
+          className="filtros__buscar"
+          value={busqueda}
+          onChange={(ev) => setBusqueda(ev.target.value)}
+          placeholder={t('filtro.buscar')}
+          aria-label={t('filtro.buscar')}
+        />
 
-        <label>
-          {t('filtro.eje')}
-          <select value={eje} onChange={(ev) => setEje(ev.target.value as Eje | '')}>
-            <option value="">{t('filtro.todos')}</option>
-            {ejes.map((e) => (
-              <option key={e} value={e}>
-                {t(`eje.${e}`)}
-              </option>
-            ))}
-          </select>
-        </label>
+        <select
+          value={etapa}
+          onChange={(ev) => setEtapa(ev.target.value as Etapa | '')}
+          aria-label={t('filtro.etapa')}
+          data-activo={etapa ? 'si' : undefined}
+        >
+          <option value="">{t('filtro.etapa')}</option>
+          {ETAPAS.map((e) => (
+            <option key={e.valor} value={e.valor}>
+              {t(e.clave)}
+            </option>
+          ))}
+        </select>
 
-        <label>
-          {t('filtro.criterio')}
-          <select value={criterio} onChange={(ev) => setCriterio(ev.target.value)}>
-            <option value="">{t('filtro.todos')}</option>
-            {criterios.map((c) => (
-              <option key={c} value={c}>
-                {c}
-              </option>
-            ))}
-          </select>
-        </label>
+        <select
+          value={eje}
+          onChange={(ev) => setEje(ev.target.value as Eje | '')}
+          aria-label={t('filtro.eje')}
+          data-activo={eje ? 'si' : undefined}
+        >
+          <option value="">{t('filtro.eje')}</option>
+          {ejes.map((e) => (
+            <option key={e} value={e}>
+              {t(`eje.${e}`)}
+            </option>
+          ))}
+        </select>
+
+        <select
+          value={criterio}
+          onChange={(ev) => setCriterio(ev.target.value)}
+          aria-label={t('filtro.criterio')}
+          data-activo={criterio ? 'si' : undefined}
+        >
+          <option value="">{t('filtro.criterio')}</option>
+          {criterios.map((c) => (
+            <option key={c} value={c}>
+              {t('filtro.crit')} {c}
+            </option>
+          ))}
+        </select>
+
+        {/* Un solo botón para volver a cero, y solo cuando hay algo que borrar: si no hay
+            filtro puesto, un botón de «quitar filtros» es ruido. */}
+        {(etapa || eje || criterio || busqueda) && (
+          <button
+            type="button"
+            className="filtros__limpiar"
+            onClick={() => {
+              setEtapa('');
+              setEje('');
+              setCriterio('');
+              setBusqueda('');
+            }}
+          >
+            {t('filtro.limpiar')}
+          </button>
+        )}
       </div>
 
+      {/* La cuenta se anuncia al filtrar. Va en frase y no como «12 / 56» porque un lector
+          de pantalla lee eso como «doce barra cincuenta y seis», que no dice nada. */}
       <p className="catalogo__cuenta" aria-live="polite">
-        {visibles.length} / {entradas.length}
+        {visibles.length === entradas.length
+          ? `${entradas.length} ${t('catalogo.actividades')}`
+          : `${visibles.length} ${t('catalogo.de')} ${entradas.length} ${t('catalogo.actividades')}`}
       </p>
 
       <ul className="catalogo__lista">

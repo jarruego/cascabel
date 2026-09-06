@@ -98,6 +98,76 @@
   --separacion-lectores: 16px;
   --separacion-autonomos: 12px;
 
+  /*
+   * ESCALA DE ESPACIADO. Base 4, con saltos que crecen: 2, 4, 8, 12, 16, 24, 32, 48, 64, 96.
+   *
+   * Antes había 10, 12, 14, 16, 18, 20, 22, 24, 26 y 28 px repartidos por el fichero, casi
+   * todos indistinguibles entre sí. Esa es la diferencia que se nota sin saber nombrarla:
+   * no es que un hueco esté mal, es que ninguno rima con los demás. Con una escala, dos
+   * bloques separados «un paso» lo están de verdad, y el ojo lo lee como orden.
+   *
+   * Elegir entre --e-3 y --e-4 es una decisión; elegir entre 14 y 16 px no lo era.
+   */
+  --e-0: 2px;
+  --e-1: 4px;
+  --e-2: 8px;
+  --e-3: 12px;
+  --e-4: 16px;
+  --e-5: 24px;
+  --e-6: 32px;
+  --e-7: 48px;
+  --e-8: 64px;
+  --e-9: 96px;
+
+  /*
+   * ESCALA TIPOGRÁFICA, razón 1,25 (tercera mayor). Cada paso es claramente distinto del
+   * anterior: dos tamaños que se parecen leen como un error de maquetación, no como
+   * jerarquía.
+   *
+   * El cuerpo del texto NO sale de aquí: sale de --t-carril, que es el contrato de
+   * accesibilidad por edad y manda sobre cualquier consideración estética.
+   */
+  --t-xs: 13px;
+  --t-s: 16px;
+  --t-m: 20px;
+  --t-l: 25px;
+  --t-xl: 31px;
+  --t-2xl: 39px;
+
+  /* Interlineado: apretado en titulares, holgado en texto corrido. */
+  --alto-titular: 1.15;
+  --alto-texto: 1.55;
+  /* Los titulares grandes van con el tracking ligeramente negativo, que es lo que hace que
+     una tipografía de texto aguante siendo titular sin parecer estirada. */
+  --track-titular: -0.015em;
+
+  /*
+   * RADIOS. Tres, y el redondo. Mezclar 8, 12 y 14 px sin criterio es otra de las cosas
+   * que se ven sin poder señalarlas.
+   */
+  --r-s: 8px;
+  --r-m: 14px;
+  --r-l: 22px;
+  --r-redondo: 999px;
+
+  /*
+   * ELEVACIÓN. Tres niveles y ni uno más: lo que está en la página, lo que se levanta al
+   * tocarlo y lo que flota por encima de todo.
+   *
+   * Dos sombras superpuestas —una corta y dura, otra larga y difusa— porque una sola sombra
+   * difusa da ese gris sucio de plantilla; así es como se comporta la luz de verdad.
+   */
+  --sombra-1: 0 1px 2px rgb(23 28 43 / 6%), 0 2px 6px rgb(23 28 43 / 6%);
+  --sombra-2: 0 2px 4px rgb(23 28 43 / 8%), 0 8px 20px rgb(23 28 43 / 10%);
+  --sombra-3: 0 4px 8px rgb(23 28 43 / 12%), 0 16px 40px rgb(23 28 43 / 18%);
+
+  /* Foco: uno solo, en un token, para que no haya tres grosores distintos por el fichero. */
+  --foco: 4px solid var(--acento);
+  --foco-hueco: 3px;
+
+  /* Transición estándar. 120 ms es el punto donde se percibe respuesta y todavía no espera. */
+  --transicion: 120ms cubic-bezier(0.2, 0, 0.2, 1);
+
   /* Valores del carril activo. Los sobrescribe [data-carril] más abajo. */
   --objetivo: var(--objetivo-lectores);
   --separacion: var(--separacion-lectores);
@@ -126,6 +196,11 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-tema='claro']) {
+    /* Sobre fondo oscuro una sombra suave sencillamente no se ve: hay que subirlas, o los
+       tres niveles de elevación se convierten en ninguno. */
+    --sombra-1: 0 1px 2px rgb(0 0 0 / 40%), 0 2px 6px rgb(0 0 0 / 30%);
+    --sombra-2: 0 2px 4px rgb(0 0 0 / 45%), 0 8px 20px rgb(0 0 0 / 40%);
+    --sombra-3: 0 4px 8px rgb(0 0 0 / 50%), 0 16px 40px rgb(0 0 0 / 55%);
     --papel: #131519;
     --superficie: #1a1d23;
     --tinta: #e8eae5;
@@ -171,7 +246,52 @@ body {
   color: var(--tinta);
   font-family: var(--f-texto);
   font-size: var(--t-c1);
-  line-height: 1.5;
+  line-height: var(--alto-texto);
+}
+
+/*
+ * JERARQUÍA DE TITULARES.
+ *
+ * No había ninguna: los encabezados usaban los tamaños y los márgenes por defecto del
+ * navegador, que son de 1996 y se notan. Un `h1` a 2em con 0,67em de margen arriba y abajo
+ * es exactamente el aspecto que se reconoce como «esto no lo ha maquetado nadie».
+ *
+ * Tres cosas que hacen casi todo el trabajo:
+ *
+ *  - **Tamaños de la escala**, con un salto claro entre niveles. Dos titulares que se
+ *    parecen no leen como jerarquía, leen como descuido.
+ *  - **Interlineado apretado y tracking ligeramente negativo.** Una tipografía de texto —y
+ *    Andika lo es, está hecha para lectores nóveles— se separa demasiado al agrandarla.
+ *    Cerrarla es lo que la deja parecer un titular en vez de un párrafo grande.
+ *  - **Margen superior mayor que el inferior.** Un titular pertenece a lo que va debajo, y
+ *    el espacio es lo que lo dice. El valor por defecto del navegador los pone iguales, así
+ *    que los títulos flotan entre dos bloques sin pertenecer a ninguno.
+ */
+h1,
+h2,
+h3 {
+  margin: 0 0 var(--e-3);
+  line-height: var(--alto-titular);
+  letter-spacing: var(--track-titular);
+  /* Reparte las líneas de un titular en vez de dejar una palabra suelta abajo. Donde no
+     está soportado no pasa nada: se comporta como antes. */
+  text-wrap: balance;
+}
+* + h2,
+* + h3 {
+  margin-top: var(--e-6);
+}
+h1 {
+  /* Crece con la pantalla: en una pizarra digital el mismo título tiene que leerse a tres
+     metros, y en un móvil no puede comerse media pantalla. */
+  font-size: clamp(var(--t-l), 5.5vw, var(--t-xl));
+}
+h2 { font-size: var(--t-m); }
+h3 { font-size: var(--t-s); }
+
+p {
+  /* Evita que la última línea de un párrafo quede con una palabra sola. */
+  text-wrap: pretty;
 }
 
 /* Un niño de 4 años tarda 8 segundos en decidir dónde tocar: sin prisas y sin sustos. */
@@ -185,17 +305,17 @@ body {
 .boton-actividad {
   display: grid;
   place-items: center;
-  gap: 8px;
-  padding: 16px;
+  gap: var(--e-2);
+  padding: var(--e-4);
   border: 3px solid var(--linea);
-  border-radius: 18px;
+  border-radius: var(--r-m);
   background: var(--superficie);
   color: var(--tinta);
   font: inherit;
   cursor: pointer;
 }
 .boton-actividad:focus-visible {
-  outline: 4px solid var(--acento);
+  outline: var(--foco);
   outline-offset: 3px;
 }
 
@@ -203,16 +323,16 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: var(--separacion);
-  margin: 24px 0;
+  margin: var(--e-5) 0;
 }
 
 .boton-repetir {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--e-3);
   min-height: 48px;
-  padding: 8px 18px;
-  border-radius: 999px;
+  padding: var(--e-2) var(--e-4);
+  border-radius: var(--r-redondo);
   border: 2px solid var(--linea);
   background: var(--superficie);
   color: var(--tinta);
@@ -234,7 +354,7 @@ body {
 .diagnostico {
   max-width: 720px;
   margin: 0 auto;
-  padding: 24px 16px 64px;
+  padding: var(--e-5) var(--e-4) var(--e-8);
 }
 .diagnostico__intro,
 .diagnostico__pie {
@@ -242,10 +362,10 @@ body {
   font-size: 0.9em;
 }
 .diagnostico__tono {
-  margin: 24px 0;
-  padding: 24px 16px;
+  margin: var(--e-5) 0;
+  padding: var(--e-5) var(--e-4);
   border: 3px solid var(--linea);
-  border-radius: 18px;
+  border-radius: var(--r-m);
   background: var(--superficie);
   text-align: center;
 }
@@ -257,30 +377,30 @@ body {
   color: var(--acento-2);
 }
 .diagnostico__nota {
-  margin: 8px 0 0;
+  margin: var(--e-2) 0 0;
   color: var(--tinta-2);
   font-variant-numeric: tabular-nums;
 }
 .diagnostico__acciones {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: var(--e-3);
 }
 .diagnostico__fallo {
-  margin-top: 16px;
-  padding: 12px 16px;
+  margin-top: var(--e-4);
+  padding: var(--e-3) var(--e-4);
   border-left: 4px solid var(--acento);
   background: var(--superficie);
 }
 .diagnostico__fallo code {
   display: block;
-  margin-top: 6px;
+  margin-top: var(--e-2);
   word-break: break-word;
 }
 .diagnostico__informe {
-  padding: 16px;
+  padding: var(--e-4);
   border: 1px solid var(--linea);
-  border-radius: 12px;
+  border-radius: var(--r-m);
   background: var(--superficie);
   font-size: 13px;
   line-height: 1.45;
@@ -292,8 +412,8 @@ body {
 }
 
 .diagnostico__coste {
-  margin: 16px 0;
-  padding: 12px 16px;
+  margin: var(--e-4) 0;
+  padding: var(--e-3) var(--e-4);
   border-left: 4px solid var(--acento-2);
   background: var(--superficie);
 }
@@ -303,37 +423,32 @@ body {
 .actividad-marco {
   max-width: 840px;
   margin: 0 auto;
-  padding: 24px 16px 64px;
+  padding: var(--e-5) var(--e-4) var(--e-8);
 }
-.filtros {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin: 24px 0 8px;
-}
+
 .filtros label {
   display: grid;
-  gap: 4px;
+  gap: var(--e-1);
   font-size: 0.85em;
   color: var(--tinta-2);
 }
 .filtros select {
   min-height: 44px;
-  padding: 6px 10px;
+  padding: var(--e-2) var(--e-3);
   border: 2px solid var(--linea);
-  border-radius: 10px;
+  border-radius: var(--r-s);
   background: var(--superficie);
   color: var(--tinta);
   font: inherit;
 }
 .catalogo__cuenta {
-  margin: 0 0 16px;
+  margin: 0 0 var(--e-4);
   color: var(--tinta-2);
   font-variant-numeric: tabular-nums;
 }
 .catalogo__lista {
   display: grid;
-  gap: 12px;
+  gap: var(--e-3);
   padding: 0;
   list-style: none;
 }
@@ -344,19 +459,33 @@ body {
    los dos se llamen «ficha». */
 .tarjeta {
   display: grid;
-  gap: 4px;
-  padding: 16px;
+  gap: var(--e-1);
+  padding: var(--e-4);
   border: 2px solid var(--linea);
   /* El eje se codifica con color Y con la barra lateral: el color nunca informa solo. */
   border-left-width: 8px;
-  border-radius: 14px;
+  border-radius: var(--r-m);
   background: var(--superficie);
   color: inherit;
   text-decoration: none;
   min-height: 60px;
+  box-shadow: var(--sombra-1);
+  transition: box-shadow var(--transicion), transform var(--transicion);
+}
+/* Al pasar por encima se levanta un nivel. Es el gesto más barato que existe para que una
+   lista de enlaces parezca una interfaz y no un documento. */
+@media (hover: hover) {
+  .tarjeta:hover {
+    box-shadow: var(--sombra-2);
+    transform: translateY(-2px);
+  }
+}
+.tarjeta:active { box-shadow: var(--sombra-1); transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .tarjeta, .tarjeta:hover, .tarjeta:active { transition: none; transform: none; }
 }
 .tarjeta:focus-visible {
-  outline: 4px solid var(--acento);
+  outline: var(--foco);
   outline-offset: 3px;
 }
 .tarjeta--pulso { border-left-color: var(--eje-pulso); }
@@ -369,21 +498,76 @@ body {
 .tarjeta__titulo { font-weight: 700; }
 .tarjeta__meta { font-size: 0.85em; color: var(--tinta-2); }
 
+/* ── filtros del catálogo ──────────────────────────────────────────────────
+   Sin etiqueta visible: la opción «todos» de cada desplegable se llama como la categoría,
+   así que el propio control dice de qué es. Ahorra una línea por filtro en la pantalla
+   donde más se agradece, que es la del maestro buscando algo con prisa.
+
+   El `aria-label` sí se mantiene en el marcado: sin él, un lector de pantalla anuncia
+   «cuadro combinado, 3.º y 4.º» sin decir de qué. Es la parte del patrón que casi todo el
+   mundo se salta. */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+  align-items: center;
+  margin: 0 0 var(--e-4);
+}
+.filtros select,
+.filtros__buscar {
+  min-height: 44px;
+  padding: var(--e-2) var(--e-3);
+  font: inherit;
+  font-size: var(--t-s);
+  color: var(--tinta);
+  background: var(--superficie);
+  border: 2px solid var(--linea);
+  border-radius: var(--r-s);
+  transition: border-color var(--transicion), box-shadow var(--transicion);
+}
+/* El buscador crece y los desplegables no: escribir necesita sitio, elegir no. */
+.filtros__buscar { flex: 1 1 200px; min-width: 0; }
+.filtros select:hover,
+.filtros__buscar:hover { border-color: var(--tinta-2); }
+.filtros select:focus-visible,
+.filtros__buscar:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
+
+/* Un filtro puesto se ve puesto. Sin esto hay que leer los tres para saber cuál está
+   activo, y con el nombre de la categoría dentro del propio control eso no es evidente. */
+.filtros select[data-activo] {
+  border-color: var(--acento-2);
+  box-shadow: inset 3px 0 0 var(--acento-2);
+  font-weight: 700;
+}
+.filtros__limpiar {
+  min-height: 44px;
+  padding: var(--e-2) var(--e-3);
+  font: inherit;
+  font-size: var(--t-xs);
+  color: var(--acento);
+  background: none;
+  border: 2px solid transparent;
+  border-radius: var(--r-s);
+  cursor: pointer;
+}
+.filtros__limpiar:hover { border-color: var(--acento); }
+.filtros__limpiar:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
+
 /* Un solo botón atrás, siempre en el mismo sitio. Regla 8 de docs/04-DISENO-UI.md. */
 .atras {
   display: inline-flex;
   align-items: center;
   min-height: 48px;
-  padding: 8px 18px;
-  margin-bottom: 16px;
+  padding: var(--e-2) var(--e-4);
+  margin-bottom: var(--e-4);
   border: 2px solid var(--linea);
-  border-radius: 999px;
+  border-radius: var(--r-redondo);
   background: var(--superficie);
   color: inherit;
   text-decoration: none;
 }
 .atras:focus-visible {
-  outline: 4px solid var(--acento);
+  outline: var(--foco);
   outline-offset: 3px;
 }
 
@@ -409,7 +593,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--separacion);
-  margin: 24px 0;
+  margin: var(--e-5) 0;
 }
 .emparejar__columna {
   display: grid;
@@ -440,15 +624,15 @@ body {
   flex-wrap: wrap;
   gap: var(--separacion);
   padding: 0;
-  margin: 20px 0;
+  margin: var(--e-5) 0;
   list-style: none;
 }
 .ordenar__fila {
   min-height: calc(var(--objetivo) + 24px);
   align-items: center;
-  padding: 12px;
+  padding: var(--e-3);
   border: 3px dashed var(--linea);
-  border-radius: 18px;
+  border-radius: var(--r-m);
 }
 .ordenar__hueco {
   width: 100%;
@@ -469,7 +653,7 @@ body {
 .ordenar__acciones {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: var(--e-3);
 }
 .ordenar__acciones [aria-disabled='true'],
 .emparejar__ficha[aria-disabled='true'] {
@@ -483,10 +667,10 @@ body {
 .guia {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 24px 32px 64px;
+  padding: var(--e-5) var(--e-6) var(--e-8);
 }
 .guia__consigna {
-  margin: 0 0 24px;
+  margin: 0 0 var(--e-5);
   font-size: clamp(32px, 6vw, 88px);
   line-height: 1.1;
   /* Alto contraste: tinta sobre papel, sin grises intermedios. */
@@ -498,7 +682,7 @@ body {
 .guia__pulso {
   display: flex;
   gap: clamp(12px, 3vw, 40px);
-  margin: 24px 0 32px;
+  margin: var(--e-5) 0 var(--e-6);
 }
 .guia__punto {
   width: clamp(48px, 9vw, 120px);
@@ -529,14 +713,14 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 16px;
-  margin: 24px 0;
+  gap: var(--e-4);
+  margin: var(--e-5) 0;
   font-size: 1.2em;
 }
 .guia__tempo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--e-3);
 }
 .guia__tempo input {
   min-width: 180px;
@@ -544,19 +728,19 @@ body {
 }
 
 .guia__pasos {
-  margin: 32px 0;
+  margin: var(--e-6) 0;
   padding-left: 1.4em;
   font-size: clamp(18px, 2.4vw, 32px);
 }
 .guia__paso {
-  margin-bottom: 20px;
+  margin-bottom: var(--e-5);
   opacity: 0.45;
 }
 .guia__paso[data-actual='true'] {
   opacity: 1;
 }
 .guia__paso h2 {
-  margin: 0 0 6px;
+  margin: 0 0 var(--e-2);
   font-size: 1em;
 }
 .guia__paso p {
@@ -568,9 +752,9 @@ body {
   font-variant-numeric: tabular-nums;
 }
 .guia__materiales {
-  padding: 20px 24px;
+  padding: var(--e-5) var(--e-5);
   border: 3px solid var(--linea);
-  border-radius: 18px;
+  border-radius: var(--r-m);
   background: var(--superficie);
 }
 
@@ -632,15 +816,15 @@ body {
 .ajustes {
   max-width: 720px;
   margin: 0 auto;
-  padding: 24px 16px 64px;
+  padding: var(--e-5) var(--e-4) var(--e-8);
 }
 .ajustes section {
-  margin: 32px 0;
-  padding-top: 24px;
+  margin: var(--e-6) 0;
+  padding-top: var(--e-5);
   border-top: 2px solid var(--linea);
 }
 .ajustes h2 {
-  margin: 0 0 8px;
+  margin: 0 0 var(--e-2);
   font-size: 1.15em;
 }
 .ajustes p {
@@ -660,7 +844,7 @@ body {
   cursor: pointer;
 }
 .enlace-boton:focus-visible {
-  outline: 3px solid var(--acento);
+  outline: var(--foco);
   outline-offset: 2px;
 }
 
@@ -670,8 +854,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
-  padding: 10px 16px;
+  gap: var(--e-3);
+  padding: var(--e-3) var(--e-4);
   border-bottom: 3px solid var(--acento-2);
   background: var(--superficie);
 }
@@ -686,11 +870,11 @@ body {
   width: 100%;
   max-width: 320px;
   min-height: 160px;
-  margin: 24px 0;
+  margin: var(--e-5) 0;
   font-size: 1.2em;
 }
 .ajustes__nota {
-  margin-top: 32px;
+  margin-top: var(--e-6);
   font-size: 0.9em;
 }
 
@@ -701,12 +885,12 @@ body {
 .legal {
   max-width: 720px;
   margin: 0 auto;
-  padding: 24px 16px 64px;
+  padding: var(--e-5) var(--e-4) var(--e-8);
 }
 .legal__conmutador {
   display: flex;
-  gap: 12px;
-  margin-bottom: 24px;
+  gap: var(--e-3);
+  margin-bottom: var(--e-5);
 }
 .legal__conmutador [aria-pressed="true"] {
   border-color: var(--acento);
@@ -714,7 +898,7 @@ body {
 }
 .legal__ninos ul {
   display: grid;
-  gap: 20px;
+  gap: var(--e-5);
   padding: 0;
   list-style: none;
   font-size: 1.15em;
@@ -722,10 +906,10 @@ body {
 .legal__ninos li {
   display: flex;
   align-items: center;
-  gap: 16px;
-  padding: 16px;
+  gap: var(--e-4);
+  padding: var(--e-4);
   border: 3px solid var(--linea);
-  border-radius: 18px;
+  border-radius: var(--r-m);
   background: var(--superficie);
 }
 .legal__ninos svg {
@@ -733,43 +917,43 @@ body {
   color: var(--acento-2);
 }
 .legal__adultos h2 {
-  margin-top: 28px;
+  margin-top: var(--e-6);
   font-size: 1.1em;
 }
 /* Lo verificable se destaca: es lo que separa una promesa de un hecho. */
 .legal__verificable {
-  padding: 12px 16px;
+  padding: var(--e-3) var(--e-4);
   border-left: 4px solid var(--ok);
   background: var(--superficie);
 }
 .legal__nota {
-  margin-top: 32px;
+  margin-top: var(--e-6);
   color: var(--tinta-2);
   font-size: 0.9em;
 }
 .creditos__lista {
   display: grid;
-  gap: 14px;
+  gap: var(--e-4);
   padding: 0;
   list-style: none;
 }
 .creditos__lista li {
-  padding: 14px 16px;
+  padding: var(--e-4) var(--e-4);
   border: 2px solid var(--linea);
-  border-radius: 12px;
+  border-radius: var(--r-m);
   background: var(--superficie);
 }
 .creditos__licencia {
   display: inline-block;
-  margin-left: 10px;
-  padding: 1px 8px;
+  margin-left: var(--e-3);
+  padding: 1px var(--e-2);
   border: 1px solid var(--linea);
-  border-radius: 999px;
+  border-radius: var(--r-redondo);
   font-size: 0.8em;
 }
 .creditos__fuente,
 .creditos__usos {
-  margin-top: 4px;
+  margin-top: var(--e-1);
   color: var(--tinta-2);
   font-size: 0.85em;
   word-break: break-word;
@@ -783,7 +967,7 @@ body {
   flex-wrap: wrap;
   gap: var(--separacion);
   padding: 0;
-  margin: 24px 0;
+  margin: var(--e-5) 0;
   list-style: none;
 }
 .tocar__patron li {
@@ -791,9 +975,9 @@ body {
   min-height: var(--objetivo);
   display: grid;
   place-items: center;
-  padding: 8px 14px;
+  padding: var(--e-2) var(--e-4);
   border: 3px solid var(--linea);
-  border-radius: 14px;
+  border-radius: var(--r-m);
   background: var(--superficie);
   font-size: 1.2em;
   font-variant-numeric: tabular-nums;
@@ -813,11 +997,11 @@ body {
   width: 100%;
   max-width: 360px;
   min-height: 180px;
-  margin: 20px 0;
+  margin: var(--e-5) 0;
   font-size: 1.3em;
 }
 .tocar__aviso {
-  padding: 12px 16px;
+  padding: var(--e-3) var(--e-4);
   border-left: 4px solid var(--tinta-2);
   background: var(--superficie);
   font-size: 0.9em;
@@ -839,7 +1023,7 @@ body {
    haría dejar de parecer una partitura. */
 .pentagrama__lienzo {
   position: relative;
-  margin: 16px auto;
+  margin: var(--e-4) auto;
   max-width: 100%;
   overflow-x: auto;
 }
@@ -848,7 +1032,7 @@ body {
   font-weight: 700;
   color: var(--acento-2);
   min-height: 1.2em;
-  margin: 8px 0;
+  margin: var(--e-2) 0;
 }
 .pentagrama__sitio {
   position: absolute;
@@ -863,7 +1047,7 @@ body {
 /* El hitbox se hace visible al enfocar o pasar por encima: invisible para quien no
    lo necesita, evidente para quien navega con teclado. */
 .pentagrama__sitio:focus-visible {
-  outline: 4px solid var(--acento);
+  outline: var(--foco);
   outline-offset: 2px;
 }
 .pentagrama__sitio:hover {
@@ -881,7 +1065,7 @@ body {
   transform: rotate(-20deg);
 }
 .pentagrama__etiqueta {
-  margin-top: 2px;
+  margin-top: var(--e-0);
   font-size: 0.75em;
   color: var(--tinta-2);
 }
@@ -903,7 +1087,7 @@ body {
   width: calc(100% - 32px);
   padding: 0;
   border: none;
-  border-radius: 24px;
+  border-radius: var(--r-l);
   background: var(--superficie);
   color: var(--tinta);
 }
@@ -914,8 +1098,8 @@ body {
 .modal__caja {
   display: grid;
   justify-items: center;
-  gap: 12px;
-  padding: 32px 28px;
+  gap: var(--e-3);
+  padding: var(--e-6) var(--e-6);
   text-align: center;
 }
 .modal__caja h2 {
@@ -932,12 +1116,12 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
-  margin-top: 12px;
+  gap: var(--e-3);
+  margin-top: var(--e-3);
 }
 .modal__empezar {
   min-height: 60px;
-  padding: 12px 28px;
+  padding: var(--e-3) var(--e-6);
   font-size: 1.15em;
   border-color: var(--vivo-verde);
   color: var(--vivo-verde);
@@ -948,7 +1132,7 @@ body {
 .modal[data-tono='celebracion'] .modal__caja {
   background: var(--suave-verde);
   color: var(--tinta);
-  border-radius: 24px;
+  border-radius: var(--r-l);
 }
 @media (prefers-reduced-motion: no-preference) {
   .modal[open] {
@@ -966,9 +1150,9 @@ body {
 .paso {
   display: grid;
   justify-items: center;
-  gap: 10px;
+  gap: var(--e-3);
   width: 100%;
-  padding: 32px 16px;
+  padding: var(--e-6) var(--e-4);
   border: none;
   background: none;
   color: inherit;
@@ -977,7 +1161,7 @@ body {
 }
 .paso__puntos {
   display: flex;
-  gap: 10px;
+  gap: var(--e-3);
 }
 .paso__punto {
   width: 16px;
@@ -1034,7 +1218,7 @@ body {
 .ordenar__ficha[data-arrastrando='true'] {
   cursor: grabbing;
   opacity: 0.85;
-  box-shadow: 0 8px 16px rgb(23 28 43 / 25%);
+  box-shadow: var(--sombra-3);
 }
 .ordenar__truco {
   color: var(--tinta-2);
@@ -1049,19 +1233,19 @@ body {
    para escribir música sin saber notación. */
 .rejilla__cuadricula {
   display: grid;
-  gap: 4px;
+  gap: var(--e-1);
   justify-content: center;
-  margin: 20px auto;
-  padding: 10px;
+  margin: var(--e-5) auto;
+  padding: var(--e-3);
   border: 3px solid var(--linea);
-  border-radius: 16px;
+  border-radius: var(--r-m);
   background: var(--superficie);
   overflow-x: auto;
 }
 .rejilla__celda {
   padding: 0;
   border: 2px solid var(--linea);
-  border-radius: 8px;
+  border-radius: var(--r-s);
   background: var(--papel);
   cursor: pointer;
 }
@@ -1071,7 +1255,7 @@ body {
 }
 /* La columna que suena se resalta: así el niño VE el pulso además de oírlo. */
 .rejilla__celda[data-columna-activa] {
-  outline: 3px solid var(--acento);
+  outline: var(--foco);
   outline-offset: -3px;
 }
 /* Sobra y falta se distinguen por FORMA, no por color: una parpadea y la otra
@@ -1094,13 +1278,13 @@ body {
   }
 }
 .rejilla__celda:focus-visible {
-  outline: 3px solid var(--acento);
+  outline: var(--foco);
   outline-offset: 2px;
 }
 .rejilla__acciones {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: var(--e-3);
   justify-content: center;
 }
 
@@ -1111,16 +1295,16 @@ body {
 .cantar__nota {
   font-size: clamp(40px, 12vw, 96px);
   font-weight: 700;
-  margin: 8px 0;
+  margin: var(--e-2) 0;
   color: var(--vivo-turquesa);
 }
 .cantar__aguja {
   position: relative;
   height: 72px;
   max-width: 320px;
-  margin: 16px auto;
+  margin: var(--e-4) auto;
   border: 3px solid var(--linea);
-  border-radius: 999px;
+  border-radius: var(--r-redondo);
   background: var(--superficie);
   overflow: hidden;
 }
@@ -1145,7 +1329,7 @@ body {
   width: 14px;
   height: calc(100% - 16px);
   margin-left: -7px;
-  border-radius: 999px;
+  border-radius: var(--r-redondo);
   background: var(--tinta-2);
   opacity: 0.25;
   transition: transform 90ms linear;
@@ -1162,16 +1346,16 @@ body {
 .cantar__empezar {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--e-3);
   min-height: 72px;
-  padding: 12px 28px;
+  padding: var(--e-3) var(--e-6);
   font-size: 1.15em;
 }
 .cantar__mensaje { font-size: 1.2em; }
 .cantar__cifras { color: var(--tinta-2); font-size: 0.85em; font-variant-numeric: tabular-nums; }
-.cantar__acciones { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.cantar__acciones { display: flex; flex-wrap: wrap; gap: var(--e-3); justify-content: center; }
 .cantar__aviso {
-  padding: 12px 16px;
+  padding: var(--e-3) var(--e-4);
   border-left: 4px solid var(--tinta-2);
   background: var(--superficie);
   font-size: 0.9em;
@@ -1185,21 +1369,21 @@ body {
 .seguir__tira {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: var(--e-3);
   justify-content: center;
   padding: 0;
-  margin: 24px 0;
+  margin: var(--e-5) 0;
   list-style: none;
 }
 .seguir__bloque {
   display: grid;
   place-items: center;
-  gap: 6px;
+  gap: var(--e-2);
   min-width: 96px;
   min-height: 96px;
-  padding: 12px;
+  padding: var(--e-3);
   border: 4px solid var(--linea);
-  border-radius: 18px;
+  border-radius: var(--r-m);
   background: var(--superficie);
   font-size: 1.3em;
   transition: transform 90ms ease, background-color 90ms ease;
@@ -1220,9 +1404,9 @@ body {
 .seguir__play {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--e-3);
   min-height: 72px;
-  padding: 12px 28px;
+  padding: var(--e-3) var(--e-6);
   font-size: 1.15em;
 }
 
@@ -1233,9 +1417,9 @@ body {
   position: relative;
   width: 100%;
   height: min(46vh, 340px);
-  margin: 16px 0;
+  margin: var(--e-4) 0;
   border: 4px solid var(--linea);
-  border-radius: 20px;
+  border-radius: var(--r-l);
   overflow: hidden;
   touch-action: none;
   cursor: crosshair;
@@ -1256,21 +1440,21 @@ body {
    Es lo que hace que el lienzo cumpla WCAG 2.5.7. */
 .lienzo__teclas {
   display: flex;
-  gap: 6px;
+  gap: var(--e-2);
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 16px;
+  margin-bottom: var(--e-4);
 }
 .lienzo__tecla {
   border: 3px solid var(--linea);
-  border-radius: 12px;
+  border-radius: var(--r-m);
   cursor: pointer;
 }
 .lienzo__tecla:focus-visible {
-  outline: 4px solid var(--acento);
+  outline: var(--foco);
   outline-offset: 2px;
 }
-.lienzo__acciones { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.lienzo__acciones { display: flex; gap: var(--e-3); flex-wrap: wrap; justify-content: center; }
 
 /* ── cuenta atrás ──────────────────────────────────────────────────────────
    No es un cronómetro: no mide lo que tardas, solo dice cuándo se empieza.
@@ -1280,10 +1464,10 @@ body {
 .cuenta {
   display: grid;
   place-items: center;
-  gap: 8px;
+  gap: var(--e-2);
   width: 100%;
   min-height: 260px;
-  padding: 24px;
+  padding: var(--e-5);
   border: none;
   background: none;
   color: inherit;
@@ -1320,8 +1504,8 @@ body {
 }
 .boton-actividad {
   border-width: 4px;
-  border-radius: 22px;
-  padding: 14px;
+  border-radius: var(--r-l);
+  padding: var(--e-4);
 }
 .boton__texto {
   font-size: 1.05em;
@@ -1367,8 +1551,8 @@ body {
    los caracteres agrupados de tres en tres. */
 .modal__codigo {
   display: grid;
-  gap: 4px;
-  margin: 4px 0;
+  gap: var(--e-1);
+  margin: var(--e-1) 0;
 }
 .modal__codigo strong {
   font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
@@ -1382,15 +1566,15 @@ body {
 }
 .comprobar__campo {
   display: grid;
-  gap: 8px;
-  margin: 20px 0;
+  gap: var(--e-2);
+  margin: var(--e-5) 0;
   max-width: 340px;
 }
 .comprobar__campo input {
   min-height: 60px;
-  padding: 8px 14px;
+  padding: var(--e-2) var(--e-4);
   border: 3px solid var(--linea);
-  border-radius: 12px;
+  border-radius: var(--r-m);
   background: var(--superficie);
   color: var(--tinta);
   font-family: ui-monospace, Consolas, monospace;
@@ -1401,9 +1585,9 @@ body {
 .comprobar__resultado {
   display: grid;
   justify-items: start;
-  gap: 6px;
-  padding: 18px 20px;
-  border-radius: 16px;
+  gap: var(--e-2);
+  padding: var(--e-4) var(--e-5);
+  border-radius: var(--r-m);
   border-left: 6px solid var(--linea);
   background: var(--superficie);
   color: var(--tinta);
@@ -1425,14 +1609,14 @@ body {
 .ficha {
   max-width: 860px;
   margin: 0 auto;
-  padding: 24px 16px 64px;
+  padding: var(--e-5) var(--e-4) var(--e-8);
 }
 .ficha__barra {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
+  gap: var(--e-3);
+  margin-bottom: var(--e-5);
 }
 .ficha__consejo { flex: 1 1 240px; color: var(--tinta-2); font-size: 0.85em; margin: 0; }
 
@@ -1444,26 +1628,26 @@ body {
    hoja en la mano, y a ese tamaño cabe una sección más por página, que es lo que evita que
    un bloque se parta por la mitad al imprimir. */
 .ficha__hoja {
-  padding: 0 0 26px;
-  margin-bottom: 30px;
+  padding: 0 0 var(--e-5);
+  margin-bottom: var(--e-6);
   font-size: 15px;
   line-height: 1.45;
   background: none;
   color: var(--tinta);
 }
-.ficha__hoja + .ficha__hoja { border-top: 1px solid var(--linea); padding-top: 30px; }
+.ficha__hoja + .ficha__hoja { border-top: 1px solid var(--linea); padding-top: var(--e-6); }
 .ficha__cabecera {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 16px;
-  padding-bottom: 10px;
-  margin-bottom: 16px;
+  gap: var(--e-4);
+  padding-bottom: var(--e-3);
+  margin-bottom: var(--e-4);
   border-bottom: 2px solid var(--linea);
 }
 .ficha__cabecera h1 { margin: 0; font-size: 1.45em; line-height: 1.2; }
 .ficha__sobretitulo {
-  margin: 0 0 4px;
+  margin: 0 0 var(--e-1);
   font-size: 0.8em;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -1472,7 +1656,7 @@ body {
 }
 .ficha__hojaNum { margin: 0; color: var(--tinta-2); font-size: 0.85em; white-space: nowrap; }
 .ficha__subtitulo {
-  margin: 4px 0 0;
+  margin: var(--e-1) 0 0;
   font-size: 0.9em;
   font-weight: 600;
   color: var(--tinta-2);
@@ -1494,8 +1678,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 8px;
-  margin: 0 0 10px;
+  gap: var(--e-2);
+  margin: 0 0 var(--e-3);
   font-size: 0.76em;
   letter-spacing: 0.04em;
   color: var(--tinta-2);
@@ -1511,9 +1695,9 @@ body {
 .ficha__ficha-tecnica {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 22px;
-  margin: 0 0 16px;
-  padding: 12px 14px;
+  gap: var(--e-3) var(--e-5);
+  margin: 0 0 var(--e-4);
+  padding: var(--e-3) var(--e-4);
   background: var(--fondo);
   border-radius: var(--radio);
 }
@@ -1527,9 +1711,9 @@ body {
 }
 .ficha__ficha-tecnica dd { margin: 1px 0 0; font-size: 0.95em; white-space: nowrap; }
 
-.ficha__entradilla { color: var(--tinta-2); margin: 0 0 14px; }
+.ficha__entradilla { color: var(--tinta-2); margin: 0 0 var(--e-4); }
 .ficha__hoja h2 {
-  margin: 18px 0 6px;
+  margin: var(--e-4) 0 var(--e-2);
   font-size: 0.82em;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -1537,16 +1721,16 @@ body {
   border-bottom: 1px solid var(--linea);
   padding-bottom: 3px;
 }
-.ficha__hoja h3 { margin: 0 0 2px; font-size: 0.95em; }
-.ficha__hoja p { margin: 0 0 8px; }
-.ficha__consigna { padding-left: 12px; border-left: 3px solid var(--linea); }
+.ficha__hoja h3 { margin: 0 0 var(--e-0); font-size: 0.95em; }
+.ficha__hoja p { margin: 0 0 var(--e-2); }
+.ficha__consigna { padding-left: var(--e-3); border-left: 3px solid var(--linea); }
 
 /* Las cuatro propuestas en dos columnas: caben en media página y se comparan de un vistazo,
    que es como se decide qué hacer con el grupo que va más rápido. */
 .ficha__dosColumnas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 12px 26px;
+  gap: var(--e-3) var(--e-5);
 }
 .ficha__dosColumnas p { margin: 0; font-size: 0.94em; }
 
@@ -1554,12 +1738,12 @@ body {
 .ficha__pasos li { margin-bottom: 9px; }
 .ficha__duracion { color: var(--tinta-2); }
 .ficha__materiales, .ficha__practica, .ficha__creditos { padding-left: 1.2em; margin: 0; }
-.ficha__materiales li, .ficha__practica li, .ficha__creditos li { margin-bottom: 6px; }
+.ficha__materiales li, .ficha__practica li, .ficha__creditos li { margin-bottom: var(--e-2); }
 .ficha__creditos { font-size: 0.9em; }
 
 .ficha__tabla { width: 100%; border-collapse: collapse; }
 .ficha__tabla th, .ficha__tabla td {
-  padding: 6px 10px 6px 0;
+  padding: var(--e-2) var(--e-3) var(--e-2) 0;
   text-align: left;
   vertical-align: top;
   border-bottom: 1px solid var(--linea);
@@ -1569,8 +1753,8 @@ body {
 /* Las aclaraciones que separan currículo de práctica. Van en pequeño pero NO se esconden:
    son lo que evita que alguien cite como normativo algo que no lo es. */
 .ficha__aclaracion {
-  margin: 8px 0 0;
-  padding: 8px 11px;
+  margin: var(--e-2) 0 0;
+  padding: var(--e-2) 11px;
   font-size: 0.82em;
   line-height: 1.4;
   color: var(--tinta-2);
@@ -1582,8 +1766,8 @@ body {
 .ficha__datos {
   display: flex;
   flex-wrap: wrap;
-  gap: 32px;
-  margin: 12px 0 14px;
+  gap: var(--e-6);
+  margin: var(--e-3) 0 var(--e-4);
   color: var(--tinta-2);
 }
 
@@ -1591,7 +1775,7 @@ body {
 .ficha__seguimiento { width: 100%; border-collapse: collapse; font-size: 0.9em; }
 .ficha__seguimiento th, .ficha__seguimiento td {
   border: 1px solid var(--linea);
-  padding: 6px 8px;
+  padding: var(--e-2) var(--e-2);
   text-align: left;
 }
 .ficha__seguimiento thead th {
@@ -1605,20 +1789,20 @@ body {
 .ficha__seguimiento tbody td { height: 27px; }
 .ficha__colNombre { width: 28%; }
 .ficha__colNotas { width: 26%; }
-.ficha__leyenda { margin: 10px 0 0; font-size: 0.85em; color: var(--tinta-2); }
+.ficha__leyenda { margin: var(--e-3) 0 0; font-size: 0.85em; color: var(--tinta-2); }
 
 .ficha__pie {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 12px;
-  margin-top: 20px;
-  padding-top: 8px;
+  gap: var(--e-3);
+  margin-top: var(--e-5);
+  padding-top: var(--e-2);
   border-top: 1px solid var(--linea);
   color: var(--tinta-2);
   font-size: 0.76em;
 }
-.actividad__barra { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.actividad__barra { display: flex; flex-wrap: wrap; gap: var(--e-3); align-items: center; }
 .actividad__ficha { color: var(--acento-2); font-size: 0.9em; }
 
 @media print {
@@ -1673,7 +1857,7 @@ body {
      sustituyen por un borde, que sí imprime. */
   .ficha__ficha-tecnica,
   .ficha__aclaracion { background: none; border: 1px solid #999; }
-  .ficha__ficha-tecnica { padding: 10px 12px; }
+  .ficha__ficha-tecnica { padding: var(--e-3) var(--e-3); }
   .ficha__tabla th, .ficha__tabla td { border-color: #000; }
   .ficha__seguimiento th, .ficha__seguimiento td { border-color: #000; }
   .ficha__seguimiento tbody td { height: 34px; }
@@ -1723,8 +1907,8 @@ body {
   z-index: 20;
   display: flex;
   justify-content: center;
-  gap: 4px;
-  padding: 6px 8px;
+  gap: var(--e-1);
+  padding: var(--e-2) var(--e-2);
   /* El área segura de iOS: sin esto, la barra queda debajo del indicador de inicio. */
   padding-bottom: max(6px, env(safe-area-inset-bottom));
   border-top: 3px solid var(--linea);
@@ -1733,19 +1917,19 @@ body {
 .nav__enlace {
   display: grid;
   place-items: center;
-  gap: 2px;
+  gap: var(--e-0);
   flex: 1 1 0;
   max-width: 160px;
   /* 56 px de alto: por encima del mínimo de WCAG y cómodo para un pulgar. */
   min-height: 56px;
-  padding: 4px;
-  border-radius: 14px;
+  padding: var(--e-1);
+  border-radius: var(--r-m);
   color: var(--tinta-2);
   text-decoration: none;
   font-size: 0.78em;
 }
 .nav__enlace:focus-visible {
-  outline: 3px solid var(--acento);
+  outline: var(--foco);
   outline-offset: -3px;
 }
 /* La sección actual se marca por color Y por fondo Y por grosor de texto: tres
@@ -1760,7 +1944,7 @@ body {
 .ajustes,
 .legal,
 .ficha {
-  padding-bottom: 96px;
+  padding-bottom: var(--e-9);
 }
 @media print {
   .nav { display: none; }
@@ -1782,8 +1966,8 @@ body {
   display: flex;
   justify-content: center;
   height: min(38vh, 260px);
-  margin: 20px 0;
-  padding: 0 8px;
+  margin: var(--e-5) 0;
+  padding: 0 var(--e-2);
   touch-action: none;
   overflow-x: auto;
 }
@@ -1797,7 +1981,7 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-bottom: 12px;
+  padding-bottom: var(--e-3);
   border: 2px solid var(--tinta-2);
   background: var(--superficie);
   color: var(--tinta);
@@ -1819,7 +2003,7 @@ body {
 }
 .teclado__blanca:focus-visible,
 .teclado__negra:focus-visible {
-  outline: 4px solid var(--acento);
+  outline: var(--foco);
   outline-offset: -4px;
   z-index: 3;
 }
@@ -1836,9 +2020,9 @@ body {
 .seguir__pista {
   position: relative;
   height: min(52vh, 420px);
-  margin: 20px 0;
+  margin: var(--e-5) 0;
   border: 3px solid var(--linea);
-  border-radius: 18px;
+  border-radius: var(--r-m);
   background: var(--superficie);
   overflow: hidden;
 }
@@ -1858,10 +2042,10 @@ body {
   transform: translateX(-50%);
   display: grid;
   justify-items: center;
-  gap: 4px;
-  padding: 10px 16px;
+  gap: var(--e-1);
+  padding: var(--e-3) var(--e-4);
   border: 3px solid var(--vivo-azul);
-  border-radius: 16px;
+  border-radius: var(--r-m);
   background: var(--suave-azul);
   color: var(--tinta);
   font-size: 1.1em;
@@ -1888,10 +2072,10 @@ body {
 .tocar__marcas {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: var(--e-3);
   justify-content: center;
   padding: 0;
-  margin: 16px 0;
+  margin: var(--e-4) 0;
   list-style: none;
 }
 .tocar__marcas li {
@@ -1919,7 +2103,7 @@ body {
    aprende: se toca, suena y se ve cómo se llama. */
 .teclado__ultima {
   min-height: 1.3em;
-  margin: 4px 0;
+  margin: var(--e-1) 0;
   font-size: clamp(32px, 9vw, 64px);
   font-weight: 700;
   line-height: 1;
@@ -1938,7 +2122,7 @@ body {
 .karaoke__pauta {
   position: relative;
   overflow: hidden;
-  margin: 12px auto 20px;
+  margin: var(--e-3) auto var(--e-5);
   background: var(--superficie);
   border: 2px solid var(--linea);
   border-radius: var(--radio);
@@ -1985,7 +2169,7 @@ body {
   display: grid;
   place-items: center;
   border: 2px solid var(--tinta);
-  border-radius: 8px;
+  border-radius: var(--r-s);
   line-height: 1;
   /* El desplazamiento centra la figura en su punto: sin esto, la nota «llega» a la línea
      medio ancho tarde y el niño toca sistemáticamente tarde por culpa del dibujo. */
@@ -1993,7 +2177,7 @@ body {
 }
 /* En pentagrama y color la figura es una cabeza de nota: alargada en el eje del tiempo. */
 .karaoke__figura[data-forma='pentagrama'],
-.karaoke__figura[data-forma='color'] { border-radius: 8px; }
+.karaoke__figura[data-forma='color'] { border-radius: var(--r-s); }
 [data-orientacion='horizontal'] .karaoke__figura[data-forma='pentagrama'],
 [data-orientacion='horizontal'] .karaoke__figura[data-forma='color'] { height: 14px; }
 [data-orientacion='vertical'] .karaoke__figura[data-forma='pentagrama'],
@@ -2006,10 +2190,10 @@ body {
 .karaoke__figura[data-forma='icono'] {
   min-width: 62px;
   min-height: 54px;
-  padding: 4px 10px;
+  padding: var(--e-1) var(--e-3);
   background: var(--superficie);
   border-width: 3px;
-  border-radius: 14px;
+  border-radius: var(--r-m);
   font-size: 22px;
   font-weight: 700;
   color: var(--tinta);
@@ -2046,8 +2230,8 @@ body {
   font-size: 24px;
 }
 .karaoke__resultado {
-  margin-top: 16px;
-  padding: 16px;
+  margin-top: var(--e-4);
+  padding: var(--e-4);
   background: var(--suave-verde);
   border: 2px solid var(--vivo-verde);
   border-radius: var(--radio);
@@ -2057,20 +2241,20 @@ body {
   text-align: center;
 }
 .karaoke__mensaje {
-  margin: 0 0 8px;
+  margin: 0 0 var(--e-2);
   font-size: 20px;
   font-weight: 600;
 }
 .karaoke__cifras {
-  margin: 4px 0;
+  margin: var(--e-1) 0;
   font-variant-numeric: tabular-nums;
 }
 .karaoke__acciones {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: var(--e-3);
   justify-content: center;
-  margin-top: 14px;
+  margin-top: var(--e-4);
 }
 
 /* El nombre de la nota que acabas de acertar, subiendo y desvaneciéndose.
@@ -2107,8 +2291,8 @@ body {
    que leer con calma, no un pie de foto. */
 .eleccion__caso {
   max-width: 46ch;
-  margin: 16px auto;
-  padding: 16px 20px;
+  margin: var(--e-4) auto;
+  padding: var(--e-4) var(--e-5);
   font-size: 20px;
   line-height: 1.5;
   color: var(--tinta);
@@ -2124,9 +2308,47 @@ body {
    delante de un ordenador y no información que haga falta para tocar. */
 .teclado__qwerty {
   display: block;
-  margin-top: 2px;
+  margin-top: var(--e-0);
   font-size: 11px;
   font-weight: 600;
   color: var(--tinta-suave);
   opacity: 0.75;
+}
+
+/* Un botón por banda. Van en fila y en el mismo orden que las bandas de arriba, así que
+   cada botón queda debajo de su banda y no hay que aprenderse ninguna correspondencia. */
+.karaoke__botones {
+  display: flex;
+  gap: var(--e-2);
+  justify-content: center;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+.karaoke__banda {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 88px;
+  padding: var(--e-2);
+  font-size: var(--t-s);
+  font-weight: 700;
+  /* Texto claro sobre el color vivo de la nota: los --vivo-* están comprobados por encima
+     de 4,5:1 contra el papel, y aquí hacen de fondo, así que el texto va del otro lado. */
+  color: var(--papel);
+  border-width: 3px;
+  border-style: solid;
+  border-radius: var(--r-m);
+  box-shadow: var(--sombra-1);
+}
+.karaoke__banda:active { box-shadow: none; transform: translateY(2px); }
+@media (prefers-reduced-motion: reduce) {
+  .karaoke__banda:active { transform: none; }
+}
+
+/* Figura que baja sin su dibujo: un círculo neutro que se abre al acertarlo. El punteado
+   dice «aquí hay algo» sin decir qué, que es justo lo que se busca. */
+.karaoke__figura[data-oculta] {
+  border-style: dashed;
+  background: var(--superficie);
+  color: transparent;
 }

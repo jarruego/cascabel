@@ -1,4 +1,5 @@
 import { obtenerContexto } from './AudioEngine';
+import { clic } from './clic';
 
 /**
  * Metrónomo con lookahead scheduling (patrón «A Tale of Two Clocks»).
@@ -83,17 +84,8 @@ export class Metronomo {
     this.idTemporizador = window.setTimeout(this.planificar, LOOKAHEAD_MS);
   };
 
-  /** Un oscilador pesa cero y no hay que descargarlo: mejor que una muestra para el clic. */
+  /** El clic vive en `audio/clic.ts`: lo comparte con la cuenta atrás. */
   private clic(tiempo: number, acentuado: boolean): void {
-    const ctx = obtenerContexto();
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-    osc.frequency.value = acentuado ? 1000 : 800;
-    gain.gain.setValueAtTime(0.001, tiempo);
-    gain.gain.exponentialRampToValueAtTime(acentuado ? 0.35 : 0.2, tiempo + 0.002);
-    gain.gain.exponentialRampToValueAtTime(0.001, tiempo + 0.03);
-    osc.connect(gain).connect(ctx.destination);
-    osc.start(tiempo);
-    osc.stop(tiempo + 0.04);
+    clic(tiempo, acentuado);
   }
 }

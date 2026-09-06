@@ -3,11 +3,11 @@
   "version": 1,
   "tipo": "karaoke",
   "titulo": "Los animales que bajan",
-  "descripcion": "Los animales bajan despacio hasta la línea. Se toca cuando llegan. Ocho pulsos lentos, sin figuras que leer.",
+  "descripcion": "Los animales bajan hasta la línea y se tocan al llegar. Los grandes duran más y suenan más graves que los pequeños.",
   "etapa": "infantil",
   "eje": "pulso",
   "lugar": "pantalla",
-  "duracion_min": 5,
+  "duracion_min": 6,
   "curriculo": {
     "area": "Comunicación y Representación de la Realidad",
     "competencia": null,
@@ -19,7 +19,8 @@
     "compas": "4/4",
     "tempo": 60,
     "figuras": [
-      "negra"
+      "negra",
+      "blanca"
     ]
   },
   "entrada": {
@@ -32,46 +33,92 @@
     "tempo": 60,
     "notas": [
       {
-        "nota": "C5",
+        "nota": "E4",
+        "pulsos": 2,
+        "icono": "oso"
+      },
+      {
+        "nota": "G4",
         "pulsos": 1,
         "icono": "conejo"
       },
       {
-        "nota": "C5",
+        "nota": "G4",
+        "pulsos": 1,
+        "icono": "conejo"
+      },
+      {
+        "nota": "A4",
         "pulsos": 1,
         "icono": "pajaro"
       },
       {
-        "nota": "C5",
+        "nota": "A4",
+        "pulsos": 1,
+        "icono": "pajaro"
+      },
+      {
+        "nota": "G4",
         "pulsos": 1,
         "icono": "gato"
       },
       {
-        "nota": "C5",
+        "nota": "G4",
         "pulsos": 1,
-        "icono": "perro"
+        "icono": "gato"
       },
       {
-        "nota": "C5",
+        "nota": "A4",
+        "pulsos": 1,
+        "icono": "raton"
+      },
+      {
+        "nota": "D4",
+        "pulsos": 3,
+        "icono": "elefante"
+      },
+      {
+        "nota": "E4",
+        "pulsos": 2,
+        "icono": "oso"
+      },
+      {
+        "nota": "G4",
         "pulsos": 1,
         "icono": "conejo"
       },
       {
-        "nota": "C5",
+        "nota": "G4",
+        "pulsos": 1,
+        "icono": "conejo"
+      },
+      {
+        "nota": "A4",
         "pulsos": 1,
         "icono": "pajaro"
       },
       {
-        "nota": "C5",
+        "nota": "G4",
         "pulsos": 1,
-        "icono": "elefante"
+        "icono": "gato"
       },
       {
-        "nota": "C5",
+        "nota": "A4",
+        "pulsos": 1,
+        "icono": "pajaro"
+      },
+      {
+        "nota": "E4",
         "pulsos": 2,
         "icono": "oso"
+      },
+      {
+        "nota": "D4",
+        "pulsos": 3,
+        "icono": "elefante"
       }
-    ]
+    ],
+    "avisoAlAcertar": "icono"
   },
   "evaluacion": {
     "autocorrectiva": true,

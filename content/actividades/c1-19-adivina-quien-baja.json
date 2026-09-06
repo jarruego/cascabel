@@ -1,9 +1,9 @@
 {
-  "id": "c1-14-notas-que-caen",
+  "id": "c1-19-adivina-quien-baja",
   "version": 1,
   "tipo": "karaoke",
-  "titulo": "Toca las notas que caen",
-  "descripcion": "Las figuras caen hasta la línea y ahí es cuando suenan. Se tocan al llegar. Sin puntuación durante el juego y sin poder perder.",
+  "titulo": "Adivina quién baja",
+  "descripcion": "Bajan círculos vacíos y el animal solo aparece si lo tocas a tiempo. La misma actividad que la de Infantil, con una vuelta más.",
   "etapa": "primaria-c1",
   "eje": "pulso",
   "lugar": "pantalla",
@@ -17,9 +17,10 @@
   "practica": {
     "secuencia": "ninguna",
     "compas": "4/4",
-    "tempo": 80,
+    "tempo": 76,
     "figuras": [
       "negra",
+      "blanca",
       "corchea"
     ]
   },
@@ -27,130 +28,122 @@
     "modo": "toque"
   },
   "contenido": {
-    "consigna": "actividad.c114.consigna",
+    "consigna": "actividad.c119.consigna",
     "orientacion": "vertical",
-    "representacion": "silaba",
-    "tempo": 80,
+    "representacion": "icono",
+    "revelar": true,
+    "avisoAlAcertar": "icono",
+    "tempo": 76,
     "notas": [
       {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 0.5,
-        "silaba": "ti"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 0.5,
-        "silaba": "ti"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 0.5,
-        "silaba": "ti"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 0.5,
-        "silaba": "ti"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 0.5,
-        "silaba": "ti"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 0.5,
-        "silaba": "ti"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 0.5,
-        "silaba": "ti"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 0.5,
-        "silaba": "ti"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
+        "nota": "E4",
         "pulsos": 2,
-        "silaba": "taa"
+        "icono": "oso"
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1,
+        "icono": "conejo"
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1,
+        "icono": "conejo"
+      },
+      {
+        "nota": "A4",
+        "pulsos": 1,
+        "icono": "pajaro"
+      },
+      {
+        "nota": "A4",
+        "pulsos": 1,
+        "icono": "pajaro"
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1,
+        "icono": "gato"
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1,
+        "icono": "gato"
+      },
+      {
+        "nota": "A4",
+        "pulsos": 1,
+        "icono": "raton"
+      },
+      {
+        "nota": "D4",
+        "pulsos": 3,
+        "icono": "elefante"
+      },
+      {
+        "nota": "E4",
+        "pulsos": 2,
+        "icono": "oso"
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1,
+        "icono": "conejo"
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1,
+        "icono": "conejo"
+      },
+      {
+        "nota": "A4",
+        "pulsos": 1,
+        "icono": "pajaro"
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1,
+        "icono": "gato"
+      },
+      {
+        "nota": "A4",
+        "pulsos": 1,
+        "icono": "pajaro"
+      },
+      {
+        "nota": "E4",
+        "pulsos": 2,
+        "icono": "oso"
+      },
+      {
+        "nota": "D4",
+        "pulsos": 3,
+        "icono": "elefante"
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1,
+        "icono": "conejo"
+      },
+      {
+        "nota": "G4",
+        "pulsos": 0.5,
+        "icono": "raton"
+      },
+      {
+        "nota": "A4",
+        "pulsos": 0.5,
+        "icono": "pajaro"
+      },
+      {
+        "nota": "E4",
+        "pulsos": 2,
+        "icono": "oso"
+      },
+      {
+        "nota": "D4",
+        "pulsos": 4,
+        "icono": "elefante"
       }
     ]
   },
@@ -163,8 +156,11 @@
     ]
   },
   "locucion": {
-    "enunciado": "actividad.c114.enunciado"
+    "enunciado": "actividad.c119.enunciado"
   },
+  "pistas": [
+    "actividad.c119.pista1"
+  ],
   "creditos": [
     {
       "obra": "Marimba",
@@ -173,7 +169,7 @@
       "licencia": "CC0"
     },
     {
-      "obra": "Iconos",
+      "obra": "Iconos de animales",
       "autor": "OpenMoji · HfG Schwäbisch Gmünd",
       "fuente": "https://openmoji.org",
       "licencia": "CC BY-SA 4.0"

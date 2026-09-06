@@ -1230,6 +1230,81 @@ La pauta girada de la orientación vertical no es convencional —no existe en p
 mantiene lo que importa: una nota más aguda queda más lejos en el mismo sentido en el que se
 cuenta, y va a la derecha, como en un piano.
 
+### T2.19 — Lenguaje visual, filtros y musicograma con bandas `[x]`
+
+Cerrada el 2026-09-06. El autor preguntó si hacía falta una librería de componentes para que
+dejara de parecer amateur. **La respuesta fue que no**, y conviene dejar escrito por qué,
+porque es la clase de decisión que se vuelve a plantear cada seis meses.
+
+Lo que hace que algo parezca amateur casi nunca es la falta de librería: es la escala
+tipográfica, el ritmo del espaciado, la coherencia de radios y sombras y los estados de
+pulsación. **Una librería no arregla nada de eso, sustituye nuestro diseño por el suyo.** Y
+el suyo, en MUI, Chakra, Mantine o Ant, es un panel de administración para adultos con
+objetivos táctiles de 36–40 px, contra los **75 px de Infantil** que aquí son contrato y
+tienen tests. Habría que sobreescribirlo todo y quedarían dos sistemas de temas peleando.
+Radix o React Aria sí encajarían filosóficamente, pero ya usamos `<dialog>`, `<select>` y
+`<button>` nativos, que son más accesibles que casi cualquier reimplementación y pesan cero.
+
+Así que se hizo el trabajo de diseño, no la instalación:
+
+- **Escala de espaciado** de base 4. Había 10, 12, 14, 16, 18, 20, 22, 24, 26 y 28 px sueltos
+  por el fichero, casi indistinguibles entre sí. **Esa es la diferencia que se nota sin saber
+  nombrarla**: no es que un hueco esté mal, es que ninguno rima con los demás. Normalizados
+  **216 valores**.
+- **Escala tipográfica** de razón 1,25, y **jerarquía de titulares**, que no existía: los
+  encabezados usaban los tamaños y márgenes por defecto del navegador, que son de 1996 y se
+  notan. Con interlineado apretado, *tracking* ligeramente negativo —una tipografía de texto
+  se separa demasiado al agrandarla— y **margen superior mayor que el inferior**, porque un
+  titular pertenece a lo que va debajo y el espacio es lo que lo dice.
+- **Tres niveles de elevación**, cada uno con dos sombras superpuestas —una corta y dura,
+  otra larga y difusa—, porque una sola sombra difusa da ese gris sucio de plantilla. Y más
+  marcadas en modo oscuro, donde una sombra suave sencillamente no se ve.
+- **31 radios y 10 anillos de foco** unificados en tokens.
+
+**Filtros del catálogo sin etiqueta**, como pidió el autor: la opción «todos» se llama como la
+categoría, así que el propio control dice de qué es. **Pero el `aria-label` se mantiene**: sin
+él un lector de pantalla anuncia «cuadro combinado, 3.º y 4.º» sin decir de qué, y es la parte
+del patrón que casi todo el mundo se salta. Con buscador que filtra al escribir, sin retardo
+—son decenas de actividades— y **quitando los acentos por los dos lados**, porque quien
+escribe «ritmico» con prisa espera encontrar «rítmico».
+
+**La cuenta atrás suena, y suena en tempo.** Con `bpm` los números caen al pulso de la
+actividad, así que deja de ser un aviso y pasa a ser lo que un músico llama una entrada: no
+solo dice cuándo se empieza, **sino a qué velocidad**. Una cuenta a un tempo cualquiera
+seguida de una melodía a otro es peor que no contar. El «¡ya!» va acentuado, como el primer
+tiempo de un compás. El clic se extrajo a `audio/clic.ts` y lo comparten metrónomo y cuenta.
+
+**Musicograma, cuatro cosas más:**
+
+- **El margen de entrada pasa a ser la ventana entera.** Eran dos constantes distintas —2 s
+  de margen contra 3,2 de ventana— y eso hacía que **la primera nota naciera a un tercio del
+  recorrido y tuviera menos aviso que todas las demás**. El autor lo notó. Ahora es una sola
+  constante usada dos veces, que es lo que impide que alguien las vuelva a separar.
+- **Un botón por banda.** Cambia lo que se practica: con un botón basta acertar *cuándo*; con
+  uno por banda hay que acertar además *cuál*. Y es lo que abre la puerta a los acordes que
+  pidió el autor: dos notas simultáneas en bandas distintas se resuelven con dos dedos sin
+  que el motor necesite nada. En ordenador, teclas 1 a 4.
+- **El aviso al acertar sigue a la representación.** Enseñar «sol» en una actividad de
+  animales no aporta nada y mete un dato que sobra: ahora aparece el animal, o la sílaba, o
+  nada, según lo que se esté trabajando.
+- **Mecánica de revelar**: bajan círculos vacíos y el dibujo aparece **solo si aciertas**.
+  Sube la dificultad sin tocar el tempo ni el número de figuras.
+
+**`audio/instrumentos.ts`**, para que cambiar de timbre sea cambiar de muestras y nada más.
+**Hoy solo hay marimba**, y conviene no disimularlo: el banco tiene pandero, claves y
+campanilla, pero son percusión sin altura. Añadir un instrumento afinado es trabajo de
+muestras —VCSL y `tools/muestras-instrumento.py`—, no de programación. Y solo valen timbres
+percusivos: el `Sampler` estira con `playbackRate`, y un piano estirado delata a la primera.
+
+**Y las actividades que lo enseñan.** «Los animales que bajan» era corta y de espaciado
+constante; ahora son 17 figuras con forma A-B-A y cierre, y **la duración de cada animal dice
+qué animal es**: el elefante dura tres pulsos y suena en re4, el pájaro dura uno y suena en
+la4. Eso no se inventa aquí — la biblioteca ya enseña esa asociación en INF-03, INF-04 e
+INF-15, así que el niño reconoce lo que ya sabe mientras trabaja el pulso. **PENDIENTE DE
+REVISIÓN PEDAGÓGICA**: que convenga ser tan literal a los 3 años lo dice una maestra.
+
+Nuevas: **C1-19 «Adivina quién baja»** (círculos que se abren) y **C2-16 «Cuatro bandas»**.
+
 ### T3.5 — Revisar los tamaños contra la investigación de NN/g `⚠️`
 
 Abierta el 2026-09-06 con la investigación de
