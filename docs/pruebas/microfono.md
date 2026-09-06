@@ -17,7 +17,7 @@ resultado en la tabla.
 | PC del autor | Windows 11 | Chrome 152 | pestaña | **sí** | 48000 Hz | 52 ms | *no medible* | 2026-09-06 |
 | PC del autor | Windows 11 | Edge 152 | pestaña | **sí** | 48000 Hz | 52 ms | *no medible* | 2026-09-06 |
 | PC del autor | Windows 11 | Firefox 146 | pestaña | **sí** | 48000 Hz | **34 ms** | *no medible* | 2026-09-06 |
-| *(pendiente)* | Android | Chrome | pestaña (reenvío) | | | | | |
+| Android 10 (armv81) | Android 10 | Chrome 151 | pestaña (HTTPS real) | *sin probar* | 48000 Hz | **27 ms** | *no medible* | 2026-09-06 |
 | *(pendiente)* | Android | Chrome | **instalada** | | | | | |
 | *(sin dispositivo)* | iOS / iPadOS | Safari | pestaña | — | — | — | — | — |
 | *(sin dispositivo)* | iOS / iPadOS | Safari | **instalada** | — | — | — | — | — |
@@ -175,7 +175,34 @@ altavoz Bluetooth dará bastantes más.
 **5. Edge y Chrome son idénticos hasta el milisegundo**, como era de esperar del mismo
 motor. Para las pruebas que vengan, con probar uno de los dos basta.
 
+### Qué sale del informe de Android
+
+Tomado el 2026-09-06 sobre el despliegue real de Cloudflare, en pestaña de Chrome 151.
+
+**El dato que importa NO se recogió.** El informe dice `micrófono sin pedir todavía`: se
+copió antes de pulsar «Empezar a escuchar», así que no sabemos si el micrófono funciona en
+Android. Hay que repetirlo, y el procedimiento está arriba, en el paso 3.
+
+Lo que sí quedó medido, y es interesante:
+
+**Android tiene menos latencia que el PC de sobremesa: 27 ms frente a 52.** Es
+contraintuitivo —uno espera que un móvil sea peor— pero encaja: el audio de Android va por
+una ruta más corta que la pila de sonido de Windows. Importa para la evaluación rítmica,
+porque la ventana de «perfecto» de 9-12 años es de ±70 ms: en el móvil la latencia se come
+el 39 % del margen, y en el PC el 74 %. **La misma actividad es más justa en tablet que en
+ordenador**, que es al revés de lo que se habría supuesto.
+
+`baseLatency` sale a 4 ms (Chromium sí lo implementa), `AudioWorklet` está soportado, la
+frecuencia de muestreo es 48 kHz igual que en escritorio, y el contexto es seguro gracias
+al HTTPS de Cloudflare.
+
 ### Lo que queda por probar
 
-Android (pestaña por reenvío de puertos, e instalada tras el despliegue de T1.10), y iOS
-si algún día hay dispositivo. El escritorio está cerrado.
+- **Android, pestaña**: repetir pulsando «Empezar a escuchar» y cantando, para saber si el
+  micrófono concede permiso y detecta tono.
+- **Android, PWA instalada**: no era posible hasta hoy, porque el manifiesto declaraba dos
+  iconos que no existían y Chrome no ofrecía «Instalar aplicación» (ver T1.9c). Ya están;
+  hace falta volver a desplegar y entonces sí se puede instalar y repetir.
+- **iOS**: si algún día hay dispositivo.
+
+El escritorio está cerrado.
