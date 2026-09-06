@@ -241,11 +241,38 @@ momento en que aparece el feedback.
 **Pistas progresivas**: cada fallo en el mismo estímulo trae la siguiente pista del JSON, y
 a partir de ahí se repite la última. Nunca se queda sin pista y nunca dice «has fallado».
 
-### T1.2 — Motor: tipos `emparejar` y `ordenar`
+### T1.2 — Motor: tipos `emparejar` y `ordenar` `[x]`
 
-- [ ] Interacción de **toque sucesivo**, nunca arrastre (WCAG 2.5.7 y motricidad fina)
-- [ ] Autocorrección por el oído: al tocar dos elementos, suenan los dos
-- [ ] Reordenar es tocar en secuencia, no arrastrar
+Cerrada el 2026-09-06.
+
+- [x] Interacción de **toque sucesivo**, nunca arrastre (WCAG 2.5.7 y motricidad fina)
+- [x] Autocorrección por el oído: al tocar dos elementos, suenan los dos
+- [x] Reordenar es tocar en secuencia, no arrastrar
+
+Reglas en `maquinaEmparejar.ts` y `maquinaOrdenar.ts`, puras y con 15 tests. Y dos
+actividades reales del catálogo para ejercitarlos: **C1-08 «Memory de instrumentos»** y
+**INF-15 «De grave a agudo»**.
+
+**Una decisión de diseño que salió de escribir el test.** En `ordenar`, al fallar se
+conserva el **prefijo correcto**, no los aciertos sueltos. Conservar los sueltos les cambia
+el índice —si acertó el segundo y falló el primero, el segundo pasa a ser el primero— y
+convierte un acierto en un error sin que el niño toque nada. Una secuencia se construye de
+izquierda a derecha: lo que está bien desde el principio se queda, y a partir del primer
+fallo se devuelve todo.
+
+**Colocar mal no se impide.** El elemento se coloca igual y comprobar es un paso aparte.
+Rechazar el toque convertiría la actividad en un cerrojo que hay que adivinar.
+
+**Discrepancia con el catálogo, pendiente de revisión pedagógica.** `content/catalogo.json`
+describe INF-15 como «cinco campanas», pero el máximo de objetos simultáneos en Infantil es
+**cuatro** (`docs/04-DISENO-UI.md`). Se ha implementado con **tres**. Hay que decidir si se
+corrige el catálogo o si el límite admite excepción cuando los objetos son idénticos salvo
+en el sonido — que es discutible, porque lo que satura no es la variedad sino el número.
+
+**El validador tenía un agujero y se ha tapado**: solo contaba objetos en `contenido.opciones`,
+así que `emparejar` y `ordenar` pasaban sin que se contara nada. Ahora cuenta según el tipo,
+comprueba que las parejas apunten a elementos que existen, que `orden` y `elementos` tengan
+las mismas claves, y rechaza `entrada.modo: arrastre` en cualquier actividad.
 
 ### T1.3 — Motor: tipo `guia-aula`
 

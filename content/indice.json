@@ -1,6 +1,6 @@
 {
-  "generado": "2026-09-05",
-  "total": 3,
+  "generado": "2026-09-06",
+  "total": 5,
   "actividades": [
     {
       "id": "c1-02-palmea-el-ritmo",
@@ -16,6 +16,23 @@
         "competencia": "CE3",
         "criterio": "3.1",
         "saber": "D. Práctica instrumental, vocal y corporal"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "c1-08-memory-de-instrumentos",
+      "titulo": "Memory de instrumentos",
+      "etapa": "primaria-c1",
+      "eje": "timbre",
+      "tipo": "emparejar",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": "D. Escucha y percepción: cualidades del sonido y familias instrumentales"
       },
       "estado": "borrador"
     },
@@ -50,6 +67,23 @@
         "competencia": "CE3",
         "criterio": "3.5",
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador"
+    },
+    {
+      "id": "inf-15-de-grave-a-agudo",
+      "titulo": "De grave a agudo",
+      "etapa": "infantil",
+      "eje": "altura",
+      "tipo": "ordenar",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 4,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE2",
+        "criterio": "2.1",
+        "saber": "F. Lenguaje y expresión musical — el sonido y sus cualidades"
       },
       "estado": "borrador"
     }

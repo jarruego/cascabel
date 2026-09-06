@@ -1,0 +1,100 @@
+{
+  "id": "c1-08-memory-de-instrumentos",
+  "version": 1,
+  "tipo": "emparejar",
+  "titulo": "Memory de instrumentos",
+  "descripcion": "Emparejar el dibujo de un instrumento con su sonido. Al tocar los dos, suenan seguidos: la corrección la hace el oído.",
+  "etapa": "primaria-c1",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 5,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.1",
+    "saber": "D. Escucha y percepción: cualidades del sonido y familias instrumentales"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "metodo": [
+      "willems"
+    ]
+  },
+  "entrada": {
+    "modo": "toque-secuencial",
+    "alternativa": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.inf05.consigna",
+    "izquierda": [
+      {
+        "clave": "tambor",
+        "icono": "tambor",
+        "etiqueta": "opcion.tambor"
+      },
+      {
+        "clave": "triangulo",
+        "icono": "triangulo",
+        "etiqueta": "opcion.triangulo"
+      },
+      {
+        "clave": "voz",
+        "icono": "voz",
+        "etiqueta": "opcion.voz"
+      }
+    ],
+    "derecha": [
+      {
+        "clave": "son-triangulo",
+        "icono": "altavoz",
+        "audio": "muestras/triangulo-largo.opus"
+      },
+      {
+        "clave": "son-voz",
+        "icono": "altavoz",
+        "audio": "muestras/voz-la.opus"
+      },
+      {
+        "clave": "son-tambor",
+        "icono": "altavoz",
+        "audio": "muestras/pandero-golpe.opus"
+      }
+    ],
+    "parejas": [
+      {
+        "izquierda": "tambor",
+        "derecha": "son-tambor"
+      },
+      {
+        "izquierda": "triangulo",
+        "derecha": "son-triangulo"
+      },
+      {
+        "izquierda": "voz",
+        "derecha": "son-voz"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.inf05.enunciado",
+    "audio": "es/c1-08-memory-de-instrumentos.opus"
+  },
+  "pistas": [
+    "actividad.inf05.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Pandero, triángulo y voz",
+      "autor": "Proyecto cocomusic",
+      "fuente": "Sintetizadas con tools/muestras-provisionales.py",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

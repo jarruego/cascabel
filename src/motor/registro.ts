@@ -1,6 +1,8 @@
 import type { ComponentType } from 'react';
 import type { PropsActividad, TipoActividad } from './tipos';
 import Eleccion from './tipos/Eleccion';
+import Emparejar from './tipos/Emparejar';
+import Ordenar from './tipos/Ordenar';
 
 /**
  * Mapa tipo de actividad -> componente.
@@ -11,8 +13,10 @@ import Eleccion from './tipos/Eleccion';
  */
 export const REGISTRO: Partial<Record<TipoActividad, ComponentType<PropsActividad>>> = {
   eleccion: Eleccion,
+  emparejar: Emparejar,
+  ordenar: Ordenar,
   // Pendientes, en este orden (ver docs/07-ROADMAP.md):
-  // emparejar, ordenar, 'guia-aula'   -> fase 1
+  // 'guia-aula'                       -> fase 1
   // rejilla, pentagrama, seguir, 'tocar-a-tiempo' -> fase 2
   // cantar, lienzo -> fase 2/3
 };
