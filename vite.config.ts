@@ -165,6 +165,7 @@ export default defineConfig({
           'audio/muestras/glockenspiel/**',
           'audio/muestras/trompeta/**',
           'audio/muestras/marimba-gm/**',
+          'audio/muestras/percusion/**',
           'audio/muestras/sitar/**',
           'audio/muestras/koto/**',
           'audio/muestras/kalimba/**',

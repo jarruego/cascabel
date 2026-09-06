@@ -26,7 +26,9 @@ export type TipoActividad =
   /** Construir una escala en el teclado viendo cómo se escribe. Ver Escala.tsx. */
   | 'escala'
   /** Grabar sonidos del entorno. La ÚNICA que guarda audio. Ver Paisaje.tsx. */
-  | 'paisaje';
+  | 'paisaje'
+  /** Componer con varias voces a la vez. Ver Pistas.tsx. */
+  | 'pistas';
 
 export type Eje = 'pulso' | 'altura' | 'timbre' | 'notacion' | 'cuerpo' | 'creacion' | 'cultura';
 
