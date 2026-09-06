@@ -8,12 +8,58 @@
  *
  * Corre en el hilo de audio en bloques de 128 muestras.
  *
- * COSTE MEDIDO (2026-09-06, T0.4): 1,33 ms por análisis en un PC de sobremesa, sobre un
- * presupuesto de 10,67 ms. Son el 12,5 % de un núcleo, no el 1-4 % que decía antes este
- * comentario. En una tablet de aula, tres o cuatro veces más lenta, serían del orden del
- * 40-50 %, y eso NO cabe en un hilo de audio que además tiene que reproducir sonido.
- * Antes de construir T2.5 hay que bajarlo: ver T2.0 en docs/07-ROADMAP.md.
+ * COSTE MEDIDO (2026-09-06): 0,19 ms por análisis en un PC de sobremesa, sobre un
+ * presupuesto de 10,67 ms. Es el 1,78 % de un núcleo. Antes de diezmar eran 1,33 ms y el
+ * 12,5 %: ver T0.4 y T2.0 en docs/07-ROADMAP.md. Si vuelves a tocar la ventana o el factor
+ * de diezmado, vuelve a medirlo con /diagnostico en vez de estimarlo.
  */
+/**
+ * Se analiza a un cuarto de la frecuencia de muestreo. Ver src/escucha/nsdf.ts, que
+ * mantiene la MISMA implementación y está cubierta por tests/nsdf.test.ts: si tocas una
+ * copia y no la otra, el test salta.
+ *
+ * Diezmar hace dos cosas, y la segunda importa más que la primera: baja el coste de
+ * 1,33 ms a 0,19 ms por análisis, y el filtro paso bajo quita el ruido agudo que hacía
+ * que el detector inventase notas. Con ruido blanco al 30 %, sin diezmar el error llegaba
+ * a 3367 cents declarando claridad 0,871 — por encima del umbral que la deja pasar.
+ */
+const FACTOR_DIEZMADO = 4;
+const TAPS = 25;
+
+function coeficientes(taps, corte) {
+  const h = new Float32Array(taps);
+  const medio = (taps - 1) / 2;
+  let suma = 0;
+  for (let i = 0; i < taps; i++) {
+    const k = i - medio;
+    const sinc = k === 0 ? 2 * corte : Math.sin(2 * Math.PI * corte * k) / (Math.PI * k);
+    const ventana = 0.5 - 0.5 * Math.cos((2 * Math.PI * i) / (taps - 1));
+    h[i] = sinc * ventana;
+    suma += h[i];
+  }
+  for (let i = 0; i < taps; i++) h[i] /= suma;
+  return h;
+}
+
+const FIR = coeficientes(TAPS, (0.5 / FACTOR_DIEZMADO) * 0.9);
+
+function decimar(x, factor) {
+  if (factor <= 1) return x;
+  const n = Math.floor(x.length / factor);
+  const y = new Float32Array(n);
+  const medio = (TAPS - 1) >> 1;
+  for (let j = 0; j < n; j++) {
+    const centro = j * factor;
+    let acc = 0;
+    for (let k = 0; k < TAPS; k++) {
+      const idx = centro + k - medio;
+      if (idx >= 0 && idx < x.length) acc += FIR[k] * x[idx];
+    }
+    y[j] = acc;
+  }
+  return y;
+}
+
 class TonoProcessor extends AudioWorkletProcessor {
   constructor(opciones) {
     super();
@@ -56,16 +102,19 @@ class TonoProcessor extends AudioWorkletProcessor {
   }
 
   analizarNucleo() {
-    const x = this.buffer;
-    const N = this.N;
+    const entrada = this.buffer;
 
+    // El gating va sobre la señal ORIGINAL: el filtro atenúa lo agudo y bajaría el RMS.
     let suma = 0;
-    for (let i = 0; i < N; i++) suma += x[i] * x[i];
-    const rms = Math.sqrt(suma / N);
-    if (rms < this.rmsMinimo) {
+    for (let i = 0; i < entrada.length; i++) suma += entrada[i] * entrada[i];
+    if (Math.sqrt(suma / entrada.length) < this.rmsMinimo) {
       this.port.postMessage({ hz: 0, claridad: 0, msAnalisis: this.msAnalisis });
       return;
     }
+
+    const x = decimar(entrada, FACTOR_DIEZMADO);
+    const tasa = sampleRate / FACTOR_DIEZMADO;
+    const N = x.length;
 
     // NSDF: función de diferencia cuadrática normalizada (McLeod).
     const maxTau = Math.floor(N / 2);
@@ -82,7 +131,7 @@ class TonoProcessor extends AudioWorkletProcessor {
 
     // Primer máximo por encima del umbral relativo: así se evita el error de octava.
     let tau = 2;
-    while (tau < maxTau && nsdf[tau] > 0) tau++;   // saltar el pico en tau=0
+    while (tau < maxTau && nsdf[tau] > 0) tau++; // saltar el pico en tau=0
     let mejorTau = -1;
     let mejorValor = 0;
     for (; tau < maxTau - 1; tau++) {
@@ -100,7 +149,8 @@ class TonoProcessor extends AudioWorkletProcessor {
       return;
     }
 
-    // Interpolación parabólica: sin ella el error es de varios cents a frecuencias agudas.
+    // Interpolación parabólica: imprescindible al diezmar, porque hay menos muestras
+    // por periodo y sin ella el error en agudos sería de decenas de cents.
     const y0 = nsdf[mejorTau - 1];
     const y1 = nsdf[mejorTau];
     const y2 = nsdf[mejorTau + 1];
@@ -108,7 +158,7 @@ class TonoProcessor extends AudioWorkletProcessor {
     const tauFinal = mejorTau + ajuste;
 
     this.port.postMessage({
-      hz: sampleRate / tauFinal,
+      hz: tasa / tauFinal,
       claridad: mejorValor,
       msAnalisis: this.msAnalisis,
     });
