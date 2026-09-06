@@ -72,6 +72,7 @@ export default function Actividad() {
 
       <ModalExito
         abierto={Boolean(resultado)}
+        resultado={resultado}
         alRepetir={() => {
           // Cambiar la clave remonta el componente desde cero: es más fiable que pedirle
           // a cada motor que sepa reiniciarse, y son seis motores distintos.

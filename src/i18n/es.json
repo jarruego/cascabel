@@ -308,5 +308,19 @@
   "ajustes.pizarra": "Modo pizarra digital",
   "ajustes.pizarraTexto": "Agranda todo para verse desde el fondo del aula. Actívalo cuando proyectes en la pizarra digital y déjalo apagado en tablets.",
   "ajustes.pizarraActivar": "Activar modo pizarra",
-  "ajustes.pizarraDesactivar": "Volver al tamaño normal"
+  "ajustes.pizarraDesactivar": "Volver al tamaño normal",
+  "catalogo.comprobar": "Comprobar un código",
+  "modal.codigo": "Enséñale este código a tu profe:",
+  "comprobar.titulo": "Comprobar un código",
+  "comprobar.texto": "El alumno termina una actividad y recibe un código. Tecléalo aquí para ver qué hizo. No hace falta que nadie tenga cuenta.",
+  "comprobar.etiqueta": "Código",
+  "comprobar.formato": "Ese código no tiene la forma correcta. Son siete letras y números.",
+  "comprobar.control": "Ese código no es válido. Comprueba si hay alguna letra cambiada.",
+  "comprobar.actividadDesconocida": "Actividad no encontrada en este dispositivo",
+  "comprobar.aciertos": "Aciertos:",
+  "comprobar.de": "de",
+  "comprobar.hoy": "Hecho hoy",
+  "comprobar.hace": "Hecho hace",
+  "comprobar.dias": "días",
+  "comprobar.privacidad": "El código no dice quién es el alumno: dice que alguien completó esa actividad, con esos aciertos, ese día. Quién te lo enseña lo sabes tú porque lo tienes delante. Por eso esto no trata ningún dato personal."
 }

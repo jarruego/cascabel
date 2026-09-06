@@ -16,6 +16,7 @@ const Ajustes = lazy(() => import('./Ajustes'));
 const Calibracion = lazy(() => import('./Calibracion'));
 const Privacidad = lazy(() => import('./Privacidad'));
 const Creditos = lazy(() => import('./Creditos'));
+const Comprobar = lazy(() => import('./Comprobar'));
 
 export function Rutas() {
   return (
@@ -28,6 +29,7 @@ export function Rutas() {
         <Route path="/calibracion" element={<Calibracion />} />
         <Route path="/privacidad" element={<Privacidad />} />
         <Route path="/creditos" element={<Creditos />} />
+        <Route path="/comprobar" element={<Comprobar />} />
         <Route path="/diagnostico" element={<Diagnostico />} />
       </Routes>
     </Suspense>

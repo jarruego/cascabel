@@ -1356,3 +1356,59 @@ body {
   --tinta-2: var(--tinta);
   --linea: var(--tinta-2);
 }
+
+/* ── código de verificación ────────────────────────────────────────────────
+   Se lee en voz alta y se copia a mano: espaciado ancho, monoespaciado y con
+   los caracteres agrupados de tres en tres. */
+.modal__codigo {
+  display: grid;
+  gap: 4px;
+  margin: 4px 0;
+}
+.modal__codigo strong {
+  font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  font-size: clamp(24px, 6vw, 38px);
+  letter-spacing: 0.12em;
+  color: var(--tinta);
+}
+.modal__codigoEtiqueta {
+  color: var(--tinta-2);
+  font-size: 0.9em;
+}
+.comprobar__campo {
+  display: grid;
+  gap: 8px;
+  margin: 20px 0;
+  max-width: 340px;
+}
+.comprobar__campo input {
+  min-height: 60px;
+  padding: 8px 14px;
+  border: 3px solid var(--linea);
+  border-radius: 12px;
+  background: var(--superficie);
+  color: var(--tinta);
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 1.6em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.comprobar__resultado {
+  display: grid;
+  justify-items: start;
+  gap: 6px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  border-left: 6px solid var(--linea);
+  background: var(--superficie);
+  color: var(--tinta);
+}
+.comprobar__resultado[data-estado='bien'] {
+  border-left-color: var(--vivo-verde);
+  background: var(--suave-verde);
+  color: var(--tinta);
+}
+.comprobar__resultado[data-estado='mal'] {
+  border-left-color: var(--acento);
+}
+.comprobar__cuando { color: var(--tinta-2); font-size: 0.9em; }
