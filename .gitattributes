@@ -1,0 +1,19 @@
+# Saltos de línea Unix en todas partes, también en el árbol de trabajo de Windows.
+#
+# No es cosmética. `core.autocrlf` está en true en esta máquina, así que un fichero recién
+# sacado del índice llegaba con CRLF y uno recién escrito por una herramienta del proyecto
+# llegaba con LF. Los dos parecen iguales al abrirlos, y no lo son: el 2026-09-07,
+# `tests/documentacion.test.ts` pasaba o fallaba según quién hubiera tocado el fichero por
+# última vez, porque el `$` de una expresión regular se queda delante del retorno de carro.
+#
+# Un test que da un resultado distinto según cómo te llegó el fichero es peor que un test
+# roto, porque el que falla en tu máquina y pasa en la de al lado no se arregla: se discute.
+* text=auto eol=lf
+
+# Binarios: que git no los toque nunca.
+*.opus binary
+*.woff2 binary
+*.png binary
+*.jpg binary
+*.ico binary
+*.pdf binary
