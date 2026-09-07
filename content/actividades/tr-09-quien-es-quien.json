@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "referencia",
   "titulo": "Épocas, compositores y estilos",
-  "descripcion": "Una consulta de cultura musical: seis épocas, once compositores y siete estilos. Sin audio, y por una razón: no se puede usar la grabación de nadie, y transcribir una obra a mano exige verificarla.",
+  "descripcion": "Consulta de cultura musical: seis épocas, once compositores y siete estilos, con buscador. Sin audio.",
   "etapa": "primaria-c3",
   "eje": "cultura",
   "lugar": "pantalla",

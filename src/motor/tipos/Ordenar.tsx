@@ -187,7 +187,7 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
         ))}
       </ol>
 
-      <div className="ordenar__banco" role="group" aria-label={t('ordenar.pordolocar')}>
+      <div className="ordenar__banco" role="group" aria-label={t('ordenar.porColocar')}>
         {sinColocar.map((clave) => (
           <span key={clave}>{ficha(clave, null)}</span>
         ))}

@@ -241,6 +241,7 @@ Emparejar la imagen del instrumento con su sonido. Por familias, con vídeo real
 
 **C1-09 · Percusión corporal a cuatro planos** — cuerpo · híbrida · guía de aula · M
 Pies, rodillas, palmas y chasquidos notados como un trigrama de colores que avanza. Base Orff, con secuencias de dificultad creciente al modo BAPNE. *CE3 · crit. 3.1 · saber D.*
+> **Corregido el 2026-09-07.** Se comprobó que BAPNE® es marca registrada con titularidad expresa sobre su notación, su terminología y sus secuencias, así que nada de eso se copia ni se sugiere relación con el método: los cuatro sonidos son de Orff y la notación es propia. Ver `08-LEGAL.md`. Y la actividad quedó como guía de aula; el patrón dibujado en pantalla es el tipo `cuerpo`.
 
 **C1-10 · Construye un cotidiáfono** — timbre · fuera de pantalla · guía de aula · S
 Ficha imprimible y vídeo: construir un instrumento con materiales del entorno y clasificarlo por cómo suena. Saber básico literal del primer ciclo. *CE4 · crit. 4.2 · saber D (construcción asistida).*

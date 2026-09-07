@@ -213,7 +213,7 @@
     },
     {
       "id": "INF-17",
-      "titulo": "Palmas y rodillas",
+      "titulo": "Palmas y muslos",
       "etapa": "infantil",
       "eje": "cuerpo",
       "lugar": "hibrida",
@@ -351,7 +351,7 @@
       "microfono": false,
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
-      "descripcion": "Pies, rodillas, palmas y chasquidos como trigrama de colores que avanza.",
+      "descripcion": "Pies, muslos, palmas y pitos, en cuatro pasos con el pulso proyectado. La versión con el patrón dibujado en pantalla es «Manos y pies» (c1-20).",
       "estado": "hecha"
     },
     {
@@ -988,7 +988,7 @@
       "microfono": false,
       "esfuerzo": "M",
       "curriculo": "CE1 · crit. 1.2 · saber A",
-      "descripcion": "Consulta de cultura musical: seis épocas, once compositores y siete estilos.",
+      "descripcion": "Consulta de cultura musical: seis épocas, once compositores y siete estilos, con buscador.",
       "estado": "hecha"
     }
   ]

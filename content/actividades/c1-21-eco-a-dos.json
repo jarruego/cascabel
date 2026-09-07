@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "eco",
   "titulo": "Eco a dos",
-  "descripcion": "Uno propone un ritmo y el otro lo repite. La aplicación compara las dos ejecuciones entre sí, y el resultado es de la pareja: nunca dice quién lo ha hecho mejor.",
+  "descripcion": "Uno propone un ritmo y el otro lo repite. Compara las dos ejecuciones entre sí, y el resultado es de la pareja: nunca dice quién lo ha hecho mejor.",
   "etapa": "primaria-c1",
   "eje": "pulso",
   "lugar": "pantalla",
