@@ -96,3 +96,31 @@ describe('los ficheros de dibujo', () => {
     expect(rutaDe(personaje, 'neutro')).toBe(`/personajes/${alguno}`);
   });
 });
+
+describe('quién presenta cada actividad', () => {
+  const DIR_ACT = join(__dirname, '..', 'content', 'actividades');
+  const actividades = readdirSync(DIR_ACT)
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => JSON.parse(readFileSync(join(DIR_ACT, f), 'utf-8')) as {
+      id: string;
+      personaje?: string;
+    });
+
+  it('el personaje declarado es uno de los ocho', () => {
+    const raros = actividades
+      .filter((a) => a.personaje && !PERSONAJES.includes(a.personaje as never))
+      .map((a) => `${a.id} → ${a.personaje}`);
+    expect(raros).toEqual([]);
+  });
+
+  it('solo se asigna un personaje que esté dibujado', () => {
+    // Declararlo antes de tener el dibujo no rompe nada —el componente cae a `neutro` y
+    // luego a nada— pero deja la pantalla sin personaje sin que nadie se entere. Mejor
+    // esperar a que exista.
+    const dibujados = new Set(ficheros.map((f) => f.split('-')[0]));
+    const sinDibujo = actividades
+      .filter((a) => a.personaje && !dibujados.has(a.personaje))
+      .map((a) => `${a.id} → ${a.personaje}`);
+    expect(sinDibujo).toEqual([]);
+  });
+});

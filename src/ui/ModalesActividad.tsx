@@ -37,10 +37,11 @@ export function ModalExplicacion({
 
   return (
     <Modal abierto={abierto} alCerrar={cerrar} titulo={actividad.titulo}>
-      {/* Dora abre, igual que Doby cierra. Es la primera de la progresión de cocomusic —la
-          base, la seguridad— y esta pantalla es exactamente eso: el momento antes de
-          empezar. Ver `docs/14-PERSONAJES.md`. */}
-      <Personaje nombre="dora" pose="saluda" tamano={110} />
+      {/* Quién presenta la actividad lo dice su JSON, y por defecto es Dora: la primera de
+          la progresión de cocomusic —la base, la seguridad— para una pantalla que es
+          exactamente eso, el momento antes de empezar. Una actividad de descubrir sonidos
+          pone a Rex; una de silencio pondrá a Fara. Ver `docs/14-PERSONAJES.md`. */}
+      <Personaje nombre={actividad.personaje ?? 'dora'} pose="saluda" tamano={110} />
       <h2>{actividad.titulo}</h2>
 
       {actividad.enunciado && <p className="modal__texto">{t(actividad.enunciado)}</p>}

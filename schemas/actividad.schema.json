@@ -358,6 +358,20 @@
       "type": "string",
       "description": "Clave de i18n con la frase que se le dice al nino, nunca texto literal. La lee un adulto en voz alta y sale en la ficha del maestro. Se llamaba 'locucion' y llevaba un campo 'audio' para una grabacion; el 2026-09-08 se decidio que no va a haber grabaciones, y un nombre que promete audio para algo que es texto es la clase de mentira que se queda para siempre. Ver docs/adr/0006."
     },
+    "personaje": {
+      "type": "string",
+      "enum": [
+        "dora",
+        "rex",
+        "milo",
+        "fara",
+        "sol",
+        "laia",
+        "simon",
+        "doby"
+      ],
+      "description": "Que personaje de cocomusic presenta la actividad. Por defecto Dora, que es la primera de la progresion. Se elige por lo que la actividad TRABAJA, no por gusto: Rex descubre, Fara calla, Milo juega con el ritmo, Simon escucha. Ver docs/14-PERSONAJES.md."
+    },
     "pistas": {
       "type": "array",
       "maxItems": 3,

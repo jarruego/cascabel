@@ -267,7 +267,23 @@ Ya está, desde que llegaron los primeros dibujos:
   que es lo que se le pide— pero la pose no aparece nunca y nadie se entera. Pasó con
   `doby-palmeea.svg` el primer día.
 
-**Dónde salen ya:** **Dora abre** cada actividad —es la primera de la progresión, la base y
-la seguridad, y esa pantalla es el momento antes de empezar— y **Doby cierra** al terminarla,
-que es su papel: integrar lo que han hecho los otros siete. Los dos extremos del recorrido,
-en los dos extremos de la actividad.
+### Quién presenta cada actividad lo dice el JSON
+
+**Doby cierra** siempre: al terminar cualquier actividad, que es su papel —integrar lo que
+han hecho los otros siete—. Eso no se configura.
+
+**Quién abre sí**, con el campo `personaje` de la actividad. Por defecto **Dora**, la primera
+de la progresión, la base y la seguridad, para una pantalla que es exactamente eso: el
+momento antes de empezar. Y se cambia por lo que la actividad **trabaja**, no por gusto:
+
+```json
+"personaje": "rex"
+```
+
+Hoy lo usan las cinco de descubrir e identificar sonidos, que es lo de Rex —«escuchar para
+descubrir»—: `inf-05`, `inf-10`, `inf-13`, `c1-08` y `c2-11`.
+
+Está así a propósito: **es un dato, no un `if`**. El día que exista Fara, ponerla en las
+actividades de silencio será una línea de contenido. `tests/personajes.test.ts` comprueba
+además que no se asigne un personaje **que aún no esté dibujado** — no rompería nada, pero
+dejaría la pantalla sin personaje y sin que nadie se entere.

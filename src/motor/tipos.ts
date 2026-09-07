@@ -1,4 +1,5 @@
 import type { Etapa } from '@/config';
+import type { Personaje } from '@/ui/personajes';
 
 /**
  * Tipos derivados de schemas/actividad.schema.json.
@@ -106,6 +107,14 @@ export interface Actividad {
    * audio para algo que es texto se queda mintiendo para siempre.
    */
   enunciado?: string;
+  /**
+   * Qué personaje de cocomusic presenta la actividad.
+   *
+   * Se elige por lo que la actividad **trabaja**, no por gusto: Rex descubre, Fara calla,
+   * Milo juega con el ritmo, Simón escucha. Por defecto Dora, que es la primera de la
+   * progresión. Ver `docs/14-PERSONAJES.md`.
+   */
+  personaje?: Personaje;
   pistas?: string[];
   creditos?: Array<{ obra: string; autor?: string; fuente?: string; licencia: string }>;
   /**
