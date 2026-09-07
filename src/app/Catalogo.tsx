@@ -219,9 +219,11 @@ export default function Catalogo() {
         combinado, 3.º y 4.º» sin decir de qué es: se ve bien y deja de ser usable para quien
         no ve. Es la parte del patrón que casi todo el mundo se salta.
       */}
-      {/* Centinela invisible: cuando este píxel sale de la pantalla, la barra de filtros
-          está pegada arriba y se le pone la sombra. */}
-      <div aria-hidden="true" />
+      {/* Centinela: cuando este píxel sale por arriba, la barra de filtros está pegada y
+          se le pone la sombra. Mide un píxel de alto a propósito — un elemento de área
+          cero le da a IntersectionObserver una proporción de cero SIEMPRE, esté visible o
+          no, y el observador no llegaría a dispararse nunca. */}
+      <div className="centinela" aria-hidden="true" />
       <div className="filtros" ref={filtros}>
         <input
           type="search"

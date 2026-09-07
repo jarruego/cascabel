@@ -3567,6 +3567,9 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
  * `z-index` por debajo de la barra de navegación (20) y de los modales: se pega a la
  * lista, no a la aplicación entera.
  * ------------------------------------------------------------------------ */
+/* Un píxel de alto, no cero: ver el comentario de Catalogo.tsx. */
+.centinela { height: 1px; }
+
 .filtros {
   position: sticky;
   top: 0;
