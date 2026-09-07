@@ -551,9 +551,17 @@ p {
   gap: var(--e-2);
   align-items: center;
 }
-/* Los tres desplegables se reparten el ancho por igual: con anchos distintos parecen tres
-   cosas distintas, y son tres filtros del mismo rango. */
-.filtros__linea:not(.filtros__linea--buscar) select { flex: 1 1 10rem; min-width: 0; }
+/* Los tres desplegables van SIEMPRE en la misma línea y a partes iguales. Con `flex-wrap`
+   se partían solos en cuanto la pantalla se estrechaba, y entonces «curso» quedaba arriba y
+   «criterio» abajo: son tres filtros del mismo rango y se leen como una unidad. Rejilla de
+   tres columnas y `min-width: 0`, que es lo que deja que un `select` encoja de verdad —sin
+   eso se planta en el ancho de su opción más larga y desborda—. */
+.filtros__linea:not(.filtros__linea--buscar) {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  flex-wrap: nowrap;
+}
+.filtros__linea:not(.filtros__linea--buscar) select { min-width: 0; width: 100%; }
 .filtros select,
 .filtros__buscar {
   min-height: 44px;

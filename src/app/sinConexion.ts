@@ -202,7 +202,9 @@ export function prefetchPersonajes(): void {
   const red = (navigator as { connection?: { saveData?: boolean; effectiveType?: string } })
     .connection;
   if (!red || red.saveData) return;
-  if (red.effectiveType && !['4g', '5g'].includes(red.effectiveType)) return;
+  // Se descartan las lentas en vez de permitir las rápidas: la especificación solo define
+  // hasta `4g`, y una lista de permitidas dejaría fuera cualquier valor que añadan después.
+  if (['slow-2g', '2g', '3g'].includes(red.effectiveType ?? '')) return;
 
   const pendientes = rutasDePersonajes();
   const bajar = () => {
