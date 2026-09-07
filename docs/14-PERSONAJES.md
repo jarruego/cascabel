@@ -101,8 +101,8 @@ Esto es lo que hace que ocho dibujos parezcan una pandilla y no ocho dibujos.
 | | |
 |---|---|
 | **Formato** | SVG, sin mapas de bits incrustados |
-| **Encuadre** | Exporta **recortado al dibujo**, como salga. De cuadrarlo se encarga `npm run personajes` |
-| **Peso** | Lo que salga: los de Doby van a 16–22 KB y los de Dora a 33–44, porque Dora tiene más del doble de trazos. No es un defecto, es el dibujo. Ver el presupuesto de abajo |
+| **Encuadre** | Exporta **recortado al dibujo**, como salga. De igualar la altura se encarga `npm run personajes` |
+| **Peso** | Cuanto menos, mejor. Van de 5 KB (Milo) a 44 (Dora), y la diferencia es el número de trazos del dibujo, no el formato. **Milo es la referencia**: con ese peso, los ochenta caben en medio megabyte |
 | **Trazo** | El mismo grosor en los ocho. Un personaje con línea más fina parece de otra serie |
 | **Texto** | **Ninguno.** Ni el nombre, ni la nota, ni letras. Va aparte y así se traduce |
 | **Fuentes** | Ninguna: si hay letras, van convertidas a trazado |
@@ -119,14 +119,23 @@ tecla de piano de 48 px tienen que dejar reconocer a Milo sin depender del amari
 npm run personajes
 ```
 
-Cuadra todas las poses en el mismo lienzo y limpia la cabecera del exportador. **Es
-obligatorio**, y por una razón que se ve en cuanto no se hace: cada pose sale recortada a su
-dibujo, así que una mide 155 × 225 y otra 207 × 220. Puestas en la misma caja, el personaje
-cambia de tamaño al cambiar de gesto.
+Iguala la altura de todas las poses y limpia la cabecera del exportador. **Es obligatorio**,
+y por una razón que se ve en cuanto no se hace: cada pose sale recortada a su dibujo, así que
+una mide 155 × 225 y otra 207 × 220. Puestas en la misma caja, el personaje cambia de tamaño
+al cambiar de gesto.
 
-El script las apoya **abajo**, no las centra: lo que tiene que coincidir entre una pose y
-otra son los pies. Centrándolas, un personaje con los brazos en alto bajaría los pies para
-compensar y parecería que da saltos. `tests/personajes.test.ts` comprueba que se ha pasado.
+Dos detalles que costaron entenderse:
+
+- **Las apoya abajo, no las centra.** Lo que tiene que coincidir entre una pose y otra son
+  los pies. Centrándolas, un personaje con los brazos en alto bajaría los pies para compensar
+  y parecería que da saltos.
+- **Iguala la altura, no la caja.** El primer intento las metía a todas en un cuadrado, y
+  `milo-canta.svg` lo rompió: mide 354 de ancho porque canta con los brazos abiertos, y en un
+  cuadrado de 250 se le habrían ido cincuenta unidades por cada lado. Lo que tiene que
+  coincidir es el **personaje**, no la caja: un gesto abierto ocupa más, y eso es el gesto.
+
+`tests/personajes.test.ts` comprueba las dos cosas, incluida la de que ninguna pose se haya
+quedado recortada.
 
 ### Qué se baja y cuándo
 
@@ -280,8 +289,13 @@ momento antes de empezar. Y se cambia por lo que la actividad **trabaja**, no po
 "personaje": "rex"
 ```
 
-Hoy lo usan las cinco de descubrir e identificar sonidos, que es lo de Rex —«escuchar para
-descubrir»—: `inf-05`, `inf-10`, `inf-13`, `c1-08` y `c2-11`.
+Hoy:
+
+| Personaje | Se lleva | Porque |
+|---|---|---|
+| **Rex** | `inf-05`, `inf-10`, `inf-13`, `c1-08`, `c2-11` | Descubrir e identificar sonidos: «escuchar para descubrir» |
+| **Milo** | `inf-09`, `inf-17`, `c1-01`, `c1-02`, `c1-20`, `c1-21`, `c3-13` | Ritmo, eco de palmas y percusión corporal: «la música también sirve para jugar» |
+| **Dora** | Todas las demás | Es el valor por defecto |
 
 Está así a propósito: **es un dato, no un `if`**. El día que exista Fara, ponerla en las
 actividades de silencio será una línea de contenido. `tests/personajes.test.ts` comprueba

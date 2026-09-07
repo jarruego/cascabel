@@ -3629,12 +3629,12 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 .personaje {
   display: block;
   margin-inline: auto;
-  /* El dibujo ya trae su aire; `contain` evita que se recorte si alguien le da una caja
-     que no sea cuadrada. */
-  object-fit: contain;
+  /* El alto lo fija quien lo coloca y el ancho lo pone el dibujo: un gesto abierto ocupa
+     más que uno cerrado, y encogerlo para cuadrarlo haría que el personaje cambiara de
+     tamaño al cambiar de pose. */
+  width: auto;
   max-width: 100%;
-  height: auto;
-  aspect-ratio: 1;
+  object-fit: contain;
 }
 
 /* En una pizarra el personaje se mira desde el fondo del aula. */

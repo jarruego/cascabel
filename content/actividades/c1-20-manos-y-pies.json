@@ -82,6 +82,7 @@
     ]
   },
   "enunciado": "actividad.c120mano.enunciado",
+  "personaje": "milo",
   "pistas": [
     "actividad.c120.pista1",
     "actividad.c120.pista2"

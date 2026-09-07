@@ -66,18 +66,32 @@ describe('los ficheros de dibujo', () => {
     expect(sueltos).toEqual([]);
   });
 
-  it('las poses de un mismo personaje comparten lienzo', () => {
-    // Si no, el personaje cambia de tamaño y da un salto al cambiar de gesto. Lo unifica
-    // `npm run personajes`, y esto comprueba que se ha pasado.
-    const lienzos = new Set<string>();
+  it('todas las poses comparten ALTURA, que es lo que las hace del mismo tamaño', () => {
+    // El ancho no: cantar con los brazos abiertos ocupa más que estar de pie, y eso es el
+    // gesto. Lo que tiene que coincidir es el personaje, no la caja. Lo unifica
+    // `npm run personajes` y esto comprueba que se ha pasado.
+    const alturas = new Set<string>();
     for (const f of ficheros) {
-      if (f.endsWith('-main.svg')) continue;
       const svg = readFileSync(join(DIR, f), 'utf-8');
       const m = /viewBox="[-\d.]+ [-\d.]+ ([\d.]+) ([\d.]+)"/.exec(svg);
       expect(m, `${f}: sin viewBox normalizado; pasa \`npm run personajes\``).toBeTruthy();
-      lienzos.add(`${m![1]}x${m![2]}`);
+      alturas.add(m![2]!);
     }
-    expect([...lienzos]).toHaveLength(1);
+    expect([...alturas]).toHaveLength(1);
+  });
+
+  it('ninguna pose se ha quedado recortada al normalizar', () => {
+    // El lienzo empezó siendo cuadrado y `milo-canta` —354 de ancho, brazos abiertos— se
+    // habría perdido cincuenta unidades por cada lado sin que nadie lo notara mirando los
+    // otros nueve.
+    const recortadas: string[] = [];
+    for (const f of ficheros) {
+      const svg = readFileSync(join(DIR, f), 'utf-8');
+      const m = /viewBox="(-?[\d.]+) [-\d.]+ ([\d.]+) [\d.]+"/.exec(svg);
+      // Un desplazamiento positivo en X significa que la ventana empieza DENTRO del dibujo.
+      if (m && Number(m[1]) > 0) recortadas.push(f);
+    }
+    expect(recortadas).toEqual([]);
   });
 
   it('ningún dibujo lleva texto, que es lo que impediría traducirlo', () => {

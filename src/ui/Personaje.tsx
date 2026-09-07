@@ -13,9 +13,11 @@ import { rutaDe, type Personaje as Nombre, type Pose } from './personajes';
  * permite ir añadiendo poses de una en una sin romper ninguna pantalla, y lo que evita el
  * icono roto del navegador, que en una aplicación para niños es peor que no enseñar nada.
  *
- * Todas las poses comparten lienzo y apoyan en la misma línea —lo hace
- * `tools/personajes.mjs`—, así que dos poses del mismo personaje salen del mismo tamaño y
- * con los pies a la misma altura. Sin eso, el personaje da un salto al cambiar de gesto.
+ * **Se coloca por altura, no por ancho.** Todas las poses comparten altura y apoyan en la
+ * misma línea —lo hace `tools/personajes.mjs`—, y el ancho es el que pida el gesto: cantar
+ * con los brazos abiertos ocupa más que estar de pie, y eso es el gesto, no un defecto.
+ * Fijar el ancho obligaría a encoger esas poses, y entonces el personaje cambiaría de
+ * tamaño al cambiar de gesto, que es justo lo que se quiere evitar.
  */
 export function Personaje({
   nombre,
@@ -25,7 +27,7 @@ export function Personaje({
 }: {
   nombre: Nombre;
   pose?: Pose;
-  /** Lado en píxeles. El dibujo es cuadrado. */
+  /** Altura en píxeles. El ancho lo pone el dibujo. */
   tamano?: number;
   /**
    * Texto alternativo. **Vacío por defecto**: el personaje casi siempre acompaña a un
@@ -45,7 +47,6 @@ export function Personaje({
   return (
     <img
       src={rutaDe(nombre, actual)}
-      width={tamano}
       height={tamano}
       alt={alt}
       aria-hidden={alt === '' ? true : undefined}

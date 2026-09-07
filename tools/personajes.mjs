@@ -12,11 +12,17 @@
  *    dibujo, así que una tiene 155 × 225 y otra 207 × 220. Puestas en una misma caja, cada
  *    pose sale de un tamaño y el personaje parece encoger y crecer al cambiar de gesto.
  *
- *    Se les da a todas **el mismo lienzo cuadrado**, con el dibujo centrado en horizontal y
+ *    Se les da a todas **la misma altura**, con el dibujo centrado en horizontal y
  *    **apoyado abajo**. Apoyado abajo y no centrado: lo que tiene que coincidir entre una
  *    pose y otra son los pies. Si se centrara, un personaje con los brazos en alto —que
  *    ocupa más arriba— bajaría los pies para compensar, y al alternar poses parecería que
  *    da saltos.
+ *
+ *    **La altura y no la caja entera.** El primer intento las metía a todas en un cuadrado,
+ *    y `milo-canta.svg` lo rompió: mide 354 de ancho porque canta con los brazos abiertos,
+ *    y en un cuadrado de 250 se le habrían ido cincuenta unidades por cada lado. Lo que
+ *    tiene que coincidir entre poses es el personaje, no la caja: un gesto abierto ocupa
+ *    más, y eso es el gesto.
  *
  * No reescribe ningún trazo: solo cambia el `viewBox`, que es la ventana por la que se mira.
  *
@@ -30,12 +36,18 @@ import { fileURLToPath } from 'node:url';
 const DIR = join(dirname(fileURLToPath(import.meta.url)), '..', 'public', 'personajes');
 
 /**
- * Lado del lienzo común, en unidades del dibujo.
+ * Altura del lienzo común, en unidades del dibujo.
  *
  * Un poco más que la pose más alta que hay, para que ninguna quede pegada al borde: el
  * personaje necesita aire, y en algunos sitios se recorta en redondo.
  */
-const LADO = 250;
+const ALTO = 250;
+
+/**
+ * Ancho mínimo. Una pose estrecha —Fara con el dedo en los labios, brazos pegados— saldría
+ * apretada contra los bordes en una caja de su propio ancho.
+ */
+const ANCHO_MINIMO = 250;
 
 /** Ficheros que no son una pose y se dejan como están. */
 const APARTE = new Set(['doby-main.svg']);
@@ -76,12 +88,14 @@ for (const fichero of readdirSync(DIR).sort()) {
     if (exportado) {
       const ancho = Number(exportado[1]);
       const alto = Number(exportado[2]);
-      // Centrado en horizontal, apoyado abajo: los pies de todas las poses caen en la misma
-      // línea, que es lo que hace que el personaje no dé saltos al cambiar de gesto.
-      const x = ((ancho - LADO) / 2).toFixed(1);
-      const y = (alto - LADO).toFixed(1);
-      svg = svg.replace(exportado[0], `viewBox="${x} ${y} ${LADO} ${LADO}"`);
-    } else if (!recuadrado || Number(recuadrado[1]) !== LADO) {
+      // El ancho, el que haga falta: nunca se recorta un gesto abierto. La altura, siempre
+      // la misma, y apoyado abajo, que es lo que pone los pies de todas las poses en la
+      // misma línea.
+      const caja = Math.max(ancho, ANCHO_MINIMO);
+      const x = ((ancho - caja) / 2).toFixed(1);
+      const y = (alto - ALTO).toFixed(1);
+      svg = svg.replace(exportado[0], `viewBox="${x} ${y} ${caja} ${ALTO}"`);
+    } else if (!recuadrado || Number(recuadrado[2]) !== ALTO) {
       console.log(`  ${fichero}: viewBox inesperado, se deja como está`);
     }
   }
