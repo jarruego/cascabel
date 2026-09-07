@@ -194,6 +194,29 @@ ocupan aproximadamente el sitio de turquesa, índigo y violeta, un paso más cá
 metodología. Si el color forma parte de la identidad del personaje de un modo que no se puede
 tocar, la 2 es perfectamente viable y solo pide tenerlo escrito.
 
+### Medido sobre los dibujos, el 2026-09-08
+
+Al llegar Sol se miraron los colores que usa **el dibujo**, no los que dice la tabla, y el
+desacuerdo resultó ser bastante menor de lo que parecía:
+
+| | Tono |
+|---|---|
+| Sol, dibujado | **171°** (verde azulado) |
+| Turquesa de la aplicación | 186° |
+| Azul de la aplicación | 212° |
+
+**Sol está dibujado en verde azulado, no en azul.** Queda a quince grados del turquesa del
+código Boomwhacker y a cuarenta del azul que decía la metodología: el dibujo ya está del lado
+de la aplicación. Con Sol, entonces, no hay nada que decidir.
+
+Los demás tampoco chocan: Fara sale en verde amarillento (86°) y Milo en amarillo (56°), más
+cálidos que los tokens de la aplicación pero en la misma familia y en el mismo orden. **Los
+personajes tienen su propia paleta y no tienen por qué usar los tokens**: lo que importa es
+que, cuando el personaje aparezca *encima* de su nota, los dos colores no se peleen.
+
+**Quedan Laia y Simón**, que son los dos casos de verdad: lila sobre una tecla índigo y rosa
+sobre una violeta. Cuando estén dibujados se mide igual y se decide con el número delante.
+
 ---
 
 ## 6. Prompts
@@ -296,6 +319,7 @@ Hoy:
 | **Rex** | `inf-05`, `inf-10`, `inf-13`, `c1-08`, `c2-11` | Descubrir e identificar sonidos: «escuchar para descubrir» |
 | **Milo** | `inf-09`, `inf-17`, `c1-01`, `c1-02`, `c1-20`, `c1-21`, `c3-13` | Ritmo, eco de palmas y percusión corporal: «la música también sirve para jugar» |
 | **Fara** | `inf-01`, `inf-14`, `c1-03`, `c2-13`, `c3-04` | Silencio y escucha pausada: «parar y escuchar también es hacer música» |
+| **Sol** | `inf-08`, `inf-12`, `c1-12`, `c1-15`, `c2-10`, `c3-06` | Pulso, movimiento y danza: «la música se siente y se expresa con el cuerpo» |
 | **Dora** | Todas las demás | Es el valor por defecto |
 
 ### Qué poses se usan de verdad hoy, y cuáles no
