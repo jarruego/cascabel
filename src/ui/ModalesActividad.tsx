@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Modal } from './Modal';
-import { Icono } from './Icono';
 import { Personaje } from './Personaje';
 import { t } from '@/i18n';
 import type { Actividad, ResultadoActividad } from '@/motor/tipos';
@@ -38,7 +37,10 @@ export function ModalExplicacion({
 
   return (
     <Modal abierto={abierto} alCerrar={cerrar} titulo={actividad.titulo}>
-      <Icono nombre="hola" tamano={72} />
+      {/* Dora abre, igual que Doby cierra. Es la primera de la progresión de cocomusic —la
+          base, la seguridad— y esta pantalla es exactamente eso: el momento antes de
+          empezar. Ver `docs/14-PERSONAJES.md`. */}
+      <Personaje nombre="dora" pose="saluda" tamano={110} />
       <h2>{actividad.titulo}</h2>
 
       {actividad.enunciado && <p className="modal__texto">{t(actividad.enunciado)}</p>}

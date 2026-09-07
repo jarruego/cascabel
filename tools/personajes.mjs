@@ -61,17 +61,28 @@ for (const fichero of readdirSync(DIR).sort()) {
     .trim();
 
   if (!APARTE.has(fichero)) {
-    const m = /viewBox="0 0 ([\d.]+) ([\d.]+)"/.exec(svg);
-    if (!m) {
-      console.log(`  ${fichero}: sin viewBox reconocible, se deja como está`);
-    } else {
-      const ancho = Number(m[1]);
-      const alto = Number(m[2]);
+    /*
+      Se mira primero si viene tal cual del exportador (`viewBox="0 0 ancho alto"`) y solo
+      entonces se recuadra. Pasar el script dos veces no puede encoger el dibujo un poco
+      más cada vez.
+
+      Con expresiones literales y no con `new RegExp`: en una cadena, `\d` se queda en una
+      `d` suelta y la clase pasa a ser «un guion, una letra d o un punto», que no casa con
+      ningún número. Costó un rato verlo.
+    */
+    const exportado = /viewBox="0 0 ([\d.]+) ([\d.]+)"/.exec(svg);
+    const recuadrado = /viewBox="[-\d.]+ [-\d.]+ ([\d.]+) ([\d.]+)"/.exec(svg);
+
+    if (exportado) {
+      const ancho = Number(exportado[1]);
+      const alto = Number(exportado[2]);
       // Centrado en horizontal, apoyado abajo: los pies de todas las poses caen en la misma
       // línea, que es lo que hace que el personaje no dé saltos al cambiar de gesto.
       const x = ((ancho - LADO) / 2).toFixed(1);
       const y = (alto - LADO).toFixed(1);
-      svg = svg.replace(m[0], `viewBox="${x} ${y} ${LADO} ${LADO}"`);
+      svg = svg.replace(exportado[0], `viewBox="${x} ${y} ${LADO} ${LADO}"`);
+    } else if (!recuadrado || Number(recuadrado[1]) !== LADO) {
+      console.log(`  ${fichero}: viewBox inesperado, se deja como está`);
     }
   }
 

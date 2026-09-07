@@ -102,7 +102,7 @@ Esto es lo que hace que ocho dibujos parezcan una pandilla y no ocho dibujos.
 |---|---|
 | **Formato** | SVG, sin mapas de bits incrustados |
 | **Encuadre** | Exporta **recortado al dibujo**, como salga. De cuadrarlo se encarga `npm run personajes` |
-| **Peso** | Alrededor de **20 KB** por fichero, y no más de 30. Los de Doby están ahí |
+| **Peso** | Lo que salga: los de Doby van a 16–22 KB y los de Dora a 33–44, porque Dora tiene más del doble de trazos. No es un defecto, es el dibujo. Ver el presupuesto de abajo |
 | **Trazo** | El mismo grosor en los ocho. Un personaje con línea más fina parece de otra serie |
 | **Texto** | **Ninguno.** Ni el nombre, ni la nota, ni letras. Va aparte y así se traduce |
 | **Fuentes** | Ninguna: si hay letras, van convertidas a trazado |
@@ -132,9 +132,20 @@ compensar y parecería que da saltos. `tests/personajes.test.ts` comprueba que s
 
 `neutro`, `celebra` y `anima` van en la primera descarga: salen en cualquier actividad. Las
 otras siete se bajan el día que se abre la actividad que las usa y se quedan cacheadas. Es
-lo mismo que se hace con los instrumentos, y por lo mismo: ochenta dibujos son más que toda
-la aplicación junta, y no se le cobra a un colegio entero la descarga de poses que ese niño
-no va a ver.
+lo mismo que se hace con los instrumentos, y por lo mismo.
+
+**El presupuesto, medido con Doby y Dora y proyectado a los ocho:**
+
+| | |
+|---|---|
+| Los ochenta dibujos | ~2,3 MB |
+| Lo que va al precache (3 poses × 8) | ~670 KB |
+| Primera descarga con los ocho dentro | ~2 MB, desde 1,35 MB |
+
+Sube la primera visita a la mitad y medio, y se acepta: un personaje sale en todas las
+pantallas, no es como un instrumento que la mayoría no abre. Si algún día apretara, lo
+primero que saldría del precache es `anima` —solo aparece tras un intento fallido, y para
+entonces la red ha tenido tiempo—, no `neutro`.
 
 ## 5. El color: hay que decidir algo
 
@@ -256,5 +267,7 @@ Ya está, desde que llegaron los primeros dibujos:
   que es lo que se le pide— pero la pose no aparece nunca y nadie se entera. Pasó con
   `doby-palmeea.svg` el primer día.
 
-**Dónde sale ya:** Doby celebra al terminar cualquier actividad. No es una elección estética:
-es el personaje del cierre, el que integra lo que han hecho los otros siete.
+**Dónde salen ya:** **Dora abre** cada actividad —es la primera de la progresión, la base y
+la seguridad, y esa pantalla es el momento antes de empezar— y **Doby cierra** al terminarla,
+que es su papel: integrar lo que han hecho los otros siete. Los dos extremos del recorrido,
+en los dos extremos de la actividad.
