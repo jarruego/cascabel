@@ -140,3 +140,26 @@ otro nombre y otra voz.
 
 > Este apartado es la razón por la que conviene conservarlo aunque no se nombre a nadie: es el
 > registro fechado de que la frontera se estudió antes de escribir la primera actividad.
+
+## Los métodos pedagógicos: cuáles son libres y cuál no
+
+Se comprobó el 2026-09-07, al hacer el tipo `cuerpo`, y el resultado no es homogéneo.
+
+**Orff-Schulwerk, Kodály y Dalcroze son de uso libre.** Son enfoques pedagógicos publicados
+hace entre setenta y cien años, y **una idea o un método no se protegen**: lo protegido es el
+texto concreto en que se explicaron. Sus cuatro sonidos corporales —pitos, palmas, muslos y
+pies—, las sílabas rítmicas *ta* y *ti-ti* o la fononimia están en cualquier manual de
+magisterio desde hace décadas y en cualquier patio de colegio desde antes. Se usan.
+
+**BAPNE® no.** Es una marca registrada y un método con autor vivo y titularidad expresa:
+su **notación, su terminología y sus secuencias concretas** están protegidas como obra, y
+además hay una estructura de formación oficial y de certificación detrás. Coincidir en los
+cuatro sonidos es inevitable —son los que tiene un cuerpo humano—, pero **no se copia su
+forma de escribirlos, ni su vocabulario, ni sus secuencias**, ni se sugiere ninguna relación
+con el método.
+
+Por eso la notación del tipo `cuerpo` es propia y se documenta como tal en
+`src/motor/tipos/Cuerpo.tsx`: cuatro filas de colores ordenadas de arriba abajo, que es a la
+vez el orden de altura del sonido y el de altura en el cuerpo. Es una decisión de diseño
+tomada desde esa restricción, no a pesar de ella.
+

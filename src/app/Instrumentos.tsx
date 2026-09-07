@@ -26,6 +26,7 @@ interface Entrada {
   titulo: string;
   eje: Eje;
   descripcion?: string;
+  herramienta?: boolean;
 }
 
 export default function Instrumentos() {
@@ -57,9 +58,15 @@ export default function Instrumentos() {
     );
   }
 
-  // Se reconocen por el prefijo `tr-`, que es lo que el catálogo ya usaba para agruparlas.
-  // No hace falta un campo nuevo en sesenta ficheros para algo que el id ya dice.
-  const herramientas = entradas.filter((e) => e.id.startsWith('tr-'));
+  /*
+    Se reconocen por el campo `herramienta`, no por el prefijo del identificador.
+
+    El prefijo era un atajo: dice de qué familia viene el id, no qué es la cosa. Y hay
+    actividades que son las dos cosas —el editor de melodías tiene criterio curricular y a la
+    vez es un instrumento sin solución— que con el prefijo se quedaban fuera de aquí y
+    enterradas entre sesenta y siete actividades del catálogo.
+  */
+  const herramientas = entradas.filter((e) => e.herramienta);
 
   return (
     <main className="catalogo instrumentos">

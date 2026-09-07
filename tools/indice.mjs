@@ -26,6 +26,9 @@ for (const f of ficheros) {
     duracion_min: a.duracion_min ?? null,
     curriculo: a.curriculo,
     estado: a.estado ?? 'borrador',
+    // Si además es un instrumento: sale en la pantalla de Instrumentos, y si tiene criterio
+    // curricular sale también en el catálogo. Ser las dos cosas no es duplicar.
+    herramienta: a.herramienta ?? false,
   });
 }
 

@@ -1,0 +1,56 @@
+{
+  "id": "inf-18-cuatro-instrumentos",
+  "version": 1,
+  "tipo": "pads",
+  "titulo": "Cuatro instrumentos para probar",
+  "descripcion": "Bombo, caja, pandereta y claves. Sin pulso y sin tarea: a esta edad lo que se aprende es que cada instrumento suena distinto.",
+  "etapa": "infantil",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": "CE3",
+    "criterio": "3.5",
+    "saber": "F. Lenguaje y expresión musical – el sonido, el silencio y sus cualidades"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.inf18.consigna",
+    "golpes": [
+      "bombo",
+      "caja",
+      "pandereta",
+      "claves"
+    ],
+    "metronomo": false,
+    "grabable": true,
+    "letrasQwerty": false
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.inf18.enunciado"
+  },
+  "pistas": [
+    "actividad.inf18.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Kit de percusión",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

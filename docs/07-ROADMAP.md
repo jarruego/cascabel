@@ -884,11 +884,12 @@ detectarlo habría que medir las barras del ABC en crudo, y no compensa hoy.
       si un niño con motricidad reducida llega a los botones— sigue necesitando a una
       persona con el dispositivo delante. Va con T0.3.
 
-### Los diez tipos de motor, terminados `[x]`
+### El motor base, terminado `[x]`
 
-Cerrado el 2026-09-06. `src/motor/registro.ts` tiene los diez tipos que
-`docs/01-ARQUITECTURA.md` planteaba: `eleccion`, `emparejar`, `ordenar`, `guia-aula`,
-`tocar-a-tiempo`, `pentagrama`, `rejilla`, `cantar`, `seguir` y `lienzo`.
+Cerrado el 2026-09-06 con los tipos que `docs/01-ARQUITECTURA.md` planteaba al principio:
+`eleccion`, `emparejar`, `ordenar`, `guia-aula`, `tocar-a-tiempo`, `pentagrama`, `rejilla`,
+`cantar`, `seguir` y `lienzo`. Después se añadieron más; la lista viva está en
+`docs/01-ARQUITECTURA.md` y `tests/documentacion.test.ts` la mantiene sincronizada.
 
 **A partir de aquí, añadir una actividad no toca código.** Es escribir un JSON y validarlo.
 Era la promesa del ADR 0001 y ya se puede cumplir.
@@ -1068,7 +1069,7 @@ Tres hojas, cada una con un lector y un momento distintos:
 
 **La guía viene del TIPO de actividad, no de cada actividad.** Es la misma idea que el motor
 aplica a los componentes: escribir 53 dosieres a mano habría envejecido igual de mal que
-escribir 53 componentes. Cada uno de los doce tipos trae su «cómo funciona», su versión sin
+escribir 53 componentes. Cada tipo de motor trae su «cómo funciona», su versión sin
 dispositivos, su ampliación, su refuerzo, qué observar y tres indicadores; y una actividad
 concreta puede sobreescribir cualquiera de ellos desde el bloque `ficha` de su JSON.
 
@@ -1393,18 +1394,37 @@ Contradice esto:
 legal; NN/g mide lo que funciona con niños de verdad. Pero subir los tamaños afecta a las 45
 actividades y a cuántos objetos caben en pantalla, así que lo decide el autor.
 
-### Estado a 2026-09-07
+### Estado a 2026-09-07 (final del día)
 
-**El catálogo previsto está entero: 67 actividades y 16 tipos de motor.** Lo que queda no es
-terminar, es depurar y ampliar, y eso lo marca el uso real.
+**El catálogo previsto está entero, y ya se ha pasado de él.** Lo que queda no es terminar,
+es depurar y ampliar, y eso lo marca el uso real.
 
 | | |
 |---|---|
-| Actividades | 67, todas validando esquema y música |
-| Tipos de motor | 16 |
-| Tests | 337 |
-| Precache | 1229 KiB (el resto del audio se cachea al usarse) |
-| Código | ~11 800 líneas en `src`, ~3 500 en `tests` |
+| Actividades | 73, todas validando esquema y música |
+| Tipos de motor | 19 (la lista viva, en [`01-ARQUITECTURA.md`](01-ARQUITECTURA.md)) |
+| Tests | 347 |
+| Precache | 1307 KiB (el resto del audio se cachea al usarse) |
+| Código | ~16 100 líneas en `src`, ~3 600 en `tests` |
+
+**Lo que entró ese día, después de cerrar el catálogo previsto:**
+
+- **`cuerpo`**, percusión corporal. Es lo que más se usa en el aula española y no necesita
+  instrumentos. La notación es propia porque la de BAPNE® está registrada — ver
+  [`08-LEGAL.md`](08-LEGAL.md), que ahora dice qué métodos son libres y cuál no.
+- **`pads`**, el kit de percusión para tocarlo. El kit existía desde el día anterior pero
+  solo se llegaba a él programando una secuencia, que es componer y no tocar.
+- **`referencia`**, el «¿cómo era esto?»: la consulta del lenguaje musical, con botón de
+  escuchar en todo lo que puede sonar. No es un ejercicio y no pretende serlo.
+- **El camino** (`/camino`), un orden sugerido por etapa que **no bloquea nada**. Setenta
+  actividades con filtros curriculares sirven a quien sabe qué busca y son un muro para
+  quien no. Sin racha, sin porcentaje y sin candados: §1 y §4.
+- **`herramienta`** pasa a ser un campo del JSON en vez del prefijo del identificador, con
+  lo que el editor de melodías y el de pistas dejan de estar enterrados en el catálogo.
+- **`tests/documentacion.test.ts`**, porque la documentación mentía: este fichero llevaba un
+  epígrafe con una cifra de tipos de motor que se había quedado seis por debajo de la real.
+  Un número obsoleto en un `.md` no rompe nada y por eso se queda ahí para siempre; el test
+  lo caza, y `npm run docs:tipos` rehace la tabla sin contar a mano.
 
 **Lo que de verdad falta**, y ninguna de las tres es programación:
 

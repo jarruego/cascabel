@@ -55,7 +55,7 @@ distintos y por tres motivos distintos**.
 |---|---|---|---|
 | **VCSL** | Marimba (6 notas) y el **kit de percusión** (10 golpes × 2 grabaciones) | CC0 | Grabaciones de instrumento suelto, con varias intensidades y **round robin**. Para percusión no hay nada mejor: aquí el golpe *es* la actividad |
 | **FluidR3_GM** vía `midi-js-soundfonts` | Piano, xilófono, flauta, guitarra, violín, **voz** y seis del mundo | MIT | 128 instrumentos afinados y ya renderizados nota a nota. Es donde estaba la voz que se buscó durante días en bancos orquestales |
-| **Síntesis propia** | Acordes, tempos, campanas, silencio | CC0 (nuestra) | Material que no existe grabado: un pulso a 92 ppm o un acorde menor de do no son una grabación de nada |
+| **Síntesis propia** | Acordes, tempos, campanas, silencio y **tres de los cuatro sonidos del cuerpo** | CC0 (nuestra) | Material que no existe grabado: un pulso a 92 ppm o un acorde menor de do no son una grabación de nada |
 
 ### Lo que ya no está
 
@@ -67,6 +67,25 @@ formante. Un tono sintetizado decae de forma monótona y no hace eso.
 
 La síntesis se **borró** en vez de dejarla comentada: código muerto que haría dudar de cuál
 de los dos era el bueno.
+
+### La percusión corporal es la excepción, y conviene decir por qué
+
+`public/audio/muestras/cuerpo/` tiene ocho ficheros y 36 KB: las **palmas son una grabación
+de verdad** (VCSL) y los **pitos, los muslos y los pies están sintetizados**
+(`tools/muestras-cuerpo.py`). Eso es justo lo contrario de lo que se decidió para la voz seis
+días antes, así que la diferencia no es un descuido.
+
+En las actividades de timbre el niño tiene que **reconocer** el sonido, y ahí una imitación
+sigue siendo una imitación: por eso la voz de formantes se tiró. En percusión corporal el
+sonido del altavoz **no es lo que hay que reconocer** —el sonido lo hace el niño con su
+cuerpo—; el altavoz solo dice cuál toca y cuándo. Es la misma función que el clic de un
+metrónomo, y a nadie le importa que ese clic no sea la grabación de nada.
+
+Aun así siguen en la lista de cosas que se grabarán el día de las locuciones: son cuatro
+sonidos y treinta segundos. Cada uno imita la física de lo que es —el pito es un transitorio
+brillante hacia 3,2 kHz, el muslo una banda amortiguada en 380 Hz porque la carne se come los
+agudos, el pie un golpe de 95 Hz con cola porque lo que resuena es el suelo—, y esos números
+están en el propio script con su justificación.
 
 ### Densidad de muestreo, y por qué no es la misma para todos
 

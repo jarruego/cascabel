@@ -1,0 +1,82 @@
+{
+  "id": "inf-17-palmas-y-rodillas",
+  "version": 1,
+  "tipo": "cuerpo",
+  "titulo": "Palmas y rodillas",
+  "descripcion": "Dos sonidos alternados, despacio. A los cuatro años, cambiar de sonido a tiempo ya es coordinación.",
+  "etapa": "infantil",
+  "eje": "cuerpo",
+  "lugar": "hibrida",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": "CE3",
+    "criterio": "3.6",
+    "saber": "H. Interés e iniciativa en la participación en manifestaciones artísticas y corporales"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 60
+  },
+  "entrada": {
+    "modo": "ninguna"
+  },
+  "contenido": {
+    "consigna": "actividad.inf17pal.consigna",
+    "tempo": 60,
+    "patron": [
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "muslos"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.inf17pal.enunciado"
+  },
+  "pistas": [
+    "actividad.inf17.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Palmas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Pitos, muslos y pies (sintetizados)",
+      "autor": "Proyecto cocomusic",
+      "fuente": "tools/muestras-cuerpo.py",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

@@ -57,6 +57,7 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
+  "herramienta": true,
   "estado": "borrador",
   "pistas": [
     "actividad.tr01.pista1"

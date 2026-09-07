@@ -1,7 +1,7 @@
 {
   "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa.",
-  "generado": "2026-09-05",
-  "total": 66,
+  "generado": "2026-09-07",
+  "total": 72,
   "actividades": [
     {
       "id": "INF-01",
@@ -209,6 +209,32 @@
       "esfuerzo": "M",
       "curriculo": "— · crit. 3.5 · saber F",
       "descripcion": "Los animales bajan despacio hasta la línea. Se toca cuando llegan. Ocho pulsos lentos, sin figuras que leer.",
+      "estado": "hecha"
+    },
+    {
+      "id": "INF-17",
+      "titulo": "Palmas y rodillas",
+      "etapa": "infantil",
+      "eje": "cuerpo",
+      "lugar": "hibrida",
+      "tipo": "cuerpo",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE3 · crit. 3.6 · saber H",
+      "descripcion": "Percusión corporal con dos sonidos alternados, despacio. A los cuatro años, cambiar de sonido a tiempo ya es coordinación.",
+      "estado": "hecha"
+    },
+    {
+      "id": "INF-18",
+      "titulo": "Cuatro instrumentos para probar",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "lugar": "pantalla",
+      "tipo": "pads",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE3 · crit. 3.5 · saber F",
+      "descripcion": "Bombo, caja, pandereta y claves para tocar y escuchar. Sin pulso y sin tarea.",
       "estado": "hecha"
     },
     {
@@ -443,6 +469,19 @@
       "esfuerzo": "M",
       "curriculo": "CE3 . crit. 3.1 . saber D",
       "descripcion": "Bajan círculos vacíos y el animal solo aparece si lo tocas a tiempo. La misma actividad que la de Infantil, con una vuelta más.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C1-20",
+      "titulo": "Manos y pies",
+      "etapa": "primaria-c1",
+      "eje": "cuerpo",
+      "lugar": "hibrida",
+      "tipo": "cuerpo",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Percusión corporal con palmas, muslos y pies, con las sílabas debajo para poder decir el ritmo antes de hacerlo.",
       "estado": "hecha"
     },
     {
@@ -797,6 +836,19 @@
       "estado": "hecha"
     },
     {
+      "id": "C3-13",
+      "titulo": "Los cuatro sonidos",
+      "etapa": "primaria-c3",
+      "eje": "cuerpo",
+      "lugar": "hibrida",
+      "tipo": "cuerpo",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Pitos, palmas, muslos y pies con silencio y contratiempo. El silencio es la parte difícil: hay que contarlo igual que un golpe.",
+      "estado": "hecha"
+    },
+    {
       "id": "TR-01",
       "titulo": "Afinador visual",
       "etapa": "primaria-c2",
@@ -859,6 +911,32 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Un piano en la pantalla. Se toca tecla a tecla o deslizando el dedo.",
+      "estado": "hecha"
+    },
+    {
+      "id": "TR-06",
+      "titulo": "Kit de percusión",
+      "etapa": "primaria-c1",
+      "eje": "timbre",
+      "lugar": "pantalla",
+      "tipo": "pads",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Diez instrumentos de percusión de aula por familias, con pulso opcional y grabadora.",
+      "estado": "hecha"
+    },
+    {
+      "id": "TR-07",
+      "titulo": "¿Cómo era esto?",
+      "etapa": "primaria-c2",
+      "eje": "notacion",
+      "lugar": "pantalla",
+      "tipo": "referencia",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.2 · saber D",
+      "descripcion": "Consulta del lenguaje musical con sonido: figuras, silencios, compases, notas, distancias, tempos y matices.",
       "estado": "hecha"
     }
   ]

@@ -44,9 +44,12 @@
         "compases",
         "escala",
         "paisaje",
-        "pistas"
+        "pistas",
+        "cuerpo",
+        "pads",
+        "referencia"
       ],
-      "description": ". 'teclado' se anadio el 2026-09-06 tras la investigacion de docs/11-RECURSOS-Y-REFERENTES.md: es un piano en pantalla sobre el Sampler que ya existe. 'karaoke' se anadio el mismo dia: musicograma que avanza de derecha a izquierda sobre un pentagrama y se toca a tiempo. 'compases' se anadio el 2026-09-07: poner las divisorias a una linea de figuras, que es de lo poco del lenguaje musical que se comprueba solo. 'escala' se anadio el 2026-09-07: teclado y pentagrama enlazados para construir una escala y ver donde caen los semitonos. 'paisaje' se anadio el 2026-09-07: es la UNICA que guarda audio, con las cuatro condiciones de docs/08-LEGAL.md. 'pistas' se anadio el 2026-09-07: componer con varias voces a la vez, que es lo que permite ensenar textura y funcion."
+      "description": ". 'teclado' se anadio el 2026-09-06 tras la investigacion de docs/11-RECURSOS-Y-REFERENTES.md: es un piano en pantalla sobre el Sampler que ya existe. 'karaoke' se anadio el mismo dia: musicograma que avanza de derecha a izquierda sobre un pentagrama y se toca a tiempo. 'compases' se anadio el 2026-09-07: poner las divisorias a una linea de figuras, que es de lo poco del lenguaje musical que se comprueba solo. 'escala' se anadio el 2026-09-07: teclado y pentagrama enlazados para construir una escala y ver donde caen los semitonos. 'paisaje' se anadio el 2026-09-07: es la UNICA que guarda audio, con las cuatro condiciones de docs/08-LEGAL.md. 'pistas' se anadio el 2026-09-07: componer con varias voces a la vez, que es lo que permite ensenar textura y funcion. 'cuerpo' se anadio el 2026-09-07: percusion corporal con notacion propia, porque la del metodo BAPNE esta registrada."
     },
     "titulo": {
       "type": "string",
@@ -457,6 +460,10 @@
           "maxLength": 600
         }
       }
+    },
+    "herramienta": {
+      "type": "boolean",
+      "description": "Si esta actividad es tambien un instrumento o una herramienta de aula: algo que se usa libremente, sin solucion ni final. Aparece en la pantalla de Instrumentos. Una que ademas tenga criterio curricular sale tambien en el catalogo, y eso no es duplicar: es que es las dos cosas."
     }
   },
   "allOf": [

@@ -31,20 +31,34 @@ src/datos/cargar.ts  →  src/motor/registro.ts  →  src/motor/tipos/<Tipo>.tsx
                        sampler, metrónomo)      de tono y palmadas)      grandes, feedback)
 ```
 
-## Los diez tipos
+## Los tipos de motor
 
-| Tipo | Mecánica | Actividades del catálogo |
+No se dice cuántos son a propósito: el número ha cambiado siete veces y cada vez dejó una
+cifra mentirosa en tres ficheros. `tests/documentacion.test.ts` comprueba que esta tabla
+lista exactamente los tipos que hay en `src/motor/registro.ts`, con sus cifras al día, y
+`npm run docs:tipos` la rehace conservando la prosa de la columna del medio.
+
+| Tipo | Mecánica | Actividades |
 |---|---|---|
 | `eleccion` | Suena o se muestra algo; se elige entre 2–4 opciones grandes | 10 |
 | `guia-aula` | Pantalla del maestro: consigna, pulso, coreografía, ficha | 10 |
 | `lienzo` | Creación libre sin evaluación | 8 |
-| `rejilla` | Cuadrícula altura × tiempo | 5 |
-| `seguir` | Reproducción con cursor sincronizado | 5 |
-| `tocar-a-tiempo` | Golpear en el momento correcto | 4 |
+| `karaoke` | Musicograma que avanza: las notas llegan y se tocan al pasar | 7 |
+| `rejilla` | Cuadrícula altura × tiempo | 7 |
+| `tocar-a-tiempo` | Golpear en el momento correcto | 6 |
+| `seguir` | Reproducción con cursor sincronizado | 4 |
+| `cantar` | Detección de altura con retorno visual | 3 |
+| `cuerpo` | Percusión corporal: pitos, palmas, muslos y pies en cuatro filas | 3 |
 | `emparejar` | Dos conjuntos, toque de dos en dos | 3 |
 | `ordenar` | Secuencia por altura, duración o forma | 3 |
-| `pentagrama` | Colocar o leer sobre pauta real | 3 |
-| `cantar` | Detección de altura con retorno visual | 3 |
+| `pads` | El kit de percusión, para tocarlo: pads por familias y pulso opcional | 2 |
+| `compases` | Colocar las barras de compás donde el pulso las pide | 1 |
+| `escala` | Construir una escala contando tonos y semitonos | 1 |
+| `paisaje` | Grabar sonido del entorno y escucharlo (no sale del aparato) | 1 |
+| `pentagrama` | Colocar o leer sobre pauta real | 1 |
+| `pistas` | Secuenciador de cuatro voces: voz, percusión, piano y flauta | 1 |
+| `referencia` | Consulta del lenguaje musical, con sonido. No es un ejercicio | 1 |
+| `teclado` | Teclado de piano de una a tres octavas | 1 |
 
 **Antes de crear un tipo nuevo**, comprueba que el caso no cabe en uno existente. Casi
 siempre cabe.

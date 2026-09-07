@@ -1,0 +1,106 @@
+{
+  "id": "c1-20-manos-y-pies",
+  "version": 1,
+  "tipo": "cuerpo",
+  "titulo": "Manos y pies",
+  "descripcion": "Palmas, muslos y pies, con las sílabas debajo para poder decir el ritmo antes de hacerlo.",
+  "etapa": "primaria-c1",
+  "eje": "cuerpo",
+  "lugar": "hibrida",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Práctica instrumental, vocal y corporal"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 76
+  },
+  "entrada": {
+    "modo": "ninguna"
+  },
+  "contenido": {
+    "consigna": "actividad.c120mano.consigna",
+    "tempo": 76,
+    "patron": [
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "pies",
+        "pulsos": 2
+      }
+    ],
+    "silabas": [
+      "ta",
+      "ta",
+      "ti",
+      "ti",
+      "ta",
+      "ta",
+      "ta",
+      "ti",
+      "ti",
+      "taa"
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c120mano.enunciado"
+  },
+  "pistas": [
+    "actividad.c120.pista1",
+    "actividad.c120.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Palmas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Pitos, muslos y pies (sintetizados)",
+      "autor": "Proyecto cocomusic",
+      "fuente": "tools/muestras-cuerpo.py",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

@@ -1,0 +1,359 @@
+{
+  "id": "tr-07-como-era-esto",
+  "version": 1,
+  "tipo": "referencia",
+  "titulo": "¿Cómo era esto?",
+  "descripcion": "La consulta del lenguaje musical: figuras, silencios, compases, notas, distancias, tempos y matices. Con botón de escuchar en todo lo que puede sonar.",
+  "etapa": "primaria-c2",
+  "eje": "notacion",
+  "lugar": "pantalla",
+  "duracion_min": 5,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.2",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.tr07.consigna",
+    "instrumento": "piano",
+    "secciones": [
+      {
+        "titulo": "Las figuras: cuánto dura cada una",
+        "entradas": [
+          {
+            "termino": "Redonda",
+            "explicacion": "Dura cuatro pulsos. Es la más larga de las que se usan aquí.",
+            "signo": "𝅝",
+            "ritmo": [
+              4,
+              4
+            ]
+          },
+          {
+            "termino": "Blanca",
+            "explicacion": "Dura dos pulsos: la mitad de una redonda.",
+            "signo": "𝅗𝅥",
+            "ritmo": [
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          {
+            "termino": "Negra",
+            "explicacion": "Dura un pulso. Es la que marca el paso al caminar: ta.",
+            "signo": "𝅘𝅥",
+            "ritmo": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          {
+            "termino": "Corchea",
+            "explicacion": "Media negra. Van de dos en dos dentro de un pulso: ti-ti.",
+            "signo": "𝅘𝅥𝅮",
+            "ritmo": [
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ]
+          },
+          {
+            "termino": "Semicorchea",
+            "explicacion": "La mitad de una corchea. Cuatro entran en un pulso.",
+            "signo": "𝅘𝅥𝅯",
+            "ritmo": [
+              0.25,
+              0.25,
+              0.25,
+              0.25,
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ]
+          },
+          {
+            "termino": "Puntillo",
+            "explicacion": "Un punto detrás de una figura le añade la mitad de lo que dura. Una negra con puntillo dura pulso y medio.",
+            "signo": "𝅘𝅥·",
+            "ritmo": [
+              1.5,
+              0.5,
+              1.5,
+              0.5
+            ]
+          }
+        ]
+      },
+      {
+        "titulo": "Los silencios: cuánto se calla",
+        "entradas": [
+          {
+            "termino": "Silencio de redonda",
+            "explicacion": "Cuatro pulsos sin tocar. Se dibuja colgando de una línea.",
+            "signo": "𝄻"
+          },
+          {
+            "termino": "Silencio de blanca",
+            "explicacion": "Dos pulsos sin tocar. Se dibuja apoyado en una línea.",
+            "signo": "𝄼"
+          },
+          {
+            "termino": "Silencio de negra",
+            "explicacion": "Un pulso sin tocar. El pulso sigue: hay que contarlo igual que si sonara.",
+            "signo": "𝄽"
+          },
+          {
+            "termino": "Silencio de corchea",
+            "explicacion": "Medio pulso sin tocar.",
+            "signo": "𝄾"
+          }
+        ]
+      },
+      {
+        "titulo": "El compás: cómo se agrupan los pulsos",
+        "entradas": [
+          {
+            "termino": "2/4",
+            "explicacion": "Los pulsos van de dos en dos, y el fuerte es el primero. Es el compás de una marcha."
+          },
+          {
+            "termino": "3/4",
+            "explicacion": "De tres en tres. Es el vals: fuerte, flojo, flojo."
+          },
+          {
+            "termino": "4/4",
+            "explicacion": "De cuatro en cuatro. Es el más común de todos, tanto que se escribe también con una C."
+          },
+          {
+            "termino": "6/8",
+            "explicacion": "Seis corcheas agrupadas en dos de tres. Suena a balanceo, no a marcha."
+          },
+          {
+            "termino": "Barra de compás",
+            "explicacion": "La raya vertical que separa un compás del siguiente. No suena: solo dice dónde empieza el pulso fuerte.",
+            "signo": "𝄀"
+          },
+          {
+            "termino": "Doble barra final",
+            "explicacion": "Se acabó la pieza.",
+            "signo": "𝄂"
+          }
+        ]
+      },
+      {
+        "titulo": "Las notas y el pentagrama",
+        "entradas": [
+          {
+            "termino": "Pentagrama",
+            "explicacion": "Cinco líneas y cuatro espacios. Cuanto más arriba está una nota, más aguda suena."
+          },
+          {
+            "termino": "Clave de sol",
+            "explicacion": "El signo del principio. Dice que la nota de la segunda línea es un sol, y a partir de ahí se cuentan las demás.",
+            "signo": "𝄞"
+          },
+          {
+            "termino": "Líneas adicionales",
+            "explicacion": "Rayitas cortas para las notas que no caben en las cinco líneas. El do de debajo del pentagrama lleva una."
+          },
+          {
+            "termino": "La escala de do",
+            "explicacion": "Do, re, mi, fa, sol, la, si, do. Ocho notas, y la última se llama igual que la primera.",
+            "notas": [
+              "C4",
+              "D4",
+              "E4",
+              "F4",
+              "G4",
+              "A4",
+              "B4",
+              "C5"
+            ]
+          },
+          {
+            "termino": "Sostenido",
+            "explicacion": "Sube la nota un semitono. En el piano, la tecla negra de al lado.",
+            "signo": "♯",
+            "notas": [
+              "F4",
+              "F#4"
+            ]
+          },
+          {
+            "termino": "Bemol",
+            "explicacion": "Baja la nota un semitono.",
+            "signo": "♭",
+            "notas": [
+              "B4",
+              "A#4"
+            ]
+          }
+        ]
+      },
+      {
+        "titulo": "Distancias entre notas",
+        "entradas": [
+          {
+            "termino": "Semitono",
+            "explicacion": "La distancia más pequeña. En el piano, dos teclas seguidas sin saltarse ninguna.",
+            "notas": [
+              "C4",
+              "C#4"
+            ]
+          },
+          {
+            "termino": "Tono",
+            "explicacion": "Dos semitonos. De do a re hay un tono, porque en medio está el do sostenido.",
+            "notas": [
+              "C4",
+              "D4"
+            ]
+          },
+          {
+            "termino": "Tercera",
+            "explicacion": "De do a mi. Es el salto con el que empiezan muchas canciones.",
+            "notas": [
+              "C4",
+              "E4"
+            ]
+          },
+          {
+            "termino": "Quinta",
+            "explicacion": "De do a sol. Suena a hueco, y es la distancia de las gaitas y de las campanas.",
+            "notas": [
+              "C4",
+              "G4"
+            ]
+          },
+          {
+            "termino": "Octava",
+            "explicacion": "De do a do. Suenan tan parecidas que se llaman igual.",
+            "notas": [
+              "C4",
+              "C5"
+            ]
+          }
+        ]
+      },
+      {
+        "titulo": "Cómo de rápido",
+        "entradas": [
+          {
+            "termino": "Adagio",
+            "explicacion": "Despacio, unos 60 pulsos por minuto. Como andar sin prisa.",
+            "ritmo": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "tempo": 60
+          },
+          {
+            "termino": "Andante",
+            "explicacion": "A paso normal, unos 84. Es lo que significa: andando.",
+            "ritmo": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "tempo": 84
+          },
+          {
+            "termino": "Allegro",
+            "explicacion": "Rápido y alegre, unos 132.",
+            "ritmo": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "tempo": 132
+          },
+          {
+            "termino": "Tempo",
+            "explicacion": "La velocidad a la que va la música. Se mide en pulsos por minuto, y por eso el metrónomo dice números."
+          }
+        ]
+      },
+      {
+        "titulo": "Cómo de fuerte",
+        "entradas": [
+          {
+            "termino": "Piano (p)",
+            "explicacion": "Flojo. No confundir con el instrumento, que se llama así porque podía tocar flojo y fuerte.",
+            "signo": "𝆏"
+          },
+          {
+            "termino": "Forte (f)",
+            "explicacion": "Fuerte.",
+            "signo": "𝆑"
+          },
+          {
+            "termino": "Mezzoforte (mf)",
+            "explicacion": "Ni una cosa ni la otra: a media fuerza."
+          },
+          {
+            "termino": "Reguladores",
+            "explicacion": "Las dos rayas que se abren o se cierran: la música va subiendo o bajando de intensidad poco a poco."
+          }
+        ]
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.tr07.enunciado"
+  },
+  "creditos": [
+    {
+      "obra": "Piano (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    }
+  ],
+  "herramienta": true,
+  "estado": "borrador"
+}

@@ -8,7 +8,7 @@ La referencia normativa es `schemas/actividad.schema.json`. Esto es la guía par
 |---|---|---|
 | `id` | Identificador estable en kebab-case | **Nunca se renombra**: puede estar en una URL compartida |
 | `version` | Entero, empieza en 1 | Súbelo si cambias la respuesta correcta |
-| `tipo` | Uno de los diez tipos de motor | Si no encaja en ninguno, probablemente estés diseñando mal la actividad |
+| `tipo` | Uno de los tipos de motor (tabla en `docs/01-ARQUITECTURA.md`) | Si no encaja en ninguno, probablemente estés diseñando mal la actividad |
 | `titulo` | Máximo 70 caracteres | Se ve en el catálogo del maestro, no en la pantalla del niño |
 | `etapa` | `infantil`, `primaria-c1/c2/c3` | Determina tolerancias, tamaños táctiles y tesitura |
 | `eje` | pulso, altura, timbre, notacion, cuerpo, creacion, cultura | Es la taxonomía del catálogo |

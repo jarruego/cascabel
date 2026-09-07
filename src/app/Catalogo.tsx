@@ -96,13 +96,16 @@ export default function Catalogo() {
   });
 
   /*
-    Las herramientas no salen aquí: tienen su propia pantalla, `Instrumentos.tsx`.
+    Aquí salen las actividades, y los instrumentos puros no lo son.
 
-    Un piano, un afinador o un metrónomo no son actividades —no tienen consigna, ni
-    solución, ni final— y mezclarlos obliga a quien busca algo que hacer en clase a
-    descartarlos uno a uno. Se reconocen por el prefijo `tr-`, que es lo que el catálogo ya
-    usaba para agruparlas: no hace falta un campo nuevo en sesenta ficheros para algo que el
-    id ya dice.
+    Un piano, un afinador o un metrónomo no tienen consigna, ni solución, ni final, y
+    mezclarlos obliga a quien busca algo que hacer en clase a descartarlos uno a uno: tienen
+    su pantalla en `Instrumentos.tsx`. Se reconocen por el prefijo `tr-`, que es la familia
+    de las herramientas transversales.
+
+    **Pero una actividad que ADEMÁS sea herramienta sí sale aquí**, aunque también salga en
+    Instrumentos: el editor de melodías tiene criterio curricular, y un maestro que busca por
+    el 4.1 tiene que encontrarlo. Ser las dos cosas no es duplicar.
   */
   const actividades = visibles.filter((e) => !e.id.startsWith('tr-'));
 

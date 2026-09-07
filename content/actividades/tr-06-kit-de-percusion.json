@@ -1,0 +1,57 @@
+{
+  "id": "tr-06-kit-de-percusion",
+  "version": 1,
+  "tipo": "pads",
+  "titulo": "Kit de percusión",
+  "descripcion": "Diez instrumentos de percusión de aula agrupados por familias, con pulso opcional detrás y grabadora. Es un instrumento, no un ejercicio.",
+  "etapa": "primaria-c1",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Práctica instrumental, vocal y corporal"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "tempo": 84
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.tr06.consigna",
+    "metronomo": true,
+    "tempo": 84,
+    "pulsosPorCompas": 4,
+    "grabable": true,
+    "letrasQwerty": true,
+    "retos": [
+      "actividad.tr06.reto1",
+      "actividad.tr06.reto2",
+      "actividad.tr06.reto3",
+      "actividad.tr06.reto4"
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.tr06.enunciado"
+  },
+  "creditos": [
+    {
+      "obra": "Kit de percusión",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "herramienta": true,
+  "estado": "borrador"
+}

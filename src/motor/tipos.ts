@@ -28,7 +28,13 @@ export type TipoActividad =
   /** Grabar sonidos del entorno. La ÚNICA que guarda audio. Ver Paisaje.tsx. */
   | 'paisaje'
   /** Componer con varias voces a la vez. Ver Pistas.tsx. */
-  | 'pistas';
+  | 'pistas'
+  /** Percusión corporal: pitos, palmas, muslos y pies. Ver Cuerpo.tsx. */
+  | 'cuerpo'
+  /** El kit de percusión, para tocarlo con el dedo. Ver Pads.tsx. */
+  | 'pads'
+  /** Consulta del lenguaje musical, con sonido. No es un ejercicio. Ver Referencia.tsx. */
+  | 'referencia';
 
 export type Eje = 'pulso' | 'altura' | 'timbre' | 'notacion' | 'cuerpo' | 'creacion' | 'cultura';
 
@@ -107,6 +113,15 @@ export interface Actividad {
     indicador2?: string;
     indicador3?: string;
   };
+  /**
+   * Es también un instrumento o una herramienta de aula: algo que se usa libremente, sin
+   * solución ni final. Sale en la pantalla de Instrumentos.
+   *
+   * **Y una que además tenga criterio curricular sale también en el catálogo.** No es
+   * duplicar: el editor de melodías es un instrumento *y* una actividad del criterio 4.1, y
+   * quien lo busca por una vía no lo busca por la otra.
+   */
+  herramienta?: boolean;
   estado?: 'borrador' | 'revision-pedagogica' | 'publicada';
 }
 

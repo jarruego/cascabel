@@ -2882,3 +2882,385 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   margin: var(--e-4) 0;
 }
 .pistas__acciones button { display: inline-flex; align-items: center; gap: var(--e-2); }
+
+/* ---------------------------------------------------------------------------
+ * Percusión corporal (tipo «cuerpo»).
+ *
+ * Cuatro filas, y el orden vertical NO es decorativo: de arriba abajo va del sonido más
+ * agudo al más grave y a la vez de las manos arriba a los pies en el suelo. Las dos escalas
+ * coinciden, y por eso un niño no tiene que aprenderse el dibujo.
+ *
+ * El color nunca informa solo (§6): cada zona lleva además su etiqueta escrita, su altura
+ * en la rejilla y una FORMA distinta —del círculo pequeño de los pitos a la barra ancha de
+ * los pies—, que va de menudo a grande igual que va el sonido de agudo a grave.
+ * ------------------------------------------------------------------------ */
+.cuerpo__rejilla {
+  margin: var(--e-5) 0;
+  overflow-x: auto;
+}
+.cuerpo__fila {
+  display: flex;
+  align-items: center;
+  gap: var(--e-2);
+  margin-bottom: var(--e-2);
+}
+.cuerpo__etiqueta {
+  flex: 0 0 auto;
+  width: 5.5rem;
+  padding-right: var(--e-2);
+  font-size: var(--t-s);
+  font-weight: 700;
+  color: var(--color-zona, var(--tinta-2));
+  text-align: right;
+}
+.cuerpo__golpes {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 3px;
+  min-width: 22rem;
+}
+
+.cuerpo__fila[data-zona='pitos'] { --color-zona: var(--vivo-amarillo); --forma: 50%; --alto: 26%; }
+.cuerpo__fila[data-zona='palmas'] { --color-zona: var(--vivo-naranja); --forma: 50%; --alto: 52%; }
+.cuerpo__fila[data-zona='muslos'] { --color-zona: var(--vivo-turquesa); --forma: var(--r-s); --alto: 74%; }
+.cuerpo__fila[data-zona='pies'] { --color-zona: var(--vivo-azul); --forma: var(--r-s); --alto: 100%; }
+/* Los pies llevan además la raya del suelo: es lo que los separa de los muslos cuando la
+   forma redondeada ya no da para más, y es literalmente contra lo que se golpea. */
+.cuerpo__fila[data-zona='pies'] .cuerpo__golpe[data-puesto] {
+  border-bottom: var(--e-1) solid var(--tinta);
+}
+
+.cuerpo__golpe {
+  flex: 1 1 0;
+  height: 3.25rem;
+  border-radius: var(--r-s);
+  /* La fila vacía se ve, pero apenas: tiene que quedar claro que el pulso pasa por ahí
+     aunque esa zona no suene. */
+  background: color-mix(in srgb, var(--linea) 40%, transparent);
+}
+.cuerpo__golpe[data-puesto] {
+  /* El blob no llena la casilla: se centra dentro, con el alto y la forma de su zona. */
+  background:
+    linear-gradient(var(--color-zona), var(--color-zona)) center / 100% var(--alto) no-repeat,
+    color-mix(in srgb, var(--linea) 40%, transparent);
+  border-radius: var(--forma);
+}
+/* Un compás de silencio no es un hueco: es tiempo que hay que contar. Rayado, no vacío. */
+.cuerpo__golpe[data-silencio] {
+  background: repeating-linear-gradient(
+    45deg,
+    transparent 0 5px,
+    color-mix(in srgb, var(--tinta-2) 22%, transparent) 5px 10px
+  );
+}
+/* La columna que suena ahora, marcada en las cuatro filas a la vez: así forma una línea
+   vertical que se sigue de un vistazo desde el fondo de la clase. */
+.cuerpo__golpe[data-aqui] {
+  box-shadow: inset 0 0 0 3px var(--tinta);
+}
+
+.cuerpo__silabas { margin-top: var(--e-3); }
+.cuerpo__silaba {
+  flex: 1 1 0;
+  padding: var(--e-1) 0;
+  border-radius: var(--r-s);
+  font-size: var(--t-s);
+  font-weight: 700;
+  color: var(--tinta-2);
+  text-align: center;
+}
+.cuerpo__silaba[data-aqui] {
+  background: var(--suave-amarillo);
+  color: var(--tinta);
+}
+
+.cuerpo__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+  justify-content: center;
+  margin: var(--e-4) 0;
+}
+.cuerpo__acciones button { display: inline-flex; align-items: center; gap: var(--e-2); }
+
+/* Proyectada en clase, cuanto más grande mejor: es lo que mira el grupo entero. */
+.lienzo[data-ampliado] .cuerpo__golpe { height: 5rem; }
+
+/* ---------------------------------------------------------------------------
+ * El kit de percusión (tipo «pads»).
+ *
+ * La FORMA la da la familia, no el gusto: círculo lleno el parche, aro el metal y
+ * rectángulo la madera. Es lo que permite que el color no informe solo (§6) y de paso
+ * enseña la clasificación sin una sola frase explicándola.
+ *
+ * Los pads llenan el ancho que haya. Un instrumento con la mitad del monitor vacío al lado
+ * es un instrumento peor: lo que hace fácil acertar un pad es que sea grande.
+ * ------------------------------------------------------------------------ */
+.pads__rejilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  gap: var(--e-3);
+  margin: var(--e-5) 0;
+  padding: var(--e-3);
+  border: 3px solid transparent;
+  border-radius: var(--r-m);
+  transition: border-color 90ms;
+}
+/* El borde late con el pulso del metrónomo: es el pulso VISIBLE que pide §6, para que una
+   actividad de ritmo se pueda hacer mirando. */
+.pads__rejilla[data-pulso] { border-color: var(--acento); }
+
+.pads__pad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e-1);
+  /* Cuadrado: el pad es el objetivo táctil más grande que quepa, y ninguna dimensión manda
+     sobre la otra. */
+  aspect-ratio: 1;
+  min-height: var(--objetivo);
+  padding: var(--e-2);
+  font: inherit;
+  font-size: var(--t-s);
+  font-weight: 700;
+  color: var(--tinta);
+  background: var(--superficie);
+  border: 4px solid var(--color-familia, var(--linea));
+  cursor: pointer;
+  box-shadow: var(--sombra-1);
+  transition: transform 60ms, background-color 60ms;
+}
+.pads__pad:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
+
+/* Parche: círculo lleno, como el parche que es. */
+.pads__pad[data-familia='parche'] {
+  --color-familia: var(--vivo-rojo);
+  border-radius: var(--r-redondo);
+}
+/* Metal: aro. Doble borde y centro hueco, que es lo que se ve mirando un plato de canto. */
+.pads__pad[data-familia='metal'] {
+  --color-familia: var(--vivo-amarillo);
+  border-radius: var(--r-redondo);
+  box-shadow: var(--sombra-1), inset 0 0 0 6px var(--superficie),
+    inset 0 0 0 9px var(--color-familia);
+}
+/* Madera: rectángulo, como una caja o un par de claves. */
+.pads__pad[data-familia='madera'] {
+  --color-familia: var(--vivo-verde);
+  border-radius: var(--r-s);
+}
+
+/* Al golpear, el pad se tiñe de su familia y se hunde. El hundimiento importa tanto como el
+   color: es la respuesta que confirma el golpe cuando el sonido aún no ha llegado. */
+.pads__pad[data-sonando] {
+  background: var(--color-familia);
+  transform: scale(0.94);
+}
+
+.pads__nombre { line-height: 1.1; text-align: center; }
+.pads__letra {
+  font-size: var(--t-xs);
+  font-weight: 400;
+  color: var(--tinta-2);
+}
+.pads__pad[data-sonando] .pads__letra { color: var(--tinta); }
+
+.pads__barra {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+  align-items: center;
+  justify-content: center;
+  margin: var(--e-4) 0;
+}
+.pads__barra button { display: inline-flex; align-items: center; gap: var(--e-2); }
+.pads__tempos { display: flex; gap: var(--e-1); }
+
+/* Proyectado o a pantalla completa caben pads más grandes, y aquí más grande es mejor. */
+.lienzo[data-ampliado] .pads__rejilla {
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pads__pad { transition: none; }
+  .pads__pad[data-sonando] { transform: none; }
+}
+
+/* ---------------------------------------------------------------------------
+ * El camino (pantalla /camino).
+ *
+ * Se parece a un itinerario de app de idiomas y no lo es: no hay candados, ni barra de
+ * progreso, ni racha. Lo único que cambia con lo hecho es una etiqueta de «ya la abriste»,
+ * que lleva TEXTO además de color, porque el color no informa solo (§6).
+ * ------------------------------------------------------------------------ */
+.camino__etapa { margin: var(--e-5) 0; }
+.camino__etapa h2 { margin: 0; }
+
+.camino__cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e-3);
+  width: 100%;
+  min-height: var(--objetivo);
+  padding: var(--e-3) var(--e-4);
+  font: inherit;
+  font-size: var(--t-l);
+  font-weight: 700;
+  color: var(--tinta);
+  text-align: left;
+  background: var(--superficie);
+  border: 2px solid var(--linea);
+  border-radius: var(--r-m);
+  cursor: pointer;
+}
+.camino__cabecera:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
+.camino__flecha { color: var(--tinta-2); }
+
+.camino__resumen {
+  margin: var(--e-3) var(--e-2);
+  color: var(--tinta-2);
+  max-width: 62ch;
+}
+
+.camino__pasos {
+  margin: var(--e-4) 0;
+  padding: 0;
+  list-style: none;
+}
+.camino__paso {
+  display: flex;
+  gap: var(--e-3);
+  padding: var(--e-3) 0;
+  /* La línea vertical que une los pasos: es lo que hace que se lea como un recorrido y no
+     como cuatro listas sueltas. */
+  border-left: 3px solid var(--linea);
+  padding-left: var(--e-4);
+  margin-left: var(--e-3);
+}
+.camino__numero {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin-left: calc(var(--e-4) * -1 - 1rem - 1.5px);
+  font-weight: 700;
+  color: var(--papel);
+  background: var(--tinta-2);
+  border-radius: var(--r-redondo);
+}
+.camino__cuerpo { flex: 1; min-width: 0; }
+.camino__titulo { margin: 0 0 var(--e-1); font-size: var(--t-m); }
+.camino__idea { margin: 0 0 var(--e-2); color: var(--tinta-2); max-width: 62ch; }
+
+.camino__actividades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.camino__enlace {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+  min-height: var(--objetivo);
+  padding: var(--e-2) var(--e-3);
+  color: var(--tinta);
+  text-decoration: none;
+  background: var(--superficie);
+  border: 2px solid var(--linea);
+  border-radius: var(--r-s);
+}
+.camino__enlace:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
+.camino__enlace[data-hecha] { border-color: var(--vivo-verde); }
+.camino__hecha {
+  padding: var(--e-0) var(--e-2);
+  font-size: var(--t-xs);
+  color: var(--papel);
+  background: var(--vivo-verde);
+  border-radius: var(--r-redondo);
+}
+
+/* Cinco destinos en la barra: el rótulo tiene que poder partirse sin desbordar. */
+.nav__enlace span { text-align: center; line-height: 1.1; }
+
+/* ---------------------------------------------------------------------------
+ * La consulta del lenguaje musical (tipo «referencia»).
+ *
+ * Es la única pantalla del proyecto pensada para LEERSE y no para tocarse, así que manda la
+ * legibilidad: una columna, medida de línea acotada y el signo grande a la izquierda para
+ * poder recorrer la lista buscándolo con el ojo.
+ * ------------------------------------------------------------------------ */
+.referencia { max-width: 46rem; margin: 0 auto; }
+
+.referencia__buscar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-1);
+  margin: var(--e-4) 0;
+  font-size: var(--t-s);
+  color: var(--tinta-2);
+}
+.referencia__buscar input {
+  min-height: var(--objetivo);
+  padding: var(--e-2) var(--e-3);
+  font: inherit;
+  font-size: var(--t-m);
+  color: var(--tinta);
+  background: var(--superficie);
+  border: 2px solid var(--linea);
+  border-radius: var(--r-s);
+}
+.referencia__buscar input:focus-visible {
+  outline: var(--foco);
+  outline-offset: var(--foco-hueco);
+}
+
+.referencia__seccion { margin: var(--e-6) 0; }
+.referencia__seccion h2 {
+  padding-bottom: var(--e-2);
+  border-bottom: 3px solid var(--linea);
+  font-size: var(--t-l);
+}
+
+.referencia__lista { margin: 0; padding: 0; list-style: none; }
+.referencia__entrada {
+  display: flex;
+  align-items: center;
+  gap: var(--e-4);
+  padding: var(--e-3) 0;
+  border-bottom: 1px solid var(--linea);
+}
+/* --f-musica es Bravura: los mismos caracteres Unicode que usa el resto del proyecto, y con
+   la fuente del sistema la mitad de esos glifos sencillamente no existen. */
+.referencia__signo {
+  flex: 0 0 3rem;
+  font-family: var(--f-musica);
+  font-size: var(--t-2xl);
+  line-height: 1;
+  text-align: center;
+  color: var(--tinta);
+}
+.referencia__texto { flex: 1; min-width: 0; }
+.referencia__texto h3 { margin: 0; font-size: var(--t-m); }
+.referencia__texto p { margin: var(--e-1) 0 0; color: var(--tinta-2); }
+
+.referencia__oir { flex: 0 0 auto; display: inline-flex; align-items: center; gap: var(--e-2); }
+.referencia__oir[data-sonando] { border-color: var(--acento); color: var(--acento); }
+
+.referencia__acciones {
+  display: flex;
+  justify-content: center;
+  margin: var(--e-6) 0;
+}
+
+@media (max-width: 30rem) {
+  /* En un móvil el botón se va debajo antes que estrechar el texto a cuatro palabras. */
+  .referencia__entrada { flex-wrap: wrap; }
+  .referencia__oir { margin-left: calc(3rem + var(--e-4)); }
+}

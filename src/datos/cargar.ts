@@ -1,4 +1,4 @@
-import { APP } from '@/config';
+import { APP, type Etapa } from '@/config';
 import type { Actividad } from '@/motor/tipos';
 
 /**
@@ -18,6 +18,25 @@ export function cargarIndice() {
   return pedir<{ actividades: Array<Pick<Actividad, 'id' | 'titulo' | 'etapa' | 'eje' | 'tipo'>> }>(
     `${APP.rutaContenido}/indice.json`,
   );
+}
+
+/**
+ * El camino sugerido: cuatro recorridos, uno por etapa.
+ *
+ * Va en su propio fichero y no en el índice porque **no es información de las actividades,
+ * es una opinión sobre en qué orden hacerlas**. El índice dice lo que hay; esto dice por
+ * dónde empezaría un maestro. Si mañana hay dos caminos distintos para la misma etapa, el
+ * índice no tiene que enterarse.
+ */
+export function cargarCamino() {
+  return pedir<{
+    caminos: Array<{
+      etapa: Etapa;
+      titulo: string;
+      resumen: string;
+      pasos: Array<{ titulo: string; idea: string; actividades: string[] }>;
+    }>;
+  }>(`${APP.rutaContenido}/camino.json`);
 }
 
 export function cargarActividad(id: string) {
