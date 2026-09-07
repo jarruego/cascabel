@@ -566,11 +566,20 @@ Abierta y cerrada el 2026-09-06, a partir de la primera prueba real del autor:
 - [x] **Personajes**: decidido el 2026-09-08. Existen y son de la metodología cocomusic —
   ocho, uno por nota: DORA, REX, MILO, FARA, SOL, LAIA, SIMÓN y DOBY. El encargo está en
   [`14-PERSONAJES.md`](14-PERSONAJES.md): poses, prompts, nombres de fichero y contrato del
-  SVG. **Doby, Dora, Rex y Milo ya están dibujados**, diez poses cada uno, y con ellos entró el
+  SVG. **Doby, Dora, Rex, Milo y Fara ya están dibujados**, diez poses cada uno, y con ellos entró el
   código —`ui/personajes.ts`, `ui/Personaje.tsx`, `tools/personajes.mjs` y su test—. Doby
   cierra siempre; quién abre lo dice el campo `personaje` de cada actividad, con Dora por
   defecto, así que asignar a Fara las de silencio el día que exista será una línea de
-  contenido y no un cambio de código. Faltan los otros cuatro y una decisión del autor: los
+  contenido y no un cambio de código.
+
+  **Y hay ochenta dibujos de los que la aplicación usa dos poses.** No es un olvido, son dos
+  cosas que faltan y conviene tenerlas escritas: `anima` quiere el sitio de la
+  retroalimentación tras un fallo, y eso pide sacar el párrafo `.feedback` a un componente
+  común porque hoy lo repiten ocho tipos de motor; y `neutro` —el personaje **haciendo de
+  nota**, en las teclas y en los carriles— necesita **los ocho dibujados**, porque con cinco
+  el piano enseñaría personaje en cinco teclas y nada en las otras. Ver `14-PERSONAJES.md` §7.
+
+  Faltan los otros tres y una decisión del autor: los
   colores de sol, la y si no coinciden con el código Boomwhacker (ver `14-PERSONAJES.md` §5)
 - [ ] Revisión con las tres preguntas de `docs/06-PIPELINE-IA.md` — es T0.3
 

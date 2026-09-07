@@ -295,7 +295,20 @@ Hoy:
 |---|---|---|
 | **Rex** | `inf-05`, `inf-10`, `inf-13`, `c1-08`, `c2-11` | Descubrir e identificar sonidos: «escuchar para descubrir» |
 | **Milo** | `inf-09`, `inf-17`, `c1-01`, `c1-02`, `c1-20`, `c1-21`, `c3-13` | Ritmo, eco de palmas y percusión corporal: «la música también sirve para jugar» |
+| **Fara** | `inf-01`, `inf-14`, `c1-03`, `c2-13`, `c3-04` | Silencio y escucha pausada: «parar y escuchar también es hacer música» |
 | **Dora** | Todas las demás | Es el valor por defecto |
+
+### Qué poses se usan de verdad hoy, y cuáles no
+
+Conviene no engañarse con esto: hay ochenta dibujos y la aplicación usa dos.
+
+| Pose | Estado |
+|---|---|
+| `saluda` | **En uso.** Abre cada actividad, con el personaje que diga su JSON |
+| `celebra` | **En uso.** Doby, al terminar |
+| `anima` | **Sin usar todavía.** Le toca el sitio de la retroalimentación tras un intento fallido — la clase `.feedback`, que comparten ocho tipos de motor. Hace falta sacar ese párrafo a un componente común antes, y eso toca ocho ficheros |
+| `neutro` | **Sin usar todavía.** Es la del personaje **haciendo de nota**: teclas del piano, carriles del musicograma. Necesita **los ocho dibujados**, porque con cinco el piano enseñaría personaje en cinco teclas y nada en las otras |
+| `busca`, `palmea`, `calla`, `baila`, `canta`, `escucha` | **Sin usar todavía.** Van dentro de la actividad, no en la pantalla de entrada, y eso es una decisión de diseño por tipo de motor que aún no se ha tomado |
 
 Está así a propósito: **es un dato, no un `if`**. El día que exista Fara, ponerla en las
 actividades de silencio será una línea de contenido. `tests/personajes.test.ts` comprueba
