@@ -40,7 +40,7 @@ function reducir(estado: Estado, accion: Accion): Estado {
   return { ...estado, indice: accion.valor };
 }
 
-export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
+export default function Cuerpo({ actividad }: PropsActividad) {
   const contenido = actividad.contenido as {
     consigna: string;
     /** Un golpe por figura: qué zona del cuerpo y cuántos pulsos ocupa. */
@@ -194,18 +194,7 @@ export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
         <button type="button" className="boton-arranque boton-actividad" onClick={() => void arrancar()}>
           {estado.sonando ? <IconoParar /> : <IconoTocar />}
           {t(estado.sonando ? 'accion.parar' : 'accion.empezar')}
-        </button>
-        <button
-          type="button"
-          className="boton-repetir"
-          onClick={() => {
-            parar();
-            alTerminar({ actividadId: actividad.id, completada: true });
-          }}
-        >
-          {t('lienzo.terminar')}
-        </button>
-      </div>
+        </button>      </div>
 
     </section>
   );

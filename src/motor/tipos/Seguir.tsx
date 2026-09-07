@@ -265,9 +265,10 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
         </button>
       </div>
 
-      <p className="feedback" aria-live="polite">
-        {sonando ? t('seguir.sigue') : t('seguir.listo')}
-      </p>
+      {/* Aquí había dos frases fijas —«toca para empezar y sigue el dibujo» y «sigue el
+          dibujo con el dedo mientras suena»— que son la instrucción de la actividad. Eso lo
+          cuenta el personaje al entrar y se vuelve a leer pulsándolo; repetirlo en pantalla
+          durante toda la actividad es decirlo dos veces y quitarle sitio al musicograma. */}
     </section>
   );
 }

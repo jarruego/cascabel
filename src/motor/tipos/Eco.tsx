@@ -36,7 +36,7 @@ import type { PropsActividad } from '../tipos';
 
 type Fase = 'esperando' | 'primero' | 'entre' | 'segundo' | 'resultado';
 
-export default function Eco({ actividad, alTerminar }: PropsActividad) {
+export default function Eco({ actividad }: PropsActividad) {
   const contenido = actividad.contenido as {
     consigna: string;
     /** Con qué suena el pandero. Uno solo: aquí lo que importa es cuándo, no qué. */
@@ -271,16 +271,6 @@ export default function Eco({ actividad, alTerminar }: PropsActividad) {
           )}
         </div>
       )}
-
-      <div className="eco__salir">
-        <button
-          type="button"
-          className="boton-repetir"
-          onClick={() => alTerminar({ actividadId: actividad.id, completada: true })}
-        >
-          {t('lienzo.terminar')}
-        </button>
-      </div>
 
     </section>
   );

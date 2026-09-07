@@ -31,7 +31,7 @@ import type { PropsActividad } from '../tipos';
  * importante del ejercicio, y grabarlo es la otra mitad, no el requisito.
  */
 
-export default function Paisaje({ actividad, alTerminar }: PropsActividad) {
+export default function Paisaje({ actividad }: PropsActividad) {
   const contenido = actividad.contenido as {
     consigna: string;
     /** Cosas que buscar, como claves de i18n. Es el guion de escucha. */
@@ -198,14 +198,6 @@ export default function Paisaje({ actividad, alTerminar }: PropsActividad) {
       {/* Se dice en la pantalla, no solo en la política de privacidad. Quien tiene que
           entenderlo es el niño y el maestro que está a su lado, no un abogado. */}
       <p className="paisaje__promesa">{t('paisaje.sePuedeBorrar')}</p>
-
-      <button
-        type="button"
-        className="boton-repetir"
-        onClick={() => alTerminar({ actividadId: actividad.id, completada: true })}
-      >
-        {t('lienzo.terminar')}
-      </button>
     </section>
   );
 }

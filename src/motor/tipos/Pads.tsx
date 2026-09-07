@@ -68,7 +68,7 @@ const LETRAS = ['1', '2', '3', '4', '5', 'Q', 'W', 'E', 'R', 'T'];
 
 const TEMPOS = [60, 84, 108];
 
-export default function Pads({ actividad, alTerminar }: PropsActividad) {
+export default function Pads({ actividad }: PropsActividad) {
   const contenido = actividad.contenido as {
     consigna: string;
     /** Qué golpes salen. Menos es más en Infantil: diez pads son diez decisiones. */
@@ -337,17 +337,6 @@ export default function Pads({ actividad, alTerminar }: PropsActividad) {
             </button>
           </>
         )}
-
-        <button
-          type="button"
-          className="boton-repetir"
-          onClick={() => {
-            metronomo.current?.parar();
-            alTerminar({ actividadId: actividad.id, completada: true });
-          }}
-        >
-          {t('lienzo.terminar')}
-        </button>
       </div>
 
     </section>

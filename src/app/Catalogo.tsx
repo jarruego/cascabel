@@ -103,6 +103,22 @@ export default function Catalogo() {
     En `sessionStorage` y no en el estado: tiene que sobrevivir a que la pantalla se
     desmonte entera, que es justo lo que pasa al abrir una actividad.
   */
+  /*
+    La URL del catálogo, apuntada mientras se está EN el catálogo.
+
+    Es lo que hace que «Volver» desde una actividad sea siempre el catálogo y siga teniendo
+    los filtros puestos. Se apuntaba al desmontar, y ahí ya era tarde: para cuando corre la
+    limpieza, el navegador está en la actividad y `window.location` devuelve su URL. «Volver»
+    navegaba entonces a la actividad en la que ya estabas, o sea a ninguna parte.
+  */
+  useEffect(() => {
+    try {
+      sessionStorage.setItem('catalogo:url', `/${parametros.toString() ? `?${parametros}` : ''}`);
+    } catch {
+      // Sin almacenamiento, «Volver» irá al catálogo sin filtros.
+    }
+  }, [parametros]);
+
   const listaLista = entradas !== null;
   const yaRepuesto = useRef(false);
 
@@ -110,15 +126,6 @@ export default function Catalogo() {
     const guardar = () => {
       try {
         sessionStorage.setItem('catalogo:scroll', String(window.scrollY));
-        /*
-          Y la URL, con sus filtros.
-
-          Es lo que hace que «Volver» desde una actividad sea siempre el catálogo y siga
-          teniendo los filtros puestos. Antes se conseguía retrocediendo en el historial, y
-          eso da otra cosa: la pantalla ANTERIOR, que puede ser la ficha o la actividad de
-          antes. Volver es volver al catálogo.
-        */
-        sessionStorage.setItem('catalogo:url', `${window.location.pathname}${window.location.search}`);
       } catch {
         // Sin almacenamiento se pierde la posición y no pasa nada más.
       }

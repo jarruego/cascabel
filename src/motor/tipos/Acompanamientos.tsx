@@ -36,7 +36,7 @@ interface Base {
 /** Hasta dónde se deja transportar: una quinta arriba y otra abajo. */
 const TOPE = 7;
 
-export default function Acompanamientos({ actividad, alTerminar }: PropsActividad) {
+export default function Acompanamientos({ actividad }: PropsActividad) {
   const contenido = actividad.contenido as { consigna: string; bases: Base[] };
   const carril = useCarril(actividad.etapa);
 
@@ -128,19 +128,6 @@ export default function Acompanamientos({ actividad, alTerminar }: PropsActivida
           );
         })}
       </ul>
-
-      <div className="acompanamientos__acciones">
-        <button
-          type="button"
-          className="boton-repetir"
-          onClick={() => {
-            parar();
-            alTerminar({ actividadId: actividad.id, completada: true });
-          }}
-        >
-          {t('lienzo.terminar')}
-        </button>
-      </div>
 
     </section>
   );

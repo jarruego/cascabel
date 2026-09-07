@@ -365,11 +365,6 @@ p {
   cursor: pointer;
 }
 
-.feedback {
-  min-height: 2em; /* Reservado siempre: que el mensaje no empuje los botones. */
-  font-size: 1.1em;
-  color: var(--ok);
-}
 
 /*
  * /diagnostico (T0.1). Es un instrumento de medida, no una pantalla de producto:
@@ -635,10 +630,6 @@ p {
 .boton--rojo { color: var(--acento); border-color: var(--acento); }
 .boton--amarillo { color: var(--eje-creacion); border-color: var(--eje-creacion); }
 .boton__texto { color: var(--tinta); font-weight: 700; }
-.feedback {
-  min-height: 2.5em;
-  font-size: 1.15em;
-}
 
 /* ── emparejar ─────────────────────────────────────────────────────────────
    Dos columnas y toque sucesivo. Nada arrastrable: WCAG 2.5.7, y por debajo de
@@ -2461,11 +2452,26 @@ p {
   inset: 0;
   z-index: 50;
   display: grid;
-  place-content: center;
+  /*
+    Centrada en vertical, **estirada en horizontal**.
+
+    Aquí ponía `place-content: center`, que centra en los dos ejes, y centrar en horizontal
+    una rejilla de una sola columna significa encoger esa columna hasta el ancho de su
+    contenido. El resultado era el que describió el autor: se amplía el piano a pantalla
+    completa y el piano se queda igual de ancho, con dos franjas de papel a los lados. En
+    apaisado, que es justo la postura que pide el modo ampliado, se veía el doble de mal.
+
+    Dejando solo `align-content` el eje horizontal vuelve a su valor normal —estirar— y la
+    actividad ocupa el ancho entero. El `safe` es para el caso contrario: si el contenido es
+    más alto que la pantalla, centrar recortaría por arriba y ahí no se puede desplazar.
+  */
+  align-content: safe center;
   padding: var(--e-4);
   overflow: auto;
   background: var(--papel);
 }
+/* Y que nada de dentro se quede con el ancho de antes. */
+.lienzo[data-ampliado] > .actividad { width: 100%; max-width: none; }
 /* El botón se queda flotando en la esquina, y en modo ampliado se aparta del contenido. */
 .lienzo[data-ampliado] .lienzo__boton {
   position: fixed;
@@ -2486,6 +2492,14 @@ p {
   de pantalla completa para leerlo sería absurdo.
 */
 .lienzo[data-ampliado] .actividad { margin: 0; }
+/*
+  Fuera lo que no se toca.
+
+  Ampliar es pedir «que se vea grande desde el fondo del aula». Todo botón que sobrevive a
+  esa petición le quita sitio a lo que sí se mira. «Idea» es una propuesta para cuando no se
+  te ocurre qué tocar: se lee sentado y en pantalla normal, no proyectado.
+*/
+.lienzo[data-ampliado] .retos__boton { display: none; }
 /* Y todo un poco más grande, que es de lo que se trataba. */
 .lienzo[data-ampliado] .karaoke__pauta[data-orientacion='vertical'] { height: clamp(300px, 70vh, 820px); }
 /* A pantalla completa el teclado crece, y la altura vive en `.teclado__teclas` desde que
@@ -3309,12 +3323,6 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 .referencia__oir { flex: 0 0 auto; display: inline-flex; align-items: center; gap: var(--e-2); }
 .referencia__oir[data-sonando] { border-color: var(--acento); color: var(--acento); }
 
-.referencia__acciones {
-  display: flex;
-  justify-content: center;
-  margin: var(--e-6) 0;
-}
-
 @media (max-width: 30rem) {
   /* En un móvil el botón se va debajo antes que estrechar el texto a cuatro palabras. */
   .referencia__entrada { flex-wrap: wrap; }
@@ -3371,12 +3379,6 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 .acompanamientos__datos { font-size: var(--t-xs); }
 .acompanamientos__base button { flex: 0 0 auto; display: inline-flex; align-items: center; gap: var(--e-2); }
 
-.acompanamientos__acciones {
-  display: flex;
-  justify-content: center;
-  margin: var(--e-6) 0;
-}
-
 @media (max-width: 30rem) {
   .acompanamientos__base { flex-wrap: wrap; }
   .acompanamientos__base button { width: 100%; justify-content: center; }
@@ -3432,8 +3434,7 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 }
 .eco__pandero[data-golpeado] .eco__cuenta { color: var(--papel); }
 
-.eco__acciones,
-.eco__salir {
+.eco__acciones {
   display: flex;
   flex-wrap: wrap;
   gap: var(--e-2);
@@ -3882,18 +3883,29 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
  * el aire y el texto, nunca la zona que se toca.
  * ------------------------------------------------------------------------ */
 .actividad .boton-repetir {
+  /*
+    Parece un botón, y ocupa poco.
+
+    La primera versión les quitó borde y fondo para que no compitieran con la actividad, y
+    se pasó: un texto suelto en gris no parece pulsable, y en una pantalla táctil eso es un
+    botón que nadie toca. Lo que había que recortar era el TAMAÑO, no la apariencia.
+  */
   min-height: var(--objetivo);
-  padding: var(--e-1) var(--e-3);
+  padding: var(--e-2) var(--e-4);
   gap: var(--e-2);
   font-size: var(--t-s);
-  border-color: transparent;
-  background: none;
-  color: var(--tinta-2);
-}
-.actividad .boton-repetir:hover,
-.actividad .boton-repetir:focus-visible {
-  border-color: var(--linea);
+  font-weight: 600;
   color: var(--tinta);
+  background: var(--superficie);
+  border: 2px solid var(--linea);
+  box-shadow: var(--sombra-1);
+}
+.actividad .boton-repetir:hover {
+  border-color: var(--tinta-2);
+}
+.actividad .boton-repetir:active {
+  transform: translateY(1px);
+  box-shadow: none;
 }
 /* El que está puesto sí se ve: es estado, no adorno. */
 .actividad .boton-repetir[data-elegida],
@@ -3986,13 +3998,20 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
  * a los diez segundos sería un adorno que además molesta. Es la misma idea del personaje de
  * la barra: llamar la atención una vez y callarse.
  * ------------------------------------------------------------------------ */
+/*
+  El que arranca late por el BORDE, no cambiando de tamaño.
+
+  Con escala, el botón empujaba a lo que tenía al lado en cada latido y la fila entera se
+  movía. Un halo que aparece y se va llama igual la atención y no mueve nada — es lo que hace
+  cualquier botón de grabar.
+*/
 .boton-arranque {
-  animation: arranque-late 2.4s ease-in-out 1.2s infinite;
+  border-color: var(--acento-2);
+  animation: arranque-late 2.2s ease-out 1s infinite;
 }
 @keyframes arranque-late {
-  0%, 82%, 100% { transform: scale(1); }
-  88% { transform: scale(1.06); }
-  94% { transform: scale(1.02); }
+  0%, 70%, 100% { box-shadow: var(--sombra-1), 0 0 0 0 rgb(44 110 99 / 45%); }
+  80% { box-shadow: var(--sombra-1), 0 0 0 8px rgb(44 110 99 / 0%); }
 }
 /* En marcha ya no llama: lo que hace falta entonces es poder pararlo, no que insista. */
 .boton-arranque[data-sonando],

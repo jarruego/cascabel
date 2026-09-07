@@ -7,6 +7,8 @@ import { DetectorDePalmadas } from '@/escucha/palmadas';
 import { useCarril } from '@/app/preferencias';
 import { evaluarRitmo, type EvaluacionRitmica } from '../evaluacion';
 import { aMilisegundos, anclarEn, rejillaDesdeSilabas } from '../rejillaRitmica';
+import { Reaccion } from '@/ui/Reaccion';
+import type { Personaje as PersonajeNombre } from '@/ui/personajes';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { CuentaAtras } from '@/ui/CuentaAtras';
@@ -47,7 +49,9 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
 
   const [fase, setFase] = useState<Fase>('listo');
   const [ronda, setRonda] = useState(0);
-  const [conMicrofono, setConMicrofono] = useState(false);
+  // Solo importa el `set`: la vía se decide al primer golpe y el valor no se dibuja
+  // desde que la instrucción salió de la pantalla.
+  const [, setConMicrofono] = useState(false);
   const [avisoMicro, setAvisoMicro] = useState<string | null>(null);
   const [evaluacion, setEvaluacion] = useState<EvaluacionRitmica | null>(null);
   /** Se acabó el tiempo sin que el niño tocara nada. No es un fallo: es que no empezó. */
@@ -447,7 +451,7 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
 
       {fase === 'respondiendo' && (
         <>
-          <p aria-live="polite">{conMicrofono ? t('tocar.palmea') : t('tocar.toca')}</p>
+          {/* La instrucción de qué hacer va en la explicación, no aquí. */}
           {/* El botón grande existe SIEMPRE, también con micrófono: un niño que prefiere
               tocar no tiene por qué explicarle a nadie por qué. */}
           {/* El botón desaparece si la ronda ya se está haciendo con palmadas: dejarlo
@@ -489,6 +493,7 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
       {fase === 'resultado' && !sinRespuesta && evaluacion && (
         <Resultado
           evaluacion={evaluacion}
+          personaje={actividad.personaje}
           ronda={ronda}
           repeticiones={repeticiones}
           alSeguir={() => {
@@ -526,11 +531,13 @@ function Resultado({
   ronda,
   repeticiones,
   alSeguir,
+  personaje,
 }: {
   evaluacion: EvaluacionRitmica;
   ronda: number;
   repeticiones: number;
   alSeguir: () => void;
+  personaje?: PersonajeNombre;
 }) {
   const { desvioMedioMs, desviacionTipicaMs, regularPeroDesfasado } = evaluacion;
 
@@ -543,8 +550,12 @@ function Resultado({
       : 'tocar.masRegular';
 
   return (
-    <section className="tocar__resultado" aria-live="polite">
-      <p className="tocar__mensaje">{t(mensaje)}</p>
+    <section className="tocar__resultado">
+      {/* Como en todas: el personaje lo dice, entra deslizando y se va solo. Antes era un
+          párrafo fijo, y una frase que se queda hasta que pase otra cosa deja de leerse. */}
+      <Reaccion tono={mensaje === 'tocar.bien' ? 'bien' : 'casi'} personaje={personaje}>
+        {t(mensaje)}
+      </Reaccion>
       {/*
         Los milisegundos ya no se enseñan aquí.
 

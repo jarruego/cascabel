@@ -13,7 +13,8 @@ import type { PropsActividad } from '../tipos';
  * valioso: una consigna enorme, un pulso que se ve desde el fondo del aula, y los pasos.
  *
  * Aquí no hay evaluación ni acierto: no la usa un niño, la usa un adulto delante de
- * veinticinco. Termina cuando el maestro decide.
+ * veinticinco. Y como no tiene final, tampoco tiene botón de terminar: se sale por
+ * «Volver», que está siempre en el mismo sitio. Ver `motor/actividadesLibres.ts`.
  */
 
 interface Paso {
@@ -23,7 +24,7 @@ interface Paso {
   duracion?: string;
 }
 
-export default function GuiaAula({ actividad, alTerminar }: PropsActividad) {
+export default function GuiaAula({ actividad }: PropsActividad) {
   const contenido = actividad.contenido as {
     consigna: string;
     pasos: Paso[];
@@ -146,23 +147,17 @@ export default function GuiaAula({ actividad, alTerminar }: PropsActividad) {
         <span aria-live="polite">
           {paso + 1} / {contenido.pasos.length}
         </span>
-        {paso + 1 < contenido.pasos.length ? (
-          <button type="button" className="boton-repetir" onClick={() => setPaso((n) => n + 1)}>
-            {t('guia.siguiente')}
-          </button>
-        ) : (
-          // No hay acierto ni evaluación: termina cuando el maestro lo dice.
-          <button
-            type="button"
-            className="boton-repetir"
-            onClick={() => {
-              parar();
-              alTerminar({ actividadId: actividad.id, completada: true });
-            }}
-          >
-            {t('guia.terminar')}
-          </button>
-        )}
+        {/* En el último paso se apaga, igual que «Anterior» en el primero. Aquí había un
+            «Terminar» que cerraba la guía, y la guía no se cierra: se sale por «Volver»,
+            como de todas las pantallas que no tienen final. */}
+        <button
+          type="button"
+          className="boton-repetir"
+          aria-disabled={paso + 1 >= contenido.pasos.length || undefined}
+          onClick={() => setPaso((n) => Math.min(contenido.pasos.length - 1, n + 1))}
+        >
+          {t('guia.siguiente')}
+        </button>
       </div>
 
       {contenido.materiales && contenido.materiales.length > 0 && (

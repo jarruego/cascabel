@@ -39,7 +39,7 @@ import type { PropsActividad } from '../tipos';
  * el sonido lo hiciera.
  */
 
-export default function Pistas({ actividad, alTerminar }: PropsActividad) {
+export default function Pistas({ actividad }: PropsActividad) {
   const contenido = actividad.contenido as {
     consigna: string;
     pistas: Pista[];
@@ -263,33 +263,15 @@ export default function Pistas({ actividad, alTerminar }: PropsActividad) {
         </button>
 
         {contenido.exportable && (
-          <>
-            <button
-              type="button"
-              className="boton-repetir"
-              aria-disabled={paraExportar().length === 0 || undefined}
-              onClick={() =>
-                descargar(`${actividad.id}.mid`, aMidiSMF(paraExportar(), bpm), 'audio/midi')
-              }
-            >
-              {t('rejilla.midi')}
-            </button>
-            <button
-              type="button"
-              className="boton-repetir"
-              onClick={() => alTerminar({ actividadId: actividad.id, completada: true })}
-            >
-              {t('lienzo.terminar')}
-            </button>
-          </>
-        )}
-        {!contenido.exportable && (
           <button
             type="button"
             className="boton-repetir"
-            onClick={() => alTerminar({ actividadId: actividad.id, completada: true })}
+            aria-disabled={paraExportar().length === 0 || undefined}
+            onClick={() =>
+              descargar(`${actividad.id}.mid`, aMidiSMF(paraExportar(), bpm), 'audio/midi')
+            }
           >
-            {t('lienzo.terminar')}
+            {t('rejilla.midi')}
           </button>
         )}
       </div>

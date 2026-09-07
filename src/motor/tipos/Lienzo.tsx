@@ -9,7 +9,6 @@ import { IconoParar, IconoTocar } from '@/ui/Transporte';
 import { Retos } from '@/ui/Retos';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
-import { Icono } from '@/ui/Icono';
 
 /**
  * Tipo «lienzo»: creación libre, sin evaluación.
@@ -37,7 +36,7 @@ interface Trazo {
   fila: number;
 }
 
-export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
+export default function Lienzo({ actividad }: PropsActividad) {
   const contenido = actividad.contenido as {
     consigna: string;
     /** Notas disponibles, de aguda a grave. La altura en pantalla es la altura del sonido. */
@@ -406,18 +405,7 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
         {contenido.retos && <Retos retos={contenido.retos} />}
         <button type="button" className="boton-repetir" onClick={() => setTrazos([])}>
           {t('lienzo.limpiar')}
-        </button>
-        <button
-          type="button"
-          className="boton-repetir"
-          onClick={() => {
-            base.current?.parar();
-            alTerminar({ actividadId: actividad.id, completada: true });
-          }}
-        >
-          <Icono nombre="pulgar" tamano={26} /> {t('lienzo.terminar')}
-        </button>
-      </div>
+        </button>      </div>
 
       {/* Pista FIJA, no feedback: no cambia nunca, así que no necesita aria-live —un
           lector de pantalla ya la lee al llegar—. No hay marcador, ni porcentaje, ni

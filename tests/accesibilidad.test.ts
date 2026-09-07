@@ -64,13 +64,24 @@ describe('accesibilidad', () => {
   });
 
   it('los avisos que cambian solos se anuncian con aria-live', () => {
-    // Un mensaje que aparece sin que el usuario navegue hasta él es invisible para un
-    // lector de pantalla si no se anuncia.
-    const conFeedback = todos.filter((c) => c.fuente.includes('className="feedback"'));
-    expect(conFeedback.length).toBeGreaterThan(0);
-    for (const { ruta, fuente } of conFeedback) {
-      const bloque = fuente.slice(fuente.indexOf('className="feedback"') - 200);
-      expect(bloque.slice(0, 400), `${ruta}: feedback sin aria-live`).toMatch(/aria-live/);
+    /*
+      Un mensaje que aparece sin que el usuario navegue hasta él es invisible para un lector
+      de pantalla si no se anuncia.
+
+      Miraba la clase `.feedback`, que era el párrafo que repetían siete tipos de motor.
+      Desde el 2026-09-08 eso es un componente —`ui/Reaccion.tsx`—, así que lo que hay que
+      comprobar es que ESE lo anuncie: si se le cayera el `aria-live`, se quedarían mudas las
+      veintiuna pantallas de golpe en vez de una.
+    */
+    const reaccion = readFileSync(join(RAIZ, 'src', 'ui', 'Reaccion.tsx'), 'utf-8');
+    expect(reaccion, 'Reaccion.tsx sin aria-live').toMatch(/aria-live/);
+
+    // Y lo que siga anunciándose a mano, que también lo haga bien.
+    for (const { ruta, fuente } of todos) {
+      for (const m of fuente.matchAll(/className="(feedback|tocar__resultado)"/g)) {
+        const bloque = fuente.slice(Math.max(0, m.index - 200), m.index + 200);
+        expect(bloque, `${ruta}: aviso sin aria-live`).toMatch(/aria-live|<Reaccion/);
+      }
     }
   });
 

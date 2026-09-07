@@ -5,6 +5,7 @@ import { componenteDe } from '@/motor/registro';
 import { Lienzo } from '@/ui/Lienzo';
 import { Personaje } from '@/ui/Personaje';
 import { anotar } from '@/datos/progreso';
+import { esLibre } from '@/motor/actividadesLibres';
 import { ModalExito, ModalExplicacion } from '@/ui/ModalesActividad';
 import { usePreferencias } from './preferencias';
 import { t } from '@/i18n';
@@ -63,6 +64,24 @@ export default function Actividad() {
       vivo = false;
     };
   }, [id]);
+
+  /**
+   * Las actividades libres se dan por hechas al abrirlas.
+   *
+   * El piano, la caja de sonidos o el kit de percusión no tienen final: se tocan hasta que
+   * se deja de tocar. Antes eso lo resolvía un botón de «Terminar» dentro de cada una, que
+   * además abría la modal de celebración — felicitar a alguien por dejar de tocar el piano
+   * es raro — y competía con «Volver». Se quitó, y con él la única forma que había de
+   * anotarlas: de ahí este efecto. Qué tipos son libres lo dice
+   * `motor/actividadesLibres.ts`, que es donde vive la regla y donde está su test.
+   *
+   * Se anota directamente, sin pasar por `setResultado`: eso abriría la celebración nada
+   * más entrar, que es justo lo que no queremos.
+   */
+  useEffect(() => {
+    if (!actividad || !esLibre(actividad.tipo)) return;
+    void anotar({ actividadId: actividad.id, completada: true });
+  }, [actividad]);
 
   /**
    * Volver al catálogo **tal como estaba**: mismos filtros y misma posición.

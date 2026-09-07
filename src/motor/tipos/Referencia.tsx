@@ -51,7 +51,7 @@ interface Seccion {
   entradas: Entrada[];
 }
 
-export default function Referencia({ actividad, alTerminar }: PropsActividad) {
+export default function Referencia({ actividad }: PropsActividad) {
   const contenido = actividad.contenido as {
     consigna: string;
     secciones: Seccion[];
@@ -174,16 +174,6 @@ export default function Referencia({ actividad, alTerminar }: PropsActividad) {
       ))}
 
       {secciones.length === 0 && <p role="status">{t('referencia.nada')}</p>}
-
-      <div className="referencia__acciones">
-        <button
-          type="button"
-          className="boton-repetir"
-          onClick={() => alTerminar({ actividadId: actividad.id, completada: true })}
-        >
-          {t('lienzo.terminar')}
-        </button>
-      </div>
 
     </section>
   );

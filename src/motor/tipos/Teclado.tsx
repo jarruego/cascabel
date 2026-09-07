@@ -36,7 +36,7 @@ const BLANCAS = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
  *  su patrón de dos y tres, y lo que permite orientarse sin mirar. */
 const CON_NEGRA = [true, true, false, true, true, true, false];
 
-export default function Teclado({ actividad, alTerminar }: PropsActividad) {
+export default function Teclado({ actividad }: PropsActividad) {
   const contenido = actividad.contenido as {
     consigna: string;
     /** Octava más grave que se muestra. */
@@ -324,14 +324,24 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
     return () => window.removeEventListener('keydown', pulsar);
   }, [desde, octavasVisibles, soloBlancas, sonar, disposicion]);
 
+  /*
+    Las teclas se generan contando BLANCAS, no octavas.
+
+    Antes el bucle iba por octavas enteras, así que `blancas: 8` ensanchaba el teclado y
+    seguía dibujando siete teclas: Doby, que es el do de arriba, no aparecía. Contando
+    blancas, la octava se deduce de cuántas llevas —siete por vuelta— y la número ocho cae
+    sola en el do siguiente.
+  */
   const teclas: Array<{ nota: string; negra: boolean; indice: number }> = [];
-  for (let o = 0; o < octavasVisibles; o++) {
-    BLANCAS.forEach((letra, i) => {
-      teclas.push({ nota: `${letra}${desde + o}`, negra: false, indice: o * 7 + i });
-      if (!soloBlancas && CON_NEGRA[i]) {
-        teclas.push({ nota: `${letra}#${desde + o}`, negra: true, indice: o * 7 + i });
-      }
-    });
+  for (let n = 0; n < blancas; n++) {
+    const octava = desde + Math.floor(n / 7);
+    const i = n % 7;
+    const letra = BLANCAS[i]!;
+    teclas.push({ nota: `${letra}${octava}`, negra: false, indice: n });
+    // La negra de la última blanca no se dibuja: quedaría colgando fuera del teclado.
+    if (!soloBlancas && CON_NEGRA[i] && n < blancas - 1) {
+      teclas.push({ nota: `${letra}#${octava}`, negra: true, indice: n });
+    }
   }
 
   return (
@@ -549,14 +559,6 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
           </button>
           </>
         )}
-
-        <button
-          type="button"
-          className="boton-repetir"
-          onClick={() => alTerminar({ actividadId: actividad.id, completada: true })}
-        >
-          {t('lienzo.terminar')}
-        </button>
       </div>
 
     </section>
