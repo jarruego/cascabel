@@ -91,9 +91,13 @@ src/
   config.ts             Constantes globales (nombre, versión del esquema, idioma por defecto)
   main.tsx  App.tsx
   app/                  Rutas, layout, proveedor de audio
+    Catalogo.tsx        La vista del MAESTRO: filtros curriculares y buscador
+    Camino.tsx          El orden sugerido por etapa. No bloquea nada: §1
+    Instrumentos.tsx    Lo marcado con `herramienta` en su JSON, no por el prefijo
   motor/
     tipos.ts            Tipos TypeScript derivados del JSON Schema
-    registro.ts         Mapa tipo-de-actividad -> componente. 16 tipos
+    registro.ts         Mapa tipo-de-actividad -> componente. La lista viva está en
+                        docs/01-ARQUITECTURA.md, con un test que la vigila
     tipos/              Un componente por tipo: Eleccion.tsx, Karaoke.tsx, Pistas.tsx...
     maquina*.ts         Reglas de producto puras, con test. NO viven en el componente
     escala.ts           Tonos, semitonos y construcción de escalas
@@ -108,6 +112,7 @@ src/
     clic.ts             El clic del pulso. Un oscilador, compartido
     sampler.ts          Muestras Opus + playbackRate + ADSR, y `sostener()`
     percusion.ts        Golpes sin altura, con round robin. NO es el sampler
+    cuerpo.ts           Pitos, palmas, muslos y pies. Es SEÑAL, no timbre: §7
     instrumentos.ts     Qué instrumentos hay y cuáles sostienen
   escucha/
     microfono.ts        getUserMedia con el procesado de voz DESACTIVADO
@@ -129,9 +134,11 @@ src/
   estilos/tokens.css    Colores, tipografías, tamaños táctiles por edad
 content/
   actividades/*.json    Una actividad por fichero
-  catalogo.json         Backlog de las 54 actividades previstas
+  catalogo.json         Backlog y reserva de códigos. El validador la usa
+  camino.json           En qué orden hacerlas. Es una opinión, no una condición
 schemas/actividad.schema.json
-tools/                  validar.py, indice.mjs, presupuesto.mjs
+tools/                  validar.py, indice.mjs, presupuesto.mjs, tabla-tipos.mjs
+                        y los muestras-*.py que construyen el banco de audio
 docs/                   Documentación viva (ver índice en README)
 prompts/                Prompts de generación de contenido
 ```
@@ -152,7 +159,9 @@ prompts/                Prompts de generación de contenido
 - Los componentes de actividad **no tocan el `AudioContext` directamente**: usan
   `useAudio()`. Un solo `AudioContext` en toda la app.
 - CSS con variables de `estilos/tokens.css`. Nada de valores mágicos: los tamaños táctiles
-  salen de `--objetivo-infantil`, `--objetivo-c1`, `--objetivo-c3`.
+  salen de `--objetivo`, que vale lo que toque según el carril (`--objetivo-infantil`,
+  `--objetivo-lectores`, `--objetivo-autonomos`). Un componente pide `var(--objetivo)` y no
+  necesita saber en qué carril está.
 - Commits en español, imperativo, con ámbito: `motor: añade tipo emparejar`,
   `contenido: 6 actividades de Infantil`, `audio: compensa outputLatency`.
 
@@ -299,6 +308,14 @@ estás seguro de un criterio, deja `"criterio": null` y márcalo en un comentari
 (toda canción se verifica contra una fuente de dominio público antes de entrar), las
 locuciones (voz humana) y los textos normativos (se copian del BOE, no se parafrasean).
 
+**Y cuidado también con los métodos.** Orff-Schulwerk, Kodály y Dalcroze son de uso libre:
+un método no se protege, se protege el texto en que se explicó, y sus sílabas rítmicas o sus
+cuatro sonidos corporales están en cualquier manual de magisterio desde hace décadas.
+**BAPNE® no**: es marca registrada, con autor vivo y titularidad expresa sobre su notación,
+su terminología y sus secuencias. Coincidir en los cuatro sonidos es inevitable —son los que
+tiene un cuerpo— pero no se copia su forma de escribirlos ni se sugiere relación alguna con
+el método. Ver `docs/08-LEGAL.md`.
+
 **Cuidado con el repertorio**: muchas canciones que parecen tradicionales están protegidas
 ("La vaca lechera", Cri-Cri). El plazo español es 70 años, **pero 80 si el autor murió antes
 del 7-12-1987**. Y el fonograma es un derecho aparte: nunca se usa audio ajeno.
@@ -335,6 +352,7 @@ npm run verificar           # typecheck + lint + tests + validación de contenid
 npm run contenido:preparar  # crea .venv con music21 y jsonschema (Python 3.11+)
 npm run contenido:validar   # solo el validador de actividades
 npm run contenido:indice    # regenera content/indice.json desde las actividades
+npm run docs:tipos          # rehace la tabla de tipos de docs/01-ARQUITECTURA.md
 npm run build && npm run preview
 
 docker compose up web                       # todo el entorno, sin instalar node
