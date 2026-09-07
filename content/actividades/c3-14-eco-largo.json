@@ -1,0 +1,52 @@
+{
+  "id": "c3-14-eco-largo",
+  "version": 1,
+  "tipo": "eco",
+  "titulo": "Eco largo",
+  "descripcion": "El mismo juego con patrones de hasta diez golpes. A esta edad lo difícil ya no es repetir, es acordarse.",
+  "etapa": "primaria-c3",
+  "eje": "pulso",
+  "lugar": "pantalla",
+  "duracion_min": 12,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Práctica instrumental, vocal y corporal"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c314ec.consigna",
+    "golpe": "cajachina",
+    "maximoGolpes": 10
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c314ec.enunciado"
+  },
+  "pistas": [
+    "actividad.c314.pista1",
+    "actividad.c314.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Percusión",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

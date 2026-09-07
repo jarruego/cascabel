@@ -1,7 +1,7 @@
 {
   "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa.",
   "generado": "2026-09-07",
-  "total": 73,
+  "total": 75,
   "actividades": [
     {
       "id": "INF-01",
@@ -485,6 +485,19 @@
       "estado": "hecha"
     },
     {
+      "id": "C1-21",
+      "titulo": "Eco a dos",
+      "etapa": "primaria-c1",
+      "eje": "pulso",
+      "lugar": "pantalla",
+      "tipo": "eco",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Uno propone un ritmo y el otro lo repite. Se comparan las dos ejecuciones entre sí.",
+      "estado": "hecha"
+    },
+    {
       "id": "C2-01",
       "titulo": "Coloca la nota",
       "etapa": "primaria-c2",
@@ -846,6 +859,19 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Pitos, palmas, muslos y pies con silencio y contratiempo. El silencio es la parte difícil: hay que contarlo igual que un golpe.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C3-14",
+      "titulo": "Eco largo",
+      "etapa": "primaria-c3",
+      "eje": "pulso",
+      "lugar": "pantalla",
+      "tipo": "eco",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "El mismo juego con hasta diez golpes: lo difícil pasa a ser acordarse.",
       "estado": "hecha"
     },
     {

@@ -51,6 +51,7 @@ lista exactamente los tipos que hay en `src/motor/registro.ts`, con sus cifras a
 | `cuerpo` | Percusión corporal: pitos, palmas, muslos y pies en cuatro filas | 3 |
 | `emparejar` | Dos conjuntos, toque de dos en dos | 3 |
 | `ordenar` | Secuencia por altura, duración o forma | 3 |
+| `eco` | Dos niños por turnos: uno propone un ritmo y el otro lo repite | 2 |
 | `pads` | El kit de percusión, para tocarlo: pads por familias y pulso opcional | 2 |
 | `acompanamientos` | Bases en bucle para cantar encima, con transporte | 1 |
 | `compases` | Colocar las barras de compás donde el pulso las pide | 1 |

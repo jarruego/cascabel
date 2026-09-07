@@ -1,0 +1,52 @@
+{
+  "id": "c1-21-eco-a-dos",
+  "version": 1,
+  "tipo": "eco",
+  "titulo": "Eco a dos",
+  "descripcion": "Uno propone un ritmo y el otro lo repite. La aplicación compara las dos ejecuciones entre sí, y el resultado es de la pareja: nunca dice quién lo ha hecho mejor.",
+  "etapa": "primaria-c1",
+  "eje": "pulso",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Práctica instrumental, vocal y corporal"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c121ec.consigna",
+    "golpe": "pandereta",
+    "maximoGolpes": 6
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.c121ec.enunciado"
+  },
+  "pistas": [
+    "actividad.c121.pista1",
+    "actividad.c121.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Percusión",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

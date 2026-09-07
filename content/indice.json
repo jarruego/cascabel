@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-07",
-  "total": 74,
+  "total": 76,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -333,6 +333,24 @@
       "eje": "cuerpo",
       "tipo": "cuerpo",
       "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Práctica instrumental, vocal y corporal"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c1-21-eco-a-dos",
+      "titulo": "Eco a dos",
+      "etapa": "primaria-c1",
+      "eje": "pulso",
+      "tipo": "eco",
+      "lugar": "pantalla",
       "microfono": false,
       "duracion_min": 10,
       "curriculo": {
@@ -855,6 +873,24 @@
       "eje": "cuerpo",
       "tipo": "cuerpo",
       "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 12,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Práctica instrumental, vocal y corporal"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-14-eco-largo",
+      "titulo": "Eco largo",
+      "etapa": "primaria-c3",
+      "eje": "pulso",
+      "tipo": "eco",
+      "lugar": "pantalla",
       "microfono": false,
       "duracion_min": 12,
       "curriculo": {

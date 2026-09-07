@@ -36,7 +36,9 @@ export type TipoActividad =
   /** Consulta del lenguaje musical, con sonido. No es un ejercicio. Ver Referencia.tsx. */
   | 'referencia'
   /** Bases en bucle para cantar encima, con transporte. Ver Acompanamientos.tsx. */
-  | 'acompanamientos';
+  | 'acompanamientos'
+  /** Dos niños por turnos: uno propone y otro repite. Ver Eco.tsx. */
+  | 'eco';
 
 export type Eje = 'pulso' | 'altura' | 'timbre' | 'notacion' | 'cuerpo' | 'creacion' | 'cultura';
 

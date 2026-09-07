@@ -20,6 +20,7 @@ import Cuerpo from './tipos/Cuerpo';
 import Pads from './tipos/Pads';
 import Referencia from './tipos/Referencia';
 import Acompanamientos from './tipos/Acompanamientos';
+import Eco from './tipos/Eco';
 
 /**
  * Mapa tipo de actividad -> componente.
@@ -49,6 +50,7 @@ export const REGISTRO: Partial<Record<TipoActividad, ComponentType<PropsActivida
   pads: Pads,
   referencia: Referencia,
   acompanamientos: Acompanamientos,
+  eco: Eco,
   // Los diez tipos de docs/01-ARQUITECTURA.md están implementados.
   // Añadir una actividad NO toca este fichero: se escribe un JSON.
   // rejilla, pentagrama, seguir, 'tocar-a-tiempo' -> fase 2

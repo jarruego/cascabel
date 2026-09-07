@@ -3325,3 +3325,84 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   .acompanamientos__base { flex-wrap: wrap; }
   .acompanamientos__base button { width: 100%; justify-content: center; }
 }
+
+/* ---------------------------------------------------------------------------
+ * El eco a dos (tipo «eco»).
+ *
+ * El pandero es el objetivo táctil más grande de toda la aplicación, y a propósito: se
+ * golpea deprisa, sin mirar y a veces con la palma entera. Un botón de 48 px aquí sería un
+ * botón que se falla.
+ * ------------------------------------------------------------------------ */
+.eco { text-align: center; }
+
+.eco__turno {
+  margin: var(--e-4) auto;
+  max-width: 40ch;
+  font-size: var(--t-m);
+  color: var(--tinta-2);
+}
+
+.eco__pandero {
+  display: grid;
+  place-items: center;
+  width: min(60vw, 18rem);
+  height: min(60vw, 18rem);
+  margin: var(--e-4) auto;
+  padding: 0;
+  background: var(--superficie);
+  border: 8px solid var(--linea);
+  border-radius: var(--r-redondo);
+  cursor: pointer;
+  transition: transform 60ms, background-color 60ms, border-color 120ms;
+}
+/* Fuera de turno se queda apagado pero NO deshabilitado: `disabled` a media actividad está
+   prohibido —un botón que desaparece del recorrido de tabulación desorienta— y aquí basta
+   con que se vea que no toca. */
+.eco__pandero[data-activo] { border-color: var(--acento); }
+.eco__pandero[data-golpeado] {
+  background: var(--acento);
+  transform: scale(0.95);
+}
+.eco__pandero:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
+
+/* El número de golpes dados, dentro del pandero. Es la única cuenta que se enseña, y es
+   una cuenta de lo que llevas, no una puntuación. */
+.eco__cuenta {
+  font-size: var(--t-2xl);
+  font-weight: 700;
+  color: var(--tinta-2);
+}
+.eco__pandero[data-golpeado] .eco__cuenta { color: var(--papel); }
+
+.eco__acciones,
+.eco__salir {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+  justify-content: center;
+  margin: var(--e-4) 0;
+}
+.eco__acciones button { display: inline-flex; align-items: center; gap: var(--e-2); }
+
+.eco__resultado {
+  max-width: 44ch;
+  margin: var(--e-4) auto;
+  padding: var(--e-3) var(--e-4);
+  /* El texto se fija junto al fondo: --suave-amarillo cambia entre claro y oscuro y
+     --tinta con él, y dejarlo heredado es como se acaba con texto claro sobre claro. */
+  color: var(--tinta);
+  background: var(--suave-amarillo);
+  border-radius: var(--r-m);
+}
+/* Cuando se parecen, verde; cuando no, el mismo recuadro en ámbar. No hay rojo en ningún
+   caso: §4, el error no castiga. */
+.eco__resultado[data-bien] { color: var(--tinta); background: var(--suave-verde); }
+.eco__veredicto { margin: 0; font-size: var(--t-m); }
+/* El dato numérico es para el maestro y va en pequeño: un niño no tiene que leer
+   milisegundos, y si los lee acaba comparándose con el otro. */
+.eco__datos { margin: var(--e-2) 0 0; font-size: var(--t-xs); color: var(--tinta-2); }
+
+@media (prefers-reduced-motion: reduce) {
+  .eco__pandero { transition: none; }
+  .eco__pandero[data-golpeado] { transform: none; }
+}
