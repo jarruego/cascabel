@@ -23,7 +23,7 @@
     "modo": "ninguna"
   },
   "contenido": {
-    "consigna": "actividad.c313losc.consigna",
+    "consigna": "actividad.c313.consigna",
     "tempo": 88,
     "patron": [
       {
@@ -75,7 +75,7 @@
       "completado"
     ]
   },
-  "enunciado": "actividad.c313losc.enunciado",
+  "enunciado": "actividad.c313.enunciado",
   "personaje": "milo",
   "pistas": [
     "actividad.c313.pista1",

@@ -23,7 +23,7 @@
     "modo": "ninguna"
   },
   "contenido": {
-    "consigna": "actividad.c120mano.consigna",
+    "consigna": "actividad.c120.consigna",
     "tempo": 76,
     "patron": [
       {
@@ -81,7 +81,7 @@
       "completado"
     ]
   },
-  "enunciado": "actividad.c120mano.enunciado",
+  "enunciado": "actividad.c120.enunciado",
   "personaje": "milo",
   "pistas": [
     "actividad.c120.pista1",

@@ -51,5 +51,8 @@
       "licencia": "CC0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "pistas": [
+    "actividad.c104.pista1"
+  ]
 }

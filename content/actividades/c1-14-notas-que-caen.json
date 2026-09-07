@@ -178,5 +178,8 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "pistas": [
+    "actividad.c114.pista1"
+  ]
 }

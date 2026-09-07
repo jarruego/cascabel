@@ -83,3 +83,36 @@ describe('la guía por tipo de actividad del dosier imprimible', () => {
     }
   });
 });
+
+describe('los textos del contenido', () => {
+  /*
+    Las claves que piden las ACTIVIDADES, no las que piden los componentes.
+
+    Salió de un fallo real del 2026-09-08: cinco actividades apuntaban a claves que no
+    existían —se habían generado con un recorte del identificador, «c120mano», y los textos
+    se habían escrito con otro, «c120»— y la pantalla enseñaba la clave en crudo donde iba
+    el enunciado. No lo cazó nada: el test de textos miraba el código y estas claves están
+    en el contenido.
+  */
+  const DIR = join(__dirname, '..', 'content', 'actividades');
+  const actividades = readdirSync(DIR)
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => JSON.parse(readFileSync(join(DIR, f), 'utf-8')) as Record<string, unknown>);
+
+  it('toda clave que pide una actividad existe', () => {
+    const rotas: string[] = [];
+    for (const a of actividades) {
+      const claves: string[] = [];
+      const buscar = (v: unknown) => {
+        if (typeof v === 'string' && /^actividad\.[a-z0-9]+\./.test(v)) claves.push(v);
+        else if (Array.isArray(v)) v.forEach(buscar);
+        else if (v && typeof v === 'object') Object.values(v).forEach(buscar);
+      };
+      buscar(a);
+      for (const c of claves) {
+        if (!(c in DICCIONARIO)) rotas.push(`${String(a.id)} → ${c}`);
+      }
+    }
+    expect(rotas).toEqual([]);
+  });
+});

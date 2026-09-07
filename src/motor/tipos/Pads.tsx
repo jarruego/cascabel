@@ -96,7 +96,8 @@ export default function Pads({ actividad, alTerminar }: PropsActividad) {
   /** Clave estable de la lista, para las dependencias de los efectos. */
   const listaGolpes = ordenados.join(',');
 
-  const grabable = contenido.grabable ?? true;
+  // Igual que en el teclado: se pide, no viene puesto.
+  const grabable = contenido.grabable ?? false;
   const conMetronomo = contenido.metronomo ?? carril !== 'infantil';
   const letrasQwerty = contenido.letrasQwerty ?? carril !== 'infantil';
 

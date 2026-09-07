@@ -21,7 +21,7 @@
     "modo": "toque"
   },
   "contenido": {
-    "consigna": "actividad.c314ec.consigna",
+    "consigna": "actividad.c314.consigna",
     "golpe": "cajachina",
     "maximoGolpes": 10
   },
@@ -33,7 +33,7 @@
       "desviacion_tipica"
     ]
   },
-  "enunciado": "actividad.c314ec.enunciado",
+  "enunciado": "actividad.c314.enunciado",
   "personaje": "milo",
   "pistas": [
     "actividad.c314.pista1",

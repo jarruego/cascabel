@@ -45,7 +45,8 @@
       "reto.piano7",
       "reto.piano8"
     ],
-    "elegirOctavas": true
+    "elegirOctavas": true,
+    "grabable": true
   },
   "evaluacion": {
     "autocorrectiva": false,

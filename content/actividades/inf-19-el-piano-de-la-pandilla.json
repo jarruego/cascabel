@@ -29,7 +29,7 @@
     "nombres": "ninguno",
     "letrasQwerty": false,
     "instrumento": "marimba",
-    "grabable": true,
+    "grabable": false,
     "retos": [
       "actividad.inf19.reto1",
       "actividad.inf19.reto2",

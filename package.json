@@ -20,6 +20,7 @@
     "contenido:preparar": "node tools/preparar.mjs",
     "contenido:validar": "node tools/validar.mjs content/actividades",
     "contenido:indice": "node tools/indice.mjs",
+    "contenido:auditar": "node tools/auditoria.mjs",
     "docs:tipos": "node tools/tabla-tipos.mjs",
     "docs:pendientes": "node tools/pendientes.mjs",
     "personajes": "node tools/personajes.mjs",

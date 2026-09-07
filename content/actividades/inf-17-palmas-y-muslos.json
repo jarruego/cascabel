@@ -23,7 +23,7 @@
     "modo": "ninguna"
   },
   "contenido": {
-    "consigna": "actividad.inf17pal.consigna",
+    "consigna": "actividad.inf17.consigna",
     "tempo": 60,
     "patron": [
       {
@@ -58,7 +58,7 @@
       "completado"
     ]
   },
-  "enunciado": "actividad.inf17pal.enunciado",
+  "enunciado": "actividad.inf17.enunciado",
   "personaje": "milo",
   "pistas": [
     "actividad.inf17.pista1"

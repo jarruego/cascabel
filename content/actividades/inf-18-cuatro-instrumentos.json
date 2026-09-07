@@ -29,7 +29,7 @@
       "claves"
     ],
     "metronomo": false,
-    "grabable": true,
+    "grabable": false,
     "letrasQwerty": false
   },
   "evaluacion": {

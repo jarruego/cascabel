@@ -21,7 +21,7 @@
     "modo": "toque"
   },
   "contenido": {
-    "consigna": "actividad.c121ec.consigna",
+    "consigna": "actividad.c121.consigna",
     "golpe": "pandereta",
     "maximoGolpes": 6
   },
@@ -33,7 +33,7 @@
       "desviacion_tipica"
     ]
   },
-  "enunciado": "actividad.c121ec.enunciado",
+  "enunciado": "actividad.c121.enunciado",
   "personaje": "milo",
   "pistas": [
     "actividad.c121.pista1",

@@ -93,7 +93,9 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
   // En Infantil no se enseñan: se toca con el dedo, y una letra más en cada tecla es ruido.
   const letrasQwerty = contenido.letrasQwerty ?? carril !== 'infantil';
   const disposicion = contenido.disposicionTeclado ?? 'horizontal';
-  const grabable = contenido.grabable ?? true;
+  // Apagado salvo que se pida: grabar es de instrumento libre. En una actividad de
+  // Infantil son dos botones más que nadie ha pedido.
+  const grabable = contenido.grabable ?? false;
   const conPersonajes = contenido.personajes ?? carril === 'infantil';
   const elegirOctavas = contenido.elegirOctavas ?? false;
 

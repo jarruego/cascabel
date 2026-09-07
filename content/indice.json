@@ -548,7 +548,7 @@
         "area": "Educación Artística",
         "competencia": "CE1",
         "criterio": "1.1",
-        "saber": null
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
       "herramienta": false
@@ -814,7 +814,7 @@
         "area": "Educación Artística",
         "competencia": "CE4",
         "criterio": "4.1",
-        "saber": null
+        "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
       "herramienta": false

@@ -304,6 +304,23 @@ dentro de «altura» conviven cantar una nota (crear, Laia) y distinguir cuál e
 | **Simón** | Distinguir entre dos: agudo o grave, mayor o menor | 11 |
 | **Doby** | La unión y el cierre. Además **cierra todas** las actividades | 1 |
 
+### Dos que la auditoría marca y se quedan
+
+`npm run contenido:auditar` avisa de dos asignaciones que no cuadran con el eje de su
+actividad. Se revisaron el 2026-09-08 y **se quedan como están**, porque lo que se queda
+corto es la etiqueta, no el personaje:
+
+- **`c1-19` «Adivina quién baja»** tiene eje `pulso` y la lleva **Rex**. Se toca a tiempo,
+  sí, pero el gancho es que al acertar aparece el animal que iba dentro: lo que mueve al
+  niño es descubrir, y descubrir es de Rex.
+- **`c2-10` «Ostinato a dos planos»** tiene eje `creacion` y la lleva **Sol**. Lo que pasa
+  ahí es media clase con los pies en el 1 y el 3 y la otra media con las palmas en el 2 y el
+  4: es el pulso en el cuerpo, aunque el resultado sea una creación.
+
+El aviso se deja puesto a propósito. Una auditoría que se afina hasta dar cero deja de
+avisar de nada, y **dos revisados a mano de setenta y ocho es una buena señal**, no un
+problema pendiente.
+
 ### Y reacciona a lo que pasa
 
 Al acertar y al fallar, el personaje sale con su pose y una frase suya. **Dos voces y un
