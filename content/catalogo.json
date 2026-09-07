@@ -1,7 +1,7 @@
 {
   "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa.",
   "generado": "2026-09-07",
-  "total": 72,
+  "total": 73,
   "actividades": [
     {
       "id": "INF-01",
@@ -937,6 +937,19 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.2 · saber D",
       "descripcion": "Consulta del lenguaje musical con sonido: figuras, silencios, compases, notas, distancias, tempos y matices.",
+      "estado": "hecha"
+    },
+    {
+      "id": "TR-08",
+      "titulo": "Bases para cantar encima",
+      "etapa": "primaria-c1",
+      "eje": "creacion",
+      "lugar": "pantalla",
+      "tipo": "acompanamientos",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Seis bases en bucle con transporte, para cantar o improvisar encima.",
       "estado": "hecha"
     }
   ]

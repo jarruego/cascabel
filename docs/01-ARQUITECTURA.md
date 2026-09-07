@@ -52,6 +52,7 @@ lista exactamente los tipos que hay en `src/motor/registro.ts`, con sus cifras a
 | `emparejar` | Dos conjuntos, toque de dos en dos | 3 |
 | `ordenar` | Secuencia por altura, duración o forma | 3 |
 | `pads` | El kit de percusión, para tocarlo: pads por familias y pulso opcional | 2 |
+| `acompanamientos` | Bases en bucle para cantar encima, con transporte | 1 |
 | `compases` | Colocar las barras de compás donde el pulso las pide | 1 |
 | `escala` | Construir una escala contando tonos y semitonos | 1 |
 | `paisaje` | Grabar sonido del entorno y escucharlo (no sale del aparato) | 1 |

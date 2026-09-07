@@ -4,6 +4,8 @@ import { OBJETIVO_TACTIL } from '@/config';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { Sampler } from '@/audio/sampler';
 import { instrumentosDisponibles, muestrasDe, sostiene } from '@/audio/instrumentos';
+import { Acompanamiento, type Patron } from '@/audio/acompanamiento';
+import { IconoParar, IconoTocar } from '@/ui/Transporte';
 import { Retos } from '@/ui/Retos';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
@@ -22,6 +24,11 @@ import { Icono } from '@/ui/Icono';
  * quiere añadirle un «comprobar», que lo piense dos veces: dejaría de ser un lienzo.
  *
  * Termina cuando el niño dice que ha terminado. No hay otra condición.
+ *
+ * **El acompañamiento opcional** (`acompanamiento` en el JSON) es lo que convierte cinco
+ * notas sueltas en música. Sobre un bordón —tónica y quinta, sin tercera— no hay nota de la
+ * pentatónica que suene mal, y ésa es justamente la propiedad que hace que un niño con
+ * vergüenza se atreva a improvisar. Ver `audio/acompanamiento.ts`.
  */
 
 interface Trazo {
@@ -47,6 +54,14 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
      * entonces la raya se convierte en un trémolo. Ver `audio/instrumentos.ts`.
      */
     instrumento?: string;
+    /**
+     * Base en bucle que suena por debajo. Ver `audio/acompanamiento.ts`.
+     *
+     * No arranca sola: hay un botón. Una base que empieza a sonar al entrar en la pantalla
+     * asusta y, sobre todo, no deja elegir; y a veces lo que quiere el maestro es justo el
+     * silencio de debajo.
+     */
+    acompanamiento?: Patron;
   };
 
   const carril = useCarril(actividad.etapa);
@@ -76,6 +91,36 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
   const soltar = useRef<(() => void) | null>(null);
 
   const cargado = useRef<string | null>(null);
+
+  /* El acompañamiento vive en un ref y no en el estado: lo que cambia con él en pantalla es
+     un botón, y meterlo en el estado obligaría a redibujar el lienzo entero cada vuelta. */
+  const base = useRef<Acompanamiento | null>(null);
+  const [sonandoBase, setSonandoBase] = useState(false);
+
+  const alternarBase = useCallback(async () => {
+    if (!contenido.acompanamiento) return;
+    if (base.current?.enMarcha) {
+      base.current.parar();
+      setSonandoBase(false);
+      return;
+    }
+    try {
+      await despertarAudio();
+      if (!base.current) {
+        const a = new Acompanamiento(contenido.acompanamiento);
+        await a.cargar();
+        base.current = a;
+      }
+      base.current.arrancar();
+      setSonandoBase(true);
+    } catch {
+      // Sin muestras el lienzo sigue funcionando entero. La base es un apoyo, no un
+      // requisito, y quedarse sin ella no puede cerrar la actividad.
+    }
+  }, [contenido.acompanamiento]);
+
+  // Al salir, la base se calla. Es lo único de esta pantalla que sigue sonando solo.
+  useEffect(() => () => base.current?.parar(), []);
 
   const preparar = useCallback(async () => {
     await despertarAudio();
@@ -286,6 +331,19 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
           </select>
         </label>
 
+        {contenido.acompanamiento && (
+          <button
+            type="button"
+            className="boton-repetir"
+            aria-pressed={sonandoBase}
+            data-elegida={sonandoBase || undefined}
+            onClick={() => void alternarBase()}
+          >
+            {sonandoBase ? <IconoParar /> : <IconoTocar />}
+            {t(sonandoBase ? 'lienzo.pararBase' : 'lienzo.base')}
+          </button>
+        )}
+
         {contenido.retos && <Retos retos={contenido.retos} />}
         <button type="button" className="boton-repetir" onClick={() => setTrazos([])}>
           {t('lienzo.limpiar')}
@@ -293,7 +351,10 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
         <button
           type="button"
           className="boton-repetir"
-          onClick={() => alTerminar({ actividadId: actividad.id, completada: true })}
+          onClick={() => {
+            base.current?.parar();
+            alTerminar({ actividadId: actividad.id, completada: true });
+          }}
         >
           <Icono nombre="pulgar" tamano={26} /> {t('lienzo.terminar')}
         </button>

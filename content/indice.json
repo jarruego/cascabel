@@ -1,6 +1,6 @@
 {
-  "generado": "2026-09-06",
-  "total": 73,
+  "generado": "2026-09-07",
+  "total": 74,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -1312,6 +1312,24 @@
         "competencia": "CE3",
         "criterio": "3.2",
         "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": true
+    },
+    {
+      "id": "tr-08-acompanamientos",
+      "titulo": "Bases para cantar encima",
+      "etapa": "primaria-c1",
+      "eje": "creacion",
+      "tipo": "acompanamientos",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Práctica instrumental, vocal y corporal"
       },
       "estado": "borrador",
       "herramienta": true

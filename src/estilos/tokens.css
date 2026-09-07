@@ -3264,3 +3264,64 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   .referencia__entrada { flex-wrap: wrap; }
   .referencia__oir { margin-left: calc(3rem + var(--e-4)); }
 }
+
+/* ---------------------------------------------------------------------------
+ * El banco de bases (tipo «acompanamientos»).
+ *
+ * Es una pantalla de maestro, no de niño: se usa de pie, delante de la clase y mirando de
+ * reojo. Por eso los botones son grandes, hay uno por fila y la tonalidad se lee de lejos.
+ * ------------------------------------------------------------------------ */
+.acompanamientos { max-width: 46rem; margin: 0 auto; }
+
+.acompanamientos__tono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e-3);
+  margin: var(--e-5) 0;
+}
+.acompanamientos__nota {
+  min-width: 4rem;
+  padding: var(--e-2) var(--e-3);
+  font-size: var(--t-2xl);
+  font-weight: 700;
+  text-align: center;
+  color: var(--tinta);
+  background: var(--superficie);
+  border: 3px solid var(--linea);
+  border-radius: var(--r-m);
+}
+
+.acompanamientos__lista { margin: 0; padding: 0; list-style: none; }
+.acompanamientos__base {
+  display: flex;
+  align-items: center;
+  gap: var(--e-4);
+  margin-bottom: var(--e-3);
+  padding: var(--e-3) var(--e-4);
+  background: var(--superficie);
+  border: 2px solid var(--linea);
+  border-radius: var(--r-m);
+}
+/* La que suena se marca con el borde Y con la franja de la izquierda: dos señales, porque
+   con el color solo no se distingue de un vistazo desde el fondo del aula. */
+.acompanamientos__base[data-sonando] {
+  border-color: var(--acento);
+  border-left-width: 10px;
+}
+.acompanamientos__texto { flex: 1; min-width: 0; }
+.acompanamientos__texto h2 { margin: 0; font-size: var(--t-m); }
+.acompanamientos__texto p { margin: var(--e-1) 0 0; color: var(--tinta-2); }
+.acompanamientos__datos { font-size: var(--t-xs); }
+.acompanamientos__base button { flex: 0 0 auto; display: inline-flex; align-items: center; gap: var(--e-2); }
+
+.acompanamientos__acciones {
+  display: flex;
+  justify-content: center;
+  margin: var(--e-6) 0;
+}
+
+@media (max-width: 30rem) {
+  .acompanamientos__base { flex-wrap: wrap; }
+  .acompanamientos__base button { width: 100%; justify-content: center; }
+}

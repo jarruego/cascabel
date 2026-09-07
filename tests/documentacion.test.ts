@@ -17,7 +17,11 @@ import { join } from 'node:path';
 const RAIZ = join(__dirname, '..');
 
 function leer(ruta: string): string {
-  return readFileSync(join(RAIZ, ruta), 'utf-8');
+  // Normalizado a saltos Unix: en Windows git deja CRLF en el arbol de trabajo, y
+  // entonces el `$` de una expresion regular se queda delante del retorno de carro y
+  // la fila de la tabla deja de casar. Falla en un sitio y no en el otro, que es el
+  // peor tipo de fallo.
+  return readFileSync(join(RAIZ, ruta), 'utf-8').replace(/\r\n/g, '\n');
 }
 
 describe('documentación', () => {

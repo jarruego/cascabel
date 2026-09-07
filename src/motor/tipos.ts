@@ -34,7 +34,9 @@ export type TipoActividad =
   /** El kit de percusión, para tocarlo con el dedo. Ver Pads.tsx. */
   | 'pads'
   /** Consulta del lenguaje musical, con sonido. No es un ejercicio. Ver Referencia.tsx. */
-  | 'referencia';
+  | 'referencia'
+  /** Bases en bucle para cantar encima, con transporte. Ver Acompanamientos.tsx. */
+  | 'acompanamientos';
 
 export type Eje = 'pulso' | 'altura' | 'timbre' | 'notacion' | 'cuerpo' | 'creacion' | 'cultura';
 

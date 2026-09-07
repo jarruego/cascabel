@@ -1,9 +1,9 @@
 {
   "id": "c2-07-improvisa-en-pentatonica",
-  "version": 1,
+  "version": 2,
   "tipo": "lienzo",
   "titulo": "Improvisa en pentatónica",
-  "descripcion": "Cinco láminas sobre base con bordón. Sin semitonos, todo suena bien.",
+  "descripcion": "Cinco láminas sobre un bordón en bucle. Sin semitonos y sin tercera en la base: no hay nota que pueda sonar mal.",
   "etapa": "primaria-c2",
   "eje": "creacion",
   "lugar": "pantalla",
@@ -41,6 +41,28 @@
       "C5",
       "A4",
       "G4"
+    ],
+    "instrumento": "marimba",
+    "acompanamiento": {
+      "tempo": 84,
+      "pulsosPorVuelta": 4,
+      "bordon": "C3",
+      "instrumento": "marimba",
+      "percusion": [
+        {
+          "golpe": "bombo",
+          "pulso": 0
+        },
+        {
+          "golpe": "claves",
+          "pulso": 2
+        }
+      ]
+    },
+    "retos": [
+      "actividad.c207.reto1",
+      "actividad.c207.reto2",
+      "actividad.c207.reto3"
     ]
   },
   "evaluacion": {
@@ -54,7 +76,7 @@
   },
   "creditos": [
     {
-      "obra": "Percusión y láminas",
+      "obra": "Marimba y percusión",
       "autor": "Versilian Studios y colaboradores",
       "fuente": "https://github.com/sgossner/VCSL",
       "licencia": "CC0"

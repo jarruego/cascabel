@@ -1,0 +1,185 @@
+{
+  "id": "tr-08-acompanamientos",
+  "version": 1,
+  "tipo": "acompanamientos",
+  "titulo": "Bases para cantar encima",
+  "descripcion": "Seis acompañamientos en bucle, con botones para subir y bajar de tonalidad. Es lo que un aula sin piano no tiene.",
+  "etapa": "primaria-c1",
+  "eje": "creacion",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Práctica instrumental, vocal y corporal"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.tr08.consigna",
+    "bases": [
+      {
+        "nombre": "Bordón lento, 4/4",
+        "para": "Para cantar despacio y para improvisar por primera vez. Cuatro pulsos por vuelta.",
+        "patron": {
+          "tempo": 72,
+          "pulsosPorVuelta": 4,
+          "bordon": "C3",
+          "instrumento": "marimba",
+          "percusion": [
+            {
+              "golpe": "bombo",
+              "pulso": 0
+            },
+            {
+              "golpe": "claves",
+              "pulso": 2
+            }
+          ]
+        }
+      },
+      {
+        "nombre": "Bordón de vals, 3/4",
+        "para": "Tres pulsos, con el fuerte en el primero. Es el compás de casi toda canción de corro.",
+        "patron": {
+          "tempo": 96,
+          "pulsosPorVuelta": 3,
+          "bordon": "C3",
+          "instrumento": "marimba",
+          "percusion": [
+            {
+              "golpe": "bombo",
+              "pulso": 0
+            },
+            {
+              "golpe": "pandereta",
+              "pulso": 1
+            },
+            {
+              "golpe": "pandereta",
+              "pulso": 2
+            }
+          ]
+        }
+      },
+      {
+        "nombre": "Marcha, 2/4",
+        "para": "De dos en dos, para caminar o para desfilar por el aula.",
+        "patron": {
+          "tempo": 100,
+          "pulsosPorVuelta": 2,
+          "bordon": "C3",
+          "instrumento": "marimba",
+          "percusion": [
+            {
+              "golpe": "bombo",
+              "pulso": 0
+            },
+            {
+              "golpe": "caja",
+              "pulso": 1
+            }
+          ]
+        }
+      },
+      {
+        "nombre": "Balanceo, 6/8",
+        "para": "Seis corcheas en dos grupos de tres. Suena a barca, no a marcha.",
+        "patron": {
+          "tempo": 120,
+          "pulsosPorVuelta": 6,
+          "bordon": "C3",
+          "instrumento": "marimba",
+          "percusion": [
+            {
+              "golpe": "bombo",
+              "pulso": 0
+            },
+            {
+              "golpe": "cajachina",
+              "pulso": 3
+            }
+          ]
+        }
+      },
+      {
+        "nombre": "Solo pulso, sin bordón",
+        "para": "Cuando la canción ya tiene su propia armonía y lo único que falta es el tempo.",
+        "patron": {
+          "tempo": 88,
+          "pulsosPorVuelta": 4,
+          "percusion": [
+            {
+              "golpe": "charles",
+              "pulso": 0
+            },
+            {
+              "golpe": "charles",
+              "pulso": 1
+            },
+            {
+              "golpe": "charles",
+              "pulso": 2
+            },
+            {
+              "golpe": "charles",
+              "pulso": 3
+            }
+          ]
+        }
+      },
+      {
+        "nombre": "Rápido, para bailar",
+        "para": "Para las danzas y para el final de la clase.",
+        "patron": {
+          "tempo": 132,
+          "pulsosPorVuelta": 4,
+          "bordon": "C3",
+          "instrumento": "marimba",
+          "percusion": [
+            {
+              "golpe": "bombo",
+              "pulso": 0
+            },
+            {
+              "golpe": "caja",
+              "pulso": 1
+            },
+            {
+              "golpe": "bombo",
+              "pulso": 2
+            },
+            {
+              "golpe": "caja",
+              "pulso": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.tr08.enunciado"
+  },
+  "creditos": [
+    {
+      "obra": "Marimba y percusión",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "herramienta": true,
+  "estado": "borrador"
+}

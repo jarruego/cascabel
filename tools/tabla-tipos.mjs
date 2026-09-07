@@ -39,7 +39,10 @@ function cuantasPorTipo() {
   return cuenta;
 }
 
-const doc = readFileSync(DOC, 'utf-8');
+// Se normalizan los finales de linea al leer: en Windows git deja CRLF en el arbol de
+// trabajo, y los marcadores de este script son literales con salto de linea Unix.
+const doc = readFileSync(DOC, 'utf-8').replace(/\r\n/g, '\n');
+
 const inicio = doc.indexOf('| Tipo | Mecánica | Actividades |');
 const fin = doc.indexOf('\n\n**Antes de crear un tipo nuevo**');
 if (inicio < 0 || fin < 0) {
