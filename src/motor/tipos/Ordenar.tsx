@@ -1,6 +1,7 @@
 import { useEffect, useReducer, useRef } from 'react';
 import { OBJETIVO_TACTIL } from '@/config';
 import { useCarril } from '@/app/preferencias';
+import { Reaccion } from '@/ui/Reaccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
@@ -232,10 +233,13 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
         </button>
       </div>
 
-      <p className="feedback" aria-live="polite">
+      <Reaccion
+        tono={estado.fase === 'completada' ? 'bien' : estado.fase === 'revisando' ? 'casi' : 'neutro'}
+        personaje={actividad.personaje}
+      >
         {estado.fase === 'revisando' && t('ordenar.casi')}
         {estado.fase === 'completada' && t('comun.completada')}
-      </p>
+      </Reaccion>
 
       <progress
         value={estado.casillas.filter(Boolean).length}

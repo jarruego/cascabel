@@ -4,6 +4,7 @@ import { useCarril } from '@/app/preferencias';
 import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { MARIMBA, Sampler } from '@/audio/sampler';
 import { aMidiSMF, aMusicXML, descargar, type NotaExportable } from '@/datos/exportar';
+import { Reaccion } from '@/ui/Reaccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
@@ -303,11 +304,14 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
         )}
       </div>
 
-      <p className="feedback" aria-live="polite">
+      <Reaccion
+        tono={estado.fase === 'completada' ? 'bien' : estado.fase === 'revisando' ? 'casi' : 'neutro'}
+        personaje={actividad.personaje}
+      >
         {estado.fase === 'revisando' && t('rejilla.revisa')}
         {estado.fase === 'completada' && t('comun.completada')}
         {modo === 'libre' && estado.fase === 'editando' && t('rejilla.libre')}
-      </p>
+      </Reaccion>
 
       {estado.fase === 'revisando' && (
         <button

@@ -1,5 +1,6 @@
 import { useEffect, useReducer, useRef } from 'react';
 import { useCarril } from '@/app/preferencias';
+import { Reaccion } from '@/ui/Reaccion';
 import { t } from '@/i18n';
 import { figuraDe } from '../musicograma';
 import {
@@ -123,7 +124,10 @@ export default function Compases({ actividad, alTerminar }: PropsActividad) {
         lo mismo que «aquí cerraba y no lo has visto», y darles la misma frase perdería la
         mitad de lo que se está enseñando.
       */}
-      <p className="feedback" aria-live="polite">
+      <Reaccion
+        tono={estado.fase === 'completada' ? 'bien' : estado.fase === 'revisando' ? 'casi' : 'neutro'}
+        personaje={actividad.personaje}
+      >
         {estado.fase === 'revisando' &&
           t(
             estado.sobran.length && estado.faltan.length
@@ -133,7 +137,7 @@ export default function Compases({ actividad, alTerminar }: PropsActividad) {
                 : 'compases.faltan',
           )}
         {estado.fase === 'completada' && t('comun.completada')}
-      </p>
+      </Reaccion>
     </section>
   );
 }

@@ -6,6 +6,7 @@ import { muestrasDe } from '@/audio/instrumentos';
 import { colorDe, nombreDe } from '@/ui/coloresNota';
 import { alturaEnPauta, yDeLinea } from '../alturaEnPauta';
 import { distancia, escalaDesde, esEscalaMayor, MAYOR, type Distancia } from '../escala';
+import { Reaccion } from '@/ui/Reaccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -182,10 +183,13 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
         })}
       </div>
 
-      <p className="feedback" aria-live="polite">
+      <Reaccion
+        tono={resuelta ? 'bien' : puestas.length === objetivo.length ? 'casi' : 'neutro'}
+        personaje={actividad.personaje}
+      >
         {resuelta && t('escala.conseguida')}
         {!resuelta && puestas.length === objetivo.length && t('escala.casi')}
-      </p>
+      </Reaccion>
 
       <div className="escala__acciones">
         <button

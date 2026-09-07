@@ -3769,3 +3769,40 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
      letras se leen como dos palabras. */
   font-weight: 500;
 }
+
+/* ---------------------------------------------------------------------------
+ * La reacción del personaje
+ *
+ * Dos voces y un orden: el personaje acompaña, la pista enseña. Por eso la frase del
+ * personaje va arriba y en pequeño, y la pista debajo con el peso de siempre — al revés se
+ * leería primero el aplauso y después, si acaso, lo que había que aprender.
+ *
+ * Y nunca rojo. §4: el error no castiga, así que el caso de «casi» es ámbar, la pose es
+ * `anima` y no una cara triste, y no hay ni una cruz en toda la pantalla.
+ * ------------------------------------------------------------------------ */
+.reaccion {
+  display: flex;
+  align-items: center;
+  gap: var(--e-3);
+  min-height: 4.5rem;
+  margin: var(--e-4) auto;
+  max-width: 46ch;
+  padding: var(--e-3) var(--e-4);
+  border-radius: var(--r-m);
+  color: var(--tinta);
+  text-align: left;
+}
+.reaccion[data-tono='bien'] { color: var(--tinta); background: var(--suave-verde); }
+.reaccion[data-tono='casi'] { color: var(--tinta); background: var(--suave-amarillo); }
+/* Sin juicio no hay recuadro: solo el texto, que suele ser una instrucción. */
+.reaccion[data-tono='neutro'] { background: none; padding-inline: 0; }
+
+.reaccion__texto { display: grid; gap: var(--e-1); margin: 0; }
+.reaccion__frase { font-size: var(--t-s); color: var(--tinta-2); }
+.reaccion__quien { font-weight: 700; color: var(--tinta); }
+.reaccion__pista { font-size: var(--t-m); }
+
+@media (max-width: 26rem) {
+  /* En un móvil estrecho el personaje se lleva demasiado ancho del texto. */
+  .reaccion .personaje { display: none; }
+}

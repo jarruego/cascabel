@@ -3,6 +3,7 @@ import { OBJETIVO_TACTIL } from '@/config';
 import { useCarril } from '@/app/preferencias';
 import { MARIMBA, Sampler } from '@/audio/sampler';
 import { despertarAudio } from '@/audio/AudioEngine';
+import { Reaccion } from '@/ui/Reaccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import {
@@ -202,11 +203,14 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
         })}
       </div>
 
-      <p className="feedback" aria-live="polite">
+      <Reaccion
+        tono={estado.fase === 'casi' ? 'casi' : estado.fase === 'bien' || estado.fase === 'completada' ? 'bien' : 'neutro'}
+        personaje={actividad.personaje}
+      >
         {estado.fase === 'bien' && t('comun.bien')}
         {estado.fase === 'casi' && (pista ? t(pista) : t('comun.casi'))}
         {estado.fase === 'completada' && t('comun.completada')}
-      </p>
+      </Reaccion>
 
       <progress
         value={estado.indice}

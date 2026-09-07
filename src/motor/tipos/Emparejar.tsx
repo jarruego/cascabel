@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useReducer, useRef } from 'react';
 import { OBJETIVO_TACTIL } from '@/config';
 import { useCarril } from '@/app/preferencias';
+import { Reaccion } from '@/ui/Reaccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
@@ -150,11 +151,14 @@ export default function Emparejar({ actividad, alTerminar }: PropsActividad) {
         {columna(contenido.derecha, 'derecha')}
       </div>
 
-      <p className="feedback" aria-live="polite">
+      <Reaccion
+        tono={estado.ultima?.acierto === false ? 'casi' : estado.ultima?.acierto === true || estado.fase === 'completada' ? 'bien' : 'neutro'}
+        personaje={actividad.personaje}
+      >
         {estado.ultima?.acierto === true && t('comun.bien')}
         {estado.ultima?.acierto === false && t('comun.escuchaOtraVez')}
         {estado.fase === 'completada' && t('comun.completada')}
-      </p>
+      </Reaccion>
 
       <progress
         value={estado.resueltas.length / 2}

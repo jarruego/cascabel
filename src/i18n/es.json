@@ -1001,5 +1001,21 @@
   "actividad.inf19.enunciado": "Cada tecla es uno de la pandilla. Tócalos y escucha cómo suena cada uno: Dora es la más grave y Doby el más agudo.",
   "actividad.inf19.reto1": "¿Puedes tocarlos todos de izquierda a derecha, sin saltarte a nadie? Van del más grave al más agudo.",
   "actividad.inf19.reto2": "Toca a Dora y luego a Doby. Se llaman casi igual y suenan casi igual, pero uno está mucho más arriba.",
-  "actividad.inf19.reto3": "Elige a dos y tócalos muchas veces seguidos. Ya tienes una canción."
+  "actividad.inf19.reto3": "Elige a dos y tócalos muchas veces seguidos. Ya tienes una canción.",
+  "reaccion.dora.bien": "Muy bien. Lo tienes.",
+  "reaccion.dora.casi": "Tranquilo, aquí no pasa nada. Otra vez.",
+  "reaccion.rex.bien": "¡Eso es! Lo has descubierto.",
+  "reaccion.rex.casi": "Vuelve a escuchar: ahí hay una pista.",
+  "reaccion.milo.bien": "¡Bien! Qué bien suena eso.",
+  "reaccion.milo.casi": "Casi, casi. Otra vez, que esto es un juego.",
+  "reaccion.fara.bien": "Muy bien. Has escuchado con calma.",
+  "reaccion.fara.casi": "Sin prisa. Escucha otra vez.",
+  "reaccion.sol.bien": "¡Eso es! Lo llevas en el cuerpo.",
+  "reaccion.sol.casi": "Venga, otra vez. Que el cuerpo lo sabe.",
+  "reaccion.laia.bien": "¡Muy bien! Eso suena a tuyo.",
+  "reaccion.laia.casi": "Prueba otra cosa: aquí se vale inventar.",
+  "reaccion.simon.bien": "Muy bien. Lo has oído.",
+  "reaccion.simon.casi": "Escucha otra vez, con atención.",
+  "reaccion.doby.bien": "¡Muy bien! Lo habéis conseguido.",
+  "reaccion.doby.casi": "Otra vez, entre todos."
 }
