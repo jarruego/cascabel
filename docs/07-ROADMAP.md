@@ -1401,11 +1401,11 @@ es depurar y ampliar, y eso lo marca el uso real.
 
 | | |
 |---|---|
-| Actividades | 73, todas validando esquema y música |
-| Tipos de motor | 19 (la lista viva, en [`01-ARQUITECTURA.md`](01-ARQUITECTURA.md)) |
-| Tests | 347 |
-| Precache | 1307 KiB (el resto del audio se cachea al usarse) |
-| Código | ~16 100 líneas en `src`, ~3 600 en `tests` |
+| Actividades | 76, todas validando esquema y música |
+| Tipos de motor | 21 (la lista viva, en [`01-ARQUITECTURA.md`](01-ARQUITECTURA.md)) |
+| Tests | 370 |
+| Precache | 1336 KiB (el resto del audio se cachea al usarse) |
+| Código | ~17000 líneas en `src`, ~3800 en `tests` |
 
 **Lo que entró ese día, después de cerrar el catálogo previsto:**
 
@@ -1421,6 +1421,10 @@ es depurar y ampliar, y eso lo marca el uso real.
   quien no. Sin racha, sin porcentaje y sin candados: §1 y §4.
 - **`herramienta`** pasa a ser un campo del JSON en vez del prefijo del identificador, con
   lo que el editor de melodías y el de pistas dejan de estar enterrados en el catálogo.
+- **`acompanamientos` y el motor de bases en bucle**, con el transporte en caliente. Y con
+  ellos, `c2-07` gana por fin el bordón que su descripción llevaba prometiendo.
+- **`eco`**, dos niños por turnos en la misma tablet: uno propone un ritmo y el otro lo
+  repite, y se comparan **entre sí**, no contra una rejilla nuestra.
 - **`tests/documentacion.test.ts`**, porque la documentación mentía: este fichero llevaba un
   epígrafe con una cifra de tipos de motor que se había quedado seis por debajo de la real.
   Un número obsoleto en un `.md` no rompe nada y por eso se queda ahí para siempre; el test

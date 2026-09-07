@@ -69,7 +69,7 @@ Cuatro voces a la vez: flauta, piano, bajo y percusión (`c3-12`). Lo que aporta
 rejilla de una voz no es tamaño, son tres ideas que no se pueden tener con una sola pista:
 **textura**, **función** y **comparación** —silenciar una voz y volver a ponerla—.
 
-### Itinerario de teoría tipo Duolingo — **SÍ, PERO PARTIDO EN DOS**
+### Itinerario de teoría tipo Duolingo — **HECHO** el 2026-09-07, partido en dos
 
 Aquí hay que separar dos cosas que en Duolingo van juntas y no tienen por qué:
 
@@ -87,16 +87,31 @@ Aquí hay que separar dos cosas que en Duolingo van juntas y no tienen por qué:
 > que necesita hoy**. Son objetivos distintos y el segundo no necesita rachas.
 
 **Lo que sí encaja**: un itinerario **visible y opcional** —«esto va después de esto»—, sin
-desbloqueos. El catálogo ya tiene el dato que hace falta (etapa, eje, criterio); lo que falta
-es dibujar el orden. **Nunca bloquear una actividad**: la regla es que el maestro entra y usa
-lo que necesita, no que el programa decida qué puede ver.
+desbloqueos. **Nunca bloquear una actividad**: la regla es que el maestro entra y usa lo que
+necesita, no que el programa decida qué puede ver.
 
-### Teoría de lenguaje musical básico — **SÍ, Y YA HAY MEDIA**
+> **Hecho.** Es `/camino`: cuatro recorridos, uno por etapa, con veintitantos pasos que
+> agrupan actividades que se apoyan unas en otras. Vive en `content/camino.json` y no en el
+> índice, porque no es información de las actividades sino **una opinión sobre en qué orden
+> hacerlas**. Sin racha, sin porcentaje, sin puntos y sin candados; lo único que cambia con
+> lo hecho es una etiqueta de «ya la abriste», y lleva texto además de color.
+>
+> `tests/camino.test.ts` comprueba además una cosa que no es de integridad sino de
+> principio: que en el fichero no aparezca ninguna clave de requisito, desbloqueo o nivel.
+> Eso es fácil de meter sin pensarlo y dificilísimo de quitar cuando ya hay contenido que lo
+> usa. **La repetición espaciada sigue sin hacerse**, y es la mitad buena que queda.
 
-Figuras, intervalos y ritmo ya están repartidos en actividades (`compases`, `escala`,
-`pentagrama`, las de ritmo). Lo que falta no es contenido nuevo, es **un sitio donde
-consultarlo**: una pantalla de referencia por edad, sin ejercicio, para mirar cuando hace
-falta. Es barato y no compite con nada.
+### Teoría de lenguaje musical básico — **HECHO** el 2026-09-07
+
+Figuras, intervalos y ritmo ya estaban repartidos en actividades (`compases`, `escala`,
+`pentagrama`, las de ritmo). Lo que faltaba no era contenido nuevo, era **un sitio donde
+consultarlo**.
+
+> **Hecho**: el tipo `referencia` y `tr-07`, «¿Cómo era esto?». Treinta y cinco entradas en
+> siete secciones, con buscador que filtra por el nombre **y por la explicación** —quien no
+> se acuerda de cómo se llama una cosa la busca por lo que hace—. Y suena, que es la única
+> ventaja real que tiene una pantalla sobre la tabla de un libro: una tabla impresa *dice*
+> que la corchea dura media negra; un botón lo demuestra.
 
 ### Compositores y estilos — **SÍ, CON LA CAUTELA DE SIEMPRE**
 
@@ -108,27 +123,39 @@ que verificarla**, y eso son horas de una en una. Es trabajo de contenido, no de
 
 ## 4. Ideas propias, ordenadas por lo que aportan
 
-### 4.1. Percusión corporal — **la que más recomiendo**
+### 4.1. Percusión corporal — **HECHA** el 2026-09-07
 
 Es lo que más se usa en el aula de música española y no está en la aplicación. No necesita
 instrumentos, funciona con treinta niños a la vez y es la vía natural al pulso antes de que
 haya coordinación para un instrumento.
 
-Técnicamente es casi gratis: ya tenemos el detector de palmadas, la rejilla rítmica y el
-anclaje al primer golpe. Lo que falta es el **contenido** —secuencias de palmas, rodillas,
-pitos y pies— y el dibujo. **PENDIENTE DE CRITERIO MUSICAL**: hay método establecido en
-España (BAPNE) y conviene mirar si su notación está libre antes de inventar una.
+Técnicamente era casi gratis: ya estaban el detector de palmadas, la rejilla rítmica y el
+anclaje al primer golpe. Lo que faltaba era el **contenido** y el dibujo.
 
-### 4.2. Improvisación pentatónica sobre acompañamiento
+> **Hecho**: el tipo `cuerpo`, con `inf-17`, `c1-20` y `c3-13`.
+>
+> **Y la duda del método se resolvió, con respuesta.** Se comprobó ese mismo día: BAPNE® es
+> marca registrada, con autor vivo y titularidad expresa sobre su notación, su terminología y
+> sus secuencias, así que **nada de eso se copia**. Los cuatro sonidos sí son libres —están
+> en el Orff-Schulwerk desde los años treinta—, y la notación de aquí es propia: cuatro filas
+> de colores cuyo orden vertical es a la vez el de altura del sonido y el de altura en el
+> cuerpo. Está en `docs/08-LEGAL.md`, que ahora dice qué métodos son libres y cuál no.
+
+### 4.2. Improvisación pentatónica sobre acompañamiento — **HECHA** el 2026-09-07
 
 Una escala pentatónica tiene una propiedad que ninguna otra: **no se puede sonar mal**.
 Cualquier nota encaja sobre el acompañamiento, y eso convierte «improvisa» en algo que un
 niño con vergüenza puede hacer. Es el mecanismo que usa todo el método Orff.
 
 Con lo que ya hay —sampler, pistas, teclado— es una actividad, no un desarrollo. La única
-pieza nueva es un acompañamiento en bucle, y eso lo da el editor por pistas.
+pieza nueva es un acompañamiento en bucle.
 
-### 4.3. Eco a dos: uno propone, otro repite
+> **Hecho**: `audio/acompanamiento.ts`, y `c2-07` pasa a versión 2 con el bordón que su
+> propia descripción llevaba prometiendo y que no estaba. El bordón es tónica y quinta **sin
+> tercera**, y eso no es estilo sino técnica: al no llevar tercera no dice si es mayor o
+> menor, y por eso no puede chocar con ninguna nota de la pentatónica.
+
+### 4.3. Eco a dos: uno propone, otro repite — **HECHO** el 2026-09-07
 
 Dos niños en la misma tablet, por turnos. El primero toca un ritmo o una melodía corta, el
 segundo lo repite, y la aplicación compara **las dos ejecuciones entre sí**, no contra un
@@ -137,16 +164,31 @@ modelo. Es lo que ya hace `anclarEn()`, aplicado a dos personas en vez de a una.
 Aporta algo que ninguna actividad individual da: **escucharse entre ellos**. Y no necesita
 red, ni cuentas, ni nada que roce la regla 3.
 
-### 4.4. Pantalla de referencia («¿cómo era esto?»)
+> **Hecho**: el tipo `eco`, con `c1-21` y `c3-14`. Lo que costó decidir no fue el código sino
+> dos criterios. **Uno**: los dos se anclan a su primer golpe, porque nadie empieza a la vez
+> que el otro y no tiene por qué. **Dos**: el mismo ritmo a otra velocidad cuenta como
+> acierto y se informa aparte — queda marcado PENDIENTE DE REVISIÓN PEDAGÓGICA, porque en un
+> conservatorio no lo sería.
+>
+> Y una trampa que casi cuela: enseñar dos números es clasificar a dos niños. El resultado es
+> de la pareja.
+
+### 4.4. Pantalla de referencia («¿cómo era esto?») — **HECHA** el 2026-09-07
 
 Figuras y sus duraciones, la escala, los nombres de las notas, el compás. Sin ejercicio y sin
 evaluación: para mirar. Un niño que ha olvidado cuánto dura una blanca ahora mismo no tiene
 dónde comprobarlo sin salir de la actividad.
 
-### 4.5. Banco de acompañamientos para cantar encima
+### 4.5. Banco de acompañamientos para cantar encima — **HECHO** el 2026-09-07
 
 Ocho compases en bucle, en varias tonalidades, para que la clase cante encima. Es lo que un
-maestro sin piano no tiene, y lo tenemos todo hecho: el editor por pistas ya los genera.
+maestro sin piano no tiene.
+
+> **Hecho**: el tipo `acompanamientos` y `tr-08`, con seis bases y botones de subir y bajar
+> de tonalidad. **El transporte resultó ser la mitad del valor**: una canción que en do queda
+> alta se canta en la bemol, es lo primero que hace cualquiera que acompañe a un grupo, y
+> ajustar el tono a las voces que hay importa bastante más que el arreglo. Se aplica en
+> caliente, sin parar, para no cortar la frase que la clase esté cantando.
 
 ### 4.6. Modo dos columnas para pizarra digital
 
