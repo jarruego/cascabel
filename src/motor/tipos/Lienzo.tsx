@@ -83,7 +83,15 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
   };
 
   const carril = useCarril(actividad.etapa);
-  const conTeclas = contenido.teclas ?? true;
+  /*
+    Apagados salvo que la actividad los pida.
+
+    En un lienzo lo que se hace es dibujar, y esa fila de botones solo le quita alto al sitio
+    donde se dibuja. Eran la vía por toque para quien no arrastra, pero el lienzo ya la
+    tiene: se puede tocar directamente donde se quiere que suene. Y desde que responde a las
+    flechas y a la barra espaciadora, también está la de teclado.
+  */
+  const conTeclas = contenido.teclas ?? false;
   const conInstrumento = contenido.elegirInstrumento ?? false;
   const notas = contenido.notas ?? ['C6', 'G5', 'E5', 'C5', 'G4', 'E4', 'C4'];
   const colores = contenido.colores ?? [

@@ -145,9 +145,15 @@ concreto. Dos decisiones del 2026-09-07 salen de ahí:
   filtro obligaba a subir hasta el principio. Es el patrón habitual de cualquier catálogo
   largo y aquí resuelve el caso real: el maestro que va probando filtros seguidos.
 
-Salir de una actividad **retrocede en el historial** en vez de ir a la raíz. Solo va a la raíz
-cuando no hay historial, que es cuando se ha entrado por un enlace directo o abriendo la
-aplicación instalada: ahí retroceder sacaría al usuario de Cascabel.
+Salir de una actividad **vuelve al catálogo, y siempre al catálogo**. Se probó retrocediendo
+en el historial —parecía gratis: la URL anterior ya llevaba los filtros y el navegador
+repone el scroll solo— y estaba mal, porque `history.back()` no lleva al catálogo: lleva a la
+pantalla anterior. Si acababas de mirar la ficha, «Volver» te devolvía a la ficha; si habías
+entrado desde otra actividad, a esa. El autor lo vio a los dos minutos de probarlo.
+
+Lo que sí funciona: **el catálogo apunta su propia URL al salir** y el botón va a esa. Los
+filtros siguen intactos y el destino es uno solo. La lección, que vale para lo que venga:
+*volver* es un destino, no un paso atrás.
 
 ## Criterios WCAG con traducción musical
 

@@ -1525,7 +1525,9 @@ actividad**, y todo lo demás ocupa lo mínimo.
 
 - **Fuera el código del profesor** — ver [`adr/0007`](adr/0007-sin-codigos-de-verificacion.md).
 - **El marco son cuatro cosas en sitios fijos**: ampliar arriba a la derecha, «Volver» abajo
-  a la izquierda, el personaje abajo en el centro y la ficha abajo a la derecha. La
+  a la izquierda, el personaje abajo en el centro y la ficha abajo a la derecha. «Volver»
+  lleva **al catálogo con sus filtros**, no un paso atrás: retroceder en el historial se
+  probó y devolvía a la ficha que acababas de mirar (ver [`04-DISENO-UI.md`](04-DISENO-UI.md)). La
   explicación se lee al entrar y desaparece; el personaje la reabre —es la respuesta a «¿qué
   había que hacer?» y un niño la busca donde está la cara— **sin reiniciar la actividad**.
   En `guia-aula` no sale personaje: esa pantalla es el guion del maestro proyectado.
@@ -1565,6 +1567,11 @@ actividad**, y todo lo demás ocupa lo mínimo.
       «curriculo-pendiente». **Lo siguiente**: decidir si una herramienta sin consigna ni
       final tiene criterio de evaluación o no lo tiene, que es una pregunta de currículo y no
       de programación.
+
+- [ ] **Decidir si «Terminar» sobra en las actividades libres.** En el piano, la caja de
+      sonidos o los pads no hay nada que terminar, y ese botón abre la modal de celebración:
+      celebrar que has dejado de tocar el piano es raro. **Lo siguiente**: o se quita y se
+      sale solo por «Volver», o se queda pero sin celebración. Lo decide el autor.
 
 - [ ] **Verlo en pantalla**, que es lo único que ningún script dice. Concretamente: el tamaño
       del personaje de la barra, si «Volver» y «Ficha» caben con icono y palabra en un móvil,

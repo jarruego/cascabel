@@ -1483,8 +1483,11 @@ p {
   position: relative;
   width: 100%;
   /* `min(46vh, 340px)` se quedaba siempre en 340: en cualquier pantalla de más de 740 px
-     de alto ganaba el número fijo, que es justo al revés de lo que se quería. */
-  height: clamp(220px, 46vh, 520px);
+     de alto ganaba el número fijo, que es justo al revés de lo que se quería.
+
+     Y sube desde que la fila de botones de colores está apagada: ese alto era suyo y ahora
+     es del lienzo, que es donde se dibuja. */
+  height: clamp(240px, 56vh, 620px);
   margin: var(--e-4) 0;
   border: 4px solid var(--linea);
   border-radius: var(--r-l);
