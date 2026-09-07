@@ -563,7 +563,11 @@ Abierta y cerrada el 2026-09-06, a partir de la primera prueba real del autor:
 - [x] **Color**: paleta viva, con contraste comprobado
 - [x] **Modales** de explicación previa y de celebración, e indicador entre ejercicios
 - [x] **Arrastrar y soltar** como vía adicional
-- [ ] **Personajes**: sigue siendo decisión de producto, no técnica
+- [x] **Personajes**: decidido el 2026-09-08. Existen y son de la metodología cocomusic —
+  ocho, uno por nota: DORA, REX, MILO, FARA, SOL, LAIA, SIMÓN y DOBY. El encargo está en
+  [`14-PERSONAJES.md`](14-PERSONAJES.md): poses, prompts, nombres de fichero y contrato del
+  SVG. **Queda por hacer** el dibujo —lo hace el autor, no yo— y una decisión suya: los
+  colores de sol, la y si no coinciden con el código Boomwhacker que usa la aplicación
 - [ ] Revisión con las tres preguntas de `docs/06-PIPELINE-IA.md` — es T0.3
 
 **OpenMoji es CC BY-SA 4.0, la misma licencia que ya tienen nuestros contenidos**, así que

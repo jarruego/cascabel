@@ -111,6 +111,7 @@ prompts/               prompts de generación de contenido y de sesión con Clau
 | [docs/11-RECURSOS-Y-REFERENTES.md](docs/11-RECURSOS-Y-REFERENTES.md) | Recursos libres con licencia y veredicto, e investigación de interfaz infantil |
 | [docs/12-IDEAS-Y-AMPLIACIONES.md](docs/12-IDEAS-Y-AMPLIACIONES.md) | Qué hay libre que se pueda aprovechar, qué construir y **qué no hacer** |
 | [docs/13-PENDIENTE-DE-REVISION.md](docs/13-PENDIENTE-DE-REVISION.md) | **Generado.** Todo lo que espera criterio musical o de aula, en un sitio |
+| [docs/14-PERSONAJES.md](docs/14-PERSONAJES.md) | Los ocho personajes de cocomusic: poses, prompts y cómo entran en la app |
 | [docs/adr/](docs/adr/) | Decisiones de arquitectura, con sus consecuencias |
 
 ## Trabajar con Claude Code
