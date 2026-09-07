@@ -989,5 +989,11 @@
   "ficha.tipo.eco.observar": "Si el segundo escucha entero antes de empezar o arranca encima. Empezar antes de que el otro acabe es el error más común y no es de ritmo: es de escucha.",
   "ficha.tipo.eco.indicador1": "Escucha entero antes de repetir",
   "ficha.tipo.eco.indicador2": "Mantiene el número de golpes",
-  "ficha.tipo.eco.indicador3": "Respeta la velocidad del primero"
+  "ficha.tipo.eco.indicador3": "Respeta la velocidad del primero",
+  "repaso.titulo": "Hace tiempo que no...",
+  "repaso.explicacion": "Cosas que hiciste hace un rato y a las que viene bien volver. No hay prisa ni se pierde nada por no hacerlo: volver sobre algo justo antes de olvidarlo es la forma más barata de que se quede.",
+  "repaso.unaSemana": "hace una semana",
+  "repaso.semanas": "hace {n} semanas",
+  "repaso.unMes": "hace un mes",
+  "repaso.meses": "hace {n} meses"
 }

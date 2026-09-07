@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { cargarCamino, cargarIndice } from '@/datos/cargar';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { leerTodo } from '@/datos/progreso';
+import { haceCuanto, queRepasar, type Sugerencia } from '@/motor/repaso';
 import { t } from '@/i18n';
 import type { Etapa } from '@/config';
 
@@ -24,6 +25,11 @@ import type { Etapa } from '@/config';
  * idiomas: no hay racha, no hay porcentaje de camino completado, no hay puntos, no hay nada
  * que se pierda por dejarlo una semana. `CLAUDE.md` §4: el error nunca castiga, y no
  * volver tampoco.
+ *
+ * **De Duolingo sí se coge una cosa, y es la que tiene evidencia detrás**: que un contenido
+ * vuelva justo antes de olvidarse. Eso no es una recompensa, es un calendario. Sale arriba
+ * como sugerencia —«hace un mes que no...»— y desaparece cuando no hay nada que sugerir. Las
+ * reglas están en `motor/repaso.ts`, con test.
  */
 
 interface Paso {
@@ -43,6 +49,7 @@ export default function Camino() {
   const [caminos, setCaminos] = useState<Recorrido[] | null>(null);
   const [titulos, setTitulos] = useState<Map<string, string>>(new Map());
   const [hechas, setHechas] = useState<Set<string>>(new Set());
+  const [repasar, setRepasar] = useState<Sugerencia[]>([]);
   const [fallo, setFallo] = useState(false);
   const [abierto, setAbierto] = useState<Etapa | null>(null);
 
@@ -64,9 +71,12 @@ export default function Camino() {
   }, []);
 
   useEffect(() => {
-    void leerTodo().then((r) =>
-      setHechas(new Set(r.filter((x) => x.completada).map((x) => x.actividadId))),
-    );
+    void leerTodo().then((r) => {
+      setHechas(new Set(r.filter((x) => x.completada).map((x) => x.actividadId)));
+      // El día se saca aquí y no dentro de `queRepasar`: así la regla es una función pura
+      // a la que se le puede pasar cualquier fecha, y el test no depende del reloj.
+      setRepasar(queRepasar(r, new Date().toISOString().slice(0, 10)));
+    });
   }, []);
 
   if (fallo) {
@@ -90,6 +100,34 @@ export default function Camino() {
       {/* Dicho en la primera línea y no escondido en un pie: quien ve una pantalla así
           asume que hay candados, y hay que quitarle la idea antes de que la coja. */}
       <p className="catalogo__aclaracion">{t('camino.noBloquea')}</p>
+
+      {/* Solo aparece si hay algo que sugerir. Una sección vacía con un «nada pendiente»
+          sería un marcador, y aquí no hay marcadores. */}
+      {repasar.length > 0 && (
+        <section className="camino__repaso">
+          <h2>{t('repaso.titulo')}</h2>
+          <p>{t('repaso.explicacion')}</p>
+          <ul>
+            {repasar.map((r) => {
+              const cuando = haceCuanto(r.diasDesde);
+              return (
+                <li key={r.actividadId}>
+                  <Link
+                    to={`/actividad/${r.actividadId}`}
+                    className="camino__enlace"
+                    onClick={() => void despertarAudio().catch(() => {})}
+                  >
+                    {titulos.get(r.actividadId) ?? r.actividadId}
+                    <span className="camino__cuando">
+                      {t(cuando.clave).replace('{n}', String(cuando.cantidad))}
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
 
       {caminos.map((c) => {
         const desplegado = abierto === c.etapa;

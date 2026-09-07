@@ -3406,3 +3406,25 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   .eco__pandero { transition: none; }
   .eco__pandero[data-golpeado] { transform: none; }
 }
+
+/* La sugerencia de repaso, arriba del camino. Es una sugerencia y se ve como tal: no lleva
+   número, ni contador, ni nada que parezca una tarea pendiente. Y no aparece si no hay nada
+   que sugerir, porque un «no tienes nada» sería un marcador. */
+.camino__repaso {
+  margin: var(--e-5) 0;
+  padding: var(--e-4);
+  color: var(--tinta);
+  background: var(--suave-amarillo);
+  border-radius: var(--r-m);
+}
+.camino__repaso h2 { margin: 0 0 var(--e-2); font-size: var(--t-m); }
+.camino__repaso p { margin: 0 0 var(--e-3); color: var(--tinta-2); max-width: 62ch; }
+.camino__repaso ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--e-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.camino__cuando { font-size: var(--t-xs); color: var(--tinta-2); }
