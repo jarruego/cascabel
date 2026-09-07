@@ -1445,6 +1445,28 @@ es depurar y ampliar, y eso lo marca el uso real.
   ningún test y solo se ve leyéndolo todo seguido. Conviene repetir esta lectura cada vez
   que un tipo nuevo traiga palabras nuevas.
 
+- **Una revisión de los anchos de toda la interfaz**, a partir de una queja del autor: «el
+  piano no se estira al 100 % y otras muchas actividades tampoco, se desaprovecha mucho
+  espacio». Tenía razón y las causas eran dos:
+  - **Todo estaba en 840 px**, que es la medida buena para un texto y la mala para
+    cualquier otra cosa. El efecto de segundo orden costó verlo: el teclado *mide su caja*
+    para decidir cuántas octavas caben, así que estaba midiendo 840 por mucho monitor que
+    hubiera delante. Un componente que se adapta no puede adaptarse a más de lo que le den.
+  - **Nueve `min(46vh, 340px)`**, que se lee como «que no pase de 340» y significa «que no
+    pase de 340 **nunca**». Todas escritas mirando un móvil.
+
+  Lo demás salió de ahí: el catálogo en columnas, el tope de tecla por carril —a los cuatro
+  años no se coloca ninguna mano, se acierta una tecla con un dedo—, la rejilla que se
+  dimensionaba como si la pantalla midiera 320 px, el pentagrama escalado con `zoom` y una
+  regla para el móvil apaisado. Todo en
+  [`04-DISENO-UI.md`](04-DISENO-UI.md), y `tests/layout.test.ts` impide que vuelva.
+
+- **Los filtros del catálogo pasan a la URL**, que era un problema de usabilidad de verdad:
+  abrir una actividad y volver los borraba, así que había que filtrar otra vez cada vez. La
+  URL lo arregla y además regala dos cosas: el «atrás» del navegador repone el scroll, y un
+  filtro se puede mandar por correo. La barra de filtros se queda pegada arriba, porque con
+  setenta y siete actividades cambiar de filtro obligaba a subir del todo.
+
 - **`tests/documentacion.test.ts`**, porque la documentación mentía: este fichero llevaba un
   epígrafe con una cifra de tipos de motor que se había quedado seis por debajo de la real.
   Un número obsoleto en un `.md` no rompe nada y por eso se queda ahí para siempre; el test

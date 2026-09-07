@@ -79,6 +79,69 @@ y pon encima un hitbox transparente de 60 px. VexFlow te da control total para h
 10. **Tipografía grande y legible.** Andika (SIL, OFL) para Infantil; Atkinson Hyperlegible
     y OpenDyslexic como opción conmutable.
 
+## Los anchos: lo que se lee y lo que se toca
+
+Añadido el 2026-09-07, después de que el autor señalara que «el piano no se estira al 100 %
+y otras muchas actividades tampoco: se desaprovecha mucho espacio». Tenía razón, y el
+diagnóstico dio dos causas que no son la misma.
+
+**Una regla no basta, porque hay dos clases de pantalla.**
+
+| | Qué hace | Regla |
+|---|---|---|
+| **Se lee** | Aviso legal, créditos, ficha del maestro, referencia | Medida acotada, unos **70 caracteres**. Pasada esa anchura el ojo pierde el renglón al bajar de línea, así que más ancho es **peor** |
+| **Se toca o se mira** | Catálogo, piano, pads, karaoke, lienzo, rejilla | **Todo el ancho disponible**, con un tope alto que solo evita lo absurdo en un monitor de 27 pulgadas |
+
+Estaba todo en 840 px, la regla del texto aplicada a la aplicación entera. El efecto de
+segundo orden es el que costó ver: el teclado **mide su caja** para decidir cuántas octavas
+caben, así que estaba midiendo 840 px por mucho monitor que hubiera delante. Un componente
+que se adapta no puede adaptarse a más de lo que le den.
+
+**`min(46vh, 340px)` no es lo que parece.** Se lee como «que no pase de 340» y significa «que
+no pase de 340 nunca»: en cualquier pantalla de más de 740 px de alto gana siempre el número
+fijo. Había nueve así, y todas se escribieron mirando un móvil. Lo que se quería decir es
+`clamp(mínimo, relativo, máximo)`, que sí tiene suelo **y** techo.
+`tests/layout.test.ts` no deja que vuelva a aparecer.
+
+**Los topes de tamaño táctil pueden ir por carril, y a veces deben.** El ancho de una tecla
+blanca está topado en 88 px porque es lo que mide una de verdad, y por encima de eso la mano
+deja de colocarse como se coloca en un piano: lo que se aprende aquí dejaría de servir allí.
+Pero ese argumento **solo vale donde se está aprendiendo a tocar**. A los cuatro años no se
+coloca ninguna mano, se acierta una tecla con un dedo, y ahí más grande es mejor. El tope
+único dejaba el piano de Infantil en 616 px con media tablet vacía al lado, defendiendo una
+postura de manos que a esa edad no existe.
+
+**Cuando el dibujo y las zonas de toque comparten coordenadas, se escala con `zoom`.** Es el
+caso del pentagrama: la pauta se dibuja en una geometría de 460 × 200 y los botones
+invisibles van encima en coordenadas absolutas sobre esa misma geometría. Hacer las dos cosas
+fluidas a la vez es donde se rompen estas pantallas. `zoom` agranda la caja **y** su
+contenido, así que los botones siguen donde se ven y solo se hacen más grandes. No sirve
+`transform: scale()`: pinta más grande pero el elemento sigue ocupando lo de antes y se
+solapa con lo de abajo.
+
+**El móvil apaisado es una postura, no un accidente.** Es la del piano y la de todo lo que
+avanza de lado, y es donde menos altura hay. Ahí se recorta lo que **no** es la actividad
+—márgenes, titular, barra de navegación— en vez de encoger la actividad, que es lo único que
+hay que ver.
+
+## La pantalla del maestro tiene sus propias reglas
+
+El catálogo no lo usa un niño: lo usa un adulto con prisa, entre clase y clase, buscando algo
+concreto. Dos decisiones del 2026-09-07 salen de ahí:
+
+- **Los filtros viven en la URL.** Estaban en el estado del componente, así que abrir una
+  actividad y volver los borraba y había que filtrar otra vez. En la URL se resuelven tres
+  cosas de golpe y ninguna hay que programarla: el botón «atrás» funciona y repone el scroll,
+  un filtro se puede guardar en favoritos o mandar por correo —«todo lo del criterio 3.1 de
+  segundo» pasa a ser un enlace—, y no queda estado que sincronizar.
+- **La barra de filtros se queda pegada arriba.** Con setenta y siete actividades, cambiar de
+  filtro obligaba a subir hasta el principio. Es el patrón habitual de cualquier catálogo
+  largo y aquí resuelve el caso real: el maestro que va probando filtros seguidos.
+
+Salir de una actividad **retrocede en el historial** en vez de ir a la raíz. Solo va a la raíz
+cuando no hay historial, que es cuando se ha entrado por un enlace directo o abriendo la
+aplicación instalada: ahí retroceder sacaría al usuario de Cascabel.
+
 ## Criterios WCAG con traducción musical
 
 | Criterio | Qué significa aquí |
