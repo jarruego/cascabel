@@ -15,35 +15,67 @@
     "saber": "D. Lenguajes musicales: aplicación de sus conceptos básicos"
   },
   "practica": {
-    "notas": ["do", "re", "mi", "fa", "sol", "la", "si", "do'"],
+    "notas": [
+      "do",
+      "re",
+      "mi",
+      "fa",
+      "sol",
+      "la",
+      "si",
+      "do'"
+    ],
     "secuencia": "flauta",
     "compas": "libre",
-    "metodo": ["kodaly"]
+    "metodo": [
+      "kodaly"
+    ]
   },
-  "entrada": { "modo": "toque" },
+  "entrada": {
+    "modo": "toque"
+  },
   "contenido": {
     "consigna": "actividad.c201.consigna",
     "clave": "sol",
     "rondas": 8,
     "objetivo_px": 60,
     "opciones": [
-      { "clave": "sol", "linea": 2 },
-      { "clave": "la", "espacio": 2 },
-      { "clave": "si", "linea": 3 },
-      { "clave": "do", "espacio": 3 }
+      {
+        "clave": "sol",
+        "linea": 2
+      },
+      {
+        "clave": "la",
+        "espacio": 2
+      },
+      {
+        "clave": "si",
+        "linea": 3
+      },
+      {
+        "clave": "do",
+        "espacio": 3
+      }
     ]
   },
   "evaluacion": {
     "autocorrectiva": true,
-    "reporta": ["aciertos", "completado"]
+    "reporta": [
+      "aciertos",
+      "completado"
+    ]
   },
-  "locucion": {
-    "enunciado": "actividad.c201.enunciado",
-    "audio": "es/c2-01-coloca-la-nota.opus"
-  },
-  "pistas": ["actividad.c201.pista1"],
+  "enunciado": "actividad.c201.enunciado",
+  "pistas": [
+    "actividad.c201.pista1"
+  ],
   "creditos": [
-    { "obra": "Fuente de notación Bravura", "autor": "Steinberg", "fuente": "SMuFL", "licencia": "OFL-1.1" }
+    {
+      "obra": "Fuente de notación Bravura",
+      "autor": "Steinberg",
+      "fuente": "SMuFL",
+      "licencia": "OFL-1.1"
+    }
   ],
   "estado": "borrador"
 }

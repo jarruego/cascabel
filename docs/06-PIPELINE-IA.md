@@ -51,7 +51,7 @@ Más un campo de «cámbialo por esto». Respuestas rápidas, decisiones claras.
 |---|---|
 | La secuencia didáctica | Sale del currículo y de la práctica documentada. Fíjala tú en una tabla y pásala como contexto |
 | El repertorio | Un modelo te dará canciones populares con toda la confianza, incluidas las protegidas. Toda canción se verifica contra una fuente de dominio público **antes** de entrar |
-| Las locuciones | Voz humana grabada, no TTS. Es la recomendación más consistente de la investigación de UX infantil |
+| ~~Las locuciones~~ | Descartadas el 2026-09-08: no va a haberlas y la síntesis está prohibida. El enunciado lo lee un adulto. Ver [`adr/0006`](adr/0006-sin-locuciones-grabadas.md) |
 | Los textos normativos | Competencias y criterios se copian del BOE, no se parafrasean |
 
 ## Dónde está de verdad el multiplicador

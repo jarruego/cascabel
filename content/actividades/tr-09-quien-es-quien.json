@@ -142,9 +142,7 @@
       "completado"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.tr09.enunciado"
-  },
+  "enunciado": "actividad.tr09.enunciado",
   "herramienta": true,
   "estado": "revision-pedagogica"
 }

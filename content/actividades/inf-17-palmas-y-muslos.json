@@ -58,9 +58,7 @@
       "completado"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.inf17pal.enunciado"
-  },
+  "enunciado": "actividad.inf17pal.enunciado",
   "pistas": [
     "actividad.inf17.pista1"
   ],

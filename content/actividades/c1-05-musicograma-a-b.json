@@ -74,9 +74,7 @@
       "completado"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.c105.enunciado"
-  },
+  "enunciado": "actividad.c105.enunciado",
   "creditos": [
     {
       "obra": "Percusión y láminas",

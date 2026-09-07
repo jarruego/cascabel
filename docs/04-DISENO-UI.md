@@ -54,8 +54,15 @@ y pon encima un hitbox transparente de 60 px. VexFlow te da control total para h
 
 ## Las diez reglas
 
-1. **Nada esencial solo en texto.** Toda instrucción existe en audio, con **voz humana
-   grabada**. La síntesis de voz suena antinatural a los pequeños y les cuesta procesarla.
+1. **Nada esencial solo en texto.** Dentro de la actividad, lo que hay que reconocer,
+   imitar o cantar **suena**: no se lee nunca.
+
+   El enunciado es la excepción, y es deliberada. Estuvo prometido en audio con voz humana
+   grabada —la síntesis se descartó porque a los pequeños les cuesta procesarla— y el
+   2026-09-08 se retiró la promesa: no va a haber grabaciones, así que la frase la lee un
+   adulto en voz alta. Ver [`adr/0006`](adr/0006-sin-locuciones-grabadas.md), que dice
+   también qué se pierde con eso y por qué es asumible. **Escribe los enunciados para
+   decirlos, no para leerlos**: frases cortas y en segunda persona.
 2. **Botón de repetir siempre visible**, grande, en el mismo sitio. Quieren oír las cosas
    cinco veces.
 3. **Iconos concretos.** Un tambor dibujado > un icono de corchea > la palabra «ritmo».

@@ -40,9 +40,7 @@
       "afinacion_media"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.tr01.enunciado"
-  },
+  "enunciado": "actividad.tr01.enunciado",
   "creditos": [
     {
       "obra": "Percusión y láminas",

@@ -113,6 +113,10 @@ Para las **locuciones** —alguien diciendo la consigna— la conclusión no cam
 según se quiera, y encaja con lo que este mismo documento ya decía abajo. `tools/muestras-voz.py`
 hace el resto: recorta, mide la altura, avisa si no es la nota declarada, normaliza y codifica.
 
+> **Al día del 2026-09-08: esto ya no aplica.** Las locuciones se descartaron —ver
+> [`adr/0006`](adr/0006-sin-locuciones-grabadas.md)—, así que lo de abajo queda como
+> registro de lo que se buscó, no como tarea pendiente.
+
 **Lo que falta de verdad no es material, son las locuciones.** Toda instrucción tiene que
 existir en audio con **voz humana grabada**, nunca sintetizada (regla 1 de `04-DISENO-UI.md`),
 y eso no está en ningún repositorio: hay que grabarlo. Es la única dependencia del proyecto

@@ -169,9 +169,7 @@
       "completado"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.tr08.enunciado"
-  },
+  "enunciado": "actividad.tr08.enunciado",
   "creditos": [
     {
       "obra": "Marimba y percusión",

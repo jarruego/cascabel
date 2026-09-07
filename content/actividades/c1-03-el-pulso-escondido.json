@@ -46,9 +46,7 @@
       "desviacion_tipica"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.c103.enunciado"
-  },
+  "enunciado": "actividad.c103.enunciado",
   "creditos": [
     {
       "obra": "Percusión y láminas",

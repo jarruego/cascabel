@@ -38,9 +38,7 @@
       "completado"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.inf18.enunciado"
-  },
+  "enunciado": "actividad.inf18.enunciado",
   "pistas": [
     "actividad.inf18.pista1"
   ],

@@ -48,9 +48,7 @@
       "afinacion_media"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.c205.enunciado"
-  },
+  "enunciado": "actividad.c205.enunciado",
   "pistas": [
     "actividad.c205.pista1",
     "actividad.c205.pista2",

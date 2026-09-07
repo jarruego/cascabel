@@ -50,9 +50,7 @@
       "desviacion_tipica"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.c115.enunciado"
-  },
+  "enunciado": "actividad.c115.enunciado",
   "pistas": [
     "actividad.c115.pista1"
   ],

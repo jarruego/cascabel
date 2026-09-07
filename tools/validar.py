@@ -328,8 +328,11 @@ def validar_producto(datos: dict, r: Resultado) -> None:
             f"Si es una sesión de aula, marca lugar: hibrida o fuera"
         )
 
-    if "locucion" not in datos:
-        r.avisos.append("producto · sin locución: los niños de 3-8 años no leen el enunciado")
+    if "enunciado" not in datos:
+        r.avisos.append(
+            "producto · sin enunciado: los ninos de 3-8 anos no leen, y sin esa frase el "
+            "adulto no sabe que decirles"
+        )
 
     tol = evaluacion.get("tolerancia_ms")
     if tol:

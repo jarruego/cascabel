@@ -67,9 +67,7 @@
       "completado"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.c305.enunciado"
-  },
+  "enunciado": "actividad.c305.enunciado",
   "estado": "borrador",
   "pistas": [
     "actividad.c305.pista1",

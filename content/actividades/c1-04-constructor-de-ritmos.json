@@ -41,9 +41,7 @@
       "completado"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.c104.enunciado"
-  },
+  "enunciado": "actividad.c104.enunciado",
   "creditos": [
     {
       "obra": "Marimba",

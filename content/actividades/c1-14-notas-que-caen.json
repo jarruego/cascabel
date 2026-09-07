@@ -162,9 +162,7 @@
       "desviacion_tipica"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.c114.enunciado"
-  },
+  "enunciado": "actividad.c114.enunciado",
   "creditos": [
     {
       "obra": "Marimba",

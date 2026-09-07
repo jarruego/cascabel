@@ -1127,15 +1127,10 @@ una nota perfectamente estable— y **aire** filtrado por los propios formantes.
 > **Sigue siendo una imitación.** `CLAUDE.md` §6 pide voz humana grabada, y esto no lo es.
 > Por eso la tarea queda abierta.
 
-- [ ] Grabar un «laaa» de dos segundos y pasarlo por `tools/muestras-voz.py`
+- [x] ~~Grabar un «laaa» de dos segundos~~ — sin efecto: las locuciones se descartaron
+  (`adr/0006`) y `tools/muestras-voz.py` se ha borrado
 
-`tools/muestras-voz.py` convierte una grabación de móvil en muestra del banco: acepta lo que
-acepte ffmpeg, recorta los silencios por energía en ventanas de 10 ms —no muestra a muestra,
-que cortaría en cualquier cruce por cero—, **mide la altura por autocorrelación y avisa si no
-coincide con la nota declarada** —el sampler transporta desde esa nota, así que una muestra
-mal etiquetada desafina todo lo que se construya encima—, normaliza el pico a −3 dBFS como el
-resto del banco y codifica a Opus. Probado con dos ficheros de altura conocida antes de darlo
-por bueno: mide 440,4 Hz donde hay un la4 y 262,3 Hz donde hay un do4, y avisa del desajuste.
+El día que se decidió que no habría locuciones (`adr/0006`), `tools/muestras-voz.py` se borró: era la herramienta de un trabajo que ya no se va a hacer.
 
 **Y la ficha, más compacta**, también a petición del autor: fuera el marco decorativo —no
 decía nada que no dijera ya el blanco—, la ficha técnica en una sola línea con `flex-grow`
@@ -1478,8 +1473,11 @@ es depurar y ampliar, y eso lo marca el uso real.
    decisiones de dificultad son correctas. Las que esperan respuesta están recogidas en
    [`13-PENDIENTE-DE-REVISION.md`](13-PENDIENTE-DE-REVISION.md), que genera
    `npm run docs:pendientes` leyendo las marcas del código.
-2. **Las locuciones.** `CLAUDE.md` §6 pide voz humana grabada y no la hay. `tools/muestras-voz.py`
-   deja el trabajo en grabar, no en programar.
+2. ~~**Las locuciones.**~~ **Descartadas el 2026-09-08**, por decisión del autor. Llevaban
+   desde el principio prometidas y sin llegar; la síntesis está prohibida y con motivo, así
+   que se retira la promesa en vez de arrastrarla. Lo que se pierde y por qué es asumible,
+   en [`adr/0006`](adr/0006-sin-locuciones-grabadas.md). El campo pasa a llamarse
+   `enunciado`, que es lo que era.
 3. **La revisión de una maestra.** Las correspondencias edad-dificultad, la secuencia
    didáctica y las coreografías las ha decidido un desarrollador leyendo la convención.
 

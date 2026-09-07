@@ -84,9 +84,7 @@
       "completado"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.c312.enunciado"
-  },
+  "enunciado": "actividad.c312.enunciado",
   "pistas": [
     "actividad.c312.pista1",
     "actividad.c312.pista2",

@@ -41,9 +41,7 @@
       "completado"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.tr06.enunciado"
-  },
+  "enunciado": "actividad.tr06.enunciado",
   "creditos": [
     {
       "obra": "Kit de percusión",

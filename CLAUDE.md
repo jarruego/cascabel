@@ -177,7 +177,7 @@ Objetivo **WCAG 2.2 AA**, y para niños es un suelo, no una meta.
 | 1.º–3.º (6–8) | 60 × 60 px | ≥ 16 px | 4–6 |
 | 4.º–6.º (9–12) | 48 × 48 px | ≥ 12 px | 6–9 |
 
-- Toda instrucción existe **en audio**, con voz humana grabada (nunca TTS).
+- **Nada esencial solo en texto.** Dentro de la actividad, lo que hay que reconocer, imitar o cantar **suena**: no se lee. El enunciado sí es texto y lo lee un adulto en voz alta; no hay locuciones grabadas y no va a haberlas — ver `docs/adr/0006`. Escríbelos para decirlos, no para leerlos: frases cortas y en segunda persona.
 - Botón de repetir audio siempre visible, en el mismo sitio.
 - El color nunca informa solo: siempre color + forma + sonido.
 - Toda actividad de ritmo debe poder hacerse **mirando** (pulso visual + `navigator.vibrate()`).
@@ -306,7 +306,7 @@ estás seguro de un criterio, deja `"criterio": null` y márcalo en un comentari
 
 **Lo que la IA no decide**: la secuencia didáctica (sale del currículo), el repertorio
 (toda canción se verifica contra una fuente de dominio público antes de entrar), las
-locuciones (voz humana) y los textos normativos (se copian del BOE, no se parafrasean).
+y los textos normativos (se copian del BOE, no se parafrasean).
 
 **Y cuidado también con los métodos.** Orff-Schulwerk, Kodály y Dalcroze son de uso libre:
 un método no se protege, se protege el texto en que se explicó, y sus sílabas rítmicas o sus

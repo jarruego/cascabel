@@ -36,9 +36,7 @@
       "completado"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.c213.enunciado"
-  },
+  "enunciado": "actividad.c213.enunciado",
   "pistas": [
     "actividad.c213.pista1",
     "actividad.c213.pista2"

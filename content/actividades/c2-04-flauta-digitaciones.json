@@ -82,9 +82,7 @@
       "aciertos"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.c204.enunciado"
-  },
+  "enunciado": "actividad.c204.enunciado",
   "pistas": [
     "actividad.c204.pista1",
     "actividad.c204.pista2"

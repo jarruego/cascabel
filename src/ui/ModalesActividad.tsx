@@ -13,13 +13,13 @@ import { diaDeHoy, generarCodigo } from '@/datos/compartir';
 /**
  * Explicación previa.
  *
- * Existe porque la regla 1 de `docs/04-DISENO-UI.md` dice que nada esencial vive solo en
- * texto: la instrucción tiene que estar **en audio**, con voz humana grabada. Mientras no
- * haya locuciones grabadas —van en `public/audio/es/` y no existen todavía— el botón de
- * escuchar aparece deshabilitado con su motivo, en vez de fingir que funciona.
+ * Existe por una razón de aula: un maestro que proyecta una actividad nueva necesita
+ * leerle la consigna a la clase antes de que veinticinco niños empiecen a tocar. Y por una
+ * de accesibilidad: quien no lee necesita que alguien se la lea, y para eso la frase tiene
+ * que estar a la vista de ese alguien.
  *
- * Y existe también por una razón de aula: un maestro que proyecta una actividad nueva
- * necesita leerle la consigna a la clase antes de que veinticinco niños empiecen a tocar.
+ * **Aquí hubo un botón de escuchar y ya no está.** Apuntaba a unas locuciones grabadas que
+ * nunca se grabaron; el 2026-09-08 se decidió que no las va a haber. Ver `docs/adr/0006`.
  */
 export function ModalExplicacion({
   actividad,
@@ -29,7 +29,6 @@ export function ModalExplicacion({
   alEmpezar: () => void;
 }) {
   const [abierto, setAbierto] = useState(true);
-  const hayLocucion = Boolean(actividad.locucion?.audio);
 
   function cerrar() {
     setAbierto(false);
@@ -41,27 +40,9 @@ export function ModalExplicacion({
       <Icono nombre="hola" tamano={72} />
       <h2>{actividad.titulo}</h2>
 
-      {actividad.locucion?.enunciado && <p className="modal__texto">{t(actividad.locucion.enunciado)}</p>}
+      {actividad.enunciado && <p className="modal__texto">{t(actividad.enunciado)}</p>}
 
       <div className="modal__acciones">
-        {/*
-          El botón solo existe si HAY algo que escuchar. Antes aparecía siempre,
-          deshabilitado y sin explicación: un botón que no hace nada es peor que no
-          tenerlo, porque el niño lo toca y concluye que la app está rota.
-
-          Cuando haya locuciones grabadas —voz humana, nunca síntesis— volverá a salir.
-        */}
-        {hayLocucion && (
-          <button
-            type="button"
-            className="boton-repetir"
-            onClick={() => {
-              void new Audio(`/audio/${actividad.locucion!.audio!}`).play().catch(() => {});
-            }}
-          >
-            <Icono nombre="altavoz" tamano={28} /> {t('modal.escucharConsigna')}
-          </button>
-        )}
 
         <button type="button" className="boton-actividad modal__empezar" onClick={cerrar}>
           {t('comun.empezar')}

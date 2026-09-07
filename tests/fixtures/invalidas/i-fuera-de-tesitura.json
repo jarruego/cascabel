@@ -60,10 +60,7 @@
       "desviacion_tipica"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.c102.enunciado",
-    "audio": "es/c1-02-palmea-el-ritmo.opus"
-  },
+  "enunciado": "actividad.c102.enunciado",
   "pistas": [
     "actividad.c102.pista1",
     "actividad.c102.pista2"

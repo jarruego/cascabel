@@ -38,13 +38,12 @@ Para regenerarlas:
 python tools/muestras-provisionales.py    # necesita ffmpeg en el PATH
 ```
 
-## `es/` — locuciones
+## `es/` — vacía, y así se queda
 
-Vacío todavía. Van aquí las locuciones de los enunciados, y son **voz humana grabada,
-nunca síntesis**: la voz sintética suena antinatural a los pequeños y les cuesta
-procesarla (regla 1 de `docs/04-DISENO-UI.md`).
-
----
+Aquí iban a ir las locuciones de los enunciados. **No van a existir**: se descartaron el
+2026-09-08 y la carpeta se queda vacía a propósito, con el razonamiento en
+[`adr/0006`](adr/0006-sin-locuciones-grabadas.md). El enunciado lo lee un adulto en voz alta,
+y por eso se escribe para decirlo y no para leerlo.
 
 ## Al día del 2026-09-07
 
@@ -104,10 +103,13 @@ tres la primera descarga de un colegio entero para bajar instrumentos que ese ni
 abrir. El primer día que se abre la actividad del piano se bajan sus muestras, y desde
 entonces funciona sin conexión igual que el resto.
 
-### Lo único que sigue pendiente
+### Lo que ya no se espera
 
-**Las locuciones.** `CLAUDE.md` §6 pide voz humana grabada para las instrucciones, y eso no
-lo da ningún banco: hay que grabarlo. `tools/muestras-voz.py` convierte una grabación de
-móvil en muestra del banco —recorta, mide la altura, avisa si no coincide con la nota
-declarada, normaliza y codifica—, así que lo que falta son treinta segundos de alguien
-hablando, no programación.
+**Las locuciones se descartaron el 2026-09-08.** Estuvieron pendientes desde el principio:
+77 frases que había que grabar con voz humana —la síntesis está prohibida y con motivo— y
+que no llegaron. Retirar la promesa era más honesto que dejarla otro año en una lista. El
+razonamiento entero, con lo que se pierde, está en
+[`adr/0006`](adr/0006-sin-locuciones-grabadas.md).
+
+Con eso, **el banco de sonido está completo**: lo que queda por mejorar son los cuatro
+sonidos corporales sintetizados, y son un lujo, no una carencia.

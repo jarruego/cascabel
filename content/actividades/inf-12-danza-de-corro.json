@@ -62,8 +62,6 @@
       "completado"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.inf12.enunciado"
-  },
+  "enunciado": "actividad.inf12.enunciado",
   "estado": "borrador"
 }

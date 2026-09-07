@@ -189,9 +189,9 @@ export default function Ficha() {
         <section>
           <h2>{t('ficha.comoFunciona')}</h2>
           <p>{guia(actividad, 'comoFunciona')}</p>
-          {actividad.locucion?.enunciado && (
+          {actividad.enunciado && (
             <p className="ficha__consigna">
-              <strong>{t('ficha.loQueSeDice')}</strong> «{t(actividad.locucion.enunciado)}»
+              <strong>{t('ficha.loQueSeDice')}</strong> «{t(actividad.enunciado)}»
             </p>
           )}
         </section>

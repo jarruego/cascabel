@@ -65,10 +65,7 @@
       "completado"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.c103.enunciado",
-    "audio": "es/inf-15-de-grave-a-agudo.opus"
-  },
+  "enunciado": "actividad.c103.enunciado",
   "pistas": [
     "actividad.c103.pista1"
   ],

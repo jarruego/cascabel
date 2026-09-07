@@ -354,22 +354,9 @@
         }
       }
     },
-    "locucion": {
-      "type": "object",
-      "required": [
-        "enunciado"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "enunciado": {
-          "type": "string",
-          "description": "Clave de i18n, nunca texto literal."
-        },
-        "audio": {
-          "type": "string",
-          "pattern": "^[a-z]{2}/[a-z0-9/_-]+\\.opus$"
-        }
-      }
+    "enunciado": {
+      "type": "string",
+      "description": "Clave de i18n con la frase que se le dice al nino, nunca texto literal. La lee un adulto en voz alta y sale en la ficha del maestro. Se llamaba 'locucion' y llevaba un campo 'audio' para una grabacion; el 2026-09-08 se decidio que no va a haber grabaciones, y un nombre que promete audio para algo que es texto es la clase de mentira que se queda para siempre. Ver docs/adr/0006."
     },
     "pistas": {
       "type": "array",

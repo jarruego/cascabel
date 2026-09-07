@@ -38,9 +38,7 @@
       "completado"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.inf07.enunciado"
-  },
+  "enunciado": "actividad.inf07.enunciado",
   "creditos": [
     {
       "obra": "Marimba",

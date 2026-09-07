@@ -46,9 +46,7 @@
       "afinacion_media"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.c107.enunciado"
-  },
+  "enunciado": "actividad.c107.enunciado",
   "pistas": [
     "actividad.c107.pista1"
   ],

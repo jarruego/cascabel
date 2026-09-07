@@ -51,9 +51,7 @@
       "completado"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.c303e.enunciado"
-  },
+  "enunciado": "actividad.c303e.enunciado",
   "pistas": [
     "actividad.c303e.pista1",
     "actividad.c303e.pista2"

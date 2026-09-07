@@ -98,7 +98,14 @@ export interface Actividad {
     tolerancia_cents?: number;
     reporta?: string[];
   };
-  locucion?: { enunciado: string; audio?: string };
+  /**
+   * Clave de i18n con la frase que se le dice al niño.
+   *
+   * Se llamaba `locucion` y llevaba un `audio` opcional para una grabación. El 2026-09-08
+   * se decidió que no va a haber grabaciones (ver `docs/adr/0006`), y un campo que promete
+   * audio para algo que es texto se queda mintiendo para siempre.
+   */
+  enunciado?: string;
   pistas?: string[];
   creditos?: Array<{ obra: string; autor?: string; fuente?: string; licencia: string }>;
   /**

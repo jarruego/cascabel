@@ -49,9 +49,7 @@
       "completado"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.tr02.enunciado"
-  },
+  "enunciado": "actividad.tr02.enunciado",
   "herramienta": true,
   "estado": "borrador"
 }

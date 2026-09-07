@@ -84,9 +84,7 @@
     ],
     "bucle": true
   },
-  "locucion": {
-    "enunciado": "actividad.c304.enunciado"
-  },
+  "enunciado": "actividad.c304.enunciado",
   "pistas": [
     "actividad.c304.pista1",
     "actividad.c304.pista2"

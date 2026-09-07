@@ -107,9 +107,7 @@
       "completado"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.inf16.enunciado"
-  },
+  "enunciado": "actividad.inf16.enunciado",
   "pistas": [
     "actividad.inf16.pista1"
   ],

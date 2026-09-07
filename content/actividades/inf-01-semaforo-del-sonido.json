@@ -72,10 +72,7 @@
       "completado"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.inf01.enunciado",
-    "audio": "es/inf-01-semaforo-del-sonido.opus"
-  },
+  "enunciado": "actividad.inf01.enunciado",
   "pistas": [
     "actividad.inf01.pista1"
   ],

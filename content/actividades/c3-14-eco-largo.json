@@ -33,9 +33,7 @@
       "desviacion_tipica"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.c314ec.enunciado"
-  },
+  "enunciado": "actividad.c314ec.enunciado",
   "pistas": [
     "actividad.c314.pista1",
     "actividad.c314.pista2"

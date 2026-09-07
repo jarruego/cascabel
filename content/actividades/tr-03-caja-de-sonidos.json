@@ -50,9 +50,7 @@
       "completado"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.tr03.enunciado"
-  },
+  "enunciado": "actividad.tr03.enunciado",
   "creditos": [
     {
       "obra": "Percusión y láminas",

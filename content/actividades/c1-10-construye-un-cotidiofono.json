@@ -59,8 +59,6 @@
       "completado"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.c110.enunciado"
-  },
+  "enunciado": "actividad.c110.enunciado",
   "estado": "borrador"
 }

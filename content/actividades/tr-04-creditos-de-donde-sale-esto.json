@@ -45,9 +45,7 @@
       "actividad.tr04.m1"
     ]
   },
-  "locucion": {
-    "enunciado": "actividad.tr04.enunciado"
-  },
+  "enunciado": "actividad.tr04.enunciado",
   "creditos": [
     {
       "obra": "Los propios créditos de Cascabel",
