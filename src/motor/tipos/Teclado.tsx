@@ -117,9 +117,28 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
   /** Nota que se acaba de tocar, para enseñarla grande encima del teclado. */
   const [ultimaTocada, setUltimaTocada] = useState<string | null>(null);
 
+  /**
+   * Personajes saltando, uno por toque.
+   *
+   * Con un identificador propio y no con el nombre de la nota: dos toques seguidos en la
+   * misma tecla compartirían clave, React reutilizaría el nodo y la animación no volvería a
+   * arrancar. El segundo toque no se vería. Es la misma trampa que ya apareció con los
+   * nombres de nota del karaoke.
+   */
+  const [saltos, setSaltos] = useState<Array<{ id: number; nota: string }>>([]);
+  const siguienteSalto = useRef(0);
+
   const sonar = useCallback(async (nota: string) => {
     setSonando((s) => new Set(s).add(nota));
     setUltimaTocada(nota);
+
+    // El salto del personaje. Se limpia solo al acabar la animación; si no se limpiara,
+    // una sesión larga de piano acabaría con cientos de nodos invisibles en el árbol.
+    if (personajeDe(nota, desde)) {
+      const id = siguienteSalto.current++;
+      setSaltos((s) => [...s, { id, nota }]);
+      window.setTimeout(() => setSaltos((s) => s.filter((x) => x.id !== id)), 900);
+    }
     if (grabador.current.grabando) {
       grabador.current.anotar(nota, obtenerContexto().currentTime * 1000);
     }
@@ -139,7 +158,7 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
     } catch {
       // Sin muestras el teclado sigue respondiendo visualmente. No se cierra nada.
     }
-  }, []);
+  }, [desde]);
 
   // Deslizar el dedo por las teclas. Se sigue con pointermove global porque el puntero
   // sale del botón donde empezó, y sin capturarlo a nivel de ventana se pierde.
@@ -363,6 +382,21 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
                 {/* El personaje ocupa el sitio del nombre, no se añade a él: una tecla con
                     dibujo Y nombre Y letra de ordenador es una tecla ilegible. Y solo en las
                     blancas, porque en una negra no cabe sin taparla entera. */}
+                {/* Los saltos de esta tecla. Van dentro del botón para heredar su
+                    posición, y con `pointer-events: none` para no robarle el toque. */}
+                {conPersonajes &&
+                  saltos
+                    .filter((x) => x.nota === k.nota)
+                    .map((x) => (
+                      <span key={x.id} className="teclado__salto">
+                        <Personaje
+                          nombre={personajeDe(k.nota, desde)!}
+                          pose="celebra"
+                          tamano={Math.round(anchoBlanca * 1.6)}
+                        />
+                      </span>
+                    ))}
+
                 {!k.negra && conPersonajes && personajeDe(k.nota, desde) && (
                   <span className="teclado__personaje">
                     <Personaje
