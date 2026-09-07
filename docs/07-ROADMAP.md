@@ -566,7 +566,7 @@ Abierta y cerrada el 2026-09-06, a partir de la primera prueba real del autor:
 - [x] **Personajes**: decidido el 2026-09-08. Existen y son de la metodología cocomusic —
   ocho, uno por nota: DORA, REX, MILO, FARA, SOL, LAIA, SIMÓN y DOBY. El encargo está en
   [`14-PERSONAJES.md`](14-PERSONAJES.md): poses, prompts, nombres de fichero y contrato del
-  SVG. **Siete de los ocho ya están dibujados**, diez poses cada uno, y con ellos entró el
+  SVG. **Los ocho ya están dibujados**, diez poses cada uno, y con ellos entró el
   código —`ui/personajes.ts`, `ui/Personaje.tsx`, `tools/personajes.mjs` y su test—. Doby
   cierra siempre; quién abre lo dice el campo `personaje` de cada actividad, con Dora por
   defecto, así que asignar a Fara las de silencio el día que exista será una línea de
@@ -579,12 +579,12 @@ Abierta y cerrada el 2026-09-06, a partir de la primera prueba real del autor:
   nota**, en las teclas y en los carriles— necesita **los ocho dibujados**, porque con cinco
   el piano enseñaría personaje en cinco teclas y nada en las otras. Ver `14-PERSONAJES.md` §7.
 
-  **Falta Simón**, y con él la decisión del color, que midiendo los dibujos ha cambiado de
-  forma: Sol resultó estar en verde azulado (171°), del lado de la aplicación y no del azul
-  que decía la tabla; pero **Laia sale violeta (257–268°), que es justo el color que la
-  aplicación reserva para la nota de Simón**. La causa es que el token de `la` se quedó en
-  azul (212°) cuando el Boomwhacker de esa nota es índigo, hacia 245°. Lo que se decida hay
-  que decidirlo con `la` y `si` a la vez, así que espera a Simón (ver `14-PERSONAJES.md` §5)
+  **La decisión del color se resolvió midiendo, y al revés de lo que parecía**: los ocho
+  dibujos coincidían con los Boomwhackers de verdad y la aplicación no. Tres notas estaban
+  mal —`fa` en un verde azulado en vez de verde claro, `la` en azul en vez de violeta y `si`
+  en morado en vez de fucsia—, y llevaban así porque el color de la nota y la paleta de la
+  interfaz eran los mismos tokens: el verde de `fa` era el verde que significa «correcto».
+  Separados en `--nota-*` y `--vivo-*`, corregidos y con test (ver `14-PERSONAJES.md` §5)
 - [ ] Revisión con las tres preguntas de `docs/06-PIPELINE-IA.md` — es T0.3
 
 **OpenMoji es CC BY-SA 4.0, la misma licencia que ya tienen nuestros contenidos**, así que

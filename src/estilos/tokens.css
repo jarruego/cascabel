@@ -60,6 +60,30 @@
   --vivo-azul: #1257a8;
   --vivo-morado: #6b3fa0;
   --vivo-rosa: #a8306a;
+  /* Verde claro, el del tubo de fa. El `--vivo-verde` de arriba es un verde azulado y
+     además significa «bien» en media interfaz, así que no puede hacer las dos cosas. */
+  --vivo-lima: #457a1f;
+
+  /*
+   * El código de color de las notas, y va aparte de la paleta a propósito.
+   *
+   * Son los colores de los **Boomwhackers**, unos tubos de plástico que existen: si un
+   * colegio los tiene, la tecla de la pantalla y el tubo que el niño sostiene tienen que
+   * ser del mismo color. La ficha del fabricante dice do rojo, re naranja, mi amarillo,
+   * fa verde claro, sol aqua, la violeta y si fucsia.
+   *
+   * Estuvieron pegados a `--vivo-*` hasta el 2026-09-08, y esa mezcla los tenía
+   * bloqueados: el verde de `fa` era el mismo verde que significa «correcto», así que
+   * corregir la nota habría cambiado el color del acierto. Separarlos es lo que ha
+   * permitido arreglar los tres que estaban mal.
+   */
+  --nota-do: var(--vivo-rojo);
+  --nota-re: var(--vivo-naranja);
+  --nota-mi: var(--vivo-amarillo);
+  --nota-fa: var(--vivo-lima);
+  --nota-sol: var(--vivo-turquesa);
+  --nota-la: var(--vivo-morado);
+  --nota-si: var(--vivo-rosa);
 
   /* Fondos suaves del mismo tono, para tarjetas. El texto encima va en --tinta. */
   --suave-rojo: #fdeceb;
@@ -221,6 +245,7 @@
     --vivo-azul: #79aef5;
     --vivo-morado: #b795e8;
     --vivo-rosa: #ef86b4;
+    --vivo-lima: #8cc762;
 
     /*
      * Y los SUAVES se oscurecen. Esto era un fallo real: los definí solo en :root, así

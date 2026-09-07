@@ -156,91 +156,44 @@ pantallas, no es como un instrumento que la mayoría no abre. Si algún día apr
 primero que saldría del precache es `anima` —solo aparece tras un intento fallido, y para
 entonces la red ha tenido tiempo—, no `neutro`.
 
-## 5. El color: hay que decidir algo
+## 5. El color: resuelto midiendo, el 2026-09-08
 
-Los cuatro primeros coinciden con el código de la aplicación. Los tres últimos no.
+Empezó como una pregunta abierta —la tabla de la metodología y el código de la aplicación no
+coincidían en sol, la y si— y acabó siendo un fallo de la aplicación, no del método.
 
-| Nota | Cascabel (Boomwhacker) | cocomusic | |
+**Lo que decidió el asunto fue medir los dibujos** en vez de discutir las tablas, y comprobar
+los tubos de verdad en la ficha del fabricante.
+
+| Nota | Boomwhacker real | El dibujo del personaje | La aplicación tenía |
 |---|---|---|---|
-| do | rojo | rojo | ✓ |
-| re | naranja | naranja | ✓ |
-| mi | amarillo | amarillo | ✓ |
-| fa | verde | verde | ✓ |
-| sol | **turquesa** | **azul** | ✗ |
-| la | **índigo** | **lila** | ✗ |
-| si | **violeta** | **rosa** | ✗ |
+| do | rojo | Dora, rojo | rojo ✓ |
+| re | naranja | Rex, naranja | naranja ✓ |
+| mi | amarillo | Milo, 56° | amarillo ✓ |
+| fa | **verde claro** | Fara, **86°** | verde azulado, 150° ✗ |
+| sol | **aqua** | Sol, **171°** | turquesa, 186° ✓ |
+| la | **violeta** | Laia, **265°** | azul, 212° ✗ |
+| si | **fucsia** | Simón, **332°** | morado, 267° ✗ |
 
-Cascabel usa el **código Boomwhacker**, verificado: do rojo, re naranja, mi amarillo, fa
-verde, sol turquesa, la índigo, si violeta. No es una paleta elegida por gusto: es la de unos
-tubos de plástico que existen, y si un colegio los tiene, la tecla de la app y el tubo que el
-niño sostiene tienen que ser del mismo color.
+**Los ocho dibujos coincidían con los tubos y la aplicación no.** Tres notas estaban mal, y
+no es un detalle de gusto: si un colegio tiene los Boomwhackers, la tecla de la pantalla y el
+tubo que el niño sostiene tienen que ser del mismo color, o el código deja de codificar.
 
-Los tres del final de cocomusic están *desplazados*, no enfrentados: azul, lila y rosa
-ocupan aproximadamente el sitio de turquesa, índigo y violeta, un paso más cálidos.
+### Por qué llevaba tanto sin arreglarse
 
-**Tres salidas, y la decisión es del autor:**
+Porque **el color de las notas y la paleta de la interfaz eran los mismos tokens**. El verde
+de `fa` era `--vivo-verde`, que en media aplicación significa «correcto»; el azul de `la` era
+el de los botones. Corregir una nota habría cambiado el color del acierto, así que no se
+podía tocar ninguna.
 
-1. **Acercar los tres de cocomusic al Boomwhacker** — Sol turquesa, Laia índigo, Simón
-   violeta. Un solo código en toda la metodología y coherencia con los instrumentos del aula.
-   Cuesta retocar tres personajes.
-2. **Mantener el color de cocomusic como identidad y el Boomwhacker como código de nota.**
-   Laia es lila siempre; la nota *la* es índigo siempre. Funciona, pero hay que asumir que en
-   el musicograma Laia aparecerá sobre un carril de otro color que el suyo.
-3. **Cambiar la aplicación al código de cocomusic.** No lo recomiendo: rompería la
-   correspondencia con los Boomwhackers, que es de las pocas cosas de la app que conectan con
-   material físico real.
+La corrección, entonces, fue separarlos: hay un código de nota, `--nota-do` … `--nota-si`, y
+hay una paleta de interfaz, `--vivo-*`. `tests/tokens.test.ts` comprueba que el mapa de
+`coloresNota.ts` no vuelva a apuntar directamente a un `--vivo-`.
 
-**Mi recomendación es la 1**, y solo si los tres retoques no desvirtúan nada de la
-metodología. Si el color forma parte de la identidad del personaje de un modo que no se puede
-tocar, la 2 es perfectamente viable y solo pide tenerlo escrito.
+### Lo que esto deja dicho para el futuro
 
-### Medido sobre los dibujos, el 2026-09-08
-
-Al llegar Sol se miraron los colores que usa **el dibujo**, no los que dice la tabla, y el
-desacuerdo resultó ser bastante menor de lo que parecía:
-
-| | Tono |
-|---|---|
-| Sol, dibujado | **171°** (verde azulado) |
-| Turquesa de la aplicación | 186° |
-| Azul de la aplicación | 212° |
-
-**Sol está dibujado en verde azulado, no en azul.** Queda a quince grados del turquesa del
-código Boomwhacker y a cuarenta del azul que decía la metodología: el dibujo ya está del lado
-de la aplicación. Con Sol, entonces, no hay nada que decidir.
-
-Los demás tampoco chocan: Fara sale en verde amarillento (86°) y Milo en amarillo (56°), más
-cálidos que los tokens de la aplicación pero en la misma familia y en el mismo orden. **Los
-personajes tienen su propia paleta y no tienen por qué usar los tokens**: lo que importa es
-que, cuando el personaje aparezca *encima* de su nota, los dos colores no se peleen.
-
-### Laia, medida el 2026-09-08
-
-Y aquí sí hay algo. Laia sale dibujada en **violeta**:
-
-| | Tono |
-|---|---|
-| Laia, dibujada | **257–268°** |
-| `--vivo-azul`, que la aplicación usa para **la** (su nota) | 212° |
-| `--vivo-morado`, que la aplicación usa para **si** (la de Simón) | **267°** |
-
-**Laia está pintada exactamente del color que la aplicación reserva para la nota de Simón.**
-No es un capricho del dibujo: el Boomwhacker de *la* es **índigo**, que está entre el azul y
-el violeta —hacia los 245°—, y el token de la aplicación se quedó en 212°, que es azul a
-secas. O sea que la que se ha alejado del estándar es la aplicación, no el dibujo.
-
-Eso abre una salida que no estaba en las tres de arriba:
-
-4. **Corregir la aplicación hacia el Boomwhacker de verdad**: `la` de 212° a ~245° (índigo) y
-   `si` de 267° a ~280° (violeta). La aplicación quedaría **más** fiel al estándar de los
-   tubos, no menos, y de paso deja sitio para que Laia sea violeta sin pisar a Simón.
-
-**No se decide todavía.** Falta Simón, y `la` y `si` solo tienen sentido movidas juntas: si
-se sube `la` a índigo sin subir `si`, las dos notas contiguas se quedan a treinta grados y en
-una tecla de 48 px eso ya no se distingue. Cuando esté dibujado se mide igual y se decide con
-los dos números delante.
-
----
+**Los personajes no tienen que usar los tokens de la aplicación.** Tienen su propia paleta y
+está bien que la tengan: lo que importa es que, cuando un personaje aparezca *encima* de su
+nota, los dos colores sean de la misma familia. Después de la corrección lo son los siete.
 
 ## 6. Prompts
 
@@ -344,6 +297,7 @@ Hoy:
 | **Fara** | `inf-01`, `inf-14`, `c1-03`, `c2-13`, `c3-04` | Silencio y escucha pausada: «parar y escuchar también es hacer música» |
 | **Sol** | `inf-08`, `inf-12`, `c1-12`, `c1-15`, `c2-10`, `c3-06` | Pulso, movimiento y danza: «la música se siente y se expresa con el cuerpo» |
 | **Laia** | Las once del eje `creacion` | Inventar, improvisar, componer: «la música también se puede inventar» |
+| **Simón** | `inf-02`, `inf-03`, `inf-04`, `inf-15`, `c1-06`, `c2-09`, `c3-05` | Distinguir entre dos sonidos: «cuando escuchamos con atención, descubrimos más». Se separa de Rex en que Rex **descubre** lo que hay y Simón **distingue** entre dos |
 | **Dora** | Todas las demás | Es el valor por defecto |
 
 ### Qué poses se usan de verdad hoy, y cuáles no

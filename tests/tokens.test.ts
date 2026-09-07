@@ -148,3 +148,36 @@ describe('colisiones de nombres de clase', () => {
     expect(conCaja.map((b) => b.selector)).toEqual([]);
   });
 });
+
+describe('el código de color de las notas', () => {
+  /*
+    Son los colores de los Boomwhackers, unos tubos de plástico que existen. Si un colegio
+    los tiene, la tecla de la pantalla y el tubo que el niño sostiene tienen que ser del
+    mismo color, o el código deja de codificar.
+
+    Tres estuvieron mal hasta el 2026-09-08 —fa, la y si— y se descubrió midiendo los
+    dibujos de los personajes de cocomusic, que sí coincidían con los tubos.
+  */
+  it('las siete notas tienen su token, y ninguno es un --vivo- directo', () => {
+    // La separación es lo que permitió arreglarlo: mientras el verde de `fa` fue el mismo
+    // que significa «correcto», corregir la nota habría cambiado el color del acierto.
+    const mapa = readFileSync(join(__dirname, '..', 'src', 'ui', 'coloresNota.ts'), 'utf-8');
+    const cuerpo = mapa.slice(mapa.indexOf('const POR_LETRA'), mapa.indexOf('};', mapa.indexOf('const POR_LETRA')));
+    const tokens = [...cuerpo.matchAll(/'([a-z-]+)'/g)].map((m) => m[1]!);
+    expect(tokens).toHaveLength(7);
+    expect(tokens.every((t) => t.startsWith('nota-'))).toBe(true);
+  });
+
+  it('cada token de nota está definido y en los dos modos', () => {
+    for (const nota of ['do', 're', 'mi', 'fa', 'sol', 'la', 'si']) {
+      expect(css, `falta --nota-${nota}`).toMatch(new RegExp(`--nota-${nota}:`));
+    }
+  });
+
+  it('el fa no usa el verde que significa «correcto»', () => {
+    // Es el error concreto que había: un solo verde haciendo de nota y de acierto.
+    const linea = /--nota-fa:\s*var\(--([a-z-]+)\)/.exec(css);
+    expect(linea).toBeTruthy();
+    expect(linea![1]).not.toBe('vivo-verde');
+  });
+});

@@ -14,14 +14,33 @@
  * pinta igual la ejecute el tipo de actividad que la ejecute.
  */
 
+/*
+  El código Boomwhacker, corregido el 2026-09-08 contra la ficha del fabricante.
+
+  Tres estaban mal y se descubrió por un camino inesperado: al dibujar los ocho personajes
+  de cocomusic se midieron sus colores para ver si chocaban con los de la aplicación, y
+  resultó que **los dibujos coincidían con los tubos y la aplicación no**. Lo que decía la
+  ficha —y lo que la aplicación decía antes—:
+
+    fa   verde claro  (~95°)   la aplicación tenía un verde azulado, 150°
+    la   violeta      (~267°)  la aplicación tenía azul, 212°
+    si   fucsia       (~331°)  la aplicación tenía morado, 267°
+
+  No es un detalle de gusto: si un colegio tiene los tubos, la tecla de la pantalla y el
+  tubo que el niño sostiene tienen que ser del mismo color, o el código deja de codificar.
+
+  Van a tokens `--nota-*` y no a `--vivo-*`: el verde de `fa` era el mismo verde que
+  significa «correcto» en media interfaz, y esa mezcla es la razón de que esto llevara
+  tanto sin arreglarse.
+*/
 const POR_LETRA: Record<string, string> = {
-  c: 'vivo-rojo',
-  d: 'vivo-naranja',
-  e: 'vivo-amarillo',
-  f: 'vivo-verde',
-  g: 'vivo-turquesa',
-  a: 'vivo-azul',
-  b: 'vivo-morado',
+  c: 'nota-do',
+  d: 'nota-re',
+  e: 'nota-mi',
+  f: 'nota-fa',
+  g: 'nota-sol',
+  a: 'nota-la',
+  b: 'nota-si',
 };
 
 /** Nombre del token CSS del color de una nota, sin el `var()`. */

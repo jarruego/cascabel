@@ -68,6 +68,7 @@
     ]
   },
   "enunciado": "actividad.inf02.enunciado",
+  "personaje": "simon",
   "estado": "borrador",
   "pistas": [
     "actividad.inf02.pista1"
