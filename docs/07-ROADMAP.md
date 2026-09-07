@@ -1401,11 +1401,11 @@ es depurar y ampliar, y eso lo marca el uso real.
 
 | | |
 |---|---|
-| Actividades | 76, todas validando esquema y música |
+| Actividades | 77, todas validando esquema y música |
 | Tipos de motor | 21 (la lista viva, en [`01-ARQUITECTURA.md`](01-ARQUITECTURA.md)) |
-| Tests | 370 |
-| Precache | 1336 KiB (el resto del audio se cachea al usarse) |
-| Código | ~17000 líneas en `src`, ~3800 en `tests` |
+| Tests | 408 |
+| Precache | 1341 KiB (el resto del audio se cachea al usarse) |
+| Código | ~17200 líneas en `src`, ~4000 en `tests` |
 
 **Lo que entró ese día, después de cerrar el catálogo previsto:**
 
@@ -1433,8 +1433,9 @@ es depurar y ampliar, y eso lo marca el uso real.
 **Lo que de verdad falta**, y ninguna de las tres es programación:
 
 1. **T0.3, probarlo con niños.** Sigue sin hacerse y es lo único que puede decir si las
-   decisiones de dificultad son correctas. Hay ocho o nueve marcadas como PENDIENTE DE
-   REVISIÓN PEDAGÓGICA esperando exactamente eso.
+   decisiones de dificultad son correctas. Las que esperan respuesta están recogidas en
+   [`13-PENDIENTE-DE-REVISION.md`](13-PENDIENTE-DE-REVISION.md), que genera
+   `npm run docs:pendientes` leyendo las marcas del código.
 2. **Las locuciones.** `CLAUDE.md` §6 pide voz humana grabada y no la hay. `tools/muestras-voz.py`
    deja el trabajo en grabar, no en programar.
 3. **La revisión de una maestra.** Las correspondencias edad-dificultad, la secuencia
