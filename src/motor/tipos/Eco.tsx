@@ -25,6 +25,13 @@ import type { PropsActividad } from '../tipos';
  *
  * **Y no hay cuenta atrás para el primero.** El que propone empieza cuando quiere y para
  * cuando quiere: si hubiera un cronómetro, lo que se mediría sería la prisa.
+ *
+ * **Aquí el tiempo se mide con `performance.now()` y no con el reloj del `AudioContext`**,
+ * que es al revés de lo que hace el resto de la aplicación. No es un descuido: en las demás
+ * actividades hay que comparar un golpe del niño con algo que hemos programado nosotros para
+ * que suene, y ahí la latencia de salida importa y hay que compensarla (`CLAUDE.md` §7). En
+ * el eco se comparan **dos entradas** entre sí, y las dos llegan por el mismo camino y con
+ * el mismo retraso, así que ese retraso se va solo en la resta.
  */
 
 type Fase = 'esperando' | 'primero' | 'entre' | 'segundo' | 'resultado';

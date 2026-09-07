@@ -59,19 +59,37 @@ export function transponer(nota: string, semitonos: number): string {
   return `${NOTAS[((midi % 12) + 12) % 12]}${octava}`;
 }
 
+export interface Vuelta {
+  /** Segundos, desde el comienzo de la vuelta, en que entra el bordón. */
+  bordon: number[];
+  percusion: Array<{ golpe: Golpe; segundos: number }>;
+  /** Lo que dura la vuelta entera, en segundos. */
+  duracion: number;
+}
+
 /**
- * Los instantes de una vuelta del bucle, en segundos desde su comienzo.
+ * Una vuelta del bucle, en segundos desde su comienzo.
  *
- * Se saca aparte del reproductor para poder comprobarlo con un test: es la parte que se
- * puede equivocar en silencio, porque un bordón que entra medio pulso tarde no da error,
- * solo suena mal.
+ * **La usa el planificador de aquí abajo**, y eso es lo que hace que valga la pena
+ * probarla. La primera versión calculaba los instantes dos veces —una en esta función,
+ * para el test, y otra dentro de `planificar()`— y eso no es un test: es una segunda
+ * implementación que va por su cuenta y que puede estar de acuerdo consigo misma mientras
+ * lo que suena está mal.
+ *
+ * Es la parte que se equivoca **en silencio**: un bordón que entra medio pulso tarde no da
+ * ningún error, solo suena mal, y quien lo oiga pensará que la actividad es así.
  */
-export function instantesDe(patron: Patron): { bordon: number[]; percusion: number[] } {
+export function instantesDeVuelta(patron: Patron): Vuelta {
   const porPulso = 60 / patron.tempo;
   return {
-    // Un bordón por vuelta: entra en el primer pulso y dura hasta el siguiente.
+    // Un bordón por vuelta: entra en el primer pulso y dura toda la vuelta. Uno por pulso
+    // lo convertiría en un ostinato, que es otra cosa y tapa lo que toca el niño.
     bordon: patron.bordon ? [0] : [],
-    percusion: (patron.percusion ?? []).map((p) => p.pulso * porPulso),
+    percusion: (patron.percusion ?? []).map((p) => ({
+      golpe: p.golpe,
+      segundos: p.pulso * porPulso,
+    })),
+    duracion: patron.pulsosPorVuelta * porPulso,
   };
 }
 
@@ -122,25 +140,28 @@ export class Acompanamiento {
 
   private planificar = (): void => {
     const ctx = obtenerContexto();
-    const porPulso = 60 / this.patron.tempo;
-    const duracionVuelta = this.patron.pulsosPorVuelta * porPulso;
+    // Los instantes salen de `instantesDeVuelta`, la misma función que prueba el test. Es
+    // la única forma de que el test diga algo sobre lo que de verdad suena.
+    const vuelta = instantesDeVuelta(this.patron);
 
     while (this.siguienteVuelta < ctx.currentTime + PROGRAMAR_S) {
       const inicio = this.siguienteVuelta;
 
       if (this.patron.bordon && this.sampler) {
         const fundamental = transponer(this.patron.bordon, this.transporte);
-        // Tónica y quinta a la vez, sonando toda la vuelta. Sin tercera: es lo que hace
-        // que ninguna nota de la pentatónica pueda chocar.
-        this.sampler.tocar(fundamental, inicio, duracionVuelta, 0.5);
-        this.sampler.tocar(transponer(fundamental, QUINTA), inicio, duracionVuelta, 0.42);
+        for (const s of vuelta.bordon) {
+          // Tónica y quinta a la vez, sonando toda la vuelta. Sin tercera: es lo que hace
+          // que ninguna nota de la pentatónica pueda chocar.
+          this.sampler.tocar(fundamental, inicio + s, vuelta.duracion, 0.5);
+          this.sampler.tocar(transponer(fundamental, QUINTA), inicio + s, vuelta.duracion, 0.42);
+        }
       }
 
-      for (const g of this.patron.percusion ?? []) {
-        this.percusion?.golpear(g.golpe, inicio + g.pulso * porPulso, 0.7);
+      for (const g of vuelta.percusion) {
+        this.percusion?.golpear(g.golpe, inicio + g.segundos, 0.7);
       }
 
-      this.siguienteVuelta += duracionVuelta;
+      this.siguienteVuelta += vuelta.duracion;
       this.vuelta += 1;
     }
 
