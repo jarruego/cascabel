@@ -190,10 +190,21 @@ maestro sin piano no tiene.
 > ajustar el tono a las voces que hay importa bastante más que el arreglo. Se aplica en
 > caliente, sin parar, para no cortar la frase que la clase esté cantando.
 
-### 4.6. Modo dos columnas para pizarra digital
+### 4.6. Modo dos columnas para pizarra digital — **HECHO** el 2026-09-07
 
-Ya existe `[data-pizarra]` en los tokens y el modo lienzo. Lo que falta es una vista pensada
-para proyectar: lo interactivo grande a un lado y el guion del maestro al otro.
+Ya existía `[data-pizarra]` en los tokens y el modo lienzo. Lo que faltaba era una vista
+pensada para proyectar: lo interactivo grande a un lado y el guion del maestro al otro.
+
+> **Hecho, y solo para `guia-aula`.** Es CSS, sin tocar ningún componente: en modo pizarra y
+> con ancho de sobra, la guía se parte en dos columnas —a la izquierda lo que mira el grupo,
+> la consigna enorme y el pulso; a la derecha lo que lee el maestro, los pasos y por dónde
+> va—. En una sola columna había que bajar la vista para leer el paso siguiente, y el pulso
+> se salía de la pantalla justo cuando la clase lo estaba mirando.
+>
+> **Y no se hace en los demás tipos por una razón concreta**: en cualquier otro, el «guion
+> del maestro» son las pistas, o sea las respuestas, y proyectarlas al lado de la actividad
+> las pone delante de veinticinco niños. La guía de aula **es** la pantalla del maestro: ahí
+> no hay nada que ocultar.
 
 ---
 

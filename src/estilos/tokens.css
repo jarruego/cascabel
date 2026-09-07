@@ -3428,3 +3428,48 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   list-style: none;
 }
 .camino__cuando { font-size: var(--t-xs); color: var(--tinta-2); }
+
+/* ---------------------------------------------------------------------------
+ * Guía de aula proyectada: dos columnas.
+ *
+ * Proyectada y en una sola columna, la guía obliga a bajar la vista para leer el paso
+ * siguiente, y el pulso —que es lo que la clase está mirando— se sale de la pantalla. En
+ * dos columnas conviven: a la izquierda lo que mira el grupo (la consigna enorme y el
+ * pulso), a la derecha lo que lee el maestro (los pasos y por dónde va).
+ *
+ * **Solo en modo pizarra y solo si hay ancho de sobra.** En una tablet, dos columnas dejan
+ * las dos estrechas, que es peor que una bien. Y el modo pizarra se activa a mano desde
+ * Ajustes: una tablet no debe reorganizarse sola.
+ *
+ * No hay problema de destripar respuestas, que es lo que impediría hacer esto en otros
+ * tipos: la guía de aula ES la pantalla del maestro, y aquí no hay respuesta que ocultar.
+ * ------------------------------------------------------------------------ */
+@media (min-width: 60rem) {
+  :root[data-pizarra='true'] .guia {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'consigna pasos'
+      'pulso    pasos'
+      'controles pasos'
+      'materiales navegacion';
+    align-items: start;
+    gap: 0 var(--e-7);
+  }
+  :root[data-pizarra='true'] .guia__consigna { grid-area: consigna; }
+  :root[data-pizarra='true'] .guia__pulso { grid-area: pulso; }
+  :root[data-pizarra='true'] .guia__controles { grid-area: controles; }
+  :root[data-pizarra='true'] .guia__pasos { grid-area: pasos; margin-top: 0; }
+  :root[data-pizarra='true'] .guia__navegacion { grid-area: navegacion; }
+  :root[data-pizarra='true'] .guia__materiales { grid-area: materiales; }
+
+  /* Un paso apagado al 45 % se ve en un monitor y desaparece en un proyector con la
+     persiana subida. Aquí se sube el suelo y se marca además el paso actual con una
+     barra: forma además de opacidad. */
+  :root[data-pizarra='true'] .guia__paso { opacity: 0.7; }
+  :root[data-pizarra='true'] .guia__paso[data-actual='true'] {
+    opacity: 1;
+    padding-left: var(--e-3);
+    border-left: 8px solid var(--acento);
+  }
+}
