@@ -1446,12 +1446,12 @@ es depurar y ampliar, y eso lo marca el uso real.
 
 | | |
 |---|---|
-| Actividades | 78, todas validando esquema y música |
+| Actividades | 78, todas validando esquema, música y auditoría |
 | Tipos de motor | 21 (la lista viva, en [`01-ARQUITECTURA.md`](01-ARQUITECTURA.md)) |
-| Tests | 430 |
-| Precache | 1828 KiB (el audio y las poses que no salen siempre se cachean al usarse) |
+| Tests | 431 |
+| Precache | 1832 KiB |
 | Personajes | 8 × 10 poses, 1530 KB |
-| Código | ~18300 líneas en `src`, ~4300 en `tests` |
+| Código | ~18400 líneas en `src`, ~4400 en `tests` |
 
 **Lo que entró ese día, después de cerrar el catálogo previsto:**
 
@@ -1544,13 +1544,32 @@ actividad**, y todo lo demás ocupa lo mínimo.
 
 **Lo que queda de este rediseño**, y es lo siguiente que toca:
 
-- [ ] **Repasar las 78 actividades una a una** con estas reglas: qué botones sobran en cada
-      una, qué opción extra no viene al caso, y si algo se sale o se superpone en un móvil.
-      Lo hecho hasta ahora es el marco y las reglas generales; el repaso es actividad por
-      actividad.
-- [ ] **Verlo en pantalla.** Se ha rehecho el marco de todas sin poder mirarlo: el tamaño del
-      personaje de la barra, si «Volver» y «Ficha» caben con icono y palabra en un móvil, y
-      si la barra de la actividad se pelea con algo. Ningún test dice eso.
+- [x] **Repasadas las 78, una a una** — `npm run contenido:auditar`, que comprueba textos,
+      lenguaje por edad, nivel, currículo, personaje e interfaz. Y encontró un fallo que
+      estaba en producción: **cinco actividades apuntaban a claves de texto que no existen**
+      —las de `cuerpo` y `eco`, con las claves generadas de un recorte del identificador y
+      los textos escritos con otro—, así que donde iba el enunciado se veía la clave en
+      crudo. No lo cazaba nada porque el test de textos mira el código y esas claves están en
+      el contenido; ahora hay uno que lo mira.
+
+      Lo demás: dos saberes básicos que sí se podían rellenar, tres actividades
+      autocorrectivas sin ninguna pista que ofrecer al fallar, un enunciado de Infantil
+      demasiado largo, y grabar dejando de venir puesto en teclados y pads.
+
+      **Dos reglas de la propia auditoría estaban mal**: medía el tiempo de una guía de aula
+      como tiempo de pantalla, y trataba un `null` de currículo como un olvido cuando §9 dice
+      justamente que ante la duda se deje `null`.
+
+- [ ] **Confirmar seis campos de currículo** que están en `null` a propósito, los tres de las
+      herramientas (`tr-01`, `tr-02`, `tr-03`). Los saca `npm run contenido:auditar` bajo
+      «curriculo-pendiente». **Lo siguiente**: decidir si una herramienta sin consigna ni
+      final tiene criterio de evaluación o no lo tiene, que es una pregunta de currículo y no
+      de programación.
+
+- [ ] **Verlo en pantalla**, que es lo único que ningún script dice. Concretamente: el tamaño
+      del personaje de la barra, si «Volver» y «Ficha» caben con icono y palabra en un móvil,
+      si el mensaje deslizante tapa algo, si el latido del botón de arranque cansa, y si
+      alguna actividad concreta se rompe girando el teléfono.
 
 **Lo que de verdad falta**, y ninguna de las tres es programación:
 

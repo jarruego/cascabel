@@ -356,6 +356,7 @@ npm run verificar           # typecheck + lint + tests + validación de contenid
 npm run contenido:preparar  # crea .venv con music21 y jsonschema (Python 3.11+)
 npm run contenido:validar   # solo el validador de actividades
 npm run contenido:indice    # regenera content/indice.json desde las actividades
+npm run contenido:auditar   # revisa las actividades: textos, nivel, currículo, personaje
 npm run docs:tipos          # rehace la tabla de tipos de docs/01-ARQUITECTURA.md
 npm run docs:pendientes     # reúne lo que espera criterio musical en docs/13
 npm run build && npm run preview
