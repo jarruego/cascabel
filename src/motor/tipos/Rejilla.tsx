@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useReducer, useRef, useState } from 'react';
+import { useCallback, useEffect, useReducer, useRef, useState, type CSSProperties } from 'react';
 import { OBJETIVO_TACTIL } from '@/config';
 import { useCarril } from '@/app/preferencias';
 import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
@@ -57,9 +57,19 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
   const modo: ModoRejilla = contenido.modo ?? (contenido.solucion ? 'dictado' : 'libre');
   const { filas, columnas } = contenido;
   const bpm = contenido.tempo ?? actividad.practica?.tempo ?? 96;
-  // En una rejilla hay muchas celdas: se usa el tamaño del carril como suelo, pero se
-  // deja que encojan si no caben, nunca por debajo del mínimo de WCAG 2.5.8.
-  const lado = Math.max(24, Math.min(OBJETIVO_TACTIL[carril], Math.floor(320 / columnas)));
+  /*
+    El tamaño de celda lo decide el CSS, no este fichero.
+
+    Aquí había `Math.floor(320 / columnas)`: la cuadrícula se dimensionaba como si la
+    pantalla midiera siempre 320 px, así que ocho columnas daban celdas de 40 px lo mismo en
+    un móvil que en una pizarra. Ahora las columnas se reparten el ancho que haya con `1fr`
+    y las celdas son cuadradas con `aspect-ratio`, que es información que el navegador tiene
+    y JavaScript no.
+
+    Lo que sí se pasa al CSS es el objetivo táctil del carril, como suelo: una celda nunca
+    baja de ahí, y si no caben, la cuadrícula desplaza en horizontal.
+  */
+  const objetivo = OBJETIVO_TACTIL[carril];
 
   const [estado, despachar] = useReducer(
     (e: EstadoRejilla, a: AccionRejilla) => reducirRejilla(e, a, modo, filas, columnas),
@@ -185,7 +195,12 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
         className="rejilla__cuadricula"
         role="grid"
         aria-label={t(contenido.consigna)}
-        style={{ gridTemplateColumns: `repeat(${columnas}, ${lado}px)` }}
+        style={
+          {
+            gridTemplateColumns: `repeat(${columnas}, minmax(var(--celda-minima), 1fr))`,
+            '--celda-minima': `${Math.max(24, Math.min(objetivo, 44))}px`,
+          } as CSSProperties
+        }
       >
         {Array.from({ length: filas }, (_, f) =>
           Array.from({ length: columnas }, (_, c) => {
@@ -199,7 +214,6 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
                 type="button"
                 role="gridcell"
                 className="rejilla__celda"
-                style={{ width: lado, height: lado }}
                 data-encendida={encendida || undefined}
                 data-marca={sobra ? 'sobra' : falta ? 'falta' : undefined}
                 data-columna-activa={c === columnaActual || undefined}

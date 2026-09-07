@@ -1220,6 +1220,45 @@ p {
 /* ── rejilla: altura × tiempo ──────────────────────────────────────────────
    Las columnas son pulsos y las filas alturas. Es la mejor interfaz que existe
    para escribir música sin saber notación. */
+/* ---------------------------------------------------------------------------
+ * La pauta crece con la pantalla
+ *
+ * El pentagrama se dibuja con una geometría fija de 460 × 200, y los botones invisibles van
+ * colocados encima en coordenadas absolutas sobre esa misma geometría. Reescribir las dos
+ * cosas para que fueran fluidas sería tocar el dibujo y las zonas de toque a la vez, que es
+ * donde se rompen estas pantallas.
+ *
+ * `zoom` lo resuelve sin tocar ninguna: agranda la caja Y su contenido, así que los botones
+ * siguen exactamente donde se ven, y de paso se hacen más grandes, nunca más pequeños.
+ *
+ * **`zoom` y no `transform: scale()`.** `transform` solo pinta más grande: el elemento
+ * seguiría ocupando 460 × 200 y la pauta se solaparía con lo que hay debajo. Firefox
+ * anterior a la 126 ignora `zoom`, y entonces se ve como se ha visto hasta ahora, que es
+ * una degradación aceptable.
+ * ------------------------------------------------------------------------ */
+@media (min-width: 56rem) {
+  .pentagrama__lienzo { zoom: 1.35; }
+}
+@media (min-width: 80rem) {
+  .pentagrama__lienzo { zoom: 1.7; }
+}
+:root[data-pizarra='true'] .pentagrama__lienzo { zoom: 2; }
+
+/* La cuadrícula ocupa el ancho disponible y las celdas salen cuadradas. Antes el tamaño lo
+   calculaba el componente suponiendo una pantalla de 320 px, y en un monitor grande la
+   rejilla se quedaba en una esquina. El `max-width` evita lo contrario: ocho casillas de un
+   palmo tampoco se leen como una rejilla. */
+.rejilla__cuadricula {
+  width: 100%;
+  max-width: min(100%, 64rem);
+  margin-inline: auto;
+  overflow-x: auto;
+}
+.rejilla__celda {
+  aspect-ratio: 1;
+  width: auto;
+  height: auto;
+}
 .rejilla__cuadricula {
   display: grid;
   gap: var(--e-1);
