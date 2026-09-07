@@ -54,6 +54,17 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
      */
     octavas?: number;
     soloBlancas?: boolean;
+    /**
+     * Cuántas teclas blancas, si lo que se quiere no cabe en octavas enteras.
+     *
+     * Una octava son siete blancas y va **de do a si**: el do de arriba se queda fuera. Pero
+     * a veces lo que hace falta es justo el do de arriba —la escala completa, do a do— y
+     * pedir dos octavas para eso da catorce teclas para enseñar ocho.
+     *
+     * En el piano de la pandilla es la razón de ser: son **ocho personajes**, de Dora a
+     * Doby, y Doby es el do de arriba. Con octavas enteras, Doby no existiría.
+     */
+    blancas?: number;
     /** Nombres bajo cada tecla: 'latino' (do re mi), 'ingles' (C D E) o 'ninguno'. */
     nombres?: 'latino' | 'ingles' | 'ninguno';
     /** Enseñar qué tecla del ordenador toca cada nota. Estorba donde no hay teclado. */
@@ -272,7 +283,13 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
     return 1;
   })();
 
-  const blancas = 7 * octavasVisibles;
+  /*
+    Las blancas que se dibujan. Si la actividad las pide por número, mandan ellas; si no,
+    salen de las octavas. Nunca menos de dos: un teclado de una tecla no es un teclado.
+  */
+  const blancas = contenido.blancas
+    ? Math.max(2, Math.round(contenido.blancas))
+    : 7 * octavasVisibles;
   /*
     Las teclas LLENAN el hueco. Antes estaban acotadas por el objetivo táctil del carril
     —unos 60 px—, y en una pantalla ancha el teclado se quedaba chico y centrado con medio

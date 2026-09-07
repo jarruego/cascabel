@@ -34,7 +34,8 @@
       "actividad.inf19.reto1",
       "actividad.inf19.reto2",
       "actividad.inf19.reto3"
-    ]
+    ],
+    "blancas": 8
   },
   "evaluacion": {
     "autocorrectiva": false,

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate, useParams } from 'react-router';
+import { Link, useNavigate, useParams } from 'react-router';
 import { cargarActividad } from '@/datos/cargar';
 import { componenteDe } from '@/motor/registro';
 import { Lienzo } from '@/ui/Lienzo';
@@ -32,7 +32,6 @@ import type { Actividad as TipoActividad, ResultadoActividad } from '@/motor/tip
 export default function Actividad() {
   const { id = '' } = useParams();
   const navegar = useNavigate();
-  const ubicacion = useLocation();
   const verFicha = usePreferencias((e) => e.verFicha);
 
   const [actividad, setActividad] = useState<TipoActividad | null>(null);
@@ -72,22 +71,29 @@ export default function Actividad() {
    * setenta y ocho actividades eso significaba volver a filtrar y a bajar cada vez que se
    * abría una, que es la forma más segura de que nadie explore nada.
    *
-   * Retroceder en el historial lo arregla entero y gratis: la URL anterior ya lleva los
-   * filtros y el navegador repone el scroll él solo. **Salvo que no haya historial**: si se
-   * ha llegado por un enlace directo, `key` vale `'default'` y retroceder sacaría al usuario
-   * fuera de Cascabel.
+   * **Se probó retrocediendo en el historial y estaba mal.** `history.back()` no lleva al
+   * catálogo: lleva a la pantalla anterior, que puede ser la ficha que acabas de mirar o la
+   * actividad de antes. El autor lo vio enseguida — «Volver» le abría la ficha —, y tenía
+   * razón en el fondo del asunto: volver es volver al catálogo, no deshacer un paso.
+   *
+   * Así que el catálogo apunta su propia URL al salir y aquí se va a esa. Filtros intactos y
+   * un solo destino. Si no hay nada apuntado —se ha entrado por un enlace directo—, `/`.
    */
-  const hayHistorial = ubicacion.key !== 'default';
   const volver = () => {
-    if (hayHistorial) navegar(-1);
-    else navegar('/');
+    let destino = '/';
+    try {
+      destino = sessionStorage.getItem('catalogo:url') || '/';
+    } catch {
+      // Sin almacenamiento se va al catálogo sin filtros, que es lo peor que puede pasar.
+    }
+    navegar(destino);
   };
 
   if (fallo) {
     return (
       <main className="actividad-marco">
         <p role="alert">{t('actividad.noEncontrada')}</p>
-        <BarraActividad id={id} volver={volver} hayHistorial={hayHistorial} verFicha={verFicha} />
+        <BarraActividad id={id} volver={volver} verFicha={verFicha} />
       </main>
     );
   }
@@ -151,7 +157,6 @@ export default function Actividad() {
       <BarraActividad
         id={id}
         volver={volver}
-        hayHistorial={hayHistorial}
         verFicha={verFicha}
         personaje={conPersonaje ? quien : undefined}
         alPersonaje={() => setExplicacion(true)}
@@ -169,14 +174,12 @@ export default function Actividad() {
 function BarraActividad({
   id,
   volver,
-  hayHistorial,
   verFicha,
   personaje,
   alPersonaje,
 }: {
   id: string;
   volver: () => void;
-  hayHistorial: boolean;
   verFicha: boolean;
   personaje?: string;
   alPersonaje?: () => void;
@@ -184,13 +187,13 @@ function BarraActividad({
   return (
     <div className="barra-actividad no-imprimir">
       {/* Sigue siendo un enlace y no un botón: así se puede abrir en otra pestaña y un
-          lector de pantalla lo anuncia como enlace. Lo que cambia es lo que hace al
-          pulsarlo — retroceder, para no perder los filtros del catálogo. */}
+          lector de pantalla lo anuncia como enlace. Lo que cambia es a dónde va: al catálogo
+          con los filtros que tuviera, no a `/` pelado. */}
       <Link
         to="/"
         className="barra-actividad__volver"
         onClick={(ev) => {
-          if (!hayHistorial || ev.metaKey || ev.ctrlKey || ev.button !== 0) return;
+          if (ev.metaKey || ev.ctrlKey || ev.button !== 0) return;
           ev.preventDefault();
           volver();
         }}

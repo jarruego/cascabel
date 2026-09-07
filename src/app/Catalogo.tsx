@@ -110,6 +110,15 @@ export default function Catalogo() {
     const guardar = () => {
       try {
         sessionStorage.setItem('catalogo:scroll', String(window.scrollY));
+        /*
+          Y la URL, con sus filtros.
+
+          Es lo que hace que «Volver» desde una actividad sea siempre el catálogo y siga
+          teniendo los filtros puestos. Antes se conseguía retrocediendo en el historial, y
+          eso da otra cosa: la pantalla ANTERIOR, que puede ser la ficha o la actividad de
+          antes. Volver es volver al catálogo.
+        */
+        sessionStorage.setItem('catalogo:url', `${window.location.pathname}${window.location.search}`);
       } catch {
         // Sin almacenamiento se pierde la posición y no pasa nada más.
       }
