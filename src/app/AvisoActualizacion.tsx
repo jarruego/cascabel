@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { t } from '@/i18n';
-import { aplicarActualizacion, vigilarActualizaciones } from './sinConexion';
+import { aplicarActualizacion, prefetchPersonajes, vigilarActualizaciones } from './sinConexion';
 
 /**
  * Aviso de versión nueva.
@@ -16,6 +16,13 @@ export function AvisoActualizacion() {
   const [hay, setHay] = useState(false);
 
   useEffect(() => vigilarActualizaciones(() => setHay(true)), []);
+
+  /*
+    Las poses de personaje que no van en el precache se bajan aquí, en los ratos muertos y
+    solo si la conexión no es de pago ni lenta. Va en este componente porque es el único que
+    vive durante toda la sesión y no pinta nada la mayor parte del tiempo.
+  */
+  useEffect(() => prefetchPersonajes(), []);
 
   if (!hay) return null;
 

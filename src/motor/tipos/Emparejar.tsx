@@ -49,6 +49,14 @@ export default function Emparejar({ actividad, alTerminar }: PropsActividad) {
     izquierda: Elemento[];
     derecha: Elemento[];
     parejas: ParejaResuelta[];
+    /**
+     * Timbre con el que suenan las notas de esta actividad. Ver `audio/instrumentos.ts`.
+     *
+     * Importa más de lo que parece: la actividad de digitaciones de flauta sonaba con la
+     * marimba de por defecto, o sea un ejercicio para aprender dónde van los dedos de la
+     * flauta que no sonaba a flauta.
+     */
+    instrumento?: string;
   };
 
   const carril = useCarril(actividad.etapa);
@@ -110,7 +118,7 @@ export default function Emparejar({ actividad, alTerminar }: PropsActividad) {
                   // Suena al tocarlo: así el primer toque ya da información.
                   if (!resuelta) {
                     if (e.audio) sonarMuestra(e.audio);
-                    else if (e.nota) void sonarNota(e.nota);
+                    else if (e.nota) void sonarNota(e.nota, contenido.instrumento);
                   }
                   despachar({ tipo: 'tocar', clave: e.clave, lado });
                 }}

@@ -41,19 +41,26 @@ export async function sonarSeguidos(rutas: string[], separacionMs = 450): Promis
  *
  * El sampler se reutiliza entre llamadas: cargarlo son seis descargas y decodificarlas, y
  * hacerlo en cada toque se notaría.
+ *
+ * **Uno por instrumento, y esto era un fallo.** Había un solo sampler en una variable del
+ * módulo, creado con el instrumento de la PRIMERA llamada. En cuanto dos actividades pedían
+ * instrumentos distintos en la misma sesión, la segunda sonaba con el de la primera — sin
+ * dar ningún error, que es lo que lo hacía difícil de ver.
  */
-let sampler: Sampler | null = null;
-let cargando: Promise<void> | null = null;
+const samplers = new Map<string, { sampler: Sampler; cargando: Promise<void> }>();
 
 export async function sonarNota(nota: string, instrumento?: string): Promise<void> {
   try {
     await despertarAudio();
-    if (!sampler) {
-      sampler = new Sampler(muestrasDe(instrumento));
-      cargando = sampler.cargar();
+    const clave = instrumento ?? 'por-defecto';
+    let entrada = samplers.get(clave);
+    if (!entrada) {
+      const sampler = new Sampler(muestrasDe(instrumento));
+      entrada = { sampler, cargando: sampler.cargar() };
+      samplers.set(clave, entrada);
     }
-    await cargando;
-    sampler.tocar(nota, undefined, 1.4);
+    await entrada.cargando;
+    entrada.sampler.tocar(nota, undefined, 1.4);
   } catch {
     // Sin audio la actividad sigue funcionando por la vía visual. Nunca se corta nada.
   }

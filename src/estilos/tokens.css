@@ -537,13 +537,23 @@ p {
    El `aria-label` sí se mantiene en el marcado: sin él, un lector de pantalla anuncia
    «cuadro combinado, 3.º y 4.º» sin decir de qué. Es la parte del patrón que casi todo el
    mundo se salta. */
+/* Dos líneas fijas: buscar arriba, elegir abajo. No se reparten solas según el ancho —una
+   barra que se recoloca hay que volver a leerla— pero cada línea sí se parte si de verdad
+   no cabe, que es lo que pasa en un móvil estrecho con tres desplegables. */
 .filtros {
+  display: grid;
+  gap: var(--e-2);
+  margin: 0 0 var(--e-4);
+}
+.filtros__linea {
   display: flex;
   flex-wrap: wrap;
   gap: var(--e-2);
   align-items: center;
-  margin: 0 0 var(--e-4);
 }
+/* Los tres desplegables se reparten el ancho por igual: con anchos distintos parecen tres
+   cosas distintas, y son tres filtros del mismo rango. */
+.filtros__linea:not(.filtros__linea--buscar) select { flex: 1 1 10rem; min-width: 0; }
 .filtros select,
 .filtros__buscar {
   min-height: 44px;
@@ -556,8 +566,8 @@ p {
   border-radius: var(--r-s);
   transition: border-color var(--transicion), box-shadow var(--transicion);
 }
-/* El buscador crece y los desplegables no: escribir necesita sitio, elegir no. */
-.filtros__buscar { flex: 1 1 200px; min-width: 0; }
+/* El buscador se queda con todo el ancho que le deje el botón de al lado. */
+.filtros__buscar { flex: 1 1 12rem; min-width: 0; }
 .filtros select:hover,
 .filtros__buscar:hover { border-color: var(--tinta-2); }
 .filtros select:focus-visible,
@@ -571,17 +581,22 @@ p {
   font-weight: 700;
 }
 .filtros__limpiar {
+  flex: 0 0 auto;
   min-height: 44px;
-  padding: var(--e-2) var(--e-3);
+  padding: var(--e-2) var(--e-4);
   font: inherit;
-  font-size: var(--t-xs);
+  font-size: var(--t-s);
   color: var(--acento);
   background: none;
-  border: 2px solid transparent;
+  /* Con borde y no transparente: al lado del buscador es el segundo elemento de la línea y
+     tiene que verse que es pulsable. Antes iba suelto entre desplegables y ahí un borde
+     habría sido un cuarto filtro. */
+  border: 2px solid var(--acento);
   border-radius: var(--r-s);
   cursor: pointer;
+  white-space: nowrap;
 }
-.filtros__limpiar:hover { border-color: var(--acento); }
+.filtros__limpiar:hover { color: var(--acento); background: var(--suave-rojo); }
 .filtros__limpiar:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
 
 /* Un solo botón atrás, siempre en el mismo sitio. Regla 8 de docs/04-DISENO-UI.md. */
@@ -3665,4 +3680,15 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 /* En una pizarra el personaje se mira desde el fondo del aula. */
 :root[data-pizarra='true'] .personaje {
   width: clamp(160px, 40vh, 400px);
+}
+
+/* El personaje ocupando el sitio del nombre en una tecla blanca. Abajo y centrado: es donde
+   estaba el nombre y donde cae el dedo, y así el dibujo no tapa la parte alta de la tecla,
+   que es la que se ve cuando hay dos manos encima. */
+.teclado__personaje {
+  position: absolute;
+  bottom: var(--e-2);
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
 }

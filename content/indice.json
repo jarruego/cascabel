@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-07",
-  "total": 77,
+  "total": 78,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -1282,6 +1282,25 @@
       "etapa": "infantil",
       "eje": "timbre",
       "tipo": "pads",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE3",
+        "criterio": "3.5",
+        "saber": "F. Lenguaje y expresión musical – el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "inf-19-el-piano-de-la-pandilla",
+      "titulo": "El piano de la pandilla",
+      "descripcion": "Una octava sin teclas negras, con un personaje en cada tecla. A esta edad no se busca «la nota fa»: se busca a Fara.",
+      "etapa": "infantil",
+      "eje": "altura",
+      "tipo": "teclado",
       "lugar": "pantalla",
       "microfono": false,
       "duracion_min": 6,

@@ -8,6 +8,8 @@ import { IconoGrabar, IconoParar, IconoTocar } from '@/ui/Transporte';
 import { GrabadorDeEventos, reproducir, type Grabacion } from '../grabacionEventos';
 import { letraDeNota, notaDeTecla, type Disposicion } from '@/ui/tecladoQwerty';
 import { Retos } from '@/ui/Retos';
+import { Personaje } from '@/ui/Personaje';
+import { personajeDe } from '@/ui/personajes';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -62,6 +64,15 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
     instrumento?: string;
     /** Botones de grabar y reproducir. Se pueden quitar donde estorben. */
     grabable?: boolean;
+    /**
+     * El personaje de cocomusic en cada tecla, en vez del nombre de la nota.
+     *
+     * Por defecto solo en Infantil: a los cuatro años no se busca «la nota fa», se busca a
+     * Fara, y el nombre escrito no dice nada a quien no lee. En los otros carriles el
+     * nombre **es** lo que hay que aprender, y taparlo con un dibujo sería quitarles justo
+     * lo que han venido a leer.
+     */
+    personajes?: boolean;
     /** Propuestas de qué hacer. Ver `ui/Retos.tsx`: son ideas, no tareas. */
     retos?: string[];
   };
@@ -75,6 +86,7 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
   const letrasQwerty = contenido.letrasQwerty ?? carril !== 'infantil';
   const disposicion = contenido.disposicionTeclado ?? 'horizontal';
   const grabable = contenido.grabable ?? true;
+  const conPersonajes = contenido.personajes ?? carril === 'infantil';
 
   /**
    * Octavas elegidas por quien está tocando, que mandan sobre lo que quepa.
@@ -348,7 +360,20 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
                   if (!deslizando.current) void sonar(k.nota);
                 }}
               >
-                {!k.negra && (etiqueta || qwerty) && (
+                {/* El personaje ocupa el sitio del nombre, no se añade a él: una tecla con
+                    dibujo Y nombre Y letra de ordenador es una tecla ilegible. Y solo en las
+                    blancas, porque en una negra no cabe sin taparla entera. */}
+                {!k.negra && conPersonajes && personajeDe(k.nota, desde) && (
+                  <span className="teclado__personaje">
+                    <Personaje
+                      nombre={personajeDe(k.nota, desde)!}
+                      pose="neutro"
+                      tamano={Math.round(anchoBlanca * 1.1)}
+                    />
+                  </span>
+                )}
+
+                {!k.negra && !conPersonajes && (etiqueta || qwerty) && (
                   <span className="teclado__nombre">
                     {etiqueta}
                     {/* La letra del ordenador va DEBAJO del nombre, no encima de la tecla, y

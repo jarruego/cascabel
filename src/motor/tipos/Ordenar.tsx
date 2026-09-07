@@ -59,6 +59,14 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
     /** Claves en el orden correcto. Es la solución, y no se manda al cliente cifrada:
      *  esto es una biblioteca educativa, no un examen. */
     orden: string[];
+    /**
+     * Timbre con el que suenan las notas de esta actividad. Ver `audio/instrumentos.ts`.
+     *
+     * Importa más de lo que parece: la actividad de digitaciones de flauta sonaba con la
+     * marimba de por defecto, o sea un ejercicio para aprender dónde van los dedos de la
+     * flauta que no sonaba a flauta.
+     */
+    instrumento?: string;
   };
 
   const carril = useCarril(actividad.etapa);
@@ -80,7 +88,7 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
   const sonar = (clave: string) => {
     const e = porClave(clave);
     if (e?.audio) sonarMuestra(e.audio);
-    else if (e?.nota) void sonarNota(e.nota);
+    else if (e?.nota) void sonarNota(e.nota, contenido.instrumento);
   };
 
   useEffect(() => {

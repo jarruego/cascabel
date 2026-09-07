@@ -1,0 +1,56 @@
+{
+  "id": "inf-19-el-piano-de-la-pandilla",
+  "version": 1,
+  "tipo": "teclado",
+  "titulo": "El piano de la pandilla",
+  "descripcion": "Una octava sin teclas negras, con un personaje en cada tecla. A esta edad no se busca «la nota fa»: se busca a Fara.",
+  "etapa": "infantil",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": "CE3",
+    "criterio": "3.5",
+    "saber": "F. Lenguaje y expresión musical – el sonido, el silencio y sus cualidades"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.inf19.consigna",
+    "desde": 4,
+    "octavas": 1,
+    "soloBlancas": true,
+    "personajes": true,
+    "nombres": "ninguno",
+    "letrasQwerty": false,
+    "instrumento": "marimba",
+    "grabable": true,
+    "retos": [
+      "actividad.inf19.reto1",
+      "actividad.inf19.reto2",
+      "actividad.inf19.reto3"
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.inf19.enunciado",
+  "personaje": "dora",
+  "creditos": [
+    {
+      "obra": "Marimba",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

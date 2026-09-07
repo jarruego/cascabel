@@ -584,7 +584,20 @@ Abierta y cerrada el 2026-09-06, a partir de la primera prueba real del autor:
   mal —`fa` en un verde azulado en vez de verde claro, `la` en azul en vez de violeta y `si`
   en morado en vez de fucsia—, y llevaban así porque el color de la nota y la paleta de la
   interfaz eran los mismos tokens: el verde de `fa` era el verde que significa «correcto».
-  Separados en `--nota-*` y `--vivo-*`, corregidos y con test (ver `14-PERSONAJES.md` §5)
+  Separados en `--nota-*` y `--vivo-*`, corregidos y con test (ver `14-PERSONAJES.md` §5).
+
+  Y con los ocho dibujados entró **la pose `neutro`, que era la razón de ser de todo esto**:
+  el personaje **haciendo de nota** en las teclas del piano, en `inf-19`. A los cuatro años
+  no se busca «la nota fa», se busca a Fara. Solo en Infantil y solo en las blancas: en los
+  otros carriles el nombre de la nota **es** lo que hay que aprender, y taparlo con un dibujo
+  sería quitarles justo lo que han venido a leer.
+
+  **Cómo se bajan los dibujos**, que era la duda del autor: tres poses por personaje en el
+  precache —las que salen en cualquier actividad—, el resto con `prefetchPersonajes()` en los
+  ratos muertos y **solo si `navigator.connection` dice que la conexión no es de pago ni
+  lenta**, y el juego entero cuando el maestro pulsa «descargar para usar sin conexión».
+  Bajarlo todo al instalar sin preguntar sería lo cómodo y es lo que la regla del proyecto no
+  permite: alguien puede abrir Cascabel en el patio con datos móviles.
 - [ ] Revisión con las tres preguntas de `docs/06-PIPELINE-IA.md` — es T0.3
 
 **OpenMoji es CC BY-SA 4.0, la misma licencia que ya tienen nuestros contenidos**, así que

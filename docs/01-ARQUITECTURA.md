@@ -54,13 +54,13 @@ lista exactamente los tipos que hay en `src/motor/registro.ts`, con sus cifras a
 | `eco` | Dos niños por turnos: uno propone un ritmo y el otro lo repite | 2 |
 | `pads` | El kit de percusión, para tocarlo: pads por familias y pulso opcional | 2 |
 | `referencia` | Consulta del lenguaje musical, con sonido. No es un ejercicio | 2 |
+| `teclado` | Teclado de piano de una a tres octavas | 2 |
 | `acompanamientos` | Bases en bucle para cantar encima, con transporte | 1 |
 | `compases` | Colocar las barras de compás donde el pulso las pide | 1 |
 | `escala` | Construir una escala contando tonos y semitonos | 1 |
 | `paisaje` | Grabar sonido del entorno y escucharlo (no sale del aparato) | 1 |
 | `pentagrama` | Colocar o leer sobre pauta real | 1 |
 | `pistas` | Secuenciador de cuatro voces: voz, percusión, piano y flauta | 1 |
-| `teclado` | Teclado de piano de una a tres octavas | 1 |
 
 **Antes de crear un tipo nuevo**, comprueba que el caso no cabe en uno existente. Casi
 siempre cabe.

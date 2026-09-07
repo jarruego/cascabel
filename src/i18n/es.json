@@ -996,5 +996,10 @@
   "repaso.unMes": "hace un mes",
   "repaso.meses": "hace {n} meses",
   "actividad.tr09.consigna": "Épocas, compositores y estilos",
-  "actividad.tr09.enunciado": "Quién hizo qué y cuándo. Busca por el nombre, por el siglo o por lo que te suene."
+  "actividad.tr09.enunciado": "Quién hizo qué y cuándo. Busca por el nombre, por el siglo o por lo que te suene.",
+  "actividad.inf19.consigna": "El piano de la pandilla",
+  "actividad.inf19.enunciado": "Cada tecla es uno de la pandilla. Tócalos y escucha cómo suena cada uno: Dora es la más grave y Doby el más agudo.",
+  "actividad.inf19.reto1": "¿Puedes tocarlos todos de izquierda a derecha, sin saltarte a nadie? Van del más grave al más agudo.",
+  "actividad.inf19.reto2": "Toca a Dora y luego a Doby. Se llaman casi igual y suenan casi igual, pero uno está mucho más arriba.",
+  "actividad.inf19.reto3": "Elige a dos y tócalos muchas veces seguidos. Ya tienes una canción."
 }

@@ -1,5 +1,6 @@
 import { APP } from '@/config';
 import { pedirRespuesta } from '@/datos/cargar';
+import { PERSONAJES, POSES } from '@/ui/personajes';
 
 /**
  * Descarga explícita para usar sin conexión, y comprobación de actualizaciones.
@@ -22,6 +23,22 @@ export interface EstadoDescarga {
 
 const CACHE = 'cascabel-contenido-v1';
 
+/**
+ * Las poses de personaje que **no** van en el precache.
+ *
+ * Tres de las diez viajan en la primera descarga porque salen en cualquier actividad; las
+ * otras siete se bajan al abrir la actividad que las usa. Aquí se listan para que la
+ * descarga explícita de Ajustes las incluya: quien pide «usar sin conexión» quiere el juego
+ * entero, no siete octavas partes.
+ */
+function rutasDePersonajes(): string[] {
+  const rutas: string[] = [];
+  for (const p of PERSONAJES) {
+    for (const pose of POSES) rutas.push(`/personajes/${p}-${pose}.svg`);
+  }
+  return rutas;
+}
+
 /** Rutas de todo el contenido: el índice, cada actividad y su audio. */
 async function rutasDeContenido(): Promise<string[]> {
   const indice = (await (await pedirRespuesta(`${APP.rutaContenido}/indice.json`)).json()) as {
@@ -31,6 +48,7 @@ async function rutasDeContenido(): Promise<string[]> {
   const rutas = new Set<string>([
     `${APP.rutaContenido}/indice.json`,
     `${APP.rutaContenido}/camino.json`,
+    ...rutasDePersonajes(),
   ]);
   for (const a of indice.actividades) {
     const ruta = `${APP.rutaContenido}/actividades/${a.id}.json`;
@@ -160,4 +178,48 @@ export async function aplicarActualizacion(): Promise<void> {
   navigator.serviceWorker.addEventListener('controllerchange', () => window.location.reload(), {
     once: true,
   });
+}
+
+/**
+ * Baja las poses que faltan cuando la aplicación no está haciendo nada, y solo si sale
+ * gratis.
+ *
+ * **Por qué no se bajan todas al instalar.** Sería lo cómodo, y es lo que la regla de este
+ * proyecto no permite: alguien puede abrir Cascabel en el patio con datos móviles, y el
+ * juego completo de personajes es más de un megabyte. Descargar eso sin avisar en la tarifa
+ * de otro no se hace.
+ *
+ * **Por qué tampoco se pregunta.** Preguntar por cada cosa que la aplicación quiere bajar
+ * acaba en un diálogo que nadie lee. El punto medio, que es lo que hace cualquier aplicación
+ * seria: bajarlo solo cuando **se sabe** que no cuesta nada —conexión rápida y sin ahorro de
+ * datos— y no bajarlo en ningún otro caso. Quien esté en 2G o con el ahorro puesto no verá
+ * ninguna descarga; los personajes le llegarán cuando abra la actividad que los use.
+ *
+ * `navigator.connection` no existe en Safari, y ahí no se prefetcha: ante la duda, no gastar
+ * los datos de nadie.
+ */
+export function prefetchPersonajes(): void {
+  const red = (navigator as { connection?: { saveData?: boolean; effectiveType?: string } })
+    .connection;
+  if (!red || red.saveData) return;
+  if (red.effectiveType && !['4g', '5g'].includes(red.effectiveType)) return;
+
+  const pendientes = rutasDePersonajes();
+  const bajar = () => {
+    const ruta = pendientes.shift();
+    if (!ruta) return;
+    // Por `pedirRespuesta` como todo lo demás: la regla de lint que lo obliga es la que
+    // sostiene la promesa de que no se pide nada a un tercero, y una excepción «solo aquí»
+    // es exactamente como se pierde esa promesa. El service worker lo intercepta con su
+    // regla `CacheFirst`, así que queda cacheado igual que si lo pidiera una pantalla.
+    void pedirRespuesta(ruta).catch(() => {});
+    programar();
+  };
+  const programar = () => {
+    const idle = (window as { requestIdleCallback?: (cb: () => void) => void })
+      .requestIdleCallback;
+    if (idle) idle(bajar);
+    else window.setTimeout(bajar, 300);
+  };
+  programar();
 }

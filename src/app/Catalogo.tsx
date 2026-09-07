@@ -225,15 +225,34 @@ export default function Catalogo() {
           no, y el observador no llegaría a dispararse nunca. */}
       <div className="centinela" aria-hidden="true" />
       <div className="filtros" ref={filtros}>
-        <input
-          type="search"
-          className="filtros__buscar"
-          value={busqueda}
-          onChange={(ev) => filtrar('q', ev.target.value, true)}
-          placeholder={t('filtro.buscar')}
-          aria-label={t('filtro.buscar')}
-        />
+        {/* Arriba lo que se ESCRIBE, que necesita todo el ancho, con el botón de quitar
+            al lado. Abajo lo que se ELIGE, que son tres y caben. Estaban los cinco en una
+            sola fila que se partía por donde tocara según el ancho, y una barra que se
+            recoloca sola hay que volver a leerla cada vez. */}
+        <div className="filtros__linea filtros__linea--buscar">
+          <input
+            type="search"
+            className="filtros__buscar"
+            value={busqueda}
+            onChange={(ev) => filtrar('q', ev.target.value, true)}
+            placeholder={t('filtro.buscar')}
+            aria-label={t('filtro.buscar')}
+          />
 
+          {/* Un solo botón para volver a cero, y solo cuando hay algo que borrar: si no hay
+              filtro puesto, un botón de «quitar filtros» es ruido. */}
+          {(etapa || eje || criterio || busqueda) && (
+            <button
+              type="button"
+              className="filtros__limpiar"
+              onClick={() => ponerParametros(new URLSearchParams())}
+            >
+              {t('filtro.limpiar')}
+            </button>
+          )}
+        </div>
+
+        <div className="filtros__linea">
         <select
           value={etapa}
           onChange={(ev) => filtrar('etapa', ev.target.value)}
@@ -276,17 +295,7 @@ export default function Catalogo() {
           ))}
         </select>
 
-        {/* Un solo botón para volver a cero, y solo cuando hay algo que borrar: si no hay
-            filtro puesto, un botón de «quitar filtros» es ruido. */}
-        {(etapa || eje || criterio || busqueda) && (
-          <button
-            type="button"
-            className="filtros__limpiar"
-            onClick={() => ponerParametros(new URLSearchParams())}
-          >
-            {t('filtro.limpiar')}
-          </button>
-        )}
+        </div>
       </div>
 
       {/* La cuenta se anuncia al filtrar. Va en frase y no como «12 / 56» porque un lector
