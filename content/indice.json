@@ -5,6 +5,7 @@
     {
       "id": "c1-01-ta-y-ti-ti",
       "titulo": "Ta y ti-ti",
+      "descripcion": "Musicograma rítmico en bucle: el cursor recorre las sílabas y el ritmo suena de verdad, no solo el pulso.",
       "etapa": "primaria-c1",
       "eje": "pulso",
       "tipo": "seguir",
@@ -23,6 +24,7 @@
     {
       "id": "c1-02-palmea-el-ritmo",
       "titulo": "Palmea el ritmo: negra y dos corcheas",
+      "descripcion": "Cuatro compases sobre una base musical real. Se mide la regularidad, no solo el acierto.",
       "etapa": "primaria-c1",
       "eje": "pulso",
       "tipo": "tocar-a-tiempo",
@@ -41,6 +43,7 @@
     {
       "id": "c1-03-el-pulso-escondido",
       "titulo": "El pulso escondido",
+      "descripcion": "Marcar el pulso de una canción. Distingue pulso de ritmo.",
       "etapa": "primaria-c1",
       "eje": "pulso",
       "tipo": "tocar-a-tiempo",
@@ -59,6 +62,7 @@
     {
       "id": "c1-04-constructor-de-ritmos",
       "titulo": "Constructor de ritmos",
+      "descripcion": "Cuadrícula libre: se colocan sonidos y se escuchan. No hay respuesta correcta.",
       "etapa": "primaria-c1",
       "eje": "creacion",
       "tipo": "rejilla",
@@ -77,6 +81,7 @@
     {
       "id": "c1-05-musicograma-a-b",
       "titulo": "Musicograma A-B",
+      "descripcion": "Audición activa con partitura gráfica avanzando (metodología Wuytack).",
       "etapa": "primaria-c1",
       "eje": "cultura",
       "tipo": "seguir",
@@ -95,6 +100,7 @@
     {
       "id": "c1-06-la-escalera-de-notas",
       "titulo": "La escalera de notas",
+      "descripcion": "Sol, mi y la como escalones; se tocan para reconstruir la melodía oída.",
       "etapa": "primaria-c1",
       "eje": "altura",
       "tipo": "ordenar",
@@ -113,6 +119,7 @@
     {
       "id": "c1-07-canta-la-nota",
       "titulo": "Canta la nota",
+      "descripcion": "Suena una nota, el niño la canta y ve en una aguja si está encima. Sin micrófono se puede cantar igual, sin medición.",
       "etapa": "primaria-c1",
       "eje": "altura",
       "tipo": "cantar",
@@ -131,6 +138,7 @@
     {
       "id": "c1-08-memory-de-instrumentos",
       "titulo": "Memory de instrumentos",
+      "descripcion": "Emparejar el dibujo de un instrumento con su sonido. Al tocar los dos, suenan seguidos: la corrección la hace el oído.",
       "etapa": "primaria-c1",
       "eje": "timbre",
       "tipo": "emparejar",
@@ -149,6 +157,7 @@
     {
       "id": "c1-09-percusion-corporal",
       "titulo": "Percusión corporal a cuatro planos",
+      "descripcion": "Pies, muslos, palmas y pitos, en cuatro pasos con el pulso proyectado. La versión con el patrón dibujado en pantalla es «Manos y pies» (c1-20).",
       "etapa": "primaria-c1",
       "eje": "cuerpo",
       "tipo": "guia-aula",
@@ -167,6 +176,7 @@
     {
       "id": "c1-10-construye-un-cotidiofono",
       "titulo": "Construye un cotidiáfono",
+      "descripcion": "Ficha imprimible y vídeo para construir un instrumento con materiales del entorno.",
       "etapa": "primaria-c1",
       "eje": "timbre",
       "tipo": "guia-aula",
@@ -185,6 +195,7 @@
     {
       "id": "c1-11-el-mando-del-director",
       "titulo": "El mando del director",
+      "descripcion": "Dos deslizadores, tempo y dinámica, sobre una pieza real.",
       "etapa": "primaria-c1",
       "eje": "cultura",
       "tipo": "lienzo",
@@ -203,6 +214,7 @@
     {
       "id": "c1-12-la-rueda-del-compas",
       "titulo": "La rueda del compás",
+      "descripcion": "El compás dibujado en círculo: se ve que es cíclico y forma una figura geométrica.",
       "etapa": "primaria-c1",
       "eje": "pulso",
       "tipo": "rejilla",
@@ -221,6 +233,7 @@
     {
       "id": "c1-13-pregunta-y-respuesta",
       "titulo": "Pregunta y respuesta",
+      "descripcion": "La app hace una frase rítmica y el niño inventa la respuesta.",
       "etapa": "primaria-c1",
       "eje": "creacion",
       "tipo": "lienzo",
@@ -239,6 +252,7 @@
     {
       "id": "c1-14-notas-que-caen",
       "titulo": "Toca las notas que caen",
+      "descripcion": "Las figuras caen hasta la línea y ahí es cuando suenan. Se tocan al llegar. Sin puntuación durante el juego y sin poder perder.",
       "etapa": "primaria-c1",
       "eje": "pulso",
       "tipo": "karaoke",
@@ -257,6 +271,7 @@
     {
       "id": "c1-15-ritmo-de-ocho",
       "titulo": "Ritmo de ocho",
+      "descripcion": "Ocho pulsos con negras y corcheas, en bucle de cuatro repeticiones.",
       "etapa": "primaria-c1",
       "eje": "pulso",
       "tipo": "tocar-a-tiempo",
@@ -275,6 +290,7 @@
     {
       "id": "c1-16-compon-con-la-escala",
       "titulo": "Compón con toda la escala",
+      "descripcion": "Cuadrícula libre con la octava entera de do a do y ocho pulsos. Con bucle.",
       "etapa": "primaria-c1",
       "eje": "creacion",
       "tipo": "rejilla",
@@ -293,6 +309,7 @@
     {
       "id": "c1-18-la-escalera-que-cae",
       "titulo": "La escalera que cae",
+      "descripcion": "Cinco carriles de color, uno por nota. Lo agudo cae por la derecha y lo grave por la izquierda, así que la melodía se ve subir y bajar.",
       "etapa": "primaria-c1",
       "eje": "altura",
       "tipo": "karaoke",
@@ -311,6 +328,7 @@
     {
       "id": "c1-19-adivina-quien-baja",
       "titulo": "Adivina quién baja",
+      "descripcion": "Bajan círculos vacíos, despacio y bien separados, y el animal solo aparece si tocas a tiempo.",
       "etapa": "primaria-c1",
       "eje": "pulso",
       "tipo": "karaoke",
@@ -329,6 +347,7 @@
     {
       "id": "c1-20-manos-y-pies",
       "titulo": "Manos y pies",
+      "descripcion": "Palmas, muslos y pies, con las sílabas debajo para poder decir el ritmo antes de hacerlo.",
       "etapa": "primaria-c1",
       "eje": "cuerpo",
       "tipo": "cuerpo",
@@ -347,6 +366,7 @@
     {
       "id": "c1-21-eco-a-dos",
       "titulo": "Eco a dos",
+      "descripcion": "Uno propone un ritmo y el otro lo repite. Compara las dos ejecuciones entre sí, y el resultado es de la pareja: nunca dice quién lo ha hecho mejor.",
       "etapa": "primaria-c1",
       "eje": "pulso",
       "tipo": "eco",
@@ -365,6 +385,7 @@
     {
       "id": "c2-01-coloca-la-nota",
       "titulo": "Coloca la nota en el pentagrama",
+      "descripcion": "Clave de sol, y una nota que hay que situar en su línea o su espacio. Nota dibujada pequeña, zona de toque grande.",
       "etapa": "primaria-c2",
       "eje": "notacion",
       "tipo": "pentagrama",
@@ -383,6 +404,7 @@
     {
       "id": "c2-02-dictado-ritmico",
       "titulo": "Dictado rítmico",
+      "descripcion": "Se escucha un ritmo y se coloca en la cuadrícula.",
       "etapa": "primaria-c2",
       "eje": "notacion",
       "tipo": "rejilla",
@@ -401,6 +423,7 @@
     {
       "id": "c2-03-dictado-melodico",
       "titulo": "Dictado melódico en rejilla",
+      "descripcion": "Cuadrícula de altura por tiempo, sin necesidad de saber notación.",
       "etapa": "primaria-c2",
       "eje": "altura",
       "tipo": "rejilla",
@@ -419,6 +442,7 @@
     {
       "id": "c2-04-flauta-digitaciones",
       "titulo": "Flauta dulce: si, la y sol",
+      "descripcion": "Empareja cada nota con su digitación. Las tres primeras notas de la flauta, que se tapan una detrás de otra.",
       "etapa": "primaria-c2",
       "eje": "notacion",
       "tipo": "emparejar",
@@ -437,6 +461,7 @@
     {
       "id": "c2-05-toca-con-la-flauta",
       "titulo": "Toca con la flauta",
+      "descripcion": "Si, la y sol con la flauta dulce. El micrófono comprueba si la nota sale afinada; si no hay micrófono, la actividad se hace igual.",
       "etapa": "primaria-c2",
       "eje": "altura",
       "tipo": "cantar",
@@ -455,6 +480,7 @@
     {
       "id": "c2-06-pon-las-barras",
       "titulo": "Pon las barras de compás",
+      "descripcion": "Una línea de figuras sin dividir y una cifra de compás. Hay que decidir dónde van las divisorias contando duraciones, no figuras.",
       "etapa": "primaria-c2",
       "eje": "notacion",
       "tipo": "compases",
@@ -473,6 +499,7 @@
     {
       "id": "c2-07-improvisa-en-pentatonica",
       "titulo": "Improvisa en pentatónica",
+      "descripcion": "Cinco láminas sobre un bordón en bucle. Sin semitonos y sin tercera en la base: no hay nota que pueda sonar mal.",
       "etapa": "primaria-c2",
       "eje": "creacion",
       "tipo": "lienzo",
@@ -491,6 +518,7 @@
     {
       "id": "c2-08-ordena-el-rondo",
       "titulo": "Ordena el rondó",
+      "descripcion": "Pieza troceada en secciones; reconstruir el orden ABACA.",
       "etapa": "primaria-c2",
       "eje": "cultura",
       "tipo": "ordenar",
@@ -509,6 +537,7 @@
     {
       "id": "c2-09-adagio-andante-allegro",
       "titulo": "Adagio, andante, allegro",
+      "descripcion": "Misma melodía a tres velocidades: la variable es solo el tempo.",
       "etapa": "primaria-c2",
       "eje": "cultura",
       "tipo": "eleccion",
@@ -527,6 +556,7 @@
     {
       "id": "c2-10-ostinato-a-dos-planos",
       "titulo": "Ostinato a dos planos",
+      "descripcion": "Dos patrones simultáneos proyectados como partitura de colores.",
       "etapa": "primaria-c2",
       "eje": "creacion",
       "tipo": "guia-aula",
@@ -545,6 +575,7 @@
     {
       "id": "c2-11-instrumentos-del-mundo",
       "titulo": "Instrumentos del mundo",
+      "descripcion": "Seis instrumentos de seis sitios distintos. Se escucha uno y se dice cuál es: sitar, koto, kalimba, gaita, banjo o tambor metálico.",
       "etapa": "primaria-c2",
       "eje": "timbre",
       "tipo": "eleccion",
@@ -563,6 +594,7 @@
     {
       "id": "c2-12-canon-a-dos-voces",
       "titulo": "Canon a dos voces",
+      "descripcion": "La clase se parte en dos y la segunda voz entra dos compases después. La pantalla del maestro lleva el pulso y marca las entradas.",
       "etapa": "primaria-c2",
       "eje": "creacion",
       "tipo": "guia-aula",
@@ -581,6 +613,7 @@
     {
       "id": "c2-13-graba-tu-paisaje-sonoro",
       "titulo": "Graba tu paisaje sonoro",
+      "descripcion": "Salir, escuchar y grabar los sonidos del sitio donde estáis. Todo se queda en el dispositivo y se borra a un clic.",
       "etapa": "primaria-c2",
       "eje": "creacion",
       "tipo": "paisaje",
@@ -599,6 +632,7 @@
     {
       "id": "c2-14-himno-de-la-alegria",
       "titulo": "El himno de la alegría",
+      "descripcion": "La melodía avanza de derecha a izquierda sobre el pentagrama. Hay que tocar cada nota cuando cruza la línea.",
       "etapa": "primaria-c2",
       "eje": "pulso",
       "tipo": "karaoke",
@@ -617,6 +651,7 @@
     {
       "id": "c2-15-lee-las-figuras",
       "titulo": "Lee las figuras",
+      "descripcion": "Negras, blancas y corcheas vienen de la derecha y se tocan al cruzar la línea. Cada figura ocupa lo que dura.",
       "etapa": "primaria-c2",
       "eje": "notacion",
       "tipo": "karaoke",
@@ -635,6 +670,7 @@
     {
       "id": "c2-16-cuatro-bandas",
       "titulo": "Cuatro bandas",
+      "descripcion": "El motivo más conocido de la historia en cuatro bandas de color, cada una con su botón justo debajo. Tres cortas y una larga, dos veces.",
       "etapa": "primaria-c2",
       "eje": "pulso",
       "tipo": "karaoke",
@@ -653,6 +689,7 @@
     {
       "id": "c3-01-tonos-y-semitonos",
       "titulo": "Tonos y semitonos",
+      "descripcion": "Construir la escala de sol mayor en el teclado viendo cómo se escribe. Se empieza en sol a propósito: es la que obliga a un sostenido.",
       "etapa": "primaria-c3",
       "eje": "notacion",
       "tipo": "escala",
@@ -671,6 +708,7 @@
     {
       "id": "c3-02-sincopa-y-contratiempo",
       "titulo": "Síncopa y contratiempo",
+      "descripcion": "Palmear fuera del pulso, con el pulso siempre de fondo.",
       "etapa": "primaria-c3",
       "eje": "pulso",
       "tipo": "tocar-a-tiempo",
@@ -689,6 +727,7 @@
     {
       "id": "c3-03-editor-de-melodias",
       "titulo": "Editor de melodías",
+      "descripcion": "Componer con la escala completa y llevarse la melodía en MIDI o MusicXML para seguir trabajándola en un editor de partituras.",
       "etapa": "primaria-c3",
       "eje": "creacion",
       "tipo": "rejilla",
@@ -707,6 +746,7 @@
     {
       "id": "c3-04-mapa-de-una-obra",
       "titulo": "Mapa de una obra",
+      "descripcion": "El tema de la Novena de Beethoven con su forma marcada: A, A, B, A. Se ve la estructura antes de oírla.",
       "etapa": "primaria-c3",
       "eje": "cultura",
       "tipo": "seguir",
@@ -725,6 +765,7 @@
     {
       "id": "c3-05-mayor-o-menor",
       "titulo": "¿Mayor o menor?",
+      "descripcion": "La misma melodía en los dos modos. El contraste es inmediatamente audible.",
       "etapa": "primaria-c3",
       "eje": "altura",
       "tipo": "eleccion",
@@ -743,6 +784,7 @@
     {
       "id": "c3-06-el-seis-por-ocho",
       "titulo": "El 6/8 con el cuerpo",
+      "descripcion": "Subdivisión ternaria vivida antes que leída, en dos grupos.",
       "etapa": "primaria-c3",
       "eje": "pulso",
       "tipo": "guia-aula",
@@ -761,6 +803,7 @@
     {
       "id": "c3-07-componed-un-rondo",
       "titulo": "Componed un rondó",
+      "descripcion": "Proyecto por grupos: estribillo común y una copla por equipo.",
       "etapa": "primaria-c3",
       "eje": "creacion",
       "tipo": "guia-aula",
@@ -779,6 +822,7 @@
     {
       "id": "c3-08-de-quien-es-esta-musica",
       "titulo": "¿De quién es esta música?",
+      "descripcion": "Ocho casos reales de licencias, sacados de los créditos de esta misma aplicación: qué puedes usar en un vídeo y qué no.",
       "etapa": "primaria-c3",
       "eje": "cultura",
       "tipo": "eleccion",
@@ -797,6 +841,7 @@
     {
       "id": "c3-09-la-serie-armonica",
       "titulo": "La serie armónica",
+      "descripcion": "Cuerdas de distinta longitud y proporciones 1:2, 2:3, 3:4. Conecta con fracciones.",
       "etapa": "primaria-c3",
       "eje": "timbre",
       "tipo": "lienzo",
@@ -815,6 +860,7 @@
     {
       "id": "c3-10-ritmo-de-doce",
       "titulo": "Ritmo de doce",
+      "descripcion": "Doce pulsos en tres grupos de cuatro, con síncopa y silencio. En bucle.",
       "etapa": "primaria-c3",
       "eje": "pulso",
       "tipo": "tocar-a-tiempo",
@@ -833,6 +879,7 @@
     {
       "id": "c3-11-melodia-larga",
       "titulo": "Compón una melodía larga",
+      "descripcion": "Octava completa y dieciséis pulsos, para frases de verdad. Con bucle.",
       "etapa": "primaria-c3",
       "eje": "creacion",
       "tipo": "rejilla",
@@ -851,6 +898,7 @@
     {
       "id": "c3-12-compon-por-pistas",
       "titulo": "Compón por pistas",
+      "descripcion": "Cuatro voces a la vez: flauta, piano, bajo y percusión. Se puede silenciar cada una para oír qué aporta.",
       "etapa": "primaria-c3",
       "eje": "creacion",
       "tipo": "pistas",
@@ -869,6 +917,7 @@
     {
       "id": "c3-13-los-cuatro-sonidos",
       "titulo": "Los cuatro sonidos",
+      "descripcion": "Pitos, palmas, muslos y pies con silencio y contratiempo. El silencio es la parte difícil.",
       "etapa": "primaria-c3",
       "eje": "cuerpo",
       "tipo": "cuerpo",
@@ -887,6 +936,7 @@
     {
       "id": "c3-14-eco-largo",
       "titulo": "Eco largo",
+      "descripcion": "El mismo juego con patrones de hasta diez golpes. A esta edad lo difícil ya no es repetir, es acordarse.",
       "etapa": "primaria-c3",
       "eje": "pulso",
       "tipo": "eco",
@@ -905,6 +955,7 @@
     {
       "id": "inf-01-semaforo-del-sonido",
       "titulo": "El semáforo del sonido",
+      "descripcion": "Suena o no suena. El niño mantiene el dedo en el círculo mientras hay sonido y lo suelta en el silencio.",
       "etapa": "infantil",
       "eje": "timbre",
       "tipo": "eleccion",
@@ -923,6 +974,7 @@
     {
       "id": "inf-02-largo-o-corto",
       "titulo": "¿Largo o corto?",
+      "descripcion": "Serpiente u hormiga. Suena un sonido y el niño elige. La duración se ve, se oye y se dibuja.",
       "etapa": "infantil",
       "eje": "timbre",
       "tipo": "eleccion",
@@ -941,6 +993,7 @@
     {
       "id": "inf-03-el-raton-y-el-elefante",
       "titulo": "El ratón y el elefante",
+      "descripcion": "Intensidad: fuerte o suave. Mismo sonido a dos volúmenes.",
       "etapa": "infantil",
       "eje": "timbre",
       "tipo": "eleccion",
@@ -959,6 +1012,7 @@
     {
       "id": "inf-04-el-pajaro-y-el-oso",
       "titulo": "El pájaro y el oso",
+      "descripcion": "Agudo o grave con el mismo instrumento en dos registros. No cambiar de timbre a la vez.",
       "etapa": "infantil",
       "eje": "altura",
       "tipo": "eleccion",
@@ -977,6 +1031,7 @@
     {
       "id": "inf-05-paisaje-sonoro",
       "titulo": "Paisaje sonoro: ¿qué suena?",
+      "descripcion": "Sonidos del entorno sobre una ilustración; tocas donde crees que está el sonido.",
       "etapa": "infantil",
       "eje": "timbre",
       "tipo": "eleccion",
@@ -995,6 +1050,7 @@
     {
       "id": "inf-06-dibuja-el-sonido",
       "titulo": "Dibuja el sonido",
+      "descripcion": "Lienzo libre donde cada trazo suena. Grafía no convencional, sin evaluación.",
       "etapa": "infantil",
       "eje": "creacion",
       "tipo": "lienzo",
@@ -1013,6 +1069,7 @@
     {
       "id": "inf-07-el-caracol-sube-y-baja",
       "titulo": "El caracol: sube y baja",
+      "descripcion": "Lienzo libre de altura: se dibuja con el dedo y lo que se dibuja suena. Arriba agudo, abajo grave.",
       "etapa": "infantil",
       "eje": "altura",
       "tipo": "lienzo",
@@ -1031,6 +1088,7 @@
     {
       "id": "inf-08-camina-corre-para",
       "titulo": "Camina, corre, para",
+      "descripcion": "Dalcroze: la música cambia de tempo y el grupo responde con el cuerpo. Pantalla del maestro, para proyector.",
       "etapa": "infantil",
       "eje": "cuerpo",
       "tipo": "guia-aula",
@@ -1049,6 +1107,7 @@
     {
       "id": "inf-09-eco-de-palmas",
       "titulo": "Eco de palmas",
+      "descripcion": "El personaje hace dos o tres palmadas y el niño las repite.",
       "etapa": "infantil",
       "eje": "pulso",
       "tipo": "tocar-a-tiempo",
@@ -1067,6 +1126,7 @@
     {
       "id": "inf-10-cajas-de-sonidos",
       "titulo": "Las cajas de los sonidos",
+      "descripcion": "Emparejamiento auditivo autocorrectivo al modo Montessori. Se tocan de dos en dos.",
       "etapa": "infantil",
       "eje": "timbre",
       "tipo": "emparejar",
@@ -1085,6 +1145,7 @@
     {
       "id": "inf-11-cancion-con-pictogramas",
       "titulo": "Canción con pictogramas",
+      "descripcion": "Cuatro frases sobre sol-mi-la, en bucle. Cada dibujo suena siempre en la misma nota, así que se acaba sabiendo qué viene antes de oírlo.",
       "etapa": "infantil",
       "eje": "altura",
       "tipo": "seguir",
@@ -1103,6 +1164,7 @@
     {
       "id": "inf-12-danza-de-corro",
       "titulo": "Danza de corro",
+      "descripcion": "Coreografía simple proyectada paso a paso con contador visual.",
       "etapa": "infantil",
       "eje": "cuerpo",
       "tipo": "guia-aula",
@@ -1121,6 +1183,7 @@
     {
       "id": "inf-13-quien-ha-sonado",
       "titulo": "¿Quién ha sonado?",
+      "descripcion": "Tres instrumentos de pequeña percusión; suena uno y hay que señalarlo.",
       "etapa": "infantil",
       "eje": "timbre",
       "tipo": "eleccion",
@@ -1139,6 +1202,7 @@
     {
       "id": "inf-14-el-cuento-sonoro",
       "titulo": "El cuento sonoro",
+      "descripcion": "Cuento locutado con huecos: el grupo elige y ejecuta un sonido en cada uno.",
       "etapa": "infantil",
       "eje": "creacion",
       "tipo": "lienzo",
@@ -1157,6 +1221,7 @@
     {
       "id": "inf-15-de-grave-a-agudo",
       "titulo": "De grave a agudo",
+      "descripcion": "Tres campanas de colores. Se escuchan las veces que haga falta y se colocan de la más grave a la más aguda; nada dice cuál es cuál.",
       "etapa": "infantil",
       "eje": "altura",
       "tipo": "ordenar",
@@ -1175,6 +1240,7 @@
     {
       "id": "inf-16-animales-que-bajan",
       "titulo": "Los animales que bajan",
+      "descripcion": "Una melodía de verdad, con un animal por nota: el oso es el más grave y el pájaro el más agudo. Despacio, para tocar sin agobio.",
       "etapa": "infantil",
       "eje": "pulso",
       "tipo": "karaoke",
@@ -1193,6 +1259,7 @@
     {
       "id": "inf-17-palmas-y-muslos",
       "titulo": "Palmas y muslos",
+      "descripcion": "Dos sonidos alternados, despacio. A los cuatro años, cambiar de sonido a tiempo ya es coordinación.",
       "etapa": "infantil",
       "eje": "cuerpo",
       "tipo": "cuerpo",
@@ -1211,6 +1278,7 @@
     {
       "id": "inf-18-cuatro-instrumentos",
       "titulo": "Cuatro instrumentos para probar",
+      "descripcion": "Bombo, caja, pandereta y claves. Sin pulso y sin tarea: a esta edad lo que se aprende es que cada instrumento suena distinto.",
       "etapa": "infantil",
       "eje": "timbre",
       "tipo": "pads",
@@ -1229,6 +1297,7 @@
     {
       "id": "tr-01-afinador-visual",
       "titulo": "Afinador visual",
+      "descripcion": "Canta o toca y ve la nota. Primer contacto con el micrófono, sin nada que perder.",
       "etapa": "primaria-c2",
       "eje": "altura",
       "tipo": "cantar",
@@ -1247,6 +1316,7 @@
     {
       "id": "tr-02-metronomo-y-calibrador",
       "titulo": "Metrónomo y calibrador",
+      "descripcion": "Metrónomo de aula con acento visual y calibración de latencia de 20 segundos. Se proyecta: el niño no está delante de una pantalla, la mira el aula entera.",
       "etapa": "primaria-c1",
       "eje": "pulso",
       "tipo": "guia-aula",
@@ -1265,6 +1335,7 @@
     {
       "id": "tr-03-caja-de-sonidos",
       "titulo": "Caja de sonidos del aula",
+      "descripcion": "Se dibuja y suena. Con flauta, una raya larga es una nota larga: lo que se dibuja es lo que se oye, también en la duración.",
       "etapa": "infantil",
       "eje": "timbre",
       "tipo": "lienzo",
@@ -1283,6 +1354,7 @@
     {
       "id": "tr-04-creditos-de-donde-sale-esto",
       "titulo": "Créditos: de dónde sale esto",
+      "descripcion": "La página de créditos de la propia aplicación, convertida en clase: cada sonido, cada icono y cada tipografía con su licencia y su porqué.",
       "etapa": "primaria-c3",
       "eje": "cultura",
       "tipo": "guia-aula",
@@ -1301,6 +1373,7 @@
     {
       "id": "tr-05-piano",
       "titulo": "Piano",
+      "descripcion": "Un piano en la pantalla. Se toca tecla a tecla o deslizando el dedo.",
       "etapa": "primaria-c1",
       "eje": "altura",
       "tipo": "teclado",
@@ -1319,6 +1392,7 @@
     {
       "id": "tr-06-kit-de-percusion",
       "titulo": "Kit de percusión",
+      "descripcion": "Diez instrumentos de percusión de aula agrupados por familias, con pulso opcional detrás y grabadora. Es un instrumento, no un ejercicio.",
       "etapa": "primaria-c1",
       "eje": "timbre",
       "tipo": "pads",
@@ -1337,6 +1411,7 @@
     {
       "id": "tr-07-como-era-esto",
       "titulo": "¿Cómo era esto?",
+      "descripcion": "La consulta del lenguaje musical: figuras, silencios, compases, notas, distancias, tempos y matices. Con botón de escuchar en todo lo que puede sonar.",
       "etapa": "primaria-c2",
       "eje": "notacion",
       "tipo": "referencia",
@@ -1355,6 +1430,7 @@
     {
       "id": "tr-08-acompanamientos",
       "titulo": "Bases para cantar encima",
+      "descripcion": "Seis acompañamientos en bucle, con botones para subir y bajar de tonalidad. Es lo que un aula sin piano no tiene.",
       "etapa": "primaria-c1",
       "eje": "creacion",
       "tipo": "acompanamientos",
@@ -1373,6 +1449,7 @@
     {
       "id": "tr-09-quien-es-quien",
       "titulo": "Épocas, compositores y estilos",
+      "descripcion": "Consulta de cultura musical: seis épocas, once compositores y siete estilos, con buscador. Sin audio.",
       "etapa": "primaria-c3",
       "eje": "cultura",
       "tipo": "referencia",

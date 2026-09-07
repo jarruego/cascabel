@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router';
+import { Link, useLocation, useNavigate, useParams } from 'react-router';
 import { cargarActividad } from '@/datos/cargar';
 import { componenteDe } from '@/motor/registro';
 import { Lienzo } from '@/ui/Lienzo';
@@ -17,6 +17,27 @@ import type { Actividad as TipoActividad, ResultadoActividad } from '@/motor/tip
 export default function Actividad() {
   const { id = '' } = useParams();
   const navegar = useNavigate();
+  const ubicacion = useLocation();
+
+  /**
+   * Volver al catálogo **tal como estaba**: mismos filtros y misma posición.
+   *
+   * Ir a `/` a secas construía una pantalla nueva, sin filtros y desde arriba del todo. Con
+   * setenta y siete actividades eso significaba volver a filtrar y a bajar cada vez que se
+   * abría una, que es la forma más segura de que nadie explore nada.
+   *
+   * Retroceder en el historial lo arregla entero y gratis: la URL anterior ya lleva los
+   * filtros —viven ahí desde hoy— y el navegador repone el scroll él solo.
+   *
+   * **Salvo que no haya historial.** Si se ha llegado por un enlace directo o abriendo la
+   * aplicación instalada en esta actividad, `key` vale `'default'` y retroceder sacaría al
+   * usuario fuera de Cascabel. Ahí sí toca ir al catálogo.
+   */
+  const hayHistorial = ubicacion.key !== 'default';
+  const volver = () => {
+    if (hayHistorial) navegar(-1);
+    else navegar('/');
+  };
   const [actividad, setActividad] = useState<TipoActividad | null>(null);
   const [fallo, setFallo] = useState<string | null>(null);
   const [resultado, setResultado] = useState<ResultadoActividad | null>(null);
@@ -43,7 +64,18 @@ export default function Actividad() {
   // las navegaciones múltiples confunden a los niños mucho más que a los adultos.
   const atras = (
     <div className="actividad__barra">
-      <Link to="/" className="atras">
+      {/* Sigue siendo un enlace y no un botón: así se puede abrir en otra pestaña, se
+          copia con el botón derecho y un lector de pantalla lo anuncia como enlace. Lo que
+          cambia es lo que hace al pulsarlo. */}
+      <Link
+        to="/"
+        className="atras"
+        onClick={(ev) => {
+          if (!hayHistorial || ev.metaKey || ev.ctrlKey || ev.button !== 0) return;
+          ev.preventDefault();
+          navegar(-1);
+        }}
+      >
         {t('comun.atras')}
       </Link>
       {/* La ficha es para el maestro: el aula sin dispositivos es el escenario más
@@ -87,7 +119,7 @@ export default function Actividad() {
           setResultado(null);
           setIntento((n) => n + 1);
         }}
-        alVolver={() => navegar('/')}
+        alVolver={volver}
       />
 
       {/* La actividad va dentro del lienzo: es lo que le da el botón de ampliar y lo que

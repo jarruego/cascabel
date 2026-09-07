@@ -189,14 +189,19 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
   }, []);
 
   /**
-   * Tope de ancho por tecla: 88 px, que es lo que mide una tecla blanca de piano real
-   * (23 mm a la densidad habitual de una pantalla).
+   * Tope de ancho por tecla, **por carril**.
    *
-   * **Por encima de eso, más ancho es peor.** La mano deja de poder colocarse como se coloca
-   * en un piano de verdad, y entonces lo que se aprende aquí no sirve allí. Es el único
-   * sitio del proyecto donde un objetivo táctil tiene techo, y lo tiene por eso.
+   * Los 88 px son lo que mide una tecla blanca de piano real (23 mm a la densidad habitual
+   * de una pantalla), y por encima de eso la mano deja de poder colocarse como se coloca en
+   * un piano de verdad: lo que se aprende aquí dejaría de servir allí. Es el único sitio del
+   * proyecto donde un objetivo táctil tiene techo.
+   *
+   * **Pero ese argumento solo vale donde se está aprendiendo a tocar.** A los cuatro años no
+   * se coloca ninguna mano: se acierta una tecla con un dedo, y ahí más grande es mejor. El
+   * tope único dejaba el piano de Infantil en 616 px con media tablet vacía al lado,
+   * defendiendo una postura de manos que a esa edad no existe.
    */
-  const ANCHO_TECLA_REAL = 88;
+  const ANCHO_TECLA_MAXIMO = { infantil: 150, lectores: 110, autonomos: 88 }[carril];
   /** Aire a los lados para que el teclado no quede pegado al borde de la pantalla. */
   const MARGEN_LATERAL = 16;
   /**
@@ -230,7 +235,7 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
     monitor vacío al lado, cuando lo que hace fácil acertar una tecla es que sea grande.
   */
   const anchoBlanca = anchoUtil
-    ? Math.max(anchoMinimo, Math.min(ANCHO_TECLA_REAL, Math.floor(anchoUtil / blancas)))
+    ? Math.max(anchoMinimo, Math.min(ANCHO_TECLA_MAXIMO, Math.floor(anchoUtil / blancas)))
     : 60;
   // `anchoMinimo` es un suelo de verdad: si las octavas pedidas no caben a ese ancho, el
   // teclado sale más ancho que la caja y ésta desplaza. Nunca teclas impracticables.

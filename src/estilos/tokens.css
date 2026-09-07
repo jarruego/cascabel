@@ -418,10 +418,16 @@ p {
   background: var(--superficie);
 }
 
-/* Catálogo: la vista del maestro. Denso a propósito, porque busca, no juega. */
+/* Catálogo: la vista del maestro. Denso a propósito, porque busca, no juega.
+
+   El tope estuvo en 840 px y encajonaba TODO: en un monitor grande o en una pizarra
+   quedaba media pantalla vacía, y el teclado —que mide su caja para saber cuántas octavas
+   caben— no podía crecer más allá de esa caja por mucha pantalla que hubiera delante. Lo
+   que sí conserva medida es el texto, y eso se acota en el párrafo, no aquí: ver la regla
+   de `.actividad > p` más abajo. */
 .catalogo,
 .actividad-marco {
-  max-width: 840px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: var(--e-5) var(--e-4) var(--e-8);
 }
@@ -983,8 +989,10 @@ p {
 .tocar__diana {
   display: block;
   width: 100%;
-  max-width: 360px;
-  min-height: 180px;
+  /* Se golpea con la mano, a veces sin mirar: cuanto más grande, mejor. El tope estaba en
+     360 px, que en una tablet apaisada es un cuarto de la pantalla. */
+  max-width: min(100%, 560px);
+  min-height: clamp(180px, 26vh, 300px);
   margin: var(--e-5) 0;
   font-size: 1.3em;
 }
@@ -1281,8 +1289,9 @@ p {
 }
 .cantar__aguja {
   position: relative;
-  height: 72px;
-  max-width: 320px;
+  /* Es lo único que se mira mientras se canta, y se mira de lejos si está proyectada. */
+  height: clamp(72px, 12vh, 120px);
+  max-width: min(100%, 560px);
   margin: var(--e-4) auto;
   border: 3px solid var(--linea);
   border-radius: var(--r-redondo);
@@ -1392,7 +1401,9 @@ p {
 .lienzo__area {
   position: relative;
   width: 100%;
-  height: min(46vh, 340px);
+  /* `min(46vh, 340px)` se quedaba siempre en 340: en cualquier pantalla de más de 740 px
+     de alto ganaba el número fijo, que es justo al revés de lo que se quería. */
+  height: clamp(220px, 46vh, 520px);
   margin: var(--e-4) 0;
   border: 4px solid var(--linea);
   border-radius: var(--r-l);
@@ -1930,7 +1941,10 @@ p {
 .teclado__caja {
   display: flex;
   justify-content: center;
-  height: min(38vh, 260px);
+  /* El alto crece con la pantalla y se para en 340: por encima de eso una tecla blanca
+     empieza a ser más alta que la mano que la toca. El tope de 260 dejaba un teclado
+     pequeño en medio de un monitor grande. */
+  height: clamp(150px, 38vh, 340px);
   margin: var(--e-5) 0;
   padding: 0 var(--e-2);
   touch-action: none;
@@ -1990,7 +2004,7 @@ p {
    es lo que el dosier llama la mitad tóxica de Duolingo. */
 .seguir__pista {
   position: relative;
-  height: min(52vh, 420px);
+  height: clamp(220px, 52vh, 560px);
   margin: var(--e-5) 0;
   border: 3px solid var(--linea);
   border-radius: var(--r-m);
@@ -2104,7 +2118,7 @@ p {
    mismo número sobre el que reparte las bandas: si lo fijara aquí, las bandas y los botones
    de abajo dejarían de cuadrar en cuanto uno de los dos cambiara. */
 .karaoke__pauta[data-orientacion='vertical'] {
-  height: min(58vh, 380px);
+  height: clamp(240px, 58vh, 560px);
   margin-inline: auto;
 }
 
@@ -2433,8 +2447,8 @@ p {
 }
 .lienzo[data-ampliado] .actividad { margin: 0; }
 /* Y todo un poco más grande, que es de lo que se trataba. */
-.lienzo[data-ampliado] .karaoke__pauta[data-orientacion='vertical'] { height: min(70vh, 560px); }
-.lienzo[data-ampliado] .teclado__caja { height: min(62vh, 420px); }
+.lienzo[data-ampliado] .karaoke__pauta[data-orientacion='vertical'] { height: clamp(300px, 70vh, 820px); }
+.lienzo[data-ampliado] .teclado__caja { height: clamp(220px, 62vh, 620px); }
 
 /* Con la barra de navegación fuera de la vista, el hueco que le deja también sobra. */
 .lienzo[data-ampliado] ~ *,
@@ -2736,7 +2750,7 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   position: relative;
   display: flex;
   justify-content: center;
-  height: min(30vh, 200px);
+  height: clamp(140px, 30vh, 300px);
   overflow-x: auto;
 }
 .escala__teclado .teclado__blanca[data-usada],
@@ -3345,8 +3359,10 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 .eco__pandero {
   display: grid;
   place-items: center;
-  width: min(60vw, 18rem);
-  height: min(60vw, 18rem);
+  /* Redondo, así que el límite lo pone el lado corto de la pantalla: con solo `60vw`,
+     en un móvil apaisado el pandero se salía por abajo. */
+  width: min(60vw, 60vh, 26rem);
+  height: min(60vw, 60vh, 26rem);
   margin: var(--e-4) auto;
   padding: 0;
   background: var(--superficie);
@@ -3472,4 +3488,92 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
     padding-left: var(--e-3);
     border-left: 8px solid var(--acento);
   }
+}
+
+/* ---------------------------------------------------------------------------
+ * Anchos: lo que se lee y lo que se toca no quieren lo mismo
+ *
+ * Todo estaba en 840 px. En un monitor grande o en una pizarra eso deja media pantalla
+ * vacía, y el teclado —que mide su caja para decidir cuántas octavas caben— no podía
+ * crecer más allá de esa caja por mucha pantalla que hubiera delante.
+ *
+ * Ensanchar el texto, en cambio, lo empeora: pasada una medida de unos setenta caracteres
+ * el ojo pierde el renglón al bajar de línea. Por eso son dos reglas y no una.
+ * ------------------------------------------------------------------------ */
+
+/* Y dentro de una actividad, el texto sigue teniendo medida. Las actividades que son
+   sobre todo lectura se acotan ellas —.referencia, .acompanamientos—; para el resto, lo
+   que se acota es el párrafo, no la actividad. */
+.actividad > p,
+.pista-fija {
+  max-width: 70ch;
+  margin-inline: auto;
+}
+
+/* El catálogo en columnas. Un móvil ve una, una tablet dos, un monitor tres o cuatro:
+   sale del ancho disponible y no de una lista de puntos de ruptura que siempre se queda
+   corta con la pantalla siguiente. */
+.catalogo__lista {
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+}
+
+/* ---------------------------------------------------------------------------
+ * Los filtros se quedan a la vista
+ *
+ * Con setenta y siete actividades, cambiar de filtro obligaba a subir hasta arriba del
+ * todo. Es el patrón habitual en cualquier catálogo largo —una barra que se queda pegada
+ * mientras la lista pasa por debajo— y aquí resuelve además el caso del maestro que va
+ * probando filtros uno detrás de otro.
+ *
+ * `z-index` por debajo de la barra de navegación (20) y de los modales: se pega a la
+ * lista, no a la aplicación entera.
+ * ------------------------------------------------------------------------ */
+.filtros {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  padding: var(--e-3) 0;
+  margin-inline: calc(var(--e-4) * -1);
+  padding-inline: var(--e-4);
+  background: var(--papel);
+}
+/* La sombra solo aparece cuando la barra está pegada y hay algo pasando por debajo. Sin
+   ella, el texto de la lista se leería «encima» de los filtros al hacer scroll. */
+.filtros[data-pegada] {
+  box-shadow: var(--sombra-1);
+}
+
+/* ---------------------------------------------------------------------------
+ * Pantallas apaisadas y bajas: un móvil girado
+ *
+ * Es la postura natural para el piano y para todo lo que avanza de lado, y es donde menos
+ * altura hay. Se recorta lo que no es la actividad —márgenes y titular— en vez de encoger
+ * la actividad, que es lo único que hay que ver.
+ * ------------------------------------------------------------------------ */
+@media (orientation: landscape) and (max-height: 32rem) {
+  .actividad-marco {
+    padding-top: var(--e-2);
+    padding-bottom: var(--e-6);
+  }
+  .actividad h1 {
+    font-size: var(--t-m);
+    margin-bottom: var(--e-2);
+  }
+  /* La pista fija ocupa dos o tres líneas y aquí no caben. Sigue estando para quien la
+     busque, pero deja de robarle sitio al instrumento. */
+  .actividad .pista-fija {
+    font-size: var(--t-xs);
+    margin: var(--e-2) auto 0;
+  }
+  .nav {
+    padding-block: var(--e-1);
+  }
+  .nav__enlace {
+    min-height: 44px;
+  }
+}
+
+/* En una pizarra el catálogo puede permitirse tarjetas más grandes: se mira de lejos. */
+:root[data-pizarra='true'] .catalogo__lista {
+  grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
 }

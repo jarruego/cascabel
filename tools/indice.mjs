@@ -18,6 +18,10 @@ for (const f of ficheros) {
   actividades.push({
     id: a.id,
     titulo: a.titulo,
+    // La descripcion viaja en el indice porque la pantalla de Instrumentos la enseña: once
+    // titulos sueltos no se leen, se ojean y no se distingue uno de otro. Son unos siete
+    // kilobytes en total, y el indice ya se precachea entero.
+    descripcion: a.descripcion ?? '',
     etapa: a.etapa,
     eje: a.eje,
     tipo: a.tipo,

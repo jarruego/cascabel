@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from 'react';
-import { Link } from 'react-router';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { Link, useSearchParams } from 'react-router';
 import { cargarIndice } from '@/datos/cargar';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { leerTodo } from '@/datos/progreso';
@@ -15,6 +15,22 @@ import type { Etapa } from '@/config';
  * cincuenta juguetes sueltos sin nada que los cosa. Aquí cada actividad nace con su
  * criterio asignado, y el maestro llega buscando «qué trabajo el criterio 3.1 en 2.º»,
  * no «qué juego pongo hoy».
+ *
+ * **Los filtros viven en la URL, y esa es la decisión de fondo de esta pantalla.** Estaban
+ * en el estado del componente, así que abrir una actividad y volver los borraba: había que
+ * volver a filtrar cada vez, y con setenta y siete actividades eso es abandonar la
+ * búsqueda. En la URL se arreglan tres cosas de golpe, y ninguna hace falta programarla
+ * aparte:
+ *
+ *  - **El botón «atrás» del navegador funciona**, porque cada filtro es una entrada del
+ *    historial y volver restaura la anterior, con su posición de scroll incluida.
+ *  - **Un filtro se puede compartir o guardar en favoritos.** «Todo lo del criterio 3.1 de
+ *    segundo» pasa a ser un enlace que un maestro manda a otro por correo.
+ *  - **No hay estado que sincronizar**, que es de donde salen la mitad de los errores de
+ *    este tipo de pantalla.
+ *
+ * Es la misma idea que `datos/compartir.ts` aplica al progreso: si el estado cabe en una
+ * URL, la URL es mejor sitio que la memoria.
  */
 
 interface Entrada {
@@ -37,11 +53,28 @@ const ETAPAS: Array<{ valor: Etapa; clave: string }> = [
 export default function Catalogo() {
   const [entradas, setEntradas] = useState<Entrada[] | null>(null);
   const [fallo, setFallo] = useState<string | null>(null);
-  const [etapa, setEtapa] = useState<Etapa | ''>('');
-  const [eje, setEje] = useState<Eje | ''>('');
-  const [criterio, setCriterio] = useState('');
-  const [busqueda, setBusqueda] = useState('');
   const [hechas, setHechas] = useState<Set<string>>(new Set());
+
+  const [parametros, ponerParametros] = useSearchParams();
+  const etapa = (parametros.get('etapa') ?? '') as Etapa | '';
+  const eje = (parametros.get('eje') ?? '') as Eje | '';
+  const criterio = parametros.get('crit') ?? '';
+  const busqueda = parametros.get('q') ?? '';
+
+  /**
+   * Cambiar un filtro.
+   *
+   * `replace` para la búsqueda y `push` para los desplegables, y la diferencia importa: al
+   * escribir en el buscador cada letra sería una entrada del historial, y entonces el botón
+   * «atrás» tendría que pulsarse una vez por letra tecleada. Elegir un curso, en cambio, sí
+   * es una decisión que uno quiere poder deshacer.
+   */
+  const filtrar = (clave: string, valor: string, reemplazar = false) => {
+    const siguiente = new URLSearchParams(parametros);
+    if (valor) siguiente.set(clave, valor);
+    else siguiente.delete(clave);
+    ponerParametros(siguiente, { replace: reemplazar });
+  };
 
   useEffect(() => {
     // Marcar lo ya hecho es orientación para el maestro, NO una recompensa para el niño:
@@ -58,6 +91,66 @@ export default function Catalogo() {
       vivo = false;
     };
   }, []);
+
+  /*
+    Volver a donde estabas.
+
+    El navegador restaura el scroll él solo al ir «atrás», pero solo si la página ya mide lo
+    que medía, y aquí la lista llega por `fetch`: cuando el navegador intenta restaurar, el
+    catálogo todavía está vacío y mide cero. Así que se guarda la posición al salir y se
+    repone cuando la lista ya está pintada.
+
+    En `sessionStorage` y no en el estado: tiene que sobrevivir a que la pantalla se
+    desmonte entera, que es justo lo que pasa al abrir una actividad.
+  */
+  const listaLista = entradas !== null;
+  const yaRepuesto = useRef(false);
+
+  useEffect(() => {
+    const guardar = () => {
+      try {
+        sessionStorage.setItem('catalogo:scroll', String(window.scrollY));
+      } catch {
+        // Sin almacenamiento se pierde la posición y no pasa nada más.
+      }
+    };
+    window.addEventListener('pagehide', guardar);
+    return () => {
+      window.removeEventListener('pagehide', guardar);
+      guardar();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!listaLista || yaRepuesto.current) return;
+    yaRepuesto.current = true;
+    try {
+      const y = Number(sessionStorage.getItem('catalogo:scroll') ?? '0');
+      // Un fotograma de margen: si se repone antes de que el navegador haya colocado la
+      // rejilla, la página aún no es tan alta y el salto se queda corto.
+      if (y > 0) requestAnimationFrame(() => window.scrollTo(0, y));
+    } catch {
+      // Igual que arriba.
+    }
+  }, [listaLista]);
+
+  /* La sombra de la barra de filtros solo cuando de verdad está pegada arriba. */
+  const filtros = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const el = filtros.current;
+    if (!el || typeof IntersectionObserver === 'undefined') return;
+    // Se observa un píxel por encima de la barra: en cuanto sale de la pantalla, la barra
+    // está pegada. Es lo mismo que hacer un `scroll` listener, pero sin escuchar cada
+    // fotograma del scroll.
+    const centinela = el.previousElementSibling;
+    if (!centinela) return;
+    const observador = new IntersectionObserver(
+      ([e]) => el.toggleAttribute('data-pegada', !e?.isIntersecting),
+      { threshold: 1 },
+    );
+    observador.observe(centinela);
+    return () => observador.disconnect();
+  }, [listaLista]);
 
   const ejes = useMemo(
     () => [...new Set((entradas ?? []).map((e) => e.eje))].sort(),
@@ -126,19 +219,22 @@ export default function Catalogo() {
         combinado, 3.º y 4.º» sin decir de qué es: se ve bien y deja de ser usable para quien
         no ve. Es la parte del patrón que casi todo el mundo se salta.
       */}
-      <div className="filtros">
+      {/* Centinela invisible: cuando este píxel sale de la pantalla, la barra de filtros
+          está pegada arriba y se le pone la sombra. */}
+      <div aria-hidden="true" />
+      <div className="filtros" ref={filtros}>
         <input
           type="search"
           className="filtros__buscar"
           value={busqueda}
-          onChange={(ev) => setBusqueda(ev.target.value)}
+          onChange={(ev) => filtrar('q', ev.target.value, true)}
           placeholder={t('filtro.buscar')}
           aria-label={t('filtro.buscar')}
         />
 
         <select
           value={etapa}
-          onChange={(ev) => setEtapa(ev.target.value as Etapa | '')}
+          onChange={(ev) => filtrar('etapa', ev.target.value)}
           aria-label={t('filtro.etapa')}
           data-activo={etapa ? 'si' : undefined}
         >
@@ -152,7 +248,7 @@ export default function Catalogo() {
 
         <select
           value={eje}
-          onChange={(ev) => setEje(ev.target.value as Eje | '')}
+          onChange={(ev) => filtrar('eje', ev.target.value)}
           aria-label={t('filtro.eje')}
           data-activo={eje ? 'si' : undefined}
         >
@@ -166,7 +262,7 @@ export default function Catalogo() {
 
         <select
           value={criterio}
-          onChange={(ev) => setCriterio(ev.target.value)}
+          onChange={(ev) => filtrar('crit', ev.target.value)}
           aria-label={t('filtro.criterio')}
           data-activo={criterio ? 'si' : undefined}
         >
@@ -184,12 +280,7 @@ export default function Catalogo() {
           <button
             type="button"
             className="filtros__limpiar"
-            onClick={() => {
-              setEtapa('');
-              setEje('');
-              setCriterio('');
-              setBusqueda('');
-            }}
+            onClick={() => ponerParametros(new URLSearchParams())}
           >
             {t('filtro.limpiar')}
           </button>
