@@ -598,6 +598,12 @@ Abierta y cerrada el 2026-09-06, a partir de la primera prueba real del autor:
   lenta**, y el juego entero cuando el maestro pulsa «descargar para usar sin conexión».
   Bajarlo todo al instalar sin preguntar sería lo cómodo y es lo que la regla del proyecto no
   permite: alguien puede abrir Cascabel en el patio con datos móviles.
+
+  **Lo que queda de los personajes**: la pose `anima`, que es la única de las diez que
+  todavía no sale en ninguna pantalla. Le toca el sitio de la retroalimentación tras un
+  intento fallido, y **lo siguiente** es sacar el párrafo `.feedback` a un componente común
+  —hoy lo repiten ocho tipos de motor con su propio `<p>`— para no repetir el personaje ocho
+  veces.
 - [ ] Revisión con las tres preguntas de `docs/06-PIPELINE-IA.md` — es T0.3
 
 **OpenMoji es CC BY-SA 4.0, la misma licencia que ya tienen nuestros contenidos**, así que
@@ -1430,11 +1436,12 @@ es depurar y ampliar, y eso lo marca el uso real.
 
 | | |
 |---|---|
-| Actividades | 77, todas validando esquema y música |
+| Actividades | 78, todas validando esquema y música |
 | Tipos de motor | 21 (la lista viva, en [`01-ARQUITECTURA.md`](01-ARQUITECTURA.md)) |
-| Tests | 408 |
-| Precache | 1341 KiB (el resto del audio se cachea al usarse) |
-| Código | ~17200 líneas en `src`, ~4000 en `tests` |
+| Tests | 442 |
+| Precache | 1823 KiB (el audio y las poses de personaje que no salen siempre se cachean al usarse) |
+| Personajes | 8 × 10 poses, 1530 KB en total |
+| Código | ~17900 líneas en `src`, ~4400 en `tests` |
 
 **Lo que entró ese día, después de cerrar el catálogo previsto:**
 
