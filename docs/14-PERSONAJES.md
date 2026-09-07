@@ -214,8 +214,31 @@ cálidos que los tokens de la aplicación pero en la misma familia y en el mismo
 personajes tienen su propia paleta y no tienen por qué usar los tokens**: lo que importa es
 que, cuando el personaje aparezca *encima* de su nota, los dos colores no se peleen.
 
-**Quedan Laia y Simón**, que son los dos casos de verdad: lila sobre una tecla índigo y rosa
-sobre una violeta. Cuando estén dibujados se mide igual y se decide con el número delante.
+### Laia, medida el 2026-09-08
+
+Y aquí sí hay algo. Laia sale dibujada en **violeta**:
+
+| | Tono |
+|---|---|
+| Laia, dibujada | **257–268°** |
+| `--vivo-azul`, que la aplicación usa para **la** (su nota) | 212° |
+| `--vivo-morado`, que la aplicación usa para **si** (la de Simón) | **267°** |
+
+**Laia está pintada exactamente del color que la aplicación reserva para la nota de Simón.**
+No es un capricho del dibujo: el Boomwhacker de *la* es **índigo**, que está entre el azul y
+el violeta —hacia los 245°—, y el token de la aplicación se quedó en 212°, que es azul a
+secas. O sea que la que se ha alejado del estándar es la aplicación, no el dibujo.
+
+Eso abre una salida que no estaba en las tres de arriba:
+
+4. **Corregir la aplicación hacia el Boomwhacker de verdad**: `la` de 212° a ~245° (índigo) y
+   `si` de 267° a ~280° (violeta). La aplicación quedaría **más** fiel al estándar de los
+   tubos, no menos, y de paso deja sitio para que Laia sea violeta sin pisar a Simón.
+
+**No se decide todavía.** Falta Simón, y `la` y `si` solo tienen sentido movidas juntas: si
+se sube `la` a índigo sin subir `si`, las dos notas contiguas se quedan a treinta grados y en
+una tecla de 48 px eso ya no se distingue. Cuando esté dibujado se mide igual y se decide con
+los dos números delante.
 
 ---
 
@@ -320,6 +343,7 @@ Hoy:
 | **Milo** | `inf-09`, `inf-17`, `c1-01`, `c1-02`, `c1-20`, `c1-21`, `c3-13` | Ritmo, eco de palmas y percusión corporal: «la música también sirve para jugar» |
 | **Fara** | `inf-01`, `inf-14`, `c1-03`, `c2-13`, `c3-04` | Silencio y escucha pausada: «parar y escuchar también es hacer música» |
 | **Sol** | `inf-08`, `inf-12`, `c1-12`, `c1-15`, `c2-10`, `c3-06` | Pulso, movimiento y danza: «la música se siente y se expresa con el cuerpo» |
+| **Laia** | Las once del eje `creacion` | Inventar, improvisar, componer: «la música también se puede inventar» |
 | **Dora** | Todas las demás | Es el valor por defecto |
 
 ### Qué poses se usan de verdad hoy, y cuáles no
