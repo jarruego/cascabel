@@ -6,8 +6,7 @@ import {
   representaAltura,
   type NotaMusicograma,
   type OpcionesGeometria,
-  type Representacion,
-} from '@/motor/musicograma';
+  type Representacion, anchoDeBandas } from '@/motor/musicograma';
 
 const NOTAS: NotaMusicograma[] = [
   { nota: 'C4', pulsos: 1 },
@@ -183,5 +182,38 @@ describe('carriles con alteraciones', () => {
       { nota: 'B4', pulsos: 1 },
       { nota: 'A#4', pulsos: 1 },
     ])).toEqual(['A#4', 'B4', 'C5']);
+  });
+});
+
+describe('el ancho de las bandas', () => {
+  // Cada banda es también su botón, así que su ancho es un objetivo táctil, no una
+  // decisión estética. 75 px es el mínimo de Infantil; 48 el de los mayores.
+  it('reparte el ancho disponible entre las bandas', () => {
+    // Mientras ninguna cota apriete, la tira ocupa exactamente lo que hay: 600 entre
+    // cuatro son 150 por banda, y entre cinco, 120.
+    expect(anchoDeBandas(4, 600, 48)).toBe(600);
+    expect(anchoDeBandas(5, 600, 48)).toBe(600);
+  });
+
+  it('no baja del objetivo táctil aunque no quepa', () => {
+    // Cuatro bandas de Infantil en un móvil estrecho: 4 × 75 = 300, más que los 280 que
+    // hay. Se desborda a propósito y la caja desplaza: mejor arrastrar que fallar el toque.
+    expect(anchoDeBandas(4, 280, 75)).toBe(300);
+  });
+
+  it('no crece sin límite en una pizarra', () => {
+    // Una banda de un palmo obliga a recorrerla entera con el ojo para ver por dónde va a
+    // caer la nota, y entonces la anchura juega en contra.
+    expect(anchoDeBandas(4, 4000, 48)).toBe(680);
+  });
+
+  it('sin medir todavía, devuelve lo que había antes de medir', () => {
+    // Un fotograma con el ancho antiguo no se ve; empezar en cero colapsaría el recuadro.
+    expect(anchoDeBandas(4, 0, 48)).toBe(352);
+    expect(anchoDeBandas(8, 0, 48)).toBe(360);
+  });
+
+  it('cero bandas no divide por cero', () => {
+    expect(Number.isFinite(anchoDeBandas(0, 800, 48))).toBe(true);
   });
 });

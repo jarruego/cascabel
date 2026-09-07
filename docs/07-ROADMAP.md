@@ -1494,14 +1494,18 @@ Y dos que sí son de producto y las decide el autor:
   verdad, así que la pregunta no es técnica: es si esa parte llega pronto o se quitan hasta
   entonces.
 
-Y una que quedó a medias en la revisión de anchos del 2026-09-07:
+Y lo que quedó a medias en la revisión de anchos se cerró el mismo día:
 
-- [ ] **Las bandas del karaoke siguen en 352 px**, o sea centradas y estrechas en cualquier
-  pantalla que no sea un móvil. No se tocaron porque `TRANSVERSAL` da a la vez el ancho de
-  las bandas y el de los botones de debajo, y las dos geometrías tienen que cuadrar: ya se
-  descuadraron una vez y el autor lo notó. **Lo siguiente**: medir el contenedor con un
-  `ResizeObserver`, como hace `Teclado.tsx`, y comprobarlo con la pantalla delante — no a
-  ciegas.
+- [x] **Las bandas del karaoke** ya no miden 352 px pase lo que pase: se mide la caja con
+  `ResizeObserver` y el ancho sale de ahí. La regla salió del componente a
+  `musicograma.ts` —`anchoDeBandas`, con test—, porque es una regla de producto: cada banda
+  es también su botón, así que su ancho es un objetivo táctil. Por abajo no baja del mínimo
+  del carril, y si con eso no cabe, la caja desplaza; por arriba hay tope, porque una banda
+  de un palmo obliga a recorrerla con el ojo para ver por dónde va a caer la nota.
+
+  De paso arregla un desajuste que ya existía: en un móvil de 320 px, cuatro bandas de 88
+  sumaban 352, el recuadro se encogía por CSS y las bandas seguían colocadas en coordenadas
+  de 352. **Sigue faltando mirarlo en pantalla**, que es lo que ningún test da.
 
 Las ideas de ampliación, con veredicto y con lo que NO conviene hacer, están en
 [`docs/12-IDEAS-Y-AMPLIACIONES.md`](12-IDEAS-Y-AMPLIACIONES.md).

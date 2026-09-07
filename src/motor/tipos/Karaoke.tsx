@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useCarril } from '@/app/preferencias';
+import { OBJETIVO_TACTIL } from '@/config';
 import { despertarAudio, latenciaMs, obtenerContexto } from '@/audio/AudioEngine';
 import { Sampler } from '@/audio/sampler';
 import { muestrasDe } from '@/audio/instrumentos';
@@ -14,6 +15,7 @@ import {
   type NotaMusicograma,
   type Orientacion,
   type Representacion,
+  anchoDeBandas,
 } from '../musicograma';
 import { duracionDe, instantesDe } from '../melodiaEnTiempo';
 import { CuentaAtras } from '@/ui/CuentaAtras';
@@ -154,6 +156,33 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
 
   const sampler = useRef<Sampler | null>(null);
   const rafId = useRef<number | null>(null);
+
+  /*
+    El ancho disponible se MIDE, no se supone.
+
+    Las bandas estaban topadas en 360 px, así que en una tablet o en una pizarra la
+    actividad se quedaba centrada y estrecha con media pantalla vacía al lado. Y el número
+    fijo tenía un segundo problema: en un móvil de 320 px, cuatro bandas de 88 sumaban 352 y
+    no cabían, así que el recuadro se encogía por CSS mientras las bandas seguían colocadas
+    en coordenadas de 352. Se descolocaban por los dos extremos.
+
+    Se mide con `ResizeObserver` y no con el ancho de la ventana porque lo que importa es la
+    caja, y la caja cambia sin que cambie la ventana: al entrar y salir del modo lienzo.
+  */
+  const caja = useRef<HTMLElement | null>(null);
+  const [anchoCaja, setAnchoCaja] = useState(0);
+
+  useEffect(() => {
+    const el = caja.current;
+    if (!el) return;
+    if (typeof ResizeObserver === 'undefined') {
+      setAnchoCaja(el.clientWidth);
+      return;
+    }
+    const ro = new ResizeObserver(([entrada]) => setAnchoCaja(entrada?.contentRect.width ?? 0));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
   const instantes = useRef<number[]>([]);
   const golpes = useRef<number[]>([]);
 
@@ -172,12 +201,12 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
    * dibujara el recuadro de otro ancho, las bandas no llegarían a los bordes y los botones
    * de abajo no cuadrarían con ellas. Tenerlo en dos sitios era un desajuste esperando.
    *
-   * Con bandas se ensancha —80 px por banda— porque el botón de abajo tiene que medir lo
-   * mismo que su banda, y una banda estrecha da un botón difícil de acertar.
+   * **Con bandas, el ancho sale de lo que hay**, y la regla vive en `anchoDeBandas`, con
+   * test: cada banda es también su botón, así que su ancho es un objetivo táctil.
    */
   const TRANSVERSAL = vertical
     ? porCarril
-      ? Math.min(88 * carriles.length, 360)
+      ? anchoDeBandas(carriles.length, anchoCaja, OBJETIVO_TACTIL[carril])
       : 200
     : 160;
 
@@ -192,7 +221,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
       separacion: SEP,
       margen: MARGEN_ARRIBA,
     }),
-    [representacion, orientacion, clave],
+    [representacion, orientacion, clave, TRANSVERSAL],
   );
 
   const parar = useCallback(() => {
@@ -335,7 +364,12 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
   const porcentaje = total ? Math.round((acertadas.size / total) * 100) : 0;
 
   return (
-    <section className="actividad karaoke" data-carril={carril} aria-labelledby="consigna">
+    <section
+      ref={caja}
+      className="actividad karaoke"
+      data-carril={carril}
+      aria-labelledby="consigna"
+    >
       <h1 id="consigna">{t(contenido.consigna)}</h1>
 
       <div

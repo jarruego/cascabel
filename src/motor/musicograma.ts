@@ -148,3 +148,43 @@ export function figuraDe(pulsos: number): string {
   if (pulsos >= 0.5) return '𝅘𝅥𝅮';
   return '𝅘𝅥𝅯';
 }
+
+/** Lo más ancha que se deja crecer una banda. */
+const ANCHO_MAXIMO_DE_BANDA = 170;
+
+/**
+ * Cuánto mide, en total, la tira de bandas de un musicograma por carriles.
+ *
+ * **Cada banda es también su botón**, así que su ancho es un objetivo táctil y no una
+ * decisión estética. De ahí las dos cotas:
+ *
+ *  - **Por abajo, el mínimo del carril.** Si con eso no cabe, la caja desplaza en
+ *    horizontal. Es mejor tener que arrastrar que tener bandas imposibles de acertar, y es
+ *    lo mismo que hace el teclado cuando no caben las octavas que le piden.
+ *  - **Por arriba, un tope.** Una banda de un palmo obliga al ojo a recorrerla entera para
+ *    ver por dónde va a caer la nota, y entonces la anchura juega en contra.
+ *
+ * Antes esto era `Math.min(88 * bandas, 360)` dentro del componente, y fallaba por los dos
+ * lados: en una tablet dejaba la actividad centrada y estrecha, y en un móvil de 320 px
+ * cuatro bandas sumaban 352, así que el recuadro se encogía por CSS mientras las bandas
+ * seguían colocadas en coordenadas de 352 y se descuadraban.
+ *
+ * @param bandas cuántos carriles hay
+ * @param anchoDisponible ancho medido de la caja, en píxeles; 0 si aún no se ha medido
+ * @param objetivoTactil mínimo por banda que exige el carril de edad
+ */
+export function anchoDeBandas(
+  bandas: number,
+  anchoDisponible: number,
+  objetivoTactil: number,
+): number {
+  const n = Math.max(1, bandas);
+  // Sin medida todavía: el valor de antes. Un fotograma con el ancho antiguo no se ve, y
+  // empezar en cero dejaría el recuadro colapsado.
+  if (anchoDisponible <= 0) return Math.min(88 * n, 360);
+  const porBanda = Math.min(
+    ANCHO_MAXIMO_DE_BANDA,
+    Math.max(objetivoTactil, anchoDisponible / n),
+  );
+  return Math.round(porBanda * n);
+}
