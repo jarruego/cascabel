@@ -26,7 +26,13 @@ export class DetectorDePalmadas {
 
     this.sesion = await abrirMicrofono();
     this.nodo = new AudioWorkletNode(ctx, 'onset-processor', {
-      processorOptions: { refractarioMs: 110, factorUmbral: 4 },
+      /*
+        El factor era 4 y saltaba solo: una silla arrastrada o una tos lo superaban, y en
+        los primeros bloques —con la media del ruido todavía en cero— lo superaba cualquier
+        cosa. Una palmada está veinte o cincuenta veces por encima del suelo de la sala, no
+        cuatro. Ver el porqué entero en `public/worklets/onset-processor.js`.
+      */
+      processorOptions: { refractarioMs: 110, factorUmbral: 12 },
     });
     this.nodo.port.onmessage = (ev: MessageEvent) => alDetectar(ev.data as Onset);
     this.sesion.fuente.connect(this.nodo);

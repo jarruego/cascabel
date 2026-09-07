@@ -229,7 +229,7 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
 
       <div className="rejilla__acciones">
         <button type="button" className="boton-repetir" onClick={() => void reproducir()}>
-          <Icono nombre="reproducir" tamano={26} /> {t('rejilla.reproducir')}
+          <Icono nombre="reproducir" tamano={26} /> {t('accion.escuchar')}
         </button>
 
         {/* Exportar. Todo se construye en memoria y se descarga con un enlace: no hay

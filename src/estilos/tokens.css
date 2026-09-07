@@ -3972,3 +3972,41 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   /* Y el marco de la actividad deja de gastar aire lateral: cada píxel es actividad. */
   .actividad-marco { padding-inline: var(--e-2); }
 }
+
+/* ---------------------------------------------------------------------------
+ * El botón que arranca
+ *
+ * En cada actividad hay uno solo: el que hay que tocar para que empiece a pasar algo. Late
+ * despacio mientras no se ha pulsado, y para en cuanto la actividad está en marcha.
+ *
+ * Late **solo ese**. Si latieran dos, dejaría de significar «este»; y si latiera siempre,
+ * a los diez segundos sería un adorno que además molesta. Es la misma idea del personaje de
+ * la barra: llamar la atención una vez y callarse.
+ * ------------------------------------------------------------------------ */
+.boton-arranque {
+  animation: arranque-late 2.4s ease-in-out 1.2s infinite;
+}
+@keyframes arranque-late {
+  0%, 82%, 100% { transform: scale(1); }
+  88% { transform: scale(1.06); }
+  94% { transform: scale(1.02); }
+}
+/* En marcha ya no llama: lo que hace falta entonces es poder pararlo, no que insista. */
+.boton-arranque[data-sonando],
+.boton-arranque[aria-pressed='true'] {
+  animation: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .boton-arranque { animation: none; }
+}
+
+/* El botón de ampliar, pegado a la esquina. Antes iba en el flujo y se comía una franja
+   entera de la actividad; ahora se superpone, que es lo que hace cualquier reproductor. */
+.lienzo__boton {
+  top: 0;
+  right: 0;
+  margin: 0;
+  z-index: 4;
+}
+/* Aire por debajo para que no se pise con lo primero de la actividad. */
+.lienzo > *:first-child { padding-top: var(--e-2); }

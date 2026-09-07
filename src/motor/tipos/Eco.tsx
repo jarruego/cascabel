@@ -282,7 +282,6 @@ export default function Eco({ actividad, alTerminar }: PropsActividad) {
         </button>
       </div>
 
-      <p className="pista-fija">{t('eco.aDos')}</p>
     </section>
   );
 }

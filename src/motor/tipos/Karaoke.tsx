@@ -511,8 +511,8 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
       </p>
 
       {fase === 'listo' && (
-        <button type="button" className="boton-repetir" onClick={() => setFase('cuenta')}>
-          {t('karaoke.empezar')}
+        <button type="button" className="boton-arranque boton-repetir" onClick={() => setFase('cuenta')}>
+          {t('accion.empezar')}
         </button>
       )}
 
@@ -551,11 +551,6 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
             {t('karaoke.diana')}
           </button>
         )
-      )}
-
-      {/* La consigna va DEBAJO de los botones, no entre ellos y el recuadro. */}
-      {fase === 'sonando' && (
-        <p className="pista-fija">{t(porCarril ? 'karaoke.tocaBanda' : 'karaoke.toca')}</p>
       )}
 
       {fase === 'resultado' && evaluacion && (

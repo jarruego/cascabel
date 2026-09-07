@@ -185,7 +185,6 @@ export default function Referencia({ actividad, alTerminar }: PropsActividad) {
         </button>
       </div>
 
-      <p className="pista-fija">{t('referencia.paraConsultar')}</p>
     </section>
   );
 }

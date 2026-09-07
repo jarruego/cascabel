@@ -414,7 +414,6 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
       {/* Pista FIJA, no feedback: no cambia nunca, así que no necesita aria-live —un
           lector de pantalla ya la lee al llegar—. No hay marcador, ni porcentaje, ni
           «bien hecho»: aquí no se evalúa nada. */}
-      <p className="pista-fija">{t('lienzo.libre')}</p>
     </section>
   );
 }

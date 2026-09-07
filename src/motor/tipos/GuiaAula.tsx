@@ -103,7 +103,7 @@ export default function GuiaAula({ actividad, alTerminar }: PropsActividad) {
 
       <div className="guia__controles no-imprimir">
         <button type="button" className="boton-repetir" onClick={sonando ? parar : arrancar}>
-          {sonando ? t('guia.parar') : t('guia.arrancar')}
+          {sonando ? t('accion.sinPulso') : t('accion.pulso')}
         </button>
 
         <label className="guia__tempo">

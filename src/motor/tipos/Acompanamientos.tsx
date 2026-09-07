@@ -122,7 +122,7 @@ export default function Acompanamientos({ actividad, alTerminar }: PropsActivida
                 onClick={() => void arrancar(b)}
               >
                 {activa ? <IconoParar /> : <IconoTocar />}
-                {t(activa ? 'acomp.parar' : 'acomp.tocar')}
+                {t(activa ? 'accion.parar' : 'accion.empezar')}
               </button>
             </li>
           );
@@ -142,7 +142,6 @@ export default function Acompanamientos({ actividad, alTerminar }: PropsActivida
         </button>
       </div>
 
-      <p className="pista-fija">{t('acomp.paraCantar')}</p>
     </section>
   );
 }

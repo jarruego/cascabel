@@ -246,11 +246,11 @@ export default function Pistas({ actividad, alTerminar }: PropsActividad) {
       <div className="pistas__acciones">
         <button
           type="button"
-          className="boton-actividad"
+          className="boton-arranque boton-actividad"
           onClick={() => void reproducir()}
         >
           {estado.sonando ? <IconoParar /> : <IconoTocar />}
-          {t(estado.sonando ? 'pistas.parar' : 'pistas.tocar')}
+          {t(estado.sonando ? 'accion.parar' : 'accion.empezar')}
         </button>
 
         <button

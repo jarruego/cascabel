@@ -540,10 +540,6 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
         </button>
       </div>
 
-      <p className="pista-fija">
-        {t('teclado.libre')}
-        {letrasQwerty && ` ${t('teclado.qwerty')}`}
-      </p>
     </section>
   );
 }

@@ -268,7 +268,7 @@ export default function Pads({ actividad, alTerminar }: PropsActividad) {
               data-elegida={pulsando || undefined}
               onClick={() => void alternarPulso()}
             >
-              {t(pulsando ? 'pads.sinPulso' : 'pads.conPulso')}
+              {t(pulsando ? 'accion.sinPulso' : 'accion.pulso')}
             </button>
             <div className="pads__tempos" role="group" aria-label={t('pads.tempo')}>
               {TEMPOS.map((n) => (
@@ -349,10 +349,6 @@ export default function Pads({ actividad, alTerminar }: PropsActividad) {
         </button>
       </div>
 
-      <p className="pista-fija">
-        {t('pads.libre')}
-        {letrasQwerty && ` ${t('pads.qwerty')}`}
-      </p>
     </section>
   );
 }

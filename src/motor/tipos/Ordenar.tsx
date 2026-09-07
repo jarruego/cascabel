@@ -203,6 +203,8 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
         {sinColocar.length === 0 && <p className="pista-fija">{t('ordenar.todasPuestas')}</p>}
       </div>
 
+      {/* Se queda porque CAMBIA durante la actividad: dice en qué punto estás, no
+          qué hay que hacer. Lo segundo lo explica el personaje. */}
       <p className="pista-fija">
         {estado.elegida ? t('ordenar.ahoraCasilla') : t('ordenar.tocaParaOir')}
       </p>
@@ -221,7 +223,7 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
             });
           }}
         >
-          {t('ordenar.escuchar')}
+          {t('accion.escuchar')}
         </button>
         <button
           type="button"

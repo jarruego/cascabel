@@ -191,9 +191,9 @@ export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
       </div>
 
       <div className="cuerpo__acciones">
-        <button type="button" className="boton-actividad" onClick={() => void arrancar()}>
+        <button type="button" className="boton-arranque boton-actividad" onClick={() => void arrancar()}>
           {estado.sonando ? <IconoParar /> : <IconoTocar />}
-          {t(estado.sonando ? 'cuerpo.parar' : 'cuerpo.tocar')}
+          {t(estado.sonando ? 'accion.parar' : 'accion.empezar')}
         </button>
         <button
           type="button"
@@ -207,7 +207,6 @@ export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
         </button>
       </div>
 
-      <p className="pista-fija">{t('cuerpo.loHacesTu')}</p>
     </section>
   );
 }

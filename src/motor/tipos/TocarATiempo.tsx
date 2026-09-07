@@ -425,8 +425,8 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
       )}
 
       {fase === 'listo' && (
-        <button type="button" className="boton-repetir" onClick={() => void empezar()}>
-          {t('tocar.empezar')}
+        <button type="button" className="boton-arranque boton-repetir" onClick={() => void empezar()}>
+          {t('accion.empezar')}
         </button>
       )}
 
@@ -462,6 +462,8 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
               {t('tocar.diana')}
             </button>
           )}
+          {/* Se queda porque CAMBIA durante la actividad: dice en qué punto estás, no qué
+              hay que hacer. Lo segundo lo explica el personaje. */}
           {viaVisible === 'palmada' && (
             <p className="pista-fija">{t('tocar.vaDePalmas')}</p>
           )}

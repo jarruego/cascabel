@@ -305,10 +305,10 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
       {fase === 'listo' && (
         <button
           type="button"
-          className="boton-actividad cantar__empezar"
+          className="boton-arranque boton-actividad cantar__empezar"
           onClick={() => setFase('cuenta')}
         >
-          <Icono nombre="voz" tamano={40} /> {t('cantar.empezar')}
+          <Icono nombre="voz" tamano={40} /> {t('accion.empezar')}
         </button>
       )}
 
