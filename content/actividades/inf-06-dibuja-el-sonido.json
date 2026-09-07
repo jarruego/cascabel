@@ -30,7 +30,8 @@
       "C5",
       "A4",
       "F4"
-    ]
+    ],
+    "elegirInstrumento": true
   },
   "evaluacion": {
     "autocorrectiva": false,

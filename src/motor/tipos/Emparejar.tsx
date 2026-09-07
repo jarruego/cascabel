@@ -160,11 +160,8 @@ export default function Emparejar({ actividad, alTerminar }: PropsActividad) {
         {estado.fase === 'completada' && t('comun.completada')}
       </Reaccion>
 
-      <progress
-        value={estado.resueltas.length / 2}
-        max={contenido.parejas.length}
-        aria-label={t('comun.progreso')}
-      />
+      {/* Sin barra de progreso: el tablero se vacía solo: las parejas resueltas se quedan fijas y las que faltan son las que quedan.
+          Una barra que repite lo que ya se ve es ruido y quita sitio. */}
     </section>
   );
 }

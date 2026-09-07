@@ -55,6 +55,24 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
      */
     instrumento?: string;
     /**
+     * El selector de instrumento.
+     *
+     * **Apagado salvo que la actividad lo pida.** Cambiar el timbre enseña algo de verdad
+     * —una raya horizontal con flauta es una nota larga y con marimba es un trémolo— pero
+     * eso es el asunto de una actividad concreta, no de todas. En la caja de sonidos, lo
+     * bueno es dibujar; un desplegable al lado es una decisión que interrumpe.
+     */
+    elegirInstrumento?: boolean;
+    /**
+     * La botonera de colores de debajo del lienzo.
+     *
+     * Es la vía por toque para quien no quiere arrastrar, **y el lienzo ya la tiene**: se
+     * puede tocar directamente donde se quiere que suene. Donde estorba —una caja de
+     * sonidos, donde lo bueno es dibujar— se apaga, y para no perder el acceso por teclado
+     * el propio lienzo responde a las flechas y a la barra espaciadora.
+     */
+    teclas?: boolean;
+    /**
      * Base en bucle que suena por debajo. Ver `audio/acompanamiento.ts`.
      *
      * No arranca sola: hay un botón. Una base que empieza a sonar al entrar en la pantalla
@@ -65,6 +83,8 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
   };
 
   const carril = useCarril(actividad.etapa);
+  const conTeclas = contenido.teclas ?? true;
+  const conInstrumento = contenido.elegirInstrumento ?? false;
   const notas = contenido.notas ?? ['C6', 'G5', 'E5', 'C5', 'G4', 'E4', 'C4'];
   const colores = contenido.colores ?? [
     'vivo-rosa', 'vivo-rojo', 'vivo-naranja', 'vivo-amarillo',
@@ -72,6 +92,9 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
   ];
 
   const [trazos, setTrazos] = useState<Trazo[]>([]);
+  /* Qué sonido está elegido para quien navega con teclado. Empieza en el más grave,
+     que es el de abajo: subir con la flecha de subir es lo que espera cualquiera. */
+  const [filaTeclado, setFilaTeclado] = useState(0);
   const lienzo = useRef<HTMLDivElement | null>(null);
   const sampler = useRef<Sampler | null>(null);
   const dibujando = useRef(false);
@@ -247,6 +270,30 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
         className="lienzo__area"
         role="application"
         aria-label={t(contenido.consigna)}
+        /*
+          El lienzo se puede tocar con el teclado.
+
+          Hace falta desde que la botonera de colores es opcional: era la única vía sin
+          ratón, y quitarla de una actividad no puede dejar sin acceso a quien navega con
+          teclado. Flechas para subir y bajar de sonido, espacio o Enter para tocarlo.
+        */
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+            e.preventDefault();
+            setFilaTeclado((f) => {
+              const siguiente = e.key === 'ArrowUp' ? f - 1 : f + 1;
+              return Math.max(0, Math.min(notas.length - 1, siguiente));
+            });
+          } else if (e.key === ' ' || e.key === 'Enter') {
+            e.preventDefault();
+            void sonar(filaTeclado);
+            setTrazos((t) => [
+              ...t,
+              { x: (t.length * 3) % 100, y: (filaTeclado / notas.length) * 100 + 5, fila: filaTeclado },
+            ]);
+          }
+        }}
         onPointerDown={(e) => {
           dibujando.current = true;
           ultimaFila.current = -1;
@@ -295,6 +342,7 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
 
       {/* Botonera de altura: la vía por TOQUE, para quien no puede o no quiere arrastrar
           el dedo. Es lo que hace que el lienzo cumpla WCAG 2.5.7. */}
+      {conTeclas && (
       <div className="lienzo__teclas" role="group" aria-label={t('lienzo.notas')}>
         {notas.map((n, i) => (
           <button
@@ -314,12 +362,14 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
           />
         ))}
       </div>
+      )}
 
       {/* Propuestas y acciones en la misma fila: en un lienzo, cada línea que no sea
           lienzo es lienzo que se pierde. */}
       <div className="lienzo__acciones">
         {/* Elegir instrumento. Va con `select` nativo y no con botones porque son ocho y no
             tres: ocho botones serían una barra más larga que el propio lienzo. */}
+        {conInstrumento && (
         <label className="lienzo__instrumento">
           <span className="visualmente-oculto">{t('lienzo.instrumento')}</span>
           <select value={instrumento} onChange={(e) => setInstrumento(e.target.value)}>
@@ -330,6 +380,7 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
             ))}
           </select>
         </label>
+        )}
 
         {contenido.acompanamiento && (
           <button

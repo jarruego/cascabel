@@ -44,7 +44,8 @@
       "reto.piano6",
       "reto.piano7",
       "reto.piano8"
-    ]
+    ],
+    "elegirOctavas": true
   },
   "evaluacion": {
     "autocorrectiva": false,

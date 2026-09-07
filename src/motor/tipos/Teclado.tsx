@@ -65,6 +65,14 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
     /** Botones de grabar y reproducir. Se pueden quitar donde estorben. */
     grabable?: boolean;
     /**
+     * El selector de una, dos o tres octavas.
+     *
+     * **Apagado salvo que la actividad lo pida.** En el instrumento libre tiene sentido —
+     * quien quiere tres octavas las pide—; en una actividad concreta es una decisión que no
+     * viene al caso y que además cambia lo que se ve mientras se toca.
+     */
+    elegirOctavas?: boolean;
+    /**
      * El personaje de cocomusic en cada tecla, en vez del nombre de la nota.
      *
      * Por defecto solo en Infantil: a los cuatro años no se busca «la nota fa», se busca a
@@ -87,6 +95,7 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
   const disposicion = contenido.disposicionTeclado ?? 'horizontal';
   const grabable = contenido.grabable ?? true;
   const conPersonajes = contenido.personajes ?? carril === 'infantil';
+  const elegirOctavas = contenido.elegirOctavas ?? false;
 
   /**
    * Octavas elegidas por quien está tocando, que mandan sobre lo que quepa.
@@ -449,6 +458,7 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
       <div className="teclado__barra">
         {/* Cuántas octavas. Un grupo de tres botones y no un desplegable: son tres
             opciones, se ven las tres, y a esta edad abrir un desplegable es un paso más. */}
+        {elegirOctavas && (
         <div className="teclado__octavas" role="group" aria-label={t('teclado.octavas')}>
           {[1, 2, 3].map((n) => (
             <button
@@ -463,6 +473,7 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
             </button>
           ))}
         </div>
+        )}
 
         {contenido.retos && <Retos retos={contenido.retos} />}
 

@@ -3851,3 +3851,109 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 
 /* En el modo lienzo desaparece todo lo que no es la actividad, la barra incluida. */
 .lienzo[data-ampliado] ~ .barra-actividad { display: none; }
+
+/* ---------------------------------------------------------------------------
+ * Los botones de la actividad ocupan lo justo
+ *
+ * Rediseño del 2026-09-08. La regla es sencilla y vale para toda la aplicación: **la acción
+ * principal se ve, las secundarias se encuentran**. Antes todos los botones medían lo mismo
+ * —48 px de alto y el texto entero—, así que «Escuchar otra vez», «Grabar», «Parar»,
+ * «Idea» y «Ya está» competían entre sí y con la actividad.
+ *
+ * Lo que NO se toca: el objetivo táctil sigue cumpliendo el mínimo de su carril. Se recorta
+ * el aire y el texto, nunca la zona que se toca.
+ * ------------------------------------------------------------------------ */
+.actividad .boton-repetir {
+  min-height: var(--objetivo);
+  padding: var(--e-1) var(--e-3);
+  gap: var(--e-2);
+  font-size: var(--t-s);
+  border-color: transparent;
+  background: none;
+  color: var(--tinta-2);
+}
+.actividad .boton-repetir:hover,
+.actividad .boton-repetir:focus-visible {
+  border-color: var(--linea);
+  color: var(--tinta);
+}
+/* El que está puesto sí se ve: es estado, no adorno. */
+.actividad .boton-repetir[data-elegida],
+.actividad .boton-repetir[aria-pressed='true'] {
+  border-color: var(--acento-2);
+  color: var(--tinta);
+}
+/* Grabando es lo único que se pinta fuerte: hay que poder pararlo sin buscarlo. */
+.actividad .boton-repetir[data-grabando] {
+  border-color: var(--acento);
+  color: var(--acento);
+}
+
+/* La barra de progreso, donde queda, se adelgaza: informa de reojo y no compite. */
+.actividad progress {
+  display: block;
+  width: min(100%, 22rem);
+  height: 6px;
+  margin: var(--e-3) auto 0;
+  border: none;
+  border-radius: var(--r-redondo);
+  background: var(--linea);
+  accent-color: var(--acento-2);
+}
+
+/* ---------------------------------------------------------------------------
+ * Que en un móvil no se rompa nada
+ *
+ * La aplicación está pensada para pizarra y tablet, pero se abre en móviles y ahí aparecen
+ * cuatro roturas concretas que el autor señaló: teclas superpuestas, barras de compás que
+ * saltan de línea, cuadrículas de composición que no caben y pistas que se salen.
+ *
+ * La regla, y vale para las cuatro: **lo que no cabe se desplaza en horizontal, nunca se
+ * parte y nunca se encoge por debajo de lo que se puede tocar.** Una fila de figuras partida
+ * en dos deja de ser un compás; una tecla de veinte píxeles deja de ser una tecla. Que haya
+ * que arrastrar es peor que nada, pero es mucho mejor que las otras dos.
+ * ------------------------------------------------------------------------ */
+
+/* La línea de figuras de «pon las barras»: en una sola línea o se desplaza. Partida en dos
+   renglones, contar los pulsos de un compás se vuelve imposible. */
+.compases__linea {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  /* Sin esto, los hijos con `flex: 1` se encogen hasta desaparecer antes de desplazar. */
+  justify-content: flex-start;
+}
+.compases__linea > * { flex: 0 0 auto; }
+
+/* Las cuadrículas de composición y las pistas: desplazan en bloque, con la fila de nombres
+   pegada a la izquierda para no perder de vista de qué voz es cada fila. */
+.rejilla__cuadricula,
+.pistas__rejilla,
+.pistas__fila {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+.pistas__etiqueta {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--papel);
+}
+
+/* El musicograma por bandas y sus botones: nunca más estrechos que un dedo. */
+.karaoke__botones { flex-wrap: nowrap; overflow-x: auto; }
+.karaoke__botones > * { flex: 0 0 auto; min-width: var(--objetivo); }
+
+@media (max-width: 30rem) {
+  /* En un móvil, las filas de acciones se ordenan solas y no se salen. */
+  .teclado__barra,
+  .pistas__acciones,
+  .lienzo__acciones,
+  .pads__barra,
+  .cuerpo__acciones,
+  .eco__acciones {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  /* Y el marco de la actividad deja de gastar aire lateral: cada píxel es actividad. */
+  .actividad-marco { padding-inline: var(--e-2); }
+}

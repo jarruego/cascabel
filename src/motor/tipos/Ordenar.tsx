@@ -241,11 +241,8 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
         {estado.fase === 'completada' && t('comun.completada')}
       </Reaccion>
 
-      <progress
-        value={estado.casillas.filter(Boolean).length}
-        max={contenido.orden.length}
-        aria-label={t('comun.progreso')}
-      />
+      {/* Sin barra de progreso: las casillas se van llenando a la vista, y son las mismas que hay que llenar.
+          Una barra que repite lo que ya se ve es ruido y quita sitio. */}
     </section>
   );
 }

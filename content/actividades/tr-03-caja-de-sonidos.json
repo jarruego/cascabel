@@ -42,7 +42,9 @@
       "reto.lienzo7",
       "reto.lienzo8"
     ],
-    "instrumento": "flauta"
+    "instrumento": "flauta",
+    "teclas": false,
+    "elegirInstrumento": true
   },
   "evaluacion": {
     "autocorrectiva": false,
