@@ -17,7 +17,7 @@ import type { RegistroProgreso } from '@/datos/progreso';
  *
  * > **PENDIENTE DE REVISIÓN PEDAGÓGICA.** Los tres intervalos son una convención razonable,
  * > no una medida. Con un curso de uso real se sabrá si a un niño de siete años le vale una
- * > semana o si hacen falos tres días.
+ * > semana o si hacen falta tres días.
  *
  * **Solo sugiere lo que ya se ha hecho.** Esto no descubre actividades nuevas —para eso está
  * el camino y está el catálogo—; solo recuerda las que ya se abrieron y hace tiempo que no.

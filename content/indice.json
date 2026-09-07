@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-07",
-  "total": 76,
+  "total": 77,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -1368,6 +1368,24 @@
         "saber": "D. Práctica instrumental, vocal y corporal"
       },
       "estado": "borrador",
+      "herramienta": true
+    },
+    {
+      "id": "tr-09-quien-es-quien",
+      "titulo": "Épocas, compositores y estilos",
+      "etapa": "primaria-c3",
+      "eje": "cultura",
+      "tipo": "referencia",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "revision-pedagogica",
       "herramienta": true
     }
   ]

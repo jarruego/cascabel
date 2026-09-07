@@ -995,5 +995,7 @@
   "repaso.unaSemana": "hace una semana",
   "repaso.semanas": "hace {n} semanas",
   "repaso.unMes": "hace un mes",
-  "repaso.meses": "hace {n} meses"
+  "repaso.meses": "hace {n} meses",
+  "actividad.tr09.consigna": "Épocas, compositores y estilos",
+  "actividad.tr09.enunciado": "Quién hizo qué y cuándo. Busca por el nombre, por el siglo o por lo que te suene."
 }

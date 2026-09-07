@@ -1,0 +1,150 @@
+{
+  "id": "tr-09-quien-es-quien",
+  "version": 1,
+  "tipo": "referencia",
+  "titulo": "Épocas, compositores y estilos",
+  "descripcion": "Una consulta de cultura musical: seis épocas, once compositores y siete estilos. Sin audio, y por una razón: no se puede usar la grabación de nadie, y transcribir una obra a mano exige verificarla.",
+  "etapa": "primaria-c3",
+  "eje": "cultura",
+  "lugar": "pantalla",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.2",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.tr09.consigna",
+    "secciones": [
+      {
+        "titulo": "Las épocas de la música",
+        "entradas": [
+          {
+            "termino": "Edad Media (hasta ~1400)",
+            "explicacion": "Casi toda la música que se conserva es de iglesia y se canta a una sola voz, sin acompañamiento: el canto gregoriano. Se empieza a escribir la música para no tener que aprendérsela de memoria."
+          },
+          {
+            "termino": "Renacimiento (~1400–1600)",
+            "explicacion": "Varias voces a la vez, entrelazadas, cantando cada una su melodía. Es la polifonía, y en España la hizo como nadie Tomás Luis de Victoria."
+          },
+          {
+            "termino": "Barroco (~1600–1750)",
+            "explicacion": "Aparecen la orquesta y la ópera, y la música se llena de adornos. Es la época de Vivaldi y de Bach."
+          },
+          {
+            "termino": "Clasicismo (~1750–1820)",
+            "explicacion": "Menos adornos y más claridad: melodías que se pueden cantar y formas ordenadas. Mozart y Haydn, y el primer Beethoven."
+          },
+          {
+            "termino": "Romanticismo (~1820–1900)",
+            "explicacion": "La música se usa para contar sentimientos y también historias y paisajes. Orquestas enormes y piezas larguísimas."
+          },
+          {
+            "termino": "Siglo XX y hoy",
+            "explicacion": "Todo a la vez y todo se vale: música que rompe las reglas a propósito, música hecha con máquinas, y las músicas populares que hoy se oyen en todas partes."
+          }
+        ]
+      },
+      {
+        "titulo": "Algunos compositores",
+        "entradas": [
+          {
+            "termino": "Hildegarda de Bingen (1098–1179)",
+            "explicacion": "Monja alemana. Compuso decenas de cantos y es de las primerísimas personas con nombre propio en la historia de la música europea."
+          },
+          {
+            "termino": "Tomás Luis de Victoria (1548–1611)",
+            "explicacion": "Nacido en Ávila. El mayor polifonista español: música para varias voces, casi toda religiosa, que todavía se canta."
+          },
+          {
+            "termino": "Antonio Vivaldi (1678–1741)",
+            "explicacion": "Italiano, del Barroco. Escribió cientos de conciertos, y «Las cuatro estaciones» son de las piezas más conocidas del mundo."
+          },
+          {
+            "termino": "Johann Sebastian Bach (1685–1750)",
+            "explicacion": "Alemán. Organista, y el que mejor ha combinado nunca varias melodías a la vez. Tuvo veinte hijos y varios fueron también compositores."
+          },
+          {
+            "termino": "Wolfgang Amadeus Mozart (1756–1791)",
+            "explicacion": "Austríaco. Empezó a componer con cinco años y murió con treinta y cinco habiendo escrito más de seiscientas obras."
+          },
+          {
+            "termino": "Ludwig van Beethoven (1770–1827)",
+            "explicacion": "Alemán. Se quedó sordo y siguió componiendo: el himno de la alegría es suyo y lo escribió sin poder oírlo."
+          },
+          {
+            "termino": "Clara Schumann (1819–1896)",
+            "explicacion": "Alemana. Pianista famosísima en toda Europa y compositora, en una época en la que a las mujeres se les daba por hecho lo primero y no lo segundo."
+          },
+          {
+            "termino": "Isaac Albéniz (1860–1909)",
+            "explicacion": "Catalán. Llevó al piano el sonido de la guitarra flamenca; «Asturias» y la suite «Iberia» son suyas."
+          },
+          {
+            "termino": "Manuel de Falla (1876–1946)",
+            "explicacion": "Gaditano. Recogió la música popular andaluza y la escribió para orquesta. «La danza del fuego» es suya."
+          },
+          {
+            "termino": "Ígor Stravinski (1882–1971)",
+            "explicacion": "Ruso. El estreno de «La consagración de la primavera» acabó en bronca en el teatro: su ritmo sonaba a algo que nadie había oído."
+          },
+          {
+            "termino": "Florence Price (1887–1953)",
+            "explicacion": "Estadounidense. La primera mujer negra a la que una gran orquesta le estrenó una sinfonía, en Chicago en 1933. Mezcló la música clásica con los espirituales."
+          }
+        ]
+      },
+      {
+        "titulo": "Estilos que se oyen hoy",
+        "entradas": [
+          {
+            "termino": "Música tradicional",
+            "explicacion": "La que se canta en las fiestas de un sitio y se aprende de oído, no de una partitura. Cada comarca tiene la suya, y casi nunca se sabe quién la compuso."
+          },
+          {
+            "termino": "Flamenco",
+            "explicacion": "Nacido en Andalucía, con cante, toque de guitarra y baile. Sus compases son de los más difíciles que hay: muchos van a doce tiempos."
+          },
+          {
+            "termino": "Jazz",
+            "explicacion": "Nació a principios del siglo XX en Estados Unidos, de la música de las comunidades negras. Lo que lo define es que se improvisa: nunca suena dos veces igual."
+          },
+          {
+            "termino": "Rock y pop",
+            "explicacion": "Guitarra, bajo, batería y voz, con canciones cortas de estrofa y estribillo. Es la música que más se oye desde hace setenta años."
+          },
+          {
+            "termino": "Música electrónica",
+            "explicacion": "Hecha con máquinas y ordenadores en vez de con instrumentos que suenen solos. Muchas veces se construye repitiendo un trozo en bucle, como en el editor de pistas."
+          },
+          {
+            "termino": "Hip hop",
+            "explicacion": "Voz recitada a ritmo sobre una base que se repite. Lo importante es el ritmo de las palabras, así que se puede hacer sin ningún instrumento."
+          },
+          {
+            "termino": "Bandas sonoras",
+            "explicacion": "Música escrita para una película o un videojuego. Casi siempre para orquesta, y es por donde mucha gente entra hoy a la música clásica sin saberlo."
+          }
+        ]
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "locucion": {
+    "enunciado": "actividad.tr09.enunciado"
+  },
+  "herramienta": true,
+  "estado": "revision-pedagogica"
+}

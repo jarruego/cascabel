@@ -1,7 +1,7 @@
 {
   "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa.",
   "generado": "2026-09-07",
-  "total": 75,
+  "total": 76,
   "actividades": [
     {
       "id": "INF-01",
@@ -976,6 +976,19 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Seis bases en bucle con transporte, para cantar o improvisar encima.",
+      "estado": "hecha"
+    },
+    {
+      "id": "TR-09",
+      "titulo": "Épocas, compositores y estilos",
+      "etapa": "primaria-c3",
+      "eje": "cultura",
+      "lugar": "pantalla",
+      "tipo": "referencia",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE1 · crit. 1.2 · saber A",
+      "descripcion": "Consulta de cultura musical: seis épocas, once compositores y siete estilos.",
       "estado": "hecha"
     }
   ]

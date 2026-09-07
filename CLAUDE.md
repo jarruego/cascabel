@@ -341,7 +341,10 @@ del 7-12-1987**. Y el fonograma es un derecho aparte: nunca se usa audio ajeno.
   documenta en el código por qué no lo hay.
 - **Verifica antes de decir que has terminado**: `npm run verificar`.
 - Si una tarea requiere criterio musical que no tengo, **no lo adivines en silencio**:
-  propón la opción convencional, di de dónde sale, y márcala como pendiente de revisión.
+  propón la opción convencional, di de dónde sale, y márcala escribiendo literalmente
+  `PENDIENTE DE REVISIÓN PEDAGÓGICA` en un comentario **junto a la decisión**, no en un
+  documento aparte. `npm run docs:pendientes` las recoge todas con su contexto en
+  `docs/13-PENDIENTE-DE-REVISION.md`, que es lo que se le pasa a la profesora.
 - Cuando toques audio o micrófono, recuérdame probarlo en dispositivo real: el emulador miente.
 
 ## 12. Comandos
@@ -353,6 +356,7 @@ npm run contenido:preparar  # crea .venv con music21 y jsonschema (Python 3.11+)
 npm run contenido:validar   # solo el validador de actividades
 npm run contenido:indice    # regenera content/indice.json desde las actividades
 npm run docs:tipos          # rehace la tabla de tipos de docs/01-ARQUITECTURA.md
+npm run docs:pendientes     # reúne lo que espera criterio musical en docs/13
 npm run build && npm run preview
 
 docker compose up web                       # todo el entorno, sin instalar node
