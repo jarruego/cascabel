@@ -9,8 +9,13 @@ import { Icono } from '@/ui/Icono';
  * superior de una tablet que sostiene con las dos manos. Es la misma razón por la que todas
  * las apps móviles serias movieron la navegación abajo hace años.
  *
- * **Cinco destinos**: actividades, camino, instrumentos, comprobar y ajustes. Todo lo demás
- * cuelga de esos cinco.
+ * **Cuatro destinos**: actividades, camino, instrumentos y ajustes. Todo lo demás cuelga de
+ * esos cuatro.
+ *
+ * Fueron cinco hasta el 2026-09-08: había uno para comprobar los códigos de verificación, y
+ * los códigos se retiraron. Daban por hecho que cada niño tiene un dispositivo y que se lo
+ * enseña al maestro uno a uno, y en la mayoría de las clases hay una pizarra y el maestro
+ * hace salir a los niños.
  *
  * Fueron tres, y las dos que se añadieron el 2026-09-07 lo hicieron por la misma razón de
  * uso: **el catálogo es la pantalla del maestro**, con sus filtros curriculares, y hay dos
@@ -31,7 +36,6 @@ const DESTINOS = [
   { a: '/', icono: 'nota-musical', clave: 'nav.actividades' },
   { a: '/camino', icono: 'andando', clave: 'nav.camino' },
   { a: '/instrumentos', icono: 'teclado', clave: 'nav.instrumentos' },
-  { a: '/comprobar', icono: 'lupa', clave: 'nav.comprobar' },
   { a: '/ajustes', icono: 'diana', clave: 'nav.ajustes' },
 ] as const;
 
@@ -52,7 +56,7 @@ export function Navegacion() {
           /* aria-current lo pone react-router solo, y es lo que un lector de pantalla usa
              para decir «página actual». No hace falta añadir nada. */
         >
-          <Icono nombre={d.icono} tamano={26} />
+          <Icono nombre={d.icono} tamano={28} />
           <span>{t(d.clave)}</span>
         </NavLink>
       ))}

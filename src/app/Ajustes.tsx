@@ -33,6 +33,8 @@ export default function Ajustes() {
   const [actividades, setActividades] = useState(0);
   const [borrado, setBorrado] = useState(false);
   const pizarra = usePreferencias((e) => e.pizarra);
+  const verFicha = usePreferencias((e) => e.verFicha);
+  const ponerVerFicha = usePreferencias((e) => e.ponerVerFicha);
   const ponerPizarra = usePreferencias((e) => e.ponerPizarra);
 
   const refrescar = useCallback(() => {
@@ -121,6 +123,19 @@ export default function Ajustes() {
           onClick={() => ponerPizarra(!pizarra)}
         >
           {pizarra ? t('ajustes.pizarraDesactivar') : t('ajustes.pizarraActivar')}
+        </button>
+      </section>
+
+      <section>
+        <h2>{t('ajustes.ficha')}</h2>
+        <p>{t('ajustes.fichaTexto')}</p>
+        <button
+          type="button"
+          className="boton-repetir"
+          aria-pressed={verFicha}
+          onClick={() => ponerVerFicha(!verFicha)}
+        >
+          {verFicha ? t('ajustes.fichaDesactivar') : t('ajustes.fichaActivar')}
         </button>
       </section>
 

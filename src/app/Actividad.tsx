@@ -3,8 +3,10 @@ import { Link, useLocation, useNavigate, useParams } from 'react-router';
 import { cargarActividad } from '@/datos/cargar';
 import { componenteDe } from '@/motor/registro';
 import { Lienzo } from '@/ui/Lienzo';
+import { Personaje } from '@/ui/Personaje';
 import { anotar } from '@/datos/progreso';
 import { ModalExito, ModalExplicacion } from '@/ui/ModalesActividad';
+import { usePreferencias } from './preferencias';
 import { t } from '@/i18n';
 import type { Actividad as TipoActividad, ResultadoActividad } from '@/motor/tipos';
 
@@ -13,37 +15,39 @@ import type { Actividad as TipoActividad, ResultadoActividad } from '@/motor/tip
  *
  * Aquí se ve por qué el proyecto está montado así: este fichero no sabe nada de música ni
  * de pedagogía. Busca el tipo en el registro y delega. Añadir una actividad no lo toca.
+ *
+ * **El marco lo ocupa todo lo que NO es la actividad, y por eso es tan poco.** Rediseñado el
+ * 2026-09-08 sobre una idea del autor: mientras se juega, la pantalla es de la actividad. La
+ * explicación se lee una vez al entrar y desaparece; no se queda arriba comiéndose sitio.
+ *
+ * Lo que queda en pantalla son cuatro cosas, siempre en el mismo sitio:
+ *
+ *  - **Arriba a la derecha**, ampliar y reducir. Lo pone `ui/Lienzo.tsx`.
+ *  - **Abajo a la izquierda**, «Volver».
+ *  - **Abajo en el centro**, el personaje de la actividad. Al tocarlo vuelve la explicación:
+ *    es la respuesta a «¿qué había que hacer?», y un niño la busca donde está la cara, no
+ *    donde está un icono de interrogación.
+ *  - **Abajo a la derecha**, la ficha para imprimir.
  */
 export default function Actividad() {
   const { id = '' } = useParams();
   const navegar = useNavigate();
   const ubicacion = useLocation();
+  const verFicha = usePreferencias((e) => e.verFicha);
 
-  /**
-   * Volver al catálogo **tal como estaba**: mismos filtros y misma posición.
-   *
-   * Ir a `/` a secas construía una pantalla nueva, sin filtros y desde arriba del todo. Con
-   * setenta y siete actividades eso significaba volver a filtrar y a bajar cada vez que se
-   * abría una, que es la forma más segura de que nadie explore nada.
-   *
-   * Retroceder en el historial lo arregla entero y gratis: la URL anterior ya lleva los
-   * filtros —viven ahí desde hoy— y el navegador repone el scroll él solo.
-   *
-   * **Salvo que no haya historial.** Si se ha llegado por un enlace directo o abriendo la
-   * aplicación instalada en esta actividad, `key` vale `'default'` y retroceder sacaría al
-   * usuario fuera de Cascabel. Ahí sí toca ir al catálogo.
-   */
-  const hayHistorial = ubicacion.key !== 'default';
-  const volver = () => {
-    if (hayHistorial) navegar(-1);
-    else navegar('/');
-  };
   const [actividad, setActividad] = useState<TipoActividad | null>(null);
   const [fallo, setFallo] = useState<string | null>(null);
   const [resultado, setResultado] = useState<ResultadoActividad | null>(null);
-  // La explicación se muestra antes de montar la actividad: si no, empieza a sonar
-  // detrás del modal y el niño oye algo que no ve.
+  /**
+   * La explicación se enseña al entrar y se puede volver a abrir con el personaje.
+   *
+   * `empezada` y `explicacion` son dos cosas distintas a propósito: la primera vez, cerrar
+   * la explicación **arranca** la actividad —si no, empezaría a sonar detrás del modal y el
+   * niño oiría algo que no ve—; las veces siguientes solo cierra el modal, sin reiniciar
+   * nada. Un niño que consulta qué había que hacer no quiere volver a empezar.
+   */
   const [empezada, setEmpezada] = useState(false);
+  const [explicacion, setExplicacion] = useState(true);
   const [intento, setIntento] = useState(0);
 
   useEffect(() => {
@@ -52,6 +56,7 @@ export default function Actividad() {
     setFallo(null);
     setResultado(null);
     setEmpezada(false);
+    setExplicacion(true);
     cargarActividad(id)
       .then((a) => vivo && setActividad(a))
       .catch((e: Error) => vivo && setFallo(e.message));
@@ -60,62 +65,63 @@ export default function Actividad() {
     };
   }, [id]);
 
-  // Un solo botón «atrás», siempre en el mismo sitio. Regla 8 de docs/04-DISENO-UI.md:
-  // las navegaciones múltiples confunden a los niños mucho más que a los adultos.
-  const atras = (
-    <div className="actividad__barra">
-      {/* Sigue siendo un enlace y no un botón: así se puede abrir en otra pestaña, se
-          copia con el botón derecho y un lector de pantalla lo anuncia como enlace. Lo que
-          cambia es lo que hace al pulsarlo. */}
-      <Link
-        to="/"
-        className="atras"
-        onClick={(ev) => {
-          if (!hayHistorial || ev.metaKey || ev.ctrlKey || ev.button !== 0) return;
-          ev.preventDefault();
-          navegar(-1);
-        }}
-      >
-        {t('comun.atras')}
-      </Link>
-      {/* La ficha es para el maestro: el aula sin dispositivos es el escenario más
-          probable de todos, según el dosier. */}
-      <Link to={`/ficha/${id}`} className="actividad__ficha no-imprimir">
-        {t('actividad.verFicha')}
-      </Link>
-    </div>
-  );
+  /**
+   * Volver al catálogo **tal como estaba**: mismos filtros y misma posición.
+   *
+   * Ir a `/` a secas construía una pantalla nueva, sin filtros y desde arriba del todo. Con
+   * setenta y ocho actividades eso significaba volver a filtrar y a bajar cada vez que se
+   * abría una, que es la forma más segura de que nadie explore nada.
+   *
+   * Retroceder en el historial lo arregla entero y gratis: la URL anterior ya lleva los
+   * filtros y el navegador repone el scroll él solo. **Salvo que no haya historial**: si se
+   * ha llegado por un enlace directo, `key` vale `'default'` y retroceder sacaría al usuario
+   * fuera de Cascabel.
+   */
+  const hayHistorial = ubicacion.key !== 'default';
+  const volver = () => {
+    if (hayHistorial) navegar(-1);
+    else navegar('/');
+  };
 
   if (fallo) {
     return (
       <main className="actividad-marco">
-        {atras}
         <p role="alert">{t('actividad.noEncontrada')}</p>
+        <BarraActividad id={id} volver={volver} hayHistorial={hayHistorial} verFicha={verFicha} />
       </main>
     );
   }
   if (!actividad) {
     return (
       <main className="actividad-marco">
-        {atras}
         <p>{t('catalogo.cargando')}</p>
       </main>
     );
   }
 
   const Componente = componenteDe(actividad.tipo);
+  const quien = actividad.personaje ?? 'dora';
+  /* En la guía de aula no sale personaje: esa pantalla es el guion del maestro proyectado, y
+     ahí una cara es decoración que le roba sitio a lo que mira la clase entera. */
+  const conPersonaje = actividad.tipo !== 'guia-aula';
 
   return (
     <main className="actividad-marco">
-      {atras}
-      {!empezada && <ModalExplicacion actividad={actividad} alEmpezar={() => setEmpezada(true)} />}
+      <ModalExplicacion
+        abierto={explicacion}
+        actividad={actividad}
+        alCerrar={() => {
+          setExplicacion(false);
+          setEmpezada(true);
+        }}
+      />
 
       <ModalExito
         abierto={Boolean(resultado)}
-        resultado={resultado}
+        personaje={quien}
         alRepetir={() => {
           // Cambiar la clave remonta el componente desde cero: es más fiable que pedirle
-          // a cada motor que sepa reiniciarse, y son seis motores distintos.
+          // a cada motor que sepa reiniciarse, y son veintiún motores distintos.
           setResultado(null);
           setIntento((n) => n + 1);
         }}
@@ -139,9 +145,100 @@ export default function Actividad() {
         </Lienzo>
       ) : (
         // No es un error del niño ni del maestro: es que ese tipo de motor aún no existe.
-        // Ver docs/07-ROADMAP.md; el registro dice cuáles hay.
         <p role="status">{t('actividad.tipoPendiente')}</p>
       )}
+
+      <BarraActividad
+        id={id}
+        volver={volver}
+        hayHistorial={hayHistorial}
+        verFicha={verFicha}
+        personaje={conPersonaje ? quien : undefined}
+        alPersonaje={() => setExplicacion(true)}
+      />
     </main>
+  );
+}
+
+/**
+ * La barra de abajo: volver, el personaje y la ficha.
+ *
+ * Tres sitios fijos y nada más. Va abajo por la misma razón que la barra de navegación: el
+ * pulgar de un niño no llega arriba en una tablet que sostiene con las dos manos.
+ */
+function BarraActividad({
+  id,
+  volver,
+  hayHistorial,
+  verFicha,
+  personaje,
+  alPersonaje,
+}: {
+  id: string;
+  volver: () => void;
+  hayHistorial: boolean;
+  verFicha: boolean;
+  personaje?: string;
+  alPersonaje?: () => void;
+}) {
+  return (
+    <div className="barra-actividad no-imprimir">
+      {/* Sigue siendo un enlace y no un botón: así se puede abrir en otra pestaña y un
+          lector de pantalla lo anuncia como enlace. Lo que cambia es lo que hace al
+          pulsarlo — retroceder, para no perder los filtros del catálogo. */}
+      <Link
+        to="/"
+        className="barra-actividad__volver"
+        onClick={(ev) => {
+          if (!hayHistorial || ev.metaKey || ev.ctrlKey || ev.button !== 0) return;
+          ev.preventDefault();
+          volver();
+        }}
+      >
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+          <path
+            d="M15 5l-7 7 7 7"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+        {t('comun.volver')}
+      </Link>
+
+      {personaje ? (
+        <button
+          type="button"
+          className="barra-actividad__personaje"
+          onClick={alPersonaje}
+          aria-label={t('actividad.verExplicacion')}
+          title={t('actividad.verExplicacion')}
+        >
+          <Personaje nombre={personaje as never} pose="saluda" tamano={56} />
+        </button>
+      ) : (
+        <span />
+      )}
+
+      {verFicha ? (
+        <Link to={`/ficha/${id}`} className="barra-actividad__ficha">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+            <path
+              d="M6 3h9l4 4v14H6zM15 3v4h4M9 12h6M9 16h6"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          {t('actividad.ficha')}
+        </Link>
+      ) : (
+        <span />
+      )}
+    </div>
   );
 }

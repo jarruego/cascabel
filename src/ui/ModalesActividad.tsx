@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Modal } from './Modal';
 import { Personaje } from './Personaje';
+import type { Personaje as NombrePersonaje } from './personajes';
 import { t } from '@/i18n';
-import type { Actividad, ResultadoActividad } from '@/motor/tipos';
-import { diaDeHoy, generarCodigo } from '@/datos/compartir';
+import type { Actividad, } from '@/motor/tipos';
 
 /**
  * Los dos modales que rodean a toda actividad: el que explica antes y el que celebra
@@ -22,25 +22,21 @@ import { diaDeHoy, generarCodigo } from '@/datos/compartir';
  * nunca se grabaron; el 2026-09-08 se decidió que no las va a haber. Ver `docs/adr/0006`.
  */
 export function ModalExplicacion({
+  abierto,
   actividad,
-  alEmpezar,
+  alCerrar,
 }: {
+  abierto: boolean;
   actividad: Actividad;
-  alEmpezar: () => void;
+  alCerrar: () => void;
 }) {
-  const [abierto, setAbierto] = useState(true);
-
-  function cerrar() {
-    setAbierto(false);
-    alEmpezar();
-  }
+  const cerrar = alCerrar;
 
   return (
     <Modal abierto={abierto} alCerrar={cerrar} titulo={actividad.titulo}>
       {/* Quién presenta la actividad lo dice su JSON, y por defecto es Dora: la primera de
           la progresión de cocomusic —la base, la seguridad— para una pantalla que es
-          exactamente eso, el momento antes de empezar. Una actividad de descubrir sonidos
-          pone a Rex; una de silencio pondrá a Fara. Ver `docs/14-PERSONAJES.md`. */}
+          exactamente eso, el momento antes de empezar. Ver `docs/14-PERSONAJES.md`. */}
       <Personaje nombre={actividad.personaje ?? 'dora'} pose="saluda" tamano={110} />
       <h2>{actividad.titulo}</h2>
 
@@ -68,43 +64,26 @@ export function ModalExplicacion({
  */
 export function ModalExito({
   abierto,
-  resultado,
+  personaje = 'dora',
   alRepetir,
   alVolver,
 }: {
   abierto: boolean;
-  resultado: ResultadoActividad | null;
+  /** El mismo que presentó la actividad: quien te la explicó es quien te despide. */
+  personaje?: NombrePersonaje;
   alRepetir: () => void;
   alVolver: () => void;
 }) {
-  // Código de verificación: el maestro lo comprueba en /comprobar y ve qué se hizo, sin
-  // cuentas de alumno y sin tratar un dato personal. Es el patrón de musictheory.net.
-  const codigo =
-    resultado && resultado.completada
-      ? generarCodigo({
-          actividadId: resultado.actividadId,
-          aciertos: resultado.aciertos ?? 0,
-          intentos: resultado.intentos ?? 0,
-          dia: diaDeHoy(),
-        })
-      : null;
-
   return (
     <Modal abierto={abierto} alCerrar={alVolver} titulo={t('comun.completada')} tono="celebracion">
-      {/* Doby celebra el final, y no es una elección estética: en la metodología cocomusic
-          es el personaje del cierre, el que integra lo que han hecho los otros siete. Ver
-          `docs/14-PERSONAJES.md`. Si su dibujo aún no está, no se dibuja nada y la modal
-          sigue entera. */}
-      <Personaje nombre="doby" pose="celebra" tamano={120} />
+      {/* Celebra el mismo personaje que presentó la actividad. Estuvo Doby siempre, por
+          ser el del cierre en la metodología, y se cambió el 2026-09-08: quien te ha
+          acompañado toda la actividad es quien tiene que despedirte, y Doby cierra el
+          recorrido entero, no cada ejercicio. */}
+      <Personaje nombre={personaje} pose="celebra" tamano={120} />
       <h2>{t('comun.completada')}</h2>
       <p className="modal__texto">{t('modal.exitoTexto')}</p>
 
-      {codigo && (
-        <p className="modal__codigo">
-          <span className="modal__codigoEtiqueta">{t('modal.codigo')}</span>
-          <strong>{codigo.slice(0, 3)} {codigo.slice(3, 6)} {codigo.slice(6)}</strong>
-        </p>
-      )}
 
       <div className="modal__acciones">
         <button type="button" className="boton-repetir" onClick={alRepetir}>

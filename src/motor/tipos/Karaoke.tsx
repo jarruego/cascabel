@@ -571,7 +571,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
               : t(porcentaje >= 60 ? 'karaoke.bien' : 'karaoke.otraVez')}
           </p>
           <p className="karaoke__cifras">
-            {t('karaoke.cogidas')} <strong>{acertadas.size}</strong> {t('comprobar.de')}{' '}
+            {t('karaoke.cogidas')} <strong>{acertadas.size}</strong> {t('catalogo.de')}{' '}
             <strong>{total}</strong> · <strong>{porcentaje} %</strong>
           </p>
           <p className="karaoke__cifras">

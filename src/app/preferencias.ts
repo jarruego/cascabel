@@ -18,6 +18,15 @@ interface EstadoPreferencias {
   /** Modo pizarra digital: escala toda la interfaz para verse desde el fondo del aula. */
   pizarra: boolean;
   ponerPizarra: (v: boolean) => void;
+  /**
+   * El botón de la ficha imprimible, abajo a la derecha de cada actividad.
+   *
+   * Encendido por defecto: es material del maestro y ahí es donde lo busca. Se puede apagar
+   * porque en una tablet que va a manejar un niño de cuatro años es un botón que solo puede
+   * sacarle de donde está.
+   */
+  verFicha: boolean;
+  ponerVerFicha: (v: boolean) => void;
 }
 
 export const usePreferencias = create<EstadoPreferencias>((set) => ({
@@ -30,6 +39,8 @@ export const usePreferencias = create<EstadoPreferencias>((set) => ({
     document.documentElement.dataset.pizarra = pizarra ? 'true' : 'false';
     set({ pizarra });
   },
+  verFicha: true,
+  ponerVerFicha: (verFicha) => set({ verFicha }),
 }));
 
 /**

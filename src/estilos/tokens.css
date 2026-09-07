@@ -1623,58 +1623,6 @@ p {
 /* ── código de verificación ────────────────────────────────────────────────
    Se lee en voz alta y se copia a mano: espaciado ancho, monoespaciado y con
    los caracteres agrupados de tres en tres. */
-.modal__codigo {
-  display: grid;
-  gap: var(--e-1);
-  margin: var(--e-1) 0;
-}
-.modal__codigo strong {
-  font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
-  font-size: clamp(24px, 6vw, 38px);
-  letter-spacing: 0.12em;
-  color: var(--tinta);
-}
-.modal__codigoEtiqueta {
-  color: var(--tinta-2);
-  font-size: 0.9em;
-}
-.comprobar__campo {
-  display: grid;
-  gap: var(--e-2);
-  margin: var(--e-5) 0;
-  max-width: 340px;
-}
-.comprobar__campo input {
-  min-height: 60px;
-  padding: var(--e-2) var(--e-4);
-  border: 3px solid var(--linea);
-  border-radius: var(--r-m);
-  background: var(--superficie);
-  color: var(--tinta);
-  font-family: ui-monospace, Consolas, monospace;
-  font-size: 1.6em;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-.comprobar__resultado {
-  display: grid;
-  justify-items: start;
-  gap: var(--e-2);
-  padding: var(--e-4) var(--e-5);
-  border-radius: var(--r-m);
-  border-left: 6px solid var(--linea);
-  background: var(--superficie);
-  color: var(--tinta);
-}
-.comprobar__resultado[data-estado='bien'] {
-  border-left-color: var(--vivo-verde);
-  background: var(--suave-verde);
-  color: var(--tinta);
-}
-.comprobar__resultado[data-estado='mal'] {
-  border-left-color: var(--acento);
-}
-.comprobar__cuando { color: var(--tinta-2); font-size: 0.9em; }
 
 /* ── ficha imprimible ──────────────────────────────────────────────────────
    Una ficha NO es la pantalla en papel: en pantalla hay un ejercicio
@@ -1864,7 +1812,6 @@ p {
 .ficha__colNombre { width: 28%; }
 .ficha__colNotas { width: 26%; }
 .ficha__leyenda { margin: var(--e-3) 0 0; font-size: 0.85em; color: var(--tinta-2); }
-.actividad__barra { display: flex; flex-wrap: wrap; gap: var(--e-3); align-items: center; }
 .actividad__ficha { color: var(--acento-2); font-size: 0.9em; }
 
 @media print {
@@ -2541,9 +2488,6 @@ p {
   El resultado final NO se esconde: es donde el niño ve qué tal le ha ido, y hacerle salir
   de pantalla completa para leerlo sería absurdo.
 */
-.lienzo[data-ampliado] :is(h1, .pista-fija, progress, .actividad__barra, .cantar__cifras) {
-  display: none;
-}
 .lienzo[data-ampliado] .actividad { margin: 0; }
 /* Y todo un poco más grande, que es de lo que se trataba. */
 .lienzo[data-ampliado] .karaoke__pauta[data-orientacion='vertical'] { height: clamp(300px, 70vh, 820px); }
@@ -3784,13 +3728,35 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   display: flex;
   align-items: center;
   gap: var(--e-3);
-  min-height: 4.5rem;
   margin: var(--e-4) auto;
   max-width: 46ch;
   padding: var(--e-3) var(--e-4);
   border-radius: var(--r-m);
   color: var(--tinta);
   text-align: left;
+  /*
+    Entra deslizando por un lado y no cae desde arriba: un mensaje que aparece encima de la
+    actividad tapa justo lo que se está mirando. Entrando de lado se lee sin perder de vista
+    el ejercicio, que es lo que pidió el autor.
+
+    Sin `min-height`: reservar sitio para un mensaje que casi nunca está deja un hueco
+    permanente en mitad de la pantalla.
+  */
+  animation: reaccion-entra 260ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes reaccion-entra {
+  from { opacity: 0; transform: translateX(-24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+/* El acierto entra por el otro lado. No es un capricho: dos mensajes seguidos que entran
+   igual se confunden entre sí, y el lado ya dice cuál es antes de leerlo. */
+.reaccion[data-tono='bien'] { animation-name: reaccion-entra-dcha; }
+@keyframes reaccion-entra-dcha {
+  from { opacity: 0; transform: translateX(24px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reaccion { animation: none; }
 }
 .reaccion[data-tono='bien'] { color: var(--tinta); background: var(--suave-verde); }
 .reaccion[data-tono='casi'] { color: var(--tinta); background: var(--suave-amarillo); }
@@ -3806,3 +3772,82 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   /* En un móvil estrecho el personaje se lleva demasiado ancho del texto. */
   .reaccion .personaje { display: none; }
 }
+
+/* ---------------------------------------------------------------------------
+ * La barra de la actividad
+ *
+ * Tres sitios fijos abajo: volver, el personaje y la ficha. Abajo por la misma razón que la
+ * barra de navegación — el pulgar de un niño no llega arriba en una tablet que sostiene con
+ * las dos manos— y con el personaje en el centro porque es el que más se toca: es la
+ * respuesta a «¿qué había que hacer?», y un niño la busca donde está la cara.
+ *
+ * Ocupa lo mínimo. Mientras se juega, la pantalla es de la actividad.
+ * ------------------------------------------------------------------------ */
+.barra-actividad {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--e-2);
+  margin-top: var(--e-4);
+  padding: var(--e-2) var(--e-3);
+  padding-bottom: max(var(--e-2), env(safe-area-inset-bottom));
+  background: var(--papel);
+  border-top: 2px solid var(--linea);
+}
+.barra-actividad__volver,
+.barra-actividad__ficha {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-1);
+  min-height: 44px;
+  padding: var(--e-1) var(--e-3);
+  font-size: var(--t-s);
+  color: var(--tinta-2);
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: var(--r-s);
+}
+.barra-actividad__volver { justify-self: start; }
+.barra-actividad__ficha { justify-self: end; }
+.barra-actividad__volver:hover,
+.barra-actividad__ficha:hover { border-color: var(--linea); color: var(--tinta); }
+.barra-actividad__volver:focus-visible,
+.barra-actividad__ficha:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
+
+/* El personaje. Sin caja ni borde: es un dibujo, y un dibujo dentro de un botón con marco
+   parece un icono de sistema. El área de toque sí cumple el mínimo. */
+.barra-actividad__personaje {
+  justify-self: center;
+  display: grid;
+  place-items: center;
+  min-width: 56px;
+  min-height: 56px;
+  padding: 0;
+  background: none;
+  border: 2px solid transparent;
+  border-radius: var(--r-redondo);
+  cursor: pointer;
+}
+.barra-actividad__personaje:focus-visible { outline: var(--foco); outline-offset: 2px; }
+
+/* Cada tanto se mueve, para que se vea que se puede tocar. Un balanceo corto y espaciado:
+   algo que se mueve sin parar deja de mirarse a los diez segundos y encima molesta. */
+.barra-actividad__personaje .personaje {
+  animation: personaje-llama 9s ease-in-out 4s infinite;
+  transform-origin: bottom center;
+}
+@keyframes personaje-llama {
+  0%, 88%, 100% { transform: rotate(0) translateY(0); }
+  91% { transform: rotate(-6deg) translateY(-4px); }
+  94% { transform: rotate(6deg) translateY(-4px); }
+  97% { transform: rotate(-3deg) translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .barra-actividad__personaje .personaje { animation: none; }
+}
+
+/* En el modo lienzo desaparece todo lo que no es la actividad, la barra incluida. */
+.lienzo[data-ampliado] ~ .barra-actividad { display: none; }
