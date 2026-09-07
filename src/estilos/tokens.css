@@ -3619,3 +3619,25 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 :root[data-pizarra='true'] .catalogo__lista {
   grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
 }
+
+/* ---------------------------------------------------------------------------
+ * Los personajes de cocomusic
+ *
+ * Cuadrados y con los pies en la misma línea: eso lo garantiza `tools/personajes.mjs` al
+ * darle a todas las poses el mismo lienzo. Aquí solo hace falta no deformarlos.
+ * ------------------------------------------------------------------------ */
+.personaje {
+  display: block;
+  margin-inline: auto;
+  /* El dibujo ya trae su aire; `contain` evita que se recorte si alguien le da una caja
+     que no sea cuadrada. */
+  object-fit: contain;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+}
+
+/* En una pizarra el personaje se mira desde el fondo del aula. */
+:root[data-pizarra='true'] .personaje {
+  width: clamp(160px, 40vh, 400px);
+}

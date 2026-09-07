@@ -61,37 +61,38 @@ igual: son identidad, no texto.
 Salen de los sitios donde la aplicación enseñaría un personaje, no de una lista de gestos
 bonitos. Cada una tiene un uso concreto.
 
-### Las tres obligatorias — las necesitan los ocho
+### El juego de diez
+
+Las tres primeras las necesitan los ocho personajes; con solo `neutro` para los ocho, la
+aplicación ya funciona entera.
 
 | Pose | Dónde sale | Qué tiene que transmitir |
 |---|---|---|
-| `neutro` | Como **nota**: teclas del piano, carriles del musicograma, ordenar de grave a agudo | Retrato limpio, de frente, reconocible a 40 px. Es la que más se usa y la que más se ve pequeña |
+| `neutro` | Como **nota**: teclas del piano, carriles del musicograma, ordenar de grave a agudo | Retrato limpio, de frente. Es la que más se usa y la que más se ve pequeña |
 | `celebra` | Al terminar una actividad | Alegría contenida. **No euforia**: se repite muchas veces y cansa |
 | `anima` | Después de un intento fallido | Ánimo, nunca lástima. El error no castiga (§4): ni tristeza, ni ceño, ni lágrima |
+| `saluda` | Pantalla de bienvenida de la actividad | Es la de DORA por rasgo, pero sirve para cualquiera |
+| `busca` | Descubrir e identificar sonidos | La de REX |
+| `palmea` | Ritmo, eco de palmas, percusión corporal | La de MILO |
+| `calla` | El silencio: semáforo del sonido, escucha | La de FARA |
+| `baila` | Pulso, caminar al ritmo, danzas | La de SOL |
+| `canta` | Cantar, improvisar, inventar | La de LAIA |
+| `escucha` | Discriminación auditiva, «¿quién ha sonado?» | La de SIMÓN |
 
-Con solo `neutro` para los ocho, la aplicación ya funciona entera.
-
-### Una propia por personaje — la de su rasgo
-
-| Personaje | Pose | Dónde sale |
-|---|---|---|
-| DORA | `saluda` | Pantalla de bienvenida de cada actividad |
-| REX | `busca` | Actividades de descubrir e identificar sonidos |
-| MILO | `palmea` | Ritmo, eco de palmas, percusión corporal |
-| FARA | `calla` | El silencio: semáforo del sonido, momentos de escucha |
-| SOL | `baila` | Pulso, caminar al ritmo, danzas |
-| LAIA | `canta` | Cantar, improvisar, inventar |
-| SIMÓN | `escucha` | Discriminación auditiva, «¿quién ha sonado?» |
-| DOBY | `pandilla` | Cierre, y el único donde salen los ocho juntos |
-
-**Total: 32 ficheros** para el juego completo (24 + 8). Se puede empezar por los 8 `neutro`.
+**Ochenta ficheros para el juego completo**, y no hace falta tenerlos todos para empezar: la
+aplicación va usando lo que encuentre.
 
 ### Cómo se comporta si falta un fichero
 
-La aplicación busca la pose pedida; si no está, usa `neutro`; si tampoco, no dibuja nada y
-sigue. **Nunca un hueco, nunca un error.** Se puede ir añadiendo de uno en uno.
+Busca la pose pedida; si no está, usa `neutro`; si tampoco, no dibuja nada y sigue. **Nunca
+un hueco, nunca el icono roto del navegador**, que en una aplicación para niños es peor que
+no enseñar nada. Se puede añadir de uno en uno.
 
----
+### `-main`, la lámina de referencia
+
+`doby-main.svg` no es una pose: es el dibujo grande del personaje, el que sirve de
+referencia para generar los demás y para material impreso. No se precachea y la aplicación
+no lo usa. Uno por personaje.
 
 ## 4. El contrato del fichero
 
@@ -100,20 +101,40 @@ Esto es lo que hace que ocho dibujos parezcan una pandilla y no ocho dibujos.
 | | |
 |---|---|
 | **Formato** | SVG, sin mapas de bits incrustados |
-| **Lienzo** | `viewBox="0 0 200 200"`, cuadrado |
-| **Margen de seguridad** | El personaje dentro de un círculo de 180 px centrado: en algunos sitios se recorta en redondo |
-| **Peso** | Menos de **12 KB** por fichero. Los 32 caben en 384 KB y el precache tiene presupuesto |
+| **Encuadre** | Exporta **recortado al dibujo**, como salga. De cuadrarlo se encarga `npm run personajes` |
+| **Peso** | Alrededor de **20 KB** por fichero, y no más de 30. Los de Doby están ahí |
 | **Trazo** | El mismo grosor en los ocho. Un personaje con línea más fina parece de otra serie |
 | **Texto** | **Ninguno.** Ni el nombre, ni la nota, ni letras. Va aparte y así se traduce |
 | **Fuentes** | Ninguna: si hay letras, van convertidas a trazado |
-| **Colores** | Planos, sin degradados ni sombras. Se ven a 40 px y se imprimen en blanco y negro |
-| **Legibilidad** | Reconocible a **40 px** y en escala de grises. Si a ese tamaño dos personajes se confunden, el problema es la silueta, no el color |
+| **Colores** | Planos, sin degradados ni sombras. Se ven a 40 px y se imprimen en gris |
+| **Legibilidad** | Reconocible a **40 px** y en escala de grises |
 
-**La silueta es lo que los distingue, no el color.** Es la regla §6 aplicada a los personajes:
-el color nunca informa solo. Un niño con daltonismo, una ficha fotocopiada o una tecla de
-piano de 48 px tienen que dejar reconocer a Milo sin depender del amarillo.
+**La silueta es lo que los distingue, no el color.** Es la regla §6 aplicada a los
+personajes: el color nunca informa solo. Un niño con daltonismo, una ficha fotocopiada o una
+tecla de piano de 48 px tienen que dejar reconocer a Milo sin depender del amarillo.
 
----
+### El paso que hay que dar siempre
+
+```bash
+npm run personajes
+```
+
+Cuadra todas las poses en el mismo lienzo y limpia la cabecera del exportador. **Es
+obligatorio**, y por una razón que se ve en cuanto no se hace: cada pose sale recortada a su
+dibujo, así que una mide 155 × 225 y otra 207 × 220. Puestas en la misma caja, el personaje
+cambia de tamaño al cambiar de gesto.
+
+El script las apoya **abajo**, no las centra: lo que tiene que coincidir entre una pose y
+otra son los pies. Centrándolas, un personaje con los brazos en alto bajaría los pies para
+compensar y parecería que da saltos. `tests/personajes.test.ts` comprueba que se ha pasado.
+
+### Qué se baja y cuándo
+
+`neutro`, `celebra` y `anima` van en la primera descarga: salen en cualquier actividad. Las
+otras siete se bajan el día que se abre la actividad que las usa y se quedan cacheadas. Es
+lo mismo que se hace con los instrumentos, y por lo mismo: ochenta dibujos son más que toda
+la aplicación junta, y no se le cobra a un colegio entero la descarga de poses que ese niño
+no va a ver.
 
 ## 5. El color: hay que decidir algo
 
@@ -208,9 +229,6 @@ Se añade al final. Una frase, y la misma redacción para todos.
 | `baila` | `En pleno movimiento, un pie levantado y los brazos abiertos.` |
 | `canta` | `Con la boca abierta cantando y las manos abiertas a los lados.` |
 | `escucha` | `Quieto, con las dos manos detrás de las orejas, muy atento.` |
-| `pandilla` | `Los ocho personajes juntos en fila, DOBY en el centro. Composición horizontal.` |
-
-> `pandilla` es la única que rompe el lienzo cuadrado: pídela en **`viewBox="0 0 600 200"`**.
 
 ### Lo que de verdad hace que se parezcan
 
@@ -223,15 +241,20 @@ Generar los ocho por separado da ocho estilos parecidos, no el mismo. Lo que fun
 
 ---
 
-## 7. Qué hará falta en el código
+## 7. El código
 
-Nada todavía. Cuando existan los primeros ficheros:
+Ya está, desde que llegaron los primeros dibujos:
 
-- `src/ui/personajes.ts` — el mapa nota → personaje y la cadena de repuesto de poses.
-- `src/ui/Personaje.tsx` — un componente que recibe personaje y pose y dibuja el SVG.
-- En `vite.config.ts`, `personajes/**` al precache: son la identidad de la aplicación y
-  tienen que estar desde la primera visita, sin conexión.
+- **`src/ui/personajes.ts`** — el mapa nota → personaje y las rutas. Ahí vive el caso que
+  importa: hay dos «do», y **Dora abre y Doby cierra**. Se resuelve por octava, no por letra.
+- **`src/ui/Personaje.tsx`** — el componente. Va con `<img>` y no con el SVG incrustado: son
+  ilustraciones a todo color que no hay que recolorear, así se cachean como cualquier imagen
+  y no se meten veinte kilobytes de trazos en el árbol del documento cada vez.
+- **`tools/personajes.mjs`** — el normalizador (`npm run personajes`).
+- **`tests/personajes.test.ts`** — el mapa, y los nombres de fichero. Esto último no es
+  paranoia: un nombre mal escrito no da ningún error —el componente cae a `neutro` y sigue,
+  que es lo que se le pide— pero la pose no aparece nunca y nadie se entera. Pasó con
+  `doby-palmeea.svg` el primer día.
 
-**No se escribe antes de que haya un solo SVG.** Un componente construido y sin enchufar es
-peor que código muerto, porque parece que la funcionalidad está; `tests/sinBasura.test.ts`
-existe justamente porque eso ya pasó una vez.
+**Dónde sale ya:** Doby celebra al terminar cualquier actividad. No es una elección estética:
+es el personaje del cierre, el que integra lo que han hecho los otros siete.

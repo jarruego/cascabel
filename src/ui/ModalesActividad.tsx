@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Modal } from './Modal';
 import { Icono } from './Icono';
+import { Personaje } from './Personaje';
 import { t } from '@/i18n';
 import type { Actividad, ResultadoActividad } from '@/motor/tipos';
 import { diaDeHoy, generarCodigo } from '@/datos/compartir';
@@ -87,7 +88,11 @@ export function ModalExito({
 
   return (
     <Modal abierto={abierto} alCerrar={alVolver} titulo={t('comun.completada')} tono="celebracion">
-      <Icono nombre="chispas" tamano={88} />
+      {/* Doby celebra el final, y no es una elección estética: en la metodología cocomusic
+          es el personaje del cierre, el que integra lo que han hecho los otros siete. Ver
+          `docs/14-PERSONAJES.md`. Si su dibujo aún no está, no se dibuja nada y la modal
+          sigue entera. */}
+      <Personaje nombre="doby" pose="celebra" tamano={120} />
       <h2>{t('comun.completada')}</h2>
       <p className="modal__texto">{t('modal.exitoTexto')}</p>
 

@@ -172,6 +172,28 @@ export default defineConfig({
           'audio/muestras/gaita/**',
           'audio/muestras/banjo/**',
           'audio/muestras/tambor-metalico/**',
+          /*
+            Los personajes, salvo tres poses.
+
+            Son ocho personajes por once poses y unos veinte kilobytes cada dibujo: el juego
+            completo pasa de un megabyte y medio, más que toda la aplicación junta. Pero no
+            se usan igual: `neutro` sale continuamente —es el personaje haciendo de nota, en
+            las teclas y en los carriles—, y `celebra` y `anima` salen al acabar y al
+            fallar, que es en cualquier actividad. Esas tres van al precache.
+
+            Las otras ocho son de sitios concretos —`calla` en el silencio, `palmea` en el
+            ritmo— y se bajan el día que se abre esa actividad, con la regla de abajo. Es lo
+            mismo que se hace con los instrumentos y por lo mismo: no cobrarle a un colegio
+            entero la primera descarga de dibujos que ese niño no va a ver.
+          */
+          'personajes/*-saluda.svg',
+          'personajes/*-busca.svg',
+          'personajes/*-palmea.svg',
+          'personajes/*-calla.svg',
+          'personajes/*-baila.svg',
+          'personajes/*-canta.svg',
+          'personajes/*-escucha.svg',
+          'personajes/*-main.svg',
         ],
         // Presupuesto de precache: por debajo de 10 MB (límite práctico de iOS).
         maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,
@@ -195,6 +217,18 @@ export default defineConfig({
             options: {
               cacheName: 'instrumentos',
               expiration: { maxEntries: 200, maxAgeSeconds: 60 * 60 * 24 * 180 },
+            },
+          },
+          {
+            /*
+              Las poses de personaje que no van al precache. `CacheFirst` por la misma razón
+              que las muestras: un dibujo no cambia, y si cambiara sería otro fichero.
+            */
+            urlPattern: /\/personajes\/.*\.svg$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'personajes',
+              expiration: { maxEntries: 120, maxAgeSeconds: 60 * 60 * 24 * 180 },
             },
           },
         ],

@@ -566,8 +566,11 @@ Abierta y cerrada el 2026-09-06, a partir de la primera prueba real del autor:
 - [x] **Personajes**: decidido el 2026-09-08. Existen y son de la metodología cocomusic —
   ocho, uno por nota: DORA, REX, MILO, FARA, SOL, LAIA, SIMÓN y DOBY. El encargo está en
   [`14-PERSONAJES.md`](14-PERSONAJES.md): poses, prompts, nombres de fichero y contrato del
-  SVG. **Queda por hacer** el dibujo —lo hace el autor, no yo— y una decisión suya: los
-  colores de sol, la y si no coinciden con el código Boomwhacker que usa la aplicación
+  SVG. **Doby ya está dibujado**: sus diez poses llegaron ese mismo día y con ellas entró el
+  código —`ui/personajes.ts`, `ui/Personaje.tsx`, `tools/personajes.mjs` y su test—, y Doby
+  celebra ya al terminar cualquier actividad, que es su papel en la metodología. Faltan los
+  otros siete personajes y una decisión del autor: los colores de sol, la y si no coinciden
+  con el código Boomwhacker que usa la aplicación (ver `14-PERSONAJES.md` §5)
 - [ ] Revisión con las tres preguntas de `docs/06-PIPELINE-IA.md` — es T0.3
 
 **OpenMoji es CC BY-SA 4.0, la misma licencia que ya tienen nuestros contenidos**, así que

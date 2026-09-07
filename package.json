@@ -22,6 +22,7 @@
     "contenido:indice": "node tools/indice.mjs",
     "docs:tipos": "node tools/tabla-tipos.mjs",
     "docs:pendientes": "node tools/pendientes.mjs",
+    "personajes": "node tools/personajes.mjs",
     "comprobar:produccion": "node tools/comprobar-produccion.mjs",
     "verificar": "npm run typecheck && npm run lint && npm run test && npm run contenido:validar"
   },
