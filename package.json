@@ -20,6 +20,7 @@
     "contenido:preparar": "node tools/preparar.mjs",
     "contenido:validar": "node tools/validar.mjs content/actividades",
     "contenido:indice": "node tools/indice.mjs",
+    "docs:tipos": "node tools/tabla-tipos.mjs",
     "comprobar:produccion": "node tools/comprobar-produccion.mjs",
     "verificar": "npm run typecheck && npm run lint && npm run test && npm run contenido:validar"
   },

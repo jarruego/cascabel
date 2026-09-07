@@ -3188,3 +3188,79 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 
 /* Cinco destinos en la barra: el rótulo tiene que poder partirse sin desbordar. */
 .nav__enlace span { text-align: center; line-height: 1.1; }
+
+/* ---------------------------------------------------------------------------
+ * La consulta del lenguaje musical (tipo «referencia»).
+ *
+ * Es la única pantalla del proyecto pensada para LEERSE y no para tocarse, así que manda la
+ * legibilidad: una columna, medida de línea acotada y el signo grande a la izquierda para
+ * poder recorrer la lista buscándolo con el ojo.
+ * ------------------------------------------------------------------------ */
+.referencia { max-width: 46rem; margin: 0 auto; }
+
+.referencia__buscar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--e-1);
+  margin: var(--e-4) 0;
+  font-size: var(--t-s);
+  color: var(--tinta-2);
+}
+.referencia__buscar input {
+  min-height: var(--objetivo);
+  padding: var(--e-2) var(--e-3);
+  font: inherit;
+  font-size: var(--t-m);
+  color: var(--tinta);
+  background: var(--superficie);
+  border: 2px solid var(--linea);
+  border-radius: var(--r-s);
+}
+.referencia__buscar input:focus-visible {
+  outline: var(--foco);
+  outline-offset: var(--foco-hueco);
+}
+
+.referencia__seccion { margin: var(--e-6) 0; }
+.referencia__seccion h2 {
+  padding-bottom: var(--e-2);
+  border-bottom: 3px solid var(--linea);
+  font-size: var(--t-l);
+}
+
+.referencia__lista { margin: 0; padding: 0; list-style: none; }
+.referencia__entrada {
+  display: flex;
+  align-items: center;
+  gap: var(--e-4);
+  padding: var(--e-3) 0;
+  border-bottom: 1px solid var(--linea);
+}
+/* --f-musica es Bravura: los mismos caracteres Unicode que usa el resto del proyecto, y con
+   la fuente del sistema la mitad de esos glifos sencillamente no existen. */
+.referencia__signo {
+  flex: 0 0 3rem;
+  font-family: var(--f-musica);
+  font-size: var(--t-2xl);
+  line-height: 1;
+  text-align: center;
+  color: var(--tinta);
+}
+.referencia__texto { flex: 1; min-width: 0; }
+.referencia__texto h3 { margin: 0; font-size: var(--t-m); }
+.referencia__texto p { margin: var(--e-1) 0 0; color: var(--tinta-2); }
+
+.referencia__oir { flex: 0 0 auto; display: inline-flex; align-items: center; gap: var(--e-2); }
+.referencia__oir[data-sonando] { border-color: var(--acento); color: var(--acento); }
+
+.referencia__acciones {
+  display: flex;
+  justify-content: center;
+  margin: var(--e-6) 0;
+}
+
+@media (max-width: 30rem) {
+  /* En un móvil el botón se va debajo antes que estrechar el texto a cuatro palabras. */
+  .referencia__entrada { flex-wrap: wrap; }
+  .referencia__oir { margin-left: calc(3rem + var(--e-4)); }
+}

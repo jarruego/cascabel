@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-06",
-  "total": 72,
+  "total": 73,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -1294,6 +1294,24 @@
         "competencia": "CE3",
         "criterio": "3.1",
         "saber": "D. Práctica instrumental, vocal y corporal"
+      },
+      "estado": "borrador",
+      "herramienta": true
+    },
+    {
+      "id": "tr-07-como-era-esto",
+      "titulo": "¿Cómo era esto?",
+      "etapa": "primaria-c2",
+      "eje": "notacion",
+      "tipo": "referencia",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.2",
+        "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
       "herramienta": true

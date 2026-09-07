@@ -35,7 +35,8 @@ src/datos/cargar.ts  →  src/motor/registro.ts  →  src/motor/tipos/<Tipo>.tsx
 
 No se dice cuántos son a propósito: el número ha cambiado siete veces y cada vez dejó una
 cifra mentirosa en tres ficheros. `tests/documentacion.test.ts` comprueba que esta tabla
-lista exactamente los tipos que hay en `src/motor/registro.ts`.
+lista exactamente los tipos que hay en `src/motor/registro.ts`, con sus cifras al día, y
+`npm run docs:tipos` la rehace conservando la prosa de la columna del medio.
 
 | Tipo | Mecánica | Actividades |
 |---|---|---|
@@ -56,6 +57,7 @@ lista exactamente los tipos que hay en `src/motor/registro.ts`.
 | `paisaje` | Grabar sonido del entorno y escucharlo (no sale del aparato) | 1 |
 | `pentagrama` | Colocar o leer sobre pauta real | 1 |
 | `pistas` | Secuenciador de cuatro voces: voz, percusión, piano y flauta | 1 |
+| `referencia` | Consulta del lenguaje musical, con sonido. No es un ejercicio | 1 |
 | `teclado` | Teclado de piano de una a tres octavas | 1 |
 
 **Antes de crear un tipo nuevo**, comprueba que el caso no cabe en uno existente. Casi

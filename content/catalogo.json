@@ -1,7 +1,7 @@
 {
   "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa.",
   "generado": "2026-09-07",
-  "total": 71,
+  "total": 72,
   "actividades": [
     {
       "id": "INF-01",
@@ -924,6 +924,19 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Diez instrumentos de percusión de aula por familias, con pulso opcional y grabadora.",
+      "estado": "hecha"
+    },
+    {
+      "id": "TR-07",
+      "titulo": "¿Cómo era esto?",
+      "etapa": "primaria-c2",
+      "eje": "notacion",
+      "lugar": "pantalla",
+      "tipo": "referencia",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.2 · saber D",
+      "descripcion": "Consulta del lenguaje musical con sonido: figuras, silencios, compases, notas, distancias, tempos y matices.",
       "estado": "hecha"
     }
   ]

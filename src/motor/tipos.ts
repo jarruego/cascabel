@@ -32,7 +32,9 @@ export type TipoActividad =
   /** Percusión corporal: pitos, palmas, muslos y pies. Ver Cuerpo.tsx. */
   | 'cuerpo'
   /** El kit de percusión, para tocarlo con el dedo. Ver Pads.tsx. */
-  | 'pads';
+  | 'pads'
+  /** Consulta del lenguaje musical, con sonido. No es un ejercicio. Ver Referencia.tsx. */
+  | 'referencia';
 
 export type Eje = 'pulso' | 'altura' | 'timbre' | 'notacion' | 'cuerpo' | 'creacion' | 'cultura';
 

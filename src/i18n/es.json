@@ -910,5 +910,20 @@
   "nav.camino": "Camino",
   "camino.noBloquea": "Un orden sugerido, no obligatorio. Nada está bloqueado: puedes abrir cualquier actividad hoy mismo y empezar por donde quieras.",
   "camino.hecha": "Ya la abriste",
-  "camino.paraElMaestro": "Este orden es una propuesta, no una programación. Cada paso agrupa actividades que se apoyan unas en otras; el ritmo lo pone la clase."
+  "camino.paraElMaestro": "Este orden es una propuesta, no una programación. Cada paso agrupa actividades que se apoyan unas en otras; el ritmo lo pone la clase.",
+  "referencia.buscar": "Buscar",
+  "referencia.ejemplo": "corchea, 3/4, octava...",
+  "referencia.oir": "Oír",
+  "referencia.nada": "Nada con esa palabra. Prueba con menos letras.",
+  "referencia.paraConsultar": "Esto no es un ejercicio: es para mirarlo cuando haga falta, incluso en mitad de otra actividad.",
+  "actividad.tr07.consigna": "¿Cómo era esto?",
+  "actividad.tr07.enunciado": "Todo lo que hay que recordar del lenguaje musical, con un botón para oírlo. Busca por el nombre o por lo que hace.",
+  "ficha.tipo.referencia.comoFunciona": "Una consulta, no un ejercicio: secciones con los términos del lenguaje musical, su signo y una línea de explicación, con buscador. Lo que puede sonar, suena —una corchea se oye durar la mitad que una negra—, y ahí está la única ventaja real que tiene la pantalla sobre la tabla del libro.",
+  "ficha.tipo.referencia.sinPantalla": "Es el mural del aula de toda la vida. Proyectada sirve para explicar en grupo; en la tablet, para que un niño resuelva su duda sin levantar la mano ni interrumpir.",
+  "ficha.tipo.referencia.ampliacion": "Que busquen ellos: decid un término y que lo encuentren y lo expliquen con sus palabras. Buscar es la mitad de saber usar una referencia.",
+  "ficha.tipo.referencia.refuerzo": "Abridla juntos y escuchad solo una sección, la de las figuras. Con siete entradas ya hay bastante para una sesión.",
+  "ficha.tipo.referencia.observar": "Si acuden a ella solos cuando se atascan en otra actividad. Que un niño consulte por su cuenta vale más que si se sabe la tabla de memoria.",
+  "ficha.tipo.referencia.indicador1": "Sabe buscar lo que necesita",
+  "ficha.tipo.referencia.indicador2": "Relaciona el signo con su sonido",
+  "ficha.tipo.referencia.indicador3": "La usa sin que se lo pidan"
 }
