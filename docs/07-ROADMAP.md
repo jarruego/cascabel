@@ -1494,6 +1494,15 @@ Y dos que sí son de producto y las decide el autor:
   verdad, así que la pregunta no es técnica: es si esa parte llega pronto o se quitan hasta
   entonces.
 
+Y una que quedó a medias en la revisión de anchos del 2026-09-07:
+
+- [ ] **Las bandas del karaoke siguen en 352 px**, o sea centradas y estrechas en cualquier
+  pantalla que no sea un móvil. No se tocaron porque `TRANSVERSAL` da a la vez el ancho de
+  las bandas y el de los botones de debajo, y las dos geometrías tienen que cuadrar: ya se
+  descuadraron una vez y el autor lo notó. **Lo siguiente**: medir el contenedor con un
+  `ResizeObserver`, como hace `Teclado.tsx`, y comprobarlo con la pantalla delante — no a
+  ciegas.
+
 Las ideas de ampliación, con veredicto y con lo que NO conviene hacer, están en
 [`docs/12-IDEAS-Y-AMPLIACIONES.md`](12-IDEAS-Y-AMPLIACIONES.md).
 
