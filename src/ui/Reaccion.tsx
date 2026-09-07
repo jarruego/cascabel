@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Personaje } from './Personaje';
 import { NOMBRES, type Personaje as Nombre } from './personajes';
 import { t } from '@/i18n';
@@ -29,9 +30,34 @@ export function Reaccion({
   children?: React.ReactNode;
 }) {
   const hayTexto = Boolean(children);
+
+  /*
+    Se enseña un rato y se va sola.
+
+    Un mensaje que se queda hasta que pase otra cosa acaba siendo parte del decorado: deja
+    de leerse y sigue ocupando sitio. Se va sola, y el tiempo sale de lo que hay que leer
+    —unos tres segundos y medio de base más un poco por cada palabra—, porque no es lo
+    mismo «¡Muy bien!» que una pista de dos líneas.
+
+    Lo que NO se va solo es `neutro`: ahí no hay reacción, hay una instrucción que tiene que
+    seguir estando mientras dure la actividad.
+  */
+  const [visible, setVisible] = useState(true);
+  const largo = typeof children === 'string' ? children.length : 60;
+
+  useEffect(() => {
+    setVisible(true);
+    if (tono === 'neutro') return;
+    const ms = 3500 + largo * 45;
+    const id = window.setTimeout(() => setVisible(false), ms);
+    return () => window.clearTimeout(id);
+    // `largo` y `tono` bastan: si cambia el mensaje, vuelve a aparecer y a contar de nuevo.
+  }, [tono, largo]);
+
   // Sin nada que decir no se dibuja nada: un recuadro vacío esperando a que pase algo llena
   // la pantalla de sitio muerto justo donde el niño está mirando.
   if (tono === 'neutro' && !hayTexto) return null;
+  if (!visible) return null;
 
   const frase = tono === 'neutro' ? '' : t(`reaccion.${personaje}.${tono}`);
 

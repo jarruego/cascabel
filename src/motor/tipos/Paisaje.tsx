@@ -116,7 +116,7 @@ export default function Paisaje({ actividad, alTerminar }: PropsActividad) {
 
   return (
     <section className="actividad paisaje" data-carril={carril} aria-labelledby="consigna">
-      <h1 id="consigna">{t(contenido.consigna)}</h1>
+      <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
 
       {/* Qué buscar. Es el guion de escucha, y es la mitad del ejercicio que funciona
           también sin micrófono. */}

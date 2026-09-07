@@ -65,7 +65,7 @@ export default function Compases({ actividad, alTerminar }: PropsActividad) {
 
   return (
     <section className="actividad compases" data-carril={carril} aria-labelledby="consigna">
-      <h1 id="consigna">{t(contenido.consigna)}</h1>
+      <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
 
       {/* La cifra de compás, como se escribe: una cifra sobre otra y sin raya en medio.
           Es la que dice cuál es la respuesta, así que tiene que verse antes que nada. */}

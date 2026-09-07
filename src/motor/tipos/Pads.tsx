@@ -227,7 +227,7 @@ export default function Pads({ actividad, alTerminar }: PropsActividad) {
 
   return (
     <section className="actividad pads" data-carril={carril} aria-labelledby="consigna">
-      <h1 id="consigna">{t(contenido.consigna)}</h1>
+      <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
 
       {/* El borde de la rejilla late con el pulso. Es el pulso VISIBLE que pide §6: una
           actividad de ritmo tiene que poder hacerse mirando. */}

@@ -1053,12 +1053,6 @@ p {
 .tocar__mensaje {
   font-size: 1.25em;
 }
-/* Las cifras son para el maestro, no para el niño: van pequeñas y en gris. */
-.tocar__cifras {
-  color: var(--tinta-2);
-  font-size: 0.9em;
-  font-variant-numeric: tabular-nums;
-}
 
 /* ── pentagrama ────────────────────────────────────────────────────────────
    El truco de docs/04-DISENO-UI.md: la nota se dibuja PEQUEÑA y correcta, y
@@ -3601,8 +3595,19 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 @media (orientation: landscape) and (max-height: 32rem) {
   .actividad-marco {
     padding-top: var(--e-2);
-    padding-bottom: var(--e-6);
+    /* Menos alto que en vertical, pero el suficiente para la barra fija. */
+    padding-bottom: calc(var(--e-7) + env(safe-area-inset-bottom));
+    /* Girado, el ancho es lo que sobra y el alto lo que falta: la actividad se lleva todo
+       el ancho, sin el aire lateral que en vertical viene bien. */
+    padding-inline: var(--e-2);
+    max-width: none;
   }
+  /* La barra encoge: en apaisado cada píxel de alto es actividad. */
+  .barra-actividad { padding-block: 2px; }
+  .barra-actividad__volver,
+  .barra-actividad__ficha { min-height: 40px; }
+  .barra-actividad__personaje { min-width: 44px; min-height: 44px; }
+  .barra-actividad__personaje .personaje { height: 40px; }
   .actividad h1 {
     font-size: var(--t-m);
     margin-bottom: var(--e-2);
@@ -3784,7 +3789,15 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
  * Ocupa lo mínimo. Mientras se juega, la pantalla es de la actividad.
  * ------------------------------------------------------------------------ */
 .barra-actividad {
-  position: sticky;
+  /*
+    Fija y no `sticky`. Con `sticky` la barra se queda al final del contenido, así que en
+    cuanto la actividad es más alta que la pantalla —o el móvil se pone apaisado, que es lo
+    mismo con menos altura— hay que bajar hasta el final para encontrar «Volver». Fija está
+    siempre donde se la dejó.
+  */
+  position: fixed;
+  left: 0;
+  right: 0;
   bottom: 0;
   z-index: 10;
   display: grid;
@@ -3797,6 +3810,8 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   background: var(--papel);
   border-top: 2px solid var(--linea);
 }
+/* Sitio para que la barra no tape el final de la actividad. */
+.actividad-marco { padding-bottom: calc(var(--e-8) + env(safe-area-inset-bottom)); }
 .barra-actividad__volver,
 .barra-actividad__ficha {
   display: inline-flex;

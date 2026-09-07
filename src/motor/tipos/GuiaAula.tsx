@@ -82,6 +82,9 @@ export default function GuiaAula({ actividad, alTerminar }: PropsActividad) {
       {/* Modo proyector: todo lo de esta pantalla se lee a ocho metros. Los tamaños
           salen de --proyector-*, no del carril: aquí el usuario es un adulto de pie
           al fondo del aula, no el niño que tiene delante. */}
+      {/* Aquí el título SÍ se ve, y es la única actividad donde pasa: esta pantalla se
+          proyecta y esa consigna enorme es justo lo que lee la clase. Las demás la
+          esconden porque el niño ya la ha leído en la explicación. */}
       <h1 id="consigna" className="guia__consigna">
         {t(contenido.consigna)}
       </h1>

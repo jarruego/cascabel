@@ -104,7 +104,7 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
 
   return (
     <section className="actividad escala" data-carril={carril} aria-labelledby="consigna">
-      <h1 id="consigna">{t(contenido.consigna)}</h1>
+      <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
 
       {/* La pauta. Se escribe sola según se toca: ver cómo se escribe lo que suena es la
           mitad de la actividad, y esperar al final la perdería. */}

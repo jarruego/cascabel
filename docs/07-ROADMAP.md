@@ -699,7 +699,7 @@ dan identidad propia. Los personajes del proyecto siguen siendo decisión de pro
 
 
 
-- [ ] Cloudflare Pages conectado a `main` de `github.com/jarruego/cascabel`
+- [x] Cloudflare Pages conectado a `main` de `github.com/jarruego/cascabel`
 - [ ] Dominio propio con HTTPS
 - [ ] `public/_headers` aplicándose de verdad (compruébalo en la respuesta real)
 - [ ] Analítica: Umami autoalojado o nada. **Nunca Google Analytics**

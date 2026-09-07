@@ -175,7 +175,7 @@ export default function Pistas({ actividad, alTerminar }: PropsActividad) {
 
   return (
     <section className="actividad pistas" data-carril={carril} aria-labelledby="consigna">
-      <h1 id="consigna">{t(contenido.consigna)}</h1>
+      <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
 
       <div className="pistas__tabla">
         {pistas.map((p) => {

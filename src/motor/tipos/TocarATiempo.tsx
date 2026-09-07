@@ -402,7 +402,7 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
 
   return (
     <section className="actividad tocar" data-carril={carril} aria-labelledby="consigna">
-      <h1 id="consigna">{t(contenido.consigna)}</h1>
+      <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
 
       {/* El patrón se VE, no solo se oye. Criterio 1.1.1: toda actividad de ritmo debe
           poder hacerse mirando, para que un alumno sordo pueda participar. */}
@@ -543,11 +543,18 @@ function Resultado({
   return (
     <section className="tocar__resultado" aria-live="polite">
       <p className="tocar__mensaje">{t(mensaje)}</p>
-      <p className="tocar__cifras">
-        {t('tocar.desvio')} <strong>{desvioMedioMs >= 0 ? '+' : ''}{desvioMedioMs.toFixed(0)} ms</strong>
-        {' · '}
-        {t('tocar.regularidad')} <strong>{desviacionTipicaMs.toFixed(0)} ms</strong>
-      </p>
+      {/*
+        Los milisegundos ya no se enseñan aquí.
+
+        `CLAUDE.md` §7 pide reportar **siempre** desvío medio con signo y desviación típica,
+        y sigue en pie: es lo que distingue a un niño con pulso excelente que entra tarde de
+        uno que va a saltos, y un porcentaje le diría a los dos que han fallado. Pero eso es
+        información **para el maestro**, y su sitio es la hoja de seguimiento de la ficha, no
+        la pantalla de un niño de siete años en mitad del ejercicio.
+
+        Lo que sí llega al niño es la lectura de esos números en palabras: «tu pulso es muy
+        regular, solo vas un poquito por detrás». Eso lo decide `mensaje`, aquí arriba.
+      */}
       <button type="button" className="boton-repetir" onClick={alSeguir}>
         {ronda + 1 >= repeticiones ? t('comun.siguiente') : t('tocar.otraVez')}
       </button>

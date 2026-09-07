@@ -317,7 +317,7 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
 
   return (
     <section className="actividad teclado" data-carril={carril} aria-labelledby="consigna">
-      <h1 id="consigna">{t(contenido.consigna)}</h1>
+      <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
 
       {/* La nota que suena, grande. Es lo que convierte el piano en algo de lo que se
           aprende: se toca, suena y se ve cómo se llama. */}

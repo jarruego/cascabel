@@ -124,7 +124,7 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
 
   return (
     <section className="actividad" data-carril={carril} aria-labelledby="consigna">
-      <h1 id="consigna">{t(contenido.consigna)}</h1>
+      <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
 
       {/* El botón de repetir solo tiene sentido si hay algo que repetir. Cuando no lo hay
           desaparece entero, en vez de quedarse ahí sin hacer nada: un botón muerto es peor

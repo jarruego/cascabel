@@ -86,7 +86,7 @@ export default function Acompanamientos({ actividad, alTerminar }: PropsActivida
 
   return (
     <section className="actividad acompanamientos" data-carril={carril} aria-labelledby="consigna">
-      <h1 id="consigna">{t(contenido.consigna)}</h1>
+      <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
 
       <div className="acompanamientos__tono" role="group" aria-label={t('acomp.tonalidad')}>
         <button type="button" className="boton-repetir" onClick={() => cambiar(-1)}>

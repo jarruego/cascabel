@@ -252,7 +252,7 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
 
   return (
     <section className="actividad cantar" data-carril={carril} aria-labelledby="consigna">
-      <h1 id="consigna">{t(contenido.consigna)}</h1>
+      <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
 
       {/* El nombre que usa la escuela española, no la notación científica: a un niño de
           ocho años «sol» le dice algo y «G4» no le dice nada. La octava tampoco se enseña:
