@@ -50,6 +50,28 @@ export function personajeDe(nota: string, octavaBase = 4): Personaje | null {
 }
 
 /**
+ * El nombre de cada personaje, y cuántas letras de ese nombre son la sílaba de su nota.
+ *
+ * **DOra, REx, MIlo, FAra, SOL, LAia, SImón, DOby**: todos empiezan por la suya, y eso es
+ * la metodología, no una coincidencia. Enseñar el nombre con esas letras destacadas es el
+ * puente entre el personaje y la nota — un niño que aún no lee reconoce a Fara por el
+ * dibujo y ve que su nombre empieza por FA.
+ *
+ * Va aquí y no en `i18n`: **no se traduce.** Los nombres son identidad, igual que los
+ * ficheros de dibujo.
+ */
+export const NOMBRES: Record<Personaje, { nombre: string; silaba: number }> = {
+  dora: { nombre: 'DOra', silaba: 2 },
+  rex: { nombre: 'REx', silaba: 2 },
+  milo: { nombre: 'MIlo', silaba: 2 },
+  fara: { nombre: 'FAra', silaba: 2 },
+  sol: { nombre: 'SOL', silaba: 3 },
+  laia: { nombre: 'LAia', silaba: 2 },
+  simon: { nombre: 'SImón', silaba: 2 },
+  doby: { nombre: 'DOby', silaba: 2 },
+};
+
+/**
  * Las poses.
  *
  * Salen de los sitios donde la aplicación enseña un personaje, no de una lista de gestos:

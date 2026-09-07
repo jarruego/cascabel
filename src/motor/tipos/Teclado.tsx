@@ -9,7 +9,7 @@ import { GrabadorDeEventos, reproducir, type Grabacion } from '../grabacionEvent
 import { letraDeNota, notaDeTecla, type Disposicion } from '@/ui/tecladoQwerty';
 import { Retos } from '@/ui/Retos';
 import { Personaje } from '@/ui/Personaje';
-import { personajeDe } from '@/ui/personajes';
+import { NOMBRES, personajeDe } from '@/ui/personajes';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -137,7 +137,9 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
     if (personajeDe(nota, desde)) {
       const id = siguienteSalto.current++;
       setSaltos((s) => [...s, { id, nota }]);
-      window.setTimeout(() => setSaltos((s) => s.filter((x) => x.id !== id)), 900);
+      // Un poco más que la animación: si se limpiara antes, el personaje desaparecería
+      // de golpe a media subida.
+      window.setTimeout(() => setSaltos((s) => s.filter((x) => x.id !== id)), 1300);
     }
     if (grabador.current.grabando) {
       grabador.current.anotar(nota, obtenerContexto().currentTime * 1000);
@@ -315,7 +317,26 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
         aria-live="polite"
         style={ultimaTocada ? { color: colorDe(ultimaTocada) } : undefined}
       >
-        {ultimaTocada ? nombreDe(ultimaTocada, nombres === 'ingles' ? 'ingles' : 'latino') : ''}
+        {/* Con personajes, el nombre entero con su sílaba destacada: DOra, REx, MIlo. El
+            nombre lleva dentro el de la nota —eso es la metodología, no una casualidad— así
+            que enseñarlo así es el puente entre el dibujo y la nota, y se lo hace el niño
+            solo. Sin personajes, el nombre de la nota de siempre. */}
+        {ultimaTocada && conPersonajes && personajeDe(ultimaTocada, desde) ? (
+          (() => {
+            const quien = personajeDe(ultimaTocada, desde)!;
+            const { nombre, silaba } = NOMBRES[quien];
+            return (
+              <>
+                <span className="teclado__silaba">{nombre.slice(0, silaba)}</span>
+                {nombre.slice(silaba)}
+              </>
+            );
+          })()
+        ) : ultimaTocada ? (
+          nombreDe(ultimaTocada, nombres === 'ingles' ? 'ingles' : 'latino')
+        ) : (
+          ''
+        )}
       </p>
 
       <div

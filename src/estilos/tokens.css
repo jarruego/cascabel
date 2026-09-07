@@ -2027,11 +2027,18 @@ p {
    origen a las negras, éstas derivarían al ensanchar la ventana. */
 .teclado__caja {
   display: flex;
+  align-items: flex-end;
   justify-content: center;
-  /* El alto crece con la pantalla y se para en 340: por encima de eso una tecla blanca
-     empieza a ser más alta que la mano que la toca. El tope de 260 dejaba un teclado
-     pequeño en medio de un monitor grande. */
-  height: clamp(150px, 38vh, 340px);
+  /*
+    Hueco arriba para que el personaje salte por encima del teclado.
+
+    No se puede dejar que se escape de la caja: `overflow-x: auto` está para que un teclado
+    de tres octavas se pueda desplazar en un móvil, y eso convierte el eje vertical en
+    `auto` también, así que todo lo que asome por arriba se recorta o saca una barra. La
+    salida es darle sitio DENTRO. Las teclas conservan su altura, que se declara abajo en
+    `.teclado__teclas`.
+  */
+  padding-top: var(--e-8);
   margin: var(--e-5) 0;
   padding: 0 var(--e-2);
   touch-action: none;
@@ -2044,6 +2051,10 @@ p {
   flex: 0 0 auto;
   height: 100%;
 }
+/* El alto crece con la pantalla y se para en 340: por encima de eso una tecla blanca empieza
+   a ser más alta que la mano que la toca. Va aquí y no en la caja porque la caja lleva
+   además el hueco del salto, y si estuviera allí ese hueco se lo comería a las teclas. */
+.teclado__teclas { height: clamp(150px, 38vh, 340px); }
 .teclado__negra {
   padding: 0;
   cursor: pointer;
@@ -2536,7 +2547,9 @@ p {
 .lienzo[data-ampliado] .actividad { margin: 0; }
 /* Y todo un poco más grande, que es de lo que se trataba. */
 .lienzo[data-ampliado] .karaoke__pauta[data-orientacion='vertical'] { height: clamp(300px, 70vh, 820px); }
-.lienzo[data-ampliado] .teclado__caja { height: clamp(220px, 62vh, 620px); }
+/* A pantalla completa el teclado crece, y la altura vive en `.teclado__teclas` desde que
+   la caja reserva hueco arriba para el salto del personaje. */
+.lienzo[data-ampliado] .teclado__teclas { height: clamp(220px, 62vh, 620px); }
 
 /* Con la barra de navegación fuera de la vista, el hueco que le deja también sobra. */
 .lienzo[data-ampliado] ~ *,
@@ -3704,38 +3717,55 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 
 /* El personaje saltando al tocar su tecla.
 
-   **Sube acelerando, y eso no es un adorno.** A velocidad constante, dos toques seguidos en
-   la misma tecla dejarían las dos copias a media altura, una encima de otra, y se vería un
-   borrón. Con `cubic-bezier` de arranque lento la primera ya está arriba y casi transparente
-   cuando aparece la segunda, así que se leen como dos saltos y no como una mancha.
-
-   Y crece poco: es el mismo personaje que está en la tecla, no otro más grande. */
+   **Sale disparado y va frenando**, como un salto de verdad: la curva es un `ease-out`
+   fuerte, así que el primer tramo se recorre en un suspiro y el resto se va apagando poco a
+   poco. Empezó siendo al revés —lento al principio— para que dos toques seguidos no se
+   solaparan, y resulta que el ease-out lo resuelve mejor: cuando llega el segundo toque, el
+   primero ya se ha ido arriba, en vez de quedarse los dos a media altura. */
 .teclado__salto {
   position: absolute;
-  /* Arranca abajo y sube poco más de medio alto de tecla. **Tiene que caber dentro de la
-     tecla**: `.teclado__caja` lleva `overflow-x: auto`, y eso pone el eje vertical en `auto`
-     también, así que cualquier cosa que asome por arriba se recorta. En una pantalla alta no
-     se nota, y ese es justo el tipo de fallo que llega a producción. */
+  /* Centrado en su tecla y creciendo desde ahí: `left: 50%` con `translateX(-50%)` hace que
+     al agrandarse se ensanche por los dos lados por igual, sin desplazarse. Puede salirse
+     del ancho de la tecla —la tecla no recorta— y sube hasta el hueco que la caja reserva
+     arriba. */
   bottom: 12%;
   left: 50%;
   pointer-events: none;
   z-index: 3;
-  animation: tecla-salta 900ms cubic-bezier(0.55, 0, 0.9, 0.4) forwards;
+  animation: tecla-salta 1200ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 @keyframes tecla-salta {
-  0% { opacity: 0; transform: translate(-50%, 0) scale(0.85); }
-  20% { opacity: 1; transform: translate(-50%, -10px) scale(1.1); }
-  100% { opacity: 0; transform: translate(-50%, -64px) scale(1.25); }
+  0% { opacity: 0; transform: translate(-50%, 0) scale(0.9); }
+  /* El impulso: en el 12 % del tiempo ya ha subido un tercio del recorrido. */
+  12% { opacity: 1; transform: translate(-50%, -42px) scale(1.15); }
+  /* Y el resto es freno y desvanecido, sin cortes. */
+  100% { opacity: 0; transform: translate(-50%, -130px) scale(1.4); }
 }
 
 /* Con movimiento reducido no salta, pero SIGUE apareciendo: lo que confirma el toque es que
    el personaje se asome, y eso no puede depender de que haya animación. */
 @media (prefers-reduced-motion: reduce) {
   .teclado__salto {
-    animation: tecla-asoma 900ms steps(2, end) forwards;
+    animation: tecla-asoma 1200ms steps(2, end) forwards;
   }
   @keyframes tecla-asoma {
     0%, 70% { opacity: 1; transform: translate(-50%, -20px); }
     100% { opacity: 0; transform: translate(-50%, -20px); }
   }
+}
+
+/* La sílaba de la nota dentro del nombre del personaje: DOra, REx, MIlo.
+
+   El resto del nombre va en tinta normal y con menos peso, así que lo primero que se lee es
+   la sílaba. No lleva color propio: hereda el de la nota, que lo pone `.teclado__ultima`
+   desde el componente. */
+.teclado__silaba {
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+.teclado__ultima {
+  /* Las letras que no son la sílaba pierden peso y algo de fuerza, para que la sílaba
+     destaque sin tener que pintarla de otro color: dos colores en una palabra de cinco
+     letras se leen como dos palabras. */
+  font-weight: 500;
 }
