@@ -7,6 +7,8 @@ export default defineConfig({
   },
   test: {
     environment: 'jsdom',
-    include: ['tests/**/*.test.ts'],
+    // .tsx tambien: tests/montaje.test.tsx monta cada tipo de motor de verdad, y para eso
+    // tiene que poder importar componentes.
+    include: ['tests/**/*.test.{ts,tsx}'],
   },
 });
