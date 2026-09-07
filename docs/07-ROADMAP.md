@@ -1425,6 +1425,26 @@ es depurar y ampliar, y eso lo marca el uso real.
   ellos, `c2-07` gana por fin el bordón que su descripción llevaba prometiendo.
 - **`eco`**, dos niños por turnos en la misma tablet: uno propone un ritmo y el otro lo
   repite, y se comparan **entre sí**, no contra una rejilla nuestra.
+- **Una revisión de los 999 textos de interfaz y las 77 descripciones**, ya de noche. La
+  ortografía estaba limpia —ni un acento perdido—, pero salieron tres cosas que ningún test
+  puede ver:
+  - **Los cuatro sonidos corporales se llamaban de tres maneras.** La pantalla ponía
+    «Muslos», el enunciado de `inf-17` decía «rodillas» y la guía `c1-09` decía
+    «chasquidos» donde el tipo `cuerpo` dice «pitos». Un niño leía una palabra y tenía que
+    seguir otra fila. Todo pasa a pitos, palmas, muslos y pies, e `inf-17` se renombra a
+    «Palmas y muslos» aprovechando que es de ese mismo día y no ha salido de aquí.
+  - **Una descripción describía otra actividad.** `c1-09` prometía «un trigrama de colores
+    que avanza» y es una guía de aula: cuatro pasos y un pulso proyectado, sin nada que
+    avance. Lo que avanza es el tipo `cuerpo`, que llegó un año después de escribirse esa
+    ficha del catálogo.
+  - **La página de créditos citaba Tone.js** como si la aplicación lo cargara, y no lo
+    carga. En la página que existe justamente para decir la verdad sobre lo que se usa.
+
+  La lección, para la próxima vez que se añada un tipo: **el vocabulario de dominio se
+  desincroniza en silencio.** Un texto que contradice a otro no rompe nada, no lo caza
+  ningún test y solo se ve leyéndolo todo seguido. Conviene repetir esta lectura cada vez
+  que un tipo nuevo traiga palabras nuevas.
+
 - **`tests/documentacion.test.ts`**, porque la documentación mentía: este fichero llevaba un
   epígrafe con una cifra de tipos de motor que se había quedado seis por debajo de la real.
   Un número obsoleto en un `.md` no rompe nada y por eso se queda ahí para siempre; el test
@@ -1441,8 +1461,16 @@ es depurar y ampliar, y eso lo marca el uso real.
 3. **La revisión de una maestra.** Las correspondencias edad-dificultad, la secuencia
    didáctica y las coreografías las ha decidido un desarrollador leyendo la convención.
 
-Y una cuarta que sí es de producto: **T3.5**, subir o no los tamaños táctiles según NN/g.
-Sigue sin decidirse porque afecta a las 67 actividades y la decide el autor.
+Y dos que sí son de producto y las decide el autor:
+
+- **T3.5**, subir o no los tamaños táctiles según NN/g. Afecta a las 77 actividades.
+- **Las tres dependencias que nadie importa.** `tone`, `abcjs` y `vexflow` están instaladas
+  y ningún fichero de `src` las usa. Peor: `vite.config.ts` fuerza un *chunk* `partitura`
+  con las dos últimas, así que **cada despliegue reparte 1,1 MB (691 KB en gzip) que ningún
+  código llega a cargar**. No entra en el precache, así que no encarece la primera visita,
+  pero es peso muerto en `dist`. Son la elección de stack para cuando haya partitura de
+  verdad, así que la pregunta no es técnica: es si esa parte llega pronto o se quitan hasta
+  entonces.
 
 Las ideas de ampliación, con veredicto y con lo que NO conviene hacer, están en
 [`docs/12-IDEAS-Y-AMPLIACIONES.md`](12-IDEAS-Y-AMPLIACIONES.md).
