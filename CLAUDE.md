@@ -43,8 +43,9 @@ Si una petición mía choca con una de estas, **párate y avísame**.
    un `AudioWorklet`. Esto es lo que hace que jurídicamente no tratemos datos personales
    de un menor.
 3. **Cero datos personales.** No hay cuentas, ni nombres, ni correos, ni fechas de
-   nacimiento. El progreso vive en IndexedDB del dispositivo. Para compartir, se codifica
-   el estado en la URL.
+   nacimiento. El progreso vive en IndexedDB del dispositivo y no sale de él. Los códigos de
+   verificación se retiraron el 2026-09-08 (ver `docs/adr/0007`): daban por hecho un
+   dispositivo por niño, y la norma es una pizarra y ninguno.
 4. **El error nunca castiga.** Prohibidos: vidas, corazones, cronómetros por defecto,
    rachas, clasificaciones entre niños, sonidos de fallo desagradables, pantallas rojas.
    El feedback de error es una pista concreta y amable.

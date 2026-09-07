@@ -842,7 +842,11 @@ detectarlo habría que medir las barras del ABC en crudo, y no compensa hoy.
       `+` y `/` en `-` y `_` y quitar el relleno, la mitad de los enlaces se rompen al
       pegarlos en WhatsApp o en un correo. Una URL manipulada devuelve `null` y la
       actividad se abre vacía, en vez de romper la app.
-- [x] **T2.7 — Códigos de verificación** `[x]` — cerrado el 2026-09-06. El patrón de
+- [x] **T2.7 — Códigos de verificación** `[x]` — cerrado el 2026-09-06 y **retirado el
+      2026-09-08**: descansaba sobre la suposición de que cada niño tiene un dispositivo,
+      y la norma es una pizarra y ninguno. Razonado en
+      [`adr/0007`](adr/0007-sin-codigos-de-verificacion.md). Lo de abajo se queda como
+      registro de lo que se construyó y por qué. El patrón de
       musictheory.net que el dosier manda copiar literalmente: el alumno termina, recibe un
       código de siete caracteres y se lo enseña; el maestro lo teclea en `/comprobar`.
       **Evaluación con evidencia, sin cuentas de alumno.**
@@ -1444,10 +1448,10 @@ es depurar y ampliar, y eso lo marca el uso real.
 |---|---|
 | Actividades | 78, todas validando esquema y música |
 | Tipos de motor | 21 (la lista viva, en [`01-ARQUITECTURA.md`](01-ARQUITECTURA.md)) |
-| Tests | 442 |
-| Precache | 1823 KiB (el audio y las poses de personaje que no salen siempre se cachean al usarse) |
-| Personajes | 8 × 10 poses, 1530 KB en total |
-| Código | ~17900 líneas en `src`, ~4400 en `tests` |
+| Tests | 430 |
+| Precache | 1828 KiB (el audio y las poses que no salen siempre se cachean al usarse) |
+| Personajes | 8 × 10 poses, 1530 KB |
+| Código | ~18300 líneas en `src`, ~4300 en `tests` |
 
 **Lo que entró ese día, después de cerrar el catálogo previsto:**
 
@@ -1513,6 +1517,40 @@ es depurar y ampliar, y eso lo marca el uso real.
   epígrafe con una cifra de tipos de motor que se había quedado seis por debajo de la real.
   Un número obsoleto en un `.md` no rompe nada y por eso se queda ahí para siempre; el test
   lo caza, y `npm run docs:tipos` rehace la tabla sin contar a mano.
+
+### Rediseño de la navegación, 2026-09-08
+
+A partir de una lista del autor. La idea de fondo: **mientras se juega, la pantalla es de la
+actividad**, y todo lo demás ocupa lo mínimo.
+
+- **Fuera el código del profesor** — ver [`adr/0007`](adr/0007-sin-codigos-de-verificacion.md).
+- **El marco son cuatro cosas en sitios fijos**: ampliar arriba a la derecha, «Volver» abajo
+  a la izquierda, el personaje abajo en el centro y la ficha abajo a la derecha. La
+  explicación se lee al entrar y desaparece; el personaje la reabre —es la respuesta a «¿qué
+  había que hacer?» y un niño la busca donde está la cara— **sin reiniciar la actividad**.
+  En `guia-aula` no sale personaje: esa pantalla es el guion del maestro proyectado.
+- **Cierra quien presentó.** Estuvo Doby siempre; Doby cierra el recorrido entero, no cada
+  ejercicio.
+- **Dos barras de progreso menos.** Se quedan donde el avance no se ve en la actividad
+  —series de N preguntas—; se van de emparejar y ordenar, donde el tablero ya lo enseña.
+- **Los botones se recortan en aire y texto, nunca en zona tocable.**
+- **Las opciones extra se piden desde el JSON.** El piano ya no enseña el selector de octavas
+  salvo que sea el instrumento libre, y la caja de sonidos pierde sus botones de colores. Eso
+  la dejaba sin vía de teclado, así que **el lienzo responde ahora a flechas y espacio**: sin
+  eso, la mejora habría sido una regresión de accesibilidad.
+- **Las cuatro roturas de móvil**, con una regla común: lo que no cabe se desplaza en
+  horizontal, nunca se parte y nunca se encoge por debajo de lo tocable. Una fila de figuras
+  partida en dos renglones deja de ser un compás.
+
+**Lo que queda de este rediseño**, y es lo siguiente que toca:
+
+- [ ] **Repasar las 78 actividades una a una** con estas reglas: qué botones sobran en cada
+      una, qué opción extra no viene al caso, y si algo se sale o se superpone en un móvil.
+      Lo hecho hasta ahora es el marco y las reglas generales; el repaso es actividad por
+      actividad.
+- [ ] **Verlo en pantalla.** Se ha rehecho el marco de todas sin poder mirarlo: el tamaño del
+      personaje de la barra, si «Volver» y «Ficha» caben con icono y palabra en un móvil, y
+      si la barra de la actividad se pelea con algo. Ningún test dice eso.
 
 **Lo que de verdad falta**, y ninguna de las tres es programación:
 
