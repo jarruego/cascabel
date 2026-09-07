@@ -138,3 +138,26 @@ describe('quién presenta cada actividad', () => {
     expect(sinDibujo).toEqual([]);
   });
 });
+
+describe('el reparto está completo', () => {
+  const DIR_ACT = join(__dirname, '..', 'content', 'actividades');
+  const todas = readdirSync(DIR_ACT)
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => JSON.parse(readFileSync(join(DIR_ACT, f), 'utf-8')) as {
+      id: string;
+      personaje?: string;
+    });
+
+  it('todas las actividades declaran su personaje', () => {
+    // Hay un valor por defecto —Dora—, así que faltar no rompe nada: sale Dora presentando
+    // una actividad de ritmo y nadie se entera. Declararlo obliga a haberlo pensado.
+    expect(todas.filter((a) => !a.personaje).map((a) => a.id)).toEqual([]);
+  });
+
+  it('los ocho tienen alguna actividad', () => {
+    // Un personaje dibujado, con diez poses y sin salir en ninguna parte sería trabajo
+    // tirado, y de los que no se notan.
+    const usados = new Set(todas.map((a) => a.personaje));
+    expect([...PERSONAJES].filter((p) => !usados.has(p))).toEqual([]);
+  });
+});

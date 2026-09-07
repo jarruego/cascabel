@@ -288,29 +288,32 @@ momento antes de empezar. Y se cambia por lo que la actividad **trabaja**, no po
 "personaje": "rex"
 ```
 
-Hoy:
+**Las 78 lo declaran**, y no por reparto automático: se elige por lo que la actividad
+trabaja, que es el criterio del dosier. Un mapa por eje habría sido más rápido y peor —
+dentro de «altura» conviven cantar una nota (crear, Laia) y distinguir cuál es más grave
+(discriminar, Simón), y son dos cosas distintas.
 
-| Personaje | Se lleva | Porque |
+| Personaje | Cuándo le toca | Actividades |
 |---|---|---|
-| **Rex** | `inf-05`, `inf-10`, `inf-13`, `c1-08`, `c2-11` | Descubrir e identificar sonidos: «escuchar para descubrir» |
-| **Milo** | `inf-09`, `inf-17`, `c1-01`, `c1-02`, `c1-20`, `c1-21`, `c3-13` | Ritmo, eco de palmas y percusión corporal: «la música también sirve para jugar» |
-| **Fara** | `inf-01`, `inf-14`, `c1-03`, `c2-13`, `c3-04` | Silencio y escucha pausada: «parar y escuchar también es hacer música» |
-| **Sol** | `inf-08`, `inf-12`, `c1-12`, `c1-15`, `c2-10`, `c3-06` | Pulso, movimiento y danza: «la música se siente y se expresa con el cuerpo» |
-| **Laia** | Las once del eje `creacion` | Inventar, improvisar, componer: «la música también se puede inventar» |
-| **Simón** | `inf-02`, `inf-03`, `inf-04`, `inf-15`, `c1-06`, `c2-09`, `c3-05` | Distinguir entre dos sonidos: «cuando escuchamos con atención, descubrimos más». Se separa de Rex en que Rex **descubre** lo que hay y Simón **distingue** entre dos |
-| **Dora** | Todas las demás | Es el valor por defecto |
+| **Dora** | La base y las referencias a las que se vuelve | 4 |
+| **Rex** | Descubrir lo que hay: identificar, investigar, seguir la pista | 13 |
+| **Milo** | El ritmo como juego: patrones, eco, palmas | 12 |
+| **Fara** | La calma: silencio, escucha larga, mirar sin responder | 7 |
+| **Sol** | El pulso en el cuerpo: movimiento, tempo, compás | 14 |
+| **Laia** | Inventar: componer, improvisar, cantar algo propio | 16 |
+| **Simón** | Distinguir entre dos: agudo o grave, mayor o menor | 11 |
+| **Doby** | La unión y el cierre. Además **cierra todas** las actividades | 1 |
 
-### Qué poses se usan de verdad hoy, y cuáles no
+### Y reacciona a lo que pasa
 
-Conviene no engañarse con esto: hay ochenta dibujos y la aplicación usa dos.
+Al acertar y al fallar, el personaje sale con su pose y una frase suya. **Dos voces y un
+orden que importa**: primero el personaje, con algo corto; debajo **la pista concreta**, que
+es la que enseña. La frase acompaña, no explica — «los dos *ti* entran en el mismo pulso» no
+lo puede decir un personaje genérico, lo dice la actividad.
 
-| Pose | Estado |
-|---|---|
-| `saluda` | **En uso.** Abre cada actividad, con el personaje que diga su JSON |
-| `celebra` | **En uso.** Doby, al terminar |
-| `anima` | **Sin usar todavía.** Le toca el sitio de la retroalimentación tras un intento fallido — la clase `.feedback`, que comparten ocho tipos de motor. Hace falta sacar ese párrafo a un componente común antes, y eso toca ocho ficheros |
-| `neutro` | **Sin usar todavía.** Es la del personaje **haciendo de nota**: teclas del piano, carriles del musicograma. Necesita **los ocho dibujados**, porque con cinco el piano enseñaría personaje en cinco teclas y nada en las otras |
-| `busca`, `palmea`, `calla`, `baila`, `canta`, `escucha` | **Sin usar todavía.** Van dentro de la actividad, no en la pantalla de entrada, y eso es una decisión de diseño por tipo de motor que aún no se ha tomado |
+Al fallar no hay lástima (§4): Fara no dice «te has equivocado», dice «sin prisa, escucha
+otra vez»; Milo no se ríe de nadie. La pose es `anima`, el recuadro es ámbar y no hay una
+sola cruz en toda la pantalla.
 
 Está así a propósito: **es un dato, no un `if`**. El día que exista Fara, ponerla en las
 actividades de silencio será una línea de contenido. `tests/personajes.test.ts` comprueba

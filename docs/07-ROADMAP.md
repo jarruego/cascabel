@@ -599,11 +599,17 @@ Abierta y cerrada el 2026-09-06, a partir de la primera prueba real del autor:
   Bajarlo todo al instalar sin preguntar sería lo cómodo y es lo que la regla del proyecto no
   permite: alguien puede abrir Cascabel en el patio con datos móviles.
 
-  **Lo que queda de los personajes**: la pose `anima`, que es la única de las diez que
-  todavía no sale en ninguna pantalla. Le toca el sitio de la retroalimentación tras un
-  intento fallido, y **lo siguiente** es sacar el párrafo `.feedback` a un componente común
-  —hoy lo repiten ocho tipos de motor con su propio `<p>`— para no repetir el personaje ocho
-  veces.
+  **Y reaccionan.** El párrafo suelto de retroalimentación que repetían siete tipos de motor
+  es ahora un componente, `ui/Reaccion.tsx`, y ahí sale el personaje de la actividad con su
+  pose y su frase. Con eso `anima` deja de ser la única pose sin usar. Dos voces y un orden:
+  el personaje acompaña —corto, en su registro— y debajo va **la pista concreta**, que es la
+  que enseña. Al fallar, ánimo y nunca lástima (§4): pose `anima`, recuadro ámbar y ni una
+  cruz.
+
+  **Las 78 actividades declaran su personaje**, elegido por lo que cada una trabaja y no por
+  un mapa automático de ejes: dentro de «altura» conviven cantar una nota —crear, Laia— y
+  distinguir cuál es más grave —discriminar, Simón—. Con test de que no falte ninguna y de
+  que ninguno de los ocho se quede sin salir.
 - [ ] Revisión con las tres preguntas de `docs/06-PIPELINE-IA.md` — es T0.3
 
 **OpenMoji es CC BY-SA 4.0, la misma licencia que ya tienen nuestros contenidos**, así que
