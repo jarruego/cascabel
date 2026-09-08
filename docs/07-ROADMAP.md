@@ -1439,7 +1439,7 @@ Contradice esto:
 legal; NN/g mide lo que funciona con niños de verdad. Pero subir los tamaños afecta a las 45
 actividades y a cuántos objetos caben en pantalla, así que lo decide el autor.
 
-### Estado a 2026-09-07 (final del día)
+### Estado a 2026-09-08 (final del día)
 
 **El catálogo previsto está entero, y ya se ha pasado de él.** Lo que queda no es terminar,
 es depurar y ampliar, y eso lo marca el uso real.
@@ -1448,10 +1448,10 @@ es depurar y ampliar, y eso lo marca el uso real.
 |---|---|
 | Actividades | 78, todas validando esquema, música y auditoría |
 | Tipos de motor | 21 (la lista viva, en [`01-ARQUITECTURA.md`](01-ARQUITECTURA.md)) |
-| Tests | 431 |
-| Precache | 1832 KiB |
+| Tests | 530 |
+| Precache | 1831 KiB |
 | Personajes | 8 × 10 poses, 1530 KB |
-| Código | ~18400 líneas en `src`, ~4400 en `tests` |
+| Código | ~18800 líneas en `src`, ~5000 en `tests` |
 
 **Lo que entró ese día, después de cerrar el catálogo previsto:**
 
@@ -1568,15 +1568,72 @@ actividad**, y todo lo demás ocupa lo mínimo.
       final tiene criterio de evaluación o no lo tiene, que es una pregunta de currículo y no
       de programación.
 
-- [ ] **Decidir si «Terminar» sobra en las actividades libres.** En el piano, la caja de
-      sonidos o los pads no hay nada que terminar, y ese botón abre la modal de celebración:
-      celebrar que has dejado de tocar el piano es raro. **Lo siguiente**: o se quita y se
-      sale solo por «Volver», o se queda pero sin celebración. Lo decide el autor.
+- [x] **«Terminar» fuera de las actividades libres.** Lo decidió el autor: «quítalo y que se
+      salga solo por Volver. Pero solo por visitar ese tipo de actividades deberían marcarse
+      como completadas». Hecho en todos los tipos sin final, y esas actividades se
+      anotan **al abrirlas**: en una actividad sin solución, haberla visto es haberla hecho,
+      y no hay ningún otro instante en el que se pueda decir que se ha completado.
+
+      Qué tipos son libres vive en [`motor/actividadesLibres.ts`](../src/motor/actividadesLibres.ts)
+      con su test, que lo comprueba contra el criterio observable —libre es el que no llama a
+      `alTerminar`— y no contra una lista escrita a mano que se quedaría vieja al añadir el
+      tipo siguiente.
 
 - [ ] **Verlo en pantalla**, que es lo único que ningún script dice. Concretamente: el tamaño
       del personaje de la barra, si «Volver» y «Ficha» caben con icono y palabra en un móvil,
       si el mensaje deslizante tapa algo, si el latido del botón de arranque cansa, y si
       alguna actividad concreta se rompe girando el teléfono.
+
+### Un patrón común para las veintiuna pantallas, 2026-09-08 (noche)
+
+De tres quejas del autor con las mismas palabras: «los botones de Empezar y otros siguen
+siendo un simple texto sin apariencia de botón», «deberían mantener un diseño común, textos
+comunes si hacen lo mismo», «siguen saliendo mensajes repetidos en el interior de la
+actividad». Las tres tenían **una causa**: cada uno de los veintiún tipos resolvía a su
+manera lo que es igual en todos.
+
+- [x] **Tres botones y no hay un cuarto**, con el latido siempre sobre la acción principal.
+      El reparto está en [`04-DISENO-UI.md`](04-DISENO-UI.md) y lo vigila
+      [`tests/botones.test.ts`](../tests/botones.test.ts), que mira también la ficha, los
+      ajustes y la calibración: tenían la misma pregunta —cuál es LA acción de esta
+      pantalla— y la respondían con un botón secundario.
+- [x] **Cuatro sitios donde la aplicación habla.** Qué hay que hacer → la explicación; dónde
+      vas → `.estado-actividad`; lo que ha pasado → la tarjeta del personaje; la nota para el
+      adulto → aparte. La tarjeta pasa a ir **superpuesta**: estaba en el flujo y movía el
+      tablero dos veces por respuesta, justo mientras el niño apunta con el dedo.
+- [x] **Las instrucciones vuelven a la explicación**, que es donde el autor las pidió. Las
+      que se habían quitado de encima de las actividades se habían quedado sin sitio; ahora
+      las da [`motor/ayudaPorTipo.ts`](../src/motor/ayudaPorTipo.ts), una por tipo.
+- [x] **Fuera los milisegundos, los cents y la regularidad** de la pantalla del niño. §7 los
+      sigue pidiendo y se siguen calculando: su sitio es la hoja del maestro. Al niño le
+      llega su lectura en palabras.
+- [x] **Ampliar amplía.** `.lienzo[data-ampliado]` centraba en los dos ejes, y centrar en
+      horizontal una rejilla de una columna es encogerla hasta el ancho de su contenido: se
+      pedía pantalla completa y el piano se quedaba igual con dos franjas de papel al lado.
+- [x] **La pantalla del micrófono que pedía §8** —permiso tardío, tras una explicación
+      ilustrada, sin insistir si se dice que no— existe por fin. Sus textos llevaban meses
+      escritos y sin usar, que es como se descubrió que faltaba.
+
+Y cuatro cosas que salieron sin buscarlas, todas del mismo tipo: **cosas escritas que no
+llegaban a la pantalla**.
+
+- [x] **Dos actividades enseñaban el enunciado de otra.** «El pulso escondido» abría diciendo
+      «toca los sonidos en orden, empezando por el más grave» —que es «De grave a agudo»— y
+      «Paisaje sonoro» decía el del memory de instrumentos. Dos actividades habían acabado
+      con el mismo prefijo de claves. No daba ningún error: la clave existía y devolvía una
+      frase bien escrita, de otra.
+- [x] **Las pistas concretas no llegaban al niño.** Las leían dos de los veintiún tipos; en
+      los otros nueve que evalúan salía la frase genérica. Regla 4 pide «una pista concreta y
+      amable», y las concretas estaban escritas desde hacía meses, yendo solo al papel.
+- [x] **Treinta y tres textos huérfanos**, catorce de ellos buenos y sin sitio.
+- [x] **Dos descuadres de currículo** —una competencia que no concuerda con el número de su
+      criterio, y otra sin declarar— y un saber de Infantil escrito de cuatro maneras, que
+      partía en cuatro un grupo que es uno.
+
+Con test cada uno, y cada test comprobado fallando antes de darlo por bueno. Y dos nuevos
+que cubren huecos que no tenían nada: las **setenta y ocho actividades se abren** una por una
+(no solo la primera de cada tipo), y el **detector de palmadas** se prueba contra tres
+segundos de silencio, que es exactamente lo que el autor vio fallar.
 
 **Lo que de verdad falta**, y ninguna de las tres es programación:
 
@@ -1595,13 +1652,23 @@ actividad**, y todo lo demás ocupa lo mínimo.
 Y dos que sí son de producto y las decide el autor:
 
 - **T3.5**, subir o no los tamaños táctiles según NN/g. Afecta a las 77 actividades.
-- **Las tres dependencias que nadie importa.** `tone`, `abcjs` y `vexflow` están instaladas
-  y ningún fichero de `src` las usa. Peor: `vite.config.ts` fuerza un *chunk* `partitura`
-  con las dos últimas, así que **cada despliegue reparte 1,1 MB (691 KB en gzip) que ningún
-  código llega a cargar**. No entra en el precache, así que no encarece la primera visita,
-  pero es peso muerto en `dist`. Son la elección de stack para cuando haya partitura de
-  verdad, así que la pregunta no es técnica: es si esa parte llega pronto o se quitan hasta
-  entonces.
+- **Dos dependencias que nadie importa, y una que sí.** El diagnóstico anterior decía que
+  eran tres y estaba mal: **VexFlow sí se usa**, con `import()` dinámico desde el pentagrama
+  (`motor/tipos/Pentagrama.tsx`), y es él solo quien pesa los 1,1 MB del *chunk* `partitura`.
+  Que sea grande está bien resuelto —carga bajo demanda y queda fuera del precache—, así que
+  ahí no hay nada que arreglar.
+
+  Los que de verdad no usa nadie son **`tone` y `abcjs`**. Al medirlo resultó que apenas
+  añadían peso al bundle porque Rollup ya los descartaba; lo que sí hacían era **obligar a
+  empaquetarlos**, porque estaban nombrados en `manualChunks` y nombrar un paquete ahí lo
+  mete aunque no lo importe nadie. Fuera de esa lista, y de paso desaparece un *chunk*
+  `audio` de un byte que se repartía en cada despliegue.
+
+  Lo que queda es una decisión de stack, y es del autor: `tone` está en `CLAUDE.md` §3 como
+  la elección para el transporte, y el transporte acabó escribiéndose a mano en
+  `audio/metronomo.ts` con *lookahead*. Entre los dos ocupan 13 MB de `node_modules` y son
+  dos paquetes más que auditar. **Lo siguiente**: decidir si el editor de partitura y el
+  transporte de Tone llegan pronto o se desinstalan hasta entonces.
 
 Y lo que quedó a medias en la revisión de anchos se cerró el mismo día:
 

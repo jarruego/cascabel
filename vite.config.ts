@@ -84,10 +84,22 @@ export default defineConfig({
     target: 'es2022',
     rollupOptions: {
       output: {
+        /*
+          Un solo trozo aparte: el de la partitura.
+
+          Aquí ponía `partitura: ['abcjs', 'vexflow']` y `audio: ['tone']`, y **nombrar un
+          paquete en `manualChunks` obliga a Rollup a empaquetarlo aunque no lo importe
+          nadie**. De los tres, el único que se usa es VexFlow, con `import()` dinámico
+          desde el pentagrama; `abcjs` y `tone` están instalados para cuando toque, y los
+          estábamos repartiendo en cada despliegue sin que ninguna línea de código llegara a
+          cargarlos. Fuera de la lista, Rollup simplemente no los mete.
+
+          VexFlow se queda con nombre propio para poder excluirlo del precache por ese
+          nombre: lo usa una actividad de setenta y ocho y no tiene por qué bajárselo un
+          colegio entero en la primera visita.
+        */
         manualChunks: {
-          // Verovio y compañía nunca entran en el arranque.
-          partitura: ['abcjs', 'vexflow'],
-          audio: ['tone'],
+          partitura: ['vexflow'],
         },
       },
     },
@@ -141,8 +153,8 @@ export default defineConfig({
         navigateFallbackDenylist: [/^\/content\//, /^\/audio\//, /^\/worklets\//],
         globPatterns: ['**/*.{js,css,html,svg,png,opus,json}', 'fuentes/Andika-Regular.woff2'],
         // Fuera del precache a propósito:
-        //  - Bravura (316 KB) y el chunk `partitura` con VexFlow y abcjs (691 KB gzip).
-        //    Los usa UNA actividad de las quince. Precachearlos triplicaría la primera
+        //  - Bravura (316 KB) y el chunk `partitura`, que es VexFlow (691 KB gzip).
+        //    Los usa UNA actividad de las setenta y ocho. Precachearlos triplicaría la primera
         //    descarga de todos los niños de un colegio para algo que la mayoría no abre.
         //    Se bajan el día que se abre un pentagrama, y entonces se quedan cacheados.
         //  - Los .txt de licencia, que son para humanos y no para la app.
