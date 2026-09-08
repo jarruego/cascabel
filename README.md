@@ -112,6 +112,7 @@ prompts/               prompts de generación de contenido y de sesión con Clau
 | [docs/12-IDEAS-Y-AMPLIACIONES.md](docs/12-IDEAS-Y-AMPLIACIONES.md) | Qué hay libre que se pueda aprovechar, qué construir y **qué no hacer** |
 | [docs/13-PENDIENTE-DE-REVISION.md](docs/13-PENDIENTE-DE-REVISION.md) | **Generado.** Todo lo que espera criterio musical o de aula, en un sitio |
 | [docs/14-PERSONAJES.md](docs/14-PERSONAJES.md) | Los ocho personajes de cocomusic: poses, prompts y cómo entran en la app |
+| [docs/15-PANTALLAS-Y-CODIGO-LIBRE.md](docs/15-PANTALLAS-Y-CODIGO-LIBRE.md) | Qué código libre se puede reaprovechar, y la aritmética de que se vea desde el fondo del aula |
 | [docs/adr/](docs/adr/) | Decisiones de arquitectura, con sus consecuencias |
 
 ## Trabajar con Claude Code

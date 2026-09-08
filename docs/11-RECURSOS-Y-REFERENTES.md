@@ -7,6 +7,10 @@ ocho que uno de ellos era CC BY-NC y hay que rehacer el trabajo.
 Recordatorio de la regla 1: nada de esto se carga desde su servidor. Todo lo que entre se
 descarga, se procesa y se sirve desde nuestro origen.
 
+**Continúa en [`15-PANTALLAS-Y-CODIGO-LIBRE.md`](15-PANTALLAS-Y-CODIGO-LIBRE.md)** (2026-09-08),
+que no repite nada de aquí: va de repositorios de código con su licencia comprobada, y de la
+aritmética de que la última fila del aula vea lo que hay en la pizarra.
+
 ---
 
 ## 1. Partituras de dominio público
