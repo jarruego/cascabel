@@ -562,7 +562,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
             className="boton-actividad karaoke__diana"
             onPointerDown={() => tocar()}
           >
-            {t('karaoke.diana')}
+            {t('tocar.diana')}
           </button>
         )
       )}

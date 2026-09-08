@@ -300,7 +300,7 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
               despachar({ tipo: 'comprobar', solucion: contenido.solucion ?? [] })
             }
           >
-            {t('rejilla.comprobar')}
+            {t('ordenar.comprobar')}
           </button>
         )}
       </div>

@@ -30,22 +30,22 @@
     "tempo": 96,
     "bloques": [
       {
-        "texto": "forma.A",
+        "texto": "forma.a",
         "color": "altura",
         "pulsos": 8
       },
       {
-        "texto": "forma.A",
+        "texto": "forma.a",
         "color": "altura",
         "pulsos": 8.0
       },
       {
-        "texto": "forma.B",
+        "texto": "forma.b",
         "color": "creacion",
         "pulsos": 8
       },
       {
-        "texto": "forma.A",
+        "texto": "forma.a",
         "color": "altura",
         "pulsos": 8.0
       }

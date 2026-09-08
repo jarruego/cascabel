@@ -310,7 +310,9 @@ export default function Catalogo() {
           <option value="">{t('filtro.criterio')}</option>
           {criterios.map((c) => (
             <option key={c} value={c}>
-              {t('filtro.crit')} {c}
+              {/* La misma palabra que la opción vacía: «Criterio» y «Criterio 3.1». Tenía
+                  clave propia y decía exactamente lo mismo. */}
+              {t('filtro.criterio')} {c}
             </option>
           ))}
         </select>

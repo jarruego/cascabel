@@ -90,7 +90,7 @@ export default function GuiaAula({ actividad }: PropsActividad) {
         {t(contenido.consigna)}
       </h1>
 
-      <div className="guia__pulso" role="group" aria-label={t('guia.pulso')}>
+      <div className="guia__pulso" role="group" aria-label={t('accion.pulso')}>
         {Array.from({ length: pulsosPorCompas }, (_, i) => (
           <span
             key={i}

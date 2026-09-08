@@ -149,7 +149,7 @@ export function ModalExito({
 
       <div className="modal__acciones">
         <button type="button" className="boton-repetir" onClick={alRepetir}>
-          {t('modal.otraVez')}
+          {t('tocar.otraVez')}
         </button>
         <button type="button" className="boton-principal modal__empezar" onClick={alVolver}>
           {t('modal.volver')}

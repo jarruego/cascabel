@@ -114,7 +114,7 @@ export default function Calibracion() {
           className="boton-principal boton-arranque"
           onClick={() => void empezar()}
         >
-          {t('calibracion.empezar')}
+          {t('accion.empezar')}
         </button>
       )}
 

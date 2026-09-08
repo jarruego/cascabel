@@ -312,7 +312,7 @@ export default function Pads({ actividad }: PropsActividad) {
               }}
             >
               {grabando ? <IconoParar /> : <IconoGrabar />}
-              {t(grabando ? 'teclado.parar' : 'teclado.grabar')}
+              {t(grabando ? 'accion.parar' : 'teclado.grabar')}
             </button>
 
             <button
@@ -333,7 +333,7 @@ export default function Pads({ actividad }: PropsActividad) {
               }}
             >
               <IconoTocar />
-              {t(reproduciendo ? 'teclado.sonando' : 'teclado.reproducir')}
+              {t(reproduciendo ? 'teclado.sonando' : 'accion.escuchar')}
             </button>
           </>
         )}

@@ -63,6 +63,74 @@ const PREFIJOS = [
   .map((m) => m[1]!)
   .filter(Boolean);
 
+/**
+ * Textos que se repiten con razón, y por qué.
+ *
+ * Cada uno es una pareja que hoy dice lo mismo y mañana puede no decirlo, así que juntarlas
+ * sería atarlas por casualidad. Todo lo que no esté aquí y esté repetido es un descuido.
+ */
+const REPETIDOS_A_PROPOSITO: Record<string, string> = {
+  'catalogo.titulo|nav.actividades|catalogo.actividades':
+    'el título de una pantalla, la etiqueta de su botón de navegación y el nombre de una ' +
+    'sección: caben tres longitudes distintas en cuanto la barra se estreche',
+  'ajustes.titulo|nav.ajustes': 'lo mismo',
+  'ajustes.privacidad|catalogo.privacidad': 'un apartado de ajustes y un enlace del pie',
+  'ajustes.calibracion|calibracion.titulo': 'el enlace que lleva y el título de la pantalla',
+  'catalogo.creditos|creditos.titulo': 'lo mismo',
+  'instrumento.piano|pista.piano':
+    'un instrumento del sampler y una voz de un arreglo. Coinciden en castellano y no ' +
+    'tienen por qué coincidir en otro idioma',
+  'instrumento.flauta|pista.flauta': 'lo mismo',
+  'rejilla.pulso|accion.pulso': 'uno va dentro de una frase de lector de pantalla, en minúscula',
+  'comun.empezar|accion.empezar':
+    'el de la pantalla de explicación lleva admiración y es el más grande de la aplicación; ' +
+    'el otro es el botón de dentro de la actividad',
+};
+
+describe('un texto por cosa', () => {
+  /*
+    «Textos comunes si hacen lo mismo», pidió el autor. Y había once claves distintas
+    diciendo cinco palabras: «Parar» escrita tres veces, «Escuchar» tres, «Comprobar» dos.
+
+    Duplicar un texto no rompe nada hoy y se cobra tres veces: al traducir son más cadenas y
+    basta con que dos se traduzcan distinto para que la aplicación diga «Parar» en un sitio
+    y «Detener» en otro; al cambiarlo hay que acordarse de todos los sitios; y en pantalla es
+    cómo se acaba con dos botones que hacen lo mismo y no se llaman igual.
+
+    No entran los textos de contenido —`actividad.*`, `opcion.*`, `ficha.*`—: ahí que dos
+    actividades coincidan en una frase corta es normal y no significa nada.
+  */
+  const DE_INTERFAZ = Object.entries(DICCIONARIO).filter(
+    ([k]) => !/^(actividad|ficha|opcion|reaccion)\./.test(k),
+  );
+
+  it('ninguna palabra de la interfaz se escribe en dos claves', () => {
+    const porTexto = new Map<string, string[]>();
+    for (const [k, v] of DE_INTERFAZ) {
+      const normal = v.trim().toLowerCase();
+      porTexto.set(normal, [...(porTexto.get(normal) ?? []), k]);
+    }
+    const repetidos = [...porTexto.values()]
+      .filter((ks) => ks.length > 1)
+      .map((ks) => ks.join('|'))
+      .filter((firma) => !(firma in REPETIDOS_A_PROPOSITO));
+    expect(
+      repetidos,
+      `mismo texto en varias claves (júntalas, o apúntalas en REPETIDOS_A_PROPOSITO ` +
+        `con el motivo):\n${repetidos.join('\n')}`,
+    ).toEqual([]);
+  });
+
+  it('la lista de excepciones no acumula parejas que ya no existen', () => {
+    // Una excepción que sobra es peor que ninguna: da permiso a un duplicado futuro que
+    // caiga por casualidad en las mismas claves.
+    const vivas = Object.keys(REPETIDOS_A_PROPOSITO).filter((firma) =>
+      firma.split('|').every((k) => k in DICCIONARIO),
+    );
+    expect(vivas).toEqual(Object.keys(REPETIDOS_A_PROPOSITO));
+  });
+});
+
 describe('textos vivos', () => {
   it('el código compone claves con plantilla, y se han encontrado', () => {
     // Si esta lista se quedara vacía por un cambio de estilo, la comprobación de abajo

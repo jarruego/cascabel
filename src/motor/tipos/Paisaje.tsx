@@ -137,7 +137,7 @@ export default function Paisaje({ actividad }: PropsActividad) {
           onClick={() => void (grabando ? detener() : empezar())}
         >
           {grabando ? <IconoParar tamano={30} /> : <IconoGrabar tamano={30} />}
-          {t(grabando ? 'paisaje.parar' : 'paisaje.grabar')}
+          {t(grabando ? 'accion.parar' : 'paisaje.grabar')}
         </button>
       </div>
 
@@ -163,7 +163,7 @@ export default function Paisaje({ actividad }: PropsActividad) {
               <li key={g.id}>
                 <button type="button" className="boton-repetir" onClick={() => escuchar(g)}>
                   <IconoTocar />
-                  {sonando === g.id ? t('teclado.sonando') : t('paisaje.escuchar')}
+                  {sonando === g.id ? t('teclado.sonando') : t('accion.escuchar')}
                   {/* «12 segundos» y no «12 s»: la abreviatura hay que sabérsela, y esto lo lee un
                       niño de nueve años que está eligiendo cuál de sus grabaciones oír. */}
                   <span className="paisaje__duracion">
