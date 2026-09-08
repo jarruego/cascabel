@@ -86,6 +86,65 @@ y pon encima un hitbox transparente de 60 px. VexFlow te da control total para h
 10. **Tipografía grande y legible.** Andika (SIL, OFL) para Infantil; Atkinson Hyperlegible
     y OpenDyslexic como opción conmutable.
 
+## Los tres botones y los cuatro sitios donde se habla
+
+Añadido el 2026-09-08, después de que el autor lo pidiera dos veces con las mismas palabras:
+«los botones de Empezar y otros siguen siendo un simple texto sin apariencia de botón»,
+«deberían mantener un diseño común, textos comunes si hacen lo mismo», «siguen saliendo
+mensajes repetidos en el interior de la actividad».
+
+Las tres quejas tenían **una sola causa**: cada uno de los veintiún tipos de motor resolvía a
+su manera lo que es igual en todos. No faltaba CSS, faltaba un reparto.
+
+### Tres botones, y no hay un cuarto
+
+| Clase | Qué es | Cómo se ve |
+|---|---|---|
+| `.boton-principal` | La acción que hace **avanzar**: empezar, comprobar, otra vez, siguiente | Relleno. Hay **una sola** en pantalla |
+| `.boton-repetir` | Lo secundario: limpiar, grabar, exportar, cambiar de instrumento, «Idea» | Borde y sombra, más pequeño |
+| `.boton-actividad` | Lo que se toca porque **es** la actividad: opciones, fichas, bandas, la diana, el pandero | Tarjeta grande, del tamaño del carril |
+
+Y encima de la principal, `.boton-arranque` mientras no se haya pulsado: late por el borde
+una vez cada dos segundos y para en cuanto la actividad arranca. **Late uno solo.** Si
+latieran dos dejaría de significar «este», que es lo único que hace.
+
+Lo vigila [`tests/botones.test.ts`](../tests/botones.test.ts): ningún botón sin clase,
+ninguna clase sin regla, ningún latido fuera de la acción principal.
+
+### Cuatro sitios donde la aplicación habla, y cada cosa en el suyo
+
+1. **Qué hay que hacer** → la pantalla de explicación. Se lee al entrar y se vuelve a leer
+   **pulsando al personaje**, que está siempre abajo en el centro. Dentro de la actividad no
+   se repite: mientras se juega, la pantalla es de la actividad.
+
+   Son dos frases: el `enunciado` de esa actividad y la ayuda de su tipo
+   ([`motor/ayudaPorTipo.ts`](../src/motor/ayudaPorTipo.ts)), que es igual en todas las de
+   ese tipo. El enunciado no debe repetir la ayuda — la auditoría avisa si lo hace.
+2. **Dónde vas** → `.estado-actividad`. «Ahora tú», «esta vuelta va de palmas», «ya están
+   todas puestas». Cambia solo, cabe en tres palabras, y por eso se puede quedar fijo.
+3. **Lo que ha pasado** → `Reaccion`, la tarjeta del personaje. Va **superpuesta** abajo a la
+   izquierda, entra deslizando y se va sola a los tres segundos y medio más un poco por cada
+   palabra. No recibe toques.
+
+   Estuvo dentro del flujo hasta el 2026-09-08 y era peor de lo que parece: al aparecer
+   empujaba el tablero hacia abajo y al irse lo subía, así que cada respuesta movía la
+   pantalla dos veces, justo mientras el niño apunta con el dedo.
+
+   Dentro lleva dos voces y el orden importa: primero el personaje con una frase suya y
+   corta, y debajo **la pista concreta de esa actividad**, que es la que enseña algo. La
+   segunda la trae el JSON, porque «los dos “ti” entran en el mismo pulso» no lo puede decir
+   un personaje genérico.
+4. **La nota para el adulto** → `.pista-fija`, y en la explicación `.modal__adulto`. Que el
+   piano también se toca con el teclado del ordenador, que el eco es para dos, que la
+   tonalidad se sube hasta que la clase cante cómoda. Nada de esto es para quien va a jugar.
+
+### Lo que no aparece nunca en la pantalla del niño
+
+Milisegundos, cents, porcentaje de regularidad, desviación típica. `CLAUDE.md` §7 pide esos
+números y se siguen calculando, pero su sitio es la hoja de seguimiento del maestro. Lo que
+llega al niño es su **lectura en palabras**, que es exactamente lo que distingue «has
+fallado» de «tu pulso es muy regular, solo vas un poquito por detrás».
+
 ## Los anchos: lo que se lee y lo que se toca
 
 Añadido el 2026-09-07, después de que el autor señalara que «el piano no se estira al 100 %

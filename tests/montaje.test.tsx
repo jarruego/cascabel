@@ -24,15 +24,18 @@ import type { Actividad, TipoActividad } from '@/motor/tipos';
  * hace falta añadir una dependencia para esto.
  */
 
+function todas(): Actividad[] {
+  const dir = join(__dirname, '..', 'content', 'actividades');
+  return readdirSync(dir)
+    .filter((f) => f.endsWith('.json'))
+    .sort()
+    .map((f) => JSON.parse(readFileSync(join(dir, f), 'utf-8')) as Actividad);
+}
+
 /** Una actividad por tipo, la primera que haya de cada uno. */
 function unaPorTipo(): Map<TipoActividad, Actividad> {
-  const dir = join(__dirname, '..', 'content', 'actividades');
   const porTipo = new Map<TipoActividad, Actividad>();
-  for (const f of readdirSync(dir).sort()) {
-    if (!f.endsWith('.json')) continue;
-    const a = JSON.parse(readFileSync(join(dir, f), 'utf-8')) as Actividad;
-    if (!porTipo.has(a.tipo)) porTipo.set(a.tipo, a);
-  }
+  for (const a of todas()) if (!porTipo.has(a.tipo)) porTipo.set(a.tipo, a);
   return porTipo;
 }
 
@@ -80,6 +83,22 @@ afterEach(() => {
 
 const actividades = unaPorTipo();
 
+/** Monta una actividad y devuelve el texto de su `h1`, o lanza si no se pudo montar. */
+async function montar(actividad: Actividad): Promise<string> {
+  const Componente = componenteDe(actividad.tipo);
+  if (!Componente) throw new Error(`sin componente para «${actividad.tipo}»`);
+  caja = document.createElement('div');
+  document.body.appendChild(caja);
+  raiz = createRoot(caja);
+  act(() => {
+    raiz!.render(createElement(Componente, { actividad, alTerminar: () => {} }));
+  });
+  // Un ciclo más para que corran los efectos que arrancan solos y sus promesas: es donde
+  // suelen estar los fallos de montaje, no en el primer dibujado.
+  await act(async () => {});
+  return caja.querySelector('h1')?.textContent?.trim() ?? '';
+}
+
 describe('cada tipo de motor se monta', () => {
   it('hay una actividad de cada tipo registrado', () => {
     // Si esto falla, es que se registró un tipo y no se escribió contenido para él: el
@@ -90,28 +109,41 @@ describe('cada tipo de motor se monta', () => {
 
   for (const [tipo, actividad] of actividades) {
     it(`${tipo} (${actividad.id})`, async () => {
-      const Componente = componenteDe(tipo);
-      expect(Componente, `sin componente registrado para «${tipo}»`).toBeTruthy();
-
-      caja = document.createElement('div');
-      document.body.appendChild(caja);
-      raiz = createRoot(caja);
-
-      act(() => {
-        raiz!.render(
-          createElement(Componente!, { actividad, alTerminar: () => {} }),
-        );
-      });
-
-      // Un ciclo más para que corran los efectos que arrancan solos y sus promesas: es
-      // donde suelen estar los fallos de montaje, no en el primer dibujado.
-      await act(async () => {});
-
       // Toda actividad enseña su consigna en un h1. Si esto está vacío, el componente se
       // dibujó pero no leyó su contenido, que es tan roto como no dibujarse.
-      const titulo = caja.querySelector('h1');
-      expect(titulo, `«${tipo}» no dibuja ningún h1`).toBeTruthy();
-      expect(titulo!.textContent?.trim().length, `«${tipo}» dibuja un h1 vacío`).toBeGreaterThan(0);
+      const titulo = await montar(actividad);
+      expect(titulo.length, `«${tipo}» dibuja un h1 vacío o ninguno`).toBeGreaterThan(0);
+    });
+  }
+});
+
+/**
+ * Y las setenta y ocho, una por una.
+ *
+ * Lo de arriba prueba **el tipo**; esto prueba **el contenido**. No es lo mismo: un JSON al
+ * que le falta un campo que su tipo da por hecho, una clave de texto mal escrita o una
+ * combinación de opciones que nadie había juntado rompen esa actividad y ninguna otra, y el
+ * primer bloque no las tocaría porque solo abre la primera de cada tipo.
+ *
+ * Es la versión mecánica de «revísalas una por una»: no dice si una actividad es buena —eso
+ * hay que mirarlo—, dice que se abre y que enseña su consigna.
+ */
+describe('las setenta y ocho actividades se abren', () => {
+  const TODAS = todas();
+
+  it('hay contenido que revisar', () => {
+    expect(TODAS.length).toBeGreaterThan(70);
+  });
+
+  for (const actividad of TODAS) {
+    it(actividad.id, async () => {
+      const titulo = await montar(actividad);
+      expect(titulo.length, `«${actividad.id}» dibuja un h1 vacío o ninguno`).toBeGreaterThan(0);
+      // La clave sin traducir se cuela tal cual en la pantalla y no da ningún error: es el
+      // fallo que enseñó «actividad.c120mano.enunciado» en el sitio del enunciado.
+      expect(titulo, `«${actividad.id}» enseña una clave en crudo`).not.toMatch(
+        /^[a-z]+\.[a-zA-Z0-9.]+$/,
+      );
     });
   }
 });
