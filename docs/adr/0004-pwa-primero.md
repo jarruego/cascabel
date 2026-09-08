@@ -54,6 +54,15 @@ equivalente funciona en Android. El daño se acota además por tres vías:
    Está escrito como regla en `CLAUDE.md` §8. Con esto, un iOS roto degrada la experiencia
    —el niño toca en vez de cantar— pero **no deja ninguna actividad inaccesible**, que es
    la diferencia entre un defecto y un cambio de arquitectura.
+
+   Desde el 2026-09-08 esa vía tiene además **puerta de entrada propia**: antes de pedir el
+   permiso sale una pantalla que explica para qué vamos a escuchar y que la voz se queda en
+   el aparato, con dos salidas del mismo tamaño —adelante, o «prefiero tocar en la
+   pantalla»—. La decisión vale para toda la sesión y no se vuelve a preguntar
+   (`escucha/permiso.ts`). No cambia la decisión de esta ADR: la refuerza, porque ahora
+   elegir el toque es una opción que se ofrece y no solo el sitio donde se cae cuando algo
+   falla — que es exactamente lo que hace falta si el día de mañana resulta que en iOS
+   falla siempre.
 2. **Un instrumento que recoja el dato cuando aparezca.** La ruta `/diagnostico` (T0.1b)
    informa de sistema, navegador, modo *standalone*, `sampleRate`, latencias y estado del
    micrófono, con un botón de copiar. El primer maestro con iPad que abra la app nos puede

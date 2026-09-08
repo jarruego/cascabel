@@ -1579,10 +1579,15 @@ actividad**, y todo lo demás ocupa lo mínimo.
       `alTerminar`— y no contra una lista escrita a mano que se quedaría vieja al añadir el
       tipo siguiente.
 
-- [ ] **Verlo en pantalla**, que es lo único que ningún script dice. Concretamente: el tamaño
-      del personaje de la barra, si «Volver» y «Ficha» caben con icono y palabra en un móvil,
-      si el mensaje deslizante tapa algo, si el latido del botón de arranque cansa, y si
-      alguna actividad concreta se rompe girando el teléfono.
+- [ ] **Verlo en pantalla**, que es lo único que ningún script dice, y **es lo que queda de
+      todo esto**. Concretamente: el tamaño del personaje de la barra; si «Volver» y «Ficha»
+      caben con icono y palabra en un móvil; si la tarjeta de reacción, ahora superpuesta
+      abajo a la izquierda, tapa algo que se esté tocando; si el latido del botón de arranque
+      cansa a los treinta segundos; si el alto del musicograma horizontal se pasa en una
+      pizarra; y si alguna actividad concreta se rompe girando el teléfono.
+
+      **Lo siguiente**: abrir una de cada tipo en el móvil y en la pizarra, girando, con la
+      lista de arriba delante. Ninguna de esas seis cosas la puede contestar un test.
 
 ### Un patrón común para las veintiuna pantallas, 2026-09-08 (noche)
 
@@ -1614,7 +1619,7 @@ manera lo que es igual en todos.
       ilustrada, sin insistir si se dice que no— existe por fin. Sus textos llevaban meses
       escritos y sin usar, que es como se descubrió que faltaba.
 
-Y cuatro cosas que salieron sin buscarlas, todas del mismo tipo: **cosas escritas que no
+Y seis cosas que salieron sin buscarlas, casi todas del mismo tipo: **cosas escritas que no
 llegaban a la pantalla**.
 
 - [x] **Dos actividades enseñaban el enunciado de otra.** «El pulso escondido» abría diciendo
@@ -1629,11 +1634,42 @@ llegaban a la pantalla**.
 - [x] **Dos descuadres de currículo** —una competencia que no concuerda con el número de su
       criterio, y otra sin declarar— y un saber de Infantil escrito de cuatro maneras, que
       partía en cuatro un grupo que es uno.
+- [x] **La región `aria-live` nacía con el mensaje.** `Reaccion` montaba y desmontaba un solo
+      elemento que llevaba a la vez el atributo y el texto, y varios lectores de pantalla
+      solo vigilan las regiones que ya estaban: es la forma más común de escribir un aviso
+      que un niño ciego no llega a oír. **Y el test de accesibilidad lo daba por bueno**,
+      porque comprobaba que el `aria-live` estuviera —y estaba—. Ahora son dos elementos: la
+      caja que no se ve y no se desmonta, y la tarjeta que aparece con cada mensaje. Eso
+      arregla de paso que la animación de entrada volviera a correr, que con un solo elemento
+      permanente habría corrido una vez y nunca más.
+- [x] **Un texto por cosa.** Doce claves distintas decían seis palabras: «Parar» escrita tres
+      veces, «Escuchar» tres, y `forma.a` y `forma.A` eran la misma letra en dos claves. El
+      test que lo vigila lleva la lista de las parejas que se repiten a propósito, cada una
+      con su motivo, y comprueba que esa lista no acumule excepciones muertas.
 
-Con test cada uno, y cada test comprobado fallando antes de darlo por bueno. Y dos nuevos
-que cubren huecos que no tenían nada: las **setenta y ocho actividades se abren** una por una
-(no solo la primera de cada tipo), y el **detector de palmadas** se prueba contra tres
-segundos de silencio, que es exactamente lo que el autor vio fallar.
+Y dos de anchos, que son de la misma familia que la revisión de septiembre:
+
+- [x] **El musicograma horizontal medía 160 px de alto pasara lo que pasara** — el mismo
+      número en un móvil y en una pizarra—, y además estaba escrito en dos sitios: en el CSS
+      y en la constante sobre la que la geometría reparte los carriles. Ahora sale de la caja
+      medida, con suelo y techo, y se aplica en línea como el vertical.
+- [x] **El botón de ampliar tenía dos reglas** a mil setecientas líneas una de otra, y la
+      segunda repetía `top` y `right` para añadir solo el margen y el z-index.
+
+Los seis primeros llevan test, y cada uno se comprobó **fallando** antes de darlo por bueno.
+Los dos de anchos no: uno es geometría que ya tiene su test y el otro es CSS duplicado, y un
+test que compruebe que dos reglas no dicen lo mismo sería más frágil que el problema.
+
+Y dos tests nuevos cubren huecos que no tenían nada: las **setenta y ocho actividades se
+abren** una por una —no solo la primera de cada tipo, que era lo que había— y el **detector
+de palmadas** se prueba contra tres segundos de silencio, que es exactamente lo que el autor
+vio fallar. Ese segundo carga el fichero de verdad, el que ejecuta el navegador, con el
+entorno del hilo de audio simulado alrededor: una copia en TypeScript probaría la copia.
+
+Ningún ADR cambia con esto. Lo de hoy afina lo que ya estaba decidido —el marco mínimo de
+[`adr/0007`](adr/0007-sin-codigos-de-verificacion.md) y la degradación por toque de
+[`adr/0004`](adr/0004-pwa-primero.md), a la que la pantalla del micrófono le pone por fin su
+puerta de entrada— y no revierte ninguna.
 
 **Lo que de verdad falta**, y ninguna de las tres es programación:
 
