@@ -2457,9 +2457,13 @@ p {
 .lienzo { position: relative; }
 
 .lienzo__boton {
+  /* Superpuesto y pegado a la esquina. Antes iba en el flujo y se comía una franja entera
+     de la actividad; ahora se solapa, que es lo que hace cualquier reproductor. */
   position: absolute;
   top: 0;
   right: 0;
+  margin: 0;
+  z-index: 4;
   display: grid;
   place-items: center;
   width: 44px;
@@ -4137,13 +4141,9 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   .boton-arranque { animation: none; }
 }
 
-/* El botón de ampliar, pegado a la esquina. Antes iba en el flujo y se comía una franja
-   entera de la actividad; ahora se superpone, que es lo que hace cualquier reproductor. */
-.lienzo__boton {
-  top: 0;
-  right: 0;
-  margin: 0;
-  z-index: 4;
-}
-/* Aire por debajo para que no se pise con lo primero de la actividad. */
+/* Aire por debajo del botón de ampliar, para que no se pise con lo primero de la
+   actividad. Lo demás de ese botón está arriba, con el resto del modo lienzo: tenía una
+   segunda regla aquí que repetía `top` y `right` y solo añadía el `margin` y el `z-index`,
+   y dos reglas del mismo selector a mil setecientas líneas de distancia es cómo se acaba
+   cambiando una y no la otra. */
 .lienzo > *:first-child { padding-top: var(--e-2); }
