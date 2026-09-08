@@ -179,6 +179,11 @@
      la actividad y la tarjeta de reacción, y a ojo se descuadraban una respecto de otra. */
   --alto-barra: calc(76px + env(safe-area-inset-bottom));
 
+  /* Lo que tarda la tarjeta de reacción en irse. Vive aquí porque lo usan dos: la animación
+     y el temporizador que la desmonta después, y si se separaran la tarjeta desaparecería
+     antes de acabar de irse o se quedaría un rato invisible ocupando sitio. */
+  --reaccion-sale: 220ms;
+
   /*
     El alto que le queda de verdad a la actividad.
 
@@ -511,9 +516,42 @@ p {
   min-height: 0;
   width: 100%;
 }
-/* El aire lo pone el `gap`. Los márgenes propios de cada bloque se suman a él y vuelven a
-   descuadrar lo que esto viene a cuadrar. El horizontal se respeta: es el que centra. */
-.actividad > * { margin-block: 0; }
+/*
+  El aire lo pone el `gap`, y el centrado lo pone `auto`.
+
+  Los márgenes verticales propios de cada bloque se suman al `gap` y descuadran lo que el
+  escenario viene a cuadrar, así que se van. Y los laterales pasan a `auto`, que es lo único
+  que centra un bloque acotado: media docena traían `margin: 24px 0`, un atajo que pone el
+  lateral a CERO, y con él la diana de «Toca aquí» —que declara `max-width: 560px`— se
+  quedaba pegada a la izquierda en cualquier pantalla más ancha que eso.
+
+  En un bloque que ya ocupa el ancho entero, `auto` no hace nada: no sobra espacio que
+  repartir. Por eso vale para todos y no hace falta ir regla por regla.
+*/
+.actividad > * {
+  margin-block: 0;
+  margin-inline: auto;
+}
+
+/*
+  Ninguna superficie más alta que el escenario, pase lo que pase.
+
+  Las tres grandes tienen un suelo en su `clamp` —240 px el lienzo, 220 el musicograma que
+  cae, 240 el de bandas— y un suelo manda sobre el alto disponible: en un móvil apaisado el
+  escenario mide unos 254 px, así que el suelo solo ya no cabía y se comía las barras. El
+  tope lo arregla sin tocar los suelos, que siguen valiendo para el caso normal.
+
+  **Se pueden recortar porque su geometría va en porcentajes.** Las franjas del lienzo, los
+  bloques que caen y las notas del musicograma se colocan con `%` del alto —`avance` es un
+  porcentaje, no píxeles—, así que la caja puede medir lo que sea y todo sigue cuadrando.
+  Las que NO se tocan son las que miden en píxeles: el pandero del eco es un cuadrado y
+  recortarle el alto lo dejaría ovalado, y la diana declara un mínimo, no un alto.
+*/
+.lienzo__area,
+.seguir__pista,
+.karaoke__pauta {
+  max-height: calc(var(--alto-escena) * 0.88);
+}
 
 .filtros label {
   display: grid;
@@ -3765,11 +3803,20 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 */
 .reaccion {
   position: fixed;
-  left: var(--e-3);
+  /*
+    Centrada. Estaba clavada a la izquierda con `left`, y era deliberado mientras no había
+    botonera —se apoyaba en la esquina—: en cuanto debajo hubo una barra centrada, una
+    tarjeta pegada al borde se lee como un descuadre. `left: 0; right: 0` con `margin-inline:
+    auto` es lo que centra un elemento fijo dejando `transform` libre para la animación;
+    con `left: 50%` habría que gastar el `transform` en el centrado.
+  */
+  left: 0;
+  right: 0;
   /* Encima de las dos barras. `--alto-acciones` lo publica la botonera al medirse. */
   bottom: calc(var(--alto-barra) + var(--alto-acciones, 0px) + var(--e-3));
   z-index: 20;
   width: min(38ch, calc(100vw - 2 * var(--e-3)));
+  margin-inline: auto;
   pointer-events: none;
 }
 /* Y la tarjeta, que es lo que se ve y lo que entra deslizando. */
@@ -3783,14 +3830,31 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   box-shadow: var(--sombra-2);
   color: var(--tinta);
   text-align: left;
+  /*
+    Sube al aparecer y baja al irse.
+
+    Entraba deslizando de lado cuando estaba apoyada en la esquina izquierda; centrada, lo
+    que se lee bien es que suba desde donde está la barra. Y **se va animada**: antes
+    desaparecía de golpe al cumplirse el tiempo, que es un parpadeo, y un parpadeo en el
+    borde de la pantalla no se distingue de un fallo.
+  */
   animation: reaccion-entra 260ms cubic-bezier(0.16, 1, 0.3, 1);
 }
+.reaccion__tarjeta[data-saliendo] {
+  animation: reaccion-sale var(--reaccion-sale) ease-in forwards;
+}
 @keyframes reaccion-entra {
-  from { opacity: 0; transform: translateX(-24px); }
-  to { opacity: 1; transform: translateX(0); }
+  from { opacity: 0; transform: translateY(14px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes reaccion-sale {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(10px) scale(0.98); }
 }
 @media (prefers-reduced-motion: reduce) {
+  /* Sin movimiento, pero tampoco un corte seco: se apaga. */
   .reaccion__tarjeta { animation: none; }
+  .reaccion__tarjeta[data-saliendo] { opacity: 0; transition: opacity var(--reaccion-sale); }
 }
 .reaccion__tarjeta[data-tono='bien'] { background: var(--suave-verde); border-color: var(--vivo-verde); }
 .reaccion__tarjeta[data-tono='casi'] { background: var(--suave-amarillo); border-color: var(--vivo-naranja); }

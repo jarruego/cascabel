@@ -106,6 +106,26 @@ describe('la interfaz aprovecha la pantalla', () => {
     }
   });
 
+  it('lo que tarda la tarjeta en irse dice lo mismo en el CSS y en el componente', () => {
+    /*
+      Son dos números que tienen que ser el mismo y viven separados: la animación de salida
+      está en el CSS y el temporizador que desmonta la tarjeta está en el componente, porque
+      una animación no se puede leer desde JavaScript sin medir el DOM.
+
+      Si se separan no falla nada, y ése es el problema: con el JS más corto la tarjeta
+      desaparece a medio irse, y con el CSS más corto se queda un rato invisible ocupando su
+      sitio y tapando lo que haya debajo.
+    */
+    const enCss = /--reaccion-sale:\s*(\d+)ms/.exec(SIN_COMENTARIOS);
+    const componente = readFileSync(join(__dirname, '..', 'src', 'ui', 'Reaccion.tsx'), 'utf-8');
+    const enJs = /const SALIDA_MS = (\d+);/.exec(componente);
+    expect(enCss, 'no se encuentra --reaccion-sale en el CSS').toBeTruthy();
+    expect(enJs, 'no se encuentra SALIDA_MS en Reaccion.tsx').toBeTruthy();
+    expect(Number(enJs![1]), 'el temporizador no dura lo que la animación').toBe(
+      Number(enCss![1]),
+    );
+  });
+
   it('hay una regla para la pantalla apaisada y baja, que es un móvil girado', () => {
     // Es la postura del piano y de todo lo que avanza de lado, y donde menos altura hay.
     expect(CSS).toMatch(/@media\s*\(orientation:\s*landscape\)\s*and\s*\(max-height/);

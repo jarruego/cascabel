@@ -1711,8 +1711,33 @@ Y un test que se dejaba engañar: el de clases CSS huérfanas busca el nombre co
 comentario que lo mencione basta para darla por viva. Tres reglas muertas sobrevivieron por
 estar documentadas en la barra que venía a sustituirlas. Ahora mira el código sin comentarios.
 
-**Lo siguiente, y lo dijo el autor**: centrar las cosas en pantalla y hacer que quepan. Esto
-era el paso previo — con quince contenedores no había nada que centrar.
+### Centrar y hacer caber, 2026-09-09
+
+- [x] **La actividad tiene un escenario.** `.actividad` no tenía **ninguna** regla: cada tipo
+      colocaba lo suyo en el flujo del documento, pegado arriba, y lo que se veía centrado lo
+      estaba porque ese componente se centraba solo. Ahora ocupa una caja de alto conocido y
+      centra dentro, con `safe center` para que si no cabe se apoye arriba y se desplace, en
+      vez de recortar por arriba, que es donde está lo que hay que mirar.
+- [x] **`--alto-escena`, el alto de verdad.** Nueve superficies medían en `vh`, que es la
+      ventana ENTERA, y la actividad tiene la ventana menos las dos barras: unos 136 px. Un
+      lienzo de `56vh` más las barras más los márgenes no cabe en 800 px de alto. Y las tres
+      más grandes llevan tope, porque su suelo de `clamp` mandaba sobre el espacio real y en
+      apaisado el suelo solo ya no cabía.
+- [x] **Un solo `gap`** en vez de un margen por bloque. Eran unos 150 px de aire que nadie
+      pidió, en la pantalla donde menos sobra.
+- [x] **`margin-inline: auto` para todo hijo del escenario**, que es lo único que centra un
+      bloque acotado. Media docena traían `margin: 24px 0` —un atajo que pone el lateral a
+      cero— y con él la diana de «Toca aquí» se quedaba a la izquierda en cualquier pantalla
+      de más de 560 px. El autor lo vio: «en muchas actividades el Toca aquí no sale
+      centrado».
+- [x] **La tarjeta de reacción, centrada y con entrada y salida.** Estaba clavada a la
+      izquierda, que era deliberado mientras no había botonera debajo; con una barra centrada
+      debajo se lee como un descuadre. Y ahora se va animada: desaparecía de golpe, y un
+      parpadeo en el borde de la pantalla no se distingue de un fallo.
+
+**Lo siguiente**: verlo en un aparato. Todo esto es geometría y ninguna de las decisiones se
+puede confirmar sin mirarla — cuánto es «demasiado grande» para un musicograma en una pizarra
+o si el escenario centrado deja el teclado a una altura cómoda no lo dice ningún test.
 
 **Lo que de verdad falta**, y ninguna de las tres es programación:
 

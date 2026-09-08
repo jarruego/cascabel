@@ -63,19 +63,41 @@ Si una petición mía choca con una de estas, **párate y avísame**.
 | App | React 19 + Vite 6 + TypeScript estricto | Sin SSR, sin Next, sin Astro |
 | Estado | Zustand | Nada de Redux |
 | Rutas | react-router (modo declarativo) | |
-| Partitura | **abcjs** por defecto; **VexFlow** cuando haga falta controlar hitboxes | |
+| Partitura | **VexFlow**, con `import()` dinámico | `abcjs` está instalada y hoy no la importa nadie: es la de ABC, para cuando toque |
 | Partitura importada | Verovio **solo** con `import()` dinámico | Es LGPL: fichero aparte, jamás en el bundle |
 | Audio | Tone.js para transporte + sampler propio con muestras Opus | |
-| Escucha | `pitchy` (McLeod) dentro de un `AudioWorklet` | |
+| Escucha | NSDF/McLeod propio en `public/worklets/tono-processor.js` | Un worklet se carga por URL, no por `import`: `pitchy` está instalada y no se usa |
 | Onsets (palmadas) | detector propio en `src/worklets/onset-processor.js` | No hay librería usable con licencia compatible |
 | PWA | `vite-plugin-pwa` (Workbox) | Precache < 10 MB |
 | Contenido | JSON + JSON Schema, música embebida en notación **ABC** | |
 | Validación de contenido | Python + `music21` en `tools/validar.py` | |
 | Despliegue | Cloudflare Pages | **Vercel Hobby prohíbe uso comercial: no lo uses** |
 
-**Licencias permitidas para dependencias nuevas: MIT, BSD, ISC, Apache-2.0.** Prohibidas
-GPL y AGPL en el front-end (contagian). LGPL solo como fichero cargado dinámicamente.
-Antes de añadir una dependencia, di qué licencia tiene y cuánto pesa en gzip.
+**Licencias: lo que decide no es una lista de siglas, es hasta dónde llega el copyleft.**
+Cascabel emite Apache-2.0 (código) y CC BY-SA 4.0 (contenido); lo que entra tiene que poder
+convivir con eso. La pregunta no es «¿es copyleft?» sino «¿el copyleft se para en su fichero,
+en su librería, o se lleva por delante la obra entera?».
+
+| Alcance del copyleft | Licencias | Qué se puede hacer |
+|---|---|---|
+| Ninguno | MIT, BSD, ISC, **Apache-2.0** | Adelante. Conservar el aviso de copyright, y el `NOTICE` si lo trae |
+| De **fichero** | **MPL-2.0** (y EPL, CDDL) | Adelante. Sus ficheros siguen siendo suyos y los nuestros siguen siendo Apache-2.0. Si modificamos uno suyo, se publica; y el aviso tiene que decir dónde está su código fuente |
+| De **librería** | LGPL | Solo como fichero aparte cargado con `import()` y **sin modificar**. Exige que el usuario pueda sustituir la librería, y dentro de un bundle minificado no puede. Es el caso de Verovio |
+| De **obra** | **GPL, AGPL** | **Nunca.** Ni en el front ni en `tools/`: el bundle es una sola obra que se distribuye a cada visitante, y la AGPL alcanza además a quien aloje la app |
+| Fuentes | OFL 1.1 | Adelante. No vender la fuente suelta y no reutilizar su Nombre Reservado si se retocan trazos |
+| Contenido | CC0, CC BY, **CC BY-SA** | Adelante. **CC BY-NC y cualquier `-ND`, nunca**: no son licencias libres |
+
+Dos cosas que se dan por sabidas y no lo son:
+
+- **Atribuir no arregla una licencia incompatible.** Con GPL, AGPL o NC puedes citar al autor
+  todo lo que quieras y sigues sin poder usarlo: la obligación no es de crédito, es de
+  licencia. La atribución sí resuelve la fila de arriba entera y CC BY.
+- **Un repositorio sin fichero de licencia es «todos los derechos reservados»**, por público
+  que sea. No se copia de ahí ni una función.
+
+Antes de añadir una dependencia, di qué licencia tiene, cuánto pesa en gzip y —si es MPL o
+LGPL— qué condición extra dispara. Cada cosa que entra se apunta en `THIRD-PARTY-NOTICES.md`
+**en el mismo commit**. El razonamiento completo está en `docs/08-LEGAL.md`.
 
 Trampas ya verificadas, no las repitas:
 - `ml5.js` **ya no** hace detección de tono (se eliminó en 1.x). Cualquier tutorial que lo use está muerto.

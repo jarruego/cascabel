@@ -21,20 +21,55 @@ pantalla de créditos de la app se genera a partir de ahí.
 
 ## Software
 
-| Paquete | Licencia |
-|---|---|
-| React, React DOM | MIT |
-| Vite, vite-plugin-pwa, Workbox | MIT |
-| Tone.js | MIT |
-| abcjs | MIT |
-| VexFlow | MIT |
-| pitchy (referencia del algoritmo NSDF/McLeod) | MIT |
-| Zustand | MIT |
-| music21 (solo herramientas, no se distribuye) | BSD-3-Clause |
+Ordenado por **lo que llega al navegador del niño**, y no por orden alfabético, porque es lo
+que decide la obligación: las licencias de software obligan al que *distribuye*. Una
+dependencia instalada que no viaja en el paquete no genera aviso — pero se apunta igual, para
+que se sepa por qué está en `package.json`.
 
-**Verovio**, si algún día se incorpora, es **LGPL-3.0-or-later**: debe cargarse como fichero
-independiente e inalterado (`import()` dinámico), nunca dentro del bundle, y hay que publicar
-el aviso de licencia y el enlace a su código fuente.
+**Se distribuye con la aplicación.** Aquí es donde las obligaciones son reales:
+
+| Paquete | Licencia | Cómo llega |
+|---|---|---|
+| React, React DOM | MIT | En el paquete principal |
+| React Router | MIT | En el paquete principal |
+| Zustand | MIT | En el paquete principal |
+| Workbox (a través de `vite-plugin-pwa`) | MIT | Genera el *service worker*, que sí se sirve |
+| VexFlow | MIT | **Aparte**: trozo `partitura`, con `import()` dinámico, el día que se abre un pentagrama |
+
+**Instalado y NO se distribuye.** Ninguna de estas tres llega al navegador hoy:
+
+| Paquete | Licencia | Por qué está y por qué no viaja |
+|---|---|---|
+| abcjs | MIT | Instalada para cuando se dibuje desde notación ABC. Ninguna línea de código la importa, y `vite.config.ts` la sacó de `manualChunks` precisamente por eso: nombrar un paquete ahí obliga a Rollup a empaquetarlo aunque no lo use nadie |
+| Tone.js | MIT | Igual: instalada para el transporte, todavía sin usar |
+| pitchy | MIT | El detector de tono **no la usa**. `public/worklets/tono-processor.js` implementa NSDF/McLeod directamente, porque un worklet se carga por URL y no por `import`. Ver abajo |
+
+**No se distribuye nunca**: las herramientas de desarrollo (Vite, `@vitejs/plugin-react`,
+ESLint, Prettier, Vitest, jsdom — MIT; TypeScript — Apache-2.0) y `music21` (BSD-3-Clause),
+que solo corre en `tools/`.
+
+**Sobre pitchy y el algoritmo de McLeod.** Lo que el worklet implementa es el **NSDF**
+descrito en McLeod y Wyvill, *A Smarter Way to Find Pitch* (ICMC 2005). Un algoritmo publicado
+no está protegido por derecho de autor; lo que tiene licencia es el **código** que lo
+implementa, y ese código es nuestro. La cita al artículo es rigor académico, no una obligación
+legal; el aviso MIT de pitchy no hace falta mientras la librería no viaje, y hoy no viaja.
+
+### Si algún día entra una dependencia con copyleft
+
+El criterio completo está en `CLAUDE.md` §3 y razonado en `docs/08-LEGAL.md`. Lo que hay que
+escribir **aquí** en cada caso:
+
+- **LGPL** (es el caso de **Verovio**, LGPL-3.0-or-later, si algún día se incorpora): debe
+  cargarse como fichero independiente e **inalterado** con `import()` dinámico, nunca dentro
+  del bundle. Se publica el aviso de licencia y el enlace a su código fuente. La razón de la
+  frontera técnica es legal: la LGPL exige que el usuario pueda sustituir la librería, y dentro
+  de un bundle minificado no puede.
+- **MPL-2.0**: sus ficheros conservan su licencia y los nuestros siguen siendo Apache-2.0. El
+  aviso tiene que decir **dónde se consigue su código fuente**, porque lo que servimos es forma
+  ejecutable (§3.2 de la MPL), y basta el enlace al repositorio de origen. Si algún día
+  modificamos uno de sus ficheros, ese fichero modificado se publica bajo MPL — cosa que ya
+  ocurre sola, porque el repositorio entero es público.
+- **GPL o AGPL**: no se escribe nada aquí, porque no entran. Ni en el front ni en `tools/`.
 
 ## Tipografías
 
@@ -69,7 +104,6 @@ cosa. Ver `docs/08-LEGAL.md`.
 | `public/audio/muestras/marimba/*.opus` (6) | Marimba, notas F3 C4 G4 B4 F5 C6, golpe medio | Versilian Studios y colaboradores | https://github.com/sgossner/VCSL | CC0 1.0 | 2026-09-06 | `LICENSE` del repositorio dice «CC0 1.0 Universal»; la API de GitHub declara `CC0-1.0` |
 | `public/audio/muestras/*.opus` | Pandero (frame drum), claves, campanilla nepalí y glockenspiel G4/C5/C6 | Versilian Studios y colaboradores | https://github.com/sgossner/VCSL | CC0 1.0 | 2026-09-06 | `LICENSE` del repositorio: «CC0 1.0 Universal» |
 | `public/audio/muestras/tempo-*.opus`, `acorde-*.opus` | Derivados: la claves repetida al pulso, y tres glockenspiel transpuestos y mezclados | Versilian Studios (material) · Proyecto cocomusic (montaje) | `tools/muestras-derivadas.py` | CC0 1.0 | 2026-09-06 | CC0 permite cualquier transformación sin condiciones |
-| `public/audio/muestras/voz-la.opus` | Un «la» cantado | Proyecto cocomusic | `tools/muestras-provisionales.py` | CC0 | 2026-09-06 | **sintetizada por formantes; es la única que queda por sustituir por una grabación real** |
 | `content/actividades/c2-14-himno-de-la-alegria.json` | Tema del cuarto movimiento de la Sinfonía n.º 9 («Himno de la alegría»), melodía sola | Ludwig van Beethoven (1770-1827) | transcripción propia a notación ABC, verificada con `music21` | **Dominio público** | 2026-09-06 | el autor murió en 1827; incluso con los 80 años de la disposición transitoria española el plazo venció en 1907 |
 | `content/actividades/c2-12-canon-a-dos-voces.json` e `inf-16-animales-que-bajan.json` | Melodía del canon «Frère Jacques» («Frère Blaise» en su fuente más antigua), transportada a fa mayor | Anónima francesa del siglo XVIII; se ha propuesto la autoría de Jean-Philippe Rameau (1683-1764) | manuscrito «Recueil de Timbres de Vaudevilles», BnF, fechado hacia 1775-1785 | **Dominio público** | 2026-09-06 | fuente conocida más antigua de 1780; el único autor que se le ha atribuido murió en 1764. La letra en español es nuestra, escrita para la actividad |
 | `content/actividades/c2-16-cuatro-bandas.json` | Motivo inicial de la Sinfonía n.º 5, melodía sola | Ludwig van Beethoven (1770-1827) | transcripción propia a notación ABC, verificada con `music21` | **Dominio público** | 2026-09-06 | el autor murió en 1827; ni con los 80 años de la disposición transitoria española llegaría a 1907 |
@@ -100,8 +134,10 @@ murió en 1827, y **no se usa grabación ajena ninguna** —la melodía se sinte
 muestras de marimba CC0 que ya están en el proyecto—. La transcripción a ABC es propia y se
 pasó por `music21` antes de generar el JSON.
 
-**Sobre la voz, y por qué sigue sintetizada.** Es la única muestra del banco que no es una
-grabación, y no por falta de haberlo intentado. Se comprobó el 2026-09-06: **VCSL no tiene
+**Sobre la voz, y dónde NO buscarla.** Esto es historia de la búsqueda, no el estado actual:
+`voz-la.opus` **ya no está sintetizada** —es el programa 53 de FluidR3, con licencia MIT, y va
+en la fila de General MIDI de la tabla de arriba, que es la que manda—. Lo que sigue valiendo
+es el mapa de dónde no hay que volver a mirar. Se comprobó el 2026-09-06: **VCSL no tiene
 voz** —su catálogo se organiza por la clasificación de Hornbostel-Sachs, y no hay categoría
 vocal: solo aerófonos, cordófonos, electrófonos, idiófonos y membranófonos—; la colección de
 la **Universidad de Iowa tampoco la tiene**, y además no declara licencia en ninguna parte;

@@ -213,7 +213,7 @@
   "creditos.vacio": "Todavía no hay material de terceros registrado.",
   "creditos.fallo": "No se han podido cargar los créditos.",
   "creditos.software": "Software",
-  "creditos.softwareTexto": "React, Vite, Workbox y Zustand, todos con licencia MIT. abcjs y VexFlow (MIT) viajan en el paquete para la parte de partitura. music21 (BSD) se usa solo en las herramientas y no se distribuye con la app.",
+  "creditos.softwareTexto": "React, React Router, Zustand y Workbox viajan dentro de la aplicación, todos con licencia MIT. VexFlow (MIT) no: se descarga aparte el día que abres un pentagrama. music21 (BSD) se usa solo en las herramientas y no se distribuye con la app.",
   "creditos.tipografias": "Tipografías",
   "creditos.tipografiasTexto": "Andika, de SIL International, y Bravura, de Steinberg Media Technologies. Ambas con licencia SIL Open Font License 1.1 y servidas desde este mismo sitio.",
   "creditos.inventario": "El inventario completo y auditable está en THIRD-PARTY-NOTICES.md, en el repositorio del proyecto.",

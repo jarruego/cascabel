@@ -82,6 +82,98 @@ concertado es «comercial», así que ante la duda no lo usan. Además no es una
 excluye de Wikimedia y de buena parte de Procomún, y es incompatible con CC BY-SA (no
 podríamos mezclar material de CPDL ni de Mutopia).
 
+## Licencias que aceptamos de fuera
+
+Escrito el 2026-09-09, después de que el autor preguntara qué significa MPL-2.0. La regla
+anterior era una lista de cuatro siglas —«MIT, BSD, ISC, Apache-2.0»— y una lista no explica
+nada: deja fuera cosas inofensivas sin decir por qué, y no ayuda a decidir el día que aparece
+una quinta sigla. Lo que sigue es la misma prohibición de siempre, enunciada por el eje que de
+verdad importa. La tabla operativa está en `CLAUDE.md` §3; aquí está el razonamiento.
+
+### El eje: hasta dónde llega el copyleft
+
+Todas las licencias libres dejan usar, copiar y redistribuir. Se diferencian en **qué arrastran
+consigo**, y ese alcance tiene tres escalones:
+
+1. **Nada** (MIT, BSD, ISC, Apache-2.0). Conservar el aviso de copyright. Apache-2.0 añade dos
+   cosas menores: conservar el fichero `NOTICE` si la dependencia lo trae, y señalar los
+   ficheros que hayamos modificado. Trae también concesión de patentes, que es una ventaja.
+2. **El fichero** (MPL-2.0, y su familia EPL y CDDL). Los ficheros que vienen con esa licencia
+   la conservan para siempre; los que escribimos nosotros, no. Si modificamos uno suyo y lo
+   distribuimos, hay que publicar **ese fichero** modificado bajo MPL. Nada más.
+3. **La obra entera** (GPL, AGPL). Si un fichero GPL entra en lo que distribuimos, lo
+   distribuido pasa a ser GPL. La AGPL va un paso más allá y alcanza también a quien **aloje**
+   el resultado, aunque no lo distribuya.
+
+Y a un lado, un caso propio: **la LGPL**, que es copyleft «de librería». No exige liberar
+nuestro código, pero sí que el usuario pueda **sustituir la librería** por otra versión. En una
+aplicación empaquetada y minificada eso es imposible, y por eso Verovio se carga como fichero
+independiente con `import()` y sin tocar: la frontera técnica es lo que hace cumplible la
+condición legal.
+
+### Por qué la MPL-2.0 no nos hace nada
+
+Es la licencia de Firefox, LibreOffice y Thunderbird. Funciona como una Apache-2.0 con una
+condición añadida, y la condición se para en el fichero. Concretamente, incorporar una
+dependencia MPL a Cascabel obliga a tres cosas y ninguna es nueva:
+
+- conservar su aviso de licencia — es lo que hace `THIRD-PARTY-NOTICES.md`;
+- decir **dónde se consigue su código fuente**, porque lo que servimos es forma ejecutable
+  (§3.2 de la MPL): basta el enlace al repositorio de origen, no hay que alojarlo nosotros;
+- publicar los cambios **si tocamos sus ficheros**. Cascabel publica su código entero bajo
+  Apache-2.0, así que esto ya se cumple sin hacer nada.
+
+Lo que **no** obliga: no nos hace cambiar la licencia de Cascabel, no alcanza a los ficheros
+que escribimos nosotros y no impone la relinkabilidad que sí impone la LGPL. Su §3.3 contempla
+expresamente combinar código MPL dentro de una obra mayor con otra licencia.
+
+> El único matiz raro de la MPL es el «Exhibit B»: un fichero puede venir marcado
+> *Incompatible With Secondary Licenses*, y entonces no se puede redistribuir bajo GPL. A
+> nosotros nos da igual, porque no emitimos GPL.
+
+### Por qué la GPL y la AGPL siguen prohibidas, incluso en `tools/`
+
+En una aplicación de servidor, meter una librería GPL solo obliga si distribuyes el binario.
+Aquí no: **una PWA se distribuye entera a cada visitante**, y el empaquetado la convierte
+literalmente en una obra sola. No hay margen de interpretación que valga.
+
+La prohibición se extiende a `tools/`, aunque esos ficheros no viajen con la app, y es una
+decisión deliberada de simplicidad: el repositorio sí se distribuye, y un script nuestro que
+importe una librería GPL sería obra derivada suya. Preferimos no tener un rincón del proyecto
+con otra licencia a tener que explicar cuál es. `music21` es BSD-3 y por eso no da problema.
+
+Esto no es una opinión sobre la GPL: es que **el objetivo del proyecto es que cualquiera pueda
+reutilizar esto sin pedir permiso**, y la combinación permisiva + CC BY-SA es la que mejor lo
+sirve. Ver también `docs/adr/`.
+
+### Lo que la atribución arregla y lo que no
+
+Es el malentendido más común, y aquí importa el doble porque esta pantalla **es contenido
+curricular** de 5.º y 6.º (`CREDITS.md`).
+
+| Familia | ¿Basta con citar la fuente? |
+|---|---|
+| MIT, BSD, ISC, Apache-2.0, CC0, CC BY, OFL | **Sí.** Citar, conservar el aviso y seguir |
+| CC BY-SA | Sí, **más** mantener la licencia en lo derivado. Es la nuestra, así que es gratis |
+| MPL-2.0, LGPL | No basta: hay además una condición técnica (publicar cambios, poder sustituir) |
+| GPL, AGPL, CC BY-NC, cualquier `-ND` | **No arregla nada.** La obligación no es de crédito |
+
+Y dos trampas que ya nos hemos encontrado:
+
+- **Gratis no es libre.** Pixabay, Pexels, Freepik, Philharmonia y la sección de pago de
+  ZapSplat tienen licencias propias que **no se pueden sublicenciar**: no podríamos publicar
+  nuestro material bajo CC BY-SA si llevara algo de ahí dentro.
+- **Sin fichero de licencia, todos los derechos reservados.** Un repositorio público de GitHub
+  sin `LICENSE` no da ningún permiso: no se copia de ahí ni una función. Pasa con más
+  proyectos educativos de los que parece (`sightreading.training`, casi todo el NYU MusEDLab).
+
+### La regla 1 es también una regla legal
+
+«Ni una petición fuera de nuestro origen» se escribió por privacidad, pero tiene un efecto
+lateral que conviene nombrar: **todo lo que llega al navegador del niño lo distribuimos
+nosotros**, así que todas las obligaciones de aviso son nuestras y están en un único sitio.
+Con un CDN de terceros, media cadena de atribución dependería de qué sirva ese CDN ese día.
+
 ## Repertorio: la trampa de los 80 años
 
 El plazo español es de 70 años **salvo que el autor falleciera antes del 7 de diciembre de

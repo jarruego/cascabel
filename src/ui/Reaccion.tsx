@@ -35,6 +35,15 @@ import { t } from '@/i18n';
  * animación de entrada vuelve a correr cada vez. En un solo elemento permanente habría
  * corrido una vez, la primera, y nunca más.
  */
+/**
+ * Lo que tarda la tarjeta en irse, en milisegundos.
+ *
+ * El mismo número que `--reaccion-sale` en `tokens.css`, y está en los dos sitios porque una
+ * animación no se puede leer desde JavaScript sin medir el DOM. Si se separan, la tarjeta
+ * desaparece a medio irse o se queda un rato invisible ocupando sitio.
+ */
+const SALIDA_MS = 220;
+
 export function Reaccion({
   tono,
   personaje = 'dora',
@@ -48,29 +57,43 @@ export function Reaccion({
   const hayTexto = Boolean(children);
 
   /*
-    Se enseña un rato y se va sola.
+    Se enseña un rato, avisa de que se va, y se va.
 
     Un mensaje que se queda hasta que pase otra cosa acaba siendo parte del decorado: deja
     de leerse y sigue ocupando sitio. Se va sola, y el tiempo sale de lo que hay que leer
     —unos tres segundos y medio de base más un poco por cada palabra—, porque no es lo
     mismo «¡Muy bien!» que una pista de dos líneas.
 
+    **Tres estados y no dos.** Antes desaparecía de golpe al cumplirse el tiempo, y un
+    parpadeo en el borde de la pantalla no se distingue de un fallo. Para irse animada tiene
+    que seguir montada mientras baja, así que hay un estado intermedio: `saliendo` pone la
+    animación de salida y un segundo temporizador la desmonta al acabar.
+
+    El segundo temporizador va contra `SALIDA_MS`, que es el mismo número que el CSS: si se
+    separaran, la tarjeta desaparecería a medio irse o se quedaría un rato invisible
+    ocupando sitio. Y es un temporizador y no `animationend` a propósito, porque con
+    `prefers-reduced-motion` no hay animación y ese evento no llegaría nunca.
+
     Lo que NO se va solo es `neutro`: ahí no hay reacción, hay una instrucción que tiene que
     seguir estando mientras dure la actividad.
   */
-  const [visible, setVisible] = useState(true);
+  const [fase, setFase] = useState<'dentro' | 'saliendo' | 'fuera'>('dentro');
   const largo = typeof children === 'string' ? children.length : 60;
 
   useEffect(() => {
-    setVisible(true);
+    setFase('dentro');
     if (tono === 'neutro') return;
     const ms = 3500 + largo * 45;
-    const id = window.setTimeout(() => setVisible(false), ms);
-    return () => window.clearTimeout(id);
+    const empiezaASalir = window.setTimeout(() => setFase('saliendo'), ms);
+    const seVa = window.setTimeout(() => setFase('fuera'), ms + SALIDA_MS);
+    return () => {
+      window.clearTimeout(empiezaASalir);
+      window.clearTimeout(seVa);
+    };
     // `largo` y `tono` bastan: si cambia el mensaje, vuelve a aparecer y a contar de nuevo.
   }, [tono, largo]);
 
-  const hayQueDecir = visible && (tono !== 'neutro' || hayTexto);
+  const hayQueDecir = fase !== 'fuera' && (tono !== 'neutro' || hayTexto);
   const frase = tono === 'neutro' ? '' : t(`reaccion.${personaje}.${tono}`);
 
   return (
@@ -82,7 +105,12 @@ export function Reaccion({
           del mismo tono cambiarían el texto sin que nada se moviera, y un mensaje que
           aparece sin movimiento en la esquina de la pantalla no se ve.
         */
-        <div className="reaccion__tarjeta" data-tono={tono} key={`${tono}-${largo}`}>
+        <div
+          className="reaccion__tarjeta"
+          data-tono={tono}
+          data-saliendo={fase === 'saliendo' || undefined}
+          key={`${tono}-${largo}`}
+        >
           {tono !== 'neutro' && (
             <Personaje
               nombre={personaje}
