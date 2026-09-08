@@ -1808,6 +1808,14 @@ estar documentadas en la barra que venía a sustituirlas. Ahora mira el código 
       **muda** —una envolvente programada en el pasado salta a su valor final— y «Vaciar»
       quedaba en dos botones que un lector de pantalla no podía distinguir.
 
+- [x] **La botonera tapaba el final de la actividad**, en todas las que no caben en la
+      pantalla. La fila del marco era `1fr`, que es `minmax(auto, 1fr)`, y ese `auto` impide
+      que la fila mida menos que su contenido **salvo que el hijo declare `min-height: 0`** —
+      y lo declara, porque hace falta para que las superficies encojan. Con las dos cosas a la
+      vez la fila no crecía: el contenido se salía por abajo y el relleno que reserva el sitio
+      de las dos barras se quedaba por encima del desbordamiento. `minmax(min-content, 1fr)`
+      dice las dos cosas a la vez, y hay test porque escribir `1fr` es lo natural.
+
 - [x] **Repaso de los veintiún tipos contra lo nuevo**: botonera donde toca, ningún botón sin
       símbolo salvo los de valor —una octava, un tempo, que no son acciones—, ningún
       «¡completada!» dentro de la actividad, y los textos fijos que quedan son todos

@@ -135,6 +135,33 @@ describe('la interfaz aprovecha la pantalla', () => {
     );
   });
 
+  it('el marco crece cuando la actividad no cabe, en vez de meterse bajo las barras', () => {
+    /*
+      El autor lo vio en el editor por pistas —«la botonera está superpuesta al layout y tapa
+      la parte de abajo»— pero pasaba en **cualquier** actividad más alta que la pantalla.
+
+      La causa es sutil y por eso hay test. La fila del marco era `1fr`, que en una rejilla
+      significa `minmax(auto, 1fr)`, y ese `auto` impide que la fila mida menos que su
+      contenido... salvo que el hijo declare `min-height: 0`. Y lo declara: hace falta para
+      que las superficies puedan encoger cuando no caben. Con las dos cosas a la vez la fila
+      no crecía, el contenido se salía por abajo, y el relleno que reserva el sitio de las dos
+      barras se quedaba por encima del desbordamiento.
+
+      Escribir `1fr` es lo natural para «que se lleve el espacio libre», así que esto vuelve
+      solo si no se vigila.
+    */
+    const bloque = SIN_COMENTARIOS.slice(SIN_COMENTARIOS.indexOf('.actividad-marco {')).slice(
+      0,
+      400,
+    );
+    const filas = /grid-template-rows:([^;]*);/.exec(bloque);
+    expect(filas, 'el marco ya no declara sus filas').toBeTruthy();
+    expect(
+      filas![1],
+      'la fila no puede crecer con el contenido: volverá a meterse bajo las barras',
+    ).toContain('min-content');
+  });
+
   it('las pistas se desplazan en bloque: un solo contenedor, no uno por pista', () => {
     /*
       El autor lo pidió dos veces, y las dos tenía razón: «no me gusta que cada pista haga

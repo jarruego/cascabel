@@ -502,9 +502,20 @@ p {
   min-height: 100vh;
   min-height: 100dvh;
   display: grid;
-  /* Una sola fila, y se la lleva entera: dentro del marco solo hay `.lienzo`, porque las
-     dos barras van fijas y los modales cerrados no ocupan. */
-  grid-template-rows: 1fr;
+  /*
+    Una sola fila, que se lleva el espacio libre **y nunca mide menos que su contenido**.
+
+    Ponía `1fr`, que en una rejilla es `minmax(auto, 1fr)`, y ese `auto` impide que la fila
+    baje del tamaño de su contenido... salvo que el hijo declare `min-height: 0`. Y lo
+    declara: se lo puse para que las superficies puedan encoger cuando no caben. Con las dos
+    cosas a la vez, una actividad más alta que la pantalla se salía por abajo sin que la fila
+    creciera, así que el relleno que reserva el sitio de las dos barras se quedaba por encima
+    del desbordamiento y la botonera tapaba el final. `min-content` lo dice explícito.
+
+    Dentro del marco solo hay `.lienzo`: las dos barras van fijas y los modales cerrados no
+    ocupan.
+  */
+  grid-template-rows: minmax(min-content, 1fr);
 }
 /* La cadena de `min-height: 0` es lo que permite que una superficie encoja cuando no cabe.
    Sin ella, un hijo de una rejilla nunca baja de su tamaño de contenido y desborda. */
@@ -2978,6 +2989,15 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
    casillas por debajo de lo acertable, y encoger sería peor. */
 .pistas__tabla {
   display: grid;
+  /*
+    La columna mide lo que mida el contenido, con el ancho visible como suelo.
+
+    Con una columna del ancho visible a secas, cada pista medía eso y no lo que mide su
+    fila: al desplazar, las casillas se salían de su propio fondo y quedaban sobre el papel.
+    Así el fondo gris llega hasta la última casilla, y con pocas columnas sigue ocupando el
+    ancho entero en vez de encogerse a la mitad.
+  */
+  grid-template-columns: minmax(100%, max-content);
   gap: var(--e-3);
   /* Cuatro voces una debajo de otra, acotadas y centradas: a pantalla completa, dieciséis
      casillas estiradas a metro y medio dejan de leerse como un compás. */
@@ -3060,20 +3080,20 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 }
 .pistas__fila { display: flex; align-items: center; gap: 2px; margin-bottom: 2px; }
 /*
-  Y los nombres de las notas se quedan pegados a la izquierda mientras se desplaza: sin
-  ellos a la vista, dieciséis casillas iguales no dicen a qué altura están.
+  Los nombres de nota se desplazan con su fila.
+
+  Estuvieron pegados a la izquierda un rato, con la idea de no perderlos de vista al
+  desplazar. En la práctica tapaban las casillas por las que iban pasando, que es peor: son
+  tres letras y cuatro pistas, y quien está componiendo sabe en qué voz está por dónde tiene
+  el dedo.
 */
 .pistas__etiqueta {
-  position: sticky;
-  left: 0;
-  z-index: 1;
   flex: 0 0 auto;
   width: 74px;
   font-size: var(--t-xs);
   color: var(--tinta-2);
   text-align: right;
   padding-right: var(--e-2);
-  background: var(--papel);
 }
 .pistas__celda {
   flex: 0 0 auto;
