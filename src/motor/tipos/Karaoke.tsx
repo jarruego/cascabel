@@ -210,7 +210,14 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
     ? porCarril
       ? anchoDeBandas(carriles.length, anchoCaja, OBJETIVO_TACTIL[carril])
       : 200
-    : 160;
+    /*
+      En horizontal, esto es el ALTO del recuadro, y estaba clavado en 160 px: el mismo
+      número en un móvil y en una pizarra de setenta pulgadas. Ahora sale de lo que hay,
+      con suelo y techo — suelo porque por debajo de 160 las notas se pisan, techo porque
+      un recuadro de un palmo obliga a recorrerlo con el ojo para ver dónde va a caer la
+      siguiente, que es justo lo que la actividad no quiere.
+    */
+    : Math.max(160, Math.min(320, Math.round(anchoCaja * 0.22)));
 
   const opciones = useMemo(
     () => ({
@@ -378,8 +385,13 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
         className="karaoke__pauta"
         data-orientacion={orientacion}
         data-representacion={representacion}
-        /* El ancho sale del mismo número que usa la geometría: ver TRANSVERSAL. */
-        style={vertical ? { width: TRANSVERSAL, maxWidth: '100%' } : undefined}
+        /*
+          La medida transversal sale del mismo número que usa la geometría: ver TRANSVERSAL.
+          En vertical es el ancho y en horizontal el alto, y **las dos van aquí**. El alto
+          estaba en el CSS con un número fijo, o sea el mismo número escrito en dos sitios,
+          que es el desajuste que este comentario avisaba de no repetir.
+        */
+        style={vertical ? { width: TRANSVERSAL, maxWidth: '100%' } : { height: TRANSVERSAL }}
         role="img"
         aria-label={t(`karaoke.pauta.${representacion}`)}
       >

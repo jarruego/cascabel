@@ -24,6 +24,41 @@ function leer(ruta: string): string {
   return readFileSync(join(RAIZ, ruta), 'utf-8').replace(/\r\n/g, '\n');
 }
 
+describe('la auditoría no se queda con una copia vieja', () => {
+  /*
+    `tools/auditoria.mjs` tiene una copia de la tabla de ayudas por tipo, y una copia se
+    queda vieja sola.
+
+    Está ahí porque la auditoría es un script `.mjs` que lee JSON y no puede importar un
+    módulo de TypeScript, y la regla que la usa hace falta: comprueba que el enunciado de una
+    actividad no repita la frase que la explicación ya enseña para su tipo. La copia es el
+    precio; este test es lo que impide que se pague dos veces.
+  */
+  it('la tabla de ayudas de la auditoría coincide con la del motor', () => {
+    const fuente = leer('src/motor/ayudaPorTipo.ts');
+    const copia = leer('tools/auditoria.mjs');
+
+    // Solo las entradas fijas: los dos tipos que eligen su ayuda en marcha —karaoke según
+    // tenga botones por carril, tocar a tiempo según entre por micrófono— no se pueden
+    // resolver leyendo el JSON, y la auditoría los deja fuera a propósito.
+    const bloque = fuente.slice(fuente.indexOf('const POR_TIPO'), fuente.indexOf('export function'));
+    const suyas = new Map(
+      [...bloque.matchAll(/^ {2}'?([a-z-]+)'?: \{ comoVa: '([^']+)'/gm)].map((m) => [m[1]!, m[2]!]),
+    );
+    const enCopia = new Map(
+      [...copia.matchAll(/^ {2}([a-z-]+): '([^']+)',$/gm)].map((m) => [m[1]!, m[2]!]),
+    );
+
+    expect(suyas.size, 'no se ha leído ninguna ayuda del motor').toBeGreaterThan(3);
+    for (const [tipo, clave] of suyas) {
+      expect(enCopia.get(tipo), `la auditoría no conoce la ayuda de «${tipo}»`).toBe(clave);
+    }
+    for (const tipo of enCopia.keys()) {
+      expect(suyas.has(tipo), `la auditoría tiene una ayuda de «${tipo}» que ya no existe`).toBe(true);
+    }
+  });
+});
+
 describe('documentación', () => {
   it('la tabla de tipos lista exactamente los tipos registrados', () => {
     const registro = leer('src/motor/registro.ts');
