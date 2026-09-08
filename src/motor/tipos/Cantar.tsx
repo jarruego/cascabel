@@ -13,10 +13,11 @@ import {
 } from '../afinacion';
 import { rechazarMicrofono, seUsaMicrofono } from '@/escucha/permiso';
 import { pistaPara } from '../maquinaEleccion';
+import { BarraAcciones } from '@/ui/BarraAcciones';
+import { IconoRepetir, IconoSiguiente, IconoTocar } from '@/ui/Simbolos';
 import { Reaccion } from '@/ui/Reaccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
-import { Icono } from '@/ui/Icono';
 import { nombreDe } from '@/ui/coloresNota';
 import { CuentaAtras } from '@/ui/CuentaAtras';
 
@@ -310,14 +311,12 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
         )}
       </p>
 
-      {fase === 'listo' && (
-        <button
-          type="button"
-          className="boton-principal boton-arranque"
-          onClick={() => setFase('cuenta')}
-        >
-          <Icono nombre="voz" tamano={40} /> {t('accion.empezar')}
-        </button>
+      {/* Por qué nota va. Aquí las vueltas no son repeticiones de lo mismo: cada una es
+          una nota distinta, así que el contador dice «nota», no «vuelta». */}
+      {contenido.notas.length > 1 && (
+        <p className="estado-actividad">
+          {t('cantar.vuelta', { n: indice + 1, total: contenido.notas.length })}
+        </p>
       )}
 
       {fase === 'cuenta' && <CuentaAtras alTerminar={() => void empezar()} />}
@@ -328,7 +327,7 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
       {fase === 'escuchando' && <p className="estado-actividad">{t('cantar.ahoraTu')}</p>}
 
       {fase === 'resultado' && (
-        <section className="cantar__resultado">
+        <>
           {/*
             Lo dice el personaje, en una tarjeta que entra y se va, como en todas.
 
@@ -348,17 +347,38 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
               ? ` ${t(pistaPara(actividad.pistas, 1)!)}`
               : ''}
           </Reaccion>
+        </>
+      )}
 
-          <div className="cantar__acciones">
+      <BarraAcciones>
+        {fase === 'listo' && (
+          <button
+            type="button"
+            className="boton-principal boton-arranque"
+            onClick={() => setFase('cuenta')}
+          >
+            <IconoTocar />
+            {t('accion.empezar')}
+          </button>
+        )}
+
+        {fase === 'resultado' && (
+          <>
             <button type="button" className="boton-repetir" onClick={() => void empezar()}>
+              <IconoRepetir />
               {t('cantar.otraVez')}
             </button>
             <button type="button" className="boton-principal" onClick={siguiente}>
-              {indice + 1 >= contenido.notas.length ? t('comun.siguiente') : t('cantar.siguienteNota')}
+              <IconoSiguiente />
+              {/* «Probar otra vez» repite ESTA nota y «Siguiente nota» pasa a la de al lado:
+                  aquí sí son dos cosas distintas, y por eso siguen siendo dos botones. */}
+              {indice + 1 >= contenido.notas.length
+                ? t('comun.terminar')
+                : t('cantar.siguienteNota')}
             </button>
-          </div>
-        </section>
-      )}
+          </>
+        )}
+      </BarraAcciones>
 
       {avisoMicro && conMicrofono === false && (
         <p className="cantar__aviso" role="status">

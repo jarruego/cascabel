@@ -152,8 +152,16 @@ export default function Emparejar({ actividad, alTerminar }: PropsActividad) {
         {columna(contenido.derecha, 'derecha')}
       </div>
 
+      {/* Sin botonera: aquí no hay ninguna acción SOBRE la actividad. Se juega tocando las
+          fichas, y una barra vacía abajo sería una franja de pantalla perdida. */}
       <Reaccion
-        tono={estado.ultima?.acierto === false ? 'casi' : estado.ultima?.acierto === true || estado.fase === 'completada' ? 'bien' : 'neutro'}
+        tono={
+          estado.ultima?.acierto === false
+            ? 'casi'
+            : estado.ultima?.acierto === true
+              ? 'bien'
+              : 'neutro'
+        }
         personaje={actividad.personaje}
       >
         {estado.ultima?.acierto === true && t('comun.bien')}
@@ -161,7 +169,6 @@ export default function Emparejar({ actividad, alTerminar }: PropsActividad) {
             distingue «escucha otra vez» de «escucha los dos seguidos: ¿se parecen?». */}
         {estado.ultima?.acierto === false &&
           t(pistaPara(actividad.pistas, estado.fallosAqui) ?? 'comun.escuchaOtraVez')}
-        {estado.fase === 'completada' && t('comun.completada')}
       </Reaccion>
 
       {/* Sin barra de progreso: el tablero se vacía solo: las parejas resueltas se quedan fijas y las que faltan son las que quedan.

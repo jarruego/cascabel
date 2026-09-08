@@ -3,7 +3,8 @@ import { useCarril } from '@/app/preferencias';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { Acompanamiento, transponer, type Patron } from '@/audio/acompanamiento';
 import { nombreDe } from '@/ui/coloresNota';
-import { IconoParar, IconoTocar } from '@/ui/Transporte';
+import { IconoMas, IconoMenos, IconoParar, IconoTocar } from '@/ui/Simbolos';
+import { BarraAcciones } from '@/ui/BarraAcciones';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -88,19 +89,35 @@ export default function Acompanamientos({ actividad }: PropsActividad) {
     <section className="actividad acompanamientos" data-carril={carril} aria-labelledby="consigna">
       <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
 
-      <div className="acompanamientos__tono" role="group" aria-label={t('acomp.tonalidad')}>
-        <button type="button" className="boton-repetir" onClick={() => cambiar(-1)}>
-          {t('acomp.masGrave')}
-        </button>
-        {/* La tonalidad se dice con el nombre de la nota, no con «+2 semitonos»: quien
-            acompaña a un grupo piensa en «en re», no en aritmética. */}
-        <output className="acompanamientos__nota" aria-live="polite">
-          {nombreDe(transponer('C4', semitonos).replace(/-?\d+$/, ''))}
-        </output>
-        <button type="button" className="boton-repetir" onClick={() => cambiar(1)}>
-          {t('acomp.masAgudo')}
-        </button>
-      </div>
+      <BarraAcciones>
+        <div
+          className="acompanamientos__tono acciones__grupo"
+          role="group"
+          aria-label={t('acomp.tonalidad')}
+        >
+          <button
+            type="button"
+            className="boton-repetir"
+            aria-label={t('acomp.masGrave')}
+            onClick={() => cambiar(-1)}
+          >
+            <IconoMenos />
+          </button>
+          {/* La tonalidad se dice con el nombre de la nota, no con «+2 semitonos»: quien
+              acompaña a un grupo piensa en «en re», no en aritmética. */}
+          <output className="acompanamientos__nota acciones__valor" aria-live="polite">
+            {nombreDe(transponer('C4', semitonos).replace(/-?\d+$/, ''))}
+          </output>
+          <button
+            type="button"
+            className="boton-repetir"
+            aria-label={t('acomp.masAgudo')}
+            onClick={() => cambiar(1)}
+          >
+            <IconoMas />
+          </button>
+        </div>
+      </BarraAcciones>
 
       <ul className="acompanamientos__lista">
         {contenido.bases.map((b) => {

@@ -4,12 +4,13 @@ import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { Sampler, aMidi } from '@/audio/sampler';
 import { muestrasDe } from '@/audio/instrumentos';
 import { colorDe, nombreDe } from '@/ui/coloresNota';
-import { IconoGrabar, IconoParar, IconoTocar } from '@/ui/Transporte';
+import { IconoGrabar, IconoParar, IconoTocar } from '@/ui/Simbolos';
 import { GrabadorDeEventos, reproducir, type Grabacion } from '../grabacionEventos';
 import { letraDeNota, notaDeTecla, type Disposicion } from '@/ui/tecladoQwerty';
 import { Retos } from '@/ui/Retos';
 import { Personaje } from '@/ui/Personaje';
 import { NOMBRES, personajeDe } from '@/ui/personajes';
+import { BarraAcciones } from '@/ui/BarraAcciones';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -484,11 +485,11 @@ export default function Teclado({ actividad }: PropsActividad) {
       {/* Una sola fila con todo lo que no es el teclado: propuestas, grabadora y salir.
           En la pantalla de un instrumento, cada línea que no sea teclado es teclado que se
           pierde. */}
-      <div className="teclado__barra">
+      <BarraAcciones>
         {/* Cuántas octavas. Un grupo de tres botones y no un desplegable: son tres
             opciones, se ven las tres, y a esta edad abrir un desplegable es un paso más. */}
         {elegirOctavas && (
-        <div className="teclado__octavas" role="group" aria-label={t('teclado.octavas')}>
+        <div className="teclado__octavas acciones__grupo" role="group" aria-label={t('teclado.octavas')}>
           {[1, 2, 3].map((n) => (
             <button
               key={n}
@@ -559,7 +560,7 @@ export default function Teclado({ actividad }: PropsActividad) {
           </button>
           </>
         )}
-      </div>
+      </BarraAcciones>
     </section>
   );
 }

@@ -3,9 +3,10 @@ import { useCarril } from '@/app/preferencias';
 import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { KIT, Percusion, type Golpe } from '@/audio/percusion';
 import { Metronomo } from '@/audio/metronomo';
-import { IconoGrabar, IconoParar, IconoTocar } from '@/ui/Transporte';
+import { IconoGrabar, IconoParar, IconoTocar } from '@/ui/Simbolos';
 import { GrabadorDeEventos, reproducir, type Grabacion } from '../grabacionEventos';
 import { Retos } from '@/ui/Retos';
+import { BarraAcciones } from '@/ui/BarraAcciones';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -259,7 +260,7 @@ export default function Pads({ actividad }: PropsActividad) {
         ))}
       </div>
 
-      <div className="pads__barra">
+      <BarraAcciones>
         {conMetronomo && (
           <>
             <button
@@ -271,7 +272,7 @@ export default function Pads({ actividad }: PropsActividad) {
             >
               {t(pulsando ? 'accion.sinPulso' : 'accion.pulso')}
             </button>
-            <div className="pads__tempos" role="group" aria-label={t('pads.tempo')}>
+            <div className="pads__tempos acciones__grupo" role="group" aria-label={t('pads.tempo')}>
               {TEMPOS.map((n) => (
                 <button
                   key={n}
@@ -337,7 +338,7 @@ export default function Pads({ actividad }: PropsActividad) {
             </button>
           </>
         )}
-      </div>
+      </BarraAcciones>
     </section>
   );
 }

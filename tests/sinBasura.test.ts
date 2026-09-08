@@ -29,7 +29,21 @@ function ficheros(dir: string, extension: RegExp): string[] {
 }
 
 const FUENTES = ficheros(join(RAIZ, 'src'), /\.tsx?$/);
-const CODIGO = FUENTES.map((f) => readFileSync(f, 'utf8')).join('\n');
+/**
+ * El código SIN comentarios.
+ *
+ * Se le quitan a propósito. La comprobación de abajo busca el nombre de la clase como
+ * cadena, y un comentario que la mencione basta para darla por viva: pasó el 2026-09-09, al
+ * documentar en `BarraAcciones.tsx` los quince contenedores que venía a sustituir. Tres de
+ * ellos siguieron con su regla en el CSS y el test los dio por buenos porque estaban
+ * escritos en esa lista.
+ *
+ * Es el peor tipo de falso negativo: cuanto mejor se documenta un borrado, menos lo caza.
+ */
+const CODIGO = FUENTES.map((f) => readFileSync(f, 'utf8'))
+  .join('\n')
+  .replace(/\/\*[\s\S]*?\*\//g, '')
+  .replace(/^\s*\/\/.*$/gm, '');
 const CSS = readFileSync(join(RAIZ, 'src', 'estilos', 'tokens.css'), 'utf8');
 
 describe('componentes conectados', () => {

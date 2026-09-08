@@ -2,6 +2,8 @@ import { useEffect, useReducer, useRef } from 'react';
 import { useCarril } from '@/app/preferencias';
 import { Reaccion } from '@/ui/Reaccion';
 import { pistaPara } from '../maquinaEleccion';
+import { BarraAcciones } from '@/ui/BarraAcciones';
+import { IconoComprobar } from '@/ui/Simbolos';
 import { t } from '@/i18n';
 import { figuraDe } from '../musicograma';
 import {
@@ -109,16 +111,17 @@ export default function Compases({ actividad, alTerminar }: PropsActividad) {
         <li className="compases__final" aria-hidden="true" />
       </ol>
 
-      <div className="compases__acciones">
+      <BarraAcciones>
         <button
           type="button"
           className="boton-principal"
           aria-disabled={estado.fase !== 'colocando' || undefined}
           onClick={() => despachar({ tipo: 'comprobar' })}
         >
+          <IconoComprobar />
           {t('ordenar.comprobar')}
         </button>
-      </div>
+      </BarraAcciones>
 
       {/*
         Dos mensajes distintos para dos errores distintos: «aquí no cierra el compás» no es
@@ -126,7 +129,7 @@ export default function Compases({ actividad, alTerminar }: PropsActividad) {
         mitad de lo que se está enseñando.
       */}
       <Reaccion
-        tono={estado.fase === 'completada' ? 'bien' : estado.fase === 'revisando' ? 'casi' : 'neutro'}
+        tono={estado.fase === 'revisando' ? 'casi' : 'neutro'}
         personaje={actividad.personaje}
       >
         {/*
@@ -146,7 +149,7 @@ export default function Compases({ actividad, alTerminar }: PropsActividad) {
         {estado.fase === 'revisando' && pistaPara(actividad.pistas, estado.intentos) && (
           <> {t(pistaPara(actividad.pistas, estado.intentos)!)}</>
         )}
-        {estado.fase === 'completada' && t('comun.completada')}
+        {/* Y nada al completar: eso lo dice la modal de enhorabuena medio segundo después. */}
       </Reaccion>
     </section>
   );

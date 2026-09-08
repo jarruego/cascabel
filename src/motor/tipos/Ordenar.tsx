@@ -3,6 +3,8 @@ import { OBJETIVO_TACTIL } from '@/config';
 import { useCarril } from '@/app/preferencias';
 import { Reaccion } from '@/ui/Reaccion';
 import { pistaPara } from '../maquinaEleccion';
+import { BarraAcciones } from '@/ui/BarraAcciones';
+import { IconoComprobar, IconoTocar } from '@/ui/Simbolos';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
@@ -212,7 +214,7 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
         {estado.elegida ? t('ordenar.ahoraCasilla') : t('ordenar.tocaParaOir')}
       </p>
 
-      <div className="ordenar__acciones">
+      <BarraAcciones>
         {/* Escuchar lo colocado, en orden y seguido. Es lo que convierte «creo que va así»
             en «ahora lo oigo»: comparar de dos en dos no dice si la serie entera sube. */}
         <button
@@ -226,6 +228,7 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
             });
           }}
         >
+          <IconoTocar />
           {t('accion.escuchar')}
         </button>
         <button
@@ -234,17 +237,19 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
           aria-disabled={!listo || estado.fase !== 'colocando' || undefined}
           onClick={() => despachar({ tipo: 'comprobar' })}
         >
+          <IconoComprobar />
           {t('ordenar.comprobar')}
         </button>
-      </div>
+      </BarraAcciones>
 
       <Reaccion
-        tono={estado.fase === 'completada' ? 'bien' : estado.fase === 'revisando' ? 'casi' : 'neutro'}
+        tono={estado.fase === 'revisando' ? 'casi' : 'neutro'}
         personaje={actividad.personaje}
       >
+        {/* Solo «casi». El «¡completada!» lo decía aquí y otra vez medio segundo después en
+            la modal de enhorabuena, que es la que se queda: al terminar ya hay pantalla. */}
         {estado.fase === 'revisando' &&
           t(pistaPara(actividad.pistas, estado.fallosAqui) ?? 'ordenar.casi')}
-        {estado.fase === 'completada' && t('comun.completada')}
       </Reaccion>
 
       {/* Sin barra de progreso: las casillas se van llenando a la vista, y son las mismas que hay que llenar.

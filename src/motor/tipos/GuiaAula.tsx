@@ -1,6 +1,14 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Metronomo } from '@/audio/metronomo';
 import { despertarAudio } from '@/audio/AudioEngine';
+import { BarraAcciones } from '@/ui/BarraAcciones';
+import {
+  IconoAnterior,
+  IconoImprimir,
+  IconoParar,
+  IconoSiguiente,
+  IconoTocar,
+} from '@/ui/Simbolos';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -102,34 +110,6 @@ export default function GuiaAula({ actividad }: PropsActividad) {
         ))}
       </div>
 
-      <div className="guia__controles no-imprimir">
-        <button
-          type="button"
-          className="boton-principal boton-arranque"
-          data-sonando={sonando || undefined}
-          onClick={sonando ? parar : arrancar}
-        >
-          {sonando ? t('accion.sinPulso') : t('accion.pulso')}
-        </button>
-
-        <label className="guia__tempo">
-          {t('guia.tempo')}
-          <input
-            type="range"
-            min={40}
-            max={160}
-            step={2}
-            value={bpm}
-            onChange={(e) => setBpm(Number(e.target.value))}
-          />
-          <output>{bpm}</output>
-        </label>
-
-        <button type="button" className="boton-repetir" onClick={() => window.print()}>
-          {t('guia.imprimir')}
-        </button>
-      </div>
-
       <ol className="guia__pasos">
         {contenido.pasos.map((x, i) => (
           <li key={x.titulo} data-actual={i === paso} className="guia__paso">
@@ -140,30 +120,64 @@ export default function GuiaAula({ actividad }: PropsActividad) {
         ))}
       </ol>
 
-      <div className="guia__navegacion no-imprimir">
+      <BarraAcciones>
+        {/* Primero lo que se usa cada minuto: pasar de paso. */}
+        <div className="acciones__grupo" role="group" aria-label={t('guia.pasos')}>
+          <button
+            type="button"
+            className="boton-repetir"
+            aria-label={t('guia.anterior')}
+            aria-disabled={paso === 0 || undefined}
+            onClick={() => setPaso((n) => Math.max(0, n - 1))}
+          >
+            <IconoAnterior />
+          </button>
+          <span className="acciones__valor" aria-live="polite">
+            {paso + 1}/{contenido.pasos.length}
+          </span>
+          {/* En el último paso se apaga, igual que «Anterior» en el primero. Aquí había un
+              «Terminar» que cerraba la guía, y la guía no se cierra: se sale por «Volver»,
+              como de todas las pantallas que no tienen final. */}
+          <button
+            type="button"
+            className="boton-repetir"
+            aria-label={t('guia.siguiente')}
+            aria-disabled={paso + 1 >= contenido.pasos.length || undefined}
+            onClick={() => setPaso((n) => Math.min(contenido.pasos.length - 1, n + 1))}
+          >
+            <IconoSiguiente />
+          </button>
+        </div>
+
         <button
           type="button"
-          className="boton-repetir"
-          aria-disabled={paso === 0 || undefined}
-          onClick={() => setPaso((n) => Math.max(0, n - 1))}
+          className="boton-principal boton-arranque"
+          data-sonando={sonando || undefined}
+          onClick={sonando ? parar : arrancar}
         >
-          {t('guia.anterior')}
+          {sonando ? <IconoParar /> : <IconoTocar />}
+          {sonando ? t('accion.sinPulso') : t('accion.pulso')}
         </button>
-        <span aria-live="polite">
-          {paso + 1} / {contenido.pasos.length}
-        </span>
-        {/* En el último paso se apaga, igual que «Anterior» en el primero. Aquí había un
-            «Terminar» que cerraba la guía, y la guía no se cierra: se sale por «Volver»,
-            como de todas las pantallas que no tienen final. */}
-        <button
-          type="button"
-          className="boton-repetir"
-          aria-disabled={paso + 1 >= contenido.pasos.length || undefined}
-          onClick={() => setPaso((n) => Math.min(contenido.pasos.length - 1, n + 1))}
-        >
-          {t('guia.siguiente')}
+
+        <label className="guia__tempo acciones__grupo">
+          {t('guia.tempo')}
+          <input
+            type="range"
+            min={40}
+            max={160}
+            step={2}
+            value={bpm}
+            onChange={(e) => setBpm(Number(e.target.value))}
+          />
+          <output className="acciones__valor">{bpm}</output>
+        </label>
+
+        {/* Y al final lo que se hace una vez. */}
+        <button type="button" className="boton-repetir" onClick={() => window.print()}>
+          <IconoImprimir />
+          {t('guia.imprimir')}
         </button>
-      </div>
+      </BarraAcciones>
 
       {contenido.materiales && contenido.materiales.length > 0 && (
         <aside className="guia__materiales">

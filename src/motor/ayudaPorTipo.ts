@@ -30,6 +30,14 @@ export interface Ayuda {
   comoVa?: string;
   /** Lo que necesita saber el adulto y el niño no. Clave de i18n. */
   paraElAdulto?: string;
+  /**
+   * Valores para los `{huecos}` de los textos de arriba.
+   *
+   * Hace falta desde que la explicación dice **cuántas vueltas** tiene la actividad, que es
+   * un dato del JSON y no del tipo. Sin esto, la frase habría que partirla en dos trozos en
+   * el componente, y en otro idioma el número puede ir en otro sitio de la frase.
+   */
+  valores?: Record<string, string | number>;
 }
 
 type Resolver = Ayuda | ((actividad: Actividad) => Ayuda);
@@ -55,12 +63,25 @@ const POR_TIPO: Partial<Record<TipoActividad, Resolver>> = {
   },
 
   /*
+    La rejilla es dos actividades bajo un tipo: un dictado que se comprueba y un editor donde
+    no hay nada que acertar. «Aquí no hay respuesta correcta» solo vale para el segundo, y
+    estaba escrito en pantalla, fijo, durante toda la actividad; su sitio es la explicación.
+  */
+  rejilla: (a) => {
+    const c = a.contenido as { modo?: string };
+    return c.modo === 'libre' ? { comoVa: 'rejilla.libre' } : {};
+  },
+
+  /*
     Y aquí depende de por dónde entre el niño. `entrada.modo` lo declara el JSON, y la
     diferencia es real: con micrófono el ritmo arranca con su primera palmada, tocando el
     botón no.
   */
   'tocar-a-tiempo': (a) => ({
     comoVa: a.entrada.modo === 'microfono-palmada' ? 'tocar.palmea' : 'tocar.toca',
+    // Y cuántas vueltas son, que es lo que el autor echó en falta: «¿cuántas veces sale el
+    // otra vez?». El 3 de reserva es el mismo que usa el componente.
+    valores: { n: (a.contenido as { repeticiones?: number }).repeticiones ?? 3 },
   }),
 };
 

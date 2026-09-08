@@ -22,6 +22,8 @@ import { CuentaAtras } from '@/ui/CuentaAtras';
 import { colorDe, nombreDe } from '@/ui/coloresNota';
 import { Icono } from '@/ui/Icono';
 import { pistaPara } from '../maquinaEleccion';
+import { BarraAcciones } from '@/ui/BarraAcciones';
+import { IconoRepetir, IconoSiguiente, IconoTocar } from '@/ui/Simbolos';
 import { Reaccion } from '@/ui/Reaccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
@@ -523,12 +525,6 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
         {avisos.length ? avisos[avisos.length - 1]!.texto : ''}
       </p>
 
-      {fase === 'listo' && (
-        <button type="button" className="boton-principal boton-arranque" onClick={() => setFase('cuenta')}>
-          {t('accion.empezar')}
-        </button>
-      )}
-
       {/* La cuenta atrás va justo antes de que empiece a contar lo que haces. */}
       {fase === 'cuenta' && <CuentaAtras desde={3} bpm={bpm} alTerminar={() => void arrancar()} />}
 
@@ -567,7 +563,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
       )}
 
       {fase === 'resultado' && evaluacion && (
-        <section className="karaoke__resultado">
+        <>
           {/*
             La frase la dice el personaje y entra deslizando, como en el resto.
 
@@ -599,9 +595,25 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
             {t('karaoke.cogidas')} <strong>{acertadas.size}</strong> {t('catalogo.de')}{' '}
             <strong>{total}</strong> · <strong>{porcentaje} %</strong>
           </p>
+        </>
+      )}
 
-          <div className="karaoke__acciones">
+      <BarraAcciones>
+        {fase === 'listo' && (
+          <button
+            type="button"
+            className="boton-principal boton-arranque"
+            onClick={() => setFase('cuenta')}
+          >
+            <IconoTocar />
+            {t('accion.empezar')}
+          </button>
+        )}
+
+        {fase === 'resultado' && evaluacion && (
+          <>
             <button type="button" className="boton-repetir" onClick={() => setFase('listo')}>
+              <IconoRepetir />
               {t('tocar.otraVez')}
             </button>
             <button
@@ -618,11 +630,13 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
                 })
               }
             >
-              {t('comun.siguiente')}
+              <IconoSiguiente />
+              {/* Una sola pasada: aquí «otra vez» es voluntario y esto es el final. */}
+              {t('comun.terminar')}
             </button>
-          </div>
-        </section>
-      )}
+          </>
+        )}
+      </BarraAcciones>
     </section>
   );
 }

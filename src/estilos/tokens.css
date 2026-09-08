@@ -688,15 +688,6 @@ p {
   25% { transform: translateX(-5px); }
   75% { transform: translateX(5px); }
 }
-.ordenar__acciones {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--e-3);
-}
-.ordenar__acciones [aria-disabled='true'],
-.emparejar__ficha[aria-disabled='true'] {
-  opacity: 0.5;
-}
 
 /* ── guía de aula: la pantalla del maestro ─────────────────────────────────
    Un proyector y veinticinco niños sin dispositivo es la norma en el aula
@@ -746,15 +737,6 @@ p {
   }
 }
 
-.guia__controles,
-.guia__navegacion {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--e-4);
-  margin: var(--e-5) 0;
-  font-size: 1.2em;
-}
 .guia__tempo {
   display: flex;
   align-items: center;
@@ -1361,13 +1343,6 @@ p {
   outline: var(--foco);
   outline-offset: 2px;
 }
-.rejilla__acciones {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--e-3);
-  justify-content: center;
-}
-
 /* ── cantar: retorno visual de afinación ───────────────────────────────────
    La aguja existe para que la actividad se pueda hacer MIRANDO, y para que el
    niño vea hacia dónde moverse mientras canta, en vez de que se lo digan al
@@ -1419,7 +1394,6 @@ p {
   background: var(--acento);
   opacity: 1;
 }
-.cantar__acciones { display: flex; flex-wrap: wrap; gap: var(--e-3); justify-content: center; }
 .cantar__aviso {
   padding: var(--e-3) var(--e-4);
   border-left: 4px solid var(--tinta-2);
@@ -1466,7 +1440,6 @@ p {
 @media (prefers-reduced-motion: reduce) {
   .seguir__bloque[data-actual] { transform: none; border-width: 7px; }
 }
-.seguir__acciones { display: flex; justify-content: center; }
 
 /* ── lienzo: creación libre ────────────────────────────────────────────────
    No hay respuesta correcta, no hay comprobación y no se puede fallar. Es la
@@ -1517,7 +1490,6 @@ p {
   outline: var(--foco);
   outline-offset: 2px;
 }
-.lienzo__acciones { display: flex; gap: var(--e-3); flex-wrap: wrap; justify-content: center; }
 
 /* ── cuenta atrás ──────────────────────────────────────────────────────────
    No es un cronómetro: no mide lo que tardas, solo dice cuándo se empieza.
@@ -2290,27 +2262,9 @@ p {
   min-height: 96px;
   font-size: 24px;
 }
-.karaoke__resultado {
-  margin-top: var(--e-4);
-  padding: var(--e-4);
-  background: var(--suave-verde);
-  border: 2px solid var(--vivo-verde);
-  border-radius: var(--radio);
-  /* El texto se fija SIEMPRE junto al fondo: --suave-verde cambia con el esquema de color
-     y heredar el texto es lo que dejó el modal de éxito ilegible en modo oscuro. */
-  color: var(--tinta);
-  text-align: center;
-}
 .karaoke__cifras {
   margin: var(--e-1) 0;
   font-variant-numeric: tabular-nums;
-}
-.karaoke__acciones {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--e-3);
-  justify-content: center;
-  margin-top: var(--e-4);
 }
 
 /* El nombre de la nota que acabas de acertar, subiendo y desvaneciéndose.
@@ -2632,15 +2586,6 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   border-radius: 0;
 }
 
-/* Grabadora del piano. Dos botones y ni uno más: grabar y escuchar, que es lo que hace una
-   grabadora de verdad. El de grabar se marca en rojo cuando está grabando —es el único
-   sitio del proyecto donde el rojo dice algo, y aquí no significa error sino «en marcha»,
-   que es el código universal de cualquier grabadora. */
-.teclado__barra [data-grabando] {
-  color: var(--papel);
-  background: var(--vivo-rojo);
-  border-color: var(--vivo-rojo);
-}
 .catalogo__aclaracion {
   margin: 0 0 var(--e-3);
   font-size: var(--t-xs);
@@ -2664,16 +2609,6 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   line-height: 1.4;
 }
 
-/* Todo lo que no es teclado, en una fila. En la pantalla de un instrumento, cada línea que
-   no sea teclado es teclado que se pierde. */
-.teclado__barra {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--e-2);
-  align-items: center;
-  justify-content: center;
-  margin: var(--e-3) 0;
-}
 
 /* Selector de octavas: tres botones pequeños y pegados, como un conmutador. Se ven las tres
    opciones a la vez, que a esta edad vale más que un desplegable con dos pasos. */
@@ -2698,8 +2633,6 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   border-left: 2px dashed var(--linea);
   border-right: 2px dashed var(--linea);
 }
-/* Botones de transporte: icono y palabra juntos. */
-.teclado__barra button { display: inline-flex; align-items: center; gap: var(--e-2); }
 
 .lienzo__instrumento select {
   min-height: 44px;
@@ -2784,7 +2717,6 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   border-left: 3px solid var(--tinta);
   border-right: 6px solid var(--tinta);
 }
-.compases__acciones { display: flex; justify-content: center; margin-top: var(--e-4); }
 
 /* ── construir una escala ──────────────────────────────────────────────────
    Pauta arriba, distancias en medio, teclado abajo. Ese orden importa: se lee de arriba
@@ -2849,7 +2781,6 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 .escala__teclado .teclado__negra[data-usada] {
   box-shadow: inset 0 0 0 3px var(--acento-2);
 }
-.escala__acciones { display: flex; justify-content: center; margin-top: var(--e-3); }
 
 /* ── paisaje sonoro: la única actividad que guarda audio ───────────────────
    El botón de grabar es el más grande de la pantalla y el único rojo. Aquí el rojo no
@@ -2862,7 +2793,6 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   text-align: left;
 }
 .paisaje__buscar li { margin-bottom: var(--e-2); }
-.paisaje__acciones { display: flex; justify-content: center; margin: var(--e-5) 0; }
 /* Lo único propio: grabando se pinta de rojo, que es el color que todo el mundo asocia a
    «se está grabando». El tamaño y la forma vienen de `.boton-principal`. */
 .paisaje__grabar[data-grabando] {
@@ -2974,14 +2904,6 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 .pistas__celda[data-aqui] { box-shadow: inset 0 0 0 2px var(--acento); }
 .pistas__celda:focus-visible { outline: var(--foco); outline-offset: 1px; }
 
-.pistas__acciones {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--e-2);
-  justify-content: center;
-  margin: var(--e-4) 0;
-}
-.pistas__acciones button { display: inline-flex; align-items: center; gap: var(--e-2); }
 
 /* ---------------------------------------------------------------------------
  * Percusión corporal (tipo «cuerpo»).
@@ -3075,14 +2997,6 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   color: var(--tinta);
 }
 
-.cuerpo__acciones {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--e-2);
-  justify-content: center;
-  margin: var(--e-4) 0;
-}
-.cuerpo__acciones button { display: inline-flex; align-items: center; gap: var(--e-2); }
 
 /* Proyectada en clase, cuanto más grande mejor: es lo que mira el grupo entero. */
 .lienzo[data-ampliado] .cuerpo__golpe { height: 5rem; }
@@ -3167,15 +3081,6 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 }
 .pads__pad[data-sonando] .pads__letra { color: var(--tinta); }
 
-.pads__barra {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--e-2);
-  align-items: center;
-  justify-content: center;
-  margin: var(--e-4) 0;
-}
-.pads__barra button { display: inline-flex; align-items: center; gap: var(--e-2); }
 .pads__tempos { display: flex; gap: var(--e-1); }
 
 /* Proyectado o a pantalla completa caben pads más grandes, y aquí más grande es mejor. */
@@ -3464,14 +3369,6 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 }
 .eco__pandero[data-golpeado] .eco__cuenta { color: var(--papel); }
 
-.eco__acciones {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--e-2);
-  justify-content: center;
-  margin: var(--e-4) 0;
-}
-.eco__acciones button { display: inline-flex; align-items: center; gap: var(--e-2); }
 
 @media (prefers-reduced-motion: reduce) {
   .eco__pandero { transition: none; }
@@ -3529,9 +3426,7 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   }
   :root[data-pizarra='true'] .guia__consigna { grid-area: consigna; }
   :root[data-pizarra='true'] .guia__pulso { grid-area: pulso; }
-  :root[data-pizarra='true'] .guia__controles { grid-area: controles; }
   :root[data-pizarra='true'] .guia__pasos { grid-area: pasos; margin-top: 0; }
-  :root[data-pizarra='true'] .guia__navegacion { grid-area: navegacion; }
   :root[data-pizarra='true'] .guia__materiales { grid-area: materiales; }
 
   /* Un paso apagado al 45 % se ve en un monitor y desaparece en un proyector con la
@@ -3635,6 +3530,11 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
     max-width: none;
   }
   .barra-actividad { padding-block: 2px; }
+  /* Y la botonera con ella: en apaisado cada píxel de alto es actividad. */
+  .barra-acciones { padding-block: var(--e-1); gap: var(--e-1); }
+  .barra-acciones > button,
+  .barra-acciones > label,
+  .barra-acciones > .acciones__grupo { min-height: 44px; }
   .barra-actividad__volver,
   .barra-actividad__ficha { min-height: 40px; }
   .barra-actividad__personaje { min-width: 44px; min-height: 44px; }
@@ -3789,7 +3689,8 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 .reaccion {
   position: fixed;
   left: var(--e-3);
-  bottom: calc(var(--alto-barra) + var(--e-3));
+  /* Encima de las dos barras. `--alto-acciones` lo publica la botonera al medirse. */
+  bottom: calc(var(--alto-barra) + var(--alto-acciones, 0px) + var(--e-3));
   z-index: 20;
   width: min(38ch, calc(100vw - 2 * var(--e-3)));
   pointer-events: none;
@@ -3823,13 +3724,68 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 .reaccion__quien { font-weight: 700; color: var(--tinta); }
 .reaccion__pista { font-size: var(--t-m); }
 
-/* Ampliado no hay barra abajo, así que la tarjeta baja a ocupar ese hueco. */
-.lienzo[data-ampliado] .reaccion { bottom: var(--e-3); }
+/* Ampliado no hay barra de navegación, pero la botonera sigue: la tarjeta se apoya en ella. */
+.lienzo[data-ampliado] .reaccion { bottom: calc(var(--alto-acciones, 0px) + var(--e-3)); }
 
 @media (max-width: 26rem) {
   /* En un móvil estrecho el personaje se lleva demasiado ancho del texto. */
   .reaccion .personaje { display: none; }
 }
+
+/* ---------------------------------------------------------------------------
+ * La botonera de la actividad
+ *
+ * Un sitio fijo para lo que actúa SOBRE la actividad, el mismo en las veintiuna pantallas.
+ * Sustituye a quince contenedores que hacían esto mismo con quince márgenes distintos, dos
+ * de ellos sin centrar, y a tres tipos que ni siquiera tenían contenedor.
+ *
+ * Va **encima** de la barra de volver-personaje-ficha y no fundida con ella: son dos cosas
+ * distintas —una es de la aplicación y otra de la actividad— y en apaisado lo que se hace es
+ * adelgazar las dos, no juntarlas.
+ * ------------------------------------------------------------------------ */
+.barra-acciones {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: var(--alto-barra);
+  /* Por debajo de la barra de navegación (10) y por encima de la actividad. La tarjeta de
+     reacción va a 20 y se apoya encima de las dos. */
+  z-index: 9;
+  display: flex;
+  /* Si no caben, saltan de línea. Ni menú de «Más» —esconde botones que un niño no va a
+     buscar— ni fila que se arrastra de lado, que no avisa de que hay algo a la derecha. */
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e-2);
+  padding: var(--e-2) var(--e-3);
+  background: var(--papel);
+  border-top: 2px solid var(--linea);
+}
+/* Dentro de la barra todos miden lo mismo de alto, tengan el texto que tengan: una fila de
+   botones de tres alturas distintas es lo que se ve como «no hay criterio». */
+.barra-acciones > button,
+.barra-acciones > label,
+.barra-acciones > .acciones__grupo {
+  flex: 0 0 auto;
+  min-height: var(--objetivo);
+}
+/* Los que van juntos porque son la misma decisión: más grave / más agudo, menos / más
+   octavas. Se pegan para que se lean como un control y no como dos botones sueltos. */
+.acciones__grupo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-1);
+}
+.acciones__valor {
+  min-width: 3.5ch;
+  font-weight: 700;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+/* Ampliado no hay barra de navegación debajo, así que la botonera baja a ocupar su sitio.
+   No se esconde: son los mandos, y sin ellos no se puede ni empezar ni parar. */
+.lienzo[data-ampliado] .barra-acciones { bottom: 0; }
 
 /* ---------------------------------------------------------------------------
  * La barra de la actividad
@@ -3863,9 +3819,17 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   background: var(--papel);
   border-top: 2px solid var(--linea);
 }
-/* Sitio para que la barra no tape el final de la actividad. Y la altura vive en un token
-   porque hay dos cosas que se apoyan en ella: este hueco y la tarjeta de reacción. */
-.actividad-marco { padding-bottom: calc(var(--alto-barra) + var(--e-3)); }
+/*
+  Sitio para que las dos barras no tapen el final de la actividad.
+
+  Son dos sumandos y ninguno es fijo: la de navegación mide `--alto-barra` —un token, porque
+  en apaisado adelgaza— y la de acciones se mide sola y publica `--alto-acciones`, porque
+  cambia de alto cuando salta de línea. Con un número a ojo, la actividad se quedaba con el
+  último botón debajo de la barra en cuanto había cinco acciones y un móvil estrecho.
+*/
+.actividad-marco {
+  padding-bottom: calc(var(--alto-barra) + var(--alto-acciones, 0px) + var(--e-3));
+}
 .barra-actividad__volver,
 .barra-actividad__ficha {
   display: inline-flex;
@@ -4024,19 +3988,7 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 .karaoke__botones > * { flex: 0 0 auto; min-width: var(--objetivo); }
 
 @media (max-width: 30rem) {
-  /* En un móvil, las filas de acciones se ordenan solas y no se salen. */
-  .teclado__barra,
-  .pistas__acciones,
-  .lienzo__acciones,
-  .pads__barra,
-  .cuerpo__acciones,
-  .eco__acciones {
-    flex-wrap: wrap;
-    justify-content: center;
   }
-  /* Y el marco de la actividad deja de gastar aire lateral: cada píxel es actividad. */
-  .actividad-marco { padding-inline: var(--e-2); }
-}
 
 /* ---------------------------------------------------------------------------
  * Los tres botones que hay, y no hay más

@@ -3,8 +3,9 @@ import { useCarril } from '@/app/preferencias';
 import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { Percusion, type Golpe } from '@/audio/percusion';
 import { compararEco, mensajeEco, type ResultadoEco } from '../eco';
-import { IconoParar, IconoTocar } from '@/ui/Transporte';
+import { IconoParar, IconoRepetir, IconoSiguiente, IconoTocar } from '@/ui/Simbolos';
 import { Reaccion } from '@/ui/Reaccion';
+import { BarraAcciones } from '@/ui/BarraAcciones';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -187,7 +188,7 @@ export default function Eco({ actividad }: PropsActividad) {
         <span className="eco__cuenta">{enTurno ? golpesDelTurno.length : ''}</span>
       </button>
 
-      <div className="eco__acciones">
+      <BarraAcciones>
         {fase === 'esperando' && (
           <button type="button" className="boton-principal boton-arranque" onClick={empezarPrimero}>
             <IconoTocar />
@@ -218,6 +219,7 @@ export default function Eco({ actividad }: PropsActividad) {
               {t('eco.escucharlo')}
             </button>
             <button type="button" className="boton-principal" onClick={empezarSegundo}>
+              <IconoSiguiente />
               {t('eco.ahoraTu')}
             </button>
           </>
@@ -242,6 +244,7 @@ export default function Eco({ actividad }: PropsActividad) {
               className="boton-repetir"
               onClick={() => void escuchar(primero)}
             >
+              <IconoTocar />
               {t('eco.oirElUno')}
             </button>
             <button
@@ -249,14 +252,16 @@ export default function Eco({ actividad }: PropsActividad) {
               className="boton-repetir"
               onClick={() => void escuchar(segundo)}
             >
+              <IconoTocar />
               {t('eco.oirElDos')}
             </button>
             <button type="button" className="boton-principal" onClick={empezarPrimero}>
+              <IconoRepetir />
               {t('eco.otraVez')}
             </button>
           </>
         )}
-      </div>
+      </BarraAcciones>
 
       {/*
         El veredicto lo dice el personaje, entra deslizando y se va, como en todo lo demás.

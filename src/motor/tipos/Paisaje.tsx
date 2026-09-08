@@ -8,7 +8,8 @@ import {
   listar,
   type GrabacionGuardada,
 } from '@/datos/grabaciones';
-import { IconoGrabar, IconoParar, IconoTocar } from '@/ui/Transporte';
+import { IconoGrabar, IconoParar, IconoTocar } from '@/ui/Simbolos';
+import { BarraAcciones } from '@/ui/BarraAcciones';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -128,7 +129,7 @@ export default function Paisaje({ actividad }: PropsActividad) {
         </ul>
       )}
 
-      <div className="paisaje__acciones">
+      <BarraAcciones>
         <button
           type="button"
           className="boton-principal boton-arranque paisaje__grabar"
@@ -139,13 +140,13 @@ export default function Paisaje({ actividad }: PropsActividad) {
           {grabando ? <IconoParar tamano={30} /> : <IconoGrabar tamano={30} />}
           {t(grabando ? 'accion.parar' : 'paisaje.grabar')}
         </button>
-      </div>
+      </BarraAcciones>
 
       {/* Mientras graba se ve Y se dice. Un indicador que se pueda confundir con otra cosa
           no sirve para esto. */}
       {grabando && (
         <p className="paisaje__enMarcha" role="status">
-          {t('paisaje.enMarcha').replace('{s}', String(maximo))}
+          {t('paisaje.enMarcha', { s: maximo })}
         </p>
       )}
 

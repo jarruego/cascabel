@@ -4,7 +4,7 @@ import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { Sampler } from '@/audio/sampler';
 import { muestrasDe } from '@/audio/instrumentos';
 import { clic } from '@/audio/clic';
-import { IconoTocar } from '@/ui/Transporte';
+import { IconoTocar } from '@/ui/Simbolos';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 

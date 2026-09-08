@@ -203,13 +203,14 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
         })}
       </div>
 
+      {/* Sin botonera: se juega tocando los sitios de la pauta, y no hay nada que hacerle a
+          la actividad desde fuera. El «¡completada!» lo dice la modal de enhorabuena. */}
       <Reaccion
-        tono={estado.fase === 'casi' ? 'casi' : estado.fase === 'bien' || estado.fase === 'completada' ? 'bien' : 'neutro'}
+        tono={estado.fase === 'casi' ? 'casi' : estado.fase === 'bien' ? 'bien' : 'neutro'}
         personaje={actividad.personaje}
       >
         {estado.fase === 'bien' && t('comun.bien')}
         {estado.fase === 'casi' && (pista ? t(pista) : t('comun.casi'))}
-        {estado.fase === 'completada' && t('comun.completada')}
       </Reaccion>
 
       <progress

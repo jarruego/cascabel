@@ -122,6 +122,40 @@ describe('los botones de la aplicación', () => {
     expect(mal, `latido fuera de la acción principal:\n${mal.join('\n')}`).toEqual([]);
   });
 
+  it('los botones de la actividad viven en la botonera, no sueltos por la pantalla', () => {
+    /*
+      El fallo que describió el autor: «según la altura de la actividad o la propia actividad
+      salen unos botones u otros, con icono, sin icono, centrado, a la izquierda». Tres tipos
+      —palmear, cantar y karaoke— ni siquiera metían su botón en un contenedor, así que
+      colgaba del flujo y salía a la izquierda mientras los demás iban centrados.
+
+      Se comprueba por tipo y no por botón: lo que importa es que un tipo con acciones tenga
+      su `<BarraAcciones>`. Dentro puede haber los que hagan falta.
+    */
+    /*
+      La excepción, y es real: en `referencia` cada FILA tiene su botón de oírla. No son
+      acciones sobre la actividad —no hay ninguna: es una lista que se consulta, incluso en
+      mitad de otra actividad— sino parte de la fila, como el nombre y la descripción.
+      Bajarlos a una barra sería preguntar «¿oír cuál?».
+    */
+    const SIN_BOTONERA = new Set(['Referencia.tsx']);
+    const TIPOS = join(RAIZ, 'motor', 'tipos');
+    const sueltos: string[] = [];
+    for (const n of readdirSync(TIPOS).filter((f) => f.endsWith('.tsx'))) {
+      if (SIN_BOTONERA.has(n)) continue;
+      const src = readFileSync(join(TIPOS, n), 'utf8');
+      const conBarra = src.includes('<BarraAcciones>');
+      // Los que se tocan porque SON la actividad no cuentan: la diana, el pandero, las
+      // teclas, las fichas. Se reconocen por llevar `boton-actividad` o clase propia.
+      const conAccion = /className="boton-(principal|repetir)/.test(src);
+      if (conAccion && !conBarra) sueltos.push(n);
+    }
+    expect(
+      sueltos,
+      `tipos con acciones fuera de la botonera:\n${sueltos.join('\n')}`,
+    ).toEqual([]);
+  });
+
   it('cada tipo que arranca algo tiene un solo botón con latido', () => {
     // Dos latidos a la vez es ninguno: el niño mira los dos y no sabe cuál es el que
     // empieza. Se cuenta por fichero porque las fases se excluyen entre sí.

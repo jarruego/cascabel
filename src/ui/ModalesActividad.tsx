@@ -52,12 +52,14 @@ export function ModalExplicacion({
         de estar ahí: ya se han contado al entrar, y mientras se juega la pantalla es de la
         actividad. Su sitio es este, y se vuelven a leer pulsando al personaje.
       */}
-      {ayuda.comoVa && <p className="modal__texto">{t(ayuda.comoVa)}</p>}
+      {ayuda.comoVa && <p className="modal__texto">{t(ayuda.comoVa, ayuda.valores)}</p>}
 
       {/* Y lo que necesita el adulto y el niño no: que el piano también se toca con el
           teclado del ordenador, que el eco es para dos. Va aparte y en pequeño porque no
           es para quien está a punto de jugar. */}
-      {ayuda.paraElAdulto && <p className="modal__adulto">{t(ayuda.paraElAdulto)}</p>}
+      {ayuda.paraElAdulto && (
+        <p className="modal__adulto">{t(ayuda.paraElAdulto, ayuda.valores)}</p>
+      )}
 
       <div className="modal__acciones">
         <button type="button" className="boton-principal modal__empezar" onClick={cerrar}>

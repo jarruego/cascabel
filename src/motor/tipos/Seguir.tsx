@@ -7,6 +7,8 @@ import { clic } from '@/audio/clic';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
+import { BarraAcciones } from '@/ui/BarraAcciones';
+import { IconoParar, IconoTocar } from '@/ui/Simbolos';
 import { rejillaDesdeSilabas } from '../rejillaRitmica';
 
 /**
@@ -270,22 +272,19 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
         </div>
       )}
 
-      <div className="seguir__acciones">
+      {/* La instrucción no se repite aquí: la cuenta el personaje al entrar y se vuelve a
+          leer pulsándolo. Y la acción va donde va en todas, en la botonera de abajo. */}
+      <BarraAcciones>
         <button
           type="button"
           className="boton-principal boton-arranque"
           data-sonando={sonando || undefined}
           onClick={() => (sonando ? parar() : void arrancar())}
         >
-          <Icono nombre={sonando ? 'pausa' : 'reproducir'} tamano={36} />
+          {sonando ? <IconoParar /> : <IconoTocar />}
           {sonando ? t('accion.parar') : t('accion.empezar')}
         </button>
-      </div>
-
-      {/* Aquí había dos frases fijas —«toca para empezar y sigue el dibujo» y «sigue el
-          dibujo con el dedo mientras suena»— que son la instrucción de la actividad. Eso lo
-          cuenta el personaje al entrar y se vuelve a leer pulsándolo; repetirlo en pantalla
-          durante toda la actividad es decirlo dos veces y quitarle sitio al musicograma. */}
+      </BarraAcciones>
     </section>
   );
 }

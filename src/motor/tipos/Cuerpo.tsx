@@ -2,7 +2,8 @@ import { useCallback, useEffect, useMemo, useReducer, useRef } from 'react';
 import { useCarril } from '@/app/preferencias';
 import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { SonidosDelCuerpo, ZONAS, type Zona } from '@/audio/cuerpo';
-import { IconoParar, IconoTocar } from '@/ui/Transporte';
+import { IconoParar, IconoTocar } from '@/ui/Simbolos';
+import { BarraAcciones } from '@/ui/BarraAcciones';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -190,7 +191,7 @@ export default function Cuerpo({ actividad }: PropsActividad) {
         )}
       </div>
 
-      <div className="cuerpo__acciones">
+      <BarraAcciones>
         <button
           type="button"
           className="boton-principal boton-arranque"
@@ -200,7 +201,7 @@ export default function Cuerpo({ actividad }: PropsActividad) {
           {estado.sonando ? <IconoParar /> : <IconoTocar />}
           {t(estado.sonando ? 'accion.parar' : 'accion.empezar')}
         </button>
-      </div>
+      </BarraAcciones>
     </section>
   );
 }

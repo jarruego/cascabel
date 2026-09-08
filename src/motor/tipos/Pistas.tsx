@@ -5,7 +5,7 @@ import { Sampler } from '@/audio/sampler';
 import { muestrasDe } from '@/audio/instrumentos';
 import { Percusion, type Golpe } from '@/audio/percusion';
 import { colorDe } from '@/ui/coloresNota';
-import { IconoParar, IconoTocar } from '@/ui/Transporte';
+import { IconoDescargar, IconoLimpiar, IconoParar, IconoTocar } from '@/ui/Simbolos';
 import { aMidiSMF, descargar, type NotaExportable } from '@/datos/exportar';
 import {
   INICIAL_PISTAS,
@@ -17,6 +17,7 @@ import {
   type EstadoPistas,
   type Pista,
 } from '../maquinaPistas';
+import { BarraAcciones } from '@/ui/BarraAcciones';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -243,7 +244,7 @@ export default function Pistas({ actividad }: PropsActividad) {
         })}
       </div>
 
-      <div className="pistas__acciones">
+      <BarraAcciones>
         <button
           type="button"
           className="boton-principal boton-arranque"
@@ -260,6 +261,7 @@ export default function Pistas({ actividad }: PropsActividad) {
           aria-disabled={estado.encendidas.size === 0 || undefined}
           onClick={() => despachar({ tipo: 'limpiarTodo' })}
         >
+          <IconoLimpiar />
           {t('pistas.limpiarTodo')}
         </button>
 
@@ -272,10 +274,11 @@ export default function Pistas({ actividad }: PropsActividad) {
               descargar(`${actividad.id}.mid`, aMidiSMF(paraExportar(), bpm), 'audio/midi')
             }
           >
+            <IconoDescargar />
             {t('rejilla.midi')}
           </button>
         )}
-      </div>
+      </BarraAcciones>
 
       {/* La exportación se lleva solo las pistas melódicas: la percusión no cabe en una
           partitura de una voz, y meterla como notas de altura sería escribir una mentira. */}

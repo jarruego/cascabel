@@ -17,9 +17,21 @@ const idioma = 'es';
 /**
  * Ningún texto vive en un componente. Es lo que convierte «traducir a valenciano»
  * en una tanda de trabajo en vez de en un refactor.
+ *
+ * **Con huecos**, si se le pasan valores: `t('tocar.vuelta', { n: 2, total: 3 })` sobre
+ * «Vuelta {n} de {total}». Se añadió el 2026-09-09, cuando hubo que decir en cuántas vueltas
+ * va una actividad; hasta entonces el único caso lo resolvía un `.replace('{s}', …)` a mano
+ * en el componente, que es la misma idea escrita donde no se ve.
+ *
+ * Los huecos van en el texto y no fuera por una razón de traducción: en otro idioma el
+ * número puede ir en otro sitio de la frase, y partirla en trozos aquí lo impediría.
  */
-export function t(clave: string): string {
-  return diccionarios[idioma]?.[clave] ?? diccionarios.es?.[clave] ?? clave;
+export function t(clave: string, valores?: Record<string, string | number>): string {
+  const texto = diccionarios[idioma]?.[clave] ?? diccionarios.es?.[clave] ?? clave;
+  if (!valores) return texto;
+  return texto.replace(/\{(\w+)\}/g, (hueco, nombre: string) =>
+    nombre in valores ? String(valores[nombre]) : hueco,
+  );
 }
 
 /**

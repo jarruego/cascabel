@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { t } from '@/i18n';
 import { Icono } from '@/ui/Icono';
+import { IconoIdea } from '@/ui/Simbolos';
 import { Modal } from '@/ui/Modal';
 
 /**
@@ -45,7 +46,7 @@ export function Retos({ retos }: Props) {
         className="boton-repetir retos__boton"
         onClick={() => setAbierto(true)}
       >
-        <Icono nombre="bombilla" tamano={26} />
+        <IconoIdea />
         {t('retos.pruebaA')}
       </button>
 

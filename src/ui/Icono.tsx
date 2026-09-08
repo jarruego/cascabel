@@ -28,7 +28,7 @@ interface Props {
 
 /** Iconos disponibles en `public/iconos`. Si se añade uno, va aquí. */
 const DISPONIBLES = new Set([
-  'abeja', 'altavoz', 'andando', 'arbol', 'arcoiris',
+  'abeja', 'altavoz', 'andando', 'arbol', 'arcoiris', 'bombilla',
   'campana', 'cantante', 'caracol', 'chispas', 'conejo',
   'delfin', 'diana', 'dino', 'elefante', 'estrella',
   'fiesta', 'fin', 'gato', 'guitarra', 'hola',

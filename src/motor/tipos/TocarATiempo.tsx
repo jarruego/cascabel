@@ -10,6 +10,8 @@ import { aMilisegundos, anclarEn, rejillaDesdeSilabas } from '../rejillaRitmica'
 import { Reaccion } from '@/ui/Reaccion';
 import type { Personaje as PersonajeNombre } from '@/ui/personajes';
 import { pistaPara } from '../maquinaEleccion';
+import { BarraAcciones } from '@/ui/BarraAcciones';
+import { IconoRepetir, IconoSiguiente, IconoTocar } from '@/ui/Simbolos';
 import { rechazarMicrofono, seUsaMicrofono } from '@/escucha/permiso';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
@@ -436,11 +438,6 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
         </ol>
       )}
 
-      {fase === 'listo' && (
-        <button type="button" className="boton-principal boton-arranque" onClick={() => void empezar()}>
-          {t('accion.empezar')}
-        </button>
-      )}
 
       {/*
         La cuenta atrás va justo antes de RESPONDER, no antes de escuchar.
@@ -453,6 +450,17 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
            tempo, con su clic por número. Un compás menos el «¡ya!», que cae encima del
            primer golpe. */
         <CuentaAtras desde={CUENTA_PULSOS - 1} bpm={bpm} alTerminar={() => {}} />
+      )}
+
+      {/*
+        En qué vuelta va. Seis actividades de este tipo hacen tres o cuatro y ninguna lo
+        decía: ni al entrar, ni durante, ni en el botón, así que el niño no sabía si le
+        quedaba una o cinco. Con una sola vuelta no sale: un «1 de 1» es ruido.
+      */}
+      {repeticiones > 1 && (
+        <p className="estado-actividad">
+          {t('tocar.vuelta', { n: ronda + 1, total: repeticiones })}
+        </p>
       )}
 
       {fase === 'escuchando' && <p className="estado-actividad">{t('tocar.escucha')}</p>}
@@ -488,17 +496,12 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
         </p>
       )}
 
+      {/* Ni felicitación ni reproche cuando no ha tocado nada: solo lo que ha pasado, y lo
+          dice el personaje como todo lo demás. */}
       {fase === 'resultado' && sinRespuesta && (
-        <section className="tocar__resultado">
-          {/* Ni felicitación ni reproche: solo lo que ha pasado y la puerta abierta. Y lo
-              dice el personaje, como todo lo que la actividad le contesta al niño. */}
-          <Reaccion tono="casi" personaje={actividad.personaje}>
-            {t('tocar.noHasTocado')}
-          </Reaccion>
-          <button type="button" className="boton-principal" onClick={() => void empezar()}>
-            {t('tocar.otraVez')}
-          </button>
-        </section>
+        <Reaccion tono="casi" personaje={actividad.personaje}>
+          {t('tocar.noHasTocado')}
+        </Reaccion>
       )}
 
       {fase === 'resultado' && !sinRespuesta && evaluacion && (
@@ -506,27 +509,75 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
           evaluacion={evaluacion}
           personaje={actividad.personaje}
           pista={pistaPara(actividad.pistas, ronda + 1) ?? undefined}
-          ronda={ronda}
-          repeticiones={repeticiones}
-          alSeguir={() => {
-            if (ronda + 1 >= repeticiones) {
-              detector.current?.parar();
-              alTerminar({
-                actividadId: actividad.id,
-                completada: true,
-                aciertos: evaluacion.aciertos,
-                intentos: esperados.current.length,
-                desvioMedioMs: evaluacion.desvioMedioMs,
-                desviacionTipicaMs: evaluacion.desviacionTipicaMs,
-              });
-            } else {
-              setRonda((n) => n + 1);
-              setEvaluacion(null);
-              setFase('listo');
-            }
-          }}
         />
       )}
+
+      <BarraAcciones>
+        {fase === 'listo' && (
+          <button
+            type="button"
+            className="boton-principal boton-arranque"
+            onClick={() => void empezar()}
+          >
+            <IconoTocar />
+            {t('accion.empezar')}
+          </button>
+        )}
+
+        {/* Aquí «otra vez» sí es otra vez: no ha tocado nada, así que la vuelta no cuenta
+            y se repite la misma. Por eso no lleva contador. */}
+        {fase === 'resultado' && sinRespuesta && (
+          <button type="button" className="boton-principal" onClick={() => void empezar()}>
+            <IconoRepetir />
+            {t('tocar.otraVez')}
+          </button>
+        )}
+
+        {/*
+          El botón que cierra la ronda vive aquí y no dentro de `Resultado`.
+
+          `Resultado` calcula y dice cómo ha ido; la acción de seguir es una acción sobre la
+          actividad y va donde van todas. Separarlos es lo que permite que el resultado sea
+          una tarjeta que se va sola y el botón se quede.
+        */}
+        {fase === 'resultado' && !sinRespuesta && evaluacion && (
+          <button
+            type="button"
+            className="boton-principal"
+            onClick={() => {
+              if (ronda + 1 >= repeticiones) {
+                detector.current?.parar();
+                alTerminar({
+                  actividadId: actividad.id,
+                  completada: true,
+                  aciertos: evaluacion.aciertos,
+                  intentos: esperados.current.length,
+                  desvioMedioMs: evaluacion.desvioMedioMs,
+                  desviacionTipicaMs: evaluacion.desviacionTipicaMs,
+                });
+                return;
+              }
+              /*
+                Arranca la vuelta siguiente aquí mismo.
+
+                Antes hacía `setFase('listo')`, o sea devolvía la actividad a la pantalla de
+                inicio, y había que pulsar «Empezar» otra vez: dos toques para «venga, la
+                siguiente». Y como «Empezar» volvía a salir, parecía que se reiniciaba todo
+                cuando en realidad ibas por la vuelta dos de tres.
+              */
+              setRonda((n) => n + 1);
+              setEvaluacion(null);
+              void empezar();
+            }}
+          >
+            {ronda + 1 >= repeticiones ? <IconoSiguiente /> : <IconoRepetir />}
+            {/* En la última vuelta no dice «otra vez», porque no hay otra. */}
+            {ronda + 1 >= repeticiones
+              ? t('comun.terminar')
+              : t('tocar.otraVezDe', { n: ronda + 2, total: repeticiones })}
+          </button>
+        )}
+      </BarraAcciones>
     </section>
   );
 }
@@ -540,16 +591,10 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
  */
 function Resultado({
   evaluacion,
-  ronda,
-  repeticiones,
-  alSeguir,
   personaje,
   pista,
 }: {
   evaluacion: EvaluacionRitmica;
-  ronda: number;
-  repeticiones: number;
-  alSeguir: () => void;
   personaje?: PersonajeNombre;
   /** La pista de ESTA actividad, que es la que enseña algo. Ver `Reaccion`. */
   pista?: string;
@@ -565,7 +610,7 @@ function Resultado({
       : 'tocar.masRegular';
 
   return (
-    <section className="tocar__resultado">
+    <>
       {/* Como en todas: el personaje lo dice, entra deslizando y se va solo. Antes era un
           párrafo fijo, y una frase que se queda hasta que pase otra cosa deja de leerse. */}
       <Reaccion tono={mensaje === 'tocar.bien' ? 'bien' : 'casi'} personaje={personaje}>
@@ -586,9 +631,6 @@ function Resultado({
         Lo que sí llega al niño es la lectura de esos números en palabras: «tu pulso es muy
         regular, solo vas un poquito por detrás». Eso lo decide `mensaje`, aquí arriba.
       */}
-      <button type="button" className="boton-principal" onClick={alSeguir}>
-        {ronda + 1 >= repeticiones ? t('comun.siguiente') : t('tocar.otraVez')}
-      </button>
-    </section>
+    </>
   );
 }

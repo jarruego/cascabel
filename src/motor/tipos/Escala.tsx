@@ -8,6 +8,8 @@ import { alturaEnPauta, yDeLinea } from '../alturaEnPauta';
 import { distancia, escalaDesde, esEscalaMayor, MAYOR, type Distancia } from '../escala';
 import { Reaccion } from '@/ui/Reaccion';
 import { pistaPara } from '../maquinaEleccion';
+import { BarraAcciones } from '@/ui/BarraAcciones';
+import { IconoRepetir } from '@/ui/Simbolos';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -184,17 +186,18 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
         })}
       </div>
 
+      {/* Solo el «casi». Al resolverla salta la modal de enhorabuena, y decirlo dos veces
+          en medio segundo es lo que el autor señaló como repetición. */}
       <Reaccion
-        tono={resuelta ? 'bien' : puestas.length === objetivo.length ? 'casi' : 'neutro'}
+        tono={!resuelta && puestas.length === objetivo.length ? 'casi' : 'neutro'}
         personaje={actividad.personaje}
       >
-        {resuelta && t('escala.conseguida')}
         {!resuelta &&
           puestas.length === objetivo.length &&
           t(pistaPara(actividad.pistas, 1) ?? 'escala.casi')}
       </Reaccion>
 
-      <div className="escala__acciones">
+      <BarraAcciones>
         <button
           type="button"
           className="boton-repetir"
@@ -203,9 +206,10 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
             setResuelta(false);
           }}
         >
+          <IconoRepetir />
           {t('escala.empezarDeNuevo')}
         </button>
-      </div>
+      </BarraAcciones>
     </section>
   );
 }

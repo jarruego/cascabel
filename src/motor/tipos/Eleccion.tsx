@@ -6,6 +6,7 @@ import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Boton } from '@/ui/Boton';
 import { BotonRepetir } from '@/ui/BotonRepetir';
+import { BarraAcciones } from '@/ui/BarraAcciones';
 import { PasoEntreEjercicios } from '@/ui/ModalesActividad';
 import {
   ESTADO_INICIAL,
@@ -140,7 +141,6 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
         />
       )}
 
-      {estimulo?.audio && <BotonRepetir onClick={reproducir} />}
 
       {/* El caso escrito. Va en aria-live porque cambia sin que se mueva el foco. */}
       {estimulo?.texto && (
@@ -171,14 +171,19 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
         ))}
       </div>
 
-      {/* aria-live para que un lector de pantalla anuncie el resultado sin robar el foco. */}
+      <BarraAcciones>{estimulo?.audio && <BotonRepetir onClick={reproducir} />}</BarraAcciones>
+
+      {/*
+        El «bien» de cada acierto se queda: son seis preguntas seguidas y ahí sí hace falta
+        saber cómo ha ido cada una. Lo que se va es el «¡completada!» del final, que lo dice
+        la modal de enhorabuena medio segundo después.
+      */}
       <Reaccion
-        tono={estado.fase === 'casi' ? 'casi' : estado.fase === 'bien' || estado.fase === 'completada' ? 'bien' : 'neutro'}
+        tono={estado.fase === 'casi' ? 'casi' : estado.fase === 'bien' ? 'bien' : 'neutro'}
         personaje={actividad.personaje}
       >
         {estado.fase === 'bien' && t('comun.bien')}
         {estado.fase === 'casi' && (pista ? t(pista) : t('comun.casi'))}
-        {estado.fase === 'completada' && t('comun.completada')}
       </Reaccion>
 
       {/*

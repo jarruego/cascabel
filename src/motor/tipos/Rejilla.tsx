@@ -6,9 +6,17 @@ import { MARIMBA, Sampler } from '@/audio/sampler';
 import { aMidiSMF, aMusicXML, descargar, type NotaExportable } from '@/datos/exportar';
 import { Reaccion } from '@/ui/Reaccion';
 import { pistaPara } from '../maquinaEleccion';
+import { BarraAcciones } from '@/ui/BarraAcciones';
+import {
+  IconoComprobar,
+  IconoDescargar,
+  IconoLimpiar,
+  IconoParar,
+  IconoRepetir,
+  IconoTocar,
+} from '@/ui/Simbolos';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
-import { Icono } from '@/ui/Icono';
 import {
   INICIAL_REJILLA,
   clave,
@@ -228,9 +236,10 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
         )}
       </div>
 
-      <div className="rejilla__acciones">
+      <BarraAcciones>
         <button type="button" className="boton-repetir" onClick={() => void reproducir()}>
-          <Icono nombre="reproducir" tamano={26} /> {t('accion.escuchar')}
+          <IconoTocar />
+          {t('accion.escuchar')}
         </button>
 
         {/* Exportar. Todo se construye en memoria y se descarga con un enlace: no hay
@@ -250,6 +259,7 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
                 )
               }
             >
+              <IconoDescargar />
               {t('rejilla.midi')}
             </button>
             <button
@@ -264,6 +274,7 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
                 )
               }
             >
+              <IconoDescargar />
               {t('rejilla.musicxml')}
             </button>
           </>
@@ -280,6 +291,7 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
             if (v && !sonando) void reproducir();
           }}
         >
+          {bucle ? <IconoParar /> : <IconoRepetir />}
           {bucle ? t('rejilla.pararBucle') : t('rejilla.bucle')}
         </button>
 
@@ -288,6 +300,7 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
           className="boton-repetir"
           onClick={() => despachar({ tipo: 'limpiar' })}
         >
+          <IconoLimpiar />
           {t('rejilla.limpiar')}
         </button>
 
@@ -300,30 +313,35 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
               despachar({ tipo: 'comprobar', solucion: contenido.solucion ?? [] })
             }
           >
+            <IconoComprobar />
             {t('ordenar.comprobar')}
           </button>
         )}
-      </div>
+
+        {/* Volver a editar después de comprobar. Vive en la botonera como todo lo demás:
+            estaba suelto debajo del feedback, que es donde se veía menos. */}
+        {estado.fase === 'revisando' && (
+          <button
+            type="button"
+            className="boton-repetir"
+            onClick={() => despachar({ tipo: 'seguir' })}
+          >
+            <IconoRepetir />
+            {t('rejilla.seguirEditando')}
+          </button>
+        )}
+      </BarraAcciones>
 
       <Reaccion
-        tono={estado.fase === 'completada' ? 'bien' : estado.fase === 'revisando' ? 'casi' : 'neutro'}
+        tono={estado.fase === 'revisando' ? 'casi' : 'neutro'}
         personaje={actividad.personaje}
       >
+        {/* Solo lo que hace falta DURANTE. El «¡completada!» lo repetía la modal de
+            enhorabuena, y el «aquí no hay respuesta correcta» del modo libre ya se cuenta al
+            entrar, en la explicación. */}
         {estado.fase === 'revisando' &&
           t(pistaPara(actividad.pistas, estado.intentos) ?? 'rejilla.revisa')}
-        {estado.fase === 'completada' && t('comun.completada')}
-        {modo === 'libre' && estado.fase === 'editando' && t('rejilla.libre')}
       </Reaccion>
-
-      {estado.fase === 'revisando' && (
-        <button
-          type="button"
-          className="boton-repetir"
-          onClick={() => despachar({ tipo: 'seguir' })}
-        >
-          {t('rejilla.seguirEditando')}
-        </button>
-      )}
     </section>
   );
 }

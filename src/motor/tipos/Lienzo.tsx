@@ -5,8 +5,9 @@ import { despertarAudio } from '@/audio/AudioEngine';
 import { Sampler } from '@/audio/sampler';
 import { instrumentosDisponibles, muestrasDe, sostiene } from '@/audio/instrumentos';
 import { Acompanamiento, type Patron } from '@/audio/acompanamiento';
-import { IconoParar, IconoTocar } from '@/ui/Transporte';
+import { IconoLimpiar, IconoParar, IconoTocar } from '@/ui/Simbolos';
 import { Retos } from '@/ui/Retos';
+import { BarraAcciones } from '@/ui/BarraAcciones';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -371,9 +372,7 @@ export default function Lienzo({ actividad }: PropsActividad) {
       </div>
       )}
 
-      {/* Propuestas y acciones en la misma fila: en un lienzo, cada línea que no sea
-          lienzo es lienzo que se pierde. */}
-      <div className="lienzo__acciones">
+      <BarraAcciones>
         {/* Elegir instrumento. Va con `select` nativo y no con botones porque son ocho y no
             tres: ocho botones serían una barra más larga que el propio lienzo. */}
         {conInstrumento && (
@@ -404,9 +403,10 @@ export default function Lienzo({ actividad }: PropsActividad) {
 
         {contenido.retos && <Retos retos={contenido.retos} />}
         <button type="button" className="boton-repetir" onClick={() => setTrazos([])}>
+          <IconoLimpiar />
           {t('lienzo.limpiar')}
         </button>
-      </div>
+      </BarraAcciones>
 
       {/* Y no hay nada más: ni marcador, ni porcentaje, ni «bien hecho». Aquí no se evalúa
           nada, así que no hay nada que contestarle al niño. */}
