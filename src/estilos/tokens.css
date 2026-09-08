@@ -180,6 +180,21 @@
   --alto-barra: calc(76px + env(safe-area-inset-bottom));
 
   /*
+    El alto que le queda de verdad a la actividad.
+
+    Las superficies se medían en `vh` —`clamp(240px, 56vh, 620px)` y ocho más— y `vh` es la
+    ventana ENTERA. La actividad no la tiene: tiene la ventana menos las dos barras de abajo,
+    que entre las dos se llevan unos 136 px. Un lienzo de 56vh más las barras más los
+    márgenes no cabía en una pantalla de 800, y ése era medio problema de «no cabe».
+
+    `--alto-acciones` lo publica la botonera al medirse, y vale 0 mientras no haya ninguna.
+    `dvh` y no `vh` porque en un móvil la barra del navegador aparece y desaparece: `vh` se
+    queda con el tamaño de cuando no está, así que promete un espacio que a ratos no hay.
+  */
+  --alto-escena: calc(100vh - var(--alto-barra) - var(--alto-acciones, 0px));
+  --alto-escena: calc(100dvh - var(--alto-barra) - var(--alto-acciones, 0px));
+
+  /*
    * ELEVACIÓN. Tres niveles y ni uno más: lo que está en la página, lo que se levanta al
    * tocarlo y lo que flota por encima de todo.
    *
@@ -350,6 +365,8 @@ p {
 }
 
 .opciones {
+  /* Centrado: sin esto se pegaba a la izquierda del escenario. */
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
   gap: var(--separacion);
@@ -456,6 +473,47 @@ p {
   margin: 0 auto;
   padding: var(--e-5) var(--e-4) var(--e-8);
 }
+
+/* ---------------------------------------------------------------------------
+ * El escenario de la actividad
+ *
+ * `.actividad` no tenía **ninguna** regla hasta el 2026-09-09. Cada tipo colocaba lo suyo en
+ * el flujo normal del documento —o sea pegado arriba— y lo que se veía centrado lo estaba
+ * porque ese componente se centraba solo. Por eso unas cosas salían centradas y otras no: no
+ * había nada común que lo decidiera.
+ *
+ * Ahora la actividad ocupa una caja de alto conocido y se centra dentro. Tres reglas:
+ *
+ *  1. El marco mide la ventana entera y reparte todo lo que le sobra a la actividad.
+ *  2. La actividad centra su contenido en vertical, y el aire entre bloques lo pone **un
+ *     solo `gap`** en vez de un margen por bloque. Antes cada uno traía el suyo, casi
+ *     siempre 24 px arriba y abajo: con tres o cuatro bloques son 150 px de aire que nadie
+ *     pidió, en la pantalla donde menos sobra.
+ *  3. `safe center`: si el contenido es más alto que el escenario, se apoya arriba y la
+ *     página se desplaza. Centrado a secas recortaría por arriba, y por arriba está lo que
+ *     hay que mirar.
+ * ------------------------------------------------------------------------ */
+.actividad-marco {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  /* Una sola fila, y se la lleva entera: dentro del marco solo hay `.lienzo`, porque las
+     dos barras van fijas y los modales cerrados no ocupan. */
+  grid-template-rows: 1fr;
+}
+/* La cadena de `min-height: 0` es lo que permite que una superficie encoja cuando no cabe.
+   Sin ella, un hijo de una rejilla nunca baja de su tamaño de contenido y desborda. */
+.lienzo { display: grid; min-height: 0; }
+.actividad {
+  display: grid;
+  align-content: safe center;
+  gap: var(--e-3);
+  min-height: 0;
+  width: 100%;
+}
+/* El aire lo pone el `gap`. Los márgenes propios de cada bloque se suman a él y vuelven a
+   descuadrar lo que esto viene a cuadrar. El horizontal se respeta: es el que centra. */
+.actividad > * { margin-block: 0; }
 
 .filtros label {
   display: grid;
@@ -640,6 +698,8 @@ p {
    Dos columnas y toque sucesivo. Nada arrastrable: WCAG 2.5.7, y por debajo de
    6 años la motricidad fina no da para arrastrar con precisión. */
 .emparejar__tablero {
+  /* Centrado: sin esto se pegaba a la izquierda del escenario. */
+  justify-content: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--separacion);
@@ -748,7 +808,11 @@ p {
 }
 
 .guia__pasos {
-  margin: var(--e-6) 0;
+  /* Centrada acotándola: es una lista numerada, no una caja flexible, así que
+     `justify-content` no habría hecho nada. Y proyectada, una línea de dos metros de ancho
+     no se lee: el tope es tan importante como el centrado. */
+  max-width: 60ch;
+  margin-inline: auto;
   padding-left: 1.4em;
   font-size: clamp(18px, 2.4vw, 32px);
 }
@@ -983,6 +1047,8 @@ p {
    El patrón se VE además de oírse: criterio 1.1.1, un alumno sordo tiene que
    poder hacer la actividad mirando. */
 .tocar__patron {
+  /* Centrado: sin esto se pegaba a la izquierda del escenario. */
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
   gap: var(--separacion);
@@ -1018,7 +1084,7 @@ p {
   /* Se golpea con la mano, a veces sin mirar: cuanto más grande, mejor. El tope estaba en
      360 px, que en una tablet apaisada es un cuarto de la pantalla. */
   max-width: min(100%, 560px);
-  min-height: clamp(180px, 26vh, 300px);
+  min-height: clamp(180px, calc(var(--alto-escena) * 0.34), 300px);
   margin: var(--e-5) 0;
   font-size: 1.3em;
 }
@@ -1356,7 +1422,7 @@ p {
 .cantar__aguja {
   position: relative;
   /* Es lo único que se mira mientras se canta, y se mira de lejos si está proyectada. */
-  height: clamp(72px, 12vh, 120px);
+  height: clamp(72px, calc(var(--alto-escena) * 0.16), 120px);
   max-width: min(100%, 560px);
   margin: var(--e-4) auto;
   border: 3px solid var(--linea);
@@ -1452,7 +1518,7 @@ p {
 
      Y sube desde que la fila de botones de colores está apagada: ese alto era suyo y ahora
      es del lienzo, que es donde se dibuja. */
-  height: clamp(240px, 56vh, 620px);
+  height: clamp(240px, calc(var(--alto-escena) * 0.74), 620px);
   margin: var(--e-4) 0;
   border: 4px solid var(--linea);
   border-radius: var(--r-l);
@@ -1991,7 +2057,7 @@ p {
 /* El alto crece con la pantalla y se para en 340: por encima de eso una tecla blanca empieza
    a ser más alta que la mano que la toca. Va aquí y no en la caja porque la caja lleva
    además el hueco del salto, y si estuviera allí ese hueco se lo comería a las teclas. */
-.teclado__teclas { height: clamp(150px, 38vh, 340px); }
+.teclado__teclas { height: clamp(150px, calc(var(--alto-escena) * 0.5), 340px); }
 .teclado__negra {
   padding: 0;
   cursor: pointer;
@@ -2040,7 +2106,7 @@ p {
    es lo que el dosier llama la mitad tóxica de Duolingo. */
 .seguir__pista {
   position: relative;
-  height: clamp(220px, 52vh, 560px);
+  height: clamp(220px, calc(var(--alto-escena) * 0.68), 560px);
   margin: var(--e-5) 0;
   border: 3px solid var(--linea);
   border-radius: var(--r-m);
@@ -2157,7 +2223,7 @@ p {
    mismo número sobre el que reparte las bandas: si lo fijara aquí, las bandas y los botones
    de abajo dejarían de cuadrar en cuanto uno de los dos cambiara. */
 .karaoke__pauta[data-orientacion='vertical'] {
-  height: clamp(240px, 58vh, 560px);
+  height: clamp(240px, calc(var(--alto-escena) * 0.76), 560px);
   margin-inline: auto;
 }
 
@@ -2487,14 +2553,14 @@ p {
 */
 .lienzo[data-ampliado] .retos__boton { display: none; }
 /* Y todo un poco más grande, que es de lo que se trataba. */
-.lienzo[data-ampliado] .karaoke__pauta[data-orientacion='vertical'] { height: clamp(300px, 70vh, 820px); }
+.lienzo[data-ampliado] .karaoke__pauta[data-orientacion='vertical'] { height: clamp(300px, calc(var(--alto-escena) * 0.82), 820px); }
 /* El horizontal NO lleva regla aquí, y es a propósito: su alto es el número sobre el que la
    geometría reparte los carriles, así que pisarlo desde el CSS descolocaría las notas
    respecto del recuadro. Crece solo: la caja se mide con `ResizeObserver` y al ampliar es
    más ancha, así que el alto sube con ella. */
 /* A pantalla completa el teclado crece, y la altura vive en `.teclado__teclas` desde que
    la caja reserva hueco arriba para el salto del personaje. */
-.lienzo[data-ampliado] .teclado__teclas { height: clamp(220px, 62vh, 620px); }
+.lienzo[data-ampliado] .teclado__teclas { height: clamp(220px, calc(var(--alto-escena) * 0.72), 620px); }
 
 /* Con la barra de navegación fuera de la vista, el hueco que le deja también sobra. */
 .lienzo[data-ampliado] ~ *,
@@ -2774,7 +2840,7 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   position: relative;
   display: flex;
   justify-content: center;
-  height: clamp(140px, 30vh, 300px);
+  height: clamp(140px, calc(var(--alto-escena) * 0.4), 300px);
   overflow-x: auto;
 }
 .escala__teclado .teclado__blanca[data-usada],
@@ -2840,7 +2906,15 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
    Cuatro voces a la vez. Cada pista es un bloque con su cabecera, y la cuadrícula desplaza
    en horizontal si hace falta: dieciséis columnas no caben en un móvil sin encoger las
    casillas por debajo de lo acertable, y encoger sería peor. */
-.pistas__tabla { display: grid; gap: var(--e-3); margin: var(--e-4) 0; }
+.pistas__tabla {
+  display: grid;
+  gap: var(--e-3);
+  /* Cuatro voces una debajo de otra, acotadas y centradas: a pantalla completa, dieciséis
+     casillas estiradas a metro y medio dejan de leerse como un compás. */
+  width: 100%;
+  max-width: 70rem;
+  margin-inline: auto;
+}
 .pistas__pista {
   padding: var(--e-2);
   background: var(--superficie);
@@ -2917,7 +2991,8 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
  * los pies—, que va de menudo a grande igual que va el sonido de agudo a grave.
  * ------------------------------------------------------------------------ */
 .cuerpo__rejilla {
-  margin: var(--e-5) 0;
+  /* Aquí no va `justify-content`: no es flex, es una caja que se desplaza de lado cuando el
+     patrón es largo. Lo que centra son las filas de dentro. */
   overflow-x: auto;
 }
 .cuerpo__fila {
@@ -3012,6 +3087,8 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
  * es un instrumento peor: lo que hace fácil acertar un pad es que sea grande.
  * ------------------------------------------------------------------------ */
 .pads__rejilla {
+  /* Centrado: sin esto se pegaba a la izquierda del escenario. */
+  justify-content: center;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
   gap: var(--e-3);
@@ -3340,8 +3417,8 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   place-items: center;
   /* Redondo, así que el límite lo pone el lado corto de la pantalla: con solo `60vw`,
      en un móvil apaisado el pandero se salía por abajo. */
-  width: min(60vw, 60vh, 26rem);
-  height: min(60vw, 60vh, 26rem);
+  width: min(60vw, calc(var(--alto-escena) * 0.7), 26rem);
+  height: min(60vw, calc(var(--alto-escena) * 0.7), 26rem);
   margin: var(--e-4) auto;
   padding: 0;
   background: var(--superficie);
@@ -3588,7 +3665,7 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 
 /* En una pizarra el personaje se mira desde el fondo del aula. */
 :root[data-pizarra='true'] .personaje {
-  width: clamp(160px, 40vh, 400px);
+  width: clamp(160px, calc(var(--alto-escena) * 0.5), 400px);
 }
 
 /* El personaje ocupando el sitio del nombre en una tecla blanca. Abajo y centrado: es donde
