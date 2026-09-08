@@ -1770,6 +1770,18 @@ estar documentadas en la barra que venía a sustituirlas. Ahora mira el código 
       con números si el `0,58` del lado de la casilla necesitaba ajuste tras el cambio de
       `--alto-escena`: no lo necesitaba —ahí manda el suelo— pero la postura sí.
 
+- [x] **Fuera el aviso de pantalla completa en la PWA instalada.** «Cascabel — para salir de
+      pantalla completa, desliza desde arriba.» Lo pone Chrome y **no se puede silenciar**:
+      es lo que impide que una web se haga pasar por el sistema. Lo que sí se puede es no
+      pedir pantalla completa cuando no gana nada — en la aplicación instalada no hay barra
+      de direcciones que ganar, y el modo lienzo no depende de esa llamada porque se aplica
+      por CSS. **En una pestaña del navegador el aviso sigue saliendo y no hay forma de
+      evitarlo**; lo que lo quita del todo es instalar la aplicación.
+
+      **Pendiente de comprobar en el aparato**: si al no entrar en pantalla completa nativa
+      el navegador sigue dejando girar la pantalla. Si no dejara, sale el aviso de «se ve
+      mejor tumbada», que ya está y no bloquea nada.
+
 - [x] **Repaso de los veintiún tipos contra lo nuevo**: botonera donde toca, ningún botón sin
       símbolo salvo los de valor —una octava, un tempo, que no son acciones—, ningún
       «¡completada!» dentro de la actividad, y los textos fijos que quedan son todos

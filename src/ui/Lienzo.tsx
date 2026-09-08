@@ -25,6 +25,24 @@ import type { Orientacion } from '@/motor/orientacion';
  */
 
 /**
+ * ¿Estamos ya fuera del navegador?
+ *
+ * Cierto en una PWA instalada, que arranca sin barra de direcciones y ocupando la pantalla.
+ * Se pregunta por el **modo de presentación**, que es un estado del documento, no por el
+ * aparato: `CLAUDE.md` §8 prohíbe mirar el `user agent` y esto no lo mira.
+ *
+ * `navigator.standalone` es el equivalente en Safari de iOS, que no implementa la consulta
+ * de medios. No está en los tipos estándar porque es propietario.
+ */
+function fueraDelNavegador(): boolean {
+  const comoApp =
+    window.matchMedia('(display-mode: standalone)').matches ||
+    window.matchMedia('(display-mode: fullscreen)').matches;
+  const enIOS = (navigator as Navigator & { standalone?: boolean }).standalone === true;
+  return comoApp || enIOS;
+}
+
+/**
  * ¿Tiene sentido pedirle a alguien que gire esto?
  *
  * Solo si es algo que se sostiene. La comprobación es **el tamaño de la pantalla**, no el
@@ -65,7 +83,19 @@ export function Lienzo({ children, orientacion = 'cualquiera' }: Props) {
     setSugerirGiro(false);
     try {
       if (siguiente) {
-        await caja.current?.requestFullscreen?.();
+        /*
+          Solo se pide pantalla completa si hay algo que ganar con ella.
+
+          En el navegador se gana la barra de direcciones, y a cambio Chrome saca su aviso de
+          «para salir, desliza desde arriba». Ese aviso **no se puede silenciar** y está bien
+          que no se pueda: impide que una web se haga pasar por el sistema entero.
+
+          Pero en la PWA instalada no hay barra que ganar —la aplicación ya ocupa la
+          pantalla—, así que la llamada no aporta nada y el aviso sale igual. El modo lienzo
+          no depende de ella: se aplica siempre por CSS, que es lo que hace que funcione
+          también en Safari de iOS.
+        */
+        if (!fueraDelNavegador()) await caja.current?.requestFullscreen?.();
 
         /*
           Y se pide la postura que necesita ESTA actividad, si es que necesita alguna.
@@ -104,9 +134,21 @@ export function Lienzo({ children, orientacion = 'cualquiera' }: Props) {
             if (!girada && sePuedeGirarAMano()) setSugerirGiro(true);
           }
         }
-      } else if (document.fullscreenElement) {
+        // Ojo: sin pantalla completa nativa no hay `fullscreenchange`, así que el efecto de
+        // abajo no se entera de nada. No hace falta: de este modo se sale por el botón.
+      } else {
+        /*
+          Al reducir se suelta la orientación SIEMPRE, y salir de pantalla completa solo si
+          se entró.
+
+          Estaban las dos cosas juntas dentro de la misma condición, y eso se rompía en
+          cuanto la pantalla completa dejó de pedirse en la PWA instalada: ahí
+          `fullscreenElement` es nulo, así que no se soltaba nada y el móvil se quedaba
+          girado al volver al catálogo. Son dos cosas distintas y ahora se preguntan por
+          separado.
+        */
         (screen.orientation as ScreenOrientation & { unlock?: () => void }).unlock?.();
-        await document.exitFullscreen();
+        if (document.fullscreenElement) await document.exitFullscreen();
       }
     } catch {
       // Sin API nativa el modo CSS ya está aplicado y se ve igual de grande dentro de la
