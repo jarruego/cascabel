@@ -81,6 +81,54 @@ export function rejillaDesdeSilabas(silabas: string[]): RejillaRitmica {
 }
 
 /**
+ * Una casilla por cada cosa que se ve en el patrón: cada golpe, y cada silencio.
+ *
+ * **Por qué el silencio también cuenta.** La fila de puntos de «tocar a tiempo» se construía
+ * solo con los golpes, así que en `ta sh ta sh` enseñaba dos puntos para cuatro pulsos y los
+ * silencios desaparecían — justo lo que esa actividad enseña. `Cuerpo.tsx` ya lo tenía
+ * resuelto al revés: «un hueco vacío no se distingue de "aquí no toca esta zona", y el
+ * silencio hay que contarlo igual que un golpe».
+ *
+ * Una sílaba con varios golpes da varias casillas —`ti-ti` da dos— y una sin ninguno da una
+ * sola, la del silencio. Así cada sílaba de arriba se corresponde con lo que hay debajo.
+ *
+ * `golpe` es el índice dentro de `golpes`, que es lo que permite saber si esa casilla se ha
+ * acertado; en un silencio es `null`, y una casilla sin golpe no se enciende nunca.
+ */
+export interface CasillaRitmica {
+  /** En qué pulso cae, desde el principio del patrón. */
+  pulso: number;
+  /** Su posición en `golpes`, o `null` si es un silencio. */
+  golpe: number | null;
+}
+
+export function casillasDesdeSilabas(silabas: string[]): CasillaRitmica[] {
+  const casillas: CasillaRitmica[] = [];
+  let pulso = 0;
+  let golpe = 0;
+
+  for (const s of silabas) {
+    const def = SILABAS[s];
+    if (!def) {
+      throw new Error(
+        `Sílaba rítmica desconocida: «${s}». Conocidas: ${silabasConocidas().join(', ')}`,
+      );
+    }
+    if (def.golpes.length === 0) {
+      casillas.push({ pulso, golpe: null });
+    } else {
+      for (const g of def.golpes) {
+        casillas.push({ pulso: pulso + g, golpe });
+        golpe += 1;
+      }
+    }
+    pulso += def.pulsos;
+  }
+
+  return casillas;
+}
+
+/**
  * Pasa la rejilla a milisegundos absolutos.
  *
  * @param inicioMs instante del primer pulso

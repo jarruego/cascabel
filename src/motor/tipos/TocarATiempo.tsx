@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { clicYa } from '@/audio/clic';
 import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { TOLERANCIA_MS } from '@/config';
@@ -6,7 +6,12 @@ import { MARIMBA, Sampler } from '@/audio/sampler';
 import { DetectorDePalmadas } from '@/escucha/palmadas';
 import { useCarril } from '@/app/preferencias';
 import { evaluarRitmo, type EvaluacionRitmica } from '../evaluacion';
-import { aMilisegundos, anclarEn, rejillaDesdeSilabas } from '../rejillaRitmica';
+import {
+  aMilisegundos,
+  anclarEn,
+  casillasDesdeSilabas,
+  rejillaDesdeSilabas,
+} from '../rejillaRitmica';
 import { Reaccion } from '@/ui/Reaccion';
 import type { Personaje as PersonajeNombre } from '@/ui/personajes';
 import { pistaPara } from '../maquinaEleccion';
@@ -103,6 +108,11 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
 
   /** Estado de cada golpe esperado mientras el niño responde. */
   const [marcas, setMarcas] = useState<Array<'pendiente' | 'acertado' | 'pasado'>>([]);
+  /* Lo que se dibuja debajo del patrón: un círculo por golpe y uno por silencio. */
+  const casillas = useMemo(
+    () => (contenido.silabas ? casillasDesdeSilabas(contenido.silabas) : []),
+    [contenido.silabas],
+  );
 
   const rejilla = (() => {
     try {
@@ -428,12 +438,21 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
         ))}
       </ol>
 
-      {/* Un punto por golpe esperado. Verde al entrar, gris al pasar de largo. Nunca
-          rojo: «apagado» dice que ese se fue, «rojo» diría que has fallado. */}
+      {/*
+        Un punto por casilla del patrón: cada golpe **y cada silencio**.
+
+        Se construía solo con los golpes, así que en `ta sh ta sh` salían dos puntos para
+        cuatro pulsos y los silencios no estaban — justo lo que esta actividad enseña, que su
+        propia pista dice «en el silencio el pulso sigue: cuéntalo por dentro».
+
+        Verde al entrar, apagado al pasar de largo, y el del silencio **nunca se enciende**:
+        se queda a puntitos. No es un fallo y no se marca como tal — nunca hay rojo aquí,
+        porque «apagado» dice que ése se fue y «rojo» diría que te has equivocado (§4).
+      */}
       {(fase === 'respondiendo' || fase === 'resultado') && marcas.length > 0 && (
         <ol className="tocar__marcas" aria-label={t('tocar.marcas')}>
-          {marcas.map((m, i) => (
-            <li key={i} data-marca={m} />
+          {casillas.map((c, i) => (
+            <li key={i} data-marca={c.golpe === null ? 'silencio' : marcas[c.golpe]} />
           ))}
         </ol>
       )}

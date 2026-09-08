@@ -1782,6 +1782,18 @@ estar documentadas en la barra que venía a sustituirlas. Ahora mira el código 
       el navegador sigue dejando girar la pantalla. Si no dejara, sale el aviso de «se ve
       mejor tumbada», que ya está y no bloquea nada.
 
+- [x] **El silencio se dibuja también en «tocar a tiempo».** En «El pulso escondido» —cuyo
+      patrón es `ta sh ta sh`— la fila de puntos enseñaba **dos** para cuatro pulsos: se
+      construía solo con los golpes esperados, así que los silencios no estaban. Y el
+      silencio es lo que esa actividad enseña; su propia pista lo dice, «en el silencio el
+      pulso sigue: cuéntalo por dentro». Ahora tiene su círculo, a puntitos y sin encenderse
+      nunca — no es un fallo y no se marca como tal.
+
+      Lo interesante es que **`cuerpo` ya lo hacía bien**, con el argumento escrito al lado:
+      «un hueco vacío no se distingue de "aquí no toca esta zona"». Era la misma decisión
+      tomada en un tipo y no en el otro, que es la clase de incoherencia que solo se ve
+      usando la aplicación.
+
 - [x] **Repaso de los veintiún tipos contra lo nuevo**: botonera donde toca, ningún botón sin
       símbolo salvo los de valor —una octava, un tempo, que no son acciones—, ningún
       «¡completada!» dentro de la actividad, y los textos fijos que quedan son todos

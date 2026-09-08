@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   aMilisegundos,
   anclarEn,
+  casillasDesdeSilabas,
   rejillaDesdeSilabas,
   silabasConocidas,
 } from '../src/motor/rejillaRitmica';
@@ -188,5 +189,51 @@ describe('anclar el patrón en el primer golpe del niño', () => {
 
   it('un patrón sin golpes no revienta', () => {
     expect(anclarEn(rejillaDesdeSilabas(['sh', 'sh']), 500, 60)).toEqual([]);
+  });
+});
+
+describe('las casillas que se dibujan debajo del patrón', () => {
+  /*
+    Salió de «El pulso escondido», cuyo patrón es `ta sh ta sh`: la fila de puntos se
+    construía solo con los golpes, así que enseñaba DOS para cuatro pulsos y los silencios no
+    estaban. Y el silencio es justo lo que esa actividad enseña — su propia pista lo dice:
+    «en el silencio el pulso sigue: cuéntalo por dentro».
+
+    `Cuerpo.tsx` ya lo tenía resuelto al revés y con el mismo argumento escrito al lado, así
+    que era una decisión tomada en un tipo y no en el otro.
+  */
+  it('el silencio tiene su casilla, y no tiene golpe', () => {
+    const c = casillasDesdeSilabas(['ta', 'sh', 'ta', 'sh']);
+    expect(c.map((x) => x.pulso)).toEqual([0, 1, 2, 3]);
+    expect(c.map((x) => x.golpe)).toEqual([0, null, 1, null]);
+  });
+
+  it('una sílaba de varios golpes da varias casillas', () => {
+    // Así cada sílaba de arriba se corresponde con lo que hay debajo: «ti-ti» son dos.
+    const c = casillasDesdeSilabas(['ta', 'ti-ti', 'ta']);
+    expect(c.map((x) => x.pulso)).toEqual([0, 1, 1.5, 2]);
+    expect(c.map((x) => x.golpe)).toEqual([0, 1, 2, 3]);
+  });
+
+  it('los índices de golpe casan con los de la rejilla', () => {
+    /*
+      Es lo que hace que una casilla sepa si se ha acertado: el componente busca su estado en
+      `marcas[casilla.golpe]`, y esa lista va en el orden de `golpes`. Si los dos órdenes se
+      separaran, un acierto encendería el círculo de al lado.
+    */
+    const silabas = ['ta', 'sh', 'ti-ti', 'sh-ti', 'ta'];
+    const casillas = casillasDesdeSilabas(silabas);
+    const { golpes } = rejillaDesdeSilabas(silabas);
+    const conGolpe = casillas.filter((c) => c.golpe !== null);
+    expect(conGolpe.length).toBe(golpes.length);
+    conGolpe.forEach((c, i) => {
+      expect(c.golpe, `la casilla ${i} apunta al golpe equivocado`).toBe(i);
+      expect(c.pulso, `la casilla ${i} no cae donde su golpe`).toBeCloseTo(golpes[i]!);
+    });
+  });
+
+  it('sin silencios, hay una casilla por golpe', () => {
+    const silabas = ['ta', 'ti-ti', 'ta', 'ta'];
+    expect(casillasDesdeSilabas(silabas).length).toBe(rejillaDesdeSilabas(silabas).golpes.length);
   });
 });

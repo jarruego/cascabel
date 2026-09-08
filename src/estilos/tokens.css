@@ -2240,6 +2240,18 @@ p {
   border-style: dashed;
   opacity: 0.4;
 }
+/*
+  El silencio: a puntitos y sin rellenar, siempre.
+
+  Se distingue del que se ha pasado de largo por la FORMA del trazo —puntos frente a rayas—
+  y no por el color, que es la regla de §6. Y no se apaga tanto: no es algo que se haya
+  perdido, es una casilla que está ahí y que hay que contar.
+*/
+.tocar__marcas li[data-marca='silencio'] {
+  border-style: dotted;
+  background: none;
+  opacity: 0.75;
+}
 @media (prefers-reduced-motion: reduce) {
   .tocar__marcas li[data-marca='acertado'] { transform: none; border-width: 7px; }
 }
