@@ -48,7 +48,6 @@ import type { PropsActividad } from '../tipos';
 
 type Fase = 'listo' | 'cuenta' | 'sonando' | 'resultado';
 
-
 /**
  * Segundos de recorrido visible antes de la línea, y **también** el margen antes de la
  * primera nota. Son el mismo número a propósito, y esa igualdad es la regla:

@@ -274,7 +274,6 @@ export default function Eco({ actividad }: PropsActividad) {
           {t(mensajeEco(resultado, carril))}
         </Reaccion>
       )}
-
     </section>
   );
 }

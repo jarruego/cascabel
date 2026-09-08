@@ -174,7 +174,6 @@ export default function Referencia({ actividad }: PropsActividad) {
       ))}
 
       {secciones.length === 0 && <p role="status">{t('referencia.nada')}</p>}
-
     </section>
   );
 }

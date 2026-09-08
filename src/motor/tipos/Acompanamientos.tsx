@@ -128,7 +128,6 @@ export default function Acompanamientos({ actividad }: PropsActividad) {
           );
         })}
       </ul>
-
     </section>
   );
 }

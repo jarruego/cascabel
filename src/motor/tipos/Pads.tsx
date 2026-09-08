@@ -338,7 +338,6 @@ export default function Pads({ actividad }: PropsActividad) {
           </>
         )}
       </div>
-
     </section>
   );
 }

@@ -560,7 +560,6 @@ export default function Teclado({ actividad }: PropsActividad) {
           </>
         )}
       </div>
-
     </section>
   );
 }

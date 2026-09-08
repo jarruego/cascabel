@@ -199,8 +199,8 @@ export default function Cuerpo({ actividad }: PropsActividad) {
         >
           {estado.sonando ? <IconoParar /> : <IconoTocar />}
           {t(estado.sonando ? 'accion.parar' : 'accion.empezar')}
-        </button>      </div>
-
+        </button>
+      </div>
     </section>
   );
 }
