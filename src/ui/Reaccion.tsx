@@ -18,6 +18,22 @@ import { t } from '@/i18n';
  * has equivocado», dice «sin prisa, escucha otra vez»; Milo no se ríe de nadie. Por eso la
  * pose de este caso es `anima` y no una cara triste, y por eso el recuadro es ámbar y nunca
  * rojo.
+ *
+ * ## Dos elementos y no uno, que es lo que no se ve leyendo
+ *
+ * Por fuera hay una caja **que nunca se desmonta**: es la región `aria-live`. Por dentro, la
+ * tarjeta, que aparece y desaparece con cada mensaje.
+ *
+ * Podría ser un solo elemento que se monta y se desmonta, y sería un error de los que no dan
+ * la cara: **una región `aria-live` que se crea en el mismo momento que su contenido no se
+ * anuncia de forma fiable**. Varios lectores de pantalla solo vigilan las regiones que ya
+ * estaban, así que crear el recuadro y su texto a la vez es la forma más común de escribir
+ * un aviso que un niño ciego no llega a oír. Estando la caja desde el principio, lo que
+ * cambia es lo de dentro, y eso sí se anuncia.
+ *
+ * Y separarlas arregla de paso lo otro: la tarjeta se monta con cada mensaje, así que su
+ * animación de entrada vuelve a correr cada vez. En un solo elemento permanente habría
+ * corrido una vez, la primera, y nunca más.
  */
 export function Reaccion({
   tono,
@@ -54,32 +70,38 @@ export function Reaccion({
     // `largo` y `tono` bastan: si cambia el mensaje, vuelve a aparecer y a contar de nuevo.
   }, [tono, largo]);
 
-  // Sin nada que decir no se dibuja nada: un recuadro vacío esperando a que pase algo llena
-  // la pantalla de sitio muerto justo donde el niño está mirando.
-  if (tono === 'neutro' && !hayTexto) return null;
-  if (!visible) return null;
-
+  const hayQueDecir = visible && (tono !== 'neutro' || hayTexto);
   const frase = tono === 'neutro' ? '' : t(`reaccion.${personaje}.${tono}`);
 
   return (
-    <div className="reaccion" data-tono={tono} aria-live="polite">
-      {tono !== 'neutro' && (
-        <Personaje
-          nombre={personaje}
-          pose={tono === 'bien' ? 'celebra' : 'anima'}
-          tamano={72}
-        />
+    <div className="reaccion" aria-live="polite">
+      {hayQueDecir && (
+        /*
+          La clave hace que la tarjeta se monte de nuevo cuando cambia el mensaje, y con
+          ella vuelve a correr la animación de entrada. Sin clave, dos reacciones seguidas
+          del mismo tono cambiarían el texto sin que nada se moviera, y un mensaje que
+          aparece sin movimiento en la esquina de la pantalla no se ve.
+        */
+        <div className="reaccion__tarjeta" data-tono={tono} key={`${tono}-${largo}`}>
+          {tono !== 'neutro' && (
+            <Personaje
+              nombre={personaje}
+              pose={tono === 'bien' ? 'celebra' : 'anima'}
+              tamano={72}
+            />
+          )}
+          <p className="reaccion__texto">
+            {frase && (
+              <span className="reaccion__frase">
+                <span className="reaccion__quien">{NOMBRES[personaje].nombre}:</span> {frase}
+              </span>
+            )}
+            {/* La pista concreta, que es lo que de verdad enseña. Va debajo y con menos peso
+                que la frase, pero se lee entera: sin ella la reacción sería un aplauso. */}
+            {hayTexto && <span className="reaccion__pista">{children}</span>}
+          </p>
+        </div>
       )}
-      <p className="reaccion__texto">
-        {frase && (
-          <span className="reaccion__frase">
-            <span className="reaccion__quien">{NOMBRES[personaje].nombre}:</span> {frase}
-          </span>
-        )}
-        {/* La pista concreta, que es lo que de verdad enseña. Va debajo y con menos peso
-            que la frase, pero se lee entera: sin ella la reacción sería un aplauso. */}
-        {hayTexto && <span className="reaccion__pista">{children}</span>}
-      </p>
     </div>
   );
 }
