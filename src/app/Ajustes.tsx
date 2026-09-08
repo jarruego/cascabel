@@ -58,7 +58,7 @@ export default function Ajustes() {
 
         <button
           type="button"
-          className="boton-repetir"
+          className="boton-principal"
           aria-disabled={descarga.fase === 'descargando' || undefined}
           onClick={() => {
             void descargarTodo(setDescarga).then(refrescar);

@@ -148,7 +148,7 @@ export default function Ficha() {
         <Link to={`/actividad/${id}`} className="atras">
           {t('comun.atras')}
         </Link>
-        <button type="button" className="boton-repetir" onClick={() => window.print()}>
+        <button type="button" className="boton-principal" onClick={() => window.print()}>
           <Icono nombre="lupa" tamano={24} /> {t('ficha.imprimir')}
         </button>
         <p className="ficha__consejo">{t('ficha.consejo')}</p>

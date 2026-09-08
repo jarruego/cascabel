@@ -29,7 +29,7 @@ export function AvisoActualizacion() {
   return (
     <div className="aviso-actualizacion" role="status">
       <span>{t('actualizacion.hay')}</span>
-      <button type="button" className="boton-repetir" onClick={() => void aplicarActualizacion()}>
+      <button type="button" className="boton-principal" onClick={() => void aplicarActualizacion()}>
         {t('actualizacion.aplicar')}
       </button>
       {/* Se puede cerrar. Quien está a mitad de clase decide cuándo, no nosotros. */}

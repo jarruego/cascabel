@@ -109,7 +109,11 @@ export default function Calibracion() {
       <p>{t('calibracion.texto')}</p>
 
       {!midiendo && (
-        <button type="button" className="boton-repetir" onClick={() => void empezar()}>
+        <button
+          type="button"
+          className="boton-principal boton-arranque"
+          onClick={() => void empezar()}
+        >
           {t('calibracion.empezar')}
         </button>
       )}

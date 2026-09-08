@@ -3,7 +3,7 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 /**
- * Que un botón parezca un botón, en las veintiuna pantallas.
+ * Que un botón parezca un botón, en toda la aplicación.
  *
  * La queja del autor fue literal: «en actividades como Palmea el ritmo y otras muchas, los
  * botones de Empezar y otros siguen siendo un simple texto sin apariencia de botón». Y no
@@ -25,8 +25,21 @@ import { join } from 'node:path';
  * sin clase, o un latido puesto en algo que no es la acción principal.
  */
 
-const TIPOS = join(__dirname, '..', 'src', 'motor', 'tipos');
-const CSS = readFileSync(join(__dirname, '..', 'src', 'estilos', 'tokens.css'), 'utf8');
+const RAIZ = join(__dirname, '..', 'src');
+/*
+  Los tres sitios donde hay botones, y los tres siguen la misma regla.
+
+  Empezó mirando solo los tipos de motor, que es donde estaba la queja. Pero la ficha, los
+  ajustes y el aviso de actualización tienen la misma pregunta —cuál es LA acción de esta
+  pantalla— y la respondían todas igual: con un botón secundario. Imprimir es lo que se viene
+  a hacer a una ficha.
+*/
+const CARPETAS = [
+  join(RAIZ, 'motor', 'tipos'),
+  join(RAIZ, 'app'),
+  join(RAIZ, 'ui'),
+];
+const CSS = readFileSync(join(RAIZ, 'estilos', 'tokens.css'), 'utf8');
 
 const COMPARTIDAS = ['boton-principal', 'boton-repetir', 'boton-actividad', 'boton-arranque'];
 
@@ -37,35 +50,44 @@ const COMPARTIDAS = ['boton-principal', 'boton-repetir', 'boton-actividad', 'bot
  * que hablan de botones —«son <button> nativos, así que Tab y Enter funcionan»— y contarlos
  * daría un botón sin clase que no existe.
  *
- * La clase viene de dos formas: entre comillas, o en una expresión como
- * `className={k.negra ? 'teclado__negra' : 'teclado__blanca'}`. De la expresión se sacan
- * los trozos entrecomillados, que es donde están los nombres de clase de verdad.
+ * La clase viene de tres formas y hay que entender las tres:
+ *
+ *   className="boton-repetir"
+ *   className={k.negra ? 'teclado__negra' : 'teclado__blanca'}
+ *   className={`boton-actividad boton--${color}`}
+ *
+ * De las dos últimas se sacan los trozos literales, que es donde están los nombres de clase
+ * de verdad; lo que se interpola es un modificador y se compone en marcha.
  */
 function botones(): Array<{ fichero: string; clases: string[] }> {
   const salida: Array<{ fichero: string; clases: string[] }> = [];
-  for (const n of readdirSync(TIPOS).filter((f) => f.endsWith('.tsx'))) {
-    const src = readFileSync(join(TIPOS, n), 'utf8');
+  for (const carpeta of CARPETAS)
+  for (const n of readdirSync(carpeta).filter((f) => f.endsWith('.tsx'))) {
+    const src = readFileSync(join(carpeta, n), 'utf8');
     for (const m of src.matchAll(/<button\b([\s\S]*?)>/g)) {
       const atributos = m[1]!;
       if (!atributos.trim()) continue;
       const entreComillas = /className="([^"]*)"/.exec(atributos);
+      const plantilla = /className=\{`([^`]*)`?/.exec(atributos);
       const enExpresion = /className=\{([^}]*)\}/.exec(atributos);
       const crudo = entreComillas
         ? entreComillas[1]!
-        : [...(enExpresion?.[1] ?? '').matchAll(/['`]([^'`]*)['`]/g)].map((x) => x[1]).join(' ');
+        : plantilla
+          ? plantilla[1]!.replace(/\$\{[^}]*\}?/g, ' ')
+          : [...(enExpresion?.[1] ?? '').matchAll(/['`]([^'`]*)['`]/g)].map((x) => x[1]).join(' ');
       salida.push({ fichero: n, clases: crudo.trim().split(/\s+/).filter(Boolean) });
     }
   }
   return salida;
 }
 
-describe('los botones de las actividades', () => {
+describe('los botones de la aplicación', () => {
   const TODOS = botones();
 
   it('se han encontrado botones que revisar', () => {
     // Si un cambio de estilo dejara esta lista vacía, todo lo de abajo pasaría sin mirar
-    // nada. Son veintiún tipos: cincuenta botones largos.
-    expect(TODOS.length).toBeGreaterThan(40);
+    // nada. Entre los veintiún tipos y las pantallas de alrededor pasan de sesenta.
+    expect(TODOS.length).toBeGreaterThan(55);
   });
 
   it('ninguno se queda sin clase, que es como se acaba pareciendo un texto suelto', () => {
