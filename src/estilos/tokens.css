@@ -3623,16 +3623,24 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
  * la actividad, que es lo único que hay que ver.
  * ------------------------------------------------------------------------ */
 @media (orientation: landscape) and (max-height: 32rem) {
+  /*
+    La barra encoge, y el hueco que se le reserva encoge con ella.
+
+    Se cambia el TOKEN y no el relleno de `.actividad-marco`: de la altura de la barra
+    cuelgan dos cosas —ese hueco y la tarjeta de reacción, que se apoya justo encima—, y
+    ajustar solo una las descuadraba. Además la regla que pone el hueco vive más abajo en
+    este fichero, así que sobrescribirla desde aquí no habría funcionado: misma
+    especificidad, gana la última.
+  */
+  :root { --alto-barra: calc(56px + env(safe-area-inset-bottom)); }
+
   .actividad-marco {
     padding-top: var(--e-2);
-    /* Menos alto que en vertical, pero el suficiente para la barra fija. */
-    padding-bottom: calc(var(--e-7) + env(safe-area-inset-bottom));
     /* Girado, el ancho es lo que sobra y el alto lo que falta: la actividad se lleva todo
        el ancho, sin el aire lateral que en vertical viene bien. */
     padding-inline: var(--e-2);
     max-width: none;
   }
-  /* La barra encoge: en apaisado cada píxel de alto es actividad. */
   .barra-actividad { padding-block: 2px; }
   .barra-actividad__volver,
   .barra-actividad__ficha { min-height: 40px; }
@@ -3644,10 +3652,18 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   }
   /* La pista fija ocupa dos o tres líneas y aquí no caben. Sigue estando para quien la
      busque, pero deja de robarle sitio al instrumento. */
-  .actividad .pista-fija {
+  .actividad .pista-fija,
+  .actividad .estado-actividad {
     font-size: var(--t-xs);
     margin: var(--e-2) auto 0;
   }
+  /* Y la tarjeta de reacción se hace más baja y más ancha: en apaisado sobra ancho y falta
+     alto, que es justo al revés de como está pensada la de vertical. */
+  .reaccion {
+    width: min(52ch, calc(100vw - 2 * var(--e-3)));
+    padding: var(--e-2) var(--e-3);
+  }
+  .reaccion .personaje { height: 48px; }
   .nav {
     padding-block: var(--e-1);
   }
