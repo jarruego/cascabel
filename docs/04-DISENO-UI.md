@@ -197,8 +197,25 @@ un error. El número vive donde se decide.
    y al terminar ya hay dos modales, y el «¡completada!» que salía aquí lo repetía la de
    enhorabuena medio segundo después. Lo que se queda es lo que solo ella puede decir: el
    «bien/casi» entre rondas y la pista concreta al fallar. Va **superpuesta** abajo a la
-   izquierda, entra deslizando y se va sola a los tres segundos y medio más un poco por cada
-   palabra. No recibe toques.
+   izquierda, entra deslizando. No recibe toques.
+
+   **Y hay dos clases de mensaje, con dos tiempos distintos.** El elogio se va solo, a los
+   tres segundos y medio más un poco por carácter. **La pista que enseña no lleva reloj**: se
+   queda mientras el niño está atascado y se va cuando vuelve a responder.
+
+   Sale de medirlo el 2026-09-09. Las 71 pistas del catálogo tienen 88 caracteres y 18
+   palabras de mediana, y un niño de 2.º lee a 60 palabras por minuto: **veinte segundos**.
+   La tarjeta duraba 6,2, así que **las 71 se quedaban cortas**. Y no hay número que arregle
+   eso, porque entre 2.º y 6.º la velocidad lectora se dobla: cualquier duración buena para
+   uno sobra o falta para el otro. La respuesta del niño sí es una señal fiable, y es gratis.
+   El razonamiento y el test están en
+   [`motor/maquinaReaccion.ts`](../src/motor/maquinaReaccion.ts).
+
+   Debajo había un fallo que no se veía: la duración decía escalar con el texto y no
+   escalaba. `children` es un array en seis de los once sitios —dos ramas `{cond && …}`
+   seguidas— y el código preguntaba `typeof children === 'string'`, así que usaba un 60 de
+   reserva **justo en los seis que llevan la pista larga**. Medía bien lo corto y mal lo
+   único que había que medir.
 
    Estuvo dentro del flujo hasta el 2026-09-08 y era peor de lo que parece: al aparecer
    empujaba el tablero hacia abajo y al irse lo subía, así que cada respuesta movía la

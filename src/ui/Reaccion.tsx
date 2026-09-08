@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Personaje } from './Personaje';
 import { NOMBRES, type Personaje as Nombre } from './personajes';
+import { duracionMs, seVe, textoDe, type TonoReaccion } from '@/motor/maquinaReaccion';
 import { t } from '@/i18n';
 
 /**
@@ -34,7 +35,15 @@ import { t } from '@/i18n';
  * Y separarlas arregla de paso lo otro: la tarjeta se monta con cada mensaje, así que su
  * animación de entrada vuelve a correr cada vez. En un solo elemento permanente habría
  * corrido una vez, la primera, y nunca más.
+ *
+ * ## Qué decide este fichero y qué no
+ *
+ * Aquí solo hay temporizadores y animación. **Cuánto dura cada clase de mensaje lo decide
+ * [`motor/maquinaReaccion.ts`](../motor/maquinaReaccion.ts)**, que es donde está el
+ * razonamiento y el test: el elogio lleva reloj, y la pista que enseña no lo lleva porque se
+ * va cuando el niño vuelve a responder.
  */
+
 /**
  * Lo que tarda la tarjeta en irse, en milisegundos.
  *
@@ -44,61 +53,81 @@ import { t } from '@/i18n';
  */
 const SALIDA_MS = 220;
 
+/** Lo que hay pintado ahora mismo, que no siempre es lo que el padre pide. Ver abajo. */
+interface Puesto {
+  tono: TonoReaccion;
+  texto: string;
+  personaje: Nombre;
+  contenido: React.ReactNode;
+}
+
 export function Reaccion({
   tono,
   personaje = 'dora',
   children,
 }: {
   /** `neutro` para lo que no es un juicio, como «sigue el dibujo mientras suena». */
-  tono: 'bien' | 'casi' | 'neutro';
+  tono: TonoReaccion;
   personaje?: Nombre;
   children?: React.ReactNode;
 }) {
-  const hayTexto = Boolean(children);
+  const texto = textoDe(children);
+  const pedida = seVe(tono, texto);
+  const ms = duracionMs(tono, texto);
 
   /*
-    Se enseña un rato, avisa de que se va, y se va.
+    Dos estados, y el primero no es el que parece.
 
-    Un mensaje que se queda hasta que pase otra cosa acaba siendo parte del decorado: deja
-    de leerse y sigue ocupando sitio. Se va sola, y el tiempo sale de lo que hay que leer
-    —unos tres segundos y medio de base más un poco por cada palabra—, porque no es lo
-    mismo «¡Muy bien!» que una pista de dos líneas.
+    `puesto` es lo que hay pintado, y **sobrevive a que el padre deje de pedirlo**. Hace
+    falta porque ahora la pista se va cuando el niño responde, no cuando vence un reloj: en
+    ese momento el tipo de motor cambia de fase, deja de pasar texto y el tono vuelve a
+    `neutro`. Si la tarjeta leyera las props en ese instante se vaciaría a media animación de
+    salida —o peor, desaparecería de golpe, que es el parpadeo que se arregló el 2026-09-09—.
+    Guardando lo último que se enseñó, sale con su contenido puesto.
 
-    **Tres estados y no dos.** Antes desaparecía de golpe al cumplirse el tiempo, y un
-    parpadeo en el borde de la pantalla no se distingue de un fallo. Para irse animada tiene
-    que seguir montada mientras baja, así que hay un estado intermedio: `saliendo` pone la
-    animación de salida y un segundo temporizador la desmonta al acabar.
-
-    El segundo temporizador va contra `SALIDA_MS`, que es el mismo número que el CSS: si se
-    separaran, la tarjeta desaparecería a medio irse o se quedaría un rato invisible
-    ocupando sitio. Y es un temporizador y no `animationend` a propósito, porque con
-    `prefers-reduced-motion` no hay animación y ese evento no llegaría nunca.
-
-    Lo que NO se va solo es `neutro`: ahí no hay reacción, hay una instrucción que tiene que
-    seguir estando mientras dure la actividad.
+    `saliendo` es el estado intermedio de siempre: pone la animación de salida y deja la
+    tarjeta montada mientras baja. El desmontaje va contra `SALIDA_MS` con un temporizador y
+    no con `animationend`, porque con `prefers-reduced-motion` no hay animación y ese evento
+    no llegaría nunca.
   */
-  const [fase, setFase] = useState<'dentro' | 'saliendo' | 'fuera'>('dentro');
-  const largo = typeof children === 'string' ? children.length : 60;
+  const [puesto, setPuesto] = useState<Puesto | null>(
+    pedida ? { tono, texto, personaje, contenido: children } : null,
+  );
+  const [saliendo, setSaliendo] = useState(false);
 
   useEffect(() => {
-    setFase('dentro');
-    if (tono === 'neutro') return;
-    const ms = 3500 + largo * 45;
-    const empiezaASalir = window.setTimeout(() => setFase('saliendo'), ms);
-    const seVa = window.setTimeout(() => setFase('fuera'), ms + SALIDA_MS);
-    return () => {
-      window.clearTimeout(empiezaASalir);
-      window.clearTimeout(seVa);
-    };
-    // `largo` y `tono` bastan: si cambia el mensaje, vuelve a aparecer y a contar de nuevo.
-  }, [tono, largo]);
+    if (pedida) {
+      setPuesto({ tono, texto, personaje, contenido: children });
+      setSaliendo(false);
+      // Sin reloj se queda hasta que el padre deje de pedirla, y de eso se encarga la otra
+      // rama. Es el caso de `casi` —la pista que enseña— y el de `neutro`.
+      if (ms === null) return;
+      const empiezaASalir = window.setTimeout(() => setSaliendo(true), ms);
+      const seVaDelTodo = window.setTimeout(() => setPuesto(null), ms + SALIDA_MS);
+      return () => {
+        window.clearTimeout(empiezaASalir);
+        window.clearTimeout(seVaDelTodo);
+      };
+    }
 
-  const hayQueDecir = fase !== 'fuera' && (tono !== 'neutro' || hayTexto);
-  const frase = tono === 'neutro' ? '' : t(`reaccion.${personaje}.${tono}`);
+    // Ha dejado de pedirse: el niño ha respondido, o la actividad ha pasado de fase.
+    setSaliendo(true);
+    const seVaDelTodo = window.setTimeout(() => setPuesto(null), SALIDA_MS);
+    return () => window.clearTimeout(seVaDelTodo);
+
+    /*
+      `children` NO está en las dependencias, y es a propósito: es un JSX nuevo en cada
+      render y reiniciaría la animación sin parar. Lo que identifica un mensaje es su texto,
+      así que dos reacciones con las mismas palabras son la misma y la tarjeta no se mueve.
+    */
+  }, [pedida, tono, texto, personaje, ms]);
+
+  const frase =
+    puesto && puesto.tono !== 'neutro' ? t(`reaccion.${puesto.personaje}.${puesto.tono}`) : '';
 
   return (
     <div className="reaccion" aria-live="polite">
-      {hayQueDecir && (
+      {puesto && (
         /*
           La clave hace que la tarjeta se monte de nuevo cuando cambia el mensaje, y con
           ella vuelve a correr la animación de entrada. Sin clave, dos reacciones seguidas
@@ -107,26 +136,27 @@ export function Reaccion({
         */
         <div
           className="reaccion__tarjeta"
-          data-tono={tono}
-          data-saliendo={fase === 'saliendo' || undefined}
-          key={`${tono}-${largo}`}
+          data-tono={puesto.tono}
+          data-saliendo={saliendo || undefined}
+          key={`${puesto.tono}-${puesto.texto.length}`}
         >
-          {tono !== 'neutro' && (
+          {puesto.tono !== 'neutro' && (
             <Personaje
-              nombre={personaje}
-              pose={tono === 'bien' ? 'celebra' : 'anima'}
+              nombre={puesto.personaje}
+              pose={puesto.tono === 'bien' ? 'celebra' : 'anima'}
               tamano={72}
             />
           )}
           <p className="reaccion__texto">
             {frase && (
               <span className="reaccion__frase">
-                <span className="reaccion__quien">{NOMBRES[personaje].nombre}:</span> {frase}
+                <span className="reaccion__quien">{NOMBRES[puesto.personaje].nombre}:</span>{' '}
+                {frase}
               </span>
             )}
             {/* La pista concreta, que es lo que de verdad enseña. Va debajo y con menos peso
                 que la frase, pero se lee entera: sin ella la reacción sería un aplauso. */}
-            {hayTexto && <span className="reaccion__pista">{children}</span>}
+            {puesto.texto !== '' && <span className="reaccion__pista">{puesto.contenido}</span>}
           </p>
         </div>
       )}
