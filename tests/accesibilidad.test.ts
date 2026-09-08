@@ -76,6 +76,25 @@ describe('accesibilidad', () => {
     const reaccion = readFileSync(join(RAIZ, 'src', 'ui', 'Reaccion.tsx'), 'utf-8');
     expect(reaccion, 'Reaccion.tsx sin aria-live').toMatch(/aria-live/);
 
+    /*
+      Y que la región **exista antes que el mensaje**, que es la mitad que no se ve leyendo.
+
+      Una región `aria-live` creada en el mismo momento que su contenido no se anuncia de
+      forma fiable: varios lectores de pantalla solo vigilan las que ya estaban. El
+      componente lo hacía así hasta el 2026-09-08 —montaba y desmontaba un solo elemento con
+      el `aria-live` y el texto dentro— y este mismo test lo daba por bueno, porque el
+      atributo estaba puesto.
+
+      Se comprueba por lo que se puede comprobar: que el componente no se salga antes de
+      dibujar. Si vuelve a aparecer un `return null` aquí, la región vuelve a nacer con el
+      mensaje.
+    */
+    expect(
+      reaccion,
+      'Reaccion.tsx vuelve a salirse con return null: la región aria-live nacería con el ' +
+        'mensaje y no se anunciaría',
+    ).not.toMatch(/return null/);
+
     // Y lo que siga anunciándose a mano, que también lo haga bien.
     for (const { ruta, fuente } of todos) {
       for (const m of fuente.matchAll(/className="(feedback|tocar__resultado)"/g)) {
