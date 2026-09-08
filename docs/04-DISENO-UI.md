@@ -126,8 +126,21 @@ fija abajo y justo encima de la barra de volver-personaje-ficha.
   las teclas, los pads, las tarjetas de opción, las casillas. Son grandes a propósito —la
   diana mide entre 180 y 300 px porque se golpea con la mano y a veces sin mirar— y meterlas
   en una barra sería encogerlas hasta que dejaran de servir.
-- **Dos barras y no una**, también en apaisado: una es de la aplicación y otra de la
-  actividad. Lo que se hace ahí es adelgazar las dos.
+- **Dos barras y no una**: una es de la aplicación y otra de la actividad. En vertical van
+  apiladas; **en apaisado comparten renglón** desde el 2026-09-09, con el trío de la
+  aplicación encogido a su contenido y pegado a la derecha.
+
+  El motivo salió de medirlo: giradas, las dos barras ocupaban **110 px de los 360** de alto
+  de un móvil —el 31 %— en la postura donde menos altura hay, que además es la del piano y la
+  de todo lo que avanza de lado. Y ese espacio ya se estaba pagando por otro sitio: la media
+  query de apaisado baja los botones a **44 px** cuando `--objetivo` vale 75 en Infantil.
+  Sacar los píxeles de la maquetación es mejor que sacarlos del tamaño de lo que se toca.
+
+  Dos detalles que hacen que el cambio sea barato de deshacer y difícil de romper: **el
+  ancho del trío se mide** y se publica en `--ancho-barra-actividad` con el mismo criterio
+  que `--alto-acciones` —un número fijo no vale porque «Volver» y «Ficha» cambian de ancho en
+  cada idioma—, y **si los botones no caben, bajan de línea** como han hecho siempre, así que
+  el peor caso del cambio es exactamente la situación anterior.
 - **Si no caben, saltan de línea.** Un menú de «Más» esconde botones que un niño no va a
   buscar; una fila que se arrastra de lado no avisa de que hay algo a la derecha.
 - **Vacía se esconde entera**, borde incluido: se queda sin botones justo mientras el niño

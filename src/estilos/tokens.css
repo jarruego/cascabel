@@ -3697,6 +3697,58 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   .nav__enlace {
     min-height: 44px;
   }
+
+  /* ── las dos barras comparten renglón ───────────────────────────────────────
+     Añadido el 2026-09-09. Girado, las dos barras fijas ocupaban 110 px de los 360 de alto
+     de un móvil: el 31 %, en la postura donde menos altura hay. Y ese espacio ya se estaba
+     pagando por otro lado — mira tres reglas más arriba: los botones bajan aquí a 44 px
+     cuando `--objetivo` vale 75 en Infantil. Sacar los píxeles de la maquetación es mejor
+     que sacarlos del tamaño de lo que se toca.
+
+     Siguen siendo dos barras, que es la decisión del autor y tiene sentido: una es de la
+     aplicación y otra de la actividad. Lo que comparten es el renglón. El trío de la
+     aplicación se encoge a su contenido y se pega a la derecha —siempre en el mismo sitio,
+     que es la regla 8— y la botonera ocupa lo que queda a la izquierda.
+
+     **Y si no cabe, degrada a lo de antes**: la botonera ya envuelve por `flex-wrap`, así
+     que con muchos botones vuelven a ser dos renglones, que es exactamente la situación
+     anterior a este bloque. El peor caso es el de siempre. */
+  .barra-actividad {
+    /* Deja de ocupar el ancho entero: sin `left`, manda `right: 0` y el ancho es el que
+       pidan sus tres hijos. */
+    left: auto;
+    grid-template-columns: auto auto auto;
+    padding-inline: var(--e-2);
+  }
+  .barra-acciones {
+    bottom: 0;
+    /*
+      El hueco del trío. Lo mide `BarraActividad` con un `ResizeObserver` y lo publica, con
+      el mismo criterio que `--alto-acciones`: un número fijo no vale porque «Volver» y
+      «Ficha» cambian de ancho en cada idioma, y en cuanto se quedara corto las dos barras
+      se solaparían. El valor de reserva solo actúa en el primer fotograma, y va holgado a
+      propósito: que sobre hueco se ve raro un instante, que falte tapa un botón.
+    */
+    right: var(--ancho-barra-actividad, 260px);
+    /* Ahora también apoya en el borde inferior, así que le toca la zona segura. */
+    padding-bottom: max(var(--e-1), env(safe-area-inset-bottom));
+  }
+  /*
+    Y con una sola fila, lo que colgaba de la suma de las dos cuelga de la más alta. Son
+    tres sitios y los tres tienen que cambiar a la vez: el alto de la escena, el apoyo de la
+    tarjeta de reacción y el relleno final de la actividad. Si se cambiara uno solo, o
+    sobraría un palmo de blanco o la botonera taparía el final.
+  */
+  :root {
+    --alto-escena: calc(100vh - max(var(--alto-barra), var(--alto-acciones, 0px)));
+    --alto-escena: calc(100dvh - max(var(--alto-barra), var(--alto-acciones, 0px)));
+  }
+  .reaccion {
+    bottom: calc(max(var(--alto-barra), var(--alto-acciones, 0px)) + var(--e-3));
+  }
+  .actividad-marco {
+    padding-bottom: calc(max(var(--alto-barra), var(--alto-acciones, 0px)) + var(--e-3));
+  }
 }
 
 /* En una pizarra el catálogo puede permitirse tarjetas más grandes: se mira de lejos. */

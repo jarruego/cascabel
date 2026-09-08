@@ -1841,9 +1841,13 @@ toca.
 
 **Lo siguiente, y lo decide el autor mirándolo**: con los ~54 px devueltos, si en apaisado se
 vuelve a `var(--objetivo)` en vez de los 44 px. Eso se come parte de lo ganado y cambia
-cuántos botones caben en la fila, así que no se ha tocado: hay que verlo. El autor se reservó
-además el derecho a deshacer la fila compartida si no le convence al verla — está en un solo
-bloque de la media query y el observador de `Actividad.tsx`, para que quitarlo sea barato.
+cuántos botones caben en la fila, así que no se ha tocado: hay que verlo.
+
+**Y el autor se reservó el derecho a deshacer la fila compartida** si no le convence al verla,
+así que va en un commit propio y no mezclado: `git revert` del commit «ui: en apaisado las dos
+barras comparten renglón» se lleva el CSS, la medición del ancho y su párrafo de
+`04-DISENO-UI.md`, y deja intacta la tarjeta, que es la otra decisión del día. Esa es la razón
+de que estas dos vayan separadas pese a haberse aprobado juntas.
 
 **Lo que de verdad falta**, y ninguna de las tres es programación:
 

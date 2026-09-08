@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router';
 import { cargarActividad } from '@/datos/cargar';
 import { componenteDe } from '@/motor/registro';
@@ -232,6 +232,13 @@ export default function Actividad() {
  *
  * Tres sitios fijos y nada más. Va abajo por la misma razón que la barra de navegación: el
  * pulgar de un niño no llega arriba en una tablet que sostiene con las dos manos.
+ *
+ * **Y en apaisado comparte renglón con la botonera de la actividad.** Ahí se encoge a su
+ * contenido y se pega a la derecha; la botonera ocupa lo que queda a la izquierda. Para eso
+ * hay que saber cuánto mide, así que se mide y se publica en `--ancho-barra-actividad`, con
+ * el mismo criterio que `--alto-acciones`: el hueco se mide, no se adivina. Un número fijo
+ * no valdría —«Volver» y «Ficha» cambian de ancho en cada idioma— y en cuanto se quedara
+ * corto las dos barras se solaparían.
  */
 function BarraActividad({
   id,
@@ -246,8 +253,32 @@ function BarraActividad({
   personaje?: string;
   alPersonaje?: () => void;
 }) {
+  const caja = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const el = caja.current;
+    const raiz = document.documentElement;
+    if (!el) return;
+
+    const publicar = (ancho: number) =>
+      raiz.style.setProperty('--ancho-barra-actividad', `${Math.ceil(ancho)}px`);
+
+    if (typeof ResizeObserver === 'undefined') {
+      publicar(el.offsetWidth);
+      return () => raiz.style.removeProperty('--ancho-barra-actividad');
+    }
+    const ro = new ResizeObserver(([e]) => publicar(e?.contentRect.width ?? 0));
+    ro.observe(el);
+    return () => {
+      ro.disconnect();
+      // Fuera de la actividad no hay barra: si el valor se quedara puesto, la botonera de
+      // otra pantalla reservaría un hueco a la derecha que no tapa nada.
+      raiz.style.removeProperty('--ancho-barra-actividad');
+    };
+  }, []);
+
   return (
-    <div className="barra-actividad no-imprimir">
+    <div className="barra-actividad no-imprimir" ref={caja}>
       {/* Sigue siendo un enlace y no un botón: así se puede abrir en otra pestaña y un
           lector de pantalla lo anuncia como enlace. Lo que cambia es a dónde va: al catálogo
           con los filtros que tuviera, no a `/` pelado. */}

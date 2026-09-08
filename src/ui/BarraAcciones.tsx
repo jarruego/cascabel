@@ -30,8 +30,14 @@ import { t } from '@/i18n';
  * ## Dónde se pone
  *
  * Fija abajo, **justo encima** de la barra de volver-personaje-ficha. Dos barras y no una:
- * lo eligió el autor, y tiene sentido —una es de la aplicación y otra de la actividad—, así
- * que en apaisado lo que se hace es adelgazarlas, no fundirlas.
+ * lo eligió el autor, y tiene sentido —una es de la aplicación y otra de la actividad—.
+ *
+ * **En apaisado comparten renglón**, decidido el 2026-09-09 al medir: las dos ocupaban
+ * 110 px de los 360 de alto de un móvil girado, el 31 %, en la postura donde menos altura
+ * hay. Siguen siendo dos barras y cada una en su sitio —el trío de la aplicación encogido y
+ * pegado a la derecha, esta ocupando lo que queda— pero en una sola fila. Y si los botones
+ * no caben, `flex-wrap` los baja de línea, que es exactamente como estaba antes: el peor
+ * caso del cambio es el caso de siempre.
  *
  * Si no caben en una línea, salta a dos. También decisión suya, y sobre las alternativas que
  * garantizan una sola línea: un menú de «Más» esconde botones que un niño no va a buscar, y
