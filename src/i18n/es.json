@@ -976,5 +976,7 @@
   "comun.terminar": "Terminar",
   "comun.empezarDe": "Empezar · {n} de {total}",
   "comun.otraVezDe": "Otra vez · {n} de {total}",
-  "cantar.siguienteNotaDe": "Siguiente nota · {n} de {total}"
+  "cantar.siguienteNotaDe": "Siguiente nota · {n} de {total}",
+  "lienzo.mejorApaisado": "Esta actividad se ve mejor con la pantalla tumbada.",
+  "lienzo.mejorVertical": "Esta actividad se ve mejor con la pantalla de pie."
 }

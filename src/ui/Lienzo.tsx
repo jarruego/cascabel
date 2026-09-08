@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { t } from '@/i18n';
+import { usePreferencias } from '@/app/preferencias';
+import type { Orientacion } from '@/motor/orientacion';
 
 /**
  * Modo lienzo: la actividad ocupa la pantalla entera y desaparece todo lo demás.
@@ -22,38 +24,86 @@ import { t } from '@/i18n';
  * partes suyas son lienzo y cuáles son explicación.
  */
 
-interface Props {
-  children: React.ReactNode;
+/**
+ * ¿Tiene sentido pedirle a alguien que gire esto?
+ *
+ * Solo si es algo que se sostiene. La comprobación es **el tamaño de la pantalla**, no el
+ * aparato: un móvil y una tablet miden menos de 1200 px por su lado mayor y un monitor o una
+ * pizarra, más. Es una aproximación y se sabe por dónde falla —un monitor pequeño se comería
+ * una línea que no le sirve, una tablet enorme se quedaría sin ella— y aun así es preferible
+ * a mirar el `user agent`, que es lo que `CLAUDE.md` §8 prohíbe: los agentes mienten y las
+ * versiones cambian, y el tamaño de la pantalla no.
+ *
+ * Lo peor que pasa si se equivoca es una línea de texto de más o de menos. No bloquea nada.
+ */
+function sePuedeGirarAMano(): boolean {
+  return Math.max(window.screen.width, window.screen.height) <= 1200;
 }
 
-export function Lienzo({ children }: Props) {
+interface Props {
+  children: React.ReactNode;
+  /**
+   * En qué postura se ve mejor esta actividad. Lo decide `motor/orientacion.ts`.
+   *
+   * Por defecto, ninguna: **no tocar la pantalla es la respuesta correcta** cuando da igual,
+   * y es la que faltaba. Hasta el 2026-09-09 se pedía apaisado siempre, y eso giraba al
+   * revés justo las cinco actividades donde las notas caen de arriba abajo.
+   */
+  orientacion?: Orientacion;
+}
+
+export function Lienzo({ children, orientacion = 'cualquiera' }: Props) {
   const [ampliado, setAmpliado] = useState(false);
+  /** Puesto solo si hace falta girar y no se ha podido. Es una sugerencia, no un bloqueo. */
+  const [sugerirGiro, setSugerirGiro] = useState(false);
   const caja = useRef<HTMLDivElement | null>(null);
+  const pizarra = usePreferencias((e) => e.pizarra);
 
   const alternar = useCallback(async () => {
     const siguiente = !ampliado;
     setAmpliado(siguiente);
+    setSugerirGiro(false);
     try {
       if (siguiente) {
         await caja.current?.requestFullscreen?.();
+
         /*
-          Y se pide apaisado.
+          Y se pide la postura que necesita ESTA actividad, si es que necesita alguna.
 
-          Un piano es ancho por definición: en vertical, un móvil no da para dos octavas
-          por mucho que se ajusten los tamaños, y un musicograma horizontal se queda sin
-          recorrido. Girar la pantalla es lo que convierte «cabe una octava» en «caben dos».
+          Tres cosas hacen que no se pida nada, y las tres son razones y no cautelas:
 
-          Va dentro del mismo `try` y sin comprobar nada antes: `screen.orientation.lock`
-          no existe en Safari de iOS ni en el escritorio, y **eso no es un error**. Si
-          falla, la pantalla se queda como estaba y el modo lienzo ya ha ganado el espacio
-          del navegador, que era la mitad del objetivo. Misma regla que con el micrófono:
-          se intenta y se cae con elegancia.
+           1. **A la actividad le da igual.** La mayoría. Girar por girar sorprende y deja al
+              niño con el aparato en una postura que no eligió.
+           2. **Es una pizarra.** Una pizarra no gira. Es una preferencia declarada en
+              ajustes, no una adivinanza sobre el aparato — `CLAUDE.md` §8 prohíbe lo
+              segundo y con razón.
+           3. **Ya está así.** No hay nada que ganar.
+
+          Y si hay que girar pero no se puede —Safari de iOS, escritorio— tampoco es un
+          error: la actividad ya ha ganado la pantalla completa, que era la mitad del
+          objetivo. Se ofrece girarlo a mano y se sigue. Misma regla que con el micrófono.
         */
-        await (
-          screen.orientation as ScreenOrientation & {
-            lock?: (orientacion: string) => Promise<void>;
+        if (orientacion !== 'cualquiera' && !pizarra) {
+          const quiereApaisado = orientacion === 'apaisado';
+          const yaEsta = window.matchMedia(
+            quiereApaisado ? '(orientation: landscape)' : '(orientation: portrait)',
+          ).matches;
+          if (!yaEsta) {
+            let girada = false;
+            try {
+              const api = screen.orientation as ScreenOrientation & {
+                lock?: (orientacion: string) => Promise<void>;
+              };
+              if (api.lock) {
+                await api.lock(quiereApaisado ? 'landscape' : 'portrait');
+                girada = true;
+              }
+            } catch {
+              // En el escritorio, Chrome tiene `lock` y lanza: girar un monitor no existe.
+            }
+            if (!girada && sePuedeGirarAMano()) setSugerirGiro(true);
           }
-        ).lock?.('landscape');
+        }
       } else if (document.fullscreenElement) {
         (screen.orientation as ScreenOrientation & { unlock?: () => void }).unlock?.();
         await document.exitFullscreen();
@@ -62,14 +112,17 @@ export function Lienzo({ children }: Props) {
       // Sin API nativa el modo CSS ya está aplicado y se ve igual de grande dentro de la
       // página. No hay nada que avisar ni nada que arreglar.
     }
-  }, [ampliado]);
+  }, [ampliado, orientacion, pizarra]);
 
   // Salir con Escape, o desde el propio navegador, tiene que devolvernos al estado normal.
   // Sin esto, cerrar la pantalla completa con Escape dejaría la página con el CSS de lienzo
   // puesto y sin forma evidente de quitarlo.
   useEffect(() => {
     const alCambiar = () => {
-      if (!document.fullscreenElement) setAmpliado(false);
+      if (!document.fullscreenElement) {
+        setAmpliado(false);
+        setSugerirGiro(false);
+      }
     };
     document.addEventListener('fullscreenchange', alCambiar);
     return () => document.removeEventListener('fullscreenchange', alCambiar);
@@ -78,6 +131,15 @@ export function Lienzo({ children }: Props) {
   return (
     <div ref={caja} className="lienzo" data-ampliado={ampliado || undefined}>
       {children}
+
+      {/* Una línea, para el adulto, y solo mientras la pantalla tenga la forma contraria: en
+          cuanto se gira desaparece sola. No bloquea nada — la actividad se puede hacer
+          entera sin girar, solo con menos sitio. */}
+      {ampliado && sugerirGiro && (
+        <p className="lienzo__giro no-imprimir" role="status">
+          {t(orientacion === 'apaisado' ? 'lienzo.mejorApaisado' : 'lienzo.mejorVertical')}
+        </p>
+      )}
       <button
         type="button"
         className="lienzo__boton no-imprimir"

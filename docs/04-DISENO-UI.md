@@ -140,6 +140,35 @@ Los símbolos son un vocabulario cerrado, con su tabla en
 veintiuna pantallas. Los botones de **valor** —una octava, un tempo— no llevan: no son
 acciones, y un icono al lado de un «2» no significa nada.
 
+### Al ampliar, la postura la pide la actividad
+
+Ampliar pedía **apaisado siempre**. Está bien para un piano —en vertical un móvil no da para
+dos octavas— y está mal para las cinco actividades donde las notas caen de arriba abajo: se
+giraba la pantalla justo al revés y el recorrido de caída, que es toda la actividad, se
+quedaba en nada.
+
+La orientación **no es una preferencia de la aplicación: es una propiedad de la actividad**,
+y casi siempre está declarada o se deduce. La regla vive en
+[`motor/orientacion.ts`](../src/motor/orientacion.ts) con su test, y da tres respuestas:
+
+- **`apaisado`** — hace falta ancho: teclado, pentagrama, tira que avanza de lado, dieciséis
+  columnas, la pantalla del maestro.
+- **`vertical`** — hace falta alto: lo que cae.
+- **`cualquiera`** — da igual, y entonces **no se toca la pantalla**. Es la respuesta que
+  faltaba: forzar un giro que no aporta nada sorprende y deja al niño con el aparato en una
+  postura que no eligió.
+
+Y tres casos en los que no se gira aunque la actividad lo pida: **en modo pizarra** (una
+pizarra no gira, y es una preferencia declarada en ajustes, no una adivinanza sobre el
+aparato), **si ya está así**, y **si el navegador no sabe** — Safari de iOS, escritorio. En
+el último caso la actividad ya ha ganado la pantalla completa, que era la mitad del objetivo,
+y si además la forma es la contraria se ofrece girarlo a mano con una línea que se va sola al
+girar. Nunca se bloquea nada: es la misma degradación del micrófono.
+
+Lo único que se «detecta» es el tamaño de la pantalla, para no pedirle a nadie que gire un
+monitor. `CLAUDE.md` §8 prohíbe mirar el *user agent* y con razón: los agentes mienten y las
+versiones cambian; el tamaño de la pantalla, no.
+
 ### Las vueltas se cuentan en el botón, y en ningún sitio más
 
 En las actividades de varias vueltas, **el botón anuncia la que va a empezar**: «Empezar · 1

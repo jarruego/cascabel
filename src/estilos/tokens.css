@@ -3939,6 +3939,24 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 */
 .barra-acciones:empty { display: none; }
 
+/* La sugerencia de girar, arriba a la izquierda para no chocar con el botón de reducir.
+   Es para el adulto y no estorba a nadie: no recibe toques y se va sola al girar. */
+.lienzo__giro {
+  position: fixed;
+  top: var(--e-3);
+  left: var(--e-3);
+  z-index: 51;
+  max-width: 26ch;
+  margin: 0;
+  padding: var(--e-2) var(--e-3);
+  color: var(--tinta-2);
+  font-size: var(--t-s);
+  background: var(--superficie);
+  border: 2px solid var(--linea);
+  border-radius: var(--r-s);
+  pointer-events: none;
+}
+
 /* Ampliado no hay barra de navegación debajo, así que la botonera baja a ocupar su sitio.
    No se esconde: son los mandos, y sin ellos no se puede ni empezar ni parar. */
 .lienzo[data-ampliado] .barra-acciones { bottom: 0; }

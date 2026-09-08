@@ -1735,9 +1735,52 @@ estar documentadas en la barra que venía a sustituirlas. Ahora mira el código 
       debajo se lee como un descuadre. Y ahora se va animada: desaparecía de golpe, y un
       parpadeo en el borde de la pantalla no se distingue de un fallo.
 
+- [x] **La postura al ampliar la pide la actividad, no la aplicación.** Se pedía apaisado
+      siempre, y eso giraba al revés las cinco actividades donde las notas caen de arriba
+      abajo. Ahora hay tres respuestas y la tercera es la que faltaba: cuando da igual, no se
+      toca la pantalla. No se gira en modo pizarra, ni si ya está así, ni donde el navegador
+      no sabe; y ahí se ofrece girarlo a mano con una línea que se va sola.
+
 **Lo siguiente**: verlo en un aparato. Todo esto es geometría y ninguna de las decisiones se
 puede confirmar sin mirarla — cuánto es «demasiado grande» para un musicograma en una pizarra
 o si el escenario centrado deja el teclado a una altura cómoda no lo dice ningún test.
+
+### Licencias: la regla dice hasta dónde llega el copyleft, 2026-09-09
+
+De una pregunta del autor —«¿qué significa MPL-2.0?»— y de lo que quiere, que es que cualquiera
+pueda reutilizar esto sin pedir permiso.
+
+- [x] **La regla de `CLAUDE.md` §3 deja de ser una lista de siglas.** Decía «MIT, BSD, ISC,
+      Apache-2.0», y una lista no explica nada: deja fuera cosas inofensivas sin decir por qué y
+      no sirve el día que aparece una quinta sigla. Ahora se enuncia por el eje que decide
+      —hasta dónde llega el copyleft: nada, el fichero, la librería o la obra— y con eso
+      **MPL-2.0 entra**: sus ficheros conservan su licencia y los nuestros siguen siendo
+      Apache-2.0. GPL y AGPL siguen fuera, y ahora también explícitamente en `tools/`.
+- [x] **El razonamiento, en `08-LEGAL.md`**: los tres escalones, por qué la LGPL obliga a la
+      frontera técnica de Verovio y la MPL no, y qué arregla la atribución y qué no. Esto último
+      es la confusión más común y aquí importa el doble: con GPL, AGPL o NC se puede citar al
+      autor todo lo que se quiera y se sigue sin poder usarlo.
+- [x] **`THIRD-PARTY-NOTICES.md`, ordenado por lo que llega al navegador**, que es lo que
+      dispara la obligación. Ordenarlo así destapó tres cosas: faltaba **React Router**, que sí
+      viaja; **abcjs, Tone y pitchy figuraban como distribuidas** y no lo son; y la fila de
+      `voz-la.opus` seguía diciendo CC0 y sintetizada cuando el propio documento explicaba dos
+      párrafos más abajo que es el programa 53 de FluidR3, **MIT**. Un inventario que atribuye
+      CC0 a material MIT es justo el error que impide relicenciar nada después.
+- [x] **Dos filas de la tabla de stack describían código que ya no existe** —«abcjs por
+      defecto» y «pitchy dentro de un AudioWorklet»—, y con el inventario ya corregido se
+      habrían contradicho en el mismo commit. Al día las dos.
+
+**Y la página de créditos volvió a mentir, un día después.** El 2026-09-08 se corrigió porque
+citaba Tone.js como si la app lo cargara; ahora decía que «abcjs y VexFlow viajan en el
+paquete», y de abcjs no es verdad. Dos veces en dos días, en la pantalla que existe justamente
+para decir la verdad sobre lo que se usa, y que además es contenido curricular de 5.º y 6.º
+(`TR-04`, saberes del bloque B sobre licencias). **Lo siguiente, y esta vez sí es un test**:
+contrastar la lista de software de los créditos contra lo que Rollup mete de verdad en el
+bundle. Es el único de los tres textos legales que ningún test vigila.
+
+Sin ADR: no hay ninguno de licencias —los siete son de arquitectura— y la política vive en
+`CLAUDE.md` §3 con su porqué en `08-LEGAL.md`, que es donde se busca. Si algún día se quiere
+uno, el sitio natural sería el 0008.
 
 **Lo que de verdad falta**, y ninguna de las tres es programación:
 

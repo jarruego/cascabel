@@ -6,6 +6,7 @@ import { Lienzo } from '@/ui/Lienzo';
 import { Personaje } from '@/ui/Personaje';
 import { anotar } from '@/datos/progreso';
 import { esLibre, hayCelebracion } from '@/motor/actividadesLibres';
+import { orientacionDe } from '@/motor/orientacion';
 import { ModalExito, ModalExplicacion, ModalMicrofono } from '@/ui/ModalesActividad';
 import { aceptarMicrofono, hayQuePreguntar, rechazarMicrofono } from '@/escucha/permiso';
 import { usePreferencias } from './preferencias';
@@ -189,7 +190,7 @@ export default function Actividad() {
       {/* La actividad va dentro del lienzo: es lo que le da el botón de ampliar y lo que
           permite que, al ampliarla, desaparezca todo lo que no es la actividad. */}
       {!empezada ? null : Componente ? (
-        <Lienzo>
+        <Lienzo orientacion={orientacionDe(actividad)}>
           <Componente
             key={intento}
             actividad={actividad}
