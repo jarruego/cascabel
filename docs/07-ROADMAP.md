@@ -1686,6 +1686,34 @@ Ningún ADR cambia con esto. Lo de hoy afina lo que ya estaba decidido —el mar
 [`adr/0004`](adr/0004-pwa-primero.md), a la que la pantalla del micrófono le pone por fin su
 puerta de entrada— y no revierte ninguna.
 
+### La botonera y los mensajes, 2026-09-09
+
+De una observación del autor que era exacta —«no existe ningún criterio común»— y de tres
+correcciones suyas seguidas, cada una sobre el arreglo anterior.
+
+- [x] **Una sola botonera**, fija encima de la de volver-personaje-ficha. Sustituye a quince
+      contenedores que hacían lo mismo con quince márgenes distintos, dos sin centrar, y a
+      tres tipos que ni siquiera metían su botón en un contenedor. Entra lo que actúa SOBRE
+      la actividad; lo que ES la actividad se queda en el lienzo.
+- [x] **Un vocabulario cerrado de símbolos**, con su tabla en `ui/Simbolos.tsx`. De camino se
+      vio que «Idea» dibujaba un círculo gris: `bombilla.svg` existía y no estaba declarado.
+- [x] **El feedback, a lo que pasa durante.** Fuera el «¡completada!» de dentro —lo repetía
+      la modal de enhorabuena— y el texto fijo que ya cuenta la explicación.
+- [x] **Las vueltas, contadas en el botón.** «Otra vez» no arrancaba nada: volvía a la
+      pantalla de inicio y había que pulsar «Empezar» otra vez. Ahora arranca la siguiente y
+      dice cuál es. Y el número sale **solo ahí**: la primera versión lo puso también en una
+      línea de estado, y dos números distintos a la vez —dónde estás y adónde vas— se leen
+      como un error.
+- [x] **La botonera vacía se esconde.** Se queda sin botones justo mientras el niño escucha y
+      responde, que es cuando más falta hace el sitio.
+
+Y un test que se dejaba engañar: el de clases CSS huérfanas busca el nombre como cadena, y un
+comentario que lo mencione basta para darla por viva. Tres reglas muertas sobrevivieron por
+estar documentadas en la barra que venía a sustituirlas. Ahora mira el código sin comentarios.
+
+**Lo siguiente, y lo dijo el autor**: centrar las cosas en pantalla y hacer que quepan. Esto
+era el paso previo — con quince contenedores no había nada que centrar.
+
 **Lo que de verdad falta**, y ninguna de las tres es programación:
 
 1. **T0.3, probarlo con niños.** Sigue sin hacerse y es lo único que puede decir si las

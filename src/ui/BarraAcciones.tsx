@@ -70,8 +70,19 @@ export function BarraAcciones({ children }: { children?: React.ReactNode }) {
     return () => raiz.style.removeProperty('--alto-acciones');
   }, []);
 
-  // Sin botones no se dibuja la barra: hay actividades que no tienen ninguna acción sobre
-  // ellas —emparejar, pentagrama— y una franja vacía ahí es una franja de pantalla perdida.
+  /*
+    Sin botones no hay barra, y son dos casos distintos.
+
+    El fácil: hay tipos que no tienen ninguna acción sobre ellos —emparejar, pentagrama— y
+    ni siquiera la montan. Eso lo resuelve este `return null`.
+
+    El otro no lo puede resolver: lo que llega aquí son **condiciones**, no botones, y
+    mientras suena el ritmo las tres valen `false`. `children` sigue siendo verdadero —es la
+    expresión, no su resultado— y desde aquí no hay forma de saber que no va a pintar nada
+    sin ejecutar el renderizado. Ése lo resuelve el CSS con `:empty`, que mira el resultado
+    en vez de la intención, y al esconderla el observador publica 0 y el hueco de abajo se
+    va con ella.
+  */
   if (!children) return null;
 
   return (

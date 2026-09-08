@@ -973,8 +973,8 @@
   "actividad.inf10.pista1": "Toca la caja y luego el sonido. Si no se parecen, vuelve a probar con otro: no pasa nada.",
   "acciones.grupo": "Lo que puedes hacer en esta actividad",
   "guia.pasos": "Paso de la sesión",
-  "tocar.vuelta": "Vuelta {n} de {total}",
-  "tocar.otraVezDe": "Otra vez · {n} de {total}",
-  "cantar.vuelta": "Nota {n} de {total}",
-  "comun.terminar": "Terminar"
+  "comun.terminar": "Terminar",
+  "comun.empezarDe": "Empezar · {n} de {total}",
+  "comun.otraVezDe": "Otra vez · {n} de {total}",
+  "cantar.siguienteNotaDe": "Siguiente nota · {n} de {total}"
 }

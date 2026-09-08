@@ -311,14 +311,6 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
         )}
       </p>
 
-      {/* Por qué nota va. Aquí las vueltas no son repeticiones de lo mismo: cada una es
-          una nota distinta, así que el contador dice «nota», no «vuelta». */}
-      {contenido.notas.length > 1 && (
-        <p className="estado-actividad">
-          {t('cantar.vuelta', { n: indice + 1, total: contenido.notas.length })}
-        </p>
-      )}
-
       {fase === 'cuenta' && <CuentaAtras alTerminar={() => void empezar()} />}
       {/* Estado, no instrucción: dice en qué punto va la actividad —ahora suena, ahora te
           toca—, cambia solo y cabe en tres palabras. Lo que hay que hacer lo cuenta el
@@ -358,7 +350,12 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
             onClick={() => setFase('cuenta')}
           >
             <IconoTocar />
-            {t('accion.empezar')}
+            {/* Como en palmear: el número va en el botón y en ningún sitio más. Aquí la
+                barra de progreso ya dice por dónde vas con una forma, así que un número
+                encima era la tercera vez que se decía lo mismo. */}
+            {contenido.notas.length > 1
+              ? t('comun.empezarDe', { n: indice + 1, total: contenido.notas.length })
+              : t('accion.empezar')}
           </button>
         )}
 
@@ -374,7 +371,10 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
                   aquí sí son dos cosas distintas, y por eso siguen siendo dos botones. */}
               {indice + 1 >= contenido.notas.length
                 ? t('comun.terminar')
-                : t('cantar.siguienteNota')}
+                : t('cantar.siguienteNotaDe', {
+                    n: indice + 2,
+                    total: contenido.notas.length,
+                  })}
             </button>
           </>
         )}

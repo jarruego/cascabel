@@ -111,6 +111,48 @@ latieran dos dejaría de significar «este», que es lo único que hace.
 Lo vigila [`tests/botones.test.ts`](../tests/botones.test.ts): ningún botón sin clase,
 ninguna clase sin regla, ningún latido fuera de la acción principal.
 
+### Un sitio para los botones, y solo uno
+
+Añadido el 2026-09-09, a partir de una observación del autor que era exacta: «según la altura
+de la actividad o la propia actividad salen unos botones u otros, con icono, sin icono,
+centrado, a la izquierda, de un color, tamaño de fuente… No existe ningún criterio común».
+Había **quince contenedores** haciendo lo mismo con quince márgenes distintos, dos sin
+centrar, y tres tipos que ni siquiera metían su botón en un contenedor.
+
+**Todo lo que actúa sobre la actividad va en [`ui/BarraAcciones.tsx`](../src/ui/BarraAcciones.tsx)**,
+fija abajo y justo encima de la barra de volver-personaje-ficha.
+
+- **Lo que ES la actividad se queda en el lienzo**: la diana de palmear, el pandero del eco,
+  las teclas, los pads, las tarjetas de opción, las casillas. Son grandes a propósito —la
+  diana mide entre 180 y 300 px porque se golpea con la mano y a veces sin mirar— y meterlas
+  en una barra sería encogerlas hasta que dejaran de servir.
+- **Dos barras y no una**, también en apaisado: una es de la aplicación y otra de la
+  actividad. Lo que se hace ahí es adelgazar las dos.
+- **Si no caben, saltan de línea.** Un menú de «Más» esconde botones que un niño no va a
+  buscar; una fila que se arrastra de lado no avisa de que hay algo a la derecha.
+- **Vacía se esconde entera**, borde incluido: se queda sin botones justo mientras el niño
+  escucha y responde, que es cuando más falta hace el sitio.
+- **El hueco de abajo se mide**, no se adivina. La barra publica `--alto-acciones` y de ahí
+  cuelgan el relleno final de la actividad y la altura de la tarjeta de reacción.
+
+Los símbolos son un vocabulario cerrado, con su tabla en
+[`ui/Simbolos.tsx`](../src/ui/Simbolos.tsx): cada acción tiene uno y siempre el mismo, en las
+veintiuna pantallas. Los botones de **valor** —una octava, un tempo— no llevan: no son
+acciones, y un icono al lado de un «2» no significa nada.
+
+### Las vueltas se cuentan en el botón, y en ningún sitio más
+
+En las actividades de varias vueltas, **el botón anuncia la que va a empezar**: «Empezar · 1
+de 3», y al acabar ésa, «Otra vez · 2 de 3». En la última no hay número, hay «Terminar».
+
+Sale de dos cosas que el autor encontró seguidas. La primera: «si das otra vez sería como dar
+empezar, ¿no?» — y lo era, porque «Otra vez» devolvía a la pantalla de inicio y había que
+pulsar «Empezar» otra vez; dos toques para una intención, y con «Empezar» reapareciendo
+parecía que se reiniciaba todo cuando ibas por la vuelta dos de tres. La segunda, al ver el
+primer arreglo: «sale Vuelta 1 de 3 y luego en el botón 2 de 3». Los dos números eran
+correctos y decían cosas distintas —dónde estás y adónde vas—, y por eso juntos se leen como
+un error. El número vive donde se decide.
+
 ### Cuatro sitios donde la aplicación habla, y cada cosa en el suyo
 
 1. **Qué hay que hacer** → la pantalla de explicación. Se lee al entrar y se vuelve a leer
@@ -122,7 +164,10 @@ ninguna clase sin regla, ningún latido fuera de la acción principal.
    ese tipo. El enunciado no debe repetir la ayuda — la auditoría avisa si lo hace.
 2. **Dónde vas** → `.estado-actividad`. «Ahora tú», «esta vuelta va de palmas», «ya están
    todas puestas». Cambia solo, cabe en tres palabras, y por eso se puede quedar fijo.
-3. **Lo que ha pasado** → `Reaccion`, la tarjeta del personaje. Va **superpuesta** abajo a la
+3. **Lo que ha pasado** → `Reaccion`, la tarjeta del personaje. **Solo durante**: al empezar
+   y al terminar ya hay dos modales, y el «¡completada!» que salía aquí lo repetía la de
+   enhorabuena medio segundo después. Lo que se queda es lo que solo ella puede decir: el
+   «bien/casi» entre rondas y la pista concreta al fallar. Va **superpuesta** abajo a la
    izquierda, entra deslizando y se va sola a los tres segundos y medio más un poco por cada
    palabra. No recibe toques.
 

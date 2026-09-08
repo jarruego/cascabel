@@ -3783,6 +3783,21 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   text-align: center;
   font-variant-numeric: tabular-nums;
 }
+/*
+  Vacía se esconde entera, borde incluido.
+
+  No basta con que el componente no se dibuje si no le pasan hijos: lo que le llega son
+  condiciones, y mientras suena el ritmo las tres valen `false`. React entonces no pinta
+  ningún nodo dentro, pero el `<div>` sigue ahí con su borde y su relleno, quedándose una
+  franja de pantalla para no decir nada. `:empty` casa justo con eso —cero nodos hijos, ni
+  texto— y con `display: none` el observador de tamaño publica 0, así que el hueco que la
+  actividad reserva abajo desaparece con ella.
+
+  Es además cuando más falta hace el sitio: la barra se queda vacía justo mientras el niño
+  escucha y responde.
+*/
+.barra-acciones:empty { display: none; }
+
 /* Ampliado no hay barra de navegación debajo, así que la botonera baja a ocupar su sitio.
    No se esconde: son los mandos, y sin ellos no se puede ni empezar ni parar. */
 .lienzo[data-ampliado] .barra-acciones { bottom: 0; }

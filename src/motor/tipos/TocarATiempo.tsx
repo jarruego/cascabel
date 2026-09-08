@@ -452,17 +452,6 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
         <CuentaAtras desde={CUENTA_PULSOS - 1} bpm={bpm} alTerminar={() => {}} />
       )}
 
-      {/*
-        En qué vuelta va. Seis actividades de este tipo hacen tres o cuatro y ninguna lo
-        decía: ni al entrar, ni durante, ni en el botón, así que el niño no sabía si le
-        quedaba una o cinco. Con una sola vuelta no sale: un «1 de 1» es ruido.
-      */}
-      {repeticiones > 1 && (
-        <p className="estado-actividad">
-          {t('tocar.vuelta', { n: ronda + 1, total: repeticiones })}
-        </p>
-      )}
-
       {fase === 'escuchando' && <p className="estado-actividad">{t('tocar.escucha')}</p>}
 
       {fase === 'respondiendo' && (
@@ -520,7 +509,12 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
             onClick={() => void empezar()}
           >
             <IconoTocar />
-            {t('accion.empezar')}
+            {/* El botón anuncia la vuelta que va a empezar, y es el único sitio donde sale
+                el número: con una cuenta en pantalla y otra aquí había dos números distintos
+                a la vez, uno diciendo dónde estás y otro adónde vas. */}
+            {repeticiones > 1
+              ? t('comun.empezarDe', { n: ronda + 1, total: repeticiones })
+              : t('accion.empezar')}
           </button>
         )}
 
@@ -574,7 +568,7 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
             {/* En la última vuelta no dice «otra vez», porque no hay otra. */}
             {ronda + 1 >= repeticiones
               ? t('comun.terminar')
-              : t('tocar.otraVezDe', { n: ronda + 2, total: repeticiones })}
+              : t('comun.otraVezDe', { n: ronda + 2, total: repeticiones })}
           </button>
         )}
       </BarraAcciones>
