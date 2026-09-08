@@ -60,6 +60,22 @@ const PALABRAS_DIFICILES = [
   'digitación', 'bordón', 'diatónica', 'cromática', 'anacrusa',
 ];
 
+/**
+ * Qué ayuda enseña la pantalla de explicación para cada tipo.
+ *
+ * Es la mitad de `src/motor/ayudaPorTipo.ts` que se puede comparar con un texto: los dos
+ * tipos que la eligen en marcha —karaoke según tenga botones por carril, tocar a tiempo
+ * según entre por micrófono— se quedan fuera, porque aquí no se sabe cuál saldría.
+ */
+const AYUDA_POR_TIPO = {
+  seguir: 'seguir.sigue',
+  ordenar: 'ordenar.tambienArrastrando',
+  lienzo: 'lienzo.libre',
+  teclado: 'teclado.libre',
+  pads: 'pads.libre',
+  referencia: 'referencia.paraConsultar',
+};
+
 const hallazgos = [];
 const avisa = (id, regla, que) => hallazgos.push({ id, regla, que });
 
@@ -132,6 +148,28 @@ for (const fichero of ficheros) {
       avisa(id, 'curriculo-pendiente', `«${campo}» está en null y espera confirmación`);
     }
   }
+  /*
+    El número del criterio dice de qué competencia cuelga: 3.5 es de la tercera, 4.1 de la
+    cuarta. Dos actividades no cuadraban y las dos enseñaban en la ficha una competencia que
+    no era la suya — `inf-06` decía CE3 con el criterio 4.1, e `inf-16` no decía ninguna.
+
+    Esto no es criterio musical: es concordancia. Qué criterio toca sí lo es, y eso va a la
+    lista de revisión, no aquí.
+  */
+  if (cur.competencia && cur.criterio) {
+    const numero = String(cur.competencia).replace('CE', '');
+    if (!String(cur.criterio).startsWith(`${numero}.`)) {
+      avisa(
+        id,
+        'curriculo',
+        `${cur.competencia} con el criterio ${cur.criterio}: el número del criterio dice de ` +
+          'qué competencia cuelga, así que uno de los dos está mal',
+      );
+    }
+  } else if (cur.criterio && !cur.competencia) {
+    avisa(id, 'curriculo', `criterio ${cur.criterio} sin competencia, y el número la dice`);
+  }
+
   const areaInfantil = etapa === 'infantil';
   const esperada = areaInfantil
     ? 'Comunicación y Representación de la Realidad'
@@ -150,6 +188,40 @@ for (const fichero of ficheros) {
       `${a.personaje} en una actividad de «${a.eje}», que no es lo suyo: revísalo contra ` +
         'docs/14-PERSONAJES.md o cámbialo',
     );
+  }
+
+  /*
+    El enunciado no repite lo que ya dice la ayuda de su tipo.
+
+    La pantalla de explicación cuenta dos cosas seguidas: qué hay que hacer (esta actividad)
+    y cómo se maneja (todas las de su tipo). Al juntarlas salieron duplicados literales:
+
+        Sigue los dibujos con el dedo mientras suena la canción.
+        Sigue el dibujo con el dedo mientras suena.
+
+    Se comparan las palabras largas —las de cinco letras o más—, que son las que llevan el
+    significado. Con cuatro en común ya se está diciendo lo mismo dos veces.
+  */
+  const ayuda = textos[AYUDA_POR_TIPO[a.tipo] ?? ''] ?? '';
+  if (ayuda && enunciado) {
+    const palabras = (x) =>
+      new Set(
+        x
+          .toLowerCase()
+          .replace(/[^a-záéíóúüñ ]/g, ' ')
+          .split(/\s+/)
+          .filter((w) => w.length >= 5),
+      );
+    const suyas = palabras(enunciado);
+    const comunes = [...palabras(ayuda)].filter((w) => suyas.has(w));
+    if (comunes.length >= 4) {
+      avisa(
+        id,
+        'textos',
+        `el enunciado repite la ayuda del tipo (${comunes.join(', ')}): en la pantalla de ` +
+          'explicación salen seguidos y se lee dos veces lo mismo',
+      );
+    }
   }
 
   // ── Interfaz: extras que no vienen al caso ──────────────────────────────────
@@ -191,4 +263,29 @@ for (const [regla, lista] of [...porRegla].sort()) {
   console.log();
 }
 if (!hallazgos.length) console.log('Sin hallazgos.');
+
+/*
+  Y el recuento de saberes, que no es un aviso sino una foto.
+
+  PENDIENTE DE REVISIÓN PEDAGÓGICA. Los saberes se escriben a mano en cada JSON y aquí no
+  hay forma de saber cuál es la redacción buena: el real decreto está en el BOE y este
+  proyecto no lo tiene delante. Lo que sí se ve es cuándo una redacción la usa **una sola
+  actividad** y otra parecida la usan treinta, que casi siempre significa que alguien
+  escribió el mismo saber de dos maneras — pasó con el F de Infantil, que estaba de cuatro
+  formas distintas y partía en cuatro un grupo que es uno.
+
+  Se imprime ordenado por uso para que se lea de un vistazo cuáles hay que confirmar. Lo que
+  hace falta es una maestra con el decreto delante diciendo cuál es la buena; hasta entonces
+  no se toca ninguna que no sea una variante evidente de otra.
+*/
+const saberes = new Map();
+for (const f of ficheros) {
+  const a = JSON.parse(readFileSync(join(DIR, f), 'utf-8'));
+  const clave = `${a.etapa === 'infantil' ? 'Infantil' : 'Primaria'}  ${a.curriculo?.saber}`;
+  saberes.set(clave, (saberes.get(clave) ?? 0) + 1);
+}
+console.log('## saberes declarados, por uso');
+for (const [clave, n] of [...saberes].sort((x, y) => y[1] - x[1])) {
+  console.log(`   ${String(n).padStart(3)}  ${clave}${n === 1 ? '   <- confirmar' : ''}`);
+}
 process.exitCode = 0;
