@@ -3,7 +3,8 @@ import { Modal } from './Modal';
 import { Personaje } from './Personaje';
 import type { Personaje as NombrePersonaje } from './personajes';
 import { t } from '@/i18n';
-import type { Actividad, } from '@/motor/tipos';
+import { ayudaDe } from '@/motor/ayudaPorTipo';
+import type { Actividad } from '@/motor/tipos';
 
 /**
  * Los dos modales que rodean a toda actividad: el que explica antes y el que celebra
@@ -31,6 +32,7 @@ export function ModalExplicacion({
   alCerrar: () => void;
 }) {
   const cerrar = alCerrar;
+  const ayuda = ayudaDe(actividad);
 
   return (
     <Modal abierto={abierto} alCerrar={cerrar} titulo={actividad.titulo}>
@@ -42,9 +44,70 @@ export function ModalExplicacion({
 
       {actividad.enunciado && <p className="modal__texto">{t(actividad.enunciado)}</p>}
 
-      <div className="modal__acciones">
+      {/*
+        Cómo se maneja la pantalla, que es igual en todas las de su tipo.
 
-        <button type="button" className="boton-actividad modal__empezar" onClick={cerrar}>
+        Estas frases estaban antes fijas ENCIMA de la actividad —«sigue el dibujo con el
+        dedo mientras suena», «aquí no hay nada que acertar»— y el autor pidió que dejaran
+        de estar ahí: ya se han contado al entrar, y mientras se juega la pantalla es de la
+        actividad. Su sitio es este, y se vuelven a leer pulsando al personaje.
+      */}
+      {ayuda.comoVa && <p className="modal__texto">{t(ayuda.comoVa)}</p>}
+
+      {/* Y lo que necesita el adulto y el niño no: que el piano también se toca con el
+          teclado del ordenador, que el eco es para dos. Va aparte y en pequeño porque no
+          es para quien está a punto de jugar. */}
+      {ayuda.paraElAdulto && <p className="modal__adulto">{t(ayuda.paraElAdulto)}</p>}
+
+      <div className="modal__acciones">
+        <button type="button" className="boton-principal modal__empezar" onClick={cerrar}>
+          {t('comun.empezar')}
+        </button>
+      </div>
+    </Modal>
+  );
+}
+
+/**
+ * La pantalla que explica para qué vamos a escuchar.
+ *
+ * `CLAUDE.md` §8: «permiso tardío y contextual, tras una pantalla explicativa ilustrada».
+ * Sale **después** de la explicación de la actividad y **solo** en las que usan micrófono,
+ * justo antes de que el navegador enseñe su propio aviso — que es una barra gris que dice
+ * «quiere usar tu micrófono» y no explica nada.
+ *
+ * Lo que se cuenta aquí es lo único que de verdad importa y el navegador no puede decir:
+ * **que la voz se queda en este aparato**. No la oye nadie, no se sube a ningún sitio y no
+ * se guarda. Es cierto por construcción —el análisis vive en un `AudioWorklet` y no hay
+ * `fetch` ni `MediaRecorder` en el camino— y es lo que hace que jurídicamente no tratemos
+ * datos personales de un menor.
+ *
+ * Y las dos salidas valen lo mismo. «Prefiero tocar en la pantalla» no es rendirse: la vía
+ * de toque está terminada antes de que se escriba ningún detector, y con ella la actividad
+ * se hace entera. Por eso las dos son botones de verdad y no un botón y un enlace pequeño.
+ */
+export function ModalMicrofono({
+  abierto,
+  personaje = 'dora',
+  alAceptar,
+  alRechazar,
+}: {
+  abierto: boolean;
+  personaje?: NombrePersonaje;
+  alAceptar: () => void;
+  alRechazar: () => void;
+}) {
+  return (
+    <Modal abierto={abierto} alCerrar={alRechazar} titulo={t('microfono.permiso.titulo')}>
+      <Personaje nombre={personaje} pose="escucha" tamano={110} />
+      <h2>{t('microfono.permiso.titulo')}</h2>
+      <p className="modal__texto">{t('microfono.permiso.texto')}</p>
+
+      <div className="modal__acciones">
+        <button type="button" className="boton-repetir" onClick={alRechazar}>
+          {t('comun.sinMicrofono')}
+        </button>
+        <button type="button" className="boton-principal modal__empezar" onClick={alAceptar}>
           {t('comun.empezar')}
         </button>
       </div>
@@ -84,12 +147,11 @@ export function ModalExito({
       <h2>{t('comun.completada')}</h2>
       <p className="modal__texto">{t('modal.exitoTexto')}</p>
 
-
       <div className="modal__acciones">
         <button type="button" className="boton-repetir" onClick={alRepetir}>
           {t('modal.otraVez')}
         </button>
-        <button type="button" className="boton-actividad modal__empezar" onClick={alVolver}>
+        <button type="button" className="boton-principal modal__empezar" onClick={alVolver}>
           {t('modal.volver')}
         </button>
       </div>

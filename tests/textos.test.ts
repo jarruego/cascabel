@@ -99,6 +99,52 @@ describe('los textos del contenido', () => {
     .filter((f) => f.endsWith('.json'))
     .map((f) => JSON.parse(readFileSync(join(DIR, f), 'utf-8')) as Record<string, unknown>);
 
+  /** `actividad.c103pulso.enunciado` -> `c103pulso`. */
+  function espacios(a: Record<string, unknown>): Set<string> {
+    const nombres = new Set<string>();
+    const buscar = (v: unknown) => {
+      if (typeof v === 'string') {
+        const m = /^actividad\.([a-z0-9]+)\./.exec(v);
+        if (m) nombres.add(m[1]!);
+      } else if (Array.isArray(v)) v.forEach(buscar);
+      else if (v && typeof v === 'object') Object.values(v).forEach(buscar);
+    };
+    buscar(a);
+    return nombres;
+  }
+
+  /*
+    Cada actividad tiene su espacio de nombres, y no lo comparte.
+
+    Salió de dos casos reales del 2026-09-08, y los dos enseñaban al niño la frase de otra
+    actividad: «El pulso escondido» abría diciendo «toca los sonidos en orden, empezando por
+    el más grave», que es «De grave a agudo»; y «Paisaje sonoro» decía «toca un dibujo y
+    luego el sonido que le va», que es el memory de instrumentos.
+
+    Lo que falló es que las claves se escriben a mano y dos actividades acabaron con el
+    mismo prefijo. La que llegó después se inventó un `c103b` para su consigna, pero su
+    enunciado se quedó en el prefijo compartido. **No dio ningún error**: la clave existía y
+    devolvía una frase bien escrita. Solo que de otra actividad, y eso no lo caza ninguna
+    comprobación de «existe la clave».
+  */
+  it('cada actividad usa un espacio de nombres propio', () => {
+    const mal: string[] = [];
+    const dueno = new Map<string, string>();
+    for (const a of actividades) {
+      const id = String(a.id);
+      const suyos = [...espacios(a)];
+      if (suyos.length > 1) {
+        mal.push(`${id} mezcla ${suyos.join(' y ')}: alguno de sus textos es de otra`);
+      }
+      for (const n of suyos) {
+        const otro = dueno.get(n);
+        if (otro && otro !== id) mal.push(`«${n}» lo usan ${otro} y ${id}`);
+        else dueno.set(n, id);
+      }
+    }
+    expect(mal, mal.join('\n')).toEqual([]);
+  });
+
   it('toda clave que pide una actividad existe', () => {
     const rotas: string[] = [];
     for (const a of actividades) {

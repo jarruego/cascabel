@@ -9,6 +9,7 @@ import { evaluarRitmo, type EvaluacionRitmica } from '../evaluacion';
 import { aMilisegundos, anclarEn, rejillaDesdeSilabas } from '../rejillaRitmica';
 import { Reaccion } from '@/ui/Reaccion';
 import type { Personaje as PersonajeNombre } from '@/ui/personajes';
+import { rechazarMicrofono, seUsaMicrofono } from '@/escucha/permiso';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { CuentaAtras } from '@/ui/CuentaAtras';
@@ -124,6 +125,9 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
 
   /** Intenta el micrófono. Si no puede, sigue con toque. Nunca lanza. */
   const intentarMicrofono = useCallback(async () => {
+    // Si ya se dijo que no en esta sesión, no se vuelve a insistir (`CLAUDE.md` §8). Y sin
+    // aviso: quien eligió tocar en la pantalla no ha tenido ningún problema que contarle.
+    if (!seUsaMicrofono()) return;
     try {
       const d = new DetectorDePalmadas();
       await d.arrancar((onset) => {
@@ -147,6 +151,9 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
       detector.current?.parar();
       detector.current = null;
       setConMicrofono(false);
+      // Un «no» del navegador vale para toda la sesión: volver a pedirlo en cada ronda es
+      // sacar la barra gris del navegador una y otra vez a quien ya ha dicho que no.
+      rechazarMicrofono();
       // El aviso es para el adulto. Al niño solo le aparece el botón grande.
       setAvisoMicro(err.tipo === 'denegado' ? 'tocar.sinPermiso' : 'tocar.sinMicrofono');
     }
@@ -429,7 +436,7 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
       )}
 
       {fase === 'listo' && (
-        <button type="button" className="boton-arranque boton-repetir" onClick={() => void empezar()}>
+        <button type="button" className="boton-principal boton-arranque" onClick={() => void empezar()}>
           {t('accion.empezar')}
         </button>
       )}
@@ -447,7 +454,7 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
         <CuentaAtras desde={CUENTA_PULSOS - 1} bpm={bpm} alTerminar={() => {}} />
       )}
 
-      {fase === 'escuchando' && <p aria-live="polite">{t('tocar.escucha')}</p>}
+      {fase === 'escuchando' && <p className="estado-actividad">{t('tocar.escucha')}</p>}
 
       {fase === 'respondiendo' && (
         <>
@@ -469,7 +476,7 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
           {/* Se queda porque CAMBIA durante la actividad: dice en qué punto estás, no qué
               hay que hacer. Lo segundo lo explica el personaje. */}
           {viaVisible === 'palmada' && (
-            <p className="pista-fija">{t('tocar.vaDePalmas')}</p>
+            <p className="estado-actividad">{t('tocar.vaDePalmas')}</p>
           )}
         </>
       )}
@@ -481,10 +488,13 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
       )}
 
       {fase === 'resultado' && sinRespuesta && (
-        <section className="tocar__resultado" aria-live="polite">
-          {/* Ni felicitación ni reproche: solo lo que ha pasado y la puerta abierta. */}
-          <p className="tocar__mensaje">{t('tocar.noHasTocado')}</p>
-          <button type="button" className="boton-repetir" onClick={() => void empezar()}>
+        <section className="tocar__resultado">
+          {/* Ni felicitación ni reproche: solo lo que ha pasado y la puerta abierta. Y lo
+              dice el personaje, como todo lo que la actividad le contesta al niño. */}
+          <Reaccion tono="casi" personaje={actividad.personaje}>
+            {t('tocar.noHasTocado')}
+          </Reaccion>
+          <button type="button" className="boton-principal" onClick={() => void empezar()}>
             {t('tocar.otraVez')}
           </button>
         </section>
@@ -568,7 +578,7 @@ function Resultado({
         Lo que sí llega al niño es la lectura de esos números en palabras: «tu pulso es muy
         regular, solo vas un poquito por detrás». Eso lo decide `mensaje`, aquí arriba.
       */}
-      <button type="button" className="boton-repetir" onClick={alSeguir}>
+      <button type="button" className="boton-principal" onClick={alSeguir}>
         {ronda + 1 >= repeticiones ? t('comun.siguiente') : t('tocar.otraVez')}
       </button>
     </section>

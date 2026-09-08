@@ -257,7 +257,8 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
       <div className="seguir__acciones">
         <button
           type="button"
-          className="boton-arranque boton-actividad seguir__play"
+          className="boton-principal boton-arranque seguir__play"
+          data-sonando={sonando || undefined}
           onClick={() => (sonando ? parar() : void arrancar())}
         >
           <Icono nombre={sonando ? 'pausa' : 'reproducir'} tamano={36} />

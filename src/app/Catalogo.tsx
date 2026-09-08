@@ -224,6 +224,10 @@ export default function Catalogo() {
   return (
     <main className="catalogo">
       <h1>{t('catalogo.titulo')}</h1>
+      {/* La promesa, escrita donde se entra y no solo en la política de privacidad. Es una
+          línea, va antes de la barra de filtros y desaparece al desplazarse: quien llega
+          por primera vez la lee, y quien viene a buscar una actividad no la vuelve a ver. */}
+      <p className="catalogo__lema">{t('app.lema')}</p>
 
       {/*
         Filtros sin etiqueta visible: **la opción «todos» se llama como la categoría**, así

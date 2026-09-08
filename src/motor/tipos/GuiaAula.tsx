@@ -103,7 +103,12 @@ export default function GuiaAula({ actividad }: PropsActividad) {
       </div>
 
       <div className="guia__controles no-imprimir">
-        <button type="button" className="boton-repetir" onClick={sonando ? parar : arrancar}>
+        <button
+          type="button"
+          className="boton-principal boton-arranque"
+          data-sonando={sonando || undefined}
+          onClick={sonando ? parar : arrancar}
+        >
           {sonando ? t('accion.sinPulso') : t('accion.pulso')}
         </button>
 

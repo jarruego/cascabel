@@ -131,7 +131,7 @@ export default function Paisaje({ actividad }: PropsActividad) {
       <div className="paisaje__acciones">
         <button
           type="button"
-          className="boton-actividad paisaje__grabar"
+          className="boton-principal boton-arranque paisaje__grabar"
           data-grabando={grabando || undefined}
           aria-pressed={grabando}
           onClick={() => void (grabando ? detener() : empezar())}
@@ -164,7 +164,11 @@ export default function Paisaje({ actividad }: PropsActividad) {
                 <button type="button" className="boton-repetir" onClick={() => escuchar(g)}>
                   <IconoTocar />
                   {sonando === g.id ? t('teclado.sonando') : t('paisaje.escuchar')}
-                  <span className="paisaje__duracion">{Math.round(g.duracionMs / 1000)} s</span>
+                  {/* «12 segundos» y no «12 s»: la abreviatura hay que sabérsela, y esto lo lee un
+                      niño de nueve años que está eligiendo cuál de sus grabaciones oír. */}
+                  <span className="paisaje__duracion">
+                    {Math.round(g.duracionMs / 1000)} {t('paisaje.duracion')}
+                  </span>
                 </button>
                 {/* Borrar a un clic y sin preguntar: una confirmación en medio solo sirve
                     para que borrar dé pereza, y aquí borrar tiene que ser fácil. */}

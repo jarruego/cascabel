@@ -66,7 +66,7 @@ export function Retos({ retos }: Props) {
           )}
           <button
             type="button"
-            className="boton-actividad modal__empezar"
+            className="boton-principal modal__empezar"
             onClick={() => setAbierto(false)}
           >
             {t('retos.aTocar')}

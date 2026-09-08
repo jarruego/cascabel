@@ -188,7 +188,7 @@ export default function Eco({ actividad }: PropsActividad) {
 
       <div className="eco__acciones">
         {fase === 'esperando' && (
-          <button type="button" className="boton-actividad" onClick={empezarPrimero}>
+          <button type="button" className="boton-principal boton-arranque" onClick={empezarPrimero}>
             <IconoTocar />
             {t('eco.empiezaUno')}
           </button>
@@ -197,7 +197,7 @@ export default function Eco({ actividad }: PropsActividad) {
         {fase === 'primero' && (
           <button
             type="button"
-            className="boton-actividad"
+            className="boton-principal"
             aria-disabled={primero.length < 2 || undefined}
             onClick={() => primero.length >= 2 && terminarPrimero()}
           >
@@ -216,7 +216,7 @@ export default function Eco({ actividad }: PropsActividad) {
               <IconoTocar />
               {t('eco.escucharlo')}
             </button>
-            <button type="button" className="boton-actividad" onClick={empezarSegundo}>
+            <button type="button" className="boton-principal" onClick={empezarSegundo}>
               {t('eco.ahoraTu')}
             </button>
           </>
@@ -225,7 +225,7 @@ export default function Eco({ actividad }: PropsActividad) {
         {fase === 'segundo' && (
           <button
             type="button"
-            className="boton-actividad"
+            className="boton-principal"
             aria-disabled={segundo.length < 1 || undefined}
             onClick={() => segundo.length >= 1 && terminarSegundo()}
           >
@@ -250,7 +250,7 @@ export default function Eco({ actividad }: PropsActividad) {
             >
               {t('eco.oirElDos')}
             </button>
-            <button type="button" className="boton-actividad" onClick={empezarPrimero}>
+            <button type="button" className="boton-principal" onClick={empezarPrimero}>
               {t('eco.otraVez')}
             </button>
           </>

@@ -11,6 +11,8 @@ import {
   mensajeAfinacion,
   type EvaluacionAfinacion,
 } from '../afinacion';
+import { rechazarMicrofono, seUsaMicrofono } from '@/escucha/permiso';
+import { Reaccion } from '@/ui/Reaccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
@@ -155,7 +157,9 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
     await new Promise((r) => setTimeout(r, 1700));
 
     let escuchando = false;
-    if (!detector.current) {
+    // Si en esta sesión se eligió tocar en la pantalla, no se vuelve a pedir el micrófono
+    // (`CLAUDE.md` §8). La actividad sigue: se oye la nota y se canta, sin que nadie mida.
+    if (!detector.current && seUsaMicrofono()) {
       try {
         const d = new DetectorDeTono();
         await d.arrancar((lectura) => {
@@ -200,6 +204,9 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
         const err = e as Error & { tipo?: string };
         detector.current = null;
         setConMicrofono(false);
+        // Un «no» del navegador vale para toda la sesión: nada de sacarle la barra gris en
+        // cada nota a quien ya ha dicho que no.
+        rechazarMicrofono();
         setAvisoMicro(err.tipo === 'denegado' ? 'cantar.sinPermiso' : 'cantar.sinMicrofono');
       }
     } else {
@@ -305,7 +312,7 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
       {fase === 'listo' && (
         <button
           type="button"
-          className="boton-arranque boton-actividad cantar__empezar"
+          className="boton-principal boton-arranque"
           onClick={() => setFase('cuenta')}
         >
           <Icono nombre="voz" tamano={40} /> {t('accion.empezar')}
@@ -313,30 +320,34 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
       )}
 
       {fase === 'cuenta' && <CuentaAtras alTerminar={() => void empezar()} />}
-      {fase === 'sonando' && <p aria-live="polite">{t('cantar.escuchaLaNota')}</p>}
-      {fase === 'escuchando' && <p aria-live="polite">{t('cantar.ahoraTu')}</p>}
+      {/* Estado, no instrucción: dice en qué punto va la actividad —ahora suena, ahora te
+          toca—, cambia solo y cabe en tres palabras. Lo que hay que hacer lo cuenta el
+          personaje al entrar. `.estado-actividad` es la misma pinta en todos los tipos. */}
+      {fase === 'sonando' && <p className="estado-actividad">{t('cantar.escuchaLaNota')}</p>}
+      {fase === 'escuchando' && <p className="estado-actividad">{t('cantar.ahoraTu')}</p>}
 
       {fase === 'resultado' && (
-        <section className="cantar__resultado" aria-live="polite">
-          {evaluacion ? (
-            <>
-              <p className="cantar__mensaje">{t(mensajeAfinacion(evaluacion))}</p>
-              {/* Las cifras son para el maestro. El niño ya tiene su frase. */}
-              <p className="cantar__cifras">
-                {evaluacion.centsMedios > 0 ? '+' : ''}
-                {evaluacion.centsMedios.toFixed(0)} cents · {t('cantar.estabilidad')}{' '}
-                {evaluacion.desviacionCents.toFixed(0)}
-              </p>
-            </>
-          ) : (
-            <p className="cantar__mensaje">{t('cantar.sinMedir')}</p>
-          )}
+        <section className="cantar__resultado">
+          {/*
+            Lo dice el personaje, en una tarjeta que entra y se va, como en todas.
+
+            Y **los cents se han ido de aquí**. Eran para el maestro —lo decía el propio
+            comentario que había— y su sitio es la hoja de seguimiento de la ficha, no la
+            pantalla de un niño de ocho años que acaba de cantar. Lo que el niño necesita es
+            la lectura de ese número en palabras, que es lo que da `mensajeAfinacion`.
+          */}
+          <Reaccion
+            tono={evaluacion && Math.abs(evaluacion.centsMedios) <= 50 ? 'bien' : 'casi'}
+            personaje={actividad.personaje}
+          >
+            {t(evaluacion ? mensajeAfinacion(evaluacion) : 'cantar.sinMedir')}
+          </Reaccion>
 
           <div className="cantar__acciones">
             <button type="button" className="boton-repetir" onClick={() => void empezar()}>
               {t('cantar.otraVez')}
             </button>
-            <button type="button" className="boton-repetir" onClick={siguiente}>
+            <button type="button" className="boton-principal" onClick={siguiente}>
               {indice + 1 >= contenido.notas.length ? t('comun.siguiente') : t('cantar.siguienteNota')}
             </button>
           </div>

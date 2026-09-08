@@ -28,7 +28,7 @@
     "alternativa": "toque"
   },
   "contenido": {
-    "consigna": "actividad.c103b.consigna",
+    "consigna": "actividad.c103pulso.consigna",
     "silabas": [
       "ta",
       "sh",
@@ -46,7 +46,7 @@
       "desviacion_tipica"
     ]
   },
-  "enunciado": "actividad.c103.enunciado",
+  "enunciado": "actividad.c103pulso.enunciado",
   "personaje": "fara",
   "creditos": [
     {
@@ -64,6 +64,6 @@
   ],
   "estado": "borrador",
   "pistas": [
-    "actividad.c103b.pista1"
+    "actividad.c103pulso.pista1"
   ]
 }

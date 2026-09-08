@@ -294,7 +294,7 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
         {modo === 'dictado' && (
           <button
             type="button"
-            className="boton-repetir"
+            className="boton-principal"
             onClick={() =>
               despachar({ tipo: 'comprobar', solucion: contenido.solucion ?? [] })
             }

@@ -246,7 +246,8 @@ export default function Pistas({ actividad }: PropsActividad) {
       <div className="pistas__acciones">
         <button
           type="button"
-          className="boton-arranque boton-actividad"
+          className="boton-principal boton-arranque"
+          data-sonando={estado.sonando || undefined}
           onClick={() => void reproducir()}
         >
           {estado.sonando ? <IconoParar /> : <IconoTocar />}

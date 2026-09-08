@@ -117,7 +117,7 @@ export default function Acompanamientos({ actividad }: PropsActividad) {
               </div>
               <button
                 type="button"
-                className="boton-actividad"
+                className="boton-principal"
                 aria-pressed={activa}
                 onClick={() => void arrancar(b)}
               >

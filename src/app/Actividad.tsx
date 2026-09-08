@@ -6,7 +6,8 @@ import { Lienzo } from '@/ui/Lienzo';
 import { Personaje } from '@/ui/Personaje';
 import { anotar } from '@/datos/progreso';
 import { esLibre } from '@/motor/actividadesLibres';
-import { ModalExito, ModalExplicacion } from '@/ui/ModalesActividad';
+import { ModalExito, ModalExplicacion, ModalMicrofono } from '@/ui/ModalesActividad';
+import { aceptarMicrofono, hayQuePreguntar, rechazarMicrofono } from '@/escucha/permiso';
 import { usePreferencias } from './preferencias';
 import { t } from '@/i18n';
 import type { Actividad as TipoActividad, ResultadoActividad } from '@/motor/tipos';
@@ -48,6 +49,14 @@ export default function Actividad() {
    */
   const [empezada, setEmpezada] = useState(false);
   const [explicacion, setExplicacion] = useState(true);
+  /**
+   * La pantalla que explica para qué vamos a escuchar, entre la explicación y la actividad.
+   *
+   * Solo en las que usan micrófono y solo la primera vez de la sesión: `CLAUDE.md` §8 pide
+   * permiso «tardío y contextual, tras una pantalla explicativa ilustrada», y que si se
+   * deniega no se vuelva a insistir. Lo que se acuerda de eso es `escucha/permiso.ts`.
+   */
+  const [permiso, setPermiso] = useState(false);
   const [intento, setIntento] = useState(0);
 
   useEffect(() => {
@@ -57,6 +66,7 @@ export default function Actividad() {
     setResultado(null);
     setEmpezada(false);
     setExplicacion(true);
+    setPermiso(false);
     cargarActividad(id)
       .then((a) => vivo && setActividad(a))
       .catch((e: Error) => vivo && setFallo(e.message));
@@ -126,6 +136,7 @@ export default function Actividad() {
 
   const Componente = componenteDe(actividad.tipo);
   const quien = actividad.personaje ?? 'dora';
+  const conMicrofono = actividad.entrada.modo.startsWith('microfono');
   /* En la guía de aula no sale personaje: esa pantalla es el guion del maestro proyectado, y
      ahí una cara es decoración que le roba sitio a lo que mira la clase entera. */
   const conPersonaje = actividad.tipo !== 'guia-aula';
@@ -137,6 +148,28 @@ export default function Actividad() {
         actividad={actividad}
         alCerrar={() => {
           setExplicacion(false);
+          /*
+            Si la actividad escucha, y en esta sesión aún no se ha preguntado, va primero la
+            pantalla del micrófono. Reabrir la explicación pulsando al personaje no la vuelve
+            a sacar: `empezada` ya está puesta y la pregunta ya se hizo.
+          */
+          if (!empezada && conMicrofono && hayQuePreguntar()) setPermiso(true);
+          else setEmpezada(true);
+        }}
+      />
+
+      <ModalMicrofono
+        abierto={permiso}
+        personaje={quien}
+        alAceptar={() => {
+          aceptarMicrofono();
+          setPermiso(false);
+          setEmpezada(true);
+        }}
+        alRechazar={() => {
+          // Decir que no NO cancela la actividad: se hace entera tocando en la pantalla.
+          rechazarMicrofono();
+          setPermiso(false);
           setEmpezada(true);
         }}
       />

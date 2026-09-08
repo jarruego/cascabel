@@ -405,11 +405,11 @@ export default function Lienzo({ actividad }: PropsActividad) {
         {contenido.retos && <Retos retos={contenido.retos} />}
         <button type="button" className="boton-repetir" onClick={() => setTrazos([])}>
           {t('lienzo.limpiar')}
-        </button>      </div>
+        </button>
+      </div>
 
-      {/* Pista FIJA, no feedback: no cambia nunca, así que no necesita aria-live —un
-          lector de pantalla ya la lee al llegar—. No hay marcador, ni porcentaje, ni
-          «bien hecho»: aquí no se evalúa nada. */}
+      {/* Y no hay nada más: ni marcador, ni porcentaje, ni «bien hecho». Aquí no se evalúa
+          nada, así que no hay nada que contestarle al niño. */}
     </section>
   );
 }

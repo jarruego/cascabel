@@ -200,12 +200,14 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
         {sinColocar.map((clave) => (
           <span key={clave}>{ficha(clave, null)}</span>
         ))}
-        {sinColocar.length === 0 && <p className="pista-fija">{t('ordenar.todasPuestas')}</p>}
+        {sinColocar.length === 0 && (
+          <p className="estado-actividad">{t('ordenar.todasPuestas')}</p>
+        )}
       </div>
 
       {/* Se queda porque CAMBIA durante la actividad: dice en qué punto estás, no
           qué hay que hacer. Lo segundo lo explica el personaje. */}
-      <p className="pista-fija">
+      <p className="estado-actividad">
         {estado.elegida ? t('ordenar.ahoraCasilla') : t('ordenar.tocaParaOir')}
       </p>
 
@@ -227,7 +229,7 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
         </button>
         <button
           type="button"
-          className="boton-repetir"
+          className="boton-principal"
           aria-disabled={!listo || estado.fase !== 'colocando' || undefined}
           onClick={() => despachar({ tipo: 'comprobar' })}
         >

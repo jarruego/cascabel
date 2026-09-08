@@ -111,7 +111,7 @@ export default function Compases({ actividad, alTerminar }: PropsActividad) {
       <div className="compases__acciones">
         <button
           type="button"
-          className="boton-repetir"
+          className="boton-principal"
           aria-disabled={estado.fase !== 'colocando' || undefined}
           onClick={() => despachar({ tipo: 'comprobar' })}
         >

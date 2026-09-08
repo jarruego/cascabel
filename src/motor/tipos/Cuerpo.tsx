@@ -191,7 +191,12 @@ export default function Cuerpo({ actividad }: PropsActividad) {
       </div>
 
       <div className="cuerpo__acciones">
-        <button type="button" className="boton-arranque boton-actividad" onClick={() => void arrancar()}>
+        <button
+          type="button"
+          className="boton-principal boton-arranque"
+          data-sonando={estado.sonando || undefined}
+          onClick={() => void arrancar()}
+        >
           {estado.sonando ? <IconoParar /> : <IconoTocar />}
           {t(estado.sonando ? 'accion.parar' : 'accion.empezar')}
         </button>      </div>

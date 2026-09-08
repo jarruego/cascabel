@@ -174,6 +174,11 @@
   --r-l: 22px;
   --r-redondo: 999px;
 
+  /* Lo que mide la barra de abajo de una actividad: el personaje (56) más su aire, más lo
+     que el aparato reserve para el gesto de inicio. Se apoyan en ella el hueco del final de
+     la actividad y la tarjeta de reacción, y a ojo se descuadraban una respecto de otra. */
+  --alto-barra: calc(76px + env(safe-area-inset-bottom));
+
   /*
    * ELEVACIÓN. Tres niveles y ni uno más: lo que está en la página, lo que se levanta al
    * tocarlo y lo que flota por encima de todo.
@@ -1041,9 +1046,6 @@ p {
   background: var(--superficie);
   font-size: 0.9em;
 }
-.tocar__mensaje {
-  font-size: 1.25em;
-}
 
 /* ── pentagrama ────────────────────────────────────────────────────────────
    El truco de docs/04-DISENO-UI.md: la nota se dibuja PEQUEÑA y correcta, y
@@ -1141,6 +1143,17 @@ p {
   color: var(--tinta-2);
   max-width: 34ch;
 }
+/* La nota para el adulto: más pequeña y separada, porque no es para quien va a jugar.
+   Un niño de seis años no necesita saber que el piano responde a la fila de la A. */
+.modal__adulto {
+  margin: 0;
+  max-width: 40ch;
+  padding-top: var(--e-2);
+  border-top: 1px solid var(--linea);
+  color: var(--tinta-2);
+  font-size: var(--t-s);
+  text-align: left;
+}
 .modal__acciones {
   display: flex;
   flex-wrap: wrap;
@@ -1148,12 +1161,18 @@ p {
   gap: var(--e-3);
   margin-top: var(--e-3);
 }
+/*
+  El botón de empezar del modal es `.boton-principal` como todos, solo que más grande.
+
+  Aquí traía además su propio color —verde sobre borde verde—, y desde que la clase común
+  pinta el relleno eso dejaba texto verde encima de fondo verde azulado: ilegible. El color
+  lo pone la clase común, y esta regla se queda solo con el tamaño, que es lo único
+  específico de estar dentro de un modal.
+*/
 .modal__empezar {
   min-height: 60px;
   padding: var(--e-3) var(--e-6);
   font-size: 1.15em;
-  border-color: var(--vivo-verde);
-  color: var(--vivo-verde);
 }
 /* La celebración se distingue por color Y por el icono de chispas: nunca solo color. */
 /* Toda superficie de color declara su color de texto explícitamente. Heredarlo es
@@ -1400,16 +1419,6 @@ p {
   background: var(--acento);
   opacity: 1;
 }
-.cantar__empezar {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--e-3);
-  min-height: 72px;
-  padding: var(--e-3) var(--e-6);
-  font-size: 1.15em;
-}
-.cantar__mensaje { font-size: 1.2em; }
-.cantar__cifras { color: var(--tinta-2); font-size: 0.85em; font-variant-numeric: tabular-nums; }
 .cantar__acciones { display: flex; flex-wrap: wrap; gap: var(--e-3); justify-content: center; }
 .cantar__aviso {
   padding: var(--e-3) var(--e-4);
@@ -1458,14 +1467,6 @@ p {
   .seguir__bloque[data-actual] { transform: none; border-width: 7px; }
 }
 .seguir__acciones { display: flex; justify-content: center; }
-.seguir__play {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--e-3);
-  min-height: 72px;
-  padding: var(--e-3) var(--e-6);
-  font-size: 1.15em;
-}
 
 /* ── lienzo: creación libre ────────────────────────────────────────────────
    No hay respuesta correcta, no hay comprobación y no se puede fallar. Es la
@@ -1886,9 +1887,38 @@ p {
   .ficha__marca--inf { bottom: -10mm; display: flex; }
 }
 
+/*
+  Nota para el ADULTO. Gris y pequeña, porque no es para el niño.
+*/
 .pista-fija {
   color: var(--tinta-2);
   font-size: 0.9em;
+}
+
+/*
+  Dónde vas. No qué hacer.
+
+  Tres tipos escribían esta línea de tres maneras distintas —un párrafo pelado, la nota gris
+  del adulto, y nada— y el autor lo notó como «mensajes repetidos dentro de la actividad».
+  El reparto, que vale para las veintiuna pantallas:
+
+    - **La explicación** dice QUÉ HAY QUE HACER. Se lee al entrar y se vuelve a leer
+      pulsando al personaje. No se repite en pantalla.
+    - **`.estado-actividad`** dice DÓNDE VAS: «ahora tú», «esta vuelta va de palmas», «ya
+      están todas puestas». Cambia sola, cabe en tres palabras y por eso se puede quedar.
+    - **`Reaccion`** dice LO QUE HA PASADO. Entra deslizando, se lee y se va.
+    - **`.pista-fija`** es para el adulto.
+
+  Sin `aria-live`: lo que cambia aquí es contexto, no un aviso, y anunciarlo cada vez
+  interrumpiría al lector de pantalla en mitad de la actividad. Lo que sí se anuncia es la
+  reacción, que es donde está la información nueva.
+*/
+.estado-actividad {
+  margin: var(--e-3) auto;
+  color: var(--tinta-2);
+  font-size: var(--t-s);
+  font-weight: 600;
+  text-align: center;
 }
 
 /* ── barra de navegación permanente ────────────────────────────────────────
@@ -2267,11 +2297,6 @@ p {
      y heredar el texto es lo que dejó el modal de éxito ilegible en modo oscuro. */
   color: var(--tinta);
   text-align: center;
-}
-.karaoke__mensaje {
-  margin: 0 0 var(--e-2);
-  font-size: 20px;
-  font-weight: 600;
 }
 .karaoke__cifras {
   margin: var(--e-1) 0;
@@ -2827,14 +2852,8 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 }
 .paisaje__buscar li { margin-bottom: var(--e-2); }
 .paisaje__acciones { display: flex; justify-content: center; margin: var(--e-5) 0; }
-.paisaje__grabar {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--e-3);
-  min-height: 88px;
-  padding: var(--e-3) var(--e-6);
-  font-size: var(--t-m);
-}
+/* Lo único propio: grabando se pinta de rojo, que es el color que todo el mundo asocia a
+   «se está grabando». El tamaño y la forma vienen de `.boton-principal`. */
 .paisaje__grabar[data-grabando] {
   color: var(--papel);
   background: var(--vivo-rojo);
@@ -3553,6 +3572,13 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   margin-inline: auto;
 }
 
+/* El lema, debajo del título del catálogo. Una línea, y solo se ve al llegar. */
+.catalogo__lema {
+  margin: calc(-1 * var(--e-3)) 0 var(--e-4);
+  color: var(--tinta-2);
+  font-size: var(--t-s);
+}
+
 /* El catálogo en columnas. Un móvil ve una, una tablet dos, un monitor tres o cuatro:
    sale del ancho disponible y no de una lista de puntos de ruptura que siempre se queda
    corta con la pantalla siguiente. */
@@ -3733,49 +3759,54 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
  * Y nunca rojo. §4: el error no castiga, así que el caso de «casi» es ámbar, la pose es
  * `anima` y no una cara triste, y no hay ni una cruz en toda la pantalla.
  * ------------------------------------------------------------------------ */
+/*
+  Va SUPERPUESTA, no dentro de la actividad.
+
+  Estaba en el flujo, y eso hacía justo lo que el autor pidió evitar: al aparecer empujaba
+  la actividad hacia abajo y al irse la subía otra vez, así que cada respuesta movía el
+  tablero dos veces. En un juego de tocar la casilla correcta, mover el tablero mientras el
+  niño apunta es peor que no decir nada.
+
+  Ahora se apoya en la esquina de abajo a la izquierda, justo encima de la barra, entra
+  deslizando y se va sola. Y no recibe toques: si cae encima de algo que se puede tocar, el
+  dedo pasa a través.
+*/
 .reaccion {
+  position: fixed;
+  left: var(--e-3);
+  bottom: calc(var(--alto-barra) + var(--e-3));
+  z-index: 20;
   display: flex;
   align-items: center;
   gap: var(--e-3);
-  margin: var(--e-4) auto;
-  max-width: 46ch;
+  width: min(38ch, calc(100vw - 2 * var(--e-3)));
   padding: var(--e-3) var(--e-4);
+  border: 2px solid var(--linea);
   border-radius: var(--r-m);
+  box-shadow: var(--sombra-2);
   color: var(--tinta);
   text-align: left;
-  /*
-    Entra deslizando por un lado y no cae desde arriba: un mensaje que aparece encima de la
-    actividad tapa justo lo que se está mirando. Entrando de lado se lee sin perder de vista
-    el ejercicio, que es lo que pidió el autor.
-
-    Sin `min-height`: reservar sitio para un mensaje que casi nunca está deja un hueco
-    permanente en mitad de la pantalla.
-  */
+  pointer-events: none;
   animation: reaccion-entra 260ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 @keyframes reaccion-entra {
   from { opacity: 0; transform: translateX(-24px); }
   to { opacity: 1; transform: translateX(0); }
 }
-/* El acierto entra por el otro lado. No es un capricho: dos mensajes seguidos que entran
-   igual se confunden entre sí, y el lado ya dice cuál es antes de leerlo. */
-.reaccion[data-tono='bien'] { animation-name: reaccion-entra-dcha; }
-@keyframes reaccion-entra-dcha {
-  from { opacity: 0; transform: translateX(24px); }
-  to { opacity: 1; transform: translateX(0); }
-}
 @media (prefers-reduced-motion: reduce) {
   .reaccion { animation: none; }
 }
-.reaccion[data-tono='bien'] { color: var(--tinta); background: var(--suave-verde); }
-.reaccion[data-tono='casi'] { color: var(--tinta); background: var(--suave-amarillo); }
-/* Sin juicio no hay recuadro: solo el texto, que suele ser una instrucción. */
-.reaccion[data-tono='neutro'] { background: none; padding-inline: 0; }
+.reaccion[data-tono='bien'] { background: var(--suave-verde); border-color: var(--vivo-verde); }
+.reaccion[data-tono='casi'] { background: var(--suave-amarillo); border-color: var(--vivo-naranja); }
+.reaccion[data-tono='neutro'] { background: var(--superficie); }
 
 .reaccion__texto { display: grid; gap: var(--e-1); margin: 0; }
 .reaccion__frase { font-size: var(--t-s); color: var(--tinta-2); }
 .reaccion__quien { font-weight: 700; color: var(--tinta); }
 .reaccion__pista { font-size: var(--t-m); }
+
+/* Ampliado no hay barra abajo, así que la tarjeta baja a ocupar ese hueco. */
+.lienzo[data-ampliado] .reaccion { bottom: var(--e-3); }
 
 @media (max-width: 26rem) {
   /* En un móvil estrecho el personaje se lleva demasiado ancho del texto. */
@@ -3814,8 +3845,9 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   background: var(--papel);
   border-top: 2px solid var(--linea);
 }
-/* Sitio para que la barra no tape el final de la actividad. */
-.actividad-marco { padding-bottom: calc(var(--e-8) + env(safe-area-inset-bottom)); }
+/* Sitio para que la barra no tape el final de la actividad. Y la altura vive en un token
+   porque hay dos cosas que se apoyan en ella: este hueco y la tarjeta de reacción. */
+.actividad-marco { padding-bottom: calc(var(--alto-barra) + var(--e-3)); }
 .barra-actividad__volver,
 .barra-actividad__ficha {
   display: inline-flex;
@@ -3989,6 +4021,65 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 }
 
 /* ---------------------------------------------------------------------------
+ * Los tres botones que hay, y no hay más
+ *
+ * La queja del autor era literal: «los botones de Empezar y otros siguen siendo un simple
+ * texto sin apariencia de botón», y «deberían mantener un diseño común, textos comunes si
+ * hacen lo mismo». El problema de fondo era que solo había dos apariencias para tres
+ * papeles distintos, así que la acción principal de cada actividad se pintaba unas veces
+ * como una tarjeta enorme y otras como un botón secundario, según el tipo.
+ *
+ * A partir de aquí, en toda la aplicación:
+ *
+ *  - **`.boton-principal`** — la acción que hace avanzar la actividad: empezar, escuchar,
+ *    poner la música, otra vez. Hay **una sola a la vez** en pantalla. Va rellena, que es
+ *    lo que la distingue de un vistazo sin tener que leerla.
+ *  - **`.boton-repetir`** — todo lo secundario: limpiar, grabar, exportar, cambiar de
+ *    instrumento, «Idea». Con borde y sombra, más pequeño, se encuentra cuando se busca.
+ *  - **`.boton-actividad`** — lo que se toca porque **es** la actividad: las opciones, las
+ *    fichas, las bandas, el pandero, la diana. No es una acción sobre la actividad, es la
+ *    actividad.
+ *
+ * Y encima de la principal, `.boton-arranque` cuando hay que pulsarla para que empiece a
+ * pasar algo. Late una vez cada dos segundos y para en cuanto la actividad está en marcha.
+ * ------------------------------------------------------------------------ */
+.boton-principal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e-2);
+  min-height: var(--objetivo);
+  padding: var(--e-3) var(--e-6);
+  font: inherit;
+  font-size: var(--t-m);
+  font-weight: 700;
+  color: #fff;
+  background: var(--acento-2);
+  border: 2px solid var(--acento-2);
+  border-radius: var(--r-redondo);
+  box-shadow: var(--sombra-1);
+  cursor: pointer;
+}
+.boton-principal:hover { background: color-mix(in srgb, var(--acento-2) 88%, #000); }
+.boton-principal:active { transform: translateY(1px); box-shadow: none; }
+.boton-principal:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
+/* Los iconos de transporte vienen en `currentColor`, así que se vuelven blancos solos. */
+.boton-principal svg { flex: 0 0 auto; }
+/*
+  Apagada no se disfraza de otra cosa.
+
+  `aria-disabled` y no `disabled`: un botón deshabilitado de verdad no recibe foco y un
+  lector de pantalla se lo salta, así que el niño que navega con teclado no llega a saber
+  que existe. Así lo encuentra, lo oye y no pasa nada al pulsarlo.
+*/
+.boton-principal[aria-disabled='true'] {
+  background: var(--linea);
+  border-color: var(--linea);
+  color: var(--tinta-2);
+  box-shadow: none;
+}
+
+/* ---------------------------------------------------------------------------
  * El botón que arranca
  *
  * En cada actividad hay uno solo: el que hay que tocar para que empiece a pasar algo. Late
@@ -4009,12 +4100,22 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   border-color: var(--acento-2);
   animation: arranque-late 2.2s ease-out 1s infinite;
 }
+/* Sobre el relleno el halo tiene que salirse del borde para verse: el mismo latido, con
+   el color del papel de por medio para que se recorte contra el botón. */
+.boton-principal.boton-arranque {
+  animation-name: arranque-late-relleno;
+}
+@keyframes arranque-late-relleno {
+  0%, 70%, 100% { box-shadow: var(--sombra-1), 0 0 0 0 rgb(44 110 99 / 55%); }
+  80% { box-shadow: var(--sombra-1), 0 0 0 10px rgb(44 110 99 / 0%); }
+}
 @keyframes arranque-late {
   0%, 70%, 100% { box-shadow: var(--sombra-1), 0 0 0 0 rgb(44 110 99 / 45%); }
   80% { box-shadow: var(--sombra-1), 0 0 0 8px rgb(44 110 99 / 0%); }
 }
 /* En marcha ya no llama: lo que hace falta entonces es poder pararlo, no que insista. */
 .boton-arranque[data-sonando],
+.boton-arranque[data-grabando],
 .boton-arranque[aria-pressed='true'] {
   animation: none;
 }

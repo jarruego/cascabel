@@ -21,6 +21,7 @@ import { duracionDe, instantesDe } from '../melodiaEnTiempo';
 import { CuentaAtras } from '@/ui/CuentaAtras';
 import { colorDe, nombreDe } from '@/ui/coloresNota';
 import { Icono } from '@/ui/Icono';
+import { Reaccion } from '@/ui/Reaccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -511,7 +512,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
       </p>
 
       {fase === 'listo' && (
-        <button type="button" className="boton-arranque boton-repetir" onClick={() => setFase('cuenta')}>
+        <button type="button" className="boton-principal boton-arranque" onClick={() => setFase('cuenta')}>
           {t('accion.empezar')}
         </button>
       )}
@@ -554,28 +555,32 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
       )}
 
       {fase === 'resultado' && evaluacion && (
-        <section className="karaoke__resultado" aria-live="polite">
+        <section className="karaoke__resultado">
           {/*
-            El resumen lleva el porcentaje que pidió el autor, pero nunca solo: va con el
-            desvío medio con signo, porque es la diferencia entre decirle a un niño «has
-            sacado un 60 %» y decirle «vas 90 ms por detrás, prueba a entrar antes».
+            La frase la dice el personaje y entra deslizando, como en el resto.
+
+            La línea de milisegundos y regularidad **se ha ido**: el autor la señaló por su
+            nombre —«tampoco tiene sentido que salgan mensajes técnicos como ms,
+            regularidad»— y tenía razón en algo más que el estilo. Un niño no puede hacer
+            nada con «+90 ms»; quien sí puede es el maestro, y para eso está la hoja de
+            seguimiento de la ficha. Lo que queda es la lectura en palabras de ese mismo
+            número, que es lo que distingue «has fallado» de «vas un poquito por detrás,
+            prueba a entrar antes».
+
+            Lo que sí se queda es cuántas has cogido de cuántas: eso no es una nota, es lo
+            que ha pasado, y se entiende a los siete años.
           */}
-          <p className="karaoke__mensaje">
+          <Reaccion
+            tono={!evaluacion.regularPeroDesfasado && porcentaje >= 60 ? 'bien' : 'casi'}
+            personaje={actividad.personaje}
+          >
             {evaluacion.regularPeroDesfasado
               ? t(evaluacion.desvioMedioMs > 0 ? 'tocar.regularTarde' : 'tocar.regularPronto')
               : t(porcentaje >= 60 ? 'karaoke.bien' : 'karaoke.otraVez')}
-          </p>
+          </Reaccion>
           <p className="karaoke__cifras">
             {t('karaoke.cogidas')} <strong>{acertadas.size}</strong> {t('catalogo.de')}{' '}
             <strong>{total}</strong> · <strong>{porcentaje} %</strong>
-          </p>
-          <p className="karaoke__cifras">
-            {t('tocar.desvio')}{' '}
-            <strong>
-              {evaluacion.desvioMedioMs >= 0 ? '+' : ''}
-              {evaluacion.desvioMedioMs.toFixed(0)} ms
-            </strong>{' '}
-            · {t('tocar.regularidad')} <strong>{evaluacion.desviacionTipicaMs.toFixed(0)} ms</strong>
           </p>
 
           <div className="karaoke__acciones">
@@ -584,7 +589,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
             </button>
             <button
               type="button"
-              className="boton-repetir"
+              className="boton-principal"
               onClick={() =>
                 alTerminar({
                   actividadId: actividad.id,

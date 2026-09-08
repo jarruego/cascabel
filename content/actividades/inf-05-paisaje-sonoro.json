@@ -21,7 +21,7 @@
     "modo": "toque"
   },
   "contenido": {
-    "consigna": "actividad.inf05b.consigna",
+    "consigna": "actividad.inf05paisaje.consigna",
     "opciones": [
       {
         "clave": "campana",
@@ -72,7 +72,7 @@
       "completado"
     ]
   },
-  "enunciado": "actividad.inf05.enunciado",
+  "enunciado": "actividad.inf05paisaje.enunciado",
   "personaje": "rex",
   "creditos": [
     {
@@ -90,6 +90,6 @@
   ],
   "estado": "borrador",
   "pistas": [
-    "actividad.inf05b.pista1"
+    "actividad.inf05paisaje.pista1"
   ]
 }
