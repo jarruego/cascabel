@@ -1798,7 +1798,9 @@ estar documentadas en la barra que venía a sustituirlas. Ahora mira el código 
       ponerlas —como ya hacía la rejilla, «se aprende oyendo lo que se pone»—; los botones
       caben («Vaciar todo» y «Guardar MIDI» sobraban de palabras); las cuatro pistas se
       deslizan **a la vez** y no cada una por su lado, porque un arreglo solo se lee si las
-      columnas cuadran; «Suena» y «Vaciar» dejan de irse al extremo contrario del nombre; y
+      columnas cuadran —hizo falta un segundo intento: había dos reglas de desplazamiento a
+      mil líneas una de otra y quité solo la primera, así que ahora hay un test que las
+      cuenta—; «Suena» y «Vaciar» dejan de irse al extremo contrario del nombre; y
       **el instrumento de cada pista se puede cambiar**, que convierte oír el mismo arreglo
       en flauta y en guitarra en media lección de timbre.
 

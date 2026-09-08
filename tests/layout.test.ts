@@ -135,6 +135,31 @@ describe('la interfaz aprovecha la pantalla', () => {
     );
   });
 
+  it('las pistas se desplazan en bloque: un solo contenedor, no uno por pista', () => {
+    /*
+      El autor lo pidió dos veces, y las dos tenía razón: «no me gusta que cada pista haga
+      scroll horizontal independiente». Un arreglo de cuatro voces solo se lee si las
+      columnas cuadran, porque son el mismo instante; con un desplazamiento por pista, al
+      mover una las demás se quedan y la columna 5 de la flauta deja de estar encima de la 5
+      del bajo.
+
+      La primera corrección falló porque había **dos** reglas con `overflow-x` a mil líneas
+      una de otra: quité una y dejé la otra. De ahí este test — cuenta, y no da por bueno que
+      haya alguna.
+    */
+    const conDesplazamiento: string[] = [];
+    for (const m of SIN_COMENTARIOS.matchAll(/([^{}]*)\{([^{}]*)\}/g)) {
+      const selector = m[1]!.trim();
+      if (!selector.includes('pistas__')) continue;
+      if (!/overflow(-x)?:\s*(auto|scroll)/.test(m[2]!)) continue;
+      conDesplazamiento.push(selector.replace(/\s+/g, ' '));
+    }
+    expect(
+      conDesplazamiento,
+      `debe desplazarse la tabla entera y nada más:\n${conDesplazamiento.join('\n')}`,
+    ).toEqual(['.pistas__tabla']);
+  });
+
   it('lo que tarda la tarjeta en irse dice lo mismo en el CSS y en el componente', () => {
     /*
       Son dos números que tienen que ser el mismo y viven separados: la animación de salida

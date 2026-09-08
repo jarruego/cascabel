@@ -3038,15 +3038,42 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 .pistas__mudo:focus-visible,
 .pistas__limpiar:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
 
-.pistas__rejilla { overflow-x: auto; }
+/*
+  El desplazamiento es UNO para las cuatro pistas, no uno por pista.
+
+  Cada pista tenía el suyo, así que al mover una las demás se quedaban donde estaban: la
+  columna 5 de la flauta dejaba de estar encima de la 5 del bajo. Y un arreglo solo se lee si
+  las columnas cuadran, porque son el mismo instante — es la diferencia entre ver cuatro
+  voces y ver cuatro tiras sueltas.
+
+  `min-width: 0` en toda la cadena es lo que permite que la caja encoja por debajo de su
+  contenido. Sin eso, una fila de dieciséis casillas nunca baja de su tamaño natural: no se
+  desplaza, empuja el ancho de la pantalla.
+*/
+.pistas__tabla,
+.pistas__pista,
+.pistas__rejilla,
+.pistas__fila { min-width: 0; }
+.pistas__tabla {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
 .pistas__fila { display: flex; align-items: center; gap: 2px; margin-bottom: 2px; }
+/*
+  Y los nombres de las notas se quedan pegados a la izquierda mientras se desplaza: sin
+  ellos a la vista, dieciséis casillas iguales no dicen a qué altura están.
+*/
 .pistas__etiqueta {
+  position: sticky;
+  left: 0;
+  z-index: 1;
   flex: 0 0 auto;
   width: 74px;
   font-size: var(--t-xs);
   color: var(--tinta-2);
   text-align: right;
   padding-right: var(--e-2);
+  background: var(--papel);
 }
 .pistas__celda {
   flex: 0 0 auto;
@@ -4244,36 +4271,9 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 }
 .compases__linea > * { flex: 0 0 auto; }
 
-/* Las cuadrículas de composición y las pistas: desplazan en bloque, con la fila de nombres
-   pegada a la izquierda para no perder de vista de qué voz es cada fila. */
-.rejilla__cuadricula,
-/*
-  El desplazamiento es UNO para las cuatro pistas, no uno por pista.
-
-  Estaba en cada pista por separado y en cada fila, así que al mover una las demás se
-  quedaban donde estaban: la columna 5 de la flauta dejaba de estar encima de la 5 del bajo,
-  y un arreglo solo se lee si las columnas cuadran — son el mismo instante.
-
-  `min-width: 0` en toda la cadena es lo que permite que la caja encoja por debajo de su
-  contenido; sin eso una casilla de una rejilla nunca baja de su tamaño natural y lo que
-  hace es empujar el ancho de la pantalla, que es lo que pasaba.
-*/
-.pistas__tabla,
-.pistas__pista,
-.pistas__rejilla,
-.pistas__fila { min-width: 0; }
-.pistas__tabla {
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-}
-/* Los nombres de las notas se quedan pegados a la izquierda mientras se desplaza: sin ellos
-   a la vista, dieciséis casillas iguales no dicen a qué altura están. */
-.pistas__etiqueta {
-  position: sticky;
-  left: 0;
-  z-index: 1;
-  background: var(--papel);
-}
+/* La cuadrícula de la rejilla desplaza en bloque cuando ni con el suelo táctil caben las
+   columnas. `contain` evita que el gesto se propague y acabe navegando hacia atrás. */
+.rejilla__cuadricula { overscroll-behavior-x: contain; }
 
 /* El musicograma por bandas y sus botones: nunca más estrechos que un dedo. */
 .karaoke__botones { flex-wrap: nowrap; overflow-x: auto; }
