@@ -3609,6 +3609,21 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   .eco__pandero[data-golpeado] { transform: none; }
 }
 
+/*
+  Los minutos, en gris y pequeños.
+
+  Se ven cuando se buscan y no compiten con el título. No son un marcador —no dicen lo que
+  has hecho, dicen lo que vas a necesitar— y por eso pueden estar donde un porcentaje no
+  podría: hay pasos de noventa minutos que no son una sesión, son tres.
+*/
+.camino__minutos {
+  margin-left: var(--e-2);
+  color: var(--tinta-2);
+  font-size: var(--t-xs);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
 /* La sugerencia de repaso, arriba del camino. Es una sugerencia y se ve como tal: no lleva
    número, ni contador, ni nada que parezca una tarea pendiente. Y no aparece si no hay nada
    que sugerir, porque un «no tienes nada» sería un marcador. */

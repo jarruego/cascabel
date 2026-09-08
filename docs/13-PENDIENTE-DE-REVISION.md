@@ -11,7 +11,7 @@ definición: están sin verificar, que es distinto y peor de dejar callado.
 En cada una, lo que hace falta es una de tres respuestas: **vale**, **cámbialo por esto**, o
 **depende, y depende de esto**.
 
-9 puntos esperando respuesta.
+11 puntos esperando respuesta.
 
 ## 1. `src/config.ts` (línea 113)
 
@@ -41,10 +41,18 @@ PENDIENTE DE REVISIÓN PEDAGÓGICA: el repertorio de sílabas de abajo es el con
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA. Los saberes se escriben a mano en cada JSON y aquí no hay forma de saber cuál es la redacción buena: el real decreto está en el BOE y este proyecto no lo tiene delante. Lo que sí se ve es cuándo una redacción la usa **una sola actividad** y otra parecida la usan treinta, que casi siempre significa que alguien escribió el mismo saber de dos maneras — pasó con el F de Infantil, que estaba de cuatro formas distintas y partía en cuatro un grupo que es uno.
 
-## 8. `tools/muestras-provisionales.py` (línea 98)
+## 8. `tools/dificultad.mjs` (línea 73)
+
+PENDIENTE DE REVISIÓN PEDAGÓGICA: los topes de esta tabla. Lo que se puede afirmar sin una maestra es que **la de elegir y la de seguir son distintas**; dónde está exactamente el techo de cada edad, no.
+
+## 9. `tools/dificultad.mjs` (línea 218)
+
+PENDIENTE DE REVISIÓN PEDAGÓGICA: los topes. Salen de la duración razonable por etapa dividida entre lo que tarda una pregunta con su escucha, no de ninguna fuente.
+
+## 10. `tools/muestras-provisionales.py` (línea 98)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: se usan tres campanas separadas por quintas justas (relación 3:2) porque la diferencia de altura tiene que ser inconfundible para un niño de 3 a 6 años. Es la opción convencional en material Montessori de campanas, donde se empieza por intervalos grandes antes de afinar el oído a los pequeños. Una maestra puede querer terceras o la escala pentatónica.
 
-## 9. `tools/muestras-provisionales.py` (línea 144)
+## 11. `tools/muestras-provisionales.py` (línea 144)
 
 Los tempos son los convencionales de los diccionarios de música: adagio 66, andante 92 y allegro 138 pulsos por minuto. PENDIENTE DE REVISIÓN PEDAGÓGICA: los rangos varían según la fuente y a esta edad lo que importa es que se distingan, no la precisión.

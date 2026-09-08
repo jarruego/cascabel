@@ -5,7 +5,8 @@ import { despertarAudio } from '@/audio/AudioEngine';
 import { leerTodo } from '@/datos/progreso';
 import { haceCuanto, queRepasar, type Sugerencia } from '@/motor/repaso';
 import { t } from '@/i18n';
-import type { Etapa } from '@/config';
+import { usePreferencias } from './preferencias';
+import type { Carril, Etapa } from '@/config';
 
 /**
  * El camino: en qué orden haría esto un maestro.
@@ -38,6 +39,26 @@ interface Paso {
   actividades: string[];
 }
 
+/** Lo que el índice sabe de una actividad y aquí hace falta. */
+interface FichaBreve {
+  titulo: string;
+  duracion_min?: number;
+}
+
+/**
+ * Qué etapas le tocan a cada carril.
+ *
+ * El carril no es la etapa —uno dice qué tamaño de botón hace falta y la otra qué curso es—
+ * pero se corresponden: los lectores son el primer y el segundo ciclo, y los autónomos el
+ * tercero. Ver `docs/adr/0005-una-app-tres-carriles.md`.
+ */
+function etapasDelCarril(carril: Carril | null): Etapa[] {
+  if (carril === 'infantil') return ['infantil'];
+  if (carril === 'lectores') return ['primaria-c1', 'primaria-c2'];
+  if (carril === 'autonomos') return ['primaria-c3'];
+  return [];
+}
+
 interface Recorrido {
   etapa: Etapa;
   titulo: string;
@@ -45,13 +66,20 @@ interface Recorrido {
   pasos: Paso[];
 }
 
+/** Lo que dura un paso entero, sumando sus actividades. */
+function minutosDe(paso: Paso, fichas: Map<string, FichaBreve>): number {
+  return paso.actividades.reduce((suma, id) => suma + (fichas.get(id)?.duracion_min ?? 0), 0);
+}
+
 export default function Camino() {
   const [caminos, setCaminos] = useState<Recorrido[] | null>(null);
-  const [titulos, setTitulos] = useState<Map<string, string>>(new Map());
+  /** Del índice: hace falta el título y la duración, así que se guarda la ficha entera. */
+  const [fichas, setFichas] = useState<Map<string, FichaBreve>>(new Map());
   const [hechas, setHechas] = useState<Set<string>>(new Set());
   const [repasar, setRepasar] = useState<Sugerencia[]>([]);
   const [fallo, setFallo] = useState(false);
   const [abierto, setAbierto] = useState<Etapa | null>(null);
+  const carril = usePreferencias((e) => e.carril);
 
   useEffect(() => {
     let vivo = true;
@@ -59,16 +87,23 @@ export default function Camino() {
       .then(([c, i]) => {
         if (!vivo) return;
         setCaminos(c.caminos);
-        setTitulos(new Map(i.actividades.map((a) => [a.id, a.titulo])));
-        // Se abre la primera etapa y ya está. Abrir las cuatro deja una pantalla de
-        // setenta enlaces, que es el muro del que esto viene a sacar a nadie.
-        setAbierto(c.caminos[0]?.etapa ?? null);
+        setFichas(new Map(i.actividades.map((a) => [a.id, a])));
+        /*
+          Se abre una sola etapa —abrir las cuatro deja una pantalla de setenta enlaces, que
+          es el muro del que esto viene a sacar a nadie— y se abre **la del carril elegido**.
+
+          Antes se abría siempre la primera, o sea Infantil: un maestro de 5.º entraba, veía
+          cuatro cabeceras cerradas y la única desplegada era la que no le servía. La
+          aplicación ya sabe con quién trabaja, y aquí no lo estaba usando para nada.
+        */
+        const suya = c.caminos.find((x) => etapasDelCarril(carril).includes(x.etapa));
+        setAbierto(suya?.etapa ?? c.caminos[0]?.etapa ?? null);
       })
       .catch(() => vivo && setFallo(true));
     return () => {
       vivo = false;
     };
-  }, []);
+  }, [carril]);
 
   useEffect(() => {
     void leerTodo().then((r) => {
@@ -117,7 +152,7 @@ export default function Camino() {
                     className="camino__enlace"
                     onClick={() => void despertarAudio().catch(() => {})}
                   >
-                    {titulos.get(r.actividadId) ?? r.actividadId}
+                    {fichas.get(r.actividadId)?.titulo ?? r.actividadId}
                     <span className="camino__cuando">
                       {t(cuando.clave).replace('{n}', String(cuando.cantidad))}
                     </span>
@@ -159,7 +194,18 @@ export default function Camino() {
                         {i + 1}
                       </span>
                       <div className="camino__cuerpo">
-                        <h3 className="camino__titulo">{paso.titulo}</h3>
+                        <h3 className="camino__titulo">
+                          {paso.titulo}
+                          {/*
+                            Cuánto dura el paso entero. No es un marcador —no mide lo que has
+                            hecho, mide lo que vas a necesitar— y hace falta: hay pasos de
+                            noventa minutos que **no son una sesión, son tres**, y desde aquí
+                            parecían uno más.
+                          */}
+                          <span className="camino__minutos">
+                            {t('camino.minutos', { n: minutosDe(paso, fichas) })}
+                          </span>
+                        </h3>
                         <p className="camino__idea">{paso.idea}</p>
                         <ul className="camino__actividades">
                           {paso.actividades.map((id) => (
@@ -175,7 +221,12 @@ export default function Camino() {
                                 {hechas.has(id) && (
                                   <span className="camino__hecha">{t('camino.hecha')}</span>
                                 )}
-                                {titulos.get(id) ?? id}
+                                {fichas.get(id)?.titulo ?? id}
+                                {fichas.get(id)?.duracion_min ? (
+                                  <span className="camino__minutos">
+                                    {t('camino.minutos', { n: fichas.get(id)!.duracion_min! })}
+                                  </span>
+                                ) : null}
                               </Link>
                             </li>
                           ))}

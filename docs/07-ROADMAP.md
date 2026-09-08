@@ -1821,6 +1821,44 @@ estar documentadas en la barra que venía a sustituirlas. Ahora mira el código 
       «¡completada!» dentro de la actividad, y los textos fijos que quedan son todos
       legítimos (la aguja de afinación, el compás, de quién es el turno).
 
+### El nivel por edad y el itinerario, 2026-09-09 (noche)
+
+- [x] **Auditoría de dificultad por edad**, `npm run contenido:dificultad`. Mide dos cargas
+      que no son la misma —cuántas cosas hay que **discriminar a la vez** para acertar una, y
+      cuántos pasos tiene una **secuencia en el tiempo**— porque medirlas con la misma vara
+      daría falsos positivos en todas las actividades de ritmo. Y una tercera comprobación
+      que resultó la más útil: **el bicho raro dentro de su propio ciclo**, que no depende de
+      que yo acierte con ningún número.
+
+      **El resultado: la calibración está bien.** La primera versión marcó tres actividades
+      por encima de banda y las tres eran el mismo falso positivo —un instrumento no es una
+      pregunta: las ocho teclas del piano de la pandilla no compiten entre sí, se tocan de
+      una en una—. Corregida la medida, ninguna actividad supera su banda, y los seis casos
+      que destacan dentro de su ciclo son deliberados: un «ritmo de ocho» tiene ocho porque
+      ése es el tema, la frase de Beethoven tiene treinta notas, y una estrofa tiene
+      veinticuatro sílabas. Cada motivo queda escrito en la herramienta.
+
+      **PENDIENTE DE REVISIÓN PEDAGÓGICA**: los topes de secuencia y de número de preguntas
+      seguidas. Lo que se puede afirmar sin una maestra es que las dos cargas son distintas;
+      dónde está el techo de cada edad, no.
+
+- [x] **Lo que sí estaba mal era el dibujo, no el nivel.** La tira del musicograma llevaba
+      `flex-wrap: wrap`, así que los veinticuatro pictogramas de «Canción con pictogramas» se
+      partían en ocho renglones en un móvil y el bloque iluminado saltaba de sitio — justo
+      cuando lo que se enseña es que la música avanza de izquierda a derecha. Ahora es una
+      línea que se desplaza y se mueve sola.
+
+- [x] **El itinerario dice cuánto dura cada cosa y se abre por donde toca.** Se abría siempre
+      por Infantil aunque el maestro tuviera elegido el carril de 5.º, y no decía la duración
+      de nada: hay pasos de noventa minutos que **no son una sesión, son tres**, y desde la
+      pantalla parecían uno más. No es un marcador —§4 prohíbe rachas y porcentajes, y una
+      duración no mide lo que has hecho sino lo que vas a necesitar— y hay test para que un
+      total no pueda mentir hacia abajo.
+
+      Lo pedagógico **no se ha tocado**: el orden de los pasos está razonado uno a uno en
+      `camino.json` y sale del currículo, que es de lo que §10 dice que no decide la máquina.
+      Se ha comprobado que cada paso contiene lo que su idea dice, y encaja.
+
 **Lo siguiente**: verlo en un aparato. Todo esto es geometría y ninguna de las decisiones se
 puede confirmar sin mirarla — cuánto es «demasiado grande» para un musicograma en una pizarra
 o si el escenario centrado deja el teclado a una altura cómoda no lo dice ningún test.

@@ -85,6 +85,23 @@ describe('el camino', () => {
     }
   });
 
+  it('toda actividad del camino dice cuánto dura', () => {
+    /*
+      La pantalla suma las duraciones de cada paso y enseña el total, porque hay pasos de
+      noventa minutos que **no son una sesión, son tres** y desde la pantalla parecían uno
+      más. Una actividad sin `duracion_min` no rompe nada: suma cero, y entonces el total
+      miente hacia abajo, que es la peor dirección para un maestro que está planificando.
+    */
+    const sinDuracion: string[] = [];
+    for (const id of referencias) {
+      const a = JSON.parse(
+        readFileSync(join(RAIZ, 'content', 'actividades', `${id}.json`), 'utf-8'),
+      ) as { duracion_min?: number };
+      if (!a.duracion_min) sinDuracion.push(id);
+    }
+    expect(sinDuracion, `sumarían cero al total de su paso:\n${sinDuracion.join('\n')}`).toEqual([]);
+  });
+
   it('no tiene ninguna noción de requisito ni de desbloqueo', () => {
     const texto = readFileSync(join(RAIZ, 'content', 'camino.json'), 'utf-8').toLowerCase();
     // Se busca en las CLAVES, no en el texto libre: el comentario del propio fichero
