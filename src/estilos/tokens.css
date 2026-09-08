@@ -1386,29 +1386,49 @@ p {
    calculaba el componente suponiendo una pantalla de 320 px, y en un monitor grande la
    rejilla se quedaba en una esquina. El `max-width` evita lo contrario: ocho casillas de un
    palmo tampoco se leen como una rejilla. */
+/*
+  El lado de la casilla lo decide el ALTO, no el ancho.
+
+  Estaba al revés: las columnas eran `1fr`, se repartían todo el ancho, y `aspect-ratio: 1`
+  convertía ese ancho en alto. Girar el aparato daba más ancho y por tanto más alto, que es
+  lo contrario de lo que hace falta cuando lo que falta es alto. Con ocho filas y el
+  contenedor a 64 rem, la casilla salía a 120 px: 960 px de rejilla en una pantalla de 360.
+
+  Ahora sale de lo que hay de alto entre el número de filas, entre dos límites que no se
+  cruzan: el suelo es el objetivo táctil del carril —por debajo deja de ser tocable, y antes
+  que eso la rejilla se desplaza de lado— y el techo son 64 px, porque una casilla más grande
+  no se toca mejor y sí obliga a recorrer la rejilla con la vista.
+
+  `--filas` y `--columnas` los pone el componente: son la forma de esta rejilla y aquí no se
+  pueden saber.
+*/
 .rejilla__cuadricula {
-  width: 100%;
-  max-width: min(100%, 64rem);
+  --lado: clamp(
+    var(--celda-minima),
+    calc((var(--alto-escena) * 0.58 - 2 * var(--e-3)) / var(--filas, 4)),
+    64px
+  );
+  display: grid;
+  grid-template-columns: repeat(var(--columnas, 8), var(--lado));
+  gap: var(--e-1);
+  justify-content: center;
+  /* Mide lo que miden sus casillas en vez de estirarse: así se centra de verdad y no deja
+     dos franjas de fondo a los lados que parecían parte de la rejilla. */
+  width: fit-content;
+  max-width: 100%;
   margin-inline: auto;
+  padding: var(--e-3);
+  border: 3px solid var(--linea);
+  border-radius: var(--r-m);
+  background: var(--superficie);
+  /* Si ni con el suelo caben a lo ancho, se desplaza. Nunca se encoge por debajo de lo
+     tocable, que es la regla de §6. */
   overflow-x: auto;
 }
 .rejilla__celda {
   aspect-ratio: 1;
   width: auto;
   height: auto;
-}
-.rejilla__cuadricula {
-  display: grid;
-  gap: var(--e-1);
-  justify-content: center;
-  margin: var(--e-5) auto;
-  padding: var(--e-3);
-  border: 3px solid var(--linea);
-  border-radius: var(--r-m);
-  background: var(--superficie);
-  overflow-x: auto;
-}
-.rejilla__celda {
   padding: 0;
   border: 2px solid var(--linea);
   border-radius: var(--r-s);

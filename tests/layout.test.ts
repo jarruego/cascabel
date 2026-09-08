@@ -106,6 +106,35 @@ describe('la interfaz aprovecha la pantalla', () => {
     }
   });
 
+  it('la rejilla mide sus casillas contra el alto, no contra el ancho', () => {
+    /*
+      Lo vio el autor en «Constructor de ritmos»: al poner el móvil apaisado las casillas se
+      agrandan y la rejilla deja de caber. La causa era que mandaba el ancho —columnas de
+      `1fr` repartiéndose todo el espacio— y `aspect-ratio: 1` convertía ese ancho en alto.
+      Girar el aparato daba más ancho y por tanto más alto, que es lo contrario de lo que
+      hace falta cuando lo que falta es alto: con ocho filas, 960 px en una pantalla de 360.
+
+      Es una regresión fácil de reintroducir, porque `1fr` es lo que uno escribe sin pensar
+      para una rejilla que llene el espacio.
+    */
+    const bloque = SIN_COMENTARIOS.slice(
+      SIN_COMENTARIOS.indexOf('.rejilla__cuadricula {'),
+    ).slice(0, 700);
+    expect(bloque, 'el lado de la casilla no sale del alto disponible').toContain('--alto-escena');
+    // El `clamp` lleva un `calc()` dentro, así que se recorta por el `;` y no por paréntesis.
+    const lado = /--lado:([\s\S]*?);/.exec(bloque);
+    expect(lado, 'no se encuentra el lado de la casilla').toBeTruthy();
+    expect(lado![1], 'el lado no tiene suelo ni techo').toContain('clamp(');
+    expect(lado![1], 'el lado no tiene techo: una casilla enorme no se toca mejor').toMatch(
+      /\d+px\s*\)\s*$/,
+    );
+    const plantilla = /grid-template-columns:([^;]*);/.exec(bloque);
+    expect(plantilla, 'no se encuentra la plantilla de columnas').toBeTruthy();
+    expect(plantilla![1], 'las columnas vuelven a repartirse el ancho con 1fr').not.toContain(
+      '1fr',
+    );
+  });
+
   it('lo que tarda la tarjeta en irse dice lo mismo en el CSS y en el componente', () => {
     /*
       Son dos números que tienen que ser el mismo y viven separados: la animación de salida

@@ -269,7 +269,16 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
         aria-label={t(contenido.consigna)}
         style={
           {
-            gridTemplateColumns: `repeat(${columnas}, minmax(var(--celda-minima), 1fr))`,
+            /*
+              La FORMA de la rejilla, para que el CSS pueda calcular el lado de la casilla.
+
+              El lado lo decide el alto disponible entre el número de filas, no el ancho: con
+              columnas de `1fr` la casilla crecía con la pantalla y `aspect-ratio` convertía
+              ese ancho en alto, así que girar el móvil daba más alto justo cuando menos
+              hay. Con ocho filas eso eran 960 px en una pantalla de 360.
+            */
+            '--filas': filas,
+            '--columnas': columnas,
             '--celda-minima': `${Math.max(24, Math.min(objetivo, 44))}px`,
           } as CSSProperties
         }

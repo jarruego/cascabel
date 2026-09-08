@@ -1741,6 +1741,32 @@ estar documentadas en la barra que venía a sustituirlas. Ahora mira el código 
       toca la pantalla. No se gira en modo pizarra, ni si ya está así, ni donde el navegador
       no sabe; y ahí se ofrece girarlo a mano con una línea que se va sola.
 
+- [x] **La rejilla cabe al girar.** Lo vio el autor en «Constructor de ritmos»: en apaisado
+      las casillas se agrandan y deja de caber. Mandaba el ancho —columnas de `1fr`— y
+      `aspect-ratio: 1` convertía ese ancho en alto, así que girar daba más alto justo cuando
+      falta. Con ocho filas y el contenedor a 64 rem la casilla salía a 120 px: 960 px de
+      rejilla en una pantalla de 360. Ahora manda el alto, con suelo —el objetivo táctil del
+      carril— y techo de 64 px, que es el «alto máximo de cuadrado» que pedía.
+
+- [x] **El bucle mantiene el pulso.** «Las actividades que ponen un sonido en bucle no
+      mantienen el ritmo al reiniciar.» Las dos que dan vueltas relanzaban la reproducción al
+      acabar cada una, y el relanzamiento salía desde el instante en que ocurría más el
+      margen para tener el sonido cargado: medio segundo en el musicograma, 270 ms en la
+      rejilla. Eso no es ni un pulso ni medio, es una costura — y en el musicograma el
+      metrónomo se paraba y se creaba otro, con lo que el pulso también se reiniciaba.
+
+      Ahora la vuelta N sale exactamente en `inicio + N × duración`: se suma, no se pregunta
+      qué hora es. Se conserva el motivo del relanzo, que era bueno —la rejilla es un editor
+      y lo que cambie a mitad de vuelta tiene que sonar en la siguiente—, con *lookahead*
+      como el del metrónomo. La aritmética vive en [`motor/bucle.ts`](../src/motor/bucle.ts)
+      con test, porque es un fallo que **solo se oye**: nada falla y hay que escuchar dos
+      vueltas sabiendo qué buscar.
+
+- [x] **Repaso de los veintiún tipos contra lo nuevo**: botonera donde toca, ningún botón sin
+      símbolo salvo los de valor —una octava, un tempo, que no son acciones—, ningún
+      «¡completada!» dentro de la actividad, y los textos fijos que quedan son todos
+      legítimos (la aguja de afinación, el compás, de quién es el turno).
+
 **Lo siguiente**: verlo en un aparato. Todo esto es geometría y ninguna de las decisiones se
 puede confirmar sin mirarla — cuánto es «demasiado grande» para un musicograma en una pizarra
 o si el escenario centrado deja el teclado a una altura cómoda no lo dice ningún test.
@@ -1781,6 +1807,43 @@ bundle. Es el único de los tres textos legales que ningún test vigila.
 Sin ADR: no hay ninguno de licencias —los siete son de arquitectura— y la política vive en
 `CLAUDE.md` §3 con su porqué en `08-LEGAL.md`, que es donde se busca. Si algún día se quiere
 uno, el sitio natural sería el 0008.
+
+### Dos medidas y dos decisiones, 2026-09-09
+
+De una sesión de I+D sobre usabilidad en pantalla pequeña y pizarra. Las dos salieron de
+medir, no de opinar, y las dos las decidió el autor.
+
+- [x] **La pista que enseña ya no lleva reloj.** Medidas las 71 pistas con texto del
+      catálogo: mediana de 88 caracteres y **18 palabras**, que a los 60 ppm de un niño de
+      2.º son **veinte segundos**. La tarjeta duraba 6,2, así que **las 71 se quedaban
+      cortas** — y 66 de 71 incluso a la velocidad de 6.º. Y no hay número que sirva, porque
+      entre 2.º y 6.º la velocidad lectora se dobla. Ahora el elogio lleva reloj y la
+      corrección se va cuando el niño vuelve a responder, que es la única señal fiable de que
+      ya no hace falta. La regla vive en `motor/maquinaReaccion.ts` con su test, que es donde
+      va una regla de producto.
+- [x] **Y debajo había un fallo que no se veía.** La duración decía escalar con el texto y no
+      escalaba: `children` es un array en **seis de los once sitios** —dos ramas
+      `{condición && …}` seguidas— y el código preguntaba `typeof children === 'string'`, así
+      que caía en un 60 de reserva. Medía bien los mensajes cortos y dejaba clavados en 6,2 s
+      **justo los seis que llevan la pista larga**.
+- [x] **En apaisado, las dos barras comparten renglón.** Ocupaban 110 px de los 360 de alto
+      de un móvil girado: el 31 %, en la postura donde menos altura hay. El trío de la
+      aplicación se encoge y se pega a la derecha, la botonera ocupa lo que queda, y el ancho
+      del trío **se mide** y se publica en `--ancho-barra-actividad` — un número fijo no vale
+      porque «Volver» y «Ficha» cambian de ancho en cada idioma. Si los botones no caben,
+      bajan de línea como siempre: el peor caso del cambio es la situación anterior.
+
+**El argumento de fondo del tercero, que es el que importa**: ese espacio ya se estaba
+pagando por otro lado. La media query de apaisado baja los botones a **44 px** cuando
+`--objetivo` vale 75 en Infantil —un 41 % menos— y eso no está decidido en ninguna parte, solo
+ocurre. Sacar los píxeles de la maquetación es mejor que sacarlos del tamaño de lo que se
+toca.
+
+**Lo siguiente, y lo decide el autor mirándolo**: con los ~54 px devueltos, si en apaisado se
+vuelve a `var(--objetivo)` en vez de los 44 px. Eso se come parte de lo ganado y cambia
+cuántos botones caben en la fila, así que no se ha tocado: hay que verlo. El autor se reservó
+además el derecho a deshacer la fila compartida si no le convence al verla — está en un solo
+bloque de la media query y el observador de `Actividad.tsx`, para que quitarlo sea barato.
 
 **Lo que de verdad falta**, y ninguna de las tres es programación:
 
