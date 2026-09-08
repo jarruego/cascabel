@@ -3462,24 +3462,6 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 }
 .eco__acciones button { display: inline-flex; align-items: center; gap: var(--e-2); }
 
-.eco__resultado {
-  max-width: 44ch;
-  margin: var(--e-4) auto;
-  padding: var(--e-3) var(--e-4);
-  /* El texto se fija junto al fondo: --suave-amarillo cambia entre claro y oscuro y
-     --tinta con él, y dejarlo heredado es como se acaba con texto claro sobre claro. */
-  color: var(--tinta);
-  background: var(--suave-amarillo);
-  border-radius: var(--r-m);
-}
-/* Cuando se parecen, verde; cuando no, el mismo recuadro en ámbar. No hay rojo en ningún
-   caso: §4, el error no castiga. */
-.eco__resultado[data-bien] { color: var(--tinta); background: var(--suave-verde); }
-.eco__veredicto { margin: 0; font-size: var(--t-m); }
-/* El dato numérico es para el maestro y va en pequeño: un niño no tiene que leer
-   milisegundos, y si los lee acaba comparándose con el otro. */
-.eco__datos { margin: var(--e-2) 0 0; font-size: var(--t-xs); color: var(--tinta-2); }
-
 @media (prefers-reduced-motion: reduce) {
   .eco__pandero { transition: none; }
   .eco__pandero[data-golpeado] { transform: none; }

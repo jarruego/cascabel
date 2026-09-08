@@ -4,6 +4,7 @@ import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { Percusion, type Golpe } from '@/audio/percusion';
 import { compararEco, mensajeEco, type ResultadoEco } from '../eco';
 import { IconoParar, IconoTocar } from '@/ui/Transporte';
+import { Reaccion } from '@/ui/Reaccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -257,19 +258,21 @@ export default function Eco({ actividad }: PropsActividad) {
         )}
       </div>
 
+      {/*
+        El veredicto lo dice el personaje, entra deslizando y se va, como en todo lo demás.
+
+        Y **los milisegundos se han ido**. Estaban puestos «para el maestro, en pequeño», y
+        aquí eso no se sostiene: el eco lo juegan dos niños delante de la misma tablet y no
+        hay ningún maestro mirando esa esquina. El autor lo pidió por su nombre —«tampoco
+        tiene sentido que salgan mensajes técnicos como ms, regularidad»— y en esta pantalla
+        además sobraba por otra razón: lo que se está diciendo es «os habéis parecido
+        mucho», que es de la pareja. Un número al lado invita justo a lo que `CLAUDE.md` §4
+        prohíbe, que es comparar a dos niños.
+      */}
       {resultado && (
-        <div className="eco__resultado" role="status" data-bien={resultado.seParecen || undefined}>
-          <p className="eco__veredicto">{t(mensajeEco(resultado, carril))}</p>
-          {/* El dato para el maestro, en pequeño: desvío medio CON SIGNO y desviación
-              típica, nunca un porcentaje. Un desvío grande con desviación pequeña es un
-              pulso excelente que va corrido, y un porcentaje diría que ha fallado. */}
-          {resultado.golpesSegundo > 1 && (
-            <p className="eco__datos">
-              {t('eco.desvio')} {Math.round(resultado.evaluacion.desvioMedioMs)} ms ·{' '}
-              {t('eco.dispersion')} {Math.round(resultado.evaluacion.desviacionTipicaMs)} ms
-            </p>
-          )}
-        </div>
+        <Reaccion tono={resultado.seParecen ? 'bien' : 'casi'} personaje={actividad.personaje}>
+          {t(mensajeEco(resultado, carril))}
+        </Reaccion>
       )}
 
     </section>
