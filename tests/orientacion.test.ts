@@ -66,11 +66,21 @@ describe('la postura que pide cada actividad', () => {
     }
   });
 
-  it('la rejilla depende de cuánto mida', () => {
-    // Con cuatro columnas cabe en cualquier postura y girarla sería marear por nada; con
-    // ocho o más, en vertical las casillas dejan de ser un objetivo táctil.
-    expect(de('c1-12-la-rueda-del-compas'), 'cuatro columnas').toBe('cualquiera');
-    expect(de('c3-03-editor-de-melodias'), 'dieciséis columnas').toBe('apaisado');
+  it('la rejilla mira las dos dimensiones, no solo las columnas', () => {
+    /*
+      Miraba solo las columnas y mandaba a apaisado tres rejillas de ocho filas que ahí no
+      caben: con el suelo táctil de 44 px son 410 px de alto, y un móvil girado da 304. En
+      «Editor de melodías» era peor todavía, porque tampoco cabían las dieciséis columnas —se
+      desplazaba en los dos ejes a la vez, cuando en vertical se desplaza solo en uno.
+
+      Los números están en el comentario del módulo; aquí se fija el resultado.
+    */
+    expect(de('c1-12-la-rueda-del-compas'), 'cuatro columnas: da igual').toBe('cualquiera');
+    expect(de('c1-04-constructor-de-ritmos'), 'ocho por cuatro: cabe girada').toBe('apaisado');
+    expect(de('c2-02-dictado-ritmico'), 'ocho por dos: cabe girada').toBe('apaisado');
+    expect(de('c1-16-compon-con-la-escala'), 'ocho filas: girada no cabe').toBe('cualquiera');
+    expect(de('c3-03-editor-de-melodias'), 'ocho filas: girada no cabe').toBe('cualquiera');
+    expect(de('c3-11-melodia-larga'), 'ocho filas: girada no cabe').toBe('cualquiera');
   });
 
   it('la postura del karaoke coincide con la que dibuja el componente', () => {

@@ -1762,6 +1762,14 @@ estar documentadas en la barra que venía a sustituirlas. Ahora mira el código 
       con test, porque es un fallo que **solo se oye**: nada falla y hay que escuchar dos
       vueltas sabiendo qué buscar.
 
+- [x] **La postura de la rejilla mira las dos dimensiones.** La regla de orientación miraba
+      solo las columnas y mandaba a apaisado tres rejillas de ocho filas que ahí no caben:
+      con el suelo táctil de 44 px son 410 px de alto y un móvil girado da 304. En «Editor de
+      melodías» era peor, porque tampoco entraban las dieciséis columnas — se desplazaba en
+      los dos ejes a la vez, cuando en vertical se desplaza solo en uno. Salió al comprobar
+      con números si el `0,58` del lado de la casilla necesitaba ajuste tras el cambio de
+      `--alto-escena`: no lo necesitaba —ahí manda el suelo— pero la postura sí.
+
 - [x] **Repaso de los veintiún tipos contra lo nuevo**: botonera donde toca, ningún botón sin
       símbolo salvo los de valor —una octava, un tempo, que no son acciones—, ningún
       «¡completada!» dentro de la actividad, y los textos fijos que quedan son todos

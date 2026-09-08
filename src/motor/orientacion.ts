@@ -78,11 +78,26 @@ const POR_TIPO: Partial<Record<TipoActividad, Regla>> = {
   seguir: (a) => ((a.contenido as { modo?: string }).modo === 'cae' ? 'vertical' : 'apaisado'),
 
   /*
-    La rejilla depende de cuánto mida. Con cuatro columnas cabe en cualquier postura y
-    girarla sería marear por nada; con ocho o más, en vertical las casillas se quedan tan
-    estrechas que dejan de ser un objetivo táctil.
+    La rejilla depende de cuánto mida, y de las DOS dimensiones.
+
+    Miraba solo las columnas —ocho o más, apaisado— y eso mandaba a apaisado tres actividades
+    de ocho filas que ahí no caben. La cuenta, con el suelo táctil de 44 px que no se puede
+    bajar (§6): ocho filas son 410 px de rejilla, y en un móvil girado el escenario mide 304.
+    En «Editor de melodías» era aún peor, porque tampoco cabían las dieciséis columnas: se
+    desplazaba en los dos ejes a la vez, cuando en vertical se desplaza solo en uno.
+
+    Así que se pide apaisado únicamente cuando ancho **y** alto salen: muchas columnas y
+    pocas filas. Con muchas filas se devuelve `cualquiera` y no se toca la pantalla — no
+    `vertical`, porque en una tablet o en un monitor caben las dos posturas y forzar una sería
+    el mismo exceso que se quitó al dejar de pedir apaisado siempre.
   */
-  rejilla: (a) => ((a.contenido as { columnas?: number }).columnas ?? 8) >= 8 ? 'apaisado' : 'cualquiera',
+  rejilla: (a) => {
+    const c = a.contenido as { columnas?: number; filas?: number };
+    const anchaDeVerdad = (c.columnas ?? 8) >= 8;
+    // Cinco filas es lo último que entra en un móvil apaisado sin bajar del objetivo táctil.
+    const cabeDeAlto = (c.filas ?? 4) <= 5;
+    return anchaDeVerdad && cabeDeAlto ? 'apaisado' : 'cualquiera';
+  },
 };
 
 export function orientacionDe(actividad: Actividad): Orientacion {
