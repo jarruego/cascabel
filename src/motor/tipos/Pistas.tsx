@@ -1,8 +1,8 @@
-import { useCallback, useEffect, useReducer, useRef } from 'react';
+import { useCallback, useEffect, useReducer, useRef, useState } from 'react';
 import { useCarril } from '@/app/preferencias';
 import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { Sampler } from '@/audio/sampler';
-import { muestrasDe } from '@/audio/instrumentos';
+import { instrumentosDisponibles, muestrasDe } from '@/audio/instrumentos';
 import { Percusion, type Golpe } from '@/audio/percusion';
 import { colorDe } from '@/ui/coloresNota';
 import { IconoDescargar, IconoLimpiar, IconoParar, IconoTocar } from '@/ui/Simbolos';
@@ -61,6 +61,23 @@ export default function Pistas({ actividad }: PropsActividad) {
     INICIAL_PISTAS,
   );
 
+  /**
+   * Qué instrumento suena en cada pista, que ya no es fijo.
+   *
+   * Arranca con el que declara el JSON y el niño lo puede cambiar: oír el mismo arreglo con
+   * la melodía en flauta y luego en guitarra es media lección de timbre, y hasta ahora
+   * exigía editar el fichero. Solo tienen selector las pistas de notas — la percusión no
+   * tiene instrumento que elegir, tiene golpes.
+   */
+  const [instrumentos, setInstrumentos] = useState<Record<string, string>>(() =>
+    Object.fromEntries(
+      pistas.filter((p) => p.clase === 'melodica').map((p) => [p.clave, p.instrumento ?? 'marimba']),
+    ),
+  );
+
+  /* La clave del sampler lleva el instrumento, no solo la pista: al cambiar de instrumento
+     hace falta OTRO sampler, y con la pista como clave el anterior se habría quedado puesto
+     y la pista seguiría sonando a lo de antes. */
   const samplers = useRef(new Map<string, Sampler>());
   const percusion = useRef<Percusion | null>(null);
   const temporizador = useRef<number | null>(null);
@@ -82,11 +99,12 @@ export default function Pistas({ actividad }: PropsActividad) {
   const preparar = useCallback(async () => {
     await despertarAudio();
     for (const p of pistas) {
-      if (p.clase === 'melodica' && !samplers.current.has(p.clave)) {
-        const s = new Sampler(muestrasDe(p.instrumento));
-        await s.cargar();
-        samplers.current.set(p.clave, s);
-      }
+      if (p.clase !== 'melodica') continue;
+      const nombre = instrumentos[p.clave] ?? p.instrumento ?? 'marimba';
+      if (samplers.current.has(nombre)) continue;
+      const s = new Sampler(muestrasDe(nombre));
+      await s.cargar();
+      samplers.current.set(nombre, s);
     }
     const golpes = pistas
       .filter((p) => p.clase === 'percusion')
@@ -96,15 +114,23 @@ export default function Pistas({ actividad }: PropsActividad) {
       await pc.cargar();
       percusion.current = pc;
     }
-  }, [pistas]);
+  }, [pistas, instrumentos]);
 
-  const sonarCelda = useCallback((pista: Pista, fila: number, cuando: number) => {
+  /**
+   * @param cuando instante del reloj de audio. **Sin él suena ya**, y hay que omitirlo, no
+   *        poner un cero: un cero es un instante del pasado, y una envolvente programada en
+   *        el pasado salta directamente a su valor final, que es el silencio. Sonaría nada.
+   */
+  const sonarCelda = useCallback((pista: Pista, fila: number, cuando?: number) => {
     if (pista.clase === 'percusion') {
       percusion.current?.golpear(pista.filas[fila] as Golpe, cuando);
     } else {
-      samplers.current.get(pista.clave)?.tocar(pista.filas[fila]!, cuando, porCasilla * (60 / bpm) * 0.95);
+      const nombre = instrumentos[pista.clave] ?? pista.instrumento ?? 'marimba';
+      samplers.current
+        .get(nombre)
+        ?.tocar(pista.filas[fila]!, cuando, porCasilla * (60 / bpm) * 0.95);
     }
-  }, [bpm, porCasilla]);
+  }, [bpm, porCasilla, instrumentos]);
 
   const reproducir = useCallback(async () => {
     if (estadoRef.current.sonando) {
@@ -185,6 +211,28 @@ export default function Pistas({ actividad }: PropsActividad) {
             <div key={p.clave} className="pistas__pista" data-muda={muda || undefined}>
               <div className="pistas__cabecera">
                 <span className="pistas__nombre">{t(`pista.${p.clave}`)}</span>
+
+                {/* Solo en las pistas de notas: la percusión no tiene instrumento que
+                    elegir. Va con `select` nativo y no con botones porque son seis. */}
+                {p.clase === 'melodica' && (
+                  <label className="pistas__instrumento">
+                    <span className="visualmente-oculto">
+                      {t('pistas.instrumento')} {t(`pista.${p.clave}`)}
+                    </span>
+                    <select
+                      value={instrumentos[p.clave] ?? p.instrumento ?? 'marimba'}
+                      onChange={(e) => {
+                        setInstrumentos((x) => ({ ...x, [p.clave]: e.target.value }));
+                      }}
+                    >
+                      {instrumentosDisponibles().map((n) => (
+                        <option key={n} value={n}>
+                          {t(`instrumento.${n}`)}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                )}
                 {/* Silenciar no borra: es lo que permite oír qué aporta cada pista. */}
                 <button
                   type="button"
@@ -198,6 +246,10 @@ export default function Pistas({ actividad }: PropsActividad) {
                 <button
                   type="button"
                   className="pistas__limpiar"
+                  /* Vacía ESTA pista, y el de abajo las cuatro. En pantalla se distinguen
+                     por dónde están; para un lector de pantalla no, así que este dice cuál.
+                     Es lo mismo que ya hacía el botón de silenciar, al lado. */
+                  aria-label={`${t('pistas.limpiar')} ${t(`pista.${p.clave}`)}`}
                   aria-disabled={!tieneAlgo(estado, p.clave) || undefined}
                   onClick={() => despachar({ tipo: 'limpiarPista', pista: p.clave })}
                 >
@@ -230,9 +282,20 @@ export default function Pistas({ actividad }: PropsActividad) {
                           }
                           aria-label={`${t(`pista.${p.clave}`)} ${valor} ${col + 1}`}
                           aria-pressed={on}
-                          onClick={() =>
-                            despachar({ tipo: 'alternar', pista: p.clave, fila, columna: col })
-                          }
+                          onClick={() => {
+                            despachar({ tipo: 'alternar', pista: p.clave, fila, columna: col });
+                            /*
+                              Y suena al encenderla, como en la rejilla: se aprende oyendo lo
+                              que se pone, no mirándolo. Al apagarla no suena — sonaría igual
+                              que al encenderla y no diría cuál de las dos cosas ha pasado.
+
+                              `preparar()` puede tardar la primera vez, mientras carga el
+                              instrumento; por eso va sin esperar a nada y la casilla se
+                              enciende ya. Que la primera nota no suene es mejor que una
+                              casilla que tarda medio segundo en responder.
+                            */
+                            if (!on) void preparar().then(() => sonarCelda(p, fila));
+                          }}
                         />
                       );
                     })}
@@ -262,7 +325,7 @@ export default function Pistas({ actividad }: PropsActividad) {
           onClick={() => despachar({ tipo: 'limpiarTodo' })}
         >
           <IconoLimpiar />
-          {t('pistas.limpiarTodo')}
+          {t('pistas.limpiar')}
         </button>
 
         {contenido.exportable && (

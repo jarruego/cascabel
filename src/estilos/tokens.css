@@ -3000,7 +3000,25 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   gap: var(--e-2);
   margin-bottom: var(--e-2);
 }
-.pistas__nombre { flex: 1; font-weight: 700; font-size: var(--t-s); }
+/*
+  El nombre no se estira, y por eso «Suena» y «Vaciar» se quedan a su lado.
+
+  Llevaba `flex: 1`, así que se comía todo el ancho de la pista y empujaba los dos botones al
+  extremo contrario: en una pista de dieciséis casillas acababan a medio palmo de la palabra
+  a la que se refieren, y no se leían como suyos.
+*/
+.pistas__nombre { flex: 0 0 auto; font-weight: 700; font-size: var(--t-s); }
+/* El selector de instrumento, entre el nombre y los dos botones: es lo que más se cambia. */
+.pistas__instrumento select {
+  font: inherit;
+  font-size: var(--t-xs);
+  padding: var(--e-1) var(--e-2);
+  color: var(--tinta);
+  background: var(--superficie);
+  border: 2px solid var(--linea);
+  border-radius: var(--r-s);
+}
+.pistas__instrumento select:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
 .pistas__mudo,
 .pistas__limpiar {
   padding: var(--e-1) var(--e-2);
@@ -4229,11 +4247,27 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 /* Las cuadrículas de composición y las pistas: desplazan en bloque, con la fila de nombres
    pegada a la izquierda para no perder de vista de qué voz es cada fila. */
 .rejilla__cuadricula,
+/*
+  El desplazamiento es UNO para las cuatro pistas, no uno por pista.
+
+  Estaba en cada pista por separado y en cada fila, así que al mover una las demás se
+  quedaban donde estaban: la columna 5 de la flauta dejaba de estar encima de la 5 del bajo,
+  y un arreglo solo se lee si las columnas cuadran — son el mismo instante.
+
+  `min-width: 0` en toda la cadena es lo que permite que la caja encoja por debajo de su
+  contenido; sin eso una casilla de una rejilla nunca baja de su tamaño natural y lo que
+  hace es empujar el ancho de la pantalla, que es lo que pasaba.
+*/
+.pistas__tabla,
+.pistas__pista,
 .pistas__rejilla,
-.pistas__fila {
+.pistas__fila { min-width: 0; }
+.pistas__tabla {
   overflow-x: auto;
   overscroll-behavior-x: contain;
 }
+/* Los nombres de las notas se quedan pegados a la izquierda mientras se desplaza: sin ellos
+   a la vista, dieciséis casillas iguales no dicen a qué altura están. */
 .pistas__etiqueta {
   position: sticky;
   left: 0;

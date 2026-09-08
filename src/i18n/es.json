@@ -689,7 +689,7 @@
   "instrumento.guitarra": "Guitarra",
   "instrumento.violin": "Violín",
   "instrumento.voz": "Voz",
-  "rejilla.midi": "Guardar MIDI",
+  "rejilla.midi": "MIDI",
   "rejilla.musicxml": "Guardar partitura",
   "actividad.c303e.consigna": "Compón tu melodía y llévatela",
   "actividad.c303e.enunciado": "Toca las casillas para escribir tu melodía. Cuando te guste, puedes guardarla y abrirla en un programa de partituras para seguir trabajándola.",
@@ -767,7 +767,6 @@
   "ficha.tipo.paisaje.indicador2": "Distingue sonidos",
   "ficha.tipo.paisaje.indicador3": "Elige qué grabar",
   "pistas.limpiar": "Vaciar",
-  "pistas.limpiarTodo": "Vaciar todo",
   "pistas.silenciar": "Silenciar",
   "pistas.activar": "Volver a oír",
   "pistas.muda": "Muda",
@@ -978,5 +977,6 @@
   "comun.otraVezDe": "Otra vez · {n} de {total}",
   "cantar.siguienteNotaDe": "Siguiente nota · {n} de {total}",
   "lienzo.mejorApaisado": "Esta actividad se ve mejor con la pantalla tumbada.",
-  "lienzo.mejorVertical": "Esta actividad se ve mejor con la pantalla de pie."
+  "lienzo.mejorVertical": "Esta actividad se ve mejor con la pantalla de pie.",
+  "pistas.instrumento": "Instrumento de esta pista"
 }
