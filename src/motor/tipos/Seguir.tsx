@@ -79,6 +79,25 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
   const rafId = useRef<number | null>(null);
   const yaTerminada = useRef(false);
 
+  /**
+   * La tira se mueve sola para que el bloque que suena esté siempre a la vista.
+   *
+   * Un musicograma es una línea y no se parte en varias filas: con veinticuatro pictogramas
+   * y un móvil eso serían ocho renglones, y el bloque iluminado saltaría de sitio —baja una
+   * fila, vuelve a la izquierda— justo cuando lo que se está enseñando es que la música
+   * avanza de izquierda a derecha. Así que la línea se desplaza, como una partitura larga
+   * proyectada, y esto es lo que la empuja.
+   *
+   * `block: 'nearest'` para que no toque el desplazamiento vertical de la página: lo único
+   * que tiene que moverse es la tira.
+   */
+  const tira = useRef<HTMLOListElement | null>(null);
+  useEffect(() => {
+    if (actual < 0) return;
+    const el = tira.current?.children[actual];
+    el?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+  }, [actual]);
+
   const parar = useCallback(() => {
     metronomo.current?.parar();
     metronomo.current = null;
@@ -266,7 +285,7 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
       {/* El musicograma. Cada bloque se ilumina cuando le toca: es lo que enseña que la
           música avanza en el tiempo y que lo que suena se puede dibujar. */}
       {modo === 'tira' ? (
-        <ol className="seguir__tira" aria-label={t(contenido.consigna)}>
+        <ol className="seguir__tira" ref={tira} aria-label={t(contenido.consigna)}>
           {bloques.map((b, i) => (
             <li
               key={`${b.texto ?? b.icono ?? i}-${i}`}

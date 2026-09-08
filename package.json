@@ -25,7 +25,8 @@
     "docs:pendientes": "node tools/pendientes.mjs",
     "personajes": "node tools/personajes.mjs",
     "comprobar:produccion": "node tools/comprobar-produccion.mjs",
-    "verificar": "npm run typecheck && npm run lint && npm run test && npm run contenido:validar"
+    "verificar": "npm run typecheck && npm run lint && npm run test && npm run contenido:validar",
+    "contenido:dificultad": "node tools/dificultad.mjs"
   },
   "dependencies": {
     "abcjs": "6.7.0",

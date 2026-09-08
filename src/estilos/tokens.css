@@ -1541,11 +1541,25 @@ p {
    animar dentro del planificador adelanta el destello hasta cien milisegundos
    respecto al sonido, y a esta edad esa es la diferencia entre entender el
    pulso y no entenderlo. */
+/*
+  Una línea, y no se parte.
+
+  Llevaba `flex-wrap: wrap`, y con bloques de 96 px eso son ocho renglones para los
+  veinticuatro pictogramas de «Canción con pictogramas» en un móvil. Un musicograma partido
+  deja de enseñar lo único que viene a enseñar —que la música avanza de izquierda a derecha—
+  porque el bloque iluminado salta de sitio: baja una fila y vuelve a la izquierda.
+
+  Se desplaza, y el componente la empuja para que el bloque que suena esté siempre a la
+  vista. `safe center` centra los patrones cortos y deja de centrar cuando no caben, que si
+  no recortaría el principio.
+*/
 .seguir__tira {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: var(--e-3);
-  justify-content: center;
+  justify-content: safe center;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
   padding: 0;
   margin: var(--e-5) 0;
   list-style: none;
@@ -1554,7 +1568,10 @@ p {
   display: grid;
   place-items: center;
   gap: var(--e-2);
-  min-width: 96px;
+  flex: 0 0 auto;
+  /* Encogen en pantallas estrechas, pero nunca por debajo del objetivo del carril: con
+     cuatro u ocho bloques eso basta para que quepan sin desplazar nada. */
+  min-width: clamp(var(--objetivo), 14vw, 96px);
   min-height: 96px;
   padding: var(--e-3);
   border: 4px solid var(--linea);
@@ -2990,14 +3007,19 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 .pistas__tabla {
   display: grid;
   /*
-    La columna mide lo que mida el contenido, con el ancho visible como suelo.
+    La columna mide **lo que mide la cuadrícula**, ni más ni menos, y se centra.
 
-    Con una columna del ancho visible a secas, cada pista medía eso y no lo que mide su
-    fila: al desplazar, las casillas se salían de su propio fondo y quedaban sobre el papel.
-    Así el fondo gris llega hasta la última casilla, y con pocas columnas sigue ocupando el
-    ancho entero en vez de encogerse a la mitad.
+    Ha costado dos intentos y los dos fallos eran opuestos. Primero la columna medía el ancho
+    visible, así que al desplazar las casillas se salían de su propio fondo y quedaban sobre
+    el papel. Después le puse el ancho visible como suelo, y entonces en una pantalla ancha
+    el fondo gris se estiraba de lado a lado con la cuadrícula apretada a la izquierda.
+
+    `max-content` a secas dice lo único que hace falta: el fondo es del ancho de sus
+    casillas. Si sobra sitio, se centra; si falta, la tabla se desplaza y el fondo va con las
+    casillas porque es exactamente igual de ancho que ellas.
   */
-  grid-template-columns: minmax(100%, max-content);
+  grid-template-columns: max-content;
+  justify-content: center;
   gap: var(--e-3);
   /* Cuatro voces una debajo de otra, acotadas y centradas: a pantalla completa, dieciséis
      casillas estiradas a metro y medio dejan de leerse como un compás. */
