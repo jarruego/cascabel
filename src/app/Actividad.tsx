@@ -5,7 +5,7 @@ import { componenteDe } from '@/motor/registro';
 import { Lienzo } from '@/ui/Lienzo';
 import { Personaje } from '@/ui/Personaje';
 import { anotar } from '@/datos/progreso';
-import { esLibre } from '@/motor/actividadesLibres';
+import { esLibre, hayCelebracion } from '@/motor/actividadesLibres';
 import { ModalExito, ModalExplicacion, ModalMicrofono } from '@/ui/ModalesActividad';
 import { aceptarMicrofono, hayQuePreguntar, rechazarMicrofono } from '@/escucha/permiso';
 import { usePreferencias } from './preferencias';
@@ -194,7 +194,16 @@ export default function Actividad() {
             key={intento}
             actividad={actividad}
             alTerminar={(r) => {
-              setResultado(r);
+              /*
+                Anotar y celebrar son dos cosas distintas.
+
+                Se anota siempre; se celebra solo si la actividad tiene un final que el niño
+                alcanza. Un musicograma en bucle no lo tiene: da vueltas hasta que alguien lo
+                para, y la modal de «¡Muy bien!» encima con la música sonando es la misma
+                rareza que felicitar a alguien por dejar de tocar el piano. La regla vive en
+                `motor/actividadesLibres.ts`, al lado de la de las actividades sin final.
+              */
+              if (hayCelebracion(actividad)) setResultado(r);
               // Si el almacenamiento está bloqueado esto no hace nada y no pasa nada:
               // la actividad ya se ha jugado, que es lo que importa.
               void anotar(r);

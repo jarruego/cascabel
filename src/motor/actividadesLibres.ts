@@ -39,3 +39,29 @@ export const TIPOS_LIBRES = [
 export function esLibre(tipo: TipoActividad): boolean {
   return (TIPOS_LIBRES as readonly string[]).includes(tipo);
 }
+
+/**
+ * ¿Se celebra al terminar esta actividad?
+ *
+ * **Solo si tiene un final que el niño alcanza.** Es la misma idea que dejó sin botón de
+ * «Terminar» a las libres, aplicada un paso más allá: un tipo puede tener final en general
+ * y no tenerlo en una actividad concreta.
+ *
+ * El caso es el musicograma en bucle. `seguir` acaba cuando acaba la pieza, y ahí la
+ * celebración está bien; pero tres de sus cuatro actividades —«Ta y ti-ti» entre ellas— van
+ * en bucle a propósito, porque un patrón de cuatro pulsos dura tres segundos y se acaba
+ * antes de que un niño se haya enterado. Ésas no acaban: dan vueltas hasta que alguien las
+ * para. Sacarles la modal de «¡Muy bien!» encima con la música sonando es la misma rareza
+ * que felicitar a alguien por dejar de tocar el piano.
+ *
+ * Que se **anoten** sí, y lo hacen: al completar la primera vuelta. Hecha y terminada dejan
+ * de ser lo mismo, y esta función es la que las separa.
+ */
+export function hayCelebracion(actividad: {
+  tipo: TipoActividad;
+  contenido: Record<string, unknown>;
+}): boolean {
+  if (esLibre(actividad.tipo)) return false;
+  if (actividad.tipo === 'seguir' && actividad.contenido.bucle === true) return false;
+  return true;
+}

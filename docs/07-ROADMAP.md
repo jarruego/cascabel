@@ -1656,6 +1656,21 @@ Y dos de anchos, que son de la misma familia que la revisión de septiembre:
 - [x] **El botón de ampliar tenía dos reglas** a mil setecientas líneas una de otra, y la
       segunda repetía `top` y `right` para añadir solo el margen y el z-index.
 
+Y uno más, que salió de una pregunta y no de una prueba:
+
+- [x] **Tres musicogramas no se marcaban nunca**, «Ta y ti-ti» entre ellos. El tipo `seguir`
+      anota cuando la pieza llega al final, y esa rama estaba **detrás del `return` que
+      relanza el bucle**: las tres actividades que van en bucle no la alcanzaban jamás. La
+      cuarta sí, que es lo que hace que un fallo así no se note. Invisible probando —la
+      actividad funciona, suena y se ve bien— y solo se ve abriéndola, saliendo y
+      acordándose de mirar el catálogo.
+
+      Ahora se anota al acabar la **primera vuelta**: el niño ha visto y oído el patrón
+      entero, y aquí no hay nada que acertar. Pero **no se celebra**, porque un musicograma
+      en bucle no termina, y sacar la modal de «¡Muy bien!» con la música sonando es la misma
+      rareza que felicitar a alguien por dejar de tocar el piano. Anotar y celebrar pasan a
+      ser dos cosas distintas, con `hayCelebracion` al lado de la regla de las libres.
+
 Los seis primeros llevan test, y cada uno se comprobó **fallando** antes de darlo por bueno.
 Los dos de anchos no: uno es geometría que ya tiene su test y el otro es CSS duplicado, y un
 test que compruebe que dos reglas no dicen lo mismo sería más frágil que el problema.

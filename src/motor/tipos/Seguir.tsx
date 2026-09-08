@@ -177,6 +177,26 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
 
       const fin = inicio + acumulado * msPorPulso;
       if (ahora >= fin) {
+        /*
+          Se anota al acabar la PRIMERA vuelta, dé vueltas o no.
+
+          Esto estaba dentro de la rama de «no hay bucle», detrás del `return` que relanza,
+          así que **las actividades en bucle no se marcaban nunca** — y tres de las cuatro
+          van en bucle, «Ta y ti-ti» incluida. Lo encontró el autor preguntando cómo se
+          marcaban, no probando: la actividad funciona igual y lo único que falla es que en
+          el catálogo sigue saliendo sin hacer.
+
+          Al acabar una vuelta el niño ha visto y oído el patrón entero, que es lo que aquí
+          significa haberlo hecho: no hay nada que acertar. `yaTerminada` se encarga de que
+          las vueltas siguientes no vuelvan a anotar.
+
+          Y quien decide si además se celebra es el marco, con `hayCelebracion`: en bucle no
+          se celebra, porque la música sigue sonando.
+        */
+        if (!yaTerminada.current) {
+          yaTerminada.current = true;
+          alTerminar({ actividadId: actividad.id, completada: true });
+        }
         if (contenido.bucle) {
           /*
             Vuelta a empezar sin cortar el sonido.
@@ -191,10 +211,6 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
           return;
         }
         parar();
-        if (!yaTerminada.current) {
-          yaTerminada.current = true;
-          alTerminar({ actividadId: actividad.id, completada: true });
-        }
         return;
       }
       rafId.current = requestAnimationFrame(seguirCursor);
