@@ -15,6 +15,7 @@ import {
   IconoRepetir,
   IconoTocar,
 } from '@/ui/Simbolos';
+import { vueltasEncoladas } from '../bucle';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import {
@@ -105,6 +106,50 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
     });
   }, [estado.fase, estado.intentos, actividad.id, alTerminar]);
 
+  /**
+   * Lo que hay encendido **ahora mismo**, para el planificador.
+   *
+   * El reloj de abajo corre fuera de React y programa la vuelta siguiente doscientos
+   * milisegundos antes de que empiece. Si leyera `estado.encendidas` por cierre, leería el
+   * de cuando arrancó la reproducción, y entonces cambiar una casilla a mitad no se oiría
+   * nunca — que es justo lo que esta actividad tiene que hacer bien.
+   */
+  const encendidasRef = useRef(estado.encendidas);
+  encendidasRef.current = estado.encendidas;
+
+  /** Temporizadores del resalte de columna, para poder cancelarlos al parar. */
+  const resaltes = useRef<number[]>([]);
+  const reloj = useRef<number | null>(null);
+
+  const pararReproduccion = useCallback(() => {
+    if (reloj.current !== null) window.clearTimeout(reloj.current);
+    reloj.current = null;
+    resaltes.current.forEach((id) => window.clearTimeout(id));
+    resaltes.current = [];
+    setColumnaActual(-1);
+    setSonando(false);
+  }, []);
+
+  useEffect(() => pararReproduccion, [pararReproduccion]);
+
+  /**
+   * Toca la rejilla, y en bucle sin costura.
+   *
+   * **Lo que había y por qué sonaba mal.** Al acabar una vuelta se relanzaba esta misma
+   * función, que salía «ahora más 150 ms», con otros 120 ms de espera antes. Esos 270 ms se
+   * colaban entre la última casilla y la primera: ni un pulso ni medio, una costura. Y el
+   * autor la oyó.
+   *
+   * **Lo que se conserva.** El motivo de relanzar era bueno: esto es un editor, y si el niño
+   * cambia una casilla a mitad de vuelta la siguiente tiene que sonar con el cambio.
+   * Programar cien compases por delante lo rompería.
+   *
+   * **Cómo se consiguen las dos.** *Lookahead*: un reloj mira cada 25 ms si la vuelta
+   * siguiente entra en los próximos 200 ms y, si entra, la programa leyendo la rejilla **en
+   * ese momento**. El cambio de una casilla sigue entrando en la vuelta siguiente, y el
+   * instante de salida de esa vuelta es exactamente donde acaba la anterior — se calcula
+   * sumando, no preguntando qué hora es.
+   */
   const reproducir = useCallback(async () => {
     if (sonando) return;
     await despertarAudio();
@@ -119,31 +164,52 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
     }
     setSonando(true);
 
-    const ctx = obtenerContexto();
-    const inicio = ctx.currentTime + 0.15;
     const paso = 60 / bpm;
+    const duracionVuelta = columnas * paso;
+    /** Instante de salida de la PRIMERA vuelta. Las demás salen sumando, no preguntando. */
+    const primera = obtenerContexto().currentTime + 0.15;
+    let vueltas = 0;
 
-    for (let c = 0; c < columnas; c++) {
-      const cuando = inicio + c * paso;
-      for (const f of notasDeColumna(estado.encendidas, c)) {
-        sampler.current?.tocar(notas[f] ?? 'C4', cuando, paso * 0.9);
+    const programarVuelta = (base: number) => {
+      for (let c = 0; c < columnas; c++) {
+        const cuando = base + c * paso;
+        for (const f of notasDeColumna(encendidasRef.current, c)) {
+          sampler.current?.tocar(notas[f] ?? 'C4', cuando, paso * 0.9);
+        }
+        // El resalte va por temporizador aparte del planificador de audio: animar dentro
+        // del planificador adelanta el destello respecto al sonido.
+        resaltes.current.push(
+          window.setTimeout(
+            () => setColumnaActual(c),
+            (cuando - obtenerContexto().currentTime) * 1000,
+          ),
+        );
       }
-      // El resalte va por temporizador aparte del planificador de audio: animar dentro
-      // del planificador adelanta el destello respecto al sonido.
-      window.setTimeout(() => setColumnaActual(c), (cuando - ctx.currentTime) * 1000);
-    }
-    window.setTimeout(
-      () => {
-        setColumnaActual(-1);
-        setSonando(false);
-        // El bucle se relanza al terminar la vuelta en vez de programar cien compases por
-        // delante: así, si el niño cambia una celda a mitad, la vuelta siguiente ya suena
-        // con el cambio. Componer es probar, y esperar al final rompe el hilo.
-        if (bucleRef.current) window.setTimeout(() => void reproducirRef.current?.(), 120);
-      },
-      (inicio + columnas * paso - ctx.currentTime) * 1000,
-    );
-  }, [sonando, bpm, columnas, estado.encendidas, notas]);
+    };
+
+    const ADELANTO_MS = 200;
+    const tick = () => {
+      const ahora = obtenerContexto().currentTime;
+      const hacenFalta = vueltasEncoladas(
+        { inicio: primera * 1000, duracionVuelta: duracionVuelta * 1000, ahora: ahora * 1000 },
+        ADELANTO_MS,
+      );
+      while (vueltas < hacenFalta) {
+        // Ya suena una vuelta y no hay bucle: se para justo cuando acabe, ni antes ni con
+        // un silencio detrás.
+        if (vueltas > 0 && !bucleRef.current) {
+          const fin = primera + vueltas * duracionVuelta;
+          window.setTimeout(pararReproduccion, (fin - ahora) * 1000);
+          reloj.current = null;
+          return;
+        }
+        programarVuelta(primera + vueltas * duracionVuelta);
+        vueltas += 1;
+      }
+      reloj.current = window.setTimeout(tick, 25);
+    };
+    tick();
+  }, [sonando, bpm, columnas, notas, pararReproduccion]);
 
   /**
    * Las celdas encendidas, como notas con instante y duración.
@@ -172,10 +238,6 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
     }
     return salida.sort((a, b) => a.inicio - b.inicio);
   }, [estado.encendidas, filas, columnas, notas]);
-
-  // Referencia estable para que el bucle pueda llamarse a sí mismo sin ciclos de deps.
-  const reproducirRef = useRef<(() => Promise<void>) | null>(null);
-  reproducirRef.current = reproducir;
 
   const tocarCelda = useCallback(
     async (fila: number, columna: number) => {

@@ -81,18 +81,25 @@ describe('toda actividad se puede dar por hecha', () => {
     }
   });
 
-  it('«seguir» anota antes de relanzar el bucle, no después', () => {
+  it('«seguir» anota la vuelta completa, dé vueltas o no', () => {
     /*
-      El fallo era de ORDEN, no de lógica: la llamada existía y estaba detrás del `return`.
-      Un test de comportamiento haría falta un reloj de audio falso y tres segundos de
-      espera; esto comprueba lo único que se rompió, que es dónde está la línea.
+      El fallo original era de ORDEN: la llamada que anota estaba detrás del `return` que
+      relanzaba el bucle, así que en bucle no se alcanzaba nunca. Ese `return` ya no existe
+      —el bucle no relanza, sigue— y con él desaparece la forma de volver a equivocarse.
+
+      Lo que queda por comprobar es que siga habiendo una sola llamada y que no esté dentro
+      de la rama de «no hay bucle», que es lo que la escondía.
     */
     const src = readFileSync(join(RAIZ, 'tipos', 'Seguir.tsx'), 'utf8');
+    expect(src, 'ya no relanza, y no debe volver a hacerlo').not.toContain('arrancarRef');
+    const llamadas = src.match(/alTerminar\(\{ actividadId/g) ?? [];
+    expect(llamadas.length, 'debe haber una sola llamada, y fuera de toda rama').toBe(1);
     const anota = src.indexOf('alTerminar({ actividadId');
-    const relanza = src.indexOf('arrancarRef.current?.(true)');
-    expect(anota, 'Seguir.tsx ya no anota').toBeGreaterThan(0);
-    expect(relanza, 'Seguir.tsx ya no relanza el bucle').toBeGreaterThan(0);
-    expect(anota, 'anota después de relanzar: en bucle no llegaría nunca').toBeLessThan(relanza);
+    const ramaSinBucle = src.indexOf('if (!contenido.bucle)');
+    expect(ramaSinBucle, 'ya no hay rama de «sin bucle»').toBeGreaterThan(0);
+    expect(anota, 'anota dentro de la rama de «sin bucle»: en bucle no llegaría').toBeLessThan(
+      ramaSinBucle,
+    );
   });
 });
 

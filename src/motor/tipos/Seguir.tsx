@@ -10,6 +10,7 @@ import { Icono } from '@/ui/Icono';
 import { BarraAcciones } from '@/ui/BarraAcciones';
 import { IconoParar, IconoTocar } from '@/ui/Simbolos';
 import { rejillaDesdeSilabas } from '../rejillaRitmica';
+import { faltaPara, posicionEnVuelta, vueltasEncoladas } from '../bucle';
 
 /**
  * Tipo «seguir»: reproducción con cursor sincronizado. Musicograma y karaoke.
@@ -76,7 +77,6 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
   const sampler = useRef<Sampler | null>(null);
   const metronomo = useRef<Metronomo | null>(null);
   const rafId = useRef<number | null>(null);
-  const hitos = useRef<number[]>([]);
   const yaTerminada = useRef(false);
 
   const parar = useCallback(() => {
@@ -91,17 +91,25 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
   useEffect(() => parar, [parar]);
 
   /**
-   * @param continuando lo llama el propio bucle al acabar una vuelta.
+   * Arranca, y en bucle no vuelve a arrancar nunca: sigue.
    *
-   * La guarda de «ya está sonando» existe para que dos toques seguidos en el botón no
-   * arranquen dos reproducciones a la vez. Pero el bucle **también** llama aquí, y ahí sí
-   * está sonando: sin distinguirlo, la vuelta siguiente se salía en la primera línea y la
-   * música simplemente paraba. Ese era el fallo.
+   * **Por qué esto no relanza.** Antes cada vuelta llamaba otra vez aquí, y aquí el instante
+   * de salida se calculaba como «ahora más medio segundo». Ese medio segundo era el margen
+   * para tener el sonido cargado, y en la primera vuelta está bien; en las siguientes se
+   * colaba entero entre el último bloque y el primero, o sea un silencio que ni es un pulso
+   * ni es medio. Eso es lo que se oía como una costura, y además el metrónomo se paraba y se
+   * creaba otro, con lo que el pulso se reiniciaba también.
+   *
+   * Ahora hay **un solo `inicio`** y la vuelta N sale exactamente en `inicio + N * duración`.
+   * Es aritmética contra el reloj del audio: no acumula error y no puede haber hueco, porque
+   * no hay ningún «ahora» de por medio.
+   *
+   * Se sigue programando poco por delante —algo más de un segundo—, que era la razón de
+   * relanzar en vez de encolar veinte vueltas de golpe. Se mantiene el motivo y se cambia la
+   * forma: es el mismo *lookahead* del metrónomo (`CLAUDE.md` §7).
    */
-  const arrancar = useCallback(async (continuando = false) => {
-    if (sonando && !continuando) return;
-    // El metrónomo de la vuelta anterior sigue vivo: hay que pararlo antes de crear otro,
-    // o se acumula uno por vuelta y el pulso se convierte en un redoble.
+  const arrancar = useCallback(async () => {
+    if (sonando) return;
     metronomo.current?.parar();
     metronomo.current = null;
     await despertarAudio();
@@ -135,95 +143,121 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
         )
       : bloques.map((b) => b.pulsos ?? 1);
 
+    /*
+      Los desfases dentro de UNA vuelta, en milisegundos desde su principio.
+
+      Antes esto eran instantes absolutos y por eso había que recalcularlos en cada vuelta.
+      Siendo desfases, la vuelta N son los mismos números más `N * duracionVuelta`: se
+      calculan una vez y valen para siempre.
+    */
     let acumulado = 0;
-    hitos.current = duraciones.map((d) => {
-      const ms = inicio + acumulado * msPorPulso;
+    const desfases = duraciones.map((d) => {
+      const ms = acumulado * msPorPulso;
       acumulado += d;
       return ms;
     });
+    const duracionVuelta = acumulado * msPorPulso;
 
-    // El sonido se programa contra el reloj de audio; el cursor lo consume aparte.
-    hitos.current.forEach((ms, i) => {
-      const nota = contenido.notas?.[i];
-      if (nota) sampler.current?.tocar(nota, ms / 1000, msPorPulso / 1000);
-    });
+    /** Programa el sonido de una vuelta. La N empieza en `inicio + N * duracionVuelta`. */
+    const programarVuelta = (n: number) => {
+      const base = inicio + n * duracionVuelta;
+      desfases.forEach((desfase, i) => {
+        const nota = contenido.notas?.[i];
+        if (nota) sampler.current?.tocar(nota, (base + desfase) / 1000, msPorPulso / 1000);
+      });
+      /*
+        **El ritmo suena, golpe a golpe.** Antes, sin `notas` declaradas no se programaba
+        ningún sonido: solo corría el metrónomo marcando negras, así que se leía «ti-ti» y se
+        oía «ta». El ritmo hay que oírlo, que es toda la actividad.
+      */
+      if (rejilla && !contenido.notas) {
+        rejilla.golpes.forEach((g) => clic((base + g * msPorPulso) / 1000, g === 0));
+      }
+    };
 
     /*
-      **El ritmo suena, golpe a golpe.** Antes, sin `notas` declaradas no se programaba
-      ningún sonido: solo corría el metrónomo marcando negras, así que se leía «ti-ti» y se
-      oía «ta». El ritmo hay que oírlo, que es toda la actividad.
-
-      Y entonces el metrónomo va EN SILENCIO. Un clic en cada negra sonando a la vez que el
-      ritmo hace que un niño no distinga cuál es cuál; el pulso se sigue viendo, que es para
-      lo que estaba.
+      Y el metrónomo va EN SILENCIO cuando el ritmo ya suena. Un clic en cada negra sonando a
+      la vez que el ritmo hace que un niño no distinga cuál es cuál; el pulso se sigue viendo,
+      que es para lo que estaba. Se crea **una sola vez**: antes se paraba y se creaba otro en
+      cada vuelta, así que el pulso se reiniciaba con ella.
     */
-    if (rejilla && !contenido.notas) {
-      rejilla.golpes.forEach((g) => clic(inicio / 1000 + (g * msPorPulso) / 1000, g === 0));
-    }
-
     const m = new Metronomo(bpm, 4, !contenido.notas && !rejilla);
     metronomo.current = m;
     m.arrancar();
     setSonando(true);
 
+    /** Cuántas vueltas llevan el sonido ya encolado. */
+    let programadas = 0;
+    /** Cuánto se programa por delante. Poco: el niño puede parar en la primera vuelta. */
+    const ADELANTO_MS = 1200;
+
     const seguirCursor = () => {
       const ahora = obtenerContexto().currentTime * 1000;
-      let indice = -1;
-      for (let i = 0; i < hitos.current.length; i++) {
-        if (ahora >= hitos.current[i]!) indice = i;
-      }
-      setActual(indice);
-      if (modo === 'cae') {
-        setRestantes(hitos.current.map((ms) => (ms - ahora) / 1000));
+
+      // Encolar lo que entre en la ventana. En bucle no para nunca; si no, solo la primera.
+      const reloj = { inicio, duracionVuelta, ahora };
+      const hacenFalta = contenido.bucle
+        ? vueltasEncoladas(reloj, ADELANTO_MS)
+        : Math.min(1, vueltasEncoladas(reloj, ADELANTO_MS));
+      while (programadas < hacenFalta) {
+        programarVuelta(programadas);
+        programadas += 1;
       }
 
-      const fin = inicio + acumulado * msPorPulso;
-      if (ahora >= fin) {
+      const transcurrido = ahora - inicio;
+      const dentro = posicionEnVuelta(reloj, Boolean(contenido.bucle));
+
+      let indice = -1;
+      if (transcurrido >= 0) {
+        for (let i = 0; i < desfases.length; i++) if (dentro >= desfases[i]!) indice = i;
+      }
+      setActual(indice);
+
+      if (modo === 'cae') {
+        setRestantes(
+          desfases.map(
+            (desfase) =>
+              faltaPara(desfase, dentro, duracionVuelta, Boolean(contenido.bucle)) / 1000,
+          ),
+        );
+      }
+
+      if (transcurrido >= duracionVuelta) {
         /*
           Se anota al acabar la PRIMERA vuelta, dé vueltas o no.
 
-          Esto estaba dentro de la rama de «no hay bucle», detrás del `return` que relanza,
-          así que **las actividades en bucle no se marcaban nunca** — y tres de las cuatro
-          van en bucle, «Ta y ti-ti» incluida. Lo encontró el autor preguntando cómo se
-          marcaban, no probando: la actividad funciona igual y lo único que falla es que en
-          el catálogo sigue saliendo sin hacer.
+          Estaba dentro de la rama de «no hay bucle», detrás del `return` que relanzaba, así
+          que **las actividades en bucle no se marcaban nunca** — y tres de las cuatro van en
+          bucle, «Ta y ti-ti» incluida. Al acabar una vuelta el niño ha visto y oído el
+          patrón entero, que es lo que aquí significa haberlo hecho: no hay nada que acertar.
 
-          Al acabar una vuelta el niño ha visto y oído el patrón entero, que es lo que aquí
-          significa haberlo hecho: no hay nada que acertar. `yaTerminada` se encarga de que
-          las vueltas siguientes no vuelvan a anotar.
-
-          Y quien decide si además se celebra es el marco, con `hayCelebracion`: en bucle no
-          se celebra, porque la música sigue sonando.
+          Quien decide si además se celebra es el marco, con `hayCelebracion`: en bucle no se
+          celebra, porque la música sigue sonando.
         */
         if (!yaTerminada.current) {
           yaTerminada.current = true;
           alTerminar({ actividadId: actividad.id, completada: true });
         }
-        if (contenido.bucle) {
-          /*
-            Vuelta a empezar sin cortar el sonido.
-
-            Se relanza `arrancar()` en vez de acumular vueltas por adelantado: programar
-            veinte repeticiones de golpe llenaría la cola de audio de eventos que quizá
-            nadie va a oír, porque el niño puede parar en la primera. Y el salto no se nota
-            porque la vuelta siguiente se programa medio segundo por delante, igual que la
-            primera.
-          */
-          void arrancarRef.current?.(true);
+        if (!contenido.bucle) {
+          parar();
           return;
         }
-        parar();
-        return;
       }
       rafId.current = requestAnimationFrame(seguirCursor);
     };
     rafId.current = requestAnimationFrame(seguirCursor);
-  }, [sonando, bpm, bloques, contenido.silabas, contenido.notas, contenido.bucle, modo, parar, actividad.id, alTerminar]);
-
-  // El bucle necesita llamarse a sí mismo, y una función no puede referenciarse dentro de
-  // su propia definición sin esto.
-  const arrancarRef = useRef<((continuando?: boolean) => Promise<void>) | null>(null);
-  arrancarRef.current = arrancar;
+  }, [
+    sonando,
+    bpm,
+    bloques,
+    contenido.silabas,
+    contenido.notas,
+    contenido.bucle,
+    modo,
+    parar,
+    actividad.id,
+    alTerminar,
+  ]);
 
   return (
     <section className="actividad seguir" data-carril={carril} aria-labelledby="consigna">
