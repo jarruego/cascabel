@@ -12,6 +12,7 @@ import {
   type EvaluacionAfinacion,
 } from '../afinacion';
 import { rechazarMicrofono, seUsaMicrofono } from '@/escucha/permiso';
+import { pistaPara } from '../maquinaEleccion';
 import { Reaccion } from '@/ui/Reaccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
@@ -341,6 +342,11 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
             personaje={actividad.personaje}
           >
             {t(evaluacion ? mensajeAfinacion(evaluacion) : 'cantar.sinMedir')}
+            {/* «Respira antes de empezar y canta con la boca bien abierta» es algo que se
+                puede hacer distinto la próxima vez. «Casi» no lo es. */}
+            {evaluacion && Math.abs(evaluacion.centsMedios) > 50 && pistaPara(actividad.pistas, 1)
+              ? ` ${t(pistaPara(actividad.pistas, 1)!)}`
+              : ''}
           </Reaccion>
 
           <div className="cantar__acciones">

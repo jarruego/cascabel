@@ -21,6 +21,7 @@ import { duracionDe, instantesDe } from '../melodiaEnTiempo';
 import { CuentaAtras } from '@/ui/CuentaAtras';
 import { colorDe, nombreDe } from '@/ui/coloresNota';
 import { Icono } from '@/ui/Icono';
+import { pistaPara } from '../maquinaEleccion';
 import { Reaccion } from '@/ui/Reaccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
@@ -577,6 +578,11 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
             {evaluacion.regularPeroDesfasado
               ? t(evaluacion.desvioMedioMs > 0 ? 'tocar.regularTarde' : 'tocar.regularPronto')
               : t(porcentaje >= 60 ? 'karaoke.bien' : 'karaoke.otraVez')}
+            {/* La pista de la actividad, que es la concreta: «mira la sílaba antes de que
+                llegue a la línea» dice qué hacer distinto; «otra vez» no. */}
+            {porcentaje < 60 && pistaPara(actividad.pistas, 1)
+              ? ` ${t(pistaPara(actividad.pistas, 1)!)}`
+              : ''}
           </Reaccion>
           <p className="karaoke__cifras">
             {t('karaoke.cogidas')} <strong>{acertadas.size}</strong> {t('catalogo.de')}{' '}

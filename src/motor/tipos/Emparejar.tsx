@@ -2,6 +2,7 @@ import { useCallback, useEffect, useReducer, useRef } from 'react';
 import { OBJETIVO_TACTIL } from '@/config';
 import { useCarril } from '@/app/preferencias';
 import { Reaccion } from '@/ui/Reaccion';
+import { pistaPara } from '../maquinaEleccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
@@ -156,7 +157,10 @@ export default function Emparejar({ actividad, alTerminar }: PropsActividad) {
         personaje={actividad.personaje}
       >
         {estado.ultima?.acierto === true && t('comun.bien')}
-        {estado.ultima?.acierto === false && t('comun.escuchaOtraVez')}
+        {/* La pista de esta actividad si la trae, y si no la frase de siempre. Es lo que
+            distingue «escucha otra vez» de «escucha los dos seguidos: ¿se parecen?». */}
+        {estado.ultima?.acierto === false &&
+          t(pistaPara(actividad.pistas, estado.fallosAqui) ?? 'comun.escuchaOtraVez')}
         {estado.fase === 'completada' && t('comun.completada')}
       </Reaccion>
 

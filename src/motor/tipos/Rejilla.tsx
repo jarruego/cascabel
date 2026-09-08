@@ -5,6 +5,7 @@ import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { MARIMBA, Sampler } from '@/audio/sampler';
 import { aMidiSMF, aMusicXML, descargar, type NotaExportable } from '@/datos/exportar';
 import { Reaccion } from '@/ui/Reaccion';
+import { pistaPara } from '../maquinaEleccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
@@ -308,7 +309,8 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
         tono={estado.fase === 'completada' ? 'bien' : estado.fase === 'revisando' ? 'casi' : 'neutro'}
         personaje={actividad.personaje}
       >
-        {estado.fase === 'revisando' && t('rejilla.revisa')}
+        {estado.fase === 'revisando' &&
+          t(pistaPara(actividad.pistas, estado.intentos) ?? 'rejilla.revisa')}
         {estado.fase === 'completada' && t('comun.completada')}
         {modo === 'libre' && estado.fase === 'editando' && t('rejilla.libre')}
       </Reaccion>

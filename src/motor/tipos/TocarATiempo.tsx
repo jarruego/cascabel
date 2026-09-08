@@ -9,6 +9,7 @@ import { evaluarRitmo, type EvaluacionRitmica } from '../evaluacion';
 import { aMilisegundos, anclarEn, rejillaDesdeSilabas } from '../rejillaRitmica';
 import { Reaccion } from '@/ui/Reaccion';
 import type { Personaje as PersonajeNombre } from '@/ui/personajes';
+import { pistaPara } from '../maquinaEleccion';
 import { rechazarMicrofono, seUsaMicrofono } from '@/escucha/permiso';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
@@ -504,6 +505,7 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
         <Resultado
           evaluacion={evaluacion}
           personaje={actividad.personaje}
+          pista={pistaPara(actividad.pistas, ronda + 1) ?? undefined}
           ronda={ronda}
           repeticiones={repeticiones}
           alSeguir={() => {
@@ -542,12 +544,15 @@ function Resultado({
   repeticiones,
   alSeguir,
   personaje,
+  pista,
 }: {
   evaluacion: EvaluacionRitmica;
   ronda: number;
   repeticiones: number;
   alSeguir: () => void;
   personaje?: PersonajeNombre;
+  /** La pista de ESTA actividad, que es la que enseña algo. Ver `Reaccion`. */
+  pista?: string;
 }) {
   const { desvioMedioMs, desviacionTipicaMs, regularPeroDesfasado } = evaluacion;
 
@@ -565,6 +570,9 @@ function Resultado({
           párrafo fijo, y una frase que se queda hasta que pase otra cosa deja de leerse. */}
       <Reaccion tono={mensaje === 'tocar.bien' ? 'bien' : 'casi'} personaje={personaje}>
         {t(mensaje)}
+        {/* Y la pista de la actividad detrás, cuando no ha salido: «marca el pulso con el
+            pie mientras palmeas» enseña algo que «prueba a ir más regular» no enseña. */}
+        {mensaje !== 'tocar.bien' && pista ? ` ${t(pista)}` : ''}
       </Reaccion>
       {/*
         Los milisegundos ya no se enseñan aquí.

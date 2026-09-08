@@ -7,6 +7,7 @@ import { colorDe, nombreDe } from '@/ui/coloresNota';
 import { alturaEnPauta, yDeLinea } from '../alturaEnPauta';
 import { distancia, escalaDesde, esEscalaMayor, MAYOR, type Distancia } from '../escala';
 import { Reaccion } from '@/ui/Reaccion';
+import { pistaPara } from '../maquinaEleccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -188,7 +189,9 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
         personaje={actividad.personaje}
       >
         {resuelta && t('escala.conseguida')}
-        {!resuelta && puestas.length === objetivo.length && t('escala.casi')}
+        {!resuelta &&
+          puestas.length === objetivo.length &&
+          t(pistaPara(actividad.pistas, 1) ?? 'escala.casi')}
       </Reaccion>
 
       <div className="escala__acciones">

@@ -1,6 +1,7 @@
 import { useEffect, useReducer, useRef } from 'react';
 import { useCarril } from '@/app/preferencias';
 import { Reaccion } from '@/ui/Reaccion';
+import { pistaPara } from '../maquinaEleccion';
 import { t } from '@/i18n';
 import { figuraDe } from '../musicograma';
 import {
@@ -128,6 +129,12 @@ export default function Compases({ actividad, alTerminar }: PropsActividad) {
         tono={estado.fase === 'completada' ? 'bien' : estado.fase === 'revisando' ? 'casi' : 'neutro'}
         personaje={actividad.personaje}
       >
+        {/*
+            Aquí la frase genérica NO es genérica: «aquí no cierra el compás» y «aquí cerraba
+            y no lo has visto» son dos errores distintos y se dicen distinto. Así que la
+            pista de la actividad se añade debajo en vez de sustituirla — es la única del
+            grupo donde el tipo sabe más que el JSON sobre lo que acaba de pasar.
+          */}
         {estado.fase === 'revisando' &&
           t(
             estado.sobran.length && estado.faltan.length
@@ -136,6 +143,9 @@ export default function Compases({ actividad, alTerminar }: PropsActividad) {
                 ? 'compases.sobran'
                 : 'compases.faltan',
           )}
+        {estado.fase === 'revisando' && pistaPara(actividad.pistas, estado.intentos) && (
+          <> {t(pistaPara(actividad.pistas, estado.intentos)!)}</>
+        )}
         {estado.fase === 'completada' && t('comun.completada')}
       </Reaccion>
     </section>
