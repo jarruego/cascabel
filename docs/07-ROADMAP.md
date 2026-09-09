@@ -2542,6 +2542,12 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       los ritmos no, y en «De la más corta a la más larga» tocar dos seguidas las mezclaba.
       Y «escuchar» encadena cada ficha cuando acaba la anterior, no cada 700 ms.
 
+- [x] **«Sube o baja» se oye subir y bajar.** Tres notas por grados conjuntos en una quinta
+      casi no se distinguían: ahora cuatro o cinco notas por el arpegio con una octava de
+      recorrido, en Infantil y en «sube, baja o se repite». «¿Cuál es más aguda?» nunca
+      baja de una cuarta entre las dos. Y la voz de General MIDI sale de los tres: era el
+      timbre que «no parecía ni el mismo instrumento».
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

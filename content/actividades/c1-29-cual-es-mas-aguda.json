@@ -54,7 +54,7 @@
       {
         "notas": [
           "G4",
-          "E4"
+          "C4"
         ],
         "respuesta": "laprimera",
         "instrumento": "flauta"
@@ -70,7 +70,7 @@
       {
         "notas": [
           "E4",
-          "F4"
+          "B4"
         ],
         "respuesta": "lasegunda",
         "instrumento": "glockenspiel"
@@ -78,10 +78,10 @@
       {
         "notas": [
           "B4",
-          "A4"
+          "E4"
         ],
         "respuesta": "laprimera",
-        "instrumento": "voz"
+        "instrumento": "glockenspiel"
       },
       {
         "notas": [

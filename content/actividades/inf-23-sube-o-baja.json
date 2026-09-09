@@ -37,26 +37,29 @@
     "estimulos": [
       {
         "notas": [
-          "D4",
-          "F4",
-          "A4"
+          "C4",
+          "E4",
+          "G4",
+          "C5"
         ],
         "respuesta": "sube",
         "instrumento": "piano"
       },
       {
         "notas": [
-          "A4",
-          "F4",
-          "D4"
+          "C5",
+          "G4",
+          "E4",
+          "C4"
         ],
         "respuesta": "baja",
-        "instrumento": "flauta"
+        "instrumento": "trompeta"
       },
       {
         "notas": [
-          "G4",
-          "E4",
+          "D5",
+          "A4",
+          "F4",
           "D4"
         ],
         "respuesta": "baja",
@@ -64,30 +67,35 @@
       },
       {
         "notas": [
-          "E4",
-          "G4",
-          "A4"
-        ],
-        "respuesta": "sube",
-        "instrumento": "voz"
-      },
-      {
-        "notas": [
           "D4",
-          "E4",
-          "G4"
+          "F4",
+          "A4",
+          "D5",
+          "F5"
         ],
         "respuesta": "sube",
         "instrumento": "clarinete"
       },
       {
         "notas": [
-          "A4",
+          "C4",
+          "E4",
+          "G4",
+          "C5",
+          "E5"
+        ],
+        "respuesta": "sube",
+        "instrumento": "glockenspiel"
+      },
+      {
+        "notas": [
+          "E5",
+          "C5",
           "G4",
           "E4"
         ],
         "respuesta": "baja",
-        "instrumento": "trompeta"
+        "instrumento": "flauta"
       }
     ],
     "instrumento": "xilofono"
