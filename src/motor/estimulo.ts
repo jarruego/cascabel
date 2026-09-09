@@ -74,10 +74,21 @@ export function eventosDe(e: Estimulo, tempoPorDefecto = 84): Evento[] {
 
   if (e.notas?.length) {
     const volumen = e.volumen ?? 0.85;
+    // Primero los instantes: una duración de cero pone la nota siguiente EN EL MISMO
+    // instante, que es como se escribe un acorde («C4, E4, G4» con duraciones «0, 0, 2»).
+    const instantes: number[] = [];
     let t = 0;
+    e.notas.forEach((_, i) => {
+      instantes.push(t);
+      t += (e.duraciones?.[i] ?? 1) * pulso;
+    });
+    const final = t;
     e.notas.forEach((nota, i) => {
-      const pulsos = e.duraciones?.[i] ?? 1;
-      const hueco = pulsos * pulso;
+      if (!nota) return;
+      // Lo que dura es hasta el siguiente instante DISTINTO, o hasta el final: así las notas
+      // de un acorde duran lo que el acorde, y no cero.
+      const siguiente = instantes.find((x) => x > instantes[i]!) ?? final;
+      const hueco = Math.max(siguiente - instantes[i]!, pulso * 0.5);
       // Ligado: la nota dura casi hasta la siguiente. Picado: un instante. Sin decir nada,
       // un poco menos que el hueco, que es como suena una nota suelta y sin intención.
       const duracion =
@@ -86,10 +97,13 @@ export function eventosDe(e: Estimulo, tempoPorDefecto = 84): Evento[] {
           : e.articulacion === 'legato'
             ? hueco * 0.98
             : hueco * 0.8;
-      if (nota) {
-        eventos.push({ en: t, tipo: 'nota', nota, duracion, volumen: e.volumenes?.[i] ?? volumen });
-      }
-      t += hueco;
+      eventos.push({
+        en: instantes[i]!,
+        tipo: 'nota',
+        nota,
+        duracion,
+        volumen: e.volumenes?.[i] ?? volumen,
+      });
     });
   }
 

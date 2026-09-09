@@ -1,7 +1,7 @@
 {
   "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa, y también si usa un código que aquí no está. El hueco de C1-17 es intencionado: ese código nunca llegó a reservarse y los ids no se renumeran, porque un id puede estar dentro de una URL compartida.",
   "generado": "2026-09-10",
-  "total": 123,
+  "total": 129,
   "actividades": [
     {
       "id": "C1-01",
@@ -378,6 +378,19 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Cuatro notas con solo sol y mi, las dos primeras de la progresión vocal, y hay que colocarlas en una cuadrícula de dos filas. El primer dictado melódico.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C1-31",
+      "titulo": "Dictado de sol, mi y la",
+      "etapa": "primaria-c1",
+      "eje": "altura",
+      "lugar": "pantalla",
+      "tipo": "rejilla",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Cuatro notas con sol, mi y la, la tercera nota de la progresión vocal, en una cuadrícula de tres filas. El paso siguiente al dictado de sol y mi.",
       "estado": "hecha"
     },
     {
@@ -768,6 +781,45 @@
       "esfuerzo": "S",
       "curriculo": "CE1 · crit. 1.1 · saber A",
       "descripcion": "La misma melodía en modo mayor y en modo menor. Con el acorde se aprende en 5.º; aquí se oye antes, como carácter: alegre o triste.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C2-32",
+      "titulo": "¿Acelera o frena?",
+      "etapa": "primaria-c2",
+      "eje": "pulso",
+      "lugar": "pantalla",
+      "tipo": "eleccion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE1 · crit. 1.1 · saber A",
+      "descripcion": "Un pulso que cada vez va más deprisa, o cada vez más despacio. Accelerando y ritardando: el tempo que cambia mientras suena.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C2-33",
+      "titulo": "¿Sol, la o si?",
+      "etapa": "primaria-c2",
+      "eje": "altura",
+      "lugar": "pantalla",
+      "tipo": "eleccion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE1 · crit. 1.1 · saber A",
+      "descripcion": "Primero suena sol, para tener referencia, y después otra nota: sol, la o si. Las tres primeras de la flauta, reconocidas de oído.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C2-34",
+      "titulo": "Palmea con blancas y corcheas",
+      "etapa": "primaria-c2",
+      "eje": "pulso",
+      "lugar": "pantalla",
+      "tipo": "tocar-a-tiempo",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Un ritmo de dos compases con blancas, negras y corcheas, para escuchar y repetir con las palmas. La versión de 3.º–4.º de «Palmea el ritmo».",
       "estado": "hecha"
     },
     {
@@ -1184,6 +1236,32 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Las notas de la clave de fa, la de los instrumentos graves. La cuarta línea es fa y a partir de ahí todo se deduce, igual que con el sol.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C3-35",
+      "titulo": "¿Suenan bien juntas o rozan?",
+      "etapa": "primaria-c3",
+      "eje": "altura",
+      "lugar": "pantalla",
+      "tipo": "eleccion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE1 · crit. 1.1 · saber A",
+      "descripcion": "Dos notas a la vez. Unas encajan y otras rozan: consonancia y disonancia, que es de lo que está hecha la armonía.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C3-36",
+      "titulo": "¿Cuántas notas a la vez?",
+      "etapa": "primaria-c3",
+      "eje": "altura",
+      "lugar": "pantalla",
+      "tipo": "eleccion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE1 · crit. 1.1 · saber A",
+      "descripcion": "Una, dos o tres notas sonando en el mismo instante. Oír dentro de un acorde es lo que hace falta para escuchar a varias voces.",
       "estado": "hecha"
     },
     {

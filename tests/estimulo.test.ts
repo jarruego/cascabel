@@ -33,6 +33,21 @@ describe('un estímulo dicho en notas', () => {
   });
 });
 
+describe('un acorde: varias notas en el mismo instante', () => {
+  it('una duración de cero pone la siguiente nota a la vez, y las dos duran lo que el acorde', () => {
+    const ev = eventosDe({ notas: ['C4', 'E4', 'G4'], duraciones: [0, 0, 2], respuesta: 'x' }, 60);
+    expect(ev.map((e) => e.en)).toEqual([0, 0, 0]);
+    for (const e of ev) if (e.tipo === 'nota') expect(e.duracion).toBeGreaterThan(1);
+  });
+
+  it('un acorde seguido de una nota: el acorde dura hasta la nota', () => {
+    const ev = eventosDe({ notas: ['C4', 'G4', 'A4'], duraciones: [0, 1, 1], respuesta: 'x' }, 60);
+    expect(ev.map((e) => e.en)).toEqual([0, 0, 1]);
+    const c4 = ev[0];
+    if (c4?.tipo === 'nota') expect(c4.duracion).toBeCloseTo(0.8, 5);
+  });
+});
+
 describe('un estímulo dicho en ritmo', () => {
   it('cada figura es un clic, y el acento cae donde se dice', () => {
     // Dos compases de tres por cuatro: seis negras con acento en la primera de cada tres.

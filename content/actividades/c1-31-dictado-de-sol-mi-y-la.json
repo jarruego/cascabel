@@ -1,0 +1,68 @@
+{
+  "id": "c1-31-dictado-de-sol-mi-y-la",
+  "version": 1,
+  "tipo": "rejilla",
+  "titulo": "Dictado de sol, mi y la",
+  "descripcion": "Cuatro notas con sol, mi y la, la tercera nota de la progresión vocal, en una cuadrícula de tres filas. El paso siguiente al dictado de sol y mi.",
+  "etapa": "primaria-c1",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "vocal-kodaly",
+    "notas": [
+      "sol",
+      "mi",
+      "la"
+    ],
+    "tempo": 84
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c131.consigna",
+    "modo": "dictado",
+    "filas": 3,
+    "columnas": 4,
+    "tempo": 84,
+    "notas": [
+      "A4",
+      "G4",
+      "E4"
+    ],
+    "solucion": [
+      "1,0",
+      "0,1",
+      "1,2",
+      "2,3"
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c131.enunciado",
+  "personaje": "simon",
+  "pistas": [
+    "actividad.c131.pista1",
+    "actividad.c131.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

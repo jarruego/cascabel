@@ -1,0 +1,210 @@
+{
+  "id": "c3-36-cuantas-notas-a-la-vez",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Cuántas notas a la vez?",
+  "descripcion": "Una, dos o tres notas sonando en el mismo instante. Oír dentro de un acorde es lo que hace falta para escuchar a varias voces.",
+  "etapa": "primaria-c3",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 7,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.1",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c336.consigna",
+    "opciones": [
+      {
+        "clave": "uno",
+        "icono": "uno",
+        "color": "verde"
+      },
+      {
+        "clave": "dos",
+        "icono": "dos",
+        "color": "azul"
+      },
+      {
+        "clave": "tres",
+        "icono": "tres",
+        "color": "rojo"
+      }
+    ],
+    "estimulos": [
+      {
+        "notas": [
+          "E4"
+        ],
+        "duraciones": [
+          2
+        ],
+        "respuesta": "uno"
+      },
+      {
+        "notas": [
+          "C4",
+          "E4",
+          "G4"
+        ],
+        "duraciones": [
+          0,
+          0,
+          2
+        ],
+        "respuesta": "tres"
+      },
+      {
+        "notas": [
+          "C4",
+          "G4"
+        ],
+        "duraciones": [
+          0,
+          2
+        ],
+        "respuesta": "dos"
+      },
+      {
+        "notas": [
+          "D4",
+          "F4"
+        ],
+        "duraciones": [
+          0,
+          2
+        ],
+        "respuesta": "dos"
+      },
+      {
+        "notas": [
+          "A4"
+        ],
+        "duraciones": [
+          2
+        ],
+        "respuesta": "uno"
+      },
+      {
+        "notas": [
+          "D4",
+          "F4",
+          "A4"
+        ],
+        "duraciones": [
+          0,
+          0,
+          2
+        ],
+        "respuesta": "tres"
+      },
+      {
+        "notas": [
+          "E4",
+          "G4",
+          "C5"
+        ],
+        "duraciones": [
+          0,
+          0,
+          2
+        ],
+        "respuesta": "tres"
+      },
+      {
+        "notas": [
+          "G4"
+        ],
+        "duraciones": [
+          2
+        ],
+        "respuesta": "uno"
+      },
+      {
+        "notas": [
+          "E4",
+          "B4"
+        ],
+        "duraciones": [
+          0,
+          2
+        ],
+        "respuesta": "dos"
+      },
+      {
+        "notas": [
+          "C4",
+          "F4",
+          "A4"
+        ],
+        "duraciones": [
+          0,
+          0,
+          2
+        ],
+        "respuesta": "tres"
+      },
+      {
+        "notas": [
+          "G4",
+          "B4"
+        ],
+        "duraciones": [
+          0,
+          2
+        ],
+        "respuesta": "dos"
+      },
+      {
+        "notas": [
+          "C5"
+        ],
+        "duraciones": [
+          2
+        ],
+        "respuesta": "uno"
+      }
+    ],
+    "instrumento": "piano"
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c336.enunciado",
+  "personaje": "simon",
+  "pistas": [
+    "actividad.c336.pista1",
+    "actividad.c336.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Melodías y ritmos de ejemplo",
+      "autor": "Cascabel",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

@@ -116,7 +116,8 @@
             "c1-07-canta-la-nota",
             "c1-23-paso-o-salto",
             "c1-29-cual-es-mas-aguda",
-            "c1-30-dictado-de-sol-y-mi"
+            "c1-30-dictado-de-sol-y-mi",
+            "c1-31-dictado-de-sol-mi-y-la"
           ]
         },
         {
@@ -178,7 +179,8 @@
             "c2-25-barras-en-tres-por-cuatro",
             "c2-26-ordena-las-cinco-figuras",
             "c2-29-dictado-pentatonico",
-            "c2-30-cada-figura-con-su-silencio"
+            "c2-30-cada-figura-con-su-silencio",
+            "c2-34-palmea-con-blancas"
           ]
         },
         {
@@ -187,7 +189,8 @@
           "actividades": [
             "c2-04-flauta-digitaciones",
             "c2-05-toca-con-la-flauta",
-            "tr-01-afinador-visual"
+            "tr-01-afinador-visual",
+            "c2-33-sol-la-o-si"
           ]
         },
         {
@@ -217,7 +220,8 @@
             "c2-21-ligado-o-picado",
             "c2-23-termina-o-se-queda-a-medias",
             "c2-28-vals-marcha-o-tango",
-            "c2-31-alegre-o-triste"
+            "c2-31-alegre-o-triste",
+            "c2-32-acelera-o-frena"
           ]
         },
         {
@@ -247,7 +251,9 @@
             "c3-16-tono-o-semitono",
             "c3-17-sostenido-o-bemol",
             "c3-18-escala-mayor-o-menor",
-            "c3-34-coloca-la-nota-en-clave-de-fa"
+            "c3-34-coloca-la-nota-en-clave-de-fa",
+            "c3-35-suena-bien-o-roza",
+            "c3-36-cuantas-notas-a-la-vez"
           ]
         },
         {

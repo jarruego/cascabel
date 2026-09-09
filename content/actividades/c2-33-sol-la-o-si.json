@@ -1,0 +1,178 @@
+{
+  "id": "c2-33-sol-la-o-si",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Sol, la o si?",
+  "descripcion": "Primero suena sol, para tener referencia, y después otra nota: sol, la o si. Las tres primeras de la flauta, reconocidas de oído.",
+  "etapa": "primaria-c2",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.1",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "flauta",
+    "notas": [
+      "sol",
+      "la",
+      "si"
+    ]
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c233.consigna",
+    "opciones": [
+      {
+        "clave": "essol",
+        "color": "verde"
+      },
+      {
+        "clave": "esla",
+        "color": "azul"
+      },
+      {
+        "clave": "essi",
+        "color": "amarillo"
+      }
+    ],
+    "estimulos": [
+      {
+        "notas": [
+          "G4",
+          "",
+          "A4"
+        ],
+        "duraciones": [
+          1,
+          0.5,
+          2
+        ],
+        "respuesta": "esla"
+      },
+      {
+        "notas": [
+          "G4",
+          "",
+          "G4"
+        ],
+        "duraciones": [
+          1,
+          0.5,
+          2
+        ],
+        "respuesta": "essol"
+      },
+      {
+        "notas": [
+          "G4",
+          "",
+          "B4"
+        ],
+        "duraciones": [
+          1,
+          0.5,
+          2
+        ],
+        "respuesta": "essi"
+      },
+      {
+        "notas": [
+          "G4",
+          "",
+          "A4"
+        ],
+        "duraciones": [
+          1,
+          0.5,
+          2
+        ],
+        "respuesta": "esla"
+      },
+      {
+        "notas": [
+          "G4",
+          "",
+          "B4"
+        ],
+        "duraciones": [
+          1,
+          0.5,
+          2
+        ],
+        "respuesta": "essi"
+      },
+      {
+        "notas": [
+          "G4",
+          "",
+          "G4"
+        ],
+        "duraciones": [
+          1,
+          0.5,
+          2
+        ],
+        "respuesta": "essol"
+      },
+      {
+        "notas": [
+          "G4",
+          "",
+          "B4"
+        ],
+        "duraciones": [
+          1,
+          0.5,
+          2
+        ],
+        "respuesta": "essi"
+      },
+      {
+        "notas": [
+          "G4",
+          "",
+          "A4"
+        ],
+        "duraciones": [
+          1,
+          0.5,
+          2
+        ],
+        "respuesta": "esla"
+      }
+    ],
+    "instrumento": "flauta"
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c233.enunciado",
+  "personaje": "laia",
+  "pistas": [
+    "actividad.c233.pista1",
+    "actividad.c233.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Melodías y ritmos de ejemplo",
+      "autor": "Cascabel",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-09",
-  "total": 123,
+  "total": 129,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -538,6 +538,25 @@
       "id": "c1-30-dictado-de-sol-y-mi",
       "titulo": "Dictado de sol y mi",
       "descripcion": "Cuatro notas con solo sol y mi, las dos primeras de la progresión vocal, y hay que colocarlas en una cuadrícula de dos filas. El primer dictado melódico.",
+      "etapa": "primaria-c1",
+      "eje": "altura",
+      "tipo": "rejilla",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c1-31-dictado-de-sol-mi-y-la",
+      "titulo": "Dictado de sol, mi y la",
+      "descripcion": "Cuatro notas con sol, mi y la, la tercera nota de la progresión vocal, en una cuadrícula de tres filas. El paso siguiente al dictado de sol y mi.",
       "etapa": "primaria-c1",
       "eje": "altura",
       "tipo": "rejilla",
@@ -1119,6 +1138,63 @@
         "competencia": "CE1",
         "criterio": "1.1",
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c2-32-acelera-o-frena",
+      "titulo": "¿Acelera o frena?",
+      "descripcion": "Un pulso que cada vez va más deprisa, o cada vez más despacio. Accelerando y ritardando: el tempo que cambia mientras suena.",
+      "etapa": "primaria-c2",
+      "eje": "pulso",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c2-33-sol-la-o-si",
+      "titulo": "¿Sol, la o si?",
+      "descripcion": "Primero suena sol, para tener referencia, y después otra nota: sol, la o si. Las tres primeras de la flauta, reconocidas de oído.",
+      "etapa": "primaria-c2",
+      "eje": "altura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c2-34-palmea-con-blancas",
+      "titulo": "Palmea con blancas y corcheas",
+      "descripcion": "Un ritmo de dos compases con blancas, negras y corcheas, para escuchar y repetir con las palmas. La versión de 3.º–4.º de «Palmea el ritmo».",
+      "etapa": "primaria-c2",
+      "eje": "pulso",
+      "tipo": "tocar-a-tiempo",
+      "lugar": "pantalla",
+      "microfono": true,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
       "herramienta": false
@@ -1727,6 +1803,44 @@
         "competencia": "CE3",
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-35-suena-bien-o-roza",
+      "titulo": "¿Suenan bien juntas o rozan?",
+      "descripcion": "Dos notas a la vez. Unas encajan y otras rozan: consonancia y disonancia, que es de lo que está hecha la armonía.",
+      "etapa": "primaria-c3",
+      "eje": "altura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 7,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-36-cuantas-notas-a-la-vez",
+      "titulo": "¿Cuántas notas a la vez?",
+      "descripcion": "Una, dos o tres notas sonando en el mismo instante. Oír dentro de un acorde es lo que hace falta para escuchar a varias voces.",
+      "etapa": "primaria-c3",
+      "eje": "altura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 7,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
       "herramienta": false

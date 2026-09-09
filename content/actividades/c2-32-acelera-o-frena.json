@@ -1,0 +1,153 @@
+{
+  "id": "c2-32-acelera-o-frena",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Acelera o frena?",
+  "descripcion": "Un pulso que cada vez va más deprisa, o cada vez más despacio. Accelerando y ritardando: el tempo que cambia mientras suena.",
+  "etapa": "primaria-c2",
+  "eje": "pulso",
+  "lugar": "pantalla",
+  "duracion_min": 5,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.1",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c232.consigna",
+    "opciones": [
+      {
+        "clave": "acelera",
+        "icono": "conejo",
+        "color": "rojo"
+      },
+      {
+        "clave": "frena",
+        "icono": "tortuga",
+        "color": "azul"
+      }
+    ],
+    "estimulos": [
+      {
+        "ritmo": [
+          1,
+          0.94,
+          0.88,
+          0.82,
+          0.76,
+          0.7,
+          0.64,
+          0.58,
+          0.52,
+          0.46
+        ],
+        "tempo": 76,
+        "respuesta": "acelera"
+      },
+      {
+        "ritmo": [
+          0.5,
+          0.56,
+          0.62,
+          0.7,
+          0.78,
+          0.88,
+          1,
+          1.14,
+          1.3
+        ],
+        "tempo": 120,
+        "respuesta": "frena"
+      },
+      {
+        "ritmo": [
+          0.5,
+          0.56,
+          0.62,
+          0.7,
+          0.78,
+          0.88,
+          1,
+          1.14,
+          1.3
+        ],
+        "tempo": 132,
+        "respuesta": "frena"
+      },
+      {
+        "ritmo": [
+          1,
+          0.94,
+          0.88,
+          0.82,
+          0.76,
+          0.7,
+          0.64,
+          0.58,
+          0.52,
+          0.46
+        ],
+        "tempo": 84,
+        "respuesta": "acelera"
+      },
+      {
+        "ritmo": [
+          1,
+          0.94,
+          0.88,
+          0.82,
+          0.76,
+          0.7,
+          0.64,
+          0.58,
+          0.52,
+          0.46
+        ],
+        "tempo": 66,
+        "respuesta": "acelera"
+      },
+      {
+        "ritmo": [
+          0.5,
+          0.56,
+          0.62,
+          0.7,
+          0.78,
+          0.88,
+          1,
+          1.14,
+          1.3
+        ],
+        "tempo": 108,
+        "respuesta": "frena"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c232.enunciado",
+  "personaje": "milo",
+  "pistas": [
+    "actividad.c232.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

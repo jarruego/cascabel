@@ -1,0 +1,183 @@
+{
+  "id": "c3-35-suena-bien-o-roza",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Suenan bien juntas o rozan?",
+  "descripcion": "Dos notas a la vez. Unas encajan y otras rozan: consonancia y disonancia, que es de lo que está hecha la armonía.",
+  "etapa": "primaria-c3",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 7,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.1",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c335.consigna",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: como consonancias se usan la tercera, la quinta y la octava, y como disonancias la segunda menor y el tritono. Es la partición de manual y deja fuera a propósito los casos discutidos, como la cuarta y la séptima.",
+    "opciones": [
+      {
+        "clave": "consonante",
+        "icono": "pulgar",
+        "color": "verde"
+      },
+      {
+        "clave": "disonante",
+        "icono": "chispas",
+        "color": "rojo"
+      }
+    ],
+    "estimulos": [
+      {
+        "notas": [
+          "C4",
+          "G4"
+        ],
+        "duraciones": [
+          0,
+          2
+        ],
+        "respuesta": "consonante"
+      },
+      {
+        "notas": [
+          "C4",
+          "C#4"
+        ],
+        "duraciones": [
+          0,
+          2
+        ],
+        "respuesta": "disonante"
+      },
+      {
+        "notas": [
+          "C4",
+          "E4"
+        ],
+        "duraciones": [
+          0,
+          2
+        ],
+        "respuesta": "consonante"
+      },
+      {
+        "notas": [
+          "E4",
+          "F4"
+        ],
+        "duraciones": [
+          0,
+          2
+        ],
+        "respuesta": "disonante"
+      },
+      {
+        "notas": [
+          "F4",
+          "B4"
+        ],
+        "duraciones": [
+          0,
+          2
+        ],
+        "respuesta": "disonante"
+      },
+      {
+        "notas": [
+          "D4",
+          "A4"
+        ],
+        "duraciones": [
+          0,
+          2
+        ],
+        "respuesta": "consonante"
+      },
+      {
+        "notas": [
+          "C4",
+          "C5"
+        ],
+        "duraciones": [
+          0,
+          2
+        ],
+        "respuesta": "consonante"
+      },
+      {
+        "notas": [
+          "G4",
+          "Ab4"
+        ],
+        "duraciones": [
+          0,
+          2
+        ],
+        "respuesta": "disonante"
+      },
+      {
+        "notas": [
+          "E4",
+          "G4"
+        ],
+        "duraciones": [
+          0,
+          2
+        ],
+        "respuesta": "consonante"
+      },
+      {
+        "notas": [
+          "B3",
+          "C4"
+        ],
+        "duraciones": [
+          0,
+          2
+        ],
+        "respuesta": "disonante"
+      }
+    ],
+    "instrumento": "piano"
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c335.enunciado",
+  "personaje": "simon",
+  "pistas": [
+    "actividad.c335.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Melodías y ritmos de ejemplo",
+      "autor": "Cascabel",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}
