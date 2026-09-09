@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { clic } from '@/audio/clic';
-import { obtenerContexto } from '@/audio/AudioEngine';
+import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { t } from '@/i18n';
 
 /**
@@ -42,6 +42,25 @@ const MS_POR_DEFECTO = 800;
 
 export function CuentaAtras({ desde = 3, alTerminar, bpm, alContar }: Props) {
   const [queda, setQueda] = useState(desde);
+  /*
+    Las funciones del padre van en referencias y no en las dependencias del efecto.
+
+    Llegan como funciones flecha nuevas en cada repintado, y con ellas en las dependencias
+    el efecto se rehacía con cada repintado del padre: volvía a sonar el clic y volvía a
+    arrancar el reloj del número. Si el padre se repintaba a menudo —«canta la nota» lo
+    hacía con cada lectura del micrófono—, el número no bajaba nunca: se atrancaba. El
+    reloj solo depende de lo que cuenta.
+  */
+  const alTerminarRef = useRef(alTerminar);
+  alTerminarRef.current = alTerminar;
+  const alContarRef = useRef(alContar);
+  alContarRef.current = alContar;
+
+  // Si el contexto de audio estaba dormido, los clics se apilaban y salían todos a la vez
+  // con la primera nota. Se despierta aquí: la cuenta siempre arranca de un toque.
+  useEffect(() => {
+    void despertarAudio();
+  }, []);
 
   // Se acota entre 400 y 1200 ms. Un tempo de 40 dejaría una cuenta de seis segundos y uno
   // de 200 la haría ininteligible: en los extremos, la cuenta deja de servir para lo suyo.
@@ -58,13 +77,13 @@ export function CuentaAtras({ desde = 3, alTerminar, bpm, alContar }: Props) {
     }
 
     if (queda <= 0) {
-      const id = window.setTimeout(alTerminar, Math.min(450, intervalo * 0.6));
+      const id = window.setTimeout(() => alTerminarRef.current(), Math.min(450, intervalo * 0.6));
       return () => window.clearTimeout(id);
     }
-    alContar?.(queda);
+    alContarRef.current?.(queda);
     const id = window.setTimeout(() => setQueda((n) => n - 1), intervalo);
     return () => window.clearTimeout(id);
-  }, [queda, alTerminar, alContar, intervalo]);
+  }, [queda, intervalo]);
 
   return (
     <button

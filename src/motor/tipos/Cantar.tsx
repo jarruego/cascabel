@@ -117,6 +117,22 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
       return 60;
     }
   })();
+  /*
+    Dos referencias que arreglan dos fallos que el autor notó el 2026-09-12 y que tenían la
+    misma raíz: **el detector se abre una vez y vive toda la actividad**, pero la función
+    que recibe sus lecturas se escribió en el primer `empezar`.
+
+     - Comparaba siempre contra la PRIMERA nota: `midiObjetivo` quedaba atrapado en ese
+       cierre. En la segunda nota la aguja medía la desviación respecto a la primera, así
+       que el centro no se ponía verde nunca aunque se cantara bien. `midiObjetivoRef`
+       apunta siempre a la nota que toca.
+     - Seguía leyendo entre nota y nota: durante la cuenta atrás de la segunda, cada
+       lectura repintaba el componente, y la cuenta atrás —que reiniciaba su reloj con
+       cada repintado— se atrancaba. `escuchandoRef` dice cuándo importan las lecturas.
+  */
+  const midiObjetivoRef = useRef(midiObjetivo);
+  midiObjetivoRef.current = midiObjetivo;
+  const escuchandoRef = useRef(false);
 
   useEffect(
     () => () => {
@@ -146,6 +162,7 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
   }, [objetivo]);
 
   const empezar = useCallback(async () => {
+    escuchandoRef.current = false;
     setEvaluacion(null);
     setCents(null);
     setCazada(false);
@@ -167,6 +184,7 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
       try {
         const d = new DetectorDeTono();
         await d.arrancar((lectura) => {
+          if (!escuchandoRef.current) return;
           if (!lectura) {
             lecturas.current.push(null);
             recientes.current = [];
@@ -174,7 +192,7 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
             return;
           }
           // Plegado a la octava más cercana: cantar la nota en tu octava es cantarla.
-          const desviacion = desviacionEnCents(lectura.midi, midiObjetivo);
+          const desviacion = desviacionEnCents(lectura.midi, midiObjetivoRef.current);
           lecturas.current.push(desviacion);
 
           // La aguja muestra la MEDIANA de las últimas lecturas, no la última. Hablar
@@ -217,14 +235,16 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
       escuchando = true;
     }
 
+    escuchandoRef.current = true;
     setFase('escuchando');
 
     finDeEscucha.current = window.setTimeout(() => {
+      escuchandoRef.current = false;
       if (escuchando) setEvaluacion(evaluarAfinacion(lecturas.current, carril));
       setFase('resultado');
       setCents(null);
     }, segundos * 1000);
-  }, [midiObjetivo, segundos, sonarNota, msParaCazar]);
+  }, [segundos, sonarNota, msParaCazar]);
 
   /*
     En cuanto la caza, se acaba. Esperar a que se agote el reloj después de haber acertado
@@ -234,6 +254,7 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
     if (!cazada || fase !== 'escuchando') return;
     if (finDeEscucha.current !== null) window.clearTimeout(finDeEscucha.current);
     const id = window.setTimeout(() => {
+      escuchandoRef.current = false;
       setEvaluacion(evaluarAfinacion(lecturas.current, carril));
       setFase('resultado');
       setCents(null);
@@ -242,6 +263,7 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
   }, [cazada, fase]);
 
   const siguiente = useCallback(() => {
+    escuchandoRef.current = false;
     if (indice + 1 >= contenido.notas.length) {
       detector.current?.parar();
       detector.current = null;

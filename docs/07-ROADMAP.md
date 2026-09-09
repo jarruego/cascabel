@@ -2475,6 +2475,14 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       felicita en la misma pantalla, el botón grande es repetir y «terminar» es el discreto.
       Se anota igual al acabar la primera vuelta.
 
+- [x] **«Canta la nota» comparaba siempre con la primera nota.** El detector se abre una
+      vez y vive toda la actividad, pero la función que recibía sus lecturas se escribió en
+      el primer arranque y llevaba dentro la primera nota: a partir de la segunda, la aguja
+      medía contra la nota equivocada y el centro no se ponía verde nunca. Y seguía leyendo
+      entre nota y nota, con lo que la cuenta atrás de la segunda —que reiniciaba su reloj
+      con cada repintado— se atrancaba. Ahora la aguja sigue a la nota que toca, solo se
+      lee mientras se escucha, y la cuenta atrás lleva su reloj aparte del padre.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
