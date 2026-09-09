@@ -37,7 +37,7 @@ interface Base {
 /** Hasta dónde se deja transportar: una quinta arriba y otra abajo. */
 const TOPE = 7;
 
-export default function Acompanamientos({ actividad }: PropsActividad) {
+export default function Acompanamientos({ actividad, alTerminar }: PropsActividad) {
   const contenido = actividad.contenido as { consigna: string; bases: Base[] };
   const carril = useCarril(actividad.etapa);
 
@@ -51,6 +51,14 @@ export default function Acompanamientos({ actividad }: PropsActividad) {
   }, []);
 
   useEffect(() => parar, [parar]);
+
+  /** Se da por hecha una sola vez: ver `HECHA_CUANDO` en `motor/actividadesLibres.ts`. */
+  const yaHecha = useRef(false);
+  const darPorHecha = useCallback(() => {
+    if (yaHecha.current) return;
+    yaHecha.current = true;
+    alTerminar({ actividadId: actividad.id, completada: true });
+  }, [actividad.id, alTerminar]);
 
   const arrancar = useCallback(
     async (base: Base) => {
@@ -70,11 +78,12 @@ export default function Acompanamientos({ actividad }: PropsActividad) {
         motor.transportar(semitonos);
         motor.arrancar();
         setSonando(base.nombre);
+        darPorHecha();
       } catch {
         // Sin muestras la pantalla se sigue leyendo. Nada se cierra.
       }
     },
-    [parar, semitonos, sonando],
+    [parar, semitonos, sonando, darPorHecha],
   );
 
   /* Cambiar de tonalidad con algo sonando lo cambia en el sitio: parar y volver a dar al

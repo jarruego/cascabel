@@ -70,7 +70,7 @@ const LETRAS = ['1', '2', '3', '4', '5', 'Q', 'W', 'E', 'R', 'T'];
 
 const TEMPOS = [60, 84, 108];
 
-export default function Pads({ actividad }: PropsActividad) {
+export default function Pads({ actividad, alTerminar }: PropsActividad) {
   const contenido = actividad.contenido as {
     consigna: string;
     /** Qué golpes salen. Menos es más en Infantil: diez pads son diez decisiones. */
@@ -128,8 +128,17 @@ export default function Pads({ actividad }: PropsActividad) {
     return percusion.current;
   }, [listaGolpes]);
 
+  /** Se da por hecha una sola vez: ver `HECHA_CUANDO` en `motor/actividadesLibres.ts`. */
+  const yaHecha = useRef(false);
+  const darPorHecha = useCallback(() => {
+    if (yaHecha.current) return;
+    yaHecha.current = true;
+    alTerminar({ actividadId: actividad.id, completada: true });
+  }, [actividad.id, alTerminar]);
+
   const golpear = useCallback(
     async (golpe: Golpe) => {
+      darPorHecha();
       setSonando((s) => new Set(s).add(golpe));
       if (grabador.current.grabando) {
         grabador.current.anotar(golpe, obtenerContexto().currentTime * 1000);
@@ -149,7 +158,7 @@ export default function Pads({ actividad }: PropsActividad) {
         // Sin muestras el pad sigue respondiendo a la vista. No se cierra nada.
       }
     },
-    [cargar],
+    [cargar, darPorHecha],
   );
 
   /*

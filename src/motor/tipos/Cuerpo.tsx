@@ -41,7 +41,7 @@ function reducir(estado: Estado, accion: Accion): Estado {
   return { ...estado, indice: accion.valor };
 }
 
-export default function Cuerpo({ actividad }: PropsActividad) {
+export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
   const contenido = actividad.contenido as {
     consigna: string;
     /** Un golpe por figura: qué zona del cuerpo y cuántos pulsos ocupa. */
@@ -72,6 +72,14 @@ export default function Cuerpo({ actividad }: PropsActividad) {
   const duracionPulsos = inicios.length
     ? inicios[inicios.length - 1]! + (patron[patron.length - 1]!.pulsos ?? 1)
     : 0;
+
+  /** Se da por hecha una sola vez: ver `HECHA_CUANDO` en `motor/actividadesLibres.ts`. */
+  const yaHecha = useRef(false);
+  const darPorHecha = useCallback(() => {
+    if (yaHecha.current) return;
+    yaHecha.current = true;
+    alTerminar({ actividadId: actividad.id, completada: true });
+  }, [actividad.id, alTerminar]);
 
   const parar = useCallback(() => {
     if (temporizador.current !== null) window.clearInterval(temporizador.current);
@@ -128,6 +136,8 @@ export default function Cuerpo({ actividad }: PropsActividad) {
     const mover = () => {
       const transcurrido = obtenerContexto().currentTime - inicio;
       const enPulsos = transcurrido / segundosPorPulso;
+      // Una vuelta entera vista y oída es haberlo hecho: como en el musicograma.
+      if (enPulsos >= duracionPulsos) darPorHecha();
       const dentro = ((enPulsos % duracionPulsos) + duracionPulsos) % duracionPulsos;
       let i = 0;
       for (let k = 0; k < inicios.length; k++) if (dentro >= inicios[k]!) i = k;
@@ -135,7 +145,7 @@ export default function Cuerpo({ actividad }: PropsActividad) {
       rafId.current = requestAnimationFrame(mover);
     };
     rafId.current = requestAnimationFrame(mover);
-  }, [bpm, duracionPulsos, estado.sonando, inicios, parar, patron]);
+  }, [bpm, duracionPulsos, estado.sonando, inicios, parar, patron, darPorHecha]);
 
   return (
     <section className="actividad cuerpo" data-carril={carril} aria-labelledby="consigna">

@@ -38,7 +38,7 @@ import type { PropsActividad } from '../tipos';
 
 type Fase = 'esperando' | 'primero' | 'entre' | 'segundo' | 'resultado';
 
-export default function Eco({ actividad }: PropsActividad) {
+export default function Eco({ actividad, alTerminar }: PropsActividad) {
   const contenido = actividad.contenido as {
     consigna: string;
     /** Con qué suena el pandero. Uno solo: aquí lo que importa es cuándo, no qué. */
@@ -121,10 +121,19 @@ export default function Eco({ actividad }: PropsActividad) {
     setFase('segundo');
   };
 
+  /** Se da por hecha una sola vez: ver `HECHA_CUANDO` en `motor/actividadesLibres.ts`. */
+  const yaHecha = useRef(false);
+  const darPorHecha = useCallback(() => {
+    if (yaHecha.current) return;
+    yaHecha.current = true;
+    alTerminar({ actividadId: actividad.id, completada: true });
+  }, [actividad.id, alTerminar]);
+
   const terminarSegundo = () => {
     grabando.current = null;
     setResultado(compararEco(primero, segundo, carril));
     setFase('resultado');
+    darPorHecha();
   };
 
   /** Vuelve a tocar lo que grabó uno de los dos, para poder escucharlo otra vez. */

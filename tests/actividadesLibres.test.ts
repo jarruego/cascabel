@@ -1,20 +1,22 @@
 import { describe, expect, it } from 'vitest';
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { TIPOS_LIBRES, esLibre, hayCelebracion } from '../src/motor/actividadesLibres';
+import { HECHA_CUANDO, TIPOS_LIBRES, esLibre, hayCelebracion, sinFinal } from '../src/motor/actividadesLibres';
 import type { TipoActividad } from '../src/motor/tipos';
 
 /**
- * Que la lista de actividades libres no se quede vieja.
+ * Que toda actividad tenga un disparador que la dé por hecha, y que la lista de libres no
+ * se quede vieja.
  *
- * La lista decide dos cosas visibles: que esas pantallas **no llevan botón de terminar** y
- * que se marcan como hechas al abrirlas. Si mañana se añade un tipo libre y nadie toca la
- * lista, ese tipo no se anotaría nunca — y no daría ningún error: simplemente el niño haría
- * la actividad y en el catálogo seguiría saliendo sin hacer.
+ * La lista decide que esas pantallas **no llevan botón de terminar** y **no celebran**. Lo
+ * que ya no decide es cuándo se marcan: desde el 2026-09-12 eso lo hace cada componente
+ * llamando a `alTerminar` cuando se cumple su condición —`HECHA_CUANDO`—, y antes las
+ * libres se marcaban al abrirlas sin que el niño hubiera tocado nada.
  *
- * El criterio se puede comprobar leyendo el componente, y eso es lo que se hace aquí:
- * **libre es el que no llama a `alTerminar`**. Un tipo que evalúa termina con un resultado
- * que depende de lo que ha hecho el niño; uno libre no tiene nada que pasar.
+ * Lo que se comprueba se puede leer en el componente: **todo tipo del registro llama a
+ * `alTerminar`**. Un tipo que no lo hiciera no se anotaría nunca, y no daría ningún
+ * error: el niño haría la actividad y en el catálogo seguiría saliendo sin hacer. Es lo
+ * que le pasaba al constructor de ritmos.
  */
 
 const RAIZ = join(__dirname, '..', 'src', 'motor');
@@ -83,6 +85,26 @@ describe('toda actividad se puede dar por hecha', () => {
     }
   });
 
+  it('el constructor de ritmos se da por hecho al escuchar el primer ritmo, sin modal', () => {
+    /*
+      Una rejilla en modo libre no tiene solución que comprobar, y comprobar era lo único
+      que la cerraba: no se marcaba nunca. Ahora se anota al escuchar lo primero que se ha
+      puesto, con la reacción del personaje, y se sigue componiendo. La modal encima de una
+      composición a medias sobraría.
+    */
+    const libres = ACTIVIDADES.filter(
+      (a) => a.tipo === 'rejilla' && (a.contenido.modo ?? (a.contenido.solucion ? 'dictado' : 'libre')) === 'libre',
+    );
+    expect(libres.map((a) => a.id)).toContain('c1-04-constructor-de-ritmos');
+    for (const a of libres) {
+      expect(sinFinal(a), a.id).toBe(true);
+      expect(hayCelebracion(a), a.id).toBe(false);
+    }
+    const dictados = ACTIVIDADES.filter((a) => a.tipo === 'rejilla' && !libres.includes(a));
+    expect(dictados.length).toBeGreaterThan(0);
+    for (const a of dictados) expect(hayCelebracion(a), a.id).toBe(true);
+  });
+
   it('«seguir» anota la vuelta completa, dé vueltas o no', () => {
     /*
       El fallo original era de ORDEN: la llamada que anota estaba detrás del `return` que
@@ -116,22 +138,31 @@ describe('actividades sin final', () => {
     for (const tipo of TIPOS_LIBRES) expect(MAPA.has(tipo), `«${tipo}» no está en el registro`).toBe(true);
   });
 
-  it('ningún tipo libre evalúa, y todo tipo que no evalúa está en la lista', () => {
-    const mal: string[] = [];
+  it('todo tipo del registro llama a alTerminar: es su disparador de «hecha»', () => {
+    const sinDisparador: string[] = [];
     for (const [tipo, fichero] of MAPA) {
       const src = readFileSync(join(RAIZ, 'tipos', `${fichero}.tsx`), 'utf8');
       /* `alTerminar` también es el nombre de una prop de la cuenta atrás, que no tiene nada
          que ver: lo que se busca es la prop de la actividad, que llega destructurada. */
-      const evalua = /function \w+\(\{[^}]*\balTerminar\b/.test(src);
-      if (evalua === esLibre(tipo as TipoActividad)) {
-        mal.push(
-          evalua
-            ? `«${tipo}» está en TIPOS_LIBRES y llama a alTerminar`
-            : `«${tipo}» no llama a alTerminar y falta en TIPOS_LIBRES`,
-        );
-      }
+      const recibe = /function \w+\(\{[^}]*\balTerminar\b/.test(src);
+      const llama = /\balTerminar\(\{/.test(src);
+      if (!recibe || !llama) sinDisparador.push(tipo);
     }
-    expect(mal, mal.join('\n')).toEqual([]);
+    expect(sinDisparador, `sin disparador de hecha: ${sinDisparador.join(', ')}`).toEqual([]);
+  });
+
+  it('HECHA_CUANDO dice de todo tipo del registro cuándo se da por hecho', () => {
+    for (const tipo of MAPA.keys()) {
+      expect(HECHA_CUANDO[tipo as TipoActividad], `«${tipo}» no dice cuándo se da por hecho`).toBeTruthy();
+    }
+  });
+
+  it('los tipos libres no piden nada al niño para terminar, pero sí para darse por hechos', () => {
+    // Lo que se comprueba es que ninguno se marque al abrirse desde el marco: esa rama
+    // se quitó, y volver a ponerla marcaría el piano sin tocarlo.
+    const marco = readFileSync(join(__dirname, '..', 'src', 'app', 'Actividad.tsx'), 'utf8');
+    expect(marco).not.toMatch(/esLibre\(actividad\.tipo\)\)\s*return;\s*void anotar/);
+    expect(TIPOS_LIBRES.length).toBeGreaterThan(0);
   });
 
   it('ninguna actividad libre enseña un botón de terminar', () => {

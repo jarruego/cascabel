@@ -41,27 +41,88 @@ export function esLibre(tipo: TipoActividad): boolean {
 }
 
 /**
+ * Cuándo se da por hecha cada tipo de actividad.
+ *
+ * Lo pidió el autor el 2026-09-12: «todas las actividades deberían tener algún disparador
+ * que las marque como completadas, sean evaluables o no». Y lo que había no lo cumplía:
+ * las libres se marcaban **al abrirlas**, sin que el niño hubiera tocado nada, y el
+ * constructor de ritmos —una rejilla en modo libre, que no es de la lista— no se marcaba
+ * **nunca**, porque lo único que lo cerraba era comprobar una solución que no tiene.
+ *
+ * La regla es una por tipo y de sentido común, y es el componente quien la dispara
+ * llamando a `alTerminar` **una sola vez**. Esta tabla es la documentación de esa regla,
+ * y el test comprueba que todo tipo del registro tenga la suya y llame a `alTerminar`.
+ *
+ *  - Las que **se evalúan** se dan por hechas al hacer todos los pasos, salgan como salgan:
+ *    una pregunta contestada mal es una pregunta hecha.
+ *  - Las que **se escuchan** —musicograma, percusión corporal, guía— al pasar una vez por
+ *    todo: la primera vuelta, el último paso.
+ *  - Las que **se tocan** —piano, pads, lienzo— al hacer sonar algo. Abrir el piano y no
+ *    tocarlo no es haberlo hecho.
+ *  - Las que **se construyen** —constructor de ritmos, pistas— al escuchar lo primero que
+ *    se ha puesto. Ahí, además, hay una reacción del personaje: es el único momento en que
+ *    algo cierra, y después se sigue componiendo sin que nada más lo interrumpa.
+ */
+export const HECHA_CUANDO: Record<TipoActividad, string> = {
+  eleccion: 'al contestar todas las preguntas, bien o mal',
+  emparejar: 'al unir todas las parejas',
+  memoria: 'al destapar todas las parejas',
+  ordenar: 'al dejar todo en su sitio',
+  pentagrama: 'al contestar todas las notas',
+  rejilla: 'dictado: al acertar la solución; libre: al escuchar el primer ritmo puesto',
+  cantar: 'al probar todas las notas, afinadas o no',
+  compases: 'al colocar todas las barras',
+  escala: 'al construir la escala',
+  karaoke: 'al llegar al final de la pieza',
+  'tocar-a-tiempo': 'al acabar las repeticiones',
+  seguir: 'al acabar la primera vuelta, en bucle o no',
+  cuerpo: 'al acabar la primera vuelta del patrón',
+  'guia-aula': 'al llegar al último paso',
+  eco: 'cuando los dos han tocado y se comparan',
+  lienzo: 'al hacer sonar el primer trazo',
+  teclado: 'al tocar la primera tecla',
+  pads: 'al dar el primer golpe',
+  pistas: 'al escuchar la primera composición con algo puesto',
+  acompanamientos: 'al arrancar la primera base',
+  referencia: 'al escuchar la primera entrada; si ninguna suena, al abrirla',
+  paisaje: 'al guardar o escuchar la primera grabación; sin micrófono, al abrirla',
+};
+
+/**
+ * ¿Tiene esta actividad un final que el niño alcanza?
+ *
+ * Es lo que decide si al darla por hecha se celebra con la modal. Las libres no lo tienen,
+ * y tampoco lo tienen dos casos de tipos que en general sí: el musicograma en bucle y la
+ * rejilla en modo libre. Los dos se dan por hechos —ver `HECHA_CUANDO`— pero sacar la modal
+ * de «¡Muy bien!» encima, con la música sonando o con el niño a medio componer, es la
+ * misma rareza que felicitar a alguien por dejar de tocar el piano.
+ */
+export function sinFinal(actividad: {
+  tipo: TipoActividad;
+  contenido: Record<string, unknown>;
+}): boolean {
+  if (esLibre(actividad.tipo)) return true;
+  if (actividad.tipo === 'seguir' && actividad.contenido.bucle === true) return true;
+  if (actividad.tipo === 'rejilla') {
+    const modo = actividad.contenido.modo ?? (actividad.contenido.solucion ? 'dictado' : 'libre');
+    if (modo === 'libre' && !Array.isArray(actividad.contenido.ejercicios)) return true;
+  }
+  return false;
+}
+
+/**
  * ¿Se celebra al terminar esta actividad?
  *
  * **Solo si tiene un final que el niño alcanza.** Es la misma idea que dejó sin botón de
  * «Terminar» a las libres, aplicada un paso más allá: un tipo puede tener final en general
- * y no tenerlo en una actividad concreta.
+ * y no tenerlo en una actividad concreta. Qué actividades no lo tienen lo dice `sinFinal`.
  *
- * El caso es el musicograma en bucle. `seguir` acaba cuando acaba la pieza, y ahí la
- * celebración está bien; pero tres de sus cuatro actividades —«Ta y ti-ti» entre ellas— van
- * en bucle a propósito, porque un patrón de cuatro pulsos dura tres segundos y se acaba
- * antes de que un niño se haya enterado. Ésas no acaban: dan vueltas hasta que alguien las
- * para. Sacarles la modal de «¡Muy bien!» encima con la música sonando es la misma rareza
- * que felicitar a alguien por dejar de tocar el piano.
- *
- * Que se **anoten** sí, y lo hacen: al completar la primera vuelta. Hecha y terminada dejan
- * de ser lo mismo, y esta función es la que las separa.
+ * Hecha y terminada dejan de ser lo mismo, y esta función es la que las separa: las que no
+ * tienen final se **anotan** igual, cuando toca según `HECHA_CUANDO`, pero no se celebran.
  */
 export function hayCelebracion(actividad: {
   tipo: TipoActividad;
   contenido: Record<string, unknown>;
 }): boolean {
-  if (esLibre(actividad.tipo)) return false;
-  if (actividad.tipo === 'seguir' && actividad.contenido.bucle === true) return false;
-  return true;
+  return !sinFinal(actividad);
 }

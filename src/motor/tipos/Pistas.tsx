@@ -40,7 +40,7 @@ import type { PropsActividad } from '../tipos';
  * el sonido lo hiciera.
  */
 
-export default function Pistas({ actividad }: PropsActividad) {
+export default function Pistas({ actividad, alTerminar }: PropsActividad) {
   const contenido = actividad.contenido as {
     consigna: string;
     pistas: Pista[];
@@ -134,11 +134,21 @@ export default function Pistas({ actividad }: PropsActividad) {
     }
   }, [bpm, porCasilla, instrumentos]);
 
+  /** Se da por hecha una sola vez: ver `HECHA_CUANDO` en `motor/actividadesLibres.ts`. */
+  const yaHecha = useRef(false);
+  const darPorHecha = useCallback(() => {
+    if (yaHecha.current) return;
+    yaHecha.current = true;
+    alTerminar({ actividadId: actividad.id, completada: true });
+  }, [actividad.id, alTerminar]);
+
   const reproducir = useCallback(async () => {
     if (estadoRef.current.sonando) {
       parar();
       return;
     }
+    // Escuchar la cuadrícula vacía no es haber compuesto nada.
+    if (estadoRef.current.encendidas.size > 0) darPorHecha();
     try {
       await preparar();
     } catch {

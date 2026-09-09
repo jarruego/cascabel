@@ -93,6 +93,14 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
   const bucleRef = useRef(false);
   const sampler = useRef<Sampler | null>(null);
   const yaTerminada = useRef(false);
+  /**
+   * En modo libre no hay solución que comprobar, así que lo que cierra es otra cosa: el
+   * primer ritmo que se escucha con algo puesto. Es el momento de la reacción del
+   * personaje —lo pidió el autor: «al crear y escuchar el primer ritmo estaría bien un
+   * feedback»— y después se sigue componiendo sin que nada más interrumpa. La modal no
+   * sale: `sinFinal` lo sabe.
+   */
+  const [primerRitmo, setPrimerRitmo] = useState(false);
 
   const notas = contenido.notas ?? ['C5', 'A4', 'G4', 'F4', 'D4', 'C4'].slice(0, filas);
 
@@ -168,6 +176,11 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
       }
     }
     setSonando(true);
+    if (modo === 'libre' && encendidasRef.current.size > 0 && !yaTerminada.current) {
+      yaTerminada.current = true;
+      setPrimerRitmo(true);
+      alTerminar({ actividadId: actividad.id, completada: true });
+    }
 
     const paso = 60 / bpm;
     /** Instante de salida de la PRIMERA columna. Las demás salen sumando, no preguntando. */
@@ -214,7 +227,7 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
       reloj.current = window.setTimeout(tick, 25);
     };
     tick();
-  }, [sonando, bpm, columnas, notas, pararReproduccion]);
+  }, [sonando, bpm, columnas, notas, pararReproduccion, alTerminar, actividad.id, modo]);
 
   /**
    * Las celdas encendidas, como notas con instante y duración.
@@ -414,7 +427,7 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
       </BarraAcciones>
 
       <Reaccion
-        tono={estado.fase === 'revisando' ? 'casi' : 'neutro'}
+        tono={estado.fase === 'revisando' ? 'casi' : primerRitmo ? 'bien' : 'neutro'}
         personaje={actividad.personaje}
       >
         {/* Solo lo que hace falta DURANTE. El «¡completada!» lo repetía la modal de
@@ -422,6 +435,7 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
             entrar, en la explicación. */}
         {estado.fase === 'revisando' &&
           t(pistaPara(actividad.pistas, estado.intentos) ?? 'rejilla.revisa')}
+        {estado.fase !== 'revisando' && primerRitmo && t('rejilla.primerRitmo')}
       </Reaccion>
     </section>
   );

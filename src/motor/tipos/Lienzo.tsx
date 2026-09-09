@@ -37,7 +37,7 @@ interface Trazo {
   fila: number;
 }
 
-export default function Lienzo({ actividad }: PropsActividad) {
+export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
   const contenido = actividad.contenido as {
     consigna: string;
     /** Notas disponibles, de aguda a grave. La altura en pantalla es la altura del sonido. */
@@ -180,7 +180,16 @@ export default function Lienzo({ actividad }: PropsActividad) {
    * apaga—, así que la raya se convierte en repeticiones, que es el trémolo y es el gesto
    * que hace un percusionista de verdad para mantener una nota.
    */
+  /** Se da por hecha una sola vez: ver `HECHA_CUANDO` en `motor/actividadesLibres.ts`. */
+  const yaHecha = useRef(false);
+  const darPorHecha = useCallback(() => {
+    if (yaHecha.current) return;
+    yaHecha.current = true;
+    alTerminar({ actividadId: actividad.id, completada: true });
+  }, [actividad.id, alTerminar]);
+
   const sonar = useCallback(async (fila: number) => {
+    darPorHecha();
     try {
       const s = await preparar();
       const nota = notas[fila] ?? 'C4';
@@ -193,7 +202,7 @@ export default function Lienzo({ actividad }: PropsActividad) {
     } catch {
       // Sin sonido se sigue dibujando. Media actividad es visual.
     }
-  }, [notas, preparar, puedeSostener]);
+  }, [notas, preparar, puedeSostener, darPorHecha]);
 
   /** Al levantar el dedo se suelta lo que estuviera sonando. */
   const callar = useCallback(() => {

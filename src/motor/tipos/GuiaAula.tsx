@@ -33,7 +33,7 @@ interface Paso {
   duracion?: string;
 }
 
-export default function GuiaAula({ actividad }: PropsActividad) {
+export default function GuiaAula({ actividad, alTerminar }: PropsActividad) {
   const contenido = actividad.contenido as {
     consigna: string;
     pasos: Paso[];
@@ -43,6 +43,18 @@ export default function GuiaAula({ actividad }: PropsActividad) {
   };
 
   const [paso, setPaso] = useState(0);
+  /** Se da por hecha una sola vez: ver `HECHA_CUANDO` en `motor/actividadesLibres.ts`. */
+  const yaHecha = useRef(false);
+  const darPorHecha = useCallback(() => {
+    if (yaHecha.current) return;
+    yaHecha.current = true;
+    alTerminar({ actividadId: actividad.id, completada: true });
+  }, [actividad.id, alTerminar]);
+
+  // El guion se ha seguido cuando se ha llegado al último paso. Con un solo paso, al abrirlo.
+  useEffect(() => {
+    if (paso >= contenido.pasos.length - 1) darPorHecha();
+  }, [paso, contenido.pasos.length, darPorHecha]);
   const [sonando, setSonando] = useState(false);
   const [pulso, setPulso] = useState<number | null>(null);
   const [bpm, setBpm] = useState(contenido.tempo ?? 84);

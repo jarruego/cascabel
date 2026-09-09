@@ -37,7 +37,7 @@ const BLANCAS = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
  *  su patrón de dos y tres, y lo que permite orientarse sin mirar. */
 const CON_NEGRA = [true, true, false, true, true, true, false];
 
-export default function Teclado({ actividad }: PropsActividad) {
+export default function Teclado({ actividad, alTerminar }: PropsActividad) {
   const contenido = actividad.contenido as {
     consigna: string;
     /** Octava más grave que se muestra. */
@@ -151,7 +151,16 @@ export default function Teclado({ actividad }: PropsActividad) {
   const [saltos, setSaltos] = useState<Array<{ id: number; nota: string }>>([]);
   const siguienteSalto = useRef(0);
 
+  /** Se da por hecha una sola vez: ver `HECHA_CUANDO` en `motor/actividadesLibres.ts`. */
+  const yaHecha = useRef(false);
+  const darPorHecha = useCallback(() => {
+    if (yaHecha.current) return;
+    yaHecha.current = true;
+    alTerminar({ actividadId: actividad.id, completada: true });
+  }, [actividad.id, alTerminar]);
+
   const sonar = useCallback(async (nota: string) => {
+    darPorHecha();
     setSonando((s) => new Set(s).add(nota));
     setUltimaTocada(nota);
 
@@ -183,7 +192,7 @@ export default function Teclado({ actividad }: PropsActividad) {
     } catch {
       // Sin muestras el teclado sigue respondiendo visualmente. No se cierra nada.
     }
-  }, [desde]);
+  }, [desde, darPorHecha]);
 
   // Deslizar el dedo por las teclas. Se sigue con pointermove global porque el puntero
   // sale del botón donde empezó, y sin capturarlo a nivel de ventana se pierde.

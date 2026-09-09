@@ -6,7 +6,7 @@ import { componenteDe } from '@/motor/registro';
 import { Lienzo } from '@/ui/Lienzo';
 import { Personaje } from '@/ui/Personaje';
 import { anotar } from '@/datos/progreso';
-import { esLibre, hayCelebracion } from '@/motor/actividadesLibres';
+import { hayCelebracion } from '@/motor/actividadesLibres';
 import { orientacionDe } from '@/motor/orientacion';
 import { ModalExito, ModalExplicacion, ModalMicrofono } from '@/ui/ModalesActividad';
 import { aceptarMicrofono, hayQuePreguntar, rechazarMicrofono } from '@/escucha/permiso';
@@ -80,24 +80,6 @@ export default function Actividad() {
       pararTodo();
     };
   }, [id]);
-
-  /**
-   * Las actividades libres se dan por hechas al abrirlas.
-   *
-   * El piano, la caja de sonidos o el kit de percusión no tienen final: se tocan hasta que
-   * se deja de tocar. Antes eso lo resolvía un botón de «Terminar» dentro de cada una, que
-   * además abría la modal de celebración — felicitar a alguien por dejar de tocar el piano
-   * es raro — y competía con «Volver». Se quitó, y con él la única forma que había de
-   * anotarlas: de ahí este efecto. Qué tipos son libres lo dice
-   * `motor/actividadesLibres.ts`, que es donde vive la regla y donde está su test.
-   *
-   * Se anota directamente, sin pasar por `setResultado`: eso abriría la celebración nada
-   * más entrar, que es justo lo que no queremos.
-   */
-  useEffect(() => {
-    if (!actividad || !esLibre(actividad.tipo)) return;
-    void anotar({ actividadId: actividad.id, completada: true });
-  }, [actividad]);
 
   /**
    * Volver al catálogo **tal como estaba**: mismos filtros y misma posición.
@@ -204,7 +186,10 @@ export default function Actividad() {
               /*
                 Anotar y celebrar son dos cosas distintas.
 
-                Se anota siempre; se celebra solo si la actividad tiene un final que el niño
+                Se anota siempre, y es cada tipo quien decide cuándo —`HECHA_CUANDO`, en
+                `motor/actividadesLibres.ts`—: el piano al tocar la primera tecla, el
+                constructor al escuchar el primer ritmo, una pregunta al contestarlas
+                todas. Se celebra solo si la actividad tiene un final que el niño
                 alcanza. Un musicograma en bucle no lo tiene: da vueltas hasta que alguien lo
                 para, y la modal de «¡Muy bien!» encima con la música sonando es la misma
                 rareza que felicitar a alguien por dejar de tocar el piano. La regla vive en

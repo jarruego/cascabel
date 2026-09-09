@@ -62,7 +62,7 @@ interface Seccion {
   entradas: Entrada[];
 }
 
-export default function Referencia({ actividad }: PropsActividad) {
+export default function Referencia({ actividad, alTerminar }: PropsActividad) {
   const contenido = actividad.contenido as {
     consigna: string;
     secciones: Seccion[];
@@ -85,8 +85,26 @@ export default function Referencia({ actividad }: PropsActividad) {
     dos veces. Ahora una entrada de referencia y un estímulo de pregunta son la misma cosa
     descrita en el JSON.
   */
+  /** Se da por hecha una sola vez: ver `HECHA_CUANDO` en `motor/actividadesLibres.ts`. */
+  const yaHecha = useRef(false);
+  const darPorHecha = useCallback(() => {
+    if (yaHecha.current) return;
+    yaHecha.current = true;
+    alTerminar({ actividadId: actividad.id, completada: true });
+  }, [actividad.id, alTerminar]);
+
+  /* Una referencia sin nada que escuchar —«¿quién es quién?» es solo lectura— se da por
+     hecha al abrirla: leerla es todo lo que se puede hacer con ella. */
+  useEffect(() => {
+    const suenaAlguna = contenido.secciones.some((s) =>
+      s.entradas.some((e) => e.notas?.length || e.ritmo?.length || e.patron?.length || e.audio),
+    );
+    if (!suenaAlguna) darPorHecha();
+  }, [contenido.secciones, darPorHecha]);
+
   const sonar = useCallback(
     async (entrada: Entrada) => {
+      darPorHecha();
       setSonando(entrada.termino);
       if (entrada.audio) {
         // Un fragmento grabado: se corta lo que sonara antes y se pone entero.
@@ -114,7 +132,7 @@ export default function Referencia({ actividad }: PropsActividad) {
       const dura = fin === null ? 600 : Math.max(400, (fin - obtenerContexto().currentTime) * 1000);
       window.setTimeout(() => setSonando((s) => (s === entrada.termino ? null : s)), dura);
     },
-    [contenido.instrumento],
+    [contenido.instrumento, darPorHecha],
   );
 
   /* El buscador filtra por término y por explicación: quien no se acuerda de cómo se llama

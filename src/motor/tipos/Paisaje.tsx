@@ -32,7 +32,7 @@ import type { PropsActividad } from '../tipos';
  * importante del ejercicio, y grabarlo es la otra mitad, no el requisito.
  */
 
-export default function Paisaje({ actividad }: PropsActividad) {
+export default function Paisaje({ actividad, alTerminar }: PropsActividad) {
   const contenido = actividad.contenido as {
     consigna: string;
     /** Cosas que buscar, como claves de i18n. Es el guion de escucha. */
@@ -71,6 +71,14 @@ export default function Paisaje({ actividad }: PropsActividad) {
     [],
   );
 
+  /** Se da por hecha una sola vez: ver `HECHA_CUANDO` en `motor/actividadesLibres.ts`. */
+  const yaHecha = useRef(false);
+  const darPorHecha = useCallback(() => {
+    if (yaHecha.current) return;
+    yaHecha.current = true;
+    alTerminar({ actividadId: actividad.id, completada: true });
+  }, [actividad.id, alTerminar]);
+
   const detener = useCallback(async () => {
     if (limite.current !== null) window.clearTimeout(limite.current);
     limite.current = null;
@@ -89,7 +97,8 @@ export default function Paisaje({ actividad }: PropsActividad) {
     // pierde al salir. Es preferible a bloquear la actividad, y más privado además.
     setGrabaciones((previas) => [g, ...previas]);
     if (!guardada) setAviso('paisaje.sinGuardar');
-  }, [actividad.id]);
+    darPorHecha();
+  }, [actividad.id, darPorHecha]);
 
   const empezar = useCallback(async () => {
     setAviso(null);
@@ -103,10 +112,13 @@ export default function Paisaje({ actividad }: PropsActividad) {
       const err = e as Error;
       setGrabando(false);
       setAviso(err.message === 'sin-grabadora' ? 'paisaje.sinGrabadora' : 'paisaje.sinPermiso');
+      // Sin micrófono la actividad es el guion de escucha, y ya lo tiene delante.
+      darPorHecha();
     }
-  }, [detener, maximo]);
+  }, [detener, maximo, darPorHecha]);
 
   const escuchar = (g: GrabacionGuardada) => {
+    darPorHecha();
     audio.current?.pause();
     const a = new Audio(URL.createObjectURL(g.audio));
     audio.current = a;
