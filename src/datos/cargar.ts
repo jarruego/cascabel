@@ -28,6 +28,19 @@ export function cargarIndice() {
  * dónde empezaría un maestro. Si mañana hay dos caminos distintos para la misma etapa, el
  * índice no tiene que enterarse.
  */
+/** Los criterios del currículo, para la pantalla que los enumera con sus actividades. */
+export function cargarCriterios() {
+  return pedir<{
+    etapas: Array<{
+      etapa: Etapa;
+      titulo: string;
+      area: string;
+      competencias: Array<{ codigo: string; texto: string }>;
+      criterios: Array<{ codigo: string; competencia: string; resumen: string; literal: boolean }>;
+    }>;
+  }>(`${APP.rutaContenido}/criterios.json`);
+}
+
 export function cargarCamino() {
   return pedir<{
     caminos: Array<{

@@ -4,6 +4,7 @@ import { cargarIndice } from '@/datos/cargar';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { leerTodo } from '@/datos/progreso';
 import { t } from '@/i18n';
+import { IconoAjustes } from '@/ui/Simbolos';
 import type { Eje, TipoActividad } from '@/motor/tipos';
 import type { Etapa } from '@/config';
 
@@ -223,7 +224,14 @@ export default function Catalogo() {
 
   return (
     <main className="catalogo">
-      <h1>{t('catalogo.titulo')}</h1>
+      {/* La rueda de ajustes va junto al título, a la derecha del todo: Ajustes salió de la
+          barra de abajo para dejar sitio a los criterios, y este es su sitio ahora. */}
+      <header className="catalogo__cabecera">
+        <h1>{t('catalogo.titulo')}</h1>
+        <Link to="/ajustes" className="catalogo__ajustes" aria-label={t('nav.ajustes')}>
+          <IconoAjustes tamano={28} />
+        </Link>
+      </header>
       {/* La promesa, escrita donde se entra y no solo en la política de privacidad. Es una
           línea, va antes de la barra de filtros y desaparece al desplazarse: quien llega
           por primera vez la lee, y quien viene a buscar una actividad no la vuelve a ver. */}

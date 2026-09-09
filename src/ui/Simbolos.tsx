@@ -69,6 +69,22 @@ export function IconoTocar({ tamano = 22 }: Props) {
 }
 
 /** Flecha que da la vuelta: otra vez, y también el bucle. Son la misma idea. */
+/** La rueda dentada de ajustes: ocho dientes y el eje, sin más detalle a 22 px. */
+export function IconoAjustes({ tamano = 22 }: Props) {
+  return (
+    <svg width={tamano} height={tamano} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path
+        d="M12 2.5l1.6 2.6 3-.6 1 2.9 2.9 1-.6 3 2.6 1.6-2.6 1.6.6 3-2.9 1-1 2.9-3-.6L12 21.5l-1.6-2.6-3 .6-1-2.9-2.9-1 .6-3L1.5 12l2.6-1.6-.6-3 2.9-1 1-2.9 3 .6z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" strokeWidth="2" />
+    </svg>
+  );
+}
+
 export function IconoRepetir({ tamano = 22 }: Props) {
   return (
     <svg width={tamano} height={tamano} viewBox="0 0 24 24" aria-hidden="true" focusable="false">

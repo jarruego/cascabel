@@ -19,6 +19,7 @@ const Privacidad = lazy(() => import('./Privacidad'));
 const Creditos = lazy(() => import('./Creditos'));
 const Instrumentos = lazy(() => import('./Instrumentos'));
 const Camino = lazy(() => import('./Camino'));
+const Criterios = lazy(() => import('./Criterios'));
 const Ficha = lazy(() => import('./Ficha'));
 
 export function Rutas() {
@@ -34,6 +35,7 @@ export function Rutas() {
         <Route path="/creditos" element={<Creditos />} />
         <Route path="/instrumentos" element={<Instrumentos />} />
         <Route path="/camino" element={<Camino />} />
+        <Route path="/criterios" element={<Criterios />} />
         <Route path="/ficha/:id" element={<Ficha />} />
         <Route path="/diagnostico" element={<Diagnostico />} />
       </Routes>

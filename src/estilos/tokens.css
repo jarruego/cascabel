@@ -1458,6 +1458,45 @@ p {
 .resumen-serie__fila[data-calidad='casi'] .resumen-serie__marca { color: var(--vivo-naranja); }
 .resumen-serie__calidad { color: var(--tinta-2); font-weight: 700; }
 
+/* ── la cabecera del catálogo: el título y la rueda de ajustes ──────────── */
+.catalogo__cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--e-3);
+}
+.catalogo__cabecera h1 { margin: 0; }
+.catalogo__ajustes {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--tinta-2);
+}
+.catalogo__ajustes:hover { background: var(--superficie); color: var(--tinta); }
+.catalogo__ajustes:focus-visible { outline: var(--foco); }
+
+/* ── los criterios del currículo ──────────────────────────────────────────── */
+.criterios__etapa { margin-top: var(--e-6); }
+.criterios__area { margin: 0 0 var(--e-3); color: var(--tinta-2); }
+.criterios__competencias { padding-left: 1.2em; }
+.criterios__competencias li { margin-bottom: var(--e-2); }
+.criterios__criterio {
+  margin: var(--e-3) 0;
+  padding: var(--e-3) var(--e-4);
+  border-left: 4px solid var(--linea);
+  background: var(--superficie);
+  border-radius: var(--r-s);
+}
+.criterios__criterio h4 { margin: 0 0 var(--e-1); font-size: var(--t-s); }
+.criterios__criterio p { margin: 0 0 var(--e-2); }
+.criterios__codigo { font-weight: 700; }
+.criterios__aviso { color: var(--tinta-2); font-weight: 400; font-size: 0.9em; }
+.criterios__vacio { color: var(--tinta-2); font-style: italic; }
+.criterios__actividades { padding-left: 1.2em; margin: 0; }
+.criterios__actividades li { margin-bottom: var(--e-1); }
+
 /* ── la barra por tramos ───────────────────────────────────────────────────
    Un tramo por pregunta: cuántas quedan se cuenta de un vistazo. Hecho en verde, el
    actual con el borde del acento y más alto —forma además de color—, y los que faltan

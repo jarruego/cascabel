@@ -36,7 +36,10 @@ const DESTINOS = [
   { a: '/', icono: 'nota-musical', clave: 'nav.actividades' },
   { a: '/camino', icono: 'andando', clave: 'nav.camino' },
   { a: '/instrumentos', icono: 'teclado', clave: 'nav.instrumentos' },
-  { a: '/ajustes', icono: 'diana', clave: 'nav.ajustes' },
+  /* Provisional, a petición del autor el 2026-09-10: los criterios del currículo con sus
+     actividades ocupan el sitio de Ajustes mientras se revisa el etiquetado. A Ajustes se
+     llega por la rueda dentada junto al título del catálogo. */
+  { a: '/criterios', icono: 'lupa', clave: 'nav.criterios' },
 ] as const;
 
 export function Navegacion() {
