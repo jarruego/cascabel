@@ -27,38 +27,68 @@
   },
   "contenido": {
     "consigna": "actividad.c103.consigna",
-    "elementos": [
+    "instrumento": "xilofono",
+    "ejercicios": [
       {
-        "clave": "media",
-        "icono": "campana",
-        "color": "vivo-verde",
-        "forma": "cuadrado",
-        "alt": "campana.media",
-        "nota": "G4"
+        "titulo": "actividad.c103.ej1",
+        "elementos": [
+          {
+            "clave": "aguda",
+            "icono": "campana",
+            "color": "vivo-naranja",
+            "forma": "triangulo",
+            "alt": "campana.aguda",
+            "nota": "C5"
+          },
+          {
+            "clave": "grave",
+            "icono": "campana",
+            "color": "vivo-azul",
+            "forma": "circulo",
+            "alt": "campana.grave",
+            "nota": "C4"
+          }
+        ],
+        "orden": [
+          "grave",
+          "aguda"
+        ]
       },
       {
-        "clave": "aguda",
-        "icono": "campana",
-        "color": "vivo-naranja",
-        "forma": "triangulo",
-        "alt": "campana.aguda",
-        "nota": "C5"
-      },
-      {
-        "clave": "grave",
-        "icono": "campana",
-        "color": "vivo-azul",
-        "forma": "circulo",
-        "alt": "campana.grave",
-        "nota": "C4"
+        "titulo": "actividad.c103.ej2",
+        "elementos": [
+          {
+            "clave": "media",
+            "icono": "campana",
+            "color": "vivo-verde",
+            "forma": "cuadrado",
+            "alt": "campana.media",
+            "nota": "G4"
+          },
+          {
+            "clave": "aguda",
+            "icono": "campana",
+            "color": "vivo-naranja",
+            "forma": "triangulo",
+            "alt": "campana.aguda",
+            "nota": "C5"
+          },
+          {
+            "clave": "grave",
+            "icono": "campana",
+            "color": "vivo-azul",
+            "forma": "circulo",
+            "alt": "campana.grave",
+            "nota": "C4"
+          }
+        ],
+        "orden": [
+          "grave",
+          "media",
+          "aguda"
+        ]
       }
-    ],
-    "orden": [
-      "grave",
-      "media",
-      "aguda"
-    ],
-    "instrumento": "xilofono"
+    ]
   },
   "evaluacion": {
     "autocorrectiva": true,

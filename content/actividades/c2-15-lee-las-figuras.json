@@ -32,54 +32,117 @@
     "orientacion": "horizontal",
     "representacion": "figura",
     "tempo": 88,
-    "notas": [
+    "ejercicios": [
       {
-        "nota": "E4",
-        "pulsos": 1
+        "titulo": "actividad.c215.ej1",
+        "notas": [
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 2
+          }
+        ]
       },
       {
-        "nota": "E4",
-        "pulsos": 1
+        "titulo": "actividad.c215.ej2",
+        "notas": [
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 2
+          }
+        ]
       },
       {
-        "nota": "E4",
-        "pulsos": 0.5
-      },
-      {
-        "nota": "E4",
-        "pulsos": 0.5
-      },
-      {
-        "nota": "E4",
-        "pulsos": 1
-      },
-      {
-        "nota": "E4",
-        "pulsos": 2
-      },
-      {
-        "nota": "E4",
-        "pulsos": 1
-      },
-      {
-        "nota": "E4",
-        "pulsos": 0.5
-      },
-      {
-        "nota": "E4",
-        "pulsos": 0.5
-      },
-      {
-        "nota": "E4",
-        "pulsos": 1
-      },
-      {
-        "nota": "E4",
-        "pulsos": 1
-      },
-      {
-        "nota": "E4",
-        "pulsos": 2
+        "titulo": "actividad.c215.ej3",
+        "notas": [
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 2
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 2
+          }
+        ]
       }
     ]
   },

@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "rejilla",
   "titulo": "Dictado rítmico",
-  "descripcion": "Se escucha un ritmo y se coloca en la cuadrícula.",
+  "descripcion": "Tres dictados rítmicos de ocho pulsos en dos filas. Se escucha y se coloca en la cuadrícula; cada uno reparte los golpes de otra forma.",
   "etapa": "primaria-c2",
   "eje": "notacion",
   "lugar": "pantalla",
@@ -32,13 +32,41 @@
       "G4",
       "C4"
     ],
-    "solucion": [
-      "1,0",
-      "1,2",
-      "0,3",
-      "1,4",
-      "1,6",
-      "0,7"
+    "ejercicios": [
+      {
+        "titulo": "actividad.c202.ej1",
+        "solucion": [
+          "1,0",
+          "1,2",
+          "0,3",
+          "1,4",
+          "1,6",
+          "0,7"
+        ]
+      },
+      {
+        "titulo": "actividad.c202.ej2",
+        "solucion": [
+          "1,0",
+          "0,1",
+          "1,2",
+          "1,4",
+          "0,5",
+          "1,6"
+        ]
+      },
+      {
+        "titulo": "actividad.c202.ej3",
+        "solucion": [
+          "0,0",
+          "1,1",
+          "1,2",
+          "0,3",
+          "1,4",
+          "1,6",
+          "0,7"
+        ]
+      }
     ]
   },
   "evaluacion": {

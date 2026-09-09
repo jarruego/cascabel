@@ -24,7 +24,7 @@
     {
       "id": "c1-02-palmea-el-ritmo",
       "titulo": "Palmea el ritmo: negra y dos corcheas",
-      "descripcion": "Cuatro compases sobre una base musical real. Se mide la regularidad, no solo el acierto.",
+      "descripcion": "Cuatro ritmos de dos compases, cada uno un poco distinto: solo negras, con un ti-ti, con un silencio, con dos ti-ti. Se escucha cada uno y se repite con las palmas.",
       "etapa": "primaria-c1",
       "eje": "pulso",
       "tipo": "tocar-a-tiempo",
@@ -43,7 +43,7 @@
     {
       "id": "c1-03-el-pulso-escondido",
       "titulo": "El pulso escondido",
-      "descripcion": "Marcar el pulso de una canción. Distingue pulso de ritmo.",
+      "descripcion": "Cuatro ritmos con silencios en sitios distintos. Hay que palmear solo donde hay sonido y seguir contando el pulso por dentro donde no lo hay.",
       "etapa": "primaria-c1",
       "eje": "pulso",
       "tipo": "tocar-a-tiempo",
@@ -100,7 +100,7 @@
     {
       "id": "c1-06-la-escalera-de-notas",
       "titulo": "La escalera de notas",
-      "descripcion": "Sol, mi y la como escalones; se tocan para reconstruir la melodía oída.",
+      "descripcion": "Tres escaleras: tres, cuatro y cinco notas, para colocarlas de la más grave a la más aguda. Cada ficha suena al tocarla.",
       "etapa": "primaria-c1",
       "eje": "altura",
       "tipo": "ordenar",
@@ -138,7 +138,7 @@
     {
       "id": "c1-08-memory-de-instrumentos",
       "titulo": "Cada instrumento con su sonido",
-      "descripcion": "Tambor, triángulo, voz y piano a un lado; sus cuatro sonidos al otro. Se toca un dibujo y luego el sonido que le va, y las parejas hechas se quedan unidas.",
+      "descripcion": "Dos tableros de cuatro parejas: primero tambor, triángulo, voz y piano; después guitarra, violín, palmas y kalimba. Se toca un dibujo y luego el sonido que le va, y las parejas hechas quedan unidas.",
       "etapa": "primaria-c1",
       "eje": "timbre",
       "tipo": "emparejar",
@@ -271,7 +271,7 @@
     {
       "id": "c1-15-ritmo-de-ocho",
       "titulo": "Ritmo de ocho",
-      "descripcion": "Ocho pulsos con negras y corcheas, en bucle de cuatro repeticiones.",
+      "descripcion": "Tres ritmos de ocho pulsos con negras y corcheas, cada uno con los ti-ti en otro sitio. Un patrón largo se aprende escuchándolo entero y repitiéndolo entero.",
       "etapa": "primaria-c1",
       "eje": "pulso",
       "tipo": "tocar-a-tiempo",
@@ -499,7 +499,7 @@
     {
       "id": "c1-28-barras-en-dos-por-cuatro",
       "titulo": "Pon las barras en 2/4",
-      "descripcion": "Una línea de negras y blancas en dos por cuatro, y hay que poner las barras cada dos pulsos. El compás más fácil de contar.",
+      "descripcion": "Tres líneas de negras y blancas en dos por cuatro, y hay que poner las barras cada dos pulsos. El compás más fácil de contar.",
       "etapa": "primaria-c1",
       "eje": "notacion",
       "tipo": "compases",
@@ -537,7 +537,7 @@
     {
       "id": "c1-30-dictado-de-sol-y-mi",
       "titulo": "Dictado de sol y mi",
-      "descripcion": "Cuatro notas con solo sol y mi, las dos primeras de la progresión vocal, y hay que colocarlas en una cuadrícula de dos filas. El primer dictado melódico.",
+      "descripcion": "Tres dictados de cuatro notas con solo sol y mi, las dos primeras de la progresión vocal, en una cuadrícula de dos filas. Las mismas dos notas, en tres órdenes.",
       "etapa": "primaria-c1",
       "eje": "altura",
       "tipo": "rejilla",
@@ -556,7 +556,7 @@
     {
       "id": "c1-31-dictado-de-sol-mi-y-la",
       "titulo": "Dictado de sol, mi y la",
-      "descripcion": "Cuatro notas con sol, mi y la, la tercera nota de la progresión vocal, en una cuadrícula de tres filas. El paso siguiente al dictado de sol y mi.",
+      "descripcion": "Tres dictados de cuatro notas con sol, mi y la, en una cuadrícula de tres filas. Las mismas tres notas, en tres melodías.",
       "etapa": "primaria-c1",
       "eje": "altura",
       "tipo": "rejilla",
@@ -670,7 +670,7 @@
     {
       "id": "c2-02-dictado-ritmico",
       "titulo": "Dictado rítmico",
-      "descripcion": "Se escucha un ritmo y se coloca en la cuadrícula.",
+      "descripcion": "Tres dictados rítmicos de ocho pulsos en dos filas. Se escucha y se coloca en la cuadrícula; cada uno reparte los golpes de otra forma.",
       "etapa": "primaria-c2",
       "eje": "notacion",
       "tipo": "rejilla",
@@ -689,7 +689,7 @@
     {
       "id": "c2-03-dictado-melodico",
       "titulo": "Dictado melódico en rejilla",
-      "descripcion": "Cuadrícula de altura por tiempo, sin necesidad de saber notación.",
+      "descripcion": "Tres dictados melódicos de seis notas en una cuadrícula de cinco filas: arriba agudo, abajo grave. Las mismas notas, tres melodías.",
       "etapa": "primaria-c2",
       "eje": "altura",
       "tipo": "rejilla",
@@ -784,7 +784,7 @@
     {
       "id": "c2-08-ordena-el-rondo",
       "titulo": "Ordena el rondó",
-      "descripcion": "Pieza troceada en secciones; reconstruir el orden ABACA.",
+      "descripcion": "Tres rondós, cada uno con una parte más: A-B-A, A-B-A-C-A y A-B-A-C-A-D-A. La A vuelve siempre entre cada parte nueva.",
       "etapa": "primaria-c2",
       "eje": "cultura",
       "tipo": "ordenar",
@@ -1164,7 +1164,7 @@
     {
       "id": "c2-29-dictado-pentatonico",
       "titulo": "Dictado pentatónico",
-      "descripcion": "Seis notas de la escala pentatónica —do, re, mi, sol, la— y una cuadrícula de cinco filas. Sin fa ni si, que son los pasos pequeños: se oye mejor adónde va cada nota.",
+      "descripcion": "Tres dictados pentatónicos de seis notas —do, re, mi, sol, la— en una cuadrícula de cinco filas. Sin fa ni si, que son los pasos pequeños: se oye mejor adónde va cada nota.",
       "etapa": "primaria-c2",
       "eje": "altura",
       "tipo": "rejilla",
@@ -1259,7 +1259,7 @@
     {
       "id": "c2-34-palmea-con-blancas",
       "titulo": "Palmea con blancas y corcheas",
-      "descripcion": "Un ritmo de dos compases con blancas, negras y corcheas, para escuchar y repetir con las palmas. La versión de 3.º–4.º de «Palmea el ritmo».",
+      "descripcion": "Tres ritmos de dos compases con blancas, negras y corcheas. La blanca es una palmada y un hueco, y cada ritmo la pone en otro sitio.",
       "etapa": "primaria-c2",
       "eje": "pulso",
       "tipo": "tocar-a-tiempo",
@@ -1354,7 +1354,7 @@
     {
       "id": "c3-02-sincopa-y-contratiempo",
       "titulo": "Síncopa y contratiempo",
-      "descripcion": "Palmear fuera del pulso, con el pulso siempre de fondo.",
+      "descripcion": "Cuatro ritmos: una síncopa, dos, la síncopa al final y un compás entero a contratiempo. El acento cae donde no se espera, y cada ejercicio lo pone en otro sitio.",
       "etapa": "primaria-c3",
       "eje": "pulso",
       "tipo": "tocar-a-tiempo",
@@ -1506,7 +1506,7 @@
     {
       "id": "c3-10-ritmo-de-doce",
       "titulo": "Ritmo de doce",
-      "descripcion": "Doce pulsos en tres grupos de cuatro, con síncopa y silencio. En bucle.",
+      "descripcion": "Tres ritmos de doce pulsos con negras, corcheas, silencios, una síncopa y un contratiempo, cada uno ordenado de otra manera. Lo difícil es acordarse de las tres partes de cuatro.",
       "etapa": "primaria-c3",
       "eje": "pulso",
       "tipo": "tocar-a-tiempo",
@@ -2228,7 +2228,7 @@
     {
       "id": "inf-09-eco-de-palmas",
       "titulo": "Eco de palmas",
-      "descripcion": "El personaje hace dos o tres palmadas y el niño las repite.",
+      "descripcion": "Tres ecos de cuatro pulsos: cuatro palmadas, y luego con un hueco en medio y al final. Se escucha y se repite igual, ni antes ni después.",
       "etapa": "infantil",
       "eje": "pulso",
       "tipo": "tocar-a-tiempo",
@@ -2247,7 +2247,7 @@
     {
       "id": "inf-10-cajas-de-sonidos",
       "titulo": "Las cajas de los sonidos",
-      "descripcion": "Cuatro cajas con un dibujo —tambor, campana, palmas, voz— y cuatro sonidos. Se toca una caja y luego el sonido que sale de ella.",
+      "descripcion": "Dos tableros: primero cuatro cajas con tambor, campana, palmas y voz; después cuatro con animales de verdad. Se toca una caja y luego el sonido que sale de ella.",
       "etapa": "infantil",
       "eje": "timbre",
       "tipo": "emparejar",

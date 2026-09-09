@@ -31,46 +31,101 @@
     "orientacion": "vertical",
     "representacion": "color",
     "tempo": 76,
-    "notas": [
+    "ejercicios": [
       {
-        "nota": "C4",
-        "pulsos": 1
+        "titulo": "actividad.c118.ej1",
+        "notas": [
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "F4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2
+          }
+        ]
       },
       {
-        "nota": "D4",
-        "pulsos": 1
+        "titulo": "actividad.c118.ej2",
+        "notas": [
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "F4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 2
+          }
+        ]
       },
       {
-        "nota": "E4",
-        "pulsos": 1
-      },
-      {
-        "nota": "F4",
-        "pulsos": 1
-      },
-      {
-        "nota": "G4",
-        "pulsos": 2
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1
-      },
-      {
-        "nota": "F4",
-        "pulsos": 1
-      },
-      {
-        "nota": "E4",
-        "pulsos": 1
-      },
-      {
-        "nota": "D4",
-        "pulsos": 1
-      },
-      {
-        "nota": "C4",
-        "pulsos": 2
+        "titulo": "actividad.c118.ej3",
+        "notas": [
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "F4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "F4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 2
+          }
+        ]
       }
     ]
   },

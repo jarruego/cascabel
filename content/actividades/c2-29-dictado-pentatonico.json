@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "rejilla",
   "titulo": "Dictado pentatónico",
-  "descripcion": "Seis notas de la escala pentatónica —do, re, mi, sol, la— y una cuadrícula de cinco filas. Sin fa ni si, que son los pasos pequeños: se oye mejor adónde va cada nota.",
+  "descripcion": "Tres dictados pentatónicos de seis notas —do, re, mi, sol, la— en una cuadrícula de cinco filas. Sin fa ni si, que son los pasos pequeños: se oye mejor adónde va cada nota.",
   "etapa": "primaria-c2",
   "eje": "altura",
   "lugar": "pantalla",
@@ -41,13 +41,40 @@
       "D4",
       "C4"
     ],
-    "solucion": [
-      "4,0",
-      "3,1",
-      "2,2",
-      "1,3",
-      "2,4",
-      "4,5"
+    "ejercicios": [
+      {
+        "titulo": "actividad.c229.ej1",
+        "solucion": [
+          "4,0",
+          "3,1",
+          "2,2",
+          "1,3",
+          "2,4",
+          "4,5"
+        ]
+      },
+      {
+        "titulo": "actividad.c229.ej2",
+        "solucion": [
+          "1,0",
+          "2,1",
+          "1,2",
+          "0,3",
+          "1,4",
+          "2,5"
+        ]
+      },
+      {
+        "titulo": "actividad.c229.ej3",
+        "solucion": [
+          "4,0",
+          "2,1",
+          "1,2",
+          "0,3",
+          "1,4",
+          "4,5"
+        ]
+      }
     ]
   },
   "evaluacion": {

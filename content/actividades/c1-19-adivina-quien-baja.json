@@ -34,66 +34,141 @@
     "revelar": true,
     "avisoAlAcertar": "icono",
     "tempo": 60,
-    "notas": [
+    "ejercicios": [
       {
-        "nota": "A4",
-        "pulsos": 2,
-        "icono": "pajaro"
+        "titulo": "actividad.c119.ej1",
+        "notas": [
+          {
+            "nota": "A4",
+            "pulsos": 2,
+            "icono": "pajaro"
+          },
+          {
+            "nota": "F#4",
+            "pulsos": 2,
+            "icono": "conejo"
+          },
+          {
+            "nota": "D4",
+            "pulsos": 2,
+            "icono": "oso"
+          },
+          {
+            "nota": "E4",
+            "pulsos": 2,
+            "icono": "gato"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2,
+            "icono": "raton"
+          },
+          {
+            "nota": "A4",
+            "pulsos": 3,
+            "icono": "pajaro"
+          }
+        ]
       },
       {
-        "nota": "F#4",
-        "pulsos": 2,
-        "icono": "conejo"
+        "titulo": "actividad.c119.ej2",
+        "notas": [
+          {
+            "nota": "D4",
+            "pulsos": 2,
+            "icono": "oso"
+          },
+          {
+            "nota": "F#4",
+            "pulsos": 1,
+            "icono": "conejo"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "icono": "raton"
+          },
+          {
+            "nota": "A4",
+            "pulsos": 3,
+            "icono": "pajaro"
+          },
+          {
+            "nota": "E4",
+            "pulsos": 2,
+            "icono": "gato"
+          },
+          {
+            "nota": "D4",
+            "pulsos": 4,
+            "icono": "oso"
+          }
+        ]
       },
       {
-        "nota": "D4",
-        "pulsos": 2,
-        "icono": "oso"
-      },
-      {
-        "nota": "E4",
-        "pulsos": 2,
-        "icono": "gato"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 2,
-        "icono": "raton"
-      },
-      {
-        "nota": "A4",
-        "pulsos": 3,
-        "icono": "pajaro"
-      },
-      {
-        "nota": "D4",
-        "pulsos": 2,
-        "icono": "oso"
-      },
-      {
-        "nota": "F#4",
-        "pulsos": 1,
-        "icono": "conejo"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "icono": "raton"
-      },
-      {
-        "nota": "A4",
-        "pulsos": 3,
-        "icono": "pajaro"
-      },
-      {
-        "nota": "E4",
-        "pulsos": 2,
-        "icono": "gato"
-      },
-      {
-        "nota": "D4",
-        "pulsos": 4,
-        "icono": "oso"
+        "titulo": "actividad.c119.ej3",
+        "notas": [
+          {
+            "nota": "A4",
+            "pulsos": 2,
+            "icono": "pajaro"
+          },
+          {
+            "nota": "F#4",
+            "pulsos": 2,
+            "icono": "conejo"
+          },
+          {
+            "nota": "D4",
+            "pulsos": 2,
+            "icono": "oso"
+          },
+          {
+            "nota": "E4",
+            "pulsos": 2,
+            "icono": "gato"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2,
+            "icono": "raton"
+          },
+          {
+            "nota": "A4",
+            "pulsos": 3,
+            "icono": "pajaro"
+          },
+          {
+            "nota": "D4",
+            "pulsos": 2,
+            "icono": "oso"
+          },
+          {
+            "nota": "F#4",
+            "pulsos": 1,
+            "icono": "conejo"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "icono": "raton"
+          },
+          {
+            "nota": "A4",
+            "pulsos": 3,
+            "icono": "pajaro"
+          },
+          {
+            "nota": "E4",
+            "pulsos": 2,
+            "icono": "gato"
+          },
+          {
+            "nota": "D4",
+            "pulsos": 4,
+            "icono": "oso"
+          }
+        ]
       }
     ]
   },

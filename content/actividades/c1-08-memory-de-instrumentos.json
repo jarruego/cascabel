@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "emparejar",
   "titulo": "Cada instrumento con su sonido",
-  "descripcion": "Tambor, triángulo, voz y piano a un lado; sus cuatro sonidos al otro. Se toca un dibujo y luego el sonido que le va, y las parejas hechas se quedan unidas.",
+  "descripcion": "Dos tableros de cuatro parejas: primero tambor, triángulo, voz y piano; después guitarra, violín, palmas y kalimba. Se toca un dibujo y luego el sonido que le va, y las parejas hechas quedan unidas.",
   "etapa": "primaria-c1",
   "eje": "timbre",
   "lugar": "pantalla",
@@ -26,66 +26,136 @@
   },
   "contenido": {
     "consigna": "actividad.inf05.consigna",
-    "izquierda": [
+    "ejercicios": [
       {
-        "clave": "tambor",
-        "icono": "tambor",
-        "etiqueta": "opcion.tambor"
+        "titulo": "actividad.inf05.ej1",
+        "izquierda": [
+          {
+            "clave": "tambor",
+            "icono": "tambor",
+            "etiqueta": "opcion.tambor"
+          },
+          {
+            "clave": "triangulo",
+            "icono": "campana",
+            "etiqueta": "opcion.triangulo"
+          },
+          {
+            "clave": "voz",
+            "icono": "voz",
+            "etiqueta": "opcion.voz"
+          },
+          {
+            "clave": "piano",
+            "icono": "teclado",
+            "etiqueta": "opcion.pianoinst"
+          }
+        ],
+        "derecha": [
+          {
+            "clave": "son-piano",
+            "icono": "altavoz",
+            "audio": "muestras/piano/c4.opus"
+          },
+          {
+            "clave": "son-triangulo",
+            "icono": "altavoz",
+            "audio": "muestras/percusion/triangulo-1.opus"
+          },
+          {
+            "clave": "son-voz",
+            "icono": "altavoz",
+            "audio": "sonidos/instrumentos/voz-cantada.opus"
+          },
+          {
+            "clave": "son-tambor",
+            "icono": "altavoz",
+            "audio": "muestras/percusion/pandereta-1.opus"
+          }
+        ],
+        "parejas": [
+          {
+            "izquierda": "tambor",
+            "derecha": "son-tambor"
+          },
+          {
+            "izquierda": "triangulo",
+            "derecha": "son-triangulo"
+          },
+          {
+            "izquierda": "voz",
+            "derecha": "son-voz"
+          },
+          {
+            "izquierda": "piano",
+            "derecha": "son-piano"
+          }
+        ]
       },
       {
-        "clave": "triangulo",
-        "icono": "campana",
-        "etiqueta": "opcion.triangulo"
-      },
-      {
-        "clave": "voz",
-        "icono": "voz",
-        "etiqueta": "opcion.voz"
-      },
-      {
-        "clave": "piano",
-        "icono": "teclado",
-        "etiqueta": "opcion.pianoinst"
-      }
-    ],
-    "derecha": [
-      {
-        "clave": "son-piano",
-        "icono": "altavoz",
-        "audio": "muestras/piano/c4.opus"
-      },
-      {
-        "clave": "son-triangulo",
-        "icono": "altavoz",
-        "audio": "muestras/percusion/triangulo-1.opus"
-      },
-      {
-        "clave": "son-voz",
-        "icono": "altavoz",
-        "audio": "sonidos/instrumentos/voz-cantada.opus"
-      },
-      {
-        "clave": "son-tambor",
-        "icono": "altavoz",
-        "audio": "muestras/percusion/pandereta-1.opus"
-      }
-    ],
-    "parejas": [
-      {
-        "izquierda": "tambor",
-        "derecha": "son-tambor"
-      },
-      {
-        "izquierda": "triangulo",
-        "derecha": "son-triangulo"
-      },
-      {
-        "izquierda": "voz",
-        "derecha": "son-voz"
-      },
-      {
-        "izquierda": "piano",
-        "derecha": "son-piano"
+        "titulo": "actividad.inf05.ej2",
+        "izquierda": [
+          {
+            "clave": "guitarra",
+            "icono": "guitarra",
+            "etiqueta": "opcion.guitarra"
+          },
+          {
+            "clave": "violin",
+            "icono": "violin",
+            "etiqueta": "opcion.violin"
+          },
+          {
+            "clave": "palmas",
+            "icono": "palmas",
+            "etiqueta": "opcion.palmas"
+          },
+          {
+            "clave": "kalimba",
+            "icono": "kalimba",
+            "etiqueta": "opcion.kalimba"
+          }
+        ],
+        "derecha": [
+          {
+            "clave": "son-kalimba",
+            "icono": "altavoz",
+            "audio": "muestras/kalimba/c4.opus"
+          },
+          {
+            "clave": "son-guitarra",
+            "icono": "altavoz",
+            "audio": "muestras/guitarra/c4.opus"
+          },
+          {
+            "clave": "son-palmas",
+            "icono": "altavoz",
+            "audio": "muestras/cuerpo/palmas-1.opus"
+          },
+          {
+            "clave": "son-violin",
+            "icono": "altavoz",
+            "audio": "muestras/violin/c4.opus"
+          }
+        ],
+        "parejas": [
+          {
+            "izquierda": "guitarra",
+            "derecha": "son-guitarra"
+          },
+          {
+            "izquierda": "violin",
+            "derecha": "son-violin"
+          },
+          {
+            "izquierda": "palmas",
+            "derecha": "son-palmas"
+          },
+          {
+            "izquierda": "kalimba",
+            "derecha": "son-kalimba"
+          }
+        ]
       }
     ]
   },

@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "tocar-a-tiempo",
   "titulo": "Eco de palmas",
-  "descripcion": "El personaje hace dos o tres palmadas y el niño las repite.",
+  "descripcion": "Tres ecos de cuatro pulsos: cuatro palmadas, y luego con un hueco en medio y al final. Se escucha y se repite igual, ni antes ni después.",
   "etapa": "infantil",
   "eje": "pulso",
   "lugar": "hibrida",
@@ -19,7 +19,8 @@
     "compas": "4/4",
     "tempo": 76,
     "figuras": [
-      "negra"
+      "negra",
+      "silencio-negra"
     ]
   },
   "entrada": {
@@ -28,14 +29,36 @@
   },
   "contenido": {
     "consigna": "actividad.inf09.consigna",
-    "silabas": [
-      "ta",
-      "ta",
-      "ta",
-      "ta"
-    ],
-    "repeticiones": 3,
-    "tempo": 76
+    "tempo": 76,
+    "ejercicios": [
+      {
+        "titulo": "actividad.inf09.ej1",
+        "silabas": [
+          "ta",
+          "ta",
+          "ta",
+          "ta"
+        ]
+      },
+      {
+        "titulo": "actividad.inf09.ej2",
+        "silabas": [
+          "ta",
+          "sh",
+          "ta",
+          "ta"
+        ]
+      },
+      {
+        "titulo": "actividad.inf09.ej3",
+        "silabas": [
+          "ta",
+          "ta",
+          "ta",
+          "sh"
+        ]
+      }
+    ]
   },
   "evaluacion": {
     "autocorrectiva": true,

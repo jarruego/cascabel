@@ -23,45 +23,75 @@
   },
   "contenido": {
     "consigna": "actividad.c322.consigna",
-    "elementos": [
+    "ejercicios": [
       {
-        "clave": "barroco",
-        "icono": "violin",
-        "etiqueta": "epoca.barroco"
+        "titulo": "actividad.c322.ej1",
+        "elementos": [
+          {
+            "clave": "barroco",
+            "icono": "violin",
+            "etiqueta": "epoca.barroco"
+          },
+          {
+            "clave": "sigloxx",
+            "icono": "radio",
+            "etiqueta": "epoca.sigloxx"
+          },
+          {
+            "clave": "medieval",
+            "icono": "castillo",
+            "etiqueta": "epoca.medieval"
+          }
+        ],
+        "orden": [
+          "medieval",
+          "barroco",
+          "sigloxx"
+        ]
       },
       {
-        "clave": "medieval",
-        "icono": "castillo",
-        "etiqueta": "epoca.medieval"
-      },
-      {
-        "clave": "romanticismo",
-        "icono": "corazon",
-        "etiqueta": "epoca.romanticismo"
-      },
-      {
-        "clave": "renacimiento",
-        "icono": "pluma",
-        "etiqueta": "epoca.renacimiento"
-      },
-      {
-        "clave": "sigloxx",
-        "icono": "radio",
-        "etiqueta": "epoca.sigloxx"
-      },
-      {
-        "clave": "clasicismo",
-        "icono": "corona",
-        "etiqueta": "epoca.clasicismo"
+        "titulo": "actividad.c322.ej2",
+        "elementos": [
+          {
+            "clave": "barroco",
+            "icono": "violin",
+            "etiqueta": "epoca.barroco"
+          },
+          {
+            "clave": "medieval",
+            "icono": "castillo",
+            "etiqueta": "epoca.medieval"
+          },
+          {
+            "clave": "romanticismo",
+            "icono": "corazon",
+            "etiqueta": "epoca.romanticismo"
+          },
+          {
+            "clave": "renacimiento",
+            "icono": "pluma",
+            "etiqueta": "epoca.renacimiento"
+          },
+          {
+            "clave": "sigloxx",
+            "icono": "radio",
+            "etiqueta": "epoca.sigloxx"
+          },
+          {
+            "clave": "clasicismo",
+            "icono": "corona",
+            "etiqueta": "epoca.clasicismo"
+          }
+        ],
+        "orden": [
+          "medieval",
+          "renacimiento",
+          "barroco",
+          "clasicismo",
+          "romanticismo",
+          "sigloxx"
+        ]
       }
-    ],
-    "orden": [
-      "medieval",
-      "renacimiento",
-      "barroco",
-      "clasicismo",
-      "romanticismo",
-      "sigloxx"
     ]
   },
   "evaluacion": {

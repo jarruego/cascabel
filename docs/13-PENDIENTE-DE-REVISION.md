@@ -113,7 +113,7 @@ PENDIENTE DE REVISIÓN PEDAGÓGICA. Los saberes se escriben a mano en cada JSON 
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: los topes de esta tabla. Lo que se puede afirmar sin una maestra es que **la de elegir y la de seguir son distintas**; dónde está exactamente el techo de cada edad, no.
 
-## 26. `tools/dificultad.mjs` (línea 232)
+## 26. `tools/dificultad.mjs` (línea 250)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: los topes. Salen de la duración razonable por etapa dividida entre lo que tarda una pregunta con su escucha, no de ninguna fuente.
 

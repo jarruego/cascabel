@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "tocar-a-tiempo",
   "titulo": "Palmea el ritmo: negra y dos corcheas",
-  "descripcion": "Cuatro compases sobre una base musical real. Se mide la regularidad, no solo el acierto.",
+  "descripcion": "Cuatro ritmos de dos compases, cada uno un poco distinto: solo negras, con un ti-ti, con un silencio, con dos ti-ti. Se escucha cada uno y se repite con las palmas.",
   "etapa": "primaria-c1",
   "eje": "pulso",
   "lugar": "pantalla",
@@ -40,14 +40,45 @@
     "consigna": "actividad.c102.consigna",
     "compases_escucha": 2,
     "compases_respuesta": 2,
-    "repeticiones": 3,
-    "silabas": [
-      "ta",
-      "ta",
-      "ti-ti",
-      "ta"
-    ],
-    "tempo": 84
+    "tempo": 84,
+    "ejercicios": [
+      {
+        "titulo": "actividad.c102.ej1",
+        "silabas": [
+          "ta",
+          "ta",
+          "ta",
+          "ta"
+        ]
+      },
+      {
+        "titulo": "actividad.c102.ej2",
+        "silabas": [
+          "ta",
+          "ta",
+          "ti-ti",
+          "ta"
+        ]
+      },
+      {
+        "titulo": "actividad.c102.ej3",
+        "silabas": [
+          "ta",
+          "sh",
+          "ti-ti",
+          "ta"
+        ]
+      },
+      {
+        "titulo": "actividad.c102.ej4",
+        "silabas": [
+          "ti-ti",
+          "ta",
+          "ti-ti",
+          "ta"
+        ]
+      }
+    ]
   },
   "evaluacion": {
     "autocorrectiva": true,

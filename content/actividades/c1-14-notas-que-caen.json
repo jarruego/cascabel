@@ -31,126 +31,261 @@
     "orientacion": "vertical",
     "representacion": "silaba",
     "tempo": 80,
-    "notas": [
+    "ejercicios": [
       {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
+        "titulo": "actividad.c114.ej1",
+        "notas": [
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "silaba": "ti"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "silaba": "ti"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "silaba": "ti"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "silaba": "ti"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          }
+        ]
       },
       {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
+        "titulo": "actividad.c114.ej2",
+        "notas": [
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "silaba": "ti"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "silaba": "ti"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "silaba": "ti"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "silaba": "ti"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2,
+            "silaba": "taa"
+          }
+        ]
       },
       {
-        "nota": "G4",
-        "pulsos": 0.5,
-        "silaba": "ti"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 0.5,
-        "silaba": "ti"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 0.5,
-        "silaba": "ti"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 0.5,
-        "silaba": "ti"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 0.5,
-        "silaba": "ti"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 0.5,
-        "silaba": "ti"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 0.5,
-        "silaba": "ti"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 0.5,
-        "silaba": "ti"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "silaba": "ta"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 2,
-        "silaba": "taa"
+        "titulo": "actividad.c114.ej3",
+        "notas": [
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "silaba": "ti"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "silaba": "ti"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "silaba": "ti"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "silaba": "ti"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "silaba": "ti"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "silaba": "ti"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "silaba": "ti"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "silaba": "ti"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "silaba": "ta"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2,
+            "silaba": "taa"
+          }
+        ]
       }
     ]
   },

@@ -27,79 +27,164 @@
     "orientacion": "vertical",
     "representacion": "icono",
     "tempo": 52,
-    "notas": [
+    "avisoAlAcertar": "icono",
+    "ejercicios": [
       {
-        "nota": "D4",
-        "pulsos": 1,
-        "icono": "oso"
+        "titulo": "actividad.inf16.ej1",
+        "notas": [
+          {
+            "nota": "D4",
+            "pulsos": 1,
+            "icono": "oso"
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1,
+            "icono": "gato"
+          },
+          {
+            "nota": "F#4",
+            "pulsos": 1,
+            "icono": "conejo"
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1,
+            "icono": "oso"
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1,
+            "icono": "oso"
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1,
+            "icono": "gato"
+          },
+          {
+            "nota": "F#4",
+            "pulsos": 1,
+            "icono": "conejo"
+          }
+        ]
       },
       {
-        "nota": "E4",
-        "pulsos": 1,
-        "icono": "gato"
+        "titulo": "actividad.inf16.ej2",
+        "notas": [
+          {
+            "nota": "D4",
+            "pulsos": 1,
+            "icono": "oso"
+          },
+          {
+            "nota": "F#4",
+            "pulsos": 1,
+            "icono": "conejo"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "icono": "raton"
+          },
+          {
+            "nota": "A4",
+            "pulsos": 2,
+            "icono": "pajaro"
+          },
+          {
+            "nota": "F#4",
+            "pulsos": 1,
+            "icono": "conejo"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "icono": "raton"
+          },
+          {
+            "nota": "A4",
+            "pulsos": 2,
+            "icono": "pajaro"
+          }
+        ]
       },
       {
-        "nota": "F#4",
-        "pulsos": 1,
-        "icono": "conejo"
-      },
-      {
-        "nota": "D4",
-        "pulsos": 1,
-        "icono": "oso"
-      },
-      {
-        "nota": "D4",
-        "pulsos": 1,
-        "icono": "oso"
-      },
-      {
-        "nota": "E4",
-        "pulsos": 1,
-        "icono": "gato"
-      },
-      {
-        "nota": "F#4",
-        "pulsos": 1,
-        "icono": "conejo"
-      },
-      {
-        "nota": "D4",
-        "pulsos": 1,
-        "icono": "oso"
-      },
-      {
-        "nota": "F#4",
-        "pulsos": 1,
-        "icono": "conejo"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "icono": "raton"
-      },
-      {
-        "nota": "A4",
-        "pulsos": 2,
-        "icono": "pajaro"
-      },
-      {
-        "nota": "F#4",
-        "pulsos": 1,
-        "icono": "conejo"
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1,
-        "icono": "raton"
-      },
-      {
-        "nota": "A4",
-        "pulsos": 2,
-        "icono": "pajaro"
+        "titulo": "actividad.inf16.ej3",
+        "notas": [
+          {
+            "nota": "D4",
+            "pulsos": 1,
+            "icono": "oso"
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1,
+            "icono": "gato"
+          },
+          {
+            "nota": "F#4",
+            "pulsos": 1,
+            "icono": "conejo"
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1,
+            "icono": "oso"
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1,
+            "icono": "oso"
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1,
+            "icono": "gato"
+          },
+          {
+            "nota": "F#4",
+            "pulsos": 1,
+            "icono": "conejo"
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1,
+            "icono": "oso"
+          },
+          {
+            "nota": "F#4",
+            "pulsos": 1,
+            "icono": "conejo"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "icono": "raton"
+          },
+          {
+            "nota": "A4",
+            "pulsos": 2,
+            "icono": "pajaro"
+          },
+          {
+            "nota": "F#4",
+            "pulsos": 1,
+            "icono": "conejo"
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "icono": "raton"
+          },
+          {
+            "nota": "A4",
+            "pulsos": 2,
+            "icono": "pajaro"
+          }
+        ]
       }
-    ],
-    "avisoAlAcertar": "icono"
+    ]
   },
   "evaluacion": {
     "autocorrectiva": true,

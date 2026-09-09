@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "tocar-a-tiempo",
   "titulo": "Ritmo de ocho",
-  "descripcion": "Ocho pulsos con negras y corcheas, en bucle de cuatro repeticiones.",
+  "descripcion": "Tres ritmos de ocho pulsos con negras y corcheas, cada uno con los ti-ti en otro sitio. Un patrón largo se aprende escuchándolo entero y repitiéndolo entero.",
   "etapa": "primaria-c1",
   "eje": "pulso",
   "lugar": "pantalla",
@@ -29,18 +29,48 @@
   },
   "contenido": {
     "consigna": "actividad.c115.consigna",
-    "silabas": [
-      "ta",
-      "ti-ti",
-      "ta",
-      "ta",
-      "ti-ti",
-      "ti-ti",
-      "ta",
-      "ta"
-    ],
-    "repeticiones": 4,
-    "tempo": 84
+    "tempo": 84,
+    "ejercicios": [
+      {
+        "titulo": "actividad.c115.ej1",
+        "silabas": [
+          "ta",
+          "ti-ti",
+          "ta",
+          "ta",
+          "ti-ti",
+          "ti-ti",
+          "ta",
+          "ta"
+        ]
+      },
+      {
+        "titulo": "actividad.c115.ej2",
+        "silabas": [
+          "ti-ti",
+          "ta",
+          "ta",
+          "ti-ti",
+          "ta",
+          "ta",
+          "ti-ti",
+          "ta"
+        ]
+      },
+      {
+        "titulo": "actividad.c115.ej3",
+        "silabas": [
+          "ta",
+          "ta",
+          "ti-ti",
+          "ti-ti",
+          "ta",
+          "ti-ti",
+          "ta",
+          "ta"
+        ]
+      }
+    ]
   },
   "evaluacion": {
     "autocorrectiva": true,

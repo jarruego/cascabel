@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "compases",
   "titulo": "Pon las barras en 2/4",
-  "descripcion": "Una línea de negras y blancas en dos por cuatro, y hay que poner las barras cada dos pulsos. El compás más fácil de contar.",
+  "descripcion": "Tres líneas de negras y blancas en dos por cuatro, y hay que poner las barras cada dos pulsos. El compás más fácil de contar.",
   "etapa": "primaria-c1",
   "eje": "notacion",
   "lugar": "pantalla",
@@ -27,21 +27,56 @@
   },
   "contenido": {
     "consigna": "actividad.c128.consigna",
-    "duraciones": [
-      1,
-      1,
-      2,
-      1,
-      1,
-      1,
-      1,
-      2,
-      1,
-      1,
-      2
-    ],
     "pulsosPorCompas": 2,
-    "figuraDelCompas": 4
+    "figuraDelCompas": 4,
+    "ejercicios": [
+      {
+        "titulo": "actividad.c128.ej1",
+        "duraciones": [
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "titulo": "actividad.c128.ej2",
+        "duraciones": [
+          2,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          1,
+          1
+        ]
+      },
+      {
+        "titulo": "actividad.c128.ej3",
+        "duraciones": [
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          2,
+          1,
+          1,
+          2
+        ]
+      }
+    ]
   },
   "evaluacion": {
     "autocorrectiva": true,

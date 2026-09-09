@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "ordenar",
   "titulo": "Ordena el rondó",
-  "descripcion": "Pieza troceada en secciones; reconstruir el orden ABACA.",
+  "descripcion": "Tres rondós, cada uno con una parte más: A-B-A, A-B-A-C-A y A-B-A-C-A-D-A. La A vuelve siempre entre cada parte nueva.",
   "etapa": "primaria-c2",
   "eje": "cultura",
   "lugar": "pantalla",
@@ -23,44 +23,77 @@
   },
   "contenido": {
     "consigna": "actividad.c208.consigna",
-    "elementos": [
+    "ejercicios": [
       {
-        "clave": "a1",
-        "icono": "sol",
-        "etiqueta": "forma.a",
-        "audio": "muestras/marimba/c4.opus"
+        "titulo": "actividad.c208.ej1",
+        "elementos": [
+          {
+            "clave": "b",
+            "icono": "luna",
+            "etiqueta": "forma.b",
+            "audio": "muestras/marimba/g4.opus"
+          },
+          {
+            "clave": "a1",
+            "icono": "sol",
+            "etiqueta": "forma.a",
+            "audio": "muestras/marimba/c4.opus"
+          },
+          {
+            "clave": "a2",
+            "icono": "sol",
+            "etiqueta": "forma.a",
+            "audio": "muestras/marimba/c4.opus"
+          }
+        ],
+        "orden": [
+          "a1",
+          "b",
+          "a2"
+        ]
       },
       {
-        "clave": "b",
-        "icono": "luna",
-        "etiqueta": "forma.b",
-        "audio": "muestras/marimba/g4.opus"
-      },
-      {
-        "clave": "a2",
-        "icono": "sol",
-        "etiqueta": "forma.a",
-        "audio": "muestras/marimba/c4.opus"
-      },
-      {
-        "clave": "c",
-        "icono": "estrella",
-        "etiqueta": "forma.c",
-        "audio": "muestras/marimba/c6.opus"
-      },
-      {
-        "clave": "a3",
-        "icono": "sol",
-        "etiqueta": "forma.a",
-        "audio": "muestras/marimba/c4.opus"
+        "titulo": "actividad.c208.ej2",
+        "elementos": [
+          {
+            "clave": "a1",
+            "icono": "sol",
+            "etiqueta": "forma.a",
+            "audio": "muestras/marimba/c4.opus"
+          },
+          {
+            "clave": "b",
+            "icono": "luna",
+            "etiqueta": "forma.b",
+            "audio": "muestras/marimba/g4.opus"
+          },
+          {
+            "clave": "a2",
+            "icono": "sol",
+            "etiqueta": "forma.a",
+            "audio": "muestras/marimba/c4.opus"
+          },
+          {
+            "clave": "c",
+            "icono": "estrella",
+            "etiqueta": "forma.c",
+            "audio": "muestras/marimba/c6.opus"
+          },
+          {
+            "clave": "a3",
+            "icono": "sol",
+            "etiqueta": "forma.a",
+            "audio": "muestras/marimba/c4.opus"
+          }
+        ],
+        "orden": [
+          "a1",
+          "b",
+          "a2",
+          "c",
+          "a3"
+        ]
       }
-    ],
-    "orden": [
-      "a1",
-      "b",
-      "a2",
-      "c",
-      "a3"
     ]
   },
   "evaluacion": {

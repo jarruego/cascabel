@@ -27,25 +27,64 @@
   },
   "contenido": {
     "consigna": "actividad.c225.consigna",
-    "duraciones": [
-      1,
-      1,
-      1,
-      2,
-      1,
-      1,
-      2,
-      1,
-      1,
-      1,
-      2,
-      1,
-      1,
-      1,
-      1
-    ],
     "pulsosPorCompas": 3,
-    "figuraDelCompas": 4
+    "figuraDelCompas": 4,
+    "ejercicios": [
+      {
+        "titulo": "actividad.c225.ej1",
+        "duraciones": [
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "titulo": "actividad.c225.ej2",
+        "duraciones": [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "titulo": "actividad.c225.ej3",
+        "duraciones": [
+          1,
+          1,
+          1,
+          1,
+          2,
+          1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    ]
   },
   "evaluacion": {
     "autocorrectiva": true,

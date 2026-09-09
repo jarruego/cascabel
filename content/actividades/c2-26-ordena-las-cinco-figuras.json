@@ -31,69 +31,117 @@
   },
   "contenido": {
     "consigna": "actividad.c226.consigna",
-    "elementos": [
+    "ejercicios": [
       {
-        "clave": "blanca",
-        "signo": "𝅗𝅥",
-        "etiqueta": "figura.blanca",
-        "ritmo": [
-          2,
-          2,
-          2
+        "titulo": "actividad.c226.ej1",
+        "elementos": [
+          {
+            "clave": "blanca",
+            "signo": "𝅗𝅥",
+            "etiqueta": "figura.blanca",
+            "ritmo": [
+              2,
+              2,
+              2
+            ],
+            "color": "vivo-verde"
+          },
+          {
+            "clave": "corchea",
+            "signo": "𝅘𝅥𝅮",
+            "etiqueta": "figura.corchea",
+            "ritmo": [
+              0.5,
+              0.5,
+              0.5
+            ],
+            "color": "vivo-rojo"
+          },
+          {
+            "clave": "negra",
+            "signo": "𝅘𝅥",
+            "etiqueta": "figura.negra",
+            "ritmo": [
+              1,
+              1,
+              1
+            ],
+            "color": "vivo-azul"
+          }
         ],
-        "color": "vivo-verde"
+        "orden": [
+          "corchea",
+          "negra",
+          "blanca"
+        ]
       },
       {
-        "clave": "semicorchea",
-        "signo": "𝅘𝅥𝅯",
-        "etiqueta": "figura.semicorchea",
-        "ritmo": [
-          0.25,
-          0.25,
-          0.25,
-          0.25
+        "titulo": "actividad.c226.ej2",
+        "elementos": [
+          {
+            "clave": "blanca",
+            "signo": "𝅗𝅥",
+            "etiqueta": "figura.blanca",
+            "ritmo": [
+              2,
+              2,
+              2
+            ],
+            "color": "vivo-verde"
+          },
+          {
+            "clave": "semicorchea",
+            "signo": "𝅘𝅥𝅯",
+            "etiqueta": "figura.semicorchea",
+            "ritmo": [
+              0.25,
+              0.25,
+              0.25,
+              0.25
+            ],
+            "color": "vivo-morado"
+          },
+          {
+            "clave": "redonda",
+            "signo": "𝅝",
+            "etiqueta": "figura.redonda",
+            "ritmo": [
+              4,
+              4
+            ],
+            "color": "vivo-amarillo"
+          },
+          {
+            "clave": "corchea",
+            "signo": "𝅘𝅥𝅮",
+            "etiqueta": "figura.corchea",
+            "ritmo": [
+              0.5,
+              0.5,
+              0.5
+            ],
+            "color": "vivo-rojo"
+          },
+          {
+            "clave": "negra",
+            "signo": "𝅘𝅥",
+            "etiqueta": "figura.negra",
+            "ritmo": [
+              1,
+              1,
+              1
+            ],
+            "color": "vivo-azul"
+          }
         ],
-        "color": "vivo-morado"
-      },
-      {
-        "clave": "redonda",
-        "signo": "𝅝",
-        "etiqueta": "figura.redonda",
-        "ritmo": [
-          4,
-          4
-        ],
-        "color": "vivo-amarillo"
-      },
-      {
-        "clave": "corchea",
-        "signo": "𝅘𝅥𝅮",
-        "etiqueta": "figura.corchea",
-        "ritmo": [
-          0.5,
-          0.5,
-          0.5
-        ],
-        "color": "vivo-rojo"
-      },
-      {
-        "clave": "negra",
-        "signo": "𝅘𝅥",
-        "etiqueta": "figura.negra",
-        "ritmo": [
-          1,
-          1,
-          1
-        ],
-        "color": "vivo-azul"
+        "orden": [
+          "semicorchea",
+          "corchea",
+          "negra",
+          "blanca",
+          "redonda"
+        ]
       }
-    ],
-    "orden": [
-      "semicorchea",
-      "corchea",
-      "negra",
-      "blanca",
-      "redonda"
     ]
   },
   "evaluacion": {

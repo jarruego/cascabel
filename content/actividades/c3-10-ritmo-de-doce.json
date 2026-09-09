@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "tocar-a-tiempo",
   "titulo": "Ritmo de doce",
-  "descripcion": "Doce pulsos en tres grupos de cuatro, con síncopa y silencio. En bucle.",
+  "descripcion": "Tres ritmos de doce pulsos con negras, corcheas, silencios, una síncopa y un contratiempo, cada uno ordenado de otra manera. Lo difícil es acordarse de las tres partes de cuatro.",
   "etapa": "primaria-c3",
   "eje": "pulso",
   "lugar": "pantalla",
@@ -31,22 +31,58 @@
   },
   "contenido": {
     "consigna": "actividad.c310.consigna",
-    "silabas": [
-      "ta",
-      "ti-ti",
-      "ta",
-      "sh",
-      "ti-ta-ti",
-      "ti-ti",
-      "ta",
-      "ta",
-      "sh-ti",
-      "ta",
-      "ti-ti",
-      "ta"
-    ],
-    "repeticiones": 4,
-    "tempo": 92
+    "tempo": 92,
+    "ejercicios": [
+      {
+        "titulo": "actividad.c310.ej1",
+        "silabas": [
+          "ta",
+          "ti-ti",
+          "ta",
+          "sh",
+          "ti-ta-ti",
+          "ti-ti",
+          "ta",
+          "ta",
+          "sh-ti",
+          "ta",
+          "ti-ti",
+          "ta"
+        ]
+      },
+      {
+        "titulo": "actividad.c310.ej2",
+        "silabas": [
+          "ti-ta-ti",
+          "ta",
+          "ti-ti",
+          "ta",
+          "sh",
+          "ta",
+          "ti-ti",
+          "sh-ti",
+          "ta",
+          "ta",
+          "ta"
+        ]
+      },
+      {
+        "titulo": "actividad.c310.ej3",
+        "silabas": [
+          "ta",
+          "sh",
+          "ta",
+          "ti-ti",
+          "ti-ta-ti",
+          "ta",
+          "sh-ti",
+          "ti-ti",
+          "ta",
+          "ta",
+          "ta"
+        ]
+      }
+    ]
   },
   "evaluacion": {
     "autocorrectiva": true,

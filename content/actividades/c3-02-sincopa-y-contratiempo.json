@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "tocar-a-tiempo",
   "titulo": "Síncopa y contratiempo",
-  "descripcion": "Palmear fuera del pulso, con el pulso siempre de fondo.",
+  "descripcion": "Cuatro ritmos: una síncopa, dos, la síncopa al final y un compás entero a contratiempo. El acento cae donde no se espera, y cada ejercicio lo pone en otro sitio.",
   "etapa": "primaria-c3",
   "eje": "pulso",
   "lugar": "pantalla",
@@ -30,13 +30,41 @@
   },
   "contenido": {
     "consigna": "actividad.c302.consigna",
-    "silabas": [
-      "ta",
-      "ti-ta-ti",
-      "ta"
-    ],
-    "repeticiones": 3,
-    "tempo": 92
+    "tempo": 92,
+    "ejercicios": [
+      {
+        "titulo": "actividad.c302.ej1",
+        "silabas": [
+          "ta",
+          "ti-ta-ti",
+          "ta"
+        ]
+      },
+      {
+        "titulo": "actividad.c302.ej2",
+        "silabas": [
+          "ti-ta-ti",
+          "ti-ta-ti"
+        ]
+      },
+      {
+        "titulo": "actividad.c302.ej3",
+        "silabas": [
+          "ta",
+          "ta",
+          "ti-ta-ti"
+        ]
+      },
+      {
+        "titulo": "actividad.c302.ej4",
+        "silabas": [
+          "sh-ti",
+          "sh-ti",
+          "ta",
+          "ta"
+        ]
+      }
+    ]
   },
   "evaluacion": {
     "autocorrectiva": true,

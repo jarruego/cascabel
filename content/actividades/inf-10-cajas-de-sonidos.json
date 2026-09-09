@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "emparejar",
   "titulo": "Las cajas de los sonidos",
-  "descripcion": "Cuatro cajas con un dibujo —tambor, campana, palmas, voz— y cuatro sonidos. Se toca una caja y luego el sonido que sale de ella.",
+  "descripcion": "Dos tableros: primero cuatro cajas con tambor, campana, palmas y voz; después cuatro con animales de verdad. Se toca una caja y luego el sonido que sale de ella.",
   "etapa": "infantil",
   "eje": "timbre",
   "lugar": "pantalla",
@@ -23,66 +23,136 @@
   },
   "contenido": {
     "consigna": "actividad.inf10.consigna",
-    "izquierda": [
+    "ejercicios": [
       {
-        "clave": "caja-a",
-        "icono": "tambor",
-        "etiqueta": "opcion.tambor"
+        "titulo": "actividad.inf10.ej1",
+        "izquierda": [
+          {
+            "clave": "caja-a",
+            "icono": "tambor",
+            "etiqueta": "opcion.tambor"
+          },
+          {
+            "clave": "caja-b",
+            "icono": "campana",
+            "etiqueta": "opcion.campana"
+          },
+          {
+            "clave": "caja-c",
+            "icono": "palmas",
+            "etiqueta": "opcion.palmas"
+          },
+          {
+            "clave": "caja-d",
+            "icono": "voz",
+            "etiqueta": "opcion.voz"
+          }
+        ],
+        "derecha": [
+          {
+            "clave": "son-c",
+            "icono": "altavoz",
+            "audio": "muestras/cuerpo/palmas-1.opus"
+          },
+          {
+            "clave": "son-b",
+            "icono": "altavoz",
+            "audio": "muestras/percusion/triangulo-1.opus"
+          },
+          {
+            "clave": "son-d",
+            "icono": "altavoz",
+            "audio": "sonidos/instrumentos/voz-cantada.opus"
+          },
+          {
+            "clave": "son-a",
+            "icono": "altavoz",
+            "audio": "muestras/percusion/bombo-1.opus"
+          }
+        ],
+        "parejas": [
+          {
+            "izquierda": "caja-a",
+            "derecha": "son-a"
+          },
+          {
+            "izquierda": "caja-b",
+            "derecha": "son-b"
+          },
+          {
+            "izquierda": "caja-c",
+            "derecha": "son-c"
+          },
+          {
+            "izquierda": "caja-d",
+            "derecha": "son-d"
+          }
+        ]
       },
       {
-        "clave": "caja-b",
-        "icono": "campana",
-        "etiqueta": "opcion.campana"
-      },
-      {
-        "clave": "caja-c",
-        "icono": "palmas",
-        "etiqueta": "opcion.palmas"
-      },
-      {
-        "clave": "caja-d",
-        "icono": "voz",
-        "etiqueta": "opcion.voz"
-      }
-    ],
-    "derecha": [
-      {
-        "clave": "son-c",
-        "icono": "altavoz",
-        "audio": "muestras/cuerpo/palmas-1.opus"
-      },
-      {
-        "clave": "son-b",
-        "icono": "altavoz",
-        "audio": "muestras/percusion/triangulo-1.opus"
-      },
-      {
-        "clave": "son-d",
-        "icono": "altavoz",
-        "audio": "sonidos/instrumentos/voz-cantada.opus"
-      },
-      {
-        "clave": "son-a",
-        "icono": "altavoz",
-        "audio": "muestras/percusion/bombo-1.opus"
-      }
-    ],
-    "parejas": [
-      {
-        "izquierda": "caja-a",
-        "derecha": "son-a"
-      },
-      {
-        "izquierda": "caja-b",
-        "derecha": "son-b"
-      },
-      {
-        "izquierda": "caja-c",
-        "derecha": "son-c"
-      },
-      {
-        "izquierda": "caja-d",
-        "derecha": "son-d"
+        "titulo": "actividad.inf10.ej2",
+        "izquierda": [
+          {
+            "clave": "perro",
+            "icono": "perro",
+            "etiqueta": "opcion.perro"
+          },
+          {
+            "clave": "gato",
+            "icono": "gato",
+            "etiqueta": "opcion.gato"
+          },
+          {
+            "clave": "vaca",
+            "icono": "vaca",
+            "etiqueta": "opcion.vaca"
+          },
+          {
+            "clave": "gallo",
+            "icono": "gallo",
+            "etiqueta": "opcion.gallo"
+          }
+        ],
+        "derecha": [
+          {
+            "clave": "son-vaca",
+            "icono": "altavoz",
+            "audio": "sonidos/animales/vaca.opus"
+          },
+          {
+            "clave": "son-perro",
+            "icono": "altavoz",
+            "audio": "sonidos/animales/perro.opus"
+          },
+          {
+            "clave": "son-gallo",
+            "icono": "altavoz",
+            "audio": "sonidos/animales/gallo.opus"
+          },
+          {
+            "clave": "son-gato",
+            "icono": "altavoz",
+            "audio": "sonidos/animales/gato.opus"
+          }
+        ],
+        "parejas": [
+          {
+            "izquierda": "perro",
+            "derecha": "son-perro"
+          },
+          {
+            "izquierda": "gato",
+            "derecha": "son-gato"
+          },
+          {
+            "izquierda": "vaca",
+            "derecha": "son-vaca"
+          },
+          {
+            "izquierda": "gallo",
+            "derecha": "son-gallo"
+          }
+        ]
       }
     ]
   },

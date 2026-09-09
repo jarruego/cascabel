@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "ordenar",
   "titulo": "La escalera de notas",
-  "descripcion": "Sol, mi y la como escalones; se tocan para reconstruir la melodía oída.",
+  "descripcion": "Tres escaleras: tres, cuatro y cinco notas, para colocarlas de la más grave a la más aguda. Cada ficha suena al tocarla.",
   "etapa": "primaria-c1",
   "eje": "altura",
   "lugar": "pantalla",
@@ -23,37 +23,112 @@
   },
   "contenido": {
     "consigna": "actividad.c106.consigna",
-    "elementos": [
+    "ejercicios": [
       {
-        "clave": "g4",
-        "icono": "campana",
-        "etiqueta": "nota.sol",
-        "audio": "muestras/marimba/g4.opus"
+        "titulo": "actividad.c106.ej1",
+        "elementos": [
+          {
+            "clave": "g4",
+            "icono": "campana",
+            "etiqueta": "nota.sol",
+            "nota": "G4"
+          },
+          {
+            "clave": "c6",
+            "icono": "campana",
+            "etiqueta": "nota.do",
+            "nota": "C6"
+          },
+          {
+            "clave": "c4",
+            "icono": "campana",
+            "etiqueta": "nota.do",
+            "nota": "C4"
+          }
+        ],
+        "orden": [
+          "c4",
+          "g4",
+          "c6"
+        ]
       },
       {
-        "clave": "c6",
-        "icono": "campana",
-        "etiqueta": "nota.do",
-        "audio": "muestras/marimba/c6.opus"
+        "titulo": "actividad.c106.ej2",
+        "elementos": [
+          {
+            "clave": "g4",
+            "icono": "campana",
+            "etiqueta": "nota.sol",
+            "nota": "G4"
+          },
+          {
+            "clave": "c6",
+            "icono": "campana",
+            "etiqueta": "nota.do",
+            "nota": "C6"
+          },
+          {
+            "clave": "c4",
+            "icono": "campana",
+            "etiqueta": "nota.do",
+            "nota": "C4"
+          },
+          {
+            "clave": "b4",
+            "icono": "campana",
+            "etiqueta": "nota.si",
+            "nota": "B4"
+          }
+        ],
+        "orden": [
+          "c4",
+          "g4",
+          "b4",
+          "c6"
+        ]
       },
       {
-        "clave": "c4",
-        "icono": "campana",
-        "etiqueta": "nota.do",
-        "audio": "muestras/marimba/c4.opus"
-      },
-      {
-        "clave": "b4",
-        "icono": "campana",
-        "etiqueta": "nota.si",
-        "audio": "muestras/marimba/b4.opus"
+        "titulo": "actividad.c106.ej3",
+        "elementos": [
+          {
+            "clave": "b4",
+            "icono": "campana",
+            "etiqueta": "nota.si",
+            "nota": "B4"
+          },
+          {
+            "clave": "e4",
+            "icono": "campana",
+            "etiqueta": "nota.mi",
+            "nota": "E4"
+          },
+          {
+            "clave": "c6",
+            "icono": "campana",
+            "etiqueta": "nota.do",
+            "nota": "C6"
+          },
+          {
+            "clave": "g4",
+            "icono": "campana",
+            "etiqueta": "nota.sol",
+            "nota": "G4"
+          },
+          {
+            "clave": "c4",
+            "icono": "campana",
+            "etiqueta": "nota.do",
+            "nota": "C4"
+          }
+        ],
+        "orden": [
+          "c4",
+          "e4",
+          "g4",
+          "b4",
+          "c6"
+        ]
       }
-    ],
-    "orden": [
-      "c4",
-      "g4",
-      "b4",
-      "c6"
     ]
   },
   "evaluacion": {
