@@ -2532,7 +2532,8 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
 - [x] **La barra de progreso vuelve, por tramos.** El paso con botón de «siguiente» no
       gustó —«prefiero la barra de antes, más bonita y con secciones»—: un tramo por
       pregunta, hecho en verde, el actual más alto y con el acento. En elección, pentagrama
-      y cantar. Las preguntas se encadenan solas tras el feedback, como al principio.
+      y cantar. Las preguntas se encadenan solas tras el feedback, como al principio. En
+      elección va debajo de los cuadros: lo primero que se mira es lo que se toca.
 - [x] **«¿Sube o baja?» cambia de instrumento en cada pregunta**, como los de tempo: con
       el mismo xilófono seis veces se confundía. Y con él «¿Cuál es más aguda?» y «Sube,
       baja o se repite». Un estímulo puede llevar su `instrumento`.
