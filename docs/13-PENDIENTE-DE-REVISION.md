@@ -11,7 +11,7 @@ definición: están sin verificar, que es distinto y peor de dejar callado.
 En cada una, lo que hace falta es una de tres respuestas: **vale**, **cámbialo por esto**, o
 **depende, y depende de esto**.
 
-28 puntos esperando respuesta.
+29 puntos esperando respuesta.
 
 ## 1. `content/actividades/c1-26-vals-o-marcha.json` (línea 25)
 
@@ -77,50 +77,54 @@ En cada una, lo que hace falta es una de tres respuestas: **vale**, **cámbialo 
 
 "consigna": "actividad.c338.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: todos los fragmentos son piezas de Kevin MacLeod (CC BY 3.0) compuestas en cada estilo. Son ejemplos de manual, limpios y reconocibles; no son grabaciones históricas.", "opciones": [
 
-## 17. `src/config.ts` (línea 113)
+## 17. `content/criterios.json` (línea 2)
+
+"$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: los textos de las competencias son los del real decreto tal como los recoge docs/03-CURRICULO.md; los resúmenes de los criterios de Primaria NO son el texto del BOE —no está en el repositorio— sino una lectura de la progresión del bloque D, y hay que sustituirlos por el criterio literal de cada ciclo antes de dar la pantalla por buena. Los de Infantil 3.5 y 3.6 sí son literales.", "etapas": [
+
+## 18. `src/config.ts` (línea 113)
 
 **Pendiente de revisión pedagógica.** Las cifras son las convencionales que ya estaban documentadas; lo que se decide aquí es el eje por el que se indexan.
 
-## 18. `src/motor/afinacion.ts` (línea 67)
+## 19. `src/motor/afinacion.ts` (línea 67)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: los tres números salen de que la precisión de canto infantil mejora con la edad, que es lo convencional en la literatura coral, pero **dónde poner cada uno lo dice una maestra oyendo a un niño**, no un desarrollador.
 
-## 19. `src/motor/eco.ts` (línea 27)
+## 20. `src/motor/eco.ts` (línea 27)
 
 **PENDIENTE DE REVISIÓN PEDAGÓGICA.** Que un eco a otra velocidad cuente como bueno es un criterio, no un hecho: en un aula de conservatorio no lo sería. Aquí se ha elegido que sí, porque a estas edades reconocer la forma rítmica va antes que sostener el tempo, y porque la alternativa —marcarlo como fallo— desanima justo a quien lo ha entendido. Se informa aparte, así que el maestro ve las dos cosas.
 
-## 20. `src/motor/evaluacion.ts` (línea 104)
+## 21. `src/motor/evaluacion.ts` (línea 104)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: el número. Que tenga que haber un punto a partir del cual se felicita es claro —si no, «bien» no significaría nada—; que ese punto sean seis de cada diez es una elección, y quien puede decir si a los siete años eso es exigente o blando es una maestra viendo a la clase, no un desarrollador.
 
-## 21. `src/motor/musicograma.ts` (línea 32)
+## 22. `src/motor/musicograma.ts` (línea 32)
 
 `vertical` —las figuras caen— no exige ningún sentido de lectura, así que sirve antes de saber leer y es la natural para el ritmo. `horizontal` —las figuras vienen de la derecha— reproduce cómo se recorre una partitura, así que es la que corresponde cuando lo que se está aprendiendo es a leer. **PENDIENTE DE REVISIÓN PEDAGÓGICA**: la correspondencia entre edades y representaciones de la tabla es la convención habitual (Kodály para las sílabas, código Boomwhacker para los colores), pero dónde está el salto de una a otra lo dice una maestra, no un desarrollador.
 
-## 22. `src/motor/rejillaRitmica.ts` (línea 9)
+## 23. `src/motor/rejillaRitmica.ts` (línea 9)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: el repertorio de sílabas de abajo es el convencional del método Kodály tal como se enseña en España, pero hay variantes regionales («ti-ri-ti-ri» frente a «ta-fa-te-fe» para semicorcheas, por ejemplo). Lo ha fijado un desarrollador.
 
-## 23. `src/motor/repaso.ts` (línea 18)
+## 24. `src/motor/repaso.ts` (línea 18)
 
 **PENDIENTE DE REVISIÓN PEDAGÓGICA.** Los tres intervalos son una convención razonable, no una medida. Con un curso de uso real se sabrá si a un niño de siete años le vale una semana o si hacen falta tres días.
 
-## 24. `tools/auditoria.mjs` (línea 271)
+## 25. `tools/auditoria.mjs` (línea 271)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA. Los saberes se escriben a mano en cada JSON y aquí no hay forma de saber cuál es la redacción buena: el real decreto está en el BOE y este proyecto no lo tiene delante. Lo que sí se ve es cuándo una redacción la usa **una sola actividad** y otra parecida la usan treinta, que casi siempre significa que alguien escribió el mismo saber de dos maneras — pasó con el F de Infantil, que estaba de cuatro formas distintas y partía en cuatro un grupo que es uno.
 
-## 25. `tools/dificultad.mjs` (línea 73)
+## 26. `tools/dificultad.mjs` (línea 73)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: los topes de esta tabla. Lo que se puede afirmar sin una maestra es que **la de elegir y la de seguir son distintas**; dónde está exactamente el techo de cada edad, no.
 
-## 26. `tools/dificultad.mjs` (línea 250)
+## 27. `tools/dificultad.mjs` (línea 251)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: los topes. Salen de la duración razonable por etapa dividida entre lo que tarda una pregunta con su escucha, no de ninguna fuente.
 
-## 27. `tools/muestras-provisionales.py` (línea 98)
+## 28. `tools/muestras-provisionales.py` (línea 98)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: se usan tres campanas separadas por quintas justas (relación 3:2) porque la diferencia de altura tiene que ser inconfundible para un niño de 3 a 6 años. Es la opción convencional en material Montessori de campanas, donde se empieza por intervalos grandes antes de afinar el oído a los pequeños. Una maestra puede querer terceras o la escala pentatónica.
 
-## 28. `tools/muestras-provisionales.py` (línea 144)
+## 29. `tools/muestras-provisionales.py` (línea 144)
 
 Los tempos son los convencionales de los diccionarios de música: adagio 66, andante 92 y allegro 138 pulsos por minuto. PENDIENTE DE REVISIÓN PEDAGÓGICA: los rangos varían según la fuente y a esta edad lo que importa es que se distingan, no la precisión.

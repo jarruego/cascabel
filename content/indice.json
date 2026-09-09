@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-09",
-  "total": 146,
+  "total": 145,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -2658,25 +2658,6 @@
         "competencia": null,
         "criterio": null,
         "saber": null
-      },
-      "estado": "borrador",
-      "herramienta": true
-    },
-    {
-      "id": "tr-04-creditos-de-donde-sale-esto",
-      "titulo": "Créditos: de dónde sale esto",
-      "descripcion": "La página de créditos de la propia aplicación, convertida en clase: cada sonido, cada icono y cada tipografía con su licencia y su porqué.",
-      "etapa": "primaria-c3",
-      "eje": "cultura",
-      "tipo": "guia-aula",
-      "lugar": "hibrida",
-      "microfono": false,
-      "duracion_min": 25,
-      "curriculo": {
-        "area": "Educación Artística",
-        "competencia": "CE2",
-        "criterio": "2.2",
-        "saber": "B. Ética: licencias, plagio y derechos de autor"
       },
       "estado": "borrador",
       "herramienta": true
