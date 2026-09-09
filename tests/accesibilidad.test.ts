@@ -104,6 +104,41 @@ describe('accesibilidad', () => {
     }
   });
 
+  it('ningún botón se queda solo con un dibujo y sin nombre', () => {
+    /*
+      Un botón que solo lleva un símbolo no tiene texto que leer: para un lector de pantalla
+      es «botón» a secas, y para quien no reconoce el dibujo tampoco dice nada. Puede estar
+      bien —las flechas de la guía de aula van entre un contador y se leen solas— pero
+      entonces tiene que llevar `aria-label`.
+
+      Salió de un caso propio: al llevar los acompañamientos a la botonera dejé «más grave» y
+      «más agudo» solo con el signo, y el enunciado de la actividad seguía nombrándolos por
+      su texto. Ahí sobraba sitio y lo que faltaba era la palabra, así que se devolvió; pero
+      el fallo general —icono sin nombre— no lo cazaba nada.
+    */
+    const mudos: string[] = [];
+    for (const { ruta, fuente } of todos) {
+      for (const m of fuente.matchAll(/<button\b([\s\S]*?)<\/button>/g)) {
+        const cuerpo = m[1]!;
+        const tieneIcono = /<Icono/.test(cuerpo);
+        /*
+          Un nombre puede venir de dos sitios: el texto visible o un `aria-label`. Los dos
+          valen y por eso se miran juntos — lo que no vale es ninguno de los dos.
+
+          Se busca `t(` y no un texto suelto porque en este proyecto **no hay literales en
+          los componentes**: todo pasa por el diccionario. La primera versión de esta
+          comprobación intentaba detectar texto con «un `>` seguido de una letra» y no
+          cazaba nada, porque la flecha de cualquier `() => algo` cumple eso.
+        */
+        const tieneNombre = /\bt\(/.test(cuerpo) || /aria-label/.test(cuerpo);
+        if (tieneIcono && !tieneNombre) {
+          mudos.push(`${ruta}: ${cuerpo.slice(0, 80).replace(/\s+/g, ' ')}`);
+        }
+      }
+    }
+    expect(mudos, `botones con dibujo y sin nombre:\n${mudos.join('\n')}`).toEqual([]);
+  });
+
   it('los grupos de opciones se etiquetan', () => {
     for (const { ruta, fuente } of todos) {
       for (const grupo of fuente.match(/role="(group|grid|application)"/g) ?? []) {

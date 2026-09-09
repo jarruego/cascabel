@@ -98,10 +98,10 @@ export default function Acompanamientos({ actividad }: PropsActividad) {
           <button
             type="button"
             className="boton-repetir"
-            aria-label={t('acomp.masGrave')}
             onClick={() => cambiar(-1)}
           >
             <IconoMenos />
+            {t('acomp.masGrave')}
           </button>
           {/* La tonalidad se dice con el nombre de la nota, no con «+2 semitonos»: quien
               acompaña a un grupo piensa en «en re», no en aritmética. */}
@@ -111,10 +111,10 @@ export default function Acompanamientos({ actividad }: PropsActividad) {
           <button
             type="button"
             className="boton-repetir"
-            aria-label={t('acomp.masAgudo')}
             onClick={() => cambiar(1)}
           >
             <IconoMas />
+            {t('acomp.masAgudo')}
           </button>
         </div>
       </BarraAcciones>

@@ -1859,6 +1859,19 @@ estar documentadas en la barra que venía a sustituirlas. Ahora mira el código 
       `camino.json` y sale del currículo, que es de lo que §10 dice que no decide la máquina.
       Se ha comprobado que cada paso contiene lo que su idea dice, y encaja.
 
+- [x] **Repaso de textos contra la interfaz de ahora.** Buscando enunciados y pistas que
+      nombren botones apareció uno real, y era mío: al llevar los acompañamientos a la
+      botonera dejé «más grave» y «más agudo» **solo con el signo**, y el enunciado seguía
+      nombrándolos por su texto. En esa actividad la barra lleva ese único control, así que
+      no había nada que hacer sitio: lo que faltaba era la palabra. Se arregla el código, no
+      el texto — el texto tenía razón.
+
+      El test que lo vigila tardó tres intentos y los dos primeros son instructivos: uno se
+      escribió con un retroceso literal en la expresión regular (`` mal escapado, lo cazó
+      el lint) y el otro no fallaba nunca porque detectaba «tiene texto» buscando un `>`
+      seguido de letra — y **la flecha de cualquier `() => algo` cumple eso**. Un test que no
+      puede fallar cuando debe es peor que ninguno, porque se cree.
+
 **Lo siguiente**: verlo en un aparato. Todo esto es geometría y ninguna de las decisiones se
 puede confirmar sin mirarla — cuánto es «demasiado grande» para un musicograma en una pizarra
 o si el escenario centrado deja el teclado a una altura cómoda no lo dice ningún test.
