@@ -73,10 +73,17 @@ describe('toda actividad se puede dar por hecha', () => {
     }
   });
 
-  it('el musicograma que sí acaba sigue celebrando', () => {
+  it('el musicograma que sí acaba celebra dentro, con «otra vez», y no abre la modal', () => {
+    /*
+      «Es muy corta y al terminar da directamente la enhorabuena; ¿y si se quiere repetir?».
+      La modal se fue: el personaje felicita en la misma pantalla y el botón grande es
+      repetir. Lo que sí se comprueba es que se siga anotando, con `cerrado`.
+    */
     const conFinal = ACTIVIDADES.filter((a) => a.tipo === 'seguir' && a.contenido.bucle !== true);
     expect(conFinal.length).toBeGreaterThan(0);
-    for (const a of conFinal) expect(hayCelebracion(a), a.id).toBe(true);
+    for (const a of conFinal) expect(hayCelebracion(a), a.id).toBe(false);
+    const src = readFileSync(join(RAIZ, 'tipos', 'Seguir.tsx'), 'utf8');
+    expect(src).toMatch(/cerrado: !contenido\.serie/);
   });
 
   it('las libres no celebran, porque no terminan', () => {

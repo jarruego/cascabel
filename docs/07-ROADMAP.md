@@ -2466,6 +2466,15 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       líneas de las parejas hechas, y con la separación normal no se veían. Y el tambor de
       «Memory de instrumentos» sonaba a pandereta: ahora es el bombo.
 
+- [x] **Un sonido a la vez, y solo al tocar su ficha.** Una muestra nueva corta a la
+      anterior y a lo programado en el `AudioContext`, en emparejar, memory y ordenar; y al
+      cerrar una pareja ya no vuelven a sonar los dos: el niño los ha oído al tocarlos, en
+      el orden que haya querido. El marco corta también la muestra al salir.
+- [x] **El musicograma con final ofrece «otra vez» antes que la enhorabuena.** Diez
+      segundos de pieza y una modal encima era cerrar antes de empezar. Ahora el personaje
+      felicita en la misma pantalla, el botón grande es repetir y «terminar» es el discreto.
+      Se anota igual al acabar la primera vuelta.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

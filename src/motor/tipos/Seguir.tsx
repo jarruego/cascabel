@@ -9,7 +9,8 @@ import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
 import { BarraAcciones } from '@/ui/BarraAcciones';
-import { IconoParar, IconoTocar } from '@/ui/Simbolos';
+import { IconoParar, IconoRepetir, IconoSiguiente, IconoTocar } from '@/ui/Simbolos';
+import { Reaccion } from '@/ui/Reaccion';
 import { rejillaDesdeSilabas } from '../rejillaRitmica';
 import { faltaPara, posicionEnVuelta, vueltasEncoladas } from '../bucle';
 
@@ -37,7 +38,7 @@ interface Bloque {
   pulsos?: number;
 }
 
-export default function Seguir({ actividad, alTerminar }: PropsActividad) {
+export default function Seguir({ actividad, alTerminar, alSalir }: PropsActividad) {
   const contenido = actividad.contenido as {
     consigna: string;
     bloques: Bloque[];
@@ -52,6 +53,8 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
      * que se mueve, no un juego de puntos.
      */
     modo?: 'tira' | 'cae';
+    /** Lo pone `conSerie` cuando esta pieza es un ejercicio de una serie. */
+    serie?: { n: number; total: number };
     /** Sílabas rítmicas si el musicograma es de ritmo; si no, se usa `pulsos` por bloque. */
     silabas?: string[];
     /**
@@ -81,6 +84,14 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
   const metronomo = useRef<Metronomo | null>(null);
   const rafId = useRef<number | null>(null);
   const yaTerminada = useRef(false);
+  /**
+   * La pieza ha llegado al final. Sin bucle y fuera de una serie, la actividad no se cierra
+   * ahí: el autor lo vio el 2026-09-12 —«es muy corta y al terminar da directamente la
+   * enhorabuena; ¿y si se quiere repetir?»—. La enhorabuena la da el personaje aquí mismo,
+   * y la botonera ofrece «otra vez» como botón grande y «terminar» como discreto. Se anota
+   * al acabar la primera vuelta, como siempre; lo que no sale es la modal.
+   */
+  const [terminada, setTerminada] = useState(false);
 
   /**
    * La tira se mueve sola para que el bloque que suena esté siempre a la vista.
@@ -272,10 +283,13 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
         */
         if (!yaTerminada.current) {
           yaTerminada.current = true;
-          alTerminar({ actividadId: actividad.id, completada: true });
+          // `cerrado`: el marco anota y no abre la modal. En una serie es el envoltorio
+          // quien decide, y ahí sí hay que avisar sin cerrar.
+          alTerminar({ actividadId: actividad.id, completada: true, cerrado: !contenido.serie });
         }
         if (!contenido.bucle) {
           parar();
+          if (!contenido.serie) setTerminada(true);
           return;
         }
       }
@@ -289,6 +303,7 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
     contenido.silabas,
     contenido.notas,
     contenido.bucle,
+    contenido.serie,
     modo,
     parar,
     actividad.id,
@@ -345,16 +360,40 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
       {/* La instrucción no se repite aquí: la cuenta el personaje al entrar y se vuelve a
           leer pulsándolo. Y la acción va donde va en todas, en la botonera de abajo. */}
       <BarraAcciones>
-        <button
-          type="button"
-          className="boton-principal boton-arranque"
-          data-sonando={sonando || undefined}
-          onClick={() => (sonando ? parar() : void arrancar())}
-        >
-          {sonando ? <IconoParar /> : <IconoTocar />}
-          {sonando ? t('accion.parar') : t('accion.empezar')}
-        </button>
+        {terminada ? (
+          <>
+            <button
+              type="button"
+              className="boton-principal"
+              onClick={() => {
+                setTerminada(false);
+                void arrancar();
+              }}
+            >
+              <IconoRepetir />
+              {t('tocar.otraVez')}
+            </button>
+            <button type="button" className="boton-repetir" onClick={() => alSalir?.()}>
+              <IconoSiguiente />
+              {t('comun.terminar')}
+            </button>
+          </>
+        ) : (
+          <button
+            type="button"
+            className="boton-principal boton-arranque"
+            data-sonando={sonando || undefined}
+            onClick={() => (sonando ? parar() : void arrancar())}
+          >
+            {sonando ? <IconoParar /> : <IconoTocar />}
+            {sonando ? t('accion.parar') : t('accion.empezar')}
+          </button>
+        )}
       </BarraAcciones>
+
+      <Reaccion tono={terminada ? 'bien' : 'neutro'} personaje={actividad.personaje}>
+        {terminada && t('comun.completada')}
+      </Reaccion>
     </section>
   );
 }

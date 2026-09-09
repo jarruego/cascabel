@@ -75,7 +75,7 @@ export const HECHA_CUANDO: Record<TipoActividad, string> = {
   escala: 'al construir la escala',
   karaoke: 'al llegar al final de la pieza',
   'tocar-a-tiempo': 'al acabar las repeticiones',
-  seguir: 'al acabar la primera vuelta, en bucle o no',
+  seguir: 'al acabar la primera vuelta, en bucle o no; la enhorabuena la da dentro, con «otra vez»',
   cuerpo: 'al acabar la primera vuelta del patrón',
   'guia-aula': 'al llegar al último paso',
   eco: 'cuando los dos han tocado y se comparan',
@@ -102,7 +102,10 @@ export function sinFinal(actividad: {
   contenido: Record<string, unknown>;
 }): boolean {
   if (esLibre(actividad.tipo)) return true;
-  if (actividad.tipo === 'seguir' && actividad.contenido.bucle === true) return true;
+  // El musicograma no abre la modal ni en bucle ni con final: con final, la enhorabuena la
+  // da dentro y ofrece repetir, que en una pieza de diez segundos es lo que se quiere.
+  // Solo como ejercicio de una serie avisa al envoltorio, que pone su propio cierre.
+  if (actividad.tipo === 'seguir' && !Array.isArray(actividad.contenido.ejercicios)) return true;
   if (actividad.tipo === 'rejilla') {
     const modo = actividad.contenido.modo ?? (actividad.contenido.solucion ? 'dictado' : 'libre');
     if (modo === 'libre' && !Array.isArray(actividad.contenido.ejercicios)) return true;
