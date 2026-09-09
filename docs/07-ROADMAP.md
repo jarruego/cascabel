@@ -2123,6 +2123,20 @@ hace la actividad**, y un agujero en el validador que las dejaba pasar.
       más, las mismas que sus catorce hermanas. Esa lista es lo que un maestro lee para saber
       qué se guarda de un niño, y decir de menos ahí es tan malo como decir de más.
 
+- [x] **Y el mismo desacuerdo entre dos actividades de ritmo.** `TocarATiempo` lleva escrito
+      en su propio comentario «El resultado. **Nunca un porcentaje**», con el argumento de
+      §7: un niño 120 ms tarde y clavado tiene un pulso excelente, y un porcentaje le diría
+      que ha fallado. `Karaoke`, que se evalúa con la misma función, imprimía «has cogido 12
+      de 16 · 75 %». Se queda «12 de 16» —eso no es una nota, es lo que ha pasado— y se va el
+      tanto por ciento, que es la misma cifra convertida en calificación y lo que la modal de
+      enhorabuena tiene prohibido desde el primer día.
+
+      El 60 % que decide si se felicita sale a `bastanteBien` en `motor/evaluacion.ts`, donde
+      hay test: estaba escrito tres veces en la misma pantalla, y esa es exactamente la forma
+      en que el color acaba diciendo una cosa y el texto otra. El número queda **pendiente de
+      revisión pedagógica** — que haga falta un punto a partir del cual se felicita es claro;
+      que sean seis de cada diez es una elección.
+
 **Lo que sigue faltando** es lo de siempre: un aparato. Nada de esto necesitaba pantalla,
 pero lo de los dos días anteriores sí.
 

@@ -98,6 +98,26 @@ export function evaluarRitmo(
   };
 }
 
+/**
+ * Cuántas hay que coger para que la tarjeta felicite en vez de sugerir otra vuelta.
+ *
+ * PENDIENTE DE REVISIÓN PEDAGÓGICA: el número. Que tenga que haber un punto a partir del
+ * cual se felicita es claro —si no, «bien» no significaría nada—; que ese punto sean seis de
+ * cada diez es una elección, y quien puede decir si a los siete años eso es exigente o
+ * blando es una maestra viendo a la clase, no un desarrollador.
+ *
+ * Vive aquí y no en el componente porque decide tres cosas a la vez —el color de la tarjeta,
+ * el texto y si se añade la pista— y estaba escrito tres veces en la misma pantalla. Así es
+ * como se acaba con un color que dice una cosa y un texto que dice otra, que es justo lo que
+ * pasó en «Canta la nota».
+ */
+export const PARA_FELICITAR = 0.6;
+
+/** ¿Se felicita, o se sugiere otra vuelta? */
+export function bastanteBien(aciertos: number, total: number): boolean {
+  return total > 0 && aciertos / total >= PARA_FELICITAR;
+}
+
 /** Diferencia en cents entre lo cantado y lo esperado. Positivo = el niño va alto. */
 export function desviacionCents(midiCantado: number, midiObjetivo: number): number {
   return (midiCantado - midiObjetivo) * 100;

@@ -5,7 +5,7 @@ import { despertarAudio, latenciaMs, obtenerContexto } from '@/audio/AudioEngine
 import { Sampler } from '@/audio/sampler';
 import { muestrasDe } from '@/audio/instrumentos';
 import { TOLERANCIA_MS } from '@/config';
-import { evaluarRitmo, type EvaluacionRitmica } from '../evaluacion';
+import { bastanteBien, evaluarRitmo, type EvaluacionRitmica } from '../evaluacion';
 import { yDeLinea } from '../alturaEnPauta';
 import {
   carrilesDe,
@@ -371,7 +371,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
   }, [fase, tocar, porCarril, carriles.length]);
 
   const total = notas.length;
-  const porcentaje = total ? Math.round((acertadas.size / total) * 100) : 0;
+  const bien = bastanteBien(acertadas.size, total);
 
   return (
     <section
@@ -579,21 +579,31 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
             que ha pasado, y se entiende a los siete años.
           */}
           <Reaccion
-            tono={!evaluacion.regularPeroDesfasado && porcentaje >= 60 ? 'bien' : 'casi'}
+            tono={!evaluacion.regularPeroDesfasado && bien ? 'bien' : 'casi'}
             personaje={actividad.personaje}
           >
             {evaluacion.regularPeroDesfasado
               ? t(evaluacion.desvioMedioMs > 0 ? 'tocar.regularTarde' : 'tocar.regularPronto')
-              : t(porcentaje >= 60 ? 'karaoke.bien' : 'karaoke.otraVez')}
+              : t(bien ? 'karaoke.bien' : 'karaoke.otraVez')}
             {/* La pista de la actividad, que es la concreta: «mira la sílaba antes de que
                 llegue a la línea» dice qué hacer distinto; «otra vez» no. */}
-            {porcentaje < 60 && pistaPara(actividad.pistas, 1)
+            {!bien && pistaPara(actividad.pistas, 1)
               ? ` ${t(pistaPara(actividad.pistas, 1)!)}`
               : ''}
           </Reaccion>
+          {/*
+            Cuántas de cuántas, y **sin el tanto por ciento**.
+
+            «12 de 16» es lo que ha pasado y se entiende a los siete años. «75 %» es la misma
+            cifra convertida en calificación, que es lo que `TocarATiempo` lleva escrito en su
+            propio comentario que no se hace nunca —un niño 120 ms tarde y clavado tiene un
+            pulso excelente y el porcentaje le diría que ha fallado— y lo que la modal de
+            enhorabuena tiene prohibido desde el primer día. Eran dos actividades de ritmo con
+            la misma evaluación y dos criterios distintos.
+          */}
           <p className="karaoke__cifras">
             {t('karaoke.cogidas')} <strong>{acertadas.size}</strong> {t('catalogo.de')}{' '}
-            <strong>{total}</strong> · <strong>{porcentaje} %</strong>
+            <strong>{total}</strong>
           </p>
         </>
       )}

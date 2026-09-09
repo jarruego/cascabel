@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { evaluarRitmo, calidadDe } from '@/motor/evaluacion';
+import { bastanteBien, evaluarRitmo, calidadDe } from '@/motor/evaluacion';
 
 /**
  * Estos tests protegen la decisión pedagógica más importante del proyecto: que un
@@ -65,5 +65,25 @@ describe('tolerancia por carril', () => {
   it('Infantil es la más generosa de todas', () => {
     expect(calidadDe(140, 'infantil')).toBe('perfecto');
     expect(calidadDe(140, 'lectores')).toBe('bien');
+  });
+});
+
+describe('cuándo se felicita y cuándo se sugiere otra vuelta', () => {
+  /*
+    El número lo decide `PARA_FELICITAR` y espera revisión pedagógica. Lo que se comprueba
+    aquí es la forma, que es lo que se rompe solo: que el umbral entra —seis de diez
+    felicita, no «más de seis»—, y que una actividad sin nada que coger no felicita por
+    división entre cero, que es como un componente acaba diciendo «¡muy bien!» a quien no
+    ha tocado nada.
+  */
+  it('el umbral entra, no se roza', () => {
+    expect(bastanteBien(6, 10)).toBe(true);
+    expect(bastanteBien(5, 10)).toBe(false);
+    expect(bastanteBien(16, 16)).toBe(true);
+  });
+
+  it('sin nada que coger no se felicita', () => {
+    expect(bastanteBien(0, 0)).toBe(false);
+    expect(bastanteBien(0, 8)).toBe(false);
   });
 });
