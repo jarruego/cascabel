@@ -1,0 +1,257 @@
+{
+  "id": "c2-31-alegre-o-triste",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Alegre o triste?",
+  "descripcion": "La misma melodía en modo mayor y en modo menor. Con el acorde se aprende en 5.º; aquí se oye antes, como carácter: alegre o triste.",
+  "etapa": "primaria-c2",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.1",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c231.consigna",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: «alegre» y «triste» es la lectura convencional del modo mayor y el menor en Primaria, y no es exacta —hay música en menor que no es triste—, pero es la puerta habitual. La única nota que cambia entre cada pareja es la tercera.",
+    "opciones": [
+      {
+        "clave": "alegre",
+        "icono": "sol",
+        "color": "amarillo"
+      },
+      {
+        "clave": "triste",
+        "icono": "luna",
+        "color": "azul"
+      }
+    ],
+    "estimulos": [
+      {
+        "notas": [
+          "C4",
+          "E4",
+          "G4",
+          "E4",
+          "C4",
+          "D4",
+          "E4",
+          "C4"
+        ],
+        "duraciones": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "respuesta": "alegre"
+      },
+      {
+        "notas": [
+          "C4",
+          "Eb4",
+          "G4",
+          "Eb4",
+          "C4",
+          "D4",
+          "Eb4",
+          "C4"
+        ],
+        "duraciones": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "respuesta": "triste"
+      },
+      {
+        "notas": [
+          "D4",
+          "F4",
+          "A4",
+          "F4",
+          "D4",
+          "E4",
+          "F4",
+          "D4"
+        ],
+        "duraciones": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "respuesta": "triste"
+      },
+      {
+        "notas": [
+          "D4",
+          "F#4",
+          "A4",
+          "F#4",
+          "D4",
+          "E4",
+          "F#4",
+          "D4"
+        ],
+        "duraciones": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "respuesta": "alegre"
+      },
+      {
+        "notas": [
+          "G4",
+          "B4",
+          "D5",
+          "B4",
+          "G4",
+          "A4",
+          "B4",
+          "G4"
+        ],
+        "duraciones": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "respuesta": "alegre"
+      },
+      {
+        "notas": [
+          "G4",
+          "Bb4",
+          "D5",
+          "Bb4",
+          "G4",
+          "A4",
+          "Bb4",
+          "G4"
+        ],
+        "duraciones": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "respuesta": "triste"
+      },
+      {
+        "notas": [
+          "A3",
+          "C4",
+          "E4",
+          "C4",
+          "A3",
+          "B3",
+          "C4",
+          "A3"
+        ],
+        "duraciones": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "respuesta": "triste"
+      },
+      {
+        "notas": [
+          "A3",
+          "C#4",
+          "E4",
+          "C#4",
+          "A3",
+          "B3",
+          "C#4",
+          "A3"
+        ],
+        "duraciones": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "respuesta": "alegre"
+      }
+    ],
+    "instrumento": "piano"
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c231.enunciado",
+  "personaje": "simon",
+  "pistas": [
+    "actividad.c231.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Melodías y ritmos de ejemplo",
+      "autor": "Cascabel",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

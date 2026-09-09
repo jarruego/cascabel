@@ -1,0 +1,179 @@
+{
+  "id": "c3-33-en-el-pulso-o-a-contratiempo",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿En el pulso o a contratiempo?",
+  "descripcion": "El bombo marca el pulso y las claves suenan con él, o justo en medio de dos pulsos: a contratiempo. Lo que hace el reggae y lo que hacen las palmas en el flamenco.",
+  "etapa": "primaria-c3",
+  "eje": "pulso",
+  "lugar": "pantalla",
+  "duracion_min": 7,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "tempo": 100
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c333.consigna",
+    "opciones": [
+      {
+        "clave": "enelpulso",
+        "color": "azul"
+      },
+      {
+        "clave": "contratiempo",
+        "color": "rojo"
+      }
+    ],
+    "estimulos": [
+      {
+        "patron": [
+          "bombo+claves",
+          "",
+          "bombo+claves",
+          "",
+          "bombo+claves",
+          "",
+          "bombo+claves",
+          ""
+        ],
+        "celda": 0.5,
+        "tempo": 96,
+        "respuesta": "enelpulso"
+      },
+      {
+        "patron": [
+          "bombo",
+          "claves",
+          "bombo",
+          "claves",
+          "bombo",
+          "claves",
+          "bombo",
+          "claves"
+        ],
+        "celda": 0.5,
+        "tempo": 96,
+        "respuesta": "contratiempo"
+      },
+      {
+        "patron": [
+          "bombo",
+          "caja",
+          "bombo",
+          "caja",
+          "bombo",
+          "caja",
+          "bombo",
+          "caja"
+        ],
+        "celda": 0.5,
+        "tempo": 104,
+        "respuesta": "contratiempo"
+      },
+      {
+        "patron": [
+          "bombo+caja",
+          "",
+          "bombo+caja",
+          "",
+          "bombo+caja",
+          "",
+          "bombo+caja",
+          ""
+        ],
+        "celda": 0.5,
+        "tempo": 104,
+        "respuesta": "enelpulso"
+      },
+      {
+        "patron": [
+          "bombo+claves",
+          "",
+          "bombo+claves",
+          "",
+          "bombo+claves",
+          "",
+          "bombo+claves",
+          ""
+        ],
+        "celda": 0.5,
+        "tempo": 112,
+        "respuesta": "enelpulso"
+      },
+      {
+        "patron": [
+          "bombo",
+          "claves",
+          "bombo",
+          "claves",
+          "bombo",
+          "claves",
+          "bombo",
+          "claves"
+        ],
+        "celda": 0.5,
+        "tempo": 88,
+        "respuesta": "contratiempo"
+      },
+      {
+        "patron": [
+          "bombo",
+          "claves",
+          "bombo",
+          "claves",
+          "bombo",
+          "claves",
+          "bombo",
+          "claves"
+        ],
+        "celda": 0.5,
+        "tempo": 116,
+        "respuesta": "contratiempo"
+      },
+      {
+        "patron": [
+          "bombo+caja",
+          "",
+          "bombo+caja",
+          "",
+          "bombo+caja",
+          "",
+          "bombo+caja",
+          ""
+        ],
+        "celda": 0.5,
+        "tempo": 92,
+        "respuesta": "enelpulso"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c333.enunciado",
+  "personaje": "milo",
+  "pistas": [
+    "actividad.c333.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

@@ -1,7 +1,7 @@
 {
   "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa, y también si usa un código que aquí no está. El hueco de C1-17 es intencionado: ese código nunca llegó a reservarse y los ids no se renumeran, porque un id puede estar dentro de una URL compartida.",
   "generado": "2026-09-10",
-  "total": 112,
+  "total": 123,
   "actividades": [
     {
       "id": "C1-01",
@@ -339,6 +339,45 @@
       "esfuerzo": "S",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Corchea, negra y blanca, y hay que ponerlas en orden de duración. Cada ficha suena: tres golpes con su hueco.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C1-28",
+      "titulo": "Pon las barras en 2/4",
+      "etapa": "primaria-c1",
+      "eje": "notacion",
+      "lugar": "pantalla",
+      "tipo": "compases",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Una línea de negras y blancas en dos por cuatro, y hay que poner las barras cada dos pulsos. El compás más fácil de contar.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C1-29",
+      "titulo": "¿Cuál es más aguda?",
+      "etapa": "primaria-c1",
+      "eje": "altura",
+      "lugar": "pantalla",
+      "tipo": "eleccion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE1 · crit. 1.1 · saber A",
+      "descripcion": "Suenan dos notas y hay que decir cuál de las dos es la más aguda: la primera o la segunda. Comparar dos alturas, que es lo que hace falta para leer un pentagrama.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C1-30",
+      "titulo": "Dictado de sol y mi",
+      "etapa": "primaria-c1",
+      "eje": "altura",
+      "lugar": "pantalla",
+      "tipo": "rejilla",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Cuatro notas con solo sol y mi, las dos primeras de la progresión vocal, y hay que colocarlas en una cuadrícula de dos filas. El primer dictado melódico.",
       "estado": "hecha"
     },
     {
@@ -693,6 +732,45 @@
       "estado": "hecha"
     },
     {
+      "id": "C2-29",
+      "titulo": "Dictado pentatónico",
+      "etapa": "primaria-c2",
+      "eje": "altura",
+      "lugar": "pantalla",
+      "tipo": "rejilla",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Seis notas de la escala pentatónica —do, re, mi, sol, la— y una cuadrícula de cinco filas. Sin fa ni si, que son los pasos pequeños: se oye mejor adónde va cada nota.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C2-30",
+      "titulo": "Cada figura con su silencio",
+      "etapa": "primaria-c2",
+      "eje": "notacion",
+      "lugar": "pantalla",
+      "tipo": "emparejar",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Blanca, negra y corchea, cada una con el silencio que dura lo mismo. Las fichas suenan: la figura como golpes y el silencio como el hueco entre ellos.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C2-31",
+      "titulo": "¿Alegre o triste?",
+      "etapa": "primaria-c2",
+      "eje": "altura",
+      "lugar": "pantalla",
+      "tipo": "eleccion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE1 · crit. 1.1 · saber A",
+      "descripcion": "La misma melodía en modo mayor y en modo menor. Con el acorde se aprende en 5.º; aquí se oye antes, como carácter: alegre o triste.",
+      "estado": "hecha"
+    },
+    {
       "id": "C3-01",
       "titulo": "Tonos y semitonos",
       "etapa": "primaria-c3",
@@ -1041,6 +1119,71 @@
       "esfuerzo": "S",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Un ritmo que empieza justo en el pulso fuerte, o uno que empieza un pulso antes: la anacrusa. Se oye antes de que se entienda.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C3-30",
+      "titulo": "Las voces del coro",
+      "etapa": "primaria-c3",
+      "eje": "timbre",
+      "lugar": "pantalla",
+      "tipo": "referencia",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE1 · crit. 1.2 · saber A",
+      "descripcion": "Consulta de las cuatro voces de un coro —soprano, contralto, tenor y bajo—, cada una sonando en su altura.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C3-31",
+      "titulo": "Ritmos del mundo",
+      "etapa": "primaria-c3",
+      "eje": "cultura",
+      "lugar": "pantalla",
+      "tipo": "referencia",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE1 · crit. 1.2 · saber A",
+      "descripcion": "Consulta de ritmos que se repiten en músicas de medio mundo, tocados con el kit: la clave cubana, el tresillo, la habanera, la campana africana y el swing.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C3-32",
+      "titulo": "¿Tresillo o dos corcheas?",
+      "etapa": "primaria-c3",
+      "eje": "notacion",
+      "lugar": "pantalla",
+      "tipo": "eleccion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Un pulso partido en dos, o partido en tres: el tresillo. Se oye la diferencia mucho antes de saber escribirla.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C3-33",
+      "titulo": "¿En el pulso o a contratiempo?",
+      "etapa": "primaria-c3",
+      "eje": "pulso",
+      "lugar": "pantalla",
+      "tipo": "eleccion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "El bombo marca el pulso y las claves suenan con él, o justo en medio de dos pulsos: a contratiempo. Lo que hace el reggae y lo que hacen las palmas en el flamenco.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C3-34",
+      "titulo": "Coloca la nota en clave de fa",
+      "etapa": "primaria-c3",
+      "eje": "notacion",
+      "lugar": "pantalla",
+      "tipo": "pentagrama",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Las notas de la clave de fa, la de los instrumentos graves. La cuarta línea es fa y a partir de ahí todo se deduce, igual que con el sol.",
       "estado": "hecha"
     },
     {

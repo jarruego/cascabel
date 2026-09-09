@@ -1,0 +1,60 @@
+{
+  "id": "c1-28-barras-en-dos-por-cuatro",
+  "version": 1,
+  "tipo": "compases",
+  "titulo": "Pon las barras en 2/4",
+  "descripcion": "Una línea de negras y blancas en dos por cuatro, y hay que poner las barras cada dos pulsos. El compás más fácil de contar.",
+  "etapa": "primaria-c1",
+  "eje": "notacion",
+  "lugar": "pantalla",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "2/4",
+    "figuras": [
+      "negra",
+      "blanca"
+    ]
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c128.consigna",
+    "duraciones": [
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "pulsosPorCompas": 2,
+    "figuraDelCompas": 4
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c128.enunciado",
+  "personaje": "sol",
+  "pistas": [
+    "actividad.c128.pista1",
+    "actividad.c128.pista2"
+  ],
+  "creditos": [],
+  "estado": "borrador"
+}

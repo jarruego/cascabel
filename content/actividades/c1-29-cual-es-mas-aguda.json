@@ -1,0 +1,129 @@
+{
+  "id": "c1-29-cual-es-mas-aguda",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Cuál es más aguda?",
+  "descripcion": "Suenan dos notas y hay que decir cuál de las dos es la más aguda: la primera o la segunda. Comparar dos alturas, que es lo que hace falta para leer un pentagrama.",
+  "etapa": "primaria-c1",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.1",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c129.consigna",
+    "opciones": [
+      {
+        "clave": "laprimera",
+        "icono": "uno",
+        "color": "azul"
+      },
+      {
+        "clave": "lasegunda",
+        "icono": "dos",
+        "color": "verde"
+      }
+    ],
+    "estimulos": [
+      {
+        "notas": [
+          "C4",
+          "G4"
+        ],
+        "respuesta": "lasegunda"
+      },
+      {
+        "notas": [
+          "A4",
+          "D4"
+        ],
+        "respuesta": "laprimera"
+      },
+      {
+        "notas": [
+          "G4",
+          "E4"
+        ],
+        "respuesta": "laprimera"
+      },
+      {
+        "notas": [
+          "D4",
+          "A4"
+        ],
+        "respuesta": "lasegunda"
+      },
+      {
+        "notas": [
+          "E4",
+          "F4"
+        ],
+        "respuesta": "lasegunda"
+      },
+      {
+        "notas": [
+          "B4",
+          "A4"
+        ],
+        "respuesta": "laprimera"
+      },
+      {
+        "notas": [
+          "C5",
+          "C4"
+        ],
+        "respuesta": "laprimera"
+      },
+      {
+        "notas": [
+          "F4",
+          "B4"
+        ],
+        "respuesta": "lasegunda"
+      }
+    ],
+    "instrumento": "xilofono"
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c129.enunciado",
+  "personaje": "rex",
+  "pistas": [
+    "actividad.c129.pista1",
+    "actividad.c129.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Melodías y ritmos de ejemplo",
+      "autor": "Cascabel",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

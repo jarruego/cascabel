@@ -1,0 +1,80 @@
+{
+  "id": "c3-34-coloca-la-nota-en-clave-de-fa",
+  "version": 1,
+  "tipo": "pentagrama",
+  "titulo": "Coloca la nota en clave de fa",
+  "descripcion": "Las notas de la clave de fa, la de los instrumentos graves. La cuarta línea es fa y a partir de ahí todo se deduce, igual que con el sol.",
+  "etapa": "primaria-c3",
+  "eje": "notacion",
+  "lugar": "pantalla",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c334.consigna",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la clave de fa se lee en 6.º en algunas programaciones y en ninguna en otras. Está aquí porque el motor la tiene y porque quien toca un instrumento grave la necesita; si la maestra la considera fuera de nivel, se quita del camino y se deja como herramienta.",
+    "clave": "fa",
+    "rondas": 7,
+    "opciones": [
+      {
+        "clave": "sol",
+        "linea": 1
+      },
+      {
+        "clave": "si",
+        "linea": 2
+      },
+      {
+        "clave": "re",
+        "linea": 3
+      },
+      {
+        "clave": "fa",
+        "linea": 4
+      },
+      {
+        "clave": "la",
+        "linea": 5
+      },
+      {
+        "clave": "do",
+        "espacio": 2
+      },
+      {
+        "clave": "mi",
+        "espacio": 3
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c334.enunciado",
+  "personaje": "dora",
+  "pistas": [
+    "actividad.c334.pista1",
+    "actividad.c334.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

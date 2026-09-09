@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-09",
-  "total": 112,
+  "total": 123,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -484,6 +484,63 @@
       "etapa": "primaria-c1",
       "eje": "notacion",
       "tipo": "ordenar",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c1-28-barras-en-dos-por-cuatro",
+      "titulo": "Pon las barras en 2/4",
+      "descripcion": "Una línea de negras y blancas en dos por cuatro, y hay que poner las barras cada dos pulsos. El compás más fácil de contar.",
+      "etapa": "primaria-c1",
+      "eje": "notacion",
+      "tipo": "compases",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c1-29-cual-es-mas-aguda",
+      "titulo": "¿Cuál es más aguda?",
+      "descripcion": "Suenan dos notas y hay que decir cuál de las dos es la más aguda: la primera o la segunda. Comparar dos alturas, que es lo que hace falta para leer un pentagrama.",
+      "etapa": "primaria-c1",
+      "eje": "altura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c1-30-dictado-de-sol-y-mi",
+      "titulo": "Dictado de sol y mi",
+      "descripcion": "Cuatro notas con solo sol y mi, las dos primeras de la progresión vocal, y hay que colocarlas en una cuadrícula de dos filas. El primer dictado melódico.",
+      "etapa": "primaria-c1",
+      "eje": "altura",
+      "tipo": "rejilla",
       "lugar": "pantalla",
       "microfono": false,
       "duracion_min": 6,
@@ -1010,6 +1067,63 @@
       "herramienta": false
     },
     {
+      "id": "c2-29-dictado-pentatonico",
+      "titulo": "Dictado pentatónico",
+      "descripcion": "Seis notas de la escala pentatónica —do, re, mi, sol, la— y una cuadrícula de cinco filas. Sin fa ni si, que son los pasos pequeños: se oye mejor adónde va cada nota.",
+      "etapa": "primaria-c2",
+      "eje": "altura",
+      "tipo": "rejilla",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c2-30-cada-figura-con-su-silencio",
+      "titulo": "Cada figura con su silencio",
+      "descripcion": "Blanca, negra y corchea, cada una con el silencio que dura lo mismo. Las fichas suenan: la figura como golpes y el silencio como el hueco entre ellos.",
+      "etapa": "primaria-c2",
+      "eje": "notacion",
+      "tipo": "emparejar",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c2-31-alegre-o-triste",
+      "titulo": "¿Alegre o triste?",
+      "descripcion": "La misma melodía en modo mayor y en modo menor. Con el acorde se aprende en 5.º; aquí se oye antes, como carácter: alegre o triste.",
+      "etapa": "primaria-c2",
+      "eje": "altura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
       "id": "c3-01-tonos-y-semitonos",
       "titulo": "Tonos y semitonos",
       "descripcion": "Construir la escala de sol mayor en el teclado viendo cómo se escribe. Se empieza en sol a propósito: es la que obliga a un sostenido.",
@@ -1513,6 +1627,101 @@
       "lugar": "pantalla",
       "microfono": false,
       "duracion_min": 7,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-30-las-voces-del-coro",
+      "titulo": "Las voces del coro",
+      "descripcion": "Consulta de las cuatro voces de un coro —soprano, contralto, tenor y bajo—, cada una sonando en su altura.",
+      "etapa": "primaria-c3",
+      "eje": "timbre",
+      "tipo": "referencia",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": true
+    },
+    {
+      "id": "c3-31-ritmos-del-mundo",
+      "titulo": "Ritmos del mundo",
+      "descripcion": "Consulta de ritmos que se repiten en músicas de medio mundo, tocados con el kit: la clave cubana, el tresillo, la habanera, la campana africana y el swing.",
+      "etapa": "primaria-c3",
+      "eje": "cultura",
+      "tipo": "referencia",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": true
+    },
+    {
+      "id": "c3-32-tresillo-o-corcheas",
+      "titulo": "¿Tresillo o dos corcheas?",
+      "descripcion": "Un pulso partido en dos, o partido en tres: el tresillo. Se oye la diferencia mucho antes de saber escribirla.",
+      "etapa": "primaria-c3",
+      "eje": "notacion",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 7,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-33-en-el-pulso-o-a-contratiempo",
+      "titulo": "¿En el pulso o a contratiempo?",
+      "descripcion": "El bombo marca el pulso y las claves suenan con él, o justo en medio de dos pulsos: a contratiempo. Lo que hace el reggae y lo que hacen las palmas en el flamenco.",
+      "etapa": "primaria-c3",
+      "eje": "pulso",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 7,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-34-coloca-la-nota-en-clave-de-fa",
+      "titulo": "Coloca la nota en clave de fa",
+      "descripcion": "Las notas de la clave de fa, la de los instrumentos graves. La cuarta línea es fa y a partir de ahí todo se deduce, igual que con el sol.",
+      "etapa": "primaria-c3",
+      "eje": "notacion",
+      "tipo": "pentagrama",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
       "curriculo": {
         "area": "Educación Artística",
         "competencia": "CE3",

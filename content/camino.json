@@ -95,7 +95,8 @@
             "c1-12-la-rueda-del-compas",
             "c1-15-ritmo-de-ocho",
             "tr-02-metronomo-y-calibrador",
-            "c1-26-vals-o-marcha"
+            "c1-26-vals-o-marcha",
+            "c1-28-barras-en-dos-por-cuatro"
           ]
         },
         {
@@ -113,7 +114,9 @@
             "c1-06-la-escalera-de-notas",
             "c1-18-la-escalera-que-cae",
             "c1-07-canta-la-nota",
-            "c1-23-paso-o-salto"
+            "c1-23-paso-o-salto",
+            "c1-29-cual-es-mas-aguda",
+            "c1-30-dictado-de-sol-y-mi"
           ]
         },
         {
@@ -173,7 +176,9 @@
             "c2-18-dictado-de-figuras",
             "c2-19-dos-por-cuatro-o-tres-por-cuatro",
             "c2-25-barras-en-tres-por-cuatro",
-            "c2-26-ordena-las-cinco-figuras"
+            "c2-26-ordena-las-cinco-figuras",
+            "c2-29-dictado-pentatonico",
+            "c2-30-cada-figura-con-su-silencio"
           ]
         },
         {
@@ -211,7 +216,8 @@
             "c2-20-forte-o-piano",
             "c2-21-ligado-o-picado",
             "c2-23-termina-o-se-queda-a-medias",
-            "c2-28-vals-marcha-o-tango"
+            "c2-28-vals-marcha-o-tango",
+            "c2-31-alegre-o-triste"
           ]
         },
         {
@@ -240,7 +246,8 @@
             "c3-15-que-intervalo-es",
             "c3-16-tono-o-semitono",
             "c3-17-sostenido-o-bemol",
-            "c3-18-escala-mayor-o-menor"
+            "c3-18-escala-mayor-o-menor",
+            "c3-34-coloca-la-nota-en-clave-de-fa"
           ]
         },
         {
@@ -253,7 +260,9 @@
             "c3-06-el-seis-por-ocho",
             "c3-14-eco-largo",
             "c3-20-que-compas-es",
-            "c3-29-empieza-en-el-fuerte-o-antes"
+            "c3-29-empieza-en-el-fuerte-o-antes",
+            "c3-32-tresillo-o-corcheas",
+            "c3-33-en-el-pulso-o-a-contratiempo"
           ]
         },
         {
@@ -264,7 +273,8 @@
             "c3-09-la-serie-armonica",
             "tr-09-quien-es-quien",
             "c3-21-crescendo-o-diminuendo",
-            "c3-27-los-instrumentos-por-familias"
+            "c3-27-los-instrumentos-por-familias",
+            "c3-30-las-voces-del-coro"
           ]
         },
         {
@@ -281,7 +291,8 @@
           "idea": "Un baile es un compás que se ve. El de doce del flamenco se cuenta y se palmea, y los demás se oyen con su ritmo debajo.",
           "actividades": [
             "c3-25-el-compas-de-doce",
-            "c3-26-bailes-y-compases"
+            "c3-26-bailes-y-compases",
+            "c3-31-ritmos-del-mundo"
           ]
         },
         {

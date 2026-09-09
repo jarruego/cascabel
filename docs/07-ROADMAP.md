@@ -2192,7 +2192,7 @@ hace la actividad**, y un agujero en el validador que las dejaba pasar.
 **Lo que sigue faltando** es lo de siempre: un aparato. Nada de esto necesitaba pantalla,
 pero lo de los dos días anteriores sí.
 
-### Treinta y cuatro actividades de lenguaje, historia y estilos, 2026-09-10 (noche)
+### Cuarenta y cinco actividades de lenguaje, historia y estilos, 2026-09-10 (noche)
 
 El autor lo pidió así: «faltan cosas sencillas de lenguaje musical, historia de la música,
 estilos... investiga y sorpréndeme». Lo que faltaba de verdad no era contenido: era **que el
@@ -2249,6 +2249,18 @@ ochenta años no es de dominio público hasta 2027.
 **Y lo que hay que ver en un aparato**: las opciones con signo musical a tamaño táctil, que
 los cuatro glifos de un dictado quepan en un botón de móvil, y cómo suenan de verdad el
 crescendo y el picado con las muestras de piano y flauta.
+
+**Segunda tanda, la misma noche: once más.** Dos dictados en cuadrícula —«sol y mi» en 1.º,
+con las dos primeras notas de la progresión vocal, y uno pentatónico en 3.º–4.º—; las barras
+en 2/4 para primero; «¿Cuál es más aguda?»; «Cada figura con su silencio», que empareja
+oyendo el hueco que deja cada silencio (las fichas de «emparejar» aceptan ahora `signo` y
+`ritmo`, como las de «ordenar»); «¿Alegre o triste?», el modo mayor y menor como carácter
+antes que como acorde; «¿Tresillo o dos corcheas?» y «¿En el pulso o a contratiempo?» para
+los ritmos que cuestan; «Coloca la nota en clave de fa»; y dos referencias más para 5.º y
+6.º: las cuatro voces del coro, sonando con la voz muestreada en su altura, y «Ritmos del
+mundo» —la clave de son, el tresillo, la habanera, la campana de 6/8, el swing y el rock—
+tocados con el kit. Con esto el catálogo pasa de 78 a **123 actividades**, y lo que espera
+criterio musical sigue marcado en cada JSON: son 24 puntos en `docs/13`.
 
 Las ideas de ampliación, con veredicto y con lo que NO conviene hacer, están en
 [`docs/12-IDEAS-Y-AMPLIACIONES.md`](12-IDEAS-Y-AMPLIACIONES.md).

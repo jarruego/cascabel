@@ -1,0 +1,122 @@
+{
+  "id": "c3-30-las-voces-del-coro",
+  "version": 1,
+  "tipo": "referencia",
+  "titulo": "Las voces del coro",
+  "descripcion": "Consulta de las cuatro voces de un coro —soprano, contralto, tenor y bajo—, cada una sonando en su altura.",
+  "etapa": "primaria-c3",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.2",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c330.consigna",
+    "instrumento": "voz",
+    "secciones": [
+      {
+        "titulo": "Las voces de mujer y de niño",
+        "entradas": [
+          {
+            "termino": "Soprano",
+            "explicacion": "La voz más aguda. Es la de casi todos los niños y niñas de Primaria, y la que suele llevar la melodía en un coro.",
+            "notas": [
+              "C5",
+              "D5",
+              "E5",
+              "D5",
+              "C5"
+            ]
+          },
+          {
+            "termino": "Contralto",
+            "explicacion": "La voz grave de mujer. Va por debajo de la soprano y rellena la armonía.",
+            "notas": [
+              "G4",
+              "A4",
+              "B4",
+              "A4",
+              "G4"
+            ]
+          }
+        ]
+      },
+      {
+        "titulo": "Las voces de hombre",
+        "entradas": [
+          {
+            "termino": "Tenor",
+            "explicacion": "La voz aguda de hombre. Canta una octava por debajo de la soprano, y por eso muchas melodías les valen a los dos.",
+            "notas": [
+              "C4",
+              "D4",
+              "E4",
+              "D4",
+              "C4"
+            ]
+          },
+          {
+            "termino": "Bajo",
+            "explicacion": "La voz más grave que hay. Sostiene el coro desde abajo, como el bombo sostiene una banda.",
+            "notas": [
+              "C3",
+              "D3",
+              "E3",
+              "D3",
+              "C3"
+            ]
+          }
+        ]
+      },
+      {
+        "titulo": "Y las cuatro juntas",
+        "entradas": [
+          {
+            "termino": "Coro a cuatro voces",
+            "explicacion": "Un acorde, de abajo arriba: bajo, tenor, contralto y soprano. Cada voz canta una nota distinta y suenan a la vez.",
+            "notas": [
+              "C3",
+              "G3",
+              "E4",
+              "C5"
+            ],
+            "duraciones": [
+              0.5,
+              0.5,
+              0.5,
+              2
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c330.enunciado",
+  "personaje": "rex",
+  "herramienta": true,
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    }
+  ],
+  "estado": "borrador"
+}

@@ -1,0 +1,208 @@
+{
+  "id": "c3-31-ritmos-del-mundo",
+  "version": 1,
+  "tipo": "referencia",
+  "titulo": "Ritmos del mundo",
+  "descripcion": "Consulta de ritmos que se repiten en músicas de medio mundo, tocados con el kit: la clave cubana, el tresillo, la habanera, la campana africana y el swing.",
+  "etapa": "primaria-c3",
+  "eje": "cultura",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.2",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c331.consigna",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la clave de son se presenta en su forma 3-2, la campana de 6/8 con el patrón estándar de doce corcheas, y el swing con el charles en tresillos con la corchea del medio en silencio. Son las versiones de manual; quien las toque de otra forma tiene razón también.",
+    "secciones": [
+      {
+        "titulo": "De Cuba y del Caribe",
+        "entradas": [
+          {
+            "termino": "Clave de son (3-2)",
+            "explicacion": "Cinco golpes en dos compases: tres en el primero y dos en el segundo. Es el esqueleto de la salsa y de mucha música cubana.",
+            "patron": [
+              "claves",
+              "",
+              "",
+              "claves",
+              "",
+              "",
+              "claves",
+              "",
+              "",
+              "",
+              "claves",
+              "",
+              "claves",
+              "",
+              "",
+              ""
+            ],
+            "celda": 0.25,
+            "tempo": 96
+          },
+          {
+            "termino": "Tresillo",
+            "explicacion": "Tres golpes que reparten dos pulsos de forma desigual: largo, largo, corto. Está en la salsa, en el reguetón y en la música de Nueva Orleans.",
+            "patron": [
+              "bombo",
+              "",
+              "",
+              "bombo",
+              "",
+              "",
+              "bombo",
+              ""
+            ],
+            "celda": 0.25,
+            "tempo": 96
+          },
+          {
+            "termino": "Habanera",
+            "explicacion": "Corchea con puntillo, semicorchea y dos corcheas. Nació en La Habana, cruzó el mar y de ella salió el tango.",
+            "patron": [
+              "bombo",
+              "",
+              "",
+              "caja",
+              "bombo",
+              "",
+              "caja",
+              ""
+            ],
+            "celda": 0.25,
+            "acentos": [
+              0
+            ],
+            "tempo": 88
+          }
+        ]
+      },
+      {
+        "titulo": "De África occidental",
+        "entradas": [
+          {
+            "termino": "Campana de 6/8",
+            "explicacion": "Doce corcheas y siete golpes, en una campana de hierro. Encima de este patrón se construyen muchas músicas de Ghana y Nigeria, y de ahí pasó a Cuba.",
+            "patron": [
+              "claves",
+              "",
+              "claves",
+              "",
+              "claves",
+              "claves",
+              "",
+              "claves",
+              "",
+              "claves",
+              "",
+              "claves"
+            ],
+            "celda": 0.5,
+            "tempo": 84
+          }
+        ]
+      },
+      {
+        "titulo": "De Estados Unidos",
+        "entradas": [
+          {
+            "termino": "Swing",
+            "explicacion": "El charles del jazz: cada pulso se parte en tres y se calla el del medio. Es lo que hace que el jazz «se balancee» en vez de andar.",
+            "patron": [
+              "charles",
+              "",
+              "charles",
+              "charles",
+              "",
+              "charles",
+              "charles",
+              "",
+              "charles",
+              "charles",
+              "",
+              "charles"
+            ],
+            "celda": 0.3333,
+            "tempo": 132
+          },
+          {
+            "termino": "Rock",
+            "explicacion": "Bombo en el uno y el tres, caja en el dos y el cuatro, y el charles marcando corcheas. Desde hace setenta años es el ritmo más oído del mundo.",
+            "patron": [
+              "bombo+charles",
+              "charles",
+              "caja+charles",
+              "charles",
+              "bombo+charles",
+              "charles",
+              "caja+charles",
+              "charles"
+            ],
+            "celda": 0.5,
+            "tempo": 116
+          }
+        ]
+      },
+      {
+        "titulo": "De España",
+        "entradas": [
+          {
+            "termino": "Compás de doce",
+            "explicacion": "El del flamenco: doce tiempos con los fuertes en el 3, el 6, el 8, el 10 y el 12. Tiene su propia actividad para palmearlo.",
+            "patron": [
+              "claves",
+              "claves",
+              "caja",
+              "claves",
+              "claves",
+              "caja",
+              "claves",
+              "caja",
+              "claves",
+              "caja",
+              "claves",
+              "caja"
+            ],
+            "acentos": [
+              2,
+              5,
+              7,
+              9,
+              11
+            ],
+            "tempo": 180
+          }
+        ]
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c331.enunciado",
+  "personaje": "sol",
+  "herramienta": true,
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

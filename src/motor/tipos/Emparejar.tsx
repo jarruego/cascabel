@@ -7,6 +7,7 @@ import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
 import { sonarMuestra, sonarNota, sonarSeguidos } from '../sonarMuestra';
+import { sonarEstimulo } from '../sonarEstimulo';
 import {
   INICIAL_EMPAREJAR,
   reducirEmparejar,
@@ -35,6 +36,10 @@ interface Elemento {
    * transporta, así que no hace falta un fichero por nota.
    */
   nota?: string;
+  /** Duraciones en pulsos con el clic: para emparejar una figura con su silencio. */
+  ritmo?: number[];
+  /** Signo musical en Unicode, con Bravura, cuando la ficha ES notación. */
+  signo?: string;
   /**
    * Imagen propia, servida desde nuestro origen. La usan los diagramas de digitación de
    * flauta, que no son iconos: un icono es un símbolo pequeño y esto es un dibujo que hay
@@ -121,6 +126,12 @@ export default function Emparejar({ actividad, alTerminar }: PropsActividad) {
                   if (!resuelta) {
                     if (e.audio) sonarMuestra(e.audio);
                     else if (e.nota) void sonarNota(e.nota, contenido.instrumento);
+                    else if (e.ritmo) {
+                      void sonarEstimulo(
+                        { ritmo: e.ritmo, respuesta: '' },
+                        { tempo: actividad.practica?.tempo },
+                      );
+                    }
                   }
                   despachar({ tipo: 'tocar', clave: e.clave, lado });
                 }}
@@ -134,6 +145,11 @@ export default function Emparejar({ actividad, alTerminar }: PropsActividad) {
                   />
                 )}
                 {e.icono && <Icono nombre={e.icono} tamano={Math.round(tam * 0.45)} />}
+                {e.signo && (
+                  <span className="boton__signo" style={{ fontSize: Math.round(tam * 0.5) }} aria-hidden="true">
+                    {e.signo}
+                  </span>
+                )}
                 <span className="boton__texto">{e.etiqueta ? t(e.etiqueta) : ''}</span>
               </button>
             </li>

@@ -1,0 +1,161 @@
+{
+  "id": "c3-32-tresillo-o-corcheas",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Tresillo o dos corcheas?",
+  "descripcion": "Un pulso partido en dos, o partido en tres: el tresillo. Se oye la diferencia mucho antes de saber escribirla.",
+  "etapa": "primaria-c3",
+  "eje": "notacion",
+  "lugar": "pantalla",
+  "duracion_min": 7,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "tempo": 84,
+    "figuras": [
+      "negra",
+      "corchea",
+      "tresillo"
+    ]
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c332.consigna",
+    "opciones": [
+      {
+        "clave": "doscorcheas",
+        "signo": "𝅘𝅥𝅮𝅘𝅥𝅮",
+        "color": "azul"
+      },
+      {
+        "clave": "tresillo",
+        "signo": "3",
+        "color": "rojo"
+      }
+    ],
+    "estimulos": [
+      {
+        "ritmo": [
+          1,
+          0.5,
+          0.5,
+          1,
+          1
+        ],
+        "tempo": 80,
+        "respuesta": "doscorcheas"
+      },
+      {
+        "ritmo": [
+          1,
+          0.3333,
+          0.3333,
+          0.3334,
+          1,
+          1
+        ],
+        "tempo": 80,
+        "respuesta": "tresillo"
+      },
+      {
+        "ritmo": [
+          1,
+          1,
+          0.3333,
+          0.3333,
+          0.3334,
+          1
+        ],
+        "tempo": 84,
+        "respuesta": "tresillo"
+      },
+      {
+        "ritmo": [
+          1,
+          1,
+          0.5,
+          0.5,
+          1
+        ],
+        "tempo": 84,
+        "respuesta": "doscorcheas"
+      },
+      {
+        "ritmo": [
+          0.5,
+          0.5,
+          1,
+          0.5,
+          0.5,
+          1
+        ],
+        "tempo": 76,
+        "respuesta": "doscorcheas"
+      },
+      {
+        "ritmo": [
+          0.3333,
+          0.3333,
+          0.3334,
+          1,
+          0.3333,
+          0.3333,
+          0.3334,
+          1
+        ],
+        "tempo": 76,
+        "respuesta": "tresillo"
+      },
+      {
+        "ritmo": [
+          1,
+          0.3333,
+          0.3333,
+          0.3334,
+          1,
+          1
+        ],
+        "tempo": 92,
+        "respuesta": "tresillo"
+      },
+      {
+        "ritmo": [
+          1,
+          0.5,
+          0.5,
+          1,
+          1
+        ],
+        "tempo": 92,
+        "respuesta": "doscorcheas"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c332.enunciado",
+  "personaje": "simon",
+  "pistas": [
+    "actividad.c332.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

@@ -1,0 +1,141 @@
+{
+  "id": "c2-30-cada-figura-con-su-silencio",
+  "version": 1,
+  "tipo": "emparejar",
+  "titulo": "Cada figura con su silencio",
+  "descripcion": "Blanca, negra y corchea, cada una con el silencio que dura lo mismo. Las fichas suenan: la figura como golpes y el silencio como el hueco entre ellos.",
+  "etapa": "primaria-c2",
+  "eje": "notacion",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "tempo": 84,
+    "figuras": [
+      "blanca",
+      "negra",
+      "corchea",
+      "silencio-blanca",
+      "silencio-negra",
+      "silencio-corchea"
+    ]
+  },
+  "entrada": {
+    "modo": "toque-secuencial",
+    "alternativa": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c230.consigna",
+    "izquierda": [
+      {
+        "clave": "negra",
+        "signo": "𝅘𝅥",
+        "etiqueta": "figura.negra",
+        "ritmo": [
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "clave": "blanca",
+        "signo": "𝅗𝅥",
+        "etiqueta": "figura.blanca",
+        "ritmo": [
+          2,
+          2
+        ]
+      },
+      {
+        "clave": "corchea",
+        "signo": "𝅘𝅥𝅮",
+        "etiqueta": "figura.corchea",
+        "ritmo": [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ]
+      }
+    ],
+    "derecha": [
+      {
+        "clave": "sil-blanca",
+        "signo": "𝄼",
+        "etiqueta": "figura.silBlanca",
+        "ritmo": [
+          1,
+          -2,
+          1,
+          -2,
+          1
+        ]
+      },
+      {
+        "clave": "sil-corchea",
+        "signo": "𝄾",
+        "etiqueta": "figura.silCorchea",
+        "ritmo": [
+          0.5,
+          -0.5,
+          0.5,
+          -0.5,
+          0.5
+        ]
+      },
+      {
+        "clave": "sil-negra",
+        "signo": "𝄽",
+        "etiqueta": "figura.silNegra",
+        "ritmo": [
+          1,
+          -1,
+          1,
+          -1,
+          1
+        ]
+      }
+    ],
+    "parejas": [
+      {
+        "izquierda": "negra",
+        "derecha": "sil-negra"
+      },
+      {
+        "izquierda": "blanca",
+        "derecha": "sil-blanca"
+      },
+      {
+        "izquierda": "corchea",
+        "derecha": "sil-corchea"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c230.enunciado",
+  "personaje": "dora",
+  "pistas": [
+    "actividad.c230.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}
