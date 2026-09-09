@@ -6,6 +6,7 @@ import {
   llevaPista,
   mensajeAfinacion,
   tonoDe,
+  ultimoTramo,
 } from '../src/motor/afinacion';
 
 /**
@@ -100,6 +101,22 @@ describe('evaluación de afinación', () => {
   it('informa de la cobertura: cuánto tiempo cantó de verdad', () => {
     const e = evaluarAfinacion([...repetir(0, 6), null, null, null, null]);
     expect(e.cobertura).toBeCloseTo(0.6, 2);
+  });
+});
+
+describe('con veinte segundos, lo que cuenta es dónde acabó', () => {
+  it('se evalúa el último tramo, no la búsqueda entera', () => {
+    // Diez segundos de silencio y tanteo lejos, y al final la nota clavada.
+    const busqueda = [...Array<null>(300).fill(null), ...Array<number>(200).fill(-60)];
+    const final = Array<number>(150).fill(2);
+    const todo = [...busqueda, ...final];
+    expect(evaluarAfinacion(todo, 'lectores').calidad).not.toBe('afinado');
+    expect(evaluarAfinacion(ultimoTramo(todo), 'lectores').calidad).toBe('afinado');
+  });
+
+  it('con pocas lecturas se devuelven todas', () => {
+    expect(ultimoTramo([1, 2, 3])).toEqual([1, 2, 3]);
+    expect(ultimoTramo([1, 2, 3], 2)).toEqual([2, 3]);
   });
 });
 

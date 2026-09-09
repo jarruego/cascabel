@@ -2498,6 +2498,12 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       pistas y la guía de aula. Es orden del documento, no solo visual, para que el teclado
       lo recorra igual.
 
+- [x] **Veinte segundos para cazar la nota.** Eran cuatro, seis y diez según la actividad,
+      y no daban para buscarla. Ahora veinte por defecto en las tres, y se acaba antes en
+      cuanto se mantiene la nota el tiempo pedido. Si se agota, se evalúa el último tramo
+      —los tres últimos segundos—, no la búsqueda entera: lo que cuenta es dónde acabó.
+      `ultimoTramo` en `afinacion.ts`, con test.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

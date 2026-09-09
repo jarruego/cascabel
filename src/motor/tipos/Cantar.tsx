@@ -12,6 +12,7 @@ import {
   mensajeAfinacion,
   tonoDe,
   type EvaluacionAfinacion,
+  ultimoTramo,
 } from '../afinacion';
 import { rechazarMicrofono, seUsaMicrofono } from '@/escucha/permiso';
 import { pistaPara } from '../maquinaEleccion';
@@ -48,12 +49,14 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
     /** Notas que se piden, en notación científica. */
     notas: string[];
     /**
-     * Segundos que se escucha al niño en cada intento.
+     * Segundos que se escucha al niño en cada intento, como mucho.
      *
-     * Ocho y no cuatro. Un niño no ataca la nota: la BUSCA, y buscarla lleva sus segundos.
-     * Con una ventana corta se acaba el tiempo mientras todavía está subiendo, y el
-     * resultado dice que ha fallado cuando lo que ha pasado es que no le ha dado tiempo.
-     * Además ahora se puede acabar antes: en cuanto la caza, se termina.
+     * Veinte. Un niño no ataca la nota: la BUSCA, y buscarla lleva sus segundos. Con una
+     * ventana corta se acaba el tiempo mientras todavía está subiendo, y el resultado dice
+     * que ha fallado cuando lo que ha pasado es que no le ha dado tiempo. Ocho seguían
+     * siendo pocos; el autor pidió veinte el 2026-09-12. No es un cronómetro que puntúe:
+     * en cuanto la caza —mantenida el tiempo pedido— se acaba, y lo normal es acabar mucho
+     * antes. Si se agota, se evalúa el último tramo, no la búsqueda entera.
      */
     segundos?: number;
     /** Milisegundos que hay que mantenerla dentro de la ventana para darla por cazada. */
@@ -74,7 +77,7 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
   };
 
   const carril = useCarril(actividad.etapa);
-  const segundos = contenido.segundos ?? 8;
+  const segundos = contenido.segundos ?? 20;
   /*
     Ochocientos milisegundos, no cuatro segundos.
 
@@ -240,7 +243,7 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
 
     finDeEscucha.current = window.setTimeout(() => {
       escuchandoRef.current = false;
-      if (escuchando) setEvaluacion(evaluarAfinacion(lecturas.current, carril));
+      if (escuchando) setEvaluacion(evaluarAfinacion(ultimoTramo(lecturas.current), carril));
       setFase('resultado');
       setCents(null);
     }, segundos * 1000);
@@ -255,7 +258,7 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
     if (finDeEscucha.current !== null) window.clearTimeout(finDeEscucha.current);
     const id = window.setTimeout(() => {
       escuchandoRef.current = false;
-      setEvaluacion(evaluarAfinacion(lecturas.current, carril));
+      setEvaluacion(evaluarAfinacion(ultimoTramo(lecturas.current), carril));
       setFase('resultado');
       setCents(null);
     }, 700);

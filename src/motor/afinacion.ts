@@ -86,6 +86,22 @@ export function ventanasDe(carril: keyof typeof VENTANAS_POR_CARRIL): {
 
 /** Por debajo de esto no cantó lo suficiente como para evaluar nada. */
 const COBERTURA_MINIMA = 0.35;
+
+/**
+ * Cuántas lecturas del final se evalúan cuando se agota el tiempo.
+ *
+ * La ventana de escucha pasó a veinte segundos el 2026-09-12 —«se necesita más tiempo
+ * para acertar cada nota», dijo el autor—, y con veinte segundos evaluar la serie entera
+ * castigaría la búsqueda: un niño que tantea diez segundos y luego la clava tendría una
+ * mediana a medio camino y una cobertura baja por los silencios del principio. Lo que
+ * cuenta es dónde acabó, así que se mira el último tramo: a unas cincuenta lecturas por
+ * segundo, ciento cincuenta son los tres últimos segundos.
+ */
+export const LECTURAS_DEL_FINAL = 150;
+
+export function ultimoTramo<T>(lecturas: T[], n = LECTURAS_DEL_FINAL): T[] {
+  return lecturas.length > n ? lecturas.slice(lecturas.length - n) : lecturas;
+}
 /** Por encima de esto no sostiene la nota, aunque la media salga bien. */
 const DESVIACION_MAXIMA = 45;
 

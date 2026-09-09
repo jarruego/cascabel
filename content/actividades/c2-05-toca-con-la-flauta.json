@@ -33,7 +33,6 @@
       "G4"
     ],
     "nombres": "latino",
-    "segundos": 10,
     "instrumento": "flauta-dulce",
     "digitaciones": {
       "B4": "/digitaciones/flauta-si.svg",
