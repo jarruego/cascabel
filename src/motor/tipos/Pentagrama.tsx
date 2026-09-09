@@ -221,13 +221,28 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
     tres segundos y medio más lo que mida la frase, y cualquier respuesta nueva la quita.
   */
   const [pistaVisible, setPistaVisible] = useState(false);
+  /*
+    El reloj vive en una referencia y no en la limpieza del efecto: la fase «casi» dura
+    1,2 s y después vuelve a «estimulo», y si el reloj se cancelara con ese cambio —que es
+    lo que hacía— la pista no se iba nunca. Lo vio el autor. Solo un nuevo fallo lo rearma.
+  */
+  const relojPista = useRef<number | null>(null);
   useEffect(() => {
     if (estado.fase !== 'casi') return;
     setPistaVisible(true);
+    if (relojPista.current !== null) window.clearTimeout(relojPista.current);
     const texto = pista ? t(pista) : t('comun.casi');
-    const id = window.setTimeout(() => setPistaVisible(false), BASE_MS + texto.length * POR_CARACTER_MS);
-    return () => window.clearTimeout(id);
+    relojPista.current = window.setTimeout(
+      () => setPistaVisible(false),
+      BASE_MS + texto.length * POR_CARACTER_MS,
+    );
   }, [estado.fase, estado.intentos, pista]);
+  useEffect(
+    () => () => {
+      if (relojPista.current !== null) window.clearTimeout(relojPista.current);
+    },
+    [],
+  );
   useEffect(() => {
     if (estado.fase === 'bien' || estado.fase === 'completada') setPistaVisible(false);
   }, [estado.fase]);
