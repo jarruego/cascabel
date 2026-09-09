@@ -43,84 +43,84 @@
     "estimulos": [
       {
         "patron": [
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo"
+          "claves",
+          "claves",
+          "claves",
+          "claves",
+          "claves",
+          "claves",
+          "claves",
+          "claves"
         ],
         "tempo": 56,
         "respuesta": "adagio"
       },
       {
         "patron": [
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo"
+          "cajachina",
+          "cajachina",
+          "cajachina",
+          "cajachina",
+          "cajachina",
+          "cajachina",
+          "cajachina",
+          "cajachina"
         ],
         "tempo": 138,
         "respuesta": "allegro"
       },
       {
         "patron": [
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo"
+          "caja",
+          "caja",
+          "caja",
+          "caja",
+          "caja",
+          "caja",
+          "caja",
+          "caja"
         ],
         "tempo": 92,
         "respuesta": "andante"
       },
       {
         "patron": [
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo"
+          "bongo",
+          "bongo",
+          "bongo",
+          "bongo",
+          "bongo",
+          "bongo",
+          "bongo",
+          "bongo"
         ],
         "tempo": 144,
         "respuesta": "allegro"
       },
       {
         "patron": [
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo"
+          "triangulo",
+          "triangulo",
+          "triangulo",
+          "triangulo",
+          "triangulo",
+          "triangulo",
+          "triangulo",
+          "triangulo"
         ],
         "tempo": 60,
         "respuesta": "adagio"
       },
       {
         "patron": [
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo",
-          "bombo"
+          "tom",
+          "tom",
+          "tom",
+          "tom",
+          "tom",
+          "tom",
+          "tom",
+          "tom"
         ],
         "tempo": 96,
         "respuesta": "andante"
