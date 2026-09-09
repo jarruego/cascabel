@@ -1,5 +1,5 @@
 import { APP } from '@/config';
-import { despertarAudio } from '@/audio/AudioEngine';
+import { despertarAudio, pararTodo } from '@/audio/AudioEngine';
 import { Sampler } from '@/audio/sampler';
 import { muestrasDe } from '@/audio/instrumentos';
 
@@ -11,24 +11,37 @@ import { muestrasDe } from '@/audio/instrumentos';
  * las actividades rítmicas pasarán por el `AudioContext`, que sí garantiza el instante;
  * esto seguirá valiendo para los estímulos de elección y emparejamiento.
  */
+/**
+ * Lo que está sonando ahora, si es una muestra. **Solo una a la vez.**
+ *
+ * Tocar una ficha con sonido mientras suena otra las superponía, y con dos animales o dos
+ * instrumentos a la vez no se distingue ninguno. Lo pidió el autor el 2026-09-12: «deja de
+ * sonar el que esté activo, no se deben solapar». Cada muestra nueva corta a la anterior, y
+ * también a lo que estuviera programado en el `AudioContext`: una nota, un ritmo.
+ */
+let enCurso: HTMLAudioElement | null = null;
+
+/** Corta la muestra que esté sonando. Lo llama el marco al salir de la actividad. */
+export function pararMuestra(): void {
+  if (!enCurso) return;
+  enCurso.pause();
+  enCurso = null;
+}
+
 export function sonarMuestra(ruta: string): HTMLAudioElement | null {
   if (!ruta) return null;
+  pararMuestra();
+  pararTodo();
   const a = new Audio(`${APP.rutaAudio}/${ruta}`);
+  enCurso = a;
+  a.addEventListener('ended', () => {
+    if (enCurso === a) enCurso = null;
+  });
   void a.play().catch(() => {
     // Sin gesto previo el navegador bloquea la reproducción. No es un error del niño y
     // no debe interrumpir la actividad: se sigue, y la vía visual basta.
   });
   return a;
-}
-
-/** Dos sonidos seguidos, para la autocorrección por el oído de «emparejar». */
-export async function sonarSeguidos(rutas: string[], separacionMs = 450): Promise<void> {
-  for (let i = 0; i < rutas.length; i++) {
-    sonarMuestra(rutas[i]!);
-    if (i < rutas.length - 1) {
-      await new Promise((r) => setTimeout(r, separacionMs));
-    }
-  }
 }
 
 /**
@@ -51,6 +64,9 @@ const samplers = new Map<string, { sampler: Sampler; cargando: Promise<void> }>(
 
 export async function sonarNota(nota: string, instrumento?: string): Promise<void> {
   try {
+    // Una ficha con nota corta a la muestra o a la nota anterior, igual que una muestra.
+    pararMuestra();
+    pararTodo();
     await despertarAudio();
     const clave = instrumento ?? 'por-defecto';
     let entrada = samplers.get(clave);

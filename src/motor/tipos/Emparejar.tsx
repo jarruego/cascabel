@@ -6,7 +6,7 @@ import { pistaPara } from '../maquinaEleccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
-import { sonarMuestra, sonarNota, sonarSeguidos } from '../sonarMuestra';
+import { sonarMuestra, sonarNota } from '../sonarMuestra';
 import { sonarEstimulo } from '../sonarEstimulo';
 import {
   INICIAL_EMPAREJAR,
@@ -111,23 +111,22 @@ export default function Emparejar({ actividad, alTerminar }: PropsActividad) {
     return () => window.removeEventListener('resize', medir);
   }, [medir]);
 
-  const porClave = useCallback(
-    (clave: string): Elemento | undefined =>
-      [...contenido.izquierda, ...contenido.derecha].find((e) => e.clave === clave),
-    [contenido.izquierda, contenido.derecha],
-  );
-
-  // La autocorrección: al cerrar una pareja suenan los dos, acierte o no. Oírlos juntos
-  // es la información; que uno de los dos sea el equivocado se aprende oyéndolo.
+  /*
+    Al cerrar una pareja no vuelve a sonar nada. Sonaban los dos seguidos, acierte o no,
+    como autocorrección por el oído; el autor lo quitó el 2026-09-12: «cuando se acierta no
+    hace falta que suene de nuevo; el sonido solo suena cuando se pulsa el cuadrado con
+    sonido». El niño ya lo ha oído al tocarlo, en el orden que haya querido —imagen y luego
+    sonido, o al revés—, y repetirlo encima del elogio lo solapaba. La pausa es más corta
+    en el acierto: no hay nada que escuchar.
+  */
   useEffect(() => {
     if (estado.fase !== 'comprobando' || !estado.ultima) return;
-    const rutas = [estado.ultima.izquierda, estado.ultima.derecha]
-      .map((c) => porClave(c)?.audio)
-      .filter((r): r is string => Boolean(r));
-    void sonarSeguidos(rutas);
-    const id = window.setTimeout(() => despachar({ tipo: 'seguir' }), 1400);
+    const id = window.setTimeout(
+      () => despachar({ tipo: 'seguir' }),
+      estado.ultima.acierto ? 900 : 1400,
+    );
     return () => window.clearTimeout(id);
-  }, [estado.fase, estado.ultima, porClave]);
+  }, [estado.fase, estado.ultima]);
 
   useEffect(() => {
     if (estado.fase !== 'completada' || yaTerminada.current) return;
