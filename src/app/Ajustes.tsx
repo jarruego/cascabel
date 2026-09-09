@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router';
+import { hayVibracion } from '@/ui/vibracion';
 import { t } from '@/i18n';
 import { borrarTodo, leerTodo } from '@/datos/progreso';
 import { usePreferencias } from './preferencias';
@@ -34,6 +35,8 @@ export default function Ajustes() {
   const [borrado, setBorrado] = useState(false);
   const pizarra = usePreferencias((e) => e.pizarra);
   const verFicha = usePreferencias((e) => e.verFicha);
+  const vibracion = usePreferencias((e) => e.vibracion);
+  const ponerVibracion = usePreferencias((e) => e.ponerVibracion);
   const ponerVerFicha = usePreferencias((e) => e.ponerVerFicha);
   const ponerPizarra = usePreferencias((e) => e.ponerPizarra);
 
@@ -138,6 +141,26 @@ export default function Ajustes() {
           {verFicha ? t('ajustes.fichaDesactivar') : t('ajustes.fichaActivar')}
         </button>
       </section>
+
+      {/*
+        Solo se ofrece donde el aparato puede vibrar. En un ordenador o en un iPhone el
+        interruptor no haría nada, y un ajuste que no hace nada es peor que no tenerlo: el
+        maestro lo activa, no pasa nada, y deja de fiarse del resto de la pantalla.
+      */}
+      {hayVibracion() && (
+        <section>
+          <h2>{t('ajustes.vibracion')}</h2>
+          <p>{t('ajustes.vibracionTexto')}</p>
+          <button
+            type="button"
+            className="boton-repetir"
+            aria-pressed={vibracion}
+            onClick={() => ponerVibracion(!vibracion)}
+          >
+            {vibracion ? t('ajustes.vibracionDesactivar') : t('ajustes.vibracionActivar')}
+          </button>
+        </section>
+      )}
 
       <section>
         <h2>{t('ajustes.calibracion')}</h2>

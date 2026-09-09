@@ -7,6 +7,7 @@ import { IconoGrabar, IconoParar, IconoTocar } from '@/ui/Simbolos';
 import { GrabadorDeEventos, reproducir, type Grabacion } from '../grabacionEventos';
 import { Retos } from '@/ui/Retos';
 import { BarraAcciones } from '@/ui/BarraAcciones';
+import { vibrarPulso } from '@/ui/vibracion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -203,9 +204,12 @@ export default function Pads({ actividad }: PropsActividad) {
     if (!pulsando) return;
     let id = 0;
     const mirar = () => {
-      if (metronomo.current?.pulsosParaPintar().length) {
+      const pulsos = metronomo.current?.pulsosParaPintar() ?? [];
+      if (pulsos.length) {
         setAcento(true);
         window.setTimeout(() => setAcento(false), 90);
+        // Y en la mano. Ver `ui/vibracion.ts`.
+        vibrarPulso(pulsos.some((p) => p.acentuado));
       }
       id = requestAnimationFrame(mirar);
     };

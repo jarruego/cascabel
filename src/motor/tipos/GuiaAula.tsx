@@ -9,6 +9,7 @@ import {
   IconoSiguiente,
   IconoTocar,
 } from '@/ui/Simbolos';
+import { vibrarPulso } from '@/ui/vibracion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -53,7 +54,12 @@ export default function GuiaAula({ actividad }: PropsActividad) {
   const bucleVisual = useCallback(() => {
     const m = metronomo.current;
     if (m) {
-      for (const p of m.pulsosParaPintar()) setPulso(p.pulso);
+      for (const p of m.pulsosParaPintar()) {
+        setPulso(p.pulso);
+        // El mismo pulso, en la mano: aquí y no en el planificador, que va 100 ms por
+        // delante. Ver `ui/vibracion.ts`.
+        vibrarPulso(p.acentuado);
+      }
     }
     rafId.current = requestAnimationFrame(bucleVisual);
   }, []);

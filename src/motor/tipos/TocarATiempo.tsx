@@ -18,6 +18,7 @@ import { pistaPara } from '../maquinaEleccion';
 import { BarraAcciones } from '@/ui/BarraAcciones';
 import { IconoRepetir, IconoSiguiente, IconoTocar } from '@/ui/Simbolos';
 import { rechazarMicrofono, seUsaMicrofono } from '@/escucha/permiso';
+import { vibrarPulso } from '@/ui/vibracion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { CuentaAtras } from '@/ui/CuentaAtras';
@@ -207,7 +208,19 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
     rejilla!.inicios.forEach((pulso, i) => {
       const ms = inicio + pulso * msPorPulso;
       temporizadores.current.push(
-        window.setTimeout(() => setPulsoActual(i), ms - ctx.currentTime * 1000),
+        window.setTimeout(() => {
+          setPulsoActual(i);
+          /*
+            Y un golpecito en la mano con cada sílaba del ejemplo.
+
+            Es el sitio donde más falta hace de toda la aplicación: aquí se está enseñando un
+            ritmo para imitarlo, y un niño sordo que solo ve el cursor iluminarse no percibe
+            la duración, solo la posición. Va con el cursor y no con el sonido porque el
+            sonido se programa 100 ms antes (§7). Durante la respuesta no vibra nada: ahí el
+            que marca es él.
+          */
+          vibrarPulso(i === 0);
+        }, ms - ctx.currentTime * 1000),
       );
     });
 

@@ -4,6 +4,7 @@ import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { MARIMBA, Sampler } from '@/audio/sampler';
 import { Metronomo } from '@/audio/metronomo';
 import { clic } from '@/audio/clic';
+import { vibrarPulso } from '@/ui/vibracion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
@@ -72,6 +73,8 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
   const modo = contenido.modo ?? 'tira';
   const [sonando, setSonando] = useState(false);
   const [actual, setActual] = useState(-1);
+  /** El último bloque que ya dio su golpecito. El bucle corre a 60 por segundo. */
+  const ultimoVibrado = useRef(-1);
   /** Segundos que faltan para cada bloque. Negativo = ya ha pasado. Solo en modo `cae`. */
   const [restantes, setRestantes] = useState<number[]>([]);
   const sampler = useRef<Sampler | null>(null);
@@ -229,6 +232,18 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
       let indice = -1;
       if (transcurrido >= 0) {
         for (let i = 0; i < desfases.length; i++) if (dentro >= desfases[i]!) indice = i;
+      }
+      /*
+        Un golpecito cada vez que cambia el bloque que suena.
+
+        Aquí no se evalúa a nadie: el musicograma se sigue con el dedo, y lo que se está
+        enseñando es que la música avanza en el tiempo. Sin oírlo, un cambio de bloque es un
+        color que se mueve; con la vibración es un pulso. Se compara con el índice anterior
+        para no repetir el mismo golpe sesenta veces por segundo.
+      */
+      if (indice !== ultimoVibrado.current) {
+        ultimoVibrado.current = indice;
+        if (indice >= 0) vibrarPulso(indice === 0);
       }
       setActual(indice);
 

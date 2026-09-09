@@ -2137,6 +2137,31 @@ hace la actividad**, y un agujero en el validador que las dejaba pasar.
       revisión pedagógica** — que haga falta un punto a partir del cual se felicita es claro;
       que sean seis de cada diez es una elección.
 
+- [x] **La vibración del pulso, que llevaba desde el principio en la lista de mínimos y no
+      existía.** `docs/04-DISENO-UI.md` la pide por su nombre contra WCAG 1.2 —«toda actividad
+      de ritmo debe poder hacerse mirando: pulso visual + `navigator.vibrate()`, un alumno
+      sordo tiene que poder participar»— y `navigator.vibrate` no aparecía en ninguna línea
+      del proyecto. El pulso visual sí estaba; la mitad que hace que se pueda **sentir**, no.
+
+      Está en cuatro sitios, que son los cuatro donde hay un pulso que seguir: el metrónomo
+      de las guías de aula, los pads, el musicograma y —el que más falta hacía— el patrón de
+      ejemplo de «tocar a tiempo», donde se está enseñando un ritmo para imitarlo y un niño
+      sordo solo veía un cursor moverse, sin duración. Durante la respuesta no vibra: ahí el
+      que marca es él.
+
+      Tres decisiones con motivo. **Va donde late lo visual y no donde suena**, porque el
+      sonido se programa 100 ms hacia el futuro (§7) y la mano iría por delante del dibujo.
+      **El acento dura más que el pulso** —55 ms contra 30— porque un móvil no tiene
+      intensidad, solo duración. Y **no se comprueba el navegador**: se intenta y se calla,
+      igual que el micrófono; en iOS y en cualquier ordenador no existe y no pasa nada. El
+      interruptor está en Ajustes, solo aparece donde el aparato puede vibrar, y viene
+      **encendido**: apagado por defecto dependería de que un adulto supiera que la opción
+      existe, que es justo lo contrario de lo que esto viene a resolver.
+
+      **Esto hay que probarlo en un móvil**, y es de las pocas cosas de las que ningún test
+      puede decir nada: que exista la llamada se prueba; que se note en la mano y no moleste,
+      no.
+
 **Lo que sigue faltando** es lo de siempre: un aparato. Nada de esto necesitaba pantalla,
 pero lo de los dos días anteriores sí.
 

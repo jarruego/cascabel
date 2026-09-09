@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { ponerVibracion as ponerVibracionGlobal } from '@/ui/vibracion';
 import { carrilPorDefecto, type Carril, type Etapa } from '@/config';
 
 /**
@@ -27,6 +28,16 @@ interface EstadoPreferencias {
    */
   verFicha: boolean;
   ponerVerFicha: (v: boolean) => void;
+  /**
+   * El pulso también en la mano, en las actividades de ritmo.
+   *
+   * Encendida por defecto, y no es una preferencia de gusto: `docs/04-DISENO-UI.md` pide que
+   * toda actividad de ritmo se pueda hacer mirando —pulso visual y vibración— para que un
+   * alumno sordo pueda participar. Apagada por defecto dependería de que un adulto supiera
+   * que la opción existe. Quien no la quiera la apaga una vez.
+   */
+  vibracion: boolean;
+  ponerVibracion: (v: boolean) => void;
 }
 
 export const usePreferencias = create<EstadoPreferencias>((set) => ({
@@ -41,6 +52,13 @@ export const usePreferencias = create<EstadoPreferencias>((set) => ({
   },
   verFicha: true,
   ponerVerFicha: (verFicha) => set({ verFicha }),
+  vibracion: true,
+  ponerVibracion: (vibracion) => {
+    // El módulo de vibración no lee el store: lo llaman temporizadores y bucles de
+    // animación, donde no hay hooks. Se le dice el valor y ya está.
+    ponerVibracionGlobal(vibracion);
+    set({ vibracion });
+  },
 }));
 
 /**

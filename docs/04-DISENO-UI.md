@@ -322,7 +322,7 @@ filtros siguen intactos y el destino es uno solo. La lección, que vale para lo 
 
 | Criterio | Qué significa aquí |
 |---|---|
-| 1.1.1 / 1.2 | **Toda actividad de ritmo debe poder hacerse mirando**: pulso visual + `navigator.vibrate()`. Un alumno sordo tiene que poder participar |
+| 1.1.1 / 1.2 | **Toda actividad de ritmo debe poder hacerse mirando**: pulso visual + `navigator.vibrate()`. Un alumno sordo tiene que poder participar. Hecho: `ui/vibracion.ts`, con interruptor en Ajustes y encendido por defecto |
 | 1.4.1 | No codifiques la altura solo por color (el error clásico de Song Maker): añade forma, posición y nombre de nota |
 | 1.4.3 | 4,5:1 en texto. Las paletas pastel infantiles suelen fallar: verifícalo |
 | 2.2.1 | Sin límites de tiempo, o ajustables |
