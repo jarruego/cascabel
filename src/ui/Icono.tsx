@@ -43,6 +43,9 @@ const DISPONIBLES = new Set([
   'castillo', 'pluma', 'corona', 'corazon', 'radio',
   'bailarina', 'bailarin', 'palmas',
   'uno', 'dos', 'tres', 'cuatro',
+  // La mariposa: el autor pidió para «flojito» un animal que no haga ruido. El gato de
+  // OpenMoji tiene rayas y parecía un tigre, que es justo lo contrario.
+  'mariposa',
 ]);
 
 /** Nombres antiguos que ya se usaban en los JSON de contenido. */

@@ -2215,9 +2215,10 @@ cae el acento.
       sostenido, un «2/4», dibujados con Bravura. Una corchea no tiene emoji ni tiene por
       qué tenerlo. Y sin dibujo ni signo, el texto es el botón entero y se lee de lejos —
       solo pasa en 5.º y 6.º, con nombres de compositores e intervalos.
-- [x] **Diecisiete iconos más de OpenMoji** (flechas, igual, altavoces, castillo, pluma,
-      corona, corazón, radio, bailarines, palmas y los números del uno al cuatro), en el
-      mismo formato que los 48 que había. Anotados en `THIRD-PARTY-NOTICES.md`.
+- [x] **Dieciocho iconos más de OpenMoji** (flechas, igual, altavoces, castillo, pluma,
+      corona, corazón, radio, bailarines, palmas, los números del uno al cuatro, y una
+      mariposa: el autor pidió para «flojito» un animal que no haga ruido, porque el gato de
+      OpenMoji tiene rayas y parecía un tigre), en el mismo formato que los 48 que había. Anotados en `THIRD-PARTY-NOTICES.md`.
 - [x] **La gaita entra en el sampler** con sus dos muestras, para que la referencia de
       instrumentos no la hiciera sonar con la marimba.
 
