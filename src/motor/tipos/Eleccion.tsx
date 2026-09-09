@@ -149,8 +149,6 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
       {/* El botón de repetir solo tiene sentido si hay algo que repetir. Cuando no lo hay
           desaparece entero, en vez de quedarse ahí sin hacer nada: un botón muerto es peor
           que ningún botón, y ya nos pasó una vez con el «Escuchar» de la modal. */}
-      <Progreso hechos={estado.indice} total={total} />
-
       {/* El caso escrito. Va en aria-live porque cambia sin que se mueva el foco. */}
       {estimulo?.texto && (
         <p className="eleccion__caso" aria-live="polite">
@@ -180,6 +178,10 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
           />
         ))}
       </div>
+
+      {/* Debajo de los cuadros, no encima: lo primero que se mira es lo que se toca, y la
+          barra se consulta después. Lo pidió el autor el 2026-09-12. */}
+      <Progreso hechos={estado.indice} total={total} />
 
       <BarraAcciones>{estimulo && suena(estimulo) && <BotonRepetir onClick={reproducir} />}</BarraAcciones>
 
