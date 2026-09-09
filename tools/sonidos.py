@@ -182,8 +182,7 @@ def main() -> int:
 
     manifiesto["generado"] = date.today().isoformat()
     # Con salto de linea de Unix, como todo el repositorio: si no, en Windows sale CRLF.
-    MANIFIESTO.write_text(json.dumps(manifiesto, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="
-")
+    MANIFIESTO.write_text(json.dumps(manifiesto, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     print(f"\n{hechos} sonidos preparados, {len(fallos)} fallos.")
     return 1 if fallos else 0
 
