@@ -2645,7 +2645,9 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       siguiendo. Y el teclado se desplaza de lado si no cabe, sin ensanchar la página. Las
       etiquetas son cuadradas e iguales, una entre cada dos notas; se pisaban. En vertical
       el conjunto va centrado: la fila del teclado a `1fr` lo dejaba arriba con medio
-      escenario vacío debajo.
+      escenario vacío debajo. Y la pista de «no es una escala mayor» sale a las ocho notas
+      y cada ocho más, dura lo que se lee y se va entera: tono y texto miraban condiciones
+      distintas y el texto se quedaba flotando.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
