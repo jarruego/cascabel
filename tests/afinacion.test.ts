@@ -3,7 +3,9 @@ import {
   VENTANAS_POR_CARRIL,
   desviacionEnCents,
   evaluarAfinacion,
+  llevaPista,
   mensajeAfinacion,
+  tonoDe,
 } from '../src/motor/afinacion';
 
 /**
@@ -139,5 +141,37 @@ describe('plegado por octavas', () => {
     // de la octava, y el filtro de estabilidad se encarga del resto.
     const midi120 = 69 + 12 * Math.log2(120 / 440);
     expect(Math.abs(desviacionEnCents(midi120, G4))).toBeLessThanOrEqual(600);
+  });
+});
+
+describe('el texto y el color de la tarjeta dicen lo mismo', () => {
+  /*
+    El fallo que esto impide ya ocurrió. El texto lo elegía `mensajeAfinacion`, que pregunta
+    a `calidad` y por tanto a la ventana del carril —90 cents en Infantil, 70 en 1.º y 2.º,
+    50 en 3.º—, y el color de la tarjeta comparaba a mano contra 50. Un niño de 1.º que
+    cantaba 60 cents bajo leía «¡la has cazado!» en una tarjeta pintada de corrección, con
+    un consejo debajo para arreglar lo que acababa de hacer bien.
+
+    Se recorre toda la ventana de cada carril con una voz estable, que es el caso donde las
+    dos respuestas tienen que coincidir sí o sí.
+  */
+  /** Una voz que sostiene la nota, desviada lo que se le diga. */
+  const vozEstable = (cents: number) => Array.from({ length: 20 }, () => cents);
+
+  for (const carril of ['infantil', 'lectores', 'autonomos'] as const) {
+    it(`nunca se contradicen en ${carril}`, () => {
+      for (let cents = -120; cents <= 120; cents += 5) {
+        const e = evaluarAfinacion(vozEstable(cents), carril);
+        const dijoQueBien = mensajeAfinacion(e) === 'cantar.afinado';
+        expect(tonoDe(e) === 'bien', `${cents} cents en ${carril}`).toBe(dijoQueBien);
+        // Y detrás de un «la has cazado» no se cuela un consejo para corregirlo.
+        expect(llevaPista(e), `${cents} cents en ${carril}`).toBe(!dijoQueBien);
+      }
+    });
+  }
+
+  it('sin evaluación no se felicita, y tampoco se corrige con una pista', () => {
+    expect(tonoDe(null)).toBe('casi');
+    expect(llevaPista(null)).toBe(false);
   });
 });

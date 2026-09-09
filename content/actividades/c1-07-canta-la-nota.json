@@ -40,7 +40,6 @@
   },
   "evaluacion": {
     "autocorrectiva": true,
-    "tolerancia_cents": 50,
     "reporta": [
       "completado",
       "afinacion_media"

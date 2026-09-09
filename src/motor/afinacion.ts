@@ -154,6 +154,31 @@ export function evaluarAfinacion(
  * Se le dice hacia dónde moverse, que es accionable, en vez de qué ha hecho mal, que no lo
  * es. Es la regla 7 de `docs/04-DISENO-UI.md`: el mensaje repara, no juzga.
  */
+/**
+ * De qué color va la tarjeta, y si lleva pista.
+ *
+ * Está aquí y no en el componente porque **es el mismo veredicto que el texto**, y esa es
+ * justo la parte que se rompió: el texto preguntaba a `calidad`, que usa la ventana del
+ * carril, y el color comparaba a mano contra 50 cents, que es la ventana del tercer ciclo.
+ * Un niño de 1.º a 60 cents leía «¡la has cazado!» en una tarjeta de corrección y con un
+ * consejo debajo para arreglar lo que acababa de hacer bien.
+ *
+ * Mientras las dos respuestas salgan de la misma función no pueden volver a contradecirse.
+ */
+export function tonoDe(e: EvaluacionAfinacion | null): 'bien' | 'casi' {
+  return e?.calidad === 'afinado' ? 'bien' : 'casi';
+}
+
+/**
+ * ¿Se le añade la pista de la actividad?
+ *
+ * Solo cuando hay algo que hacer distinto la próxima vez. «Respira antes de empezar» lo es;
+ * detrás de un «la has cazado» no lo es, es ruido que convierte un acierto en una enmienda.
+ */
+export function llevaPista(e: EvaluacionAfinacion | null): boolean {
+  return Boolean(e) && e!.calidad !== 'afinado';
+}
+
 export function mensajeAfinacion(e: EvaluacionAfinacion): string {
   if (e.calidad === 'sin-senal') return 'cantar.noTeOigo';
   if (e.calidad === 'afinado') return 'cantar.afinado';

@@ -104,7 +104,9 @@
   "evaluacion": {
     "autocorrectiva": true,
     "reporta": [
-      "completado"
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
     ]
   },
   "enunciado": "actividad.inf16.enunciado",

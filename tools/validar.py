@@ -334,20 +334,15 @@ def validar_producto(datos: dict, r: Resultado) -> None:
             "adulto no sabe que decirles"
         )
 
-    tol = evaluacion.get("tolerancia_ms")
-    if tol:
-        esperado = {
-            "infantil": 150,
-            "primaria-c1": 100,
-            "primaria-c2": 100,
-            "primaria-c3": 70,
-        }.get(etapa)
-        if esperado and tol.get("perfecto", 0) < esperado:
-            r.avisos.append(
-                f"producto · tolerancia de {tol.get('perfecto')} ms demasiado dura "
-                f"para {etapa} (referencia: {esperado} ms)"
-            )
-    if tol and "desvio_medio_con_signo" not in (evaluacion.get("reporta") or []):
+    # La tolerancia ya no se declara por actividad: la ventana sale del carril, en
+    # config.ts y en afinacion.ts, y el esquema rechaza el campo. Lo que si se sigue
+    # pidiendo es que una actividad ritmica cuente el desvio con signo: un nino
+    # desfasado pero regular tiene buen pulso, y un porcentaje le dice que ha fallado.
+    # Ritmicas son las que comparan el golpe del nino contra una rejilla en el tiempo:
+    # los tres tipos que pasan por motor/evaluacion.ts. «aciertos» a secas no sirve para
+    # detectarlas, porque una actividad de preguntas tambien cuenta aciertos.
+    reporta = evaluacion.get("reporta") or []
+    if tipo in {"tocar-a-tiempo", "karaoke", "eco"} and "desvio_medio_con_signo" not in reporta:
         r.avisos.append(
             "producto · una actividad rítmica debería reportar el desvío medio con signo: "
             "un niño desfasado pero regular tiene buen pulso"

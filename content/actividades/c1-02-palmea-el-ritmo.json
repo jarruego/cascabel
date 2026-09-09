@@ -51,11 +51,6 @@
   },
   "evaluacion": {
     "autocorrectiva": true,
-    "tolerancia_ms": {
-      "perfecto": 100,
-      "bien": 180,
-      "casi": 300
-    },
     "reporta": [
       "aciertos",
       "desvio_medio_con_signo",

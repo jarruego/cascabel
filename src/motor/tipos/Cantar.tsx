@@ -8,7 +8,9 @@ import {
   desviacionEnCents,
   ventanasDe,
   evaluarAfinacion,
+  llevaPista,
   mensajeAfinacion,
+  tonoDe,
   type EvaluacionAfinacion,
 } from '../afinacion';
 import { rechazarMicrofono, seUsaMicrofono } from '@/escucha/permiso';
@@ -328,14 +330,20 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
             pantalla de un niño de ocho años que acaba de cantar. Lo que el niño necesita es
             la lectura de ese número en palabras, que es lo que da `mensajeAfinacion`.
           */}
-          <Reaccion
-            tono={evaluacion && Math.abs(evaluacion.centsMedios) <= 50 ? 'bien' : 'casi'}
-            personaje={actividad.personaje}
-          >
+          {/*
+            El color y la pista salen del MISMO veredicto que el texto.
+
+            Comparaban a mano contra 50 cents, que es la ventana del tercer ciclo, mientras
+            que el texto lo decide `mensajeAfinacion` con la ventana del carril —90 en
+            Infantil, 70 en 1.º y 2.º—. Un niño de siete años que cantaba 60 cents bajo leía
+            «¡la has cazado!» en una tarjeta pintada de corrección y con un consejo debajo
+            para arreglar lo que acababa de hacer bien.
+          */}
+          <Reaccion tono={tonoDe(evaluacion)} personaje={actividad.personaje}>
             {t(evaluacion ? mensajeAfinacion(evaluacion) : 'cantar.sinMedir')}
             {/* «Respira antes de empezar y canta con la boca bien abierta» es algo que se
                 puede hacer distinto la próxima vez. «Casi» no lo es. */}
-            {evaluacion && Math.abs(evaluacion.centsMedios) > 50 && pistaPara(actividad.pistas, 1)
+            {llevaPista(evaluacion) && pistaPara(actividad.pistas, 1)
               ? ` ${t(pistaPara(actividad.pistas, 1)!)}`
               : ''}
           </Reaccion>

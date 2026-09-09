@@ -93,10 +93,17 @@ export interface Actividad {
     alternativa?: 'toque' | 'toque-secuencial' | 'sin-grabar' | 'ninguna';
   };
   contenido: Record<string, unknown>;
+  /**
+   * Qué se evalúa y qué se guarda.
+   *
+   * **La tolerancia no está aquí a propósito.** Se pudo declarar por actividad y no la leía
+   * nadie: la ventana de ritmo sale de `TOLERANCIA_MS` y la de afinación de
+   * `VENTANAS_POR_CARRIL`, las dos por carril, porque miden control motor y precisión vocal
+   * y eso depende de la edad del niño. Una de las dos actividades que la declaraba ya decía
+   * un número distinto del que se usaba, sin que nada avisara.
+   */
   evaluacion?: {
     autocorrectiva?: boolean;
-    tolerancia_ms?: { perfecto: number; bien: number; casi: number };
-    tolerancia_cents?: number;
     reporta?: string[];
   };
   /**

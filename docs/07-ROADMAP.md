@@ -2095,6 +2095,34 @@ hace la actividad**, y un agujero en el validador que las dejaba pasar.
       persigue los pictogramas en color y deja en paz el sostenido de la escala y el tic de
       «ya hecha», que son caracteres de imprenta.
 
+- [x] **«Canta la nota» decía dos cosas contrarias en la misma tarjeta.** El texto lo elige
+      `mensajeAfinacion`, que pregunta al veredicto y por tanto a la ventana **del carril**
+      —90 cents en Infantil, 70 en 1.º y 2.º, 50 en 3.º, porque una voz de seis años es
+      inestable por construcción—. El color de la tarjeta y la pista, en cambio, comparaban a
+      mano contra 50. Un niño de 1.º que cantaba 60 cents bajo leía «¡la has cazado!» en una
+      tarjeta pintada de corrección, con un consejo debajo para arreglar lo que acababa de
+      hacer bien.
+
+      El número estaba escrito dos veces y la copia se quedó atrás cuando la ventana pasó a
+      depender de la edad. Ahora las tres cosas salen de la misma función —`tonoDe` y
+      `llevaPista`, en `motor/afinacion.ts`— y el test recorre la ventana entera de los tres
+      carriles comprobando que texto y color nunca se contradicen. Puesto el fallo a mano,
+      salta en «-90 cents en infantil» y «-70 en lectores», que son exactamente los dos casos
+      reales.
+
+- [x] **Y la misma enfermedad, en el esquema.** `evaluacion.tolerancia_ms` y
+      `tolerancia_cents` se podían declarar por actividad y no los leía nadie: las dos
+      ventanas viven en `config.ts` y en `afinacion.ts`, por carril. De las dos actividades
+      que los usaban, una repetía el número del código y **la otra ya decía uno distinto**
+      —50 cents donde su carril usa 70— sin que saltara nada, porque un dato que no se usa no
+      puede fallar. Fuera del esquema, del tipo y de las dos actividades; el validador sigue
+      pidiendo el desvío con signo a las tres familias que comparan contra una rejilla, que
+      es lo que §7 exige de verdad.
+
+      De paso: `inf-16` declaraba guardar solo «completado» y su motor guarda cuatro cosas
+      más, las mismas que sus catorce hermanas. Esa lista es lo que un maestro lee para saber
+      qué se guarda de un niño, y decir de menos ahí es tan malo como decir de más.
+
 **Lo que sigue faltando** es lo de siempre: un aparato. Nada de esto necesitaba pantalla,
 pero lo de los dos días anteriores sí.
 

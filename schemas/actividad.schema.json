@@ -313,32 +313,6 @@
           "type": "boolean",
           "default": true
         },
-        "tolerancia_ms": {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "perfecto": {
-              "type": "integer",
-              "minimum": 40,
-              "maximum": 200
-            },
-            "bien": {
-              "type": "integer",
-              "minimum": 60,
-              "maximum": 300
-            },
-            "casi": {
-              "type": "integer",
-              "minimum": 100,
-              "maximum": 500
-            }
-          }
-        },
-        "tolerancia_cents": {
-          "type": "integer",
-          "minimum": 20,
-          "maximum": 150
-        },
         "reporta": {
           "type": "array",
           "items": {
@@ -352,7 +326,8 @@
             ]
           }
         }
-      }
+      },
+      "description": "Qué se evalúa y qué se guarda. La TOLERANCIA no se declara aquí: la ventana de ritmo sale de TOLERANCIA_MS y la de afinación de VENTANAS_POR_CARRIL, las dos por carril, porque miden control motor y precisión vocal y eso depende de la edad. Estuvieron declarables y no las leía nadie; una de las dos actividades que las usaba ya contradecía al código sin que saltara nada."
     },
     "enunciado": {
       "type": "string",
