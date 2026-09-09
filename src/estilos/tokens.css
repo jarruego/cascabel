@@ -1239,8 +1239,12 @@ p {
 .pentagrama__lienzo {
   position: relative;
   margin: var(--e-4) auto;
+  /* El ancho lo pone el componente según cuántos sitios hay; si no cabe, se desplaza con
+     el dedo, y el marco no se ensancha nunca. `contain` evita que el gesto se propague. */
   max-width: 100%;
   overflow-x: auto;
+  overscroll-behavior-x: contain;
+  box-sizing: content-box;
 }
 .pentagrama__pedida {
   font-size: clamp(28px, 7vw, 56px);

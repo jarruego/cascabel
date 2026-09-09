@@ -41,7 +41,13 @@ interface Opcion {
   espacio?: number;
 }
 
-const ANCHO = 460;
+/**
+ * Dónde empieza la primera nota: justo después de la clave. Estaba en 150 y con siete
+ * sitios en clave de fa se salían del recuadro por la derecha —«las notas se van muy a la
+ * derecha»—; el ancho del recuadro sale ahora de cuántos sitios hay, y si no cabe en la
+ * pantalla, el recuadro se desplaza con el dedo.
+ */
+const INICIO = 84;
 const SEPARACION = 14;
 const ALTO = 200;
 /** Margen superior: deja sitio para notas por encima de la pauta. */
@@ -57,6 +63,8 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
 
   const carril = useCarril(actividad.etapa);
   const tam = OBJETIVO_TACTIL[carril];
+  const paso = tam + 12;
+  const ancho = Math.max(320, INICIO + contenido.opciones.length * paso + 12);
   const clave = contenido.clave ?? 'sol';
   const lienzo = useRef<HTMLDivElement | null>(null);
   const sampler = useRef<Sampler | null>(null);
@@ -99,7 +107,7 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
         lienzo.current.innerHTML = '';
 
         const renderer = new Renderer(lienzo.current, Renderer.Backends.SVG);
-        renderer.resize(ANCHO, ALTO);
+        renderer.resize(ancho, ALTO);
         const ctx = renderer.getContext();
 
         /*
@@ -108,7 +116,7 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
           componente colocaba los sitios, y las notas «estaban muy desplazadas de su sitio».
           El aire lo pone ARRIBA, que es el mismo número para el dibujo y para los sitios.
         */
-        const pauta = new Stave(10, ARRIBA, ANCHO - 30, {
+        const pauta = new Stave(10, ARRIBA, ancho - 20, {
           spacingBetweenLinesPx: SEPARACION,
           spaceAboveStaffLn: 0,
           spaceBelowStaffLn: 0,
@@ -127,7 +135,7 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
     return () => {
       cancelado = true;
     };
-  }, [clave, dibujado]);
+  }, [clave, dibujado, ancho]);
 
   useEffect(() => {
     if (estado.fase !== 'bien' && estado.fase !== 'casi') return;
@@ -182,7 +190,7 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
         {pedida && t(`nota.${pedida}`)}
       </p>
 
-      <div className="pentagrama__lienzo" style={{ width: ANCHO, height: ALTO }}>
+      <div className="pentagrama__lienzo" style={{ width: ancho, height: ALTO }}>
         <div ref={lienzo} aria-hidden="true" />
 
         {/*
@@ -202,7 +210,7 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
               style={{
                 width: tam,
                 height: tam,
-                left: 150 + contenido.opciones.indexOf(o) * (tam + 12),
+                left: INICIO + contenido.opciones.indexOf(o) * paso,
                 top: y - tam / 2,
               }}
               aria-label={t(`nota.${o.clave}`)}

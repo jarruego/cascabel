@@ -2593,7 +2593,9 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       cuatro espacios de aire sobre la quinta línea y el componente no contaba con ellos.
       Además pedía las notas en orden —sol, la, si, do, y otra vez— con el nombre escrito
       debajo de cada sitio: se acertaba leyendo. Ahora baraja sin dos iguales seguidas y el
-      nombre solo lo oye el lector de pantalla.
+      nombre solo lo oye el lector de pantalla. Y el recuadro mide según cuántos sitios hay,
+      empezando justo tras la clave: con siete en clave de fa se salían por la derecha. Si
+      no cabe en vertical, se desplaza con el dedo.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
