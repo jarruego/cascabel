@@ -2607,7 +2607,10 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       apretados arriba y abajo, y la pauta ocupa lo que queda: la separación entre líneas
       sale del alto, de 14 a 34 px, y con ella la clave, las cabezas y los huecos. Solo el
       marco de la pauta se desplaza, de lado; la barra queda fija debajo. Mismo patrón que
-      la escala.
+      la escala. Y la causa de que aun así la página se ensanchara: un hijo de la cuadrícula
+      del escenario tiene `min-width: auto` y no mide menos que su contenido, aunque tenga
+      `overflow-x: auto`. Ahora todo bloque de actividad lleva `min-width: 0`, y lo que no
+      cabe se desplaza dentro de su marco.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la

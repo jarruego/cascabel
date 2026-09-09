@@ -552,6 +552,15 @@ p {
 .actividad > * {
   margin-block: 0;
   margin-inline: auto;
+  /*
+    Ningún bloque ensancha la página. Un hijo de la cuadrícula del escenario tiene
+    `min-width: auto`, y eso significa «como mínimo, lo que mide mi contenido»: un marco
+    con una pauta de 600 px dentro se negaba a medir menos de 600 aunque tuviera
+    `overflow-x: auto`, la sección crecía con él y la página entera se desplazaba de lado
+    con las barras fijas descolocadas. Lo vio el autor en «Coloca la nota». Con `min-width:
+    0` el bloque mide lo que le toca y lo que no cabe se desplaza dentro de él.
+  */
+  min-width: 0;
 }
 
 /*
@@ -1253,6 +1262,8 @@ p {
   gap: var(--e-2);
 }
 .pentagrama__marco {
+  width: 100%;
+  min-width: 0;
   min-height: 0;
   overflow-x: auto;
   overflow-y: hidden;
