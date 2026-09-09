@@ -2618,7 +2618,7 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
 - [x] **«Canta la nota» en apaisado, sin cuenta atrás, con la nota sostenida y una aguja
       con recorrido.** La sección se lleva el alto del escenario y lo reparte; la barra va
       abajo; la cuenta atrás se fue —la nota de tres segundos ya es el aviso—; la referencia
-      es un órgano de tubos real, sostenido tres segundos, en vez de 1,6 s de marimba que se
+      es una flauta real, sostenida tres segundos, en vez de 1,6 s de marimba que se
       apagaba; y la aguja abarca ±300 cents en una franja ancha y baja, con la ventana de
       «casi» tenue y la de «afinado» en verde del ancho que marque el carril.
 
