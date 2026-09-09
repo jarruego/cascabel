@@ -2672,7 +2672,9 @@ textos, niveles, camino, y la sección de instrumentos.
 - [x] **Textos.** Siete enunciados que no decían lo que se hace: «¿Largo o corto?» hablaba
       de un triángulo y un tambor que no están; «¿Sube o baja?» de tres notas; los dos de
       emparejar prometían que sonarían los dos; los tres memory repetían la ayuda del tipo y
-      dos se pasaban de largo. Y las referencias a «Instrumentos» dicen «el Taller».
+      dos se pasaban de largo. Y las referencias a «Instrumentos» dicen «el Taller». Después,
+      «¿Paso o salto?»: un instrumento sostenido distinto por pregunta, dos pulsos por nota y
+      una octava entre los saltos, con el enunciado del escalón y el brinco.
 - [x] **Niveles y camino.** La herramienta de dificultad no señala nada sin revisar, y el
       camino cubre todas las actividades con una por etapa; la auditoría solo deja los tres
       criterios en `null` de las herramientas, que es lo correcto.
