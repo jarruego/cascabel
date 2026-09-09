@@ -1,0 +1,157 @@
+{
+  "id": "c1-24-dictado-de-ta-y-ti-ti",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "Dictado de ta y ti-ti",
+  "descripcion": "Suenan cuatro pulsos con negras y corcheas, y hay que elegir cómo se escriben. Es el primer dictado, con solo dos figuras.",
+  "etapa": "primaria-c1",
+  "eje": "notacion",
+  "lugar": "pantalla",
+  "duracion_min": 7,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 84,
+    "figuras": [
+      "negra",
+      "corchea"
+    ]
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c124.consigna",
+    "opciones": [
+      {
+        "clave": "r1",
+        "signo": "𝅘𝅥 𝅘𝅥 𝅘𝅥 𝅘𝅥",
+        "color": "azul"
+      },
+      {
+        "clave": "r2",
+        "signo": "𝅘𝅥𝅮𝅘𝅥𝅮 𝅘𝅥 𝅘𝅥 𝅘𝅥",
+        "color": "verde"
+      },
+      {
+        "clave": "r3",
+        "signo": "𝅘𝅥 𝅘𝅥 𝅘𝅥𝅮𝅘𝅥𝅮 𝅘𝅥",
+        "color": "rojo"
+      },
+      {
+        "clave": "r4",
+        "signo": "𝅘𝅥𝅮𝅘𝅥𝅮 𝅘𝅥𝅮𝅘𝅥𝅮 𝅘𝅥 𝅘𝅥",
+        "color": "amarillo"
+      }
+    ],
+    "estimulos": [
+      {
+        "ritmo": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "respuesta": "r1"
+      },
+      {
+        "ritmo": [
+          0.5,
+          0.5,
+          1,
+          1,
+          1
+        ],
+        "respuesta": "r2"
+      },
+      {
+        "ritmo": [
+          1,
+          1,
+          0.5,
+          0.5,
+          1
+        ],
+        "respuesta": "r3"
+      },
+      {
+        "ritmo": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          1,
+          1
+        ],
+        "respuesta": "r4"
+      },
+      {
+        "ritmo": [
+          1,
+          1,
+          0.5,
+          0.5,
+          1
+        ],
+        "respuesta": "r3"
+      },
+      {
+        "ritmo": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "respuesta": "r1"
+      },
+      {
+        "ritmo": [
+          0.5,
+          0.5,
+          1,
+          1,
+          1
+        ],
+        "respuesta": "r2"
+      },
+      {
+        "ritmo": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          1,
+          1
+        ],
+        "respuesta": "r4"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c124.enunciado",
+  "personaje": "dora",
+  "pistas": [
+    "actividad.c124.pista1",
+    "actividad.c124.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

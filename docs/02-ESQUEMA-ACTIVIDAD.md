@@ -43,6 +43,30 @@ La referencia normativa es `schemas/actividad.schema.json`. Esto es la guía par
 - El ABC tiene que parsear, cuadrar los compases, caber en la tesitura de la edad y no
   tener saltos mayores que el límite de la etapa (4.ª en Infantil, 5.ª en c1, 6.ª en c2)
 
+## Lo que puede sonar sin un fichero de audio
+
+Desde el 2026-09-10, un estímulo de `eleccion`, una entrada de `referencia` y una ficha de
+`ordenar` pueden describir lo que suena en el propio JSON, y el motor lo toca con el sampler,
+el clic y el kit de percusión que ya existen. Es lo que permite escribir un intervalo, un
+dictado de figuras o un «forte o piano» sin grabar nada. La regla vive en
+`src/motor/estimulo.ts` y tiene test.
+
+```jsonc
+{ "notas": ["C4", "G4"], "respuesta": "quinta" }                 // dos notas seguidas
+{ "notas": ["C4", "D4", "E4"], "duraciones": [0.5, 0.5, 1] }     // pulsos por nota
+{ "notas": ["C4", "E4", "G4"], "volumen": 0.2 }                   // dinámica, de 0 a 1
+{ "notas": ["G4", "G4", "G4"], "volumenes": [0.2, 0.6, 1] }       // crescendo
+{ "notas": ["C4", "D4", "E4"], "articulacion": "staccato" }       // o "legato"
+{ "ritmo": [1, -1, 0.5, 0.5, 2] }                                 // clics; negativo = silencio
+{ "ritmo": [1, 1, 1, 1, 1, 1], "acentos": [0, 3] }                // un 3/4: acento en el 1 y el 4
+{ "patron": ["bombo", "caja", "caja"], "tempo": 138 }             // golpes del kit, uno por pulso
+{ "patron": ["bombo+charles", "", "caja"], "celda": 0.5 }         // varios a la vez, y silencios
+```
+
+Las opciones de `eleccion` y las fichas de `ordenar` admiten además `signo` —un glifo
+musical en Unicode, dibujado con Bravura— en vez de `icono`, para cuando la respuesta **es**
+notación: una corchea no tiene emoji ni tiene por qué tenerlo.
+
 ## Notación ABC en 30 segundos
 
 ```

@@ -1,0 +1,172 @@
+{
+  "id": "c3-27-los-instrumentos-por-familias",
+  "version": 1,
+  "tipo": "referencia",
+  "titulo": "Los instrumentos, por familias",
+  "descripcion": "Consulta de instrumentos agrupados por familia, cada uno con su sonido: cuerda, viento, percusión y voz.",
+  "etapa": "primaria-c3",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.2",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c327.consigna",
+    "secciones": [
+      {
+        "titulo": "Cuerda",
+        "entradas": [
+          {
+            "termino": "Violín",
+            "explicacion": "Cuerda frotada con un arco. Es el más agudo de la orquesta y el que más hay: hasta treinta.",
+            "notas": [
+              "G4",
+              "A4",
+              "B4",
+              "D5"
+            ],
+            "instrumento": "violin"
+          },
+          {
+            "termino": "Guitarra",
+            "explicacion": "Cuerda pulsada con los dedos. Seis cuerdas, y el instrumento español por excelencia.",
+            "notas": [
+              "E4",
+              "G4",
+              "B4",
+              "E5"
+            ],
+            "instrumento": "guitarra"
+          },
+          {
+            "termino": "Piano",
+            "explicacion": "Cuerda percutida: al pulsar la tecla, un martillo golpea la cuerda. Por eso hay quien lo cuenta como percusión.",
+            "notas": [
+              "C4",
+              "E4",
+              "G4",
+              "C5"
+            ],
+            "instrumento": "piano"
+          }
+        ]
+      },
+      {
+        "titulo": "Viento",
+        "entradas": [
+          {
+            "termino": "Flauta",
+            "explicacion": "Viento madera, aunque hoy sea de metal: se llama así por cómo se hace el sonido, soplando en un bisel.",
+            "notas": [
+              "G4",
+              "A4",
+              "B4",
+              "D5"
+            ],
+            "instrumento": "flauta"
+          },
+          {
+            "termino": "Gaita",
+            "explicacion": "Un fuelle que guarda el aire y varios tubos. La hay en Galicia, en Asturias y en Escocia.",
+            "notas": [
+              "A4",
+              "B4",
+              "C5",
+              "D5"
+            ],
+            "instrumento": "gaita"
+          }
+        ]
+      },
+      {
+        "titulo": "Percusión",
+        "entradas": [
+          {
+            "termino": "Xilófono",
+            "explicacion": "Láminas de madera golpeadas con baquetas. Tiene notas, pero es percusión: se golpea.",
+            "notas": [
+              "C4",
+              "E4",
+              "G4",
+              "C5"
+            ],
+            "instrumento": "xilofono"
+          },
+          {
+            "termino": "Marimba",
+            "explicacion": "Como el xilófono, pero más grande y con tubos debajo de cada lámina que hacen resonar el sonido.",
+            "notas": [
+              "C4",
+              "E4",
+              "G4",
+              "C5"
+            ],
+            "instrumento": "marimba"
+          },
+          {
+            "termino": "Bombo y caja",
+            "explicacion": "Sin altura: no dan notas, dan golpes. Son los que marcan el pulso en casi cualquier música de hoy.",
+            "patron": [
+              "bombo",
+              "caja",
+              "bombo",
+              "caja"
+            ],
+            "tempo": 100
+          }
+        ]
+      },
+      {
+        "titulo": "La voz",
+        "entradas": [
+          {
+            "termino": "Voz",
+            "explicacion": "El único instrumento que todo el mundo lleva encima. Cuerdas que vibran con el aire: es cuerda y viento a la vez.",
+            "notas": [
+              "C4",
+              "E4",
+              "G4",
+              "E4",
+              "C4"
+            ],
+            "instrumento": "voz"
+          }
+        ]
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c327.enunciado",
+  "personaje": "rex",
+  "herramienta": true,
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

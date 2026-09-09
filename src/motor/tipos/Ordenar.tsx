@@ -9,6 +9,7 @@ import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
 import { sonarMuestra, sonarNota } from '../sonarMuestra';
+import { sonarEstimulo } from '../sonarEstimulo';
 import { propsArrastre, zonaBajoPunto } from '@/ui/arrastrable';
 import {
   inicial,
@@ -41,6 +42,13 @@ interface Elemento {
   audio?: string;
   /** Nota que suena, para cuando lo que se compara es una altura y no una muestra. */
   nota?: string;
+  /**
+   * Duraciones en pulsos marcadas con el clic, para cuando lo que se ordena es cuánto dura
+   * una figura: una blanca no tiene altura que oír, tiene dos pulsos.
+   */
+  ritmo?: number[];
+  /** Signo musical en Unicode, con Bravura. Lo que se ve cuando la ficha ES notación. */
+  signo?: string;
   /** Token de color, sin el `--`. Sirve para distinguir fichas, no para informar. */
   color?: string;
   /**
@@ -93,6 +101,9 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
     const e = porClave(clave);
     if (e?.audio) sonarMuestra(e.audio);
     else if (e?.nota) void sonarNota(e.nota, contenido.instrumento);
+    else if (e?.ritmo) {
+      void sonarEstimulo({ ritmo: e.ritmo, respuesta: '' }, { tempo: actividad.practica?.tempo });
+    }
   };
 
   useEffect(() => {
@@ -153,6 +164,11 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
         }}
       >
         {e?.icono && <Icono nombre={e.icono} tamano={Math.round(tam * 0.45)} />}
+        {e?.signo && (
+          <span className="boton__signo" style={{ fontSize: Math.round(tam * 0.5) }} aria-hidden="true">
+            {e.signo}
+          </span>
+        )}
         {e?.forma && (
           <span
             className="ordenar__forma"

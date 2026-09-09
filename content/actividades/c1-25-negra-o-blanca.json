@@ -1,0 +1,114 @@
+{
+  "id": "c1-25-negra-o-blanca",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Negra o blanca?",
+  "descripcion": "Suenan figuras iguales seguidas: o son negras, de un pulso, o blancas, de dos. La duración se oye en el hueco entre golpes.",
+  "etapa": "primaria-c1",
+  "eje": "notacion",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 84,
+    "figuras": [
+      "negra",
+      "blanca"
+    ]
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c125.consigna",
+    "opciones": [
+      {
+        "clave": "negra",
+        "signo": "𝅘𝅥",
+        "color": "azul"
+      },
+      {
+        "clave": "blanca",
+        "signo": "𝅗𝅥",
+        "color": "verde"
+      }
+    ],
+    "estimulos": [
+      {
+        "ritmo": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "respuesta": "negra"
+      },
+      {
+        "ritmo": [
+          2,
+          2
+        ],
+        "respuesta": "blanca"
+      },
+      {
+        "ritmo": [
+          2,
+          2
+        ],
+        "respuesta": "blanca"
+      },
+      {
+        "ritmo": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "respuesta": "negra"
+      },
+      {
+        "ritmo": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "respuesta": "negra"
+      },
+      {
+        "ritmo": [
+          2,
+          2
+        ],
+        "respuesta": "blanca"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c125.enunciado",
+  "personaje": "sol",
+  "pistas": [
+    "actividad.c125.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

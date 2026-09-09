@@ -1,0 +1,186 @@
+{
+  "id": "c3-18-escala-mayor-o-menor",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Escala mayor o menor?",
+  "descripcion": "Ocho notas subiendo: una escala mayor o una menor. Con el acorde ya se sabe distinguir; con la escala entera cuesta más y se oye dónde está la diferencia.",
+  "etapa": "primaria-c3",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.1",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c318.consigna",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la escala menor se presenta en su forma natural, que es la que se enseña primero. La armónica y la melódica no entran en Primaria.",
+    "opciones": [
+      {
+        "clave": "mayor",
+        "icono": "sol",
+        "color": "amarillo"
+      },
+      {
+        "clave": "menor",
+        "icono": "luna",
+        "color": "azul"
+      }
+    ],
+    "estimulos": [
+      {
+        "notas": [
+          "C4",
+          "D4",
+          "E4",
+          "F4",
+          "G4",
+          "A4",
+          "B4",
+          "C5"
+        ],
+        "tempo": 132,
+        "respuesta": "mayor"
+      },
+      {
+        "notas": [
+          "C4",
+          "D4",
+          "Eb4",
+          "F4",
+          "G4",
+          "Ab4",
+          "Bb4",
+          "C5"
+        ],
+        "tempo": 132,
+        "respuesta": "menor"
+      },
+      {
+        "notas": [
+          "D4",
+          "E4",
+          "F4",
+          "G4",
+          "A4",
+          "Bb4",
+          "C5",
+          "D5"
+        ],
+        "tempo": 132,
+        "respuesta": "menor"
+      },
+      {
+        "notas": [
+          "D4",
+          "E4",
+          "F#4",
+          "G4",
+          "A4",
+          "B4",
+          "C#5",
+          "D5"
+        ],
+        "tempo": 132,
+        "respuesta": "mayor"
+      },
+      {
+        "notas": [
+          "A3",
+          "B3",
+          "C#4",
+          "D4",
+          "E4",
+          "F#4",
+          "G#4",
+          "A4"
+        ],
+        "tempo": 132,
+        "respuesta": "mayor"
+      },
+      {
+        "notas": [
+          "A3",
+          "B3",
+          "C4",
+          "D4",
+          "E4",
+          "F4",
+          "G4",
+          "A4"
+        ],
+        "tempo": 132,
+        "respuesta": "menor"
+      },
+      {
+        "notas": [
+          "G3",
+          "A3",
+          "Bb3",
+          "C4",
+          "D4",
+          "Eb4",
+          "F4",
+          "G4"
+        ],
+        "tempo": 132,
+        "respuesta": "menor"
+      },
+      {
+        "notas": [
+          "G3",
+          "A3",
+          "B3",
+          "C4",
+          "D4",
+          "E4",
+          "F#4",
+          "G4"
+        ],
+        "tempo": 132,
+        "respuesta": "mayor"
+      }
+    ],
+    "instrumento": "piano"
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c318.enunciado",
+  "personaje": "simon",
+  "pistas": [
+    "actividad.c318.pista1",
+    "actividad.c318.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Melodías y ritmos de ejemplo",
+      "autor": "Cascabel",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

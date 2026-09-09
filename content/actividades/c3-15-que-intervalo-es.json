@@ -1,0 +1,167 @@
+{
+  "id": "c3-15-que-intervalo-es",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Qué intervalo es?",
+  "descripcion": "Dos notas seguidas: segunda, tercera, quinta u octava. Cuatro intervalos que se distinguen bien y bastan para leer casi cualquier melodía.",
+  "etapa": "primaria-c3",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c315.consigna",
+    "opciones": [
+      {
+        "clave": "segunda",
+        "signo": "2ª",
+        "color": "verde"
+      },
+      {
+        "clave": "tercera",
+        "signo": "3ª",
+        "color": "azul"
+      },
+      {
+        "clave": "quinta",
+        "signo": "5ª",
+        "color": "amarillo"
+      },
+      {
+        "clave": "octava",
+        "signo": "8ª",
+        "color": "rojo"
+      }
+    ],
+    "estimulos": [
+      {
+        "notas": [
+          "C4",
+          "D4"
+        ],
+        "respuesta": "segunda"
+      },
+      {
+        "notas": [
+          "C4",
+          "G4"
+        ],
+        "respuesta": "quinta"
+      },
+      {
+        "notas": [
+          "C4",
+          "E4"
+        ],
+        "respuesta": "tercera"
+      },
+      {
+        "notas": [
+          "C4",
+          "C5"
+        ],
+        "respuesta": "octava"
+      },
+      {
+        "notas": [
+          "G4",
+          "B4"
+        ],
+        "respuesta": "tercera"
+      },
+      {
+        "notas": [
+          "E4",
+          "F#4"
+        ],
+        "respuesta": "segunda"
+      },
+      {
+        "notas": [
+          "D4",
+          "D5"
+        ],
+        "respuesta": "octava"
+      },
+      {
+        "notas": [
+          "D4",
+          "A4"
+        ],
+        "respuesta": "quinta"
+      },
+      {
+        "notas": [
+          "A3",
+          "C4"
+        ],
+        "respuesta": "tercera"
+      },
+      {
+        "notas": [
+          "F4",
+          "C5"
+        ],
+        "respuesta": "quinta"
+      },
+      {
+        "notas": [
+          "G4",
+          "A4"
+        ],
+        "respuesta": "segunda"
+      },
+      {
+        "notas": [
+          "E4",
+          "E5"
+        ],
+        "respuesta": "octava"
+      }
+    ],
+    "instrumento": "piano"
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c315.enunciado",
+  "personaje": "simon",
+  "pistas": [
+    "actividad.c315.pista1",
+    "actividad.c315.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Melodías y ritmos de ejemplo",
+      "autor": "Cascabel",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

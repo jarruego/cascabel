@@ -1,0 +1,334 @@
+{
+  "id": "c3-20-que-compas-es",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Qué compás es?",
+  "descripcion": "Dos por cuatro, tres por cuatro, cuatro por cuatro o seis por ocho, a oído: dónde cae el acento y cuántos pulsos hay hasta el siguiente.",
+  "etapa": "primaria-c3",
+  "eje": "notacion",
+  "lugar": "pantalla",
+  "duracion_min": 9,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "tempo": 108
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c320.consigna",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el 6/8 se hace sonar con seis corcheas y acento en la primera y la cuarta, que es su subdivisión ternaria; el 4/4 lleva acento solo en el uno, sin el acento secundario del tres, para no confundirlo con dos compases de 2/4.",
+    "opciones": [
+      {
+        "clave": "dosporcuatro",
+        "signo": "2/4",
+        "color": "azul"
+      },
+      {
+        "clave": "tresporcuatro",
+        "signo": "3/4",
+        "color": "verde"
+      },
+      {
+        "clave": "cuatro",
+        "signo": "4/4",
+        "color": "amarillo"
+      },
+      {
+        "clave": "seis",
+        "signo": "6/8",
+        "color": "rojo"
+      }
+    ],
+    "estimulos": [
+      {
+        "ritmo": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "acentos": [
+          0,
+          3,
+          6
+        ],
+        "tempo": 120,
+        "respuesta": "tresporcuatro"
+      },
+      {
+        "ritmo": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "acentos": [
+          0,
+          2,
+          4,
+          6
+        ],
+        "tempo": 108,
+        "respuesta": "dosporcuatro"
+      },
+      {
+        "ritmo": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "acentos": [
+          0,
+          3,
+          6,
+          9
+        ],
+        "tempo": 84,
+        "respuesta": "seisporocho"
+      },
+      {
+        "ritmo": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "acentos": [
+          0,
+          4,
+          8
+        ],
+        "tempo": 112,
+        "respuesta": "cuatroporcuatro"
+      },
+      {
+        "ritmo": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "acentos": [
+          0,
+          2,
+          4,
+          6
+        ],
+        "tempo": 124,
+        "respuesta": "dosporcuatro"
+      },
+      {
+        "ritmo": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "acentos": [
+          0,
+          3,
+          6,
+          9
+        ],
+        "tempo": 92,
+        "respuesta": "seisporocho"
+      },
+      {
+        "ritmo": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "acentos": [
+          0,
+          4,
+          8
+        ],
+        "tempo": 100,
+        "respuesta": "cuatroporcuatro"
+      },
+      {
+        "ritmo": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "acentos": [
+          0,
+          3,
+          6
+        ],
+        "tempo": 132,
+        "respuesta": "tresporcuatro"
+      },
+      {
+        "ritmo": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "acentos": [
+          0,
+          3,
+          6,
+          9
+        ],
+        "tempo": 76,
+        "respuesta": "seisporocho"
+      },
+      {
+        "ritmo": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "acentos": [
+          0,
+          4,
+          8
+        ],
+        "tempo": 120,
+        "respuesta": "cuatroporcuatro"
+      },
+      {
+        "ritmo": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "acentos": [
+          0,
+          3,
+          6
+        ],
+        "tempo": 104,
+        "respuesta": "tresporcuatro"
+      },
+      {
+        "ritmo": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "acentos": [
+          0,
+          2,
+          4,
+          6
+        ],
+        "tempo": 96,
+        "respuesta": "dosporcuatro"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c320.enunciado",
+  "personaje": "sol",
+  "pistas": [
+    "actividad.c320.pista1",
+    "actividad.c320.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

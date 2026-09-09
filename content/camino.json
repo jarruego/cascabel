@@ -1,6 +1,6 @@
 {
   "$comment": "El camino sugerido. NO es un itinerario obligatorio y no bloquea nada: cualquier actividad se puede abrir desde el primer dia, este o no marcada como hecha, y el orden es una recomendacion del maestro, no una condicion del programa (CLAUDE.md §1: «es una biblioteca, no un metodo cerrado»). Solo lista actividades que existen en content/actividades; tests/camino.test.ts lo comprueba.",
-  "generado": "2026-09-09",
+  "generado": "2026-09-10",
   "caminos": [
     {
       "etapa": "infantil",
@@ -12,7 +12,9 @@
           "idea": "Lo primero que se aprende no es un sonido: es el silencio, y que se puede estar callado a propósito.",
           "actividades": [
             "inf-01-semaforo-del-sonido",
-            "inf-02-largo-o-corto"
+            "inf-02-largo-o-corto",
+            "inf-20-rapido-o-despacio",
+            "inf-21-fuerte-o-flojito"
           ]
         },
         {
@@ -41,7 +43,8 @@
             "inf-09-eco-de-palmas",
             "inf-08-camina-corre-para",
             "inf-17-palmas-y-muslos",
-            "inf-12-danza-de-corro"
+            "inf-12-danza-de-corro",
+            "inf-22-cuantos-golpes"
           ]
         },
         {
@@ -51,7 +54,8 @@
             "inf-07-el-caracol-sube-y-baja",
             "inf-11-cancion-con-pictogramas",
             "inf-16-animales-que-bajan",
-            "inf-19-el-piano-de-la-pandilla"
+            "inf-19-el-piano-de-la-pandilla",
+            "inf-23-sube-o-baja"
           ]
         },
         {
@@ -77,7 +81,11 @@
             "c1-01-ta-y-ti-ti",
             "c1-02-palmea-el-ritmo",
             "c1-03-el-pulso-escondido",
-            "c1-21-eco-a-dos"
+            "c1-21-eco-a-dos",
+            "c1-22-cuantos-sonidos",
+            "c1-24-dictado-de-ta-y-ti-ti",
+            "c1-25-negra-o-blanca",
+            "c1-27-ordena-las-figuras"
           ]
         },
         {
@@ -86,7 +94,8 @@
           "actividades": [
             "c1-12-la-rueda-del-compas",
             "c1-15-ritmo-de-ocho",
-            "tr-02-metronomo-y-calibrador"
+            "tr-02-metronomo-y-calibrador",
+            "c1-26-vals-o-marcha"
           ]
         },
         {
@@ -103,7 +112,8 @@
           "actividades": [
             "c1-06-la-escalera-de-notas",
             "c1-18-la-escalera-que-cae",
-            "c1-07-canta-la-nota"
+            "c1-07-canta-la-nota",
+            "c1-23-paso-o-salto"
           ]
         },
         {
@@ -149,7 +159,8 @@
           "actividades": [
             "c2-01-coloca-la-nota",
             "c2-15-lee-las-figuras",
-            "tr-07-como-era-esto"
+            "tr-07-como-era-esto",
+            "c2-22-sube-baja-o-se-repite"
           ]
         },
         {
@@ -158,7 +169,11 @@
           "actividades": [
             "c2-02-dictado-ritmico",
             "c2-03-dictado-melodico",
-            "c2-06-pon-las-barras"
+            "c2-06-pon-las-barras",
+            "c2-18-dictado-de-figuras",
+            "c2-19-dos-por-cuatro-o-tres-por-cuatro",
+            "c2-25-barras-en-tres-por-cuatro",
+            "c2-26-ordena-las-cinco-figuras"
           ]
         },
         {
@@ -179,12 +194,24 @@
           ]
         },
         {
+          "titulo": "De qué está hecho el sonido",
+          "idea": "Timbre y familias: reconocer un instrumento y decir de qué familia es. En primero se oían cuatro; aquí ya son cinco y tres familias, con los del mundo al final.",
+          "actividades": [
+            "c2-17-que-instrumento-suena",
+            "c2-24-familias-de-instrumentos",
+            "c2-11-instrumentos-del-mundo"
+          ]
+        },
+        {
           "titulo": "Forma y carácter",
           "idea": "Que una obra tiene partes, y que la velocidad cambia lo que cuenta.",
           "actividades": [
             "c2-08-ordena-el-rondo",
             "c2-09-adagio-andante-allegro",
-            "c2-11-instrumentos-del-mundo"
+            "c2-20-forte-o-piano",
+            "c2-21-ligado-o-picado",
+            "c2-23-termina-o-se-queda-a-medias",
+            "c2-28-vals-marcha-o-tango"
           ]
         },
         {
@@ -209,7 +236,11 @@
           "idea": "La distancia entre dos notas explica por qué una escala suena alegre y otra triste. Es la primera idea abstracta del camino.",
           "actividades": [
             "c3-01-tonos-y-semitonos",
-            "c3-05-mayor-o-menor"
+            "c3-05-mayor-o-menor",
+            "c3-15-que-intervalo-es",
+            "c3-16-tono-o-semitono",
+            "c3-17-sostenido-o-bemol",
+            "c3-18-escala-mayor-o-menor"
           ]
         },
         {
@@ -220,7 +251,9 @@
             "c3-10-ritmo-de-doce",
             "c3-13-los-cuatro-sonidos",
             "c3-06-el-seis-por-ocho",
-            "c3-14-eco-largo"
+            "c3-14-eco-largo",
+            "c3-20-que-compas-es",
+            "c3-29-empieza-en-el-fuerte-o-antes"
           ]
         },
         {
@@ -229,7 +262,26 @@
           "actividades": [
             "c3-04-mapa-de-una-obra",
             "c3-09-la-serie-armonica",
-            "tr-09-quien-es-quien"
+            "tr-09-quien-es-quien",
+            "c3-21-crescendo-o-diminuendo",
+            "c3-27-los-instrumentos-por-familias"
+          ]
+        },
+        {
+          "titulo": "Un viaje por la historia",
+          "idea": "Seis épocas en orden, diez escenas para colocarlas, y siete melodías que casi todo el mundo ha oído sin saber de quién eran. Es la parte de cultura que el criterio 1.2 pide y que más fácil es de saltarse.",
+          "actividades": [
+            "c3-22-ordena-las-epocas",
+            "c3-23-de-que-epoca-es",
+            "c3-24-quien-compuso-esta-melodia"
+          ]
+        },
+        {
+          "titulo": "Bailes y estilos",
+          "idea": "Un baile es un compás que se ve. El de doce del flamenco se cuenta y se palmea, y los demás se oyen con su ritmo debajo.",
+          "actividades": [
+            "c3-25-el-compas-de-doce",
+            "c3-26-bailes-y-compases"
           ]
         },
         {

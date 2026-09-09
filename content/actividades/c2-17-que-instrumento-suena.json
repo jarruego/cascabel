@@ -1,0 +1,120 @@
+{
+  "id": "c2-17-que-instrumento-suena",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Qué instrumento suena?",
+  "descripcion": "Violín, flauta, piano, guitarra y xilófono. Suena uno y hay que decir cuál; cada uno suena en dos notas distintas.",
+  "etapa": "primaria-c2",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.2",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c217.consigna",
+    "opciones": [
+      {
+        "clave": "violin",
+        "icono": "violin",
+        "color": "morado"
+      },
+      {
+        "clave": "flauta",
+        "color": "azul"
+      },
+      {
+        "clave": "piano",
+        "icono": "teclado",
+        "color": "verde"
+      },
+      {
+        "clave": "guitarra",
+        "icono": "guitarra",
+        "color": "amarillo"
+      },
+      {
+        "clave": "xilofono",
+        "color": "rojo"
+      }
+    ],
+    "estimulos": [
+      {
+        "audio": "muestras/violin/c4.opus",
+        "respuesta": "violin"
+      },
+      {
+        "audio": "muestras/flauta/c4.opus",
+        "respuesta": "flauta"
+      },
+      {
+        "audio": "muestras/piano/c4.opus",
+        "respuesta": "piano"
+      },
+      {
+        "audio": "muestras/guitarra/c4.opus",
+        "respuesta": "guitarra"
+      },
+      {
+        "audio": "muestras/xilofono/c4.opus",
+        "respuesta": "xilofono"
+      },
+      {
+        "audio": "muestras/flauta/a4.opus",
+        "respuesta": "flauta"
+      },
+      {
+        "audio": "muestras/xilofono/a4.opus",
+        "respuesta": "xilofono"
+      },
+      {
+        "audio": "muestras/violin/a4.opus",
+        "respuesta": "violin"
+      },
+      {
+        "audio": "muestras/guitarra/a4.opus",
+        "respuesta": "guitarra"
+      },
+      {
+        "audio": "muestras/piano/a4.opus",
+        "respuesta": "piano"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c217.enunciado",
+  "personaje": "rex",
+  "pistas": [
+    "actividad.c217.pista1",
+    "actividad.c217.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

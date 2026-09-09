@@ -1,0 +1,213 @@
+{
+  "id": "c2-23-termina-o-se-queda-a-medias",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Termina o se queda a medias?",
+  "descripcion": "Una frase que acaba en la nota de casa suena a punto final; una que se para en otra, a pregunta. Es la primera idea de forma: la pregunta y la respuesta.",
+  "etapa": "primaria-c2",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.1",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c223.consigna",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: las frases que «terminan» acaban en do (la tónica) y las que «se quedan a medias» acaban en sol (la dominante), que es la explicación convencional de antecedente y consecuente. Son melodías propias y no de repertorio.",
+    "opciones": [
+      {
+        "clave": "termina",
+        "icono": "fin",
+        "color": "verde"
+      },
+      {
+        "clave": "amedias",
+        "icono": "pausa",
+        "color": "amarillo"
+      }
+    ],
+    "estimulos": [
+      {
+        "notas": [
+          "C4",
+          "D4",
+          "E4",
+          "F4",
+          "G4"
+        ],
+        "duraciones": [
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "respuesta": "amedias"
+      },
+      {
+        "notas": [
+          "G4",
+          "F4",
+          "E4",
+          "D4",
+          "C4"
+        ],
+        "duraciones": [
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "respuesta": "termina"
+      },
+      {
+        "notas": [
+          "E4",
+          "D4",
+          "E4",
+          "D4",
+          "C4"
+        ],
+        "duraciones": [
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "respuesta": "termina"
+      },
+      {
+        "notas": [
+          "C4",
+          "E4",
+          "D4",
+          "F4",
+          "G4"
+        ],
+        "duraciones": [
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "respuesta": "amedias"
+      },
+      {
+        "notas": [
+          "E4",
+          "E4",
+          "F4",
+          "G4",
+          "A4",
+          "G4"
+        ],
+        "duraciones": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "respuesta": "amedias"
+      },
+      {
+        "notas": [
+          "G4",
+          "A4",
+          "G4",
+          "E4",
+          "D4",
+          "C4"
+        ],
+        "duraciones": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "respuesta": "termina"
+      },
+      {
+        "notas": [
+          "C4",
+          "E4",
+          "G4",
+          "E4",
+          "C4"
+        ],
+        "duraciones": [
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "respuesta": "termina"
+      },
+      {
+        "notas": [
+          "G4",
+          "E4",
+          "F4",
+          "D4",
+          "G4"
+        ],
+        "duraciones": [
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "respuesta": "amedias"
+      }
+    ],
+    "instrumento": "piano"
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c223.enunciado",
+  "personaje": "simon",
+  "pistas": [
+    "actividad.c223.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Melodías y ritmos de ejemplo",
+      "autor": "Cascabel",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

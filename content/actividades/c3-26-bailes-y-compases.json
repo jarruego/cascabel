@@ -1,0 +1,276 @@
+{
+  "id": "c3-26-bailes-y-compases",
+  "version": 1,
+  "tipo": "referencia",
+  "titulo": "Bailes de España y sus compases",
+  "descripcion": "Consulta de bailes y de su compás, con el ritmo sonando: vals, pasodoble, jota, muiñeira, sardana, sevillanas, habanera, chotis y bulería.",
+  "etapa": "primaria-c3",
+  "eje": "cultura",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.2",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c326.consigna",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: los compases son los de manual —pasodoble en 2/4, jota y sevillanas en 3/4, muiñeira y sardana en 6/8, chotis en 4/4, habanera en 2/4 con su célula de corchea con puntillo—; varios de estos bailes se escriben también en otros compases según la región o la fuente, y aquí se ha elegido uno por baile para no confundir.",
+    "secciones": [
+      {
+        "titulo": "Los que van de dos en dos",
+        "entradas": [
+          {
+            "termino": "Pasodoble · 2/4",
+            "explicacion": "El de las plazas y las bandas. Se marcha con él: un pie en cada pulso.",
+            "patron": [
+              "bombo",
+              "caja",
+              "bombo",
+              "caja",
+              "bombo",
+              "caja",
+              "bombo",
+              "caja"
+            ],
+            "acentos": [
+              0,
+              2,
+              4,
+              6
+            ],
+            "tempo": 116
+          },
+          {
+            "termino": "Habanera · 2/4",
+            "explicacion": "Vino de Cuba y de ahí salió el tango. Su ritmo cojea: el segundo golpe llega tarde.",
+            "patron": [
+              "bombo",
+              "",
+              "",
+              "caja",
+              "bombo",
+              "",
+              "caja",
+              "",
+              "bombo",
+              "",
+              "",
+              "caja",
+              "bombo",
+              "",
+              "caja",
+              ""
+            ],
+            "celda": 0.25,
+            "acentos": [
+              0,
+              8
+            ],
+            "tempo": 88
+          },
+          {
+            "termino": "Chotis · 4/4",
+            "explicacion": "El baile de Madrid, que llegó de Escocia pasando por toda Europa. Lento y de cuatro pulsos.",
+            "patron": [
+              "bombo",
+              "caja",
+              "bombo",
+              "caja",
+              "bombo",
+              "caja",
+              "bombo",
+              "caja"
+            ],
+            "acentos": [
+              0,
+              4
+            ],
+            "tempo": 84
+          }
+        ]
+      },
+      {
+        "titulo": "Los que van de tres en tres",
+        "entradas": [
+          {
+            "termino": "Vals · 3/4",
+            "explicacion": "Un pulso fuerte y dos suaves, dando vueltas. Nació en Austria y está en todas partes.",
+            "patron": [
+              "bombo",
+              "caja",
+              "caja",
+              "bombo",
+              "caja",
+              "caja",
+              "bombo",
+              "caja",
+              "caja"
+            ],
+            "acentos": [
+              0,
+              3,
+              6
+            ],
+            "tempo": 138
+          },
+          {
+            "termino": "Jota · 3/4",
+            "explicacion": "Rápida y saltada, con castañuelas. La hay en Aragón, Navarra, Castilla, Valencia...",
+            "patron": [
+              "bombo",
+              "claves",
+              "claves",
+              "bombo",
+              "claves",
+              "claves",
+              "bombo",
+              "claves",
+              "claves"
+            ],
+            "acentos": [
+              0,
+              3,
+              6
+            ],
+            "tempo": 160
+          },
+          {
+            "termino": "Sevillanas · 3/4",
+            "explicacion": "Cuatro coplas iguales, y se bailan en pareja. Tres pulsos, con el primero fuerte.",
+            "patron": [
+              "bombo",
+              "claves",
+              "claves",
+              "bombo",
+              "claves",
+              "claves",
+              "bombo",
+              "claves",
+              "claves"
+            ],
+            "acentos": [
+              0,
+              3,
+              6
+            ],
+            "tempo": 144
+          }
+        ]
+      },
+      {
+        "titulo": "Los de seis por ocho",
+        "entradas": [
+          {
+            "termino": "Muiñeira · 6/8",
+            "explicacion": "La danza gallega, con gaita. Seis corcheas de dos en tres: UNO-dos-tres CUATRO-cinco-seis.",
+            "patron": [
+              "bombo",
+              "claves",
+              "claves",
+              "caja",
+              "claves",
+              "claves",
+              "bombo",
+              "claves",
+              "claves",
+              "caja",
+              "claves",
+              "claves"
+            ],
+            "celda": 0.5,
+            "acentos": [
+              0,
+              3,
+              6,
+              9
+            ],
+            "tempo": 96
+          },
+          {
+            "termino": "Sardana · 6/8",
+            "explicacion": "En corro y cogidos de la mano, en Cataluña. La cobla la toca con flabiol y tenora.",
+            "patron": [
+              "bombo",
+              "claves",
+              "claves",
+              "caja",
+              "claves",
+              "claves",
+              "bombo",
+              "claves",
+              "claves",
+              "caja",
+              "claves",
+              "claves"
+            ],
+            "celda": 0.5,
+            "acentos": [
+              0,
+              3,
+              6,
+              9
+            ],
+            "tempo": 88
+          }
+        ]
+      },
+      {
+        "titulo": "El compás de doce",
+        "entradas": [
+          {
+            "termino": "Bulería · 12 tiempos",
+            "explicacion": "Flamenco. Doce tiempos con los fuertes en el 3, el 6, el 8, el 10 y el 12: se palmea contando.",
+            "patron": [
+              "claves",
+              "claves",
+              "caja",
+              "claves",
+              "claves",
+              "caja",
+              "claves",
+              "caja",
+              "claves",
+              "caja",
+              "claves",
+              "caja"
+            ],
+            "acentos": [
+              2,
+              5,
+              7,
+              9,
+              11
+            ],
+            "tempo": 180
+          }
+        ]
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c326.enunciado",
+  "personaje": "sol",
+  "herramienta": true,
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

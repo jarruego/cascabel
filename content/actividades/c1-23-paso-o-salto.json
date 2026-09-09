@@ -1,0 +1,128 @@
+{
+  "id": "c1-23-paso-o-salto",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Paso o salto?",
+  "descripcion": "Dos notas: o están al lado (un paso) o lejos (un salto). El primer intervalo, sin llamarlo así.",
+  "etapa": "primaria-c1",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.1",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c123.consigna",
+    "opciones": [
+      {
+        "clave": "paso",
+        "icono": "andando",
+        "color": "verde"
+      },
+      {
+        "clave": "salto",
+        "icono": "conejo",
+        "color": "rojo"
+      }
+    ],
+    "estimulos": [
+      {
+        "notas": [
+          "C4",
+          "D4"
+        ],
+        "respuesta": "paso"
+      },
+      {
+        "notas": [
+          "C4",
+          "G4"
+        ],
+        "respuesta": "salto"
+      },
+      {
+        "notas": [
+          "D4",
+          "A4"
+        ],
+        "respuesta": "salto"
+      },
+      {
+        "notas": [
+          "E4",
+          "F4"
+        ],
+        "respuesta": "paso"
+      },
+      {
+        "notas": [
+          "G4",
+          "A4"
+        ],
+        "respuesta": "paso"
+      },
+      {
+        "notas": [
+          "E4",
+          "B4"
+        ],
+        "respuesta": "salto"
+      },
+      {
+        "notas": [
+          "C4",
+          "A4"
+        ],
+        "respuesta": "salto"
+      },
+      {
+        "notas": [
+          "A4",
+          "B4"
+        ],
+        "respuesta": "paso"
+      }
+    ],
+    "instrumento": "xilofono"
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c123.enunciado",
+  "personaje": "rex",
+  "pistas": [
+    "actividad.c123.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Melodías y ritmos de ejemplo",
+      "autor": "Cascabel",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

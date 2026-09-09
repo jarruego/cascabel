@@ -1,0 +1,120 @@
+{
+  "id": "inf-23-sube-o-baja",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Sube o baja?",
+  "descripcion": "Tres notas seguidas: o van subiendo o van bajando. La escalera de sonidos, para oírla antes de dibujarla.",
+  "etapa": "infantil",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 5,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": "CE2",
+    "criterio": "2.1",
+    "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.inf23.consigna",
+    "opciones": [
+      {
+        "clave": "sube",
+        "icono": "flecha-arriba",
+        "color": "verde"
+      },
+      {
+        "clave": "baja",
+        "icono": "flecha-abajo",
+        "color": "azul"
+      }
+    ],
+    "estimulos": [
+      {
+        "notas": [
+          "D4",
+          "F4",
+          "A4"
+        ],
+        "respuesta": "sube"
+      },
+      {
+        "notas": [
+          "A4",
+          "F4",
+          "D4"
+        ],
+        "respuesta": "baja"
+      },
+      {
+        "notas": [
+          "G4",
+          "E4",
+          "D4"
+        ],
+        "respuesta": "baja"
+      },
+      {
+        "notas": [
+          "E4",
+          "G4",
+          "A4"
+        ],
+        "respuesta": "sube"
+      },
+      {
+        "notas": [
+          "D4",
+          "E4",
+          "G4"
+        ],
+        "respuesta": "sube"
+      },
+      {
+        "notas": [
+          "A4",
+          "G4",
+          "E4"
+        ],
+        "respuesta": "baja"
+      }
+    ],
+    "instrumento": "xilofono"
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.inf23.enunciado",
+  "personaje": "rex",
+  "pistas": [
+    "actividad.inf23.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Melodías y ritmos de ejemplo",
+      "autor": "Cascabel",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

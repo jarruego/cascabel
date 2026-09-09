@@ -1,0 +1,64 @@
+{
+  "id": "c2-25-barras-en-tres-por-cuatro",
+  "version": 1,
+  "tipo": "compases",
+  "titulo": "Pon las barras en 3/4",
+  "descripcion": "Una línea de figuras en tres por cuatro, y hay que poner las barras donde los pulsos suman tres. Como la de 4/4, pero contando de tres en tres.",
+  "etapa": "primaria-c2",
+  "eje": "notacion",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "3/4",
+    "figuras": [
+      "negra",
+      "blanca"
+    ]
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c225.consigna",
+    "duraciones": [
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1
+    ],
+    "pulsosPorCompas": 3,
+    "figuraDelCompas": 4
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c225.enunciado",
+  "personaje": "sol",
+  "pistas": [
+    "actividad.c225.pista1",
+    "actividad.c225.pista2"
+  ],
+  "creditos": [],
+  "estado": "borrador"
+}

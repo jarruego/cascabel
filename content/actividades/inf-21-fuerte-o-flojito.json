@@ -1,0 +1,132 @@
+{
+  "id": "inf-21-fuerte-o-flojito",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Fuerte o flojito?",
+  "descripcion": "La misma música dos veces: una fuerte y otra flojita. Es la intensidad, la cualidad del sonido que falta en el resto de Infantil.",
+  "etapa": "infantil",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 5,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": "CE2",
+    "criterio": "2.1",
+    "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.inf21.consigna",
+    "opciones": [
+      {
+        "clave": "fuerte",
+        "icono": "leon",
+        "color": "rojo"
+      },
+      {
+        "clave": "flojito",
+        "icono": "gato",
+        "color": "verde"
+      }
+    ],
+    "estimulos": [
+      {
+        "notas": [
+          "E4",
+          "G4",
+          "E4",
+          "G4"
+        ],
+        "volumen": 1,
+        "respuesta": "fuerte"
+      },
+      {
+        "notas": [
+          "E4",
+          "G4",
+          "E4",
+          "G4"
+        ],
+        "volumen": 0.18,
+        "respuesta": "flojito"
+      },
+      {
+        "notas": [
+          "G4",
+          "E4",
+          "D4",
+          "E4"
+        ],
+        "volumen": 0.18,
+        "respuesta": "flojito"
+      },
+      {
+        "notas": [
+          "G4",
+          "E4",
+          "D4",
+          "E4"
+        ],
+        "volumen": 1,
+        "respuesta": "fuerte"
+      },
+      {
+        "notas": [
+          "D4",
+          "E4",
+          "G4",
+          "A4"
+        ],
+        "volumen": 1,
+        "respuesta": "fuerte"
+      },
+      {
+        "notas": [
+          "D4",
+          "E4",
+          "G4",
+          "A4"
+        ],
+        "volumen": 0.18,
+        "respuesta": "flojito"
+      }
+    ],
+    "instrumento": "xilofono"
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.inf21.enunciado",
+  "personaje": "fara",
+  "pistas": [
+    "actividad.inf21.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Melodías y ritmos de ejemplo",
+      "autor": "Cascabel",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

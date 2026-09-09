@@ -1,9 +1,7 @@
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { useCarril } from '@/app/preferencias';
-import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
-import { Sampler } from '@/audio/sampler';
-import { muestrasDe } from '@/audio/instrumentos';
-import { clic } from '@/audio/clic';
+import { obtenerContexto } from '@/audio/AudioEngine';
+import { sonarEstimulo } from '../sonarEstimulo';
 import { IconoTocar } from '@/ui/Simbolos';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
@@ -24,8 +22,10 @@ import type { PropsActividad } from '../tipos';
  *
  *  - `notas`: se tocan con el sampler, una detrás de otra. Sirve para intervalos y para
  *    escalas —«un tono» deja de ser una palabra en cuanto se oyen las dos notas seguidas—.
- *  - `ritmo`: pulsos que se marcan con el clic del metrónomo. Es lo que convierte una
- *    figura dibujada en una duración.
+ *  - `ritmo`: pulsos que se marcan con el clic del metrónomo, con `acentos` si es un
+ *    compás. Es lo que convierte una figura dibujada en una duración.
+ *  - `patron`: golpes del kit de percusión, para los ritmos que son de un baile o de un
+ *    estilo y no de una figura.
  *
  * **El contenido vive en el JSON**, así que añadir «qué es un calderón» no toca este
  * fichero. Es la misma promesa del motor aplicada a algo que no es un ejercicio.
@@ -40,10 +40,19 @@ interface Entrada {
   signo?: string;
   /** Notas en notación científica, tocadas una detrás de otra. */
   notas?: string[];
+  /** Pulsos de cada nota. Por defecto, uno. */
+  duraciones?: number[];
   /** Duraciones en pulsos, marcadas con el clic. */
   ritmo?: number[];
+  /** Índices del ritmo o del patrón que llevan acento: es lo que hace un compás. */
+  acentos?: number[];
+  /** Golpes del kit, una celda por pulso. Ver `motor/estimulo.ts`. */
+  patron?: string[];
+  celda?: number;
   /** A qué velocidad se toca el ritmo. Por defecto, 84. */
   tempo?: number;
+  /** Timbre de ESTA entrada, si no es el de la actividad: la referencia de instrumentos. */
+  instrumento?: string;
 }
 
 interface Seccion {
@@ -62,44 +71,32 @@ export default function Referencia({ actividad }: PropsActividad) {
   const carril = useCarril(actividad.etapa);
   const [busqueda, setBusqueda] = useState('');
   const [sonando, setSonando] = useState<string | null>(null);
-  const sampler = useRef<Sampler | null>(null);
 
+  /*
+    Suena por el mismo camino que los estímulos de «elección»: `sonarEstimulo`. Antes esto
+    tenía su propio sampler y su propio bucle de clics, y en cuanto hizo falta un acento —un
+    tres por cuatro no se explica sin él— o un timbre distinto por entrada, tocaba escribirlo
+    dos veces. Ahora una entrada de referencia y un estímulo de pregunta son la misma cosa
+    descrita en el JSON.
+  */
   const sonar = useCallback(
     async (entrada: Entrada) => {
       setSonando(entrada.termino);
-      const segundosPorPulso = 60 / (entrada.tempo ?? 84);
-      try {
-        await despertarAudio();
-        const ctx = obtenerContexto();
-        const desde = ctx.currentTime + 0.1;
-
-        if (entrada.ritmo) {
-          // El clic y no una nota: aquí lo que se enseña es la duración, y una altura
-          // metería una información que no viene al caso.
-          let t0 = desde;
-          for (const pulsos of entrada.ritmo) {
-            clic(t0, false);
-            t0 += pulsos * segundosPorPulso;
-          }
-        }
-        if (entrada.notas?.length) {
-          if (!sampler.current) {
-            const s = new Sampler(muestrasDe(contenido.instrumento));
-            await s.cargar();
-            sampler.current = s;
-          }
-          entrada.notas.forEach((nota, i) => {
-            sampler.current?.tocar(nota, desde + i * segundosPorPulso * 0.9, 0.85);
-          });
-        }
-      } catch {
-        // Sin muestras la entrada sigue leyéndose. Una referencia que no suena sigue
-        // sirviendo; una que se rompe al abrirla, no.
-      }
-      const total =
-        ((entrada.ritmo?.reduce((a, b) => a + b, 0) ?? 0) + (entrada.notas?.length ?? 0)) *
-        segundosPorPulso;
-      window.setTimeout(() => setSonando(null), total * 1000 + 400);
+      const fin = await sonarEstimulo(
+        {
+          notas: entrada.notas,
+          duraciones: entrada.duraciones,
+          ritmo: entrada.ritmo,
+          acentos: entrada.acentos,
+          patron: entrada.patron,
+          celda: entrada.celda,
+          tempo: entrada.tempo,
+          respuesta: '',
+        },
+        { instrumento: entrada.instrumento ?? contenido.instrumento, tempo: 84 },
+      );
+      const dura = fin === null ? 600 : Math.max(400, (fin - obtenerContexto().currentTime) * 1000);
+      window.setTimeout(() => setSonando((s) => (s === entrada.termino ? null : s)), dura);
     },
     [contenido.instrumento],
   );

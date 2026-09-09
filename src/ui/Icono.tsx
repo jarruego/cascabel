@@ -38,6 +38,11 @@ const DISPONIBLES = new Set([
   'raton', 'reproducir', 'silencio', 'sol', 'tambor',
   'tambor-grande', 'teclado', 'tortuga', 'trompeta', 'unicornio',
   'violin', 'voz',
+  // Añadidos el 2026-09-10 para las actividades de lenguaje, historia y estilos.
+  'flecha-arriba', 'flecha-abajo', 'igual', 'fuerte', 'flojo',
+  'castillo', 'pluma', 'corona', 'corazon', 'radio',
+  'bailarina', 'bailarin', 'palmas',
+  'uno', 'dos', 'tres', 'cuatro',
 ]);
 
 /** Nombres antiguos que ya se usaban en los JSON de contenido. */

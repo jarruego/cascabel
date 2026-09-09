@@ -1,0 +1,167 @@
+{
+  "id": "c1-22-cuantos-sonidos",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Cuántos sonidos?",
+  "descripcion": "De uno a cuatro sonidos seguidos, y hay que contarlos. Con corcheas es más difícil que con negras, y eso es a propósito.",
+  "etapa": "primaria-c1",
+  "eje": "pulso",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.1",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c122.consigna",
+    "opciones": [
+      {
+        "clave": "uno",
+        "icono": "uno",
+        "color": "verde"
+      },
+      {
+        "clave": "dos",
+        "icono": "dos",
+        "color": "azul"
+      },
+      {
+        "clave": "tres",
+        "icono": "tres",
+        "color": "rojo"
+      },
+      {
+        "clave": "cuatro",
+        "icono": "cuatro",
+        "color": "amarillo"
+      }
+    ],
+    "estimulos": [
+      {
+        "notas": [
+          "G4",
+          "G4",
+          "G4"
+        ],
+        "respuesta": "tres"
+      },
+      {
+        "notas": [
+          "E4",
+          "G4"
+        ],
+        "respuesta": "dos"
+      },
+      {
+        "notas": [
+          "G4",
+          "E4",
+          "G4",
+          "E4"
+        ],
+        "respuesta": "cuatro"
+      },
+      {
+        "notas": [
+          "A4"
+        ],
+        "respuesta": "uno"
+      },
+      {
+        "notas": [
+          "G4",
+          "G4",
+          "E4",
+          "E4"
+        ],
+        "duraciones": [
+          0.5,
+          0.5,
+          1,
+          1
+        ],
+        "respuesta": "cuatro"
+      },
+      {
+        "notas": [
+          "E4",
+          "G4",
+          "A4"
+        ],
+        "duraciones": [
+          0.5,
+          0.5,
+          1
+        ],
+        "respuesta": "tres"
+      },
+      {
+        "notas": [
+          "A4",
+          "G4"
+        ],
+        "duraciones": [
+          0.5,
+          0.5
+        ],
+        "respuesta": "dos"
+      },
+      {
+        "notas": [
+          "G4",
+          "A4",
+          "G4",
+          "E4"
+        ],
+        "duraciones": [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "respuesta": "cuatro"
+      }
+    ],
+    "instrumento": "xilofono"
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c122.enunciado",
+  "personaje": "milo",
+  "pistas": [
+    "actividad.c122.pista1",
+    "actividad.c122.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Melodías y ritmos de ejemplo",
+      "autor": "Cascabel",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

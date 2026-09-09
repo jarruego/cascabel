@@ -1,0 +1,94 @@
+{
+  "id": "c1-27-ordena-las-figuras",
+  "version": 1,
+  "tipo": "ordenar",
+  "titulo": "De la más corta a la más larga",
+  "descripcion": "Corchea, negra y blanca, y hay que ponerlas en orden de duración. Cada ficha suena: tres golpes con su hueco.",
+  "etapa": "primaria-c1",
+  "eje": "notacion",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "tempo": 84,
+    "figuras": [
+      "corchea",
+      "negra",
+      "blanca"
+    ]
+  },
+  "entrada": {
+    "modo": "toque-secuencial",
+    "alternativa": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c127.consigna",
+    "elementos": [
+      {
+        "clave": "negra",
+        "signo": "𝅘𝅥",
+        "etiqueta": "figura.negra",
+        "ritmo": [
+          1,
+          1,
+          1
+        ],
+        "color": "vivo-azul"
+      },
+      {
+        "clave": "blanca",
+        "signo": "𝅗𝅥",
+        "etiqueta": "figura.blanca",
+        "ritmo": [
+          2,
+          2,
+          2
+        ],
+        "color": "vivo-verde"
+      },
+      {
+        "clave": "corchea",
+        "signo": "𝅘𝅥𝅮",
+        "etiqueta": "figura.corchea",
+        "ritmo": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "color": "vivo-rojo"
+      }
+    ],
+    "orden": [
+      "corchea",
+      "negra",
+      "blanca"
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c127.enunciado",
+  "personaje": "dora",
+  "pistas": [
+    "actividad.c127.pista1",
+    "actividad.c127.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

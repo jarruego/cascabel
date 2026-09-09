@@ -752,6 +752,20 @@ p {
 .boton--rojo { color: var(--acento); border-color: var(--acento); }
 .boton--amarillo { color: var(--eje-creacion); border-color: var(--eje-creacion); }
 .boton__texto { color: var(--tinta); font-weight: 700; }
+/*
+  El signo musical, cuando la opción ES notación: una corchea, un sostenido, un «2/4». Va
+  con Bravura, como en la referencia, y del tamaño de un dibujo: es lo que se toca.
+*/
+.boton__signo {
+  font-family: var(--f-musica);
+  line-height: 1.1;
+  color: var(--tinta);
+}
+/* Sin dibujo ni signo, el texto es el botón entero y tiene que leerse de lejos. */
+.boton__texto[data-solo] {
+  font-size: var(--t-l);
+  padding: var(--e-2) 0;
+}
 
 /* ── emparejar ─────────────────────────────────────────────────────────────
    Dos columnas y toque sucesivo. Nada arrastrable: WCAG 2.5.7, y por debajo de

@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-09",
-  "total": 78,
+  "total": 112,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -383,6 +383,120 @@
       "herramienta": false
     },
     {
+      "id": "c1-22-cuantos-sonidos",
+      "titulo": "¿Cuántos sonidos?",
+      "descripcion": "De uno a cuatro sonidos seguidos, y hay que contarlos. Con corcheas es más difícil que con negras, y eso es a propósito.",
+      "etapa": "primaria-c1",
+      "eje": "pulso",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c1-23-paso-o-salto",
+      "titulo": "¿Paso o salto?",
+      "descripcion": "Dos notas: o están al lado (un paso) o lejos (un salto). El primer intervalo, sin llamarlo así.",
+      "etapa": "primaria-c1",
+      "eje": "altura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c1-24-dictado-de-ta-y-ti-ti",
+      "titulo": "Dictado de ta y ti-ti",
+      "descripcion": "Suenan cuatro pulsos con negras y corcheas, y hay que elegir cómo se escriben. Es el primer dictado, con solo dos figuras.",
+      "etapa": "primaria-c1",
+      "eje": "notacion",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 7,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c1-25-negra-o-blanca",
+      "titulo": "¿Negra o blanca?",
+      "descripcion": "Suenan figuras iguales seguidas: o son negras, de un pulso, o blancas, de dos. La duración se oye en el hueco entre golpes.",
+      "etapa": "primaria-c1",
+      "eje": "notacion",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c1-26-vals-o-marcha",
+      "titulo": "¿Vals o marcha?",
+      "descripcion": "Bombo y caja tocan un vals o una marcha. El vals va de tres en tres y la marcha de dos en dos: es el compás, sentido antes que escrito.",
+      "etapa": "primaria-c1",
+      "eje": "pulso",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c1-27-ordena-las-figuras",
+      "titulo": "De la más corta a la más larga",
+      "descripcion": "Corchea, negra y blanca, y hay que ponerlas en orden de duración. Cada ficha suena: tres golpes con su hueco.",
+      "etapa": "primaria-c1",
+      "eje": "notacion",
+      "tipo": "ordenar",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
       "id": "c2-01-coloca-la-nota",
       "titulo": "Coloca la nota en el pentagrama",
       "descripcion": "Clave de sol, y una nota que hay que situar en su línea o su espacio. Nota dibujada pequeña, zona de toque grande.",
@@ -687,6 +801,215 @@
       "herramienta": false
     },
     {
+      "id": "c2-17-que-instrumento-suena",
+      "titulo": "¿Qué instrumento suena?",
+      "descripcion": "Violín, flauta, piano, guitarra y xilófono. Suena uno y hay que decir cuál; cada uno suena en dos notas distintas.",
+      "etapa": "primaria-c2",
+      "eje": "timbre",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c2-18-dictado-de-figuras",
+      "titulo": "Dictado de figuras",
+      "descripcion": "Un compás de cuatro pulsos con negras, blancas, corcheas y un silencio, y cuatro formas de escribirlo. Solo una es la que ha sonado.",
+      "etapa": "primaria-c2",
+      "eje": "notacion",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c2-19-dos-por-cuatro-o-tres-por-cuatro",
+      "titulo": "¿2/4 o 3/4?",
+      "descripcion": "Suenan dos compases con el acento marcado, y hay que decir si los pulsos van de dos en dos o de tres en tres.",
+      "etapa": "primaria-c2",
+      "eje": "notacion",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 7,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c2-20-forte-o-piano",
+      "titulo": "¿Forte o piano?",
+      "descripcion": "La misma frase, fuerte o suave. Forte y piano son las dos palabras de intensidad que se leen en cualquier partitura.",
+      "etapa": "primaria-c2",
+      "eje": "timbre",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c2-21-ligado-o-picado",
+      "titulo": "¿Ligado o picado?",
+      "descripcion": "Cinco notas ligadas, como un delfín, o picadas, como una rana. La articulación, que cambia el carácter sin cambiar las notas.",
+      "etapa": "primaria-c2",
+      "eje": "timbre",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c2-22-sube-baja-o-se-repite",
+      "titulo": "¿Sube, baja o se repite?",
+      "descripcion": "Una frase de cuatro o cinco notas: sube, baja o repite la misma. Es la dirección de la melodía, que es lo primero que se lee en un pentagrama.",
+      "etapa": "primaria-c2",
+      "eje": "altura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c2-23-termina-o-se-queda-a-medias",
+      "titulo": "¿Termina o se queda a medias?",
+      "descripcion": "Una frase que acaba en la nota de casa suena a punto final; una que se para en otra, a pregunta. Es la primera idea de forma: la pregunta y la respuesta.",
+      "etapa": "primaria-c2",
+      "eje": "altura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c2-24-familias-de-instrumentos",
+      "titulo": "Familias de instrumentos",
+      "descripcion": "Cuerda, viento o percusión. Suena un instrumento y hay que decir de qué familia es, sin que haga falta saber cuál es.",
+      "etapa": "primaria-c2",
+      "eje": "timbre",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c2-25-barras-en-tres-por-cuatro",
+      "titulo": "Pon las barras en 3/4",
+      "descripcion": "Una línea de figuras en tres por cuatro, y hay que poner las barras donde los pulsos suman tres. Como la de 4/4, pero contando de tres en tres.",
+      "etapa": "primaria-c2",
+      "eje": "notacion",
+      "tipo": "compases",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c2-26-ordena-las-cinco-figuras",
+      "titulo": "Las cinco figuras, en orden",
+      "descripcion": "Semicorchea, corchea, negra, blanca y redonda, de la más corta a la más larga. Cada una suena tres veces para que se oiga el hueco.",
+      "etapa": "primaria-c2",
+      "eje": "notacion",
+      "tipo": "ordenar",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 7,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c2-28-vals-marcha-o-tango",
+      "titulo": "¿Vals, marcha o tango?",
+      "descripcion": "Tres ritmos de baile tocados con el kit: el vals de tres, la marcha de dos y el tango con su ritmo de habanera.",
+      "etapa": "primaria-c2",
+      "eje": "cultura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
       "id": "c3-01-tonos-y-semitonos",
       "titulo": "Tonos y semitonos",
       "descripcion": "Construir la escala de sol mayor en el teclado viendo cómo se escribe. Se empieza en sol a propósito: es la que obliga a un sostenido.",
@@ -948,6 +1271,253 @@
         "competencia": "CE3",
         "criterio": "3.1",
         "saber": "D. Práctica instrumental, vocal y corporal"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-15-que-intervalo-es",
+      "titulo": "¿Qué intervalo es?",
+      "descripcion": "Dos notas seguidas: segunda, tercera, quinta u octava. Cuatro intervalos que se distinguen bien y bastan para leer casi cualquier melodía.",
+      "etapa": "primaria-c3",
+      "eje": "altura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-16-tono-o-semitono",
+      "titulo": "¿Tono o semitono?",
+      "descripcion": "Dos notas seguidas, a un tono o a medio. Es la distancia más pequeña que hay, y la que decide dónde caen los semitonos de una escala.",
+      "etapa": "primaria-c3",
+      "eje": "altura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 7,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-17-sostenido-o-bemol",
+      "titulo": "¿Sostenido o bemol?",
+      "descripcion": "Suena una nota y después la misma alterada: medio tono más aguda (sostenido) o más grave (bemol). Las alteraciones, oídas antes que escritas.",
+      "etapa": "primaria-c3",
+      "eje": "notacion",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 7,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-18-escala-mayor-o-menor",
+      "titulo": "¿Escala mayor o menor?",
+      "descripcion": "Ocho notas subiendo: una escala mayor o una menor. Con el acorde ya se sabe distinguir; con la escala entera cuesta más y se oye dónde está la diferencia.",
+      "etapa": "primaria-c3",
+      "eje": "altura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-20-que-compas-es",
+      "titulo": "¿Qué compás es?",
+      "descripcion": "Dos por cuatro, tres por cuatro, cuatro por cuatro o seis por ocho, a oído: dónde cae el acento y cuántos pulsos hay hasta el siguiente.",
+      "etapa": "primaria-c3",
+      "eje": "notacion",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 9,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-21-crescendo-o-diminuendo",
+      "titulo": "¿Crescendo o diminuendo?",
+      "descripcion": "La misma nota repetida, cada vez más fuerte o cada vez más suave. Los dos signos de intensidad que cambian mientras suena la música.",
+      "etapa": "primaria-c3",
+      "eje": "timbre",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-22-ordena-las-epocas",
+      "titulo": "Ordena las épocas",
+      "descripcion": "Edad Media, Renacimiento, Barroco, Clasicismo, Romanticismo y siglo XX, en orden. Son las mismas seis de la referencia de épocas, para colocarlas.",
+      "etapa": "primaria-c3",
+      "eje": "cultura",
+      "tipo": "ordenar",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 7,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-23-de-que-epoca-es",
+      "titulo": "¿De qué época es?",
+      "descripcion": "Diez escenas de la historia de la música, y hay que decir en qué época pasan. Son las mismas cinco épocas de la referencia, con sus compositores.",
+      "etapa": "primaria-c3",
+      "eje": "cultura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-24-quien-compuso-esta-melodia",
+      "titulo": "¿Quién compuso esta melodía?",
+      "descripcion": "Siete melodías que casi todo el mundo ha oído alguna vez, y seis compositores. Todas son de dominio público y suenan con el piano.",
+      "etapa": "primaria-c3",
+      "eje": "cultura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-25-el-compas-de-doce",
+      "titulo": "El compás de doce",
+      "descripcion": "El compás flamenco de doce tiempos, con los acentos en el 3, el 6, el 8, el 10 y el 12. En bucle, para palmearlo encima hasta que salga solo.",
+      "etapa": "primaria-c3",
+      "eje": "cultura",
+      "tipo": "seguir",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-26-bailes-y-compases",
+      "titulo": "Bailes de España y sus compases",
+      "descripcion": "Consulta de bailes y de su compás, con el ritmo sonando: vals, pasodoble, jota, muiñeira, sardana, sevillanas, habanera, chotis y bulería.",
+      "etapa": "primaria-c3",
+      "eje": "cultura",
+      "tipo": "referencia",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": true
+    },
+    {
+      "id": "c3-27-los-instrumentos-por-familias",
+      "titulo": "Los instrumentos, por familias",
+      "descripcion": "Consulta de instrumentos agrupados por familia, cada uno con su sonido: cuerda, viento, percusión y voz.",
+      "etapa": "primaria-c3",
+      "eje": "timbre",
+      "tipo": "referencia",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": true
+    },
+    {
+      "id": "c3-29-empieza-en-el-fuerte-o-antes",
+      "titulo": "¿Empieza en el fuerte o antes?",
+      "descripcion": "Un ritmo que empieza justo en el pulso fuerte, o uno que empieza un pulso antes: la anacrusa. Se oye antes de que se entienda.",
+      "etapa": "primaria-c3",
+      "eje": "notacion",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 7,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
       "herramienta": false
@@ -1308,6 +1878,82 @@
         "area": "Comunicación y Representación de la Realidad",
         "competencia": "CE3",
         "criterio": "3.5",
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "inf-20-rapido-o-despacio",
+      "titulo": "¿Rápido o despacio?",
+      "descripcion": "Suena un pulso. El conejo va deprisa y la tortuga despacio. La versión de Infantil de adagio y allegro, sin las palabras.",
+      "etapa": "infantil",
+      "eje": "pulso",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE2",
+        "criterio": "2.1",
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "inf-21-fuerte-o-flojito",
+      "titulo": "¿Fuerte o flojito?",
+      "descripcion": "La misma música dos veces: una fuerte y otra flojita. Es la intensidad, la cualidad del sonido que falta en el resto de Infantil.",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE2",
+        "criterio": "2.1",
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "inf-22-cuantos-golpes",
+      "titulo": "¿Cuántos golpes?",
+      "descripcion": "Suenan uno, dos o tres golpes de tambor y hay que contarlos. Contar sonidos es contar sin ver, que cuesta más.",
+      "etapa": "infantil",
+      "eje": "pulso",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE2",
+        "criterio": "2.1",
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "inf-23-sube-o-baja",
+      "titulo": "¿Sube o baja?",
+      "descripcion": "Tres notas seguidas: o van subiendo o van bajando. La escalera de sonidos, para oírla antes de dibujarla.",
+      "etapa": "infantil",
+      "eje": "altura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE2",
+        "criterio": "2.1",
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",

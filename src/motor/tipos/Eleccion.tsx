@@ -7,6 +7,8 @@ import type { PropsActividad } from '../tipos';
 import { Boton } from '@/ui/Boton';
 import { BotonRepetir } from '@/ui/BotonRepetir';
 import { BarraAcciones } from '@/ui/BarraAcciones';
+import { suena, type Estimulo } from '../estimulo';
+import { sonarEstimulo } from '../sonarEstimulo';
 import { PasoEntreEjercicios } from '@/ui/ModalesActividad';
 import {
   ESTADO_INICIAL,
@@ -28,20 +30,11 @@ import {
  * allí, donde hay un test que lo vigila.
  */
 
-interface Estimulo {
-  /** Muestra que suena. Opcional: hay estímulos que se leen, no se oyen. */
-  audio?: string;
-  /**
-   * Enunciado escrito, como clave de i18n. Lo usan las actividades de ética del bloque B
-   * (licencias y derechos de autor, 5.º-6.º), donde el estímulo **es** un caso escrito: no
-   * hay nada que sonar, y leerlo es justamente lo que se practica.
-   */
-  texto?: string;
-  respuesta: string;
-}
 interface Opcion {
   clave: string;
-  icono: string;
+  icono?: string;
+  /** Signo musical en vez de dibujo. Ver `ui/Boton.tsx`. */
+  signo?: string;
   color: string;
 }
 
@@ -49,7 +42,15 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
   const contenido = actividad.contenido as {
     consigna: string;
     opciones: Opcion[];
+    /**
+     * Lo que suena o se lee en cada ejercicio. Un fichero, un caso escrito, o —desde el
+     * 2026-09-10— notas, un ritmo o un patrón del kit descritos en el JSON: ver
+     * `motor/estimulo.ts`. Es lo que permite un intervalo, un dictado de figuras o un
+     * «forte o piano» sin grabar nada.
+     */
     estimulos: Estimulo[];
+    /** Timbre de los estímulos con notas. Ver `audio/instrumentos.ts`. */
+    instrumento?: string;
   };
 
   // El tamaño sale del CARRIL, no de la etapa: un niño de 4.º y uno de 3.º comparten
@@ -68,14 +69,22 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
   const yaTerminada = useRef(false);
 
   const reproducir = useCallback(() => {
-    if (!estimulo?.audio) return;
-    audioRef.current?.pause();
-    const a = new Audio(`/audio/${estimulo.audio}`);
-    audioRef.current = a;
-    void a.play().catch(() => {
-      // Sin gesto previo el navegador bloquea la reproducción: no es un error del niño.
+    if (!estimulo) return;
+    if (estimulo.audio) {
+      audioRef.current?.pause();
+      const a = new Audio(`/audio/${estimulo.audio}`);
+      audioRef.current = a;
+      void a.play().catch(() => {
+        // Sin gesto previo el navegador bloquea la reproducción: no es un error del niño.
+      });
+      return;
+    }
+    // Notas, ritmo o golpes: se programan contra el reloj del audio y nunca lanzan.
+    void sonarEstimulo(estimulo, {
+      instrumento: contenido.instrumento,
+      tempo: actividad.practica?.tempo,
     });
-  }, [estimulo]);
+  }, [estimulo, contenido.instrumento, actividad.practica?.tempo]);
 
   // Suena al llegar a cada estímulo nuevo, y al volver a él tras un fallo.
   useEffect(() => {
@@ -154,6 +163,7 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
           <Boton
             key={o.clave}
             icono={o.icono}
+            signo={o.signo}
             color={o.color}
             tamano={tam}
             etiqueta={t(`opcion.${o.clave}`)}
@@ -171,7 +181,7 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
         ))}
       </div>
 
-      <BarraAcciones>{estimulo?.audio && <BotonRepetir onClick={reproducir} />}</BarraAcciones>
+      <BarraAcciones>{estimulo && suena(estimulo) && <BotonRepetir onClick={reproducir} />}</BarraAcciones>
 
       {/*
         El «bien» de cada acierto se queda: son seis preguntas seguidas y ahí sí hace falta

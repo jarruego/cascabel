@@ -1,0 +1,119 @@
+{
+  "id": "inf-22-cuantos-golpes",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Cuántos golpes?",
+  "descripcion": "Suenan uno, dos o tres golpes de tambor y hay que contarlos. Contar sonidos es contar sin ver, que cuesta más.",
+  "etapa": "infantil",
+  "eje": "pulso",
+  "lugar": "pantalla",
+  "duracion_min": 5,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": "CE2",
+    "criterio": "2.1",
+    "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.inf22.consigna",
+    "opciones": [
+      {
+        "clave": "uno",
+        "icono": "uno",
+        "color": "verde"
+      },
+      {
+        "clave": "dos",
+        "icono": "dos",
+        "color": "azul"
+      },
+      {
+        "clave": "tres",
+        "icono": "tres",
+        "color": "rojo"
+      }
+    ],
+    "estimulos": [
+      {
+        "patron": [
+          "bombo",
+          "bombo"
+        ],
+        "tempo": 72,
+        "respuesta": "dos"
+      },
+      {
+        "patron": [
+          "bombo"
+        ],
+        "tempo": 72,
+        "respuesta": "uno"
+      },
+      {
+        "patron": [
+          "bombo",
+          "bombo",
+          "bombo"
+        ],
+        "tempo": 72,
+        "respuesta": "tres"
+      },
+      {
+        "patron": [
+          "caja",
+          "caja"
+        ],
+        "tempo": 72,
+        "respuesta": "dos"
+      },
+      {
+        "patron": [
+          "tom",
+          "tom",
+          "tom"
+        ],
+        "tempo": 72,
+        "respuesta": "tres"
+      },
+      {
+        "patron": [
+          "caja"
+        ],
+        "tempo": 72,
+        "respuesta": "uno"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.inf22.enunciado",
+  "personaje": "milo",
+  "pistas": [
+    "actividad.inf22.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

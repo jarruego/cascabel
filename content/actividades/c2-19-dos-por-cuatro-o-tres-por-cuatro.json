@@ -1,0 +1,221 @@
+{
+  "id": "c2-19-dos-por-cuatro-o-tres-por-cuatro",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿2/4 o 3/4?",
+  "descripcion": "Suenan dos compases con el acento marcado, y hay que decir si los pulsos van de dos en dos o de tres en tres.",
+  "etapa": "primaria-c2",
+  "eje": "notacion",
+  "lugar": "pantalla",
+  "duracion_min": 7,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "tempo": 108
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c219.consigna",
+    "opciones": [
+      {
+        "clave": "dosporcuatro",
+        "signo": "2/4",
+        "color": "azul"
+      },
+      {
+        "clave": "tresporcuatro",
+        "signo": "3/4",
+        "color": "verde"
+      }
+    ],
+    "estimulos": [
+      {
+        "ritmo": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "acentos": [
+          0,
+          3,
+          6
+        ],
+        "tempo": 112,
+        "respuesta": "tresporcuatro"
+      },
+      {
+        "ritmo": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "acentos": [
+          0,
+          2,
+          4,
+          6
+        ],
+        "tempo": 104,
+        "respuesta": "dosporcuatro"
+      },
+      {
+        "ritmo": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "acentos": [
+          0,
+          2,
+          4,
+          6
+        ],
+        "tempo": 120,
+        "respuesta": "dosporcuatro"
+      },
+      {
+        "ritmo": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "acentos": [
+          0,
+          3,
+          6
+        ],
+        "tempo": 126,
+        "respuesta": "tresporcuatro"
+      },
+      {
+        "ritmo": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "acentos": [
+          0,
+          3,
+          6
+        ],
+        "tempo": 100,
+        "respuesta": "tresporcuatro"
+      },
+      {
+        "ritmo": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "acentos": [
+          0,
+          2,
+          4,
+          6
+        ],
+        "tempo": 96,
+        "respuesta": "dosporcuatro"
+      },
+      {
+        "ritmo": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "acentos": [
+          0,
+          2,
+          4,
+          6
+        ],
+        "tempo": 112,
+        "respuesta": "dosporcuatro"
+      },
+      {
+        "ritmo": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "acentos": [
+          0,
+          3,
+          6
+        ],
+        "tempo": 116,
+        "respuesta": "tresporcuatro"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c219.enunciado",
+  "personaje": "sol",
+  "pistas": [
+    "actividad.c219.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

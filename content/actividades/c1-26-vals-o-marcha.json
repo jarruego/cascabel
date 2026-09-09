@@ -1,0 +1,187 @@
+{
+  "id": "c1-26-vals-o-marcha",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Vals o marcha?",
+  "descripcion": "Bombo y caja tocan un vals o una marcha. El vals va de tres en tres y la marcha de dos en dos: es el compás, sentido antes que escrito.",
+  "etapa": "primaria-c1",
+  "eje": "pulso",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.1",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c126.consigna",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el vals se hace sonar como bombo-caja-caja y la marcha como bombo-caja, que es la convención de manual para que el acento se oiga en el uno. Si en clase se enseña con otra fórmula, se cambia aquí.",
+    "opciones": [
+      {
+        "clave": "vals",
+        "icono": "bailarina",
+        "color": "morado"
+      },
+      {
+        "clave": "marcha",
+        "icono": "andando",
+        "color": "rojo"
+      }
+    ],
+    "estimulos": [
+      {
+        "patron": [
+          "bombo",
+          "caja",
+          "caja",
+          "bombo",
+          "caja",
+          "caja",
+          "bombo",
+          "caja",
+          "caja"
+        ],
+        "acentos": [
+          0,
+          3,
+          6
+        ],
+        "tempo": 132,
+        "respuesta": "vals"
+      },
+      {
+        "patron": [
+          "bombo",
+          "caja",
+          "bombo",
+          "caja",
+          "bombo",
+          "caja",
+          "bombo",
+          "caja"
+        ],
+        "acentos": [
+          0,
+          2,
+          4,
+          6
+        ],
+        "tempo": 112,
+        "respuesta": "marcha"
+      },
+      {
+        "patron": [
+          "bombo",
+          "caja",
+          "bombo",
+          "caja",
+          "bombo",
+          "caja",
+          "bombo",
+          "caja"
+        ],
+        "acentos": [
+          0,
+          2,
+          4,
+          6
+        ],
+        "tempo": 120,
+        "respuesta": "marcha"
+      },
+      {
+        "patron": [
+          "bombo",
+          "caja",
+          "caja",
+          "bombo",
+          "caja",
+          "caja",
+          "bombo",
+          "caja",
+          "caja"
+        ],
+        "acentos": [
+          0,
+          3,
+          6
+        ],
+        "tempo": 144,
+        "respuesta": "vals"
+      },
+      {
+        "patron": [
+          "bombo",
+          "claves",
+          "claves",
+          "bombo",
+          "claves",
+          "claves",
+          "bombo",
+          "claves",
+          "claves"
+        ],
+        "acentos": [
+          0,
+          3,
+          6
+        ],
+        "tempo": 138,
+        "respuesta": "vals"
+      },
+      {
+        "patron": [
+          "bombo",
+          "claves",
+          "bombo",
+          "claves",
+          "bombo",
+          "claves",
+          "bombo",
+          "claves"
+        ],
+        "acentos": [
+          0,
+          2,
+          4,
+          6
+        ],
+        "tempo": 116,
+        "respuesta": "marcha"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c126.enunciado",
+  "personaje": "sol",
+  "pistas": [
+    "actividad.c126.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

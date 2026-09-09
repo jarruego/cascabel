@@ -1,0 +1,218 @@
+{
+  "id": "c3-21-crescendo-o-diminuendo",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Crescendo o diminuendo?",
+  "descripcion": "La misma nota repetida, cada vez más fuerte o cada vez más suave. Los dos signos de intensidad que cambian mientras suena la música.",
+  "etapa": "primaria-c3",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.1",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c321.consigna",
+    "opciones": [
+      {
+        "clave": "crescendo",
+        "signo": "<",
+        "color": "rojo"
+      },
+      {
+        "clave": "diminuendo",
+        "signo": ">",
+        "color": "azul"
+      }
+    ],
+    "estimulos": [
+      {
+        "notas": [
+          "G4",
+          "G4",
+          "G4",
+          "G4",
+          "G4",
+          "G4"
+        ],
+        "volumenes": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.8,
+          1
+        ],
+        "respuesta": "crescendo"
+      },
+      {
+        "notas": [
+          "G4",
+          "G4",
+          "G4",
+          "G4",
+          "G4",
+          "G4"
+        ],
+        "volumenes": [
+          1,
+          0.8,
+          0.6,
+          0.45,
+          0.3,
+          0.15
+        ],
+        "respuesta": "diminuendo"
+      },
+      {
+        "notas": [
+          "C4",
+          "D4",
+          "E4",
+          "F4",
+          "G4",
+          "A4"
+        ],
+        "volumenes": [
+          1,
+          0.8,
+          0.6,
+          0.45,
+          0.3,
+          0.15
+        ],
+        "respuesta": "diminuendo"
+      },
+      {
+        "notas": [
+          "A4",
+          "G4",
+          "F4",
+          "E4",
+          "D4",
+          "C4"
+        ],
+        "volumenes": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.8,
+          1
+        ],
+        "respuesta": "crescendo"
+      },
+      {
+        "notas": [
+          "E4",
+          "E4",
+          "E4",
+          "E4",
+          "E4",
+          "E4"
+        ],
+        "volumenes": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.8,
+          1
+        ],
+        "respuesta": "crescendo"
+      },
+      {
+        "notas": [
+          "A4",
+          "A4",
+          "A4",
+          "A4",
+          "A4",
+          "A4"
+        ],
+        "volumenes": [
+          1,
+          0.8,
+          0.6,
+          0.45,
+          0.3,
+          0.15
+        ],
+        "respuesta": "diminuendo"
+      },
+      {
+        "notas": [
+          "G4",
+          "E4",
+          "G4",
+          "E4",
+          "G4",
+          "E4"
+        ],
+        "volumenes": [
+          1,
+          0.8,
+          0.6,
+          0.45,
+          0.3,
+          0.15
+        ],
+        "respuesta": "diminuendo"
+      },
+      {
+        "notas": [
+          "C4",
+          "E4",
+          "G4",
+          "C5",
+          "G4",
+          "E4"
+        ],
+        "volumenes": [
+          0.15,
+          0.3,
+          0.45,
+          0.6,
+          0.8,
+          1
+        ],
+        "respuesta": "crescendo"
+      }
+    ],
+    "instrumento": "piano"
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c321.enunciado",
+  "personaje": "fara",
+  "pistas": [
+    "actividad.c321.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Melodías y ritmos de ejemplo",
+      "autor": "Cascabel",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

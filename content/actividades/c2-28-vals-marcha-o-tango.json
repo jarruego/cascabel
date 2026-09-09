@@ -1,0 +1,253 @@
+{
+  "id": "c2-28-vals-marcha-o-tango",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Vals, marcha o tango?",
+  "descripcion": "Tres ritmos de baile tocados con el kit: el vals de tres, la marcha de dos y el tango con su ritmo de habanera.",
+  "etapa": "primaria-c2",
+  "eje": "cultura",
+  "lugar": "pantalla",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.2",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c228.consigna",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el tango se representa con el ritmo de habanera (corchea con puntillo, semicorchea, corchea, corchea), que es su célula rítmica de manual; el vals como bombo-caja-caja y la marcha como bombo-caja.",
+    "opciones": [
+      {
+        "clave": "vals",
+        "icono": "bailarina",
+        "color": "morado"
+      },
+      {
+        "clave": "marcha",
+        "icono": "andando",
+        "color": "rojo"
+      },
+      {
+        "clave": "tango",
+        "icono": "bailarin",
+        "color": "azul"
+      }
+    ],
+    "estimulos": [
+      {
+        "patron": [
+          "bombo",
+          "caja",
+          "caja",
+          "bombo",
+          "caja",
+          "caja",
+          "bombo",
+          "caja",
+          "caja"
+        ],
+        "acentos": [
+          0,
+          3,
+          6
+        ],
+        "tempo": 138,
+        "respuesta": "vals"
+      },
+      {
+        "patron": [
+          "bombo",
+          "",
+          "",
+          "caja",
+          "bombo",
+          "",
+          "caja",
+          "",
+          "bombo",
+          "",
+          "",
+          "caja",
+          "bombo",
+          "",
+          "caja",
+          ""
+        ],
+        "celda": 0.25,
+        "acentos": [
+          0,
+          8
+        ],
+        "tempo": 88,
+        "respuesta": "tango"
+      },
+      {
+        "patron": [
+          "bombo",
+          "caja",
+          "bombo",
+          "caja",
+          "bombo",
+          "caja",
+          "bombo",
+          "caja"
+        ],
+        "acentos": [
+          0,
+          2,
+          4,
+          6
+        ],
+        "tempo": 116,
+        "respuesta": "marcha"
+      },
+      {
+        "patron": [
+          "bombo",
+          "",
+          "",
+          "claves",
+          "bombo",
+          "",
+          "claves",
+          "",
+          "bombo",
+          "",
+          "",
+          "claves",
+          "bombo",
+          "",
+          "claves",
+          ""
+        ],
+        "celda": 0.25,
+        "acentos": [
+          0,
+          8
+        ],
+        "tempo": 92,
+        "respuesta": "tango"
+      },
+      {
+        "patron": [
+          "bombo",
+          "claves",
+          "claves",
+          "bombo",
+          "claves",
+          "claves",
+          "bombo",
+          "claves",
+          "claves"
+        ],
+        "acentos": [
+          0,
+          3,
+          6
+        ],
+        "tempo": 144,
+        "respuesta": "vals"
+      },
+      {
+        "patron": [
+          "bombo",
+          "claves",
+          "bombo",
+          "claves",
+          "bombo",
+          "claves",
+          "bombo",
+          "claves"
+        ],
+        "acentos": [
+          0,
+          2,
+          4,
+          6
+        ],
+        "tempo": 112,
+        "respuesta": "marcha"
+      },
+      {
+        "patron": [
+          "bombo",
+          "caja",
+          "caja",
+          "bombo",
+          "caja",
+          "caja",
+          "bombo",
+          "caja",
+          "caja"
+        ],
+        "acentos": [
+          0,
+          3,
+          6
+        ],
+        "tempo": 126,
+        "respuesta": "vals"
+      },
+      {
+        "patron": [
+          "bombo",
+          "",
+          "",
+          "caja",
+          "bombo",
+          "",
+          "caja",
+          "",
+          "bombo",
+          "",
+          "",
+          "caja",
+          "bombo",
+          "",
+          "caja",
+          ""
+        ],
+        "celda": 0.25,
+        "acentos": [
+          0,
+          8
+        ],
+        "tempo": 96,
+        "respuesta": "tango"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c228.enunciado",
+  "personaje": "sol",
+  "pistas": [
+    "actividad.c228.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

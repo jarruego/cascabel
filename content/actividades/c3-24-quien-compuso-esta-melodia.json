@@ -1,0 +1,363 @@
+{
+  "id": "c3-24-quien-compuso-esta-melodia",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Quién compuso esta melodía?",
+  "descripcion": "Siete melodías que casi todo el mundo ha oído alguna vez, y seis compositores. Todas son de dominio público y suenan con el piano.",
+  "etapa": "primaria-c3",
+  "eje": "cultura",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.2",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c324.consigna",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: las siete melodías están transcritas de memoria y simplificadas a una sola voz y a las figuras del ciclo; hay que confirmarlas frente a una partitura de dominio público antes de darlas por buenas.",
+    "opciones": [
+      {
+        "clave": "beethoven",
+        "color": "rojo"
+      },
+      {
+        "clave": "mozart",
+        "color": "azul"
+      },
+      {
+        "clave": "bach",
+        "color": "verde"
+      },
+      {
+        "clave": "brahms",
+        "color": "amarillo"
+      },
+      {
+        "clave": "grieg",
+        "color": "morado"
+      },
+      {
+        "clave": "tarrega",
+        "color": "turquesa"
+      }
+    ],
+    "estimulos": [
+      {
+        "notas": [
+          "E4",
+          "E4",
+          "F4",
+          "G4",
+          "G4",
+          "F4",
+          "E4",
+          "D4",
+          "C4",
+          "C4",
+          "D4",
+          "E4",
+          "E4",
+          "D4",
+          "D4"
+        ],
+        "duraciones": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1.5,
+          0.5,
+          2
+        ],
+        "tempo": 100,
+        "respuesta": "beethoven"
+      },
+      {
+        "notas": [
+          "G4",
+          "D4",
+          "G4",
+          "D4",
+          "G4",
+          "D4",
+          "G4",
+          "B4",
+          "D5"
+        ],
+        "duraciones": [
+          1,
+          1,
+          1,
+          1,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          2
+        ],
+        "tempo": 120,
+        "respuesta": "mozart"
+      },
+      {
+        "notas": [
+          "E4",
+          "E4",
+          "G4",
+          "E4",
+          "E4",
+          "G4",
+          "E4",
+          "G4",
+          "C5",
+          "B4",
+          "A4",
+          "A4",
+          "G4"
+        ],
+        "duraciones": [
+          0.5,
+          0.5,
+          2,
+          0.5,
+          0.5,
+          2,
+          0.5,
+          0.5,
+          1,
+          0.5,
+          0.5,
+          1,
+          1
+        ],
+        "tempo": 84,
+        "respuesta": "brahms"
+      },
+      {
+        "notas": [
+          "C4",
+          "E4",
+          "G4",
+          "C5",
+          "E5",
+          "G4",
+          "C5",
+          "E5",
+          "C4",
+          "E4",
+          "G4",
+          "C5",
+          "E5",
+          "G4",
+          "C5",
+          "E5"
+        ],
+        "duraciones": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "tempo": 76,
+        "respuesta": "bach"
+      },
+      {
+        "notas": [
+          "G4",
+          "E4",
+          "D4",
+          "C4",
+          "D4",
+          "E4",
+          "G4",
+          "E4",
+          "D4",
+          "C4",
+          "D4",
+          "E4",
+          "G4",
+          "E4",
+          "G4",
+          "A4",
+          "E4",
+          "A4",
+          "G4",
+          "E4",
+          "D4",
+          "C4"
+        ],
+        "duraciones": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          2
+        ],
+        "tempo": 96,
+        "respuesta": "grieg"
+      },
+      {
+        "notas": [
+          "E5",
+          "D#5",
+          "E5",
+          "D#5",
+          "E5",
+          "B4",
+          "D5",
+          "C5",
+          "A4"
+        ],
+        "duraciones": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          1.5
+        ],
+        "tempo": 112,
+        "respuesta": "beethoven"
+      },
+      {
+        "notas": [
+          "E5",
+          "D5",
+          "F#4",
+          "G#4",
+          "C#5",
+          "B4",
+          "D4",
+          "E4",
+          "B4",
+          "A4",
+          "C#4",
+          "E4",
+          "A4"
+        ],
+        "duraciones": [
+          0.5,
+          0.5,
+          1,
+          1,
+          0.5,
+          0.5,
+          1,
+          1,
+          0.5,
+          0.5,
+          1,
+          1,
+          2
+        ],
+        "tempo": 132,
+        "respuesta": "tarrega"
+      }
+    ],
+    "instrumento": "piano"
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c324.enunciado",
+  "personaje": "doby",
+  "pistas": [
+    "actividad.c324.pista1",
+    "actividad.c324.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Himno de la alegría (Sinfonía n.º 9) y Para Elisa",
+      "autor": "Ludwig van Beethoven (1770-1827)",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "Pequeña serenata nocturna, K. 525",
+      "autor": "Wolfgang Amadeus Mozart (1756-1791)",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "Preludio en do mayor, BWV 846",
+      "autor": "Johann Sebastian Bach (1685-1750)",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "Canción de cuna (Wiegenlied), op. 49 n.º 4",
+      "autor": "Johannes Brahms (1833-1897)",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "La mañana (Peer Gynt, op. 46)",
+      "autor": "Edvard Grieg (1843-1907)",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "Gran vals",
+      "autor": "Francisco Tárrega (1852-1909)",
+      "licencia": "Dominio público"
+    }
+  ],
+  "estado": "borrador"
+}

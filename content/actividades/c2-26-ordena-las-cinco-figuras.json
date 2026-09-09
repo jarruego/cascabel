@@ -1,0 +1,119 @@
+{
+  "id": "c2-26-ordena-las-cinco-figuras",
+  "version": 1,
+  "tipo": "ordenar",
+  "titulo": "Las cinco figuras, en orden",
+  "descripcion": "Semicorchea, corchea, negra, blanca y redonda, de la más corta a la más larga. Cada una suena tres veces para que se oiga el hueco.",
+  "etapa": "primaria-c2",
+  "eje": "notacion",
+  "lugar": "pantalla",
+  "duracion_min": 7,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "tempo": 84,
+    "figuras": [
+      "semicorchea",
+      "corchea",
+      "negra",
+      "blanca",
+      "redonda"
+    ]
+  },
+  "entrada": {
+    "modo": "toque-secuencial",
+    "alternativa": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c226.consigna",
+    "elementos": [
+      {
+        "clave": "blanca",
+        "signo": "𝅗𝅥",
+        "etiqueta": "figura.blanca",
+        "ritmo": [
+          2,
+          2,
+          2
+        ],
+        "color": "vivo-verde"
+      },
+      {
+        "clave": "semicorchea",
+        "signo": "𝅘𝅥𝅯",
+        "etiqueta": "figura.semicorchea",
+        "ritmo": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ],
+        "color": "vivo-morado"
+      },
+      {
+        "clave": "redonda",
+        "signo": "𝅝",
+        "etiqueta": "figura.redonda",
+        "ritmo": [
+          4,
+          4
+        ],
+        "color": "vivo-amarillo"
+      },
+      {
+        "clave": "corchea",
+        "signo": "𝅘𝅥𝅮",
+        "etiqueta": "figura.corchea",
+        "ritmo": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "color": "vivo-rojo"
+      },
+      {
+        "clave": "negra",
+        "signo": "𝅘𝅥",
+        "etiqueta": "figura.negra",
+        "ritmo": [
+          1,
+          1,
+          1
+        ],
+        "color": "vivo-azul"
+      }
+    ],
+    "orden": [
+      "semicorchea",
+      "corchea",
+      "negra",
+      "blanca",
+      "redonda"
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c226.enunciado",
+  "personaje": "dora",
+  "pistas": [
+    "actividad.c226.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

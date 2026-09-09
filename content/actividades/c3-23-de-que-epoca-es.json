@@ -1,0 +1,116 @@
+{
+  "id": "c3-23-de-que-epoca-es",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿De qué época es?",
+  "descripcion": "Diez escenas de la historia de la música, y hay que decir en qué época pasan. Son las mismas cinco épocas de la referencia, con sus compositores.",
+  "etapa": "primaria-c3",
+  "eje": "cultura",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.2",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c323.consigna",
+    "opciones": [
+      {
+        "clave": "medieval",
+        "icono": "castillo",
+        "color": "morado"
+      },
+      {
+        "clave": "barroco",
+        "icono": "violin",
+        "color": "amarillo"
+      },
+      {
+        "clave": "clasicismo",
+        "icono": "corona",
+        "color": "azul"
+      },
+      {
+        "clave": "romanticismo",
+        "icono": "corazon",
+        "color": "rojo"
+      },
+      {
+        "clave": "sigloxx",
+        "icono": "radio",
+        "color": "verde"
+      }
+    ],
+    "estimulos": [
+      {
+        "texto": "actividad.c323.caso1",
+        "respuesta": "medieval"
+      },
+      {
+        "texto": "actividad.c323.caso2",
+        "respuesta": "barroco"
+      },
+      {
+        "texto": "actividad.c323.caso3",
+        "respuesta": "clasicismo"
+      },
+      {
+        "texto": "actividad.c323.caso4",
+        "respuesta": "romanticismo"
+      },
+      {
+        "texto": "actividad.c323.caso5",
+        "respuesta": "sigloxx"
+      },
+      {
+        "texto": "actividad.c323.caso6",
+        "respuesta": "barroco"
+      },
+      {
+        "texto": "actividad.c323.caso7",
+        "respuesta": "medieval"
+      },
+      {
+        "texto": "actividad.c323.caso8",
+        "respuesta": "clasicismo"
+      },
+      {
+        "texto": "actividad.c323.caso9",
+        "respuesta": "romanticismo"
+      },
+      {
+        "texto": "actividad.c323.caso10",
+        "respuesta": "sigloxx"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c323.enunciado",
+  "personaje": "rex",
+  "pistas": [
+    "actividad.c323.pista1",
+    "actividad.c323.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

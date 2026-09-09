@@ -1,0 +1,135 @@
+{
+  "id": "c3-16-tono-o-semitono",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Tono o semitono?",
+  "descripcion": "Dos notas seguidas, a un tono o a medio. Es la distancia más pequeña que hay, y la que decide dónde caen los semitonos de una escala.",
+  "etapa": "primaria-c3",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 7,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c316.consigna",
+    "opciones": [
+      {
+        "clave": "tono",
+        "color": "azul"
+      },
+      {
+        "clave": "semitono",
+        "color": "verde"
+      }
+    ],
+    "estimulos": [
+      {
+        "notas": [
+          "C4",
+          "D4"
+        ],
+        "respuesta": "tono"
+      },
+      {
+        "notas": [
+          "E4",
+          "F4"
+        ],
+        "respuesta": "semitono"
+      },
+      {
+        "notas": [
+          "F4",
+          "G4"
+        ],
+        "respuesta": "tono"
+      },
+      {
+        "notas": [
+          "B4",
+          "C5"
+        ],
+        "respuesta": "semitono"
+      },
+      {
+        "notas": [
+          "G4",
+          "A4"
+        ],
+        "respuesta": "tono"
+      },
+      {
+        "notas": [
+          "A4",
+          "Bb4"
+        ],
+        "respuesta": "semitono"
+      },
+      {
+        "notas": [
+          "D4",
+          "E4"
+        ],
+        "respuesta": "tono"
+      },
+      {
+        "notas": [
+          "C#4",
+          "D4"
+        ],
+        "respuesta": "semitono"
+      },
+      {
+        "notas": [
+          "F#4",
+          "G4"
+        ],
+        "respuesta": "semitono"
+      },
+      {
+        "notas": [
+          "A4",
+          "B4"
+        ],
+        "respuesta": "tono"
+      }
+    ],
+    "instrumento": "piano"
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c316.enunciado",
+  "personaje": "simon",
+  "pistas": [
+    "actividad.c316.pista1",
+    "actividad.c316.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Melodías y ritmos de ejemplo",
+      "autor": "Cascabel",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

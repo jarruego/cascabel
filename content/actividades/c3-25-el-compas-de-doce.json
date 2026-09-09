@@ -1,0 +1,118 @@
+{
+  "id": "c3-25-el-compas-de-doce",
+  "version": 1,
+  "tipo": "seguir",
+  "titulo": "El compás de doce",
+  "descripcion": "El compás flamenco de doce tiempos, con los acentos en el 3, el 6, el 8, el 10 y el 12. En bucle, para palmearlo encima hasta que salga solo.",
+  "etapa": "primaria-c3",
+  "eje": "cultura",
+  "lugar": "pantalla",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.2",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "libre",
+    "tempo": 168
+  },
+  "entrada": {
+    "modo": "ninguna"
+  },
+  "contenido": {
+    "consigna": "actividad.c325.consigna",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el compás de doce se presenta con los acentos de la soleá y la bulería (3, 6, 8, 10 y 12), que es la forma más habitual de enseñarlo. Los acentos suenan una quinta más agudos para que se distingan sin depender del color.",
+    "tempo": 168,
+    "bucle": true,
+    "bloques": [
+      {
+        "icono": "mano",
+        "color": "cultura"
+      },
+      {
+        "icono": "mano",
+        "color": "cultura"
+      },
+      {
+        "icono": "palmas",
+        "color": "pulso"
+      },
+      {
+        "icono": "mano",
+        "color": "cultura"
+      },
+      {
+        "icono": "mano",
+        "color": "cultura"
+      },
+      {
+        "icono": "palmas",
+        "color": "pulso"
+      },
+      {
+        "icono": "mano",
+        "color": "cultura"
+      },
+      {
+        "icono": "palmas",
+        "color": "pulso"
+      },
+      {
+        "icono": "mano",
+        "color": "cultura"
+      },
+      {
+        "icono": "palmas",
+        "color": "pulso"
+      },
+      {
+        "icono": "mano",
+        "color": "cultura"
+      },
+      {
+        "icono": "palmas",
+        "color": "pulso"
+      }
+    ],
+    "notas": [
+      "D4",
+      "D4",
+      "A4",
+      "D4",
+      "D4",
+      "A4",
+      "D4",
+      "A4",
+      "D4",
+      "A4",
+      "D4",
+      "A4"
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c325.enunciado",
+  "personaje": "sol",
+  "creditos": [
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

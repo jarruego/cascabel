@@ -1,0 +1,119 @@
+{
+  "id": "c2-24-familias-de-instrumentos",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "Familias de instrumentos",
+  "descripcion": "Cuerda, viento o percusión. Suena un instrumento y hay que decir de qué familia es, sin que haga falta saber cuál es.",
+  "etapa": "primaria-c2",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.2",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c224.consigna",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el xilófono se cuenta como percusión (láminas golpeadas), que es la clasificación de aula; y el piano se deja fuera a propósito porque es cuerda percutida y confunde justo lo que se está enseñando.",
+    "opciones": [
+      {
+        "clave": "cuerda",
+        "icono": "guitarra",
+        "color": "amarillo"
+      },
+      {
+        "clave": "viento",
+        "icono": "trompeta",
+        "color": "azul"
+      },
+      {
+        "clave": "percusion",
+        "icono": "tambor",
+        "color": "rojo"
+      }
+    ],
+    "estimulos": [
+      {
+        "audio": "muestras/violin/c4.opus",
+        "respuesta": "cuerda"
+      },
+      {
+        "audio": "muestras/percusion/bombo-1.opus",
+        "respuesta": "percusion"
+      },
+      {
+        "audio": "muestras/flauta/c4.opus",
+        "respuesta": "viento"
+      },
+      {
+        "audio": "muestras/guitarra/a4.opus",
+        "respuesta": "cuerda"
+      },
+      {
+        "audio": "muestras/percusion/triangulo-1.opus",
+        "respuesta": "percusion"
+      },
+      {
+        "audio": "muestras/gaita/c4.opus",
+        "respuesta": "viento"
+      },
+      {
+        "audio": "muestras/banjo/c4.opus",
+        "respuesta": "cuerda"
+      },
+      {
+        "audio": "muestras/xilofono/c4.opus",
+        "respuesta": "percusion"
+      },
+      {
+        "audio": "muestras/koto/a4.opus",
+        "respuesta": "cuerda"
+      },
+      {
+        "audio": "muestras/percusion/caja-1.opus",
+        "respuesta": "percusion"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c224.enunciado",
+  "personaje": "rex",
+  "pistas": [
+    "actividad.c224.pista1",
+    "actividad.c224.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Percusión y láminas",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

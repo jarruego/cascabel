@@ -1,0 +1,158 @@
+{
+  "id": "c2-20-forte-o-piano",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Forte o piano?",
+  "descripcion": "La misma frase, fuerte o suave. Forte y piano son las dos palabras de intensidad que se leen en cualquier partitura.",
+  "etapa": "primaria-c2",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.1",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c220.consigna",
+    "opciones": [
+      {
+        "clave": "forte",
+        "icono": "fuerte",
+        "color": "rojo"
+      },
+      {
+        "clave": "suave",
+        "icono": "flojo",
+        "color": "azul"
+      }
+    ],
+    "estimulos": [
+      {
+        "notas": [
+          "C4",
+          "E4",
+          "G4",
+          "E4",
+          "C4"
+        ],
+        "volumen": 1,
+        "respuesta": "forte"
+      },
+      {
+        "notas": [
+          "C4",
+          "E4",
+          "G4",
+          "E4",
+          "C4"
+        ],
+        "volumen": 0.2,
+        "respuesta": "suave"
+      },
+      {
+        "notas": [
+          "G4",
+          "A4",
+          "G4",
+          "F4",
+          "E4"
+        ],
+        "volumen": 0.2,
+        "respuesta": "suave"
+      },
+      {
+        "notas": [
+          "G4",
+          "A4",
+          "G4",
+          "F4",
+          "E4"
+        ],
+        "volumen": 1,
+        "respuesta": "forte"
+      },
+      {
+        "notas": [
+          "D4",
+          "F4",
+          "A4",
+          "F4"
+        ],
+        "volumen": 1,
+        "respuesta": "forte"
+      },
+      {
+        "notas": [
+          "E4",
+          "D4",
+          "C4",
+          "D4",
+          "E4"
+        ],
+        "volumen": 0.2,
+        "respuesta": "suave"
+      },
+      {
+        "notas": [
+          "A4",
+          "G4",
+          "E4",
+          "G4"
+        ],
+        "volumen": 0.2,
+        "respuesta": "suave"
+      },
+      {
+        "notas": [
+          "C4",
+          "D4",
+          "E4",
+          "F4",
+          "G4"
+        ],
+        "volumen": 1,
+        "respuesta": "forte"
+      }
+    ],
+    "instrumento": "piano"
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c220.enunciado",
+  "personaje": "fara",
+  "pistas": [
+    "actividad.c220.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Melodías y ritmos de ejemplo",
+      "autor": "Cascabel",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

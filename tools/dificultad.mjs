@@ -174,6 +174,17 @@ const REVISADOS = {
     'la cuarta vuelta existe porque un patrón largo necesita más pasadas para aprenderse. ' +
     'Desde que el botón dice «Otra vez · 2 de 4», el niño sabe cuántas quedan.',
   'c3-10-ritmo-de-doce': 'Lo mismo, con doce: el patrón largo es el tema.',
+  /*
+    Estos cinco aparecieron el 2026-09-10 sin que cambiara nada en ellos: entraron treinta y
+    cuatro actividades cortas de lenguaje —dos notas, cuatro clics— y la mediana de cada
+    ciclo bajó. Son instrumentos y musicogramas, no preguntas, y el motivo es el de siempre:
+    lo que hay delante en cada momento es pequeño aunque la secuencia sea larga.
+  */
+  'tr-05-piano': 'Es un piano: veintiuna teclas es una paleta, y se tocan de una en una.',
+  'c2-16-cuatro-bandas': 'Dieciséis notas cayendo de una en una por cuatro bandas. Lo que crece es la duración.',
+  'c3-12-compon-por-pistas': 'Cuatro voces de dieciséis casillas, y es un editor: no hay nada que acertar.',
+  'inf-09-eco-de-palmas': 'Cuatro palmadas por tres vueltas. Cuatro es lo que cabe en un eco de Infantil, y tres vueltas es lo mínimo para que se aprenda.',
+  'inf-17-palmas-y-muslos': 'Ocho golpes en bucle, de dos en dos: dos palmadas y dos en los muslos, sin parar hasta que salga.',
   'c1-14-notas-que-caen':
     'Veinticuatro notas, pero de una en una: en un musicograma que cae solo hay dos o tres ' +
     'en pantalla a la vez. Lo que crece es la duración, no lo que hay que discriminar.',

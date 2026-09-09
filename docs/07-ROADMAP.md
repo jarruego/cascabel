@@ -2192,6 +2192,64 @@ hace la actividad**, y un agujero en el validador que las dejaba pasar.
 **Lo que sigue faltando** es lo de siempre: un aparato. Nada de esto necesitaba pantalla,
 pero lo de los dos días anteriores sí.
 
+### Treinta y cuatro actividades de lenguaje, historia y estilos, 2026-09-10 (noche)
+
+El autor lo pidió así: «faltan cosas sencillas de lenguaje musical, historia de la música,
+estilos... investiga y sorpréndeme». Lo que faltaba de verdad no era contenido: era **que el
+motor pudiera sonar lo que el lenguaje musical necesita sin grabar nada**. Un estímulo de
+«elección» solo podía ser un fichero de audio o un caso escrito, y eso deja fuera casi todo:
+un intervalo son dos notas, un dictado de figuras son cuatro clics con duraciones, «forte» y
+«piano» son la misma frase a dos volúmenes, y un vals se distingue de una marcha por dónde
+cae el acento.
+
+- [x] **`motor/estimulo.ts`, con test.** Un estímulo se describe en el JSON con `notas`
+      (y `duraciones`, `volumen`, `volumenes` para un crescendo, `articulacion`), con
+      `ritmo` en pulsos (negativo es silencio, y `acentos` para el compás) o con `patron` de
+      golpes del kit («bombo+charles», celda vacía es silencio). Es puro: convierte la
+      descripción en instantes y se prueba sin altavoz. `sonarEstimulo.ts` los programa
+      contra el reloj del audio, nunca con `setTimeout` (§7). La referencia y las fichas de
+      «ordenar» suenan por el mismo camino, así que una entrada de consulta y una pregunta
+      son la misma cosa descrita en JSON — y la referencia admite ahora un timbre por
+      entrada, que es lo que hacía falta para una de instrumentos.
+- [x] **Las opciones pueden ser notación.** `signo` en vez de `icono`: una corchea, un
+      sostenido, un «2/4», dibujados con Bravura. Una corchea no tiene emoji ni tiene por
+      qué tenerlo. Y sin dibujo ni signo, el texto es el botón entero y se lee de lejos —
+      solo pasa en 5.º y 6.º, con nombres de compositores e intervalos.
+- [x] **Diecisiete iconos más de OpenMoji** (flechas, igual, altavoces, castillo, pluma,
+      corona, corazón, radio, bailarines, palmas y los números del uno al cuatro), en el
+      mismo formato que los 48 que había. Anotados en `THIRD-PARTY-NOTICES.md`.
+- [x] **La gaita entra en el sampler** con sus dos muestras, para que la referencia de
+      instrumentos no la hiciera sonar con la marimba.
+
+**Las treinta y cuatro**, por etapa. Todas son JSON sobre tipos que ya existían.
+
+| Etapa | Lenguaje musical | Historia y estilos |
+|---|---|---|
+| Infantil | ¿Rápido o despacio? · ¿Fuerte o flojito? · ¿Cuántos golpes? · ¿Sube o baja? | — |
+| 1.º–2.º | ¿Cuántos sonidos? · ¿Paso o salto? · Dictado de ta y ti-ti · ¿Negra o blanca? · De la más corta a la más larga | ¿Vals o marcha? |
+| 3.º–4.º | Dictado de figuras · ¿2/4 o 3/4? · ¿Forte o piano? · ¿Ligado o picado? · ¿Sube, baja o se repite? · ¿Termina o se queda a medias? · Pon las barras en 3/4 · Las cinco figuras, en orden | ¿Qué instrumento suena? · Familias de instrumentos · ¿Vals, marcha o tango? |
+| 5.º–6.º | ¿Qué intervalo es? · ¿Tono o semitono? · ¿Sostenido o bemol? · ¿Escala mayor o menor? · ¿Qué compás es? · ¿Crescendo o diminuendo? · ¿Empieza en el fuerte o antes? | Ordena las épocas · ¿De qué época es? · ¿Quién compuso esta melodía? · El compás de doce · Bailes de España y sus compases · Los instrumentos, por familias |
+
+El itinerario tiene tres pasos nuevos —«De qué está hecho el sonido» en 3.º–4.º, «Un viaje
+por la historia» y «Bailes y estilos» en 5.º–6.º— y los instrumentos del mundo se mudan al
+paso de timbre, que es el suyo. Todas están en el catálogo, en el índice y en el camino, con
+test para cada una de las tres cosas.
+
+**Lo que espera criterio musical**, marcado en el propio JSON con `PENDIENTE DE REVISIÓN
+PEDAGÓGICA` para que `npm run docs:pendientes` lo recoja: los compases elegidos para cada
+baile (varios se escriben en más de uno), las fórmulas de bombo y caja del vals, la marcha y
+la habanera, la escala menor en su forma natural, el 6/8 con acento en la primera y la
+cuarta corchea, la explicación de antecedente y consecuente con la tónica y la dominante, y
+**las siete melodías de dominio público, transcritas de memoria** y simplificadas a una voz:
+hay que confirmarlas frente a una partitura antes de darlas por buenas. El repertorio se
+eligió por el plazo español —Beethoven, Mozart, Bach, Brahms, Grieg y Tárrega, todos muertos
+antes de 1910—; Falla se dejó fuera a propósito, porque murió en 1946 y con el plazo de
+ochenta años no es de dominio público hasta 2027.
+
+**Y lo que hay que ver en un aparato**: las opciones con signo musical a tamaño táctil, que
+los cuatro glifos de un dictado quepan en un botón de móvil, y cómo suenan de verdad el
+crescendo y el picado con las muestras de piano y flauta.
+
 Las ideas de ampliación, con veredicto y con lo que NO conviene hacer, están en
 [`docs/12-IDEAS-Y-AMPLIACIONES.md`](12-IDEAS-Y-AMPLIACIONES.md).
 

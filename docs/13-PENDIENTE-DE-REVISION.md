@@ -11,52 +11,88 @@ definición: están sin verificar, que es distinto y peor de dejar callado.
 En cada una, lo que hace falta es una de tres respuestas: **vale**, **cámbialo por esto**, o
 **depende, y depende de esto**.
 
-12 puntos esperando respuesta.
+21 puntos esperando respuesta.
 
-## 1. `src/config.ts` (línea 113)
+## 1. `content/actividades/c1-26-vals-o-marcha.json` (línea 25)
+
+"consigna": "actividad.c126.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el vals se hace sonar como bombo-caja-caja y la marcha como bombo-caja, que es la convención de manual para que el acento se oiga en el uno. Si en clase se enseña con otra fórmula, se cambia aquí.", "opciones": [
+
+## 2. `content/actividades/c2-23-termina-o-se-queda-a-medias.json` (línea 25)
+
+"consigna": "actividad.c223.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: las frases que «terminan» acaban en do (la tónica) y las que «se quedan a medias» acaban en sol (la dominante), que es la explicación convencional de antecedente y consecuente. Son melodías propias y no de repertorio.", "opciones": [
+
+## 3. `content/actividades/c2-24-familias-de-instrumentos.json` (línea 25)
+
+"consigna": "actividad.c224.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el xilófono se cuenta como percusión (láminas golpeadas), que es la clasificación de aula; y el piano se deja fuera a propósito porque es cuerda percutida y confunde justo lo que se está enseñando.", "opciones": [
+
+## 4. `content/actividades/c2-28-vals-marcha-o-tango.json` (línea 25)
+
+"consigna": "actividad.c228.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el tango se representa con el ritmo de habanera (corchea con puntillo, semicorchea, corchea, corchea), que es su célula rítmica de manual; el vals como bombo-caja-caja y la marcha como bombo-caja.", "opciones": [
+
+## 5. `content/actividades/c3-18-escala-mayor-o-menor.json` (línea 25)
+
+"consigna": "actividad.c318.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la escala menor se presenta en su forma natural, que es la que se enseña primero. La armónica y la melódica no entran en Primaria.", "opciones": [
+
+## 6. `content/actividades/c3-20-que-compas-es.json` (línea 26)
+
+"consigna": "actividad.c320.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el 6/8 se hace sonar con seis corcheas y acento en la primera y la cuarta, que es su subdivisión ternaria; el 4/4 lleva acento solo en el uno, sin el acento secundario del tres, para no confundirlo con dos compases de 2/4.", "opciones": [
+
+## 7. `content/actividades/c3-24-quien-compuso-esta-melodia.json` (línea 25)
+
+"consigna": "actividad.c324.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: las siete melodías están transcritas de memoria y simplificadas a una sola voz y a las figuras del ciclo; hay que confirmarlas frente a una partitura de dominio público antes de darlas por buenas.", "opciones": [
+
+## 8. `content/actividades/c3-25-el-compas-de-doce.json` (línea 27)
+
+"consigna": "actividad.c325.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el compás de doce se presenta con los acentos de la soleá y la bulería (3, 6, 8, 10 y 12), que es la forma más habitual de enseñarlo. Los acentos suenan una quinta más agudos para que se distingan sin depender del color.", "tempo": 168, "bucle": true, "bloques": [
+
+## 9. `content/actividades/c3-26-bailes-y-compases.json` (línea 25)
+
+"consigna": "actividad.c326.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: los compases son los de manual —pasodoble en 2/4, jota y sevillanas en 3/4, muiñeira y sardana en 6/8, chotis en 4/4, habanera en 2/4 con su célula de corchea con puntillo—; varios de estos bailes se escriben también en otros compases según la región o la fuente, y aquí se ha elegido uno por baile para no confundir.", "secciones": [
+
+## 10. `src/config.ts` (línea 113)
 
 **Pendiente de revisión pedagógica.** Las cifras son las convencionales que ya estaban documentadas; lo que se decide aquí es el eje por el que se indexan.
 
-## 2. `src/motor/afinacion.ts` (línea 67)
+## 11. `src/motor/afinacion.ts` (línea 67)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: los tres números salen de que la precisión de canto infantil mejora con la edad, que es lo convencional en la literatura coral, pero **dónde poner cada uno lo dice una maestra oyendo a un niño**, no un desarrollador.
 
-## 3. `src/motor/eco.ts` (línea 27)
+## 12. `src/motor/eco.ts` (línea 27)
 
 **PENDIENTE DE REVISIÓN PEDAGÓGICA.** Que un eco a otra velocidad cuente como bueno es un criterio, no un hecho: en un aula de conservatorio no lo sería. Aquí se ha elegido que sí, porque a estas edades reconocer la forma rítmica va antes que sostener el tempo, y porque la alternativa —marcarlo como fallo— desanima justo a quien lo ha entendido. Se informa aparte, así que el maestro ve las dos cosas.
 
-## 4. `src/motor/evaluacion.ts` (línea 104)
+## 13. `src/motor/evaluacion.ts` (línea 104)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: el número. Que tenga que haber un punto a partir del cual se felicita es claro —si no, «bien» no significaría nada—; que ese punto sean seis de cada diez es una elección, y quien puede decir si a los siete años eso es exigente o blando es una maestra viendo a la clase, no un desarrollador.
 
-## 5. `src/motor/musicograma.ts` (línea 32)
+## 14. `src/motor/musicograma.ts` (línea 32)
 
 `vertical` —las figuras caen— no exige ningún sentido de lectura, así que sirve antes de saber leer y es la natural para el ritmo. `horizontal` —las figuras vienen de la derecha— reproduce cómo se recorre una partitura, así que es la que corresponde cuando lo que se está aprendiendo es a leer. **PENDIENTE DE REVISIÓN PEDAGÓGICA**: la correspondencia entre edades y representaciones de la tabla es la convención habitual (Kodály para las sílabas, código Boomwhacker para los colores), pero dónde está el salto de una a otra lo dice una maestra, no un desarrollador.
 
-## 6. `src/motor/rejillaRitmica.ts` (línea 9)
+## 15. `src/motor/rejillaRitmica.ts` (línea 9)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: el repertorio de sílabas de abajo es el convencional del método Kodály tal como se enseña en España, pero hay variantes regionales («ti-ri-ti-ri» frente a «ta-fa-te-fe» para semicorcheas, por ejemplo). Lo ha fijado un desarrollador.
 
-## 7. `src/motor/repaso.ts` (línea 18)
+## 16. `src/motor/repaso.ts` (línea 18)
 
 **PENDIENTE DE REVISIÓN PEDAGÓGICA.** Los tres intervalos son una convención razonable, no una medida. Con un curso de uso real se sabrá si a un niño de siete años le vale una semana o si hacen falta tres días.
 
-## 8. `tools/auditoria.mjs` (línea 270)
+## 17. `tools/auditoria.mjs` (línea 270)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA. Los saberes se escriben a mano en cada JSON y aquí no hay forma de saber cuál es la redacción buena: el real decreto está en el BOE y este proyecto no lo tiene delante. Lo que sí se ve es cuándo una redacción la usa **una sola actividad** y otra parecida la usan treinta, que casi siempre significa que alguien escribió el mismo saber de dos maneras — pasó con el F de Infantil, que estaba de cuatro formas distintas y partía en cuatro un grupo que es uno.
 
-## 9. `tools/dificultad.mjs` (línea 73)
+## 18. `tools/dificultad.mjs` (línea 73)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: los topes de esta tabla. Lo que se puede afirmar sin una maestra es que **la de elegir y la de seguir son distintas**; dónde está exactamente el techo de cada edad, no.
 
-## 10. `tools/dificultad.mjs` (línea 218)
+## 19. `tools/dificultad.mjs` (línea 218)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: los topes. Salen de la duración razonable por etapa dividida entre lo que tarda una pregunta con su escucha, no de ninguna fuente.
 
-## 11. `tools/muestras-provisionales.py` (línea 98)
+## 20. `tools/muestras-provisionales.py` (línea 98)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: se usan tres campanas separadas por quintas justas (relación 3:2) porque la diferencia de altura tiene que ser inconfundible para un niño de 3 a 6 años. Es la opción convencional en material Montessori de campanas, donde se empieza por intervalos grandes antes de afinar el oído a los pequeños. Una maestra puede querer terceras o la escala pentatónica.
 
-## 12. `tools/muestras-provisionales.py` (línea 144)
+## 21. `tools/muestras-provisionales.py` (línea 144)
 
 Los tempos son los convencionales de los diccionarios de música: adagio 66, andante 92 y allegro 138 pulsos por minuto. PENDIENTE DE REVISIÓN PEDAGÓGICA: los rangos varían según la fuente y a esta edad lo que importa es que se distingan, no la precisión.

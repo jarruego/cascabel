@@ -1,0 +1,142 @@
+{
+  "id": "c3-17-sostenido-o-bemol",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Sostenido o bemol?",
+  "descripcion": "Suena una nota y después la misma alterada: medio tono más aguda (sostenido) o más grave (bemol). Las alteraciones, oídas antes que escritas.",
+  "etapa": "primaria-c3",
+  "eje": "notacion",
+  "lugar": "pantalla",
+  "duracion_min": 7,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c317.consigna",
+    "opciones": [
+      {
+        "clave": "sostenido",
+        "signo": "♯",
+        "color": "rojo"
+      },
+      {
+        "clave": "bemol",
+        "signo": "♭",
+        "color": "azul"
+      }
+    ],
+    "estimulos": [
+      {
+        "notas": [
+          "C4",
+          "C#4"
+        ],
+        "respuesta": "sostenido"
+      },
+      {
+        "notas": [
+          "D4",
+          "Db4"
+        ],
+        "respuesta": "bemol"
+      },
+      {
+        "notas": [
+          "F4",
+          "F#4"
+        ],
+        "respuesta": "sostenido"
+      },
+      {
+        "notas": [
+          "E4",
+          "Eb4"
+        ],
+        "respuesta": "bemol"
+      },
+      {
+        "notas": [
+          "B4",
+          "Bb4"
+        ],
+        "respuesta": "bemol"
+      },
+      {
+        "notas": [
+          "G4",
+          "G#4"
+        ],
+        "respuesta": "sostenido"
+      },
+      {
+        "notas": [
+          "D4",
+          "D#4"
+        ],
+        "respuesta": "sostenido"
+      },
+      {
+        "notas": [
+          "A4",
+          "Ab4"
+        ],
+        "respuesta": "bemol"
+      },
+      {
+        "notas": [
+          "G4",
+          "Gb4"
+        ],
+        "respuesta": "bemol"
+      },
+      {
+        "notas": [
+          "A4",
+          "A#4"
+        ],
+        "respuesta": "sostenido"
+      }
+    ],
+    "instrumento": "piano"
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c317.enunciado",
+  "personaje": "dora",
+  "pistas": [
+    "actividad.c317.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Melodías y ritmos de ejemplo",
+      "autor": "Cascabel",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

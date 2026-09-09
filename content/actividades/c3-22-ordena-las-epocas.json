@@ -1,0 +1,88 @@
+{
+  "id": "c3-22-ordena-las-epocas",
+  "version": 1,
+  "tipo": "ordenar",
+  "titulo": "Ordena las épocas",
+  "descripcion": "Edad Media, Renacimiento, Barroco, Clasicismo, Romanticismo y siglo XX, en orden. Son las mismas seis de la referencia de épocas, para colocarlas.",
+  "etapa": "primaria-c3",
+  "eje": "cultura",
+  "lugar": "pantalla",
+  "duracion_min": 7,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.2",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque-secuencial",
+    "alternativa": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c322.consigna",
+    "elementos": [
+      {
+        "clave": "barroco",
+        "icono": "violin",
+        "etiqueta": "epoca.barroco"
+      },
+      {
+        "clave": "medieval",
+        "icono": "castillo",
+        "etiqueta": "epoca.medieval"
+      },
+      {
+        "clave": "romanticismo",
+        "icono": "corazon",
+        "etiqueta": "epoca.romanticismo"
+      },
+      {
+        "clave": "renacimiento",
+        "icono": "pluma",
+        "etiqueta": "epoca.renacimiento"
+      },
+      {
+        "clave": "sigloxx",
+        "icono": "radio",
+        "etiqueta": "epoca.sigloxx"
+      },
+      {
+        "clave": "clasicismo",
+        "icono": "corona",
+        "etiqueta": "epoca.clasicismo"
+      }
+    ],
+    "orden": [
+      "medieval",
+      "renacimiento",
+      "barroco",
+      "clasicismo",
+      "romanticismo",
+      "sigloxx"
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c322.enunciado",
+  "personaje": "doby",
+  "pistas": [
+    "actividad.c322.pista1",
+    "actividad.c322.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

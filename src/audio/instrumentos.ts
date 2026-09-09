@@ -136,8 +136,19 @@ const XILOFONO: Muestra[] = [
  * en casi todas las actividades y el que tiene que estar disponible sin conexión desde el
  * primer momento.
  */
+/**
+ * Los seis del mundo, con las dos notas que tienen (do y la de la octava central). Sirven
+ * para sonar una escala corta en la referencia de instrumentos: con dos muestras a una sexta
+ * el sampler estira poco, y estirar poco es lo que un instrumento de timbre raro aguanta.
+ */
+const GAITA: Muestra[] = [
+  { nota: 'C4', url: '/audio/muestras/gaita/c4.opus' },
+  { nota: 'A4', url: '/audio/muestras/gaita/a4.opus' },
+];
+
 export const INSTRUMENTOS: Record<string, Muestra[]> = {
   marimba: MARIMBA,
+  gaita: GAITA,
   piano: PIANO,
   xilofono: XILOFONO,
   flauta: FLAUTA,

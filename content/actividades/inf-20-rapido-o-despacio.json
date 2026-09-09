@@ -1,0 +1,84 @@
+{
+  "id": "inf-20-rapido-o-despacio",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Rápido o despacio?",
+  "descripcion": "Suena un pulso. El conejo va deprisa y la tortuga despacio. La versión de Infantil de adagio y allegro, sin las palabras.",
+  "etapa": "infantil",
+  "eje": "pulso",
+  "lugar": "pantalla",
+  "duracion_min": 5,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": "CE2",
+    "criterio": "2.1",
+    "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.inf20.consigna",
+    "opciones": [
+      {
+        "clave": "rapido",
+        "icono": "conejo",
+        "color": "rojo"
+      },
+      {
+        "clave": "despacio",
+        "icono": "tortuga",
+        "color": "azul"
+      }
+    ],
+    "estimulos": [
+      {
+        "audio": "muestras/tempo-allegro.opus",
+        "respuesta": "rapido"
+      },
+      {
+        "audio": "muestras/tempo-adagio.opus",
+        "respuesta": "despacio"
+      },
+      {
+        "audio": "muestras/tempo-adagio.opus",
+        "respuesta": "despacio"
+      },
+      {
+        "audio": "muestras/tempo-allegro.opus",
+        "respuesta": "rapido"
+      },
+      {
+        "audio": "muestras/tempo-allegro.opus",
+        "respuesta": "rapido"
+      },
+      {
+        "audio": "muestras/tempo-adagio.opus",
+        "respuesta": "despacio"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.inf20.enunciado",
+  "personaje": "milo",
+  "pistas": [
+    "actividad.inf20.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

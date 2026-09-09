@@ -1,0 +1,171 @@
+{
+  "id": "c2-22-sube-baja-o-se-repite",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Sube, baja o se repite?",
+  "descripcion": "Una frase de cuatro o cinco notas: sube, baja o repite la misma. Es la dirección de la melodía, que es lo primero que se lee en un pentagrama.",
+  "etapa": "primaria-c2",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c222.consigna",
+    "opciones": [
+      {
+        "clave": "sube",
+        "icono": "flecha-arriba",
+        "color": "verde"
+      },
+      {
+        "clave": "baja",
+        "icono": "flecha-abajo",
+        "color": "azul"
+      },
+      {
+        "clave": "repite",
+        "icono": "igual",
+        "color": "amarillo"
+      }
+    ],
+    "estimulos": [
+      {
+        "notas": [
+          "C4",
+          "D4",
+          "E4",
+          "F4",
+          "G4"
+        ],
+        "respuesta": "sube"
+      },
+      {
+        "notas": [
+          "G4",
+          "G4",
+          "G4",
+          "G4"
+        ],
+        "respuesta": "repite"
+      },
+      {
+        "notas": [
+          "A4",
+          "G4",
+          "F4",
+          "E4",
+          "D4"
+        ],
+        "respuesta": "baja"
+      },
+      {
+        "notas": [
+          "E4",
+          "F4",
+          "G4",
+          "A4"
+        ],
+        "respuesta": "sube"
+      },
+      {
+        "notas": [
+          "G4",
+          "F4",
+          "E4",
+          "D4",
+          "C4"
+        ],
+        "respuesta": "baja"
+      },
+      {
+        "notas": [
+          "E4",
+          "E4",
+          "E4",
+          "E4",
+          "E4"
+        ],
+        "respuesta": "repite"
+      },
+      {
+        "notas": [
+          "C5",
+          "B4",
+          "A4",
+          "G4"
+        ],
+        "respuesta": "baja"
+      },
+      {
+        "notas": [
+          "D4",
+          "E4",
+          "F4",
+          "G4",
+          "A4"
+        ],
+        "respuesta": "sube"
+      },
+      {
+        "notas": [
+          "A4",
+          "A4",
+          "A4"
+        ],
+        "respuesta": "repite"
+      },
+      {
+        "notas": [
+          "F4",
+          "E4",
+          "D4",
+          "C4"
+        ],
+        "respuesta": "baja"
+      }
+    ],
+    "instrumento": "piano"
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c222.enunciado",
+  "personaje": "dora",
+  "pistas": [
+    "actividad.c222.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Melodías y ritmos de ejemplo",
+      "autor": "Cascabel",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

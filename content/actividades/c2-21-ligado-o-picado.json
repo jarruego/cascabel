@@ -1,0 +1,170 @@
+{
+  "id": "c2-21-ligado-o-picado",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Ligado o picado?",
+  "descripcion": "Cinco notas ligadas, como un delfín, o picadas, como una rana. La articulación, que cambia el carácter sin cambiar las notas.",
+  "etapa": "primaria-c2",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.1",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c221.consigna",
+    "opciones": [
+      {
+        "clave": "ligado",
+        "icono": "delfin",
+        "color": "azul"
+      },
+      {
+        "clave": "picado",
+        "icono": "rana",
+        "color": "verde"
+      }
+    ],
+    "estimulos": [
+      {
+        "notas": [
+          "C4",
+          "D4",
+          "E4",
+          "F4",
+          "G4"
+        ],
+        "articulacion": "legato",
+        "tempo": 76,
+        "respuesta": "ligado"
+      },
+      {
+        "notas": [
+          "C4",
+          "D4",
+          "E4",
+          "F4",
+          "G4"
+        ],
+        "articulacion": "staccato",
+        "tempo": 76,
+        "respuesta": "picado"
+      },
+      {
+        "notas": [
+          "G4",
+          "E4",
+          "C4",
+          "E4",
+          "G4"
+        ],
+        "articulacion": "staccato",
+        "tempo": 88,
+        "respuesta": "picado"
+      },
+      {
+        "notas": [
+          "G4",
+          "E4",
+          "C4",
+          "E4",
+          "G4"
+        ],
+        "articulacion": "legato",
+        "tempo": 76,
+        "respuesta": "ligado"
+      },
+      {
+        "notas": [
+          "E4",
+          "F4",
+          "G4",
+          "A4",
+          "G4",
+          "F4"
+        ],
+        "articulacion": "legato",
+        "tempo": 80,
+        "respuesta": "ligado"
+      },
+      {
+        "notas": [
+          "A4",
+          "A4",
+          "G4",
+          "G4",
+          "E4"
+        ],
+        "articulacion": "staccato",
+        "tempo": 96,
+        "respuesta": "picado"
+      },
+      {
+        "notas": [
+          "C4",
+          "C4",
+          "D4",
+          "D4",
+          "E4"
+        ],
+        "articulacion": "staccato",
+        "tempo": 96,
+        "respuesta": "picado"
+      },
+      {
+        "notas": [
+          "A4",
+          "G4",
+          "F4",
+          "E4",
+          "D4",
+          "C4"
+        ],
+        "articulacion": "legato",
+        "tempo": 76,
+        "respuesta": "ligado"
+      }
+    ],
+    "instrumento": "flauta"
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c221.enunciado",
+  "personaje": "laia",
+  "pistas": [
+    "actividad.c221.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Melodías y ritmos de ejemplo",
+      "autor": "Cascabel",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}
