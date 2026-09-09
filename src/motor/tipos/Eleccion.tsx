@@ -190,12 +190,28 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
         saber cómo ha ido cada una. Lo que se va es el «¡completada!» del final, que lo dice
         la modal de enhorabuena medio segundo después.
       */}
+      {/*
+        La pista de un fallo se queda hasta la siguiente respuesta.
+
+        Salía 1,2 s y se iba con el cambio de fase: «ni da tiempo de leer», dijo el autor
+        de «¿Tono o semitono?», cuya pista es una frase entera. La tarjeta de «casi» está
+        pensada para no llevar reloj —lo quita el niño al responder—, así que aquí se le da
+        lo que estaba escrito que tenía: mientras siga en la misma pregunta con un fallo
+        detrás, la pista sigue. Al acertar o cambiar de pregunta se va.
+      */}
       <Reaccion
-        tono={estado.fase === 'casi' ? 'casi' : estado.fase === 'bien' ? 'bien' : 'neutro'}
+        tono={
+          estado.fase === 'bien'
+            ? 'bien'
+            : estado.fase === 'casi' || (estado.fase === 'estimulo' && estado.fallosAqui > 0)
+              ? 'casi'
+              : 'neutro'
+        }
         personaje={actividad.personaje}
       >
         {estado.fase === 'bien' && t('comun.bien')}
-        {estado.fase === 'casi' && (pista ? t(pista) : t('comun.casi'))}
+        {(estado.fase === 'casi' || (estado.fase === 'estimulo' && estado.fallosAqui > 0)) &&
+          (pista ? t(pista) : t('comun.casi'))}
       </Reaccion>
 
     </section>

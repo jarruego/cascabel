@@ -267,12 +267,20 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
 
       {/* Sin botonera: se juega tocando los sitios de la pauta, y no hay nada que hacerle a
           la actividad desde fuera. El «¡completada!» lo dice la modal de enhorabuena. */}
+      {/* La pista de un fallo se queda hasta la siguiente respuesta: ver `Eleccion`. */}
       <Reaccion
-        tono={estado.fase === 'casi' ? 'casi' : estado.fase === 'bien' ? 'bien' : 'neutro'}
+        tono={
+          estado.fase === 'bien'
+            ? 'bien'
+            : estado.fase === 'casi' || (estado.fase === 'estimulo' && estado.fallosAqui > 0)
+              ? 'casi'
+              : 'neutro'
+        }
         personaje={actividad.personaje}
       >
         {estado.fase === 'bien' && t('comun.bien')}
-        {estado.fase === 'casi' && (pista ? t(pista) : t('comun.casi'))}
+        {(estado.fase === 'casi' || (estado.fase === 'estimulo' && estado.fallosAqui > 0)) &&
+          (pista ? t(pista) : t('comun.casi'))}
       </Reaccion>
 
     </section>
