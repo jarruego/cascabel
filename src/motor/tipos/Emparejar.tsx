@@ -209,7 +209,11 @@ export default function Emparejar({ actividad, alTerminar }: PropsActividad) {
             <line key={i} x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2} />
           ))}
         </svg>
-      <div className="emparejar__tablero">
+      <div
+        className="emparejar__tablero"
+        // Cuántas filas hay decide el lado de las fichas: ver `--filas` en tokens.css.
+        style={{ ["--filas" as string]: Math.max(contenido.izquierda.length, contenido.derecha.length) }}
+      >
         {columna(contenido.izquierda, 'izquierda')}
         {columna(contenido.derecha, 'derecha')}
       </div>

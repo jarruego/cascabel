@@ -2460,9 +2460,16 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       el permiso o el worklet no carga, la actividad sigue y se canta sin medir. Con
       palmadas nada cambia: tocar en la pantalla es una forma completa de hacerla.
 
+- [x] **El tablero de emparejar: cuadrados iguales y aire entre columnas.** El lado sale
+      de cuántas filas hay, con el objetivo táctil como suelo y 170 px de tope, y lo de
+      dentro se acota a su celda. Entre columnas, de 48 a 160 px: es donde se dibujan las
+      líneas de las parejas hechas, y con la separación normal no se veían. Y el tambor de
+      «Memory de instrumentos» sonaba a pandereta: ahora es el bombo.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
-en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, y que la
-app instalada en Android se ponga al día sola al abrirla tras un despliegue.
+en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
+app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
+tablero de emparejar quepa sin desplazar en un móvil en vertical con cuatro filas.
 
 Las ideas de ampliación, con veredicto y con lo que NO conviene hacer, están en
 [`docs/12-IDEAS-Y-AMPLIACIONES.md`](12-IDEAS-Y-AMPLIACIONES.md).
