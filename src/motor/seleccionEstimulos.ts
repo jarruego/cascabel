@@ -37,6 +37,21 @@ function barajado<T>(lista: T[], azar: () => number): T[] {
   return copia;
 }
 
+/**
+ * Una lista barajada en la que ninguna entrada repite a la anterior, para las rondas que
+ * piden cada cosa varias veces: «coloca la nota» pedía sol, la, si, do, sol, la, si, do,
+ * en orden —«están en orden y es muy fácil acertar», dijo el autor—. Con pocas entradas
+ * distintas no siempre se puede evitar la repetición; entonces se deja como salga.
+ */
+export function barajarSinRepetir<T>(lista: T[], semilla: number): T[] {
+  const azar = azarDe(semilla);
+  for (let intento = 0; intento < 20; intento++) {
+    const b = barajado(lista, azar);
+    if (b.every((x, i) => i === 0 || x !== b[i - 1])) return b;
+  }
+  return barajado(lista, azar);
+}
+
 export function seleccionarEstimulos<T extends { respuesta?: string }>(
   estimulos: T[],
   semilla: number,

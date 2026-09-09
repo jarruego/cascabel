@@ -5,6 +5,7 @@ import { MARIMBA, Sampler } from '@/audio/sampler';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { Reaccion } from '@/ui/Reaccion';
 import { Progreso } from '@/ui/Progreso';
+import { barajarSinRepetir } from '../seleccionEstimulos';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import {
@@ -62,13 +63,14 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
   const yaTerminada = useRef(false);
   const [dibujado, setDibujado] = useState(false);
 
-  // Las rondas son las opciones barajadas: se pide cada nota una vez.
+  // Las rondas son las opciones barajadas, sin dos iguales seguidas. Decía «barajadas» y
+  // no lo estaban: salían sol, la, si, do, sol, la, si, do, y así se acierta sin mirar.
   const [preguntas] = useState(() => {
     const base = contenido.opciones.map((o) => o.clave);
     const n = contenido.rondas ?? base.length;
     const salida: string[] = [];
     while (salida.length < n) salida.push(...base);
-    return salida.slice(0, n);
+    return barajarSinRepetir(salida.slice(0, n), Math.floor(Math.random() * 2 ** 31));
   });
 
   const [estado, despachar] = useReducer(
@@ -100,7 +102,17 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
         renderer.resize(ANCHO, ALTO);
         const ctx = renderer.getContext();
 
-        const pauta = new Stave(10, ARRIBA, ANCHO - 30, { spacingBetweenLinesPx: SEPARACION });
+        /*
+          Sin aire propio por encima ni por debajo: VexFlow pone cuatro espacios de margen
+          sobre la quinta línea, así que la pauta se dibujaba 56 px más abajo de donde este
+          componente colocaba los sitios, y las notas «estaban muy desplazadas de su sitio».
+          El aire lo pone ARRIBA, que es el mismo número para el dibujo y para los sitios.
+        */
+        const pauta = new Stave(10, ARRIBA, ANCHO - 30, {
+          spacingBetweenLinesPx: SEPARACION,
+          spaceAboveStaffLn: 0,
+          spaceBelowStaffLn: 0,
+        });
         pauta.addClef(clave === 'sol' ? 'treble' : 'bass');
         pauta.setContext(ctx).draw();
 
@@ -197,9 +209,9 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
               aria-disabled={estado.fase !== 'estimulo' || undefined}
               onClick={() => void elegir(o)}
             >
-              {/* La cabeza de nota, del tamaño real que tendría en la pauta. */}
+              {/* La cabeza de nota, del tamaño real que tendría en la pauta. Sin el nombre
+                  escrito debajo: con él, la actividad era leer, no colocar. */}
               <span className="pentagrama__nota" aria-hidden="true" />
-              <span className="pentagrama__etiqueta">{t(`nota.${o.clave}`)}</span>
               <span className="visualmente-oculto">{nota.nombre}</span>
             </button>
           );

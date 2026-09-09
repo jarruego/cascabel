@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { MAX_POR_VUELTA, seleccionarEstimulos } from '../src/motor/seleccionEstimulos';
+import { MAX_POR_VUELTA, barajarSinRepetir, seleccionarEstimulos } from '../src/motor/seleccionEstimulos';
 
 const banco = [
   { id: 1, respuesta: 'sube' },
@@ -13,6 +13,18 @@ const banco = [
   { id: 9, respuesta: 'sube' },
   { id: 10, respuesta: 'baja' },
 ];
+
+describe('barajar sin repetir seguidas', () => {
+  it('conserva las entradas y no deja dos iguales seguidas', () => {
+    const rondas = ['sol', 'la', 'si', 'do', 'sol', 'la', 'si', 'do'];
+    for (const semilla of [1, 2, 3, 11, 99]) {
+      const b = barajarSinRepetir(rondas, semilla);
+      expect([...b].sort()).toEqual([...rondas].sort());
+      expect(b.some((x, i) => i > 0 && x === b[i - 1])).toBe(false);
+      expect(b).not.toEqual(rondas);
+    }
+  });
+});
 
 describe('cinco estímulos por vuelta', () => {
   it('con cinco o menos se hacen todas, en su orden', () => {
