@@ -1439,7 +1439,7 @@ Contradice esto:
 legal; NN/g mide lo que funciona con niños de verdad. Pero subir los tamaños afecta a las 45
 actividades y a cuántos objetos caben en pantalla, así que lo decide el autor.
 
-### Estado a 2026-09-08 (final del día)
+### Estado a 2026-09-09 (final del día)
 
 **El catálogo previsto está entero, y ya se ha pasado de él.** Lo que queda no es terminar,
 es depurar y ampliar, y eso lo marca el uso real.
@@ -1448,10 +1448,10 @@ es depurar y ampliar, y eso lo marca el uso real.
 |---|---|
 | Actividades | 78, todas validando esquema, música y auditoría |
 | Tipos de motor | 21 (la lista viva, en [`01-ARQUITECTURA.md`](01-ARQUITECTURA.md)) |
-| Tests | 530 |
+| Tests | 579 |
 | Precache | 1831 KiB |
 | Personajes | 8 × 10 poses, 1530 KB |
-| Código | ~18800 líneas en `src`, ~5000 en `tests` |
+| Código | ~20500 líneas en `src`, ~5900 en `tests` |
 
 **Lo que entró ese día, después de cerrar el catálogo previsto:**
 
@@ -2001,6 +2001,56 @@ Y lo que quedó a medias en la revisión de anchos se cerró el mismo día:
   De paso arregla un desajuste que ya existía: en un móvil de 320 px, cuatro bandas de 88
   sumaban 352, el recuadro se encogía por CSS y las bandas seguían colocadas en coordenadas
   de 352. **Sigue faltando mirarlo en pantalla**, que es lo que ningún test da.
+
+### El repaso ficha a ficha, 2026-09-09 (noche)
+
+Leídas las setenta y ocho una por una, campo a campo. Lo que apareció no fue contenido malo
+—la música y los textos aguantan— sino **cuatro etiquetas que decían algo distinto de lo que
+hace la actividad**, y un agujero en el validador que las dejaba pasar.
+
+- [x] **El catálogo había dejado de ser la lista de todo lo que hay.** «Compón por pistas»
+      (C3-12) se escribió después de generar el backlog y estuvo sin reserva sin que saltara
+      nada: el validador solo comprobaba que una actividad no se sentara encima de un código
+      reservado **para otra cosa**, y un código que no está reservado no puede chocar con
+      ninguno. Ahora falla también al revés, mirando la familia del código —INF, C1, C2, C3,
+      TR— para que una actividad suelta o las de prueba sigan validando. Con su test, y el
+      apaño usa `C1-17`, que es el único hueco real de la numeración: queda anotado en el
+      propio catálogo que el hueco es intencionado, porque un id puede estar dentro de una
+      URL compartida y renumerar sería romperla.
+
+- [x] **«Ostinato a dos planos» no es de creación.** Media clase hace pies en 1 y 3, la otra
+      media palmas en 2 y 4, y luego se intercambian: los dos patrones vienen dados y no se
+      inventa nada, se ejecuta con el cuerpo. Pasa a eje `cuerpo`, y con eso SOL —energía y
+      movimiento— deja de ser una asignación rara. El currículo no cambia: CE4 habla de
+      producciones **colectivas**, y esto lo es, dos grupos sosteniendo un pulso que ninguno
+      hace solo.
+
+- [x] **«Adivina quién baja» es de MILO, no de REX.** REX es «escuchar para descubrir» y aquí
+      no se descubre escuchando: se mira una línea y se toca a tiempo. El eje es `pulso`, que
+      es de MILO, y el envoltorio —aparece el animal que llevaba dentro el círculo— es
+      exactamente su rasgo. Las dos las encontró `npm run contenido:auditar` comparando el
+      personaje con el eje, que es justo para lo que está.
+
+- [x] **Un saber escrito de dos maneras.** `c2-01` decía «D. Lenguajes musicales: aplicación
+      de sus conceptos básicos» donde otras diecinueve del mismo criterio dicen «D. Lenguajes
+      y práctica musical». Mismo bloque y misma idea: variante evidente, se unifica.
+
+      **La otra no se toca, y el motivo importa.** `c1-08` declara un saber del bloque D
+      donde su hermana más cercana —mismo criterio, mismo eje— declara uno del A. Decidir si
+      reconocer timbres es escucha del bloque musical o recepción del de análisis no es
+      redactar distinto: es **clasificar** distinto, y eso es del decreto, no mío (§9). El
+      recuento de saberes ahora **dice qué actividad** lleva cada redacción única, para que
+      quien tenga el BOE delante no tenga que buscarla por los setenta y ocho ficheros.
+
+- [x] **Comprobado que no falta nada más**: ninguna actividad se queda sin personaje, ninguna
+      sin créditos que deba tenerlos —las siete que no llevan son guías de aula, referencias
+      escritas aquí o grabaciones del propio niño— y la única en `revision-pedagogica` es
+      «Épocas, compositores y estilos», que es la que más lo necesita: once compositores con
+      sus fechas. Verificadas una a una y correctas; **no lleva créditos porque no usa
+      material de nadie**, y un año de nacimiento no es de nadie.
+
+**Lo que sigue faltando** es lo de siempre: un aparato. Nada de esto necesitaba pantalla,
+pero lo de los dos días anteriores sí.
 
 Las ideas de ampliación, con veredicto y con lo que NO conviene hacer, están en
 [`docs/12-IDEAS-Y-AMPLIACIONES.md`](12-IDEAS-Y-AMPLIACIONES.md).

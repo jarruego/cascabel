@@ -32,6 +32,21 @@ describe('validador de contenido', { timeout: 120_000 }, () => {
     expect(codigo).toBe(0);
   });
 
+  /*
+    C3-12 «Compón por pistas» se escribió después de generar el backlog y estuvo semanas sin
+    reserva en `content/catalogo.json` sin que saltara nada: el validador solo miraba si una
+    actividad se sentaba encima de un código reservado PARA OTRA COSA, y un código que no
+    está reservado no puede chocar con ninguno. El catálogo dejó de ser la lista de todo lo
+    que hay sin que nadie se enterara.
+
+    El apaño usa el código C1-17, que es el único hueco real de la numeración.
+  */
+  it('rechaza un código de una familia conocida que el catálogo no tiene apuntado', () => {
+    const { codigo, salida } = validar('sin-reserva');
+    expect(salida).toMatch(/C1-17 .* no esta en el catalogo/);
+    expect(codigo).not.toBe(0);
+  });
+
   it('rechaza un compás desbordado, una tesitura imposible y una etapa inexistente', () => {
     const { codigo, salida } = validar('invalidas');
 

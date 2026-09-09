@@ -384,6 +384,15 @@ def validar_catalogo(resultados: list[Resultado]) -> list[str]:
 
     El id es estable y no se renombra (puede estar en una URL compartida), asi que el unico
     momento barato para detectar la colision es antes de que exista.
+
+    Y comprueba tambien lo contrario: que ninguna actividad use un codigo sin reservar de una
+    familia que el catalogo si conoce. C3-12 se escribio despues de generar el backlog y
+    estuvo sin reserva sin que saltara nada, porque un codigo desconocido no puede chocar con
+    ninguno.
+
+    Se mira la familia —el INF, C1, C2, C3 o TR de delante— y no el fichero, para que esto
+    valga igual validando una actividad suelta. Un `V-ALGO` de una prueba no es una omision:
+    es que ahi no hay backlog ninguno.
     """
     ruta = RAIZ / "content" / "catalogo.json"
     if not ruta.exists():
@@ -396,6 +405,7 @@ def validar_catalogo(resultados: list[Resultado]) -> list[str]:
         if codigo:
             titulos[codigo] = entrada.get("titulo", "")
 
+    familias = {c.split("-")[0] for c in titulos}
     problemas = []
     vistos: dict[str, str] = {}
     for r in resultados:
@@ -415,6 +425,16 @@ def validar_catalogo(resultados: list[Resultado]) -> list[str]:
 
         previsto = titulos.get(codigo)
         if previsto is None:
+            # Sin reserva no hay colision posible, pero tampoco hay apunte: asi entro
+            # C3-12 sin que nadie se enterara, y el catalogo dejo de ser la lista de todo
+            # lo que hay. Reservar el codigo es la unica forma de que el siguiente choque
+            # se vea.
+            if codigo.split("-")[0] not in familias:
+                continue
+            problemas.append(
+                f"El codigo {codigo} ({datos['id']}) no esta en el catalogo: "
+                f"anadelo a content/catalogo.json para que quede reservado"
+            )
             continue
         # Se comparan las palabras significativas, no la cadena entera: el titulo del
         # catalogo es un apunte de backlog y se afina al escribir la actividad.

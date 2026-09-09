@@ -1,0 +1,76 @@
+{
+  "id": "c1-17-codigo-sin-reservar",
+  "version": 1,
+  "tipo": "tocar-a-tiempo",
+  "titulo": "Código sin reservar",
+  "descripcion": "Copia de una actividad válida con un código de familia conocida que el catálogo no tiene apuntado.",
+  "etapa": "primaria-c1",
+  "eje": "pulso",
+  "lugar": "pantalla",
+  "duracion_min": 5,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Práctica instrumental, vocal y corporal"
+  },
+  "practica": {
+    "figuras": [
+      "negra",
+      "corchea",
+      "silencio-negra"
+    ],
+    "compas": "2/4",
+    "tempo": 72,
+    "secuencia": "ninguna",
+    "metodo": [
+      "orff",
+      "kodaly"
+    ]
+  },
+  "musica": {
+    "abc": "X:1\nM:4/4\nL:1/4\nK:C\nD | C D E F | G F E D | C3 |"
+  },
+  "entrada": {
+    "modo": "microfono-palmada",
+    "alternativa": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c102.consigna",
+    "compases_escucha": 2,
+    "compases_respuesta": 2,
+    "repeticiones": 3,
+    "silabas": [
+      "ta",
+      "ta",
+      "ti-ti",
+      "ta"
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "tolerancia_ms": {
+      "perfecto": 100,
+      "bien": 180,
+      "casi": 300
+    },
+    "reporta": [
+      "aciertos",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "enunciado": "actividad.c102.enunciado",
+  "pistas": [
+    "actividad.c102.pista1",
+    "actividad.c102.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Base rítmica 2/4",
+      "autor": "Propia",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

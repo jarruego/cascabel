@@ -274,18 +274,28 @@ if (!hallazgos.length) console.log('Sin hallazgos.');
   escribió el mismo saber de dos maneras — pasó con el F de Infantil, que estaba de cuatro
   formas distintas y partía en cuatro un grupo que es uno.
 
-  Se imprime ordenado por uso para que se lea de un vistazo cuáles hay que confirmar. Lo que
-  hace falta es una maestra con el decreto delante diciendo cuál es la buena; hasta entonces
-  no se toca ninguna que no sea una variante evidente de otra.
+  Se imprime ordenado por uso para que se lea de un vistazo cuáles hay que confirmar, y la
+  que usa una sola actividad **dice cuál es**: una lista de redacciones sin nombres obliga a
+  buscarla a mano por los setenta y ocho ficheros, y esta foto es justo lo que se le enseña a
+  quien tiene el decreto delante.
+
+  Hasta que eso pase no se toca ninguna que no sea una variante evidente de otra, y evidente
+  significa **mismo bloque y misma idea**. Se arregló así la de `c2-01`, que decía
+  «Lenguajes musicales: aplicación de sus conceptos básicos» donde otras diecinueve del mismo
+  criterio dicen «Lenguajes y práctica musical». No se tocó la de `c1-08`: esa cambia de
+  bloque, de D a A, y decidir si reconocer timbres es escucha del bloque musical o recepción
+  del bloque de análisis no es redactar distinto, es clasificar distinto.
 */
 const saberes = new Map();
 for (const f of ficheros) {
   const a = JSON.parse(readFileSync(join(DIR, f), 'utf-8'));
   const clave = `${a.etapa === 'infantil' ? 'Infantil' : 'Primaria'}  ${a.curriculo?.saber}`;
-  saberes.set(clave, (saberes.get(clave) ?? 0) + 1);
+  const antes = saberes.get(clave) ?? { n: 0, quien: [] };
+  saberes.set(clave, { n: antes.n + 1, quien: [...antes.quien, a.id] });
 }
 console.log('## saberes declarados, por uso');
-for (const [clave, n] of [...saberes].sort((x, y) => y[1] - x[1])) {
-  console.log(`   ${String(n).padStart(3)}  ${clave}${n === 1 ? '   <- confirmar' : ''}`);
+for (const [clave, { n, quien }] of [...saberes].sort((x, y) => y[1].n - x[1].n)) {
+  const cola = n === 1 ? `   <- confirmar (${quien[0]})` : '';
+  console.log(`   ${String(n).padStart(3)}  ${clave}${cola}`);
 }
 process.exitCode = 0;

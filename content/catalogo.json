@@ -1,7 +1,7 @@
 {
-  "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa.",
-  "generado": "2026-09-08",
-  "total": 77,
+  "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa, y también si usa un código que aquí no está. El hueco de C1-17 es intencionado: ese código nunca llegó a reservarse y los ids no se renumeran, porque un id puede estar dentro de una URL compartida.",
+  "generado": "2026-09-09",
+  "total": 78,
   "actividades": [
     {
       "id": "INF-01",
@@ -631,7 +631,7 @@
       "id": "C2-10",
       "titulo": "Ostinato a dos planos",
       "etapa": "primaria-c2",
-      "eje": "creacion",
+      "eje": "cuerpo",
       "lugar": "hibrida",
       "tipo": "guia-aula",
       "microfono": false,
@@ -859,6 +859,19 @@
       "esfuerzo": "M",
       "curriculo": "CE4 · crit. 4.1 · saber D",
       "descripcion": "Octava completa y dieciséis pulsos, para frases de verdad. Con bucle.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C3-12",
+      "titulo": "Compón por pistas",
+      "etapa": "primaria-c3",
+      "eje": "creacion",
+      "lugar": "pantalla",
+      "tipo": "pistas",
+      "microfono": false,
+      "esfuerzo": "L",
+      "curriculo": "CE4 · crit. 4.1 · saber D",
+      "descripcion": "Cuatro voces a la vez en una misma cuadricula, cada una con su instrumento. Se exporta a MIDI.",
       "estado": "hecha"
     },
     {
