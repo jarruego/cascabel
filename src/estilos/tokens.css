@@ -1257,9 +1257,11 @@ p {
 .pentagrama {
   height: calc(var(--alto-escena) - var(--e-5) - var(--e-3));
   min-height: 0;
-  grid-template-rows: auto minmax(160px, 1fr) auto;
-  align-content: stretch;
-  gap: var(--e-2);
+  /* Los tres bloques juntos y centrados: el componente acota el alto de la pauta, así
+     que el nombre queda pegado a ella y no arriba del todo en un móvil en vertical. */
+  grid-template-rows: auto auto auto;
+  align-content: center;
+  gap: var(--e-3);
 }
 .pentagrama__marco {
   width: 100%;
@@ -1273,9 +1275,10 @@ p {
   position: relative;
   margin: 0 auto;
 }
-/* Apretado: es una palabra, y cada píxel que no gasta lo gana la pauta. */
+/* Apretado pero legible: es una palabra, y en vertical `vmin` la hace crecer con el
+   ancho, que es lo que allí hay. */
 .pentagrama__pedida {
-  font-size: clamp(22px, 5vw, 34px);
+  font-size: clamp(28px, 9vmin, 44px);
   font-weight: 700;
   line-height: 1.1;
   color: var(--acento-2);

@@ -61,7 +61,6 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
   const tam = OBJETIVO_TACTIL[carril];
   const clave = contenido.clave ?? 'sol';
   const lienzo = useRef<HTMLDivElement | null>(null);
-  const marco = useRef<HTMLDivElement | null>(null);
   const sampler = useRef<Sampler | null>(null);
   const yaTerminada = useRef(false);
 
@@ -76,15 +75,23 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
     cabe, el marco se desplaza de lado con el dedo; lo demás —el nombre y la barra— se queda
     quieto fuera del marco.
   */
-  const [altoMarco, setAltoMarco] = useState(0);
+  const seccion = useRef<HTMLElement | null>(null);
+  const [altoSeccion, setAltoSeccion] = useState(0);
   useEffect(() => {
-    const el = marco.current;
+    const el = seccion.current;
     if (!el || typeof ResizeObserver === 'undefined') return;
-    const ro = new ResizeObserver(([e]) => setAltoMarco(Math.floor(e?.contentRect.height ?? 0)));
+    const ro = new ResizeObserver(([e]) => setAltoSeccion(Math.floor(e?.contentRect.height ?? 0)));
     ro.observe(el);
     return () => ro.disconnect();
   }, []);
-  const ALTO = Math.max(160, altoMarco - 2);
+  /*
+    Se mide la sección, no el marco, y la pauta se acota por arriba: en vertical la sección
+    es alta y una pauta que se la comiera entera dejaría el nombre de la nota arriba del
+    todo, lejos de la pauta —«está muy arriba», dijo el autor—. Con la pauta acotada, el
+    nombre, la pauta y la barra van juntos en el centro. Ciento veinte píxeles es lo que se
+    llevan el nombre, la barra y los huecos.
+  */
+  const ALTO = Math.max(160, Math.min(340, altoSeccion - 120));
   const SEPARACION = Math.max(14, Math.min(34, Math.floor((ALTO - tam) / 10)));
   const ARRIBA = Math.round((ALTO - 4 * SEPARACION) / 2);
   const INICIO = Math.round(INICIO_POR_ESPACIO * SEPARACION);
@@ -117,7 +124,7 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
   // el niño, no la partitura.
   useEffect(() => {
     const div = lienzo.current;
-    if (!div || altoMarco === 0) return;
+    if (!div || altoSeccion === 0) return;
 
     let cancelado = false;
     void (async () => {
@@ -129,6 +136,14 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
         const renderer = new Renderer(lienzo.current, Renderer.Backends.SVG);
         renderer.resize(ancho, ALTO);
         const ctx = renderer.getContext();
+        /*
+          La pauta se dibuja a la separación de VexFlow, diez píxeles, y se escala entera
+          después. VexFlow no agranda la clave con la separación entre líneas —dibuja el
+          glifo a un tamaño fijo—, así que con líneas a 30 px la clave salía diminuta.
+          Escalando el contexto crecen las líneas y la clave por igual.
+        */
+        const escala = SEPARACION / 10;
+        ctx.scale(escala, escala);
 
         /*
           Sin aire propio por encima ni por debajo: VexFlow pone cuatro espacios de margen
@@ -136,8 +151,8 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
           componente colocaba los sitios, y las notas «estaban muy desplazadas de su sitio».
           El aire lo pone ARRIBA, que es el mismo número para el dibujo y para los sitios.
         */
-        const pauta = new Stave(10, ARRIBA, ancho - 20, {
-          spacingBetweenLinesPx: SEPARACION,
+        const pauta = new Stave(10 / escala, ARRIBA / escala, (ancho - 20) / escala, {
+          spacingBetweenLinesPx: 10,
           spaceAboveStaffLn: 0,
           spaceBelowStaffLn: 0,
         });
@@ -152,7 +167,7 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
     return () => {
       cancelado = true;
     };
-  }, [clave, ancho, ALTO, ARRIBA, SEPARACION, altoMarco]);
+  }, [clave, ancho, ALTO, ARRIBA, SEPARACION, altoSeccion]);
 
   useEffect(() => {
     if (estado.fase !== 'bien' && estado.fase !== 'casi') return;
@@ -198,7 +213,7 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
   const pista = pistaPara(actividad.pistas, estado.fallosAqui);
 
   return (
-    <section className="actividad pentagrama" data-carril={carril} aria-labelledby="consigna">
+    <section className="actividad pentagrama" data-carril={carril} aria-labelledby="consigna" ref={seccion}>
       <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
 
       <p className="pentagrama__pedida" aria-live="polite">
@@ -206,7 +221,7 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
       </p>
 
       {/* El marco es lo único que se desplaza, y solo de lado. */}
-      <div className="pentagrama__marco" ref={marco}>
+      <div className="pentagrama__marco">
       <div className="pentagrama__lienzo" style={{ width: ancho, height: ALTO }}>
         <div ref={lienzo} aria-hidden="true" />
 

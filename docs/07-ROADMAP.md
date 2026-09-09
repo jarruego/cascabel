@@ -2610,7 +2610,10 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       la escala. Y la causa de que aun así la página se ensanchara: un hijo de la cuadrícula
       del escenario tiene `min-width: auto` y no mide menos que su contenido, aunque tenga
       `overflow-x: auto`. Ahora todo bloque de actividad lleva `min-width: 0`, y lo que no
-      cabe se desplaza dentro de su marco.
+      cabe se desplaza dentro de su marco. La clave era diminuta con líneas anchas porque
+      VexFlow no la agranda con la separación: ahora la pauta se dibuja a la separación
+      normal y se escala entera. Y en vertical el nombre queda pegado a la pauta, con los
+      tres bloques centrados, no arriba del todo.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
