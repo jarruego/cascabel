@@ -2636,12 +2636,14 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
 
 - [x] **La pista de un fallo se queda hasta la siguiente respuesta.** Salía 1,2 s y se iba
       con el cambio de fase: «ni da tiempo de leer». En elección y pentagrama la tarjeta de
-      «casi» sigue mientras se está en la misma pregunta con un fallo detrás.
+      «casi» dura lo que tarda en leerse —tres segundos y medio más la frase— y cualquier
+      respuesta nueva la quita; sin reloj se quedaba flotando.
 - [x] **La pauta de la escala es un rótulo que avanza.** Cuando no cabe una nota más, la de
       la izquierda desaparece y las demás corren un sitio, con movimiento; las etiquetas de
       tono y semitono van en una sola línea y avanzan igual. Se evalúan las últimas ocho
       notas, así que el «empezar otra vez» sobra: una escala mal empezada se arregla
-      siguiendo. Y el teclado se desplaza de lado si no cabe, sin ensanchar la página.
+      siguiendo. Y el teclado se desplaza de lado si no cabe, sin ensanchar la página. Las
+      etiquetas son cuadradas e iguales, una entre cada dos notas; se pisaban.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la

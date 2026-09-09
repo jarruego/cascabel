@@ -4,6 +4,7 @@ import { useCarril } from '@/app/preferencias';
 import { MARIMBA, Sampler } from '@/audio/sampler';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { Reaccion } from '@/ui/Reaccion';
+import { BASE_MS, POR_CARACTER_MS } from '../maquinaReaccion';
 import { Progreso } from '@/ui/Progreso';
 import { barajarSinRepetir } from '../seleccionEstimulos';
 import { t } from '@/i18n';
@@ -212,6 +213,26 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
 
   const pista = pistaPara(actividad.pistas, estado.fallosAqui);
 
+  /*
+    La pista de un fallo se queda lo que tarda en leerse, y se va antes si se responde.
+
+    Sin reloj se quedaba flotando después de cualquier toque —lo vio el autor—; con 1,2 s
+    no daba tiempo de leerla. Ahora dura lo que la tarjeta de elogio con ese mismo texto,
+    tres segundos y medio más lo que mida la frase, y cualquier respuesta nueva la quita.
+  */
+  const [pistaVisible, setPistaVisible] = useState(false);
+  useEffect(() => {
+    if (estado.fase !== 'casi') return;
+    setPistaVisible(true);
+    const texto = pista ? t(pista) : t('comun.casi');
+    const id = window.setTimeout(() => setPistaVisible(false), BASE_MS + texto.length * POR_CARACTER_MS);
+    return () => window.clearTimeout(id);
+  }, [estado.fase, estado.intentos, pista]);
+  useEffect(() => {
+    if (estado.fase === 'bien' || estado.fase === 'completada') setPistaVisible(false);
+  }, [estado.fase]);
+  const conPista = estado.fase === 'casi' || (estado.fase === 'estimulo' && pistaVisible);
+
   return (
     <section className="actividad pentagrama" data-carril={carril} aria-labelledby="consigna" ref={seccion}>
       <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
@@ -267,20 +288,13 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
 
       {/* Sin botonera: se juega tocando los sitios de la pauta, y no hay nada que hacerle a
           la actividad desde fuera. El «¡completada!» lo dice la modal de enhorabuena. */}
-      {/* La pista de un fallo se queda hasta la siguiente respuesta: ver `Eleccion`. */}
+      {/* La pista de un fallo dura lo que tarda en leerse: ver `pistaVisible`. */}
       <Reaccion
-        tono={
-          estado.fase === 'bien'
-            ? 'bien'
-            : estado.fase === 'casi' || (estado.fase === 'estimulo' && estado.fallosAqui > 0)
-              ? 'casi'
-              : 'neutro'
-        }
+        tono={estado.fase === 'bien' ? 'bien' : conPista ? 'casi' : 'neutro'}
         personaje={actividad.personaje}
       >
         {estado.fase === 'bien' && t('comun.bien')}
-        {(estado.fase === 'casi' || (estado.fase === 'estimulo' && estado.fallosAqui > 0)) &&
-          (pista ? t(pista) : t('comun.casi'))}
+        {conPista && (pista ? t(pista) : t('comun.casi'))}
       </Reaccion>
 
     </section>

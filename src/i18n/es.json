@@ -771,7 +771,7 @@
   "escala.pauta": "Pentagrama con las notas que llevas puestas",
   "escala.distancias": "Distancia entre cada dos notas",
   "escala.tono": "tono",
-  "escala.semitono": "semitono",
+  "escala.semitono": "semi\ntono",
   "escala.salto": "salto",
   "escala.esLaSiguiente": "Es la nota que toca ahora",
   "escala.casi": "Las últimas ocho notas no forman una escala mayor. Sigue tocando: mira dónde te salen los semitonos.",

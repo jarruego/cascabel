@@ -1,7 +1,8 @@
-import { useCallback, useEffect, useMemo, useReducer, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { OBJETIVO_TACTIL } from '@/config';
 import { useCarril } from '@/app/preferencias';
 import { Reaccion } from '@/ui/Reaccion';
+import { BASE_MS, POR_CARACTER_MS } from '../maquinaReaccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Boton } from '@/ui/Boton';
@@ -142,6 +143,26 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
   const bloqueado = estado.fase !== 'estimulo';
   const pista = pistaPara(actividad.pistas, estado.fallosAqui);
 
+  /*
+    La pista de un fallo se queda lo que tarda en leerse, y se va antes si se responde.
+
+    Sin reloj se quedaba flotando después de cualquier toque —lo vio el autor—; con 1,2 s
+    no daba tiempo de leerla. Ahora dura lo que la tarjeta de elogio con ese mismo texto,
+    tres segundos y medio más lo que mida la frase, y cualquier respuesta nueva la quita.
+  */
+  const [pistaVisible, setPistaVisible] = useState(false);
+  useEffect(() => {
+    if (estado.fase !== 'casi') return;
+    setPistaVisible(true);
+    const texto = pista ? t(pista) : t('comun.casi');
+    const id = window.setTimeout(() => setPistaVisible(false), BASE_MS + texto.length * POR_CARACTER_MS);
+    return () => window.clearTimeout(id);
+  }, [estado.fase, estado.intentos, pista]);
+  useEffect(() => {
+    if (estado.fase === 'bien' || estado.fase === 'completada') setPistaVisible(false);
+  }, [estado.fase]);
+  const conPista = estado.fase === 'casi' || (estado.fase === 'estimulo' && pistaVisible);
+
   return (
     <section className="actividad" data-carril={carril} aria-labelledby="consigna">
       <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
@@ -190,28 +211,13 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
         saber cómo ha ido cada una. Lo que se va es el «¡completada!» del final, que lo dice
         la modal de enhorabuena medio segundo después.
       */}
-      {/*
-        La pista de un fallo se queda hasta la siguiente respuesta.
-
-        Salía 1,2 s y se iba con el cambio de fase: «ni da tiempo de leer», dijo el autor
-        de «¿Tono o semitono?», cuya pista es una frase entera. La tarjeta de «casi» está
-        pensada para no llevar reloj —lo quita el niño al responder—, así que aquí se le da
-        lo que estaba escrito que tenía: mientras siga en la misma pregunta con un fallo
-        detrás, la pista sigue. Al acertar o cambiar de pregunta se va.
-      */}
+      {/* La pista de un fallo dura lo que tarda en leerse: ver `pistaVisible`. */}
       <Reaccion
-        tono={
-          estado.fase === 'bien'
-            ? 'bien'
-            : estado.fase === 'casi' || (estado.fase === 'estimulo' && estado.fallosAqui > 0)
-              ? 'casi'
-              : 'neutro'
-        }
+        tono={estado.fase === 'bien' ? 'bien' : conPista ? 'casi' : 'neutro'}
         personaje={actividad.personaje}
       >
         {estado.fase === 'bien' && t('comun.bien')}
-        {(estado.fase === 'casi' || (estado.fase === 'estimulo' && estado.fallosAqui > 0)) &&
-          (pista ? t(pista) : t('comun.casi'))}
+        {conPista && (pista ? t(pista) : t('comun.casi'))}
       </Reaccion>
 
     </section>

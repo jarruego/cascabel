@@ -3242,22 +3242,35 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   display: flex;
   flex-wrap: nowrap;
   overflow: hidden;
-  gap: var(--e-1);
-  justify-content: center;
-  padding: 0;
+  gap: 4px;
+  justify-content: flex-start;
+  /* 42 px: la primera etiqueta centrada entre la primera nota (40) y la segunda (86). */
+  padding: 0 0 0 42px;
   margin: 0 0 var(--e-2);
-  min-height: 2.2em;
+  min-height: 42px;
   list-style: none;
 }
+/* Cuadradas y todas iguales: 42 px más 4 de hueco son los 46 px que separan dos notas, y
+   con el margen de la izquierda cada etiqueta queda entre las dos notas que compara. Antes
+   el tono medía el doble que el semitono y se pisaban; la palabra y el color ya dicen cuál
+   es. «Semitono» va en dos líneas para caber. */
 .escala__distancias li {
-  padding: var(--e-1) var(--e-2);
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  padding: 0;
   font-size: var(--t-xs);
+  line-height: 1.05;
+  text-align: center;
+  white-space: pre-line;
   border-radius: var(--r-s);
   background: var(--fondo);
   border: 2px solid var(--linea);
 }
-.escala__distancias li[data-distancia='tono'] { min-width: 92px; text-align: center; border-color: var(--vivo-azul); }
-.escala__distancias li[data-distancia='semitono'] { min-width: 46px; text-align: center; border-color: var(--vivo-naranja); }
+.escala__distancias li[data-distancia='tono'] { border-color: var(--vivo-azul); }
+.escala__distancias li[data-distancia='semitono'] { border-color: var(--vivo-naranja); }
 .escala__distancias li[data-distancia='otra'] { border-style: dashed; color: var(--tinta-2); }
 
 .escala__teclado {
