@@ -1568,12 +1568,25 @@ p {
   `--filas` y `--columnas` los pone el componente: son la forma de esta rejilla y aquí no se
   pueden saber.
 */
+/* La sección mide su ancho para la cuadrícula: `cqw` de abajo. */
+.rejilla { container-type: inline-size; }
 .rejilla__cuadricula {
-  --lado: clamp(
-    var(--celda-minima),
-    calc((var(--alto-escena) * 0.58 - 2 * var(--e-3)) / var(--filas, 4)),
-    64px
-  );
+  /*
+    El lado de la casilla sale de las DOS medidas: lo que cabe a lo ancho por columna y lo
+    que cabe a lo alto por fila, y manda la menor. Salía solo del alto, con un 58 % del
+    escenario, y el autor lo vio al girar el móvil: «no entiendo que los cuadros sean más
+    pequeños en apaisado que en vertical». En vertical el ancho es lo que falta y en
+    apaisado el alto, y con una sola medida siempre se desaprovecha la otra.
+
+    A lo alto se descuenta lo que rodea a la cuadrícula —el aire del marco, el borde y el
+    relleno— para que en el constructor no haya que desplazar en vertical: la cuadrícula
+    entera cabe entre la barra de arriba y la botonera. A lo ancho, el borde, el relleno y
+    los huecos entre columnas. Y siempre entre el suelo táctil del carril y un tope: si ni
+    con el suelo caben a lo ancho, se desplaza de lado, que es lo que dice §6.
+  */
+  --por-ancho: calc((100cqw - 2 * var(--e-3) - 6px - (var(--columnas, 8) - 1) * var(--e-1)) / var(--columnas, 8));
+  --por-alto: calc((var(--alto-escena) - 96px - (var(--filas, 4) - 1) * var(--e-1)) / var(--filas, 4));
+  --lado: clamp(var(--celda-minima), min(var(--por-ancho), var(--por-alto)), 96px);
   display: grid;
   grid-template-columns: repeat(var(--columnas, 8), var(--lado));
   gap: var(--e-1);

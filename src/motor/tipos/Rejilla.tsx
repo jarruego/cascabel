@@ -298,10 +298,10 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
             /*
               La FORMA de la rejilla, para que el CSS pueda calcular el lado de la casilla.
 
-              El lado lo decide el alto disponible entre el número de filas, no el ancho: con
-              columnas de `1fr` la casilla crecía con la pantalla y `aspect-ratio` convertía
-              ese ancho en alto, así que girar el móvil daba más alto justo cuando menos
-              hay. Con ocho filas eso eran 960 px en una pantalla de 360.
+              El lado sale de las dos medidas —lo que cabe por columna a lo ancho y por fila a
+              lo alto— y manda la menor: ver `.rejilla__cuadricula` en tokens.css. Con
+              columnas de `1fr` la casilla crecía con el ancho y `aspect-ratio` lo convertía en
+              alto, y con ocho filas eso eran 960 px en una pantalla de 360.
             */
             '--filas': filas,
             '--columnas': columnas,

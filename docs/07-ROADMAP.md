@@ -2567,6 +2567,12 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       acaba se queda a la vista con su botonera escondida. Vale para emparejar, ordenar,
       dictados y compases en serie.
 
+- [x] **Las casillas de la rejilla salen de las dos medidas.** El lado se calculaba solo
+      con el alto, y al girar el móvil salían más pequeñas en apaisado que en vertical.
+      Ahora manda la menor entre lo que cabe por columna a lo ancho y por fila a lo alto,
+      descontando lo que rodea a la cuadrícula para que el constructor quepa sin desplazar
+      en vertical, con el suelo táctil del carril y un tope de 96 px.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
