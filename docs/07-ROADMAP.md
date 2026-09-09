@@ -2525,6 +2525,22 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       pulsar. La barra de seis píxeles del final se va de elección, pentagrama y cantar: los
       puntos del paso ya dicen por dónde se va.
 
+- [x] **Elección: cinco preguntas por vuelta, sacadas del banco.** No había tope y había
+      actividades de ocho, diez y doce seguidas. Ahora cada vuelta saca cinco, repartidas
+      entre las respuestas para que ninguna opción se quede sin salir, y «otra vez» saca
+      otras. El JSON conserva el banco entero. `seleccionEstimulos.ts`, con test.
+- [x] **La barra de progreso vuelve, por tramos.** El paso con botón de «siguiente» no
+      gustó —«prefiero la barra de antes, más bonita y con secciones»—: un tramo por
+      pregunta, hecho en verde, el actual más alto y con el acento. En elección, pentagrama
+      y cantar. Las preguntas se encadenan solas tras el feedback, como al principio.
+- [x] **«¿Sube o baja?» cambia de instrumento en cada pregunta**, como los de tempo: con
+      el mismo xilófono seis veces se confundía. Y con él «¿Cuál es más aguda?» y «Sube,
+      baja o se repite». Un estímulo puede llevar su `instrumento`.
+
+- [x] **Las figuras de ordenar no se pisan.** Muestras y notas ya cortaban a la anterior;
+      los ritmos no, y en «De la más corta a la más larga» tocar dos seguidas las mezclaba.
+      Y «escuchar» encadena cada ficha cuando acaba la anterior, no cada 700 ms.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

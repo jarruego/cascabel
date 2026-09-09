@@ -8,8 +8,10 @@ import { IconoComprobar, IconoTocar } from '@/ui/Simbolos';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
-import { sonarMuestra, sonarNota } from '../sonarMuestra';
+import { pararMuestra, sonarMuestra, sonarNota } from '../sonarMuestra';
 import { sonarEstimulo } from '../sonarEstimulo';
+import { duracionDe } from '../estimulo';
+import { pararTodo } from '@/audio/AudioEngine';
 import { propsArrastre, zonaBajoPunto } from '@/ui/arrastrable';
 import {
   inicial,
@@ -97,14 +99,35 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
     estado.casillas,
   );
 
+  const tempo = actividad.practica?.tempo ?? 84;
+  /**
+   * Suena una ficha, y corta lo que estuviera sonando: dos figuras seguidas no se
+   * superponen. Muestras y notas ya cortaban; los ritmos no, y en «De la más corta a la más
+   * larga» tocar dos seguidas las mezclaba. Lo vio el autor el 2026-09-12.
+   */
   const sonar = (clave: string) => {
     const e = porClave(clave);
+    pararMuestra();
+    pararTodo();
     if (e?.audio) sonarMuestra(e.audio);
     else if (e?.nota) void sonarNota(e.nota, contenido.instrumento);
     else if (e?.ritmo) {
-      void sonarEstimulo({ ritmo: e.ritmo, respuesta: '' }, { tempo: actividad.practica?.tempo });
+      void sonarEstimulo({ ritmo: e.ritmo, respuesta: '' }, { tempo });
     }
   };
+  /** Cuánto dura una ficha al sonar, en milisegundos: para encadenarlas sin pisarse. */
+  const duraMs = (clave: string) => {
+    const e = porClave(clave);
+    if (e?.ritmo) return duracionDe({ ritmo: e.ritmo, respuesta: '' }, tempo) * 1000 + 150;
+    return 700;
+  };
+  /** Los temporizadores de «escuchar»: se cancelan al volver a pulsar y al salir. */
+  const cola = useRef<number[]>([]);
+  const vaciarCola = () => {
+    cola.current.forEach((id) => window.clearTimeout(id));
+    cola.current = [];
+  };
+  useEffect(() => vaciarCola, []);
 
   useEffect(() => {
     if (estado.fase !== 'revisando') return;
@@ -238,10 +261,15 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
           className="boton-repetir"
           aria-disabled={estado.casillas.every((c) => c === null) || undefined}
           onClick={() => {
+            // Cada ficha empieza cuando acaba la anterior: una redonda dura más que 700 ms,
+            // y con un paso fijo las largas se pisaban con la siguiente.
+            vaciarCola();
             const puestas = estado.casillas.filter((c): c is string => c !== null);
-            puestas.forEach((clave, i) => {
-              window.setTimeout(() => sonar(clave), i * 700);
-            });
+            let cuando = 0;
+            for (const clave of puestas) {
+              cola.current.push(window.setTimeout(() => sonar(clave), cuando));
+              cuando += duraMs(clave);
+            }
           }}
         >
           <IconoTocar />

@@ -7,6 +7,7 @@ import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
 import { sonarMuestra, sonarNota } from '../sonarMuestra';
+import { pararTodo } from '@/audio/AudioEngine';
 import { sonarEstimulo } from '../sonarEstimulo';
 import {
   INICIAL_EMPAREJAR,
@@ -166,6 +167,8 @@ export default function Emparejar({ actividad, alTerminar }: PropsActividad) {
                     if (e.audio) sonarMuestra(e.audio);
                     else if (e.nota) void sonarNota(e.nota, contenido.instrumento);
                     else if (e.ritmo) {
+                      // Un ritmo corta al anterior, como hacen las muestras y las notas.
+                      pararTodo();
                       void sonarEstimulo(
                         { ritmo: e.ritmo, respuesta: '' },
                         { tempo: actividad.practica?.tempo },
