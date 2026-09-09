@@ -2173,6 +2173,22 @@ hace la actividad**, y un agujero en el validador que las dejaba pasar.
       Ahora hay test, y compara campo a campo contra los setenta y ocho ficheros en vez de
       contra el fichero entero: la fecha de generación cambia sola y no significa nada.
 
+- [x] **La pantalla de créditos pedía las setenta y ocho actividades en fila india.** Un
+      `await` dentro del bucle, así que la última no empezaba a pedirse hasta que había
+      llegado la penúltima: setenta y ocho viajes encadenados en la única pantalla que existe
+      por una obligación legal. Ahora van a la vez, con el `catch` todavía por actividad —una
+      ilegible no puede dejar en blanco los créditos de las demás.
+
+**Dos cosas que quedan anotadas y no se han tocado**, porque las decide el autor:
+
+- `CLAUDE.md` §10 describe una pantalla `/revisar` para revisar contenido en lote, con N
+  actividades y su botón de play. **No existe**: no hay ruta ni componente. O se escribe, o
+  el punto 3 del ciclo de trabajo describe algo que no se puede hacer.
+- Las setenta y ocho actividades están en `estado: "borrador"` menos una, y eso no se ve por
+  ninguna parte en la aplicación desplegada. Decirlo —una vez, en el sitio del maestro, no
+  una etiqueta en cada tarjeta— es coherente con cómo se cuenta todo lo demás aquí; pero
+  cómo se presenta el proyecto a un maestro es una decisión de producto y no la tomo yo.
+
 **Lo que sigue faltando** es lo de siempre: un aparato. Nada de esto necesitaba pantalla,
 pero lo de los dos días anteriores sí.
 

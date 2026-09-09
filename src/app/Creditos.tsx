@@ -43,19 +43,31 @@ export default function Creditos() {
     void (async () => {
       try {
         const indice = await cargarIndice();
-        const entradas: Array<{ credito: Credito; actividad: string }> = [];
-        for (const e of indice.actividades) {
-          try {
-            const a = (await cargarActividad(e.id)) as Actividad;
-            for (const c of a.creditos ?? []) {
-              entradas.push({ credito: c as Credito, actividad: a.titulo });
+        /*
+          Las setenta y ocho a la vez, no una detrás de otra.
+
+          Estaba con un `await` dentro del bucle, así que la actividad setenta y ocho no
+          empezaba a pedirse hasta que había llegado la setenta y siete: setenta y ocho
+          viajes encadenados en la única pantalla que existe por una obligación legal. Son
+          ficheros del propio origen y el navegador ya limita cuántos abre a la vez.
+
+          El `catch` sigue siendo de cada una: una actividad ilegible no puede dejar en
+          blanco los créditos de las demás, que son obligaciones que hay que mostrar igual.
+        */
+        const porActividad = await Promise.all(
+          indice.actividades.map(async (e) => {
+            try {
+              const a = (await cargarActividad(e.id)) as Actividad;
+              return (a.creditos ?? []).map((c) => ({
+                credito: c as Credito,
+                actividad: a.titulo,
+              }));
+            } catch {
+              return [];
             }
-          } catch {
-            // Una actividad ilegible no debe dejar la pantalla de créditos en blanco:
-            // los demás créditos siguen siendo obligaciones que hay que mostrar.
-          }
-        }
-        if (vivo) setGrupos(agrupar(entradas));
+          }),
+        );
+        if (vivo) setGrupos(agrupar(porActividad.flat()));
       } catch {
         if (vivo) setFallo(true);
       }
