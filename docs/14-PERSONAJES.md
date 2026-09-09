@@ -288,21 +288,26 @@ momento antes de empezar. Y se cambia por lo que la actividad **trabaja**, no po
 "personaje": "rex"
 ```
 
-**Las 78 lo declaran**, y no por reparto automático: se elige por lo que la actividad
+**Las 145 lo declaran**, y no por reparto automático: se elige por lo que la actividad
 trabaja, que es el criterio del dosier. Un mapa por eje habría sido más rápido y peor —
 dentro de «altura» conviven cantar una nota (crear, Laia) y distinguir cuál es más grave
 (discriminar, Simón), y son dos cosas distintas.
 
+Y el criterio se aplica entero: el 2026-09-10 Doby estaba en cinco actividades y Dora en
+una de Infantil, porque «la unión» y «la base» no se habían mirado como lo que la
+actividad trabaja. Lo que se hace juntos es de Doby; la primera de cada eje, de Dora.
+`tests/personajes.test.ts` avisa si alguno baja de la mitad de su parte.
+
 | Personaje | Cuándo le toca | Actividades |
 |---|---|---|
-| **Dora** | La base y las referencias a las que se vuelve | 4 |
-| **Rex** | Descubrir lo que hay: identificar, investigar, seguir la pista | 13 |
-| **Milo** | El ritmo como juego: patrones, eco, palmas | 12 |
-| **Fara** | La calma: silencio, escucha larga, mirar sin responder | 7 |
-| **Sol** | El pulso en el cuerpo: movimiento, tempo, compás | 14 |
-| **Laia** | Inventar: componer, improvisar, cantar algo propio | 16 |
-| **Simón** | Distinguir entre dos: agudo o grave, mayor o menor | 11 |
-| **Doby** | La unión y el cierre. Además **cierra todas** las actividades | 1 |
+| **Dora** | La base: la primera de cada eje, donde se empieza seguro, y las referencias a las que se vuelve | 13 |
+| **Rex** | Descubrir lo que hay: identificar, investigar, seguir la pista | 27 |
+| **Milo** | El ritmo como juego: patrones, eco, palmas | 15 |
+| **Fara** | La calma: silencio, escucha larga, mirar sin responder | 13 |
+| **Sol** | El pulso en el cuerpo: movimiento, tempo, compás | 23 |
+| **Laia** | Inventar: componer, improvisar, cantar algo propio | 15 |
+| **Simón** | Distinguir entre dos: agudo o grave, mayor o menor | 20 |
+| **Doby** | La unión: lo que se hace juntos —a dos, en grupo, en coro, en corro— y lo que junta partes. Además **cierra todas** las actividades | 19 |
 
 ### Dos que la auditoría marca y se quedan
 

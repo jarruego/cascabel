@@ -161,3 +161,27 @@ describe('el reparto está completo', () => {
     expect([...PERSONAJES].filter((p) => !usados.has(p))).toEqual([]);
   });
 });
+
+/**
+ * Que la pandilla salga entera, y repartida.
+ *
+ * El personaje de cada actividad se elige por lo que trabaja, no por reparto, y eso está
+ * bien; pero aplicado a medias dejó a Doby en cinco actividades y a Dora en una de
+ * Infantil, y el autor lo notó el 2026-09-10: «hay personajes que salen muy poco o nada».
+ * Este test no pide reparto igual —sería falso—: pide que nadie baje de la mitad de lo que
+ * le tocaría a partes iguales, ni suba del doble. Los umbrales salen de cuántas
+ * actividades hay, así que crecen con el catálogo.
+ */
+describe('la pandilla sale repartida', () => {
+  const DIR_ACTIVIDADES = join(__dirname, '..', 'content', 'actividades');
+  const declarados = readdirSync(DIR_ACTIVIDADES)
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => (JSON.parse(readFileSync(join(DIR_ACTIVIDADES, f), 'utf-8')) as { personaje?: string }).personaje ?? 'dora');
+  const parte = declarados.length / PERSONAJES.length;
+
+  it('ningún personaje baja de la mitad de su parte ni sube del doble', () => {
+    const cuenta = Object.fromEntries(PERSONAJES.map((p) => [p, declarados.filter((x) => x === p).length]));
+    const fuera = PERSONAJES.filter((p) => cuenta[p]! < parte / 2 || cuenta[p]! > parte * 2);
+    expect(fuera, JSON.stringify(cuenta)).toEqual([]);
+  });
+});
