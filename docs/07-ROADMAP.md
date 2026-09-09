@@ -2597,6 +2597,11 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       empezando justo tras la clave: con siete en clave de fa se salían por la derecha. Si
       no cabe en vertical, se desplaza con el dedo.
 
+- [x] **«Pon las barras» centrada cuando cabe.** Un `flex-start` posterior la pegaba a la
+      izquierda también en apaisado; `safe center` ya centra si cabe y empieza por la
+      izquierda si no. Revisadas las demás filas de actividad: los puntos del pulso de la
+      guía de aula tenían lo mismo y se centran; el resto ya centraba o llena el ancho.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

@@ -899,6 +899,8 @@ p {
    sordo tiene que poder participar (criterio 1.1.1 de docs/04-DISENO-UI.md). */
 .guia__pulso {
   display: flex;
+  /* Centrados: los puntos del pulso se pegaban a la izquierda en cualquier pantalla ancha. */
+  justify-content: safe center;
   gap: clamp(12px, 3vw, 40px);
   margin: var(--e-5) 0 var(--e-6);
   /* El punto activo crece un 18 %: hasta 11 px por lado. Ver `.seguir__tira`. */
@@ -4587,12 +4589,14 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
  * ------------------------------------------------------------------------ */
 
 /* La línea de figuras de «pon las barras»: en una sola línea o se desplaza. Partida en dos
-   renglones, contar los pulsos de un compás se vuelve imposible. */
+   renglones, contar los pulsos de un compás se vuelve imposible. Y centrada cuando cabe:
+   aquí había un `flex-start` que la pegaba a la izquierda también en apaisado, donde cabe
+   de sobra. `safe center` de arriba ya hace las dos cosas —centra si cabe y empieza por la
+   izquierda si no—, que es lo que el autor vio que faltaba el 2026-09-12. */
 .compases__linea {
   flex-wrap: nowrap;
   overflow-x: auto;
-  /* Sin esto, los hijos con `flex: 1` se encogen hasta desaparecer antes de desplazar. */
-  justify-content: flex-start;
+  overscroll-behavior-x: contain;
 }
 .compases__linea > * { flex: 0 0 auto; }
 
