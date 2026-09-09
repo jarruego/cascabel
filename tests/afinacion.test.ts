@@ -107,7 +107,7 @@ describe('evaluación de afinación', () => {
 describe('con veinte segundos, lo que cuenta es dónde acabó', () => {
   it('se evalúa el último tramo, no la búsqueda entera', () => {
     // Diez segundos de silencio y tanteo lejos, y al final la nota clavada.
-    const busqueda = [...Array<null>(300).fill(null), ...Array<number>(200).fill(-60)];
+    const busqueda = [...Array<null>(300).fill(null), ...Array<number>(200).fill(-120)];
     const final = Array<number>(150).fill(2);
     const todo = [...busqueda, ...final];
     expect(evaluarAfinacion(todo, 'lectores').calidad).not.toBe('afinado');
