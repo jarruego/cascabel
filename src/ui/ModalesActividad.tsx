@@ -90,9 +90,9 @@ export function ModalExplicacion({
  * detector y con ella la actividad se hace entera, así que son dos botones de verdad. Con
  * voz no hay nada que tocar: escuchar ES la actividad. Ahí el micrófono no se ofrece como
  * opcional —lo pidió el autor el 2026-09-12: «no des opción a no hacerlo»— y la salida es
- * un «ahora no puedo hacer ruido», para el aula en silencio o el niño que no quiere cantar
- * delante de los demás. Sigue sin ser un requisito (§8): con ese botón se oye la nota y se
- * canta sin que se mida, y la actividad se termina igual.
+ * un «ahora no puedo hacer ruido» que **no entra**: la deja para luego y vuelve al
+ * catálogo. §8 se mantiene para lo que no decide el niño —permiso denegado, worklet que no
+ * carga—: ahí la actividad sigue y se canta sin que se mida.
  */
 export function ModalMicrofono({
   abierto,

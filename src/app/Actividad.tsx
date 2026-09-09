@@ -125,6 +125,7 @@ export default function Actividad() {
   const Componente = componenteDe(actividad.tipo);
   const quien = actividad.personaje ?? 'dora';
   const conMicrofono = actividad.entrada.modo.startsWith('microfono');
+  const modoMicrofono = actividad.entrada.modo === 'microfono-voz' ? 'voz' : 'palmada';
   /* En la guía de aula no sale personaje: esa pantalla es el guion del maestro proyectado, y
      ahí una cara es decoración que le roba sitio a lo que mira la clase entera. */
   const conPersonaje = actividad.tipo !== 'guia-aula';
@@ -141,7 +142,7 @@ export default function Actividad() {
             pantalla del micrófono. Reabrir la explicación pulsando al personaje no la vuelve
             a sacar: `empezada` ya está puesta y la pregunta ya se hizo.
           */
-          if (!empezada && conMicrofono && hayQuePreguntar()) setPermiso(true);
+          if (!empezada && conMicrofono && hayQuePreguntar(modoMicrofono)) setPermiso(true);
           else setEmpezada(true);
         }}
       />
@@ -149,14 +150,22 @@ export default function Actividad() {
       <ModalMicrofono
         abierto={permiso}
         personaje={quien}
-        modo={actividad.entrada.modo === 'microfono-voz' ? 'voz' : 'palmada'}
+        modo={modoMicrofono}
         alAceptar={() => {
           aceptarMicrofono();
           setPermiso(false);
           setEmpezada(true);
         }}
         alRechazar={() => {
-          // Decir que no NO cancela la actividad: se hace entera tocando en la pantalla.
+          /*
+            Con palmadas, decir que no NO cancela la actividad: se hace entera tocando en la
+            pantalla. Con voz no hay nada que tocar: «ahora no puedo hacer ruido» la deja
+            para luego y vuelve al catálogo, sin recordar el no. Ver `escucha/permiso.ts`.
+          */
+          if (modoMicrofono === 'voz') {
+            volver();
+            return;
+          }
           rechazarMicrofono();
           setPermiso(false);
           setEmpezada(true);

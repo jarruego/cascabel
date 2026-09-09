@@ -2454,8 +2454,11 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       aplica en el acto (`motor/actualizacion.ts`, con test); a mitad de sesión sigue el
       aviso con botón. Y Ajustes enseña la versión: número, día y commit.
 - [x] **Donde escuchar es la actividad, el micrófono no se ofrece como opcional.** En las
-      de voz el segundo botón ya no es «prefiero que no», es «ahora no puedo hacer ruido».
-      Sigue sin ser requisito: con él se oye la nota y se canta sin medir.
+      de voz el segundo botón es «ahora no puedo hacer ruido», y **no entra**: la deja para
+      luego y vuelve al catálogo, sin recordar el no, para que quien vuelva más tarde pueda
+      decir que sí. §8 sigue en pie para lo que no decide el niño: si el navegador deniega
+      el permiso o el worklet no carga, la actividad sigue y se canta sin medir. Con
+      palmadas nada cambia: tocar en la pantalla es una forma completa de hacerla.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, y que la
