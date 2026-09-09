@@ -1679,24 +1679,38 @@ p {
    La aguja existe para que la actividad se pueda hacer MIRANDO, y para que el
    niño vea hacia dónde moverse mientras canta, en vez de que se lo digan al
    final cuando ya no puede hacer nada. */
+/*
+  «Canta la nota» cabe en apaisado. La sección se lleva el alto del escenario y lo reparte
+  entre el nombre, la digitación si la hay, la aguja, la guía y la barra, todos acotados
+  por el alto y no solo por el ancho; y la aguja es ancha y baja, que es lo que le da
+  recorrido a la lectura. La regla es la de todas las pantallas que caben.
+*/
+.cantar {
+  height: calc(var(--alto-escena) - var(--e-5) - var(--e-3));
+  min-height: 0;
+  align-content: center;
+  gap: var(--e-2);
+}
 .cantar__nota {
-  font-size: clamp(40px, 12vw, 96px);
+  font-size: clamp(36px, 14vmin, 96px);
   font-weight: 700;
-  margin: var(--e-2) 0;
+  line-height: 1;
+  margin: 0;
   color: var(--vivo-turquesa);
 }
 .cantar__aguja {
   position: relative;
-  /* Es lo único que se mira mientras se canta, y se mira de lejos si está proyectada. */
-  height: clamp(72px, calc(var(--alto-escena) * 0.16), 120px);
+  /* Ancha y baja: cuanto más ancha, más recorrido para ±300 cents; y baja porque el alto
+     es lo que falta en apaisado. Se mira de lejos si está proyectada. */
+  height: clamp(44px, calc(var(--alto-escena) * 0.12), 80px);
   /*
     `width`, no `max-width`. Es un elemento de la cuadrícula del escenario con márgenes
     laterales `auto`, y eso lo encoge a su contenido; como todo lo que tiene dentro va en
     posición absoluta, su contenido mide cero: la caja se quedaba en seis píxeles de borde
     —la «raya en medio» que veía el autor— y la franja verde y la aguja, recortadas dentro.
   */
-  width: min(100%, 560px);
-  margin: var(--e-4) auto;
+  width: min(100%, 760px);
+  margin: var(--e-2) auto;
   border: 3px solid var(--linea);
   border-radius: var(--r-redondo);
   background: var(--superficie);
@@ -1708,7 +1722,7 @@ p {
   position: absolute;
   left: 50%;
   top: 0;
-  width: 70px;
+  /* El ancho lo pone el componente: es la ventana de «afinado» del carril. */
   height: 100%;
   transform: translateX(-50%);
   background: var(--suave-verde);
@@ -1716,17 +1730,27 @@ p {
   border-left: 2px dashed var(--vivo-verde);
   border-right: 2px dashed var(--vivo-verde);
 }
+/* La franja de «casi», detrás de la verde y más tenue. */
+.cantar__casi {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  transform: translateX(-50%);
+  background: color-mix(in srgb, var(--vivo-amarillo) 14%, transparent);
+}
 .cantar__marca {
   position: absolute;
   left: 50%;
-  top: 8px;
+  top: 6px;
   width: 14px;
-  height: calc(100% - 16px);
+  height: calc(100% - 12px);
   margin-left: -7px;
   border-radius: var(--r-redondo);
   background: var(--tinta-2);
   opacity: 0.25;
-  transition: transform 90ms linear;
+  /* Se mueve con `left`, en porcentaje del ancho: ver el componente. */
+  transition: left 90ms linear;
 }
 .cantar__marca[data-activa] {
   background: var(--acento);
@@ -3087,8 +3111,12 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 .cantar__digitacion {
   display: block;
   width: auto;
-  margin: 0 auto var(--e-3);
+  /* Acotada por el alto: en apaisado 190 px de dibujo no dejaban sitio a la aguja. */
+  height: clamp(80px, calc(var(--alto-escena) * 0.3), 190px);
+  margin: 0 auto;
 }
+.cantar .progreso { margin: 0 auto; }
+.cantar__guia { margin: 0; }
 
 /* ── poner las barras de compás ────────────────────────────────────────────
    Las figuras se escriben con Bravura, que ya está en el proyecto: aquí no hay pauta ni

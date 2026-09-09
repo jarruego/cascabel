@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useCarril } from '@/app/preferencias';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { Sampler, aMidi } from '@/audio/sampler';
-import { muestrasDe } from '@/audio/instrumentos';
+import { muestrasDe, sostiene } from '@/audio/instrumentos';
 import { DetectorDeTono } from '@/escucha/tono';
 import {
   desviacionEnCents,
@@ -23,7 +23,6 @@ import { Progreso } from '@/ui/Progreso';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { nombreDe } from '@/ui/coloresNota';
-import { CuentaAtras } from '@/ui/CuentaAtras';
 
 /**
  * Tipo «cantar»: suena una nota, el niño la canta y ve si está afinando.
@@ -42,7 +41,7 @@ import { CuentaAtras } from '@/ui/CuentaAtras';
  * la nota se toca ANTES de abrir el micrófono, nunca a la vez.
  */
 
-type Fase = 'listo' | 'cuenta' | 'sonando' | 'escuchando' | 'resultado';
+type Fase = 'listo' | 'sonando' | 'escuchando' | 'resultado';
 
 export default function Cantar({ actividad, alTerminar }: PropsActividad) {
   const contenido = actividad.contenido as {
@@ -151,6 +150,9 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
     yaTerminada.current = true;
   }, [fase, evaluacion, indice, contenido.notas.length]);
 
+  /** Segundos que suena la referencia. Larga: una nota que se apaga no se puede imitar. */
+  const REFERENCIA_S = 3;
+
   const sonarNota = useCallback(async () => {
     await despertarAudio();
     if (!sampler.current) {
@@ -162,8 +164,21 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
         // Sin muestras se sigue: el niño no oye la referencia, pero puede intentarlo.
       }
     }
-    sampler.current?.tocar(objetivo, undefined, 1.6);
-  }, [objetivo]);
+    /*
+      La nota se mantiene tres segundos. Sonaba 1,6 s de marimba —un golpe que se apaga—,
+      y una nota que se apaga no se puede imitar: el autor pidió «un tono más largo, con
+      otro instrumento o con voz». Con un instrumento que sostiene —órgano, flauta— se
+      sostiene de verdad; con uno percusivo, se alarga lo que dé la muestra.
+    */
+    const s = sampler.current;
+    if (!s) return;
+    if (sostiene(contenido.instrumento)) {
+      const soltar = s.sostener(objetivo, 0.9);
+      window.setTimeout(soltar, REFERENCIA_S * 1000);
+    } else {
+      s.tocar(objetivo, undefined, REFERENCIA_S);
+    }
+  }, [objetivo, contenido.instrumento]);
 
   const empezar = useCallback(async () => {
     escuchandoRef.current = false;
@@ -179,7 +194,7 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
     // oiría la referencia que tiene que imitar.
     setFase('sonando');
     await sonarNota();
-    await new Promise((r) => setTimeout(r, 1700));
+    await new Promise((r) => setTimeout(r, REFERENCIA_S * 1000 + 200));
 
     let escuchando = false;
     // Si en esta sesión se eligió tocar en la pantalla, no se vuelve a pedir el micrófono
@@ -284,14 +299,20 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
     setFase('listo');
   }, [indice, contenido.notas.length, actividad.id, alTerminar, evaluacion]);
 
-  // Aguja de afinación: la posición horizontal es la desviación, acotada a ±100 cents.
-  const posicion = cents === null ? 0 : Math.max(-100, Math.min(100, cents));
+  /*
+    La aguja abarca ±300 cents —una tercera menor a cada lado—, no ±100. Con ±100 la aguja
+    estaba clavada en un extremo casi siempre y no decía cuánto faltaba; con más recorrido
+    se ve venir la nota desde lejos. El autor lo pidió: «más horquilla de tonos». La
+    posición va en porcentaje del ancho, así la aguja sirve igual de ancha que se ponga.
+  */
+  const RANGO = 300;
+  const posicion = cents === null ? 0 : Math.max(-RANGO, Math.min(RANGO, cents));
+  const izquierdaPct = 50 + (posicion / RANGO) * 50;
+  const anchoZona = (ventana: number) => `${(ventana / RANGO) * 100}%`;
 
   return (
     <section className="actividad cantar" data-carril={carril} aria-labelledby="consigna">
       <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
-
-      <Progreso hechos={indice} total={contenido.notas.length} />
 
       {/* El nombre que usa la escuela española, no la notación científica: a un niño de
           ocho años «sol» le dice algo y «G4» no le dice nada. La octava tampoco se enseña:
@@ -311,14 +332,17 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
           MIRANDO además de oyendo, y para que un niño vea hacia dónde moverse en vez de
           que se lo digan al final. */}
       <div className="cantar__aguja" aria-hidden="true">
-        <span className="cantar__centro" />
+        {/* Dos franjas: la de «casi», tenue, y dentro la de «afinado», verde. Su ancho es
+            la ventana del carril: en Infantil la diana es más grande, y se ve. */}
+        <span className="cantar__casi" style={{ width: anchoZona(ventanas.casi) }} />
+        <span className="cantar__centro" style={{ width: anchoZona(ventanas.afinado) }} />
         <span
           className="cantar__marca"
           data-activa={cents !== null || undefined}
           data-dentro={
             (cents !== null && Math.abs(cents) <= ventanas.afinado) || undefined
           }
-          style={{ transform: `translateX(${posicion * 1.4}px)` }}
+          style={{ left: `${izquierdaPct}%` }}
         />
       </div>
       {/*
@@ -341,7 +365,6 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
         )}
       </p>
 
-      {fase === 'cuenta' && <CuentaAtras alTerminar={() => void empezar()} />}
       {/* Estado, no instrucción: dice en qué punto va la actividad —ahora suena, ahora te
           toca—, cambia solo y cabe en tres palabras. Lo que hay que hacer lo cuenta el
           personaje al entrar. `.estado-actividad` es la misma pinta en todos los tipos. */}
@@ -378,12 +401,17 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
         </>
       )}
 
+      {/* Abajo, encima de la botonera: la nota y la aguja son lo que se mira. */}
+      <Progreso hechos={indice} total={contenido.notas.length} />
+
       <BarraAcciones>
         {fase === 'listo' && (
           <button
             type="button"
             className="boton-principal boton-arranque"
-            onClick={() => setFase('cuenta')}
+            // Sin cuenta atrás: la nota suena tres segundos y después se escucha; ese es el
+            // aviso. Una cuenta antes de una nota larga era esperar dos veces.
+            onClick={() => void empezar()}
           >
             <IconoTocar />
             {/* Como en palmear: el número va en el botón y en ningún sitio más. Aquí la

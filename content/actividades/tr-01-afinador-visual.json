@@ -30,7 +30,8 @@
       "G4",
       "A4",
       "C5"
-    ]
+    ],
+    "instrumento": "organo"
   },
   "evaluacion": {
     "autocorrectiva": true,
