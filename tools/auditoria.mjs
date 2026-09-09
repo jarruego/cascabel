@@ -71,6 +71,7 @@ const AYUDA_POR_TIPO = {
   seguir: 'seguir.sigue',
   ordenar: 'ordenar.tambienArrastrando',
   lienzo: 'lienzo.libre',
+  memoria: 'memoria.comoVa',
   teclado: 'teclado.libre',
   pads: 'pads.libre',
   referencia: 'referencia.paraConsultar',

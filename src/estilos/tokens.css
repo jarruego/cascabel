@@ -785,6 +785,39 @@ p {
   margin: 0;
   list-style: none;
 }
+/*
+  Todas las fichas del mismo tamaño.
+
+  Antes cada una medía lo que su contenido —un dibujo con etiqueta era más alta que un
+  altavoz sin ella— y el tablero salía a cuadros de tamaños distintos, que es lo que el
+  autor vio. Las filas se reparten igual y cada ficha llena su celda.
+*/
+.emparejar__columna { grid-auto-rows: 1fr; }
+.emparejar__columna > li { display: grid; }
+.emparejar__ficha { width: 100%; height: 100%; }
+/* El marco del tablero es lo que sirve de origen a las líneas de las parejas hechas. */
+.emparejar__marco { position: relative; }
+/*
+  Una línea tenue entre cada pareja resuelta.
+
+  Sin ella, dos fichas apagadas en columnas distintas no dicen cuál va con cuál; con ella
+  el tablero enseña lo que ya está hecho, que es lo que pidió el autor.
+*/
+.emparejar__lineas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+.emparejar__lineas line {
+  stroke: var(--ok);
+  stroke-width: 3;
+  stroke-linecap: round;
+  opacity: 0.45;
+}
+
 .emparejar__ficha[data-estado='elegida'] {
   border-color: var(--acento);
   border-width: 5px;
@@ -2559,6 +2592,42 @@ p {
   border-style: dashed;
   background: var(--superficie);
   color: transparent;
+}
+
+/* ── memoria ───────────────────────────────────────────────────────────────
+   Cartas boca abajo, un dibujo y su sonido. El tablero es una rejilla de cuadrados del
+   objetivo táctil del carril, y las cartas tapadas se ven todas iguales a propósito. */
+.memoria__tablero {
+  display: grid;
+  grid-template-columns: repeat(var(--columnas, 4), minmax(var(--lado, 60px), 1fr));
+  gap: var(--separacion);
+  width: min(100%, calc(var(--columnas, 4) * 120px + (var(--columnas, 4) - 1) * var(--separacion)));
+  margin: var(--e-4) auto;
+  padding: 0;
+  list-style: none;
+}
+.memoria__tablero > li { display: grid; }
+.memoria__carta {
+  width: 100%;
+  aspect-ratio: 1;
+  padding: var(--e-2);
+  transition: transform 120ms ease, background 120ms ease;
+}
+.memoria__carta[data-estado='tapada'] {
+  background: var(--suave-azul);
+  border-color: var(--vivo-azul);
+  color: var(--vivo-azul);
+}
+.memoria__carta[data-estado='destapada'] { background: var(--superficie); }
+/* Resuelta: se queda a la vista, con el borde del acierto y el nombre debajo. */
+.memoria__carta[data-estado='resuelta'] {
+  border-color: var(--ok);
+  background: var(--suave-verde);
+  cursor: default;
+}
+.memoria__carta[data-cara='sonido'][data-estado='destapada'] { color: var(--eje-timbre); }
+@media (prefers-reduced-motion: reduce) {
+  .memoria__carta { transition: none; }
 }
 
 /* Diagrama dentro de una tarjeta de emparejar. Alto fijo y ancho automático: lo que hay

@@ -1,7 +1,7 @@
 {
   "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa, y también si usa un código que aquí no está. El hueco de C1-17 es intencionado: ese código nunca llegó a reservarse y los ids no se renumeran, porque un id puede estar dentro de una URL compartida.",
   "generado": "2026-09-10",
-  "total": 143,
+  "total": 146,
   "actividades": [
     {
       "id": "C1-01",
@@ -96,7 +96,7 @@
     },
     {
       "id": "C1-08",
-      "titulo": "Memory de instrumentos",
+      "titulo": "Cada instrumento con su sonido",
       "etapa": "primaria-c1",
       "eje": "timbre",
       "lugar": "pantalla",
@@ -104,7 +104,7 @@
       "microfono": false,
       "esfuerzo": "S",
       "curriculo": "CE1 · crit. 1.1 · saber D",
-      "descripcion": "Emparejar imagen del instrumento con su sonido, por familias.",
+      "descripcion": "Tambor, triángulo, voz y piano a un lado; sus cuatro sonidos al otro. Se toca un dibujo y luego el sonido que le va, y las parejas hechas se quedan unidas.",
       "estado": "hecha"
     },
     {
@@ -430,6 +430,19 @@
       "esfuerzo": "S",
       "curriculo": "CE1 · crit. 1.1 · saber A",
       "descripcion": "Una bocina, un autobús, un patio lleno de niños, la campana de una iglesia, un martillo y una ambulancia. La calle, oída con atención.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C1-35",
+      "titulo": "Memory de instrumentos",
+      "etapa": "primaria-c1",
+      "eje": "timbre",
+      "lugar": "pantalla",
+      "tipo": "memoria",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE1 · crit. 1.1 · saber A",
+      "descripcion": "Doce cartas boca abajo, en tres filas: seis instrumentos y sus seis sonidos. Un memory de verdad, en el que lo que hay que recordar es dónde sonó cada cosa.",
       "estado": "hecha"
     },
     {
@@ -1395,6 +1408,19 @@
       "estado": "hecha"
     },
     {
+      "id": "C3-41",
+      "titulo": "Memory de instrumentos tocados de verdad",
+      "etapa": "primaria-c3",
+      "eje": "timbre",
+      "lugar": "pantalla",
+      "tipo": "memoria",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE1 · crit. 1.2 · saber A",
+      "descripcion": "Dieciséis cartas, cuatro por cuatro: ocho instrumentos y ocho grabaciones de músicos tocándolos. Violín, trompeta, saxofón, acordeón, guitarra eléctrica, piano, kalimba y bombo.",
+      "estado": "hecha"
+    },
+    {
       "id": "INF-01",
       "titulo": "El semáforo del sonido",
       "etapa": "infantil",
@@ -1743,6 +1769,19 @@
       "esfuerzo": "S",
       "curriculo": "CE2 · crit. 2.1 · saber F",
       "descripcion": "Lluvia, viento, tormenta y olas. Sonidos de la naturaleza grabados de verdad, para escucharlos con atención y saber cuál es.",
+      "estado": "hecha"
+    },
+    {
+      "id": "INF-28",
+      "titulo": "Memory de animales",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "lugar": "pantalla",
+      "tipo": "memoria",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE2 · crit. 2.1 · saber F",
+      "descripcion": "Ocho cartas boca abajo: cuatro dibujos y cuatro sonidos de animales grabados de verdad. Se destapan de dos en dos y la pareja que encaja se queda a la vista.",
       "estado": "hecha"
     },
     {

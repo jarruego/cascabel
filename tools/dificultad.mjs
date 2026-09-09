@@ -95,8 +95,11 @@ function cargaDe(a) {
         que: `${n(c.opciones)} opciones`,
       };
     case 'emparejar':
-      // El tablero entero está a la vista: las dos columnas se comparan entre sí.
-      return { elegir: n(c.izquierda) + n(c.derecha), seguir: 0, que: `${n(c.parejas)} parejas` };
+      // Cada toque elige dentro de UNA columna; la otra no compite con ella.
+      return { elegir: Math.max(n(c.izquierda), n(c.derecha)), seguir: 0, que: `${n(c.parejas)} parejas` };
+    case 'memoria':
+      // Lo que hay que recordar son las parejas, no las cartas.
+      return { elegir: n(c.parejas), seguir: 0, que: `${n(c.parejas)} parejas boca abajo` };
     case 'ordenar':
       return { elegir: n(c.orden), seguir: 0, que: `${n(c.orden)} fichas` };
     case 'pentagrama':

@@ -21,6 +21,7 @@ import Pads from './tipos/Pads';
 import Referencia from './tipos/Referencia';
 import Acompanamientos from './tipos/Acompanamientos';
 import Eco from './tipos/Eco';
+import Memoria from './tipos/Memoria';
 
 /**
  * Mapa tipo de actividad -> componente.
@@ -32,6 +33,7 @@ import Eco from './tipos/Eco';
 export const REGISTRO: Partial<Record<TipoActividad, ComponentType<PropsActividad>>> = {
   eleccion: Eleccion,
   emparejar: Emparejar,
+  memoria: Memoria,
   ordenar: Ordenar,
   'guia-aula': GuiaAula,
   'tocar-a-tiempo': TocarATiempo,

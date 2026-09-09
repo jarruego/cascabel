@@ -32,6 +32,8 @@ export type TipoActividad =
   | 'pistas'
   /** Percusión corporal: pitos, palmas, muslos y pies. Ver Cuerpo.tsx. */
   | 'cuerpo'
+  /** Cartas boca abajo: un dibujo y su sonido. Lo propuso el autor el 2026-09-11. Ver Memoria.tsx. */
+  | 'memoria'
   /** El kit de percusión, para tocarlo con el dedo. Ver Pads.tsx. */
   | 'pads'
   /** Consulta del lenguaje musical, con sonido. No es un ejercicio. Ver Referencia.tsx. */

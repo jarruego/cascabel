@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "emparejar",
   "titulo": "Cada figura con su silencio",
-  "descripcion": "Blanca, negra y corchea, cada una con el silencio que dura lo mismo. Las fichas suenan: la figura como golpes y el silencio como el hueco entre ellos.",
+  "descripcion": "Redonda, blanca, negra y corchea, cada una con el silencio que dura lo mismo. Las fichas suenan: la figura como golpes y el silencio como el hueco entre ellos.",
   "etapa": "primaria-c2",
   "eje": "notacion",
   "lugar": "pantalla",
@@ -18,9 +18,11 @@
     "secuencia": "ninguna",
     "tempo": 84,
     "figuras": [
+      "redonda",
       "blanca",
       "negra",
       "corchea",
+      "silencio-redonda",
       "silencio-blanca",
       "silencio-negra",
       "silencio-corchea"
@@ -63,6 +65,15 @@
           0.5,
           0.5
         ]
+      },
+      {
+        "clave": "redonda",
+        "signo": "𝅝",
+        "etiqueta": "figura.redonda",
+        "ritmo": [
+          4,
+          4
+        ]
       }
     ],
     "derecha": [
@@ -75,6 +86,18 @@
           -2,
           1,
           -2,
+          1
+        ]
+      },
+      {
+        "clave": "sil-redonda",
+        "signo": "𝄻",
+        "etiqueta": "figura.silRedonda",
+        "ritmo": [
+          1,
+          -4,
+          1,
+          -4,
           1
         ]
       },
@@ -115,6 +138,10 @@
       {
         "izquierda": "corchea",
         "derecha": "sil-corchea"
+      },
+      {
+        "izquierda": "redonda",
+        "derecha": "sil-redonda"
       }
     ]
   },

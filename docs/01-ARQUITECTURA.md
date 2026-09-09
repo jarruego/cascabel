@@ -53,6 +53,7 @@ lista exactamente los tipos que hay en `src/motor/registro.ts`, con sus cifras a
 | `cantar` | Detección de altura con retorno visual | 3 |
 | `compases` | Colocar las barras de compás donde el pulso las pide | 3 |
 | `cuerpo` | Percusión corporal: pitos, palmas, muslos y pies en cuatro filas | 3 |
+| `memoria` | Cartas boca abajo: un dibujo y su sonido. Se destapan dos y la pareja se queda a la vista | 3 |
 | `eco` | Dos niños por turnos: uno propone un ritmo y el otro lo repite | 2 |
 | `pads` | El kit de percusión, para tocarlo: pads por familias y pulso opcional | 2 |
 | `pentagrama` | Colocar o leer sobre pauta real | 2 |

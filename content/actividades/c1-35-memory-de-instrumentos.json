@@ -1,0 +1,92 @@
+{
+  "id": "c1-35-memory-de-instrumentos",
+  "version": 1,
+  "tipo": "memoria",
+  "titulo": "Memory de instrumentos",
+  "descripcion": "Doce cartas boca abajo, en tres filas: seis instrumentos y sus seis sonidos. Un memory de verdad, en el que lo que hay que recordar es dónde sonó cada cosa.",
+  "etapa": "primaria-c1",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 7,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.1",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c135.consigna",
+    "columnas": 4,
+    "parejas": [
+      {
+        "clave": "tambor",
+        "icono": "tambor",
+        "etiqueta": "opcion.tambor",
+        "audio": "muestras/percusion/bombo-1.opus"
+      },
+      {
+        "clave": "triangulo",
+        "icono": "campana",
+        "etiqueta": "opcion.triangulo",
+        "audio": "muestras/percusion/triangulo-1.opus"
+      },
+      {
+        "clave": "voz",
+        "icono": "voz",
+        "etiqueta": "opcion.voz",
+        "audio": "sonidos/instrumentos/voz-cantada.opus"
+      },
+      {
+        "clave": "piano",
+        "icono": "teclado",
+        "etiqueta": "opcion.pianoinst",
+        "audio": "muestras/piano/c4.opus"
+      },
+      {
+        "clave": "guitarra",
+        "icono": "guitarra",
+        "etiqueta": "opcion.guitarra",
+        "audio": "muestras/guitarra/c4.opus"
+      },
+      {
+        "clave": "violin",
+        "icono": "violin",
+        "etiqueta": "opcion.violin",
+        "audio": "muestras/violin/c4.opus"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c135.enunciado",
+  "personaje": "rex",
+  "pistas": [
+    "actividad.c135.pista1",
+    "actividad.c135.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",
+      "autor": "Autores de Wikimedia Commons, cada uno con su licencia",
+      "fuente": "https://commons.wikimedia.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

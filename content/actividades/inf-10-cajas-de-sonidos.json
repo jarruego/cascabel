@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "emparejar",
   "titulo": "Las cajas de los sonidos",
-  "descripcion": "Emparejamiento auditivo autocorrectivo al modo Montessori. Se tocan de dos en dos.",
+  "descripcion": "Cuatro cajas con un dibujo —tambor, campana, palmas, voz— y cuatro sonidos. Se toca una caja y luego el sonido que sale de ella.",
   "etapa": "infantil",
   "eje": "timbre",
   "lugar": "pantalla",
@@ -33,18 +33,38 @@
         "clave": "caja-b",
         "icono": "campana",
         "etiqueta": "opcion.campana"
+      },
+      {
+        "clave": "caja-c",
+        "icono": "palmas",
+        "etiqueta": "opcion.palmas"
+      },
+      {
+        "clave": "caja-d",
+        "icono": "voz",
+        "etiqueta": "opcion.voz"
       }
     ],
     "derecha": [
       {
+        "clave": "son-c",
+        "icono": "altavoz",
+        "audio": "muestras/cuerpo/palmas-1.opus"
+      },
+      {
         "clave": "son-b",
         "icono": "altavoz",
-        "audio": "muestras/xilofono/c5.opus"
+        "audio": "muestras/percusion/triangulo-1.opus"
+      },
+      {
+        "clave": "son-d",
+        "icono": "altavoz",
+        "audio": "sonidos/instrumentos/voz-cantada.opus"
       },
       {
         "clave": "son-a",
         "icono": "altavoz",
-        "audio": "muestras/percusion/pandereta-1.opus"
+        "audio": "muestras/percusion/bombo-1.opus"
       }
     ],
     "parejas": [
@@ -55,6 +75,14 @@
       {
         "izquierda": "caja-b",
         "derecha": "son-b"
+      },
+      {
+        "izquierda": "caja-c",
+        "derecha": "son-c"
+      },
+      {
+        "izquierda": "caja-d",
+        "derecha": "son-d"
       }
     ]
   },
@@ -77,6 +105,12 @@
       "obra": "Iconos",
       "autor": "OpenMoji · HfG Schwäbisch Gmünd",
       "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",
+      "autor": "Autores de Wikimedia Commons, cada uno con su licencia",
+      "fuente": "https://commons.wikimedia.org",
       "licencia": "CC BY-SA 4.0"
     }
   ],

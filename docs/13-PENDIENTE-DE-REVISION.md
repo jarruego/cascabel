@@ -105,7 +105,7 @@ PENDIENTE DE REVISIÓN PEDAGÓGICA: el repertorio de sílabas de abajo es el con
 
 **PENDIENTE DE REVISIÓN PEDAGÓGICA.** Los tres intervalos son una convención razonable, no una medida. Con un curso de uso real se sabrá si a un niño de siete años le vale una semana o si hacen falta tres días.
 
-## 24. `tools/auditoria.mjs` (línea 270)
+## 24. `tools/auditoria.mjs` (línea 271)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA. Los saberes se escriben a mano en cada JSON y aquí no hay forma de saber cuál es la redacción buena: el real decreto está en el BOE y este proyecto no lo tiene delante. Lo que sí se ve es cuándo una redacción la usa **una sola actividad** y otra parecida la usan treinta, que casi siempre significa que alguien escribió el mismo saber de dos maneras — pasó con el F de Infantil, que estaba de cuatro formas distintas y partía en cuatro un grupo que es uno.
 
@@ -113,7 +113,7 @@ PENDIENTE DE REVISIÓN PEDAGÓGICA. Los saberes se escriben a mano en cada JSON 
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: los topes de esta tabla. Lo que se puede afirmar sin una maestra es que **la de elegir y la de seguir son distintas**; dónde está exactamente el techo de cada edad, no.
 
-## 26. `tools/dificultad.mjs` (línea 229)
+## 26. `tools/dificultad.mjs` (línea 232)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: los topes. Salen de la duración razonable por etapa dividida entre lo que tarda una pregunta con su escucha, no de ninguna fuente.
 

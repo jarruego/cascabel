@@ -2346,6 +2346,35 @@ recortado de una grabación de veinte empieza y acaba donde debe, y si el estira
 instrumentos nuevos —que no son percusivos— se nota en alguna nota. Los recortes se cambian
 en el manifiesto y se rehacen con `python tools/sonidos.py <id> --forzar`.
 
+### Emparejar que se ve bien, y un memory de verdad, 2026-09-11
+
+«Quedan muy feos: cuadrados de diferentes tamaños, solo tres. Y es más emparejar que
+memory», dijo el autor de los de tipo `emparejar`. Las tres cosas eran ciertas.
+
+- [x] **Las fichas miden todas lo mismo.** Cada una medía lo que su contenido —un dibujo con
+      etiqueta era más alto que un altavoz sin ella— y el tablero salía a cuadros desiguales.
+      Ahora las filas se reparten igual y cada ficha llena su celda.
+- [x] **Las parejas hechas quedan unidas por una línea tenue.** Se mide en el DOM después de
+      pintar y se vuelve a medir al cambiar de tamaño la ventana. Sin ella, dos fichas
+      apagadas en columnas distintas no decían cuál iba con cuál.
+- [x] **Cuatro parejas donde había dos o tres**: «Cada instrumento con su sonido» (antes
+      «Memory de instrumentos», que no lo era: ya no se llama así), «Las cajas de los
+      sonidos» y «Cada figura con su silencio». Para que cupieran hubo que decidir cómo se
+      cuenta el tope de objetos de `docs/04` en un tablero de dos columnas: **por columna**,
+      no las dos sumadas, porque cada toque elige entre los de un lado y el otro no compite
+      con él. Con las dos sumadas, cuatro parejas no cabían ni en primero. Queda «Flauta
+      dulce: si, la y sol» con tres, porque tres son las notas que se enseñan.
+- [x] **Tipo `memoria`, el memory de verdad.** Cartas boca abajo, y cada pareja es un dibujo y
+      su sonido. Se destapan dos: si encajan se quedan; si no, se tapan y ya, sin vidas ni
+      reloj. Una carta de sonido solo enseña un altavoz, y suena: para encontrar la pareja
+      del perro hay que acordarse de en qué carta sonó un perro. Las reglas en
+      `maquinaMemoria.ts`, con test; el tablero se baraja con semilla para no rebarajarse en
+      cada repintado. Tres actividades: **animales** (Infantil, 2×4 con grabaciones de
+      verdad), **instrumentos** (1.º–2.º, 3×4) e **instrumentos tocados de verdad** (4×4, con
+      las grabaciones de músicos del banco). Ésta última se pidió para 3.º–4.º y va en
+      5.º–6.º: ocho parejas son ocho cosas que recordar, y el tope de 3.º–4.º son seis.
+      Con nueve en el tercer ciclo, cabe.
+
 Las ideas de ampliación, con veredicto y con lo que NO conviene hacer, están en
 [`docs/12-IDEAS-Y-AMPLIACIONES.md`](12-IDEAS-Y-AMPLIACIONES.md).
 

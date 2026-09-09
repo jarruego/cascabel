@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useReducer, useRef } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useReducer, useRef, useState } from 'react';
 import { OBJETIVO_TACTIL } from '@/config';
 import { useCarril } from '@/app/preferencias';
 import { Reaccion } from '@/ui/Reaccion';
@@ -70,10 +70,46 @@ export default function Emparejar({ actividad, alTerminar }: PropsActividad) {
   const tam = OBJETIVO_TACTIL[carril];
   const yaTerminada = useRef(false);
 
+
   const [estado, despachar] = useReducer(
     (e: EstadoEmparejar, a: AccionEmparejar) => reducirEmparejar(e, a, contenido.parejas),
     INICIAL_EMPAREJAR,
   );
+
+  /*
+    Las líneas entre las parejas ya hechas.
+
+    Se miden en el DOM después de pintar: cada ficha se apunta por su clave, y para cada
+    pareja resuelta se traza una línea del borde derecho de la de la izquierda al borde
+    izquierdo de la de la derecha, en coordenadas del marco del tablero. Se vuelve a medir
+    al cambiar de tamaño la ventana, porque ahí las fichas se mueven y las líneas no.
+  */
+  const marco = useRef<HTMLDivElement | null>(null);
+  const fichas = useRef(new Map<string, HTMLButtonElement>());
+  const [lineas, setLineas] = useState<Array<{ x1: number; y1: number; x2: number; y2: number }>>([]);
+  const medir = useCallback(() => {
+    const caja = marco.current?.getBoundingClientRect();
+    if (!caja) return;
+    const nuevas: Array<{ x1: number; y1: number; x2: number; y2: number }> = [];
+    for (const p of contenido.parejas) {
+      const a = fichas.current.get(p.izquierda)?.getBoundingClientRect();
+      const b = fichas.current.get(p.derecha)?.getBoundingClientRect();
+      if (!a || !b) continue;
+      if (!estado.resueltas.includes(p.izquierda) || !estado.resueltas.includes(p.derecha)) continue;
+      nuevas.push({
+        x1: a.right - caja.left,
+        y1: a.top + a.height / 2 - caja.top,
+        x2: b.left - caja.left,
+        y2: b.top + b.height / 2 - caja.top,
+      });
+    }
+    setLineas(nuevas);
+  }, [contenido.parejas, estado.resueltas]);
+  useLayoutEffect(() => {
+    medir();
+    window.addEventListener('resize', medir);
+    return () => window.removeEventListener('resize', medir);
+  }, [medir]);
 
   const porClave = useCallback(
     (clave: string): Elemento | undefined =>
@@ -115,6 +151,10 @@ export default function Emparejar({ actividad, alTerminar }: PropsActividad) {
               <button
                 type="button"
                 className="boton-actividad emparejar__ficha"
+                ref={(el) => {
+                  if (el) fichas.current.set(e.clave, el);
+                  else fichas.current.delete(e.clave);
+                }}
                 style={{ minWidth: tam, minHeight: tam }}
                 // aria-disabled y no `disabled`: quitar el foco a media actividad deja
                 // perdido a quien navega con teclado.
@@ -163,9 +203,16 @@ export default function Emparejar({ actividad, alTerminar }: PropsActividad) {
     <section className="actividad emparejar" data-carril={carril} aria-labelledby="consigna">
       <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
 
+      <div className="emparejar__marco" ref={marco}>
+        <svg className="emparejar__lineas" aria-hidden="true">
+          {lineas.map((l, i) => (
+            <line key={i} x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2} />
+          ))}
+        </svg>
       <div className="emparejar__tablero">
         {columna(contenido.izquierda, 'izquierda')}
         {columna(contenido.derecha, 'derecha')}
+      </div>
       </div>
 
       {/* Sin botonera: aquí no hay ninguna acción SOBRE la actividad. Se juega tocando las

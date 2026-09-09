@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-09",
-  "total": 143,
+  "total": 146,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -137,8 +137,8 @@
     },
     {
       "id": "c1-08-memory-de-instrumentos",
-      "titulo": "Memory de instrumentos",
-      "descripcion": "Emparejar el dibujo de un instrumento con su sonido. Al tocar los dos, suenan seguidos: la corrección la hace el oído.",
+      "titulo": "Cada instrumento con su sonido",
+      "descripcion": "Tambor, triángulo, voz y piano a un lado; sus cuatro sonidos al otro. Se toca un dibujo y luego el sonido que le va, y las parejas hechas se quedan unidas.",
       "etapa": "primaria-c1",
       "eje": "timbre",
       "tipo": "emparejar",
@@ -620,6 +620,25 @@
       "lugar": "pantalla",
       "microfono": false,
       "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c1-35-memory-de-instrumentos",
+      "titulo": "Memory de instrumentos",
+      "descripcion": "Doce cartas boca abajo, en tres filas: seis instrumentos y sus seis sonidos. Un memory de verdad, en el que lo que hay que recordar es dónde sonó cada cosa.",
+      "etapa": "primaria-c1",
+      "eje": "timbre",
+      "tipo": "memoria",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 7,
       "curriculo": {
         "area": "Educación Artística",
         "competencia": "CE1",
@@ -1164,7 +1183,7 @@
     {
       "id": "c2-30-cada-figura-con-su-silencio",
       "titulo": "Cada figura con su silencio",
-      "descripcion": "Blanca, negra y corchea, cada una con el silencio que dura lo mismo. Las fichas suenan: la figura como golpes y el silencio como el hueco entre ellos.",
+      "descripcion": "Redonda, blanca, negra y corchea, cada una con el silencio que dura lo mismo. Las fichas suenan: la figura como golpes y el silencio como el hueco entre ellos.",
       "etapa": "primaria-c2",
       "eje": "notacion",
       "tipo": "emparejar",
@@ -2036,6 +2055,25 @@
       "herramienta": true
     },
     {
+      "id": "c3-41-memory-de-instrumentos-tocados",
+      "titulo": "Memory de instrumentos tocados de verdad",
+      "descripcion": "Dieciséis cartas, cuatro por cuatro: ocho instrumentos y ocho grabaciones de músicos tocándolos. Violín, trompeta, saxofón, acordeón, guitarra eléctrica, piano, kalimba y bombo.",
+      "etapa": "primaria-c3",
+      "eje": "timbre",
+      "tipo": "memoria",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
       "id": "inf-01-semaforo-del-sonido",
       "titulo": "El semáforo del sonido",
       "descripcion": "Suena o no suena. El niño mantiene el dedo en el círculo mientras hay sonido y lo suelta en el silencio.",
@@ -2209,7 +2247,7 @@
     {
       "id": "inf-10-cajas-de-sonidos",
       "titulo": "Las cajas de los sonidos",
-      "descripcion": "Emparejamiento auditivo autocorrectivo al modo Montessori. Se tocan de dos en dos.",
+      "descripcion": "Cuatro cajas con un dibujo —tambor, campana, palmas, voz— y cuatro sonidos. Se toca una caja y luego el sonido que sale de ella.",
       "etapa": "infantil",
       "eje": "timbre",
       "tipo": "emparejar",
@@ -2539,6 +2577,25 @@
       "lugar": "pantalla",
       "microfono": false,
       "duracion_min": 5,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE2",
+        "criterio": "2.1",
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "inf-28-memory-de-animales",
+      "titulo": "Memory de animales",
+      "descripcion": "Ocho cartas boca abajo: cuatro dibujos y cuatro sonidos de animales grabados de verdad. Se destapan de dos en dos y la pareja que encaja se queda a la vista.",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "tipo": "memoria",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
       "curriculo": {
         "area": "Comunicación y Representación de la Realidad",
         "competencia": "CE2",

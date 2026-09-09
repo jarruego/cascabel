@@ -2,8 +2,8 @@
   "id": "c1-08-memory-de-instrumentos",
   "version": 1,
   "tipo": "emparejar",
-  "titulo": "Memory de instrumentos",
-  "descripcion": "Emparejar el dibujo de un instrumento con su sonido. Al tocar los dos, suenan seguidos: la corrección la hace el oído.",
+  "titulo": "Cada instrumento con su sonido",
+  "descripcion": "Tambor, triángulo, voz y piano a un lado; sus cuatro sonidos al otro. Se toca un dibujo y luego el sonido que le va, y las parejas hechas se quedan unidas.",
   "etapa": "primaria-c1",
   "eje": "timbre",
   "lugar": "pantalla",
@@ -41,9 +41,19 @@
         "clave": "voz",
         "icono": "voz",
         "etiqueta": "opcion.voz"
+      },
+      {
+        "clave": "piano",
+        "icono": "teclado",
+        "etiqueta": "opcion.pianoinst"
       }
     ],
     "derecha": [
+      {
+        "clave": "son-piano",
+        "icono": "altavoz",
+        "audio": "muestras/piano/c4.opus"
+      },
       {
         "clave": "son-triangulo",
         "icono": "altavoz",
@@ -72,6 +82,10 @@
       {
         "izquierda": "voz",
         "derecha": "son-voz"
+      },
+      {
+        "izquierda": "piano",
+        "derecha": "son-piano"
       }
     ]
   },

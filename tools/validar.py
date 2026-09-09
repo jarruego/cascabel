@@ -258,7 +258,13 @@ def validar_producto(datos: dict, r: Resultado) -> None:
     # Objetos simultáneos en pantalla, contados según el tipo. Antes solo se miraba
     # "opciones", así que emparejar y ordenar se colaban sin contar nada.
     if datos.get("tipo") == "emparejar":
-        opciones = (contenido.get("izquierda") or []) + (contenido.get("derecha") or [])
+        # Por columna, no las dos sumadas: cada toque elige entre los de UN lado, y el otro
+        # lado no compite con el. Con las dos sumadas, cuatro parejas —que es lo que un
+        # tablero necesita para no parecer un tramite— no cabian ni en primero.
+        opciones = max(contenido.get("izquierda") or [], contenido.get("derecha") or [], key=len)
+    elif datos.get("tipo") == "memoria":
+        # Un memory se mide en parejas: es lo que hay que recordar.
+        opciones = contenido.get("parejas")
     elif datos.get("tipo") == "ordenar":
         opciones = contenido.get("elementos")
     else:
