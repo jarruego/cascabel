@@ -47,11 +47,7 @@ interface Opcion {
  * derecha»—; el ancho del recuadro sale ahora de cuántos sitios hay, y si no cabe en la
  * pantalla, el recuadro se desplaza con el dedo.
  */
-const INICIO = 84;
-const SEPARACION = 14;
-const ALTO = 200;
-/** Margen superior: deja sitio para notas por encima de la pauta. */
-const ARRIBA = 60;
+const INICIO_POR_ESPACIO = 6;
 
 export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
   const contenido = actividad.contenido as {
@@ -63,13 +59,37 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
 
   const carril = useCarril(actividad.etapa);
   const tam = OBJETIVO_TACTIL[carril];
-  const paso = tam + 12;
-  const ancho = Math.max(320, INICIO + contenido.opciones.length * paso + 12);
   const clave = contenido.clave ?? 'sol';
   const lienzo = useRef<HTMLDivElement | null>(null);
+  const marco = useRef<HTMLDivElement | null>(null);
   const sampler = useRef<Sampler | null>(null);
   const yaTerminada = useRef(false);
-  const [dibujado, setDibujado] = useState(false);
+
+  /*
+    La pauta ocupa el alto que hay, y de ahí sale todo lo demás.
+
+    Medía 200 px con líneas a 14 px en cualquier pantalla: «el pentagrama es muy pequeño»,
+    dijo el autor. Ahora el marco de la pauta es la fila que crece de la sección —ver
+    `.pentagrama` en tokens.css— y se mide; la separación entre líneas sale de ese alto,
+    entre 14 y 34 px, dejando sitio para el sitio táctil por arriba y por abajo. Con la
+    separación crecen la clave, la cabeza de nota y el hueco tras la clave. Si a lo ancho no
+    cabe, el marco se desplaza de lado con el dedo; lo demás —el nombre y la barra— se queda
+    quieto fuera del marco.
+  */
+  const [altoMarco, setAltoMarco] = useState(0);
+  useEffect(() => {
+    const el = marco.current;
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    const ro = new ResizeObserver(([e]) => setAltoMarco(Math.floor(e?.contentRect.height ?? 0)));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+  const ALTO = Math.max(160, altoMarco - 2);
+  const SEPARACION = Math.max(14, Math.min(34, Math.floor((ALTO - tam) / 10)));
+  const ARRIBA = Math.round((ALTO - 4 * SEPARACION) / 2);
+  const INICIO = Math.round(INICIO_POR_ESPACIO * SEPARACION);
+  const paso = Math.max(tam + 12, Math.round(SEPARACION * 2.6));
+  const ancho = Math.max(320, INICIO + contenido.opciones.length * paso + 12);
 
   // Las rondas son las opciones barajadas, sin dos iguales seguidas. Decía «barajadas» y
   // no lo estaban: salían sol, la, si, do, sol, la, si, do, y así se acierta sin mirar.
@@ -97,7 +117,7 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
   // el niño, no la partitura.
   useEffect(() => {
     const div = lienzo.current;
-    if (!div || dibujado) return;
+    if (!div || altoMarco === 0) return;
 
     let cancelado = false;
     void (async () => {
@@ -123,19 +143,16 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
         });
         pauta.addClef(clave === 'sol' ? 'treble' : 'bass');
         pauta.setContext(ctx).draw();
-
-        if (!cancelado) setDibujado(true);
       } catch {
-        // Sin VexFlow se dibuja la pauta a mano más abajo. Una actividad no se cae por
-        // no poder cargar una librería de notación.
-        if (!cancelado) setDibujado(true);
+        // Sin VexFlow no hay pauta dibujada, pero los sitios siguen ahí y suenan. Una
+        // actividad no se cae por no poder cargar una librería de notación.
       }
     })();
 
     return () => {
       cancelado = true;
     };
-  }, [clave, dibujado, ancho]);
+  }, [clave, ancho, ALTO, ARRIBA, SEPARACION, altoMarco]);
 
   useEffect(() => {
     if (estado.fase !== 'bien' && estado.fase !== 'casi') return;
@@ -184,12 +201,12 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
     <section className="actividad pentagrama" data-carril={carril} aria-labelledby="consigna">
       <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
 
-      <Progreso hechos={estado.indice} total={preguntas.length} />
-
       <p className="pentagrama__pedida" aria-live="polite">
         {pedida && t(`nota.${pedida}`)}
       </p>
 
+      {/* El marco es lo único que se desplaza, y solo de lado. */}
+      <div className="pentagrama__marco" ref={marco}>
       <div className="pentagrama__lienzo" style={{ width: ancho, height: ALTO }}>
         <div ref={lienzo} aria-hidden="true" />
 
@@ -219,12 +236,19 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
             >
               {/* La cabeza de nota, del tamaño real que tendría en la pauta. Sin el nombre
                   escrito debajo: con él, la actividad era leer, no colocar. */}
-              <span className="pentagrama__nota" aria-hidden="true" />
+              <span
+                className="pentagrama__nota"
+                aria-hidden="true"
+                style={{ width: Math.round(SEPARACION * 1.25), height: Math.round(SEPARACION * 0.9) }}
+              />
               <span className="visualmente-oculto">{nota.nombre}</span>
             </button>
           );
         })}
       </div>
+      </div>
+
+      <Progreso hechos={estado.indice} total={preguntas.length} />
 
       {/* Sin botonera: se juega tocando los sitios de la pauta, y no hay nada que hacerle a
           la actividad desde fuera. El «¡completada!» lo dice la modal de enhorabuena. */}

@@ -1238,23 +1238,40 @@ p {
    encima va un hitbox transparente del tamaño táctil del carril. Un dedo de
    siete años no acierta un espacio de doce píxeles, y agrandar la pauta la
    haría dejar de parecer una partitura. */
+/*
+  «Coloca la nota» cabe entera: el nombre arriba, la pauta en medio con todo el alto que
+  quede, y la barra de progreso fija debajo. Solo el marco de la pauta se desplaza, y solo
+  de lado. Es la misma regla que la escala: la sección se lleva el alto del escenario y lo
+  reparte, y lo que no cabe a lo ancho se desplaza en un solo bloque. El componente mide el
+  marco y dibuja la pauta a ese alto.
+*/
+.pentagrama {
+  height: calc(var(--alto-escena) - var(--e-5) - var(--e-3));
+  min-height: 0;
+  grid-template-rows: auto minmax(160px, 1fr) auto;
+  align-content: stretch;
+  gap: var(--e-2);
+}
+.pentagrama__marco {
+  min-height: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+}
 .pentagrama__lienzo {
   position: relative;
-  margin: var(--e-4) auto;
-  /* El ancho lo pone el componente según cuántos sitios hay; si no cabe, se desplaza con
-     el dedo, y el marco no se ensancha nunca. `contain` evita que el gesto se propague. */
-  max-width: 100%;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  box-sizing: content-box;
+  margin: 0 auto;
 }
+/* Apretado: es una palabra, y cada píxel que no gasta lo gana la pauta. */
 .pentagrama__pedida {
-  font-size: clamp(28px, 7vw, 56px);
+  font-size: clamp(22px, 5vw, 34px);
   font-weight: 700;
+  line-height: 1.1;
   color: var(--acento-2);
-  min-height: 1.2em;
-  margin: var(--e-2) 0;
+  min-height: 1.1em;
+  margin: 0;
 }
+.pentagrama .progreso { margin: 0 auto; }
 .pentagrama__sitio {
   position: absolute;
   display: grid;
@@ -1541,13 +1558,8 @@ p {
  * anterior a la 126 ignora `zoom`, y entonces se ve como se ha visto hasta ahora, que es
  * una degradación aceptable.
  * ------------------------------------------------------------------------ */
-@media (min-width: 56rem) {
-  .pentagrama__lienzo { zoom: 1.35; }
-}
-@media (min-width: 80rem) {
-  .pentagrama__lienzo { zoom: 1.7; }
-}
-:root[data-pizarra='true'] .pentagrama__lienzo { zoom: 2; }
+/* El zoom por anchura de pantalla se fue: la pauta mide ahora lo que hay de alto, también
+   en la pizarra, que es la regla de las pantallas que caben. */
 
 /* La cuadrícula ocupa el ancho disponible y las celdas salen cuadradas. Antes el tamaño lo
    calculaba el componente suponiendo una pantalla de 320 px, y en un monitor grande la

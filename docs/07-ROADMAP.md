@@ -2602,6 +2602,13 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       izquierda si no. Revisadas las demás filas de actividad: los puntos del pulso de la
       guía de aula tenían lo mismo y se centran; el resto ya centraba o llena el ancho.
 
+- [x] **«Coloca la nota» a lo grande.** La pauta medía 200 px con líneas a 14 en cualquier
+      pantalla. Ahora la sección se lleva el alto del escenario, el nombre y la barra van
+      apretados arriba y abajo, y la pauta ocupa lo que queda: la separación entre líneas
+      sale del alto, de 14 a 34 px, y con ella la clave, las cabezas y los huecos. Solo el
+      marco de la pauta se desplaza, de lado; la barra queda fija debajo. Mismo patrón que
+      la escala.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
