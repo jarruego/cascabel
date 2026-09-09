@@ -99,7 +99,7 @@ pantallas vive fuera de ellas, en un módulo con su test, y esto es dónde:
 
 | Módulo | Qué decide |
 |---|---|
-| [`motor/actividadesLibres.ts`](../src/motor/actividadesLibres.ts) | Qué tipos **no tienen final**. Ésos no llevan botón de terminar —se sale por «Volver»— y se marcan como hechos **al abrirlos**: en una actividad sin solución, haberla visto es haberla hecho |
+| [`motor/actividadesLibres.ts`](../src/motor/actividadesLibres.ts) | Qué tipos **no tienen final** —no llevan botón de terminar, se sale por «Volver», y no celebran— y **cuándo se da por hecha cada tipo** (`HECHA_CUANDO`): el piano al tocar la primera tecla, el constructor al escuchar el primer ritmo, una pregunta al contestarlas todas. Todo tipo tiene su disparador, y un test lo vigila |
 | [`motor/ayudaPorTipo.ts`](../src/motor/ayudaPorTipo.ts) | Qué cuenta la pantalla de explicación sobre **cómo se maneja** ese tipo, y qué nota lleva para el adulto |
 | [`escucha/permiso.ts`](../src/escucha/permiso.ts) | Si en esta sesión se usa el micrófono y si ya se preguntó. Vive en memoria y no en disco, a propósito |
 | [`ui/Reaccion.tsx`](../src/ui/Reaccion.tsx) | Cómo se le contesta al niño: tarjeta superpuesta, personaje + pista concreta, y se va sola |

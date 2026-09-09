@@ -2415,6 +2415,29 @@ bien en un móvil con cuatro filas, y si las variaciones giradas de los ritmos s
 naturales de palmear. Y elección, cantar y pentagrama, que ya eran series por su cuenta,
 todavía no pasan por el cierre común.
 
+### Toda actividad se da por hecha por una condición de sentido común, 2026-09-12
+
+El autor preguntó cuándo se completa el constructor de ritmos, y la respuesta era «nunca»:
+una rejilla en modo libre no tiene solución, y comprobarla era lo único que la cerraba.
+Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin tocar nada.
+
+- [x] **Una condición por tipo, en `HECHA_CUANDO`, y el componente la dispara.** Las que
+      se evalúan, al hacer todos los pasos salgan como salgan; las que se escuchan, a la
+      primera vuelta o al último paso; las que se tocan, al hacer sonar algo; las que se
+      construyen, al escuchar lo primero puesto. El marco ya no marca nada al abrir. El test
+      comprueba que todo tipo del registro llama a `alTerminar` y tiene su línea en la tabla.
+- [x] **El constructor de ritmos reacciona al primer ritmo** —«¡Suena!»— y se anota ahí;
+      después se sigue componiendo sin que nada interrumpa, y la modal no sale (`sinFinal`).
+- [x] **Sin barras de desplazamiento por lo que crece.** `transform: scale()` no cambia la
+      maquetación pero sí el área desplazable: el bloque actual de «Ta y ti-ti» se salía de
+      su tira y aparecía una barra con cuatro bloques que cabían. Los contenedores que
+      desplazan dejan dentro el sitio de lo escalado: la tira del musicograma, las marcas de
+      «toca a tiempo», los puntos de la guía y de los pasos, y las bandas del karaoke. No hay
+      test: jsdom no maqueta, y un test que no mide no vigila nada.
+
+**Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
+en un móvil en vertical, y que ninguna otra pantalla enseñe barra al crecer algo.
+
 Las ideas de ampliación, con veredicto y con lo que NO conviene hacer, están en
 [`docs/12-IDEAS-Y-AMPLIACIONES.md`](12-IDEAS-Y-AMPLIACIONES.md).
 
