@@ -7,7 +7,6 @@ import { colorDe, nombreDe } from '@/ui/coloresNota';
 import { alturaEnPauta, yDeLinea } from '../alturaEnPauta';
 import { distancia, escalaDesde, esEscalaMayor, MAYOR, type Distancia } from '../escala';
 import { Reaccion } from '@/ui/Reaccion';
-import { BASE_MS, POR_CARACTER_MS } from '../maquinaReaccion';
 import { pistaPara } from '../maquinaEleccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
@@ -75,26 +74,23 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
   const caben = Math.max(3, Math.floor((anchoPauta - 40) / 46));
 
   /*
-    La pista de «no es una escala mayor» sale al llegar a ocho notas sin acertar, y cada
-    ocho más, y dura lo que tarda en leerse. El tono y el texto de la tarjeta salen de la
-    MISMA condición: antes el tono miraba «exactamente ocho» y el texto «ocho o más», así
-    que a la novena nota se iba la caja con el personaje y el texto se quedaba flotando.
-    Lo vio el autor el 2026-09-10.
+    La pista de «no es una escala mayor» sale UNA vez, al llegar a ocho notas sin acertar,
+    y se queda seis segundos: lo pidió el autor el 2026-09-10, y basta para leerla. No se
+    repite después —quien sigue tocando ya sabe lo que busca—. El tono y el texto de la
+    tarjeta salen de la misma condición; cuando miraban condiciones distintas, el texto se
+    quedaba flotando sin su caja.
   */
+  const PISTA_MS = 6000;
   const objetivo = escalaDesde(tonica, MAYOR);
   const [pistaVisible, setPistaVisible] = useState(false);
   const relojPista = useRef<number | null>(null);
   const textoPista = t(pistaPara(actividad.pistas, 1) ?? 'escala.casi');
   useEffect(() => {
-    const n = puestas.length;
-    if (resuelta || n < objetivo.length || (n - objetivo.length) % objetivo.length !== 0) return;
+    if (resuelta || puestas.length !== objetivo.length) return;
     setPistaVisible(true);
     if (relojPista.current !== null) window.clearTimeout(relojPista.current);
-    relojPista.current = window.setTimeout(
-      () => setPistaVisible(false),
-      BASE_MS + textoPista.length * POR_CARACTER_MS,
-    );
-  }, [puestas.length, resuelta, objetivo.length, textoPista]);
+    relojPista.current = window.setTimeout(() => setPistaVisible(false), PISTA_MS);
+  }, [puestas.length, resuelta, objetivo.length]);
   useEffect(
     () => () => {
       if (relojPista.current !== null) window.clearTimeout(relojPista.current);
