@@ -1622,7 +1622,13 @@ p {
   position: relative;
   /* Es lo único que se mira mientras se canta, y se mira de lejos si está proyectada. */
   height: clamp(72px, calc(var(--alto-escena) * 0.16), 120px);
-  max-width: min(100%, 560px);
+  /*
+    `width`, no `max-width`. Es un elemento de la cuadrícula del escenario con márgenes
+    laterales `auto`, y eso lo encoge a su contenido; como todo lo que tiene dentro va en
+    posición absoluta, su contenido mide cero: la caja se quedaba en seis píxeles de borde
+    —la «raya en medio» que veía el autor— y la franja verde y la aguja, recortadas dentro.
+  */
+  width: min(100%, 560px);
   margin: var(--e-4) auto;
   border: 3px solid var(--linea);
   border-radius: var(--r-redondo);

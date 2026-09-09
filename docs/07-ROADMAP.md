@@ -2481,7 +2481,11 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       medía contra la nota equivocada y el centro no se ponía verde nunca. Y seguía leyendo
       entre nota y nota, con lo que la cuenta atrás de la segunda —que reiniciaba su reloj
       con cada repintado— se atrancaba. Ahora la aguja sigue a la nota que toca, solo se
-      lee mientras se escucha, y la cuenta atrás lleva su reloj aparte del padre.
+      lee mientras se escucha, y la cuenta atrás lleva su reloj aparte del padre. Y la
+      aguja **no se veía**: la caja es un elemento de la cuadrícula del escenario con
+      márgenes `auto`, que la encogía a su contenido, y como todo lo de dentro va en
+      posición absoluta medía cero —seis píxeles de borde, la «raya en medio»—. Ahora
+      declara su ancho. Visto en el navegador contra la versión desplegada.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
