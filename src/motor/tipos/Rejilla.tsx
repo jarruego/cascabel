@@ -5,6 +5,7 @@ import { despertarAudio, obtenerContexto, pararTodo } from '@/audio/AudioEngine'
 import { MARIMBA, Sampler } from '@/audio/sampler';
 import { aMidiSMF, aMusicXML, descargar, type NotaExportable } from '@/datos/exportar';
 import { Reaccion } from '@/ui/Reaccion';
+import { mantenerALaVista } from '@/ui/seguirColumna';
 import { pistaPara } from '../maquinaEleccion';
 import { BarraAcciones } from '@/ui/BarraAcciones';
 import {
@@ -88,6 +89,12 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
   );
   const [sonando, setSonando] = useState(false);
   const [columnaActual, setColumnaActual] = useState(-1);
+  /** La cuadrícula se desplaza sola para que la columna que suena se vea. Ver `ui/seguirColumna.ts`. */
+  const cuadricula = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    if (columnaActual < 0) return;
+    mantenerALaVista(cuadricula.current, cuadricula.current?.querySelector('[data-columna-activa]'));
+  }, [columnaActual]);
   /** Repetir sin parar. Componer es probar, y parar cada cuatro compases lo corta. */
   const [bucle, setBucle] = useState(false);
   const bucleRef = useRef(false);
@@ -283,6 +290,7 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
 
       <div
         className="rejilla__cuadricula"
+        ref={cuadricula}
         role="grid"
         aria-label={t(contenido.consigna)}
         style={

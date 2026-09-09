@@ -2556,6 +2556,11 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       «no» del navegador: con él queda solo la pantalla. El paisaje sonoro no elige nada:
       pide el micrófono con su botón de grabar.
 
+- [x] **La cuadrícula sigue a la melodía.** En el constructor de ritmos y en las pistas,
+      cuando la columna que suena se sale por la derecha, la caja se desplaza de lado sola
+      —solo de lado, y solo cuando se sale— y la deja a un tercio del borde para que se
+      vean las que vienen. `ui/seguirColumna.ts`.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

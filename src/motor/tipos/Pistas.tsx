@@ -18,6 +18,7 @@ import {
   type Pista,
 } from '../maquinaPistas';
 import { BarraAcciones } from '@/ui/BarraAcciones';
+import { mantenerALaVista } from '@/ui/seguirColumna';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -142,6 +143,13 @@ export default function Pistas({ actividad, alTerminar }: PropsActividad) {
     alTerminar({ actividadId: actividad.id, completada: true });
   }, [actividad.id, alTerminar]);
 
+  /** La tabla se desplaza sola para que la columna que suena se vea. Ver `ui/seguirColumna.ts`. */
+  const tabla = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    if (estado.columna < 0) return;
+    mantenerALaVista(tabla.current, tabla.current?.querySelector('[data-aqui]'));
+  }, [estado.columna]);
+
   const reproducir = useCallback(async () => {
     if (estadoRef.current.sonando) {
       parar();
@@ -216,7 +224,7 @@ export default function Pistas({ actividad, alTerminar }: PropsActividad) {
     <section className="actividad pistas" data-carril={carril} aria-labelledby="consigna">
       <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
 
-      <div className="pistas__tabla">
+      <div className="pistas__tabla" ref={tabla}>
         {pistas.map((p) => {
           const muda = estado.silenciadas.has(p.clave);
           return (
