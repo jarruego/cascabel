@@ -2643,7 +2643,9 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       tono y semitono van en una sola línea y avanzan igual. Se evalúan las últimas ocho
       notas, así que el «empezar otra vez» sobra: una escala mal empezada se arregla
       siguiendo. Y el teclado se desplaza de lado si no cabe, sin ensanchar la página. Las
-      etiquetas son cuadradas e iguales, una entre cada dos notas; se pisaban.
+      etiquetas son cuadradas e iguales, una entre cada dos notas; se pisaban. En vertical
+      el conjunto va centrado: la fila del teclado a `1fr` lo dejaba arriba con medio
+      escenario vacío debajo.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
