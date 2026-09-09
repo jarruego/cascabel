@@ -42,6 +42,10 @@ DIGITACIONES: dict[str, tuple[bool, set[int]]] = {
 }
 
 ANCHO, ALTO = 90, 260
+# El recuadro empieza a la izquierda del cero: el agujero del pulgar y su rótulo van fuera
+# del cuerpo, a la izquierda, y con el recuadro en 0 la palabra «pulgar» salía cortada por
+# la mitad. Lo vio el autor el 2026-09-12.
+IZQUIERDA = -28
 CENTRO = 52          # eje de los agujeros delanteros
 RADIO = 11
 PRIMERO = 62         # y del primer agujero
@@ -64,7 +68,7 @@ def circulo(cx: int, cy: int, r: int, tapado: bool) -> str:
 
 def diagrama(nombre: str, pulgar: bool, tapados: set[int]) -> str:
     partes = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {ANCHO} {ALTO}" '
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{IZQUIERDA} 0 {ANCHO - IZQUIERDA} {ALTO}" '
         f'role="img" aria-label="Digitación de {nombre} en flauta dulce soprano">',
         f'<title>Digitación de {nombre}</title>',
         # Cuerpo de la flauta.
@@ -77,7 +81,8 @@ def diagrama(nombre: str, pulgar: bool, tapados: set[int]) -> str:
         '<line x1="20" y1="44" x2="34" y2="44" stroke="#171c2b" '
         'stroke-width="2" stroke-dasharray="3 3"/>',
         circulo(12, 44, 9, pulgar),
-        '<text x="12" y="30" text-anchor="middle" font-size="11" '
+        # Trece y no once: el dibujo se ve a 190 px de alto, y a once la palabra no se leía.
+        '<text x="12" y="30" text-anchor="middle" font-size="13" '
         'font-family="system-ui, sans-serif" fill="#4a5266">pulgar</text>',
     ]
     for i in range(1, 8):
