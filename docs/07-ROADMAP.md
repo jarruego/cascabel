@@ -2622,6 +2622,10 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       apagaba; y la aguja abarca ±300 cents en una franja ancha y baja, con la ventana de
       «casi» tenue y la de «afinado» en verde del ancho que marque el carril.
 
+- [x] **El rótulo del pulgar en las digitaciones de flauta salía cortado.** El agujero del
+      pulgar va fuera del cuerpo, a la izquierda, y el recuadro del dibujo empezaba en el
+      borde del cuerpo. Arreglado en el generador y regenerados los tres diagramas.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
