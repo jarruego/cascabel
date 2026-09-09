@@ -1,5 +1,5 @@
 {
-  "generado": "2026-09-07",
+  "generado": "2026-09-09",
   "total": 78,
   "actividades": [
     {
@@ -396,7 +396,7 @@
         "area": "Educación Artística",
         "competencia": "CE3",
         "criterio": "3.1",
-        "saber": "D. Lenguajes musicales: aplicación de sus conceptos básicos"
+        "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
       "herramienta": false
@@ -558,7 +558,7 @@
       "titulo": "Ostinato a dos planos",
       "descripcion": "Dos patrones simultáneos proyectados como partitura de colores.",
       "etapa": "primaria-c2",
-      "eje": "creacion",
+      "eje": "cuerpo",
       "tipo": "guia-aula",
       "lugar": "hibrida",
       "microfono": false,
@@ -1059,7 +1059,7 @@
       "duracion_min": 6,
       "curriculo": {
         "area": "Comunicación y Representación de la Realidad",
-        "competencia": "CE3",
+        "competencia": "CE4",
         "criterio": "4.1",
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
@@ -1080,7 +1080,7 @@
         "area": "Comunicación y Representación de la Realidad",
         "competencia": "CE3",
         "criterio": "3.5",
-        "saber": "F. Lenguaje y expresión musical — el sonido y sus cualidades"
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
       "herramienta": false
@@ -1232,7 +1232,7 @@
         "area": "Comunicación y Representación de la Realidad",
         "competencia": "CE2",
         "criterio": "2.1",
-        "saber": "F. Lenguaje y expresión musical — el sonido y sus cualidades"
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
       "herramienta": false
@@ -1249,9 +1249,9 @@
       "duracion_min": 6,
       "curriculo": {
         "area": "Comunicación y Representación de la Realidad",
-        "competencia": null,
+        "competencia": "CE3",
         "criterio": "3.5",
-        "saber": "F. Lenguaje y expresión musical"
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
       "herramienta": false
@@ -1289,7 +1289,7 @@
         "area": "Comunicación y Representación de la Realidad",
         "competencia": "CE3",
         "criterio": "3.5",
-        "saber": "F. Lenguaje y expresión musical – el sonido, el silencio y sus cualidades"
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
       "herramienta": false
@@ -1308,7 +1308,7 @@
         "area": "Comunicación y Representación de la Realidad",
         "competencia": "CE3",
         "criterio": "3.5",
-        "saber": "F. Lenguaje y expresión musical – el sonido, el silencio y sus cualidades"
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
       "herramienta": false

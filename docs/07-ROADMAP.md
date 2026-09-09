@@ -2162,6 +2162,17 @@ hace la actividad**, y un agujero en el validador que las dejaba pasar.
       puede decir nada: que exista la llamada se prueba; que se note en la mano y no moleste,
       no.
 
+- [x] **El índice del catálogo se había quedado atrás, y nada lo decía.** `indice.json` es lo
+      único que se carga al arrancar —el catálogo filtra por curso, eje y criterio sin bajar
+      ni una actividad entera— y se genera a mano con `npm run contenido:indice`. Al cambiar
+      el eje de «Ostinato a dos planos» no se regeneró, y el síntoma es el peor posible:
+      **nada falla**. La actividad se abre bien, porque se lee de su fichero; lo que miente
+      es la lista, que la seguía enseñando entre las de crear, que es donde un maestro no la
+      iba a buscar.
+
+      Ahora hay test, y compara campo a campo contra los setenta y ocho ficheros en vez de
+      contra el fichero entero: la fecha de generación cambia sola y no significa nada.
+
 **Lo que sigue faltando** es lo de siempre: un aparato. Nada de esto necesitaba pantalla,
 pero lo de los dos días anteriores sí.
 
