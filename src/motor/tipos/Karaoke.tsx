@@ -77,6 +77,8 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
     consigna: string;
     notas: NotaMusicograma[];
     tempo?: number;
+    /** Lo pone `conSerie`: qué ejercicio es de cuántos. */
+    serie?: { n: number; total: number };
     clave?: 'sol' | 'fa';
     /** 'vertical' cae de arriba abajo; 'horizontal' viene de la derecha. */
     orientacion?: Orientacion;
@@ -616,7 +618,9 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
             onClick={() => setFase('cuenta')}
           >
             <IconoTocar />
-            {t('accion.empezar')}
+            {contenido.serie
+              ? t('comun.empezarDe', { n: contenido.serie.n, total: contenido.serie.total })
+              : t('accion.empezar')}
           </button>
         )}
 

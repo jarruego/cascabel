@@ -1361,6 +1361,41 @@ p {
   font: inherit;
   cursor: pointer;
 }
+/* ── el cierre de una serie ────────────────────────────────────────────────
+   Una fila por ejercicio, en palabras, con la forma acompañando al color (§6). */
+.resumen-serie {
+  display: grid;
+  justify-items: center;
+  gap: var(--e-3);
+  text-align: center;
+}
+.resumen-serie h2 { margin: 0; font-size: var(--t-xl); }
+.resumen-serie__filas {
+  display: grid;
+  gap: var(--e-2);
+  width: min(100%, 28rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.resumen-serie__fila {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--e-3);
+  padding: var(--e-2) var(--e-4);
+  border: 2px solid var(--linea);
+  border-radius: var(--r-m);
+  background: var(--superficie);
+  text-align: left;
+}
+.resumen-serie__fila[data-calidad='bien'] { border-color: var(--ok); }
+.resumen-serie__fila[data-calidad='casi'] { border-color: var(--vivo-amarillo); }
+.resumen-serie__marca { font-size: var(--t-l); line-height: 1; }
+.resumen-serie__fila[data-calidad='bien'] .resumen-serie__marca { color: var(--ok); }
+.resumen-serie__fila[data-calidad='casi'] .resumen-serie__marca { color: var(--vivo-naranja); }
+.resumen-serie__calidad { color: var(--tinta-2); font-weight: 700; }
+
 .paso__puntos {
   display: flex;
   gap: var(--e-3);

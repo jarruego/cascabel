@@ -2380,6 +2380,41 @@ memory», dijo el autor de los de tipo `emparejar`. Las tres cosas eran ciertas.
       una destapada solo se pueden tocar las de la otra clase: las demás se apagan. Es regla
       de la máquina, con test, no un adorno de la pantalla.
 
+### Las actividades dejan de ser píldoras, 2026-09-11
+
+«Son muy cortas, como píldoras, y muchas veces repiten lo mismo tres o cuatro veces sin
+variación», dijo el autor. Y lo que quería no era encadenar píldoras en una sesión —para eso
+está el itinerario—, sino que **cada actividad sea, por dentro, una pequeña serie de
+ejercicios de sí misma**: negras, luego con silencio, luego con corcheas, y al final un cierre
+que diga cómo ha ido cada uno.
+
+- [x] **`contenido.ejercicios`, y un motor común para las series.** `serie.ts` lleva el orden,
+      la pausa entre ejercicios, la calidad de cada uno en palabras y las dos formas de
+      repetir; `conSerie()` envuelve el componente de un tipo sin tocarlo, montándolo de cero
+      por ejercicio y por vuelta. El cierre (`ResumenSerie`) es una fila por ejercicio, sin
+      cifras, y sustituye a la modal de celebración: «repetir los que costaron» es el botón
+      grande, «entera otra vez» el discreto. Se anota al llegar al cierre, no al pulsar
+      terminar. Siete tipos lo usan: tocar-a-tiempo, rejilla, ordenar, emparejar, compases,
+      karaoke y seguir. Con test en `serie.ts` y `variaciones.ts`.
+- [x] **«Otra vez» nunca repite lo mismo.** La vuelta N es la variación N, determinista y
+      dentro de lo que la actividad declara: el ritmo se gira, el dictado mueve las columnas,
+      las fichas salen en otro orden, el compás empieza por otro compás, el karaoke va un seis
+      por ciento más deprisa con tope en el veinte. La primera vez es siempre lo escrito.
+- [x] **Treinta actividades reescritas como series**, con los ejercicios escritos a mano y
+      dentro de sus figuras y notas: las siete de ritmo (ya no repiten el mismo patrón: «solo
+      negras, con un ti-ti, con un silencio, dos ti-ti»), los cinco dictados en rejilla (tres
+      melodías cada uno con las mismas notas), seis de ordenar (de pocas fichas a todas), dos
+      de emparejar (un segundo tablero), las tres de compases (tres líneas) y las siete de
+      karaoke (primera parte, segunda parte, entera). Las de un solo ejercicio que tienen
+      sentido así —memory, dictado de flauta, musicogramas de una pieza— se quedan como están.
+      Las herramientas —validador y dificultad— miran ejercicio a ejercicio, y la carga de una
+      serie es la del ejercicio más largo, no la suma: entre uno y otro hay una pausa.
+
+**Pendiente de oír**: si la pausa de un segundo entre ejercicios basta, si el cierre se lee
+bien en un móvil con cuatro filas, y si las variaciones giradas de los ritmos siguen siendo
+naturales de palmear. Y elección, cantar y pentagrama, que ya eran series por su cuenta,
+todavía no pasan por el cierre común.
+
 Las ideas de ampliación, con veredicto y con lo que NO conviene hacer, están en
 [`docs/12-IDEAS-Y-AMPLIACIONES.md`](12-IDEAS-Y-AMPLIACIONES.md).
 

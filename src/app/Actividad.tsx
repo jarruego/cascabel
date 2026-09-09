@@ -199,6 +199,7 @@ export default function Actividad() {
           <Componente
             key={intento}
             actividad={actividad}
+            alSalir={volver}
             alTerminar={(r) => {
               /*
                 Anotar y celebrar son dos cosas distintas.
@@ -209,7 +210,8 @@ export default function Actividad() {
                 rareza que felicitar a alguien por dejar de tocar el piano. La regla vive en
                 `motor/actividadesLibres.ts`, al lado de la de las actividades sin final.
               */
-              if (hayCelebracion(actividad)) setResultado(r);
+              // Una serie trae su propio cierre (`cerrado`), y la modal encima sobraría.
+              if (hayCelebracion(actividad) && !r.cerrado) setResultado(r);
               // Si el almacenamiento está bloqueado esto no hace nada y no pasa nada:
               // la actividad ya se ha jugado, que es lo que importa.
               void anotar(r);

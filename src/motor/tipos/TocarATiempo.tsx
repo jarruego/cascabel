@@ -5,7 +5,7 @@ import { TOLERANCIA_MS } from '@/config';
 import { MARIMBA, Sampler } from '@/audio/sampler';
 import { DetectorDePalmadas } from '@/escucha/palmadas';
 import { useCarril } from '@/app/preferencias';
-import { evaluarRitmo, type EvaluacionRitmica } from '../evaluacion';
+import { bastanteBien, evaluarRitmo, type EvaluacionRitmica } from '../evaluacion';
 import {
   aMilisegundos,
   anclarEn,
@@ -50,12 +50,14 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
     consigna: string;
     silabas: string[];
     repeticiones?: number;
+    /** Lo pone `conSerie`: qué ejercicio es de cuántos. Con serie, cada ejercicio es UNA vuelta. */
+    serie?: { n: number; total: number };
     tempo?: number;
   };
 
   const carril = useCarril(actividad.etapa);
   const bpm = contenido.tempo ?? actividad.practica?.tempo ?? 84;
-  const repeticiones = contenido.repeticiones ?? 3;
+  const repeticiones = contenido.serie ? 1 : (contenido.repeticiones ?? 3);
 
   const [fase, setFase] = useState<Fase>('listo');
   const [ronda, setRonda] = useState(0);
@@ -544,9 +546,11 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
             {/* El botón anuncia la vuelta que va a empezar, y es el único sitio donde sale
                 el número: con una cuenta en pantalla y otra aquí había dos números distintos
                 a la vez, uno diciendo dónde estás y otro adónde vas. */}
-            {repeticiones > 1
-              ? t('comun.empezarDe', { n: ronda + 1, total: repeticiones })
-              : t('accion.empezar')}
+            {contenido.serie
+              ? t('comun.empezarDe', { n: contenido.serie.n, total: contenido.serie.total })
+              : repeticiones > 1
+                ? t('comun.empezarDe', { n: ronda + 1, total: repeticiones })
+                : t('accion.empezar')}
           </button>
         )}
 
@@ -576,6 +580,11 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
                 alTerminar({
                   actividadId: actividad.id,
                   completada: true,
+                  // Regular pero desfasado es «bien»: tiene pulso, solo va desplazado (§7).
+                  calidad:
+                    evaluacion.regularPeroDesfasado || bastanteBien(evaluacion.aciertos, esperados.current.length)
+                      ? 'bien'
+                      : 'casi',
                   aciertos: evaluacion.aciertos,
                   intentos: esperados.current.length,
                   desvioMedioMs: evaluacion.desvioMedioMs,
@@ -599,7 +608,9 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
             {ronda + 1 >= repeticiones ? <IconoSiguiente /> : <IconoRepetir />}
             {/* En la última vuelta no dice «otra vez», porque no hay otra. */}
             {ronda + 1 >= repeticiones
-              ? t('comun.terminar')
+              ? contenido.serie && contenido.serie.n < contenido.serie.total
+                ? t('serie.siguiente')
+                : t('comun.terminar')
               : t('comun.otraVezDe', { n: ronda + 2, total: repeticiones })}
           </button>
         )}

@@ -22,6 +22,7 @@ import Referencia from './tipos/Referencia';
 import Acompanamientos from './tipos/Acompanamientos';
 import Eco from './tipos/Eco';
 import Memoria from './tipos/Memoria';
+import { conSerie } from './tipos/Serie';
 
 /**
  * Mapa tipo de actividad -> componente.
@@ -32,19 +33,19 @@ import Memoria from './tipos/Memoria';
  */
 export const REGISTRO: Partial<Record<TipoActividad, ComponentType<PropsActividad>>> = {
   eleccion: Eleccion,
-  emparejar: Emparejar,
+  emparejar: conSerie(Emparejar, 'emparejar'),
   memoria: Memoria,
-  ordenar: Ordenar,
+  ordenar: conSerie(Ordenar, 'ordenar'),
   'guia-aula': GuiaAula,
-  'tocar-a-tiempo': TocarATiempo,
+  'tocar-a-tiempo': conSerie(TocarATiempo, 'tocar-a-tiempo'),
   pentagrama: Pentagrama,
-  rejilla: Rejilla,
+  rejilla: conSerie(Rejilla, 'rejilla'),
   cantar: Cantar,
-  seguir: Seguir,
+  seguir: conSerie(Seguir, 'seguir'),
   lienzo: Lienzo,
   teclado: Teclado,
-  karaoke: Karaoke,
-  compases: Compases,
+  karaoke: conSerie(Karaoke, 'karaoke'),
+  compases: conSerie(Compases, 'compases'),
   escala: Escala,
   paisaje: Paisaje,
   pistas: Pistas,

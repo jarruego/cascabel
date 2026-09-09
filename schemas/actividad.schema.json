@@ -303,7 +303,7 @@
     },
     "contenido": {
       "type": "object",
-      "description": "Carga útil específica del tipo. El motor la interpreta.",
+      "description": "Carga útil específica del tipo. El motor la interpreta. Puede traer `ejercicios`: una lista de variantes, cada una con `titulo` y sus campos encima de los comunes; la actividad se hace entonces como serie, con un cierre (docs/02).",
       "minProperties": 1
     },
     "evaluacion": {

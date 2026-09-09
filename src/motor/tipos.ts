@@ -163,9 +163,18 @@ export interface ResultadoActividad {
   desvioMedioMs?: number;
   desviacionTipicaMs?: number;
   afinacionMediaCents?: number;
+  /** Cómo ha ido, en palabras. Lo pone el motor que lo sabe; si no, se deduce de las cifras. */
+  calidad?: 'bien' | 'casi' | 'hecho';
+  /**
+   * La actividad ya ha enseñado su propio cierre —el resumen de una serie— y el marco no
+   * debe abrir la modal de celebración encima.
+   */
+  cerrado?: boolean;
 }
 
 export interface PropsActividad {
   actividad: Actividad;
   alTerminar: (resultado: ResultadoActividad) => void;
+  /** Volver al catálogo. Lo usa el cierre de una serie; el marco lo provee. */
+  alSalir?: () => void;
 }

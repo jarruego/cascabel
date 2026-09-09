@@ -43,6 +43,34 @@ La referencia normativa es `schemas/actividad.schema.json`. Esto es la guía par
 - El ABC tiene que parsear, cuadrar los compases, caber en la tesitura de la edad y no
   tener saltos mayores que el límite de la etapa (4.ª en Infantil, 5.ª en c1, 6.ª en c2)
 
+## Una actividad como serie de ejercicios
+
+Desde el 2026-09-11, `contenido.ejercicios` convierte una actividad en una pequeña serie de
+ejercicios de sí misma. Cada ejercicio es el contenido base con sus campos encima, y lleva un
+`titulo` (clave de i18n) que sale en el cierre:
+
+```jsonc
+"contenido": {
+  "consigna": "actividad.c102.consigna",
+  "tempo": 84,                                  // común a todos
+  "ejercicios": [
+    { "titulo": "actividad.c102.ej1", "silabas": ["ta", "ta", "ta", "ta"] },
+    { "titulo": "actividad.c102.ej2", "silabas": ["ta", "ta", "ti-ti", "ta"] },
+    { "titulo": "actividad.c102.ej3", "silabas": ["ta", "sh", "ti-ti", "ta"] }
+  ]
+}
+```
+
+Lo que hace el motor (`serie.ts`, con test): los ejercicios van en orden con una pausa
+entre ellos; al final, un cierre con una fila por ejercicio en palabras —bien, casi, hecho—
+y dos botones: «repetir los que costaron» y, discreto, «entera otra vez». Cada vuelta varía
+(`variaciones.ts`): el ritmo se gira, el dictado mueve las columnas, el karaoke va un poco
+más deprisa. Nunca se repite lo mismo. Sin `ejercicios`, la actividad es un solo ejercicio y
+todo sigue como antes. Los ejercicios se escriben a mano, porque la progresión es pedagógica.
+
+Lo admiten hoy: tocar-a-tiempo, rejilla, ordenar, emparejar, compases, karaoke y seguir.
+El validador y `dificultad` miran cada ejercicio por separado.
+
 ## Lo que puede sonar sin un fichero de audio
 
 Desde el 2026-09-10, un estímulo de `eleccion`, una entrada de `referencia` y una ficha de
