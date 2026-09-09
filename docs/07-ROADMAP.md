@@ -2086,6 +2086,15 @@ hace la actividad**, y un agujero en el validador que las dejaba pasar.
       De paso se fue el último literal suelto que quedaba en un componente: la ficha
       imprimible escribía `${duracion} min` a mano.
 
+- [x] **El último emoji de la interfaz.** El botón de volver a oír llevaba un altavoz 🔊 y
+      era el único que quedaba: todo lo demás se dibuja en `ui/Simbolos.tsx`. Tenía los dos
+      problemas del emoji a la vez — la forma la pone la tipografía del aparato, así que el
+      mismo botón se ve distinto en cada móvil; y el significado era otro, porque un altavoz
+      es el volumen y ese botón no sube nada, vuelve a poner lo que acaba de sonar. Ahora es
+      la flecha en círculo, que es la de «otra vez» en la tabla de símbolos. Con test, que
+      persigue los pictogramas en color y deja en paz el sostenido de la escala y el tic de
+      «ya hecha», que son caracteres de imprenta.
+
 **Lo que sigue faltando** es lo de siempre: un aparato. Nada de esto necesitaba pantalla,
 pero lo de los dos días anteriores sí.
 

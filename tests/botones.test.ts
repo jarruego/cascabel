@@ -111,6 +111,38 @@ describe('los botones de la aplicación', () => {
     expect([...huerfanas], `clases de botón sin CSS:\n${[...huerfanas].join('\n')}`).toEqual([]);
   });
 
+  it('los símbolos son los dibujados, no emojis', () => {
+    /*
+      El vocabulario de símbolos vive en `ui/Simbolos.tsx` y se DIBUJA: un triángulo es
+      «suena», una flecha en círculo es «otra vez», y significan lo mismo en las veintiuna
+      pantallas.
+
+      Quedaba uno suelto, un altavoz en el botón de volver a oír, y tenía los dos problemas
+      de los emojis a la vez. El de forma: lo dibuja la tipografía del aparato, así que lo
+      que en un Android es un altavoz limpio en otro es otro dibujo y en otro está en blanco
+      y negro. Y el de significado: un altavoz es el volumen, y ese botón no sube nada,
+      vuelve a poner lo que acaba de sonar.
+
+      Se persiguen los pictogramas en color, que son los que cambian de dibujo con el
+      aparato. Fuera de eso quedan dos cosas que sí se escriben tal cual y no son emojis: los
+      signos musicales —el sostenido de la escala es notación— y el tic de «ya hecha» del
+      catálogo, que es un carácter de imprenta de toda la vida, en un solo color y con su
+      texto al lado.
+    */
+    const PICTOGRAMAS = /[\u{1F300}-\u{1FAFF}]|️/u;
+    const culpables: string[] = [];
+    for (const carpeta of CARPETAS) {
+      for (const n of readdirSync(carpeta).filter((f) => f.endsWith('.tsx'))) {
+        // En un comentario sí se puede citar el emoji que se quitó y por qué.
+        const codigo = readFileSync(join(carpeta, n), 'utf8')
+          .replace(/\/\*[\s\S]*?\*\//g, '')
+          .replace(/\/\/.*/g, '');
+        if (PICTOGRAMAS.test(codigo)) culpables.push(n);
+      }
+    }
+    expect(culpables, 'un emoji donde va un símbolo dibujado').toEqual([]);
+  });
+
   it('el latido va siempre sobre la acción principal', () => {
     /*
       `boton-arranque` significa «este, y hasta que lo pulses». Si latiera un botón

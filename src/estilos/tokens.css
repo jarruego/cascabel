@@ -382,7 +382,17 @@ p {
   display: inline-flex;
   align-items: center;
   gap: var(--e-3);
-  min-height: 48px;
+  /*
+    El alto es el del carril, no 48 fijos.
+
+    Dentro de una actividad ya lo era —lo pone `.actividad .boton-repetir`—, así que esto no
+    arregla ningún botón encogido: iguala la regla base con la de dentro. Lo que quita es la
+    trampa de que el número solo estuviera bien por la regla de al lado: fuera de la
+    actividad `--objetivo` vale lo del carril de lectores, 60, y donde hay `data-carril`
+    vale lo que toque. «Secundario» es peso visual —borde en vez de relleno, menos cuerpo de
+    letra—, nunca tamaño de diana.
+  */
+  min-height: var(--objetivo);
   padding: var(--e-2) var(--e-4);
   border-radius: var(--r-redondo);
   border: 2px solid var(--linea);
