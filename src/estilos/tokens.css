@@ -1279,11 +1279,6 @@ p {
   background: var(--tinta);
   transform: rotate(-20deg);
 }
-.pentagrama__etiqueta {
-  margin-top: var(--e-0);
-  font-size: 0.75em;
-  color: var(--tinta-2);
-}
 .visualmente-oculto {
   position: absolute;
   width: 1px;
@@ -3131,11 +3126,29 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
    Pauta arriba, distancias en medio, teclado abajo. Ese orden importa: se lee de arriba
    abajo lo mismo que se hace de abajo arriba, así que la nota que se toca sube por la
    pantalla hasta escribirse, que es la relación que la actividad enseña. */
+/*
+  La pantalla de la escala cabe entera, en vertical y en apaisado, sin desplazar.
+
+  Son tres bloques en columna —la pauta, las distancias y el teclado— y la sección se
+  lleva exactamente el alto del escenario: la pauta con un alto acotado, las distancias lo
+  suyo, y el teclado lo que queda, nunca por debajo de dos objetivos táctiles. Antes cada
+  bloque traía su alto fijo, sumaban más de lo que hay en un móvil apaisado, y la página
+  se desplazaba con las barras fijas encima: «no me cabe, se redimensiona todo», dijo el
+  autor el 2026-09-12. La regla general de estas pantallas está en docs/07-ROADMAP.md.
+*/
+.escala {
+  height: calc(var(--alto-escena) - var(--e-5) - var(--e-3));
+  min-height: 0;
+  grid-template-rows: auto auto minmax(calc(var(--objetivo) * 2), 1fr);
+  align-content: stretch;
+}
 .escala__pauta {
   position: relative;
   width: 100%;
-  height: 140px;
-  margin: var(--e-4) 0 var(--e-2);
+  /* Cinco líneas a 12 px desde 40 px de margen, y dos adicionales por abajo: 112 px es el
+     mínimo que no recorta ninguna nota. */
+  height: clamp(112px, calc(var(--alto-escena) * 0.34), 150px);
+  margin: 0 0 var(--e-2);
   overflow-x: auto;
   background: var(--superficie);
   border: 2px solid var(--linea);
@@ -3184,7 +3197,10 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   display: flex;
   /* `safe`: ver `.teclado__caja`. Catorce teclas tampoco caben en un móvil. */
   justify-content: safe center;
-  height: clamp(140px, calc(var(--alto-escena) * 0.4), 300px);
+  /* El alto es el que queda en la sección: ver `.escala`. */
+  height: auto;
+  min-height: calc(var(--objetivo) * 2);
+  max-height: 300px;
   overflow-x: auto;
 }
 .escala__teclado .teclado__blanca[data-usada],

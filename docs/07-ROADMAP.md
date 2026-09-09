@@ -2573,6 +2573,28 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       descontando lo que rodea a la cuadrícula para que el constructor quepa sin desplazar
       en vertical, con el suelo táctil del carril y un tope de 96 px.
 
+- [x] **Las figuras se dibujan con los glifos SMuFL de Bravura, no con Unicode combinado.**
+      Las secuencias «cabeza + plica + corchete» del bloque Unicode se componen glifo a glifo
+      y el corchete de la semicorchea caía abajo. Los glifos del Área de Uso Privado son la
+      figura entera, de una pieza: es lo que hacen MuseScore y Dorico. Traducidos en todo el
+      contenido, silencios, claves, barras, matices y alteraciones incluidos.
+- [x] **«Tonos y semitonos» cabe entera, y la regla para las pantallas que no caben.** Lo
+      que pasaba: tres bloques con alto fijo —pauta 140, distancias, teclado 140 a 300—
+      sumaban más que un móvil apaisado, la página se desplazaba y en apaisado las barras
+      se compactan, con lo que parecía que «se redimensionaba todo». La regla que sale del
+      estudio, y que ya cumplen la rejilla y ahora la escala: **la sección se lleva el alto
+      del escenario y lo reparte**; cada bloque declara si es fijo (lo tocable, que nunca
+      baja del objetivo) o flexible (lo que se mira: pauta, tira, cuadrícula, con un alto
+      acotado entre un mínimo legible y un máximo útil); y si ni con los mínimos cabe, se
+      desplaza **un solo bloque, de lado**, nunca la página. Queda por pasar por esa regla:
+      el karaoke por bandas, el musicograma que cae y el teclado libre.
+
+- [x] **«Coloca la nota» colocaba los sitios 56 px por encima de la pauta.** VexFlow deja
+      cuatro espacios de aire sobre la quinta línea y el componente no contaba con ellos.
+      Además pedía las notas en orden —sol, la, si, do, y otra vez— con el nombre escrito
+      debajo de cada sitio: se acertaba leyendo. Ahora baraja sin dos iguales seguidas y el
+      nombre solo lo oye el lector de pantalla.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
