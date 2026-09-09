@@ -10,7 +10,7 @@
   "comun.sinEscuchar": "Ahora no puedo hacer ruido",
   "microfono.permiso.voz": "Vamos a escuchar tu voz para ver si cantas la nota. Tu voz se queda en este ordenador: nadie más la oye y no se guarda en ningún sitio. Si ahora no puedes hacer ruido, déjala para luego.",
   "microfono.permiso.palmada": "Si eliges palmas, escucharemos tus palmadas para ver si van a tiempo. El sonido se queda en este ordenador: nadie más lo oye y no se guarda en ningún sitio.",
-  "actividad.inf01.enunciado": "Toca el círculo verde mientras oigas el sonido. Cuando haya silencio, suéltalo.",
+  "actividad.inf01.enunciado": "Escucha con atención. Si ha sonado algo, toca el altavoz verde. Si no se ha oído nada, toca el azul del silencio.",
   "actividad.inf01.consigna": "¿Suena o hay silencio?",
   "actividad.inf01.pista1": "Escucha con atención. El silencio también es música.",
   "actividad.c102.enunciado": "Escucha el ritmo y después repítelo con las palmas.",
