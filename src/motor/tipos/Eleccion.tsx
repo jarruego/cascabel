@@ -103,8 +103,8 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
     sin enchufar es peor que código muerto, porque parece que la funcionalidad está.
 
     Y hace falta: sin ella, seis estímulos se encadenan y el niño no se entera de que ha
-    cambiado la pregunta. No es un cronómetro —se salta tocando—, así que no choca con la
-    regla 4.
+    cambiado la pregunta. Desde el 2026-09-12 es un paso con botón, no una pausa con reloj:
+    el niño pulsa «siguiente» cuando quiere.
   */
   const [enPausa, setEnPausa] = useState(false);
 

@@ -2508,6 +2508,14 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       posterior los dejaba al ancho de su texto, y con cinco píxeles de hueco los centros
       se iban desplazando banda a banda.
 
+- [x] **El paso entre ejercicios se sigue pulsando, no esperando.** Era una pausa con reloj
+      que se podía saltar tocando y no se veía que se pudiera. Ahora lleva el botón verde de
+      «siguiente» a la derecha, y el niño decide cuándo viene el siguiente. Vale para las
+      elecciones y para las series que no enseñan resultado propio.
+- [x] **Los estímulos de tempo cambian de instrumento.** «¿Rápido o despacio?» y «Adagio,
+      andante, allegro» iban con bombo en los seis, que apenas se aprecia: ahora claves,
+      caja china, caja, bongó, triángulo y tom, uno por estímulo.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

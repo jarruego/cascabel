@@ -1385,16 +1385,12 @@ p {
   gap: var(--e-3);
   width: 100%;
   padding: var(--e-6) var(--e-4);
-  border: none;
-  background: none;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
 }
 .paso__frase {
   font-size: var(--t-l);
   font-weight: 700;
 }
+.paso__seguir { margin-top: var(--e-3); }
 /* ── el cierre de una serie ────────────────────────────────────────────────
    Una fila por ejercicio, en palabras, con la forma acompañando al color (§6). */
 .resumen-serie {
