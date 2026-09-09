@@ -3223,22 +3223,30 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   margin-left: -8px;
   border: 2px solid var(--tinta);
   border-radius: 8px;
+  /* Cuando la pauta avanza, la nota corre un sitio: se ve moverse. */
+  transition: left 220ms ease;
 }
+.escala__adicional { transition: left 220ms ease; }
 .escala__alteracion {
   position: absolute;
   font-size: 20px;
   font-weight: 700;
   color: var(--tinta);
+  transition: left 220ms ease;
 }
 /* Un tono se dibuja el DOBLE de largo que un semitono: la palabra dice qué es y el tamaño
    dice cuánto mide. Sin esa diferencia, «tono» y «semitono» son dos etiquetas cualquiera. */
+/* Una sola línea, siempre: las etiquetas avanzan con la pauta y las de la izquierda se
+   van cuando no caben, igual que las notas. */
 .escala__distancias {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow: hidden;
   gap: var(--e-1);
   justify-content: center;
   padding: 0;
-  margin: 0 0 var(--e-4);
+  margin: 0 0 var(--e-2);
+  min-height: 2.2em;
   list-style: none;
 }
 .escala__distancias li {
@@ -3254,6 +3262,9 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 
 .escala__teclado {
   position: relative;
+  /* Si las catorce teclas no caben, se desplaza de lado: nunca ensancha la página. */
+  min-width: 0;
+  max-width: 100%;
   display: flex;
   /* `safe`: ver `.teclado__caja`. Catorce teclas tampoco caben en un móvil. */
   justify-content: safe center;

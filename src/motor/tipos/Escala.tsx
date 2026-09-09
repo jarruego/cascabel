@@ -8,8 +8,6 @@ import { alturaEnPauta, yDeLinea } from '../alturaEnPauta';
 import { distancia, escalaDesde, esEscalaMayor, MAYOR, type Distancia } from '../escala';
 import { Reaccion } from '@/ui/Reaccion';
 import { pistaPara } from '../maquinaEleccion';
-import { BarraAcciones } from '@/ui/BarraAcciones';
-import { IconoRepetir } from '@/ui/Simbolos';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -56,6 +54,26 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
 
   const [puestas, setPuestas] = useState<string[]>([tonica]);
   const [resuelta, setResuelta] = useState(false);
+  /*
+    La pauta es un rótulo que avanza: se escribe sin parar, y cuando ya no cabe una nota
+    más, la de la izquierda desaparece y las demás corren un sitio. Lo pidió el autor el
+    2026-09-10: así hay movimiento, la pauta cabe siempre y sobra el «empezar otra vez»
+    —una escala mal empezada se arregla siguiendo, no borrando—. Lo que se evalúa son las
+    ÚLTIMAS ocho notas: en cuanto forman la escala mayor, está. Cuántas caben lo dice el
+    ancho de la pauta, que se mide.
+  */
+  const pauta = useRef<HTMLDivElement | null>(null);
+  const [anchoPauta, setAnchoPauta] = useState(0);
+  useEffect(() => {
+    const el = pauta.current;
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    const ro = new ResizeObserver(([e]) => setAnchoPauta(Math.floor(e?.contentRect.width ?? 0)));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+  const caben = Math.max(3, Math.floor((anchoPauta - 40) / 46));
+  const primera = Math.max(0, puestas.length - caben);
+  const visibles = puestas.slice(primera);
   const sampler = useRef<Sampler | null>(null);
   const yaTerminada = useRef(false);
 
@@ -86,7 +104,7 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
     void sonar(nota);
     const nuevas = [...puestas, nota];
     setPuestas(nuevas);
-    if (nuevas.length === objetivo.length) setResuelta(esEscalaMayor(nuevas));
+    if (esEscalaMayor(nuevas.slice(-objetivo.length))) setResuelta(true);
   };
 
   const teclas: Array<{ nota: string; negra: boolean; indice: number }> = [];
@@ -111,7 +129,7 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
 
       {/* La pauta. Se escribe sola según se toca: ver cómo se escribe lo que suena es la
           mitad de la actividad, y esperar al final la perdería. */}
-      <div className="escala__pauta" role="img" aria-label={t('escala.pauta')}>
+      <div className="escala__pauta" role="img" aria-label={t('escala.pauta')} ref={pauta}>
         {[1, 2, 3, 4, 5].map((l) => (
           <span
             key={l}
@@ -120,10 +138,12 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
             aria-hidden="true"
           />
         ))}
-        {puestas.map((nota, i) => {
+        {visibles.map((nota, i) => {
           const alto = alturaEnPauta(nota.replace('#', ''), 'sol', SEP, MARGEN);
+          // La clave es el índice absoluto: así la nota que corre un sitio es el mismo
+          // elemento, y la transición de `left` se ve como movimiento.
           return (
-            <span key={`${nota}-${i}`} aria-hidden="true">
+            <span key={primera + i} aria-hidden="true">
               {alto.adicionales.map((y) => (
                 <span
                   key={y}
@@ -150,8 +170,8 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
       {/* Las distancias, entre nota y nota. Un tono se dibuja el doble de largo que un
           semitono: la palabra dice qué es y el tamaño dice cuánto mide. */}
       <ol className="escala__distancias" aria-label={t('escala.distancias')}>
-        {distancias.map((d, i) => (
-          <li key={i} data-distancia={d ?? 'otra'}>
+        {distancias.slice(Math.max(0, distancias.length - (caben - 1))).map((d, j) => (
+          <li key={distancias.length - Math.min(distancias.length, caben - 1) + j} data-distancia={d ?? 'otra'}>
             {t(d === 'tono' ? 'escala.tono' : d === 'semitono' ? 'escala.semitono' : 'escala.salto')}
           </li>
         ))}
@@ -193,23 +213,9 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
         personaje={actividad.personaje}
       >
         {!resuelta &&
-          puestas.length === objetivo.length &&
+          puestas.length >= objetivo.length &&
           t(pistaPara(actividad.pistas, 1) ?? 'escala.casi')}
       </Reaccion>
-
-      <BarraAcciones>
-        <button
-          type="button"
-          className="boton-repetir"
-          onClick={() => {
-            setPuestas([tonica]);
-            setResuelta(false);
-          }}
-        >
-          <IconoRepetir />
-          {t('escala.empezarDeNuevo')}
-        </button>
-      </BarraAcciones>
     </section>
   );
 }

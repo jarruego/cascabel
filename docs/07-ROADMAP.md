@@ -2634,6 +2634,15 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       tenían la mitad de la energía por debajo de 250 Hz, que es lo que sonaba a tren y a
       tormenta. La medida está en el cuaderno de la sesión, no en el repositorio.
 
+- [x] **La pista de un fallo se queda hasta la siguiente respuesta.** Salía 1,2 s y se iba
+      con el cambio de fase: «ni da tiempo de leer». En elección y pentagrama la tarjeta de
+      «casi» sigue mientras se está en la misma pregunta con un fallo detrás.
+- [x] **La pauta de la escala es un rótulo que avanza.** Cuando no cabe una nota más, la de
+      la izquierda desaparece y las demás corren un sitio, con movimiento; las etiquetas de
+      tono y semitono van en una sola línea y avanzan igual. Se evalúan las últimas ocho
+      notas, así que el «empezar otra vez» sobra: una escala mal empezada se arregla
+      siguiendo. Y el teclado se desplaza de lado si no cabe, sin ensanchar la página.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
