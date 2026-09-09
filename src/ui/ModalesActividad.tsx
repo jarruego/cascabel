@@ -85,14 +85,14 @@ export function ModalExplicacion({
  * `fetch` ni `MediaRecorder` en el camino— y es lo que hace que jurídicamente no tratemos
  * datos personales de un menor.
  *
- * Y las dos salidas valen lo mismo. La segunda no es rendirse: con palmadas, la vía de
- * toque está terminada antes de que se escriba ningún detector y con ella la actividad se
- * hace entera; con voz, se canta igual y nadie mide. Por eso las dos son botones de verdad
- * y no un botón y un enlace pequeño.
- *
- * **Y el texto depende de lo que se va a escuchar.** Había uno solo, y en «Canta la nota»
- * decía «Prefiero tocar en la pantalla» cuando ahí no hay nada que tocar: lo que hace ese
- * botón es cantar sin que se mida. El autor lo vio el 2026-09-12. `modo` lo decide.
+ * **Y el texto depende de lo que se va a escuchar.** Con palmadas, el «no» es «prefiero
+ * tocar en la pantalla»: la vía de toque está terminada antes de que se escriba ningún
+ * detector y con ella la actividad se hace entera, así que son dos botones de verdad. Con
+ * voz no hay nada que tocar: escuchar ES la actividad. Ahí el micrófono no se ofrece como
+ * opcional —lo pidió el autor el 2026-09-12: «no des opción a no hacerlo»— y la salida es
+ * un «ahora no puedo hacer ruido», para el aula en silencio o el niño que no quiere cantar
+ * delante de los demás. Sigue sin ser un requisito (§8): con ese botón se oye la nota y se
+ * canta sin que se mida, y la actividad se termina igual.
  */
 export function ModalMicrofono({
   abierto,
