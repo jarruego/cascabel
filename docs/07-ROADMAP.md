@@ -2445,8 +2445,21 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       pantalla». Y el afinador visual, que sin micrófono no tiene nada que medir, avisa al
       adulto en vez de quedarse mudo.
 
+- [x] **Las actualizaciones llegan.** «Le cuesta mucho rato o directamente no actualiza,
+      sobre todo instalada», y tenía dos causas: no se comprobaba al arrancar —solo al
+      recuperar el foco, que una PWA abierta con el foco no recibe— y, cuando se comprobaba,
+      se miraba antes de que la descarga acabara. Ahora se comprueba al arrancar esperando
+      a la respuesta, se escucha `updatefound` en el registro, y cada media hora mientras
+      está abierta. Si la versión nueva aparece nada más abrir y fuera de una actividad, se
+      aplica en el acto (`motor/actualizacion.ts`, con test); a mitad de sesión sigue el
+      aviso con botón. Y Ajustes enseña la versión: número, día y commit.
+- [x] **Donde escuchar es la actividad, el micrófono no se ofrece como opcional.** En las
+      de voz el segundo botón ya no es «prefiero que no», es «ahora no puedo hacer ruido».
+      Sigue sin ser requisito: con él se oye la nota y se canta sin medir.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
-en un móvil en vertical, y que ninguna otra pantalla enseñe barra al crecer algo.
+en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, y que la
+app instalada en Android se ponga al día sola al abrirla tras un despliegue.
 
 Las ideas de ampliación, con veredicto y con lo que NO conviene hacer, están en
 [`docs/12-IDEAS-Y-AMPLIACIONES.md`](12-IDEAS-Y-AMPLIACIONES.md).

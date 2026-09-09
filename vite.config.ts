@@ -1,6 +1,7 @@
 import { defineConfig, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
+import { execSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath, URL } from 'node:url';
@@ -66,7 +67,29 @@ function contenido(): Plugin {
   };
 }
 
+/**
+ * La versión que se enseña en Ajustes: la del package.json, el día y el commit.
+ *
+ * Es lo que permite saber de un vistazo qué tiene cada dispositivo cuando «no se actualiza»:
+ * sin esto, la única forma era comparar pantallas. El commit se lee de git si lo hay; en un
+ * build sin repositorio se queda en el día.
+ */
+function versionVisible(): string {
+  const { version } = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf-8'));
+  const dia = new Date().toISOString().slice(0, 10);
+  let commit = '';
+  try {
+    commit = execSync('git rev-parse --short HEAD', { encoding: 'utf-8' }).trim();
+  } catch {
+    // Sin git no hay commit, y con el día basta.
+  }
+  return [version, dia, commit].filter(Boolean).join(' · ');
+}
+
 export default defineConfig({
+  define: {
+    __CASCABEL_VERSION__: JSON.stringify(versionVisible()),
+  },
   resolve: {
     alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
   },

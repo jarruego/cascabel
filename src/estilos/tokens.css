@@ -1042,6 +1042,11 @@ p {
 
 /* El aviso NO tapa la actividad: se apoya arriba y se puede ignorar. Una app que se
    recarga sola delante de 25 niños es peor que una app desactualizada. */
+.ajustes__version {
+  margin-top: var(--e-6);
+  color: var(--tinta-2);
+  font-size: var(--t-xs);
+}
 .aviso-actualizacion {
   display: flex;
   flex-wrap: wrap;

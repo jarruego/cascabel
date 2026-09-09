@@ -174,6 +174,12 @@ export default function Ajustes() {
         <h2>{t('ajustes.privacidad')}</h2>
         <p>{t('ajustes.privacidadTexto')}</p>
       </section>
+
+      {/* Para saber qué tiene cada dispositivo cuando «no se actualiza». */}
+      <p className="ajustes__version">
+        {t('ajustes.version')}{' '}
+        {typeof __CASCABEL_VERSION__ === 'undefined' ? '' : __CASCABEL_VERSION__}
+      </p>
     </main>
   );
 }

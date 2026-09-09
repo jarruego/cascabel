@@ -142,30 +142,77 @@ export async function borrarDescarga(): Promise<void> {
 }
 
 /**
- * Comprueba si hay una versión nueva al recuperar el foco. Devuelve la función para
- * dejar de escuchar.
+ * Vigila si hay una versión nueva y avisa cuando la hay.
+ *
+ * Lo que había fallaba de dos maneras, y las dos las notó el autor en la app instalada:
+ *
+ *  - **No comprobaba al arrancar.** Solo escuchaba los eventos de foco y visibilidad, y
+ *    una PWA que se abre ya con el foco no recibe ninguno. Podía pasar la sesión entera sin
+ *    enterarse. Ahora la primera comprobación es inmediata.
+ *  - **Miraba antes de tiempo.** Pedía la actualización y en la misma línea preguntaba si
+ *    ya había una esperando, sin esperar a que la descarga acabara. El worker nuevo llegaba
+ *    unos segundos después y no se detectaba hasta la siguiente comprobación, dos minutos y
+ *    un cambio de foco más tarde. Ahora se espera a `update()`, y además se escucha
+ *    `updatefound` en el propio registro, que es la señal fiable.
+ *
+ * Y una tercera cosa: **cada media hora** mientras la app está abierta, para el aula que la
+ * deja puesta toda la mañana. Qué se hace con la versión encontrada —aplicarla en el acto o
+ * avisar— lo decide `motor/actualizacion.ts`, con test.
  */
 export function vigilarActualizaciones(alHaberNueva: () => void): () => void {
   if (!('serviceWorker' in navigator)) return () => {};
 
   let ultima = 0;
-  const comprobar = () => {
-    // Como mucho una vez cada dos minutos: recuperar el foco pasa muchas veces seguidas.
-    const ahora = Date.now();
-    if (document.visibilityState !== 'visible' || ahora - ultima < 120_000) return;
-    ultima = ahora;
-    void navigator.serviceWorker.getRegistration().then((r) => {
-      if (!r) return;
-      void r.update();
-      if (r.waiting) alHaberNueva();
-    });
+  let avisado = false;
+  const avisar = () => {
+    if (avisado) return;
+    avisado = true;
+    alHaberNueva();
   };
 
-  document.addEventListener('visibilitychange', comprobar);
-  window.addEventListener('focus', comprobar);
+  const comprobar = async (forzar = false) => {
+    // Como mucho una vez cada dos minutos: recuperar el foco pasa muchas veces seguidas.
+    const ahora = Date.now();
+    if (!forzar && (document.visibilityState !== 'visible' || ahora - ultima < 120_000)) return;
+    ultima = ahora;
+    const r = await navigator.serviceWorker.getRegistration();
+    if (!r) return;
+    try {
+      await r.update();
+    } catch {
+      // Sin red no hay nada que actualizar, y no pasa nada.
+    }
+    if (r.waiting) avisar();
+  };
+
+  // El registro avisa por sí mismo cuando encuentra un worker nuevo. Se engancha en cuanto
+  // haya uno activo: `ready` no resuelve antes.
+  let registro: ServiceWorkerRegistration | null = null;
+  const alEncontrar = () => {
+    const nuevo = registro?.installing;
+    if (!nuevo) return;
+    nuevo.addEventListener('statechange', () => {
+      // «installed» con un controlador ya en marcha es una versión nueva esperando; sin
+      // controlador es la primera instalación, y ahí no hay nada que avisar.
+      if (nuevo.state === 'installed' && navigator.serviceWorker.controller) avisar();
+    });
+  };
+  void navigator.serviceWorker.ready.then((r) => {
+    registro = r;
+    r.addEventListener('updatefound', alEncontrar);
+    if (r.waiting) avisar();
+  });
+
+  void comprobar(true);
+  const alFoco = () => void comprobar();
+  const cadaRato = window.setInterval(() => void comprobar(true), 30 * 60_000);
+  document.addEventListener('visibilitychange', alFoco);
+  window.addEventListener('focus', alFoco);
   return () => {
-    document.removeEventListener('visibilitychange', comprobar);
-    window.removeEventListener('focus', comprobar);
+    window.clearInterval(cadaRato);
+    document.removeEventListener('visibilitychange', alFoco);
+    window.removeEventListener('focus', alFoco);
+    registro?.removeEventListener('updatefound', alEncontrar);
   };
 }
 
