@@ -26,7 +26,9 @@ function componentes(): Map<string, string> {
     [...registro.matchAll(/^import (\w+) from '\.\/tipos\/(\w+)';$/gm)].map((m) => [m[1]!, m[2]!]),
   );
   const mapa = new Map<string, string>();
-  for (const m of registro.matchAll(/^\s+'?([a-z-]+)'?:\s+(\w+),$/gm)) {
+  // Un tipo puede ir envuelto en `conSerie(Tipo, 'tipo')`, que lo convierte en serie de
+  // ejercicios sin cambiar su componente: lo que se busca es el componente de dentro.
+  for (const m of registro.matchAll(/^\s+'?([a-z-]+)'?:\s+(?:conSerie\()?(\w+)/gm)) {
     const fichero = importado.get(m[2]!);
     if (fichero) mapa.set(m[1]!, fichero);
   }

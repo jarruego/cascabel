@@ -83,7 +83,25 @@ const SEGUIR = {
 
 /** Cuántas cosas hay que discriminar a la vez, y cuántos pasos tiene la secuencia. */
 function cargaDe(a) {
-  const c = a.contenido ?? {};
+  // Una serie (2026-09-11): lo que se discrimina es lo del ejercicio más pesado, y lo que se
+  // sigue es la del más largo. Sin `ejercicios`, la actividad es un solo ejercicio.
+  const base = a.contenido ?? {};
+  if (Array.isArray(base.ejercicios) && base.ejercicios.length) {
+    const { ejercicios, ...comun } = base;
+    const cargas = ejercicios.map((e) => cargaDeUno(a, { ...comun, ...e }));
+    return {
+      elegir: Math.max(...cargas.map((x) => x.elegir)),
+      // Lo que hay delante en cada momento es UN ejercicio, con su pausa antes y después:
+      // se mide el más largo, no la suma.
+      seguir: Math.max(...cargas.map((x) => x.seguir)),
+      ejercicios: cargas.reduce((s, x) => s + (x.ejercicios ?? 0), 0) || undefined,
+      que: `${cargas.length} ejercicios: ${cargas[0].que}…`,
+    };
+  }
+  return cargaDeUno(a, base);
+}
+
+function cargaDeUno(a, c) {
   const n = (x) => (Array.isArray(x) ? x.length : 0);
 
   switch (a.tipo) {
@@ -144,8 +162,9 @@ function cargaDe(a) {
     case 'tocar-a-tiempo':
       return {
         elegir: 0,
-        seguir: n(c.silabas) * (c.repeticiones ?? 3),
-        que: `${n(c.silabas)} sílabas × ${c.repeticiones ?? 3} vueltas`,
+        // Sin repeticiones declaradas, una: desde las series, repetir lo mismo ya no es la norma.
+        seguir: n(c.silabas) * (c.repeticiones ?? 1),
+        que: `${n(c.silabas)} sílabas × ${c.repeticiones ?? 1} vueltas`,
       };
     case 'cuerpo':
       return { elegir: 4, seguir: n(c.patron), que: `${n(c.patron)} golpes` };
@@ -173,10 +192,9 @@ const REVISADOS = {
     'distintas. Ésa es la actividad: el timbre no depende de la altura, y para verlo hay que ' +
     'oír el mismo instrumento en dos alturas. Reducirlo a seis lo convertiría en otra cosa.',
   'c1-15-ritmo-de-ocho':
-    'Ocho sílabas por cuatro vueltas. El patrón largo es el tema —se llama «Ritmo de ocho»— y ' +
-    'la cuarta vuelta existe porque un patrón largo necesita más pasadas para aprenderse. ' +
-    'Desde que el botón dice «Otra vez · 2 de 4», el niño sabe cuántas quedan.',
-  'c3-10-ritmo-de-doce': 'Lo mismo, con doce: el patrón largo es el tema.',
+    'Tres ritmos de ocho sílabas. El patrón largo es el tema —se llama «Ritmo de ocho»— y ' +
+    'desde el 2026-09-11 cada vuelta es un ritmo distinto, no el mismo repetido.',
+  'c3-10-ritmo-de-doce': 'Lo mismo, con doce: tres ritmos distintos de doce, y el patrón largo es el tema.',
   /*
     Estos cinco aparecieron el 2026-09-10 sin que cambiara nada en ellos: entraron treinta y
     cuatro actividades cortas de lenguaje —dos notas, cuatro clics— y la mediana de cada

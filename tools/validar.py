@@ -239,22 +239,8 @@ def validar_musica(datos: dict, r: Resultado) -> None:
         )
 
 
-def validar_producto(datos: dict, r: Resultado) -> None:
-    """Reglas de producto que están en CLAUDE.md y que nadie recuerda a las 2 de la mañana."""
-    etapa = datos.get("etapa", "")
-    entrada = datos.get("entrada") or {}
-    evaluacion = datos.get("evaluacion") or {}
-    contenido = datos.get("contenido") or {}
-
-    if entrada.get("modo", "").startswith("microfono") and entrada.get("alternativa") in (None, "ninguna"):
-        r.errores.append(
-            "producto · una actividad de micrófono necesita alternativa por toque "
-            "(accesibilidad y aulas con 25 micrófonos abiertos)"
-        )
-
-    if etapa == "infantil" and entrada.get("modo") == "arrastre":
-        r.errores.append("producto · por debajo de 6 años solo tap, nunca arrastrar")
-
+def _reglas_de_ejercicio(datos: dict, contenido: dict, etapa: str, r: Resultado) -> None:
+    """Lo que se comprueba de cada ejercicio: cuantas cosas hay en pantalla y que cuadren."""
     # Objetos simultáneos en pantalla, contados según el tipo. Antes solo se miraba
     # "opciones", así que emparejar y ordenar se colaban sin contar nada.
     if datos.get("tipo") == "emparejar":
@@ -279,7 +265,7 @@ def validar_producto(datos: dict, r: Resultado) -> None:
             )
 
     for prohibido in ("vidas", "tiempo_limite_s", "racha", "clasificacion"):
-        if prohibido in evaluacion or prohibido in contenido:
+        if prohibido in (datos.get("evaluacion") or {}) or prohibido in contenido:
             r.errores.append(f"producto · '{prohibido}' está prohibido: el error nunca castiga")
 
     tipo = datos.get("tipo")
@@ -315,6 +301,34 @@ def validar_producto(datos: dict, r: Resultado) -> None:
                 f"contenido · 'orden' y 'elementos' no contienen las mismas claves: "
                 f"{sorted(orden)} frente a {sorted(claves)}"
             )
+
+
+def validar_producto(datos: dict, r: Resultado) -> None:
+    """Reglas de producto que están en CLAUDE.md y que nadie recuerda a las 2 de la mañana."""
+    etapa = datos.get("etapa", "")
+    entrada = datos.get("entrada") or {}
+    evaluacion = datos.get("evaluacion") or {}
+    contenido = datos.get("contenido") or {}
+
+    if entrada.get("modo", "").startswith("microfono") and entrada.get("alternativa") in (None, "ninguna"):
+        r.errores.append(
+            "producto · una actividad de micrófono necesita alternativa por toque "
+            "(accesibilidad y aulas con 25 micrófonos abiertos)"
+        )
+
+    if etapa == "infantil" and entrada.get("modo") == "arrastre":
+        r.errores.append("producto · por debajo de 6 años solo tap, nunca arrastrar")
+
+    # Una actividad puede ser una serie de ejercicios (2026-09-11): las reglas que miran
+    # el contenido —objetos en pantalla, parejas, orden— se aplican a cada ejercicio, con
+    # lo comun de la base debajo. Sin `ejercicios`, la base es el unico ejercicio.
+    base = contenido
+    comun = {k: v for k, v in base.items() if k != "ejercicios"}
+    ejercicios = [dict(comun, **e) for e in (base.get("ejercicios") or [])] or [base]
+    for contenido in ejercicios:
+        _reglas_de_ejercicio(datos, contenido, etapa, r)
+    contenido = base
+    tipo = datos.get("tipo")
 
     if datos.get("entrada", {}).get("modo") == "arrastre":
         r.errores.append(
