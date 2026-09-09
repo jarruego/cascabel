@@ -194,9 +194,16 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
   /** Instante de cada nota, en segundos desde el arranque. Incluye el margen de entrada. */
   const tiempos = useMemo(() => instantesDe(notas, bpm, ENTRADA_S), [notas, bpm]);
 
-  // Un par de segundos de cola tras la última nota: si la evaluación llegara justo al
-  // ataque, un golpe algo tardío en la última nota se perdería.
-  const duracionTotal = duracionDe(notas, bpm, ENTRADA_S) + 2;
+  /*
+    Se deja de escuchar poco después de la ÚLTIMA nota, no al final de su duración más dos
+    segundos. Con una blanca al final eran cuatro o cinco segundos mirando una pantalla
+    parada —«cuando acabas de tocar, está mucho rato sin pasar nada», dijo el autor—. Lo que
+    hace falta es que quepa un golpe algo tardío en esa última nota: un pulso y medio.
+  */
+  const duracionTotal = Math.min(
+    duracionDe(notas, bpm, ENTRADA_S) + 2,
+    (tiempos[tiempos.length - 1] ?? 0) + (60 / bpm) * 1.5,
+  );
 
   /**
    * Tamaño del recuadro en el eje que NO es el del tiempo, en píxeles.
@@ -645,8 +652,11 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
               }
             >
               <IconoSiguiente />
-              {/* Una sola pasada: aquí «otra vez» es voluntario y esto es el final. */}
-              {t('comun.terminar')}
+              {/* Una sola pasada: «otra vez» es voluntario. En una serie, lo que viene es el
+                  siguiente ejercicio, y el botón lo dice. */}
+              {contenido.serie && contenido.serie.n < contenido.serie.total
+                ? t('serie.siguiente')
+                : t('comun.terminar')}
             </button>
           </>
         )}

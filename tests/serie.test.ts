@@ -6,6 +6,7 @@ import {
   ejerciciosDe,
   hayCasi,
   inicialSerie,
+  llevaPausa,
   reducirSerie,
   type EstadoSerie,
 } from '../src/motor/serie';
@@ -71,6 +72,15 @@ describe('una actividad como serie de ejercicios', () => {
     e = r(r(e, { tipo: 'terminar', calidad: 'hecho' }), { tipo: 'seguir' });
     expect(calidadGlobal(r(e, { tipo: 'terminar', calidad: 'hecho' }))).toBe('hecho');
     expect(calidadGlobal(r(e, { tipo: 'terminar', calidad: 'casi' }))).toBe('casi');
+  });
+});
+
+describe('la pausa entre ejercicios', () => {
+  it('se salta en los tipos que ya enseñan su resultado y esperan al «siguiente»', () => {
+    expect(llevaPausa('karaoke')).toBe(false);
+    expect(llevaPausa('tocar-a-tiempo')).toBe(false);
+    expect(llevaPausa('ordenar')).toBe(true);
+    expect(llevaPausa('rejilla')).toBe(true);
   });
 });
 

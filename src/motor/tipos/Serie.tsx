@@ -9,6 +9,7 @@ import {
   calidadGlobal,
   ejerciciosDe,
   inicialSerie,
+  llevaPausa,
   reducirSerie,
   type AccionSerie,
   type EstadoSerie,
@@ -65,6 +66,9 @@ export function conSerie(Uno: ComponentType<PropsActividad>, tipo: string) {
         }
         acumulado.current.push(r);
         despachar({ tipo: 'terminar', calidad: calidadDeResultado(r) });
+        // Quien ya ha enseñado su resultado y ha esperado al «siguiente» no pasa por la
+        // pausa: al siguiente ejercicio directamente. En el último, «seguir» no hace nada.
+        if (!llevaPausa(tipo)) despachar({ tipo: 'seguir' });
       },
       [alTerminar, total],
     );

@@ -20,6 +20,21 @@
 
 export type Calidad = 'bien' | 'casi' | 'hecho';
 
+/**
+ * Tipos que enseñan su propio resultado y esperan a que el niño pulse «siguiente».
+ *
+ * Para ésos la pausa entre ejercicios sobra: ya han visto cómo ha ido y ya han decidido
+ * seguir. Ponerles encima otra pantalla con el personaje era felicitar dos veces —lo notó
+ * el autor en el karaoke el 2026-09-12— y se salta: se pasa directamente al «empezar» del
+ * siguiente. Los demás tipos acaban solos, sin botón, y ahí la pausa es lo que dice que
+ * el ejercicio ha cambiado.
+ */
+export const CON_RESULTADO_PROPIO: ReadonlySet<string> = new Set(['karaoke', 'tocar-a-tiempo']);
+
+export function llevaPausa(tipo: string): boolean {
+  return !CON_RESULTADO_PROPIO.has(tipo);
+}
+
 export type FaseSerie = 'ejercicio' | 'entre' | 'resumen';
 
 export interface EstadoSerie {
