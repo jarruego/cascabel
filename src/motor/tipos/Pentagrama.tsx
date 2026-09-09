@@ -213,11 +213,6 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
         {estado.fase === 'casi' && (pista ? t(pista) : t('comun.casi'))}
       </Reaccion>
 
-      <progress
-        value={estado.indice}
-        max={preguntas.length}
-        aria-label={t('comun.progreso')}
-      />
     </section>
   );
 }

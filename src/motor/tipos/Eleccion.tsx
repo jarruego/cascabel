@@ -65,7 +65,13 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
   );
 
   const estimulo = contenido.estimulos[estado.indice];
-  const tam = OBJETIVO_TACTIL[carril];
+  /*
+    Con dos opciones, los botones crecen: «solo hay dos», dijo el autor de «¿Largo o
+    corto?», y dos cuadrados del tamaño mínimo en una pantalla vacía se ven perdidos. Con
+    tres crecen algo menos; a partir de cuatro, el objetivo del carril tal cual.
+  */
+  const factor = contenido.opciones.length <= 2 ? 1.6 : contenido.opciones.length === 3 ? 1.3 : 1;
+  const tam = Math.round(OBJETIVO_TACTIL[carril] * factor);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const yaTerminada = useRef(false);
 
@@ -142,10 +148,13 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
       {/* El botón de repetir solo tiene sentido si hay algo que repetir. Cuando no lo hay
           desaparece entero, en vez de quedarse ahí sin hacer nada: un botón muerto es peor
           que ningún botón, y ya nos pasó una vez con el «Escuchar» de la modal. */}
+      {/* El paso ocupa el sitio de las opciones: mientras se ve, lo único que hay que
+          pulsar es «siguiente». Con las opciones debajo, el botón se perdía. */}
       {enPausa && (
         <PasoEntreEjercicios
           actual={estado.indice + 1}
           total={total}
+          personaje={actividad.personaje}
           alSeguir={() => {
             setEnPausa(false);
             despachar({ tipo: 'seguir' });
@@ -153,15 +162,14 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
         />
       )}
 
-
       {/* El caso escrito. Va en aria-live porque cambia sin que se mueva el foco. */}
-      {estimulo?.texto && (
+      {!enPausa && estimulo?.texto && (
         <p className="eleccion__caso" aria-live="polite">
           {t(estimulo.texto)}
         </p>
       )}
 
-      <div className="opciones" role="group" aria-label={t(contenido.consigna)}>
+      <div className="opciones" role="group" aria-label={t(contenido.consigna)} hidden={enPausa}>
         {contenido.opciones.map((o) => (
           <Boton
             key={o.clave}
@@ -184,7 +192,9 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
         ))}
       </div>
 
-      <BarraAcciones>{estimulo && suena(estimulo) && <BotonRepetir onClick={reproducir} />}</BarraAcciones>
+      <BarraAcciones>
+        {!enPausa && estimulo && suena(estimulo) && <BotonRepetir onClick={reproducir} />}
+      </BarraAcciones>
 
       {/*
         El «bien» de cada acierto se queda: son seis preguntas seguidas y ahí sí hace falta
@@ -199,15 +209,8 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
         {estado.fase === 'casi' && (pista ? t(pista) : t('comun.casi'))}
       </Reaccion>
 
-      {/*
-        El progreso se muestra, pero NO la puntuación: cuántas van de cuántas es
-        orientación, y cuántas has fallado es un castigo. Ver CLAUDE.md §4.
-      */}
-      <progress
-        value={estado.indice}
-        max={total}
-        aria-label={t('comun.progreso')}
-      />
+      {/* Sin barra de progreso: por dónde se va lo dicen los puntos del paso entre
+          preguntas, y una barra de seis píxeles debajo de todo era fea y decía lo mismo. */}
     </section>
   );
 }

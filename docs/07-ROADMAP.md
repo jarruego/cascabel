@@ -2516,6 +2516,15 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       andante, allegro» iban con bombo en los seis, que apenas se aprecia: ahora claves,
       caja china, caja, bongó, triángulo y tom, uno por estímulo.
 
+- [x] **Las opciones sin texto.** «¿Largo o corto?» enseñaba `opcion.largo` tal cual, y
+      otras cinco actividades tenían lo mismo: la etiqueta se compone y el test de textos no
+      la veía. Nueve textos añadidos y un test que mira todas las claves de opción.
+- [x] **Elección: botones más grandes con dos opciones, el paso en el sitio de las opciones,
+      y sin barra de progreso.** Con dos, los cuadrados crecen un 60 %; con tres, un 30 %.
+      Mientras se ve el paso, las opciones se esconden y «siguiente» es lo único que hay que
+      pulsar. La barra de seis píxeles del final se va de elección, pentagrama y cantar: los
+      puntos del paso ya dicen por dónde se va.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

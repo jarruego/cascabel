@@ -4508,16 +4508,6 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 }
 
 /* La barra de progreso, donde queda, se adelgaza: informa de reojo y no compite. */
-.actividad progress {
-  display: block;
-  width: min(100%, 22rem);
-  height: 6px;
-  margin: var(--e-3) auto 0;
-  border: none;
-  border-radius: var(--r-redondo);
-  background: var(--linea);
-  accent-color: var(--acento-2);
-}
 
 /* ---------------------------------------------------------------------------
  * Que en un móvil no se rompa nada

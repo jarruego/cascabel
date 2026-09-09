@@ -419,7 +419,6 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
         </p>
       )}
 
-      <progress value={indice} max={contenido.notas.length} aria-label={t('comun.progreso')} />
     </section>
   );
 }
