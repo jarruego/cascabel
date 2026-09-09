@@ -2645,7 +2645,13 @@ p {
    justo para que se distingan sin que el tercer botón deje de estar bajo la tercera banda. */
 .karaoke__botones {
   display: flex;
-  gap: 5px;
+  /*
+    Casi sin hueco. Cada botón es la continuación de su banda, y las bandas van pegadas:
+    con un hueco entre botones, sus centros dejan de caer bajo el centro de cada banda —el
+    desvío crece con el número de bandas— y el autor lo vio en «Cuatro bandas». Dos píxeles
+    bastan para que se distingan y no desplazan nada que se note.
+  */
+  gap: 2px;
   margin: 0 auto var(--e-3);
 }
 .karaoke__banda {
@@ -4552,7 +4558,11 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
      este aire sale una barra vertical mientras se toca. Ver `.seguir__tira`. */
   padding-bottom: 2px;
 }
-.karaoke__botones > * { flex: 0 0 auto; min-width: var(--objetivo); }
+/* Se reparten el ancho del recuadro a partes iguales, que es el ancho de cada banda: así
+   cada botón queda justo debajo de la suya. `0 0 auto` los dejaba al ancho de su texto, y
+   entonces ni cuadraban ni medían lo mismo. El suelo táctil se mantiene; si no caben, la
+   fila se desplaza. */
+.karaoke__botones > * { flex: 1 1 0; min-width: var(--objetivo); }
 
 @media (max-width: 30rem) {
   }

@@ -2504,6 +2504,10 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       —los tres últimos segundos—, no la búsqueda entera: lo que cuenta es dónde acabó.
       `ultimoTramo` en `afinacion.ts`, con test.
 
+- [x] **Los botones de las bandas, justo debajo de su banda y con su ancho.** Una regla
+      posterior los dejaba al ancho de su texto, y con cinco píxeles de hueco los centros
+      se iban desplazando banda a banda.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
