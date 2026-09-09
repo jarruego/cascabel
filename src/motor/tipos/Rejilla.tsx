@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useReducer, useRef, useState, type CSSProperties } from 'react';
 import { OBJETIVO_TACTIL } from '@/config';
 import { useCarril } from '@/app/preferencias';
-import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
+import { despertarAudio, obtenerContexto, pararTodo } from '@/audio/AudioEngine';
 import { MARIMBA, Sampler } from '@/audio/sampler';
 import { aMidiSMF, aMusicXML, descargar, type NotaExportable } from '@/datos/exportar';
 import { Reaccion } from '@/ui/Reaccion';
@@ -126,6 +126,9 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
     reloj.current = null;
     resaltes.current.forEach((id) => window.clearTimeout(id));
     resaltes.current = [];
+    // Parar el reloj no paraba lo ya programado: las notas en cola seguían sonando hasta
+    // el final. Esto las corta, también las que aún no habían empezado.
+    pararTodo();
     setColumnaActual(-1);
     setSonando(false);
   }, []);
@@ -133,22 +136,24 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
   useEffect(() => pararReproduccion, [pararReproduccion]);
 
   /**
-   * Toca la rejilla, y en bucle sin costura.
+   * Toca la rejilla, casilla a casilla y en bucle sin costura.
    *
    * **Lo que había y por qué sonaba mal.** Al acabar una vuelta se relanzaba esta misma
    * función, que salía «ahora más 150 ms», con otros 120 ms de espera antes. Esos 270 ms se
    * colaban entre la última casilla y la primera: ni un pulso ni medio, una costura. Y el
    * autor la oyó.
    *
-   * **Lo que se conserva.** El motivo de relanzar era bueno: esto es un editor, y si el niño
-   * cambia una casilla a mitad de vuelta la siguiente tiene que sonar con el cambio.
-   * Programar cien compases por delante lo rompería.
+   * **Y lo segundo que oyó.** Después se programaba la vuelta entera de golpe, y eso tiene
+   * dos consecuencias que son la misma: una casilla puesta a mitad de vuelta no sonaba hasta
+   * la vuelta siguiente, y al pulsar «parar» la vuelta ya en cola seguía sonando hasta el
+   * final. Esto es un editor: lo que se pone tiene que sonar donde está, ahora.
    *
-   * **Cómo se consiguen las dos.** *Lookahead*: un reloj mira cada 25 ms si la vuelta
-   * siguiente entra en los próximos 200 ms y, si entra, la programa leyendo la rejilla **en
-   * ese momento**. El cambio de una casilla sigue entrando en la vuelta siguiente, y el
-   * instante de salida de esa vuelta es exactamente donde acaba la anterior — se calcula
-   * sumando, no preguntando qué hora es.
+   * **Cómo se consiguen las tres.** *Lookahead* por casilla: un reloj mira cada 25 ms qué
+   * columnas caen en los próximos 150 ms y programa solo ésas, leyendo la rejilla **en ese
+   * momento**. Una casilla puesta suena en cuanto le llega su columna, aunque sea en esta
+   * misma vuelta; parar deja como mucho 150 ms en cola, y `pararTodo()` corta hasta eso. El
+   * instante de cada columna sale sumando desde la primera, no preguntando qué hora es: no
+   * acumula error y no puede haber hueco entre vueltas.
    */
   const reproducir = useCallback(async () => {
     if (sonando) return;
@@ -165,46 +170,46 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
     setSonando(true);
 
     const paso = 60 / bpm;
-    const duracionVuelta = columnas * paso;
-    /** Instante de salida de la PRIMERA vuelta. Las demás salen sumando, no preguntando. */
+    /** Instante de salida de la PRIMERA columna. Las demás salen sumando, no preguntando. */
     const primera = obtenerContexto().currentTime + 0.15;
-    let vueltas = 0;
+    /** Columnas ya programadas, contando vueltas: la columna n suena en primera + n·paso. */
+    let programadas = 0;
 
-    const programarVuelta = (base: number) => {
-      for (let c = 0; c < columnas; c++) {
-        const cuando = base + c * paso;
-        for (const f of notasDeColumna(encendidasRef.current, c)) {
-          sampler.current?.tocar(notas[f] ?? 'C4', cuando, paso * 0.9);
-        }
-        // El resalte va por temporizador aparte del planificador de audio: animar dentro
-        // del planificador adelanta el destello respecto al sonido.
-        resaltes.current.push(
-          window.setTimeout(
-            () => setColumnaActual(c),
-            (cuando - obtenerContexto().currentTime) * 1000,
-          ),
-        );
+    const programarColumna = (n: number) => {
+      const c = n % columnas;
+      const cuando = primera + n * paso;
+      for (const f of notasDeColumna(encendidasRef.current, c)) {
+        sampler.current?.tocar(notas[f] ?? 'C4', cuando, paso * 0.9);
       }
+      // El resalte va por temporizador aparte del planificador de audio: animar dentro
+      // del planificador adelanta el destello respecto al sonido.
+      resaltes.current.push(
+        window.setTimeout(
+          () => setColumnaActual(c),
+          (cuando - obtenerContexto().currentTime) * 1000,
+        ),
+      );
     };
 
-    const ADELANTO_MS = 200;
+    const ADELANTO_MS = 150;
     const tick = () => {
       const ahora = obtenerContexto().currentTime;
+      // La misma aritmética que para vueltas enteras, con la columna como unidad.
       const hacenFalta = vueltasEncoladas(
-        { inicio: primera * 1000, duracionVuelta: duracionVuelta * 1000, ahora: ahora * 1000 },
+        { inicio: primera * 1000, duracionVuelta: paso * 1000, ahora: ahora * 1000 },
         ADELANTO_MS,
       );
-      while (vueltas < hacenFalta) {
-        // Ya suena una vuelta y no hay bucle: se para justo cuando acabe, ni antes ni con
-        // un silencio detrás.
-        if (vueltas > 0 && !bucleRef.current) {
-          const fin = primera + vueltas * duracionVuelta;
+      while (programadas < hacenFalta) {
+        // Al completar una vuelta sin bucle se para justo cuando acabe la última casilla,
+        // ni antes ni con un silencio detrás.
+        if (programadas > 0 && programadas % columnas === 0 && !bucleRef.current) {
+          const fin = primera + programadas * paso;
           window.setTimeout(pararReproduccion, (fin - ahora) * 1000);
           reloj.current = null;
           return;
         }
-        programarVuelta(primera + vueltas * duracionVuelta);
-        vueltas += 1;
+        programarColumna(programadas);
+        programadas += 1;
       }
       reloj.current = window.setTimeout(tick, 25);
     };
@@ -369,7 +374,12 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
         <button
           type="button"
           className="boton-repetir"
-          onClick={() => despachar({ tipo: 'limpiar' })}
+          onClick={() => {
+            // Vaciar también para: una cuadrícula vacía sonando en bucle es un silencio
+            // con el botón de parar encendido, y el autor pidió que vaciar parara.
+            pararReproduccion();
+            despachar({ tipo: 'limpiar' });
+          }}
         >
           <IconoLimpiar />
           {t('rejilla.limpiar')}

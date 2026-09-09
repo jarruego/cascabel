@@ -2263,6 +2263,30 @@ mundo» —la clave de son, el tresillo, la habanera, la campana de 6/8, el swin
 tocados con el kit. Con esto el catálogo pasa de 78 a **123 actividades**, y lo que espera
 criterio musical sigue marcado en cada JSON: son 24 puntos en `docs/13`.
 
+### Parar es parar, y lo que se pone suena ya, 2026-09-10
+
+Dos quejas del autor sobre el constructor de ritmos, y las dos tenían la misma raíz.
+
+- [x] **«Parar», «vaciar» y salir de la actividad no paraban la melodía.** Una fuente de Web
+      Audio no se puede cancelar desde fuera una vez programada, y el constructor programaba
+      **la vuelta entera** de golpe: parar detenía el reloj que encolaba vueltas nuevas, y la
+      que ya estaba en cola seguía hasta el final. Ahora todo lo que suena —samplers, kit,
+      clic y percusión corporal— pasa por una salida maestra y deja apuntada su fuente, y
+      `pararTodo()` las detiene una a una, **también las que aún no han empezado**, con la
+      maestra a cero veinte milisegundos para que nada se corte con un chasquido. Lo llaman
+      parar y vaciar en el constructor y en las pistas, parar en el musicograma, repetir en
+      una pregunta (para no superponer dos escalas) y **el marco de la actividad al salir**,
+      que es lo que cubre a todos los tipos de una vez. Con test sobre un contexto fingido.
+- [x] **Una casilla puesta a mitad de vuelta no sonaba hasta la siguiente.** Misma causa: la
+      vuelta se programaba entera. Ahora el constructor programa **casilla a casilla**, con
+      un *lookahead* de 150 ms que lee la rejilla en el momento de programar cada columna,
+      con la misma aritmética que ya tenían las vueltas (`bucle.ts`, con test). Lo que se pone
+      suena en cuanto le llega su columna, en esta misma vuelta; lo que se quita deja de sonar
+      salvo que estuviera a menos de 150 ms. Las pistas ya funcionaban así.
+
+**Hay que oírlo en el aparato**: que parar corte limpio y que la casilla recién puesta
+entre en la vuelta en curso.
+
 Las ideas de ampliación, con veredicto y con lo que NO conviene hacer, están en
 [`docs/12-IDEAS-Y-AMPLIACIONES.md`](12-IDEAS-Y-AMPLIACIONES.md).
 

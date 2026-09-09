@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useCarril } from '@/app/preferencias';
-import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
+import { despertarAudio, obtenerContexto, pararTodo } from '@/audio/AudioEngine';
 import { MARIMBA, Sampler } from '@/audio/sampler';
 import { Metronomo } from '@/audio/metronomo';
 import { clic } from '@/audio/clic';
@@ -104,6 +104,8 @@ export default function Seguir({ actividad, alTerminar }: PropsActividad) {
   const parar = useCallback(() => {
     metronomo.current?.parar();
     metronomo.current = null;
+    // Y lo ya programado, que sin esto seguía sonando hasta el final de la vuelta.
+    pararTodo();
     if (rafId.current !== null) cancelAnimationFrame(rafId.current);
     rafId.current = null;
     setSonando(false);

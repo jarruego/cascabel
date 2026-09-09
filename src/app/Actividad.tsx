@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router';
 import { cargarActividad } from '@/datos/cargar';
+import { pararTodo } from '@/audio/AudioEngine';
 import { componenteDe } from '@/motor/registro';
 import { Lienzo } from '@/ui/Lienzo';
 import { Personaje } from '@/ui/Personaje';
@@ -73,6 +74,10 @@ export default function Actividad() {
       .catch((e: Error) => vivo && setFallo(e.message));
     return () => {
       vivo = false;
+      // Al salir de una actividad, o al cambiar a otra, no queda nada sonando: ni una
+      // vuelta en cola del constructor, ni una escala a medias de una pregunta. Cada tipo
+      // lo hacía a su manera, y ninguno del todo.
+      pararTodo();
     };
   }, [id]);
 

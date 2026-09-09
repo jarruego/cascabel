@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useReducer, useRef, useState } from 'react';
 import { useCarril } from '@/app/preferencias';
-import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
+import { despertarAudio, obtenerContexto, pararTodo } from '@/audio/AudioEngine';
 import { Sampler } from '@/audio/sampler';
 import { instrumentosDisponibles, muestrasDe } from '@/audio/instrumentos';
 import { Percusion, type Golpe } from '@/audio/percusion';
@@ -90,6 +90,8 @@ export default function Pistas({ actividad }: PropsActividad) {
     if (rafId.current !== null) cancelAnimationFrame(rafId.current);
     temporizador.current = null;
     rafId.current = null;
+    // Lo ya programado, como mucho cien milisegundos, también se corta.
+    pararTodo();
     despachar({ tipo: 'sonando', valor: false });
   }, []);
 
@@ -322,7 +324,10 @@ export default function Pistas({ actividad }: PropsActividad) {
           type="button"
           className="boton-repetir"
           aria-disabled={estado.encendidas.size === 0 || undefined}
-          onClick={() => despachar({ tipo: 'limpiarTodo' })}
+          onClick={() => {
+            parar();
+            despachar({ tipo: 'limpiarTodo' });
+          }}
         >
           <IconoLimpiar />
           {t('pistas.limpiar')}

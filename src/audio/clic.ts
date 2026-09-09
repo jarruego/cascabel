@@ -1,4 +1,4 @@
-import { obtenerContexto } from './AudioEngine';
+import { obtenerContexto, registrarFuente, salidaMaestra } from './AudioEngine';
 
 /**
  * El clic del pulso.
@@ -23,7 +23,8 @@ export function clic(tiempo: number, acentuado = false): void {
   gain.gain.setValueAtTime(0.001, tiempo);
   gain.gain.exponentialRampToValueAtTime(acentuado ? 0.35 : 0.2, tiempo + 0.002);
   gain.gain.exponentialRampToValueAtTime(0.001, tiempo + 0.03);
-  osc.connect(gain).connect(ctx.destination);
+  osc.connect(gain).connect(salidaMaestra());
+  registrarFuente(osc);
   osc.start(tiempo);
   osc.stop(tiempo + 0.04);
 }

@@ -6,6 +6,7 @@ import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Boton } from '@/ui/Boton';
 import { BotonRepetir } from '@/ui/BotonRepetir';
+import { pararTodo } from '@/audio/AudioEngine';
 import { BarraAcciones } from '@/ui/BarraAcciones';
 import { suena, type Estimulo } from '../estimulo';
 import { sonarEstimulo } from '../sonarEstimulo';
@@ -79,7 +80,9 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
       });
       return;
     }
-    // Notas, ritmo o golpes: se programan contra el reloj del audio y nunca lanzan.
+    // Notas, ritmo o golpes: se programan contra el reloj del audio y nunca lanzan. Antes se
+    // corta lo que quede del anterior: repetir a mitad de una escala no superpone dos.
+    pararTodo();
     void sonarEstimulo(estimulo, {
       instrumento: contenido.instrumento,
       tempo: actividad.practica?.tempo,

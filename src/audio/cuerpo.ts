@@ -1,4 +1,4 @@
-import { obtenerContexto } from './AudioEngine';
+import { obtenerContexto, registrarFuente, salidaMaestra } from './AudioEngine';
 import { cargarBinario } from '@/datos/cargar';
 
 /**
@@ -35,7 +35,7 @@ export class SonidosDelCuerpo {
     this.salida = ctx.createGain();
     // Más bajo que un instrumento: esto acompaña a lo que hace el niño, no compite con ello.
     this.salida.gain.value = 0.7;
-    this.salida.connect(ctx.destination);
+    this.salida.connect(salidaMaestra());
 
     await Promise.all(
       ZONAS.map(async (zona) => {
@@ -64,6 +64,7 @@ export class SonidosDelCuerpo {
     const fuente = ctx.createBufferSource();
     fuente.buffer = versiones[i]!;
     fuente.connect(this.salida);
+    registrarFuente(fuente);
     fuente.start(cuando ?? ctx.currentTime);
   }
 }

@@ -1,4 +1,4 @@
-import { obtenerContexto } from './AudioEngine';
+import { obtenerContexto, registrarFuente, salidaMaestra } from './AudioEngine';
 import { cargarBinario } from '@/datos/cargar';
 
 /**
@@ -69,7 +69,7 @@ export class Sampler {
     const ctx = obtenerContexto();
     this.salida = ctx.createGain();
     this.salida.gain.value = 0.8;
-    this.salida.connect(ctx.destination);
+    this.salida.connect(salidaMaestra());
 
     await Promise.all(
       this.muestras.map(async ({ nota, url }) => {
@@ -121,6 +121,7 @@ export class Sampler {
     env.gain.exponentialRampToValueAtTime(volumen, t + 0.02);
 
     fuente.connect(env).connect(this.salida);
+    registrarFuente(fuente);
     fuente.start(t);
 
     let soltada = false;
@@ -157,6 +158,7 @@ export class Sampler {
     env.gain.exponentialRampToValueAtTime(0.0001, t + duracion);
 
     fuente.connect(env).connect(this.salida);
+    registrarFuente(fuente);
     fuente.start(t);
     fuente.stop(t + duracion + 0.05);
   }
