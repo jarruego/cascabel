@@ -22,18 +22,50 @@ import type { Calidad } from '@/motor/serie';
  *
  * **Aquí hubo un botón de escuchar y ya no está.** Apuntaba a unas locuciones grabadas que
  * nunca se grabaron; el 2026-09-08 se decidió que no las va a haber. Ver `docs/adr/0006`.
+ *
+ * **Y aquí se elige con qué se hace la actividad, cuando escucha.** Había una segunda
+ * modal después de esta —«vamos a escuchar»— con otro «empezar», y la elección solo salía
+ * la primera vez de la sesión. El autor lo pidió el 2026-09-12: una sola modal, y poder
+ * elegir cada vez. Con palmadas, los dos botones son «tocar en la pantalla» y «con
+ * palmas», que es el verde; con voz, «ahora no puedo hacer ruido» —que no entra— y
+ * «empezar». Si el navegador ya dijo que no al micrófono, queda solo la pantalla. Y al
+ * reabrir la explicación con el personaje, a mitad de actividad, solo hay «empezar»: la
+ * elección ya está hecha y cambiarla a medias sería reiniciar.
+ *
+ * Lo que se cuenta del micrófono es lo único que importa y el navegador no puede decir:
+ * **que la voz se queda en este aparato**. Es cierto por construcción —el análisis vive en
+ * un `AudioWorklet` y no hay `fetch` ni `MediaRecorder` en el camino— y es lo que hace que
+ * jurídicamente no tratemos datos personales de un menor.
  */
 export function ModalExplicacion({
   abierto,
   actividad,
+  empezada,
+  microfono = null,
+  microfonoDenegado = false,
+  alEmpezar,
+  alSalir,
   alCerrar,
 }: {
   abierto: boolean;
   actividad: Actividad;
+  /** Si ya se está jugando, la modal solo se cierra: no se vuelve a elegir. */
+  empezada: boolean;
+  /** Qué escucha la actividad, si escucha y tiene vía por toque. `null`: no elige nada. */
+  microfono?: 'voz' | 'palmada' | null;
+  /** El navegador ha dicho que no en esta sesión: no se vuelve a ofrecer. */
+  microfonoDenegado?: boolean;
+  /** Arranca la actividad, con micrófono o tocando en la pantalla. */
+  alEmpezar: (eleccion: 'microfono' | 'toque') => void;
+  /** «Ahora no puedo hacer ruido»: se deja para luego. */
+  alSalir: () => void;
+  /** Cerrar la explicación a mitad de actividad. */
   alCerrar: () => void;
 }) {
-  const cerrar = alCerrar;
   const ayuda = ayudaDe(actividad);
+  const elige = microfono !== null && !empezada;
+  const conMicrofono = microfono !== null && !microfonoDenegado;
+  const cerrar = empezada ? alCerrar : () => alEmpezar(conMicrofono ? 'microfono' : 'toque');
 
   return (
     <Modal abierto={abierto} alCerrar={cerrar} titulo={actividad.titulo}>
@@ -62,64 +94,22 @@ export function ModalExplicacion({
         <p className="modal__adulto">{t(ayuda.paraElAdulto, ayuda.valores)}</p>
       )}
 
+      {/* Para qué se escucha y dónde se queda lo escuchado. Solo mientras se elige. */}
+      {elige && conMicrofono && <p className="modal__texto">{t(`microfono.permiso.${microfono}`)}</p>}
+
       <div className="modal__acciones">
+        {elige && microfono === 'palmada' && conMicrofono && (
+          <button type="button" className="boton-repetir" onClick={() => alEmpezar('toque')}>
+            {t('comun.sinMicrofono')}
+          </button>
+        )}
+        {elige && microfono === 'voz' && conMicrofono && (
+          <button type="button" className="boton-repetir" onClick={alSalir}>
+            {t('comun.sinEscuchar')}
+          </button>
+        )}
         <button type="button" className="boton-principal modal__empezar" onClick={cerrar}>
-          {t('comun.empezar')}
-        </button>
-      </div>
-    </Modal>
-  );
-}
-
-/**
- * La pantalla que explica para qué vamos a escuchar.
- *
- * `CLAUDE.md` §8: «permiso tardío y contextual, tras una pantalla explicativa ilustrada».
- * Sale **después** de la explicación de la actividad y **solo** en las que usan micrófono,
- * justo antes de que el navegador enseñe su propio aviso — que es una barra gris que dice
- * «quiere usar tu micrófono» y no explica nada.
- *
- * Lo que se cuenta aquí es lo único que de verdad importa y el navegador no puede decir:
- * **que la voz se queda en este aparato**. No la oye nadie, no se sube a ningún sitio y no
- * se guarda. Es cierto por construcción —el análisis vive en un `AudioWorklet` y no hay
- * `fetch` ni `MediaRecorder` en el camino— y es lo que hace que jurídicamente no tratemos
- * datos personales de un menor.
- *
- * **Y el texto depende de lo que se va a escuchar.** Con palmadas, el «no» es «prefiero
- * tocar en la pantalla»: la vía de toque está terminada antes de que se escriba ningún
- * detector y con ella la actividad se hace entera, así que son dos botones de verdad. Con
- * voz no hay nada que tocar: escuchar ES la actividad. Ahí el micrófono no se ofrece como
- * opcional —lo pidió el autor el 2026-09-12: «no des opción a no hacerlo»— y la salida es
- * un «ahora no puedo hacer ruido» que **no entra**: la deja para luego y vuelve al
- * catálogo. §8 se mantiene para lo que no decide el niño —permiso denegado, worklet que no
- * carga—: ahí la actividad sigue y se canta sin que se mida.
- */
-export function ModalMicrofono({
-  abierto,
-  personaje = 'dora',
-  modo = 'palmada',
-  alAceptar,
-  alRechazar,
-}: {
-  abierto: boolean;
-  personaje?: NombrePersonaje;
-  /** Qué se va a escuchar: la voz o las palmadas. Cambia lo que se dice y lo que ofrece el «no». */
-  modo?: 'voz' | 'palmada';
-  alAceptar: () => void;
-  alRechazar: () => void;
-}) {
-  return (
-    <Modal abierto={abierto} alCerrar={alRechazar} titulo={t('microfono.permiso.titulo')}>
-      <Personaje nombre={personaje} pose="escucha" tamano={110} />
-      <h2>{t('microfono.permiso.titulo')}</h2>
-      <p className="modal__texto">{t(`microfono.permiso.${modo}`)}</p>
-
-      <div className="modal__acciones">
-        <button type="button" className="boton-repetir" onClick={alRechazar}>
-          {t(modo === 'voz' ? 'comun.sinEscuchar' : 'comun.sinMicrofono')}
-        </button>
-        <button type="button" className="boton-principal modal__empezar" onClick={alAceptar}>
-          {t('comun.empezar')}
+          {elige && microfono === 'palmada' && conMicrofono ? t('comun.conPalmas') : t('comun.empezar')}
         </button>
       </div>
     </Modal>

@@ -1,63 +1,64 @@
 /**
- * Si en esta sesión se usa el micrófono, y si ya se ha preguntado.
+ * Con qué se hace la actividad que está abierta: micrófono o pantalla. Y si el navegador
+ * ha dicho que no.
  *
- * `CLAUDE.md` §8 lo pide con estas palabras: «no se pide el permiso al entrar; se pide
- * cuando hace falta, tras la pantalla ilustrada, y si se deniega no se vuelve a insistir en
- * esa sesión». Las tres partes necesitan que alguien se acuerde de lo que ha pasado, y ese
- * alguien es este módulo.
+ * `CLAUDE.md` §8: «no se pide el permiso al entrar; se pide cuando hace falta, tras la
+ * pantalla ilustrada, y si se deniega no se vuelve a insistir en esa sesión». La pantalla
+ * ilustrada es la explicación de la actividad, que desde el 2026-09-12 ofrece las dos
+ * salidas en una sola modal: «con palmas» o «tocar en la pantalla». Había dos modales
+ * seguidas con dos «empezar», y la elección solo se hacía la primera vez de la sesión: «la
+ * segunda vez que entro ya no me deja cambiar», dijo el autor.
  *
- * **Vive en memoria y no en IndexedDB, a propósito.** Un permiso guardado sobreviviría a la
- * sesión, y entonces un niño que un martes tocó «prefiero tocar en la pantalla» se quedaría
- * sin micrófono en marzo sin saber por qué. Al recargar vuelve a estar todo por decidir,
- * que es lo que espera cualquiera. Y de paso no guardamos ni un dato más de los que ya no
- * guardamos (regla 3).
+ * **Lo que se recuerda, y lo que no.**
+ *  - La elección del niño vale para la actividad abierta y nada más: al entrar en otra —o
+ *    en la misma otra vez— se vuelve a elegir. `nuevaActividad()` lo olvida.
+ *  - El «no» del navegador —permiso denegado, sin `getUserMedia`— sí dura toda la sesión:
+ *    eso es lo que no se vuelve a pedir. Con él, la explicación ofrece solo la pantalla.
+ *
+ * **Vive en memoria y no en IndexedDB, a propósito.** Al recargar vuelve a estar todo por
+ * decidir, que es lo que espera cualquiera. Y de paso no guardamos ni un dato más de los
+ * que ya no guardamos (regla 3).
  *
  * Rechazar **no rompe nada**: el micrófono es un accesorio, nunca un requisito. Toda
- * actividad que lo usa tiene su vía por toque terminada antes de que se escriba el
- * detector, así que decir que no es una forma legítima de hacer la actividad y no un modo
- * degradado.
- *
- * **Salvo donde escuchar ES la actividad.** En las de voz —cantar la nota, la flauta, el
- * afinador— no hay nada que tocar, y el autor lo decidió el 2026-09-12: «ahora no puedo
- * hacer ruido» no entra en la actividad, la deja para luego. Por eso ese «no» no se
- * recuerda: quien vuelve más tarde tiene que poder decir que sí. Lo que sí se recuerda es
- * el «no» de las palmadas, y el del navegador; y ninguno de los dos cierra las de voz, que
- * preguntan siempre que no se haya dicho que sí.
+ * actividad de palmadas tiene su vía por toque terminada antes de que se escriba el
+ * detector. En las de voz no hay nada que tocar: «ahora no puedo hacer ruido» no entra y
+ * la deja para luego; y si es el navegador el que dice que no, se canta sin que se mida.
  */
 
-type Estado = 'sin-preguntar' | 'aceptado' | 'rechazado';
+type Estado = 'sin-elegir' | 'microfono' | 'toque' | 'denegado';
 
-let estado: Estado = 'sin-preguntar';
+let estado: Estado = 'sin-elegir';
 
-/**
- * ¿Hay que enseñar la pantalla que explica para qué vamos a escuchar?
- *
- * Con palmadas, solo si nunca se ha preguntado: el «no» vale para toda la sesión. Con voz,
- * siempre que no se haya dicho que sí, porque ahí el «no» es «ahora no» y no cierra nada.
- */
-export function hayQuePreguntar(modo: 'voz' | 'palmada' = 'palmada'): boolean {
-  return modo === 'voz' ? estado !== 'aceptado' : estado === 'sin-preguntar';
+/** ¿El navegador ha denegado el micrófono en esta sesión? Entonces no se vuelve a ofrecer. */
+export function microfonoDenegado(): boolean {
+  return estado === 'denegado';
 }
 
-/** ¿Se intenta abrir el micrófono? Falso solo si ya se dijo que no. */
+/** ¿Se intenta abrir el micrófono en la actividad abierta? Solo si se ha elegido. */
 export function seUsaMicrofono(): boolean {
-  return estado !== 'rechazado';
+  return estado === 'microfono';
 }
 
 export function aceptarMicrofono(): void {
-  estado = 'aceptado';
+  if (estado !== 'denegado') estado = 'microfono';
 }
 
-/**
- * Se llama en dos sitios y por dos motivos distintos que acaban igual: cuando el niño elige
- * tocar en la pantalla, y cuando el navegador deniega el permiso. En los dos casos lo que
- * no se puede hacer es volver a preguntar en la misma sesión.
- */
+/** Esta vez, en la pantalla. No se recuerda para la siguiente. */
+export function elegirToque(): void {
+  if (estado !== 'denegado') estado = 'toque';
+}
+
+/** El navegador ha dicho que no: vale para toda la sesión. */
 export function rechazarMicrofono(): void {
-  estado = 'rechazado';
+  estado = 'denegado';
+}
+
+/** Al entrar en una actividad se vuelve a elegir, salvo que el navegador haya dicho que no. */
+export function nuevaActividad(): void {
+  if (estado !== 'denegado') estado = 'sin-elegir';
 }
 
 /** Solo para los tests: devolver la sesión a como estaba al arrancar. */
 export function olvidarPermiso(): void {
-  estado = 'sin-preguntar';
+  estado = 'sin-elegir';
 }

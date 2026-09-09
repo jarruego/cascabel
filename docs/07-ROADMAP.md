@@ -2548,6 +2548,14 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       baja de una cuarta entre las dos. Y la voz de General MIDI sale de los tres: era el
       timbre que «no parecía ni el mismo instrumento».
 
+- [x] **Una sola modal al entrar, y se elige cada vez.** En las que escuchan había dos
+      modales seguidas con dos «empezar», y la elección entre palmas y pantalla solo salía
+      la primera vez de la sesión. Ahora la explicación lleva las dos salidas —«tocar en la
+      pantalla» y «con palmas», que es el verde; con voz, «ahora no puedo hacer ruido» y
+      «empezar»— y se vuelve a elegir en cada actividad. Lo único que dura la sesión es el
+      «no» del navegador: con él queda solo la pantalla. El paisaje sonoro no elige nada:
+      pide el micrófono con su botón de grabar.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

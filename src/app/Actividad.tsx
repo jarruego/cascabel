@@ -9,8 +9,8 @@ import { Personaje } from '@/ui/Personaje';
 import { anotar } from '@/datos/progreso';
 import { hayCelebracion } from '@/motor/actividadesLibres';
 import { orientacionDe } from '@/motor/orientacion';
-import { ModalExito, ModalExplicacion, ModalMicrofono } from '@/ui/ModalesActividad';
-import { aceptarMicrofono, hayQuePreguntar, rechazarMicrofono } from '@/escucha/permiso';
+import { ModalExito, ModalExplicacion } from '@/ui/ModalesActividad';
+import { aceptarMicrofono, elegirToque, microfonoDenegado, nuevaActividad } from '@/escucha/permiso';
 import { usePreferencias } from './preferencias';
 import { t } from '@/i18n';
 import type { Actividad as TipoActividad, ResultadoActividad } from '@/motor/tipos';
@@ -52,14 +52,6 @@ export default function Actividad() {
    */
   const [empezada, setEmpezada] = useState(false);
   const [explicacion, setExplicacion] = useState(true);
-  /**
-   * La pantalla que explica para qué vamos a escuchar, entre la explicación y la actividad.
-   *
-   * Solo en las que usan micrófono y solo la primera vez de la sesión: `CLAUDE.md` §8 pide
-   * permiso «tardío y contextual, tras una pantalla explicativa ilustrada», y que si se
-   * deniega no se vuelva a insistir. Lo que se acuerda de eso es `escucha/permiso.ts`.
-   */
-  const [permiso, setPermiso] = useState(false);
   const [intento, setIntento] = useState(0);
 
   useEffect(() => {
@@ -69,7 +61,8 @@ export default function Actividad() {
     setResultado(null);
     setEmpezada(false);
     setExplicacion(true);
-    setPermiso(false);
+    // Con qué se hace —micrófono o pantalla— se elige en cada actividad, en su explicación.
+    nuevaActividad();
     cargarActividad(id)
       .then((a) => vivo && setActividad(a))
       .catch((e: Error) => vivo && setFallo(e.message));
@@ -126,7 +119,13 @@ export default function Actividad() {
 
   const Componente = componenteDe(actividad.tipo);
   const quien = actividad.personaje ?? 'dora';
-  const conMicrofono = actividad.entrada.modo.startsWith('microfono');
+  /*
+    Qué escucha la actividad, para que la explicación ofrezca las dos salidas. Solo si tiene
+    vía por toque: el paisaje sonoro también escucha, pero ahí el micrófono se pide con su
+    propio botón de grabar y no hay nada que elegir antes.
+  */
+  const conMicrofono =
+    actividad.entrada.modo.startsWith('microfono') && actividad.entrada.alternativa === 'toque';
   const modoMicrofono = actividad.entrada.modo === 'microfono-voz' ? 'voz' : 'palmada';
   /* En la guía de aula no sale personaje: esa pantalla es el guion del maestro proyectado, y
      ahí una cara es decoración que le roba sitio a lo que mira la clase entera. */
@@ -137,41 +136,20 @@ export default function Actividad() {
       <ModalExplicacion
         abierto={explicacion}
         actividad={actividad}
-        alCerrar={() => {
+        empezada={empezada}
+        microfono={conMicrofono ? modoMicrofono : null}
+        microfonoDenegado={microfonoDenegado()}
+        alEmpezar={(eleccion) => {
+          // La elección vale para esta actividad: `escucha/permiso.ts` la olvida al salir.
+          if (eleccion === 'microfono') aceptarMicrofono();
+          else elegirToque();
           setExplicacion(false);
-          /*
-            Si la actividad escucha, y en esta sesión aún no se ha preguntado, va primero la
-            pantalla del micrófono. Reabrir la explicación pulsando al personaje no la vuelve
-            a sacar: `empezada` ya está puesta y la pregunta ya se hizo.
-          */
-          if (!empezada && conMicrofono && hayQuePreguntar(modoMicrofono)) setPermiso(true);
-          else setEmpezada(true);
-        }}
-      />
-
-      <ModalMicrofono
-        abierto={permiso}
-        personaje={quien}
-        modo={modoMicrofono}
-        alAceptar={() => {
-          aceptarMicrofono();
-          setPermiso(false);
           setEmpezada(true);
         }}
-        alRechazar={() => {
-          /*
-            Con palmadas, decir que no NO cancela la actividad: se hace entera tocando en la
-            pantalla. Con voz no hay nada que tocar: «ahora no puedo hacer ruido» la deja
-            para luego y vuelve al catálogo, sin recordar el no. Ver `escucha/permiso.ts`.
-          */
-          if (modoMicrofono === 'voz') {
-            volver();
-            return;
-          }
-          rechazarMicrofono();
-          setPermiso(false);
-          setEmpezada(true);
-        }}
+        // «Ahora no puedo hacer ruido» la deja para luego, sin recordar el no.
+        alSalir={volver}
+        // Reabierta con el personaje a mitad de actividad: solo se cierra.
+        alCerrar={() => setExplicacion(false)}
       />
 
       <ModalExito
