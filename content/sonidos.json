@@ -1,6 +1,6 @@
 {
   "$comment": "Banco de sonidos reales. Cada entrada apunta a un fichero de Wikimedia Commons; tools/sonidos.py lo baja, comprueba la licencia por API, lo recorta y escribe aqui lo verificado. La pantalla de creditos lee este fichero: es la atribucion que exige la CC BY, y sale de datos, no de memoria.",
-  "generado": "2026-09-09",
+  "generado": "2026-09-10",
   "sonidos": [
     {
       "id": "perro",
@@ -416,15 +416,16 @@
       "id": "lluvia",
       "categoria": "casa",
       "nombre": "Lluvia",
-      "commons": "File:Fall Rain (Antti Luode).mp3",
-      "desde": 5,
-      "segundos": 6,
+      "commons": "File:Sound of rain.ogg",
+      "desde": 2,
+      "segundos": 7,
+      "$comment": "Cambiada el 2026-09-10: la anterior (Fall Rain) llevaba retumbo grave y se confundía con la tormenta. Esta es siseo limpio de lluvia, sin graves.",
       "verificado": {
-        "licencia": "CC BY 3.0",
-        "licencia_url": "https://creativecommons.org/licenses/by/3.0",
-        "autor": "Antti Luode",
-        "url": "https://commons.wikimedia.org/wiki/File:Fall_Rain_(Antti_Luode).mp3",
-        "fecha": "2026-09-09"
+        "licencia": "CC BY-SA 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "autor": "Effib",
+        "url": "https://commons.wikimedia.org/wiki/File:Sound_of_rain.ogg",
+        "fecha": "2026-09-10"
       }
     },
     {
@@ -719,15 +720,16 @@
       "id": "olas",
       "categoria": "casa",
       "nombre": "Olas del mar",
-      "commons": "File:Ocean Waves on a Tropical Beach.ogg",
-      "desde": 10,
+      "commons": "File:Meeresrauschen.ogg",
+      "desde": 26,
       "segundos": 8,
+      "$comment": "Cambiada el 2026-09-10: la anterior (Tropical Beach) era rumor grave continuo —«parece un tren»—. Esta tiene el vaivén de cada ola claro y sin graves.",
       "verificado": {
-        "licencia": "CC0",
-        "licencia_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-        "autor": "Jarrod stanley",
-        "url": "https://commons.wikimedia.org/wiki/File:Ocean_Waves_on_a_Tropical_Beach.ogg",
-        "fecha": "2026-09-09"
+        "licencia": "CC BY 2.5",
+        "licencia_url": "https://creativecommons.org/licenses/by/2.5",
+        "autor": "L. Ginzkey",
+        "url": "https://commons.wikimedia.org/wiki/File:Meeresrauschen.ogg",
+        "fecha": "2026-09-10"
       }
     },
     {

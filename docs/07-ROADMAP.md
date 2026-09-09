@@ -2626,6 +2626,14 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       pulgar va fuera del cuerpo, a la izquierda, y el recuadro del dibujo empezaba en el
       borde del cuerpo. Arreglado en el generador y regenerados los tres diagramas.
 
+- [x] **Lluvia y olas que suenan a lo que son.** «La lluvia no es sonido de lluvia y se
+      confunde con la tormenta; las olas parecen un tren», dijo el autor de «¿Qué tiempo
+      hace?». Se midieron catorce grabaciones de Commons —brillo, retumbo grave, vaivén
+      lento y goteo— y se eligieron un siseo limpio de lluvia sin graves (CC BY-SA 3.0) y
+      un oleaje con el vaivén de cada ola claro y sin retumbo (CC BY 2.5). Las anteriores
+      tenían la mitad de la energía por debajo de 250 Hz, que es lo que sonaba a tren y a
+      tormenta. La medida está en el cuaderno de la sesión, no en el repositorio.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
