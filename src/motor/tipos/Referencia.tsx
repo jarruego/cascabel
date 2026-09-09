@@ -74,6 +74,22 @@ export default function Referencia({ actividad, alTerminar }: PropsActividad) {
   const [busqueda, setBusqueda] = useState('');
   const [sonando, setSonando] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  /**
+   * Lo que suena en bucle: un ritmo o un patrón del kit se repite hasta que se para o se
+   * toca otro. Lo pidió el autor el 2026-09-10: «se corta enseguida; al dar play debería
+   * seguir en bucle». Las notas —un intervalo, una escala— y los fragmentos grabados suenan
+   * una vez, que es lo que son. El reloj de la vuelta siguiente vive aquí para poder
+   * cancelarlo al parar y al salir.
+   */
+  const bucle = useRef<{ termino: string; reloj: number | null } | null>(null);
+  const pararBucle = useCallback(() => {
+    if (bucle.current?.reloj !== null && bucle.current?.reloj !== undefined) {
+      window.clearTimeout(bucle.current.reloj);
+    }
+    bucle.current = null;
+    pararTodo();
+  }, []);
+  useEffect(() => pararBucle, [pararBucle]);
   // Al salir se para la grabación que estuviera sonando: un fragmento de veinte segundos
   // no puede seguir detrás de otra pantalla.
   useEffect(() => () => audioRef.current?.pause(), []);
@@ -105,6 +121,13 @@ export default function Referencia({ actividad, alTerminar }: PropsActividad) {
   const sonar = useCallback(
     async (entrada: Entrada) => {
       darPorHecha();
+      // Tocar lo que ya suena en bucle lo para. Tocar otra cosa corta lo anterior.
+      if (bucle.current?.termino === entrada.termino) {
+        pararBucle();
+        setSonando(null);
+        return;
+      }
+      pararBucle();
       setSonando(entrada.termino);
       if (entrada.audio) {
         // Un fragmento grabado: se corta lo que sonara antes y se pone entero.
@@ -130,9 +153,21 @@ export default function Referencia({ actividad, alTerminar }: PropsActividad) {
         { instrumento: entrada.instrumento ?? contenido.instrumento, tempo: 84 },
       );
       const dura = fin === null ? 600 : Math.max(400, (fin - obtenerContexto().currentTime) * 1000);
-      window.setTimeout(() => setSonando((s) => (s === entrada.termino ? null : s)), dura);
+      const repite = Boolean(entrada.ritmo?.length || entrada.patron?.length);
+      if (!repite || fin === null) {
+        window.setTimeout(() => setSonando((s) => (s === entrada.termino ? null : s)), dura);
+        return;
+      }
+      // En bucle: la vuelta siguiente se programa justo al acabar esta, sin costura.
+      const vuelta = { termino: entrada.termino, reloj: null as number | null };
+      bucle.current = vuelta;
+      vuelta.reloj = window.setTimeout(() => {
+        if (bucle.current !== vuelta) return;
+        bucle.current = null;
+        void sonar(entrada);
+      }, Math.max(0, dura - 30));
     },
-    [contenido.instrumento, darPorHecha],
+    [contenido.instrumento, darPorHecha, pararBucle],
   );
 
   /* El buscador filtra por término y por explicación: quien no se acuerda de cómo se llama

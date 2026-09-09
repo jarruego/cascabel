@@ -2649,6 +2649,34 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       las ocho notas, dura seis segundos y se va entera: tono y texto miraban condiciones
       distintas y el texto se quedaba flotando.
 
+### El repaso general, 2026-09-10
+
+Después de dos días de corregir actividad a actividad, el autor pidió repasarlo todo:
+textos, niveles, camino, y la sección de instrumentos.
+
+- [x] **La sección «Instrumentos» se llama «Taller».** Tiene instrumentos, pero también el
+      afinador, el metrónomo, los acompañamientos y las referencias del lenguaje musical,
+      de los estilos y de las obras: «Instrumentos» no lo decía.
+- [x] **La guía de créditos se va.** Era una guía de aula que enseñaba a leer la página de
+      créditos, y sobraba: la página de créditos sigue, enlazada desde el catálogo y desde
+      privacidad, y «¿De quién es esta música?» cubre lo que enseñaba.
+- [x] **Criterios en la barra, provisionalmente, y Ajustes tras la rueda dentada.** Una
+      pantalla que enumera, por etapa, las competencias y los criterios con las actividades
+      que trabaja cada uno, y los que se quedan sin ninguna. Los textos de las competencias
+      son los del real decreto; los resúmenes de los criterios de Primaria no son todavía el
+      literal del BOE y la pantalla lo marca: PENDIENTE en `content/criterios.json`. A
+      Ajustes se llega por la rueda junto al título del catálogo.
+- [x] **Los ritmos y los estilos de las referencias suenan en bucle** hasta que se para o
+      se toca otro: «Bailes y compases» y «Ritmos del mundo» se cortaban a la vuelta. Las
+      notas y los fragmentos grabados siguen sonando una vez.
+- [x] **Textos.** Siete enunciados que no decían lo que se hace: «¿Largo o corto?» hablaba
+      de un triángulo y un tambor que no están; «¿Sube o baja?» de tres notas; los dos de
+      emparejar prometían que sonarían los dos; los tres memory repetían la ayuda del tipo y
+      dos se pasaban de largo. Y las referencias a «Instrumentos» dicen «el Taller».
+- [x] **Niveles y camino.** La herramienta de dificultad no señala nada sin revisar, y el
+      camino cubre todas las actividades con una por etapa; la auditoría solo deja los tres
+      criterios en `null` de las herramientas, que es lo correcto.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
