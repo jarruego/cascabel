@@ -2679,6 +2679,12 @@ textos, niveles, camino, y la sección de instrumentos.
       camino cubre todas las actividades con una por etapa; la auditoría solo deja los tres
       criterios en `null` de las herramientas, que es lo correcto.
 
+- [x] **La pandilla sale repartida.** Doby estaba en cinco actividades y Dora en una de
+      Infantil: «la unión» y «la base» no se habían mirado como lo que la actividad trabaja.
+      Lo que se hace juntos es de Doby y la primera de cada eje de Dora; diecisiete cambian
+      de presentador. Un test pide que nadie baje de la mitad de su parte ni suba del doble,
+      con umbrales que crecen con el catálogo. La tabla de `docs/14` vuelve a estar al día.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
