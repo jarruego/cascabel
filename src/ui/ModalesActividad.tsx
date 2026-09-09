@@ -5,6 +5,7 @@ import type { Personaje as NombrePersonaje } from './personajes';
 import { t } from '@/i18n';
 import { ayudaDe } from '@/motor/ayudaPorTipo';
 import type { Actividad } from '@/motor/tipos';
+import type { Calidad } from '@/motor/serie';
 
 /**
  * Los dos modales que rodean a toda actividad: el que explica antes y el que celebra
@@ -84,18 +85,26 @@ export function ModalExplicacion({
  * `fetch` ni `MediaRecorder` en el camino— y es lo que hace que jurídicamente no tratemos
  * datos personales de un menor.
  *
- * Y las dos salidas valen lo mismo. «Prefiero tocar en la pantalla» no es rendirse: la vía
- * de toque está terminada antes de que se escriba ningún detector, y con ella la actividad
- * se hace entera. Por eso las dos son botones de verdad y no un botón y un enlace pequeño.
+ * Y las dos salidas valen lo mismo. La segunda no es rendirse: con palmadas, la vía de
+ * toque está terminada antes de que se escriba ningún detector y con ella la actividad se
+ * hace entera; con voz, se canta igual y nadie mide. Por eso las dos son botones de verdad
+ * y no un botón y un enlace pequeño.
+ *
+ * **Y el texto depende de lo que se va a escuchar.** Había uno solo, y en «Canta la nota»
+ * decía «Prefiero tocar en la pantalla» cuando ahí no hay nada que tocar: lo que hace ese
+ * botón es cantar sin que se mida. El autor lo vio el 2026-09-12. `modo` lo decide.
  */
 export function ModalMicrofono({
   abierto,
   personaje = 'dora',
+  modo = 'palmada',
   alAceptar,
   alRechazar,
 }: {
   abierto: boolean;
   personaje?: NombrePersonaje;
+  /** Qué se va a escuchar: la voz o las palmadas. Cambia lo que se dice y lo que ofrece el «no». */
+  modo?: 'voz' | 'palmada';
   alAceptar: () => void;
   alRechazar: () => void;
 }) {
@@ -103,11 +112,11 @@ export function ModalMicrofono({
     <Modal abierto={abierto} alCerrar={alRechazar} titulo={t('microfono.permiso.titulo')}>
       <Personaje nombre={personaje} pose="escucha" tamano={110} />
       <h2>{t('microfono.permiso.titulo')}</h2>
-      <p className="modal__texto">{t('microfono.permiso.texto')}</p>
+      <p className="modal__texto">{t(`microfono.permiso.${modo}`)}</p>
 
       <div className="modal__acciones">
         <button type="button" className="boton-repetir" onClick={alRechazar}>
-          {t('comun.sinMicrofono')}
+          {t(modo === 'voz' ? 'comun.sinEscuchar' : 'comun.sinMicrofono')}
         </button>
         <button type="button" className="boton-principal modal__empezar" onClick={alAceptar}>
           {t('comun.empezar')}
@@ -172,20 +181,40 @@ export function PasoEntreEjercicios({
   actual,
   total,
   alSeguir,
-  ms = 1100,
+  calidad,
+  personaje = 'dora',
+  ms,
 }: {
   actual: number;
   total: number;
   alSeguir: () => void;
+  /**
+   * Cómo ha ido el ejercicio que acaba de terminar. Con ella, la pausa es también el
+   * «¡muy bien!» que en una actividad de un solo ejercicio pone la modal: sin esto, «La
+   * escalera de notas» felicitaba al fallar —la pista— y al final —el cierre—, y al acertar
+   * a la primera pasaba al siguiente sin decir nada. Lo vio el autor el 2026-09-12.
+   */
+  calidad?: Calidad;
+  personaje?: NombrePersonaje;
   ms?: number;
 }) {
+  // Con frase se lee algo: un poco más de tiempo. Sigue saltándose tocando.
+  const espera = ms ?? (calidad ? 1600 : 1100);
   useEffect(() => {
-    const id = window.setTimeout(alSeguir, ms);
+    const id = window.setTimeout(alSeguir, espera);
     return () => window.clearTimeout(id);
-  }, [alSeguir, ms]);
+  }, [alSeguir, espera]);
 
   return (
     <button type="button" className="paso" onClick={alSeguir} aria-live="polite">
+      {calidad && (
+        <>
+          <Personaje nombre={personaje} pose={calidad === 'bien' ? 'celebra' : 'anima'} tamano={96} />
+          <span className="paso__frase">
+            {t(calidad === 'bien' ? 'comun.bien' : `serie.paso.${calidad}`)}
+          </span>
+        </>
+      )}
       <span className="paso__puntos" aria-hidden="true">
         {Array.from({ length: total }, (_, i) => (
           <span key={i} className="paso__punto" data-estado={i < actual ? 'hecho' : i === actual ? 'actual' : 'pendiente'} />

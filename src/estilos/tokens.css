@@ -1363,6 +1363,10 @@ p {
   font: inherit;
   cursor: pointer;
 }
+.paso__frase {
+  font-size: var(--t-l);
+  font-weight: 700;
+}
 /* ── el cierre de una serie ────────────────────────────────────────────────
    Una fila por ejercicio, en palabras, con la forma acompañando al color (§6). */
 .resumen-serie {

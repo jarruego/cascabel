@@ -125,6 +125,9 @@ export function conSerie(Uno: ComponentType<PropsActividad>, tipo: string) {
           <PasoEntreEjercicios
             actual={serie.posicion + 1}
             total={serie.orden.length}
+            // En «entre» la posición aún es la del ejercicio que acaba de terminar.
+            calidad={serie.resultados[indice]}
+            personaje={actividad.personaje}
             alSeguir={() => despachar({ tipo: 'seguir' })}
           />
         )}

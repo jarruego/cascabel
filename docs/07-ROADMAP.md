@@ -2435,6 +2435,16 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       «toca a tiempo», los puntos de la guía y de los pasos, y las bandas del karaoke. No hay
       test: jsdom no maqueta, y un test que no mide no vigila nada.
 
+- [x] **La pausa entre ejercicios dice cómo ha ido el que acaba.** «La escalera de notas»
+      felicitaba al fallar —la pista— y al final —el cierre—, y al acertar a la primera
+      pasaba al siguiente sin decir nada: el «¡muy bien!» lo ponía la modal, y en una serie
+      la modal no sale. Ahora la pausa lleva al personaje y una frase según la calidad, para
+      los siete tipos que son serie de una vez.
+- [x] **El modal del micrófono dice lo que va a escuchar.** Con voz, el «no» es «prefiero
+      que no me escuche» y se canta sin medir; con palmadas sigue siendo «tocar en la
+      pantalla». Y el afinador visual, que sin micrófono no tiene nada que medir, avisa al
+      adulto en vez de quedarse mudo.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, y que ninguna otra pantalla enseñe barra al crecer algo.
 
