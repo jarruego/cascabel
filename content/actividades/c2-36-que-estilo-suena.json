@@ -1,0 +1,109 @@
+{
+  "id": "c2-36-que-estilo-suena",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Qué estilo suena?",
+  "descripcion": "Rock, vals, rap y salsa: cuatro estilos que se distinguen a la primera, con música de verdad. Es el primer paso para hablar de estilos: reconocerlos.",
+  "etapa": "primaria-c2",
+  "eje": "cultura",
+  "lugar": "pantalla",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.2",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c236.consigna",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: los fragmentos de rock, vals y salsa son piezas de Kevin MacLeod (CC BY 3.0) compuestas «en el estilo de», y el rap es una base instrumental CC0. Son ejemplos limpios de manual; no son grabaciones históricas de cada estilo.",
+    "opciones": [
+      {
+        "clave": "rock",
+        "icono": "guitarra",
+        "color": "rojo"
+      },
+      {
+        "clave": "vals",
+        "icono": "bailarina",
+        "color": "morado"
+      },
+      {
+        "clave": "rap",
+        "icono": "microfono",
+        "color": "azul"
+      },
+      {
+        "clave": "salsa",
+        "icono": "fiesta",
+        "color": "amarillo"
+      }
+    ],
+    "estimulos": [
+      {
+        "audio": "sonidos/estilos/rock.opus",
+        "respuesta": "rock"
+      },
+      {
+        "audio": "sonidos/estilos/vals.opus",
+        "respuesta": "vals"
+      },
+      {
+        "audio": "sonidos/estilos/salsa.opus",
+        "respuesta": "salsa"
+      },
+      {
+        "audio": "sonidos/estilos/rap.opus",
+        "respuesta": "rap"
+      },
+      {
+        "audio": "sonidos/estilos/vals.opus",
+        "respuesta": "vals"
+      },
+      {
+        "audio": "sonidos/estilos/rock.opus",
+        "respuesta": "rock"
+      },
+      {
+        "audio": "sonidos/estilos/salsa.opus",
+        "respuesta": "salsa"
+      },
+      {
+        "audio": "sonidos/estilos/rap.opus",
+        "respuesta": "rap"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c236.enunciado",
+  "personaje": "sol",
+  "pistas": [
+    "actividad.c236.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",
+      "autor": "Autores de Wikimedia Commons, cada uno con su licencia",
+      "fuente": "https://commons.wikimedia.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

@@ -44,10 +44,10 @@
   ],
   "creditos": [
     {
-      "obra": "Piano",
-      "autor": "Frank Wen, soundfont FluidR3_GM",
-      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
-      "licencia": "MIT"
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
     }
   ],
   "estado": "borrador"

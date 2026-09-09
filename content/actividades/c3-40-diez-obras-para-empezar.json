@@ -1,0 +1,131 @@
+{
+  "id": "c3-40-diez-obras-para-empezar",
+  "version": 1,
+  "tipo": "referencia",
+  "titulo": "Catorce obras para empezar",
+  "descripcion": "Consulta de obras famosas con un fragmento grabado de cada una: quién la escribió, cuándo y qué escuchar en ella. De Bach a Saint-Saëns, pasando por Tárrega.",
+  "etapa": "primaria-c3",
+  "eje": "cultura",
+  "lugar": "pantalla",
+  "duracion_min": 12,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.2",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c340.consigna",
+    "secciones": [
+      {
+        "titulo": "Barroco",
+        "entradas": [
+          {
+            "termino": "Vivaldi · La primavera (1725)",
+            "explicacion": "El primer concierto de «Las cuatro estaciones». El violín imita pájaros y el arranque lo conoce todo el mundo.",
+            "audio": "sonidos/obras/vivaldi-primavera.opus"
+          },
+          {
+            "termino": "Bach · Aria de las Variaciones Goldberg (1741)",
+            "explicacion": "Una melodía tranquila para teclado sobre la que Bach escribió treinta variaciones. Esta grabación es de dominio público a propósito.",
+            "audio": "sonidos/obras/bach-goldberg.opus"
+          },
+          {
+            "termino": "Pachelbel · Canon (hacia 1680)",
+            "explicacion": "Ocho notas de bajo que se repiten sin parar, y encima tres violines que se van imitando. Suena en la mitad de las bodas del mundo.",
+            "audio": "sonidos/obras/pachelbel-canon.opus"
+          }
+        ]
+      },
+      {
+        "titulo": "Clasicismo",
+        "entradas": [
+          {
+            "termino": "Mozart · Pequeña serenata nocturna (1787)",
+            "explicacion": "Música para cuerda, clara y ligera, escrita para una fiesta. El principio sube por el acorde como si llamara a la puerta.",
+            "audio": "sonidos/obras/mozart-serenata.opus"
+          },
+          {
+            "termino": "Beethoven · Quinta sinfonía (1808)",
+            "explicacion": "Cuatro notas —ta-ta-ta-TAAA— y toda la sinfonía sale de ahí. Beethoven ya estaba quedándose sordo.",
+            "audio": "sonidos/obras/beethoven-quinta.opus"
+          },
+          {
+            "termino": "Beethoven · Para Elisa (1810)",
+            "explicacion": "Una pieza pequeña para piano que nadie publicó hasta cuarenta años después de su muerte. Nadie sabe quién era Elisa.",
+            "audio": "sonidos/obras/beethoven-elisa.opus"
+          }
+        ]
+      },
+      {
+        "titulo": "Romanticismo",
+        "entradas": [
+          {
+            "termino": "Brahms · Canción de cuna (1868)",
+            "explicacion": "La nana más cantada del mundo. Brahms la escribió para el hijo recién nacido de una amiga.",
+            "audio": "sonidos/obras/brahms-nana.opus"
+          },
+          {
+            "termino": "Strauss · El Danubio azul (1866)",
+            "explicacion": "El vals de los valses: Viena, tres por cuatro, y una melodía que empieza subiendo por el acorde.",
+            "audio": "sonidos/obras/strauss-danubio.opus"
+          },
+          {
+            "termino": "Chaikovski · El lago de los cisnes (1876)",
+            "explicacion": "Un ballet: la música cuenta la historia sin palabras. El tema del cisne lo lleva el oboe.",
+            "audio": "sonidos/obras/tchaikovsky-cisnes.opus"
+          },
+          {
+            "termino": "Grieg · La mañana (1875)",
+            "explicacion": "De «Peer Gynt». Una melodía de flauta y oboe que sube como el sol; es la música de «amanece» en mil películas.",
+            "audio": "sonidos/obras/grieg-manana.opus"
+          },
+          {
+            "termino": "Grieg · En la gruta del rey de la montaña (1875)",
+            "explicacion": "La misma obra. Empieza lentísima y a escondidas y acaba corriendo: es el ejemplo de accelerando que todo el mundo recuerda.",
+            "audio": "sonidos/obras/grieg-montana.opus"
+          },
+          {
+            "termino": "Saint-Saëns · El elefante (1886)",
+            "explicacion": "De «El carnaval de los animales»: un vals para contrabajo, el instrumento más grave y más torpe, que es el chiste.",
+            "audio": "sonidos/obras/saintsaens-elefante.opus"
+          },
+          {
+            "termino": "Saint-Saëns · Acuario (1886)",
+            "explicacion": "Del mismo carnaval: piano y cuerda que brillan como el agua. La música puede describir un sitio sin decir nada.",
+            "audio": "sonidos/obras/saintsaens-acuario.opus"
+          },
+          {
+            "termino": "Tárrega · Recuerdos de la Alhambra (1896)",
+            "explicacion": "Guitarra española: un trémolo, que es repetir la misma nota tan deprisa que parece que dura. Tárrega era de Castellón.",
+            "audio": "sonidos/obras/tarrega-alhambra.opus"
+          }
+        ]
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c340.enunciado",
+  "personaje": "doby",
+  "herramienta": true,
+  "creditos": [
+    {
+      "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",
+      "autor": "Autores de Wikimedia Commons, cada uno con su licencia",
+      "fuente": "https://commons.wikimedia.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "revision-pedagogica"
+}

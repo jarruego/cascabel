@@ -34,7 +34,7 @@
     ],
     "nombres": "latino",
     "segundos": 10,
-    "instrumento": "flauta",
+    "instrumento": "flauta-dulce",
     "digitaciones": {
       "B4": "/digitaciones/flauta-si.svg",
       "A4": "/digitaciones/flauta-la.svg",
@@ -57,16 +57,16 @@
   ],
   "creditos": [
     {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
       "obra": "Diagramas de digitación",
       "autor": "Proyecto cocomusic",
       "fuente": "tools/digitaciones.py",
       "licencia": "CC BY-SA 4.0"
-    },
-    {
-      "obra": "Flauta",
-      "autor": "Frank Wen, soundfont FluidR3_GM",
-      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
-      "licencia": "MIT"
     }
   ],
   "estado": "borrador"

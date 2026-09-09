@@ -65,12 +65,6 @@
   "personaje": "laia",
   "creditos": [
     {
-      "obra": "Percusión y láminas",
-      "autor": "Versilian Studios y colaboradores",
-      "fuente": "https://github.com/sgossner/VCSL",
-      "licencia": "CC0"
-    },
-    {
       "obra": "Iconos",
       "autor": "OpenMoji · HfG Schwäbisch Gmünd",
       "fuente": "https://openmoji.org",

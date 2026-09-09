@@ -36,30 +36,111 @@
     ],
     "estimulos": [
       {
-        "audio": "muestras/acorde-mayor-do.opus",
+        "notas": [
+          "C4",
+          "E4",
+          "G4"
+        ],
+        "duraciones": [
+          0,
+          0,
+          2.5
+        ],
         "respuesta": "mayor"
       },
       {
-        "audio": "muestras/acorde-menor-do.opus",
+        "notas": [
+          "C4",
+          "Eb4",
+          "G4"
+        ],
+        "duraciones": [
+          0,
+          0,
+          2.5
+        ],
         "respuesta": "menor"
       },
       {
-        "audio": "muestras/acorde-menor-sol.opus",
+        "notas": [
+          "G3",
+          "Bb3",
+          "D4"
+        ],
+        "duraciones": [
+          0,
+          0,
+          2.5
+        ],
         "respuesta": "menor"
       },
       {
-        "audio": "muestras/acorde-mayor-sol.opus",
+        "notas": [
+          "G3",
+          "B3",
+          "D4"
+        ],
+        "duraciones": [
+          0,
+          0,
+          2.5
+        ],
         "respuesta": "mayor"
       },
       {
-        "audio": "muestras/acorde-mayor-do.opus",
+        "notas": [
+          "D4",
+          "F#4",
+          "A4"
+        ],
+        "duraciones": [
+          0,
+          0,
+          2.5
+        ],
         "respuesta": "mayor"
       },
       {
-        "audio": "muestras/acorde-menor-sol.opus",
+        "notas": [
+          "D4",
+          "F4",
+          "A4"
+        ],
+        "duraciones": [
+          0,
+          0,
+          2.5
+        ],
         "respuesta": "menor"
+      },
+      {
+        "notas": [
+          "A3",
+          "C4",
+          "E4"
+        ],
+        "duraciones": [
+          0,
+          0,
+          2.5
+        ],
+        "respuesta": "menor"
+      },
+      {
+        "notas": [
+          "A3",
+          "C#4",
+          "E4"
+        ],
+        "duraciones": [
+          0,
+          0,
+          2.5
+        ],
+        "respuesta": "mayor"
       }
-    ]
+    ],
+    "instrumento": "piano"
   },
   "evaluacion": {
     "autocorrectiva": true,
@@ -76,7 +157,7 @@
   ],
   "creditos": [
     {
-      "obra": "Percusión y láminas (pandero, claves, campanilla, glockenspiel, marimba)",
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
       "autor": "Versilian Studios y colaboradores",
       "fuente": "https://github.com/sgossner/VCSL",
       "licencia": "CC0"

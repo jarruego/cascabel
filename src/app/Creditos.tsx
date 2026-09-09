@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
-import { cargarActividad, cargarIndice } from '@/datos/cargar';
+import { cargarActividad, cargarIndice, cargarSonidos, type SonidoDelBanco } from '@/datos/cargar';
 import { t } from '@/i18n';
 import type { Actividad } from '@/motor/tipos';
 
@@ -37,6 +37,14 @@ function agrupar(entradas: Array<{ credito: Credito; actividad: string }>) {
 export default function Creditos() {
   const [grupos, setGrupos] = useState<ReturnType<typeof agrupar> | null>(null);
   const [fallo, setFallo] = useState(false);
+  /*
+    El banco de sonidos reales, sonido a sonido.
+
+    Aquí no vale agrupar: la CC BY exige nombrar al autor de CADA grabación, y en el banco
+    hay noventa autores distintos. La lista sale del manifiesto que la herramienta
+    verificó contra Commons, así que dice exactamente lo que se comprobó, ni más ni menos.
+  */
+  const [sonidos, setSonidos] = useState<SonidoDelBanco[]>([]);
 
   useEffect(() => {
     let vivo = true;
@@ -68,6 +76,12 @@ export default function Creditos() {
           }),
         );
         if (vivo) setGrupos(agrupar(porActividad.flat()));
+        try {
+          const banco = await cargarSonidos();
+          if (vivo) setSonidos(banco.sonidos.filter((x) => x.verificado));
+        } catch {
+          // Sin manifiesto no hay banco que enseñar, y los demás créditos siguen saliendo.
+        }
       } catch {
         if (vivo) setFallo(true);
       }
@@ -105,6 +119,29 @@ export default function Creditos() {
             </li>
           ))}
         </ul>
+      )}
+
+      {sonidos.length > 0 && (
+        <>
+          <h2>{t('creditos.sonidos')}</h2>
+          <p>{t('creditos.sonidosTexto')}</p>
+          <ul className="creditos__lista creditos__banco">
+            {sonidos.map((s) => (
+              <li key={s.id}>
+                <strong>{s.nombre}</strong>
+                {s.verificado?.autor && <> · {s.verificado.autor}</>}
+                <span className="creditos__licencia">{s.verificado?.licencia}</span>
+                {s.verificado?.url && (
+                  <div className="creditos__fuente">
+                    <a href={s.verificado.url} rel="noreferrer">
+                      {s.commons.replace(/^File:/, '')}
+                    </a>
+                  </div>
+                )}
+              </li>
+            ))}
+          </ul>
+        </>
       )}
 
       <h2>{t('creditos.software')}</h2>

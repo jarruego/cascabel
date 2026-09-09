@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Genera muestras de audio PROVISIONALES por síntesis.
+Genera muestras de audio PROVISIONALES por síntesis. Desde el 2026-09-10 solo queda el silencio: el resto se sustituyó por grabaciones (ver docs/10).
 
 Esto NO es T1.7. Las muestras buenas serán grabaciones o material CC0 de VCSL y VSCO 2,
 con timbres percusivos reales. Esto existe sólo para desbloquear T0.2 —que una actividad
@@ -157,26 +157,12 @@ def pulso_a(bpm: float, golpes: int = 8, hz: float = 660.0) -> list[float]:
 
 
 PIEZAS = {
-    "pandero-golpe": pandero,
-    "triangulo-largo": triangulo,
+    # Lo unico que queda. El 2026-09-10 se borraron el pandero, el triangulo, las campanas,
+    # los acordes, los tempos y el sonido largo/corto sintetizados: ninguna actividad los
+    # usaba ya, porque un acorde son tres notas de piano a la vez, un tempo son ocho bombos
+    # de VCSL a esa velocidad, y una campana es una nota del xilofono. Todo eso se describe
+    # en el JSON de la actividad y suena con grabaciones. El silencio es el silencio.
     "silencio-2s": silencio,
-    # Tres campanas separadas por quintas justas: 293,7 Hz (re4), 440 (la4), 659,3 (mi5).
-    # El ámbito cabe en la tesitura de Infantil que declara este mismo fichero.
-    "campana-grave": lambda: campana(293.66),
-    "campana-media": lambda: campana(440.0),
-    "campana-aguda": lambda: campana(659.26),
-    # Para «mayor o menor»: mismo acorde salvo la tercera, que es la discriminación pedida.
-    "acorde-mayor-do": lambda: acorde(261.63, [0, 4, 7]),
-    "acorde-menor-do": lambda: acorde(261.63, [0, 3, 7]),
-    "acorde-mayor-sol": lambda: acorde(392.00, [0, 4, 7]),
-    "acorde-menor-sol": lambda: acorde(392.00, [0, 3, 7]),
-    # Para «adagio, andante, allegro»: tempos convencionales de diccionario.
-    "tempo-adagio": lambda: pulso_a(66),
-    "tempo-andante": lambda: pulso_a(92),
-    "tempo-allegro": lambda: pulso_a(138),
-    # Para «largo o corto»: el contraste más básico de todos.
-    "sonido-corto": lambda: pandero(0.28),
-    "sonido-largo": lambda: triangulo(2.6),
 }
 
 

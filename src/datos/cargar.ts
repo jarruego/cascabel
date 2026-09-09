@@ -39,6 +39,19 @@ export function cargarCamino() {
   }>(`${APP.rutaContenido}/camino.json`);
 }
 
+/** El manifiesto del banco de sonidos reales: quién grabó cada cosa y con qué licencia. */
+export interface SonidoDelBanco {
+  id: string;
+  categoria: string;
+  nombre: string;
+  commons: string;
+  verificado?: { licencia: string; licencia_url?: string; autor: string; url: string; fecha: string };
+}
+
+export function cargarSonidos() {
+  return pedir<{ sonidos: SonidoDelBanco[] }>(`${APP.rutaContenido}/sonidos.json`);
+}
+
 export function cargarActividad(id: string) {
   if (!/^[a-z0-9-]+$/.test(id)) throw new Error(`Id de actividad inválido: ${id}`);
   return pedir<Actividad>(`${APP.rutaContenido}/actividades/${id}.json`);

@@ -41,7 +41,7 @@
     ],
     "estimulos": [
       {
-        "audio": "muestras/pandero-golpe.opus",
+        "audio": "muestras/percusion/pandereta-1.opus",
         "respuesta": "suena"
       },
       {
@@ -49,7 +49,7 @@
         "respuesta": "silencio"
       },
       {
-        "audio": "muestras/triangulo-largo.opus",
+        "audio": "muestras/percusion/triangulo-1.opus",
         "respuesta": "suena"
       },
       {
@@ -57,7 +57,7 @@
         "respuesta": "silencio"
       },
       {
-        "audio": "muestras/voz-la.opus",
+        "audio": "muestras/voz/a4.opus",
         "respuesta": "suena"
       },
       {
@@ -79,10 +79,16 @@
   ],
   "creditos": [
     {
-      "obra": "Percusión y láminas (pandero, claves, campanilla, glockenspiel, marimba)",
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
       "autor": "Versilian Studios y colaboradores",
       "fuente": "https://github.com/sgossner/VCSL",
       "licencia": "CC0"
+    },
+    {
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
+      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
+      "licencia": "MIT"
     },
     {
       "obra": "Iconos",

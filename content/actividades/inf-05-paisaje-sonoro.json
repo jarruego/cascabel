@@ -41,27 +41,27 @@
     ],
     "estimulos": [
       {
-        "audio": "muestras/campana-media.opus",
+        "audio": "muestras/xilofono/c5.opus",
         "respuesta": "campana"
       },
       {
-        "audio": "muestras/sonido-corto.opus",
+        "audio": "muestras/percusion/claves-1.opus",
         "respuesta": "madera"
       },
       {
-        "audio": "muestras/pandero-golpe.opus",
+        "audio": "muestras/percusion/pandereta-1.opus",
         "respuesta": "tambor"
       },
       {
-        "audio": "muestras/campana-aguda.opus",
+        "audio": "muestras/xilofono/c6.opus",
         "respuesta": "campana"
       },
       {
-        "audio": "muestras/pandero-golpe.opus",
+        "audio": "muestras/percusion/pandereta-1.opus",
         "respuesta": "tambor"
       },
       {
-        "audio": "muestras/sonido-corto.opus",
+        "audio": "muestras/percusion/claves-1.opus",
         "respuesta": "madera"
       }
     ]
@@ -76,7 +76,7 @@
   "personaje": "rex",
   "creditos": [
     {
-      "obra": "Percusión y láminas",
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
       "autor": "Versilian Studios y colaboradores",
       "fuente": "https://github.com/sgossner/VCSL",
       "licencia": "CC0"

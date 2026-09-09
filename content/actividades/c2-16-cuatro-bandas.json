@@ -119,16 +119,16 @@
   ],
   "creditos": [
     {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
       "obra": "Motivo inicial de la Sinfonía n.º 5",
       "autor": "Ludwig van Beethoven (1770-1827)",
       "fuente": "Dominio público: el autor murió en 1827, muy por encima de los 80 años que exige la disposición transitoria de la ley española.",
       "licencia": "Dominio público"
-    },
-    {
-      "obra": "Marimba",
-      "autor": "Versilian Studios y colaboradores",
-      "fuente": "https://github.com/sgossner/VCSL",
-      "licencia": "CC0"
     }
   ],
   "estado": "borrador"

@@ -66,6 +66,18 @@ actividades a mano, y las dos son CC0 o compatibles.
 | **ZapSplat** | Efectos, sección CC0 | CC0 en parte del catálogo | Solo la parte marcada CC0, y comprobándolo |
 | **OpenGameArt** | Assets de juego | CC0 en parte | Menor volumen, pero limpio |
 
+### Al día del 2026-09-10: Wikimedia Commons es la fuente, y VCSL/VSCO los instrumentos
+
+Lo de abajo sigue siendo cierto y ya no es lo que se usa. **Wikimedia Commons** resultó ser la
+biblioteca que faltaba para todo lo que no es una nota suelta —animales, vehículos, casa,
+instrumentos tocados, estilos y obras— por una razón que ninguna otra tiene: su API devuelve
+la licencia y el autor de cada fichero, y eso permite que `tools/sonidos.py` verifique cada
+sonido antes de entrar. Y contiene el catálogo entero de Kevin MacLeod (CC BY 3.0) y las
+grabaciones de Musopen (dominio público). Freesound se descartó por exigir clave de API para
+bajar. Los instrumentos del sampler salen ahora de **VCSL** y **VSCO 2 CE** fichero a
+fichero desde GitHub (`tools/muestras-vcsl.py`); del soundfont quedan la guitarra, la voz y
+los seis del mundo. Ver `docs/10`.
+
 ### Soundfonts General MIDI: donde sí estaba todo
 
 **La primera búsqueda se equivocó de sitio, y conviene dejar dicho en qué.** Miró bancos de

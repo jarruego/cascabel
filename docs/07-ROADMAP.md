@@ -2287,6 +2287,54 @@ Dos quejas del autor sobre el constructor de ritmos, y las dos tenían la misma 
 **Hay que oírlo en el aparato**: que parar corte limpio y que la casilla recién puesta
 entre en la vuelta en curso.
 
+### El banco de sonidos reales, 2026-09-10
+
+«Ahora suena todo muy robótico o directamente raro», dijo el autor, y tenía razón por tres
+sitios: los tempos, los acordes, las campanas y «sonido largo/corto» estaban **sintetizados**
+desde el primer día; piano, xilófono, flauta y violín eran un soundfont de 2008 a 48 kbps; y
+no había ni un animal, ni un vehículo, ni un sonido de casa, ni un compás de música con
+estilo. Tres cosas, tres arreglos.
+
+- [x] **Un banco de 99 sonidos reales, todos de Wikimedia Commons.** Animales de granja y
+      de bosque, vehículos, casa y calle, tiempo, veintitrés instrumentos tocados por músicos,
+      diez estilos —rock, jazz, hip hop, reggae, vals, salsa, cumbia, bossa nova, electrónica,
+      rap— y catorce fragmentos de obras, de Vivaldi a Saint-Saëns pasando por Tárrega.
+      **Commons y solo Commons**, por una razón que no es de gusto: su API devuelve la
+      licencia y el autor de cada fichero, así que la verificación que `CLAUDE.md` §3 exige
+      la hace `tools/sonidos.py` y no la memoria de nadie. El manifiesto
+      `content/sonidos.json` dice qué fichero, desde qué segundo y cuántos, y la herramienta
+      escribe al lado lo que comprobó; la pantalla de créditos lo enseña sonido a sonido,
+      que es lo que la CC BY pide. Se rechaza todo lo que no sea CC0, dominio público, CC BY
+      o CC BY-SA con versión. En Commons están además el catálogo entero de Kevin MacLeod y
+      las grabaciones de Musopen, que es de donde salen estilos y obras. Con test: todo
+      verificado y en disco, nada desconocido en las actividades, y el banco por debajo de
+      seis megas. Va fuera del precache y se baja al usarse, como los instrumentos.
+- [x] **Veinte instrumentos de verdad para el sampler**, de VCSL y VSCO 2 CE (CC0, en
+      GitHub, fichero a fichero con `tools/muestras-vcsl.py`): el Steinway B y el xilófono de
+      VCSL sustituyen al piano y al xilófono del soundfont; la flauta y el violín pasan a
+      VSCO; y entran dieciséis que no había — **flauta dulce** (la del colegio: las tres
+      actividades de flauta suenan ahora a flauta dulce), carillón, vibráfono, arpa, saxofón,
+      armónica, órgano, violonchelo, contrabajo, trompeta, trompa, trombón, tuba, clarinete,
+      oboe y fagot. Una muestra cada tres o cuatro semitonos, que es lo que `docs/10` fija
+      para que el estirado no se oiga. Los créditos de las 143 actividades se recalcularon
+      desde lo que cada una hace sonar de verdad.
+- [x] **Los sintetizados se han ido.** Los tempos son ocho bombos de VCSL a esa velocidad,
+      los acordes tres notas de piano a la vez, las campanas notas del xilófono, y lo largo y
+      lo corto una flauta que dura y unas claves que no: once actividades reescritas y
+      quince ficheros borrados. Queda `silencio-2s`, porque el silencio es el silencio.
+- [x] **Catorce actividades que solo se podían hacer con el banco**: cuatro de Infantil
+      (¿Qué animal es?, la granja, ¿qué suena en casa?, ¿qué tiempo hace?), tres de 1.º–2.º
+      (el bosque, vehículos, sonidos de la calle), tres de 3.º–4.º (instrumentos tocados de
+      verdad, ¿qué estilo suena?, ¿quién canta?) y cuatro de 5.º–6.º (la orquesta tocada de
+      verdad, ocho estilos, ¿de quién es esta obra? con grabaciones, y la referencia de
+      catorce obras con su fragmento). Veinticuatro iconos más de OpenMoji para ellas. El
+      catálogo pasa a **143**.
+
+**Lo que hay que oír, y no puede decir ningún test**: si un ladrido de cuatro segundos
+recortado de una grabación de veinte empieza y acaba donde debe, y si el estirado de los
+instrumentos nuevos —que no son percusivos— se nota en alguna nota. Los recortes se cambian
+en el manifiesto y se rehacen con `python tools/sonidos.py <id> --forzar`.
+
 Las ideas de ampliación, con veredicto y con lo que NO conviene hacer, están en
 [`docs/12-IDEAS-Y-AMPLIACIONES.md`](12-IDEAS-Y-AMPLIACIONES.md).
 

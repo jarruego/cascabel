@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-09",
-  "total": 129,
+  "total": 143,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -568,6 +568,63 @@
         "competencia": "CE3",
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c1-32-quien-canta-en-el-bosque",
+      "titulo": "¿Quién canta en el bosque?",
+      "descripcion": "Pájaro, rana, búho y abeja. Cuatro animales pequeños con cuatro sonidos muy distintos: canto, croar, ulular y zumbido.",
+      "etapa": "primaria-c1",
+      "eje": "timbre",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c1-33-que-vehiculo-es",
+      "titulo": "¿Qué vehículo es?",
+      "descripcion": "Moto, tren, avión, helicóptero, ambulancia y barco, grabados de verdad. Reconocer un sonido por su fuente, que es el primer paso de la escucha atenta.",
+      "etapa": "primaria-c1",
+      "eje": "timbre",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c1-34-sonidos-de-la-calle",
+      "titulo": "Sonidos de la calle",
+      "descripcion": "Una bocina, un autobús, un patio lleno de niños, la campana de una iglesia, un martillo y una ambulancia. La calle, oída con atención.",
+      "etapa": "primaria-c1",
+      "eje": "timbre",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.1",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
       "herramienta": false
@@ -1195,6 +1252,63 @@
         "competencia": "CE3",
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c2-35-instrumentos-tocados-de-verdad",
+      "titulo": "¿Qué instrumento suena? Tocado de verdad",
+      "descripcion": "Violín, trompeta, saxofón, acordeón y guitarra eléctrica, en grabaciones de músicos tocando de verdad, no en notas sueltas. Cada uno con una frase.",
+      "etapa": "primaria-c2",
+      "eje": "timbre",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c2-36-que-estilo-suena",
+      "titulo": "¿Qué estilo suena?",
+      "descripcion": "Rock, vals, rap y salsa: cuatro estilos que se distinguen a la primera, con música de verdad. Es el primer paso para hablar de estilos: reconocerlos.",
+      "etapa": "primaria-c2",
+      "eje": "cultura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c2-37-quien-canta",
+      "titulo": "¿Quién canta?",
+      "descripcion": "Una solista, un coro de adultos o un coro de niños. Tres formas de cantar, en grabaciones de verdad, para reconocer la voz humana como instrumento.",
+      "etapa": "primaria-c2",
+      "eje": "timbre",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
       "herramienta": false
@@ -1846,6 +1960,82 @@
       "herramienta": false
     },
     {
+      "id": "c3-37-la-orquesta-tocada-de-verdad",
+      "titulo": "La orquesta, tocada de verdad",
+      "descripcion": "Violonchelo, clarinete, oboe, tuba, trompa, contrabajo, arpa y clave: ocho instrumentos que no se ven todos los días, en grabaciones de músicos.",
+      "etapa": "primaria-c3",
+      "eje": "timbre",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 9,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-38-ocho-estilos",
+      "titulo": "¿Qué estilo suena? Ocho estilos",
+      "descripcion": "Rock, jazz, hip hop, reggae, vals, salsa, bossa nova y música electrónica, con veinte segundos de cada uno. Para reconocerlos y para poder nombrar lo que se oye.",
+      "etapa": "primaria-c3",
+      "eje": "cultura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-39-de-quien-es-esta-obra",
+      "titulo": "¿De quién es esta obra?",
+      "descripcion": "Doce fragmentos de obras famosas, grabadas por orquestas y solistas, y nueve compositores. La misma pregunta que con las melodías al piano, pero con la música de verdad.",
+      "etapa": "primaria-c3",
+      "eje": "cultura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 12,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-40-diez-obras-para-empezar",
+      "titulo": "Catorce obras para empezar",
+      "descripcion": "Consulta de obras famosas con un fragmento grabado de cada una: quién la escribió, cuándo y qué escuchar en ella. De Bach a Saint-Saëns, pasando por Tárrega.",
+      "etapa": "primaria-c3",
+      "eje": "cultura",
+      "tipo": "referencia",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 12,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "revision-pedagogica",
+      "herramienta": true
+    },
+    {
       "id": "inf-01-semaforo-del-sonido",
       "titulo": "El semáforo del sonido",
       "descripcion": "Suena o no suena. El niño mantiene el dedo en el círculo mientras hay sonido y lo suelta en el silencio.",
@@ -2269,6 +2459,82 @@
       "descripcion": "Tres notas seguidas: o van subiendo o van bajando. La escalera de sonidos, para oírla antes de dibujarla.",
       "etapa": "infantil",
       "eje": "altura",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE2",
+        "criterio": "2.1",
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "inf-24-que-animal-es",
+      "titulo": "¿Qué animal es?",
+      "descripcion": "Perro, gato, león y elefante, grabados de verdad. Suena uno y hay que tocar el animal. Es reconocer un timbre con la ayuda de algo que ya se sabe: cómo suena un perro.",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE2",
+        "criterio": "2.1",
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "inf-25-los-animales-de-la-granja",
+      "titulo": "Los animales de la granja",
+      "descripcion": "Vaca, oveja, gallo y cerdo, grabados en una granja de verdad. Suena uno y hay que tocarlo.",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE2",
+        "criterio": "2.1",
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "inf-26-que-suena-en-casa",
+      "titulo": "¿Qué suena en casa?",
+      "descripcion": "Llaman a la puerta, suena el timbre, el teléfono o el reloj. Cuatro sonidos de casa que todo niño conoce, para ponerles nombre.",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "tipo": "eleccion",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE2",
+        "criterio": "2.1",
+        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "inf-27-que-tiempo-hace",
+      "titulo": "¿Qué tiempo hace?",
+      "descripcion": "Lluvia, viento, tormenta y olas. Sonidos de la naturaleza grabados de verdad, para escucharlos con atención y saber cuál es.",
+      "etapa": "infantil",
+      "eje": "timbre",
       "tipo": "eleccion",
       "lugar": "pantalla",
       "microfono": false,

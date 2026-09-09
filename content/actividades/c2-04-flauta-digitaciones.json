@@ -23,7 +23,7 @@
   },
   "contenido": {
     "consigna": "actividad.c204.consigna",
-    "instrumento": "flauta",
+    "instrumento": "flauta-dulce",
     "izquierda": [
       {
         "clave": "si",
@@ -91,16 +91,16 @@
   ],
   "creditos": [
     {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
       "obra": "Diagramas de digitación",
       "autor": "Proyecto cocomusic",
       "fuente": "tools/digitaciones.py",
       "licencia": "CC BY-SA 4.0"
-    },
-    {
-      "obra": "Marimba",
-      "autor": "Versilian Studios y colaboradores",
-      "fuente": "https://github.com/sgossner/VCSL",
-      "licencia": "CC0"
     }
   ],
   "estado": "borrador"

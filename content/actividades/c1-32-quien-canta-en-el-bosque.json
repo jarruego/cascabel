@@ -1,0 +1,108 @@
+{
+  "id": "c1-32-quien-canta-en-el-bosque",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Quién canta en el bosque?",
+  "descripcion": "Pájaro, rana, búho y abeja. Cuatro animales pequeños con cuatro sonidos muy distintos: canto, croar, ulular y zumbido.",
+  "etapa": "primaria-c1",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.1",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c132.consigna",
+    "opciones": [
+      {
+        "clave": "pajaro",
+        "icono": "pajaro",
+        "color": "verde"
+      },
+      {
+        "clave": "rana",
+        "icono": "rana",
+        "color": "azul"
+      },
+      {
+        "clave": "buho",
+        "icono": "buho",
+        "color": "morado"
+      },
+      {
+        "clave": "abeja",
+        "icono": "abeja",
+        "color": "amarillo"
+      }
+    ],
+    "estimulos": [
+      {
+        "audio": "sonidos/animales/pajaro.opus",
+        "respuesta": "pajaro"
+      },
+      {
+        "audio": "sonidos/animales/rana.opus",
+        "respuesta": "rana"
+      },
+      {
+        "audio": "sonidos/animales/abeja.opus",
+        "respuesta": "abeja"
+      },
+      {
+        "audio": "sonidos/animales/buho.opus",
+        "respuesta": "buho"
+      },
+      {
+        "audio": "sonidos/animales/rana.opus",
+        "respuesta": "rana"
+      },
+      {
+        "audio": "sonidos/animales/pajaro.opus",
+        "respuesta": "pajaro"
+      },
+      {
+        "audio": "sonidos/animales/buho.opus",
+        "respuesta": "buho"
+      },
+      {
+        "audio": "sonidos/animales/abeja.opus",
+        "respuesta": "abeja"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c132.enunciado",
+  "personaje": "rex",
+  "pistas": [
+    "actividad.c132.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",
+      "autor": "Autores de Wikimedia Commons, cada uno con su licencia",
+      "fuente": "https://commons.wikimedia.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

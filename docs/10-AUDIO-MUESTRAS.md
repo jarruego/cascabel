@@ -17,7 +17,19 @@ del mismo instrumento no suenan a matiz, suenan a error.
 python tools/muestras-instrumento.py <carpeta-con-wav> marimba
 ```
 
-## `muestras/` (raíz) — PROVISIONALES
+## `muestras/` (raíz) — solo el silencio
+
+> **Al día del 2026-09-10: los sintetizados se han ido.** Tempos, acordes, campanas,
+> «sonido largo/corto», el pandero y el triángulo de síntesis ya no los usa ninguna
+> actividad y se han borrado: los tempos son ahora ocho bombos de VCSL a esa velocidad, los
+> acordes tres notas de piano a la vez, las campanas notas del xilófono, y lo largo y lo
+> corto una flauta que dura y unas claves que no. Todo descrito en el JSON de la actividad
+> (`docs/02`, «lo que puede sonar sin un fichero»). Queda `silencio-2s.opus`, porque el
+> silencio es el silencio, y `tools/muestras-provisionales.py` solo genera ése.
+>
+> Y hay banco de sonidos reales: ver el apartado `sonidos/` al final.
+
+## `muestras/` (raíz) — lo que fue PROVISIONAL
 
 Estos ficheros están **sintetizados**, no grabados, y los genera
 `tools/muestras-provisionales.py`. Existen para desbloquear T0.2 —que una actividad se
@@ -113,3 +125,27 @@ razonamiento entero, con lo que se pierde, está en
 
 Con eso, **el banco de sonido está completo**: lo que queda por mejorar son los cuatro
 sonidos corporales sintetizados, y son un lujo, no una carencia.
+
+## `sonidos/` — el banco de sonidos reales (2026-09-10)
+
+Animales, vehículos, sonidos de casa y de la calle, instrumentos tocados de verdad, estilos
+—rock, jazz, hip hop, reggae, vals, salsa, cumbia, bossa nova, electrónica, rap— y fragmentos
+de obras: Grieg, Beethoven, Mozart, Bach, Vivaldi, Brahms, Tárrega, Strauss, Chaikovski,
+Saint-Saëns y Pachelbel.
+
+**Todo sale de Wikimedia Commons**, y no por gusto: Commons devuelve por API la licencia y el
+autor de cada fichero, así que la comprobación que `CLAUDE.md` §3 exige la hace
+`tools/sonidos.py` y no la memoria de nadie. El manifiesto es `content/sonidos.json`: cada
+entrada dice qué fichero de Commons es, desde qué segundo y cuántos se recortan, y la
+herramienta escribe al lado lo que verificó —licencia, autor, URL y fecha—. La pantalla de
+créditos lo lee tal cual, que es lo que la CC BY pide. Se rechaza todo lo que no sea CC0,
+dominio público, CC BY o CC BY-SA con versión.
+
+En Commons está además el catálogo entero de **Kevin MacLeod** (CC BY 3.0), que es de donde
+salen los estilos, y las grabaciones de **Musopen** y del proyecto Open Goldberg (dominio
+público y CC0), que es de donde salen las obras.
+
+Opus 48 kbps mono, pico a −3 dBFS, desvanecidos en los cortes. Fuera del precache y con
+`CacheFirst` al usarse, como los instrumentos. `tests/sonidos.test.ts` vigila que todo lo del
+manifiesto esté verificado y en disco, que ninguna actividad use un sonido que el manifiesto
+no conozca, y que el banco entero no pase de seis megas.

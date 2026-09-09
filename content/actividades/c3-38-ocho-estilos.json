@@ -1,0 +1,132 @@
+{
+  "id": "c3-38-ocho-estilos",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Qué estilo suena? Ocho estilos",
+  "descripcion": "Rock, jazz, hip hop, reggae, vals, salsa, bossa nova y música electrónica, con veinte segundos de cada uno. Para reconocerlos y para poder nombrar lo que se oye.",
+  "etapa": "primaria-c3",
+  "eje": "cultura",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.2",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c338.consigna",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: todos los fragmentos son piezas de Kevin MacLeod (CC BY 3.0) compuestas en cada estilo. Son ejemplos de manual, limpios y reconocibles; no son grabaciones históricas.",
+    "opciones": [
+      {
+        "clave": "rock",
+        "color": "rojo"
+      },
+      {
+        "clave": "jazz",
+        "color": "azul"
+      },
+      {
+        "clave": "hiphop",
+        "color": "morado"
+      },
+      {
+        "clave": "reggae",
+        "color": "verde"
+      },
+      {
+        "clave": "vals",
+        "color": "amarillo"
+      },
+      {
+        "clave": "salsa",
+        "color": "turquesa"
+      },
+      {
+        "clave": "bossa",
+        "color": "verde"
+      },
+      {
+        "clave": "electronica",
+        "color": "azul"
+      }
+    ],
+    "estimulos": [
+      {
+        "audio": "sonidos/estilos/jazz.opus",
+        "respuesta": "jazz"
+      },
+      {
+        "audio": "sonidos/estilos/rock.opus",
+        "respuesta": "rock"
+      },
+      {
+        "audio": "sonidos/estilos/reggae.opus",
+        "respuesta": "reggae"
+      },
+      {
+        "audio": "sonidos/estilos/vals.opus",
+        "respuesta": "vals"
+      },
+      {
+        "audio": "sonidos/estilos/hiphop.opus",
+        "respuesta": "hiphop"
+      },
+      {
+        "audio": "sonidos/estilos/bossa.opus",
+        "respuesta": "bossa"
+      },
+      {
+        "audio": "sonidos/estilos/electronica.opus",
+        "respuesta": "electronica"
+      },
+      {
+        "audio": "sonidos/estilos/salsa.opus",
+        "respuesta": "salsa"
+      },
+      {
+        "audio": "sonidos/estilos/reggae.opus",
+        "respuesta": "reggae"
+      },
+      {
+        "audio": "sonidos/estilos/jazz.opus",
+        "respuesta": "jazz"
+      },
+      {
+        "audio": "sonidos/estilos/hiphop.opus",
+        "respuesta": "hiphop"
+      },
+      {
+        "audio": "sonidos/estilos/electronica.opus",
+        "respuesta": "electronica"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c338.enunciado",
+  "personaje": "sol",
+  "pistas": [
+    "actividad.c338.pista1",
+    "actividad.c338.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",
+      "autor": "Autores de Wikimedia Commons, cada uno con su licencia",
+      "fuente": "https://commons.wikimedia.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

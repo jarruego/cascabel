@@ -31,33 +31,34 @@
       {
         "clave": "media",
         "icono": "campana",
-        "audio": "muestras/campana-media.opus",
         "color": "vivo-verde",
         "forma": "cuadrado",
-        "alt": "campana.media"
+        "alt": "campana.media",
+        "nota": "G4"
       },
       {
         "clave": "aguda",
         "icono": "campana",
-        "audio": "muestras/campana-aguda.opus",
         "color": "vivo-naranja",
         "forma": "triangulo",
-        "alt": "campana.aguda"
+        "alt": "campana.aguda",
+        "nota": "C5"
       },
       {
         "clave": "grave",
         "icono": "campana",
-        "audio": "muestras/campana-grave.opus",
         "color": "vivo-azul",
         "forma": "circulo",
-        "alt": "campana.grave"
+        "alt": "campana.grave",
+        "nota": "C4"
       }
     ],
     "orden": [
       "grave",
       "media",
       "aguda"
-    ]
+    ],
+    "instrumento": "xilofono"
   },
   "evaluacion": {
     "autocorrectiva": true,
@@ -72,7 +73,7 @@
   ],
   "creditos": [
     {
-      "obra": "Percusión y láminas (pandero, claves, campanilla, glockenspiel, marimba)",
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
       "autor": "Versilian Studios y colaboradores",
       "fuente": "https://github.com/sgossner/VCSL",
       "licencia": "CC0"

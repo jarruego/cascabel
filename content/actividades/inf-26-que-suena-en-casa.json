@@ -1,0 +1,100 @@
+{
+  "id": "inf-26-que-suena-en-casa",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Qué suena en casa?",
+  "descripcion": "Llaman a la puerta, suena el timbre, el teléfono o el reloj. Cuatro sonidos de casa que todo niño conoce, para ponerles nombre.",
+  "etapa": "infantil",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 5,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": "CE2",
+    "criterio": "2.1",
+    "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.inf26.consigna",
+    "opciones": [
+      {
+        "clave": "puerta",
+        "icono": "puerta",
+        "color": "amarillo"
+      },
+      {
+        "clave": "timbre",
+        "icono": "campana",
+        "color": "verde"
+      },
+      {
+        "clave": "telefono",
+        "icono": "telefono",
+        "color": "azul"
+      },
+      {
+        "clave": "reloj",
+        "icono": "reloj",
+        "color": "rojo"
+      }
+    ],
+    "estimulos": [
+      {
+        "audio": "sonidos/casa/puerta.opus",
+        "respuesta": "puerta"
+      },
+      {
+        "audio": "sonidos/casa/telefono.opus",
+        "respuesta": "telefono"
+      },
+      {
+        "audio": "sonidos/casa/reloj.opus",
+        "respuesta": "reloj"
+      },
+      {
+        "audio": "sonidos/casa/timbre.opus",
+        "respuesta": "timbre"
+      },
+      {
+        "audio": "sonidos/casa/telefono.opus",
+        "respuesta": "telefono"
+      },
+      {
+        "audio": "sonidos/casa/puerta.opus",
+        "respuesta": "puerta"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.inf26.enunciado",
+  "personaje": "fara",
+  "pistas": [
+    "actividad.inf26.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",
+      "autor": "Autores de Wikimedia Commons, cada uno con su licencia",
+      "fuente": "https://commons.wikimedia.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

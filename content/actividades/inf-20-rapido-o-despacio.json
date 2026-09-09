@@ -36,27 +36,87 @@
     ],
     "estimulos": [
       {
-        "audio": "muestras/tempo-allegro.opus",
+        "patron": [
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo"
+        ],
+        "tempo": 140,
         "respuesta": "rapido"
       },
       {
-        "audio": "muestras/tempo-adagio.opus",
+        "patron": [
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo"
+        ],
+        "tempo": 56,
         "respuesta": "despacio"
       },
       {
-        "audio": "muestras/tempo-adagio.opus",
+        "patron": [
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo"
+        ],
+        "tempo": 60,
         "respuesta": "despacio"
       },
       {
-        "audio": "muestras/tempo-allegro.opus",
+        "patron": [
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo"
+        ],
+        "tempo": 132,
         "respuesta": "rapido"
       },
       {
-        "audio": "muestras/tempo-allegro.opus",
+        "patron": [
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo"
+        ],
+        "tempo": 144,
         "respuesta": "rapido"
       },
       {
-        "audio": "muestras/tempo-adagio.opus",
+        "patron": [
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo"
+        ],
+        "tempo": 52,
         "respuesta": "despacio"
       }
     ]
@@ -73,6 +133,12 @@
     "actividad.inf20.pista1"
   ],
   "creditos": [
+    {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
     {
       "obra": "Iconos",
       "autor": "OpenMoji · HfG Schwäbisch Gmünd",

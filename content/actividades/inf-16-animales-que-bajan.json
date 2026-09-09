@@ -116,16 +116,16 @@
   ],
   "creditos": [
     {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
       "obra": "Melodía del Campanero («Frère Jacques» / «Frère Blaise»)",
       "autor": "Anónima francesa del siglo XVIII; se ha propuesto la autoría de Jean-Philippe Rameau (1683-1764)",
       "fuente": "Fuente conocida más antigua: manuscrito «Recueil de Timbres de Vaudevilles», BnF, fechado hacia 1775-1785",
       "licencia": "Dominio público"
-    },
-    {
-      "obra": "Marimba",
-      "autor": "Versilian Studios y colaboradores",
-      "fuente": "https://github.com/sgossner/VCSL",
-      "licencia": "CC0"
     },
     {
       "obra": "Iconos de animales",

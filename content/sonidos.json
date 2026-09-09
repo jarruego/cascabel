@@ -1,0 +1,1419 @@
+{
+  "$comment": "Banco de sonidos reales. Cada entrada apunta a un fichero de Wikimedia Commons; tools/sonidos.py lo baja, comprueba la licencia por API, lo recorta y escribe aqui lo verificado. La pantalla de creditos lee este fichero: es la atribucion que exige la CC BY, y sale de datos, no de memoria.",
+  "generado": "2026-09-09",
+  "sonidos": [
+    {
+      "id": "perro",
+      "categoria": "animales",
+      "nombre": "Perro",
+      "commons": "File:Perro ladrando.ogg",
+      "segundos": 4,
+      "verificado": {
+        "licencia": "CC BY-SA 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "autor": "Armartinell",
+        "url": "https://commons.wikimedia.org/wiki/File:Perro_ladrando.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "gato",
+      "categoria": "animales",
+      "nombre": "Gato",
+      "commons": "File:Meow of a pleading cat.oga",
+      "segundos": 4,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "Heismark",
+        "url": "https://commons.wikimedia.org/wiki/File:Meow_of_a_pleading_cat.oga",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "vaca",
+      "categoria": "animales",
+      "nombre": "Vaca",
+      "commons": "File:Single Cow Moo.ogg",
+      "segundos": 3.8,
+      "verificado": {
+        "licencia": "CC BY-SA 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "autor": "MichaeltheFox8621",
+        "url": "https://commons.wikimedia.org/wiki/File:Single_Cow_Moo.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "gallo",
+      "categoria": "animales",
+      "nombre": "Gallo",
+      "commons": "File:Rooster crowing.ogg",
+      "segundos": 3.8,
+      "verificado": {
+        "licencia": "CC BY-SA 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "autor": "Filo gèn'",
+        "url": "https://commons.wikimedia.org/wiki/File:Rooster_crowing.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "caballo",
+      "categoria": "animales",
+      "nombre": "Caballo",
+      "commons": "File:Wiehern.ogg",
+      "segundos": 2.3,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "Hü.",
+        "url": "https://commons.wikimedia.org/wiki/File:Wiehern.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "rana",
+      "categoria": "animales",
+      "nombre": "Rana",
+      "commons": "File:Single Frog Croak.oga",
+      "segundos": 4.4,
+      "verificado": {
+        "licencia": "CC BY-SA 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "autor": "MichaeltheFox8621",
+        "url": "https://commons.wikimedia.org/wiki/File:Single_Frog_Croak.oga",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "pato",
+      "categoria": "animales",
+      "nombre": "Pato",
+      "commons": "File:Pekin duck & mallard.ogg",
+      "segundos": 5,
+      "verificado": {
+        "licencia": "CC BY-SA 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "autor": "WaderClub",
+        "url": "https://commons.wikimedia.org/wiki/File:Pekin_duck_%26_mallard.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "cerdo",
+      "categoria": "animales",
+      "nombre": "Cerdo",
+      "commons": "File:Pig grunt - Erdie.ogg",
+      "segundos": 1,
+      "verificado": {
+        "licencia": "CC BY 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+        "autor": "erdie",
+        "url": "https://commons.wikimedia.org/wiki/File:Pig_grunt_-_Erdie.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "leon",
+      "categoria": "animales",
+      "nombre": "León",
+      "commons": "File:Lion raring-sound1TamilNadu178.ogg",
+      "segundos": 5,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "த*உழவன்",
+        "url": "https://commons.wikimedia.org/wiki/File:Lion_raring-sound1TamilNadu178.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "elefante",
+      "categoria": "animales",
+      "nombre": "Elefante",
+      "commons": "File:Elephant voice - trumpeting.ogg",
+      "segundos": 1.5,
+      "verificado": {
+        "licencia": "CC0",
+        "licencia_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "autor": "தகவலுழவன்",
+        "url": "https://commons.wikimedia.org/wiki/File:Elephant_voice_-_trumpeting.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "pajaro",
+      "categoria": "animales",
+      "nombre": "Pájaro",
+      "commons": "File:Bird call with so-called separated chirps.ogg",
+      "segundos": 5,
+      "verificado": {
+        "licencia": "CC0",
+        "licencia_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "autor": "Jidanni",
+        "url": "https://commons.wikimedia.org/wiki/File:Bird_call_with_so-called_separated_chirps.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "abeja",
+      "categoria": "animales",
+      "nombre": "Abeja",
+      "commons": "File:Bee buzzing sound (animal noises).opus",
+      "segundos": 4,
+      "verificado": {
+        "licencia": "CC BY 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+        "autor": "Free Sounds Library User Spanac",
+        "url": "https://commons.wikimedia.org/wiki/File:Bee_buzzing_sound_(animal_noises).opus",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "oveja",
+      "categoria": "animales",
+      "nombre": "Oveja",
+      "commons": "File:Sheep bleating.ogg",
+      "segundos": 4,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "earthcalling",
+        "url": "https://commons.wikimedia.org/wiki/File:Sheep_bleating.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "buho",
+      "categoria": "animales",
+      "nombre": "Búho",
+      "commons": "File:Strix aluco male.oga",
+      "segundos": 5,
+      "verificado": {
+        "licencia": "CC BY-SA 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "autor": "Vianney Bajart",
+        "url": "https://commons.wikimedia.org/wiki/File:Strix_aluco_male.oga",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "burro",
+      "categoria": "animales",
+      "nombre": "Burro",
+      "commons": "File:157763 felix-blume a-donkey-is-braying-in-his-enclosure-in-south-of-france.wav",
+      "segundos": 5,
+      "verificado": {
+        "licencia": "CC0",
+        "licencia_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "autor": "felix-blume",
+        "url": "https://commons.wikimedia.org/wiki/File:157763_felix-blume_a-donkey-is-braying-in-his-enclosure-in-south-of-france.wav",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "moto",
+      "categoria": "vehiculos",
+      "nombre": "Moto",
+      "commons": "File:Motorbike 1.ogg",
+      "segundos": 5,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "ezwa",
+        "url": "https://commons.wikimedia.org/wiki/File:Motorbike_1.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "tren-silbato",
+      "categoria": "vehiculos",
+      "nombre": "Silbato de tren",
+      "commons": "File:WWS SteamWhistle.ogg",
+      "segundos": 5,
+      "verificado": {
+        "licencia": "CC BY 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/4.0",
+        "autor": "Work With Sounds / Konrad Gutkowski",
+        "url": "https://commons.wikimedia.org/wiki/File:WWS_SteamWhistle.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "tren",
+      "categoria": "vehiculos",
+      "nombre": "Tren de vapor",
+      "commons": "File:Parovoz sound.ogg",
+      "segundos": 3.4,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "Alex Alex Lep",
+        "url": "https://commons.wikimedia.org/wiki/File:Parovoz_sound.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "avion",
+      "categoria": "vehiculos",
+      "nombre": "Avión",
+      "commons": "File:Jet airliner overhead.ogg",
+      "desde": 20,
+      "segundos": 6,
+      "verificado": {
+        "licencia": "CC BY-SA 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "autor": "Jud McCranie",
+        "url": "https://commons.wikimedia.org/wiki/File:Jet_airliner_overhead.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "helicoptero",
+      "categoria": "vehiculos",
+      "nombre": "Helicóptero",
+      "commons": "File:Helicopter over a lake.ogg",
+      "desde": 5,
+      "segundos": 6,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "ezwa",
+        "url": "https://commons.wikimedia.org/wiki/File:Helicopter_over_a_lake.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "ambulancia",
+      "categoria": "vehiculos",
+      "nombre": "Ambulancia",
+      "commons": "File:Hoorn van een ambulance - SoundCloud - Beeld en Geluid.ogg",
+      "segundos": 5,
+      "verificado": {
+        "licencia": "CC BY-SA 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "autor": "Beeld en Geluid",
+        "url": "https://commons.wikimedia.org/wiki/File:Hoorn_van_een_ambulance_-_SoundCloud_-_Beeld_en_Geluid.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "barco",
+      "categoria": "vehiculos",
+      "nombre": "Sirena de barco",
+      "commons": "File:WWS IcebreakerKunashipssiren.ogg",
+      "segundos": 5,
+      "verificado": {
+        "licencia": "CC BY 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/4.0",
+        "autor": "Work With Sounds / Museum of Municipal Engineering",
+        "url": "https://commons.wikimedia.org/wiki/File:WWS_IcebreakerKunashipssiren.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "autobus",
+      "categoria": "vehiculos",
+      "nombre": "Autobús",
+      "commons": "File:WWS City Bus MAN SG 220 – engine.oga",
+      "desde": 10,
+      "segundos": 6,
+      "verificado": {
+        "licencia": "CC BY 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/4.0",
+        "autor": "Work With Sounds / Technical Museum of Slovenia",
+        "url": "https://commons.wikimedia.org/wiki/File:WWS_City_Bus_MAN_SG_220_%E2%80%93_engine.oga",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "tractor",
+      "categoria": "vehiculos",
+      "nombre": "Tractor",
+      "commons": "File:WWS TractorUrsusC342engine.ogg",
+      "desde": 5,
+      "segundos": 6,
+      "verificado": {
+        "licencia": "CC BY 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/4.0",
+        "autor": "Work With Sounds / Museum of Municipal Engineering",
+        "url": "https://commons.wikimedia.org/wiki/File:WWS_TractorUrsusC342engine.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "coche-bocina",
+      "categoria": "vehiculos",
+      "nombre": "Bocina de coche",
+      "commons": "File:Car Horn.wav",
+      "segundos": 3,
+      "verificado": {
+        "licencia": "CC0",
+        "licencia_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "autor": "15HPanska_Ruttner_Jan",
+        "url": "https://commons.wikimedia.org/wiki/File:Car_Horn.wav",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "coche",
+      "categoria": "vehiculos",
+      "nombre": "Coche que pasa",
+      "commons": "File:Speeding-car-horn doppler effect sample.ogg",
+      "segundos": 2,
+      "verificado": {
+        "licencia": "CC BY-SA 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "autor": "Magickallwiz",
+        "url": "https://commons.wikimedia.org/wiki/File:Speeding-car-horn_doppler_effect_sample.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "puerta",
+      "categoria": "casa",
+      "nombre": "Llaman a la puerta",
+      "commons": "File:Knocking on wood or door.ogg",
+      "segundos": 4,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "stephan",
+        "url": "https://commons.wikimedia.org/wiki/File:Knocking_on_wood_or_door.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "timbre",
+      "categoria": "casa",
+      "nombre": "Timbre de casa",
+      "commons": "File:Doorbell-classic-dingdong.ogg",
+      "segundos": 3,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "",
+        "url": "https://commons.wikimedia.org/wiki/File:Doorbell-classic-dingdong.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "telefono",
+      "categoria": "casa",
+      "nombre": "Teléfono",
+      "commons": "File:Telephone.ogg",
+      "segundos": 5,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "Dsw4.",
+        "url": "https://commons.wikimedia.org/wiki/File:Telephone.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "lluvia",
+      "categoria": "casa",
+      "nombre": "Lluvia",
+      "commons": "File:Fall Rain (Antti Luode).mp3",
+      "desde": 5,
+      "segundos": 6,
+      "verificado": {
+        "licencia": "CC BY 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+        "autor": "Antti Luode",
+        "url": "https://commons.wikimedia.org/wiki/File:Fall_Rain_(Antti_Luode).mp3",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "viento",
+      "categoria": "casa",
+      "nombre": "Viento",
+      "commons": "File:Howling wind.ogg",
+      "desde": 10,
+      "segundos": 6,
+      "verificado": {
+        "licencia": "CC0",
+        "licencia_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "autor": "Tvabutzku1234",
+        "url": "https://commons.wikimedia.org/wiki/File:Howling_wind.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "reloj",
+      "categoria": "casa",
+      "nombre": "Reloj",
+      "commons": "File:Clock ticking.ogg",
+      "segundos": 5,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "natalie",
+        "url": "https://commons.wikimedia.org/wiki/File:Clock_ticking.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "campana",
+      "categoria": "casa",
+      "nombre": "Campana de iglesia",
+      "commons": "File:Samariter Church Bell II (g).ogg",
+      "segundos": 6,
+      "verificado": {
+        "licencia": "CC BY-SA 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "autor": "Pete w. View",
+        "url": "https://commons.wikimedia.org/wiki/File:Samariter_Church_Bell_II_(g).ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "despertador",
+      "categoria": "casa",
+      "nombre": "Despertador",
+      "commons": "File:WWS Alarmclock.ogg",
+      "segundos": 5,
+      "verificado": {
+        "licencia": "CC BY 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/4.0",
+        "autor": "Work With Sounds / Konrad Gutkowski",
+        "url": "https://commons.wikimedia.org/wiki/File:WWS_Alarmclock.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "timbre-colegio",
+      "categoria": "casa",
+      "nombre": "Timbre del colegio",
+      "commons": "File:Old school bell 4.ogg",
+      "segundos": 4.5,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "ezwa",
+        "url": "https://commons.wikimedia.org/wiki/File:Old_school_bell_4.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "patio",
+      "categoria": "casa",
+      "nombre": "Patio del colegio",
+      "commons": "File:Douzen kids on playground.ogg",
+      "desde": 5,
+      "segundos": 6,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "stephan",
+        "url": "https://commons.wikimedia.org/wiki/File:Douzen_kids_on_playground.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "bebe",
+      "categoria": "casa",
+      "nombre": "Bebé llorando",
+      "commons": "File:Crying newborn baby.ogg",
+      "segundos": 5,
+      "verificado": {
+        "licencia": "CC0",
+        "licencia_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "autor": "the_yura",
+        "url": "https://commons.wikimedia.org/wiki/File:Crying_newborn_baby.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "estornudo",
+      "categoria": "casa",
+      "nombre": "Estornudo",
+      "commons": "File:Sneezing.ogg",
+      "segundos": 3.4,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "jc",
+        "url": "https://commons.wikimedia.org/wiki/File:Sneezing.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "ronquido",
+      "categoria": "casa",
+      "nombre": "Ronquido",
+      "commons": "File:Palatal snoring 1.ogg",
+      "desde": 5,
+      "segundos": 5,
+      "verificado": {
+        "licencia": "CC BY-SA 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "autor": "Langenbergstefan",
+        "url": "https://commons.wikimedia.org/wiki/File:Palatal_snoring_1.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "silbato",
+      "categoria": "casa",
+      "nombre": "Silbato",
+      "commons": "File:218318 splicesound referee-whistle-blow-gymnasium.wav",
+      "segundos": 3,
+      "verificado": {
+        "licencia": "CC0",
+        "licencia_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "autor": "SpliceSound",
+        "url": "https://commons.wikimedia.org/wiki/File:218318_splicesound_referee-whistle-blow-gymnasium.wav",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "martillo",
+      "categoria": "casa",
+      "nombre": "Martillo",
+      "commons": "File:Hammer and nails (Antti Luode).mp3",
+      "desde": 2,
+      "segundos": 5,
+      "verificado": {
+        "licencia": "CC BY 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+        "autor": "Antti Luode",
+        "url": "https://commons.wikimedia.org/wiki/File:Hammer_and_nails_(Antti_Luode).mp3",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "taladro",
+      "categoria": "casa",
+      "nombre": "Taladro",
+      "commons": "File:Drilling next door 1.ogg",
+      "desde": 5,
+      "segundos": 4,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "ezwa",
+        "url": "https://commons.wikimedia.org/wiki/File:Drilling_next_door_1.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "rio",
+      "categoria": "casa",
+      "nombre": "Río",
+      "commons": "File:Shallow small river with stony riverbed.ogg",
+      "desde": 2,
+      "segundos": 6,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "stephan",
+        "url": "https://commons.wikimedia.org/wiki/File:Shallow_small_river_with_stony_riverbed.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "fuego",
+      "categoria": "casa",
+      "nombre": "Fuego",
+      "commons": "File:WWS Fireoftheforge.ogg",
+      "desde": 2,
+      "segundos": 6,
+      "verificado": {
+        "licencia": "CC BY 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/4.0",
+        "autor": "Work With Sounds / La Fonderie",
+        "url": "https://commons.wikimedia.org/wiki/File:WWS_Fireoftheforge.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "carillon",
+      "categoria": "casa",
+      "nombre": "Carillón de viento",
+      "commons": "File:Windchimes.ogg",
+      "segundos": 5.3,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "Esc861",
+        "url": "https://commons.wikimedia.org/wiki/File:Windchimes.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "cisterna",
+      "categoria": "casa",
+      "nombre": "Cisterna",
+      "commons": "File:Toilet-flush.ogg",
+      "segundos": 6,
+      "verificado": {
+        "licencia": "CC BY-SA 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "autor": "DrTrumpet",
+        "url": "https://commons.wikimedia.org/wiki/File:Toilet-flush.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "cristal",
+      "categoria": "casa",
+      "nombre": "Cristal que se rompe",
+      "commons": "File:Glass breaking (Gravity Sound).wav",
+      "segundos": 3,
+      "verificado": {
+        "licencia": "CC BY 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/4.0",
+        "autor": "Gravity Sound",
+        "url": "https://commons.wikimedia.org/wiki/File:Glass_breaking_(Gravity_Sound).wav",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "aplausos",
+      "categoria": "casa",
+      "nombre": "Aplausos",
+      "commons": "File:Clapping hurray (cropped).oga",
+      "segundos": 6,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "Starlite",
+        "url": "https://commons.wikimedia.org/wiki/File:Clapping_hurray_(cropped).oga",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "grifo",
+      "categoria": "casa",
+      "nombre": "Grifo",
+      "commons": "File:Faucet water into sink.ogg",
+      "desde": 5,
+      "segundos": 5,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "stephan",
+        "url": "https://commons.wikimedia.org/wiki/File:Faucet_water_into_sink.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "trueno",
+      "categoria": "casa",
+      "nombre": "Tormenta",
+      "commons": "File:Rhumphries - rbh-thunder-storm.ogg",
+      "segundos": 8,
+      "verificado": {
+        "licencia": "CC BY 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+        "autor": "RHumphries",
+        "url": "https://commons.wikimedia.org/wiki/File:Rhumphries_-_rbh-thunder-storm.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "olas",
+      "categoria": "casa",
+      "nombre": "Olas del mar",
+      "commons": "File:Ocean Waves on a Tropical Beach.ogg",
+      "desde": 10,
+      "segundos": 8,
+      "verificado": {
+        "licencia": "CC0",
+        "licencia_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "autor": "Jarrod stanley",
+        "url": "https://commons.wikimedia.org/wiki/File:Ocean_Waves_on_a_Tropical_Beach.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "pasos",
+      "categoria": "casa",
+      "nombre": "Pasos",
+      "commons": "File:Footstep on Gravel (Gravity Sound).mp3",
+      "segundos": 3,
+      "verificado": {
+        "licencia": "CC BY 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/4.0",
+        "autor": "Gravity Sound",
+        "url": "https://commons.wikimedia.org/wiki/File:Footstep_on_Gravel_(Gravity_Sound).mp3",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "violin",
+      "categoria": "instrumentos",
+      "nombre": "Violín",
+      "commons": "File:Violin G major scale.ogg",
+      "segundos": 9,
+      "verificado": {
+        "licencia": "CC BY-SA 3.0",
+        "licencia_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "autor": "Myself",
+        "url": "https://commons.wikimedia.org/wiki/File:Violin_G_major_scale.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "violonchelo",
+      "categoria": "instrumentos",
+      "nombre": "Violonchelo",
+      "commons": "File:JOHN MICHEL CELLO-J S BACH CELLO SUITE 1 in G Prelude.ogg",
+      "segundos": 10,
+      "verificado": {
+        "licencia": "CC BY-SA 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "autor": "Johann Sebastian Bach",
+        "url": "https://commons.wikimedia.org/wiki/File:JOHN_MICHEL_CELLO-J_S_BACH_CELLO_SUITE_1_in_G_Prelude.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "arpa",
+      "categoria": "instrumentos",
+      "nombre": "Arpa",
+      "commons": "File:Gliss.ogg",
+      "segundos": 5.8,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "Daniel Musiklexikon",
+        "url": "https://commons.wikimedia.org/wiki/File:Gliss.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "saxofon",
+      "categoria": "instrumentos",
+      "nombre": "Saxofón",
+      "commons": "File:Jazz Funk no1 (saxophone).flac",
+      "segundos": 8,
+      "verificado": {
+        "licencia": "CC BY-SA 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "autor": "Claude Reid",
+        "url": "https://commons.wikimedia.org/wiki/File:Jazz_Funk_no1_(saxophone).flac",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "trompeta",
+      "categoria": "instrumentos",
+      "nombre": "Trompeta",
+      "commons": "File:Harry Gozzard trumpet solo in Donahue band.ogg",
+      "segundos": 8,
+      "verificado": {
+        "licencia": "CC BY 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/4.0",
+        "autor": "Geo Lightspeed7",
+        "url": "https://commons.wikimedia.org/wiki/File:Harry_Gozzard_trumpet_solo_in_Donahue_band.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "clarinete",
+      "categoria": "instrumentos",
+      "nombre": "Clarinete",
+      "commons": "File:Cool in Rhythmn basset clarinet solo improvisation 2008.ogg",
+      "segundos": 8,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "Theo Jörgensmann",
+        "url": "https://commons.wikimedia.org/wiki/File:Cool_in_Rhythmn_basset_clarinet_solo_improvisation_2008.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "oboe",
+      "categoria": "instrumentos",
+      "nombre": "Oboe",
+      "commons": "File:Ferling Oboe Study No 28 Aaron Hill.ogg",
+      "segundos": 8,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "Aaron Hill Oboe / Franz Wilhelm Ferling (1796–1874) Bearbeitung (Video entfernt): Lewenstein",
+        "url": "https://commons.wikimedia.org/wiki/File:Ferling_Oboe_Study_No_28_Aaron_Hill.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "tuba",
+      "categoria": "instrumentos",
+      "nombre": "Tuba",
+      "commons": "File:Tuba-range-C-low.ogg",
+      "segundos": 7.5,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "No machine-readable author provided. AntoineVE~commonswiki assumed (based on copyright claims).",
+        "url": "https://commons.wikimedia.org/wiki/File:Tuba-range-C-low.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "trompa",
+      "categoria": "instrumentos",
+      "nombre": "Trompa",
+      "commons": "File:Horn fifths.ogg",
+      "segundos": 6,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "Ludwig van Beethoven",
+        "url": "https://commons.wikimedia.org/wiki/File:Horn_fifths.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "acordeon",
+      "categoria": "instrumentos",
+      "nombre": "Acordeón",
+      "commons": "File:Accordion chords-01.ogg",
+      "segundos": 8,
+      "verificado": {
+        "licencia": "CC BY-SA 3.0",
+        "licencia_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+        "autor": "No machine-readable author provided. Clngre~commonswiki assumed (based on copyright claims).",
+        "url": "https://commons.wikimedia.org/wiki/File:Accordion_chords-01.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "organo",
+      "categoria": "instrumentos",
+      "nombre": "Órgano",
+      "commons": "File:Hartford City Presbyterian Pipe Organ.ogg",
+      "segundos": 8,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "TwoScarsUp",
+        "url": "https://commons.wikimedia.org/wiki/File:Hartford_City_Presbyterian_Pipe_Organ.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "clave",
+      "categoria": "instrumentos",
+      "nombre": "Clave (clavecín)",
+      "commons": "File:Handel - Suites for Harpsichord - No.5 in E major - The Harmonious Blacksmith.ogg",
+      "segundos": 10,
+      "verificado": {
+        "licencia": "CC0",
+        "licencia_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "autor": "Musopen",
+        "url": "https://commons.wikimedia.org/wiki/File:Handel_-_Suites_for_Harpsichord_-_No.5_in_E_major_-_The_Harmonious_Blacksmith.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "flauta-travesera",
+      "categoria": "instrumentos",
+      "nombre": "Flauta travesera",
+      "commons": "File:Bach - Partita For Solo Flute - Modern Flute - 4. Bouree.ogg",
+      "segundos": 10,
+      "verificado": {
+        "licencia": "CC BY-SA 2.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/2.0",
+        "autor": "Scott Goff (flute)",
+        "url": "https://commons.wikimedia.org/wiki/File:Bach_-_Partita_For_Solo_Flute_-_Modern_Flute_-_4._Bouree.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "guitarra-electrica",
+      "categoria": "instrumentos",
+      "nombre": "Guitarra eléctrica",
+      "commons": "File:Electric guitar lick in the style of Chuck Berry.wav",
+      "segundos": 6,
+      "verificado": {
+        "licencia": "CC BY-SA 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "autor": "Include.aliment",
+        "url": "https://commons.wikimedia.org/wiki/File:Electric_guitar_lick_in_the_style_of_Chuck_Berry.wav",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "bajo-electrico",
+      "categoria": "instrumentos",
+      "nombre": "Bajo eléctrico",
+      "commons": "File:Funky Slap Bass line.ogg",
+      "segundos": 8,
+      "verificado": {
+        "licencia": "CC BY 2.5",
+        "licencia_url": "https://creativecommons.org/licenses/by/2.5",
+        "autor": "Serolillo",
+        "url": "https://commons.wikimedia.org/wiki/File:Funky_Slap_Bass_line.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "contrabajo",
+      "categoria": "instrumentos",
+      "nombre": "Contrabajo",
+      "commons": "File:Jazz walking bass on double bass.oga",
+      "segundos": 8,
+      "verificado": {
+        "licencia": "CC BY 2.5",
+        "licencia_url": "https://creativecommons.org/licenses/by/2.5",
+        "autor": "Serolillo",
+        "url": "https://commons.wikimedia.org/wiki/File:Jazz_walking_bass_on_double_bass.oga",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "guitarra-flamenca",
+      "categoria": "instrumentos",
+      "nombre": "Guitarra flamenca",
+      "commons": "File:Flamenco sample by FRANCISCOKEEP.ogg",
+      "segundos": 10,
+      "verificado": {
+        "licencia": "CC BY 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+        "autor": "FranciscoKeep DJ Producciones",
+        "url": "https://commons.wikimedia.org/wiki/File:Flamenco_sample_by_FRANCISCOKEEP.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "palmas-flamencas",
+      "categoria": "instrumentos",
+      "nombre": "Palmas flamencas",
+      "commons": "File:Palmas sevillanas (flamenco clapping), 160 BPM.ogg",
+      "segundos": 8,
+      "verificado": {
+        "licencia": "CC0",
+        "licencia_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "autor": "Santiago Sanchez Cifuentes",
+        "url": "https://commons.wikimedia.org/wiki/File:Palmas_sevillanas_(flamenco_clapping),_160_BPM.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "dulzaina",
+      "categoria": "instrumentos",
+      "nombre": "Dulzaina",
+      "commons": "File:Pasodoble portugal dulzaina Santiago.ogg",
+      "segundos": 10,
+      "verificado": {
+        "licencia": "CC BY 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/4.0",
+        "autor": "Santiago Guzón \"el Barato\"",
+        "url": "https://commons.wikimedia.org/wiki/File:Pasodoble_portugal_dulzaina_Santiago.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "coro",
+      "categoria": "instrumentos",
+      "nombre": "Coro",
+      "commons": "File:Carol concert practice by The University of Greenwich Choir (2018).ogg",
+      "desde": 5,
+      "segundos": 8,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "University of Greenwich",
+        "url": "https://commons.wikimedia.org/wiki/File:Carol_concert_practice_by_The_University_of_Greenwich_Choir_(2018).ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "soprano",
+      "categoria": "instrumentos",
+      "nombre": "Soprano",
+      "commons": "File:Lupita Pérez Arias, O mio babbino caro (Gianni Schicchi).ogg",
+      "desde": 10,
+      "segundos": 10,
+      "verificado": {
+        "licencia": "CC BY 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+        "autor": "Djblack!",
+        "url": "https://commons.wikimedia.org/wiki/File:Lupita_P%C3%A9rez_Arias,_O_mio_babbino_caro_(Gianni_Schicchi).ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "canto-gregoriano",
+      "categoria": "instrumentos",
+      "nombre": "Canto gregoriano",
+      "commons": "File:Rorate Caeli ~ Gregorian Chant.ogg",
+      "segundos": 10,
+      "verificado": {
+        "licencia": "CC BY-SA 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "autor": "Inritter",
+        "url": "https://commons.wikimedia.org/wiki/File:Rorate_Caeli_~_Gregorian_Chant.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "coro-infantil",
+      "categoria": "instrumentos",
+      "nombre": "Coro infantil",
+      "commons": "File:Anthem of Nihonmatsu, Fukushima (children's choir).ogg",
+      "segundos": 8,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "Unknown authorUnknown author",
+        "url": "https://commons.wikimedia.org/wiki/File:Anthem_of_Nihonmatsu,_Fukushima_(children%27s_choir).ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "rock",
+      "categoria": "estilos",
+      "nombre": "Rock",
+      "commons": "File:Cool Rock (ISRC USUAN1100279).mp3",
+      "desde": 10,
+      "segundos": 20,
+      "verificado": {
+        "licencia": "CC BY 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+        "autor": "Kevin MacLeod",
+        "url": "https://commons.wikimedia.org/wiki/File:Cool_Rock_(ISRC_USUAN1100279).mp3",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "jazz",
+      "categoria": "estilos",
+      "nombre": "Jazz",
+      "commons": "File:Kevin MacLeod - I Knew a Guy.ogg",
+      "desde": 10,
+      "segundos": 20,
+      "verificado": {
+        "licencia": "CC BY 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+        "autor": "Kevin MacLeod",
+        "url": "https://commons.wikimedia.org/wiki/File:Kevin_MacLeod_-_I_Knew_a_Guy.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "hiphop",
+      "categoria": "estilos",
+      "nombre": "Hip hop",
+      "commons": "File:Griphop (ISRC USUAN1100413).mp3",
+      "desde": 10,
+      "segundos": 20,
+      "verificado": {
+        "licencia": "CC BY 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+        "autor": "Kevin MacLeod",
+        "url": "https://commons.wikimedia.org/wiki/File:Griphop_(ISRC_USUAN1100413).mp3",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "reggae",
+      "categoria": "estilos",
+      "nombre": "Reggae",
+      "commons": "File:Yallahs (ISRC USUAN1100807).mp3",
+      "desde": 10,
+      "segundos": 20,
+      "verificado": {
+        "licencia": "CC BY 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+        "autor": "Kevin MacLeod",
+        "url": "https://commons.wikimedia.org/wiki/File:Yallahs_(ISRC_USUAN1100807).mp3",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "vals",
+      "categoria": "estilos",
+      "nombre": "Vals",
+      "commons": "File:Fairytale Waltz (ISRC USUAN1100232).mp3",
+      "desde": 5,
+      "segundos": 20,
+      "verificado": {
+        "licencia": "CC BY 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+        "autor": "Kevin MacLeod",
+        "url": "https://commons.wikimedia.org/wiki/File:Fairytale_Waltz_(ISRC_USUAN1100232).mp3",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "salsa",
+      "categoria": "estilos",
+      "nombre": "Salsa",
+      "commons": "File:No Frills Salsa (ISRC USUAN1100133).mp3",
+      "desde": 10,
+      "segundos": 20,
+      "verificado": {
+        "licencia": "CC BY 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+        "autor": "Kevin MacLeod",
+        "url": "https://commons.wikimedia.org/wiki/File:No_Frills_Salsa_(ISRC_USUAN1100133).mp3",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "cumbia",
+      "categoria": "estilos",
+      "nombre": "Cumbia",
+      "commons": "File:No Frills Cumbia (ISRC USUAN1100275).mp3",
+      "desde": 10,
+      "segundos": 20,
+      "verificado": {
+        "licencia": "CC BY 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+        "autor": "Kevin MacLeod",
+        "url": "https://commons.wikimedia.org/wiki/File:No_Frills_Cumbia_(ISRC_USUAN1100275).mp3",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "bossa",
+      "categoria": "estilos",
+      "nombre": "Bossa nova",
+      "commons": "File:Casa Bossa Nova (ISRC USUAN1600012).mp3",
+      "desde": 10,
+      "segundos": 20,
+      "verificado": {
+        "licencia": "CC BY 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+        "autor": "Kevin MacLeod",
+        "url": "https://commons.wikimedia.org/wiki/File:Casa_Bossa_Nova_(ISRC_USUAN1600012).mp3",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "electronica",
+      "categoria": "estilos",
+      "nombre": "Música electrónica",
+      "commons": "File:Cut Trance (ISRC USUAN1100273).mp3",
+      "desde": 15,
+      "segundos": 20,
+      "verificado": {
+        "licencia": "CC BY 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+        "autor": "Kevin MacLeod",
+        "url": "https://commons.wikimedia.org/wiki/File:Cut_Trance_(ISRC_USUAN1100273).mp3",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "rap",
+      "categoria": "estilos",
+      "nombre": "Rap",
+      "commons": "File:Cloud rap beat.ogg",
+      "segundos": 11,
+      "verificado": {
+        "licencia": "CC0",
+        "licencia_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "autor": "Zanahary",
+        "url": "https://commons.wikimedia.org/wiki/File:Cloud_rap_beat.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "grieg-manana",
+      "categoria": "obras",
+      "nombre": "Grieg · La mañana",
+      "commons": "File:Musopen - Morning.ogg",
+      "segundos": 25,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "Grieg, Edvard; Musopen Symphony Orchestra",
+        "url": "https://commons.wikimedia.org/wiki/File:Musopen_-_Morning.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "grieg-montana",
+      "categoria": "obras",
+      "nombre": "Grieg · En la gruta del rey de la montaña",
+      "commons": "File:Musopen - In the Hall Of The Mountain King.ogg",
+      "segundos": 22,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "Grieg, Edvard; Musopen Symphony Orchestra",
+        "url": "https://commons.wikimedia.org/wiki/File:Musopen_-_In_the_Hall_Of_The_Mountain_King.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "beethoven-quinta",
+      "categoria": "obras",
+      "nombre": "Beethoven · Quinta sinfonía",
+      "commons": "File:Ludwig van Beethoven - symphony no. 5 in c minor, op. 67 - i. allegro con brio.ogg",
+      "segundos": 20,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "Ludwig van Beethoven",
+        "url": "https://commons.wikimedia.org/wiki/File:Ludwig_van_Beethoven_-_symphony_no._5_in_c_minor,_op._67_-_i._allegro_con_brio.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "mozart-serenata",
+      "categoria": "obras",
+      "nombre": "Mozart · Pequeña serenata nocturna",
+      "commons": "File:Mozart K525 Serenade in G Major 1 - Allegro.ogg",
+      "segundos": 20,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "Wolfgang Amadeus Mozart (1756–1791). The website lists the \"performer\" as the European Archive, which does not make sens",
+        "url": "https://commons.wikimedia.org/wiki/File:Mozart_K525_Serenade_in_G_Major_1_-_Allegro.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "bach-goldberg",
+      "categoria": "obras",
+      "nombre": "Bach · Aria de las Variaciones Goldberg",
+      "commons": "File:Bach, Goldberg Variations, Aria (Musopen version).ogg",
+      "segundos": 25,
+      "verificado": {
+        "licencia": "CC0",
+        "licencia_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "autor": "Johann Sebastian Bach",
+        "url": "https://commons.wikimedia.org/wiki/File:Bach,_Goldberg_Variations,_Aria_(Musopen_version).ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "vivaldi-primavera",
+      "categoria": "obras",
+      "nombre": "Vivaldi · La primavera",
+      "commons": "File:Vivaldi - Four Seasons 1 Spring mvt 1 Allegro - John Harrison violin.oga",
+      "segundos": 20,
+      "verificado": {
+        "licencia": "CC BY-SA 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "autor": "Antonio Vivaldi",
+        "url": "https://commons.wikimedia.org/wiki/File:Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.oga",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "beethoven-elisa",
+      "categoria": "obras",
+      "nombre": "Beethoven · Para Elisa",
+      "commons": "File:Für-Elise-Audio-Sample-measures-1-4.ogg",
+      "segundos": 6,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "Ludwig van Beethoven",
+        "url": "https://commons.wikimedia.org/wiki/File:F%C3%BCr-Elise-Audio-Sample-measures-1-4.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "brahms-nana",
+      "categoria": "obras",
+      "nombre": "Brahms · Canción de cuna",
+      "commons": "File:Johannes Brahms ninna nanna op 49 n 4.ogg",
+      "segundos": 20,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "Pracchia-78",
+        "url": "https://commons.wikimedia.org/wiki/File:Johannes_Brahms_ninna_nanna_op_49_n_4.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "tarrega-alhambra",
+      "categoria": "obras",
+      "nombre": "Tárrega · Recuerdos de la Alhambra",
+      "commons": "File:Recuerdos de la Alhambra.ogg",
+      "segundos": 20,
+      "verificado": {
+        "licencia": "CC BY-SA 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "autor": "Carlo Alberto Boni",
+        "url": "https://commons.wikimedia.org/wiki/File:Recuerdos_de_la_Alhambra.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "strauss-danubio",
+      "categoria": "obras",
+      "nombre": "Strauss · El Danubio azul",
+      "commons": "File:Strauss, An der schönen blauen Donau.ogg",
+      "desde": 30,
+      "segundos": 20,
+      "verificado": {
+        "licencia": "CC0",
+        "licencia_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "autor": "European Archive",
+        "url": "https://commons.wikimedia.org/wiki/File:Strauss,_An_der_sch%C3%B6nen_blauen_Donau.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "tchaikovsky-cisnes",
+      "categoria": "obras",
+      "nombre": "Chaikovski · El lago de los cisnes",
+      "commons": "File:Peter Ilyich Tchaikovsky- Swan Lake- Extract from Act 2.ogg",
+      "segundos": 20,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "Ballet Francaise Symphony Orchestra",
+        "url": "https://commons.wikimedia.org/wiki/File:Peter_Ilyich_Tchaikovsky-_Swan_Lake-_Extract_from_Act_2.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "saintsaens-elefante",
+      "categoria": "obras",
+      "nombre": "Saint-Saëns · El elefante",
+      "commons": "File:Saint-Saens - The Carnival of the Animals - 05 L'Éléphant.ogg",
+      "segundos": 20,
+      "verificado": {
+        "licencia": "CC BY-SA 2.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/2.0",
+        "autor": "Camille Saint-Saëns",
+        "url": "https://commons.wikimedia.org/wiki/File:Saint-Saens_-_The_Carnival_of_the_Animals_-_05_L%27%C3%89l%C3%A9phant.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "saintsaens-acuario",
+      "categoria": "obras",
+      "nombre": "Saint-Saëns · Acuario",
+      "commons": "File:Saint-Saens - The Carnival of the Animals - 07 Aquarium.ogg",
+      "segundos": 20,
+      "verificado": {
+        "licencia": "CC BY-SA 2.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/2.0",
+        "autor": "Camille Saint-Saëns",
+        "url": "https://commons.wikimedia.org/wiki/File:Saint-Saens_-_The_Carnival_of_the_Animals_-_07_Aquarium.ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "pachelbel-canon",
+      "categoria": "obras",
+      "nombre": "Pachelbel · Canon",
+      "commons": "File:Kevin MacLeod - Canon in D Major.ogg",
+      "desde": 20,
+      "segundos": 20,
+      "verificado": {
+        "licencia": "CC BY 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+        "autor": "Kevin MacLeod; original composition: Johann Pachelbel",
+        "url": "https://commons.wikimedia.org/wiki/File:Kevin_MacLeod_-_Canon_in_D_Major.ogg",
+        "fecha": "2026-09-09"
+      }
+    }
+  ]
+}

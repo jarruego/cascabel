@@ -72,6 +72,12 @@
   ],
   "creditos": [
     {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
       "obra": "Fuente de notación Bravura",
       "autor": "Steinberg",
       "fuente": "SMuFL",

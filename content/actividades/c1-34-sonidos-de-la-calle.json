@@ -1,0 +1,118 @@
+{
+  "id": "c1-34-sonidos-de-la-calle",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "Sonidos de la calle",
+  "descripcion": "Una bocina, un autobús, un patio lleno de niños, la campana de una iglesia, un martillo y una ambulancia. La calle, oída con atención.",
+  "etapa": "primaria-c1",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.1",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c134.consigna",
+    "opciones": [
+      {
+        "clave": "coche",
+        "icono": "coche",
+        "color": "rojo"
+      },
+      {
+        "clave": "autobus",
+        "icono": "autobus",
+        "color": "azul"
+      },
+      {
+        "clave": "patio",
+        "icono": "nino",
+        "color": "amarillo"
+      },
+      {
+        "clave": "campana",
+        "icono": "campana",
+        "color": "verde"
+      },
+      {
+        "clave": "martillo",
+        "icono": "martillo",
+        "color": "morado"
+      },
+      {
+        "clave": "ambulancia",
+        "icono": "ambulancia",
+        "color": "turquesa"
+      }
+    ],
+    "estimulos": [
+      {
+        "audio": "sonidos/casa/campana.opus",
+        "respuesta": "campana"
+      },
+      {
+        "audio": "sonidos/vehiculos/coche-bocina.opus",
+        "respuesta": "coche"
+      },
+      {
+        "audio": "sonidos/casa/patio.opus",
+        "respuesta": "patio"
+      },
+      {
+        "audio": "sonidos/casa/martillo.opus",
+        "respuesta": "martillo"
+      },
+      {
+        "audio": "sonidos/vehiculos/autobus.opus",
+        "respuesta": "autobus"
+      },
+      {
+        "audio": "sonidos/vehiculos/ambulancia.opus",
+        "respuesta": "ambulancia"
+      },
+      {
+        "audio": "sonidos/casa/taladro.opus",
+        "respuesta": "martillo"
+      },
+      {
+        "audio": "sonidos/vehiculos/coche.opus",
+        "respuesta": "coche"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c134.enunciado",
+  "personaje": "fara",
+  "pistas": [
+    "actividad.c134.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",
+      "autor": "Autores de Wikimedia Commons, cada uno con su licencia",
+      "fuente": "https://commons.wikimedia.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

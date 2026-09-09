@@ -1,0 +1,96 @@
+{
+  "id": "c2-37-quien-canta",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Quién canta?",
+  "descripcion": "Una solista, un coro de adultos o un coro de niños. Tres formas de cantar, en grabaciones de verdad, para reconocer la voz humana como instrumento.",
+  "etapa": "primaria-c2",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.2",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c237.consigna",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el canto gregoriano se cuenta como «coro», que es lo que es —voces de adultos al unísono—, aunque suene distinto de un coro a cuatro voces.",
+    "opciones": [
+      {
+        "clave": "solista",
+        "icono": "cantante",
+        "color": "morado"
+      },
+      {
+        "clave": "coro",
+        "icono": "voz",
+        "color": "azul"
+      },
+      {
+        "clave": "coroinfantil",
+        "icono": "nino",
+        "color": "verde"
+      }
+    ],
+    "estimulos": [
+      {
+        "audio": "sonidos/instrumentos/coro.opus",
+        "respuesta": "coro"
+      },
+      {
+        "audio": "sonidos/instrumentos/soprano.opus",
+        "respuesta": "solista"
+      },
+      {
+        "audio": "sonidos/instrumentos/coro-infantil.opus",
+        "respuesta": "coroinfantil"
+      },
+      {
+        "audio": "sonidos/instrumentos/soprano.opus",
+        "respuesta": "solista"
+      },
+      {
+        "audio": "sonidos/instrumentos/canto-gregoriano.opus",
+        "respuesta": "coro"
+      },
+      {
+        "audio": "sonidos/instrumentos/coro-infantil.opus",
+        "respuesta": "coroinfantil"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c237.enunciado",
+  "personaje": "simon",
+  "pistas": [
+    "actividad.c237.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",
+      "autor": "Autores de Wikimedia Commons, cada uno con su licencia",
+      "fuente": "https://commons.wikimedia.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

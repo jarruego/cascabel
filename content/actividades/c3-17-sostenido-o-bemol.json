@@ -121,10 +121,10 @@
   ],
   "creditos": [
     {
-      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
-      "autor": "Frank Wen y colaboradores",
-      "fuente": "https://github.com/gleitz/midi-js-soundfonts",
-      "licencia": "MIT"
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
     },
     {
       "obra": "Iconos",

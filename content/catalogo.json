@@ -1,7 +1,7 @@
 {
   "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa, y también si usa un código que aquí no está. El hueco de C1-17 es intencionado: ese código nunca llegó a reservarse y los ids no se renumeran, porque un id puede estar dentro de una URL compartida.",
   "generado": "2026-09-10",
-  "total": 129,
+  "total": 143,
   "actividades": [
     {
       "id": "C1-01",
@@ -391,6 +391,45 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Cuatro notas con sol, mi y la, la tercera nota de la progresión vocal, en una cuadrícula de tres filas. El paso siguiente al dictado de sol y mi.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C1-32",
+      "titulo": "¿Quién canta en el bosque?",
+      "etapa": "primaria-c1",
+      "eje": "timbre",
+      "lugar": "pantalla",
+      "tipo": "eleccion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE1 · crit. 1.1 · saber A",
+      "descripcion": "Pájaro, rana, búho y abeja. Cuatro animales pequeños con cuatro sonidos muy distintos: canto, croar, ulular y zumbido.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C1-33",
+      "titulo": "¿Qué vehículo es?",
+      "etapa": "primaria-c1",
+      "eje": "timbre",
+      "lugar": "pantalla",
+      "tipo": "eleccion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE1 · crit. 1.1 · saber A",
+      "descripcion": "Moto, tren, avión, helicóptero, ambulancia y barco, grabados de verdad. Reconocer un sonido por su fuente, que es el primer paso de la escucha atenta.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C1-34",
+      "titulo": "Sonidos de la calle",
+      "etapa": "primaria-c1",
+      "eje": "timbre",
+      "lugar": "pantalla",
+      "tipo": "eleccion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE1 · crit. 1.1 · saber A",
+      "descripcion": "Una bocina, un autobús, un patio lleno de niños, la campana de una iglesia, un martillo y una ambulancia. La calle, oída con atención.",
       "estado": "hecha"
     },
     {
@@ -820,6 +859,45 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Un ritmo de dos compases con blancas, negras y corcheas, para escuchar y repetir con las palmas. La versión de 3.º–4.º de «Palmea el ritmo».",
+      "estado": "hecha"
+    },
+    {
+      "id": "C2-35",
+      "titulo": "¿Qué instrumento suena? Tocado de verdad",
+      "etapa": "primaria-c2",
+      "eje": "timbre",
+      "lugar": "pantalla",
+      "tipo": "eleccion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE1 · crit. 1.2 · saber A",
+      "descripcion": "Violín, trompeta, saxofón, acordeón y guitarra eléctrica, en grabaciones de músicos tocando de verdad, no en notas sueltas. Cada uno con una frase.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C2-36",
+      "titulo": "¿Qué estilo suena?",
+      "etapa": "primaria-c2",
+      "eje": "cultura",
+      "lugar": "pantalla",
+      "tipo": "eleccion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE1 · crit. 1.2 · saber A",
+      "descripcion": "Rock, vals, rap y salsa: cuatro estilos que se distinguen a la primera, con música de verdad. Es el primer paso para hablar de estilos: reconocerlos.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C2-37",
+      "titulo": "¿Quién canta?",
+      "etapa": "primaria-c2",
+      "eje": "timbre",
+      "lugar": "pantalla",
+      "tipo": "eleccion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE1 · crit. 1.2 · saber A",
+      "descripcion": "Una solista, un coro de adultos o un coro de niños. Tres formas de cantar, en grabaciones de verdad, para reconocer la voz humana como instrumento.",
       "estado": "hecha"
     },
     {
@@ -1265,6 +1343,58 @@
       "estado": "hecha"
     },
     {
+      "id": "C3-37",
+      "titulo": "La orquesta, tocada de verdad",
+      "etapa": "primaria-c3",
+      "eje": "timbre",
+      "lugar": "pantalla",
+      "tipo": "eleccion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE1 · crit. 1.2 · saber A",
+      "descripcion": "Violonchelo, clarinete, oboe, tuba, trompa, contrabajo, arpa y clave: ocho instrumentos que no se ven todos los días, en grabaciones de músicos.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C3-38",
+      "titulo": "¿Qué estilo suena? Ocho estilos",
+      "etapa": "primaria-c3",
+      "eje": "cultura",
+      "lugar": "pantalla",
+      "tipo": "eleccion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE1 · crit. 1.2 · saber A",
+      "descripcion": "Rock, jazz, hip hop, reggae, vals, salsa, bossa nova y música electrónica, con veinte segundos de cada uno. Para reconocerlos y para poder nombrar lo que se oye.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C3-39",
+      "titulo": "¿De quién es esta obra?",
+      "etapa": "primaria-c3",
+      "eje": "cultura",
+      "lugar": "pantalla",
+      "tipo": "eleccion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE1 · crit. 1.2 · saber A",
+      "descripcion": "Doce fragmentos de obras famosas, grabadas por orquestas y solistas, y nueve compositores. La misma pregunta que con las melodías al piano, pero con la música de verdad.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C3-40",
+      "titulo": "Catorce obras para empezar",
+      "etapa": "primaria-c3",
+      "eje": "cultura",
+      "lugar": "pantalla",
+      "tipo": "referencia",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE1 · crit. 1.2 · saber A",
+      "descripcion": "Consulta de obras famosas con un fragmento grabado de cada una: quién la escribió, cuándo y qué escuchar en ella. De Bach a Saint-Saëns, pasando por Tárrega.",
+      "estado": "hecha"
+    },
+    {
       "id": "INF-01",
       "titulo": "El semáforo del sonido",
       "etapa": "infantil",
@@ -1561,6 +1691,58 @@
       "esfuerzo": "S",
       "curriculo": "CE2 · crit. 2.1 · saber F",
       "descripcion": "Tres notas seguidas: o van subiendo o van bajando. La escalera de sonidos, para oírla antes de dibujarla.",
+      "estado": "hecha"
+    },
+    {
+      "id": "INF-24",
+      "titulo": "¿Qué animal es?",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "lugar": "pantalla",
+      "tipo": "eleccion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE2 · crit. 2.1 · saber F",
+      "descripcion": "Perro, gato, león y elefante, grabados de verdad. Suena uno y hay que tocar el animal. Es reconocer un timbre con la ayuda de algo que ya se sabe: cómo suena un perro.",
+      "estado": "hecha"
+    },
+    {
+      "id": "INF-25",
+      "titulo": "Los animales de la granja",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "lugar": "pantalla",
+      "tipo": "eleccion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE2 · crit. 2.1 · saber F",
+      "descripcion": "Vaca, oveja, gallo y cerdo, grabados en una granja de verdad. Suena uno y hay que tocarlo.",
+      "estado": "hecha"
+    },
+    {
+      "id": "INF-26",
+      "titulo": "¿Qué suena en casa?",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "lugar": "pantalla",
+      "tipo": "eleccion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE2 · crit. 2.1 · saber F",
+      "descripcion": "Llaman a la puerta, suena el timbre, el teléfono o el reloj. Cuatro sonidos de casa que todo niño conoce, para ponerles nombre.",
+      "estado": "hecha"
+    },
+    {
+      "id": "INF-27",
+      "titulo": "¿Qué tiempo hace?",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "lugar": "pantalla",
+      "tipo": "eleccion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE2 · crit. 2.1 · saber F",
+      "descripcion": "Lluvia, viento, tormenta y olas. Sonidos de la naturaleza grabados de verdad, para escucharlos con atención y saber cuál es.",
       "estado": "hecha"
     },
     {

@@ -184,6 +184,25 @@ export default defineConfig({
           'audio/muestras/gaita/**',
           'audio/muestras/banjo/**',
           'audio/muestras/tambor-metalico/**',
+          'audio/muestras/glockenspiel/**',
+          'audio/muestras/vibrafono/**',
+          'audio/muestras/arpa/**',
+          'audio/muestras/flauta-dulce/**',
+          'audio/muestras/saxofon/**',
+          'audio/muestras/armonica/**',
+          'audio/muestras/organo/**',
+          'audio/muestras/violonchelo/**',
+          'audio/muestras/contrabajo/**',
+          'audio/muestras/trompeta/**',
+          'audio/muestras/trompa/**',
+          'audio/muestras/trombon/**',
+          'audio/muestras/tuba/**',
+          'audio/muestras/clarinete/**',
+          'audio/muestras/oboe/**',
+          'audio/muestras/fagot/**',
+          // El banco de sonidos reales —animales, vehículos, casa, instrumentos tocados,
+          // estilos y obras— son unos cinco megas: se baja lo que cada actividad use.
+          'audio/sonidos/**',
           /*
             Los personajes, salvo tres poses.
 
@@ -228,6 +247,15 @@ export default defineConfig({
             handler: 'CacheFirst',
             options: {
               cacheName: 'instrumentos',
+              expiration: { maxEntries: 200, maxAgeSeconds: 60 * 60 * 24 * 180 },
+            },
+          },
+          {
+            // El banco de sonidos reales, por lo mismo: un ladrido grabado no cambia.
+            urlPattern: /\/audio\/sonidos\/.*\.opus$/,
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'sonidos',
               expiration: { maxEntries: 200, maxAgeSeconds: 60 * 60 * 24 * 180 },
             },
           },

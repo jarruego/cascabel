@@ -36,30 +36,45 @@
     ],
     "estimulos": [
       {
-        "audio": "muestras/sonido-corto.opus",
+        "audio": "muestras/percusion/claves-1.opus",
         "respuesta": "corto"
       },
       {
-        "audio": "muestras/sonido-largo.opus",
+        "notas": [
+          "A4"
+        ],
+        "duraciones": [
+          3.5
+        ],
+        "articulacion": "legato",
+        "tempo": 60,
         "respuesta": "largo"
       },
       {
-        "audio": "muestras/sonido-largo.opus",
+        "notas": [
+          "E4"
+        ],
+        "duraciones": [
+          3
+        ],
+        "articulacion": "legato",
+        "tempo": 60,
         "respuesta": "largo"
       },
       {
-        "audio": "muestras/sonido-corto.opus",
+        "audio": "muestras/percusion/cajachina-1.opus",
         "respuesta": "corto"
       },
       {
-        "audio": "muestras/triangulo-largo.opus",
+        "audio": "muestras/percusion/triangulo-1.opus",
         "respuesta": "largo"
       },
       {
-        "audio": "muestras/pandero-golpe.opus",
+        "audio": "muestras/percusion/claves-2.opus",
         "respuesta": "corto"
       }
-    ]
+    ],
+    "instrumento": "flauta"
   },
   "evaluacion": {
     "autocorrectiva": true,
@@ -75,9 +90,15 @@
   ],
   "creditos": [
     {
-      "obra": "Percusión y láminas (pandero, claves, campanilla, glockenspiel, marimba)",
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
       "autor": "Versilian Studios y colaboradores",
       "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Orquesta: cuerda, madera y metal",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VSCO-2-CE",
       "licencia": "CC0"
     },
     {

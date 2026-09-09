@@ -1,6 +1,6 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useCarril } from '@/app/preferencias';
-import { obtenerContexto } from '@/audio/AudioEngine';
+import { obtenerContexto, pararTodo } from '@/audio/AudioEngine';
 import { sonarEstimulo } from '../sonarEstimulo';
 import { IconoTocar } from '@/ui/Simbolos';
 import { t } from '@/i18n';
@@ -53,6 +53,8 @@ interface Entrada {
   tempo?: number;
   /** Timbre de ESTA entrada, si no es el de la actividad: la referencia de instrumentos. */
   instrumento?: string;
+  /** Una grabación del banco de sonidos, relativa a `/audio/`: un fragmento de una obra. */
+  audio?: string;
 }
 
 interface Seccion {
@@ -71,6 +73,10 @@ export default function Referencia({ actividad }: PropsActividad) {
   const carril = useCarril(actividad.etapa);
   const [busqueda, setBusqueda] = useState('');
   const [sonando, setSonando] = useState<string | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  // Al salir se para la grabación que estuviera sonando: un fragmento de veinte segundos
+  // no puede seguir detrás de otra pantalla.
+  useEffect(() => () => audioRef.current?.pause(), []);
 
   /*
     Suena por el mismo camino que los estímulos de «elección»: `sonarEstimulo`. Antes esto
@@ -82,6 +88,16 @@ export default function Referencia({ actividad }: PropsActividad) {
   const sonar = useCallback(
     async (entrada: Entrada) => {
       setSonando(entrada.termino);
+      if (entrada.audio) {
+        // Un fragmento grabado: se corta lo que sonara antes y se pone entero.
+        pararTodo();
+        audioRef.current?.pause();
+        const a = new Audio(`/audio/${entrada.audio}`);
+        audioRef.current = a;
+        a.addEventListener('ended', () => setSonando((s) => (s === entrada.termino ? null : s)));
+        void a.play().catch(() => setSonando(null));
+        return;
+      }
       const fin = await sonarEstimulo(
         {
           notas: entrada.notas,
@@ -136,7 +152,7 @@ export default function Referencia({ actividad }: PropsActividad) {
           <h2>{s.titulo}</h2>
           <ul className="referencia__lista">
             {s.entradas.map((e) => {
-              const suena = Boolean(e.notas?.length || e.ritmo?.length);
+              const suena = Boolean(e.notas?.length || e.ritmo?.length || e.patron?.length || e.audio);
               return (
                 <li key={e.termino} className="referencia__entrada">
                   {/* El signo va aparte del texto y marcado como decorativo: un lector de

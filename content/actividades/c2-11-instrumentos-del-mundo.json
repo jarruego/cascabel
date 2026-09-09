@@ -117,8 +117,8 @@
   ],
   "creditos": [
     {
-      "obra": "Sitar, koto, kalimba, gaita, banjo y tambor metálico",
-      "autor": "Frank Wen, soundfont FluidR3_GM (2000-2008)",
+      "obra": "Instrumentos de General MIDI (FluidR3_GM)",
+      "autor": "Frank Wen y colaboradores",
       "fuente": "https://github.com/gleitz/midi-js-soundfonts",
       "licencia": "MIT"
     }

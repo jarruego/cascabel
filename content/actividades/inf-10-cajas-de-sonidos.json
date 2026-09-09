@@ -39,12 +39,12 @@
       {
         "clave": "son-b",
         "icono": "altavoz",
-        "audio": "muestras/campana-media.opus"
+        "audio": "muestras/xilofono/c5.opus"
       },
       {
         "clave": "son-a",
         "icono": "altavoz",
-        "audio": "muestras/pandero-golpe.opus"
+        "audio": "muestras/percusion/pandereta-1.opus"
       }
     ],
     "parejas": [
@@ -68,7 +68,7 @@
   "personaje": "rex",
   "creditos": [
     {
-      "obra": "Percusión y láminas",
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
       "autor": "Versilian Studios y colaboradores",
       "fuente": "https://github.com/sgossner/VCSL",
       "licencia": "CC0"

@@ -46,6 +46,13 @@ const DISPONIBLES = new Set([
   // La mariposa: el autor pidió para «flojito» un animal que no haga ruido. El gato de
   // OpenMoji tiene rayas y parecía un tigre, que es justo lo contrario.
   'mariposa',
+  // Y veinticuatro más el 2026-09-10 con el banco de sonidos reales: animales de granja y
+  // de bosque, vehículos, casa, tiempo, y tres instrumentos.
+  'vaca', 'gallo', 'oveja', 'cerdo', 'buho',
+  'puerta', 'telefono', 'reloj', 'martillo',
+  'moto', 'tren', 'avion', 'helicoptero', 'ambulancia', 'barco', 'coche', 'autobus',
+  'saxofon', 'acordeon', 'microfono',
+  'lluvia', 'viento', 'trueno', 'olas',
 ]);
 
 /** Nombres antiguos que ya se usaban en los JSON de contenido. */

@@ -42,27 +42,87 @@
     ],
     "estimulos": [
       {
-        "audio": "muestras/tempo-adagio.opus",
+        "patron": [
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo"
+        ],
+        "tempo": 56,
         "respuesta": "adagio"
       },
       {
-        "audio": "muestras/tempo-allegro.opus",
+        "patron": [
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo"
+        ],
+        "tempo": 138,
         "respuesta": "allegro"
       },
       {
-        "audio": "muestras/tempo-andante.opus",
+        "patron": [
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo"
+        ],
+        "tempo": 92,
         "respuesta": "andante"
       },
       {
-        "audio": "muestras/tempo-allegro.opus",
+        "patron": [
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo"
+        ],
+        "tempo": 144,
         "respuesta": "allegro"
       },
       {
-        "audio": "muestras/tempo-adagio.opus",
+        "patron": [
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo"
+        ],
+        "tempo": 60,
         "respuesta": "adagio"
       },
       {
-        "audio": "muestras/tempo-andante.opus",
+        "patron": [
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo",
+          "bombo"
+        ],
+        "tempo": 96,
         "respuesta": "andante"
       }
     ]
@@ -82,7 +142,7 @@
   ],
   "creditos": [
     {
-      "obra": "Percusión y láminas (pandero, claves, campanilla, glockenspiel, marimba)",
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
       "autor": "Versilian Studios y colaboradores",
       "fuente": "https://github.com/sgossner/VCSL",
       "licencia": "CC0"

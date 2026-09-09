@@ -1,0 +1,100 @@
+{
+  "id": "inf-27-que-tiempo-hace",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿Qué tiempo hace?",
+  "descripcion": "Lluvia, viento, tormenta y olas. Sonidos de la naturaleza grabados de verdad, para escucharlos con atención y saber cuál es.",
+  "etapa": "infantil",
+  "eje": "timbre",
+  "lugar": "pantalla",
+  "duracion_min": 5,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": "CE2",
+    "criterio": "2.1",
+    "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.inf27.consigna",
+    "opciones": [
+      {
+        "clave": "lluvia",
+        "icono": "lluvia",
+        "color": "azul"
+      },
+      {
+        "clave": "viento",
+        "icono": "viento",
+        "color": "verde"
+      },
+      {
+        "clave": "trueno",
+        "icono": "trueno",
+        "color": "morado"
+      },
+      {
+        "clave": "olas",
+        "icono": "olas",
+        "color": "amarillo"
+      }
+    ],
+    "estimulos": [
+      {
+        "audio": "sonidos/casa/lluvia.opus",
+        "respuesta": "lluvia"
+      },
+      {
+        "audio": "sonidos/casa/olas.opus",
+        "respuesta": "olas"
+      },
+      {
+        "audio": "sonidos/casa/viento.opus",
+        "respuesta": "viento"
+      },
+      {
+        "audio": "sonidos/casa/trueno.opus",
+        "respuesta": "trueno"
+      },
+      {
+        "audio": "sonidos/casa/olas.opus",
+        "respuesta": "olas"
+      },
+      {
+        "audio": "sonidos/casa/lluvia.opus",
+        "respuesta": "lluvia"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.inf27.enunciado",
+  "personaje": "fara",
+  "pistas": [
+    "actividad.inf27.pista1"
+  ],
+  "creditos": [
+    {
+      "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",
+      "autor": "Autores de Wikimedia Commons, cada uno con su licencia",
+      "fuente": "https://commons.wikimedia.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Iconos",
+      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
+      "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}

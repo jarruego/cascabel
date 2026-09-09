@@ -36,30 +36,61 @@
     ],
     "estimulos": [
       {
-        "audio": "muestras/campana-aguda.opus",
+        "notas": [
+          "C6"
+        ],
+        "duraciones": [
+          2
+        ],
         "respuesta": "agudo"
       },
       {
-        "audio": "muestras/campana-grave.opus",
+        "notas": [
+          "C2"
+        ],
+        "duraciones": [
+          2
+        ],
         "respuesta": "grave"
       },
       {
-        "audio": "muestras/marimba/c6.opus",
+        "notas": [
+          "E6"
+        ],
+        "duraciones": [
+          2
+        ],
         "respuesta": "agudo"
       },
       {
-        "audio": "muestras/marimba/f3.opus",
+        "notas": [
+          "E2"
+        ],
+        "duraciones": [
+          2
+        ],
         "respuesta": "grave"
       },
       {
-        "audio": "muestras/campana-aguda.opus",
+        "notas": [
+          "G5"
+        ],
+        "duraciones": [
+          2
+        ],
         "respuesta": "agudo"
       },
       {
-        "audio": "muestras/marimba/c4.opus",
+        "notas": [
+          "G2"
+        ],
+        "duraciones": [
+          2
+        ],
         "respuesta": "grave"
       }
-    ]
+    ],
+    "instrumento": "piano"
   },
   "evaluacion": {
     "autocorrectiva": true,
@@ -75,7 +106,7 @@
   ],
   "creditos": [
     {
-      "obra": "Percusión y láminas (pandero, claves, campanilla, glockenspiel, marimba)",
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
       "autor": "Versilian Studios y colaboradores",
       "fuente": "https://github.com/sgossner/VCSL",
       "licencia": "CC0"

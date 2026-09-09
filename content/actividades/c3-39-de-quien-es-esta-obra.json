@@ -1,0 +1,135 @@
+{
+  "id": "c3-39-de-quien-es-esta-obra",
+  "version": 1,
+  "tipo": "eleccion",
+  "titulo": "¿De quién es esta obra?",
+  "descripcion": "Doce fragmentos de obras famosas, grabadas por orquestas y solistas, y nueve compositores. La misma pregunta que con las melodías al piano, pero con la música de verdad.",
+  "etapa": "primaria-c3",
+  "eje": "cultura",
+  "lugar": "pantalla",
+  "duracion_min": 12,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.2",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c339.consigna",
+    "opciones": [
+      {
+        "clave": "beethoven",
+        "color": "rojo"
+      },
+      {
+        "clave": "mozart",
+        "color": "azul"
+      },
+      {
+        "clave": "bach",
+        "color": "verde"
+      },
+      {
+        "clave": "vivaldi",
+        "color": "amarillo"
+      },
+      {
+        "clave": "brahms",
+        "color": "morado"
+      },
+      {
+        "clave": "grieg",
+        "color": "turquesa"
+      },
+      {
+        "clave": "tarrega",
+        "color": "rojo"
+      },
+      {
+        "clave": "tchaikovsky",
+        "color": "azul"
+      },
+      {
+        "clave": "saintsaens",
+        "color": "verde"
+      }
+    ],
+    "estimulos": [
+      {
+        "audio": "sonidos/obras/grieg-manana.opus",
+        "respuesta": "grieg"
+      },
+      {
+        "audio": "sonidos/obras/beethoven-quinta.opus",
+        "respuesta": "beethoven"
+      },
+      {
+        "audio": "sonidos/obras/vivaldi-primavera.opus",
+        "respuesta": "vivaldi"
+      },
+      {
+        "audio": "sonidos/obras/mozart-serenata.opus",
+        "respuesta": "mozart"
+      },
+      {
+        "audio": "sonidos/obras/bach-goldberg.opus",
+        "respuesta": "bach"
+      },
+      {
+        "audio": "sonidos/obras/tchaikovsky-cisnes.opus",
+        "respuesta": "tchaikovsky"
+      },
+      {
+        "audio": "sonidos/obras/brahms-nana.opus",
+        "respuesta": "brahms"
+      },
+      {
+        "audio": "sonidos/obras/saintsaens-elefante.opus",
+        "respuesta": "saintsaens"
+      },
+      {
+        "audio": "sonidos/obras/tarrega-alhambra.opus",
+        "respuesta": "tarrega"
+      },
+      {
+        "audio": "sonidos/obras/grieg-montana.opus",
+        "respuesta": "grieg"
+      },
+      {
+        "audio": "sonidos/obras/beethoven-elisa.opus",
+        "respuesta": "beethoven"
+      },
+      {
+        "audio": "sonidos/obras/saintsaens-acuario.opus",
+        "respuesta": "saintsaens"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c339.enunciado",
+  "personaje": "doby",
+  "pistas": [
+    "actividad.c339.pista1",
+    "actividad.c339.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",
+      "autor": "Autores de Wikimedia Commons, cada uno con su licencia",
+      "fuente": "https://commons.wikimedia.org",
+      "licencia": "CC BY-SA 4.0"
+    }
+  ],
+  "estado": "borrador"
+}
