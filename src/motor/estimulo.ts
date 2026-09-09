@@ -44,6 +44,10 @@ export interface Estimulo {
   celda?: number;
   /** Pulsos por minuto. Si no se dice, el de la actividad. */
   tempo?: number;
+  /** Timbre de ESTE estímulo, si no es el de la actividad. Cambiarlo entre preguntas ayuda a
+   *  oír lo que se pregunta —«sube o baja» con el mismo xilófono seis veces se confunde— y de
+   *  paso enseña que la altura no es cosa de un instrumento. */
+  instrumento?: string;
   respuesta: string;
 }
 

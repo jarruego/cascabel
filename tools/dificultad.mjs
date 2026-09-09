@@ -109,7 +109,8 @@ function cargaDeUno(a, c) {
       return {
         elegir: n(c.opciones),
         seguir: 0,
-        ejercicios: n(c.estimulos),
+        // Desde el 2026-09-12 cada vuelta saca cinco del banco, como mucho.
+        ejercicios: Math.min(5, n(c.estimulos)),
         que: `${n(c.opciones)} opciones`,
       };
     case 'emparejar':

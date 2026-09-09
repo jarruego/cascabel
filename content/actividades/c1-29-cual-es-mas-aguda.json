@@ -40,56 +40,64 @@
           "C4",
           "G4"
         ],
-        "respuesta": "lasegunda"
+        "respuesta": "lasegunda",
+        "instrumento": "xilofono"
       },
       {
         "notas": [
           "A4",
           "D4"
         ],
-        "respuesta": "laprimera"
+        "respuesta": "laprimera",
+        "instrumento": "piano"
       },
       {
         "notas": [
           "G4",
           "E4"
         ],
-        "respuesta": "laprimera"
+        "respuesta": "laprimera",
+        "instrumento": "flauta"
       },
       {
         "notas": [
           "D4",
           "A4"
         ],
-        "respuesta": "lasegunda"
+        "respuesta": "lasegunda",
+        "instrumento": "violin"
       },
       {
         "notas": [
           "E4",
           "F4"
         ],
-        "respuesta": "lasegunda"
+        "respuesta": "lasegunda",
+        "instrumento": "glockenspiel"
       },
       {
         "notas": [
           "B4",
           "A4"
         ],
-        "respuesta": "laprimera"
+        "respuesta": "laprimera",
+        "instrumento": "voz"
       },
       {
         "notas": [
           "C5",
           "C4"
         ],
-        "respuesta": "laprimera"
+        "respuesta": "laprimera",
+        "instrumento": "guitarra"
       },
       {
         "notas": [
           "F4",
           "B4"
         ],
-        "respuesta": "lasegunda"
+        "respuesta": "lasegunda",
+        "instrumento": "clarinete"
       }
     ],
     "instrumento": "xilofono"

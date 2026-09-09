@@ -4,6 +4,7 @@ import { useCarril } from '@/app/preferencias';
 import { MARIMBA, Sampler } from '@/audio/sampler';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { Reaccion } from '@/ui/Reaccion';
+import { Progreso } from '@/ui/Progreso';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import {
@@ -162,6 +163,8 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
   return (
     <section className="actividad pentagrama" data-carril={carril} aria-labelledby="consigna">
       <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
+
+      <Progreso hechos={estado.indice} total={preguntas.length} />
 
       <p className="pentagrama__pedida" aria-live="polite">
         {pedida && t(`nota.${pedida}`)}

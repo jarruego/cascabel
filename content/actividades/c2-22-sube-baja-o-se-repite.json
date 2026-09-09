@@ -48,7 +48,8 @@
           "F4",
           "G4"
         ],
-        "respuesta": "sube"
+        "respuesta": "sube",
+        "instrumento": "piano"
       },
       {
         "notas": [
@@ -57,7 +58,8 @@
           "G4",
           "G4"
         ],
-        "respuesta": "repite"
+        "respuesta": "repite",
+        "instrumento": "flauta"
       },
       {
         "notas": [
@@ -67,7 +69,8 @@
           "E4",
           "D4"
         ],
-        "respuesta": "baja"
+        "respuesta": "baja",
+        "instrumento": "violin"
       },
       {
         "notas": [
@@ -76,7 +79,8 @@
           "G4",
           "A4"
         ],
-        "respuesta": "sube"
+        "respuesta": "sube",
+        "instrumento": "voz"
       },
       {
         "notas": [
@@ -86,7 +90,8 @@
           "D4",
           "C4"
         ],
-        "respuesta": "baja"
+        "respuesta": "baja",
+        "instrumento": "clarinete"
       },
       {
         "notas": [
@@ -96,7 +101,8 @@
           "E4",
           "E4"
         ],
-        "respuesta": "repite"
+        "respuesta": "repite",
+        "instrumento": "trompeta"
       },
       {
         "notas": [
@@ -105,7 +111,8 @@
           "A4",
           "G4"
         ],
-        "respuesta": "baja"
+        "respuesta": "baja",
+        "instrumento": "oboe"
       },
       {
         "notas": [
@@ -115,7 +122,8 @@
           "G4",
           "A4"
         ],
-        "respuesta": "sube"
+        "respuesta": "sube",
+        "instrumento": "guitarra"
       },
       {
         "notas": [
@@ -123,7 +131,8 @@
           "A4",
           "A4"
         ],
-        "respuesta": "repite"
+        "respuesta": "repite",
+        "instrumento": "glockenspiel"
       },
       {
         "notas": [
@@ -132,7 +141,8 @@
           "D4",
           "C4"
         ],
-        "respuesta": "baja"
+        "respuesta": "baja",
+        "instrumento": "violonchelo"
       }
     ],
     "instrumento": "piano"

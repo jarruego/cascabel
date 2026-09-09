@@ -41,7 +41,8 @@
           "F4",
           "A4"
         ],
-        "respuesta": "sube"
+        "respuesta": "sube",
+        "instrumento": "piano"
       },
       {
         "notas": [
@@ -49,7 +50,8 @@
           "F4",
           "D4"
         ],
-        "respuesta": "baja"
+        "respuesta": "baja",
+        "instrumento": "flauta"
       },
       {
         "notas": [
@@ -57,7 +59,8 @@
           "E4",
           "D4"
         ],
-        "respuesta": "baja"
+        "respuesta": "baja",
+        "instrumento": "violin"
       },
       {
         "notas": [
@@ -65,7 +68,8 @@
           "G4",
           "A4"
         ],
-        "respuesta": "sube"
+        "respuesta": "sube",
+        "instrumento": "voz"
       },
       {
         "notas": [
@@ -73,7 +77,8 @@
           "E4",
           "G4"
         ],
-        "respuesta": "sube"
+        "respuesta": "sube",
+        "instrumento": "clarinete"
       },
       {
         "notas": [
@@ -81,7 +86,8 @@
           "G4",
           "E4"
         ],
-        "respuesta": "baja"
+        "respuesta": "baja",
+        "instrumento": "trompeta"
       }
     ],
     "instrumento": "xilofono"

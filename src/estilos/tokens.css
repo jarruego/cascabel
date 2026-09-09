@@ -1426,6 +1426,37 @@ p {
 .resumen-serie__fila[data-calidad='casi'] .resumen-serie__marca { color: var(--vivo-naranja); }
 .resumen-serie__calidad { color: var(--tinta-2); font-weight: 700; }
 
+/* ── la barra por tramos ───────────────────────────────────────────────────
+   Un tramo por pregunta: cuántas quedan se cuenta de un vistazo. Hecho en verde, el
+   actual con el borde del acento y más alto —forma además de color—, y los que faltan
+   vacíos. Ver `ui/Progreso.tsx`. */
+.progreso {
+  display: flex;
+  align-items: center;
+  gap: var(--e-2);
+  width: min(100%, 24rem);
+  margin: 0 auto var(--e-2);
+  padding: var(--e-1) 0;
+  list-style: none;
+}
+.progreso__tramo {
+  flex: 1 1 0;
+  height: 12px;
+  border: 2px solid var(--linea);
+  border-radius: var(--r-redondo);
+  background: var(--superficie);
+  transition: background-color var(--transicion), border-color var(--transicion);
+}
+.progreso__tramo[data-estado='hecho'] {
+  background: var(--vivo-verde);
+  border-color: var(--vivo-verde);
+}
+.progreso__tramo[data-estado='actual'] {
+  height: 18px;
+  border-color: var(--acento);
+  border-width: 3px;
+}
+
 .paso__puntos {
   display: flex;
   gap: var(--e-3);

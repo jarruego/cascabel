@@ -19,6 +19,7 @@ import { pistaPara } from '../maquinaEleccion';
 import { BarraAcciones } from '@/ui/BarraAcciones';
 import { IconoRepetir, IconoSiguiente, IconoTocar } from '@/ui/Simbolos';
 import { Reaccion } from '@/ui/Reaccion';
+import { Progreso } from '@/ui/Progreso';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { nombreDe } from '@/ui/coloresNota';
@@ -289,6 +290,8 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
   return (
     <section className="actividad cantar" data-carril={carril} aria-labelledby="consigna">
       <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
+
+      <Progreso hechos={indice} total={contenido.notas.length} />
 
       {/* El nombre que usa la escuela española, no la notación científica: a un niño de
           ocho años «sol» le dice algo y «G4» no le dice nada. La octava tampoco se enseña:

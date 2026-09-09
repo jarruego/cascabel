@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useReducer, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useReducer, useRef } from 'react';
 import { OBJETIVO_TACTIL } from '@/config';
 import { useCarril } from '@/app/preferencias';
 import { Reaccion } from '@/ui/Reaccion';
@@ -10,7 +10,8 @@ import { pararTodo } from '@/audio/AudioEngine';
 import { BarraAcciones } from '@/ui/BarraAcciones';
 import { suena, type Estimulo } from '../estimulo';
 import { sonarEstimulo } from '../sonarEstimulo';
-import { PasoEntreEjercicios } from '@/ui/ModalesActividad';
+import { Progreso } from '@/ui/Progreso';
+import { seleccionarEstimulos } from '../seleccionEstimulos';
 import {
   ESTADO_INICIAL,
   esperaMs,
@@ -57,14 +58,24 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
   // El tamaño sale del CARRIL, no de la etapa: un niño de 4.º y uno de 3.º comparten
   // ciclo curricular y no comparten motricidad. Ver ADR 0005.
   const carril = useCarril(actividad.etapa);
-  const total = contenido.estimulos.length;
+  /*
+    Cinco por vuelta, sacadas del banco de la actividad y repartidas entre las respuestas.
+    La semilla se decide al montar: cada «otra vez» monta de nuevo y saca otras cinco. Las
+    reglas en `motor/seleccionEstimulos.ts`, con test.
+  */
+  const semilla = useRef(Math.floor(Math.random() * 2 ** 31));
+  const estimulos = useMemo(
+    () => seleccionarEstimulos(contenido.estimulos, semilla.current),
+    [contenido.estimulos],
+  );
+  const total = estimulos.length;
 
   const [estado, despachar] = useReducer(
     (e: EstadoEleccion, a: AccionEleccion) => reducir(e, a, total),
     ESTADO_INICIAL,
   );
 
-  const estimulo = contenido.estimulos[estado.indice];
+  const estimulo = estimulos[estado.indice];
   /*
     Con dos opciones, los botones crecen: «solo hay dos», dijo el autor de «¿Largo o
     corto?», y dos cuadrados del tamaño mínimo en una pantalla vacía se ven perdidos. Con
@@ -90,7 +101,7 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
     // corta lo que quede del anterior: repetir a mitad de una escala no superpone dos.
     pararTodo();
     void sonarEstimulo(estimulo, {
-      instrumento: contenido.instrumento,
+      instrumento: estimulo.instrumento ?? contenido.instrumento,
       tempo: actividad.practica?.tempo,
     });
   }, [estimulo, contenido.instrumento, actividad.practica?.tempo]);
@@ -101,26 +112,16 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
   }, [estado.fase, estado.indice, reproducir]);
 
   /*
-    El feedback se muestra un rato y después viene la pausa entre ejercicios.
+    El feedback se muestra un rato y después viene la pregunta siguiente, sola.
 
-    **La pausa existía hecha y sin conectar.** `PasoEntreEjercicios` estaba escrito, con sus
-    estilos y sus textos, desde que el autor pidió «pausas o indicadores entre subejercicios»,
-    y no lo usaba nadie: lo destapó la auditoría del 2026-09-07. Un componente construido y
-    sin enchufar es peor que código muerto, porque parece que la funcionalidad está.
-
-    Y hace falta: sin ella, seis estímulos se encadenan y el niño no se entera de que ha
-    cambiado la pregunta. Desde el 2026-09-12 es un paso con botón, no una pausa con reloj:
-    el niño pulsa «siguiente» cuando quiere.
+    Hubo una pausa con reloj entre preguntas, y luego un paso con botón de «siguiente», y
+    el autor se quedó con ninguno de los dos: «prefiero la barra de progreso». Lo que dice
+    que la pregunta ha cambiado es el tramo que avanza en la barra y el estímulo nuevo que
+    suena. El tiempo del feedback no es un cronómetro: es lo que tarda en leerse la pista.
   */
-  const [enPausa, setEnPausa] = useState(false);
-
   useEffect(() => {
     if (estado.fase !== 'bien' && estado.fase !== 'casi') return;
-    const id = window.setTimeout(() => {
-      // En el último no hay pausa: lo que viene después no es otro ejercicio, es el final.
-      if (estado.indice + 1 < total) setEnPausa(true);
-      else despachar({ tipo: 'seguir' });
-    }, esperaMs(estado.fase));
+    const id = window.setTimeout(() => despachar({ tipo: 'seguir' }), esperaMs(estado.fase));
     return () => window.clearTimeout(id);
   }, [estado.fase, estado.intentos, estado.indice, total]);
 
@@ -138,7 +139,7 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
 
   useEffect(() => () => audioRef.current?.pause(), []);
 
-  const bloqueado = estado.fase !== 'estimulo' || enPausa;
+  const bloqueado = estado.fase !== 'estimulo';
   const pista = pistaPara(actividad.pistas, estado.fallosAqui);
 
   return (
@@ -148,28 +149,16 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
       {/* El botón de repetir solo tiene sentido si hay algo que repetir. Cuando no lo hay
           desaparece entero, en vez de quedarse ahí sin hacer nada: un botón muerto es peor
           que ningún botón, y ya nos pasó una vez con el «Escuchar» de la modal. */}
-      {/* El paso ocupa el sitio de las opciones: mientras se ve, lo único que hay que
-          pulsar es «siguiente». Con las opciones debajo, el botón se perdía. */}
-      {enPausa && (
-        <PasoEntreEjercicios
-          actual={estado.indice + 1}
-          total={total}
-          personaje={actividad.personaje}
-          alSeguir={() => {
-            setEnPausa(false);
-            despachar({ tipo: 'seguir' });
-          }}
-        />
-      )}
+      <Progreso hechos={estado.indice} total={total} />
 
       {/* El caso escrito. Va en aria-live porque cambia sin que se mueva el foco. */}
-      {!enPausa && estimulo?.texto && (
+      {estimulo?.texto && (
         <p className="eleccion__caso" aria-live="polite">
           {t(estimulo.texto)}
         </p>
       )}
 
-      <div className="opciones" role="group" aria-label={t(contenido.consigna)} hidden={enPausa}>
+      <div className="opciones" role="group" aria-label={t(contenido.consigna)}>
         {contenido.opciones.map((o) => (
           <Boton
             key={o.clave}
@@ -192,9 +181,7 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
         ))}
       </div>
 
-      <BarraAcciones>
-        {!enPausa && estimulo && suena(estimulo) && <BotonRepetir onClick={reproducir} />}
-      </BarraAcciones>
+      <BarraAcciones>{estimulo && suena(estimulo) && <BotonRepetir onClick={reproducir} />}</BarraAcciones>
 
       {/*
         El «bien» de cada acierto se queda: son seis preguntas seguidas y ahí sí hace falta
@@ -209,8 +196,6 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
         {estado.fase === 'casi' && (pista ? t(pista) : t('comun.casi'))}
       </Reaccion>
 
-      {/* Sin barra de progreso: por dónde se va lo dicen los puntos del paso entre
-          preguntas, y una barra de seis píxeles debajo de todo era fea y decía lo mismo. */}
     </section>
   );
 }
