@@ -1,6 +1,6 @@
 {
   "$comment": "El camino sugerido. NO es un itinerario obligatorio y no bloquea nada: cualquier actividad se puede abrir desde el primer dia, este o no marcada como hecha, y el orden es una recomendacion del maestro, no una condicion del programa (CLAUDE.md §1: «es una biblioteca, no un metodo cerrado»). Solo lista actividades que existen en content/actividades; tests/camino.test.ts lo comprueba.",
-  "generado": "2026-09-07",
+  "generado": "2026-09-09",
   "caminos": [
     {
       "etapa": "infantil",
@@ -228,9 +228,16 @@
           "idea": "Seguir cinco minutos de música sabiendo dónde se está. Es la escucha que pide el criterio 1.2 y la que no se practica casi nunca.",
           "actividades": [
             "c3-04-mapa-de-una-obra",
-            "c3-08-de-quien-es-esta-musica",
             "c3-09-la-serie-armonica",
             "tr-09-quien-es-quien"
+          ]
+        },
+        {
+          "titulo": "De quién es la música",
+          "idea": "Quién escribió lo que suena, quién lo tocó, y qué se puede usar y qué no. Es el bloque de ética del currículo, que solo aparece en este ciclo, y se estudia sobre los créditos de esta misma aplicación.",
+          "actividades": [
+            "c3-08-de-quien-es-esta-musica",
+            "tr-04-creditos-de-donde-sale-esto"
           ]
         },
         {

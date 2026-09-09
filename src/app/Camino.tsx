@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { cargarCamino, cargarIndice } from '@/datos/cargar';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { leerTodo } from '@/datos/progreso';
+import { duracionLegible } from '@/motor/duracion';
 import { haceCuanto, queRepasar, type Sugerencia } from '@/motor/repaso';
 import { t } from '@/i18n';
 import { usePreferencias } from './preferencias';
@@ -66,9 +67,20 @@ interface Recorrido {
   pasos: Paso[];
 }
 
-/** Lo que dura un paso entero, sumando sus actividades. */
-function minutosDe(paso: Paso, fichas: Map<string, FichaBreve>): number {
-  return paso.actividades.reduce((suma, id) => suma + (fichas.get(id)?.duracion_min ?? 0), 0);
+/** Lo que duran unas cuantas actividades juntas. */
+function minutosDe(ids: string[], fichas: Map<string, FichaBreve>): number {
+  return ids.reduce((suma, id) => suma + (fichas.get(id)?.duracion_min ?? 0), 0);
+}
+
+/** Todas las actividades de un recorrido, en orden. */
+function actividadesDe(recorrido: Recorrido): string[] {
+  return recorrido.pasos.flatMap((p) => p.actividades);
+}
+
+/** El texto de una duración, ya traducido. */
+function cuantoDura(minutos: number): string {
+  const { clave, valores } = duracionLegible(minutos);
+  return t(clave, valores);
 }
 
 export default function Camino() {
@@ -175,7 +187,24 @@ export default function Camino() {
                 aria-expanded={desplegado}
                 onClick={() => setAbierto(desplegado ? null : c.etapa)}
               >
-                <span>{c.titulo}</span>
+                {/*
+                  El recuento va DENTRO de la caja del título y no suelto entre el título y
+                  la flecha: si no, en un móvil se queda en medio y empuja la flecha fuera.
+                  Así se pone al lado cuando cabe y baja de línea cuando no, y la flecha no
+                  se mueve de su esquina.
+                */}
+                <span className="camino__cabecera-texto">
+                  <span>{c.titulo}</span>
+                  {/*
+                    De cuánto se está hablando. Importa **con la etapa cerrada**, que es como
+                    se ven tres de las cuatro: un maestro que se asoma a otro ciclo ve si son
+                    dos clases o un trimestre sin tener que desplegarlo y sumar.
+                  */}
+                  <span className="camino__minutos">
+                    {t('camino.cuantas', { n: actividadesDe(c).length })} ·{' '}
+                    {cuantoDura(minutosDe(actividadesDe(c), fichas))}
+                  </span>
+                </span>
                 <span className="camino__flecha" aria-hidden="true">
                   {desplegado ? '▾' : '▸'}
                 </span>
@@ -203,7 +232,7 @@ export default function Camino() {
                             parecían uno más.
                           */}
                           <span className="camino__minutos">
-                            {t('camino.minutos', { n: minutosDe(paso, fichas) })}
+                            {cuantoDura(minutosDe(paso.actividades, fichas))}
                           </span>
                         </h3>
                         <p className="camino__idea">{paso.idea}</p>
@@ -224,7 +253,7 @@ export default function Camino() {
                                 {fichas.get(id)?.titulo ?? id}
                                 {fichas.get(id)?.duracion_min ? (
                                   <span className="camino__minutos">
-                                    {t('camino.minutos', { n: fichas.get(id)!.duracion_min! })}
+                                    {cuantoDura(fichas.get(id)!.duracion_min!)}
                                   </span>
                                 ) : null}
                               </Link>

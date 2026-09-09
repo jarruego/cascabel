@@ -979,5 +979,8 @@
   "lienzo.mejorApaisado": "Esta actividad se ve mejor con la pantalla tumbada.",
   "lienzo.mejorVertical": "Esta actividad se ve mejor con la pantalla de pie.",
   "pistas.instrumento": "Instrumento de esta pista",
-  "camino.minutos": "{n} min"
+  "duracion.minutos": "{n} min",
+  "duracion.horas": "{h} h {m} min",
+  "duracion.horasJustas": "{h} h",
+  "camino.cuantas": "{n} actividades"
 }

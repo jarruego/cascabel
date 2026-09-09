@@ -2049,6 +2049,43 @@ hace la actividad**, y un agujero en el validador que las dejaba pasar.
       sus fechas. Verificadas una a una y correctas; **no lleva créditos porque no usa
       material de nadie**, y un año de nacimiento no es de nadie.
 
+- [x] **Centrar y desplazar a la vez recortaba por la izquierda, en cinco superficies.**
+      Cuando el contenido es más ancho que su caja, `justify-content: center` reparte el
+      desbordamiento a los dos lados: al de la derecha se llega desplazando y al de la
+      izquierda **no**, porque el desplazamiento no es negativo. Lo llevaban la rejilla de
+      ritmos, los dos teclados, la línea de compases y la tabla de pistas — o sea, en un
+      móvil, la primera columna, las teclas graves y el primer compás, cortados y fuera de
+      alcance. `safe center` centra mientras quepa y deja de centrar en cuanto no cabe.
+
+      El test agrupa las declaraciones **por selector** y no por bloque, que es lo que hacía
+      falta para verlo: `.pistas__tabla` tiene el centrado en un sitio y el `overflow-x`
+      ochenta líneas más abajo, y leídos por separado ninguno de los dos parece un problema.
+
+- [x] **El itinerario: el bloque de ética tiene su paso, y ya no falta ninguna actividad.**
+      `tr-04 «Créditos: de dónde sale esto»` era la única de las setenta y ocho a la que no
+      se llegaba desde el camino, y estaba excluida a propósito con un motivo equivocado —«no
+      es una actividad, se lee»— que describe la página de créditos y no esto, que es una
+      guía de aula de veinticinco minutos en cuatro pasos.
+
+      Al meterla apareció lo que la excepción tapaba: su pareja `c3-08` colgaba de «Escuchar
+      una obra entera», cuya idea habla de seguir cinco minutos de música. Las dos declaran el
+      saber del **bloque B —licencias, plagio y derechos de autor—, que el decreto pone solo
+      en 5.º y 6.º**: es el único bloque que aparece en un ciclo y en ninguno de los
+      anteriores, y estaba escondido dentro de un paso que iba de otra cosa. Ahora es un paso,
+      «De quién es la música», antes de componer y no después, porque componer cierra el
+      camino.
+
+- [x] **Cada etapa dice de cuánto se está hablando.** «17 actividades · 3 h 39 min» en la
+      cabecera, que es donde importa: tres de las cuatro etapas se ven **cerradas**, y un
+      maestro que se asoma a otro ciclo no tenía forma de saber si eran dos clases o un
+      trimestre sin desplegarlo y sumar a mano. Y la regla de cómo se dice una duración salió
+      a `motor/duracion.ts` con su test: por debajo de la hora, minutos; por encima, «2 h 15
+      min», porque «135 min» obliga a dividir de cabeza justo cuando se está cuadrando una
+      clase de cuarenta y cinco; y la hora justa no arrastra un «0 min».
+
+      De paso se fue el último literal suelto que quedaba en un componente: la ficha
+      imprimible escribía `${duracion} min` a mano.
+
 **Lo que sigue faltando** es lo de siempre: un aparato. Nada de esto necesitaba pantalla,
 pero lo de los dos días anteriores sí.
 

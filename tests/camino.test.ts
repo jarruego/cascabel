@@ -54,11 +54,22 @@ describe('el camino', () => {
     expect(repetidas).toEqual([]);
   });
 
-  it('cubre todas las actividades menos las que no son un ejercicio', () => {
-    // Los créditos no son una actividad: no se «hace», se lee. Cualquier otra que se quede
-    // fuera del camino es un olvido, y este test es el único sitio donde se nota.
-    const FUERA = new Set(['tr-04-creditos-de-donde-sale-esto']);
-    const sinCamino = [...enDisco].filter((id) => !referencias.includes(id) && !FUERA.has(id));
+  it('cubre todas las actividades, sin excepciones', () => {
+    /*
+      Una actividad fuera del camino es un olvido, y este test es el único sitio donde se
+      nota.
+
+      Tuvo una excepción y estaba mal razonada: `tr-04 «Créditos: de dónde sale esto»` se dio
+      por «no es una actividad, se lee», que describe la PÁGINA de créditos y no esto — esto
+      es una guía de aula de veinticinco minutos en cuatro pasos. Al meterla apareció lo que
+      la excepción tapaba: su pareja `c3-08` colgaba de «Escuchar una obra entera», y las dos
+      son el mismo saber del bloque B, el de licencias y derechos de autor, que el decreto
+      pone solo en 5.º y 6.º. Ahora ese bloque tiene su paso.
+
+      Si alguna vez hace falta volver a dejar una fuera, el motivo va aquí escrito, no en una
+      lista muda.
+    */
+    const sinCamino = [...enDisco].filter((id) => !referencias.includes(id));
     expect(sinCamino.sort()).toEqual([]);
   });
 

@@ -1422,7 +1422,9 @@ p {
   display: grid;
   grid-template-columns: repeat(var(--columnas, 8), var(--lado));
   gap: var(--e-1);
-  justify-content: center;
+  /* `safe`: si la rejilla no cabe, centrarla escondería la primera columna a la izquierda,
+     donde no llega ningún desplazamiento. */
+  justify-content: safe center;
   /* Mide lo que miden sus casillas en vez de estirarse: así se centra de verdad y no deja
      dos franjas de fondo a los lados que parecían parte de la rejilla. */
   width: fit-content;
@@ -2117,7 +2119,9 @@ p {
 .teclado__caja {
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  /* `safe`: tres octavas no caben en un móvil, y centrarlas dejaría las teclas graves fuera
+     por la izquierda sin forma de alcanzarlas. */
+  justify-content: safe center;
   /*
     Hueco arriba para que el personaje salte por encima del teclado.
 
@@ -2834,7 +2838,7 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: safe center;
   gap: 0;
   padding: 0;
   margin: var(--e-4) 0;
@@ -2937,7 +2941,8 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 .escala__teclado {
   position: relative;
   display: flex;
-  justify-content: center;
+  /* `safe`: ver `.teclado__caja`. Catorce teclas tampoco caben en un móvil. */
+  justify-content: safe center;
   height: clamp(140px, calc(var(--alto-escena) * 0.4), 300px);
   overflow-x: auto;
 }
@@ -3019,7 +3024,9 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
     casillas porque es exactamente igual de ancho que ellas.
   */
   grid-template-columns: max-content;
-  justify-content: center;
+  /* `safe`: con dieciséis columnas la tabla desplaza, y centrada empezaría por el compás
+     tres. */
+  justify-content: safe center;
   gap: var(--e-3);
   /* Cuatro voces una debajo de otra, acotadas y centradas: a pantalla completa, dieciséis
      casillas estiradas a metro y medio dejan de leerse como un compás. */
@@ -3357,6 +3364,16 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 }
 .camino__cabecera:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
 .camino__flecha { color: var(--tinta-2); }
+/* El título y su recuento: al lado si caben, en dos líneas si no. La flecha se queda en su
+   esquina en los dos casos, que es lo que hace que la cabecera se lea igual en un móvil. */
+.camino__cabecera-texto {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--e-2);
+  min-width: 0;
+}
+.camino__cabecera-texto .camino__minutos { margin-left: 0; }
 
 .camino__resumen {
   margin: var(--e-3) var(--e-2);

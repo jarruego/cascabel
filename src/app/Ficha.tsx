@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router';
 import { cargarActividad } from '@/datos/cargar';
+import { duracionLegible } from '@/motor/duracion';
 import { t, existe } from '@/i18n';
 import { Icono } from '@/ui/Icono';
 import { APP, carrilPorDefecto, OBJETIVO_TACTIL } from '@/config';
@@ -63,6 +64,12 @@ function guia(actividad: Actividad, campo: string): string {
   if (propio) return tr(propio);
   const porTipo = `ficha.tipo.${actividad.tipo}.${campo}`;
   return existe(porTipo) ? t(porTipo) : '';
+}
+
+/** El texto de una duración, ya traducido. Igual que en el itinerario. */
+function cuantoDura(minutos: number): string {
+  const { clave, valores } = duracionLegible(minutos);
+  return t(clave, valores);
 }
 
 export default function Ficha() {
@@ -168,7 +175,9 @@ export default function Ficha() {
         <dl className="ficha__ficha-tecnica">
           <div>
             <dt>{t('ficha.duracion')}</dt>
-            <dd>{actividad.duracion_min ? `${actividad.duracion_min} min` : '—'}</dd>
+            {/* «min» es texto y estaba escrito aquí dentro. Va por `t()` como todo lo
+                demás, y de paso por la misma regla que el itinerario. */}
+            <dd>{actividad.duracion_min ? cuantoDura(actividad.duracion_min) : '—'}</dd>
           </div>
           <div>
             <dt>{t('ficha.donde')}</dt>

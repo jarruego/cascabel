@@ -72,6 +72,44 @@ describe('la interfaz aprovecha la pantalla', () => {
     );
   });
 
+  it('lo que se desplaza en horizontal no se centra sin `safe`', () => {
+    /*
+      Centrar y desplazar a la vez recorta por la izquierda, y no hay forma de llegar.
+
+      Cuando el contenido es más ancho que su caja, `justify-content: center` reparte el
+      desbordamiento a los dos lados; el de la derecha se alcanza desplazando y el de la
+      izquierda **no existe**, porque el desplazamiento no es negativo. Lo llevaban cinco
+      superficies: la rejilla de ritmos, los dos teclados, la línea de compases y la tabla de
+      pistas. En un móvil eso es la primera columna, las teclas graves y el primer compás,
+      cortados y fuera de alcance.
+
+      `safe center` centra mientras quepa y deja de centrar en cuanto no cabe.
+
+      Se agrupa por selector porque las declaraciones de uno se escriben en varios bloques:
+      `.pistas__tabla` tiene el centrado en su sitio y el `overflow-x` ochenta líneas más
+      abajo, con las reglas de encogido.
+    */
+    const declaraciones = new Map<string, string[]>();
+    for (const trozo of SIN_COMENTARIOS.matchAll(/([^{}@]+)\{([^{}]*)\}/g)) {
+      const selector = trozo[1] ?? '';
+      const cuerpo = trozo[2] ?? '';
+      for (const uno of selector.split(',')) {
+        const clave = uno.trim().replace(/\s+/g, ' ');
+        declaraciones.set(clave, [...(declaraciones.get(clave) ?? []), cuerpo]);
+      }
+    }
+
+    const culpables = [...declaraciones]
+      .filter(([, cuerpos]) => {
+        const todo = cuerpos.join(';');
+        return /overflow(-x)?:\s*(auto|scroll)/.test(todo) && /justify-content:\s*center/.test(todo);
+      })
+      .map(([selector]) => selector);
+    expect(culpables, 'centran y desplazan a la vez: la izquierda queda inalcanzable').toEqual(
+      [],
+    );
+  });
+
   it('las superficies miden contra el alto REAL, no contra la ventana', () => {
     /*
       `vh` es la ventana entera y la actividad no la tiene: tiene la ventana menos las dos
