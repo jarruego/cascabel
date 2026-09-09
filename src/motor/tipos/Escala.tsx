@@ -7,6 +7,7 @@ import { colorDe, nombreDe } from '@/ui/coloresNota';
 import { alturaEnPauta, yDeLinea } from '../alturaEnPauta';
 import { distancia, escalaDesde, esEscalaMayor, MAYOR, type Distancia } from '../escala';
 import { Reaccion } from '@/ui/Reaccion';
+import { BASE_MS, POR_CARACTER_MS } from '../maquinaReaccion';
 import { pistaPara } from '../maquinaEleccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
@@ -72,12 +73,39 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
     return () => ro.disconnect();
   }, []);
   const caben = Math.max(3, Math.floor((anchoPauta - 40) / 46));
+
+  /*
+    La pista de «no es una escala mayor» sale al llegar a ocho notas sin acertar, y cada
+    ocho más, y dura lo que tarda en leerse. El tono y el texto de la tarjeta salen de la
+    MISMA condición: antes el tono miraba «exactamente ocho» y el texto «ocho o más», así
+    que a la novena nota se iba la caja con el personaje y el texto se quedaba flotando.
+    Lo vio el autor el 2026-09-10.
+  */
+  const objetivo = escalaDesde(tonica, MAYOR);
+  const [pistaVisible, setPistaVisible] = useState(false);
+  const relojPista = useRef<number | null>(null);
+  const textoPista = t(pistaPara(actividad.pistas, 1) ?? 'escala.casi');
+  useEffect(() => {
+    const n = puestas.length;
+    if (resuelta || n < objetivo.length || (n - objetivo.length) % objetivo.length !== 0) return;
+    setPistaVisible(true);
+    if (relojPista.current !== null) window.clearTimeout(relojPista.current);
+    relojPista.current = window.setTimeout(
+      () => setPistaVisible(false),
+      BASE_MS + textoPista.length * POR_CARACTER_MS,
+    );
+  }, [puestas.length, resuelta, objetivo.length, textoPista]);
+  useEffect(
+    () => () => {
+      if (relojPista.current !== null) window.clearTimeout(relojPista.current);
+    },
+    [],
+  );
   const primera = Math.max(0, puestas.length - caben);
   const visibles = puestas.slice(primera);
   const sampler = useRef<Sampler | null>(null);
   const yaTerminada = useRef(false);
 
-  const objetivo = escalaDesde(tonica, MAYOR);
 
   const sonar = useCallback(async (nota: string) => {
     try {
@@ -208,13 +236,8 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
 
       {/* Solo el «casi». Al resolverla salta la modal de enhorabuena, y decirlo dos veces
           en medio segundo es lo que el autor señaló como repetición. */}
-      <Reaccion
-        tono={!resuelta && puestas.length === objetivo.length ? 'casi' : 'neutro'}
-        personaje={actividad.personaje}
-      >
-        {!resuelta &&
-          puestas.length >= objetivo.length &&
-          t(pistaPara(actividad.pistas, 1) ?? 'escala.casi')}
+      <Reaccion tono={pistaVisible && !resuelta ? 'casi' : 'neutro'} personaje={actividad.personaje}>
+        {pistaVisible && !resuelta && textoPista}
       </Reaccion>
     </section>
   );
