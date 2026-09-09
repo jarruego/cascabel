@@ -878,6 +878,8 @@ p {
   display: flex;
   gap: clamp(12px, 3vw, 40px);
   margin: var(--e-5) 0 var(--e-6);
+  /* El punto activo crece un 18 %: hasta 11 px por lado. Ver `.seguir__tira`. */
+  padding-inline: var(--e-3);
 }
 .guia__punto {
   width: clamp(48px, 9vw, 120px);
@@ -1399,6 +1401,8 @@ p {
 .paso__puntos {
   display: flex;
   gap: var(--e-3);
+  /* El punto actual crece un 30 %. Ver `.seguir__tira`. */
+  padding: var(--e-1);
 }
 .paso__punto {
   width: 16px;
@@ -1654,7 +1658,15 @@ p {
   justify-content: safe center;
   overflow-x: auto;
   overscroll-behavior-x: contain;
-  padding: 0;
+  /*
+    Aire para el bloque que crece. `transform: scale()` no cambia la maquetación, pero sí
+    el área desplazable: el bloque actual, un 12 % más grande, se salía de la caja y en
+    «Ta y ti-ti» aparecía una barra de desplazamiento con cuatro bloques que cabían de
+    sobra. El autor lo vio el 2026-09-12. La regla general: **un contenedor que desplaza
+    deja dentro el sitio que ocupa lo escalado**, y no al revés. Lo mismo en las marcas de
+    «toca a tiempo», los puntos de la guía y de los pasos, y las bandas del karaoke.
+  */
+  padding: var(--e-3) var(--e-2);
   margin: var(--e-5) 0;
   list-style: none;
 }
@@ -2343,7 +2355,8 @@ p {
   flex-wrap: wrap;
   gap: var(--e-3);
   justify-content: center;
-  padding: 0;
+  /* Sitio para la marca acertada, que crece un cuarto. Ver `.seguir__tira`. */
+  padding: var(--e-1);
   margin: var(--e-4) 0;
   list-style: none;
 }
@@ -4489,7 +4502,13 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 .rejilla__cuadricula { overscroll-behavior-x: contain; }
 
 /* El musicograma por bandas y sus botones: nunca más estrechos que un dedo. */
-.karaoke__botones { flex-wrap: nowrap; overflow-x: auto; }
+.karaoke__botones {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  /* `overflow-x: auto` arrastra `overflow-y` a auto, y la banda pulsada baja 2 px: sin
+     este aire sale una barra vertical mientras se toca. Ver `.seguir__tira`. */
+  padding-bottom: 2px;
+}
 .karaoke__botones > * { flex: 0 0 auto; min-width: var(--objetivo); }
 
 @media (max-width: 30rem) {
