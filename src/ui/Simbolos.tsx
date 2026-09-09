@@ -69,18 +69,20 @@ export function IconoTocar({ tamano = 22 }: Props) {
 }
 
 /** Flecha que da la vuelta: otra vez, y también el bucle. Son la misma idea. */
-/** La rueda dentada de ajustes: ocho dientes y el eje, sin más detalle a 22 px. */
+/** La rueda dentada de ajustes, la de siempre: un aro con ocho dientes y el eje. */
 export function IconoAjustes({ tamano = 22 }: Props) {
   return (
     <svg width={tamano} height={tamano} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path
-        d="M12 2.5l1.6 2.6 3-.6 1 2.9 2.9 1-.6 3 2.6 1.6-2.6 1.6.6 3-2.9 1-1 2.9-3-.6L12 21.5l-1.6-2.6-3 .6-1-2.9-2.9-1 .6-3L1.5 12l2.6-1.6-.6-3 2.9-1 1-2.9 3 .6z"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinejoin="round"
-      />
-      <circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" strokeWidth="2" />
+      <circle cx="12" cy="12" r="7.2" fill="none" stroke="currentColor" strokeWidth="3.4" />
+      <line x1="19.20" y1="12.00" x2="22.80" y2="12.00" stroke="currentColor" strokeWidth="3.2" />
+      <line x1="17.09" y1="17.09" x2="19.64" y2="19.64" stroke="currentColor" strokeWidth="3.2" />
+      <line x1="12.00" y1="19.20" x2="12.00" y2="22.80" stroke="currentColor" strokeWidth="3.2" />
+      <line x1="6.91" y1="17.09" x2="4.36" y2="19.64" stroke="currentColor" strokeWidth="3.2" />
+      <line x1="4.80" y1="12.00" x2="1.20" y2="12.00" stroke="currentColor" strokeWidth="3.2" />
+      <line x1="6.91" y1="6.91" x2="4.36" y2="4.36" stroke="currentColor" strokeWidth="3.2" />
+      <line x1="12.00" y1="4.80" x2="12.00" y2="1.20" stroke="currentColor" strokeWidth="3.2" />
+      <line x1="17.09" y1="6.91" x2="19.64" y2="4.36" stroke="currentColor" strokeWidth="3.2" />
+      <circle cx="12" cy="12" r="2.4" fill="currentColor" />
     </svg>
   );
 }

@@ -1463,14 +1463,18 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--e-3);
+  /* Aire entre el título y la rueda, y la rueda a la derecha del todo. */
+  gap: var(--e-6);
+  margin-bottom: var(--e-2);
 }
 .catalogo__cabecera h1 { margin: 0; }
 .catalogo__ajustes {
   display: inline-grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+  margin-left: auto;
   border-radius: 50%;
   color: var(--tinta-2);
 }
