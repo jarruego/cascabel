@@ -37,7 +37,7 @@
     "izquierda": [
       {
         "clave": "negra",
-        "signo": "𝅘𝅥",
+        "signo": "",
         "etiqueta": "figura.negra",
         "ritmo": [
           1,
@@ -48,7 +48,7 @@
       },
       {
         "clave": "blanca",
-        "signo": "𝅗𝅥",
+        "signo": "",
         "etiqueta": "figura.blanca",
         "ritmo": [
           2,
@@ -57,7 +57,7 @@
       },
       {
         "clave": "corchea",
-        "signo": "𝅘𝅥𝅮",
+        "signo": "",
         "etiqueta": "figura.corchea",
         "ritmo": [
           0.5,
@@ -68,7 +68,7 @@
       },
       {
         "clave": "redonda",
-        "signo": "𝅝",
+        "signo": "",
         "etiqueta": "figura.redonda",
         "ritmo": [
           4,
@@ -79,7 +79,7 @@
     "derecha": [
       {
         "clave": "sil-blanca",
-        "signo": "𝄼",
+        "signo": "",
         "etiqueta": "figura.silBlanca",
         "ritmo": [
           1,
@@ -91,7 +91,7 @@
       },
       {
         "clave": "sil-redonda",
-        "signo": "𝄻",
+        "signo": "",
         "etiqueta": "figura.silRedonda",
         "ritmo": [
           1,
@@ -103,7 +103,7 @@
       },
       {
         "clave": "sil-corchea",
-        "signo": "𝄾",
+        "signo": "",
         "etiqueta": "figura.silCorchea",
         "ritmo": [
           0.5,
@@ -115,7 +115,7 @@
       },
       {
         "clave": "sil-negra",
-        "signo": "𝄽",
+        "signo": "",
         "etiqueta": "figura.silNegra",
         "ritmo": [
           1,

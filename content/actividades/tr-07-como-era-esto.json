@@ -30,7 +30,7 @@
           {
             "termino": "Redonda",
             "explicacion": "Dura cuatro pulsos. Es la más larga de las que se usan aquí.",
-            "signo": "𝅝",
+            "signo": "",
             "ritmo": [
               4,
               4
@@ -39,7 +39,7 @@
           {
             "termino": "Blanca",
             "explicacion": "Dura dos pulsos: la mitad de una redonda.",
-            "signo": "𝅗𝅥",
+            "signo": "",
             "ritmo": [
               2,
               2,
@@ -50,7 +50,7 @@
           {
             "termino": "Negra",
             "explicacion": "Dura un pulso. Es la que marca el paso al caminar: ta.",
-            "signo": "𝅘𝅥",
+            "signo": "",
             "ritmo": [
               1,
               1,
@@ -65,7 +65,7 @@
           {
             "termino": "Corchea",
             "explicacion": "Media negra. Van de dos en dos dentro de un pulso: ti-ti.",
-            "signo": "𝅘𝅥𝅮",
+            "signo": "",
             "ritmo": [
               0.5,
               0.5,
@@ -80,7 +80,7 @@
           {
             "termino": "Semicorchea",
             "explicacion": "La mitad de una corchea. Cuatro entran en un pulso.",
-            "signo": "𝅘𝅥𝅯",
+            "signo": "",
             "ritmo": [
               0.25,
               0.25,
@@ -95,7 +95,7 @@
           {
             "termino": "Puntillo",
             "explicacion": "Un punto detrás de una figura le añade la mitad de lo que dura. Una negra con puntillo dura pulso y medio.",
-            "signo": "𝅘𝅥·",
+            "signo": "",
             "ritmo": [
               1.5,
               0.5,
@@ -111,22 +111,22 @@
           {
             "termino": "Silencio de redonda",
             "explicacion": "Cuatro pulsos sin tocar. Se dibuja colgando de una línea.",
-            "signo": "𝄻"
+            "signo": ""
           },
           {
             "termino": "Silencio de blanca",
             "explicacion": "Dos pulsos sin tocar. Se dibuja apoyado en una línea.",
-            "signo": "𝄼"
+            "signo": ""
           },
           {
             "termino": "Silencio de negra",
             "explicacion": "Un pulso sin tocar. El pulso sigue: hay que contarlo igual que si sonara.",
-            "signo": "𝄽"
+            "signo": ""
           },
           {
             "termino": "Silencio de corchea",
             "explicacion": "Medio pulso sin tocar.",
-            "signo": "𝄾"
+            "signo": ""
           }
         ]
       },
@@ -152,12 +152,12 @@
           {
             "termino": "Barra de compás",
             "explicacion": "La raya vertical que separa un compás del siguiente. No suena: solo dice dónde empieza el pulso fuerte.",
-            "signo": "𝄀"
+            "signo": ""
           },
           {
             "termino": "Doble barra final",
             "explicacion": "Se acabó la pieza.",
-            "signo": "𝄂"
+            "signo": ""
           }
         ]
       },
@@ -171,7 +171,7 @@
           {
             "termino": "Clave de sol",
             "explicacion": "El signo del principio. Dice que la nota de la segunda línea es un sol, y a partir de ahí se cuentan las demás.",
-            "signo": "𝄞"
+            "signo": ""
           },
           {
             "termino": "Líneas adicionales",
@@ -194,7 +194,7 @@
           {
             "termino": "Sostenido",
             "explicacion": "Sube la nota un semitono. En el piano, la tecla negra de al lado.",
-            "signo": "♯",
+            "signo": "",
             "notas": [
               "F4",
               "F#4"
@@ -203,7 +203,7 @@
           {
             "termino": "Bemol",
             "explicacion": "Baja la nota un semitono.",
-            "signo": "♭",
+            "signo": "",
             "notas": [
               "B4",
               "A#4"
@@ -318,12 +318,12 @@
           {
             "termino": "Piano (p)",
             "explicacion": "Flojo. No confundir con el instrumento, que se llama así porque podía tocar flojo y fuerte.",
-            "signo": "𝆏"
+            "signo": ""
           },
           {
             "termino": "Forte (f)",
             "explicacion": "Fuerte.",
-            "signo": "𝆑"
+            "signo": ""
           },
           {
             "termino": "Mezzoforte (mf)",

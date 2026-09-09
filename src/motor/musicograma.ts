@@ -139,14 +139,20 @@ export function geometriaDe(
   };
 }
 
-/** Figura musical para una duración en pulsos, en la fuente Bravura. */
+/**
+ * Figura musical para una duración en pulsos, en la fuente Bravura.
+ *
+ * Glifos SMuFL del Área de Uso Privado —la figura entera, de una pieza—, no las secuencias
+ * «cabeza + plica + corchete» del bloque Unicode: ésas se componen glifo a glifo y el
+ * corchete de la semicorchea salía abajo. Es lo que hacen MuseScore y Dorico.
+ */
 export function figuraDe(pulsos: number): string {
-  if (pulsos >= 4) return '𝅝';
-  if (pulsos >= 2) return '𝅗𝅥';
-  if (pulsos >= 1.5) return '𝅘𝅥·';
-  if (pulsos >= 1) return '𝅘𝅥';
-  if (pulsos >= 0.5) return '𝅘𝅥𝅮';
-  return '𝅘𝅥𝅯';
+  if (pulsos >= 4) return '\uE1D2'; // redonda      noteWhole
+  if (pulsos >= 2) return '\uE1D3'; // blanca       noteHalfUp
+  if (pulsos >= 1.5) return '\uE1D5\uE1E7'; // negra con puntillo
+  if (pulsos >= 1) return '\uE1D5'; // negra        noteQuarterUp
+  if (pulsos >= 0.5) return '\uE1D7'; // corchea      note8thUp
+  return '\uE1D9'; // semicorchea  note16thUp
 }
 
 /** Lo más ancha que se deja crecer una banda. */

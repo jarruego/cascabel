@@ -25,12 +25,12 @@
     "opciones": [
       {
         "clave": "sostenido",
-        "signo": "♯",
+        "signo": "",
         "color": "rojo"
       },
       {
         "clave": "bemol",
-        "signo": "♭",
+        "signo": "",
         "color": "azul"
       }
     ],

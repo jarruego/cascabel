@@ -31,22 +31,22 @@
     "opciones": [
       {
         "clave": "r1",
-        "signo": "𝅘𝅥 𝅘𝅥 𝅘𝅥 𝅘𝅥",
+        "signo": "   ",
         "color": "azul"
       },
       {
         "clave": "r2",
-        "signo": "𝅘𝅥𝅮𝅘𝅥𝅮 𝅘𝅥 𝅘𝅥 𝅘𝅥",
+        "signo": "   ",
         "color": "verde"
       },
       {
         "clave": "r3",
-        "signo": "𝅘𝅥 𝅘𝅥 𝅘𝅥𝅮𝅘𝅥𝅮 𝅘𝅥",
+        "signo": "   ",
         "color": "rojo"
       },
       {
         "clave": "r4",
-        "signo": "𝅘𝅥𝅮𝅘𝅥𝅮 𝅘𝅥𝅮𝅘𝅥𝅮 𝅘𝅥 𝅘𝅥",
+        "signo": "   ",
         "color": "amarillo"
       }
     ],

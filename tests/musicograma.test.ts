@@ -135,12 +135,13 @@ describe('carriles de color', () => {
 
 describe('figuras', () => {
   it('cada duración tiene su figura', () => {
-    expect(figuraDe(4)).toBe('𝅝');
-    expect(figuraDe(2)).toBe('𝅗𝅥');
-    expect(figuraDe(1.5)).toBe('𝅘𝅥·');
-    expect(figuraDe(1)).toBe('𝅘𝅥');
-    expect(figuraDe(0.5)).toBe('𝅘𝅥𝅮');
-    expect(figuraDe(0.25)).toBe('𝅘𝅥𝅯');
+    // Glifos SMuFL de Bravura: la figura entera, no una secuencia Unicode combinada.
+    expect(figuraDe(4)).toBe('\uE1D2');
+    expect(figuraDe(2)).toBe('\uE1D3');
+    expect(figuraDe(1.5)).toBe('\uE1D5\uE1E7');
+    expect(figuraDe(1)).toBe('\uE1D5');
+    expect(figuraDe(0.5)).toBe('\uE1D7');
+    expect(figuraDe(0.25)).toBe('\uE1D9');
   });
 
   it('más duración nunca da una figura más breve', () => {

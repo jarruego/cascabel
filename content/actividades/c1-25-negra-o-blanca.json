@@ -31,12 +31,12 @@
     "opciones": [
       {
         "clave": "negra",
-        "signo": "𝅘𝅥",
+        "signo": "",
         "color": "azul"
       },
       {
         "clave": "blanca",
-        "signo": "𝅗𝅥",
+        "signo": "",
         "color": "verde"
       }
     ],

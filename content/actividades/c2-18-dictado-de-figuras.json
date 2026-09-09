@@ -33,22 +33,22 @@
     "opciones": [
       {
         "clave": "d1",
-        "signo": "𝅘𝅥 𝅘𝅥 𝅗𝅥",
+        "signo": "  ",
         "color": "azul"
       },
       {
         "clave": "d2",
-        "signo": "𝅗𝅥 𝅘𝅥𝅮𝅘𝅥𝅮 𝅘𝅥",
+        "signo": "  ",
         "color": "verde"
       },
       {
         "clave": "d3",
-        "signo": "𝅘𝅥 𝄽 𝅘𝅥 𝅘𝅥",
+        "signo": "   ",
         "color": "rojo"
       },
       {
         "clave": "d4",
-        "signo": "𝅘𝅥𝅮𝅘𝅥𝅮 𝅘𝅥 𝄽 𝅘𝅥",
+        "signo": "   ",
         "color": "amarillo"
       }
     ],
