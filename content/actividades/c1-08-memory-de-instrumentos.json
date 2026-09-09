@@ -52,7 +52,7 @@
       {
         "clave": "son-voz",
         "icono": "altavoz",
-        "audio": "muestras/voz/a4.opus"
+        "audio": "sonidos/instrumentos/voz-cantada.opus"
       },
       {
         "clave": "son-tambor",
@@ -103,6 +103,12 @@
       "obra": "Iconos",
       "autor": "OpenMoji · HfG Schwäbisch Gmünd",
       "fuente": "https://openmoji.org",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",
+      "autor": "Autores de Wikimedia Commons, cada uno con su licencia",
+      "fuente": "https://commons.wikimedia.org",
       "licencia": "CC BY-SA 4.0"
     }
   ],

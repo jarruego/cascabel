@@ -2330,6 +2330,17 @@ estilo. Tres cosas, tres arreglos.
       catorce obras con su fragmento). Veinticuatro iconos más de OpenMoji para ellas. El
       catálogo pasa a **143**.
 
+- [ ] **La voz sigue siendo el «ooh» del soundfont, y no hay biblioteca que lo arregle.**
+      Se buscó de nuevo el 2026-09-10: VCSL y VSCO no tienen voz, Commons tiene canciones
+      enteras y no notas sueltas, y Freesound exige clave de API. Lo que sí se ha hecho: en
+      «¿quién ha sonado?», «memory de instrumentos» y «el semáforo del sonido» la voz es ya
+      **una cantante de verdad** —tres segundos y medio de la soprano del banco—, porque ahí
+      lo que se reconoce es un timbre, no una nota. Para el sampler —las voces del coro, la
+      pista de voz del editor— la única voz de verdad que va a haber es **la que se grabe**:
+      `tools/muestras-voz.py` vuelve a existir para eso, parte una grabación de móvil por
+      los silencios, comprueba la altura de cada nota con autocorrelación y avisa si no es la
+      que toca. Treinta segundos con un móvil, ocho notas con «aah», y sale CC BY-SA.
+
 **Lo que hay que oír, y no puede decir ningún test**: si un ladrido de cuatro segundos
 recortado de una grabación de veinte empieza y acaba donde debe, y si el estirado de los
 instrumentos nuevos —que no son percusivos— se nota en alguna nota. Los recortes se cambian

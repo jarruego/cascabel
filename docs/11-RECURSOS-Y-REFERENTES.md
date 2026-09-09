@@ -78,6 +78,10 @@ bajar. Los instrumentos del sampler salen ahora de **VCSL** y **VSCO 2 CE** fich
 fichero desde GitHub (`tools/muestras-vcsl.py`); del soundfont quedan la guitarra, la voz y
 los seis del mundo. Ver `docs/10`.
 
+**La voz cantada sigue sin fuente libre** —se volvió a buscar el 2026-09-10 en Commons, sin
+resultado: hay canciones, no notas sueltas—. La salida es grabarla: `tools/muestras-voz.py`
+prepara una grabación de móvil con ocho notas y comprueba la altura de cada una.
+
 ### Soundfonts General MIDI: donde sí estaba todo
 
 **La primera búsqueda se equivocó de sitio, y conviene dejar dicho en qué.** Miró bancos de

@@ -1414,6 +1414,36 @@
         "url": "https://commons.wikimedia.org/wiki/File:Kevin_MacLeod_-_Canon_in_D_Major.ogg",
         "fecha": "2026-09-09"
       }
+    },
+    {
+      "id": "voz-cantada",
+      "categoria": "instrumentos",
+      "nombre": "Una voz cantando",
+      "commons": "File:Lupita Pérez Arias, O mio babbino caro (Gianni Schicchi).ogg",
+      "desde": 12,
+      "segundos": 3.5,
+      "verificado": {
+        "licencia": "CC BY 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+        "autor": "Djblack!",
+        "url": "https://commons.wikimedia.org/wiki/File:Lupita_P%C3%A9rez_Arias,_O_mio_babbino_caro_(Gianni_Schicchi).ogg",
+        "fecha": "2026-09-09"
+      }
+    },
+    {
+      "id": "coro-corto",
+      "categoria": "instrumentos",
+      "nombre": "Un coro, un momento",
+      "commons": "File:Carol concert practice by The University of Greenwich Choir (2018).ogg",
+      "desde": 6,
+      "segundos": 3.5,
+      "verificado": {
+        "licencia": "Public domain",
+        "licencia_url": "",
+        "autor": "University of Greenwich",
+        "url": "https://commons.wikimedia.org/wiki/File:Carol_concert_practice_by_The_University_of_Greenwich_Choir_(2018).ogg",
+        "fecha": "2026-09-09"
+      }
     }
   ]
 }
