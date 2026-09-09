@@ -3199,8 +3199,12 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 .escala {
   height: calc(var(--alto-escena) - var(--e-5) - var(--e-3));
   min-height: 0;
-  grid-template-rows: auto auto minmax(calc(var(--objetivo) * 2), 1fr);
-  align-content: stretch;
+  /* Los tres bloques juntos y centrados. Con la fila del teclado a `1fr` y el teclado
+     acotado a 300 px, en vertical la fila era enorme y el teclado se quedaba arriba con
+     medio escenario vacío debajo: «está todo muy arriba», dijo el autor. El alto del
+     teclado sale ahora del escenario, en `.escala__teclado`, y el conjunto se centra. */
+  grid-template-rows: auto auto auto;
+  align-content: center;
 }
 .escala__pauta {
   position: relative;
@@ -3281,10 +3285,10 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   display: flex;
   /* `safe`: ver `.teclado__caja`. Catorce teclas tampoco caben en un móvil. */
   justify-content: safe center;
-  /* El alto es el que queda en la sección: ver `.escala`. */
-  height: auto;
-  min-height: calc(var(--objetivo) * 2);
-  max-height: 300px;
+  /* Lo que queda del escenario tras la pauta, las etiquetas y los huecos —unos 230 px—,
+     nunca menos de dos objetivos táctiles ni más de 300. En apaisado llena; en vertical
+     queda a 300 y el conjunto se centra. */
+  height: clamp(calc(var(--objetivo) * 2), calc(var(--alto-escena) - 230px), 300px);
   overflow-x: auto;
 }
 .escala__teclado .teclado__blanca[data-usada],
