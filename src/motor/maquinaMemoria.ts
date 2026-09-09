@@ -14,6 +14,9 @@
  *  - **No hay límite de intentos, ni tiempo, ni puntos.** Un fallo no cuesta nada: cuesta
  *    volver a tapar, que es lo que hace que la siguiente vez ya se sepa dónde estaba.
  *  - Tocar una carta ya destapada no hace nada, y tocar la misma dos veces tampoco.
+ *  - **La segunda carta es siempre de la otra cara.** Con un sonido destapado solo se
+ *    puede destapar un dibujo, y al revés. Lo pidió el autor al probarlo: dos sonidos
+ *    seguidos, o dos dibujos, confunden y nunca pueden ser pareja, así que no se ofrecen.
  */
 
 export type CaraDeCarta = 'imagen' | 'sonido';
@@ -68,6 +71,8 @@ export function reducirMemoria(
 
       const a = cartas.find((c) => c.id === estado.primera)!;
       const b = cartas.find((c) => c.id === accion.id)!;
+      // De la misma cara que la primera: no es una pareja posible, y no se acepta.
+      if (a.cara === b.cara) return estado;
       const acierto = encajan(a, b);
       return {
         ...estado,
@@ -85,6 +90,14 @@ export function reducirMemoria(
       return { ...estado, fase: completada ? 'completada' : 'eligiendo', turno: null };
     }
   }
+}
+
+/** ¿Se puede tocar esta carta ahora? Con una destapada, solo las de la otra cara. */
+export function tocable(estado: EstadoMemoria, carta: Carta, cartas: Carta[]): boolean {
+  if (estado.fase !== 'eligiendo' || estado.resueltas.includes(carta.id)) return false;
+  if (estado.primera === null || estado.primera === carta.id) return true;
+  const primera = cartas.find((c) => c.id === estado.primera);
+  return primera !== undefined && primera.cara !== carta.cara;
 }
 
 /** ¿Se ve la cara de esta carta ahora mismo? Las resueltas y las dos del turno en curso. */

@@ -5,6 +5,7 @@ import {
   destapada,
   encajan,
   reducirMemoria,
+  tocable,
   type Carta,
   type EstadoMemoria,
 } from '../src/motor/maquinaMemoria';
@@ -50,6 +51,16 @@ describe('máquina de memoria', () => {
     expect(e.turno?.acierto).toBe(true);
   });
 
+  it('la segunda carta tiene que ser de la otra cara: dos sonidos seguidos no se aceptan', () => {
+    // Lo pidió el autor: dos sonidos seguidos confunden y nunca pueden ser pareja.
+    const e = d(INICIAL_MEMORIA, 'perro-sonido');
+    expect(d(e, 'gato-sonido')).toBe(e);
+    expect(tocable(e, CARTAS[3]!, CARTAS)).toBe(false); // gato-sonido
+    expect(tocable(e, CARTAS[2]!, CARTAS)).toBe(true); // gato-imagen
+    expect(tocable(e, CARTAS[1]!, CARTAS)).toBe(true); // la misma, para deshacer
+    expect(d(e, 'gato-imagen').fase).toBe('comprobando');
+  });
+
   it('tocar una resuelta, la misma dos veces o una que no existe no hace nada', () => {
     let e = seguir(d(d(INICIAL_MEMORIA, 'perro-imagen'), 'perro-sonido'));
     expect(d(e, 'perro-imagen')).toBe(e);
@@ -59,7 +70,7 @@ describe('máquina de memoria', () => {
   });
 
   it('no acepta toques mientras se comprueba, y termina al destapar todas', () => {
-    let e = d(d(INICIAL_MEMORIA, 'perro-imagen'), 'gato-imagen');
+    let e = d(d(INICIAL_MEMORIA, 'perro-imagen'), 'gato-sonido');
     expect(d(e, 'perro-sonido')).toBe(e);
     e = seguir(e);
     e = seguir(d(d(e, 'perro-imagen'), 'perro-sonido'));

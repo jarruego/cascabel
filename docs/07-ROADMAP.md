@@ -2374,6 +2374,11 @@ memory», dijo el autor de los de tipo `emparejar`. Las tres cosas eran ciertas.
       las grabaciones de músicos del banco). Ésta última se pidió para 3.º–4.º y va en
       5.º–6.º: ocho parejas son ocho cosas que recordar, y el tope de 3.º–4.º son seis.
       Con nueve en el tercer ciclo, cabe.
+- [x] **Dos tapas y un turno que obliga a alternar.** Al probarlo, el autor vio que dos sonidos
+      seguidos, o dos dibujos, confunden. Ahora las cartas tapadas de sonido son lilas con un
+      altavoz y las de dibujo amarillas con una lupa —color y forma, nunca solo color—, y con
+      una destapada solo se pueden tocar las de la otra clase: las demás se apagan. Es regla
+      de la máquina, con test, no un adorno de la pantalla.
 
 Las ideas de ampliación, con veredicto y con lo que NO conviene hacer, están en
 [`docs/12-IDEAS-Y-AMPLIACIONES.md`](12-IDEAS-Y-AMPLIACIONES.md).

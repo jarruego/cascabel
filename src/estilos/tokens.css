@@ -2613,10 +2613,21 @@ p {
   padding: var(--e-2);
   transition: transform 120ms ease, background 120ms ease;
 }
-.memoria__carta[data-estado='tapada'] {
-  background: var(--suave-azul);
-  border-color: var(--vivo-azul);
-  color: var(--vivo-azul);
+/* Dos tapas: las de sonido en lila con altavoz, las de dibujo en amarillo con lupa. Color
+   Y forma, nunca solo color (§6). */
+.memoria__carta[data-estado='tapada'][data-cara='sonido'] {
+  background: var(--suave-morado);
+  border-color: var(--vivo-morado);
+  border-style: dashed;
+}
+.memoria__carta[data-estado='tapada'][data-cara='imagen'] {
+  background: var(--suave-amarillo);
+  border-color: var(--vivo-amarillo);
+}
+/* Con una destapada, las de su misma cara se apagan: no pueden ser pareja. */
+.memoria__carta[aria-disabled='true'][data-estado='tapada'] {
+  opacity: 0.45;
+  cursor: default;
 }
 .memoria__carta[data-estado='destapada'] { background: var(--superficie); }
 /* Resuelta: se queda a la vista, con el borde del acierto y el nombre debajo. */

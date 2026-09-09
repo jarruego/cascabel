@@ -12,6 +12,7 @@ import {
   barajar,
   destapada,
   reducirMemoria,
+  tocable,
   type AccionMemoria,
   type Carta,
   type EstadoMemoria,
@@ -104,7 +105,6 @@ export default function Memoria({ actividad, alTerminar }: PropsActividad) {
     });
   }, [estado.fase, estado.intentos, actividad.id, alTerminar, contenido.parejas.length]);
 
-  const bloqueado = estado.fase !== 'eligiendo';
 
   return (
     <section className="actividad memoria" data-carril={carril} aria-labelledby="consigna">
@@ -119,6 +119,7 @@ export default function Memoria({ actividad, alTerminar }: PropsActividad) {
           const p = parejaDe(c.pareja);
           const seVe = destapada(estado, c.id);
           const resuelta = estado.resueltas.includes(c.id);
+          const seToca = tocable(estado, c, cartas);
           const nombre = p?.etiqueta ? t(p.etiqueta) : c.pareja;
           return (
             <li key={c.id}>
@@ -139,9 +140,9 @@ export default function Memoria({ actividad, alTerminar }: PropsActividad) {
                       ? nombre
                       : t('memoria.sonido')
                 }
-                aria-disabled={bloqueado || resuelta || undefined}
+                aria-disabled={!seToca || undefined}
                 onClick={() => {
-                  if (bloqueado || resuelta) return;
+                  if (!seToca) return;
                   if (c.cara === 'sonido') sonar(p);
                   despachar({ tipo: 'destapar', id: c.id });
                 }}
@@ -152,7 +153,15 @@ export default function Memoria({ actividad, alTerminar }: PropsActividad) {
                 {seVe && c.cara === 'sonido' && (
                   <Icono nombre="altavoz" tamano={Math.round(tam * 0.55)} />
                 )}
-                {!seVe && <Icono nombre="nota-musical" tamano={Math.round(tam * 0.4)} />}
+                {/*
+                  La tapa dice qué hay debajo: un altavoz en las de sonido y un marco en
+                  las de dibujo, con colores distintos. Lo pidió el autor al probarlo: sin
+                  eso, dos sonidos seguidos o dos dibujos seguidos confunden, y saber de
+                  qué clase es cada carta tapada es parte del juego, no una pista de más.
+                */}
+                {!seVe && (
+                  <Icono nombre={c.cara === 'sonido' ? 'altavoz' : 'lupa'} tamano={Math.round(tam * 0.4)} />
+                )}
                 {resuelta && <span className="boton__texto">{nombre}</span>}
               </button>
             </li>
