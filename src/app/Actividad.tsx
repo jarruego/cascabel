@@ -149,6 +149,7 @@ export default function Actividad() {
       <ModalMicrofono
         abierto={permiso}
         personaje={quien}
+        modo={actividad.entrada.modo === 'microfono-voz' ? 'voz' : 'palmada'}
         alAceptar={() => {
           aceptarMicrofono();
           setPermiso(false);

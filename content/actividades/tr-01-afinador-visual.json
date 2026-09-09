@@ -31,7 +31,8 @@
       "A4",
       "C5"
     ],
-    "segundos": 6
+    "segundos": 6,
+    "soloMide": true
   },
   "evaluacion": {
     "autocorrectiva": true,

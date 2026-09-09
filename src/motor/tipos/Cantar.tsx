@@ -60,6 +60,13 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
     msParaCazar?: number;
     /** Sistema de nombres: 'latino' (do re mi) por defecto, o 'ingles'. */
     nombres?: 'latino' | 'ingles';
+    /**
+     * La actividad es medir, y sin micrófono no queda nada que hacer: el afinador visual.
+     * Cantar la nota sin que se mida sigue siendo cantar; mirar un afinador sin aguja, no.
+     * Con esto, si se eligió no escuchar, se avisa al adulto. Al niño se le ofrecen las
+     * notas igual: el micrófono nunca es un requisito (§8).
+     */
+    soloMide?: boolean;
     /** Timbre de la nota de referencia. */
     instrumento?: string;
     /**
@@ -391,6 +398,11 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
       {avisoMicro && conMicrofono === false && (
         <p className="cantar__aviso" role="status">
           {t(avisoMicro)}
+        </p>
+      )}
+      {contenido.soloMide && !seUsaMicrofono() && !avisoMicro && (
+        <p className="cantar__aviso" role="status">
+          {t('cantar.soloMide')}
         </p>
       )}
 
