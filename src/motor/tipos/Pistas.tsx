@@ -322,16 +322,6 @@ export default function Pistas({ actividad, alTerminar }: PropsActividad) {
       <BarraAcciones>
         <button
           type="button"
-          className="boton-principal boton-arranque"
-          data-sonando={estado.sonando || undefined}
-          onClick={() => void reproducir()}
-        >
-          {estado.sonando ? <IconoParar /> : <IconoTocar />}
-          {t(estado.sonando ? 'accion.parar' : 'accion.empezar')}
-        </button>
-
-        <button
-          type="button"
           className="boton-repetir"
           aria-disabled={estado.encendidas.size === 0 || undefined}
           onClick={() => {
@@ -356,6 +346,17 @@ export default function Pistas({ actividad, alTerminar }: PropsActividad) {
             {t('rejilla.midi')}
           </button>
         )}
+
+        {/* El verde, a la derecha: como en todas las botoneras. */}
+        <button
+          type="button"
+          className="boton-principal boton-arranque"
+          data-sonando={estado.sonando || undefined}
+          onClick={() => void reproducir()}
+        >
+          {estado.sonando ? <IconoParar /> : <IconoTocar />}
+          {t(estado.sonando ? 'accion.parar' : 'accion.empezar')}
+        </button>
       </BarraAcciones>
 
       {/* La exportación se lleva solo las pistas melódicas: la percusión no cabe en una

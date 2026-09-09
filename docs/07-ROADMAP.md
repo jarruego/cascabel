@@ -2487,6 +2487,17 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       posición absoluta medía cero —seis píxeles de borde, la «raya en medio»—. Ahora
       declara su ancho. Visto en el navegador contra la versión desplegada.
 
+- [x] **Karaoke en serie.** El botón decía «terminar» entre ejercicios y ahora dice
+      «siguiente»; tras la última nota se esperaba su duración entera más dos segundos, y
+      ahora pulso y medio; «has cogido» pasa a «has tocado a tiempo»; y al pulsar siguiente
+      no sale la pausa con el personaje —ya se ha visto el resultado y ya se ha decidido
+      seguir—, sino el «empezar» del siguiente. Lo mismo en «toca a tiempo», que también
+      enseña su resultado. La regla, `llevaPausa`, en `serie.ts` con test.
+- [x] **El botón verde siempre a la derecha, los sin color a la izquierda.** Lo fijó el
+      autor y estaba al revés en el musicograma, el cierre de las series, la rejilla, las
+      pistas y la guía de aula. Es orden del documento, no solo visual, para que el teclado
+      lo recorra igual.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

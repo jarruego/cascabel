@@ -362,9 +362,11 @@ export default function Seguir({ actividad, alTerminar, alSalir }: PropsActivida
       <BarraAcciones>
         {terminada ? (
           <>
+            {/* Sin color y a la izquierda; el que cierra, verde y a la derecha: es el
+                orden de todas las botoneras, lo fijó el autor el 2026-09-12. */}
             <button
               type="button"
-              className="boton-principal"
+              className="boton-repetir"
               onClick={() => {
                 setTerminada(false);
                 void arrancar();
@@ -373,7 +375,7 @@ export default function Seguir({ actividad, alTerminar, alSalir }: PropsActivida
               <IconoRepetir />
               {t('tocar.otraVez')}
             </button>
-            <button type="button" className="boton-repetir" onClick={() => alSalir?.()}>
+            <button type="button" className="boton-principal" onClick={() => alSalir?.()}>
               <IconoSiguiente />
               {t('comun.terminar')}
             </button>

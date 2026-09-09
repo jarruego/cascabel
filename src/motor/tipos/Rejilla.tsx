@@ -398,20 +398,6 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
           {t('rejilla.limpiar')}
         </button>
 
-        {/* En modo libre no hay botón de comprobar, porque no hay nada que comprobar. */}
-        {modo === 'dictado' && (
-          <button
-            type="button"
-            className="boton-principal"
-            onClick={() =>
-              despachar({ tipo: 'comprobar', solucion: contenido.solucion ?? [] })
-            }
-          >
-            <IconoComprobar />
-            {t('ordenar.comprobar')}
-          </button>
-        )}
-
         {/* Volver a editar después de comprobar. Vive en la botonera como todo lo demás:
             estaba suelto debajo del feedback, que es donde se veía menos. */}
         {estado.fase === 'revisando' && (
@@ -422,6 +408,21 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
           >
             <IconoRepetir />
             {t('rejilla.seguirEditando')}
+          </button>
+        )}
+
+        {/* En modo libre no hay botón de comprobar, porque no hay nada que comprobar. Y va
+            el último: el verde, a la derecha. */}
+        {modo === 'dictado' && (
+          <button
+            type="button"
+            className="boton-principal"
+            onClick={() =>
+              despachar({ tipo: 'comprobar', solucion: contenido.solucion ?? [] })
+            }
+          >
+            <IconoComprobar />
+            {t('ordenar.comprobar')}
           </button>
         )}
       </BarraAcciones>

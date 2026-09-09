@@ -47,34 +47,28 @@ export function ResumenSerie({
         ))}
       </ol>
 
+      {/* Los botones sin color a la izquierda y el verde a la derecha, como en todas las
+          botoneras. Con algún «casi», el verde es repetir los que costaron; si no, terminar. */}
       <BarraAcciones>
+        <button type="button" className="boton-repetir" onClick={alRepetirTodo}>
+          <IconoRepetir />
+          {t('serie.enteraOtraVez')}
+        </button>
         {hayCasi ? (
           <>
-            <button type="button" className="boton-principal boton-arranque" onClick={alRepetirCasi}>
-              <IconoRepetir />
-              {t('serie.repetirCasi')}
-            </button>
             <button type="button" className="boton-repetir" onClick={alTerminar}>
               <IconoSiguiente />
               {t('comun.terminar')}
             </button>
+            <button type="button" className="boton-principal boton-arranque" onClick={alRepetirCasi}>
+              <IconoRepetir />
+              {t('serie.repetirCasi')}
+            </button>
           </>
         ) : (
-          <>
-            <button type="button" className="boton-principal" onClick={alTerminar}>
-              <IconoSiguiente />
-              {t('comun.terminar')}
-            </button>
-            <button type="button" className="boton-repetir" onClick={alRepetirTodo}>
-              <IconoRepetir />
-              {t('serie.enteraOtraVez')}
-            </button>
-          </>
-        )}
-        {hayCasi && (
-          <button type="button" className="boton-repetir" onClick={alRepetirTodo}>
-            <IconoRepetir />
-            {t('serie.enteraOtraVez')}
+          <button type="button" className="boton-principal" onClick={alTerminar}>
+            <IconoSiguiente />
+            {t('comun.terminar')}
           </button>
         )}
       </BarraAcciones>

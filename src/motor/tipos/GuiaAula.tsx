@@ -167,16 +167,6 @@ export default function GuiaAula({ actividad, alTerminar }: PropsActividad) {
           </button>
         </div>
 
-        <button
-          type="button"
-          className="boton-principal boton-arranque"
-          data-sonando={sonando || undefined}
-          onClick={sonando ? parar : arrancar}
-        >
-          {sonando ? <IconoParar /> : <IconoTocar />}
-          {sonando ? t('accion.sinPulso') : t('accion.pulso')}
-        </button>
-
         <label className="guia__tempo acciones__grupo">
           {t('guia.tempo')}
           <input
@@ -190,10 +180,21 @@ export default function GuiaAula({ actividad, alTerminar }: PropsActividad) {
           <output className="acciones__valor">{bpm}</output>
         </label>
 
-        {/* Y al final lo que se hace una vez. */}
+        {/* Lo que se hace una vez. */}
         <button type="button" className="boton-repetir" onClick={() => window.print()}>
           <IconoImprimir />
           {t('guia.imprimir')}
+        </button>
+
+        {/* Y el verde, el último: a la derecha, como en todas las botoneras. */}
+        <button
+          type="button"
+          className="boton-principal boton-arranque"
+          data-sonando={sonando || undefined}
+          onClick={sonando ? parar : arrancar}
+        >
+          {sonando ? <IconoParar /> : <IconoTocar />}
+          {sonando ? t('accion.sinPulso') : t('accion.pulso')}
         </button>
       </BarraAcciones>
 
