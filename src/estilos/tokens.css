@@ -1379,18 +1379,18 @@ p {
 /* ── indicador entre ejercicios ────────────────────────────────────────────
    Puntos, no un porcentaje ni un contador de aciertos. Dice por dónde vas, que
    es orientación; no dice qué tal lo llevas, que sería puntuación. */
+/* El paso entre ejercicios vive en la botonera: los puntos y el «vas por el» a la
+   izquierda del botón verde. Ver `PasoEntreEjercicios`. */
 .paso {
-  display: grid;
-  justify-items: center;
+  display: inline-flex;
+  align-items: center;
   gap: var(--e-3);
-  width: 100%;
-  padding: var(--e-6) var(--e-4);
 }
-.paso__frase {
-  font-size: var(--t-l);
-  font-weight: 700;
-}
-.paso__seguir { margin-top: var(--e-3); }
+/* Mientras se ve el paso, el ejercicio que acaba esconde su botonera y su tarjeta: el paso
+   pone las suyas, y dos barras fijas abajo se pisarían. */
+.serie__ejercicio { display: contents; }
+.serie__ejercicio[data-entre] .barra-acciones,
+.serie__ejercicio[data-entre] .reaccion { display: none; }
 /* ── el cierre de una serie ────────────────────────────────────────────────
    Una fila por ejercicio, en palabras, con la forma acompañando al color (§6). */
 .resumen-serie {

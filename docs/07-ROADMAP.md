@@ -2561,6 +2561,12 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       —solo de lado, y solo cuando se sale— y la deja a un tercio del borde para que se
       vean las que vienen. `ui/seguirColumna.ts`.
 
+- [x] **El paso entre ejercicios de una serie, abajo como todo.** Estaba encima del
+      tablero, con el personaje y el botón en medio. Ahora la reacción es la tarjeta de
+      siempre y los puntos con «siguiente» van en la botonera; el tablero del ejercicio que
+      acaba se queda a la vista con su botonera escondida. Vale para emparejar, ordenar,
+      dictados y compases en serie.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

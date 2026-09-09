@@ -1,5 +1,7 @@
 import { Modal } from './Modal';
 import { IconoSiguiente } from './Simbolos';
+import { BarraAcciones } from './BarraAcciones';
+import { Reaccion } from './Reaccion';
 import { Personaje } from './Personaje';
 import type { Personaje as NombrePersonaje } from './personajes';
 import { t } from '@/i18n';
@@ -161,13 +163,15 @@ export function ModalExito({
 }
 
 /**
- * El paso entre ejercicios: cómo ha ido, «vas por el 3 de 6», y el botón de seguir.
+ * El paso entre ejercicios de una serie: cómo ha ido, «vas por el 3 de 6», y seguir.
  *
- * **Se sigue pulsando, no esperando.** Era una pausa con reloj que se podía saltar
- * tocando, y no se veía que se pudiera: «no tiene botones de siguiente», dijo el autor de
- * «¿Rápido o despacio?» el 2026-09-12. Ahora es un paso de verdad, con el botón verde a
- * la derecha como en todas las botoneras, y el niño decide cuándo viene el siguiente. Es
- * lo mismo que ya hacían el karaoke y «toca a tiempo» con su propio resultado.
+ * **Abajo, como todo lo demás.** Estaba encima del tablero, con el personaje y el botón en
+ * medio de la pantalla, y en «Cada instrumento con su sonido» se veía raro: el autor pidió
+ * dejarlo «como en el resto». Ahora la reacción es la tarjeta del personaje de siempre, y
+ * los puntos y el botón verde de «siguiente» van en la botonera de abajo. El tablero del
+ * ejercicio que acaba se queda a la vista, con su propia botonera escondida mientras tanto.
+ *
+ * **Se sigue pulsando, no esperando**: el niño decide cuándo viene el siguiente.
  */
 export function PasoEntreEjercicios({
   actual,
@@ -189,27 +193,28 @@ export function PasoEntreEjercicios({
   personaje?: NombrePersonaje;
 }) {
   return (
-    <div className="paso" aria-live="polite">
+    <>
       {calidad && (
-        <>
-          <Personaje nombre={personaje} pose={calidad === 'bien' ? 'celebra' : 'anima'} tamano={96} />
-          <span className="paso__frase">
-            {t(calidad === 'bien' ? 'comun.bien' : `serie.paso.${calidad}`)}
-          </span>
-        </>
+        <Reaccion tono={calidad === 'bien' ? 'bien' : calidad === 'casi' ? 'casi' : 'neutro'} personaje={personaje}>
+          {t(calidad === 'bien' ? 'comun.bien' : `serie.paso.${calidad}`)}
+        </Reaccion>
       )}
-      <span className="paso__puntos" aria-hidden="true">
-        {Array.from({ length: total }, (_, i) => (
-          <span key={i} className="paso__punto" data-estado={i < actual ? 'hecho' : i === actual ? 'actual' : 'pendiente'} />
-        ))}
-      </span>
-      <span className="paso__texto">
-        {t('paso.vas')} {actual + 1} / {total}
-      </span>
-      <button type="button" className="boton-principal paso__seguir" onClick={alSeguir}>
-        <IconoSiguiente />
-        {t('serie.siguiente')}
-      </button>
-    </div>
+      <BarraAcciones>
+        <span className="paso acciones__grupo" aria-live="polite">
+          <span className="paso__puntos" aria-hidden="true">
+            {Array.from({ length: total }, (_, i) => (
+              <span key={i} className="paso__punto" data-estado={i < actual ? 'hecho' : i === actual ? 'actual' : 'pendiente'} />
+            ))}
+          </span>
+          <span className="paso__texto">
+            {t('paso.vas')} {actual + 1} / {total}
+          </span>
+        </span>
+        <button type="button" className="boton-principal" onClick={alSeguir}>
+          <IconoSiguiente />
+          {t('serie.siguiente')}
+        </button>
+      </BarraAcciones>
+    </>
   );
 }

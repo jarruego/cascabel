@@ -125,6 +125,16 @@ export function conSerie(Uno: ComponentType<PropsActividad>, tipo: string) {
 
     return (
       <>
+        {/* El ejercicio que acaba se queda a la vista; su botonera y su tarjeta se esconden
+            mientras el paso pone las suyas abajo, para que no haya dos. */}
+        <div className="serie__ejercicio" data-entre={serie.fase === 'entre' || undefined}>
+          <Uno
+            key={`${indice}-${serie.vuelta}`}
+            actividad={actividadDelEjercicio}
+            alTerminar={terminarEjercicio}
+            alSalir={alSalir}
+          />
+        </div>
         {serie.fase === 'entre' && (
           <PasoEntreEjercicios
             actual={serie.posicion + 1}
@@ -135,12 +145,6 @@ export function conSerie(Uno: ComponentType<PropsActividad>, tipo: string) {
             alSeguir={() => despachar({ tipo: 'seguir' })}
           />
         )}
-        <Uno
-          key={`${indice}-${serie.vuelta}`}
-          actividad={actividadDelEjercicio}
-          alTerminar={terminarEjercicio}
-          alSalir={alSalir}
-        />
       </>
     );
   };
