@@ -40,59 +40,98 @@
           "C4",
           "D4"
         ],
-        "respuesta": "paso"
+        "respuesta": "paso",
+        "instrumento": "flauta",
+        "duraciones": [
+          2,
+          2
+        ]
       },
       {
         "notas": [
           "C4",
-          "G4"
+          "C5"
         ],
-        "respuesta": "salto"
+        "respuesta": "salto",
+        "instrumento": "piano",
+        "duraciones": [
+          2,
+          2
+        ]
       },
       {
         "notas": [
           "D4",
           "A4"
         ],
-        "respuesta": "salto"
+        "respuesta": "salto",
+        "instrumento": "violin",
+        "duraciones": [
+          2,
+          2
+        ]
       },
       {
         "notas": [
           "E4",
           "F4"
         ],
-        "respuesta": "paso"
+        "respuesta": "paso",
+        "instrumento": "clarinete",
+        "duraciones": [
+          2,
+          2
+        ]
       },
       {
         "notas": [
           "G4",
           "A4"
         ],
-        "respuesta": "paso"
+        "respuesta": "paso",
+        "instrumento": "glockenspiel",
+        "duraciones": [
+          2,
+          2
+        ]
       },
       {
         "notas": [
           "E4",
           "B4"
         ],
-        "respuesta": "salto"
+        "respuesta": "salto",
+        "instrumento": "trompeta",
+        "duraciones": [
+          2,
+          2
+        ]
       },
       {
         "notas": [
           "C4",
           "A4"
         ],
-        "respuesta": "salto"
+        "respuesta": "salto",
+        "instrumento": "oboe",
+        "duraciones": [
+          2,
+          2
+        ]
       },
       {
         "notas": [
           "A4",
           "B4"
         ],
-        "respuesta": "paso"
+        "respuesta": "paso",
+        "instrumento": "guitarra",
+        "duraciones": [
+          2,
+          2
+        ]
       }
-    ],
-    "instrumento": "xilofono"
+    ]
   },
   "evaluacion": {
     "autocorrectiva": true,
