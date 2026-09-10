@@ -2724,7 +2724,9 @@ textos, niveles, camino, y la sección de instrumentos.
 
 - [x] **Percusión corporal: «chasquidos» en vez de «pitos», y un dibujo sobre cada fila.**
       Chasquear los dedos, palmas, la pierna y el pie, de OpenMoji, encima del nombre de
-      cada zona; el nombre interno de la zona no cambia, solo lo que se lee.
+      cada zona; el nombre interno de la zona no cambia, solo lo que se lee. Y cabe en
+      apaisado: la sección se lleva el alto del escenario y las filas se reparten lo que
+      hay, menos altas y, como llenan el ancho, más anchas.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la

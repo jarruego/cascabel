@@ -165,7 +165,8 @@ export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
         altura del SONIDO y el de altura en el CUERPO, y esa coincidencia es lo que hace que
         no haya que aprenderse el dibujo.
       */}
-      <div className="cuerpo__rejilla">
+      {/* Cuántas filas hay decide el alto de cada una: ver `--alto-fila` en tokens.css. */}
+      <div className="cuerpo__rejilla" style={{ ['--filas' as string]: contenido.silabas ? 5 : 4 }}>
         {ZONAS.map((zona) => (
           <div key={zona} className="cuerpo__fila" data-zona={zona}>
             {/* Un dibujo encima del nombre: para quien no lee, y para que «chasquidos» no

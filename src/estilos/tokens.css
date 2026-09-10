@@ -3564,17 +3564,35 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
  * en la rejilla y una FORMA distinta —del círculo pequeño de los pitos a la barra ancha de
  * los pies—, que va de menudo a grande igual que va el sonido de agudo a grave.
  * ------------------------------------------------------------------------ */
+/*
+  La percusión corporal cabe en apaisado. La sección se lleva el alto del escenario y las
+  filas se reparten lo que hay: el alto de cada golpe sale de cuántas filas hay —cuatro
+  zonas, y las sílabas si las trae— y de lo que queda tras la botonera, entre un mínimo
+  tocable y el tamaño de siempre. En un móvil apaisado, 3,25 rem por fila más las sílabas
+  no cabían y la página se desplazaba: el autor lo vio el 2026-09-10. Menos alto y, como
+  las casillas llenan el ancho, más ancho.
+*/
+.cuerpo {
+  height: calc(var(--alto-escena) - var(--e-5) - var(--e-3));
+  min-height: 0;
+  align-content: center;
+}
 .cuerpo__rejilla {
+  --alto-fila: clamp(1.6rem, calc((var(--alto-escena) - 110px) / var(--filas, 4) - 8px), 3.25rem);
   /* Aquí no va `justify-content`: no es flex, es una caja que se desplaza de lado cuando el
      patrón es largo. Lo que centra son las filas de dentro. */
   overflow-x: auto;
+  min-width: 0;
+  max-width: 100%;
 }
 .cuerpo__fila {
   display: flex;
   align-items: center;
   gap: var(--e-2);
-  margin-bottom: var(--e-2);
+  margin-bottom: clamp(2px, calc(var(--alto-fila) * 0.15), var(--e-2));
 }
+/* El dibujo de la zona encoge con la fila, para que no sea él quien la estire. */
+.cuerpo__etiqueta img { height: min(26px, calc(var(--alto-fila) * 0.6)); width: auto; }
 .cuerpo__etiqueta {
   flex: 0 0 auto;
   width: 6rem;
@@ -3609,7 +3627,7 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 
 .cuerpo__golpe {
   flex: 1 1 0;
-  height: 3.25rem;
+  height: var(--alto-fila, 3.25rem);
   border-radius: var(--r-s);
   /* La fila vacía se ve, pero apenas: tiene que quedar claro que el pulso pasa por ahí
      aunque esa zona no suene. */
@@ -3639,7 +3657,7 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 .cuerpo__silabas { margin-top: var(--e-3); }
 .cuerpo__silaba {
   flex: 1 1 0;
-  padding: var(--e-1) 0;
+  padding: clamp(0px, calc(var(--alto-fila) * 0.1), var(--e-1)) 0;
   border-radius: var(--r-s);
   font-size: var(--t-s);
   font-weight: 700;
