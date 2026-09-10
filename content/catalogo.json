@@ -1,7 +1,7 @@
 {
   "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa, y también si usa un código que aquí no está. El hueco de C1-17 es intencionado: ese código nunca llegó a reservarse y los ids no se renumeran, porque un id puede estar dentro de una URL compartida.",
   "generado": "2026-09-10",
-  "total": 149,
+  "total": 153,
   "actividades": [
     {
       "id": "C1-01",
@@ -1938,6 +1938,58 @@
       "esfuerzo": "S",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Una canción tradicional con percusión corporal: corcheas con las manos, eco con los pies.",
+      "estado": "hecha"
+    },
+    {
+      "id": "INF-29",
+      "titulo": "Cucú: Sol y Milo",
+      "etapa": "infantil",
+      "eje": "altura",
+      "lugar": "pantalla",
+      "tipo": "karaoke",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE3 · crit. 3.5 · saber F",
+      "descripcion": "Karaoke de dos bandas con Sol y Milo: sol y mi.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C1-40",
+      "titulo": "Debajo un botón con la pandilla",
+      "etapa": "primaria-c1",
+      "eje": "pulso",
+      "lugar": "pantalla",
+      "tipo": "karaoke",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Karaoke de una banda: cada nota baja con su personaje.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C1-38",
+      "titulo": "Au clair de la lune: Dora, Rex y Milo",
+      "etapa": "primaria-c1",
+      "eje": "altura",
+      "lugar": "pantalla",
+      "tipo": "karaoke",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Karaoke de tres bandas: do, re y mi con sus personajes.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C1-39",
+      "titulo": "El pastel de Sol, Laia, Milo y Dora",
+      "etapa": "primaria-c1",
+      "eje": "altura",
+      "lugar": "pantalla",
+      "tipo": "karaoke",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Karaoke de cuatro bandas: sol, la, mi y do con sus personajes.",
       "estado": "hecha"
     }
   ]

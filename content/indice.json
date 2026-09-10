@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-10",
-  "total": 148,
+  "total": 152,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -682,6 +682,63 @@
         "competencia": "CE3",
         "criterio": "3.1",
         "saber": "D. Práctica instrumental, vocal y corporal"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c1-38-au-clair-de-la-lune",
+      "titulo": "Au clair de la lune: Dora, Rex y Milo",
+      "descripcion": "La primera parte de «Au clair de la lune», con tres pulsadores: Dora (do), Rex (re) y Milo (mi). Cada nota baja con su personaje.",
+      "etapa": "primaria-c1",
+      "eje": "altura",
+      "tipo": "karaoke",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c1-39-el-pastel-de-sol-laia-milo-y-dora",
+      "titulo": "El pastel de Sol, Laia, Milo y Dora",
+      "descripcion": "La primera estrofa de «Backe, backe Kuchen», una canción tradicional alemana de cuatro notas —sol, la, mi, do—, con cuatro pulsadores: Sol, Laia, Milo y Dora.",
+      "etapa": "primaria-c1",
+      "eje": "altura",
+      "tipo": "karaoke",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c1-40-debajo-un-boton-con-la-pandilla",
+      "titulo": "Debajo un botón con la pandilla",
+      "descripcion": "«Debajo un botón» con un solo pulsador: cada nota baja con su personaje —Dora, Rex, Milo, Fara, Sol, Laia, Doby— y se toca a tiempo cuando llega a la línea.",
+      "etapa": "primaria-c1",
+      "eje": "pulso",
+      "tipo": "karaoke",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
       "herramienta": false
@@ -2658,6 +2715,25 @@
         "competencia": "CE2",
         "criterio": "2.1",
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "inf-29-cucu-sol-y-mi",
+      "titulo": "Cucú: Sol y Milo",
+      "descripcion": "Un canto de dos notas, sol y mi, con dos pulsadores: Sol y Milo. Cada nota baja con su personaje y se toca a su pulsador cuando llega a la línea.",
+      "etapa": "infantil",
+      "eje": "altura",
+      "tipo": "karaoke",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": "CE3",
+        "criterio": "3.5",
+        "saber": "F. Lenguaje y expresión musical – el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
       "herramienta": false

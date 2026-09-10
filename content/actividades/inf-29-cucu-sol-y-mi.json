@@ -1,0 +1,167 @@
+{
+  "id": "inf-29-cucu-sol-y-mi",
+  "version": 1,
+  "tipo": "karaoke",
+  "titulo": "Cucú: Sol y Milo",
+  "descripcion": "Un canto de dos notas, sol y mi, con dos pulsadores: Sol y Milo. Cada nota baja con su personaje y se toca a su pulsador cuando llega a la línea.",
+  "etapa": "infantil",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": "CE3",
+    "criterio": "3.5",
+    "saber": "F. Lenguaje y expresión musical – el sonido, el silencio y sus cualidades"
+  },
+  "practica": {
+    "secuencia": "vocal-kodaly",
+    "notas": [
+      "sol",
+      "mi"
+    ],
+    "compas": "2/4",
+    "tempo": 84
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la melodía es propia: no hay ninguna canción tradicional de solo dos notas con partitura en texto que se pueda cotejar (los cantos de sol-mi de Kodály en inglés no están transcritos en Wikipedia). Una maestra debe decir si el canto es cantable a los cuatro años y si conviene cambiarlo por uno de su repertorio.",
+    "consigna": "actividad.inf29.consigna",
+    "representacion": "personaje",
+    "orientacion": "vertical",
+    "botonesPorCarril": true,
+    "tempo": 84,
+    "notas": [
+      {
+        "nota": "G4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "G4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "G4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "G4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "G4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "G4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "G4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 2
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "enunciado": "actividad.inf29.enunciado",
+  "personaje": "sol",
+  "pistas": [
+    "actividad.inf29.pista1",
+    "actividad.inf29.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "«Cucú, ¿dónde estás?», canto de sol y mi",
+      "autor": "cocomusic",
+      "fuente": "Escrito para esta actividad, en el estilo de los cantos de sol-mi de la progresión vocal",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador",
+  "musica": {
+    "abc": "X:1\nT:Cucú, ¿dónde estás?\nC:cocomusic\nM:2/4\nL:1/4\nK:C\nG E | G E | G/2 G/2 E | E E | G E | G E | G/2 G/2 E | E E | G E | G/2 G/2 E | G E | E2 |]"
+  }
+}

@@ -22,6 +22,8 @@ import { duracionDe, instantesDe } from '../melodiaEnTiempo';
 import { CuentaAtras } from '@/ui/CuentaAtras';
 import { colorDe, nombreDe } from '@/ui/coloresNota';
 import { Icono } from '@/ui/Icono';
+import { Personaje } from '@/ui/Personaje';
+import { personajeDe } from '@/ui/personajes';
 import { pistaPara } from '../maquinaEleccion';
 import { BarraAcciones } from '@/ui/BarraAcciones';
 import { IconoRepetir, IconoSiguiente, IconoTocar } from '@/ui/Simbolos';
@@ -510,6 +512,11 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
               {(!revelar || acertadas.has(i)) && (
                 <>
                   {representacion === 'icono' && n.icono && <Icono nombre={n.icono} tamano={38} />}
+                  {/* Con la pandilla, cada nota baja con su personaje: Dora es do, Milo es mi.
+                      Lo pidió el autor el 2026-09-10 para las canciones por bandas. */}
+                  {representacion === 'personaje' && personajeDe(n.nota) && (
+                    <Personaje nombre={personajeDe(n.nota)!} pose="neutro" tamano={46} />
+                  )}
                   {contenidoFigura}
                 </>
               )}
@@ -559,6 +566,11 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
               onPointerDown={() => tocar(i)}
               aria-label={`${nombreDe(nota)} · ${i + 1}`}
             >
+              {/* El pulsador de cada banda es su personaje cantando, con el nombre de la
+                  nota debajo: es la nota con su imagen, como pidió el autor. */}
+              {representacion === 'personaje' && personajeDe(nota) && (
+                <Personaje nombre={personajeDe(nota)!} pose="canta" tamano={48} />
+              )}
               {nombreDe(nota)}
             </button>
           ))}

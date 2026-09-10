@@ -1,0 +1,179 @@
+{
+  "id": "c1-40-debajo-un-boton-con-la-pandilla",
+  "version": 1,
+  "tipo": "karaoke",
+  "titulo": "Debajo un botón con la pandilla",
+  "descripcion": "«Debajo un botón» con un solo pulsador: cada nota baja con su personaje —Dora, Rex, Milo, Fara, Sol, Laia, Doby— y se toca a tiempo cuando llega a la línea.",
+  "etapa": "primaria-c1",
+  "eje": "pulso",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "2/4",
+    "tempo": 72
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el ritmo es el de las transcripciones (corchea con puntillo y semicorchea al empezar cada frase); a 72 la semicorchea son 200 ms y con un solo pulsador puede costar en 1.º. Si cuesta, bajar a 64 o dar la pareja «De-ba» por un solo toque.",
+    "consigna": "actividad.c140.consigna",
+    "representacion": "personaje",
+    "orientacion": "vertical",
+    "botonesPorCarril": false,
+    "tempo": 72,
+    "notas": [
+      {
+        "nota": "C4",
+        "pulsos": 0.75
+      },
+      {
+        "nota": "D4",
+        "pulsos": 0.25
+      },
+      {
+        "nota": "E4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "F4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "G4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "G4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1
+      },
+      {
+        "nota": "A4",
+        "pulsos": 0.75
+      },
+      {
+        "nota": "A4",
+        "pulsos": 0.25
+      },
+      {
+        "nota": "C5",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "F4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "G4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "G4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "G4",
+        "pulsos": 1
+      },
+      {
+        "nota": "F4",
+        "pulsos": 0.75
+      },
+      {
+        "nota": "G4",
+        "pulsos": 0.25
+      },
+      {
+        "nota": "A4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "F4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "E4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "E4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "D4",
+        "pulsos": 0.75
+      },
+      {
+        "nota": "E4",
+        "pulsos": 0.25
+      },
+      {
+        "nota": "F4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "D4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "C4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "C4",
+        "pulsos": 0.5
+      },
+      {
+        "nota": "C4",
+        "pulsos": 1
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "enunciado": "actividad.c140.enunciado",
+  "personaje": "sol",
+  "pistas": [
+    "actividad.c140.pista1",
+    "actividad.c140.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "«Debajo un botón», canción infantil",
+      "autor": "Tradicional española, anónima",
+      "fuente": "Melodía de dominio público. Ritmo y notas cotejados con dos transcripciones escolares que coinciden: COAEM (#músicaviral) y Partyflauta nivel 2",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador",
+  "musica": {
+    "abc": "X:1\nT:Debajo un botón\nC:Tradicional española\nM:2/4\nL:1/8\nK:C\nC3/2 D/2 E F | G G G2 | A3/2 A/2 c F | G G G2 | F3/2 G/2 A F | E E E2 | D3/2 E/2 F D | C C C2 |]"
+  }
+}

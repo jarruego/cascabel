@@ -41,10 +41,10 @@ lista exactamente los tipos que hay en `src/motor/registro.ts`, con sus cifras a
 | Tipo | Mecánica | Actividades |
 |---|---|---|
 | `eleccion` | Suena o se muestra algo; se elige entre 2–4 opciones grandes | 58 |
+| `karaoke` | Musicograma que avanza: las notas llegan y se tocan al pasar | 11 |
 | `rejilla` | Cuadrícula altura × tiempo | 10 |
 | `guia-aula` | Pantalla del maestro: consigna, pulso, coreografía, ficha | 9 |
 | `lienzo` | Creación libre sin evaluación | 8 |
-| `karaoke` | Musicograma que avanza: las notas llegan y se tocan al pasar | 7 |
 | `referencia` | Consulta del lenguaje musical, con sonido. No es un ejercicio | 7 |
 | `tocar-a-tiempo` | Golpear en el momento correcto | 7 |
 | `ordenar` | Secuencia por altura, duración o forma | 6 |

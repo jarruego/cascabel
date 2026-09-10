@@ -38,7 +38,7 @@
 import { aMidi } from '@/audio/sampler';
 import { alturaEnPauta, type Clave } from './alturaEnPauta';
 
-export type Representacion = 'pentagrama' | 'color' | 'silaba' | 'figura' | 'icono';
+export type Representacion = 'pentagrama' | 'color' | 'silaba' | 'figura' | 'icono' | 'personaje';
 export type Orientacion = 'horizontal' | 'vertical';
 
 export interface NotaMusicograma {
@@ -58,7 +58,8 @@ export interface NotaMusicograma {
  * Es la pregunta de la que cuelga todo lo demás. Si la respuesta es no, hay un solo carril.
  */
 export function representaAltura(r: Representacion): boolean {
-  return r === 'pentagrama' || r === 'color';
+  // «personaje» también dice altura: cada personaje ES una nota (Dora es do, Sol es sol).
+  return r === 'pentagrama' || r === 'color' || r === 'personaje';
 }
 
 /**

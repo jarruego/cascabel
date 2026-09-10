@@ -1,0 +1,155 @@
+{
+  "id": "c1-38-au-clair-de-la-lune",
+  "version": 1,
+  "tipo": "karaoke",
+  "titulo": "Au clair de la lune: Dora, Rex y Milo",
+  "descripcion": "La primera parte de «Au clair de la lune», con tres pulsadores: Dora (do), Rex (re) y Milo (mi). Cada nota baja con su personaje.",
+  "etapa": "primaria-c1",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 92
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: se usa solo la primera parte, que en la canción se canta dos veces seguidas, porque la segunda sube a la, si y sol grave y ya no son tres bandas. Confirmar el tempo. El compás original es 2/2; se escribe 4/4 porque el esquema no admite 2/2 y son los mismos cuatro tiempos de negra por compás.",
+    "consigna": "actividad.c138.consigna",
+    "representacion": "personaje",
+    "orientacion": "vertical",
+    "botonesPorCarril": true,
+    "tempo": 92,
+    "notas": [
+      {
+        "nota": "C4",
+        "pulsos": 1
+      },
+      {
+        "nota": "C4",
+        "pulsos": 1
+      },
+      {
+        "nota": "C4",
+        "pulsos": 1
+      },
+      {
+        "nota": "D4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 2
+      },
+      {
+        "nota": "D4",
+        "pulsos": 2
+      },
+      {
+        "nota": "C4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "D4",
+        "pulsos": 1
+      },
+      {
+        "nota": "D4",
+        "pulsos": 1
+      },
+      {
+        "nota": "C4",
+        "pulsos": 4
+      },
+      {
+        "nota": "C4",
+        "pulsos": 1
+      },
+      {
+        "nota": "C4",
+        "pulsos": 1
+      },
+      {
+        "nota": "C4",
+        "pulsos": 1
+      },
+      {
+        "nota": "D4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 2
+      },
+      {
+        "nota": "D4",
+        "pulsos": 2
+      },
+      {
+        "nota": "C4",
+        "pulsos": 1
+      },
+      {
+        "nota": "E4",
+        "pulsos": 1
+      },
+      {
+        "nota": "D4",
+        "pulsos": 1
+      },
+      {
+        "nota": "D4",
+        "pulsos": 1
+      },
+      {
+        "nota": "C4",
+        "pulsos": 4
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "enunciado": "actividad.c138.enunciado",
+  "personaje": "doby",
+  "pistas": [
+    "actividad.c138.pista1",
+    "actividad.c138.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "«Au clair de la lune», primera parte",
+      "autor": "Tradicional francesa, anónima (siglo XVIII)",
+      "fuente": "Melodía de dominio público; cotejada con la partitura de Wikipedia en francés (Lilypond): c4 c c d e2 d c4 e d d c1, dos veces",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador",
+  "musica": {
+    "abc": "X:1\nT:Au clair de la lune\nC:Tradicional francesa\nM:4/4\nL:1/4\nK:C\nC C C D | E2 D2 | C E D D | C4 | C C C D | E2 D2 | C E D D | C4 |]"
+  }
+}
