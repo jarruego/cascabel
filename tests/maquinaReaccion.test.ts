@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { TRAS_ACIERTO_MS, esperaTrasRespuesta } from '../src/motor/maquinaReaccion';
 import { createElement, Fragment } from 'react';
 import {
   BASE_MS,
@@ -92,5 +93,17 @@ describe('cuánto se queda', () => {
 
   it('la instrucción tampoco', () => {
     expect(duracionMs('neutro', 'Sigue el dibujo mientras suena')).toBeNull();
+  });
+});
+
+describe('cuánto se espera tras una respuesta', () => {
+  it('tras un acierto, enseguida: no hay nada que leer', () => {
+    expect(esperaTrasRespuesta(true, 'una pista larguísima que no se va a leer')).toBe(TRAS_ACIERTO_MS);
+  });
+
+  it('tras un fallo, lo que tarda en leerse la pista', () => {
+    const pista = 'Cada compás tiene que sumar exactamente tres pulsos.';
+    expect(esperaTrasRespuesta(false, pista)).toBe(BASE_MS + pista.length * POR_CARACTER_MS);
+    expect(esperaTrasRespuesta(false, pista)).toBeGreaterThan(esperaTrasRespuesta(false, 'Casi.'));
   });
 });

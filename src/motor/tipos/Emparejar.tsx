@@ -2,6 +2,7 @@ import { useCallback, useEffect, useLayoutEffect, useReducer, useRef, useState }
 import { OBJETIVO_TACTIL } from '@/config';
 import { useCarril } from '@/app/preferencias';
 import { Reaccion } from '@/ui/Reaccion';
+import { esperaTrasRespuesta } from '../maquinaReaccion';
 import { pistaPara } from '../maquinaEleccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
@@ -120,14 +121,16 @@ export default function Emparejar({ actividad, alTerminar }: PropsActividad) {
     sonido, o al revés—, y repetirlo encima del elogio lo solapaba. La pausa es más corta
     en el acierto: no hay nada que escuchar.
   */
+  const mensajeDeFallo = t(pistaPara(actividad.pistas, estado.fallosAqui) ?? 'comun.escuchaOtraVez');
   useEffect(() => {
     if (estado.fase !== 'comprobando' || !estado.ultima) return;
+    // Tras el acierto, enseguida; tras el fallo, lo que tarda en leerse la pista.
     const id = window.setTimeout(
       () => despachar({ tipo: 'seguir' }),
-      estado.ultima.acierto ? 900 : 1400,
+      esperaTrasRespuesta(estado.ultima.acierto, mensajeDeFallo),
     );
     return () => window.clearTimeout(id);
-  }, [estado.fase, estado.ultima]);
+  }, [estado.fase, estado.ultima, mensajeDeFallo]);
 
   useEffect(() => {
     if (estado.fase !== 'completada' || yaTerminada.current) return;

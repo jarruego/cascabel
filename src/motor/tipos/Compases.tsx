@@ -1,6 +1,7 @@
 import { useEffect, useReducer, useRef } from 'react';
 import { useCarril } from '@/app/preferencias';
 import { Reaccion } from '@/ui/Reaccion';
+import { esperaTrasRespuesta } from '../maquinaReaccion';
 import { pistaPara } from '../maquinaEleccion';
 import { BarraAcciones } from '@/ui/BarraAcciones';
 import { IconoComprobar } from '@/ui/Simbolos';
@@ -54,11 +55,27 @@ export default function Compases({ actividad, alTerminar }: PropsActividad) {
     INICIAL_COMPASES,
   );
 
+  /* Lo que dice la tarjeta al fallar: el error concreto y, si la hay, la pista. Se calcula
+     aquí porque de su longitud sale cuánto se espera antes de volver a colocar. */
+  const mensajeDeFallo =
+    estado.fase === 'revisando'
+      ? t(
+          estado.sobran.length && estado.faltan.length
+            ? 'compases.sobranYFaltan'
+            : estado.sobran.length
+              ? 'compases.sobran'
+              : 'compases.faltan',
+        ) + (pistaPara(actividad.pistas, estado.intentos) ? ` ${t(pistaPara(actividad.pistas, estado.intentos)!)}` : '')
+      : '';
+
   useEffect(() => {
     if (estado.fase !== 'revisando') return;
-    const id = window.setTimeout(() => despachar({ tipo: 'seguir' }), 2600);
+    const id = window.setTimeout(
+      () => despachar({ tipo: 'seguir' }),
+      esperaTrasRespuesta(false, mensajeDeFallo),
+    );
     return () => window.clearTimeout(id);
-  }, [estado.fase, estado.intentos]);
+  }, [estado.fase, estado.intentos, mensajeDeFallo]);
 
   useEffect(() => {
     if (estado.fase !== 'completada' || yaTerminada.current) return;
@@ -138,17 +155,7 @@ export default function Compases({ actividad, alTerminar }: PropsActividad) {
             pista de la actividad se añade debajo en vez de sustituirla — es la única del
             grupo donde el tipo sabe más que el JSON sobre lo que acaba de pasar.
           */}
-        {estado.fase === 'revisando' &&
-          t(
-            estado.sobran.length && estado.faltan.length
-              ? 'compases.sobranYFaltan'
-              : estado.sobran.length
-                ? 'compases.sobran'
-                : 'compases.faltan',
-          )}
-        {estado.fase === 'revisando' && pistaPara(actividad.pistas, estado.intentos) && (
-          <> {t(pistaPara(actividad.pistas, estado.intentos)!)}</>
-        )}
+        {estado.fase === 'revisando' && mensajeDeFallo}
         {/* Y nada al completar: eso lo dice la modal de enhorabuena medio segundo después. */}
       </Reaccion>
     </section>

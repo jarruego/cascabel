@@ -2,6 +2,7 @@ import { useEffect, useReducer, useRef } from 'react';
 import { OBJETIVO_TACTIL } from '@/config';
 import { useCarril } from '@/app/preferencias';
 import { Reaccion } from '@/ui/Reaccion';
+import { esperaTrasRespuesta } from '../maquinaReaccion';
 import { pistaPara } from '../maquinaEleccion';
 import { BarraAcciones } from '@/ui/BarraAcciones';
 import { IconoComprobar, IconoTocar } from '@/ui/Simbolos';
@@ -129,11 +130,16 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
   };
   useEffect(() => vaciarCola, []);
 
+  const mensajeDeFallo = t(pistaPara(actividad.pistas, estado.fallosAqui) ?? 'ordenar.casi');
   useEffect(() => {
     if (estado.fase !== 'revisando') return;
-    const id = window.setTimeout(() => despachar({ tipo: 'seguir' }), 2200);
+    // Lo que tarda en leerse la pista, no un número fijo: ver `esperaTrasRespuesta`.
+    const id = window.setTimeout(
+      () => despachar({ tipo: 'seguir' }),
+      esperaTrasRespuesta(false, mensajeDeFallo),
+    );
     return () => window.clearTimeout(id);
-  }, [estado.fase, estado.intentos]);
+  }, [estado.fase, estado.intentos, mensajeDeFallo]);
 
   useEffect(() => {
     if (estado.fase !== 'completada' || yaTerminada.current) return;
@@ -292,8 +298,7 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
       >
         {/* Solo «casi». El «¡completada!» lo decía aquí y otra vez medio segundo después en
             la modal de enhorabuena, que es la que se queda: al terminar ya hay pantalla. */}
-        {estado.fase === 'revisando' &&
-          t(pistaPara(actividad.pistas, estado.fallosAqui) ?? 'ordenar.casi')}
+        {estado.fase === 'revisando' && mensajeDeFallo}
       </Reaccion>
 
       {/* Sin barra de progreso: las casillas se van llenando a la vista, y son las mismas que hay que llenar.

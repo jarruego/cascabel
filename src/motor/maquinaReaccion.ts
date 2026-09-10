@@ -54,6 +54,24 @@ export const BASE_MS = 3500;
 /** Lo que se le suma por carácter. */
 export const POR_CARACTER_MS = 45;
 
+/** Lo que se espera tras un acierto antes de seguir: un «¡bien!» y ya. */
+export const TRAS_ACIERTO_MS = 900;
+
+/**
+ * Cuánto se espera tras una respuesta antes de que la actividad siga sola.
+ *
+ * **El acierto y el fallo no valen lo mismo.** Tras un acierto no hay nada que leer y se
+ * sigue enseguida; tras un fallo hay una pista, y lo que dura es lo que tarda en leerse:
+ * la base más lo que mida la frase, la misma cuenta que la tarjeta de elogio. Había cinco
+ * tipos con cinco números fijos —900, 1400, 2200, 2600— y el autor lo vio en «pon las
+ * barras»: «no da tiempo a leer el mensaje de error». Ahora es una sola regla, y sale de
+ * la frase.
+ */
+export function esperaTrasRespuesta(acierto: boolean, texto: string): number {
+  if (acierto) return TRAS_ACIERTO_MS;
+  return BASE_MS + texto.length * POR_CARACTER_MS;
+}
+
 /**
  * El texto que lleva la tarjeta, venga como un hijo o como varios.
  *

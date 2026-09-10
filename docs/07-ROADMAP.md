@@ -2685,6 +2685,14 @@ textos, niveles, camino, y la sección de instrumentos.
       de presentador. Un test pide que nadie baje de la mitad de su parte ni suba del doble,
       con umbrales que crecen con el catálogo. La tabla de `docs/14` vuelve a estar al día.
 
+- [x] **El tiempo de un mensaje de fallo sale de la frase, y el del acierto es corto.**
+      Había cinco tipos con cinco números fijos —900, 1400, 2200, 2600 ms— y en «pon las
+      barras» no daba tiempo a leer. Una sola regla, `esperaTrasRespuesta`, con test: tras
+      un acierto 900 ms; tras un fallo 3,5 s más 45 ms por letra, la misma cuenta que la
+      tarjeta de elogio. Aplicada a compases, ordenar y emparejar; elección, pentagrama y
+      escala ya la seguían; los dictados en rejilla esperan a que se pulse; y el memory se
+      queda en 1,4 s porque ahí no hay frase, hay dos cartas que mirar.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
