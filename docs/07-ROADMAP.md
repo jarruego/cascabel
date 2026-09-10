@@ -2959,6 +2959,10 @@ textos, niveles, camino, y la sección de instrumentos.
       largas: la fila medía el ancho visible y la etiqueta pegada solo aguanta dentro de su
       fila; ahora la fila mide lo que mide la tira.
 
+- [x] **La 340 «Diez obras para empezar» pasa al Taller** (`herramienta: true`): es un
+      reproductor de obras para poner en clase, no un ejercicio, dijo el autor el 2026-09-11.
+      Sigue en el catálogo, porque tiene criterio curricular.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
