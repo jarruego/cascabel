@@ -2719,9 +2719,11 @@ textos, niveles, camino, y la sección de instrumentos.
       golpes se repartían por cercanía —cada hueco cogía el más próximo— y golpeando sin
       parar siempre había uno dentro de cada ventana. Ahora se reparten en orden: dentro de
       la ventana puntúa; antes de tiempo **quema** el hueco, que se queda gris y no se
-      recupera; lo demás sobra, y los sobrantes cuentan en contra en el cierre. El umbral
-      para felicitar sube de seis a ocho de cada diez —sigue marcado como pendiente de
-      revisión pedagógica— y vale para karaoke y canta la nota, que usan la misma regla.
+      recupera; lo demás sobra, y los sobrantes cuentan en contra en el cierre. Y felicitar
+      se cuenta en fallos permitidos, un golpe de cada cinco con la parte entera hacia abajo
+      —con cuatro pulsos no se perdona ninguno, con ocho uno, con doce dos—, y «regular pero
+      desfasado» exige haber dado todos los golpes. Sigue marcado como pendiente de revisión
+      pedagógica, y vale para karaoke y canta la nota, que usan la misma regla.
 
 - [x] **Percusión corporal: «chasquidos» en vez de «pitos», y un dibujo sobre cada fila.**
       Chasquear los dedos, palmas, la pierna y el pie, de OpenMoji, encima del nombre de
@@ -2752,6 +2754,10 @@ textos, niveles, camino, y la sección de instrumentos.
       hasta que haya una transcripción verificada. Las canciones enteras no van en bucle:
       se tocan una vez y al final el personaje felicita y se ofrece repetir o terminar; y
       la columna de las zonas se queda fija a la izquierda mientras la tira avanza.
+
+- [x] **El tic de hecha, en la línea del título y pulsable.** Iba en su propia línea; ahora
+      va a la derecha del título, y al tocarlo una modal pregunta si quitar la marca. Quitarla
+      no borra nada más: las veces y el mejor intento se quedan.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
