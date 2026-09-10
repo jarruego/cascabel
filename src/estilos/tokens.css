@@ -3800,6 +3800,11 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   display: flex;
   align-items: center;
   gap: var(--e-2);
+  /* Tan ancha como su tira y nunca menos que la caja: la etiqueta pegada a la izquierda
+     solo se queda quieta dentro del ancho de su fila, y con la fila al ancho visible se iba
+     en cuanto la tira pasaba de ahí (lo vio el autor en el Danubio, 2026-09-11). */
+  width: max-content;
+  min-width: 100%;
   margin-bottom: clamp(2px, calc(var(--alto-fila) * 0.15), var(--e-2));
 }
 /* El dibujo de la zona encoge con la fila, para que no sea él quien la estire. */

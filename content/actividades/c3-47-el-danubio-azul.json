@@ -23,7 +23,7 @@
     "modo": "ninguna"
   },
   "contenido": {
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: un vals con el cuerpo: el pie en el uno y las palmas en el dos y el tres, mientras la melodía suena con la flauta. Es la forma más directa de sentir el 3/4. Entero y sin bucle: dos frases de ocho compases, la anacrusa en el tercer tiempo. La melodía es la voz superior del arreglo simplificado de Mutopia (N. Kouremenos, CC BY-SA 4.0), cotejada con su partitura renderizada.",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: un vals con el cuerpo: el pie en el uno y las palmas en el dos y el tres, mientras la melodía suena con la flauta. Es la forma más directa de sentir el 3/4. Entero y sin bucle: el primer vals completo, treinta y tres compases del arreglo, la anacrusa en el tercer tiempo. Cada frase de ocho compases cambia la pareja de golpes del dos y el tres —palmas, muslos, palmas, chasquidos— para que las cuatro zonas trabajen; el pie va siempre en el uno. Melodía al 100 %. La melodía es la voz superior del arreglo simplificado de Mutopia (N. Kouremenos, CC BY-SA 4.0), cotejada con su partitura renderizada.",
     "consigna": "actividad.c347.consigna",
     "tempo": 108,
     "bucle": false,
@@ -108,10 +108,73 @@
         "zona": "pies"
       },
       {
-        "zona": "palmas"
+        "zona": "muslos"
       },
       {
-        "zona": "palmas"
+        "zona": "muslos"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "muslos"
       },
       {
         "zona": "pies"
@@ -172,6 +235,99 @@
       },
       {
         "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pitos"
       }
     ],
     "melodia": [
@@ -222,8 +378,61 @@
       null,
       "E5",
       "E5",
+      null,
+      "C4",
+      "E4",
+      "G4",
+      "C5",
+      null,
+      "C6",
+      "C6",
+      null,
+      "G5",
+      "G5",
+      null,
+      "C4",
+      "C4",
+      "E4",
+      "G4",
+      "C5",
+      null,
+      "C6",
+      "C6",
+      null,
+      "A5",
+      "A5",
+      null,
+      "D4",
+      "D4",
+      "F4",
+      "A4",
+      "A4",
+      null,
+      null,
+      "A4",
+      "F#4",
+      "G4",
+      "E5",
+      null,
+      null,
+      "E5",
+      null,
+      null,
+      "E5",
+      null,
+      "D5",
+      "A5",
+      null,
+      "G5",
+      "C5",
+      "C5",
+      "C6",
+      "C6",
+      "C6",
+      null,
       null
-    ]
+    ],
+    "volumenMelodia": 1
   },
   "evaluacion": {
     "autocorrectiva": false,

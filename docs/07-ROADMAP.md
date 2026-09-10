@@ -2953,6 +2953,11 @@ textos, niveles, camino, y la sección de instrumentos.
       Radetzky** con la melodía al 100 % (`volumenMelodia`, nuevo campo de `cuerpo`) y el
       pasaje dos veces, como repite la marcha; el trío queda para cuando haya fuente. **La 343**
       pasa de 100 a 176 por semicorchea (el tope del esquema es 180): iba «extremadamente lenta».
+      **La 347 Danubio** llega hasta el final del primer vals (33 compases), con la melodía al
+      100 % y las cuatro zonas: el pie siempre en el uno y, por frases, palmas, muslos, palmas
+      y chasquidos en el dos y el tres. Y la columna de zonas se quedaba sin fijar en las tiras
+      largas: la fila medía el ancho visible y la etiqueta pegada solo aguanta dentro de su
+      fila; ahora la fila mide lo que mide la tira.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
