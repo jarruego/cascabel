@@ -92,15 +92,7 @@ export function ModalExplicacion({
 
   return (
     <Modal abierto={abierto} alCerrar={cerrar} titulo={actividad.titulo}>
-      <button
-        type="button"
-        className="modal__compartir"
-        aria-label={t('modal.copiarEnlace')}
-        title={t('modal.copiarEnlace')}
-        onClick={() => void compartir()}
-      >
-        <IconoCompartir />
-      </button>
+      {/* El aviso de copiado va arriba del todo, centrado, y se va solo. */}
       {copiado !== 'no' && (
         <p className="modal__aviso" role="status" data-tono={copiado === 'si' ? 'bien' : 'aviso'}>
           {copiado === 'si' ? t('modal.enlaceCopiado') : t('modal.enlaceNoCopiado')}
@@ -116,8 +108,19 @@ export function ModalExplicacion({
           la progresión de cocomusic —la base, la seguridad— para una pantalla que es
           exactamente eso, el momento antes de empezar. Ver `docs/14-PERSONAJES.md`. */}
       <Personaje nombre={actividad.personaje ?? 'dora'} pose="saluda" tamano={110} />
-      <h2>
+      <h2 className="modal__titulo">
         <span className="codigo">{codigoDe(actividad.id)}</span> {actividad.titulo}
+        {/* Compartir es copiar el enlace: un icono pequeño pegado al título, a la derecha.
+            Lo pidió así el autor el 2026-09-10; el botón grande en la esquina estorbaba. */}
+        <button
+          type="button"
+          className="modal__compartir"
+          aria-label={t('modal.copiarEnlace')}
+          title={t('modal.copiarEnlace')}
+          onClick={() => void compartir()}
+        >
+          <IconoCompartir tamano={18} />
+        </button>
       </h2>
 
       {actividad.enunciado && <p className="modal__texto">{t(actividad.enunciado)}</p>}

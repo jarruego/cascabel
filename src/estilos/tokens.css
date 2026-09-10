@@ -1425,25 +1425,27 @@ p {
   color: var(--tinta-2);
   max-width: 34ch;
 }
-/* Compartir: un botón redondo en la esquina de la modal que copia el enlace. Es para el
-   adulto, así que va discreto —contorno y tinta secundaria— pero con el objetivo táctil
-   entero. */
+/* Compartir: un icono pequeño al lado del título, a la derecha, que copia el enlace. Es
+   para el adulto, así que va discreto —sin borde, tinta secundaria—; el área que se pulsa
+   sigue siendo de 36 px aunque el dibujo sea de 18. */
+.modal__titulo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+}
 .modal__compartir {
-  position: absolute;
-  top: var(--e-3);
-  right: var(--e-3);
   display: grid;
   place-items: center;
-  width: max(44px, var(--objetivo));
-  height: max(44px, var(--objetivo));
+  width: 36px;
+  height: 36px;
   padding: 0;
-  border: 2px solid var(--linea);
+  border: none;
   border-radius: 50%;
-  background: var(--superficie);
+  background: transparent;
   color: var(--tinta-2);
   cursor: pointer;
 }
-.modal__compartir:hover { color: var(--tinta); border-color: var(--tinta-2); }
+.modal__compartir:hover { color: var(--tinta); background: var(--suave-azul); }
 .modal__compartir:focus-visible { outline: var(--foco); outline-offset: 2px; }
 /* «Enlace copiado»: un aviso corto que se va solo. En verde con el tic implícito del texto. */
 .modal__aviso {
