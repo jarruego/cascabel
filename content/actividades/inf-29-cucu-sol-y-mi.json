@@ -33,102 +33,213 @@
     "orientacion": "vertical",
     "botonesPorCarril": true,
     "tempo": 84,
-    "notas": [
+    "ejercicios": [
       {
-        "nota": "G4",
-        "pulsos": 1
+        "titulo": "actividad.inf29.ej1",
+        "notas": [
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          }
+        ]
       },
       {
-        "nota": "E4",
-        "pulsos": 1
+        "titulo": "actividad.inf29.ej2",
+        "notas": [
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 2
+          }
+        ]
       },
       {
-        "nota": "G4",
-        "pulsos": 1
-      },
-      {
-        "nota": "E4",
-        "pulsos": 1
-      },
-      {
-        "nota": "G4",
-        "pulsos": 0.5
-      },
-      {
-        "nota": "G4",
-        "pulsos": 0.5
-      },
-      {
-        "nota": "E4",
-        "pulsos": 1
-      },
-      {
-        "nota": "E4",
-        "pulsos": 1
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1
-      },
-      {
-        "nota": "E4",
-        "pulsos": 1
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1
-      },
-      {
-        "nota": "E4",
-        "pulsos": 1
-      },
-      {
-        "nota": "G4",
-        "pulsos": 0.5
-      },
-      {
-        "nota": "G4",
-        "pulsos": 0.5
-      },
-      {
-        "nota": "E4",
-        "pulsos": 1
-      },
-      {
-        "nota": "E4",
-        "pulsos": 1
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1
-      },
-      {
-        "nota": "E4",
-        "pulsos": 1
-      },
-      {
-        "nota": "G4",
-        "pulsos": 0.5
-      },
-      {
-        "nota": "G4",
-        "pulsos": 0.5
-      },
-      {
-        "nota": "E4",
-        "pulsos": 1
-      },
-      {
-        "nota": "G4",
-        "pulsos": 1
-      },
-      {
-        "nota": "E4",
-        "pulsos": 1
-      },
-      {
-        "nota": "E4",
-        "pulsos": 2
+        "titulo": "actividad.inf29.ej3",
+        "notas": [
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 2
+          }
+        ]
       }
     ]
   },

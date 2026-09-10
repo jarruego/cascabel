@@ -1,0 +1,592 @@
+{
+  "id": "c3-43-el-preludio-de-bach",
+  "version": 1,
+  "tipo": "karaoke",
+  "titulo": "El preludio de Bach",
+  "descripcion": "Los cuatro primeros compases del Preludio en do mayor de Bach, como una escalera de arpegios en el pentagrama. Tres partes: dos compases, otros dos y los cuatro.",
+  "etapa": "primaria-c3",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 132
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el pulso es la semicorchea a 132: son 450 ms por nota, rápido para 3.º ciclo aunque el dibujo del arpegio sea siempre el mismo. Si cuesta, bajar a 108. Sin ABC porque llega a fa5.",
+    "consigna": "actividad.c343.consigna",
+    "representacion": "pentagrama",
+    "orientacion": "vertical",
+    "botonesPorCarril": false,
+    "tempo": 132,
+    "ejercicios": [
+      {
+        "titulo": "actividad.c343.ej1",
+        "notas": [
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "A4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D5",
+            "pulsos": 1
+          },
+          {
+            "nota": "F5",
+            "pulsos": 1
+          },
+          {
+            "nota": "A4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D5",
+            "pulsos": 1
+          },
+          {
+            "nota": "F5",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "A4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D5",
+            "pulsos": 1
+          },
+          {
+            "nota": "F5",
+            "pulsos": 1
+          },
+          {
+            "nota": "A4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D5",
+            "pulsos": 1
+          },
+          {
+            "nota": "F5",
+            "pulsos": 1
+          }
+        ]
+      },
+      {
+        "titulo": "actividad.c343.ej2",
+        "notas": [
+          {
+            "nota": "B3",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D5",
+            "pulsos": 1
+          },
+          {
+            "nota": "F5",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D5",
+            "pulsos": 1
+          },
+          {
+            "nota": "F5",
+            "pulsos": 1
+          },
+          {
+            "nota": "B3",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D5",
+            "pulsos": 1
+          },
+          {
+            "nota": "F5",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D5",
+            "pulsos": 1
+          },
+          {
+            "nota": "F5",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          }
+        ]
+      },
+      {
+        "titulo": "actividad.c343.ej3",
+        "notas": [
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "A4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D5",
+            "pulsos": 1
+          },
+          {
+            "nota": "F5",
+            "pulsos": 1
+          },
+          {
+            "nota": "A4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D5",
+            "pulsos": 1
+          },
+          {
+            "nota": "F5",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "A4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D5",
+            "pulsos": 1
+          },
+          {
+            "nota": "F5",
+            "pulsos": 1
+          },
+          {
+            "nota": "A4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D5",
+            "pulsos": 1
+          },
+          {
+            "nota": "F5",
+            "pulsos": 1
+          },
+          {
+            "nota": "B3",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D5",
+            "pulsos": 1
+          },
+          {
+            "nota": "F5",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D5",
+            "pulsos": 1
+          },
+          {
+            "nota": "F5",
+            "pulsos": 1
+          },
+          {
+            "nota": "B3",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D5",
+            "pulsos": 1
+          },
+          {
+            "nota": "F5",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D5",
+            "pulsos": 1
+          },
+          {
+            "nota": "F5",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          }
+        ]
+      }
+    ],
+    "clave": "sol"
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "enunciado": "actividad.c343.enunciado",
+  "personaje": "laia",
+  "pistas": [
+    "actividad.c343.pista1",
+    "actividad.c343.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Preludio n.º 1 en do mayor, BWV 846, compases 1-4",
+      "autor": "Johann Sebastian Bach (1685-1750)",
+      "fuente": "Dominio público; cotejado con la partitura de Wikipedia en inglés (Lilypond), juntando las tres voces en un solo arpegio",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

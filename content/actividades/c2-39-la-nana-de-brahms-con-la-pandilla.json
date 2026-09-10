@@ -1,0 +1,298 @@
+{
+  "id": "c2-39-la-nana-de-brahms-con-la-pandilla",
+  "version": 1,
+  "tipo": "karaoke",
+  "titulo": "La nana de Brahms con la pandilla",
+  "descripcion": "La primera mitad de la «Canción de cuna» de Brahms, con un solo pulsador: cada nota baja con su personaje. Tres partes: media, media y entera.",
+  "etapa": "primaria-c2",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "3/4",
+    "tempo": 84
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: los dos silencios de negra de la partitura se han absorbido en la nota anterior, que en un karaoke de toque es lo mismo que dejarla sonar. Siete alturas distintas: un solo pulsador. Confirmar tempo.",
+    "consigna": "actividad.c239.consigna",
+    "representacion": "personaje",
+    "orientacion": "vertical",
+    "botonesPorCarril": false,
+    "tempo": 84,
+    "ejercicios": [
+      {
+        "titulo": "actividad.c239.ej1",
+        "notas": [
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "B4",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          }
+        ]
+      },
+      {
+        "titulo": "actividad.c239.ej2",
+        "notas": [
+          {
+            "nota": "F4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "F4",
+            "pulsos": 2
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "F4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "B4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "B4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 2
+          }
+        ]
+      },
+      {
+        "titulo": "actividad.c239.ej3",
+        "notas": [
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "B4",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "F4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "F4",
+            "pulsos": 2
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "F4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "B4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "B4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 2
+          }
+        ]
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "enunciado": "actividad.c239.enunciado",
+  "personaje": "fara",
+  "pistas": [
+    "actividad.c239.pista1",
+    "actividad.c239.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "«Canción de cuna» (Wiegenlied), op. 49 n.º 4, primera mitad",
+      "autor": "Johannes Brahms (1833-1897)",
+      "fuente": "Dominio público; cotejada con la partitura de Wikipedia en inglés (Lilypond, mi bemol mayor) y transportada a do",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador",
+  "musica": {
+    "abc": "X:1\nT:Canción de cuna\nC:Johannes Brahms\nM:3/4\nL:1/8\nK:C\nE E | G3 E E2 | G4 E G | c2 B3 A | A2 G2 D E | F2 D2 D E | F4 D F | B A G2 B2 | c4 |]"
+  }
+}

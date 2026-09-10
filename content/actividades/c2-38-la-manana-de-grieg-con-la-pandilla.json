@@ -1,13 +1,13 @@
 {
-  "id": "c1-39-el-pastel-de-sol-laia-milo-y-dora",
+  "id": "c2-38-la-manana-de-grieg-con-la-pandilla",
   "version": 1,
   "tipo": "karaoke",
-  "titulo": "El pastel de Sol, Laia, Milo y Dora",
-  "descripcion": "La primera estrofa de «Backe, backe Kuchen», una canción tradicional alemana de cuatro notas —sol, la, mi, do—, con cuatro pulsadores: Sol, Laia, Milo y Dora.",
-  "etapa": "primaria-c1",
+  "titulo": "La mañana de Grieg con la pandilla",
+  "descripcion": "El tema de «La mañana» de Grieg, con cinco pulsadores: Dora, Rex, Milo, Sol y Laia. Cada nota baja con su personaje. Tres partes: media, media y entera.",
+  "etapa": "primaria-c2",
   "eje": "altura",
   "lugar": "pantalla",
-  "duracion_min": 6,
+  "duracion_min": 10,
   "curriculo": {
     "area": "Educación Artística",
     "competencia": "CE3",
@@ -15,52 +15,34 @@
     "saber": "D. Lenguajes y práctica musical"
   },
   "practica": {
-    "secuencia": "vocal-kodaly",
-    "notas": [
-      "sol",
-      "la",
-      "mi",
-      "do"
-    ],
-    "compas": "4/4",
-    "tempo": 100
+    "secuencia": "ninguna",
+    "compas": "6/8",
+    "tempo": 120
   },
   "entrada": {
     "modo": "toque"
   },
   "contenido": {
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: es una canción alemana que los niños no conocen: aquí vale por sus cuatro notas (sol, la, mi, do), que son justo las de la progresión vocal. Si la maestra tiene una española de cuatro notas con partitura fiable, se cambia. Se usa la primera estrofa: el final de la canción baja a re y sube a sol agudo. El compás original es 2/2; se escribe 4/4 porque el esquema no admite 2/2 y son los mismos cuatro tiempos de negra por compás.",
-    "consigna": "actividad.c139.consigna",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el pulso es la corchea (6/8) a 120, que son dos compases por frase; la apoyatura del compás 2 y la del 3 se han quitado y las dos semicorcheas del compás 2 se conservan. Confirmar tempo y si cinco pulsadores son muchos en 3.º.",
+    "consigna": "actividad.c238.consigna",
     "representacion": "personaje",
     "orientacion": "vertical",
     "botonesPorCarril": true,
-    "tempo": 100,
+    "tempo": 120,
     "ejercicios": [
       {
-        "titulo": "actividad.c139.ej1",
+        "titulo": "actividad.c238.ej1",
         "notas": [
           {
             "nota": "G4",
             "pulsos": 1
           },
           {
-            "nota": "G4",
-            "pulsos": 1
-          },
-          {
-            "nota": "A4",
-            "pulsos": 1
-          },
-          {
-            "nota": "A4",
-            "pulsos": 1
-          },
-          {
-            "nota": "G4",
-            "pulsos": 2
-          },
-          {
             "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
             "pulsos": 1
           },
           {
@@ -68,39 +50,59 @@
             "pulsos": 1
           },
           {
-            "nota": "G4",
+            "nota": "D4",
             "pulsos": 1
-          },
-          {
-            "nota": "G4",
-            "pulsos": 1
-          },
-          {
-            "nota": "A4",
-            "pulsos": 1
-          },
-          {
-            "nota": "A4",
-            "pulsos": 1
-          },
-          {
-            "nota": "G4",
-            "pulsos": 2
           },
           {
             "nota": "E4",
-            "pulsos": 2
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
           }
         ]
       },
       {
-        "titulo": "actividad.c139.ej2",
+        "titulo": "actividad.c238.ej2",
         "notas": [
           {
             "nota": "G4",
             "pulsos": 1
           },
           {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
             "nota": "G4",
             "pulsos": 1
           },
@@ -109,11 +111,11 @@
             "pulsos": 1
           },
           {
-            "nota": "A4",
+            "nota": "E4",
             "pulsos": 1
           },
           {
-            "nota": "G4",
+            "nota": "A4",
             "pulsos": 1
           },
           {
@@ -122,71 +124,31 @@
           },
           {
             "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
             "pulsos": 1
           },
           {
             "nota": "C4",
-            "pulsos": 1
-          },
-          {
-            "nota": "G4",
-            "pulsos": 1
-          },
-          {
-            "nota": "G4",
-            "pulsos": 1
-          },
-          {
-            "nota": "A4",
-            "pulsos": 1
-          },
-          {
-            "nota": "A4",
-            "pulsos": 1
-          },
-          {
-            "nota": "G4",
-            "pulsos": 1
-          },
-          {
-            "nota": "G4",
-            "pulsos": 1
-          },
-          {
-            "nota": "E4",
-            "pulsos": 1
-          },
-          {
-            "nota": "E4",
-            "pulsos": 1
+            "pulsos": 3
           }
         ]
       },
       {
-        "titulo": "actividad.c139.ej3",
+        "titulo": "actividad.c238.ej3",
         "notas": [
           {
             "nota": "G4",
             "pulsos": 1
           },
           {
-            "nota": "G4",
-            "pulsos": 1
-          },
-          {
-            "nota": "A4",
-            "pulsos": 1
-          },
-          {
-            "nota": "A4",
-            "pulsos": 1
-          },
-          {
-            "nota": "G4",
-            "pulsos": 2
-          },
-          {
             "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
             "pulsos": 1
           },
           {
@@ -194,47 +156,11 @@
             "pulsos": 1
           },
           {
-            "nota": "G4",
+            "nota": "D4",
             "pulsos": 1
-          },
-          {
-            "nota": "G4",
-            "pulsos": 1
-          },
-          {
-            "nota": "A4",
-            "pulsos": 1
-          },
-          {
-            "nota": "A4",
-            "pulsos": 1
-          },
-          {
-            "nota": "G4",
-            "pulsos": 2
           },
           {
             "nota": "E4",
-            "pulsos": 2
-          },
-          {
-            "nota": "G4",
-            "pulsos": 1
-          },
-          {
-            "nota": "G4",
-            "pulsos": 1
-          },
-          {
-            "nota": "A4",
-            "pulsos": 1
-          },
-          {
-            "nota": "A4",
-            "pulsos": 1
-          },
-          {
-            "nota": "G4",
             "pulsos": 1
           },
           {
@@ -243,6 +169,10 @@
           },
           {
             "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
             "pulsos": 1
           },
           {
@@ -250,7 +180,27 @@
             "pulsos": 1
           },
           {
+            "nota": "D4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
             "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
             "pulsos": 1
           },
           {
@@ -262,6 +212,10 @@
             "pulsos": 1
           },
           {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
             "nota": "A4",
             "pulsos": 1
           },
@@ -270,16 +224,16 @@
             "pulsos": 1
           },
           {
-            "nota": "G4",
-            "pulsos": 1
-          },
-          {
             "nota": "E4",
             "pulsos": 1
           },
           {
-            "nota": "E4",
+            "nota": "D4",
             "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 3
           }
         ]
       }
@@ -293,17 +247,17 @@
       "desviacion_tipica"
     ]
   },
-  "enunciado": "actividad.c139.enunciado",
+  "enunciado": "actividad.c238.enunciado",
   "personaje": "doby",
   "pistas": [
-    "actividad.c139.pista1",
-    "actividad.c139.pista2"
+    "actividad.c238.pista1",
+    "actividad.c238.pista2"
   ],
   "creditos": [
     {
-      "obra": "«Backe, backe Kuchen», primera estrofa",
-      "autor": "Tradicional alemana, anónima (siglo XIX)",
-      "fuente": "Melodía de dominio público; cotejada con la partitura de Wikipedia en alemán (Lilypond, en re) y transportada a do",
+      "obra": "«La mañana», de la suite Peer Gynt n.º 1, op. 46",
+      "autor": "Edvard Grieg (1843-1907)",
+      "fuente": "Dominio público; tema cotejado con la partitura de Wikipedia en noruego (Lilypond, mi mayor) y transportado a do",
       "licencia": "Dominio público"
     },
     {
@@ -315,6 +269,6 @@
   ],
   "estado": "borrador",
   "musica": {
-    "abc": "X:1\nT:Backe, backe Kuchen\nC:Tradicional alemana\nM:4/4\nL:1/4\nK:C\nG G A A | G2 E C | G G A A | G2 E2 | G G A A | G G E C | G G A A | G G E E |]"
+    "abc": "X:1\nT:La mañana\nC:Edvard Grieg\nM:6/8\nL:1/8\nK:C\nG E D C D E | G E D C D/2 E/2 D/2 E/2 | G E G A E A | G E D C3 |]"
   }
 }

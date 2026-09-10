@@ -2875,6 +2875,18 @@ textos, niveles, camino, y la sección de instrumentos.
       el pulsador da un botecito al tocarlo. Con `prefers-reduced-motion`, solo el cambio de
       dibujo.
 
+- [x] **Los karaokes van en tres partes**, como la 214: media canción, la otra media y
+      entera. Aplicado a los cuatro de la pandilla (029, 138, 139, 140) y a cinco obras
+      nuevas, todas cotejadas con partitura en texto: **238** «La mañana de Grieg con la
+      pandilla» (cinco bandas: Dora, Rex, Milo, Sol y Laia; no.wikipedia), **239** «La nana
+      de Brahms con la pandilla» (un pulsador; en.wikipedia, de mi bemol a do), **240** «La
+      Pequeña serenata nocturna» (pentagrama, en sol mayor para no bajar de si3), **343** «El
+      preludio de Bach» (pentagrama, los cuatro primeros compases como arpegio) y **344»
+      «Para Elisa» (pentagrama, con sostenidos). Grieg queda cotejado también en la 324;
+      Tárrega sigue de memoria: el único arreglo libre es el de guitarra con trémolo y no se
+      ha podido leer la melodía con seguridad. Cómo se cotejan las melodías está en
+      `11-RECURSOS-Y-REFERENTES.md`.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

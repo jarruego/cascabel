@@ -1,0 +1,227 @@
+{
+  "id": "c2-40-la-pequena-serenata-nocturna",
+  "version": 1,
+  "tipo": "karaoke",
+  "titulo": "La Pequeña serenata nocturna",
+  "descripcion": "El primer tema de la «Pequeña serenata nocturna» de Mozart en el pentagrama, con un solo pulsador. Tres partes: la pregunta, la respuesta y las dos.",
+  "etapa": "primaria-c2",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 120
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: se queda en sol mayor (con fa#) y en pentagrama, no con personajes: transportado a do bajaría a sol3, fuera de la tesitura de 2.º ciclo. Los silencios se absorben en la nota anterior. Tempo original 148: a 120.",
+    "consigna": "actividad.c240.consigna",
+    "representacion": "pentagrama",
+    "orientacion": "vertical",
+    "botonesPorCarril": false,
+    "tempo": 120,
+    "ejercicios": [
+      {
+        "titulo": "actividad.c240.ej1",
+        "notas": [
+          {
+            "nota": "G4",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "B4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D5",
+            "pulsos": 2
+          }
+        ]
+      },
+      {
+        "titulo": "actividad.c240.ej2",
+        "notas": [
+          {
+            "nota": "C5",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "F#4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D4",
+            "pulsos": 2
+          }
+        ]
+      },
+      {
+        "titulo": "actividad.c240.ej3",
+        "notas": [
+          {
+            "nota": "G4",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "B4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D5",
+            "pulsos": 2
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "F#4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D4",
+            "pulsos": 2
+          }
+        ]
+      }
+    ],
+    "clave": "sol"
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "enunciado": "actividad.c240.enunciado",
+  "personaje": "rex",
+  "pistas": [
+    "actividad.c240.pista1",
+    "actividad.c240.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "«Pequeña serenata nocturna» (Eine kleine Nachtmusik), K. 525, primer tema",
+      "autor": "Wolfgang Amadeus Mozart (1756-1791)",
+      "fuente": "Dominio público; cotejado con la partitura de Wikipedia en inglés (Lilypond, sol mayor)",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador",
+  "musica": {
+    "abc": "X:1\nT:Pequeña serenata nocturna\nC:W. A. Mozart\nM:4/4\nL:1/8\nK:G\nG3 D G3 D | G D G B d4 | c3 A c3 A | c A ^F A D4 |]"
+  }
+}

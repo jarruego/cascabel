@@ -29,94 +29,197 @@
     "orientacion": "vertical",
     "botonesPorCarril": true,
     "tempo": 92,
-    "notas": [
+    "ejercicios": [
       {
-        "nota": "C4",
-        "pulsos": 1
+        "titulo": "actividad.c138.ej1",
+        "notas": [
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 2
+          },
+          {
+            "nota": "D4",
+            "pulsos": 2
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 4
+          }
+        ]
       },
       {
-        "nota": "C4",
-        "pulsos": 1
+        "titulo": "actividad.c138.ej2",
+        "notas": [
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 2
+          },
+          {
+            "nota": "D4",
+            "pulsos": 2
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 4
+          }
+        ]
       },
       {
-        "nota": "C4",
-        "pulsos": 1
-      },
-      {
-        "nota": "D4",
-        "pulsos": 1
-      },
-      {
-        "nota": "E4",
-        "pulsos": 2
-      },
-      {
-        "nota": "D4",
-        "pulsos": 2
-      },
-      {
-        "nota": "C4",
-        "pulsos": 1
-      },
-      {
-        "nota": "E4",
-        "pulsos": 1
-      },
-      {
-        "nota": "D4",
-        "pulsos": 1
-      },
-      {
-        "nota": "D4",
-        "pulsos": 1
-      },
-      {
-        "nota": "C4",
-        "pulsos": 4
-      },
-      {
-        "nota": "C4",
-        "pulsos": 1
-      },
-      {
-        "nota": "C4",
-        "pulsos": 1
-      },
-      {
-        "nota": "C4",
-        "pulsos": 1
-      },
-      {
-        "nota": "D4",
-        "pulsos": 1
-      },
-      {
-        "nota": "E4",
-        "pulsos": 2
-      },
-      {
-        "nota": "D4",
-        "pulsos": 2
-      },
-      {
-        "nota": "C4",
-        "pulsos": 1
-      },
-      {
-        "nota": "E4",
-        "pulsos": 1
-      },
-      {
-        "nota": "D4",
-        "pulsos": 1
-      },
-      {
-        "nota": "D4",
-        "pulsos": 1
-      },
-      {
-        "nota": "C4",
-        "pulsos": 4
+        "titulo": "actividad.c138.ej3",
+        "notas": [
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 2
+          },
+          {
+            "nota": "D4",
+            "pulsos": 2
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 4
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 2
+          },
+          {
+            "nota": "D4",
+            "pulsos": 2
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 4
+          }
+        ]
       }
     ]
   },

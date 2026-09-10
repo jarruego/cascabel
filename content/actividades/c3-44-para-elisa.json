@@ -1,0 +1,295 @@
+{
+  "id": "c3-44-para-elisa",
+  "version": 1,
+  "tipo": "karaoke",
+  "titulo": "Para Elisa",
+  "descripcion": "El comienzo de «Para Elisa» en el pentagrama, con un solo pulsador y sus sostenidos. Tres partes: la entrada, la vuelta y todo seguido.",
+  "etapa": "primaria-c3",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "libre",
+    "tempo": 112
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el pulso es la corchea (3/8) a 112 y las semicorcheas son medio pulso; los silencios de semicorchea se han absorbido en la nota anterior. Sin ABC y compás «libre» en la ficha: el esquema no admite 3/8. Confirmar tempo.",
+    "consigna": "actividad.c344.consigna",
+    "representacion": "pentagrama",
+    "orientacion": "vertical",
+    "botonesPorCarril": false,
+    "tempo": 112,
+    "ejercicios": [
+      {
+        "titulo": "actividad.c344.ej1",
+        "notas": [
+          {
+            "nota": "E5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D#5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D#5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "B4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "C4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          }
+        ]
+      },
+      {
+        "titulo": "actividad.c344.ej2",
+        "notas": [
+          {
+            "nota": "B4",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G#4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "B4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D#5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D#5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "B4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 3
+          }
+        ]
+      },
+      {
+        "titulo": "actividad.c344.ej3",
+        "notas": [
+          {
+            "nota": "E5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D#5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D#5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "B4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "C4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "B4",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G#4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "B4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D#5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D#5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "B4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 3
+          }
+        ]
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "enunciado": "actividad.c344.enunciado",
+  "personaje": "simon",
+  "pistas": [
+    "actividad.c344.pista1",
+    "actividad.c344.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "«Para Elisa» (Bagatela n.º 25, WoO 59), anacrusa y compases 1-4",
+      "autor": "Ludwig van Beethoven (1770-1827)",
+      "fuente": "Dominio público; cotejado con la partitura de Wikipedia en inglés (Lilypond)",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

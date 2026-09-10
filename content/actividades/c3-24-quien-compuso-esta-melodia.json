@@ -22,7 +22,7 @@
   },
   "contenido": {
     "consigna": "actividad.c324.consigna",
-    "$comment": "Cotejadas el 2026-09-10 con partituras de dominio público en Wikipedia (Lilypond): Himno de la alegría (coincide), Pequeña serenata nocturna (alturas coinciden; los silencios de corchea se han absorbido en la nota anterior), Canción de cuna de Brahms (en mi bemol, transportada a do: coincide; duraciones simplificadas), Preludio en do de Bach (coincide) y Para Elisa (coincide). PENDIENTE DE REVISIÓN PEDAGÓGICA: «La mañana» de Grieg y «Recuerdos de la Alhambra» de Tárrega NO se han podido cotejar con una fuente escrita —no hay partitura en texto en Wikipedia ni en Mutopia— y siguen transcritas de memoria; una maestra debe confirmarlas contra la partitura (IMSLP) o retirarlas. Todas están simplificadas a una voz y a las figuras del ciclo.",
+    "$comment": "Cotejadas con partituras de dominio público en texto (Lilypond de Wikipedia): Himno de la alegría, Pequeña serenata nocturna, Canción de cuna de Brahms, Preludio en do de Bach, Para Elisa y, desde el 2026-09-11, «La mañana» de Grieg (no.wikipedia): coincide nota por nota. PENDIENTE DE REVISIÓN PEDAGÓGICA: «Recuerdos de la Alhambra» de Tárrega sigue de memoria: la única partitura libre encontrada (Mutopia, CC BY-SA 3.0) es el arreglo de guitarra con trémolo y no se ha podido leer la melodía con seguridad. Confirmar contra IMSLP o retirarla. Todas están simplificadas a una voz y a las figuras del ciclo.",
     "opciones": [
       {
         "clave": "beethoven",

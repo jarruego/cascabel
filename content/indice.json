@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-10",
-  "total": 152,
+  "total": 157,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -1428,6 +1428,63 @@
       "herramienta": false
     },
     {
+      "id": "c2-38-la-manana-de-grieg-con-la-pandilla",
+      "titulo": "La mañana de Grieg con la pandilla",
+      "descripcion": "El tema de «La mañana» de Grieg, con cinco pulsadores: Dora, Rex, Milo, Sol y Laia. Cada nota baja con su personaje. Tres partes: media, media y entera.",
+      "etapa": "primaria-c2",
+      "eje": "altura",
+      "tipo": "karaoke",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c2-39-la-nana-de-brahms-con-la-pandilla",
+      "titulo": "La nana de Brahms con la pandilla",
+      "descripcion": "La primera mitad de la «Canción de cuna» de Brahms, con un solo pulsador: cada nota baja con su personaje. Tres partes: media, media y entera.",
+      "etapa": "primaria-c2",
+      "eje": "altura",
+      "tipo": "karaoke",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c2-40-la-pequena-serenata-nocturna",
+      "titulo": "La Pequeña serenata nocturna",
+      "descripcion": "El primer tema de la «Pequeña serenata nocturna» de Mozart en el pentagrama, con un solo pulsador. Tres partes: la pregunta, la respuesta y las dos.",
+      "etapa": "primaria-c2",
+      "eje": "altura",
+      "tipo": "karaoke",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
       "id": "c3-01-tonos-y-semitonos",
       "titulo": "Tonos y semitonos",
       "descripcion": "Construir la escala de do mayor en el teclado viendo cómo se escribe: todas blancas, y los semitonos donde no hay negra.",
@@ -2178,6 +2235,44 @@
       "lugar": "pantalla",
       "microfono": false,
       "duracion_min": 15,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-43-el-preludio-de-bach",
+      "titulo": "El preludio de Bach",
+      "descripcion": "Los cuatro primeros compases del Preludio en do mayor de Bach, como una escalera de arpegios en el pentagrama. Tres partes: dos compases, otros dos y los cuatro.",
+      "etapa": "primaria-c3",
+      "eje": "altura",
+      "tipo": "karaoke",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-44-para-elisa",
+      "titulo": "Para Elisa",
+      "descripcion": "El comienzo de «Para Elisa» en el pentagrama, con un solo pulsador y sus sostenidos. Tres partes: la entrada, la vuelta y todo seguido.",
+      "etapa": "primaria-c3",
+      "eje": "altura",
+      "tipo": "karaoke",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 10,
       "curriculo": {
         "area": "Educación Artística",
         "competencia": "CE3",
