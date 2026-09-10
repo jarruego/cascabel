@@ -17,7 +17,7 @@
   "practica": {
     "secuencia": "ninguna",
     "compas": "4/4",
-    "tempo": 88,
+    "tempo": 66,
     "figuras": [
       "negra",
       "blanca",
@@ -31,7 +31,7 @@
     "consigna": "actividad.c215.consigna",
     "orientacion": "horizontal",
     "representacion": "figura",
-    "tempo": 88,
+    "tempo": 66,
     "ejercicios": [
       {
         "titulo": "actividad.c215.ej1",
@@ -144,7 +144,8 @@
           }
         ]
       }
-    ]
+    ],
+    "$comment": "Tempo bajado de 88 a 66 el 2026-09-11: a 88, con la caja de las figuras, dos corcheas se montaban una sobre otra; a 66 cada negra son 80 px de recorrido y las corcheas se tocan sin pisarse."
   },
   "evaluacion": {
     "autocorrectiva": true,

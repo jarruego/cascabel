@@ -2887,6 +2887,11 @@ textos, niveles, camino, y la sección de instrumentos.
       ha podido leer la melodía con seguridad. Cómo se cotejan las melodías está en
       `11-RECURSOS-Y-REFERENTES.md`.
 
+- [x] **En «Lee las figuras» (215) las notas iban muy pegadas.** Dos cosas a la vez: la caja
+      de las figuras pasa de 62 a 40 px de ancho (el glifo de Bravura es estrecho) y el tempo
+      de 88 a 66. A esa velocidad una negra son 80 px de recorrido y dos corcheas se tocan sin
+      pisarse. Los patrones no cambian: son ritmos, no una canción.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

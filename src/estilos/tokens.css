@@ -2837,7 +2837,16 @@ p {
   font-weight: 700;
   color: var(--tinta);
 }
-.karaoke__figura[data-forma='figura'] { font-family: 'Bravura', serif; font-size: 34px; }
+/* Las figuras van en caja estrecha: una negra de Bravura es un glifo de un dedo de ancho, y
+   con la caja de 62 px dos corcheas a 88 se montaban una sobre otra («muy pegadas», el autor,
+   2026-09-11). A 40 px de caja y 66 de tempo, dos corcheas se tocan y no se pisan. */
+.karaoke__figura[data-forma='figura'] {
+  font-family: 'Bravura', serif;
+  font-size: 28px;
+  min-width: 40px;
+  min-height: 48px;
+  padding: 2px 6px;
+}
 
 /* Al acertar: crece, se ilumina y cambia de borde. Nunca solo color. */
 .karaoke__figura[data-acertada] {
