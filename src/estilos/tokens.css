@@ -3306,9 +3306,10 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 .compases__pauta {
   position: relative;
   flex: 0 0 auto;
-  /* Ocho espacios de alto: con 36 px por espacio la pauta mide 144 y una negra se ve desde
-     el fondo de la clase; por debajo de 15 el hueco baja de los 45 px y ya no se acierta. */
-  height: clamp(120px, 100%, 288px);
+  /* Ocho espacios de alto: con 27 px por espacio la pauta mide 108 y una negra se ve desde
+     el fondo de la clase; por debajo de 15 el hueco baja de los 45 px y ya no se acierta.
+     El tope estaba en 288 y el autor lo vio gigante: un cuarto menos. */
+  height: clamp(120px, 75%, 216px);
 }
 .compases__dibujo {
   display: block;
