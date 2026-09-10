@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router';
+import { MarcaCocomusic } from '@/ui/MarcaCocomusic';
 import { hayVibracion } from '@/ui/vibracion';
 import { t } from '@/i18n';
 import { borrarTodo, leerTodo } from '@/datos/progreso';
@@ -173,6 +174,12 @@ export default function Ajustes() {
       <section>
         <h2>{t('ajustes.privacidad')}</h2>
         <p>{t('ajustes.privacidadTexto')}</p>
+      </section>
+
+      <section>
+        <h2>{t('ajustes.acercaDe')}</h2>
+        <p>{t('ajustes.acercaDeTexto')}</p>
+        <MarcaCocomusic />
       </section>
 
       {/* Para saber qué tiene cada dispositivo cuando «no se actualiza». */}

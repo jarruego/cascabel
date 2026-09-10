@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
+import { MarcaCocomusic } from '@/ui/MarcaCocomusic';
+import { APP } from '@/config';
 import { cargarIndice } from '@/datos/cargar';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { desmarcar, leerTodo } from '@/datos/progreso';
@@ -58,6 +60,28 @@ export default function Catalogo() {
   const [entradas, setEntradas] = useState<Entrada[] | null>(null);
   const [fallo, setFallo] = useState<string | null>(null);
   const [hechas, setHechas] = useState<Set<string>>(new Set());
+  /*
+    La bienvenida: una tarjeta arriba del catálogo la primera vez, con el logotipo de
+    cocomusic, una frase y el enlace, y «Entendido» para que no vuelva a salir. No es una
+    pantalla que haya que cerrar para entrar —un maestro abre la app con la clase delante—
+    sino una tarjeta que se puede ignorar. Que ya se ha visto se recuerda en el aparato,
+    sin ningún dato personal; sin almacenamiento, no sale, que es lo menos molesto.
+  */
+  const [bienvenida, setBienvenida] = useState(() => {
+    try {
+      return localStorage.getItem('bienvenida:vista') !== 'si';
+    } catch {
+      return false;
+    }
+  });
+  const cerrarBienvenida = () => {
+    setBienvenida(false);
+    try {
+      localStorage.setItem('bienvenida:vista', 'si');
+    } catch {
+      // Volverá a salir la próxima vez, y nada más.
+    }
+  };
   /** La actividad cuyo tic se ha pulsado, a la espera de confirmar que se desmarca. */
   const [porDesmarcar, setPorDesmarcar] = useState<{ id: string; titulo: string } | null>(null);
 
@@ -196,6 +220,31 @@ export default function Catalogo() {
           línea, va antes de la barra de filtros y desaparece al desplazarse: quien llega
           por primera vez la lee, y quien viene a buscar una actividad no la vuelve a ver. */}
       <p className="catalogo__lema">{t('app.lema')}</p>
+
+      {bienvenida && (
+        <aside className="bienvenida" aria-label={t('bienvenida.titulo')}>
+          <img className="bienvenida__logo" src="/marca/cocomusic.png" alt={APP.proyecto} width={480} height={266} />
+          <div className="bienvenida__cuerpo">
+            <h2>{t('bienvenida.titulo')}</h2>
+            <p>{t('bienvenida.texto')}</p>
+            {/* Sin color a la izquierda, el principal a la derecha: como en toda botonera. */}
+            <div className="bienvenida__acciones">
+              <button type="button" className="boton-repetir" onClick={cerrarBienvenida}>
+                {t('bienvenida.cerrar')}
+              </button>
+              <a
+                className="boton-principal"
+                href={APP.webProyecto}
+                target="_blank"
+                rel="noopener"
+                onClick={cerrarBienvenida}
+              >
+                {t('bienvenida.enlace')}
+              </a>
+            </div>
+          </div>
+        </aside>
+      )}
 
       {/*
         Filtros sin etiqueta visible: **la opción «todos» se llama como la categoría**, así
@@ -398,6 +447,9 @@ export default function Catalogo() {
       {/* Los instrumentos viven en su propia pantalla, no aquí: ver `Instrumentos.tsx`.
           Tenerlos en dos sitios sería peor que en ninguno. */}
 
+      <div className="catalogo__marca">
+        <MarcaCocomusic />
+      </div>
       <p className="catalogo__pie">
         <Link to="/privacidad">{t('catalogo.privacidad')}</Link>
         {' · '}

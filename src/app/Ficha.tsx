@@ -400,6 +400,14 @@ export default function Ficha() {
           {/* Va impreso: es la diferencia entre «la app no guarda datos» y «este papel es
               tuyo», y las dos cosas hay que decirlas. */}
           <p className="ficha__aclaracion">{t('ficha.avisoDatos')}</p>
+          {/* Va impreso a propósito: en el papel, la dirección es lo único que lleva al
+              resto del material. */}
+          <p className="ficha__masRecursos">
+            {t('ficha.masRecursos')}{' '}
+            <a href={APP.webProyecto} target="_blank" rel="noopener">
+              cocomusic.es
+            </a>
+          </p>
         </section>
 
       </article>

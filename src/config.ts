@@ -8,6 +8,8 @@
 export const APP = {
   nombre: 'Cascabel',
   proyecto: 'cocomusic',
+  /** La web del proyecto. Es un enlace, no una petición: la app no le pide nada nunca. */
+  webProyecto: 'https://cocomusic.es',
   idiomaPorDefecto: 'es',
   versionEsquemaActividad: 1,
   /** Rutas relativas siempre: la CSP prohíbe cualquier origen que no sea el nuestro. */

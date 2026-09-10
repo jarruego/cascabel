@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
+import { MarcaCocomusic } from '@/ui/MarcaCocomusic';
 import { cargarActividad, cargarIndice, cargarSonidos, type SonidoDelBanco } from '@/datos/cargar';
 import { t } from '@/i18n';
 import type { Actividad } from '@/motor/tipos';
@@ -98,6 +99,17 @@ export default function Creditos() {
       </Link>
 
       <h1>{t('creditos.titulo')}</h1>
+
+      {/* Quién hay detrás, antes que el material de terceros: es lo primero que busca
+          quien abre esta página. */}
+      <section className="creditos__cocomusic">
+        <MarcaCocomusic tamano="grande" conTexto={false} />
+        <div>
+          <h2>{t('creditos.cocomusic')}</h2>
+          <p>{t('creditos.cocomusicTexto')}</p>
+        </div>
+      </section>
+
       <p>{t('creditos.texto')}</p>
 
       {fallo && <p role="alert">{t('creditos.fallo')}</p>}

@@ -7,6 +7,9 @@ Este proyecto usa **dos nombres**, y conviene no confundirlos:
 | **cocomusic** | El proyecto pedagógico: el enfoque, el catálogo curricular y el conjunto de materiales. |
 | **Cascabel** | Esta aplicación concreta — la biblioteca de actividades — que forma parte de cocomusic. |
 
+El logotipo de cocomusic que viaja con la aplicación (`public/marca/cocomusic.png`) es una
+de esas marcas: está ahí para identificar al proyecto, no para reutilizarlo.
+
 **Ninguno de los dos nombres, ni sus logotipos, están cubiertos** por la licencia Apache 2.0
 del código, ni por la CC BY-SA 4.0 de los contenidos, ni por la CC0 de los esquemas. Ni las
 licencias de Creative Commons ni las de software libre ceden derechos de marca: es una

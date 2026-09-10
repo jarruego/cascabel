@@ -2804,6 +2804,15 @@ textos, niveles, camino, y la sección de instrumentos.
       en el Camino, con la misma etapa desplegada. `app/vuelta.ts`, compartido por las tres
       listas, con test.
 
+- [x] **cocomusic, visible.** «Un proyecto de cocomusic» con el logotipo y el enlace en el
+      pie del catálogo, en «acerca de» de Ajustes y arriba de los Créditos; en la ficha del
+      maestro, «más recursos en cocomusic.es», impreso. Y una tarjeta de bienvenida arriba
+      del catálogo la primera vez, con «Entendido»: no una pantalla que haya que cerrar. El
+      logotipo se sirve desde `public/marca/` (PNG de la web, con el fondo quitado; el SVG
+      vendrá) y es marca, fuera de las licencias: `TRADEMARK.md`. Nunca en la pantalla de
+      actividad. Queda para más adelante un campo en el JSON que enlace cada actividad con
+      su ficha imprimible de cocomusic.es.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

@@ -4353,6 +4353,87 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   font-size: var(--t-s);
 }
 
+/* ── la marca del proyecto ─────────────────────────────────────────────────
+   «Un proyecto de cocomusic», con el logotipo. Ver `ui/MarcaCocomusic.tsx`. */
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e-2);
+  color: var(--tinta-2);
+  font-size: var(--t-s);
+  text-decoration: none;
+  border-radius: var(--r-s);
+}
+.marca:hover { color: var(--tinta); }
+.marca:focus-visible { outline: var(--foco); outline-offset: 2px; }
+.marca__logo { height: 32px; width: auto; }
+.marca[data-tamano='grande'] .marca__logo { height: 72px; }
+.catalogo__marca {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--e-6);
+}
+
+/* La bienvenida: una tarjeta, no una pantalla. Se puede ignorar y se cierra una vez. */
+.bienvenida {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--e-4);
+  align-items: center;
+  margin: 0 0 var(--e-4);
+  padding: var(--e-4);
+  border: 2px solid var(--linea);
+  border-radius: var(--r-m);
+  background: var(--superficie);
+  box-shadow: var(--sombra-1);
+}
+.bienvenida__logo { width: clamp(96px, 22vw, 160px); height: auto; }
+.bienvenida h2 { margin: 0 0 var(--e-1); font-size: var(--t-m); }
+.bienvenida p { margin: 0 0 var(--e-3); color: var(--tinta-2); max-width: 60ch; }
+.bienvenida__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--e-2);
+}
+.bienvenida__acciones .boton-principal { text-decoration: none; }
+@media (max-width: 560px) {
+  .bienvenida { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .bienvenida__acciones { justify-content: center; }
+}
+
+.creditos__cocomusic {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--e-4);
+  align-items: center;
+  margin: var(--e-4) 0 var(--e-5);
+}
+.creditos__cocomusic h2 { margin: 0 0 var(--e-1); }
+.creditos__cocomusic p { margin: 0; }
+@media (max-width: 480px) {
+  .creditos__cocomusic { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+}
+.ficha__masRecursos { margin: var(--e-3) 0 0; font-size: 0.9em; }
+
+/* El logotipo es negro y naranja sobre transparente: en oscuro lleva una placa blanca. */
+:root[data-tema='oscuro'] .marca__logo,
+:root[data-tema='oscuro'] .bienvenida__logo {
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: var(--r-s);
+  box-sizing: content-box;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema='claro']) .marca__logo,
+  :root:not([data-tema='claro']) .bienvenida__logo {
+    background: #fff;
+    padding: 6px 10px;
+    border-radius: var(--r-s);
+    box-sizing: content-box;
+  }
+}
+
 /* El catálogo en columnas. Un móvil ve una, una tablet dos, un monitor tres o cuatro:
    sale del ancho disponible y no de una lista de puntos de ruptura que siempre se queda
    corta con la pantalla siguiente. */
