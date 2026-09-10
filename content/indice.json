@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-10",
-  "total": 159,
+  "total": 160,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -2305,6 +2305,25 @@
       "id": "c3-46-marcha-radetzky",
       "titulo": "Marcha Radetzky",
       "descripcion": "El comienzo de la «Marcha Radetzky» de Strauss, la de las palmas del concierto de Año Nuevo, en el pentagrama con un solo pulsador. Tres partes: la llamada, el balanceo y todo seguido.",
+      "etapa": "primaria-c3",
+      "eje": "altura",
+      "tipo": "karaoke",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-47-el-danubio-azul",
+      "titulo": "El Danubio azul",
+      "descripcion": "El primer vals de «El Danubio azul» de Strauss en el pentagrama, con un solo pulsador: la melodía sube por el acorde y responde desde arriba. Tres partes: la primera frase, la segunda y las dos.",
       "etapa": "primaria-c3",
       "eje": "altura",
       "tipo": "karaoke",

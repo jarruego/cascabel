@@ -50,9 +50,12 @@ Lo que de verdad ha servido para comprobar nota por nota, en orden de preferenci
    (`page.render(scale=5)`) y se leen recortando compás a compás. Vale para canciones
    tradicionales españolas, que no están en Wikipedia. Dos transcripciones que coinciden
    nota por nota es el listón.
-3. **Mutopia** tiene `.ly` de obras clásicas, pero son arreglos completos: el de «Recuerdos
-   de la Alhambra» es la guitarra con trémolo y la melodía no se lee con seguridad. Sirve
-   para piezas a una voz, no para estos.
+3. **Mutopia** tiene `.ly` de obras clásicas. Cuando el arreglo es sencillo sirve muy bien:
+   «El Danubio azul» está como piano simplificado en do (CC BY-SA 4.0) y la melodía es la voz
+   superior, que se lee del `.ly` y se comprueba con el PDF renderizado. Cuando es un arreglo
+   denso —«Recuerdos de la Alhambra» es la guitarra con trémolo— la melodía no se lee con
+   seguridad y no vale. La transcripción de Mutopia tiene su licencia aparte de la obra y se
+   acredita como tal en `creditos`.
 
 Lo que esto ha destapado: «Debajo un botón» estaba escrita con cuatro corcheas iguales y son
 corchea con puntillo y semicorchea; a «Frère Jacques» le faltaba una nota; el mapa del Himno
@@ -60,7 +63,9 @@ tenía 30 notas para 32 pulsos y no era su forma. **Ninguna melodía se escribe 
 ni siquiera las que «se sabe todo el mundo». Cotejadas y con su fuente en el `$comment` del
 JSON: Estrellita, Frère Jacques, Debajo un botón, Au clair de la lune, Backe backe Kuchen,
 Himno de la alegría, la 5.ª, Para Elisa, la Pequeña serenata, la Canción de cuna de Brahms,
-el Preludio de Bach y La mañana. Sin fuente y marcada PENDIENTE: Recuerdos de la Alhambra.
+el Preludio de Bach, La mañana, En la gruta del rey de la montaña, la Marcha Radetzky y El
+Danubio azul. Sin fuente y marcada PENDIENTE: Recuerdos de la Alhambra. Sin fuente en texto
+todavía: El cascanueces y El carnaval de los animales.
 
 **Transportar** es lo normal: se lleva la pieza a do mayor para que cada nota tenga su
 personaje, salvo que la tesitura del ciclo (`tools/validar.py`) obligue a dejarla en su tono,

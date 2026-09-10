@@ -1,0 +1,374 @@
+{
+  "id": "c3-47-el-danubio-azul",
+  "version": 1,
+  "tipo": "karaoke",
+  "titulo": "El Danubio azul",
+  "descripcion": "El primer vals de «El Danubio azul» de Strauss en el pentagrama, con un solo pulsador: la melodía sube por el acorde y responde desde arriba. Tres partes: la primera frase, la segunda y las dos.",
+  "etapa": "primaria-c3",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "3/4",
+    "tempo": 100
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la melodía es la voz superior del arreglo simplificado para piano de Mutopia (N. Kouremenos, CC BY-SA 4.0, en do mayor), cotejada compás a compás con su partitura renderizada; los acordes se reducen a su nota más aguda, que es la melodía. Sube hasta la5 y por eso no lleva ABC (el validador la daría por fuera de tesitura): no se canta, se toca. Tempo 100 por negra; el original es un vals a unas 132. Las dos frases acaban en la nota que hace de anacrusa de la siguiente: en la primera parte se ha quedado el si3 como arranque de la segunda.",
+    "consigna": "actividad.c347.consigna",
+    "representacion": "pentagrama",
+    "clave": "sol",
+    "orientacion": "vertical",
+    "botonesPorCarril": false,
+    "tempo": 100,
+    "ejercicios": [
+      {
+        "titulo": "actividad.c347.ej1",
+        "notas": [
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2
+          },
+          {
+            "nota": "G5",
+            "pulsos": 1
+          },
+          {
+            "nota": "G5",
+            "pulsos": 2
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 2
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2
+          },
+          {
+            "nota": "G5",
+            "pulsos": 1
+          },
+          {
+            "nota": "G5",
+            "pulsos": 2
+          },
+          {
+            "nota": "F5",
+            "pulsos": 1
+          },
+          {
+            "nota": "F5",
+            "pulsos": 2
+          }
+        ]
+      },
+      {
+        "titulo": "actividad.c347.ej2",
+        "notas": [
+          {
+            "nota": "B3",
+            "pulsos": 1
+          },
+          {
+            "nota": "B3",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "A4",
+            "pulsos": 1
+          },
+          {
+            "nota": "A4",
+            "pulsos": 2
+          },
+          {
+            "nota": "A5",
+            "pulsos": 1
+          },
+          {
+            "nota": "A5",
+            "pulsos": 2
+          },
+          {
+            "nota": "F5",
+            "pulsos": 1
+          },
+          {
+            "nota": "F5",
+            "pulsos": 2
+          },
+          {
+            "nota": "B3",
+            "pulsos": 1
+          },
+          {
+            "nota": "B3",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "A4",
+            "pulsos": 1
+          },
+          {
+            "nota": "A4",
+            "pulsos": 2
+          },
+          {
+            "nota": "A5",
+            "pulsos": 1
+          },
+          {
+            "nota": "A5",
+            "pulsos": 2
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 2
+          }
+        ]
+      },
+      {
+        "titulo": "actividad.c347.ej3",
+        "notas": [
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2
+          },
+          {
+            "nota": "G5",
+            "pulsos": 1
+          },
+          {
+            "nota": "G5",
+            "pulsos": 2
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 2
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2
+          },
+          {
+            "nota": "G5",
+            "pulsos": 1
+          },
+          {
+            "nota": "G5",
+            "pulsos": 2
+          },
+          {
+            "nota": "F5",
+            "pulsos": 1
+          },
+          {
+            "nota": "F5",
+            "pulsos": 2
+          },
+          {
+            "nota": "B3",
+            "pulsos": 1
+          },
+          {
+            "nota": "B3",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "A4",
+            "pulsos": 1
+          },
+          {
+            "nota": "A4",
+            "pulsos": 2
+          },
+          {
+            "nota": "A5",
+            "pulsos": 1
+          },
+          {
+            "nota": "A5",
+            "pulsos": 2
+          },
+          {
+            "nota": "F5",
+            "pulsos": 1
+          },
+          {
+            "nota": "F5",
+            "pulsos": 2
+          },
+          {
+            "nota": "B3",
+            "pulsos": 1
+          },
+          {
+            "nota": "B3",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "A4",
+            "pulsos": 1
+          },
+          {
+            "nota": "A4",
+            "pulsos": 2
+          },
+          {
+            "nota": "A5",
+            "pulsos": 1
+          },
+          {
+            "nota": "A5",
+            "pulsos": 2
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 2
+          }
+        ]
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "enunciado": "actividad.c347.enunciado",
+  "personaje": "sol",
+  "pistas": [
+    "actividad.c347.pista1",
+    "actividad.c347.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "«El Danubio azul», op. 314, primer vals",
+      "autor": "Johann Strauss hijo (1825-1899)",
+      "fuente": "Dominio público",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "Arreglo simplificado para piano de «El Danubio azul» (solo se usa su melodía)",
+      "autor": "Nikos Kouremenos, Mutopia Project",
+      "fuente": "https://www.mutopiaproject.org/ftp/StraussJJ/O314/blue_danube/",
+      "licencia": "CC BY-SA 4.0"
+    },
+    {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}
