@@ -2620,7 +2620,9 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       abajo; la cuenta atrás se fue —la nota de tres segundos ya es el aviso—; la referencia
       es una flauta real, sostenida tres segundos, en vez de 1,6 s de marimba que se
       apagaba; y la aguja abarca ±300 cents en una franja ancha y baja, con la ventana de
-      «casi» tenue y la de «afinado» en verde del ancho que marque el carril.
+      «casi» tenue y la de «afinado» en verde del ancho que marque el carril. Y la flauta
+      tiene treinta segundos en vez de veinte: colocar los dedos, coger aire y soplar lleva
+      más que cantar.
 
 - [x] **El rótulo del pulgar en las digitaciones de flauta salía cortado.** El agujero del
       pulgar va fuera del cuerpo, a la izquierda, y el recuadro del dibujo empezaba en el
