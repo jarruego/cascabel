@@ -36,8 +36,9 @@ export const LINEA_1 = 2;
 export const LINEA_3 = 4;
 export const LINEA_5 = 6;
 
-/** Anchura del hueco donde va una barra. Es también el objetivo táctil: tres espacios. */
-export const HUECO = 3;
+/** Anchura del hueco donde va una barra. Es también el objetivo táctil: cuatro espacios,
+ *  que con la pauta a 96 px de alto son 48. */
+export const HUECO = 4;
 
 export interface Figura {
   /** Borde izquierdo del glifo. */
