@@ -2634,7 +2634,10 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       lento y goteo— y se eligieron un siseo limpio de lluvia sin graves (CC BY-SA 3.0) y
       un oleaje con el vaivén de cada ola claro y sin retumbo (CC BY 2.5). Las anteriores
       tenían la mitad de la energía por debajo de 250 Hz, que es lo que sonaba a tren y a
-      tormenta. La medida está en el cuaderno de la sesión, no en el repositorio.
+      tormenta. La medida está en el cuaderno de la sesión, no en el repositorio. Después,
+      en «¿Qué vehículo es?», el avión —un reactor lejano sin forma— pasa a ser un avión que
+      cruza de un lado a otro, y el tren de 3,4 s a siete segundos de locomotora de vapor
+      resoplando, elegidos midiendo dónde está lo reconocible de cada grabación.
 
 - [x] **La pista de un fallo se queda hasta la siguiente respuesta.** Salía 1,2 s y se iba
       con el cambio de fase: «ni da tiempo de leer». En elección y pentagrama la tarjeta de

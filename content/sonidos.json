@@ -244,29 +244,32 @@
       "id": "tren",
       "categoria": "vehiculos",
       "nombre": "Tren de vapor",
-      "commons": "File:Parovoz sound.ogg",
-      "segundos": 3.4,
+      "commons": "File:Steam Loco 520 @ Yantaringa South Australia 1991.ogg",
+      "segundos": 7,
+      "desde": 114,
+      "$comment": "Cambiado el 2026-09-10: el anterior duraba 3,4 s. Este es el resoplido rítmico de una locomotora de vapor en marcha, el tramo más rítmico de la grabación.",
       "verificado": {
-        "licencia": "Public domain",
-        "licencia_url": "",
-        "autor": "Alex Alex Lep",
-        "url": "https://commons.wikimedia.org/wiki/File:Parovoz_sound.ogg",
-        "fecha": "2026-09-09"
+        "licencia": "CC BY-SA 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "autor": "K.Tregenza",
+        "url": "https://commons.wikimedia.org/wiki/File:Steam_Loco_520_@_Yantaringa_South_Australia_1991.ogg",
+        "fecha": "2026-09-10"
       }
     },
     {
       "id": "avion",
       "categoria": "vehiculos",
-      "nombre": "Avión",
-      "commons": "File:Jet airliner overhead.ogg",
-      "desde": 20,
-      "segundos": 6,
+      "nombre": "Avión que pasa",
+      "commons": "File:428086 inspectorj airplane-boeing-flyby-right-to-left-a.wav",
+      "desde": 11,
+      "segundos": 7,
+      "$comment": "Cambiado el 2026-09-10: el reactor «overhead» anterior era un rumor sin forma. Este es un avión que pasa de derecha a izquierda, con la subida y la bajada que lo hacen reconocible.",
       "verificado": {
-        "licencia": "CC BY-SA 4.0",
-        "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
-        "autor": "Jud McCranie",
-        "url": "https://commons.wikimedia.org/wiki/File:Jet_airliner_overhead.ogg",
-        "fecha": "2026-09-09"
+        "licencia": "CC BY 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/4.0",
+        "autor": "InspectorJ",
+        "url": "https://commons.wikimedia.org/wiki/File:428086_inspectorj_airplane-boeing-flyby-right-to-left-a.wav",
+        "fecha": "2026-09-10"
       }
     },
     {
