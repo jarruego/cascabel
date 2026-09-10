@@ -2703,7 +2703,8 @@ textos, niveles, camino, y la sección de instrumentos.
 - [x] **«Tonos y semitonos» construye la escala de do mayor**, no la de sol: empieza en do,
       todas las teclas son blancas y los semitonos caen entre mi-fa y si-do. Las últimas
       ocho notas tienen que formar la escala Y empezar en do. Un salto avisa en el acto:
-      «vuelve a empezar en do». Y una hermana, **342 «La escala de sol mayor»**: la misma
+      «vuelve a empezar en do», y tocar la tónica empieza de nuevo de verdad: vacía la
+      pauta y deja solo esa nota. Y una hermana, **342 «La escala de sol mayor»**: la misma
       construcción con la tónica que obliga a un sostenido, detrás de la de do en el camino.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
