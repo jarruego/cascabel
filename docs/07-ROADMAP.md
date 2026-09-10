@@ -2558,8 +2558,9 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
 
 - [x] **La cuadrícula sigue a la melodía.** En el constructor de ritmos y en las pistas,
       cuando la columna que suena se sale por la derecha, la caja se desplaza de lado sola
-      —solo de lado, y solo cuando se sale— y la deja a un tercio del borde para que se
-      vean las que vienen. `ui/seguirColumna.ts`.
+      —solo de lado— con la casilla actual en el centro y las que vienen a la derecha:
+      primero se movía solo cuando se salía, y la siguiente se perdía un instante.
+      `ui/seguirColumna.ts`, también para la percusión corporal.
 
 - [x] **El paso entre ejercicios de una serie, abajo como todo.** Estaba encima del
       tablero, con el personaje y el botón en medio. Ahora la reacción es la tarjeta de
