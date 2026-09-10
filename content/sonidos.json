@@ -420,14 +420,16 @@
       "id": "telefono",
       "categoria": "casa",
       "nombre": "Teléfono",
-      "commons": "File:Telephone.ogg",
+      "commons": "File:Model 500 Telephone British ring.ogg",
       "segundos": 5,
+      "desde": 1.9,
+      "$comment": "Cambiado el 2026-09-10: el anterior (Telephone.ogg) era casi todo ruido grave y no sonaba a teléfono. Este es un teléfono de campanilla (Western Electric 500) con timbre doble; se cogen dos timbrazos.",
       "verificado": {
-        "licencia": "Public domain",
-        "licencia_url": "",
-        "autor": "Dsw4.",
-        "url": "https://commons.wikimedia.org/wiki/File:Telephone.ogg",
-        "fecha": "2026-09-09"
+        "licencia": "CC BY-SA 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "autor": "CianMcCann",
+        "url": "https://commons.wikimedia.org/wiki/File:Model_500_Telephone_British_ring.ogg",
+        "fecha": "2026-09-10"
       }
     },
     {

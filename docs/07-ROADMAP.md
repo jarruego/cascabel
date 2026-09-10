@@ -2827,6 +2827,9 @@ textos, niveles, camino, y la sección de instrumentos.
       cuatro frases de 16 negras. Grieg y Tárrega (324) siguen sin fuente escrita: PENDIENTE
       en el JSON. La melodía de la percusión corporal sube de 0,35 a 0,5 de volumen.
 
+- [x] **El teléfono de la 026 no sonaba a teléfono.** Era casi todo ruido grave; ahora es
+      un teléfono de campanilla (Western Electric 500, Commons, CC BY-SA 3.0), dos timbrazos.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

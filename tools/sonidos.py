@@ -147,6 +147,10 @@ def convertir(origen: Path, destino: Path, desde: float, segundos: float) -> Non
 
 def main() -> int:
     argumentos = [a for a in sys.argv[1:] if not a.startswith("--")]
+    # La consola de Windows sale en cp1252 y se atraganta con «✓» y «✗»: se fuerza UTF-8.
+    for flujo in (sys.stdout, sys.stderr):
+        if hasattr(flujo, "reconfigure"):
+            flujo.reconfigure(encoding="utf-8")
     forzar = "--forzar" in sys.argv
     manifiesto = json.loads(MANIFIESTO.read_text(encoding="utf-8"))
     hechos = 0
