@@ -49,7 +49,7 @@
         "respuesta": "madera"
       },
       {
-        "audio": "muestras/percusion/pandereta-1.opus",
+        "audio": "muestras/percusion/caja-1.opus",
         "respuesta": "tambor"
       },
       {
@@ -57,7 +57,7 @@
         "respuesta": "campana"
       },
       {
-        "audio": "muestras/percusion/pandereta-1.opus",
+        "audio": "muestras/percusion/caja-2.opus",
         "respuesta": "tambor"
       },
       {
