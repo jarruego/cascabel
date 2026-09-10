@@ -3270,68 +3270,94 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 .cantar__guia { margin: 0; }
 
 /* ── poner las barras de compás ────────────────────────────────────────────
-   Las figuras se escriben con Bravura, que ya está en el proyecto: aquí no hay pauta ni
-   alturas, solo figuras en fila, y traer un renderizador de partituras para dibujar ocho
-   negras sería traer una imprenta para escribir una postal. */
-.compases__cifra {
-  display: inline-grid;
-  margin: var(--e-4) auto;
-  font-family: var(--f-musica), serif;
-  font-size: 34px;
-  line-height: 0.95;
-  text-align: center;
+   Un pentagrama de verdad dibujado en SVG con los glifos de Bravura, que es SMuFL: con el
+   tamaño de fuente igual a la altura de la pauta (cuatro unidades del viewBox), cada glifo
+   cae en su sitio. Ver `motor/pautaRitmica.ts`.
+
+   El alto: la sección se lleva el escenario, y la pauta se queda con lo que quede hasta un
+   máximo, centrada. En un móvil en vertical el tope manda; en apaisado manda lo que queda
+   entre la barra de arriba y la botonera; en pantalla completa, más. Lo que no cabe a lo
+   ancho se desplaza de lado en un solo bloque. */
+.compases {
+  height: calc(var(--alto-escena) - var(--e-5) - var(--e-3));
+  min-height: 0;
+  grid-template-rows: minmax(0, 1fr);
+  align-content: center;
 }
-.compases__linea {
+.compases__marco {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   justify-content: safe center;
-  gap: 0;
+  align-items: center;
+  height: 100%;
+  min-height: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  padding-inline: var(--e-2);
+}
+.compases__pauta {
+  position: relative;
+  flex: 0 0 auto;
+  /* Ocho espacios de alto: con 36 px por espacio la pauta mide 144 y una negra se ve desde
+     el fondo de la clase; por debajo de 15 el hueco baja de los 45 px y ya no se acierta. */
+  height: clamp(120px, 100%, 288px);
+}
+.compases__dibujo {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+  fill: var(--tinta);
+}
+.compases__glifo {
+  font-family: var(--f-musica), serif;
+  /* Cuatro unidades del viewBox: la altura de la pauta, que es el em de Bravura. */
+  font-size: 4px;
+}
+.compases__raya { stroke: var(--tinta); stroke-width: 0.13; }
+.compases__final-fina { stroke: var(--tinta); stroke-width: 0.16; }
+.compases__final-gruesa { stroke: var(--tinta); stroke-width: 0.5; }
+/* Las divisorias por estado. Libre: un rastro punteado, apenas, que dice dónde se toca. */
+.compases__linea-barra { stroke: var(--tinta); stroke-width: 0.16; stroke-linecap: butt; }
+.compases__divisoria[data-estado='libre'] .compases__linea-barra {
+  stroke: var(--linea);
+  stroke-dasharray: 0.35 0.35;
+}
+.compases__divisoria[data-estado='sobra'] .compases__linea-barra { stroke: var(--vivo-naranja); stroke-width: 0.36; }
+.compases__divisoria[data-estado='sobra'] .compases__banda { fill: color-mix(in srgb, var(--vivo-naranja) 16%, transparent); }
+.compases__divisoria[data-estado='falta'] .compases__linea-barra {
+  stroke: var(--vivo-verde);
+  stroke-width: 0.24;
+  stroke-dasharray: 0.2 0.3;
+  stroke-linecap: round;
+}
+.compases__divisoria[data-estado='falta'] .compases__banda { fill: color-mix(in srgb, var(--vivo-verde) 16%, transparent); }
+.compases__divisoria[data-estado='puesta'] .compases__banda { fill: transparent; }
+/* Los huecos: botones transparentes encima del dibujo, colocados en porcentaje del ancho. */
+.compases__huecos {
+  position: absolute;
+  inset: 0;
+  margin: 0;
   padding: 0;
-  margin: var(--e-4) 0;
   list-style: none;
 }
-.compases__hueco { display: flex; align-items: center; }
-.compases__figura {
-  display: block;
-  min-width: 34px;
-  font-family: var(--f-musica), serif;
-  font-size: 44px;
-  line-height: 1;
-  text-align: center;
+.compases__hueco {
+  position: absolute;
+  top: 0;
+  height: 100%;
 }
-/* El hueco es un botón alto y estrecho: alto para poder acertarlo, estrecho para que se
-   lea como el sitio donde va una raya y no como un botón más. */
 .compases__barra {
-  width: 22px;
-  height: 64px;
+  display: block;
+  width: 100%;
+  height: 100%;
   padding: 0;
-  background: none;
+  background: transparent;
   border: none;
-  border-left: 3px dashed var(--linea);
+  border-radius: var(--r-s);
   cursor: pointer;
 }
-.compases__barra:hover { border-left-color: var(--tinta-2); }
-.compases__barra:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
-/* Puesta: raya entera y gruesa, como una divisoria de verdad. */
-.compases__barra[data-puesta] { border-left: 4px solid var(--tinta); }
-/* Sobra: se marca con trazo doble, no con rojo. Regla 4. */
-.compases__barra[data-sobra] {
-  border-left: 4px double var(--vivo-naranja);
-  background: color-mix(in srgb, var(--vivo-naranja) 14%, transparent);
-}
-/* Falta: se enseña dónde estaba, en verde y punteada. Enseñar la respuesta es enseñar. */
-.compases__barra[data-falta] {
-  border-left: 4px dotted var(--vivo-verde);
-  background: color-mix(in srgb, var(--vivo-verde) 14%, transparent);
-}
-/* La barra final: siempre puesta, nunca tocable. */
-.compases__final {
-  width: 8px;
-  height: 64px;
-  border-left: 3px solid var(--tinta);
-  border-right: 6px solid var(--tinta);
-}
+.compases__barra:hover { background: color-mix(in srgb, var(--tinta) 6%, transparent); }
+.compases__barra:focus-visible { outline: var(--foco); outline-offset: -3px; }
 
 /* ── construir una escala ──────────────────────────────────────────────────
    Pauta arriba, distancias en medio, teclado abajo. Ese orden importa: se lee de arriba
@@ -4892,17 +4918,9 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
  * que arrastrar es peor que nada, pero es mucho mejor que las otras dos.
  * ------------------------------------------------------------------------ */
 
-/* La línea de figuras de «pon las barras»: en una sola línea o se desplaza. Partida en dos
-   renglones, contar los pulsos de un compás se vuelve imposible. Y centrada cuando cabe:
-   aquí había un `flex-start` que la pegaba a la izquierda también en apaisado, donde cabe
-   de sobra. `safe center` de arriba ya hace las dos cosas —centra si cabe y empieza por la
-   izquierda si no—, que es lo que el autor vio que faltaba el 2026-09-12. */
-.compases__linea {
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-}
-.compases__linea > * { flex: 0 0 auto; }
+/* La pauta de «pon las barras» va en `.compases__marco`, arriba: en una sola línea o se
+   desplaza, y centrada cuando cabe (`safe center`), que es lo que el autor vio que faltaba
+   el 2026-09-12. */
 
 /* La cuadrícula de la rejilla desplaza en bloque cuando ni con el suelo táctil caben las
    columnas. `contain` evita que el gesto se propague y acabe navegando hacia atrás. */

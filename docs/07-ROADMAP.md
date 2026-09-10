@@ -2771,6 +2771,15 @@ textos, niveles, camino, y la sección de instrumentos.
       hay redes ni cuentas: el enlace es público y no lleva nada dentro. Si el portapapeles
       falla, se enseña el enlace escrito para copiarlo a mano.
 
+- [x] **«Pon las barras» sobre un pentagrama de verdad.** Clave de sol, cifra de compás,
+      cinco líneas, las figuras en la tercera línea con la plica hacia abajo y la doble barra
+      final; las divisorias que pone el niño son barras como las de una partitura. Dibujado
+      en SVG con los glifos de Bravura, sin VexFlow: la disposición está en
+      `motor/pautaRitmica.ts` con test, y los huecos son botones transparentes en porcentaje
+      del ancho. La pauta se lleva el alto que quede, con tope, y se desplaza de lado si no
+      cabe. Las tres actividades (128, 206, 225) cambian a la vez porque es el motor. La
+      tercera línea para figuras sin altura queda PENDIENTE de la profesora.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
