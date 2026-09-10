@@ -17,18 +17,18 @@
   "practica": {
     "secuencia": "ninguna",
     "compas": "2/4",
-    "tempo": 72
+    "tempo": 60
   },
   "entrada": {
     "modo": "toque"
   },
   "contenido": {
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el ritmo es el de las transcripciones (corchea con puntillo y semicorchea al empezar cada frase); a 72 la semicorchea son 200 ms y con un solo pulsador puede costar en 1.º. Si cuesta, bajar a 64 o dar la pareja «De-ba» por un solo toque.",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el ritmo es el de las transcripciones (corchea con puntillo y semicorchea al empezar cada frase); a 72 los personajes iban muy juntos y el autor pidió bajar (2026-09-11): a 60, la semicorchea son 250 ms. Si aún cuesta, dar la pareja «De-ba» por un solo toque.",
     "consigna": "actividad.c140.consigna",
     "representacion": "personaje",
     "orientacion": "vertical",
     "botonesPorCarril": false,
-    "tempo": 72,
+    "tempo": 60,
     "notas": [
       {
         "nota": "C4",

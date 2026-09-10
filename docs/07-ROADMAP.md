@@ -2868,7 +2868,9 @@ textos, niveles, camino, y la sección de instrumentos.
       botón con la pandilla» (una banda, el ritmo cotejado), 138 «Au clair de la lune» (tres
       bandas, do-re-mi, cotejada con fr.wikipedia) y 139 «El pastel de Sol, Laia, Milo y
       Dora» («Backe, backe Kuchen», cuatro bandas sol-la-mi-do, cotejada con de.wikipedia y
-      transportada a do). Las cuatro con ABC para el validador.
+      transportada a do). Las cuatro con ABC para el validador. Con personajes, el
+      recuadro ocupa todo el ancho en vertical y no baja de 56 px por carril en horizontal
+      aunque haya un solo pulsador, y la 140 va a 60 en vez de 72: iban apelotonados.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la

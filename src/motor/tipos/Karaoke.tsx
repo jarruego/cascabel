@@ -222,10 +222,19 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
    * **Con bandas, el ancho sale de lo que hay**, y la regla vive en `anchoDeBandas`, con
    * test: cada banda es también su botón, así que su ancho es un objetivo táctil.
    */
+  /*
+    Con personajes cada carril necesita sitio para el dibujo, aunque haya un solo pulsador:
+    en la 140 seis carriles cabían en 200 px y los personajes salían «muy apelotonados»
+    (el autor, 2026-09-11). Sin bandas pero con altura, en vertical el recuadro ocupa todo
+    el ancho que haya, y en horizontal el alto no baja de 56 px por carril.
+  */
+  const minimoPorCarril = representacion === 'personaje' ? carriles.length * 56 : 0;
   const TRANSVERSAL = vertical
     ? porCarril
       ? anchoDeBandas(carriles.length, anchoCaja, OBJETIVO_TACTIL[carril])
-      : 200
+      : carriles.length > 1
+        ? Math.max(200, Math.min(anchoCaja, 640))
+        : 200
     /*
       En horizontal, esto es el ALTO del recuadro, y estaba clavado en 160 px: el mismo
       número en un móvil y en una pizarra de setenta pulgadas. Ahora sale de lo que hay,
@@ -233,7 +242,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
       un recuadro de un palmo obliga a recorrerlo con el ojo para ver dónde va a caer la
       siguiente, que es justo lo que la actividad no quiere.
     */
-    : Math.max(160, Math.min(320, Math.round(anchoCaja * 0.22)));
+    : Math.max(160, minimoPorCarril, Math.min(320, Math.round(anchoCaja * 0.22)));
 
   const opciones = useMemo(
     () => ({
