@@ -57,7 +57,8 @@ Una actividad de tipo `cuerpo` que es una canción entera puede llevar `melodia`
 por golpe del `patron`, en notación científica, o `null` donde no hay nota. Suena bajita
 —un tercio del volumen— debajo de los golpes, con el `instrumento` que declare o la flauta:
 es la referencia para cantar, no el protagonista. Solo se escribe desde una fuente
-verificada; una melodía de memoria no entra.
+verificada; una melodía de memoria no entra. Y `bucle: false`: una canción entera se toca
+una vez y al acabar se ofrece repetirla o terminar; los patrones cortos siguen en bucle.
 
 ## Una actividad como serie de ejercicios
 

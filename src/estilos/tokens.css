@@ -3645,6 +3645,12 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   flex: 0 0 auto;
   width: 6rem;
   padding-right: var(--e-2);
+  /* Fija a la izquierda mientras la tira se desplaza: la zona se lee siempre, y los golpes
+     pasan por detrás. Lo pidió el autor el 2026-09-10 para las canciones enteras. */
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--papel);
   /* El dibujo encima del nombre, los dos pegados a la derecha, contra los golpes. */
   display: grid;
   justify-items: end;

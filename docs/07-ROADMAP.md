@@ -2749,7 +2749,9 @@ textos, niveles, camino, y la sección de instrumentos.
       está protegida hasta la década de 2070, como avisa `CLAUDE.md` §10. Y las canciones
       enteras llevan la melodía bajita debajo de los golpes —`melodia`, una nota por golpe,
       con la flauta a un tercio del volumen—: «Estrellita» la tiene; «Debajo un botón» no,
-      hasta que haya una transcripción verificada.
+      hasta que haya una transcripción verificada. Las canciones enteras no van en bucle:
+      se tocan una vez y al final el personaje felicita y se ofrece repetir o terminar; y
+      la columna de las zonas se queda fija a la izquierda mientras la tira avanza.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la

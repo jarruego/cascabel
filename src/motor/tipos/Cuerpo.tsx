@@ -1,10 +1,11 @@
-import { useCallback, useEffect, useMemo, useReducer, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { useCarril } from '@/app/preferencias';
 import { despertarAudio, obtenerContexto, pararTodo } from '@/audio/AudioEngine';
 import { SonidosDelCuerpo, ZONAS, type Zona } from '@/audio/cuerpo';
 import { Sampler } from '@/audio/sampler';
 import { muestrasDe } from '@/audio/instrumentos';
-import { IconoParar, IconoTocar } from '@/ui/Simbolos';
+import { IconoParar, IconoRepetir, IconoSiguiente, IconoTocar } from '@/ui/Simbolos';
+import { Reaccion } from '@/ui/Reaccion';
 import { BarraAcciones } from '@/ui/BarraAcciones';
 import { mantenerALaVista } from '@/ui/seguirColumna';
 import { t } from '@/i18n';
@@ -52,7 +53,7 @@ function reducir(estado: Estado, accion: Accion): Estado {
   return { ...estado, indice: accion.valor };
 }
 
-export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
+export default function Cuerpo({ actividad, alTerminar, alSalir }: PropsActividad) {
   const contenido = actividad.contenido as {
     consigna: string;
     /** Un golpe por figura: qué zona del cuerpo y cuántos pulsos ocupa. */
@@ -68,6 +69,12 @@ export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
     melodia?: Array<string | null>;
     /** Con qué suena la melodía. Por defecto la flauta, que sostiene y se canta encima. */
     instrumento?: string;
+    /**
+     * Repetir sin parar. Es lo de siempre para un patrón de cuatro pulsos, que se acaba antes
+     * de que un niño se haya enterado. Una canción entera no: se toca una vez, y al acabar
+     * se ofrece repetirla o terminar. Lo pidió el autor el 2026-09-10.
+     */
+    bucle?: boolean;
   };
 
   const carril = useCarril(actividad.etapa);
@@ -76,6 +83,9 @@ export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
 
   const [estado, despachar] = useReducer(reducir, { sonando: false, indice: -1 });
   const sampler = useRef<Sampler | null>(null);
+  const bucle = contenido.bucle ?? true;
+  /** La canción ha llegado al final: el personaje felicita y se ofrece repetir o terminar. */
+  const [terminada, setTerminada] = useState(false);
   const VOLUMEN_MELODIA = 0.35;
   /**
    * Con una canción entera el patrón no cabe en pantalla: la tira se desplaza de lado y
@@ -158,6 +168,8 @@ export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
     temporizador.current = window.setInterval(() => {
       const ahora = obtenerContexto().currentTime;
       while (inicio + posicionDe(siguiente) * segundosPorPulso < ahora + 0.1) {
+        // Sin bucle, después del último golpe no se programa nada más.
+        if (!bucle && siguiente >= patron.length) break;
         const g = patron[siguiente % patron.length]!;
         const cuando = inicio + posicionDe(siguiente) * segundosPorPulso;
         if (g.zona !== 'silencio') {
@@ -181,7 +193,14 @@ export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
       const transcurrido = obtenerContexto().currentTime - inicio;
       const enPulsos = transcurrido / segundosPorPulso;
       // Una vuelta entera vista y oída es haberlo hecho: como en el musicograma.
-      if (enPulsos >= duracionPulsos) darPorHecha();
+      if (enPulsos >= duracionPulsos) {
+        darPorHecha();
+        if (!bucle) {
+          parar();
+          setTerminada(true);
+          return;
+        }
+      }
       const dentro = ((enPulsos % duracionPulsos) + duracionPulsos) % duracionPulsos;
       let i = 0;
       for (let k = 0; k < inicios.length; k++) if (dentro >= inicios[k]!) i = k;
@@ -189,7 +208,7 @@ export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
       rafId.current = requestAnimationFrame(mover);
     };
     rafId.current = requestAnimationFrame(mover);
-  }, [bpm, duracionPulsos, estado.sonando, inicios, parar, patron, darPorHecha, contenido.melodia, contenido.instrumento]);
+  }, [bpm, duracionPulsos, estado.sonando, inicios, parar, patron, darPorHecha, contenido.melodia, contenido.instrumento, bucle]);
 
   return (
     <section className="actividad cuerpo" data-carril={carril} aria-labelledby="consigna">
@@ -262,16 +281,41 @@ export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
       </div>
 
       <BarraAcciones>
-        <button
-          type="button"
-          className="boton-principal boton-arranque"
-          data-sonando={estado.sonando || undefined}
-          onClick={() => void arrancar()}
-        >
-          {estado.sonando ? <IconoParar /> : <IconoTocar />}
-          {t(estado.sonando ? 'accion.parar' : 'accion.empezar')}
-        </button>
+        {terminada ? (
+          <>
+            {/* Sin color a la izquierda, el verde a la derecha: como en el musicograma. */}
+            <button
+              type="button"
+              className="boton-repetir"
+              onClick={() => {
+                setTerminada(false);
+                void arrancar();
+              }}
+            >
+              <IconoRepetir />
+              {t('tocar.otraVez')}
+            </button>
+            <button type="button" className="boton-principal" onClick={() => alSalir?.()}>
+              <IconoSiguiente />
+              {t('comun.terminar')}
+            </button>
+          </>
+        ) : (
+          <button
+            type="button"
+            className="boton-principal boton-arranque"
+            data-sonando={estado.sonando || undefined}
+            onClick={() => void arrancar()}
+          >
+            {estado.sonando ? <IconoParar /> : <IconoTocar />}
+            {t(estado.sonando ? 'accion.parar' : 'accion.empezar')}
+          </button>
+        )}
       </BarraAcciones>
+
+      <Reaccion tono={terminada ? 'bien' : 'neutro'} personaje={actividad.personaje}>
+        {terminada && t('comun.completada')}
+      </Reaccion>
     </section>
   );
 }

@@ -157,7 +157,8 @@
       "tín",
       "tin",
       "tin"
-    ]
+    ],
+    "bucle": false
   },
   "evaluacion": {
     "autocorrectiva": false,

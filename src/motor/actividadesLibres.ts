@@ -76,7 +76,7 @@ export const HECHA_CUANDO: Record<TipoActividad, string> = {
   karaoke: 'al llegar al final de la pieza',
   'tocar-a-tiempo': 'al acabar las repeticiones',
   seguir: 'al acabar la primera vuelta, en bucle o no; la enhorabuena la da dentro, con «otra vez»',
-  cuerpo: 'al acabar la primera vuelta del patrón',
+  cuerpo: 'al acabar la primera vuelta del patrón; una canción entera se toca una vez y ofrece repetir o terminar',
   'guia-aula': 'al llegar al último paso',
   eco: 'cuando los dos han tocado y se comparan',
   lienzo: 'al hacer sonar el primer trazo',

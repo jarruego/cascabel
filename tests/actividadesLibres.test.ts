@@ -177,6 +177,13 @@ describe('actividades sin final', () => {
     // pantalla de la que solo se puede salir de una manera es lo que había antes.
     for (const tipo of TIPOS_LIBRES) {
       const src = readFileSync(join(RAIZ, 'tipos', `${MAPA.get(tipo)!}.tsx`), 'utf8');
+      /* Una excepción con nombre: la percusión corporal, cuando es una canción entera y no
+         va en bucle, llega a un final y ahí sí ofrece «otra vez» o «terminar», como el
+         musicograma. Solo vale dentro de ese estado de final, que es lo que se comprueba. */
+      if (/\.terminar'/.test(src)) {
+        expect(src, `«${tipo}» tiene botón de terminar sin un final que lo justifique`).toMatch(/setTerminada\(true\)/);
+        continue;
+      }
       expect(src, `«${tipo}» sigue teniendo botón de terminar`).not.toMatch(/\.terminar'/);
     }
   });

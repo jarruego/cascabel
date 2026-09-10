@@ -272,7 +272,8 @@
       "C4",
       null
     ],
-    "instrumento": "flauta"
+    "instrumento": "flauta",
+    "bucle": false
   },
   "evaluacion": {
     "autocorrectiva": false,
