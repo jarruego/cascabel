@@ -2787,6 +2787,12 @@ textos, niveles, camino, y la sección de instrumentos.
       elementos iguales: el componente mide el escenario y pone `--columnas` y `--lado`.
       Queda por aplicarla a otras rejillas donde se vea la misma falta.
 
+- [x] **El bombo del kit se oía «muy tenue».** El prefijo de la herramienta no casaba con
+      ningún fichero de VCSL y se cogía el golpe más flojo, v2. Ahora es v7, cortado a 2,2 s:
+      13 dB más entre 150 y 300 Hz y 16 dB más entre 300 y 1000 Hz, lo que un altavoz de
+      móvil sí reproduce. `muestras-percusion.py` acepta nombres para rehacer solo algunos
+      golpes. Si en el aparato sigue corto, el siguiente paso es ecualizar presencia.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
