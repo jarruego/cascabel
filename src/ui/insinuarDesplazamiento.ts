@@ -12,6 +12,11 @@ import { useEffect, type RefObject } from 'react';
  * Reglas: solo si de verdad sobra contenido; solo si la caja está al principio; se
  * respeta `prefers-reduced-motion`; y cualquier gesto del usuario —tocar, rueda, tecla—
  * lo corta en seco, porque insinuar no es quitarle el control a nadie.
+ *
+ * **No va en las cajas que se desplazan solas al reproducir** —constructor, pistas,
+ * percusión corporal, seguir—: ahí la propia reproducción enseña que hay más, y dos
+ * movimientos automáticos seguidos marean. Lo pidió el autor el 2026-09-10. Va en las que
+ * solo se mueven con el dedo: pautas, teclados y botones por bandas.
  */
 
 /** Cuánto dura el ida y vuelta. */

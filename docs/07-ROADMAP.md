@@ -2795,8 +2795,9 @@ textos, niveles, camino, y la sección de instrumentos.
 
 - [x] **Lo que se desplaza de lado lo insinúa al entrar.** La caja se mueve sola un trecho
       hacia la derecha y vuelve, con aceleración y frenada, en 1,6 s: pauta de compases y
-      de colocar notas, constructor, pistas, percusión corporal, seguir, teclado, escala y
-      karaoke por bandas. Solo si de verdad sobra, se respeta `prefers-reduced-motion`, y
+      de colocar notas, teclado, escala y karaoke por bandas. No en las que se desplazan
+      solas al reproducir (constructor, pistas, percusión corporal, seguir): ahí la
+      reproducción ya lo enseña, y el autor pidió quitarlo. Solo si de verdad sobra, se respeta `prefers-reduced-motion`, y
       cualquier gesto lo corta. `ui/insinuarDesplazamiento.ts`, con test de la curva.
 
 - [x] **«Volver» lleva a la pantalla de la que se salió.** Iba siempre al catálogo; ahora

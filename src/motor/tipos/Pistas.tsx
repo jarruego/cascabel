@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useReducer, useRef, useState } from 'react';
 import { useCarril } from '@/app/preferencias';
-import { useInsinuarDesplazamiento } from '@/ui/insinuarDesplazamiento';
 import { despertarAudio, obtenerContexto, pararTodo } from '@/audio/AudioEngine';
 import { Sampler } from '@/audio/sampler';
 import { instrumentosDisponibles, muestrasDe } from '@/audio/instrumentos';
@@ -146,7 +145,6 @@ export default function Pistas({ actividad, alTerminar }: PropsActividad) {
 
   /** La tabla se desplaza sola para que la columna que suena se vea. Ver `ui/seguirColumna.ts`. */
   const tabla = useRef<HTMLDivElement | null>(null);
-  useInsinuarDesplazamiento(tabla);
   useEffect(() => {
     if (estado.columna < 0) return;
     mantenerALaVista(tabla.current, tabla.current?.querySelector('[data-aqui]'));

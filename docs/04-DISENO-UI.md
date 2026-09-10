@@ -109,7 +109,8 @@ comprueba antes de dar una actividad por pulida.
 2. **Lo que se desplaza de lado lo insinúa al entrar** (`ui/insinuarDesplazamiento.ts`): la
    caja se mueve un trecho y vuelve, con aceleración y frenada, en 1,6 s; solo si de verdad
    sobra, respetando `prefers-reduced-motion`, y cualquier gesto lo corta. Toda caja nueva
-   con `overflow-x: auto` llama a `useInsinuarDesplazamiento`.
+   con `overflow-x: auto` llama a `useInsinuarDesplazamiento`, **salvo las que se desplazan
+   solas al reproducir** (regla 3): ahí la reproducción ya enseña que hay más.
 3. **Lo que suena se mantiene a la vista, centrado** (`ui/seguirColumna.ts`): en una
    cuadrícula o una tira que se reproduce, la caja avanza con el pulso y la casilla actual
    va en el centro, con las que vienen a la derecha. Solo la caja y solo de lado: nunca

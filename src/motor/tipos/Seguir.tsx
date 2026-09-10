@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useCarril } from '@/app/preferencias';
-import { useInsinuarDesplazamiento } from '@/ui/insinuarDesplazamiento';
 import { despertarAudio, obtenerContexto, pararTodo } from '@/audio/AudioEngine';
 import { MARIMBA, Sampler } from '@/audio/sampler';
 import { Metronomo } from '@/audio/metronomo';
@@ -107,7 +106,6 @@ export default function Seguir({ actividad, alTerminar, alSalir }: PropsActivida
    * que tiene que moverse es la tira.
    */
   const tira = useRef<HTMLOListElement | null>(null);
-  useInsinuarDesplazamiento(tira);
   useEffect(() => {
     if (actual < 0) return;
     const el = tira.current?.children[actual];
