@@ -2639,7 +2639,9 @@ Y las libres —piano, pads, referencia— se marcaban **al abrirlas**, sin toca
       cruza de un lado a otro, y el tren de 3,4 s a siete segundos de locomotora de vapor
       resoplando, elegidos midiendo dónde está lo reconocible de cada grabación. Y en
       «Sonidos de la calle» el autobús —un motor que se confundía con las obras— deja paso
-      al timbre de una bicicleta, con su icono nuevo de OpenMoji.
+      al timbre de una bicicleta, con su icono nuevo de OpenMoji. Y a la siguiente vuelta,
+      las obras —que sonaban a otra cosa— se van y entra el tren, y el timbre deja paso a un
+      perro ladrando: coche, tren, patio, campana, perro y ambulancia.
 
 - [x] **La pista de un fallo se queda hasta la siguiente respuesta.** Salía 1,2 s y se iba
       con el cambio de fase: «ni da tiempo de leer». En elección y pentagrama la tarjeta de

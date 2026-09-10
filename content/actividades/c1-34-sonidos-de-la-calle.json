@@ -29,8 +29,8 @@
         "color": "rojo"
       },
       {
-        "clave": "bicicleta",
-        "icono": "bicicleta",
+        "clave": "perro",
+        "icono": "perro",
         "color": "azul"
       },
       {
@@ -44,8 +44,8 @@
         "color": "verde"
       },
       {
-        "clave": "martillo",
-        "icono": "martillo",
+        "clave": "tren",
+        "icono": "tren",
         "color": "morado"
       },
       {
@@ -68,20 +68,20 @@
         "respuesta": "patio"
       },
       {
-        "audio": "sonidos/casa/martillo.opus",
-        "respuesta": "martillo"
+        "audio": "sonidos/vehiculos/tren.opus",
+        "respuesta": "tren"
       },
       {
-        "audio": "sonidos/vehiculos/bicicleta.opus",
-        "respuesta": "bicicleta"
+        "audio": "sonidos/animales/perro.opus",
+        "respuesta": "perro"
       },
       {
         "audio": "sonidos/vehiculos/ambulancia.opus",
         "respuesta": "ambulancia"
       },
       {
-        "audio": "sonidos/casa/taladro.opus",
-        "respuesta": "martillo"
+        "audio": "sonidos/vehiculos/tren-silbato.opus",
+        "respuesta": "tren"
       },
       {
         "audio": "sonidos/vehiculos/coche.opus",
