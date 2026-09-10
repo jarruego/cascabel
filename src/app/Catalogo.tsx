@@ -273,17 +273,6 @@ export default function Catalogo() {
             aria-label={t('filtro.buscar')}
           />
 
-          {/* Esconder o enseñar las que ya se han hecho. Un conmutador y no un filtro más:
-              lo que hace es apartar lo ya visto para ver lo que queda. */}
-          <button
-            type="button"
-            className="filtros__conmutador"
-            aria-pressed={ocultarHechas}
-            onClick={() => filtrar('hechas', ocultarHechas ? '' : 'no')}
-          >
-            {t(ocultarHechas ? 'filtro.mostrarHechas' : 'filtro.ocultarHechas')}
-          </button>
-
           {/* Un solo botón para volver a cero, y solo cuando hay algo que borrar: si no hay
               filtro puesto, un botón de «quitar filtros» es ruido. */}
           {(etapa || eje || criterio || busqueda || ocultarHechas) && (
@@ -347,11 +336,23 @@ export default function Catalogo() {
 
       {/* La cuenta se anuncia al filtrar. Va en frase y no como «12 / 56» porque un lector
           de pantalla lee eso como «doce barra cincuenta y seis», que no dice nada. */}
-      <p className="catalogo__cuenta" aria-live="polite">
-        {visibles.length === entradas.length
-          ? `${entradas.length} ${t('catalogo.actividades')}`
-          : `${visibles.length} ${t('catalogo.de')} ${entradas.length} ${t('catalogo.actividades')}`}
-      </p>
+      <div className="catalogo__cuenta-linea">
+        <p className="catalogo__cuenta" aria-live="polite">
+          {visibles.length === entradas.length
+            ? `${entradas.length} ${t('catalogo.actividades')}`
+            : `${visibles.length} ${t('catalogo.de')} ${entradas.length} ${t('catalogo.actividades')}`}
+        </p>
+        {/* Esconder o enseñar las que ya se han hecho, a la derecha de la cuenta: es a la
+            cuenta a lo que afecta. Un conmutador y no un filtro más. */}
+        <button
+          type="button"
+          className="filtros__conmutador"
+          aria-pressed={ocultarHechas}
+          onClick={() => filtrar('hechas', ocultarHechas ? '' : 'no')}
+        >
+          {t(ocultarHechas ? 'filtro.mostrarHechas' : 'filtro.ocultarHechas')}
+        </button>
+      </div>
 
       <ul className="catalogo__lista">
         {actividades.map((e) => (
