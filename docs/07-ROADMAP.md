@@ -2963,8 +2963,9 @@ textos, niveles, camino, y la sección de instrumentos.
       herramienta, pero el catálogo solo excluye la familia `tr-`, así que seguía saliendo
       entre las actividades. Pasa a ser **910** (`tr-10`): es un reproductor de obras para
       poner en clase, no un ejercicio, dijo el autor el 2026-09-11. **La 349 Primavera** baja
-      de 96 a 66 y cada frase se toca dos veces, como hace el concierto (fuerte y su eco
-      piano): iba muy rápida y era muy compleja.
+      de 96 a 66 y ahora es el ritornello entero, trece compases sacados de la edición de
+      Mutopia (violín primero, CC BY-SA, solo las alturas): la llamada con su eco piano y la
+      frase fuerte —«la parte más famosa viene justo después», dijo el autor— con el suyo.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
