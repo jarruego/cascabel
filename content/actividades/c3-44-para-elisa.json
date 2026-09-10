@@ -23,7 +23,7 @@
     "modo": "toque"
   },
   "contenido": {
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el pulso es la corchea (3/8) a 112 y las semicorcheas son medio pulso; los silencios de semicorchea se han absorbido en la nota anterior. Sin ABC y compás «libre» en la ficha: el esquema no admite 3/8. Confirmar tempo. El 2026-09-11 pasa a horizontal, como el Himno (214): en vertical el recuadro salía ancho y las notas a la derecha. Tempo 84.",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el pulso es la corchea (3/8) a 84 y las semicorcheas son medio pulso; los silencios de semicorchea se han absorbido en la nota anterior. Sin ABC y compás «libre» en la ficha: el esquema no admite 3/8. El comienzo se cotejó con la partitura de Wikipedia en inglés (Lilypond) y la frase entera —hasta el la de la primera casilla de repetición— con la edición de Mutopia (WoO 59, typesetting de dominio público): el 2026-09-11 el autor notó que la melodía se cortaba a falta de pocas notas, porque el bloque de Wikipedia acaba antes del final de la frase. Va en horizontal como el Himno.",
     "consigna": "actividad.c344.consigna",
     "representacion": "pentagrama",
     "botonesPorCarril": false,
@@ -143,7 +143,39 @@
           },
           {
             "nota": "A4",
-            "pulsos": 3
+            "pulsos": 1.5
+          },
+          {
+            "nota": "C4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "B4",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "B4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 2
           }
         ]
       },
@@ -256,7 +288,39 @@
           },
           {
             "nota": "A4",
-            "pulsos": 3
+            "pulsos": 1.5
+          },
+          {
+            "nota": "C4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "B4",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "B4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 2
           }
         ]
       }
@@ -278,9 +342,9 @@
   ],
   "creditos": [
     {
-      "obra": "«Para Elisa» (Bagatela n.º 25, WoO 59), anacrusa y compases 1-4",
+      "obra": "«Para Elisa» (Bagatela n.º 25, WoO 59), primera frase completa",
       "autor": "Ludwig van Beethoven (1770-1827)",
-      "fuente": "Dominio público; cotejado con la partitura de Wikipedia en inglés (Lilypond)",
+      "fuente": "Dominio público; cotejado con la partitura de Wikipedia en inglés (Lilypond) y con la edición de Mutopia (https://www.mutopiaproject.org/ftp/BeethovenLv/WoO59/fur_Elise_WoO59/), de dominio público",
       "licencia": "Dominio público"
     },
     {
