@@ -68,16 +68,21 @@ aplicación ya funciona entera.
 
 | Pose | Dónde sale | Qué tiene que transmitir |
 |---|---|---|
-| `neutro` | Como **nota**: teclas del piano, carriles del musicograma, ordenar de grave a agudo | Retrato limpio, de frente. Es la que más se usa y la que más se ve pequeña |
-| `celebra` | Al terminar una actividad | Alegría contenida. **No euforia**: se repite muchas veces y cansa |
+| `neutro` | Como **nota**: teclas del piano, casillas de la rejilla (con doce o menos), figuras que bajan en el karaoke | Retrato limpio, de frente. Es la que más se usa y la que más se ve pequeña |
+| `celebra` | Al terminar una actividad, en la reacción de acierto, y en el karaoke al acertar una nota (alterna con `baila`) | Alegría contenida. **No euforia**: se repite muchas veces y cansa |
 | `anima` | Después de un intento fallido | Ánimo, nunca lástima. El error no castiga (§4): ni tristeza, ni ceño, ni lágrima |
-| `saluda` | Pantalla de bienvenida de la actividad | Es la de DORA por rasgo, pero sirve para cualquiera |
-| `busca` | Descubrir e identificar sonidos | La de REX |
-| `palmea` | Ritmo, eco de palmas, percusión corporal | La de MILO |
-| `calla` | El silencio: semáforo del sonido, escucha | La de FARA |
-| `baila` | Pulso, caminar al ritmo, danzas | La de SOL |
-| `canta` | Cantar, improvisar, inventar | La de LAIA |
-| `escucha` | Discriminación auditiva, «¿quién ha sonado?» | La de SIMÓN |
+| `saluda` | Pantalla de bienvenida de la actividad, el botón del personaje en la barra de la actividad, y Dora en «Actividades» de la barra de abajo | Es la de DORA por rasgo, pero sirve para cualquiera |
+| `busca` | Rex en «Criterios» de la barra de abajo | La de REX |
+| `palmea` | Milo en «Taller» de la barra de abajo | La de MILO |
+| `calla` | **Aún sin usar.** Descartada para los silencios: iría al lado de los iconos de zona y desentona | La de FARA |
+| `baila` | Sol en «Camino» de la barra de abajo, y en el karaoke al acertar una nota (alterna con `celebra`) | La de SOL |
+| `canta` | Los pulsadores del karaoke por bandas: cada personaje cantando con el nombre de su nota | La de LAIA |
+| `escucha` | **Aún sin usar.** Lo siguiente: mientras suena el estímulo en elección y dictados, en la tarjeta de reacción | La de SIMÓN |
+
+Al día del 2026-09-11 se usan **ocho de las diez**. Lo que se acordó con el autor para las
+que quedan y para el resto: los personajes nunca tapan la actividad ni se mezclan con otros
+iconos. Van donde ya hay un sitio para ellos —la tarjeta de reacción, los pulsadores, las
+casillas grandes— y sustituyen a un texto, no se añaden al lado de un dibujo.
 
 **Ochenta ficheros para el juego completo**, y no hace falta tenerlos todos para empezar: la
 aplicación va usando lo que encuentre.

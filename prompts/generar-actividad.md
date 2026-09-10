@@ -51,7 +51,10 @@ acepta lo que salga sin pasar por `tools/validar.py`.**
 >
 > **Repertorio.** No uses melodías concretas salvo que yo te las dé verificadas como dominio
 > público. Si necesitas una melodía, **compón una** y decláralo en `creditos` con licencia
-> `Propia`. Muchas canciones que parecen tradicionales están protegidas.
+> `Propia`. Muchas canciones que parecen tradicionales están protegidas. Y si te doy una
+> canción, no la escribas de memoria: se coteja nota por nota con una partitura en texto
+> (Lilypond de Wikipedia, en el idioma que la tenga) y la fuente va en el `$comment`. Cómo se
+> hace está en `docs/11-RECURSOS-Y-REFERENTES.md` §1.
 >
 > ### Tu tarea
 >

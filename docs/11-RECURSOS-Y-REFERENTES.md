@@ -35,6 +35,39 @@ pieza pasa por `npm run contenido:validar`, que comprueba tesitura, saltos y com
 > autor, **u 80 si murió antes del 7-12-1987**. PDMX es CC0 respecto a *la transcripción*;
 > la obra subyacente hay que verificarla igual. Ver `08-LEGAL.md`.
 
+### Cómo se coteja una melodía, al día del 2026-09-11
+
+Lo que de verdad ha servido para comprobar nota por nota, en orden de preferencia:
+
+1. **Wikipedia en texto.** Muchos artículos de canciones y temas llevan la partitura escrita
+   en Lilypond dentro de un bloque `<score>`. Se pide el wikitexto crudo
+   (`https://XX.wikipedia.org/w/index.php?title=Título&action=raw`) y se extraen los bloques
+   con una expresión regular; las notas se leen tal cual. Hay que mirar en **varios idiomas**:
+   «Au clair de la lune» está en la francesa, «Backe, backe Kuchen» y «Es regnet» en la
+   alemana, «La mañana» de Grieg solo en la noruega. Cuidado con el modo `\relative`: cada
+   nota va a la octava más cercana a la anterior, y la coma o el apóstrofo la cambian.
+2. **PDF de partituras escolares** (COAEM, Partyflauta): se rasterizan con `pypdfium2`
+   (`page.render(scale=5)`) y se leen recortando compás a compás. Vale para canciones
+   tradicionales españolas, que no están en Wikipedia. Dos transcripciones que coinciden
+   nota por nota es el listón.
+3. **Mutopia** tiene `.ly` de obras clásicas, pero son arreglos completos: el de «Recuerdos
+   de la Alhambra» es la guitarra con trémolo y la melodía no se lee con seguridad. Sirve
+   para piezas a una voz, no para estos.
+
+Lo que esto ha destapado: «Debajo un botón» estaba escrita con cuatro corcheas iguales y son
+corchea con puntillo y semicorchea; a «Frère Jacques» le faltaba una nota; el mapa del Himno
+tenía 30 notas para 32 pulsos y no era su forma. **Ninguna melodía se escribe de memoria**,
+ni siquiera las que «se sabe todo el mundo». Cotejadas y con su fuente en el `$comment` del
+JSON: Estrellita, Frère Jacques, Debajo un botón, Au clair de la lune, Backe backe Kuchen,
+Himno de la alegría, la 5.ª, Para Elisa, la Pequeña serenata, la Canción de cuna de Brahms,
+el Preludio de Bach y La mañana. Sin fuente y marcada PENDIENTE: Recuerdos de la Alhambra.
+
+**Transportar** es lo normal: se lleva la pieza a do mayor para que cada nota tenga su
+personaje, salvo que la tesitura del ciclo (`tools/validar.py`) obligue a dejarla en su tono,
+como la Pequeña serenata, que en do bajaría a sol3. Y las **canciones de dos notas no
+existen** en ninguna fuente cotejable: los cantos de sol-mi de Kodály en inglés no están
+transcritos, así que «Cucú: Sol y Milo» es propia y lo declara.
+
 ---
 
 ## 2. Ilustración y personajes

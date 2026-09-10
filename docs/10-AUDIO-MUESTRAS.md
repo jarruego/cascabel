@@ -141,6 +141,14 @@ herramienta escribe al lado lo que verificó —licencia, autor, URL y fecha—.
 créditos lo lee tal cual, que es lo que la CC BY pide. Se rechaza todo lo que no sea CC0,
 dominio público, CC BY o CC BY-SA con versión.
 
+**La caché de descargas va por el fichero de Commons, no por el id.** Hasta el 2026-09-10
+iba por el id, y cambiar el `commons` de un sonido reutilizaba la descarga vieja: lluvia,
+olas, avión, tren y teléfono se «cambiaron» y siguieron sonando igual durante dos días.
+Ahora el nombre en caché lleva un hash del título de Commons, la extensión sale de la ruta
+de la URL (Commons añade `?utm_source=…`) y ffmpeg recibe `-vn` porque algunos originales
+son vídeo. Al cambiar un sonido, se comprueba el `.opus` resultante decodificándolo, no la
+salida de la herramienta.
+
 En Commons está además el catálogo entero de **Kevin MacLeod** (CC BY 3.0), que es de donde
 salen los estilos, y las grabaciones de **Musopen** y del proyecto Open Goldberg (dominio
 público y CC0), que es de donde salen las obras.

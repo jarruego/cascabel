@@ -333,7 +333,8 @@ estás seguro de un criterio, deja `"criterio": null` y márcalo en un comentari
 4. Revisión pedagógica: ¿es cantable a esta edad?, ¿se entiende sin leer?, ¿lo haría en clase?
 
 **Lo que la IA no decide**: la secuencia didáctica (sale del currículo), el repertorio
-(toda canción se verifica contra una fuente de dominio público antes de entrar), las
+(toda canción se verifica contra una fuente de dominio público antes de entrar: **nota por
+nota y con partitura en texto**, cómo se hace está en `docs/11` §1; nunca de memoria), las
 y los textos normativos (se copian del BOE, no se parafrasean).
 
 **Y cuidado también con los métodos.** Orff-Schulwerk, Kodály y Dalcroze son de uso libre:

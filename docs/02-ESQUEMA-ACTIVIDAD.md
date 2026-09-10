@@ -85,6 +85,18 @@ y dos botones: «repetir los que costaron» y, discreto, «entera otra vez». Ca
 más deprisa. Nunca se repite lo mismo. Sin `ejercicios`, la actividad es un solo ejercicio y
 todo sigue como antes. Los ejercicios se escriben a mano, porque la progresión es pedagógica.
 
+**Los karaokes van en tres partes**: media canción, la otra media y entera, desde el
+2026-09-11 en todos los que tienen canción (214, 216, y los nueve de obras y de la
+pandilla). Es la progresión que al autor le gustó de la 214, y se escribe con tres
+`ejercicios` cuyas `notas` son la primera mitad, la segunda y la suma.
+
+**Las representaciones del karaoke** (`contenido.representacion`): `pentagrama` (la nota en su
+altura, con `clave`), `color` (una franja por grado), `silaba`, `figura`, `icono` y, desde el
+2026-09-10, `personaje`: cada nota baja con su personaje de la pandilla (Dora es do, Milo es
+mi) y, con `botonesPorCarril`, el pulsador de cada banda es el personaje cantando con el
+nombre de su nota. Solo tiene sentido en do mayor sin alteraciones: un fa sostenido no es
+Fara. Con sostenidos, `pentagrama`.
+
 Lo admiten hoy: tocar-a-tiempo, rejilla, ordenar, emparejar, compases, karaoke y seguir.
 El validador y `dificultad` miran cada ejercicio por separado.
 
