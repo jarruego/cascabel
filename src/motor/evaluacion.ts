@@ -127,6 +127,39 @@ export function evaluarRitmo(
 }
 
 /**
+ * Qué se le dice al niño al acabar una vuelta. Es UNA regla, y la usan el mensaje del
+ * personaje y la calidad que se anota en la serie: el autor vio el 2026-09-10 que en
+ * «Ritmo de ocho» fallaba un pulso, el personaje decía «¡muy bien!» y el cierre de la serie
+ * decía «casi». Pasaba porque el mensaje miraba solo la desviación típica —que con un golpe
+ * perdido sale hasta más pequeña, porque hay un error menos que dispersa— y el cierre miraba
+ * los aciertos. Ahora los dos salen de aquí.
+ *
+ *  - `regularTarde` / `regularPronto`: todos los golpes, muy juntos, todos desplazados.
+ *    Es buen pulso: cuenta como bien y se le dice dónde está el desfase.
+ *  - `faltan`: no ha llegado a los aciertos que perdona `fallosPermitidos`.
+ *  - `sobran`: aciertos de sobra, pero más de la mitad de los golpes fuera de todo hueco.
+ *  - `masRegular`: aciertos de sobra, pero a saltos.
+ *  - `bien`: lo demás.
+ */
+export type MensajeRitmico = 'bien' | 'regularTarde' | 'regularPronto' | 'faltan' | 'sobran' | 'masRegular';
+
+/** Con más dispersión que esto, aun acertando, se sugiere ir más regular. */
+export const DISPERSION_MAXIMA_MS = 90;
+
+export function mensajeRitmico(evaluacion: EvaluacionRitmica, total: number): MensajeRitmico {
+  const { aciertos, sobrantes, desvioMedioMs, desviacionTipicaMs, regularPeroDesfasado } = evaluacion;
+  if (regularPeroDesfasado) return desvioMedioMs > 0 ? 'regularTarde' : 'regularPronto';
+  if (total <= 0 || aciertos < total - fallosPermitidos(total)) return 'faltan';
+  if (!bastanteBien(aciertos, total, sobrantes)) return 'sobran';
+  return desviacionTipicaMs < DISPERSION_MAXIMA_MS ? 'bien' : 'masRegular';
+}
+
+/** La calidad que se anota en la serie a partir del mensaje. El buen pulso desfasado es «bien». */
+export function calidadDeMensaje(mensaje: MensajeRitmico): 'bien' | 'casi' {
+  return mensaje === 'bien' || mensaje === 'regularTarde' || mensaje === 'regularPronto' ? 'bien' : 'casi';
+}
+
+/**
  * Cuánto se puede fallar para que aun así se felicite: un golpe de cada cinco.
  *
  * PENDIENTE DE REVISIÓN PEDAGÓGICA: el número. Que tenga que haber un punto a partir del

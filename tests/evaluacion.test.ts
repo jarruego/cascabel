@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { bastanteBien, evaluarRitmo, calidadDe } from '@/motor/evaluacion';
+import { bastanteBien, calidadDe, calidadDeMensaje, evaluarRitmo, mensajeRitmico } from '@/motor/evaluacion';
 
 /**
  * Estos tests protegen la decisión pedagógica más importante del proyecto: que un
@@ -133,5 +133,59 @@ describe('cuándo se felicita y cuándo se sugiere otra vuelta', () => {
   it('sin nada que coger no se felicita', () => {
     expect(bastanteBien(0, 0)).toBe(false);
     expect(bastanteBien(0, 8)).toBe(false);
+  });
+});
+
+describe('el mensaje al acabar la vuelta y la calidad de la serie salen de la misma regla', () => {
+  /*
+    El autor lo vio el 2026-09-10 en «Ritmo de ocho»: falló un pulso, el personaje dijo
+    «¡muy bien!» y el cierre de la serie dijo «casi». El mensaje miraba solo la desviación
+    típica, y con un golpe perdido hay un error menos que dispersa: salía hasta mejor.
+  */
+  const ocho = [0, 500, 1000, 1500, 2000, 2500, 3000, 3500];
+
+  it('con cuatro golpes y uno perdido no felicita, y la serie anota lo mismo', () => {
+    // Es el caso del autor: el primer ejercicio de «Eco de palmas» tiene cuatro pulsos, y
+    // con cuatro no se perdona ninguno. Los tres que dio estaban clavados, y por eso la
+    // desviación típica sola decía «muy bien».
+    const r = evaluarRitmo([0, 500, 1000, 1500], [10, 505, 990], 'primaria-c1');
+    const m = mensajeRitmico(r, 4);
+    expect(m).toBe('faltan');
+    expect(calidadDeMensaje(m)).toBe('casi');
+  });
+
+  it('con ocho golpes se perdona uno, y con dos perdidos ya no', () => {
+    expect(mensajeRitmico(evaluarRitmo(ocho, [0, 500, 1000, 2000, 2500, 3000, 3500], 'primaria-c1'), 8)).toBe('bien');
+    expect(mensajeRitmico(evaluarRitmo(ocho, [0, 500, 1000, 2500, 3000, 3500], 'primaria-c1'), 8)).toBe('faltan');
+  });
+
+  it('todos dentro y juntos es bien', () => {
+    const r = evaluarRitmo(ocho, ocho.map((e) => e + 20), 'primaria-c1');
+    const m = mensajeRitmico(r, ocho.length);
+    expect(m).toBe('bien');
+    expect(calidadDeMensaje(m)).toBe('bien');
+  });
+
+  it('buen pulso desfasado se dice dónde está el desfase y cuenta como bien', () => {
+    const r = evaluarRitmo(ocho, ocho.map((e) => e + 150), 'primaria-c1');
+    const m = mensajeRitmico(r, ocho.length);
+    expect(m).toBe('regularTarde');
+    expect(calidadDeMensaje(m)).toBe('bien');
+  });
+
+  it('aporrear con los huecos cogidos es «sobran»', () => {
+    // Los ocho clavados y luego nueve golpes más cuando ya no queda hueco: sobran.
+    const golpes = [...ocho, ...Array.from({ length: 9 }, (_, i) => 4000 + i * 100)];
+    const r = evaluarRitmo(ocho, golpes, 'primaria-c1');
+    expect(r.aciertos).toBe(8);
+    expect(mensajeRitmico(r, ocho.length)).toBe('sobran');
+  });
+
+  it('todos dentro pero a saltos pide ir más regular', () => {
+    // Alternando 170 ms tarde y 170 ms pronto: cada golpe es «bien» en 1.º (±180), pero
+    // la dispersión es de 170 ms, y eso no es un pulso.
+    const r = evaluarRitmo(ocho, ocho.map((e, i) => e + (i % 2 ? -170 : 170)), 'primaria-c1');
+    expect(r.aciertos).toBe(8);
+    expect(mensajeRitmico(r, ocho.length)).toBe('masRegular');
   });
 });

@@ -2723,7 +2723,11 @@ textos, niveles, camino, y la sección de instrumentos.
       se cuenta en fallos permitidos, un golpe de cada cinco con la parte entera hacia abajo
       —con cuatro pulsos no se perdona ninguno, con ocho uno, con doce dos—, y «regular pero
       desfasado» exige haber dado todos los golpes. Sigue marcado como pendiente de revisión
-      pedagógica, y vale para karaoke y canta la nota, que usan la misma regla.
+      pedagógica, y vale para karaoke y canta la nota, que usan la misma regla. Y el mensaje
+      del personaje al acabar la vuelta sale de esa misma regla (`mensajeRitmico`): con un
+      pulso perdido decía «¡muy bien!» mientras el cierre decía «casi», porque miraba solo la
+      desviación típica, que con un golpe menos sale hasta mejor. Ahora hay mensaje para
+      «faltan golpes» y «sobran golpes», y la calidad de la serie se deriva del mensaje.
 
 - [x] **Percusión corporal: «chasquidos» en vez de «pitos», y un dibujo sobre cada fila.**
       Chasquear los dedos, palmas, la pierna y el pie, de OpenMoji, encima del nombre de

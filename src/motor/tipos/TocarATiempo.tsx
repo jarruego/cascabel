@@ -5,7 +5,7 @@ import { TOLERANCIA_MS } from '@/config';
 import { MARIMBA, Sampler } from '@/audio/sampler';
 import { DetectorDePalmadas } from '@/escucha/palmadas';
 import { useCarril } from '@/app/preferencias';
-import { bastanteBien, evaluarRitmo, type EvaluacionRitmica } from '../evaluacion';
+import { calidadDeMensaje, evaluarRitmo, mensajeRitmico, type EvaluacionRitmica } from '../evaluacion';
 import {
   aMilisegundos,
   anclarEn,
@@ -545,6 +545,7 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
       {fase === 'resultado' && !sinRespuesta && evaluacion && (
         <Resultado
           evaluacion={evaluacion}
+          total={esperados.current.length}
           personaje={actividad.personaje}
           pista={pistaPara(actividad.pistas, ronda + 1) ?? undefined}
         />
@@ -596,11 +597,8 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
                   actividadId: actividad.id,
                   completada: true,
                   // Regular pero desfasado es «bien»: tiene pulso, solo va desplazado (§7).
-                  calidad:
-                    evaluacion.regularPeroDesfasado ||
-                    bastanteBien(evaluacion.aciertos, esperados.current.length, evaluacion.sobrantes)
-                      ? 'bien'
-                      : 'casi',
+                  // La misma regla que el mensaje del personaje: ver `mensajeRitmico`.
+                  calidad: calidadDeMensaje(mensajeRitmico(evaluacion, esperados.current.length)),
                   aciertos: evaluacion.aciertos,
                   intentos: esperados.current.length,
                   desvioMedioMs: evaluacion.desvioMedioMs,
@@ -644,23 +642,20 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
  */
 function Resultado({
   evaluacion,
+  total,
   personaje,
   pista,
 }: {
   evaluacion: EvaluacionRitmica;
+  /** Cuántos golpes había que dar. */
+  total: number;
   personaje?: PersonajeNombre;
   /** La pista de ESTA actividad, que es la que enseña algo. Ver `Reaccion`. */
   pista?: string;
 }) {
-  const { desvioMedioMs, desviacionTipicaMs, regularPeroDesfasado } = evaluacion;
-
-  const mensaje = regularPeroDesfasado
-    ? desvioMedioMs > 0
-      ? 'tocar.regularTarde'
-      : 'tocar.regularPronto'
-    : desviacionTipicaMs < 90
-      ? 'tocar.bien'
-      : 'tocar.masRegular';
+  // La regla vive en `evaluacion.ts`, con su test, y es la misma que anota la calidad en la
+  // serie: aquí solo se le pone texto.
+  const mensaje = `tocar.${mensajeRitmico(evaluacion, total)}`;
 
   return (
     <>

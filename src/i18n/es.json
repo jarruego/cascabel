@@ -244,6 +244,8 @@
   "tocar.regularTarde": "Tu pulso es muy regular, solo vas un poquito por detrás. Prueba a empezar antes.",
   "tocar.regularPronto": "Tu pulso es muy regular, solo vas un poquito por delante. Espera un pelín más.",
   "tocar.masRegular": "Escucha otra vez y marca el pulso con el pie mientras tocas.",
+  "tocar.faltan": "Se te ha escapado algún golpe. Escucha otra vez y cuéntalos: uno por cada marca.",
+  "tocar.sobran": "Has dado golpes de más. Solo uno por cada marca, y espera a la siguiente.",
   "tocar.sinMicrofono": "No se ha podido usar el micrófono en este dispositivo. La actividad funciona igual tocando el botón.",
   "tocar.sinPermiso": "No se ha dado permiso para el micrófono. La actividad funciona igual tocando el botón; si quieres usar palmadas, hay que permitirlo en los ajustes del navegador.",
   "actividad.contenidoInvalido": "Esta actividad tiene un ritmo que todavía no sabemos tocar. No es culpa tuya.",
