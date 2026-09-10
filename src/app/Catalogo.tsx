@@ -5,6 +5,7 @@ import { despertarAudio } from '@/audio/AudioEngine';
 import { desmarcar, leerTodo } from '@/datos/progreso';
 import { Modal } from '@/ui/Modal';
 import { t } from '@/i18n';
+import { useVuelta } from './vuelta';
 import { IconoAjustes } from '@/ui/Simbolos';
 import { codigoDe } from '@/motor/codigo';
 import type { Eje, TipoActividad } from '@/motor/tipos';
@@ -101,62 +102,12 @@ export default function Catalogo() {
   }, []);
 
   /*
-    Volver a donde estabas.
-
-    El navegador restaura el scroll él solo al ir «atrás», pero solo si la página ya mide lo
-    que medía, y aquí la lista llega por `fetch`: cuando el navegador intenta restaurar, el
-    catálogo todavía está vacío y mide cero. Así que se guarda la posición al salir y se
-    repone cuando la lista ya está pintada.
-
-    En `sessionStorage` y no en el estado: tiene que sobrevivir a que la pantalla se
-    desmonte entera, que es justo lo que pasa al abrir una actividad.
+    Volver a donde estabas: la URL con sus filtros y la altura del scroll. Vive en
+    `vuelta.ts`, compartido con el Taller y el Camino: «Volver» desde una actividad lleva a
+    la pantalla de la que se salió, y no siempre es el catálogo.
   */
-  /*
-    La URL del catálogo, apuntada mientras se está EN el catálogo.
-
-    Es lo que hace que «Volver» desde una actividad sea siempre el catálogo y siga teniendo
-    los filtros puestos. Se apuntaba al desmontar, y ahí ya era tarde: para cuando corre la
-    limpieza, el navegador está en la actividad y `window.location` devuelve su URL. «Volver»
-    navegaba entonces a la actividad en la que ya estabas, o sea a ninguna parte.
-  */
-  useEffect(() => {
-    try {
-      sessionStorage.setItem('catalogo:url', `/${parametros.toString() ? `?${parametros}` : ''}`);
-    } catch {
-      // Sin almacenamiento, «Volver» irá al catálogo sin filtros.
-    }
-  }, [parametros]);
-
   const listaLista = entradas !== null;
-  const yaRepuesto = useRef(false);
-
-  useEffect(() => {
-    const guardar = () => {
-      try {
-        sessionStorage.setItem('catalogo:scroll', String(window.scrollY));
-      } catch {
-        // Sin almacenamiento se pierde la posición y no pasa nada más.
-      }
-    };
-    window.addEventListener('pagehide', guardar);
-    return () => {
-      window.removeEventListener('pagehide', guardar);
-      guardar();
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!listaLista || yaRepuesto.current) return;
-    yaRepuesto.current = true;
-    try {
-      const y = Number(sessionStorage.getItem('catalogo:scroll') ?? '0');
-      // Un fotograma de margen: si se repone antes de que el navegador haya colocado la
-      // rejilla, la página aún no es tan alta y el salto se queda corto.
-      if (y > 0) requestAnimationFrame(() => window.scrollTo(0, y));
-    } catch {
-      // Igual que arriba.
-    }
-  }, [listaLista]);
+  useVuelta(`/${parametros.toString() ? `?${parametros}` : ''}`, listaLista);
 
   /* La sombra de la barra de filtros solo cuando de verdad está pegada arriba. */
   const filtros = useRef<HTMLDivElement | null>(null);

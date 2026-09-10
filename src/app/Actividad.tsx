@@ -13,6 +13,7 @@ import { ModalExito, ModalExplicacion } from '@/ui/ModalesActividad';
 import { aceptarMicrofono, elegirToque, microfonoDenegado, nuevaActividad } from '@/escucha/permiso';
 import { usePreferencias } from './preferencias';
 import { t } from '@/i18n';
+import { destinoDeVuelta } from './vuelta';
 import type { Actividad as TipoActividad, ResultadoActividad } from '@/motor/tipos';
 
 /**
@@ -77,29 +78,13 @@ export default function Actividad() {
   }, [id]);
 
   /**
-   * Volver al catálogo **tal como estaba**: mismos filtros y misma posición.
-   *
-   * Ir a `/` a secas construía una pantalla nueva, sin filtros y desde arriba del todo. Con
-   * setenta y ocho actividades eso significaba volver a filtrar y a bajar cada vez que se
-   * abría una, que es la forma más segura de que nadie explore nada.
-   *
-   * **Se probó retrocediendo en el historial y estaba mal.** `history.back()` no lleva al
-   * catálogo: lleva a la pantalla anterior, que puede ser la ficha que acabas de mirar o la
-   * actividad de antes. El autor lo vio enseguida — «Volver» le abría la ficha —, y tenía
-   * razón en el fondo del asunto: volver es volver al catálogo, no deshacer un paso.
-   *
-   * Así que el catálogo apunta su propia URL al salir y aquí se va a esa. Filtros intactos y
-   * un solo destino. Si no hay nada apuntado —se ha entrado por un enlace directo—, `/`.
+   * Volver a la pantalla de la que se salió **tal como estaba**: el catálogo con sus
+   * filtros, el Taller o el Camino, y a la misma altura. Ir a `/` a secas construía una
+   * pantalla nueva, sin filtros y desde arriba del todo, que es la forma más segura de que
+   * nadie explore nada. El porqué de no usar el historial está en `vuelta.ts`. Si no hay
+   * nada apuntado —se ha entrado por un enlace directo—, el catálogo.
    */
-  const volver = () => {
-    let destino = '/';
-    try {
-      destino = sessionStorage.getItem('catalogo:url') || '/';
-    } catch {
-      // Sin almacenamiento se va al catálogo sin filtros, que es lo peor que puede pasar.
-    }
-    navegar(destino);
-  };
+  const volver = () => navegar(destinoDeVuelta());
 
   if (fallo) {
     return (

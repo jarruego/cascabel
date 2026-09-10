@@ -2799,6 +2799,11 @@ textos, niveles, camino, y la sección de instrumentos.
       karaoke por bandas. Solo si de verdad sobra, se respeta `prefers-reduced-motion`, y
       cualquier gesto lo corta. `ui/insinuarDesplazamiento.ts`, con test de la curva.
 
+- [x] **«Volver» lleva a la pantalla de la que se salió.** Iba siempre al catálogo; ahora
+      va al catálogo con sus filtros, al Taller o al Camino, a la misma altura de scroll y,
+      en el Camino, con la misma etapa desplegada. `app/vuelta.ts`, compartido por las tres
+      listas, con test.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

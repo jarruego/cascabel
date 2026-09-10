@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { cargarIndice } from '@/datos/cargar';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { t } from '@/i18n';
+import { useVuelta } from './vuelta';
 import type { Eje } from '@/motor/tipos';
 
 /**
@@ -32,6 +33,7 @@ interface Entrada {
 export default function Instrumentos() {
   const [entradas, setEntradas] = useState<Entrada[] | null>(null);
   const [fallo, setFallo] = useState(false);
+  useVuelta('/instrumentos', entradas !== null);
 
   useEffect(() => {
     let vivo = true;

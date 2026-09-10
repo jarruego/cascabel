@@ -6,6 +6,7 @@ import { leerTodo } from '@/datos/progreso';
 import { duracionLegible } from '@/motor/duracion';
 import { haceCuanto, queRepasar, type Sugerencia } from '@/motor/repaso';
 import { t } from '@/i18n';
+import { useVuelta } from './vuelta';
 import { codigoDe } from '@/motor/codigo';
 import { usePreferencias } from './preferencias';
 import type { Carril, Etapa } from '@/config';
@@ -93,6 +94,17 @@ export default function Camino() {
   const [fallo, setFallo] = useState(false);
   const [abierto, setAbierto] = useState<Etapa | null>(null);
   const carril = usePreferencias((e) => e.carril);
+  useVuelta('/camino', caminos !== null);
+  // La etapa desplegada también se recuerda: volver al Camino con la tuya cerrada es
+  // volver a otra pantalla. Misma vida que el scroll: la pestaña.
+  useEffect(() => {
+    if (!abierto) return;
+    try {
+      sessionStorage.setItem('camino:abierta', abierto);
+    } catch {
+      // Se pierde y se abre la del carril, como siempre.
+    }
+  }, [abierto]);
 
   useEffect(() => {
     let vivo = true;
@@ -110,7 +122,14 @@ export default function Camino() {
           aplicación ya sabe con quién trabaja, y aquí no lo estaba usando para nada.
         */
         const suya = c.caminos.find((x) => etapasDelCarril(carril).includes(x.etapa));
-        setAbierto(suya?.etapa ?? c.caminos[0]?.etapa ?? null);
+        let recordada: Etapa | null = null;
+        try {
+          const r = sessionStorage.getItem('camino:abierta');
+          if (r && c.caminos.some((x) => x.etapa === r)) recordada = r as Etapa;
+        } catch {
+          // Sin almacenamiento, la del carril.
+        }
+        setAbierto(recordada ?? suya?.etapa ?? c.caminos[0]?.etapa ?? null);
       })
       .catch(() => vivo && setFallo(true));
     return () => {
