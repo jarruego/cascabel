@@ -2870,7 +2870,10 @@ textos, niveles, camino, y la sección de instrumentos.
       Dora» («Backe, backe Kuchen», cuatro bandas sol-la-mi-do, cotejada con de.wikipedia y
       transportada a do). Las cuatro con ABC para el validador. Con personajes, el
       recuadro ocupa todo el ancho en vertical y no baja de 56 px por carril en horizontal
-      aunque haya un solo pulsador, y la 140 va a 60 en vez de 72: iban apelotonados.
+      aunque haya un solo pulsador, y la 140 va a 60 en vez de 72: iban apelotonados. Al
+      acertar, el personaje salta con dos latidos y cambia a «celebra» o «baila», alternando;
+      el pulsador da un botecito al tocarlo. Con `prefers-reduced-motion`, solo el cambio de
+      dibujo.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la

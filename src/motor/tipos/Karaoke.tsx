@@ -524,7 +524,14 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
                   {/* Con la pandilla, cada nota baja con su personaje: Dora es do, Milo es mi.
                       Lo pidió el autor el 2026-09-10 para las canciones por bandas. */}
                   {representacion === 'personaje' && personajeDe(n.nota) && (
-                    <Personaje nombre={personajeDe(n.nota)!} pose="neutro" tamano={46} />
+                    /* Al acertar, el personaje se pone contento: celebra o baila, alternando
+                       para que una racha no sea el mismo dibujo siete veces. El salto y el
+                       latido los pone el CSS. Lo pidió el autor el 2026-09-11. */
+                    <Personaje
+                      nombre={personajeDe(n.nota)!}
+                      pose={acertadas.has(i) ? (i % 2 === 0 ? 'celebra' : 'baila') : 'neutro'}
+                      tamano={46}
+                    />
                   )}
                   {contenidoFigura}
                 </>
