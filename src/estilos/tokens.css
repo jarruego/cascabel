@@ -653,6 +653,21 @@ p {
 .tarjeta--creacion { border-left-color: var(--eje-creacion); }
 .tarjeta--cultura { border-left-color: var(--eje-cultura); }
 .tarjeta__titulo { font-weight: 700; }
+/* El código corto de una actividad —tres cifras, ver `motor/codigo.ts`—: pequeño, con
+   cifras tabulares y en una píldora, delante del título en todas partes. */
+.codigo {
+  display: inline-block;
+  padding: 0 0.4em;
+  border-radius: var(--r-s);
+  background: var(--fondo);
+  border: 1px solid var(--linea);
+  color: var(--tinta-2);
+  font-size: 0.8em;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+  vertical-align: 0.1em;
+}
 .tarjeta__meta { font-size: 0.85em; color: var(--tinta-2); }
 
 /* ── filtros del catálogo ──────────────────────────────────────────────────

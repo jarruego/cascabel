@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { cargarCriterios, cargarIndice } from '@/datos/cargar';
 import { t } from '@/i18n';
+import { codigoDe } from '@/motor/codigo';
 import type { Etapa } from '@/config';
 
 /**
@@ -113,7 +114,9 @@ export default function Criterios() {
                     <ul className="criterios__actividades">
                       {actividades.map((a) => (
                         <li key={a.id}>
-                          <Link to={`/actividad/${a.id}`}>{a.titulo}</Link>
+                          <Link to={`/actividad/${a.id}`}>
+                            <span className="codigo">{codigoDe(a.id)}</span> {a.titulo}
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -128,7 +131,9 @@ export default function Criterios() {
                 <ul className="criterios__actividades">
                   {sinCriterio.map((a) => (
                     <li key={a.id}>
-                      <Link to={`/actividad/${a.id}`}>{a.titulo}</Link>
+                      <Link to={`/actividad/${a.id}`}>
+                        <span className="codigo">{codigoDe(a.id)}</span> {a.titulo}
+                      </Link>
                     </li>
                   ))}
                 </ul>

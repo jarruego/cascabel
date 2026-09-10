@@ -43,6 +43,14 @@ La referencia normativa es `schemas/actividad.schema.json`. Esto es la guía par
 - El ABC tiene que parsear, cuadrar los compases, caber en la tesitura de la edad y no
   tener saltos mayores que el límite de la etapa (4.ª en Infantil, 5.ª en c1, 6.ª en c2)
 
+## El código corto
+
+Cada actividad tiene un código de tres cifras que sale de su `id`, no de un campo aparte:
+la etapa da la primera cifra —0 Infantil, 1, 2 y 3 los ciclos de Primaria, 9 el Taller— y
+el número del `id` las otras dos: `inf-23-…` es **023**, `c1-07-…` es **107**, `tr-05-…`
+es **905**. Sale delante del título en el catálogo, el camino, la explicación, la ficha y
+los criterios, y el buscador del catálogo lo entiende. Ver `motor/codigo.ts`.
+
 ## Una actividad como serie de ejercicios
 
 Desde el 2026-09-11, `contenido.ejercicios` convierte una actividad en una pequeña serie de

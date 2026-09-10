@@ -57,7 +57,10 @@ async function pintar(url: string): Promise<string[]> {
     );
   });
   await act(async () => {});
-  return [...caja.querySelectorAll('.tarjeta__titulo')].map((e) => e.textContent ?? '');
+  // El título sin el código corto que va delante: lo que se comprueba es qué actividades salen.
+  return [...caja.querySelectorAll('.tarjeta__titulo')].map((e) =>
+    (e.textContent ?? '').replace(/^\d{3}\s+/, ''),
+  );
 }
 
 describe('el catálogo', () => {

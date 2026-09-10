@@ -8,6 +8,7 @@ import { t } from '@/i18n';
 import { ayudaDe } from '@/motor/ayudaPorTipo';
 import type { Actividad } from '@/motor/tipos';
 import type { Calidad } from '@/motor/serie';
+import { codigoDe } from '@/motor/codigo';
 
 /**
  * Los dos modales que rodean a toda actividad: el que explica antes y el que celebra
@@ -75,7 +76,9 @@ export function ModalExplicacion({
           la progresión de cocomusic —la base, la seguridad— para una pantalla que es
           exactamente eso, el momento antes de empezar. Ver `docs/14-PERSONAJES.md`. */}
       <Personaje nombre={actividad.personaje ?? 'dora'} pose="saluda" tamano={110} />
-      <h2>{actividad.titulo}</h2>
+      <h2>
+        <span className="codigo">{codigoDe(actividad.id)}</span> {actividad.titulo}
+      </h2>
 
       {actividad.enunciado && <p className="modal__texto">{t(actividad.enunciado)}</p>}
 

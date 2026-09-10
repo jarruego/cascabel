@@ -6,6 +6,7 @@ import { leerTodo } from '@/datos/progreso';
 import { duracionLegible } from '@/motor/duracion';
 import { haceCuanto, queRepasar, type Sugerencia } from '@/motor/repaso';
 import { t } from '@/i18n';
+import { codigoDe } from '@/motor/codigo';
 import { usePreferencias } from './preferencias';
 import type { Carril, Etapa } from '@/config';
 
@@ -250,6 +251,7 @@ export default function Camino() {
                                 {hechas.has(id) && (
                                   <span className="camino__hecha">{t('camino.hecha')}</span>
                                 )}
+                                <span className="codigo">{codigoDe(id)}</span>{' '}
                                 {fichas.get(id)?.titulo ?? id}
                                 {fichas.get(id)?.duracion_min ? (
                                   <span className="camino__minutos">

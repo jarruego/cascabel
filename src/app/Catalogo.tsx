@@ -5,6 +5,7 @@ import { despertarAudio } from '@/audio/AudioEngine';
 import { leerTodo } from '@/datos/progreso';
 import { t } from '@/i18n';
 import { IconoAjustes } from '@/ui/Simbolos';
+import { codigoDe } from '@/motor/codigo';
 import type { Eje, TipoActividad } from '@/motor/tipos';
 import type { Etapa } from '@/config';
 
@@ -198,9 +199,10 @@ export default function Catalogo() {
     if (eje && e.eje !== eje) return false;
     if (criterio && e.curriculo?.criterio !== criterio) return false;
     if (!aguja) return true;
-    // Se busca también por eje y por criterio: «pulso» o «3.1» son búsquedas legítimas.
+    // Se busca también por eje, por criterio y por código: «pulso», «3.1» o «107» son
+    // búsquedas legítimas.
     const pajar = normalizar(
-      `${e.titulo} ${t(`eje.${e.eje}`)} ${e.tipo} ${e.curriculo?.criterio ?? ''}`,
+      `${codigoDe(e.id)} ${e.titulo} ${t(`eje.${e.eje}`)} ${e.tipo} ${e.curriculo?.criterio ?? ''}`,
     );
     return aguja.split(/\s+/).every((palabra) => pajar.includes(palabra));
   });
@@ -347,7 +349,9 @@ export default function Catalogo() {
                  Si falla, la actividad se abre igual y el sonido lo intenta después. */
               onClick={() => void despertarAudio().catch(() => {})}
             >
-              <span className="tarjeta__titulo">{e.titulo}</span>
+              <span className="tarjeta__titulo">
+                <span className="codigo">{codigoDe(e.id)}</span> {e.titulo}
+              </span>
               {hechas.has(e.id) && (
                 <span className="tarjeta__hecha" aria-label={t('catalogo.yaHecha')}>
                   ✓

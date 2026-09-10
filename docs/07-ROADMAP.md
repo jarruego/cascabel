@@ -2695,6 +2695,11 @@ textos, niveles, camino, y la sección de instrumentos.
       escala ya la seguían; los dictados en rejilla esperan a que se pulse; y el memory se
       queda en 1,4 s porque ahí no hay frase, hay dos cartas que mirar.
 
+- [x] **Cada actividad tiene un código de tres cifras.** Sale del `id`: la etapa da la
+      primera cifra y el número del `id` las otras dos (`c1-07` → 107, `inf-23` → 023,
+      `tr-05` → 905). Delante del título en el catálogo, el camino, la explicación, la ficha
+      y los criterios; el buscador lo entiende; y un test vigila que no se repita ninguno.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router';
 import { cargarActividad } from '@/datos/cargar';
 import { duracionLegible } from '@/motor/duracion';
+import { codigoDe } from '@/motor/codigo';
 import { t, existe } from '@/i18n';
 import { Icono } from '@/ui/Icono';
 import { APP, carrilPorDefecto, OBJETIVO_TACTIL } from '@/config';
@@ -134,7 +135,8 @@ export default function Ficha() {
         {hoja === 1 ? (
           <>
             <p className="ficha__sobretitulo">
-              {t(ETAPA[actividad.etapa] ?? '')} · {t(`eje.${actividad.eje}`)}
+              <span className="codigo">{codigoDe(actividad.id)}</span> · {t(ETAPA[actividad.etapa] ?? '')} ·{' '}
+              {t(`eje.${actividad.eje}`)}
             </p>
             <h1>{actividad.titulo}</h1>
             <p className="ficha__subtitulo">{t(clave)}</p>
