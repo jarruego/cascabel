@@ -29,8 +29,8 @@
         "color": "rojo"
       },
       {
-        "clave": "autobus",
-        "icono": "autobus",
+        "clave": "bicicleta",
+        "icono": "bicicleta",
         "color": "azul"
       },
       {
@@ -72,8 +72,8 @@
         "respuesta": "martillo"
       },
       {
-        "audio": "sonidos/vehiculos/autobus.opus",
-        "respuesta": "autobus"
+        "audio": "sonidos/vehiculos/bicicleta.opus",
+        "respuesta": "bicicleta"
       },
       {
         "audio": "sonidos/vehiculos/ambulancia.opus",
