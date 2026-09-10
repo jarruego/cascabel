@@ -31,6 +31,7 @@
  * | imprimir | impresora | guía de aula y ficha |
  * | idea | bombilla | instrumentos abiertos |
  * | más agudo / más grave | más y menos | acompañamientos, octavas |
+ * | compartir (copiar el enlace) | tres nodos unidos | la explicación de cada actividad |
  *
  * Lo que **no** lleva símbolo: nada. Todo botón de la botonera lleva el suyo, porque media
  * botonera con icono y media sin él es justo lo que el autor describió como «no existe
@@ -222,6 +223,18 @@ export function IconoIdea({ tamano = 22 }: Props) {
 }
 
 /** Más: subir el tono, añadir una octava. */
+/** Compartir: los tres nodos unidos que llevan todos los sistemas. Copia el enlace. */
+export function IconoCompartir({ tamano = 22 }: Props) {
+  return (
+    <svg width={tamano} height={tamano} viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <circle cx="18" cy="5" r="2.6" fill="currentColor" />
+      <circle cx="6" cy="12" r="2.6" fill="currentColor" />
+      <circle cx="18" cy="19" r="2.6" fill="currentColor" />
+      <path d="M8.3 10.7 15.7 6.3M8.3 13.3l7.4 4.4" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export function IconoMas({ tamano = 22 }: Props) {
   return (
     <svg width={tamano} height={tamano} viewBox="0 0 24 24" aria-hidden="true" focusable="false">

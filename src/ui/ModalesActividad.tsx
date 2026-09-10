@@ -1,5 +1,7 @@
+import { useEffect, useRef, useState } from 'react';
 import { Modal } from './Modal';
-import { IconoSiguiente } from './Simbolos';
+import { IconoCompartir, IconoSiguiente } from './Simbolos';
+import { copiarEnlace, enlaceActual } from './copiarEnlace';
 import { BarraAcciones } from './BarraAcciones';
 import { Reaccion } from './Reaccion';
 import { Personaje } from './Personaje';
@@ -70,8 +72,46 @@ export function ModalExplicacion({
   const conMicrofono = microfono !== null && !microfonoDenegado;
   const cerrar = empezada ? alCerrar : () => alEmpezar(conMicrofono ? 'microfono' : 'toque');
 
+  /*
+    Compartir es copiar el enlace, y nada más: no hay redes ni cuentas a las que mandarlo.
+    El aviso de «copiado» se queda unos segundos y se va solo; si el portapapeles falla,
+    se enseña el enlace escrito para copiarlo a mano. Lo pidió el autor el 2026-09-10.
+  */
+  const [copiado, setCopiado] = useState<'no' | 'si' | 'fallo'>('no');
+  const temporizador = useRef<number | null>(null);
+  useEffect(() => () => window.clearTimeout(temporizador.current ?? undefined), []);
+  useEffect(() => {
+    if (!abierto) setCopiado('no');
+  }, [abierto]);
+  const compartir = async () => {
+    const bien = await copiarEnlace(enlaceActual());
+    setCopiado(bien ? 'si' : 'fallo');
+    window.clearTimeout(temporizador.current ?? undefined);
+    if (bien) temporizador.current = window.setTimeout(() => setCopiado('no'), 4000);
+  };
+
   return (
     <Modal abierto={abierto} alCerrar={cerrar} titulo={actividad.titulo}>
+      <button
+        type="button"
+        className="modal__compartir"
+        aria-label={t('modal.copiarEnlace')}
+        title={t('modal.copiarEnlace')}
+        onClick={() => void compartir()}
+      >
+        <IconoCompartir />
+      </button>
+      {copiado !== 'no' && (
+        <p className="modal__aviso" role="status" data-tono={copiado === 'si' ? 'bien' : 'aviso'}>
+          {copiado === 'si' ? t('modal.enlaceCopiado') : t('modal.enlaceNoCopiado')}
+          {copiado === 'fallo' && (
+            <>
+              {' '}
+              <code className="modal__enlace">{enlaceActual()}</code>
+            </>
+          )}
+        </p>
+      )}
       {/* Quién presenta la actividad lo dice su JSON, y por defecto es Dora: la primera de
           la progresión de cocomusic —la base, la seguridad— para una pantalla que es
           exactamente eso, el momento antes de empezar. Ver `docs/14-PERSONAJES.md`. */}

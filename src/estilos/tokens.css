@@ -1408,6 +1408,7 @@ p {
   backdrop-filter: blur(2px);
 }
 .modal__caja {
+  position: relative;
   display: grid;
   justify-items: center;
   gap: var(--e-3);
@@ -1424,6 +1425,39 @@ p {
   color: var(--tinta-2);
   max-width: 34ch;
 }
+/* Compartir: un botón redondo en la esquina de la modal que copia el enlace. Es para el
+   adulto, así que va discreto —contorno y tinta secundaria— pero con el objetivo táctil
+   entero. */
+.modal__compartir {
+  position: absolute;
+  top: var(--e-3);
+  right: var(--e-3);
+  display: grid;
+  place-items: center;
+  width: max(44px, var(--objetivo));
+  height: max(44px, var(--objetivo));
+  padding: 0;
+  border: 2px solid var(--linea);
+  border-radius: 50%;
+  background: var(--superficie);
+  color: var(--tinta-2);
+  cursor: pointer;
+}
+.modal__compartir:hover { color: var(--tinta); border-color: var(--tinta-2); }
+.modal__compartir:focus-visible { outline: var(--foco); outline-offset: 2px; }
+/* «Enlace copiado»: un aviso corto que se va solo. En verde con el tic implícito del texto. */
+.modal__aviso {
+  margin: 0;
+  padding: var(--e-1) var(--e-3);
+  border-radius: var(--r-s);
+  font-size: var(--t-s);
+  max-width: 40ch;
+  overflow-wrap: anywhere;
+}
+.modal__aviso[data-tono='bien'] { background: var(--suave-verde); color: var(--ok); }
+.modal__aviso[data-tono='aviso'] { background: var(--suave-amarillo); color: var(--tinta); }
+.modal__enlace { font-size: var(--t-xs); user-select: all; }
+
 /* La nota para el adulto: más pequeña y separada, porque no es para quien va a jugar.
    Un niño de seis años no necesita saber que el piano responde a la fila de la A. */
 .modal__adulto {

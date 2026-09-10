@@ -2765,6 +2765,12 @@ textos, niveles, camino, y la sección de instrumentos.
       borra nada más: las veces y el mejor intento se quedan. En el camino, la misma franja
       al final de cada ficha, sin pulsar: la marca se quita desde el catálogo.
 
+- [x] **Compartir una actividad es copiar su enlace.** Un botón redondo en la esquina de la
+      modal de explicación —actividades y herramientas, que es la misma— copia el enlace al
+      portapapeles y avisa «enlace copiado, ya puedes compartirlo» durante unos segundos. No
+      hay redes ni cuentas: el enlace es público y no lleva nada dentro. Si el portapapeles
+      falla, se enseña el enlace escrito para copiarlo a mano.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
