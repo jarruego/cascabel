@@ -2827,9 +2827,15 @@ textos, niveles, camino, y la sección de instrumentos.
       cuatro frases de 16 negras. Grieg y Tárrega (324) siguen sin fuente escrita: PENDIENTE
       en el JSON. La melodía de la percusión corporal sube de 0,35 a 0,5 de volumen.
 
-- [x] **El teléfono de la 026 no sonaba a teléfono.** Era casi todo ruido grave; el segundo
-      intento (Model 500) sonaba a marcar teclas. Ahora es un Iskra ATA 2 grabado por Work
-      With Sounds (Commons, CC BY 3.0): el timbre de campanilla de siempre, dos timbrazos.
+- [x] **El teléfono de la 026 no sonaba a teléfono, y destapó un fallo de la herramienta.**
+      `sonidos.py` guardaba la descarga en caché solo por el id, así que cambiar el fichero
+      de Commons de un sonido reutilizaba la descarga vieja: **los cambios de lluvia, olas,
+      avión y tren del 9 y el 10 no habían llegado nunca al .opus**, y el teléfono tampoco.
+      Ahora la caché va por el fichero de Commons y la extensión sale de la ruta de la URL.
+      Regenerado todo el banco: esos cinco cambian de verdad y los otros 97 son idénticos.
+      El teléfono es un Iskra ATA 2 grabado por Work With Sounds (Commons, CC BY 3.0): el
+      timbre de campanilla de siempre, dos timbrazos. **Hay que volver a oír lluvia, olas,
+      avión y tren en el aparato**: es la primera vez que suenan los elegidos.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la

@@ -36,6 +36,7 @@ Salida: public/audio/sonidos/<categoria>/<id>.opus
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import subprocess
@@ -168,8 +169,15 @@ def main() -> int:
             m = metadatos(s["commons"])
             if not LICENCIAS_VALIDAS.match(m["licencia"]):
                 raise RuntimeError(f"licencia no admitida: «{m['licencia']}»")
-            extension = Path(urllib.parse.unquote(m["url"])).suffix or ".bin"
-            crudo = CACHE / f"{s['id']}{extension}"
+            # La extensión sale de la RUTA de la URL, no de la URL entera: Commons añade
+            # «?utm_source=…» y el sufijo era «.org&utm_campaign=…». Y la caché va por el
+            # fichero de Commons, no por el id: con el id solo, cambiar el `commons` de un
+            # sonido reutilizaba la descarga vieja y el cambio no llegaba nunca al .opus.
+            # El autor lo oyó el 2026-09-10 («el teléfono no es el típico ring ring»).
+            ruta = urllib.parse.unquote(urllib.parse.urlparse(m["url"]).path)
+            extension = Path(ruta).suffix or ".bin"
+            huella = hashlib.sha1(s["commons"].encode("utf-8")).hexdigest()[:10]
+            crudo = CACHE / f"{s['id']}-{huella}{extension}"
             descargar(m["url"], crudo)
             convertir(crudo, destino, float(s.get("desde", 0)), float(s["segundos"]))
             s["verificado"] = {
