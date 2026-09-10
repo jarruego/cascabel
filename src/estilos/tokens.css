@@ -3290,6 +3290,12 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   display: flex;
   justify-content: safe center;
   align-items: center;
+  /* Ancho fijo al de la sección: sin él, el `margin-inline: auto` de `.actividad > *` lo
+     dejaba a medida del contenido y la pauta ensanchaba la pantalla entera en vez de
+     desplazarse dentro. Lo vio el autor el 2026-09-10. */
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   height: 100%;
   min-height: 0;
   overflow-x: auto;
@@ -3317,19 +3323,22 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   font-size: 4px;
 }
 .compases__raya { stroke: var(--tinta); stroke-width: 0.13; }
-.compases__final-fina { stroke: var(--tinta); stroke-width: 0.16; }
-.compases__final-gruesa { stroke: var(--tinta); stroke-width: 0.5; }
+/* Las barras van más gruesas que en la imprenta (0,16 espacios): en una pantalla, y a la
+   distancia de una pizarra, la barra fina se pierde entre las líneas. */
+.compases__final-fina { stroke: var(--tinta); stroke-width: 0.28; }
+.compases__final-gruesa { stroke: var(--tinta); stroke-width: 0.7; }
 /* Las divisorias por estado. Libre: un rastro punteado, apenas, que dice dónde se toca. */
-.compases__linea-barra { stroke: var(--tinta); stroke-width: 0.16; stroke-linecap: butt; }
+.compases__linea-barra { stroke: var(--tinta); stroke-width: 0.3; stroke-linecap: butt; }
 .compases__divisoria[data-estado='libre'] .compases__linea-barra {
   stroke: var(--linea);
+  stroke-width: 0.18;
   stroke-dasharray: 0.35 0.35;
 }
-.compases__divisoria[data-estado='sobra'] .compases__linea-barra { stroke: var(--vivo-naranja); stroke-width: 0.36; }
+.compases__divisoria[data-estado='sobra'] .compases__linea-barra { stroke: var(--vivo-naranja); stroke-width: 0.44; }
 .compases__divisoria[data-estado='sobra'] .compases__banda { fill: color-mix(in srgb, var(--vivo-naranja) 16%, transparent); }
 .compases__divisoria[data-estado='falta'] .compases__linea-barra {
   stroke: var(--vivo-verde);
-  stroke-width: 0.24;
+  stroke-width: 0.34;
   stroke-dasharray: 0.2 0.3;
   stroke-linecap: round;
 }
