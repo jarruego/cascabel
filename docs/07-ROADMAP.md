@@ -2762,7 +2762,8 @@ textos, niveles, camino, y la sección de instrumentos.
 - [x] **El tic de hecha, en la línea del título y pulsable.** Iba en su propia línea; ahora
       es una franja verde plana en el borde derecho de la tarjeta, de arriba a abajo, con el
       tic en blanco centrado; al tocarla una modal pregunta si quitar la marca. Quitarla no
-      borra nada más: las veces y el mejor intento se quedan.
+      borra nada más: las veces y el mejor intento se quedan. En el camino, la misma franja
+      al final de cada ficha, sin pulsar: la marca se quita desde el catálogo.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la

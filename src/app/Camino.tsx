@@ -246,11 +246,6 @@ export default function Camino() {
                                 data-hecha={hechas.has(id) || undefined}
                                 onClick={() => void despertarAudio().catch(() => {})}
                               >
-                                {/* La marca lleva texto además del símbolo: un tic verde
-                                    solo sería color informando por su cuenta (§6). */}
-                                {hechas.has(id) && (
-                                  <span className="camino__hecha">{t('camino.hecha')}</span>
-                                )}
                                 <span className="codigo">{codigoDe(id)}</span>{' '}
                                 {fichas.get(id)?.titulo ?? id}
                                 {fichas.get(id)?.duracion_min ? (
@@ -258,6 +253,15 @@ export default function Camino() {
                                     {cuantoDura(fichas.get(id)!.duracion_min!)}
                                   </span>
                                 ) : null}
+                                {/* La misma franja verde que en el catálogo, al final de la
+                                    ficha. El color no informa solo (§6): va el tic, y el
+                                    lector de pantalla oye el texto. Aquí no se pulsa: la
+                                    marca se quita desde el catálogo. */}
+                                {hechas.has(id) && (
+                                  <span className="camino__hecha" role="img" aria-label={t('camino.hecha')}>
+                                    ✓
+                                  </span>
+                                )}
                               </Link>
                             </li>
                           ))}

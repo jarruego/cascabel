@@ -3938,6 +3938,7 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   list-style: none;
 }
 .camino__enlace {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: var(--e-2);
@@ -3950,13 +3951,21 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   border-radius: var(--r-s);
 }
 .camino__enlace:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
-.camino__enlace[data-hecha] { border-color: var(--vivo-verde); }
+/* Hecha: la misma franja verde plana del catálogo, al final de la ficha, con el tic en
+   blanco. La ficha deja sitio a la derecha para que el texto no pase por debajo. */
+.camino__enlace[data-hecha] { padding-right: calc(var(--e-3) + 36px); }
 .camino__hecha {
-  padding: var(--e-0) var(--e-2);
-  font-size: var(--t-xs);
-  color: var(--papel);
-  background: var(--vivo-verde);
-  border-radius: var(--r-redondo);
+  position: absolute;
+  inset: -2px -2px -2px auto;
+  width: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 0 var(--r-s) var(--r-s) 0;
+  background: color-mix(in srgb, var(--vivo-verde) 55%, var(--superficie));
+  border: 2px solid color-mix(in srgb, var(--vivo-verde) 85%, var(--superficie));
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
 }
 
 /* Cinco destinos en la barra: el rótulo tiene que poder partirse sin desbordar. */
