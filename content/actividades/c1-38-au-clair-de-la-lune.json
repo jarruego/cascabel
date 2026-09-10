@@ -254,5 +254,10 @@
   "estado": "borrador",
   "musica": {
     "abc": "X:1\nT:Au clair de la lune\nC:Tradicional francesa\nM:4/4\nL:1/4\nK:C\nC C C D | E2 D2 | C E D D | C4 | C C C D | E2 D2 | C E D D | C4 |]"
+  },
+  "letra": {
+    "idioma": "fr",
+    "texto": "Au clair de la lune,\nmon ami Pierrot,\nprête-moi ta plume\npour écrire un mot.",
+    "fuente": "Canción tradicional francesa del siglo XVIII, de dominio público. Letra de la partitura de Wikipedia en francés (Lilypond). Solo la primera estrofa, que es la que se toca."
   }
 }

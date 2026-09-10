@@ -443,6 +443,29 @@
     "herramienta": {
       "type": "boolean",
       "description": "Si esta actividad es tambien un instrumento o una herramienta de aula: algo que se usa libremente, sin solucion ni final. Aparece en la pantalla de Instrumentos. Una que ademas tenga criterio curricular sale tambien en el catalogo, y eso no es duplicar: es que es las dos cosas."
+    },
+    "letra": {
+      "type": "object",
+      "description": "La letra de la cancion, si la tiene y esta cotejada con una fuente de dominio publico. Sale en la ficha del maestro, no en la pantalla del nino (alli lo que hay que cantar SUENA). Solo entra una letra cuya autoria se haya verificado: una traduccion moderna tiene autor aunque circule como tradicional.",
+      "additionalProperties": false,
+      "required": [
+        "idioma",
+        "texto"
+      ],
+      "properties": {
+        "idioma": {
+          "type": "string",
+          "description": "Codigo de idioma: es, fr, de, en..."
+        },
+        "texto": {
+          "type": "string",
+          "description": "La letra, con saltos de linea entre versos."
+        },
+        "fuente": {
+          "type": "string",
+          "description": "De donde se ha cotejado."
+        }
+      }
     }
   },
   "allOf": [

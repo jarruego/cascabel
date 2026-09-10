@@ -55,7 +55,18 @@ Lo que de verdad ha servido para comprobar nota por nota, en orden de preferenci
    superior, que se lee del `.ly` y se comprueba con el PDF renderizado. Cuando es un arreglo
    denso —«Recuerdos de la Alhambra» es la guitarra con trémolo— la melodía no se lee con
    seguridad y no vale. La transcripción de Mutopia tiene su licencia aparte de la obra y se
-   acredita como tal en `creditos`.
+   acredita como tal en `creditos`. Mutopia tiene además las cuatro estaciones enteras de
+   Vivaldi por partes (`VivaldiA/O8/spring/spring-lys/`), con el violín primero en texto,
+   que es de donde sale el ritornello completo de «La primavera».
+4. **Wikimedia Commons** guarda imágenes de temas: los catorce del Carnaval de los animales
+   («Saint-Saens carnival NN.jpg», dominio público, siete disponibles) y «Cygne saint saens
+   fa majeur.svg» (CC0) con «El cisne» entero. Se leen ampliadas, como los PDF.
+
+**Letras.** Solo entran cotejadas y de dominio público: «Debajo un botón» (COAEM y
+Partyflauta), «Au clair de la lune» (fr.wikipedia), «Backe, backe Kuchen» (de.wikipedia) y el
+«Wiegenlied» de Brahms (en.wikipedia). La de «Estrellita» en español es una adaptación de
+principios del siglo XX de autor desconocido y **no entra**: una traducción tiene derechos
+propios aunque la melodía y el texto inglés de Jane Taylor (1806) sean libres.
 
 Lo que esto ha destapado: «Debajo un botón» estaba escrita con cuatro corcheas iguales y son
 corchea con puntillo y semicorchea; a «Frère Jacques» le faltaba una nota; el mapa del Himno

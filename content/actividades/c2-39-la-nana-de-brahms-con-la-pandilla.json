@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "karaoke",
   "titulo": "La nana de Brahms con la pandilla",
-  "descripcion": "La primera mitad de la «Canción de cuna» de Brahms, con un solo pulsador: cada nota baja con su personaje. Tres partes: media, media y entera.",
+  "descripcion": "La «Canción de cuna» de Brahms entera, con un solo pulsador: cada nota baja con su personaje. Tres partes: la primera mitad, la segunda y entera.",
   "etapa": "primaria-c2",
   "eje": "altura",
   "lugar": "pantalla",
@@ -23,7 +23,7 @@
     "modo": "toque"
   },
   "contenido": {
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: los dos silencios de negra de la partitura se han absorbido en la nota anterior, que en un karaoke de toque es lo mismo que dejarla sonar. Siete alturas distintas: un solo pulsador. Confirmar tempo.",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la canción entera desde el 2026-09-11: la primera parte (Guten Abend, gut' Nacht…) y la segunda (Morgen früh…), las dos de la partitura de Wikipedia en inglés. Los silencios de negra se absorben en la nota anterior y la apoyatura del último compás se quita. Siete alturas distintas: un solo pulsador. Confirmar tempo. El ABC de la ficha lleva solo la primera mitad: la segunda arranca con un salto de octava (do4 a do5, «Deck: Morgen») que el validador no admite como cantable en 2.º ciclo, y aquí no se canta, se toca.",
     "consigna": "actividad.c239.consigna",
     "representacion": "personaje",
     "orientacion": "vertical",
@@ -92,12 +92,7 @@
           {
             "nota": "E4",
             "pulsos": 0.5
-          }
-        ]
-      },
-      {
-        "titulo": "actividad.c239.ej2",
-        "notas": [
+          },
           {
             "nota": "F4",
             "pulsos": 1
@@ -144,6 +139,99 @@
           },
           {
             "nota": "C5",
+            "pulsos": 2
+          }
+        ]
+      },
+      {
+        "titulo": "actividad.c239.ej2",
+        "notas": [
+          {
+            "nota": "C5",
+            "pulsos": 2
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "F4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "F4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "A4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2
+          },
+          {
+            "nota": "C4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 2
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "F4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "F4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
             "pulsos": 2
           }
         ]
@@ -258,6 +346,94 @@
           {
             "nota": "C5",
             "pulsos": 2
+          },
+          {
+            "nota": "C5",
+            "pulsos": 2
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "F4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "F4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1
+          },
+          {
+            "nota": "A4",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2
+          },
+          {
+            "nota": "C4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 2
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "F4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "F4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C4",
+            "pulsos": 2
           }
         ]
       }
@@ -294,5 +470,10 @@
   "estado": "borrador",
   "musica": {
     "abc": "X:1\nT:Canción de cuna\nC:Johannes Brahms\nM:3/4\nL:1/8\nK:C\nE E | G3 E E2 | G4 E G | c2 B3 A | A2 G2 D E | F2 D2 D E | F4 D F | B A G2 B2 | c4 |]"
+  },
+  "letra": {
+    "idioma": "de",
+    "texto": "Guten Abend, gut' Nacht,\nmit Rosen bedacht,\nmit Näglein besteckt,\nschlupf unter die Deck':\nMorgen früh, wenn Gott will,\nwirst du wieder geweckt.",
+    "fuente": "Primera estrofa del «Wiegenlied» op. 49 n.º 4 de Brahms, texto tradicional de Des Knaben Wunderhorn, de dominio público. Cotejada con la partitura de Wikipedia en inglés (Lilypond)."
   }
 }

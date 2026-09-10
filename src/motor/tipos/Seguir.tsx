@@ -13,6 +13,7 @@ import { IconoParar, IconoRepetir, IconoSiguiente, IconoTocar } from '@/ui/Simbo
 import { Reaccion } from '@/ui/Reaccion';
 import { rejillaDesdeSilabas } from '../rejillaRitmica';
 import { faltaPara, posicionEnVuelta, vueltasEncoladas } from '../bucle';
+import { notasDelMapa } from '../notasDelMapa';
 
 /**
  * Tipo «seguir»: reproducción con cursor sincronizado. Musicograma y karaoke.
@@ -196,23 +197,10 @@ export default function Seguir({ actividad, alTerminar, alSalir }: PropsActivida
     /** Programa el sonido de una vuelta. La N empieza en `inicio + N * duracionVuelta`. */
     const programarVuelta = (n: number) => {
       const base = inicio + n * duracionVuelta;
-      if (contenido.notas && !rejilla) {
-        /*
-          Con bloques, las notas van **una por pulso**, no una por bloque. `desfases` aquí
-          son los arranques de los bloques, y colgar de ellos las notas hacía que un mapa de
-          sesenta y cuatro pulsos con cuatro bloques sonara cuatro notas separadas cinco
-          segundos: «pasan muchos segundos entre nota y nota, infumable», dijo el autor el
-          2026-09-11 del Preludio y del Cisne. Un `null` es un pulso en el que no empieza
-          nota: la anterior sigue sonando lo que le quede.
-        */
-        contenido.notas.forEach((nota, i) => {
-          if (nota) sampler.current?.tocar(nota, (base + i * msPorPulso) / 1000, msPorPulso / 1000);
-        });
-      } else {
-        desfases.forEach((desfase, i) => {
-          const nota = contenido.notas?.[i];
-          if (nota) sampler.current?.tocar(nota, (base + desfase) / 1000, msPorPulso / 1000);
-        });
+      // Tantas notas como casillas, una por casilla; tantas como pulsos, una por pulso. La
+      // regla, con su test, está en `notasDelMapa.ts`: aquí solo se programa.
+      for (const { nota, ms } of notasDelMapa(contenido.notas, desfases, msPorPulso)) {
+        sampler.current?.tocar(nota, (base + ms) / 1000, msPorPulso / 1000);
       }
       /*
         **El ritmo suena, golpe a golpe.** Antes, sin `notas` declaradas no se programaba

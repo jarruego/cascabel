@@ -126,6 +126,8 @@ export interface Actividad {
   personaje?: Personaje;
   pistas?: string[];
   creditos?: Array<{ obra: string; autor?: string; fuente?: string; licencia: string }>;
+  /** La letra cotejada, para la ficha del maestro. Ver el esquema. */
+  letra?: { idioma: string; texto: string; fuente?: string };
   /**
    * Textos propios del dosier imprimible. Todo es opcional: sin esto, la ficha usa la guía
    * genérica del TIPO de actividad, que es lo que hace que las 53 tengan dosier útil sin

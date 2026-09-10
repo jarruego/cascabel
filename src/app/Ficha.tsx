@@ -207,6 +207,23 @@ export default function Ficha() {
           )}
         </section>
 
+        {/* La letra, si la canción la tiene cotejada: es para el maestro, que la canta o la
+            lee; en la pantalla del niño lo que hay que cantar suena. */}
+        {actividad.letra && (
+          <section>
+            <h2>{t('ficha.letra')}</h2>
+            <p className="ficha__letra" lang={actividad.letra.idioma}>
+              {actividad.letra.texto.split('\n').map((verso, i) => (
+                <span key={i}>
+                  {verso}
+                  <br />
+                </span>
+              ))}
+            </p>
+            {actividad.letra.fuente && <p className="ficha__aclaracion">{actividad.letra.fuente}</p>}
+          </section>
+        )}
+
         {/* Los pasos solo los tienen las guías de aula, y ahí SON la actividad. */}
         {pasos && (
           <section>

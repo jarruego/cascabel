@@ -316,5 +316,10 @@
   "estado": "borrador",
   "musica": {
     "abc": "X:1\nT:Backe, backe Kuchen\nC:Tradicional alemana\nM:4/4\nL:1/4\nK:C\nG G A A | G2 E C | G G A A | G2 E2 | G G A A | G G E C | G G A A | G G E E |]"
+  },
+  "letra": {
+    "idioma": "de",
+    "texto": "Backe, backe Kuchen,\nder Bäcker hat gerufen.\nWer will guten Kuchen backen,\nder muss haben sieben Sachen.",
+    "fuente": "Canción tradicional alemana del siglo XIX, de dominio público. Letra de la partitura de Wikipedia en alemán (Lilypond). Solo los versos que se tocan."
   }
 }

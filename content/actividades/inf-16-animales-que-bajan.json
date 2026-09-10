@@ -78,11 +78,6 @@
         "titulo": "actividad.inf16.ej2",
         "notas": [
           {
-            "nota": "D4",
-            "pulsos": 1,
-            "icono": "oso"
-          },
-          {
             "nota": "F#4",
             "pulsos": 1,
             "icono": "conejo"
@@ -190,7 +185,7 @@
         ]
       }
     ],
-    "$comment": "Melodía cotejada el 2026-09-10 con la partitura de «Frère Jacques» de Wikipedia (Lilypond, en fa: f g a f | f g a f | a bes c2 | a bes c2), transportada a re: re mi fa# re ×2, fa# sol la ×2. A la primera parte le faltaba el último re."
+    "$comment": "Melodía cotejada el 2026-09-10 con la partitura de «Frère Jacques» de Wikipedia (Lilypond, en fa: f g a f | f g a f | a bes c2 | a bes c2), transportada a re: re mi fa# re ×2, fa# sol la ×2. A la primera parte le faltaba el último re. Y a la segunda parte le sobraba un re al principio: la partitura dice fa# sol la, dos veces (2026-09-11; lo cazó el test de que la parte entera es la suma de las dos)."
   },
   "evaluacion": {
     "autocorrectiva": true,

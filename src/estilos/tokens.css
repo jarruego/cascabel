@@ -4509,6 +4509,7 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   .creditos__cocomusic { grid-template-columns: 1fr; justify-items: center; text-align: center; }
 }
 .ficha__masRecursos { margin: var(--e-3) 0 0; font-size: 0.9em; }
+.ficha__letra { margin: 0; line-height: 1.5; }
 
 /* El logotipo es negro y naranja sobre transparente: en oscuro lleva una placa blanca. */
 :root[data-tema='oscuro'] .marca__logo,

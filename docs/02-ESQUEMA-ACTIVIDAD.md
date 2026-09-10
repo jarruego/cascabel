@@ -90,6 +90,16 @@ todo sigue como antes. Los ejercicios se escriben a mano, porque la progresión 
 pandilla). Es la progresión que al autor le gustó de la 214, y se escribe con tres
 `ejercicios` cuyas `notas` son la primera mitad, la segunda y la suma.
 
+**Los mapas (`seguir`) con `notas`** las escriben de dos maneras, y se distingue por la
+cuenta: **tantas notas como casillas** (una por bloque o por sílaba: la canción con
+pictogramas) o **tantas como pulsos** (la forma de una obra: `null` donde no empieza nota).
+`tests/obras.test.ts` comprueba que sea una de las dos y `motor/notasDelMapa.ts` es la regla.
+
+**La letra** (`letra: { idioma, texto, fuente }`) es opcional y sale solo en la ficha del
+maestro: en la pantalla del niño lo que hay que cantar suena. Entra únicamente una letra
+cotejada y de dominio público; una traducción moderna tiene autor aunque circule como
+tradicional (la de «Estrellita» en español, por ejemplo, no entra).
+
 **Las representaciones del karaoke** (`contenido.representacion`): `pentagrama` (la nota en su
 altura, con `clave`), `color` (una franja por grado), `silaba`, `figura`, `icono` y, desde el
 2026-09-10, `personaje`: cada nota baja con su personaje de la pandilla (Dora es do, Milo es

@@ -231,5 +231,10 @@
       "licencia": "CC0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "letra": {
+    "idioma": "es",
+    "texto": "Debajo un botón, ton, ton,\nque encontró Martín, tin, tin,\nhabía un ratón, ton, ton,\n¡ay, qué chiquitín, tin, tin!",
+    "fuente": "Canción tradicional española, anónima. Letra cotejada con la transcripción de COAEM (#músicaviral) y con la de Partyflauta nivel 2."
+  }
 }

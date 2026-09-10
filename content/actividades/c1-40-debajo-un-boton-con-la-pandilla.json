@@ -302,5 +302,10 @@
   "estado": "borrador",
   "musica": {
     "abc": "X:1\nT:Debajo un botón\nC:Tradicional española\nM:2/4\nL:1/8\nK:C\nC3/2 D/2 E F | G G G2 | A3/2 A/2 c F | G G G2 | F3/2 G/2 A F | E E E2 | D3/2 E/2 F D | C C C2 |]"
+  },
+  "letra": {
+    "idioma": "es",
+    "texto": "Debajo un botón, ton, ton,\nque encontró Martín, tin, tin,\nhabía un ratón, ton, ton,\n¡ay, qué chiquitín, tin, tin!",
+    "fuente": "Canción tradicional española, anónima. Letra cotejada con la transcripción de COAEM (#músicaviral) y con la de Partyflauta nivel 2."
   }
 }

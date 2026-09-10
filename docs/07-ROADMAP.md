@@ -2972,6 +2972,21 @@ textos, niveles, camino, y la sección de instrumentos.
       «infumable». Con bloques, las notas van ahora una por pulso; con sílabas, como antes.
       No era el tempo.
 
+- [x] **La tanda de la noche del 2026-09-11.** La regla de los mapas (tantas notas como casillas,
+      una por casilla; tantas como pulsos, una por pulso) pasa a `motor/notasDelMapa.ts` con
+      test: la primera lectura es la de la canción con pictogramas (011), que el arreglo de
+      la tarde había roto sin que nadie avisara. Tests de
+      contenido nuevos en `tests/obras.test.ts`: un mapa tiene tantas notas como pulsos suman
+      sus bloques (habría cazado la 304 con 30 notas para 32), la tercera parte de un karaoke
+      es la suma de las dos primeras, y la percusión corporal con melodía lleva una nota por
+      golpe. **Letras** en la ficha del maestro (`letra`, campo nuevo del esquema): «Debajo un
+      botón», «Au clair de la lune», «Backe, backe Kuchen» y la nana de Brahms; la de
+      «Estrellita» en español no entra, es una adaptación del siglo XX de autor desconocido.
+      **La nana de Brahms** (239) es ahora la canción entera, con la segunda mitad de la
+      partitura. Personajes de la 349 (Rex) y la 029 (Simón) según la auditoría. Sin fuente
+      siguen: la segunda frase de la Serenata, el trío de la Radetzky, El cascanueces y el
+      resto del Carnaval, y Tárrega.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
