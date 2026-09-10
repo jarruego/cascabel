@@ -27,6 +27,36 @@ describe('evaluación rítmica', () => {
     expect(r.regularPeroDesfasado).toBe(false);
   });
 
+  it('un golpe antes de tiempo quema su hueco, y el golpe bueno que venga detrás sobra', () => {
+    // Se adelanta 400 ms al segundo hueco (la ventana de 1.º es ±300) y luego lo da bien.
+    const r = evaluarRitmo(rejilla, [0, 100, 500, 1000, 1500], 'primaria-c1');
+    expect(r.emparejados[1]!.calidad).toBe('fuera');
+    expect(r.emparejados[1]!.realMs).toBeNull();
+    // El tercero y el cuarto no pagan el adelanto del segundo.
+    expect(r.emparejados[2]!.calidad).not.toBe('fuera');
+    expect(r.emparejados[3]!.calidad).not.toBe('fuera');
+    expect(r.aciertos).toBe(3);
+    expect(r.sobrantes).toBe(1);
+  });
+
+  it('aporrear no rellena los huecos', () => {
+    // Un golpe cada 100 ms durante toda la vuelta: antes había uno dentro de cada ventana.
+    const golpes = Array.from({ length: 20 }, (_, i) => i * 100);
+    const r = evaluarRitmo(rejilla, golpes, 'primaria-c1');
+    // Cada hueco quemado bloquea el suyo, no el siguiente: aporreando se coge como mucho
+    // uno de cada dos. Lo que lo descalifica es el recuento de golpes de más.
+    expect(r.aciertos).toBeLessThanOrEqual(2);
+    expect(r.sobrantes).toBeGreaterThan(10);
+    expect(bastanteBien(r.aciertos, rejilla.length, r.sobrantes)).toBe(false);
+  });
+
+  it('un golpe tardío, pasada la ventana, no entra en el hueco de al lado', () => {
+    // 850 está fuera del primero (500 ± 300) y aún fuera del segundo (1000 ± 300): sobra.
+    const r = evaluarRitmo(rejilla, [0, 850, 1000, 1500], 'primaria-c1');
+    expect(r.emparejados[1]!.calidad).toBe('fuera');
+    expect(r.emparejados[2]!.calidad).not.toBe('fuera');
+  });
+
   it('cuenta como fallada la palmada que no llega', () => {
     const r = evaluarRitmo(rejilla, [0, 500, 1000], 'primaria-c1');
     expect(r.emparejados[3]!.realMs).toBeNull();
@@ -71,15 +101,21 @@ describe('tolerancia por carril', () => {
 describe('cuándo se felicita y cuándo se sugiere otra vuelta', () => {
   /*
     El número lo decide `PARA_FELICITAR` y espera revisión pedagógica. Lo que se comprueba
-    aquí es la forma, que es lo que se rompe solo: que el umbral entra —seis de diez
-    felicita, no «más de seis»—, y que una actividad sin nada que coger no felicita por
+    aquí es la forma, que es lo que se rompe solo: que el umbral entra —ocho de diez
+    felicita, no «más de ocho»—, que los golpes de más cuentan en contra, y que una
+    actividad sin nada que coger no felicita por
     división entre cero, que es como un componente acaba diciendo «¡muy bien!» a quien no
     ha tocado nada.
   */
   it('el umbral entra, no se roza', () => {
-    expect(bastanteBien(6, 10)).toBe(true);
-    expect(bastanteBien(5, 10)).toBe(false);
+    expect(bastanteBien(8, 10)).toBe(true);
+    expect(bastanteBien(7, 10)).toBe(false);
     expect(bastanteBien(16, 16)).toBe(true);
+  });
+
+  it('aporrear no se felicita aunque se cojan los huecos', () => {
+    expect(bastanteBien(8, 10, 5)).toBe(true);
+    expect(bastanteBien(8, 10, 6)).toBe(false);
   });
 
   it('sin nada que coger no se felicita', () => {

@@ -2560,6 +2560,13 @@ p {
   border-color: var(--vivo-verde);
   transform: scale(1.25);
 }
+/* Quemado: golpeado antes de tiempo. Gris como el que se pasó de largo, y con la raya
+   por en medio que dice «este ya no». */
+.tocar__marcas li[data-marca='quemado'] {
+  border-style: dashed;
+  opacity: 0.4;
+  background: linear-gradient(135deg, transparent 45%, var(--linea) 45%, var(--linea) 55%, transparent 55%);
+}
 .tocar__marcas li[data-marca='pasado'] {
   border-style: dashed;
   opacity: 0.4;

@@ -2712,6 +2712,14 @@ textos, niveles, camino, y la sección de instrumentos.
       pauta y deja solo esa nota. Y una hermana, **342 «La escala de sol mayor»**: la misma
       construcción con la tónica que obliga a un sostenido, detrás de la de do en el camino.
 
+- [x] **Aporrear ya no acierta, y felicitar pide ocho de diez.** En «toca a tiempo» los
+      golpes se repartían por cercanía —cada hueco cogía el más próximo— y golpeando sin
+      parar siempre había uno dentro de cada ventana. Ahora se reparten en orden: dentro de
+      la ventana puntúa; antes de tiempo **quema** el hueco, que se queda gris y no se
+      recupera; lo demás sobra, y los sobrantes cuentan en contra en el cierre. El umbral
+      para felicitar sube de seis a ocho de cada diez —sigue marcado como pendiente de
+      revisión pedagógica— y vale para karaoke y canta la nota, que usan la misma regla.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

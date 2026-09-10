@@ -15,6 +15,8 @@ export type Calidad = 'perfecto' | 'bien' | 'casi' | 'fuera';
 export interface EvaluacionRitmica {
   emparejados: Array<{ esperadoMs: number; realMs: number | null; errorMs: number | null; calidad: Calidad }>;
   aciertos: number;
+  /** Golpes que no cayeron en ningún hueco: los de más. Aporrear los dispara. */
+  sobrantes: number;
   desvioMedioMs: number;
   desviacionTipicaMs: number;
   /** true cuando el niño es regular pero va desplazado: hay que felicitarle, no corregirle. */
@@ -50,30 +52,50 @@ export function evaluarRitmo(
   realesMs: number[],
   quien: Carril | Etapa,
 ): EvaluacionRitmica {
-  const disponibles = [...realesMs];
   const limite = ventana(quien).casi;
 
-  const emparejados = esperadosMs.map((esperado) => {
-    let mejorIndice = -1;
-    let mejorError = Infinity;
-    disponibles.forEach((real, i) => {
-      const error = real - esperado;
-      if (Math.abs(error) < Math.abs(mejorError) && Math.abs(error) <= limite) {
-        mejorError = error;
-        mejorIndice = i;
-      }
-    });
-    if (mejorIndice === -1) {
-      return { esperadoMs: esperado, realMs: null, errorMs: null, calidad: 'fuera' as Calidad };
+  /*
+    Los golpes se reparten EN ORDEN, no «cada hueco coge el golpe más cercano».
+
+    Con el reparto por cercanía, aporrear la pantalla sin ritmo lo acertaba todo: entre
+    tantos golpes, siempre había uno dentro de cada ventana. El autor lo vio el 2026-09-10
+    en «Ritmo de ocho». Ahora cada golpe se compara con el primer hueco que aún no ha
+    pasado, y solo hay tres cosas que pueda ser:
+
+     - dentro de la ventana: es su golpe, y se puntúa;
+     - antes de tiempo: **quema** el hueco. Se queda en gris, sin golpe, y los golpes que
+       lleguen después para ese mismo hueco sobran —no lo recuperan ni queman el siguiente,
+       que sería castigar dos veces un solo adelanto—;
+     - cuando ya no queda hueco por venir: sobra.
+
+    Un hueco cuya ventana pasa sin golpe se queda «fuera», como siempre.
+  */
+  const golpes = [...realesMs].sort((a, b) => a - b);
+  type Emparejado = EvaluacionRitmica['emparejados'][number];
+  const emparejados: Emparejado[] = esperadosMs.map((esperado) => ({
+    esperadoMs: esperado,
+    realMs: null,
+    errorMs: null,
+    calidad: 'fuera' as Calidad,
+  }));
+  const quemados = new Set<number>();
+  let sobrantes = 0;
+  let j = 0;
+  for (const golpe of golpes) {
+    // Los huecos cuya ventana ya ha pasado se quedan atrás, con lo que tuvieran.
+    while (j < esperadosMs.length && golpe > esperadosMs[j]! + limite) j++;
+    if (j >= esperadosMs.length || quemados.has(j)) {
+      sobrantes++;
+      continue;
     }
-    const real = disponibles.splice(mejorIndice, 1)[0]!;
-    return {
-      esperadoMs: esperado,
-      realMs: real,
-      errorMs: mejorError,
-      calidad: calidadDe(mejorError, quien),
-    };
-  });
+    const error = golpe - esperadosMs[j]!;
+    if (error < -limite) {
+      quemados.add(j);
+      continue;
+    }
+    emparejados[j] = { esperadoMs: esperadosMs[j]!, realMs: golpe, errorMs: error, calidad: calidadDe(error, quien) };
+    j++;
+  }
 
   const errores = emparejados
     .map((e) => e.errorMs)
@@ -91,6 +113,7 @@ export function evaluarRitmo(
   return {
     emparejados,
     aciertos: emparejados.filter((e) => e.calidad === 'perfecto' || e.calidad === 'bien').length,
+    sobrantes,
     desvioMedioMs,
     desviacionTipicaMs,
     regularPeroDesfasado:
@@ -111,11 +134,18 @@ export function evaluarRitmo(
  * como se acaba con un color que dice una cosa y un texto que dice otra, que es justo lo que
  * pasó en «Canta la nota».
  */
-export const PARA_FELICITAR = 0.6;
+export const PARA_FELICITAR = 0.8;
 
-/** ¿Se felicita, o se sugiere otra vuelta? */
-export function bastanteBien(aciertos: number, total: number): boolean {
-  return total > 0 && aciertos / total >= PARA_FELICITAR;
+/**
+ * ¿Se felicita, o se sugiere otra vuelta?
+ *
+ * Ocho de cada diez desde el 2026-09-10 —eran seis—: el autor vio que «aunque falle un
+ * poco» todo salía «bien» en el cierre de la serie, y «casi» no es un castigo, es el
+ * ejercicio que conviene repetir. Y los golpes de más cuentan en contra: quien acierta
+ * ocho de diez huecos aporreando veinte veces no ha seguido el ritmo.
+ */
+export function bastanteBien(aciertos: number, total: number, sobrantes = 0): boolean {
+  return total > 0 && aciertos / total >= PARA_FELICITAR && sobrantes <= total / 2;
 }
 
 /** Diferencia en cents entre lo cantado y lo esperado. Positivo = el niño va alto. */

@@ -110,7 +110,11 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
   const temporizadores = useRef<number[]>([]);
 
   /** Estado de cada golpe esperado mientras el niño responde. */
-  const [marcas, setMarcas] = useState<Array<'pendiente' | 'acertado' | 'pasado'>>([]);
+  /** `quemado`: golpeado antes de tiempo. Se ve gris, como `pasado`, y ya no se recupera. */
+  const [marcas, setMarcas] = useState<Array<'pendiente' | 'acertado' | 'pasado' | 'quemado'>>([]);
+  /** Las marcas, para leerlas desde `tocar` sin que dependa de ellas. */
+  const marcasRef = useRef(marcas);
+  marcasRef.current = marcas;
   /* Lo que se dibuja debajo del patrón: un círculo por golpe y uno por silencio. */
   const casillas = useMemo(
     () => (contenido.silabas ? casillasDesdeSilabas(contenido.silabas) : []),
@@ -342,19 +346,30 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
 
     golpes.current.push(ahora);
 
-    // Se marca en verde el golpe esperado más cercano, si cae dentro de la ventana «casi»
-    // del carril. Es retorno inmediato: el niño ve que ha entrado sin esperar al final, y
-    // eso es lo que le deja corregir dentro de la misma vuelta.
+    /*
+      La marca en vivo sigue la misma regla que la evaluación final (`evaluarRitmo`): el
+      golpe se compara con el primer hueco que aún no ha pasado. Dentro de la ventana, en
+      verde; antes de tiempo, el hueco se quema y se queda en gris —es lo que hace que
+      aporrear no rellene nada—; y si ese hueco ya está quemado, el golpe sobra. Es retorno
+      inmediato: el niño ve lo que ha pasado sin esperar al final.
+    */
     const limite = TOLERANCIA_MS[carril].casi;
     let mejor = -1;
-    let mejorError = Infinity;
-    esperados.current.forEach((e, i) => {
-      const err = Math.abs(ahora - e);
-      if (err < mejorError && err <= limite) {
-        mejorError = err;
-        mejor = i;
-      }
-    });
+    let quema = false;
+    let sobra = false;
+    const siguiente = esperados.current.findIndex((e) => ahora <= e + limite);
+    if (siguiente === -1) sobra = true;
+    else if (marcasRef.current[siguiente] === 'quemado' || marcasRef.current[siguiente] === 'acertado') sobra = true;
+    else if (ahora < esperados.current[siguiente]! - limite) quema = true;
+    else mejor = siguiente;
+    if (quema) {
+      setMarcas((m) => {
+        const n = [...m];
+        n[siguiente] = 'quemado';
+        return n;
+      });
+    }
+    void sobra;
 
     /*
       **Todo golpe suena; el acierto suena MÁS.**
@@ -582,7 +597,8 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
                   completada: true,
                   // Regular pero desfasado es «bien»: tiene pulso, solo va desplazado (§7).
                   calidad:
-                    evaluacion.regularPeroDesfasado || bastanteBien(evaluacion.aciertos, esperados.current.length)
+                    evaluacion.regularPeroDesfasado ||
+                    bastanteBien(evaluacion.aciertos, esperados.current.length, evaluacion.sobrantes)
                       ? 'bien'
                       : 'casi',
                   aciertos: evaluacion.aciertos,
