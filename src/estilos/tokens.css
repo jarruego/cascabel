@@ -3818,6 +3818,13 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   background: var(--suave-amarillo);
   color: var(--tinta);
 }
+.cuerpo__silaba[data-corta] {
+  min-width: 0;
+  overflow: visible;
+  white-space: nowrap;
+  font-size: var(--t-xs);
+}
+.cuerpo__golpe { min-width: 8px; }
 
 
 /* Proyectada o a pantalla completa, cuanto más grande mejor: es lo que mira el grupo

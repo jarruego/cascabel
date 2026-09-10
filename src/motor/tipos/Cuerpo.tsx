@@ -270,6 +270,9 @@ export default function Cuerpo({ actividad, alTerminar, alSalir }: PropsActivida
                   key={`${s}-${i}`}
                   className="cuerpo__silaba"
                   data-aqui={estado.indice === i || undefined}
+                  /* Una semicorchea es una casilla de un dedo: la sílaba va pequeña y
+                     puede salirse un poco. Mejor eso que una casilla vacía. */
+                  data-corta={(patron[i]?.pulsos ?? 1) < 0.5 || undefined}
                   style={{ flexGrow: patron[i]?.pulsos ?? 1 }}
                 >
                   {s}

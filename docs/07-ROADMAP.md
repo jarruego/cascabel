@@ -2752,7 +2752,12 @@ textos, niveles, camino, y la sección de instrumentos.
       (†1917). Cada una se verifica antes de entrar. Y la segunda, **137 «Debajo un botón con
       el cuerpo»**: corcheas con las manos y el eco con los pies o los chasquidos. Se hizo en
       lugar de «La vaca lechera», que el autor pidió y que no es tradicional: tiene autor y
-      está protegida hasta la década de 2070, como avisa `CLAUDE.md` §10. Y las canciones
+      está protegida hasta la década de 2070, como avisa `CLAUDE.md` §10. El 2026-09-10 se
+      corrigió con dos transcripciones escolares que coinciden nota por nota (COAEM y
+      Partyflauta): cada frase es corchea con puntillo, semicorchea, corchea, corchea y el
+      eco corchea, corchea, negra —antes eran cuatro corcheas iguales, que no es la canción—,
+      y lleva la melodía tocada con la flauta como la 136. El tempo (72) y la pareja
+      «De-ba» a dos palmadas quedan PENDIENTES en el JSON. Y las canciones
       enteras llevan la melodía bajita debajo de los golpes —`melodia`, una nota por golpe,
       con la flauta a un tercio del volumen—: «Estrellita» la tiene; «Debajo un botón» no,
       hasta que haya una transcripción verificada. Las canciones enteras no van en bucle:

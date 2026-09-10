@@ -17,19 +17,23 @@
   "practica": {
     "secuencia": "ninguna",
     "compas": "2/4",
-    "tempo": 96
+    "tempo": 72
   },
   "entrada": {
     "modo": "ninguna"
   },
   "contenido": {
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: (1) «Debajo un botón» es una canción tradicional española anónima, y así consta en los cancioneros escolares; conviene confirmarlo contra una fuente de dominio público antes de darla por buena. Se eligió en lugar de «La vaca lechera», que el autor pidió y que NO es tradicional: música de Fernando García Morcillo (†2002) y letra de Jacobo Morcillo, protegida hasta bien entrada la década de 2070 (CLAUDE.md §10). (2) El ritmo escrito —cuatro corcheas, una negra y las dos negras del eco en cada frase— es la lectura habitual del estribillo; una maestra debe confirmar que cuadra con cómo se canta en su clase. (3) El reparto de zonas es una propuesta. (4) Sin melodía todavía: no se ha escrito de memoria a propósito —una melodía mal transcrita enseña algo falso—; en cuanto haya una transcripción verificada, va en `melodia`, una nota por golpe, y sonará bajita como en «Estrellita».",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: (1) Ritmo y melodía tomados de dos transcripciones que coinciden nota por nota: la de COAEM (#músicaviral, «Debajo de un botón», instrumentos en do, Andante ♩=60) y la de Partyflauta nivel 2 (CEIP As Mercedes, Ourense). Do mayor, 2/4; cada frase es corchea con puntillo, semicorchea, corchea, corchea | corchea, corchea, negra. La canción es tradicional anónima y así consta en ambas; las transcripciones solo se han usado como referencia de una melodía de dominio público. (2) El tempo: las transcripciones dicen 60 y en el aula se canta más ligera; se ha puesto 72 y una maestra debe fijarlo. (3) La pareja «De-ba» (puntillo y semicorchea) se toca con dos palmadas rápidas, como se dice; si a los seis años cuesta, la alternativa es una sola palmada en «De» y cantar «ba». (4) El reparto de zonas es una propuesta: palabras con las manos, eco con pies o chasquidos. Se hizo en lugar de «La vaca lechera», que el autor pidió y que tiene autor y está protegida (CLAUDE.md §10).",
     "consigna": "actividad.c137.consigna",
-    "tempo": 96,
+    "tempo": 72,
     "patron": [
       {
         "zona": "palmas",
-        "pulsos": 0.5
+        "pulsos": 0.75
+      },
+      {
+        "zona": "palmas",
+        "pulsos": 0.25
       },
       {
         "zona": "palmas",
@@ -40,17 +44,23 @@
         "pulsos": 0.5
       },
       {
-        "zona": "palmas",
+        "zona": "pies",
         "pulsos": 0.5
       },
       {
-        "zona": "palmas"
+        "zona": "pies",
+        "pulsos": 0.5
       },
       {
         "zona": "pies"
       },
       {
-        "zona": "pies"
+        "zona": "muslos",
+        "pulsos": 0.75
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.25
       },
       {
         "zona": "muslos",
@@ -61,21 +71,23 @@
         "pulsos": 0.5
       },
       {
-        "zona": "muslos",
+        "zona": "pitos",
         "pulsos": 0.5
       },
       {
-        "zona": "muslos",
+        "zona": "pitos",
         "pulsos": 0.5
-      },
-      {
-        "zona": "muslos"
       },
       {
         "zona": "pitos"
       },
       {
-        "zona": "pitos"
+        "zona": "palmas",
+        "pulsos": 0.75
+      },
+      {
+        "zona": "palmas",
+        "pulsos": 0.25
       },
       {
         "zona": "palmas",
@@ -86,21 +98,23 @@
         "pulsos": 0.5
       },
       {
-        "zona": "palmas",
+        "zona": "pies",
         "pulsos": 0.5
       },
       {
-        "zona": "palmas",
+        "zona": "pies",
         "pulsos": 0.5
-      },
-      {
-        "zona": "palmas"
       },
       {
         "zona": "pies"
       },
       {
-        "zona": "pies"
+        "zona": "muslos",
+        "pulsos": 0.75
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.25
       },
       {
         "zona": "muslos",
@@ -111,18 +125,12 @@
         "pulsos": 0.5
       },
       {
-        "zona": "muslos",
+        "zona": "pitos",
         "pulsos": 0.5
       },
       {
-        "zona": "muslos",
+        "zona": "pitos",
         "pulsos": 0.5
-      },
-      {
-        "zona": "muslos"
-      },
-      {
-        "zona": "pitos"
       },
       {
         "zona": "pitos"
@@ -158,7 +166,38 @@
       "tin",
       "tin"
     ],
-    "bucle": false
+    "bucle": false,
+    "melodia": [
+      "C4",
+      "D4",
+      "E4",
+      "F4",
+      "G4",
+      "G4",
+      "G4",
+      "A4",
+      "A4",
+      "C5",
+      "F4",
+      "G4",
+      "G4",
+      "G4",
+      "F4",
+      "G4",
+      "A4",
+      "F4",
+      "E4",
+      "E4",
+      "E4",
+      "D4",
+      "E4",
+      "F4",
+      "D4",
+      "C4",
+      "C4",
+      "C4"
+    ],
+    "instrumento": "flauta"
   },
   "evaluacion": {
     "autocorrectiva": false,
@@ -176,7 +215,7 @@
     {
       "obra": "«Debajo un botón», canción infantil",
       "autor": "Tradicional española, anónima",
-      "fuente": "Cancionero infantil tradicional; origen por confirmar",
+      "fuente": "Melodía de dominio público. Ritmo y notas cotejados con dos transcripciones escolares que coinciden: COAEM (#músicaviral) y Partyflauta nivel 2",
       "licencia": "Dominio público"
     },
     {
