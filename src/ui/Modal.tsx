@@ -42,7 +42,18 @@ export function Modal({ abierto, alCerrar, titulo, children, tono = 'normal' }: 
   useEffect(() => {
     const d = ref.current;
     if (!d) return;
-    if (abierto && !d.open) d.showModal();
+    if (abierto && !d.open) {
+      d.showModal();
+      /*
+        El foco va a la caja, no al primer botón. `showModal()` enfoca el primer elemento
+        pulsable, y si la página acaba de abrirse desde un enlace —sin ningún toque antes—
+        el navegador lo pinta con el anillo de foco: el autor vio el 2026-09-10 el icono de
+        compartir «rodeado con un círculo rojo». Enfocar la caja hace que el lector de
+        pantalla empiece por el título y que el anillo solo salga cuando alguien pulse Tab,
+        que es para quien existe.
+      */
+      d.querySelector<HTMLElement>('.modal__caja')?.focus();
+    }
     if (!abierto && d.open) {
       cerrandoNosotros.current = true;
       d.close();
@@ -76,7 +87,9 @@ export function Modal({ abierto, alCerrar, titulo, children, tono = 'normal' }: 
         if (e.target === ref.current) alCerrar();
       }}
     >
-      <div className="modal__caja">{children}</div>
+      <div className="modal__caja" tabIndex={-1}>
+        {children}
+      </div>
     </dialog>
   );
 }
