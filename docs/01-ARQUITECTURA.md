@@ -48,8 +48,8 @@ lista exactamente los tipos que hay en `src/motor/registro.ts`, con sus cifras a
 | `referencia` | Consulta del lenguaje musical, con sonido. No es un ejercicio | 7 |
 | `tocar-a-tiempo` | Golpear en el momento correcto | 7 |
 | `ordenar` | Secuencia por altura, duración o forma | 6 |
+| `cuerpo` | Percusión corporal: pitos, palmas, muslos y pies en cuatro filas | 5 |
 | `seguir` | Reproducción con cursor sincronizado | 5 |
-| `cuerpo` | Percusión corporal: pitos, palmas, muslos y pies en cuatro filas | 4 |
 | `emparejar` | Dos conjuntos, toque de dos en dos | 4 |
 | `cantar` | Detección de altura con retorno visual | 3 |
 | `compases` | Colocar las barras de compás donde el pulso las pide | 3 |

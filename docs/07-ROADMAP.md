@@ -2742,7 +2742,10 @@ textos, niveles, camino, y la sección de instrumentos.
       PENDIENTE en el JSON. Candidatas para más: tradicionales anónimas —«Debajo de un
       botón», «Cucú, cantaba la rana», «Al corro de la patata», «Tengo una muñeca vestida
       de azul», «Antón Pirulero», «Que llueva»— y «Los pollitos dicen», de Ismael Parraguez
-      (†1917). Cada una se verifica antes de entrar.
+      (†1917). Cada una se verifica antes de entrar. Y la segunda, **137 «Debajo un botón con
+      el cuerpo»**: corcheas con las manos y el eco con los pies o los chasquidos. Se hizo en
+      lugar de «La vaca lechera», que el autor pidió y que no es tradicional: tiene autor y
+      está protegida hasta la década de 2070, como avisa `CLAUDE.md` §10.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la

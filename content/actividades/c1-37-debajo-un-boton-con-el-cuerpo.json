@@ -1,0 +1,195 @@
+{
+  "id": "c1-37-debajo-un-boton-con-el-cuerpo",
+  "version": 1,
+  "tipo": "cuerpo",
+  "titulo": "Debajo un botón con el cuerpo",
+  "descripcion": "Cantar «Debajo un botón» con percusión corporal: las corcheas de cada frase con las manos y el «ton, ton» con los pies o los chasquidos.",
+  "etapa": "primaria-c1",
+  "eje": "cuerpo",
+  "lugar": "hibrida",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Práctica instrumental, vocal y corporal"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "2/4",
+    "tempo": 96
+  },
+  "entrada": {
+    "modo": "ninguna"
+  },
+  "contenido": {
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: (1) «Debajo un botón» es una canción tradicional española anónima, y así consta en los cancioneros escolares; conviene confirmarlo contra una fuente de dominio público antes de darla por buena. Se eligió en lugar de «La vaca lechera», que el autor pidió y que NO es tradicional: música de Fernando García Morcillo (†2002) y letra de Jacobo Morcillo, protegida hasta bien entrada la década de 2070 (CLAUDE.md §10). (2) El ritmo escrito —cuatro corcheas, una negra y las dos negras del eco en cada frase— es la lectura habitual del estribillo; una maestra debe confirmar que cuadra con cómo se canta en su clase. (3) El reparto de zonas es una propuesta.",
+    "consigna": "actividad.c137.consigna",
+    "tempo": 96,
+    "patron": [
+      {
+        "zona": "palmas",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "palmas",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "palmas",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "palmas",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "palmas",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "palmas",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "palmas",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "palmas",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pitos"
+      }
+    ],
+    "silabas": [
+      "De",
+      "ba",
+      "jo un",
+      "bo",
+      "tón",
+      "ton",
+      "ton",
+      "que en",
+      "con",
+      "tró",
+      "Mar",
+      "tín",
+      "tin",
+      "tin",
+      "ha",
+      "bí",
+      "a un",
+      "ra",
+      "tón",
+      "ton",
+      "ton",
+      "ay",
+      "qué",
+      "chi",
+      "qui",
+      "tín",
+      "tin",
+      "tin"
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c137.enunciado",
+  "personaje": "doby",
+  "pistas": [
+    "actividad.c137.pista1",
+    "actividad.c137.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "«Debajo un botón», canción infantil",
+      "autor": "Tradicional española, anónima",
+      "fuente": "Cancionero infantil tradicional; origen por confirmar",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Pitos, muslos y pies (sintetizados)",
+      "autor": "Proyecto cocomusic",
+      "fuente": "tools/muestras-cuerpo.py",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

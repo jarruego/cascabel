@@ -1,7 +1,7 @@
 {
   "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa, y también si usa un código que aquí no está. El hueco de C1-17 es intencionado: ese código nunca llegó a reservarse y los ids no se renumeran, porque un id puede estar dentro de una URL compartida.",
   "generado": "2026-09-10",
-  "total": 148,
+  "total": 149,
   "actividades": [
     {
       "id": "C1-01",
@@ -1925,6 +1925,19 @@
       "esfuerzo": "S",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Una canción entera con percusión corporal; la tira sigue sola.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C1-37",
+      "titulo": "Debajo un botón con el cuerpo",
+      "etapa": "primaria-c1",
+      "eje": "cuerpo",
+      "lugar": "hibrida",
+      "tipo": "cuerpo",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Una canción tradicional con percusión corporal: corcheas con las manos, eco con los pies.",
       "estado": "hecha"
     }
   ]
