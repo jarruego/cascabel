@@ -51,6 +51,14 @@ el número del `id` las otras dos: `inf-23-…` es **023**, `c1-07-…` es **107
 es **905**. Sale delante del título en el catálogo, el camino, la explicación, la ficha y
 los criterios, y el buscador del catálogo lo entiende. Ver `motor/codigo.ts`.
 
+## La melodía debajo de la percusión corporal
+
+Una actividad de tipo `cuerpo` que es una canción entera puede llevar `melodia`: una nota
+por golpe del `patron`, en notación científica, o `null` donde no hay nota. Suena bajita
+—un tercio del volumen— debajo de los golpes, con el `instrumento` que declare o la flauta:
+es la referencia para cantar, no el protagonista. Solo se escribe desde una fuente
+verificada; una melodía de memoria no entra.
+
 ## Una actividad como serie de ejercicios
 
 Desde el 2026-09-11, `contenido.ejercicios` convierte una actividad en una pequeña serie de

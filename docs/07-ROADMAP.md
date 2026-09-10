@@ -2745,7 +2745,10 @@ textos, niveles, camino, y la sección de instrumentos.
       (†1917). Cada una se verifica antes de entrar. Y la segunda, **137 «Debajo un botón con
       el cuerpo»**: corcheas con las manos y el eco con los pies o los chasquidos. Se hizo en
       lugar de «La vaca lechera», que el autor pidió y que no es tradicional: tiene autor y
-      está protegida hasta la década de 2070, como avisa `CLAUDE.md` §10.
+      está protegida hasta la década de 2070, como avisa `CLAUDE.md` §10. Y las canciones
+      enteras llevan la melodía bajita debajo de los golpes —`melodia`, una nota por golpe,
+      con la flauta a un tercio del volumen—: «Estrellita» la tiene; «Debajo un botón» no,
+      hasta que haya una transcripción verificada.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la

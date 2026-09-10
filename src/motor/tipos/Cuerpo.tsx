@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useMemo, useReducer, useRef } from 'react';
 import { useCarril } from '@/app/preferencias';
-import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
+import { despertarAudio, obtenerContexto, pararTodo } from '@/audio/AudioEngine';
 import { SonidosDelCuerpo, ZONAS, type Zona } from '@/audio/cuerpo';
+import { Sampler } from '@/audio/sampler';
+import { muestrasDe } from '@/audio/instrumentos';
 import { IconoParar, IconoTocar } from '@/ui/Simbolos';
 import { BarraAcciones } from '@/ui/BarraAcciones';
 import { mantenerALaVista } from '@/ui/seguirColumna';
@@ -58,6 +60,14 @@ export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
     tempo?: number;
     /** Sílabas Kodály paralelas al patrón, si la actividad las quiere enseñar. */
     silabas?: string[];
+    /**
+     * La melodía, una nota por golpe —o `null` donde no hay nota—, para las canciones
+     * enteras. Suena BAJITO debajo de los golpes: es la referencia para cantar, no el
+     * protagonista, y por eso va a un tercio del volumen. Lo pidió el autor el 2026-09-10.
+     */
+    melodia?: Array<string | null>;
+    /** Con qué suena la melodía. Por defecto la flauta, que sostiene y se canta encima. */
+    instrumento?: string;
   };
 
   const carril = useCarril(actividad.etapa);
@@ -65,6 +75,8 @@ export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
   const patron = contenido.patron;
 
   const [estado, despachar] = useReducer(reducir, { sonando: false, indice: -1 });
+  const sampler = useRef<Sampler | null>(null);
+  const VOLUMEN_MELODIA = 0.35;
   /**
    * Con una canción entera el patrón no cabe en pantalla: la tira se desplaza de lado y
    * sigue sola al golpe que toca, como la cuadrícula del constructor. Lo pidió el autor el
@@ -105,6 +117,8 @@ export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
     if (rafId.current !== null) cancelAnimationFrame(rafId.current);
     temporizador.current = null;
     rafId.current = null;
+    // Y la melodía que hubiera en cola, que sin esto sonaba un pulso más.
+    pararTodo();
     despachar({ tipo: 'sonando', valor: false });
   }, []);
 
@@ -121,6 +135,11 @@ export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
         const s = new SonidosDelCuerpo();
         await s.cargar();
         sonidos.current = s;
+      }
+      if (contenido.melodia && !sampler.current) {
+        const s = new Sampler(muestrasDe(contenido.instrumento ?? 'flauta'));
+        await s.cargar();
+        sampler.current = s;
       }
     } catch {
       // Sin muestras el patrón se sigue viendo avanzar, y en esta actividad eso basta: el
@@ -140,8 +159,14 @@ export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
       const ahora = obtenerContexto().currentTime;
       while (inicio + posicionDe(siguiente) * segundosPorPulso < ahora + 0.1) {
         const g = patron[siguiente % patron.length]!;
+        const cuando = inicio + posicionDe(siguiente) * segundosPorPulso;
         if (g.zona !== 'silencio') {
-          sonidos.current?.golpear(g.zona, inicio + posicionDe(siguiente) * segundosPorPulso);
+          sonidos.current?.golpear(g.zona, cuando);
+        }
+        // La nota de ese golpe, bajita y de lo que dura el golpe.
+        const nota = contenido.melodia?.[siguiente % patron.length];
+        if (nota) {
+          sampler.current?.tocar(nota, cuando, (g.pulsos ?? 1) * segundosPorPulso * 0.95, VOLUMEN_MELODIA);
         }
         siguiente += 1;
       }
@@ -164,7 +189,7 @@ export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
       rafId.current = requestAnimationFrame(mover);
     };
     rafId.current = requestAnimationFrame(mover);
-  }, [bpm, duracionPulsos, estado.sonando, inicios, parar, patron, darPorHecha]);
+  }, [bpm, duracionPulsos, estado.sonando, inicios, parar, patron, darPorHecha, contenido.melodia, contenido.instrumento]);
 
   return (
     <section className="actividad cuerpo" data-carril={carril} aria-labelledby="consigna">

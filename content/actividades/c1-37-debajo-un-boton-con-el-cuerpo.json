@@ -23,7 +23,7 @@
     "modo": "ninguna"
   },
   "contenido": {
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: (1) «Debajo un botón» es una canción tradicional española anónima, y así consta en los cancioneros escolares; conviene confirmarlo contra una fuente de dominio público antes de darla por buena. Se eligió en lugar de «La vaca lechera», que el autor pidió y que NO es tradicional: música de Fernando García Morcillo (†2002) y letra de Jacobo Morcillo, protegida hasta bien entrada la década de 2070 (CLAUDE.md §10). (2) El ritmo escrito —cuatro corcheas, una negra y las dos negras del eco en cada frase— es la lectura habitual del estribillo; una maestra debe confirmar que cuadra con cómo se canta en su clase. (3) El reparto de zonas es una propuesta.",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: (1) «Debajo un botón» es una canción tradicional española anónima, y así consta en los cancioneros escolares; conviene confirmarlo contra una fuente de dominio público antes de darla por buena. Se eligió en lugar de «La vaca lechera», que el autor pidió y que NO es tradicional: música de Fernando García Morcillo (†2002) y letra de Jacobo Morcillo, protegida hasta bien entrada la década de 2070 (CLAUDE.md §10). (2) El ritmo escrito —cuatro corcheas, una negra y las dos negras del eco en cada frase— es la lectura habitual del estribillo; una maestra debe confirmar que cuadra con cómo se canta en su clase. (3) El reparto de zonas es una propuesta. (4) Sin melodía todavía: no se ha escrito de memoria a propósito —una melodía mal transcrita enseña algo falso—; en cuanto haya una transcripción verificada, va en `melodia`, una nota por golpe, y sonará bajita como en «Estrellita».",
     "consigna": "actividad.c137.consigna",
     "tempo": 96,
     "patron": [
