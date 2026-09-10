@@ -2730,9 +2730,10 @@ textos, niveles, camino, y la sección de instrumentos.
       donde un alto fijo de 5 rem por fila pisaba el cálculo. Y cada dibujo va del color
       de su fila, con el SVG de máscara.
 
-- [x] **«Ocultar hechas» junto al buscador.** Un conmutador que aparta las actividades ya
-      hechas para ver lo que queda; va en la URL como los demás filtros y «quitar filtros»
-      también lo quita.
+- [x] **«Ocultar hechas», a la derecha de la cuenta de actividades.** Un conmutador que
+      aparta las actividades ya hechas para ver lo que queda; va en la URL como los demás
+      filtros y «quitar filtros» también lo quita. Estuvo junto al buscador; es a la cuenta
+      a lo que afecta, y ahí está.
 
 - [x] **136 «Estrellita con el cuerpo»**: la primera canción entera con percusión corporal.
       Cuarenta y ocho pulsos con la letra sílaba a sílaba debajo; la tira se sale de la
