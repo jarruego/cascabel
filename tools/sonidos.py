@@ -139,7 +139,9 @@ def convertir(origen: Path, destino: Path, desde: float, segundos: float) -> Non
     destino.parent.mkdir(parents=True, exist_ok=True)
     subprocess.run(
         ["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-ss", str(desde), "-t", str(segundos),
-         "-i", str(origen), "-ac", "1", "-af", filtros, "-c:a", "libopus", "-b:a", "48k",
+         # `-vn`: algunos ficheros de Commons son vídeo (.webm) con el sonido dentro, y sin esto
+         # ffmpeg intenta meter la imagen en un .opus y falla.
+         "-i", str(origen), "-vn", "-ac", "1", "-af", filtros, "-c:a", "libopus", "-b:a", "48k",
          "-application", "audio", str(destino)],
         check=True,
     )

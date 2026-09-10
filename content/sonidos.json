@@ -420,15 +420,15 @@
       "id": "telefono",
       "categoria": "casa",
       "nombre": "Teléfono",
-      "commons": "File:Model 500 Telephone British ring.ogg",
-      "segundos": 5,
+      "commons": "File:Automatic telephone Iskra ATA 2 - ringing.webm",
+      "segundos": 7.5,
       "desde": 1.9,
-      "$comment": "Cambiado el 2026-09-10: el anterior (Telephone.ogg) era casi todo ruido grave y no sonaba a teléfono. Este es un teléfono de campanilla (Western Electric 500) con timbre doble; se cogen dos timbrazos.",
+      "$comment": "Cambiado el 2026-09-10 dos veces: el primero (Telephone.ogg) era ruido grave y el segundo (Model 500) sonaba a marcar teclas. Este es un teléfono automático Iskra ATA 2 grabado por Work With Sounds: el timbre de campanilla de siempre, dos timbrazos.",
       "verificado": {
-        "licencia": "CC BY-SA 3.0",
-        "licencia_url": "https://creativecommons.org/licenses/by-sa/3.0",
-        "autor": "CianMcCann",
-        "url": "https://commons.wikimedia.org/wiki/File:Model_500_Telephone_British_ring.ogg",
+        "licencia": "CC BY 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by/3.0",
+        "autor": "Work With Sounds",
+        "url": "https://commons.wikimedia.org/wiki/File:Automatic_telephone_Iskra_ATA_2_-_ringing.webm",
         "fecha": "2026-09-10"
       }
     },
