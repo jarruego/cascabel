@@ -3573,12 +3573,16 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   las casillas llenan el ancho, más ancho.
 */
 .cuerpo {
-  height: calc(var(--alto-escena) - var(--e-5) - var(--e-3));
+  /* `max-height` y no `height`: forzar el alto exacto del escenario dejaba unos píxeles
+     de más en vertical —el marco tiene su propio aire— y la página se desplazaba. */
+  max-height: calc(var(--alto-escena) - var(--e-5) - var(--e-3));
   min-height: 0;
   align-content: center;
 }
 .cuerpo__rejilla {
-  --alto-fila: clamp(1.6rem, calc((var(--alto-escena) - 110px) / var(--filas, 4) - 8px), 3.25rem);
+  /* Ciento sesenta píxeles de descuento: la etiqueta con su dibujo, las sílabas con su
+     margen y los huecos. Con 110 seguía sin caber en un móvil apaisado. */
+  --alto-fila: clamp(1.4rem, calc((var(--alto-escena) - 160px) / var(--filas, 4) - 6px), 3.25rem);
   /* Aquí no va `justify-content`: no es flex, es una caja que se desplaza de lado cuando el
      patrón es largo. Lo que centra son las filas de dentro. */
   overflow-x: auto;
@@ -3592,7 +3596,9 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   margin-bottom: clamp(2px, calc(var(--alto-fila) * 0.15), var(--e-2));
 }
 /* El dibujo de la zona encoge con la fila, para que no sea él quien la estire. */
-.cuerpo__etiqueta img { height: min(26px, calc(var(--alto-fila) * 0.6)); width: auto; }
+.cuerpo__etiqueta img { height: min(26px, calc(var(--alto-fila) * 0.55)); width: auto; }
+/* Y con las filas al mínimo, el nombre en una línea corta. */
+.cuerpo__etiqueta { white-space: nowrap; }
 .cuerpo__etiqueta {
   flex: 0 0 auto;
   width: 6rem;

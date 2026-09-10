@@ -53,6 +53,8 @@ const DISPONIBLES = new Set([
   'moto', 'tren', 'avion', 'helicoptero', 'ambulancia', 'barco', 'coche', 'autobus',
   'saxofon', 'acordeon', 'microfono',
   'lluvia', 'viento', 'trueno', 'olas',
+  // La bicicleta y las tres zonas de la percusión corporal, el 2026-09-10.
+  'bicicleta', 'chasquido', 'muslo', 'pie',
 ]);
 
 /** Nombres antiguos que ya se usaban en los JSON de contenido. */
