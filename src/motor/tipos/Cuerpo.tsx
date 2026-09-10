@@ -75,6 +75,8 @@ export default function Cuerpo({ actividad, alTerminar, alSalir }: PropsActivida
      * se ofrece repetirla o terminar. Lo pidió el autor el 2026-09-10.
      */
     bucle?: boolean;
+    /** Volumen de la melodía, de 0 a 1. Por defecto la mitad: acompaña a los golpes. */
+    volumenMelodia?: number;
   };
 
   const carril = useCarril(actividad.etapa);
@@ -87,7 +89,9 @@ export default function Cuerpo({ actividad, alTerminar, alSalir }: PropsActivida
   /** La canción ha llegado al final: el personaje felicita y se ofrece repetir o terminar. */
   const [terminada, setTerminada] = useState(false);
   // Subido de 0,35 a 0,5 el 2026-09-10: bajo los golpes, a 0,35 la flauta no se oía.
-  const VOLUMEN_MELODIA = 0.5;
+  /* Por actividad: la Radetzky (346) la quiere al 100 %, que ahí la melodía es la que manda
+     y las palmas acompañan; en Estrellita sigue a la mitad, bajo los golpes. */
+  const VOLUMEN_MELODIA = contenido.volumenMelodia ?? 0.5;
   /**
    * Con una canción entera el patrón no cabe en pantalla: la tira se desplaza de lado y
    * sigue sola al golpe que toca, como la cuadrícula del constructor. Lo pidió el autor el

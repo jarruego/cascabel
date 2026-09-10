@@ -1,7 +1,7 @@
 {
   "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa, y también si usa un código que aquí no está. El hueco de C1-17 es intencionado: ese código nunca llegó a reservarse y los ids no se renumeran, porque un id puede estar dentro de una URL compartida.",
   "generado": "2026-09-10",
-  "total": 163,
+  "total": 162,
   "actividades": [
     {
       "id": "C1-01",
@@ -1392,19 +1392,6 @@
       "esfuerzo": "M",
       "curriculo": "CE1 · crit. 1.2 · saber A",
       "descripcion": "Consulta de obras famosas con un fragmento grabado de cada una: quién la escribió, cuándo y qué escuchar en ella. De Bach a Saint-Saëns, pasando por Tárrega.",
-      "estado": "hecha"
-    },
-    {
-      "id": "C3-41",
-      "titulo": "Memory de instrumentos tocados de verdad",
-      "etapa": "primaria-c3",
-      "eje": "timbre",
-      "lugar": "pantalla",
-      "tipo": "memoria",
-      "microfono": false,
-      "esfuerzo": "S",
-      "curriculo": "CE1 · crit. 1.2 · saber A",
-      "descripcion": "Dieciséis cartas, cuatro por cuatro: ocho instrumentos y ocho grabaciones de músicos tocándolos. Violín, trompeta, saxofón, acordeón, guitarra eléctrica, piano, kalimba y bombo.",
       "estado": "hecha"
     },
     {

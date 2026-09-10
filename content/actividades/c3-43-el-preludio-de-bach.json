@@ -17,15 +17,15 @@
   "practica": {
     "secuencia": "ninguna",
     "compas": "4/4",
-    "tempo": 100
+    "tempo": 176
   },
   "entrada": {
     "modo": "ninguna"
   },
   "contenido": {
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el Preludio como mapa: cuatro compases, cuatro acordes, y el mismo dibujo de arpegio en todos. Lo que se enseña es que la música cambia de color (de acorde) sin cambiar de dibujo. El pulso es la semicorchea a 100. Los nombres de los acordes están en cifrado de aula (do, re menor, sol séptima, do); una maestra debe decir si en 3.º ciclo se nombran así o solo por color. Notas cotejadas con la partitura de Wikipedia en inglés, juntando las tres voces en un arpegio.",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el Preludio como mapa: cuatro compases, cuatro acordes, y el mismo dibujo de arpegio en todos. Lo que se enseña es que la música cambia de color (de acorde) sin cambiar de dibujo. El pulso es la semicorchea a 176 (44 por negra, el tope del esquema es 180): a 100 iba «extremadamente lenta», dijo el autor el 2026-09-11; el original va a unas 70 por negra. Los nombres de los acordes están en cifrado de aula (do, re menor, sol séptima, do); una maestra debe decir si en 3.º ciclo se nombran así o solo por color. Notas cotejadas con la partitura de Wikipedia en inglés, juntando las tres voces en un arpegio.",
     "consigna": "actividad.c343.consigna",
-    "tempo": 100,
+    "tempo": 176,
     "bucle": true,
     "bloques": [
       {

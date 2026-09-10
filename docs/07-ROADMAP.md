@@ -2948,6 +2948,12 @@ textos, niveles, camino, y la sección de instrumentos.
       «Debajo un botón» (sale en la 137) y «Backe, backe Kuchen» (en alemán); la de
       «Estrellita» en español sigue por confirmar.
 
+- [x] **La 341 «Memory de instrumentos tocados» se retira**: dieciséis casillas, la música
+      tardaba en arrancar y confundía, dijo el autor. La 135 (ocho cartas) se queda. **La 346
+      Radetzky** con la melodía al 100 % (`volumenMelodia`, nuevo campo de `cuerpo`) y el
+      pasaje dos veces, como repite la marcha; el trío queda para cuando haya fuente. **La 343**
+      pasa de 100 a 176 por semicorchea (el tope del esquema es 180): iba «extremadamente lenta».
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

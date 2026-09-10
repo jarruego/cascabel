@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-10",
-  "total": 162,
+  "total": 161,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -2205,25 +2205,6 @@
       },
       "estado": "revision-pedagogica",
       "herramienta": true
-    },
-    {
-      "id": "c3-41-memory-de-instrumentos-tocados",
-      "titulo": "Memory de instrumentos tocados de verdad",
-      "descripcion": "Dieciséis cartas, cuatro por cuatro: ocho instrumentos y ocho grabaciones de músicos tocándolos. Violín, trompeta, saxofón, acordeón, guitarra eléctrica, piano, kalimba y bombo.",
-      "etapa": "primaria-c3",
-      "eje": "timbre",
-      "tipo": "memoria",
-      "lugar": "pantalla",
-      "microfono": false,
-      "duracion_min": 8,
-      "curriculo": {
-        "area": "Educación Artística",
-        "competencia": "CE1",
-        "criterio": "1.2",
-        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
-      },
-      "estado": "borrador",
-      "herramienta": false
     },
     {
       "id": "c3-42-la-escala-de-sol-mayor",

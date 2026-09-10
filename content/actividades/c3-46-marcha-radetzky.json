@@ -23,12 +23,113 @@
     "modo": "ninguna"
   },
   "contenido": {
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la Marcha Radetzky es la de las palmas del concierto de Año Nuevo, y por eso va con el cuerpo, entera y sin bucle: la llamada (do do do) con palmas, la bajada con muslos, el sol largo con los pies, el balanceo de mi y re sostenido con chasquidos y el cierre con palmas. La melodía suena con la flauta debajo. El reparto de zonas es una propuesta. Melodía cotejada con la partitura de Wikipedia en inglés (Lilypond, do mayor, 2/2); pulso la negra a 108.",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la Marcha Radetzky es la de las palmas del concierto de Año Nuevo, y por eso va con el cuerpo, entera y sin bucle: la llamada (do do do) con palmas, la bajada con muslos, el sol largo con los pies, el balanceo de mi y re sostenido con chasquidos y el cierre con palmas. La melodía suena con la flauta debajo. El reparto de zonas es una propuesta. Melodía cotejada con la partitura de Wikipedia en inglés (Lilypond, do mayor, 2/2); pulso la negra a 108. El 2026-09-11 la melodía sube al 100 % y el pasaje se toca dos veces seguidas, como en la marcha, que repite su primera parte: el autor pidió la canción más larga, y la partitura en texto de Wikipedia solo trae este pasaje. El resto de la marcha (el trío) queda para cuando haya fuente.",
     "consigna": "actividad.c346.consigna",
     "tempo": 108,
     "bucle": false,
     "instrumento": "flauta",
     "patron": [
+      {
+        "zona": "palmas",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "palmas",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "palmas",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 1.5
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "pies",
+        "pulsos": 3
+      },
+      {
+        "zona": "pitos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "pitos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pitos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "pitos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pitos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "pitos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
       {
         "zona": "palmas",
         "pulsos": 0.5
@@ -159,8 +260,37 @@
       "D#5",
       "E5",
       "D5",
+      "C5",
+      "C5",
+      "C5",
+      "C5",
+      "C5",
+      "C5",
+      "C5",
+      "E5",
+      "D5",
+      "C5",
+      "B4",
+      "A4",
+      "G#4",
+      "A4",
+      "B4",
+      "C5",
+      "D5",
+      "G4",
+      "E5",
+      "D#5",
+      "E5",
+      "E5",
+      "D#5",
+      "E5",
+      "E5",
+      "D#5",
+      "E5",
+      "D5",
       "C5"
-    ]
+    ],
+    "volumenMelodia": 1
   },
   "evaluacion": {
     "autocorrectiva": false,
