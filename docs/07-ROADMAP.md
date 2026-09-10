@@ -2733,7 +2733,7 @@ textos, niveles, camino, y la sección de instrumentos.
 
 - [x] **«Ocultar hechas», a la derecha de la cuenta de actividades.** Un conmutador que
       aparta las actividades ya hechas para ver lo que queda; va en la URL como los demás
-      filtros y «quitar filtros» también lo quita. Estuvo junto al buscador; es a la cuenta
+      filtros, pero «quitar filtros» lo respeta: no es qué se busca, es cómo se mira. Estuvo junto al buscador; es a la cuenta
       a lo que afecta, y ahí está.
 
 - [x] **136 «Estrellita con el cuerpo»**: la primera canción entera con percusión corporal.

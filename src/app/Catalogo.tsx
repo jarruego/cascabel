@@ -275,11 +275,17 @@ export default function Catalogo() {
 
           {/* Un solo botón para volver a cero, y solo cuando hay algo que borrar: si no hay
               filtro puesto, un botón de «quitar filtros» es ruido. */}
-          {(etapa || eje || criterio || busqueda || ocultarHechas) && (
+          {(etapa || eje || criterio || busqueda) && (
             <button
               type="button"
               className="filtros__limpiar"
-              onClick={() => ponerParametros(new URLSearchParams())}
+              onClick={() => {
+                // «Ocultar hechas» no es un filtro de qué buscar, es cómo se mira la lista:
+                // se conserva. Lo pidió el autor el 2026-09-10.
+                const limpio = new URLSearchParams();
+                if (ocultarHechas) limpio.set('hechas', 'no');
+                ponerParametros(limpio);
+              }}
             >
               {t('filtro.limpiar')}
             </button>
