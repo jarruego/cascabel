@@ -62,6 +62,9 @@ export default function Catalogo() {
   const eje = (parametros.get('eje') ?? '') as Eje | '';
   const criterio = parametros.get('crit') ?? '';
   const busqueda = parametros.get('q') ?? '';
+  /* Esconder las ya hechas: lo pidió el autor el 2026-09-10, junto al buscador. Va en la
+     URL como los demás filtros, así que volver al catálogo lo conserva. */
+  const ocultarHechas = parametros.get('hechas') === 'no';
 
   /**
    * Cambiar un filtro.
@@ -198,6 +201,7 @@ export default function Catalogo() {
     if (etapa && e.etapa !== etapa) return false;
     if (eje && e.eje !== eje) return false;
     if (criterio && e.curriculo?.criterio !== criterio) return false;
+    if (ocultarHechas && hechas.has(e.id)) return false;
     if (!aguja) return true;
     // Se busca también por eje, por criterio y por código: «pulso», «3.1» o «107» son
     // búsquedas legítimas.
@@ -269,9 +273,20 @@ export default function Catalogo() {
             aria-label={t('filtro.buscar')}
           />
 
+          {/* Esconder o enseñar las que ya se han hecho. Un conmutador y no un filtro más:
+              lo que hace es apartar lo ya visto para ver lo que queda. */}
+          <button
+            type="button"
+            className="filtros__conmutador"
+            aria-pressed={ocultarHechas}
+            onClick={() => filtrar('hechas', ocultarHechas ? '' : 'no')}
+          >
+            {t(ocultarHechas ? 'filtro.mostrarHechas' : 'filtro.ocultarHechas')}
+          </button>
+
           {/* Un solo botón para volver a cero, y solo cuando hay algo que borrar: si no hay
               filtro puesto, un botón de «quitar filtros» es ruido. */}
-          {(etapa || eje || criterio || busqueda) && (
+          {(etapa || eje || criterio || busqueda || ocultarHechas) && (
             <button
               type="button"
               className="filtros__limpiar"

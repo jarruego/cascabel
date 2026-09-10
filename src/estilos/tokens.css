@@ -745,6 +745,29 @@ p {
   cursor: pointer;
   white-space: nowrap;
 }
+/* El conmutador de «ocultar hechas», al lado del buscador: como el de quitar filtros
+   pero en el color de la tinta, y encendido cuando está puesto. */
+.filtros__conmutador {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: var(--e-2) var(--e-3);
+  font: inherit;
+  font-size: var(--t-s);
+  color: var(--tinta-2);
+  background: none;
+  border: 2px solid var(--linea);
+  border-radius: var(--r-s);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.filtros__conmutador[aria-pressed='true'] {
+  color: var(--tinta);
+  background: var(--suave-verde);
+  border-color: var(--vivo-verde);
+  font-weight: 700;
+}
+.filtros__conmutador:hover { border-color: var(--tinta-2); }
+.filtros__conmutador:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
 .filtros__limpiar:hover { color: var(--acento); background: var(--suave-rojo); }
 .filtros__limpiar:focus-visible { outline: var(--foco); outline-offset: var(--foco-hueco); }
 

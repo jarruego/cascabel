@@ -640,6 +640,8 @@
   "actividad.c215.pista1": "Mira el tamaño de la figura antes de que llegue: te dice cuánto tienes que esperar hasta la siguiente.",
   "filtro.buscar": "Buscar actividad",
   "filtro.limpiar": "Quitar filtros",
+  "filtro.ocultarHechas": "Ocultar hechas",
+  "filtro.mostrarHechas": "Mostrar hechas",
   "catalogo.actividades": "actividades",
   "catalogo.de": "de",
   "karaoke.tocaBanda": "Toca el botón del color de la nota justo cuando llegue a la línea.",

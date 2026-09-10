@@ -2730,6 +2730,10 @@ textos, niveles, camino, y la sección de instrumentos.
       donde un alto fijo de 5 rem por fila pisaba el cálculo. Y cada dibujo va del color
       de su fila, con el SVG de máscara.
 
+- [x] **«Ocultar hechas» junto al buscador.** Un conmutador que aparta las actividades ya
+      hechas para ver lo que queda; va en la URL como los demás filtros y «quitar filtros»
+      también lo quita.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
