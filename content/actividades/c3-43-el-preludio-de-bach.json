@@ -17,18 +17,17 @@
   "practica": {
     "secuencia": "ninguna",
     "compas": "4/4",
-    "tempo": 132
+    "tempo": 100
   },
   "entrada": {
     "modo": "toque"
   },
   "contenido": {
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el pulso es la semicorchea a 132: son 450 ms por nota, rápido para 3.º ciclo aunque el dibujo del arpegio sea siempre el mismo. Si cuesta, bajar a 108. Sin ABC porque llega a fa5.",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el pulso es la semicorchea a 132: son 450 ms por nota, rápido para 3.º ciclo aunque el dibujo del arpegio sea siempre el mismo. Si cuesta, bajar a 108. Sin ABC porque llega a fa5. El 2026-09-11 pasa a horizontal, como el Himno (214): en vertical el recuadro salía ancho y las notas a la derecha. Tempo 100.",
     "consigna": "actividad.c343.consigna",
     "representacion": "pentagrama",
-    "orientacion": "vertical",
     "botonesPorCarril": false,
-    "tempo": 132,
+    "tempo": 100,
     "ejercicios": [
       {
         "titulo": "actividad.c343.ej1",

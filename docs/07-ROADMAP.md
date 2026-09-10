@@ -2905,6 +2905,12 @@ textos, niveles, camino, y la sección de instrumentos.
       Pixabay y FiftySounds no, porque prohíben redistribuir y el banco viaja en el
       repositorio.
 
+- [x] **Los karaokes en pentagrama van en horizontal**, como el Himno: en vertical el
+      recuadro salía ancho y las notas a la derecha (la anchura a toda la caja era solo para
+      los personajes). Y más despacio: Para Elisa a 84, el Preludio a 100, la Serenata a 96,
+      la Gruta a 120. **La 308 «¿De quién es esta música?» se retira** a petición del autor:
+      no tenía sentido como actividad de niños; su paso del camino desaparece con ella.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

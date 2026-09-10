@@ -1,7 +1,7 @@
 {
   "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa, y también si usa un código que aquí no está. El hueco de C1-17 es intencionado: ese código nunca llegó a reservarse y los ids no se renumeran, porque un id puede estar dentro de una URL compartida.",
   "generado": "2026-09-10",
-  "total": 161,
+  "total": 160,
   "actividades": [
     {
       "id": "C1-01",
@@ -1002,19 +1002,6 @@
       "esfuerzo": "M",
       "curriculo": "CE4 · crit. 4.1, 4.2 y 4.3 · saber B",
       "descripcion": "Proyecto por grupos: estribillo común y una copla por equipo.",
-      "estado": "hecha"
-    },
-    {
-      "id": "C3-08",
-      "titulo": "¿De quién es esta música?",
-      "etapa": "primaria-c3",
-      "eje": "cultura",
-      "lugar": "pantalla",
-      "tipo": "eleccion",
-      "microfono": false,
-      "esfuerzo": "S",
-      "curriculo": "CE2 · crit. 2.2 · saber B",
-      "descripcion": "Casos reales de licencias: qué puedes usar en un vídeo y qué no.",
       "estado": "hecha"
     },
     {

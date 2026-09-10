@@ -23,11 +23,10 @@
     "modo": "toque"
   },
   "contenido": {
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: está en 2/2 y aquí el pulso es la negra a 108 (54 por blanca, la original va a 108 por blanca: la mitad). Los silencios se absorben en la nota anterior y las dos apoyaturas se quitan. Sube a mi5, el techo de 3.º ciclo.",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: está en 2/2 y aquí el pulso es la negra a 108 (54 por blanca, la original va a 108 por blanca: la mitad). Los silencios se absorben en la nota anterior y las dos apoyaturas se quitan. Sube a mi5, el techo de 3.º ciclo. El 2026-09-11 pasa a horizontal, como el Himno (214): en vertical el recuadro salía ancho y las notas a la derecha. Tempo 108.",
     "consigna": "actividad.c346.consigna",
     "representacion": "pentagrama",
     "clave": "sol",
-    "orientacion": "vertical",
     "botonesPorCarril": false,
     "tempo": 108,
     "ejercicios": [

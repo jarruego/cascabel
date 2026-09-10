@@ -232,7 +232,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
   const TRANSVERSAL = vertical
     ? porCarril
       ? anchoDeBandas(carriles.length, anchoCaja, OBJETIVO_TACTIL[carril])
-      : carriles.length > 1
+      : representacion === 'personaje' && carriles.length > 1
         ? Math.max(200, Math.min(anchoCaja, 640))
         : 200
     /*

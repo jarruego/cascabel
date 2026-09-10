@@ -17,19 +17,18 @@
   "practica": {
     "secuencia": "ninguna",
     "compas": "4/4",
-    "tempo": 152
+    "tempo": 120
   },
   "entrada": {
     "modo": "toque"
   },
   "contenido": {
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la pieza empieza lenta y acelera hasta el final; aquí va a un solo tempo (152 por corchea, 76 por negra), que es el del principio. Transportada a re menor para que el do sostenido sea la única alteración y la tesitura quede entre la3 y fa4. Los silencios finales se absorben en la nota anterior.",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la pieza empieza lenta y acelera hasta el final; aquí va a un solo tempo (152 por corchea, 76 por negra), que es el del principio. Transportada a re menor para que el do sostenido sea la única alteración y la tesitura quede entre la3 y fa4. Los silencios finales se absorben en la nota anterior. El 2026-09-11 pasa a horizontal, como el Himno (214): en vertical el recuadro salía ancho y las notas a la derecha. Tempo 120.",
     "consigna": "actividad.c345.consigna",
     "representacion": "pentagrama",
     "clave": "sol",
-    "orientacion": "vertical",
     "botonesPorCarril": false,
-    "tempo": 152,
+    "tempo": 120,
     "ejercicios": [
       {
         "titulo": "actividad.c345.ej1",

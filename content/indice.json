@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-10",
-  "total": 160,
+  "total": 159,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -1613,25 +1613,6 @@
         "competencia": "CE4",
         "criterio": "4.1",
         "saber": "D. Lenguajes y práctica musical"
-      },
-      "estado": "borrador",
-      "herramienta": false
-    },
-    {
-      "id": "c3-08-de-quien-es-esta-musica",
-      "titulo": "¿De quién es esta música?",
-      "descripcion": "Ocho casos reales de licencias, sacados de los créditos de esta misma aplicación: qué puedes usar en un vídeo y qué no.",
-      "etapa": "primaria-c3",
-      "eje": "cultura",
-      "tipo": "eleccion",
-      "lugar": "pantalla",
-      "microfono": false,
-      "duracion_min": 15,
-      "curriculo": {
-        "area": "Educación Artística",
-        "competencia": "CE2",
-        "criterio": "2.2",
-        "saber": "B. Ética: licencias, plagio y derechos de autor"
       },
       "estado": "borrador",
       "herramienta": false

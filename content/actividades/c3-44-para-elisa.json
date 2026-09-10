@@ -17,18 +17,17 @@
   "practica": {
     "secuencia": "ninguna",
     "compas": "libre",
-    "tempo": 112
+    "tempo": 84
   },
   "entrada": {
     "modo": "toque"
   },
   "contenido": {
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el pulso es la corchea (3/8) a 112 y las semicorcheas son medio pulso; los silencios de semicorchea se han absorbido en la nota anterior. Sin ABC y compás «libre» en la ficha: el esquema no admite 3/8. Confirmar tempo.",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el pulso es la corchea (3/8) a 112 y las semicorcheas son medio pulso; los silencios de semicorchea se han absorbido en la nota anterior. Sin ABC y compás «libre» en la ficha: el esquema no admite 3/8. Confirmar tempo. El 2026-09-11 pasa a horizontal, como el Himno (214): en vertical el recuadro salía ancho y las notas a la derecha. Tempo 84.",
     "consigna": "actividad.c344.consigna",
     "representacion": "pentagrama",
-    "orientacion": "vertical",
     "botonesPorCarril": false,
-    "tempo": 112,
+    "tempo": 84,
     "ejercicios": [
       {
         "titulo": "actividad.c344.ej1",
