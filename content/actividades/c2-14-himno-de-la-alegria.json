@@ -291,7 +291,8 @@
           }
         ]
       }
-    ]
+    ],
+    "$comment": "Cotejado el 2026-09-10 con la partitura de «Ode to Joy» de Wikipedia (Lilypond, sol mayor) transportada a do: las dos frases coinciden nota por nota, incluida la negra con puntillo y corchea del final de cada una."
   },
   "evaluacion": {
     "autocorrectiva": true,

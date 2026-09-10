@@ -32,22 +32,22 @@
       {
         "texto": "forma.a",
         "color": "altura",
-        "pulsos": 8
+        "pulsos": 16
       },
       {
         "texto": "forma.a",
         "color": "altura",
-        "pulsos": 8.0
+        "pulsos": 16
       },
       {
         "texto": "forma.b",
         "color": "creacion",
-        "pulsos": 8
+        "pulsos": 16
       },
       {
         "texto": "forma.a",
         "color": "altura",
-        "pulsos": 8.0
+        "pulsos": 16
       }
     ],
     "notas": [
@@ -66,6 +66,7 @@
       "E4",
       "D4",
       "D4",
+      null,
       "E4",
       "E4",
       "F4",
@@ -80,9 +81,43 @@
       "E4",
       "D4",
       "C4",
-      "C4"
+      "C4",
+      null,
+      "D4",
+      "D4",
+      "E4",
+      "C4",
+      "D4",
+      "E4",
+      "E4",
+      "C4",
+      "D4",
+      "E4",
+      "E4",
+      "D4",
+      "C4",
+      "D4",
+      "G3",
+      null,
+      "E4",
+      "E4",
+      "F4",
+      "G4",
+      "G4",
+      "F4",
+      "E4",
+      "D4",
+      "C4",
+      "C4",
+      "D4",
+      "E4",
+      "D4",
+      "C4",
+      "C4",
+      null
     ],
-    "bucle": true
+    "bucle": true,
+    "$comment": "Reescrito el 2026-09-10 con la partitura de «Ode to Joy» de Wikipedia (Lilypond, sol mayor) transportada a do: cuatro frases de cuatro compases de 4/4, una nota por negra. Antes había 30 notas para 32 pulsos y las frases no cuadraban con los bloques. Simplificaciones, una nota por pulso: la negra con puntillo y corchea del final de las frases A se escribe negra y negra; en la frase B, las parejas de corcheas (mi-fa) se escriben con su primera nota; la blanca final de cada frase es una nota y un silencio. La segunda frase A acaba en do y la primera en re, como en la partitura: el mapa las llama a las dos A porque es la misma frase con final distinto. PENDIENTE DE REVISIÓN PEDAGÓGICA: si la maestra prefiere A-A'-B-A'."
   },
   "enunciado": "actividad.c304.enunciado",
   "personaje": "fara",

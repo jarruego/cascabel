@@ -180,7 +180,8 @@
           }
         ]
       }
-    ]
+    ],
+    "$comment": "Cotejado el 2026-09-10 con la partitura del motivo de Wikipedia (do menor, 2/4: r8 g g g | ees2 fermata | r8 f f f | d2~ d2 fermata). Las alturas coinciden. El «D#4» es en realidad un mi bemol: el motor escribe las notas solo con sostenidos (escala.ts), y en esta actividad la nota no se nombra, se toca por bandas. Las duraciones largas están simplificadas: el calderón no se escribe."
   },
   "evaluacion": {
     "autocorrectiva": true,

@@ -86,7 +86,8 @@ export default function Cuerpo({ actividad, alTerminar, alSalir }: PropsActivida
   const bucle = contenido.bucle ?? true;
   /** La canción ha llegado al final: el personaje felicita y se ofrece repetir o terminar. */
   const [terminada, setTerminada] = useState(false);
-  const VOLUMEN_MELODIA = 0.35;
+  // Subido de 0,35 a 0,5 el 2026-09-10: bajo los golpes, a 0,35 la flauta no se oía.
+  const VOLUMEN_MELODIA = 0.5;
   /**
    * Con una canción entera el patrón no cabe en pantalla: la tira se desplaza de lado y
    * sigue sola al golpe que toca, como la cuadrícula del constructor. Lo pidió el autor el

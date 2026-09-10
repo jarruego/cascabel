@@ -22,7 +22,7 @@
   },
   "contenido": {
     "consigna": "actividad.c324.consigna",
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: las siete melodías están transcritas de memoria y simplificadas a una sola voz y a las figuras del ciclo; hay que confirmarlas frente a una partitura de dominio público antes de darlas por buenas.",
+    "$comment": "Cotejadas el 2026-09-10 con partituras de dominio público en Wikipedia (Lilypond): Himno de la alegría (coincide), Pequeña serenata nocturna (alturas coinciden; los silencios de corchea se han absorbido en la nota anterior), Canción de cuna de Brahms (en mi bemol, transportada a do: coincide; duraciones simplificadas), Preludio en do de Bach (coincide) y Para Elisa (coincide). PENDIENTE DE REVISIÓN PEDAGÓGICA: «La mañana» de Grieg y «Recuerdos de la Alhambra» de Tárrega NO se han podido cotejar con una fuente escrita —no hay partitura en texto en Wikipedia ni en Mutopia— y siguen transcritas de memoria; una maestra debe confirmarlas contra la partitura (IMSLP) o retirarlas. Todas están simplificadas a una voz y a las figuras del ciclo.",
     "opciones": [
       {
         "clave": "beethoven",

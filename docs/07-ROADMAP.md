@@ -2819,6 +2819,14 @@ textos, niveles, camino, y la sección de instrumentos.
       actividad. Queda para más adelante un campo en el JSON que enlace cada actividad con
       su ficha imprimible de cocomusic.es.
 
+- [x] **Las canciones y temas, cotejados con partitura.** Con las de Wikipedia en Lilypond
+      (dominio público, en texto): Estrellita, Frère Jacques, Himno de la alegría, la 5.ª de
+      Beethoven, Para Elisa, la Pequeña serenata, la Canción de cuna de Brahms y el Preludio
+      de Bach coinciden. Arreglos: a la primera parte de la 016 le faltaba el último re; el
+      mapa de la 304 tenía 30 notas para 32 pulsos y no era la forma del Himno, ahora son
+      cuatro frases de 16 negras. Grieg y Tárrega (324) siguen sin fuente escrita: PENDIENTE
+      en el JSON. La melodía de la percusión corporal sube de 0,35 a 0,5 de volumen.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
