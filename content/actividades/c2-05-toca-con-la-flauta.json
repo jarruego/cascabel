@@ -38,7 +38,9 @@
       "B4": "/digitaciones/flauta-si.svg",
       "A4": "/digitaciones/flauta-la.svg",
       "G4": "/digitaciones/flauta-sol.svg"
-    }
+    },
+    "segundos": 30,
+    "$comment": "Treinta segundos y no los veinte por defecto: con la flauta hay que colocar los dedos, coger aire y soplar antes de que suene nada, y el autor vio que veinte se quedaban cortos (2026-09-10). Se acaba antes en cuanto se mantiene la nota."
   },
   "evaluacion": {
     "autocorrectiva": true,
