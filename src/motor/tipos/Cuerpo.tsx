@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { useCarril } from '@/app/preferencias';
+import { useInsinuarDesplazamiento } from '@/ui/insinuarDesplazamiento';
 import { despertarAudio, obtenerContexto, pararTodo } from '@/audio/AudioEngine';
 import { SonidosDelCuerpo, ZONAS, type Zona } from '@/audio/cuerpo';
 import { Sampler } from '@/audio/sampler';
@@ -93,6 +94,7 @@ export default function Cuerpo({ actividad, alTerminar, alSalir }: PropsActivida
    * 2026-09-10 para «Estrellita». Ver `ui/seguirColumna.ts`.
    */
   const rejilla = useRef<HTMLDivElement | null>(null);
+  useInsinuarDesplazamiento(rejilla);
   useEffect(() => {
     if (estado.indice < 0) return;
     mantenerALaVista(rejilla.current, rejilla.current?.querySelector('[data-aqui]'));

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useCarril } from '@/app/preferencias';
+import { useInsinuarDesplazamiento } from '@/ui/insinuarDesplazamiento';
 import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { Sampler, aMidi } from '@/audio/sampler';
 import { muestrasDe } from '@/audio/instrumentos';
@@ -234,6 +235,7 @@ export default function Teclado({ actividad, alTerminar }: PropsActividad) {
     sin que cambie la ventana.
   */
   const caja = useRef<HTMLDivElement | null>(null);
+  useInsinuarDesplazamiento(caja);
   const [anchoCaja, setAnchoCaja] = useState(0);
 
   useEffect(() => {

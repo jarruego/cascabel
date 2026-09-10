@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useReducer, useRef, useState, type CSSProperties } from 'react';
 import { OBJETIVO_TACTIL } from '@/config';
 import { useCarril } from '@/app/preferencias';
+import { useInsinuarDesplazamiento } from '@/ui/insinuarDesplazamiento';
 import { despertarAudio, obtenerContexto, pararTodo } from '@/audio/AudioEngine';
 import { MARIMBA, Sampler } from '@/audio/sampler';
 import { aMidiSMF, aMusicXML, descargar, type NotaExportable } from '@/datos/exportar';
@@ -91,6 +92,7 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
   const [columnaActual, setColumnaActual] = useState(-1);
   /** La cuadrícula se desplaza sola para que la columna que suena se vea. Ver `ui/seguirColumna.ts`. */
   const cuadricula = useRef<HTMLDivElement | null>(null);
+  useInsinuarDesplazamiento(cuadricula);
   useEffect(() => {
     if (columnaActual < 0) return;
     mantenerALaVista(cuadricula.current, cuadricula.current?.querySelector('[data-columna-activa]'));

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useReducer, useRef } from 'react';
 import { useCarril } from '@/app/preferencias';
+import { useInsinuarDesplazamiento } from '@/ui/insinuarDesplazamiento';
 import { Reaccion } from '@/ui/Reaccion';
 import { esperaTrasRespuesta } from '../maquinaReaccion';
 import { pistaPara } from '../maquinaEleccion';
@@ -52,6 +53,9 @@ export default function Compases({ actividad, alTerminar }: PropsActividad) {
   };
 
   const carril = useCarril(actividad.etapa);
+  /** La caja que se desplaza de lado: al entrar se insinúa que hay más. */
+  const marco = useRef<HTMLDivElement | null>(null);
+  useInsinuarDesplazamiento(marco);
   const { duraciones, pulsosPorCompas } = contenido;
   const abajo = contenido.figuraDelCompas ?? 4;
   const yaTerminada = useRef(false);
@@ -106,7 +110,7 @@ export default function Compases({ actividad, alTerminar }: PropsActividad) {
         se vuelve imposible. La caja de dentro tiene la proporción exacta del dibujo, así
         que su alto fija su ancho y los botones se colocan en porcentaje.
       */}
-      <div className="compases__marco">
+      <div className="compases__marco" ref={marco}>
         <div className="compases__pauta" style={{ aspectRatio: `${pauta.ancho} / ${ALTO}` }}>
           <svg
             className="compases__dibujo"

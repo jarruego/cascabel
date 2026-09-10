@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useCarril } from '@/app/preferencias';
+import { useInsinuarDesplazamiento } from '@/ui/insinuarDesplazamiento';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { Sampler, aMidi } from '@/audio/sampler';
 import { muestrasDe } from '@/audio/instrumentos';
@@ -48,6 +49,9 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
   };
 
   const carril = useCarril(actividad.etapa);
+  /** La caja que se desplaza de lado: al entrar se insinúa que hay más. */
+  const tecladoEscala = useRef<HTMLDivElement | null>(null);
+  useInsinuarDesplazamiento(tecladoEscala);
   const tonica = contenido.tonica;
   const desde = contenido.desde ?? Number(tonica.replace(/[^0-9]/g, '') || '4');
   const octavas = contenido.octavas ?? 2;
@@ -242,7 +246,7 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
         ))}
       </ol>
 
-      <div className="escala__teclado" role="group" aria-label={t('teclado.teclas')}>
+      <div className="escala__teclado" role="group" aria-label={t('teclado.teclas')} ref={tecladoEscala}>
         {teclas.map((k) => {
           const usada = puestas.includes(k.nota);
           const siguiente = objetivo[puestas.length] === k.nota;

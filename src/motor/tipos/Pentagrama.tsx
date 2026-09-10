@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useReducer, useRef, useState } from 'react';
 import { OBJETIVO_TACTIL } from '@/config';
 import { useCarril } from '@/app/preferencias';
+import { useInsinuarDesplazamiento } from '@/ui/insinuarDesplazamiento';
 import { MARIMBA, Sampler } from '@/audio/sampler';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { Reaccion } from '@/ui/Reaccion';
@@ -59,6 +60,9 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
   };
 
   const carril = useCarril(actividad.etapa);
+  /** La caja que se desplaza de lado: al entrar se insinúa que hay más. */
+  const marco = useRef<HTMLDivElement | null>(null);
+  useInsinuarDesplazamiento(marco);
   const tam = OBJETIVO_TACTIL[carril];
   const clave = contenido.clave ?? 'sol';
   const lienzo = useRef<HTMLDivElement | null>(null);
@@ -257,7 +261,7 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
       </p>
 
       {/* El marco es lo único que se desplaza, y solo de lado. */}
-      <div className="pentagrama__marco">
+      <div className="pentagrama__marco" ref={marco}>
       <div className="pentagrama__lienzo" style={{ width: ancho, height: ALTO }}>
         <div ref={lienzo} aria-hidden="true" />
 

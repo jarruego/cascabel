@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useCarril } from '@/app/preferencias';
+import { useInsinuarDesplazamiento } from '@/ui/insinuarDesplazamiento';
 import { OBJETIVO_TACTIL } from '@/config';
 import { despertarAudio, latenciaMs, obtenerContexto } from '@/audio/AudioEngine';
 import { Sampler } from '@/audio/sampler';
@@ -115,6 +116,9 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
   };
 
   const carril = useCarril(actividad.etapa);
+  /** La caja que se desplaza de lado: al entrar se insinúa que hay más. */
+  const botones = useRef<HTMLDivElement | null>(null);
+  useInsinuarDesplazamiento(botones);
   const bpm = contenido.tempo ?? actividad.practica?.tempo ?? 100;
   const clave = contenido.clave ?? 'sol';
   const notas = contenido.notas;
@@ -545,7 +549,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
         el principio, además, se pueden colocar los dedos antes de que empiece.
       */}
       {porCarril ? (
-        <div className="karaoke__botones" style={{ width: TRANSVERSAL, maxWidth: '100%' }}>
+        <div className="karaoke__botones" style={{ width: TRANSVERSAL, maxWidth: '100%' }} ref={botones}>
           {carriles.map((nota, i) => (
             <button
               key={nota}
