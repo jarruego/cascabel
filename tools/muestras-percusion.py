@@ -31,6 +31,7 @@ import math
 import shutil
 import struct
 import subprocess
+import sys
 import urllib.parse
 import urllib.request
 import wave
@@ -45,7 +46,13 @@ BASE = "https://raw.githubusercontent.com/sgossner/VCSL/master"
 # Se coge una intensidad media y no la más fuerte: un golpe al máximo satura en el altavoz
 # de una tablet y suena a chasquido, no a instrumento.
 KIT = {
-    "bombo": ("Membranophones/Struck Membranophones/Bass Drum 1", "BD1_Hit", "v4"),
+    # El bombo va al golpe más fuerte (v7) a propósito: los bombos de VCSL son de orquesta,
+    # casi todo por debajo de 150 Hz, y un altavoz de móvil o de tablet no reproduce eso.
+    # El autor lo oyó «muy tenue» el 2026-09-10: el prefijo de antes («BD1_Hit») no casaba
+    # con ningún fichero y se cogía el primero por orden, v2, el más flojo y el que menos
+    # ataque tiene. Medido: v7 lleva 13 dB más entre 150 y 300 Hz y 16 dB más entre 300 y
+    # 1000 Hz, que es lo que un altavoz pequeño sí da.
+    "bombo": ("Membranophones/Struck Membranophones/Bass Drum 1", "BDrumNew_hit", "v7"),
     "caja": ("Membranophones/Struck Membranophones/Snare Drum, Modern 1", "Snare2_HitNS", "v4"),
     "tom": ("Membranophones/Struck Membranophones/Tom 1", "Tom1_Hit", "v4"),
     "bongo": ("Membranophones/Struck Membranophones/Bongos", "Bongo", "v4"),
@@ -97,7 +104,12 @@ def pico(wav: Path) -> float:
     return max(abs(v) for v in valores) / 32768
 
 
-def preparar(origen: Path, destino: Path) -> int:
+# Cuánto se deja sonar como máximo, en segundos. El bombo de orquesta resuena seis segundos
+# y eso son cuarenta kilobytes por golpe que nadie oye entre pulso y pulso.
+DURACION_MAXIMA = {"bombo": 2.2}
+
+
+def preparar(origen: Path, destino: Path, duracion_maxima: float | None = None) -> int:
     """
     Recorta el silencio inicial, normaliza a -3 dBFS y codifica a Opus.
 
@@ -109,9 +121,13 @@ def preparar(origen: Path, destino: Path) -> int:
     """
     temporal = destino.with_suffix(".tmp.wav")
     # `silenceremove` con umbral bajo: quita lo que hay ANTES del ataque y nada más.
+    filtros = "silenceremove=start_periods=1:start_threshold=-50dB:start_silence=0"
+    if duracion_maxima:
+        # Se corta con una bajada de medio segundo, no a cuchillo.
+        filtros += f",atrim=end={duracion_maxima},afade=t=out:st={duracion_maxima - 0.5}:d=0.5"
     subprocess.run(
         ["ffmpeg", "-y", "-loglevel", "error", "-i", str(origen),
-         "-af", "silenceremove=start_periods=1:start_threshold=-50dB:start_silence=0",
+         "-af", filtros,
          "-ac", "1", "-ar", "48000", str(temporal)],
         check=True,
     )
@@ -136,8 +152,12 @@ def main() -> int:
     temporales = SALIDA / "_tmp"
     temporales.mkdir(exist_ok=True)
 
+    # Con nombres en la línea de órdenes se rehacen solo esos: `muestras-percusion.py bombo`.
+    pedidos = set(sys.argv[1:])
     total = 0
     for nombre, (carpeta, prefijo, intensidad) in KIT.items():
+        if pedidos and nombre not in pedidos:
+            continue
         ficheros = [f for f in listar(carpeta) if f.lower().endswith(".wav")]
         # Se prefieren los de la intensidad pedida; si no hay, cualquiera sirve.
         candidatos = [f for f in ficheros if intensidad in f and prefijo.lower() in f.lower()]
@@ -155,7 +175,7 @@ def main() -> int:
             if not descargar(carpeta, fichero, crudo):
                 continue
             destino = SALIDA / f"{nombre}-{i + 1}.opus"
-            total += preparar(crudo, destino)
+            total += preparar(crudo, destino, DURACION_MAXIMA.get(nombre))
             print(f"    {fichero[:44]:44} -> {destino.name}")
 
     shutil.rmtree(temporales, ignore_errors=True)
