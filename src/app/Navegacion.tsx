@@ -1,6 +1,6 @@
 import { NavLink, useLocation } from 'react-router';
 import { t } from '@/i18n';
-import { Icono } from '@/ui/Icono';
+import { Personaje } from '@/ui/Personaje';
 
 /**
  * Barra de navegación permanente, abajo, como una app de móvil.
@@ -32,14 +32,28 @@ import { Icono } from '@/ui/Icono';
  * en el mismo sitio. Y desaparece al imprimir.
  */
 
+/*
+  Cada destino lo presenta un personaje, con su pose y su color. Los iconos grises de antes
+  eran «muy feos y poco rollo infantil», dijo el autor el 2026-09-10, y la pandilla estaba
+  sin usar en la mitad de sus poses. El reparto sigue el criterio de `docs/14-PERSONAJES.md`,
+  qué trabaja cada sitio:
+
+   - Actividades: **Dora** saluda. La base, por donde se entra.
+   - Camino: **Sol** baila. El recorrido es moverse por él.
+   - Taller: **Milo** palmea. Ahí se toca.
+   - Criterios: **Rex** busca. Es la pantalla de encontrar.
+
+  El color es el disco de detrás, y la sección actual se marca por color, por fondo y por
+  grosor de letra: tres señales, nunca solo el color.
+*/
 const DESTINOS = [
-  { a: '/', icono: 'nota-musical', clave: 'nav.actividades' },
-  { a: '/camino', icono: 'andando', clave: 'nav.camino' },
-  { a: '/instrumentos', icono: 'teclado', clave: 'nav.instrumentos' },
+  { a: '/', personaje: 'dora', pose: 'saluda', color: 'rojo', clave: 'nav.actividades' },
+  { a: '/camino', personaje: 'sol', pose: 'baila', color: 'verde', clave: 'nav.camino' },
+  { a: '/instrumentos', personaje: 'milo', pose: 'palmea', color: 'amarillo', clave: 'nav.instrumentos' },
   /* Provisional, a petición del autor el 2026-09-10: los criterios del currículo con sus
      actividades ocupan el sitio de Ajustes mientras se revisa el etiquetado. A Ajustes se
      llega por la rueda dentada junto al título del catálogo. */
-  { a: '/criterios', icono: 'lupa', clave: 'nav.criterios' },
+  { a: '/criterios', personaje: 'rex', pose: 'busca', color: 'azul', clave: 'nav.criterios' },
 ] as const;
 
 export function Navegacion() {
@@ -56,10 +70,13 @@ export function Navegacion() {
           to={d.a}
           end={d.a === '/'}
           className="nav__enlace"
+          data-color={d.color}
           /* aria-current lo pone react-router solo, y es lo que un lector de pantalla usa
              para decir «página actual». No hace falta añadir nada. */
         >
-          <Icono nombre={d.icono} tamano={28} />
+          <span className="nav__disco" aria-hidden="true">
+            <Personaje nombre={d.personaje} pose={d.pose} tamano={44} />
+          </span>
           <span>{t(d.clave)}</span>
         </NavLink>
       ))}

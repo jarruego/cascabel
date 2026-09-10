@@ -2849,6 +2849,20 @@ textos, niveles, camino, y la sección de instrumentos.
       dentro va el personaje de la nota: Milo en el mi, Sol en el sol. Lo pidió el autor
       para la 130.
 
+- [x] **La barra de abajo la presentan los personajes.** Dora saluda en Actividades, Sol
+      baila en el Camino, Milo palmea en el Taller y Rex busca en Criterios, cada uno sobre
+      un disco de su color; la sección actual llena el disco. Los iconos grises se han ido.
+
+- [x] **Karaoke con la pandilla: cuatro canciones a una, dos, tres y cuatro bandas.** La
+      representación nueva `personaje` hace que cada nota baje con su personaje y que el
+      pulsador de cada banda sea el personaje cantando con el nombre de su nota. Las
+      canciones: 029 «Cucú: Sol y Milo» (dos bandas, sol-mi, melodía propia porque no hay
+      ninguna tradicional de dos notas con partitura cotejable: PENDIENTE), 140 «Debajo un
+      botón con la pandilla» (una banda, el ritmo cotejado), 138 «Au clair de la lune» (tres
+      bandas, do-re-mi, cotejada con fr.wikipedia) y 139 «El pastel de Sol, Laia, Milo y
+      Dora» («Backe, backe Kuchen», cuatro bandas sol-la-mi-do, cotejada con de.wikipedia y
+      transportada a do). Las cuatro con ABC para el validador.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

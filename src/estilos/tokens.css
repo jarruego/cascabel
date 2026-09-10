@@ -2479,12 +2479,46 @@ p {
   outline: var(--foco);
   outline-offset: -3px;
 }
+/* El personaje de cada destino, sobre un disco de su color. El dibujo asoma por encima del
+   disco: es un personaje de pie, no un icono dentro de un círculo. */
+.nav__enlace[data-color='rojo'] { --nav-suave: var(--suave-rojo); --nav-vivo: var(--vivo-rojo); }
+.nav__enlace[data-color='verde'] { --nav-suave: var(--suave-verde); --nav-vivo: var(--vivo-verde); }
+.nav__enlace[data-color='amarillo'] { --nav-suave: var(--suave-amarillo); --nav-vivo: var(--vivo-amarillo); }
+.nav__enlace[data-color='azul'] { --nav-suave: var(--suave-azul); --nav-vivo: var(--vivo-azul); }
+.nav__disco {
+  position: relative;
+  display: grid;
+  place-items: end center;
+  width: 44px;
+  height: 44px;
+}
+.nav__disco::before {
+  content: '';
+  position: absolute;
+  inset: 8px 2px 0;
+  border-radius: 50%;
+  background: var(--nav-suave);
+  border: 2px solid var(--nav-vivo);
+  transition: background-color var(--transicion), transform var(--transicion);
+}
+.nav__disco .personaje {
+  position: relative;
+  display: block;
+  height: 44px;
+  width: auto;
+}
 /* La sección actual se marca por color Y por fondo Y por grosor de texto: tres
-   señales, porque el color solo no lo distingue un 8 % de los niños. */
+   señales, porque el color solo no lo distingue un 8 % de los niños. El disco se llena
+   de su color vivo y el personaje se levanta un poco. */
 .nav__enlace[aria-current='page'] {
-  color: var(--acento-2);
-  background: var(--suave-azul);
+  color: var(--nav-vivo);
+  background: var(--nav-suave);
   font-weight: 700;
+}
+.nav__enlace[aria-current='page'] .nav__disco::before { background: var(--nav-vivo); }
+.nav__enlace[aria-current='page'] .nav__disco .personaje { transform: translateY(-2px); }
+@media (prefers-reduced-motion: reduce) {
+  .nav__disco::before, .nav__disco .personaje { transition: none; transform: none; }
 }
 /* Sitio para que la barra no tape el final del contenido. */
 .catalogo,
@@ -2791,7 +2825,8 @@ p {
    borde del color de la nota: el color acompaña, y lo que se lee es el símbolo. */
 .karaoke__figura[data-forma='silaba'],
 .karaoke__figura[data-forma='figura'],
-.karaoke__figura[data-forma='icono'] {
+.karaoke__figura[data-forma='icono'],
+.karaoke__figura[data-forma='personaje'] {
   min-width: 62px;
   min-height: 54px;
   padding: var(--e-1) var(--e-3);
@@ -2918,6 +2953,10 @@ p {
   flex: 1 1 0;
   min-width: 0;
   min-height: 88px;
+  /* Con personaje dentro, el dibujo arriba y el nombre debajo. */
+  display: grid;
+  place-items: center;
+  gap: 2px;
   /* Redondeados solo por abajo: por arriba quedan a ras del recuadro, y esa arista recta
      es lo que hace que se lean como la continuación de su banda y no como cuatro botones
      sueltos que casualmente están ahí. */
