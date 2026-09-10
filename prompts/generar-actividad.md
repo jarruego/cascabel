@@ -78,6 +78,10 @@ npm run contenido:indice         # regenera el índice
 Lo que no pasa el validador **se descarta y se regenera**, no se arregla a mano. Arreglar a
 mano es exactamente el trabajo que esta arquitectura existe para evitar.
 
+Y si la actividad pide un **tipo de motor nuevo** —o toca uno existente—, antes de darlo por
+terminado se pasa la lista «Reglas que salieron del uso» de `docs/04-DISENO-UI.md`, punto por
+punto, en las tres posturas: móvil en vertical, apaisado y pantalla completa.
+
 ## Prompt de revisión pedagógica
 
 Para la persona que revisa, no para la IA. Tres preguntas cerradas por actividad:

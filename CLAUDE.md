@@ -210,6 +210,11 @@ Objetivo **WCAG 2.2 AA**, y para niños es un suelo, no una meta.
   elemento y después su destino— funciona siempre y es el que se diseña primero.
 - Respeta `prefers-reduced-motion`. Nada parpadea más de 3 veces por segundo.
 - Tipografías: Andika para Infantil, Atkinson Hyperlegible y OpenDyslexic conmutables.
+- **Antes de dar por pulido un tipo de motor, pásale la lista «Reglas que salieron del uso»
+  de `docs/04-DISENO-UI.md`**: verde a la derecha, una sola modal, lo que no cabe se
+  desplaza en un bloque y lo insinúa, elementos repartidos en filas iguales, reacción abajo
+  con sus tiempos, un fallo de cada cinco, disparador de hecha. Son las que hacen que una
+  actividad nueva se sienta como las demás, y ninguna se deduce del código sin leerlas.
 
 ---
 

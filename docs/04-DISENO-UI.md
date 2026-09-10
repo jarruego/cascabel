@@ -86,6 +86,108 @@ y pon encima un hitbox transparente de 60 px. VexFlow te da control total para h
 10. **Tipografía grande y legible.** Andika (SIL, OFL) para Infantil; Atkinson Hyperlegible
     y OpenDyslexic como opción conmutable.
 
+## Reglas que salieron del uso
+
+Las diez de arriba se escribieron antes de que nadie tocara la aplicación. Estas salieron
+después, probando cada actividad en un móvil, una tablet y una pizarra durante septiembre
+de 2026, y son las que hacen que una actividad nueva «se sienta» como las demás. Cada una
+tiene su código, y casi todas su test; aquí están escritas como regla, no como historia
+(la historia está en `07-ROADMAP.md`, con la fecha y la frase del autor que la provocó).
+
+**Cuando hagas un tipo de motor nuevo o retoques uno, pásale esta lista.** Es lo que se
+comprueba antes de dar una actividad por pulida.
+
+### La pantalla
+
+1. **Lo que no cabe, no se parte: se desplaza en un solo bloque, y solo de lado.** Una
+   fila de figuras partida en dos deja de ser un compás; una cuadrícula partida deja de ser
+   una cuadrícula. La sección se lleva el alto del escenario (`--alto-escena`), lo que es
+   fijo conserva su objetivo táctil, lo flexible se acota con `clamp`, y **un** bloque
+   lleva `overflow-x: auto`. Ese bloque necesita `width: 100%; min-width: 0`, o el
+   `margin-inline: auto` de `.actividad > *` lo deja a medida del contenido y ensancha la
+   pantalla entera. Ejemplos: `.compases__marco`, `.pentagrama__marco`, `.cuerpo__rejilla`.
+2. **Lo que se desplaza de lado lo insinúa al entrar** (`ui/insinuarDesplazamiento.ts`): la
+   caja se mueve un trecho y vuelve, con aceleración y frenada, en 1,6 s; solo si de verdad
+   sobra, respetando `prefers-reduced-motion`, y cualquier gesto lo corta. Toda caja nueva
+   con `overflow-x: auto` llama a `useInsinuarDesplazamiento`.
+3. **Lo que suena se mantiene a la vista, centrado** (`ui/seguirColumna.ts`): en una
+   cuadrícula o una tira que se reproduce, la caja avanza con el pulso y la casilla actual
+   va en el centro, con las que vienen a la derecha. Solo la caja y solo de lado: nunca
+   `scrollIntoView`, que arrastra también la página.
+4. **Elementos iguales se reparten en filas iguales** (`ui/repartir.ts`): cuatro son dos y
+   dos, cinco son tres y dos, seis son dos columnas en vertical y tres en apaisado, con la
+   última fila centrada y el hueco repartido (`space-evenly`). El componente mide el
+   escenario y pone `--columnas` y `--lado`; el lado nunca baja del objetivo táctil.
+5. **Se comprueba en tres posturas**: móvil en vertical, móvil en apaisado y pantalla
+   completa. Las tres tienen alturas distintas y lo que cabe en una se sale en otra. El
+   emulador miente en audio; en tamaños, menos, pero la revisión final la hace el autor en
+   el aparato.
+6. **Cuadrados que son cuadrados** (`aspect-ratio: 1`) y separación igual entre columnas y
+   filas. Un botón «casi cuadrado» se lee como un error.
+
+### Los botones y las modales
+
+7. **El verde siempre a la derecha.** En cualquier botonera, el botón principal (verde) va
+   a la derecha y el sin color a la izquierda, y en ese orden en el DOM. «Otra vez» a la
+   izquierda, «Terminar» o «Siguiente» a la derecha.
+8. **Una sola modal de explicación** (`ModalExplicacion`), con el personaje, el enunciado,
+   cómo va la pantalla y, si escucha, la elección: con palmadas, «Tocar en la pantalla» y
+   «Con palmas»; con voz, «Ahora no puedo hacer ruido» (sale, no se recuerda) y
+   «¡Empezar!». Nunca dos modales seguidas. Al abrirse enfoca su caja, no el primer botón.
+9. **Todo botón de la botonera lleva su símbolo** (`ui/Simbolos.tsx`), de una línea y del
+   mismo grosor; los OpenMoji de color son contenido, no señales. Una botonera con la
+   mitad de iconos «no tiene criterio».
+10. **Ningún literal en componentes.** Todo pasa por `t('clave')`, incluidas las opciones
+    de las actividades (`opcion.*`): hay un test que comprueba que cada opción del
+    contenido tiene su texto.
+
+### Cómo se reacciona
+
+11. **La reacción va abajo, con el personaje, y se va sola.** Nunca un párrafo fijo encima
+    de la actividad. Tiempos en `motor/maquinaReaccion.ts`: **900 ms** al acertar; al fallar,
+    **3 500 ms más 45 ms por carácter**, porque hay que leerlo. La pista que sale tras un
+    fallo se queda visible ese mismo tiempo, no desaparece al reintentar.
+12. **Se felicita con un fallo de cada cinco** (`motor/evaluacion.ts`): `fallosPermitidos`
+    es la parte entera de `total × 0,2` —con cuatro pulsos no se perdona ninguno, con ocho
+    uno—, los golpes de más cuentan en contra, y «regular pero desfasado» exige haber dado
+    todos los golpes. **El mensaje del personaje y la calidad que se anota en la serie
+    salen de la misma función** (`mensajeRitmico`): si se separan, uno dice «¡muy bien!» y
+    el otro «casi», que es lo que pasó.
+13. **Un golpe antes de tiempo quema su hueco.** Los golpes se emparejan en orden, no por
+    cercanía: aporrear la pantalla no acierta nada. El hueco quemado se ve en gris.
+14. **Toda actividad tiene un disparador de hecha.** Las autocorrectivas, al completar; las
+    libres (`motor/actividadesLibres.ts`), al primer uso real: la primera reproducción, el
+    primer golpe, la primera vuelta vista entera. Ninguna actividad se queda sin poder
+    marcarse como hecha.
+15. **Una serie de ejercicios** (`motor/serie.ts`) pasa de uno a otro con «Siguiente» en la
+    botonera y la reacción del personaje; los tipos con pantalla de resultado propia
+    (karaoke, tocar a tiempo) no llevan esa pausa. Al final, `ResumenSerie`.
+
+### Las listas y el progreso
+
+16. **El tic de hecha es una franja verde plana** en el borde derecho de la tarjeta, de
+    arriba a abajo, con el tic en blanco: verde al 55 % sobre la superficie y borde al
+    85 %. En el catálogo se pulsa y una modal pregunta si quitar la marca; en el Camino no
+    se pulsa y la ficha lleva el borde entero en ese verde.
+17. **«Volver» vuelve a la lista de la que se salió** (`app/vuelta.ts`): catálogo con sus
+    filtros, Taller o Camino, a la misma altura de scroll. Nunca `history.back()`.
+18. **Toda actividad tiene un código de tres cifras** (`motor/codigo.ts`: Infantil 0xx,
+    ciclos 1xx, 2xx, 3xx, transversales 9xx) y sale en la tarjeta, la modal, la ficha y el
+    buscador. Es como el maestro la nombra en voz alta.
+19. **Compartir es copiar el enlace**: un icono pequeño junto al título de la modal, y el
+    aviso «enlace copiado» arriba, centrado, que se va solo. No hay redes ni cuentas.
+
+### El sonido
+
+20. **Cada estímulo puede llevar su instrumento** y hay que elegirlo por lo que se pide:
+    para «sube o baja», uno de altura clara y salto exagerado; para «paso o salto», el que
+    deje oír la distancia. El órgano y el bombo apenas se aprecian en un altavoz pequeño.
+21. **La percusión no se estira** y las muestras se eligen por lo que un altavoz de móvil
+    reproduce: por debajo de 150 Hz no hay nada que oír, así que un bombo necesita golpe y
+    presencia, no graves. Ver `10-AUDIO-MUESTRAS.md`.
+22. **El audio de referencia se sostiene lo que haga falta leer**: la nota de la flauta
+    3 s, la ventana para cantar 20 s (30 s con flauta), sin cuenta atrás. Los niños tardan.
+
 ## Los tres botones y los cuatro sitios donde se habla
 
 Añadido el 2026-09-08, después de que el autor lo pidiera dos veces con las mismas palabras:
