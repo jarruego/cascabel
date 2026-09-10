@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState, type CSSProperties } from 'react';
 import { useCarril } from '@/app/preferencias';
 import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { KIT, Percusion, type Golpe } from '@/audio/percusion';
@@ -9,6 +9,7 @@ import { Retos } from '@/ui/Retos';
 import { BarraAcciones } from '@/ui/BarraAcciones';
 import { vibrarPulso } from '@/ui/vibracion';
 import { t } from '@/i18n';
+import { repartir } from '@/ui/repartir';
 import type { PropsActividad } from '../tipos';
 
 /**
@@ -105,6 +106,25 @@ export default function Pads({ actividad, alTerminar }: PropsActividad) {
 
   const percusion = useRef<Percusion | null>(null);
   const [sonando, setSonando] = useState<Set<string>>(new Set());
+
+  /*
+    Los pads se reparten por la pantalla según cuántos son y hacia dónde mira: dos y dos,
+    tres y dos, tres y tres... con la última fila centrada y el hueco repartido. La regla
+    está en `ui/repartir.ts`, con test; aquí solo se mide el hueco disponible. Lo pidió el
+    autor el 2026-09-10 viendo «Cuatro instrumentos» en una sola fila.
+  */
+  const escenario = useRef<HTMLElement | null>(null);
+  const [medida, setMedida] = useState({ ancho: 0, alto: 0 });
+  useEffect(() => {
+    const el = escenario.current;
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    const ro = new ResizeObserver(([e]) => {
+      const r = e?.contentRect;
+      if (r) setMedida({ ancho: Math.floor(r.width), alto: Math.floor(r.height) });
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
   const deslizando = useRef(false);
   const ultimo = useRef<string | null>(null);
 
@@ -240,8 +260,26 @@ export default function Pads({ actividad, alTerminar }: PropsActividad) {
     setPulsando(true);
   };
 
+  // El hueco entre pads y el marco de la rejilla (borde de 3 px y relleno) salen de ahí.
+  const reparto = repartir(ordenados.length, medida.ancho - 2 * 15, medida.alto - 2 * 15, {
+    hueco: 16,
+    maximo: 220,
+    minimo: 48,
+  });
+
   return (
-    <section className="actividad pads" data-carril={carril} aria-labelledby="consigna">
+    <section
+      ref={escenario}
+      className="actividad pads"
+      data-carril={carril}
+      aria-labelledby="consigna"
+      style={
+        {
+          ['--columnas' as string]: reparto.columnas,
+          ['--lado' as string]: `${reparto.lado}px`,
+        } as CSSProperties
+      }
+    >
       <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
 
       {/* El borde de la rejilla late con el pulso. Es el pulso VISIBLE que pide §6: una

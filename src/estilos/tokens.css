@@ -3841,13 +3841,27 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
  * Los pads llenan el ancho que haya. Un instrumento con la mitad del monitor vacío al lado
  * es un instrumento peor: lo que hace fácil acertar un pad es que sea grande.
  * ------------------------------------------------------------------------ */
+/* La sección se lleva el escenario, y los pads se reparten dentro: filas iguales, la
+   última centrada y el hueco repartido (`space-evenly`). Cuántas columnas y de qué lado lo
+   dice `ui/repartir.ts` y el componente lo pone en `--columnas` y `--lado`. */
+.pads {
+  height: calc(var(--alto-escena) - var(--e-5) - var(--e-3));
+  min-height: 0;
+  grid-template-rows: minmax(0, 1fr);
+  align-content: center;
+  overflow-y: auto;
+}
 .pads__rejilla {
-  /* Centrado: sin esto se pegaba a la izquierda del escenario. */
-  justify-content: center;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  height: 100%;
+  min-height: 0;
+  /* Justo el ancho de las columnas que tocan: es lo que hace que la fila se corte donde
+     toca y que la última, si es corta, quede centrada. */
+  width: min(100%, calc(var(--columnas, 2) * var(--lado, 120px) + (var(--columnas, 2) + 1) * var(--e-4)));
   gap: var(--e-3);
-  margin: var(--e-5) 0;
   padding: var(--e-3);
   border: 3px solid transparent;
   border-radius: var(--r-m);
@@ -3863,9 +3877,12 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   align-items: center;
   justify-content: center;
   gap: var(--e-1);
-  /* Cuadrado: el pad es el objetivo táctil más grande que quepa, y ninguna dimensión manda
-     sobre la otra. */
-  aspect-ratio: 1;
+  /* Cuadrado, del lado que ha calculado el reparto: el más grande que quepa sin que ninguna
+     dimensión mande sobre la otra, y nunca por debajo del objetivo táctil. */
+  flex: 0 0 auto;
+  width: var(--lado, 7rem);
+  height: var(--lado, 7rem);
+  min-width: var(--objetivo);
   min-height: var(--objetivo);
   padding: var(--e-2);
   font: inherit;
@@ -3915,10 +3932,8 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 
 .pads__tempos { display: flex; gap: var(--e-1); }
 
-/* Proyectado o a pantalla completa caben pads más grandes, y aquí más grande es mejor. */
-.lienzo[data-ampliado] .pads__rejilla {
-  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
-}
+/* Proyectado o a pantalla completa el escenario es más alto y el reparto ya da pads más
+   grandes: no hace falta otra regla. */
 
 @media (prefers-reduced-motion: reduce) {
   .pads__pad { transition: none; }

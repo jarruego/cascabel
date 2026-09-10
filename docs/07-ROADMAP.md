@@ -2780,6 +2780,13 @@ textos, niveles, camino, y la sección de instrumentos.
       cabe. Las tres actividades (128, 206, 225) cambian a la vez porque es el motor. La
       tercera línea para figuras sin altura queda PENDIENTE de la profesora.
 
+- [x] **Los pads se reparten por la pantalla.** «Cuatro instrumentos» salía en una fila;
+      ahora son dos y dos, cinco son tres y dos, seis son tres y tres (dos columnas en
+      vertical, tres en apaisado), con la última fila centrada y el hueco repartido. La regla
+      es `ui/repartir.ts`, pura y con test, y es la convención para cualquier rejilla de
+      elementos iguales: el componente mide el escenario y pone `--columnas` y `--lado`.
+      Queda por aplicarla a otras rejillas donde se vea la misma falta.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
