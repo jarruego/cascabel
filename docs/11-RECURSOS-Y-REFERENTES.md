@@ -115,6 +115,23 @@ los seis del mundo. Ver `docs/10`.
 resultado: hay canciones, no notas sueltas—. La salida es grabarla: `tools/muestras-voz.py`
 prepara una grabación de móvil con ocho notas y comprueba la altura de cada una.
 
+### Bancos de música «libre de derechos», al día del 2026-09-11
+
+El autor preguntó por cuatro bancos. La pregunta que decide no es «¿es gratis?» sino «¿se
+puede meter el fichero en `public/audio/` de un repositorio público con licencia CC BY-SA?»,
+porque eso es lo que hace el banco de sonidos: **redistribuir**.
+
+| Banco | Licencia | Veredicto |
+|---|---|---|
+| **Musopen** | Grabaciones de dominio público o CC0, obra por obra | **Sí.** Ya es de donde salen «La mañana», «En la gruta» y otras, a través de Wikimedia Commons, que además devuelve la licencia por API. Preferir siempre la copia de Commons por eso |
+| **Free Music Archive** | Creative Commons, **una licencia por pista**, elegida por el artista; abundan NC y ND | **Sí, con filtro**: solo CC0, CC BY o CC BY-SA, y comprobando la pista una a una en su página, porque no hay API. Menos cómodo que Commons y con el mismo resultado |
+| **Pixabay Music** | «Pixabay Content License», propia: uso libre sin atribución, pero «you cannot sell or distribute Content on a Standalone basis» | **No.** No es una licencia libre y prohíbe redistribuir el fichero suelto, que es lo que hace un repositorio público. Valdría para un vídeo, no para este banco |
+| **FiftySounds** | Propia: uso gratuito con enlace de atribución en la página, y prohíbe «vender, revender, sublicenciar o distribuir la música» | **No**, por lo mismo: prohíbe redistribuir. Y sus «adaptaciones» de canciones infantiles son arreglos con derechos propios |
+
+Dos que se ofrecen por ahí y no son bancos: «Free Music Projects» vende pistas (9 € cada
+una) y las listas de «piezas clásicas para niños» de blogs son ideas, no recursos. La regla
+de `CLAUDE.md` §3 sigue valiendo entera: **atribuir no arregla una licencia incompatible**.
+
 ### Soundfonts General MIDI: donde sí estaba todo
 
 **La primera búsqueda se equivocó de sitio, y conviene dejar dicho en qué.** Miró bancos de

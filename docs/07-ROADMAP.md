@@ -2892,6 +2892,17 @@ textos, niveles, camino, y la sección de instrumentos.
       de 88 a 66. A esa velocidad una negra son 80 px de recorrido y dos corcheas se tocan sin
       pisarse. Los patrones no cambian: son ritmos, no una canción.
 
+- [x] **Dos obras más, las que tenían partitura en texto**: **345** «En la gruta del rey de la
+      montaña» (Grieg, en.wikipedia; a re menor una octava abajo) y **346** «Marcha Radetzky»
+      (Strauss padre, en.wikipedia). Las otras que pidió el autor —El Danubio azul, El
+      cascanueces, El carnaval de los animales— **no tienen partitura en texto** en ninguna
+      Wikipedia ni en Mutopia: quedan para cuando haya una fuente cotejable (PDMX o un PDF de
+      dominio público leído compás a compás). Sus grabaciones sí están en el banco y en las
+      actividades de escucha 339 y 340. Y el estudio de bancos de música que pidió el autor
+      está en `11-RECURSOS-Y-REFERENTES.md` §3: Musopen y FMA (solo CC BY/BY-SA/CC0) sí;
+      Pixabay y FiftySounds no, porque prohíben redistribuir y el banco viaja en el
+      repositorio.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

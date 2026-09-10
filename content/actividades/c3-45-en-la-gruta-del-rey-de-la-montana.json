@@ -1,0 +1,275 @@
+{
+  "id": "c3-45-en-la-gruta-del-rey-de-la-montana",
+  "version": 1,
+  "tipo": "karaoke",
+  "titulo": "En la gruta del rey de la montaña",
+  "descripcion": "El tema de «En la gruta del rey de la montaña» de Grieg, en el pentagrama con sus sostenidos y un solo pulsador. Tres partes: la primera frase, la segunda y las dos.",
+  "etapa": "primaria-c3",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 152
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la pieza empieza lenta y acelera hasta el final; aquí va a un solo tempo (152 por corchea, 76 por negra), que es el del principio. Transportada a re menor para que el do sostenido sea la única alteración y la tesitura quede entre la3 y fa4. Los silencios finales se absorben en la nota anterior.",
+    "consigna": "actividad.c345.consigna",
+    "representacion": "pentagrama",
+    "clave": "sol",
+    "orientacion": "vertical",
+    "botonesPorCarril": false,
+    "tempo": 152,
+    "ejercicios": [
+      {
+        "titulo": "actividad.c345.ej1",
+        "notas": [
+          {
+            "nota": "A3",
+            "pulsos": 1
+          },
+          {
+            "nota": "B3",
+            "pulsos": 1
+          },
+          {
+            "nota": "C#4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C#4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 2
+          },
+          {
+            "nota": "F4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C#4",
+            "pulsos": 1
+          },
+          {
+            "nota": "F4",
+            "pulsos": 2
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C#4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 2
+          }
+        ]
+      },
+      {
+        "titulo": "actividad.c345.ej2",
+        "notas": [
+          {
+            "nota": "A3",
+            "pulsos": 1
+          },
+          {
+            "nota": "B3",
+            "pulsos": 1
+          },
+          {
+            "nota": "C#4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C#4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 2
+          },
+          {
+            "nota": "F4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C#4",
+            "pulsos": 1
+          },
+          {
+            "nota": "F4",
+            "pulsos": 2
+          },
+          {
+            "nota": "E4",
+            "pulsos": 4
+          }
+        ]
+      },
+      {
+        "titulo": "actividad.c345.ej3",
+        "notas": [
+          {
+            "nota": "A3",
+            "pulsos": 1
+          },
+          {
+            "nota": "B3",
+            "pulsos": 1
+          },
+          {
+            "nota": "C#4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C#4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 2
+          },
+          {
+            "nota": "F4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C#4",
+            "pulsos": 1
+          },
+          {
+            "nota": "F4",
+            "pulsos": 2
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C#4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 2
+          },
+          {
+            "nota": "A3",
+            "pulsos": 1
+          },
+          {
+            "nota": "B3",
+            "pulsos": 1
+          },
+          {
+            "nota": "C#4",
+            "pulsos": 1
+          },
+          {
+            "nota": "D4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C#4",
+            "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 2
+          },
+          {
+            "nota": "F4",
+            "pulsos": 1
+          },
+          {
+            "nota": "C#4",
+            "pulsos": 1
+          },
+          {
+            "nota": "F4",
+            "pulsos": 2
+          },
+          {
+            "nota": "E4",
+            "pulsos": 4
+          }
+        ]
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "enunciado": "actividad.c345.enunciado",
+  "personaje": "rex",
+  "pistas": [
+    "actividad.c345.pista1",
+    "actividad.c345.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "«En la gruta del rey de la montaña», de la suite Peer Gynt n.º 1, op. 46",
+      "autor": "Edvard Grieg (1843-1907)",
+      "fuente": "Dominio público; tema cotejado con la partitura de Wikipedia en inglés (Lilypond, si menor) y transportado a re menor una octava abajo",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador",
+  "musica": {
+    "abc": "X:1\nT:En la gruta del rey de la montaña\nC:Edvard Grieg\nM:4/4\nL:1/8\nK:Dm\nA, B, ^C D E ^C E2 | F ^C F2 E ^C E2 | A, B, ^C D E ^C E2 | F ^C F2 E4 |]"
+  }
+}

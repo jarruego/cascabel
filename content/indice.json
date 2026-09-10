@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-10",
-  "total": 157,
+  "total": 159,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -2267,6 +2267,44 @@
       "id": "c3-44-para-elisa",
       "titulo": "Para Elisa",
       "descripcion": "El comienzo de «Para Elisa» en el pentagrama, con un solo pulsador y sus sostenidos. Tres partes: la entrada, la vuelta y todo seguido.",
+      "etapa": "primaria-c3",
+      "eje": "altura",
+      "tipo": "karaoke",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-45-en-la-gruta-del-rey-de-la-montana",
+      "titulo": "En la gruta del rey de la montaña",
+      "descripcion": "El tema de «En la gruta del rey de la montaña» de Grieg, en el pentagrama con sus sostenidos y un solo pulsador. Tres partes: la primera frase, la segunda y las dos.",
+      "etapa": "primaria-c3",
+      "eje": "altura",
+      "tipo": "karaoke",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-46-marcha-radetzky",
+      "titulo": "Marcha Radetzky",
+      "descripcion": "El comienzo de la «Marcha Radetzky» de Strauss, la de las palmas del concierto de Año Nuevo, en el pentagrama con un solo pulsador. Tres partes: la llamada, el balanceo y todo seguido.",
       "etapa": "primaria-c3",
       "eje": "altura",
       "tipo": "karaoke",

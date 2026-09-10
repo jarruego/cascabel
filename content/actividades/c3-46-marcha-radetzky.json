@@ -1,0 +1,307 @@
+{
+  "id": "c3-46-marcha-radetzky",
+  "version": 1,
+  "tipo": "karaoke",
+  "titulo": "Marcha Radetzky",
+  "descripcion": "El comienzo de la «Marcha Radetzky» de Strauss, la de las palmas del concierto de Año Nuevo, en el pentagrama con un solo pulsador. Tres partes: la llamada, el balanceo y todo seguido.",
+  "etapa": "primaria-c3",
+  "eje": "altura",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 108
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: está en 2/2 y aquí el pulso es la negra a 108 (54 por blanca, la original va a 108 por blanca: la mitad). Los silencios se absorben en la nota anterior y las dos apoyaturas se quitan. Sube a mi5, el techo de 3.º ciclo.",
+    "consigna": "actividad.c346.consigna",
+    "representacion": "pentagrama",
+    "clave": "sol",
+    "orientacion": "vertical",
+    "botonesPorCarril": false,
+    "tempo": 108,
+    "ejercicios": [
+      {
+        "titulo": "actividad.c346.ej1",
+        "notas": [
+          {
+            "nota": "C5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "D5",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "B4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G#4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "B4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "D5",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 3
+          }
+        ]
+      },
+      {
+        "titulo": "actividad.c346.ej2",
+        "notas": [
+          {
+            "nota": "E5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D#5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D#5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D#5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "D5",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          }
+        ]
+      },
+      {
+        "titulo": "actividad.c346.ej3",
+        "notas": [
+          {
+            "nota": "C5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "D5",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "B4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G#4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "A4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "B4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          },
+          {
+            "nota": "D5",
+            "pulsos": 1
+          },
+          {
+            "nota": "G4",
+            "pulsos": 3
+          },
+          {
+            "nota": "E5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D#5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D#5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "E5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D#5",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E5",
+            "pulsos": 1
+          },
+          {
+            "nota": "D5",
+            "pulsos": 1
+          },
+          {
+            "nota": "C5",
+            "pulsos": 1
+          }
+        ]
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "enunciado": "actividad.c346.enunciado",
+  "personaje": "sol",
+  "pistas": [
+    "actividad.c346.pista1",
+    "actividad.c346.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "«Marcha Radetzky», op. 228, comienzo",
+      "autor": "Johann Strauss padre (1804-1849)",
+      "fuente": "Dominio público; cotejado con la partitura de Wikipedia en inglés (Lilypond, do mayor, 2/2)",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador",
+  "musica": {
+    "abc": "X:1\nT:Marcha Radetzky\nC:Johann Strauss I\nM:4/4\nL:1/8\nK:C\nc c c2 c c c2 | e2 d2 c3 B | A ^G A B c2 d2 | G6 e ^d | e2 e ^d e2 e ^d | e2 d2 c2 z2 |]"
+  }
+}
