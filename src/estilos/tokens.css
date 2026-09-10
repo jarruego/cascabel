@@ -3687,8 +3687,16 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 }
 
 
-/* Proyectada en clase, cuanto más grande mejor: es lo que mira el grupo entero. */
-.lienzo[data-ampliado] .cuerpo__golpe { height: 5rem; }
+/* Proyectada o a pantalla completa, cuanto más grande mejor: es lo que mira el grupo
+   entero. Pero grande hasta donde quepa: aquí había un alto fijo de 5 rem por fila que
+   pisaba el cálculo y, en un móvil apaisado ampliado, se salía por abajo. Ampliada no hay
+   barra de navegación ni barra de la actividad; queda la botonera. */
+.lienzo[data-ampliado] .cuerpo__rejilla {
+  --alto-fila: clamp(1.4rem, calc((100dvh - var(--alto-acciones, 0px) - 150px) / var(--filas, 4) - 6px), 5rem);
+}
+.lienzo[data-ampliado] .cuerpo {
+  max-height: calc(100dvh - var(--alto-acciones, 0px) - 2 * var(--e-4));
+}
 
 /* ---------------------------------------------------------------------------
  * El kit de percusión (tipo «pads»).
