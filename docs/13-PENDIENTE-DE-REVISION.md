@@ -101,9 +101,9 @@ PENDIENTE DE REVISIÓN PEDAGÓGICA: los tres números salen de que la precisión
 
 **PENDIENTE DE REVISIÓN PEDAGÓGICA.** Que un eco a otra velocidad cuente como bueno es un criterio, no un hecho: en un aula de conservatorio no lo sería. Aquí se ha elegido que sí, porque a estas edades reconocer la forma rítmica va antes que sostener el tempo, y porque la alternativa —marcarlo como fallo— desanima justo a quien lo ha entendido. Se informa aparte, así que el maestro ve las dos cosas.
 
-## 23. `src/motor/evaluacion.ts` (línea 127)
+## 23. `src/motor/evaluacion.ts` (línea 132)
 
-PENDIENTE DE REVISIÓN PEDAGÓGICA: el número. Que tenga que haber un punto a partir del cual se felicita es claro —si no, «bien» no significaría nada—; que ese punto sean seis de cada diez es una elección, y quien puede decir si a los siete años eso es exigente o blando es una maestra viendo a la clase, no un desarrollador.
+PENDIENTE DE REVISIÓN PEDAGÓGICA: el número. Que tenga que haber un punto a partir del cual se felicita es claro —si no, «bien» no significaría nada—; que ese punto sea un fallo de cada cinco es una elección del autor (2026-09-10), y quien puede decir si a los siete años eso es exigente o blando es una maestra viendo a la clase.
 
 ## 24. `src/motor/musicograma.ts` (línea 32)
 

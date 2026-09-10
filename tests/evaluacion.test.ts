@@ -100,17 +100,29 @@ describe('tolerancia por carril', () => {
 
 describe('cuándo se felicita y cuándo se sugiere otra vuelta', () => {
   /*
-    El número lo decide `PARA_FELICITAR` y espera revisión pedagógica. Lo que se comprueba
-    aquí es la forma, que es lo que se rompe solo: que el umbral entra —ocho de diez
-    felicita, no «más de ocho»—, que los golpes de más cuentan en contra, y que una
-    actividad sin nada que coger no felicita por
+    El número lo decide `FALLO_MAXIMO` y espera revisión pedagógica. Lo que se comprueba
+    aquí es la forma, que es lo que se rompe solo: que se cuenta en fallos permitidos —con
+    cuatro pulsos no se perdona ninguno, con ocho uno, con doce dos—, que los golpes de más
+    cuentan en contra, y que una actividad sin nada que coger no felicita por
     división entre cero, que es como un componente acaba diciendo «¡muy bien!» a quien no
     ha tocado nada.
   */
-  it('el umbral entra, no se roza', () => {
+  it('un fallo de cada cinco, con la parte entera hacia abajo', () => {
+    expect(bastanteBien(4, 4)).toBe(true);
+    expect(bastanteBien(3, 4)).toBe(false); // con cuatro pulsos, un fallo es el 25 %
+    expect(bastanteBien(7, 8)).toBe(true);
+    expect(bastanteBien(6, 8)).toBe(false);
+    expect(bastanteBien(10, 12)).toBe(true);
+    expect(bastanteBien(9, 12)).toBe(false);
     expect(bastanteBien(8, 10)).toBe(true);
     expect(bastanteBien(7, 10)).toBe(false);
     expect(bastanteBien(16, 16)).toBe(true);
+  });
+
+  it('regular pero desfasado exige haber dado todos los golpes', () => {
+    // Tres golpes parecidos y uno perdido: antes era «buen pulso, solo desfasado».
+    const r = evaluarRitmo([0, 500, 1000, 1500], [120, 622, 1118], 'primaria-c1');
+    expect(r.regularPeroDesfasado).toBe(false);
   });
 
   it('aporrear no se felicita aunque se cojan los huecos', () => {

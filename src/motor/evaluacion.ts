@@ -116,36 +116,46 @@ export function evaluarRitmo(
     sobrantes,
     desvioMedioMs,
     desviacionTipicaMs,
+    // Regular pero desfasado solo si ha dado TODOS los golpes: con uno perdido no hay
+    // pulso regular que felicitar, hay un fallo. Antes bastaban tres golpes parecidos.
     regularPeroDesfasado:
-      errores.length >= 3 && desviacionTipicaMs <= t.perfecto / 2 && Math.abs(desvioMedioMs) > t.perfecto,
+      errores.length === esperadosMs.length &&
+      errores.length >= 3 &&
+      desviacionTipicaMs <= t.perfecto / 2 &&
+      Math.abs(desvioMedioMs) > t.perfecto,
   };
 }
 
 /**
- * Cuántas hay que coger para que la tarjeta felicite en vez de sugerir otra vuelta.
+ * Cuánto se puede fallar para que aun así se felicite: un golpe de cada cinco.
  *
  * PENDIENTE DE REVISIÓN PEDAGÓGICA: el número. Que tenga que haber un punto a partir del
- * cual se felicita es claro —si no, «bien» no significaría nada—; que ese punto sean seis de
- * cada diez es una elección, y quien puede decir si a los siete años eso es exigente o
- * blando es una maestra viendo a la clase, no un desarrollador.
+ * cual se felicita es claro —si no, «bien» no significaría nada—; que ese punto sea un
+ * fallo de cada cinco es una elección del autor (2026-09-10), y quien puede decir si a los
+ * siete años eso es exigente o blando es una maestra viendo a la clase.
+ *
+ * **Se cuenta en fallos permitidos, no en porcentaje de aciertos**, y la diferencia se ve
+ * en los patrones cortos: con cuatro pulsos, un fallo es el 25 % y no se perdona; con ocho,
+ * se perdona uno; con doce, dos. La parte entera, siempre hacia abajo.
  *
  * Vive aquí y no en el componente porque decide tres cosas a la vez —el color de la tarjeta,
- * el texto y si se añade la pista— y estaba escrito tres veces en la misma pantalla. Así es
- * como se acaba con un color que dice una cosa y un texto que dice otra, que es justo lo que
- * pasó en «Canta la nota».
+ * el texto y si se añade la pista— y estaba escrito tres veces en la misma pantalla.
  */
-export const PARA_FELICITAR = 0.8;
+export const FALLO_MAXIMO = 0.2;
+
+/** Cuántos golpes se pueden fallar en un patrón de `total`. */
+export function fallosPermitidos(total: number): number {
+  return Math.floor(total * FALLO_MAXIMO);
+}
 
 /**
  * ¿Se felicita, o se sugiere otra vuelta?
  *
- * Ocho de cada diez desde el 2026-09-10 —eran seis—: el autor vio que «aunque falle un
- * poco» todo salía «bien» en el cierre de la serie, y «casi» no es un castigo, es el
- * ejercicio que conviene repetir. Y los golpes de más cuentan en contra: quien acierta
- * ocho de diez huecos aporreando veinte veces no ha seguido el ritmo.
+ * Con un fallo de cada cinco como mucho, y los golpes de más cuentan en contra: quien
+ * acierta ocho de diez huecos aporreando veinte veces no ha seguido el ritmo.
  */
 export function bastanteBien(aciertos: number, total: number, sobrantes = 0): boolean {
-  return total > 0 && aciertos / total >= PARA_FELICITAR && sobrantes <= total / 2;
+  return total > 0 && aciertos >= total - fallosPermitidos(total) && sobrantes <= total / 2;
 }
 
 /** Diferencia en cents entre lo cantado y lo esperado. Positivo = el niño va alto. */
