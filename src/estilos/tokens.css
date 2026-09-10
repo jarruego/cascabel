@@ -1088,7 +1088,10 @@ p {
   display: grid;
   place-items: center;
   border-radius: 0 var(--r-m) var(--r-m) 0;
-  background: var(--vivo-verde);
+  /* Verde rebajado con la superficie, como si tuviera menos opacidad, y un borde como el de
+     la tarjeta en un tono más fuerte del mismo verde. Lo pidió el autor el 2026-09-10. */
+  background: color-mix(in srgb, var(--vivo-verde) 55%, var(--superficie));
+  border: 2px solid color-mix(in srgb, var(--vivo-verde) 85%, var(--superficie));
   color: #fff;
   font-size: 1.25em;
   font-weight: 700;
