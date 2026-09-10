@@ -2838,6 +2838,11 @@ textos, niveles, camino, y la sección de instrumentos.
       timbre de campanilla de siempre, dos timbrazos. **Hay que volver a oír lluvia, olas,
       avión y tren en el aparato**: es la primera vez que suenan los elegidos.
 
+- [x] **El tambor de la 013 sonaba a pandereta**: era la muestra de pandereta con respuesta
+      «tambor». Ahora caja, como en la 005. Revisadas todas las que dicen «tambor»: las
+      demás ya usaban bombo (108, 135, 341, 010, 224) o caja (005), y en la 022 los golpes
+      son del kit. No queda ninguna pandereta respondiendo como tambor.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
