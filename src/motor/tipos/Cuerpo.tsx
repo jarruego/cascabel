@@ -4,6 +4,7 @@ import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { SonidosDelCuerpo, ZONAS, type Zona } from '@/audio/cuerpo';
 import { IconoParar, IconoTocar } from '@/ui/Simbolos';
 import { BarraAcciones } from '@/ui/BarraAcciones';
+import { mantenerALaVista } from '@/ui/seguirColumna';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 
@@ -64,6 +65,16 @@ export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
   const patron = contenido.patron;
 
   const [estado, despachar] = useReducer(reducir, { sonando: false, indice: -1 });
+  /**
+   * Con una canción entera el patrón no cabe en pantalla: la tira se desplaza de lado y
+   * sigue sola al golpe que toca, como la cuadrícula del constructor. Lo pidió el autor el
+   * 2026-09-10 para «Estrellita». Ver `ui/seguirColumna.ts`.
+   */
+  const rejilla = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    if (estado.indice < 0) return;
+    mantenerALaVista(rejilla.current, rejilla.current?.querySelector('[data-aqui]'));
+  }, [estado.indice]);
   const sonidos = useRef<SonidosDelCuerpo | null>(null);
   const temporizador = useRef<number | null>(null);
   const rafId = useRef<number | null>(null);
@@ -165,7 +176,11 @@ export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
         no haya que aprenderse el dibujo.
       */}
       {/* Cuántas filas hay decide el alto de cada una: ver `--alto-fila` en tokens.css. */}
-      <div className="cuerpo__rejilla" style={{ ['--filas' as string]: contenido.silabas ? 5 : 4 }}>
+      <div
+        className="cuerpo__rejilla"
+        ref={rejilla}
+        style={{ ['--filas' as string]: contenido.silabas ? 5 : 4, ['--pulsos' as string]: patron.length }}
+      >
         {ZONAS.map((zona) => (
           <div key={zona} className="cuerpo__fila" data-zona={zona}>
             {/* Un dibujo encima del nombre: para quien no lee, y para que «chasquidos» no

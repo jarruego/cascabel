@@ -3609,6 +3609,7 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   /* Aquí no va `justify-content`: no es flex, es una caja que se desplaza de lado cuando el
      patrón es largo. Lo que centra son las filas de dentro. */
   overflow-x: auto;
+  overscroll-behavior-x: contain;
   min-width: 0;
   max-width: 100%;
 }
@@ -3652,7 +3653,9 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   flex: 1;
   align-items: center;
   gap: 3px;
-  min-width: 22rem;
+  /* Cada golpe, un dedo como mínimo: con una canción de cuarenta y ocho pulsos la tira se
+     sale de la pantalla y se desplaza sola siguiendo al cursor. */
+  min-width: max(22rem, calc(var(--pulsos, 8) * 2.25rem));
 }
 
 .cuerpo__fila[data-zona='pitos'] { --color-zona: var(--vivo-amarillo); --forma: 50%; --alto: 26%; }
