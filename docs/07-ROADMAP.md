@@ -2726,7 +2726,9 @@ textos, niveles, camino, y la sección de instrumentos.
       Chasquear los dedos, palmas, la pierna y el pie, de OpenMoji, encima del nombre de
       cada zona; el nombre interno de la zona no cambia, solo lo que se lee. Y cabe en
       apaisado: la sección se lleva el alto del escenario y las filas se reparten lo que
-      hay, menos altas y, como llenan el ancho, más anchas.
+      hay, menos altas y, como llenan el ancho, más anchas; también a pantalla completa,
+      donde un alto fijo de 5 rem por fila pisaba el cálculo. Y cada dibujo va del color
+      de su fila, con el SVG de máscara.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
