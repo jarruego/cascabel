@@ -399,7 +399,7 @@ export default function Catalogo() {
           <li key={e.id}>
             <Link
               to={`/actividad/${e.id}`}
-              className={`tarjeta tarjeta--${e.eje}`}
+              className={`tarjeta tarjeta--${e.eje}${hechas.has(e.id) ? ' tarjeta--hecha' : ''}`}
               /* El AudioContext nace suspendido y solo se reanuda DENTRO de un gesto.
                  Este clic es el gesto: para cuando la actividad se monte, ya no lo hay.
                  Si falla, la actividad se abre igual y el sonido lo intenta después. */
@@ -407,10 +407,12 @@ export default function Catalogo() {
             >
               <span className="tarjeta__titulo">
                 <span className="codigo">{codigoDe(e.id)}</span> {e.titulo}
-                {/* El tic va en la misma línea, a la derecha, y se puede pulsar para quitar
-                    la marca: lo pidió el autor el 2026-09-10. Va dentro del enlace de la
-                    tarjeta, así que para no abrir la actividad se para el clic aquí. */}
-                {hechas.has(e.id) && (
+              </span>
+              {/* El tic es una franja verde en el borde derecho, de arriba a abajo, con el
+                  tic en blanco: plano y sin adorno, como pidió el autor el 2026-09-10. Se
+                  puede pulsar para quitar la marca; va dentro del enlace de la tarjeta, así
+                  que para no abrir la actividad se para el clic aquí. */}
+              {hechas.has(e.id) && (
                   <span
                     className="tarjeta__hecha"
                     role="button"
@@ -431,7 +433,6 @@ export default function Catalogo() {
                     ✓
                   </span>
                 )}
-              </span>
               <span className="tarjeta__meta">
                 {t(`eje.${e.eje}`)} · {e.tipo}
                 {e.curriculo?.criterio ? ` · crit. ${e.curriculo.criterio}` : ''}

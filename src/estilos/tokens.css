@@ -622,6 +622,7 @@ p {
    componentes sin relación no pueden compartir nombre de clase, por mucho que en castellano
    los dos se llamen «ficha». */
 .tarjeta {
+  position: relative;
   display: grid;
   gap: var(--e-1);
   padding: var(--e-4);
@@ -659,12 +660,7 @@ p {
 .tarjeta--cuerpo { border-left-color: var(--eje-cuerpo); }
 .tarjeta--creacion { border-left-color: var(--eje-creacion); }
 .tarjeta--cultura { border-left-color: var(--eje-cultura); }
-.tarjeta__titulo {
-  display: flex;
-  align-items: center;
-  gap: var(--e-2);
-  font-weight: 700;
-}
+.tarjeta__titulo { font-weight: 700; }
 /* El código corto de una actividad —tres cifras, ver `motor/codigo.ts`—: pequeño, con
    cifras tabulares y en una píldora, delante del título en todas partes. */
 .codigo {
@@ -1080,25 +1076,27 @@ p {
 
 /* Marca de «ya hecha». Es orientación, no recompensa: sin puntos, sin racha y sin
    porcentaje. Un tick discreto y verde, del tamaño del texto y no del de un trofeo. */
-/* El tic de hecha: en la misma línea del título, a la derecha, y pulsable para quitar la
-   marca. Redondo y con fondo, para que se vea que es un botón y no un adorno. */
+/* El tic de hecha: una franja verde en el borde derecho de la tarjeta, de arriba a abajo,
+   con el tic en blanco centrado. Plana, sin borde ni sombra. Se pulsa para quitar la marca,
+   y por eso la tarjeta hecha deja sitio a la derecha: el texto no pasa por debajo. */
+.tarjeta--hecha { padding-right: calc(var(--e-4) + 44px); }
 .tarjeta__hecha {
-  display: inline-grid;
+  position: absolute;
+  /* Tapa el borde de la tarjeta por arriba, abajo y a la derecha, y hereda su esquina. */
+  inset: -2px -2px -2px auto;
+  width: 44px;
+  display: grid;
   place-items: center;
-  flex: 0 0 auto;
-  margin-left: auto;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 2px solid var(--vivo-verde);
-  background: var(--suave-verde);
-  color: var(--vivo-verde);
+  border-radius: 0 var(--r-m) var(--r-m) 0;
+  background: var(--vivo-verde);
+  color: #fff;
+  font-size: 1.25em;
   font-weight: 700;
   line-height: 1;
   cursor: pointer;
 }
-.tarjeta__hecha:hover { background: var(--vivo-verde); color: var(--papel); }
-.tarjeta__hecha:focus-visible { outline: var(--foco); outline-offset: 2px; }
+.tarjeta__hecha:hover { filter: brightness(0.9); }
+.tarjeta__hecha:focus-visible { outline: var(--foco); outline-offset: -4px; }
 
 /* ── ajustes y aviso de actualización ──────────────────────────────────────
    Pantalla para el ADULTO: densidad normal, texto corriente, sin botones de

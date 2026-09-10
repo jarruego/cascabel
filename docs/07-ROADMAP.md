@@ -2760,8 +2760,9 @@ textos, niveles, camino, y la sección de instrumentos.
       la columna de las zonas se queda fija a la izquierda mientras la tira avanza.
 
 - [x] **El tic de hecha, en la línea del título y pulsable.** Iba en su propia línea; ahora
-      va a la derecha del título, y al tocarlo una modal pregunta si quitar la marca. Quitarla
-      no borra nada más: las veces y el mejor intento se quedan.
+      es una franja verde plana en el borde derecho de la tarjeta, de arriba a abajo, con el
+      tic en blanco centrado; al tocarla una modal pregunta si quitar la marca. Quitarla no
+      borra nada más: las veces y el mejor intento se quedan.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
