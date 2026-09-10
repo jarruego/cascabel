@@ -659,7 +659,12 @@ p {
 .tarjeta--cuerpo { border-left-color: var(--eje-cuerpo); }
 .tarjeta--creacion { border-left-color: var(--eje-creacion); }
 .tarjeta--cultura { border-left-color: var(--eje-cultura); }
-.tarjeta__titulo { font-weight: 700; }
+.tarjeta__titulo {
+  display: flex;
+  align-items: center;
+  gap: var(--e-2);
+  font-weight: 700;
+}
 /* El código corto de una actividad —tres cifras, ver `motor/codigo.ts`—: pequeño, con
    cifras tabulares y en una píldora, delante del título en todas partes. */
 .codigo {
@@ -1075,11 +1080,25 @@ p {
 
 /* Marca de «ya hecha». Es orientación, no recompensa: sin puntos, sin racha y sin
    porcentaje. Un tick discreto y verde, del tamaño del texto y no del de un trofeo. */
+/* El tic de hecha: en la misma línea del título, a la derecha, y pulsable para quitar la
+   marca. Redondo y con fondo, para que se vea que es un botón y no un adorno. */
 .tarjeta__hecha {
-  float: right;
-  color: var(--ok);
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  margin-left: auto;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--vivo-verde);
+  background: var(--suave-verde);
+  color: var(--vivo-verde);
   font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
 }
+.tarjeta__hecha:hover { background: var(--vivo-verde); color: var(--papel); }
+.tarjeta__hecha:focus-visible { outline: var(--foco); outline-offset: 2px; }
 
 /* ── ajustes y aviso de actualización ──────────────────────────────────────
    Pantalla para el ADULTO: densidad normal, texto corriente, sin botones de

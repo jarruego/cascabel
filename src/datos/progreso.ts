@@ -112,6 +112,20 @@ export async function anotar(resultado: ResultadoActividad): Promise<void> {
   await conAlmacen('readwrite', (a) => a.put(registro) as IDBRequest<IDBValidKey>);
 }
 
+/**
+ * Quita la marca de hecha a una actividad. Lo pidió el autor el 2026-09-10: el tic verde
+ * de la tarjeta se puede pulsar y, tras confirmar, la actividad vuelve a salir como no
+ * hecha. Lo demás —cuántas veces se abrió, el mejor intento— se queda: es orientación
+ * para el maestro, y desmarcar no es borrar.
+ */
+export async function desmarcar(actividadId: string): Promise<void> {
+  const previo = await leer(actividadId);
+  if (!previo) return;
+  const registro: RegistroProgreso = { ...previo, completada: false };
+  enMemoria.set(registro.actividadId, registro);
+  await conAlmacen('readwrite', (a) => a.put(registro) as IDBRequest<IDBValidKey>);
+}
+
 export async function leer(actividadId: string): Promise<RegistroProgreso | null> {
   const guardado = await conAlmacen<RegistroProgreso>('readonly', (a) => a.get(actividadId));
   return guardado ?? enMemoria.get(actividadId) ?? null;

@@ -2,7 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
 import { cargarIndice } from '@/datos/cargar';
 import { despertarAudio } from '@/audio/AudioEngine';
-import { leerTodo } from '@/datos/progreso';
+import { desmarcar, leerTodo } from '@/datos/progreso';
+import { Modal } from '@/ui/Modal';
 import { t } from '@/i18n';
 import { IconoAjustes } from '@/ui/Simbolos';
 import { codigoDe } from '@/motor/codigo';
@@ -56,6 +57,8 @@ export default function Catalogo() {
   const [entradas, setEntradas] = useState<Entrada[] | null>(null);
   const [fallo, setFallo] = useState<string | null>(null);
   const [hechas, setHechas] = useState<Set<string>>(new Set());
+  /** La actividad cuyo tic se ha pulsado, a la espera de confirmar que se desmarca. */
+  const [porDesmarcar, setPorDesmarcar] = useState<{ id: string; titulo: string } | null>(null);
 
   const [parametros, ponerParametros] = useSearchParams();
   const etapa = (parametros.get('etapa') ?? '') as Etapa | '';
@@ -360,6 +363,37 @@ export default function Catalogo() {
         </button>
       </div>
 
+      {/* Confirmar antes de desmarcar: un tic se pulsa sin querer al ir a abrir la tarjeta. */}
+      <Modal abierto={porDesmarcar !== null} alCerrar={() => setPorDesmarcar(null)} titulo={t('catalogo.desmarcar.titulo')}>
+        <h2>{t('catalogo.desmarcar.titulo')}</h2>
+        <p className="modal__texto">
+          {t('catalogo.desmarcar.texto', { titulo: porDesmarcar?.titulo ?? '' })}
+        </p>
+        <div className="modal__acciones">
+          <button type="button" className="boton-repetir" onClick={() => setPorDesmarcar(null)}>
+            {t('comun.ahoraNo')}
+          </button>
+          <button
+            type="button"
+            className="boton-principal modal__empezar"
+            onClick={() => {
+              const id = porDesmarcar?.id;
+              setPorDesmarcar(null);
+              if (!id) return;
+              void desmarcar(id).then(() =>
+                setHechas((h) => {
+                  const n = new Set(h);
+                  n.delete(id);
+                  return n;
+                }),
+              );
+            }}
+          >
+            {t('catalogo.desmarcar.confirmar')}
+          </button>
+        </div>
+      </Modal>
+
       <ul className="catalogo__lista">
         {actividades.map((e) => (
           <li key={e.id}>
@@ -373,12 +407,31 @@ export default function Catalogo() {
             >
               <span className="tarjeta__titulo">
                 <span className="codigo">{codigoDe(e.id)}</span> {e.titulo}
+                {/* El tic va en la misma línea, a la derecha, y se puede pulsar para quitar
+                    la marca: lo pidió el autor el 2026-09-10. Va dentro del enlace de la
+                    tarjeta, así que para no abrir la actividad se para el clic aquí. */}
+                {hechas.has(e.id) && (
+                  <span
+                    className="tarjeta__hecha"
+                    role="button"
+                    tabIndex={0}
+                    aria-label={t('catalogo.yaHecha')}
+                    onClick={(ev) => {
+                      ev.preventDefault();
+                      ev.stopPropagation();
+                      setPorDesmarcar({ id: e.id, titulo: e.titulo });
+                    }}
+                    onKeyDown={(ev) => {
+                      if (ev.key !== 'Enter' && ev.key !== ' ') return;
+                      ev.preventDefault();
+                      ev.stopPropagation();
+                      setPorDesmarcar({ id: e.id, titulo: e.titulo });
+                    }}
+                  >
+                    ✓
+                  </span>
+                )}
               </span>
-              {hechas.has(e.id) && (
-                <span className="tarjeta__hecha" aria-label={t('catalogo.yaHecha')}>
-                  ✓
-                </span>
-              )}
               <span className="tarjeta__meta">
                 {t(`eje.${e.eje}`)} · {e.tipo}
                 {e.curriculo?.criterio ? ` · crit. ${e.curriculo.criterio}` : ''}
