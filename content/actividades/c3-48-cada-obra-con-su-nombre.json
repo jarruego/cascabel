@@ -1,0 +1,181 @@
+{
+  "id": "c3-48-cada-obra-con-su-nombre",
+  "version": 1,
+  "tipo": "emparejar",
+  "titulo": "Cada obra con su nombre",
+  "descripcion": "Ocho obras famosas grabadas de verdad, en dos tableros: se escucha un trozo y se une con su nombre. La mañana, la Gruta, el Danubio, Para Elisa; la Primavera, el Elefante, el Acuario y los Cisnes.",
+  "etapa": "primaria-c3",
+  "eje": "cultura",
+  "lugar": "pantalla",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE1",
+    "criterio": "1.2",
+    "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+  },
+  "practica": {
+    "secuencia": "ninguna"
+  },
+  "entrada": {
+    "modo": "toque-secuencial",
+    "alternativa": "toque"
+  },
+  "contenido": {
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: las grabaciones son las del banco (Musopen y otras de Commons, verificadas por API), las mismas que usan la 339 y la 340; aquí se unen con el nombre de la obra y no con el compositor, que es un paso antes. Los iconos son una asociación libre (el sol para La mañana, el castillo para la Gruta, la bailarina para el vals, el corazón para Elisa, la mariposa para la Primavera): confirmar que ayudan y no despistan. El criterio curricular (CE1 1.1) se ha copiado de la 339.",
+    "consigna": "actividad.c348.consigna",
+    "ejercicios": [
+      {
+        "titulo": "actividad.c348.ej1",
+        "izquierda": [
+          {
+            "clave": "manana",
+            "icono": "sol",
+            "etiqueta": "obra.manana"
+          },
+          {
+            "clave": "gruta",
+            "icono": "castillo",
+            "etiqueta": "obra.gruta"
+          },
+          {
+            "clave": "danubio",
+            "icono": "bailarina",
+            "etiqueta": "obra.danubio"
+          },
+          {
+            "clave": "elisa",
+            "icono": "corazon",
+            "etiqueta": "obra.elisa"
+          }
+        ],
+        "derecha": [
+          {
+            "clave": "son-elisa",
+            "icono": "altavoz",
+            "audio": "sonidos/obras/beethoven-elisa.opus"
+          },
+          {
+            "clave": "son-danubio",
+            "icono": "altavoz",
+            "audio": "sonidos/obras/strauss-danubio.opus"
+          },
+          {
+            "clave": "son-gruta",
+            "icono": "altavoz",
+            "audio": "sonidos/obras/grieg-montana.opus"
+          },
+          {
+            "clave": "son-manana",
+            "icono": "altavoz",
+            "audio": "sonidos/obras/grieg-manana.opus"
+          }
+        ],
+        "parejas": [
+          {
+            "izquierda": "manana",
+            "derecha": "son-manana"
+          },
+          {
+            "izquierda": "gruta",
+            "derecha": "son-gruta"
+          },
+          {
+            "izquierda": "danubio",
+            "derecha": "son-danubio"
+          },
+          {
+            "izquierda": "elisa",
+            "derecha": "son-elisa"
+          }
+        ]
+      },
+      {
+        "titulo": "actividad.c348.ej2",
+        "izquierda": [
+          {
+            "clave": "primavera",
+            "icono": "mariposa",
+            "etiqueta": "obra.primavera"
+          },
+          {
+            "clave": "elefante",
+            "icono": "elefante",
+            "etiqueta": "obra.elefante"
+          },
+          {
+            "clave": "acuario",
+            "icono": "delfin",
+            "etiqueta": "obra.acuario"
+          },
+          {
+            "clave": "cisnes",
+            "icono": "pajaro",
+            "etiqueta": "obra.cisnes"
+          }
+        ],
+        "derecha": [
+          {
+            "clave": "son-cisnes",
+            "icono": "altavoz",
+            "audio": "sonidos/obras/tchaikovsky-cisnes.opus"
+          },
+          {
+            "clave": "son-acuario",
+            "icono": "altavoz",
+            "audio": "sonidos/obras/saintsaens-acuario.opus"
+          },
+          {
+            "clave": "son-elefante",
+            "icono": "altavoz",
+            "audio": "sonidos/obras/saintsaens-elefante.opus"
+          },
+          {
+            "clave": "son-primavera",
+            "icono": "altavoz",
+            "audio": "sonidos/obras/vivaldi-primavera.opus"
+          }
+        ],
+        "parejas": [
+          {
+            "izquierda": "primavera",
+            "derecha": "son-primavera"
+          },
+          {
+            "izquierda": "elefante",
+            "derecha": "son-elefante"
+          },
+          {
+            "izquierda": "acuario",
+            "derecha": "son-acuario"
+          },
+          {
+            "izquierda": "cisnes",
+            "derecha": "son-cisnes"
+          }
+        ]
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c348.enunciado",
+  "personaje": "rex",
+  "pistas": [
+    "actividad.c348.pista1",
+    "actividad.c348.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Grabaciones de las ocho obras (Grieg, Strauss, Beethoven, Vivaldi, Saint-Saëns, Chaikovski)",
+      "autor": "Intérpretes varios: cada grabación con su intérprete y su licencia en la pantalla de créditos, que las lee del banco de sonidos (Wikimedia Commons, verificadas por API)",
+      "fuente": "content/sonidos.json",
+      "licencia": "Dominio público"
+    }
+  ],
+  "estado": "borrador"
+}

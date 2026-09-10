@@ -1,0 +1,282 @@
+{
+  "id": "c3-49-la-primavera-de-vivaldi-con-figuras",
+  "version": 1,
+  "tipo": "karaoke",
+  "titulo": "La primavera de Vivaldi con figuras",
+  "descripcion": "El comienzo de «La primavera» de Vivaldi leído por figuras: corcheas, semicorcheas y negra con puntillo pasan por la línea y se tocan a tiempo. Tres partes: la llamada, la respuesta y todo seguido.",
+  "etapa": "primaria-c3",
+  "eje": "notacion",
+  "lugar": "pantalla",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 96,
+    "figuras": [
+      "corchea",
+      "semicorchea",
+      "puntillo"
+    ]
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el tema del primer movimiento (fr.wikipedia, Lilypond, mi mayor: e8 | gis8 gis gis fis16 e b'4. b16 a | ×2 | gis8 a16 b a8 gis fis8 dis b), transportado a do y una octava abajo para que quede entre sol3 y sol4. Va por figuras, no por altura: lo que se lee es el ritmo (corchea, dos semicorcheas, negra con puntillo). Sin ABC porque baja a sol3. Tempo 96 por negra; el original es un Allegro más vivo.",
+    "consigna": "actividad.c349.consigna",
+    "representacion": "figura",
+    "tempo": 96,
+    "ejercicios": [
+      {
+        "titulo": "actividad.c349.ej1",
+        "notas": [
+          {
+            "nota": "C4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "C4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "F4",
+            "pulsos": 0.25
+          }
+        ]
+      },
+      {
+        "titulo": "actividad.c349.ej2",
+        "notas": [
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "C4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "F4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "F4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "F4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "B3",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G3",
+            "pulsos": 1
+          }
+        ]
+      },
+      {
+        "titulo": "actividad.c349.ej3",
+        "notas": [
+          {
+            "nota": "C4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "C4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "F4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "C4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "F4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "F4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "F4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "B3",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G3",
+            "pulsos": 1
+          }
+        ]
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "enunciado": "actividad.c349.enunciado",
+  "personaje": "laia",
+  "pistas": [
+    "actividad.c349.pista1",
+    "actividad.c349.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "«La primavera», concierto n.º 1 de Las cuatro estaciones, op. 8, primer movimiento, tema inicial",
+      "autor": "Antonio Vivaldi (1678-1741)",
+      "fuente": "Dominio público; cotejado con la partitura de Wikipedia en francés (Lilypond, mi mayor) y transportado a do",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

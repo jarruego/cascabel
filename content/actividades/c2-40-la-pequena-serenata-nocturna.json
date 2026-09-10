@@ -1,13 +1,13 @@
 {
   "id": "c2-40-la-pequena-serenata-nocturna",
   "version": 1,
-  "tipo": "karaoke",
+  "tipo": "eleccion",
   "titulo": "La Pequeña serenata nocturna",
-  "descripcion": "El primer tema de la «Pequeña serenata nocturna» de Mozart en el pentagrama, con un solo pulsador. Tres partes: la pregunta, la respuesta y las dos.",
+  "descripcion": "El primer tema de la «Pequeña serenata nocturna» de Mozart es una pregunta que sube y una respuesta que baja. Se escucha una y se dice cuál es.",
   "etapa": "primaria-c2",
   "eje": "altura",
   "lugar": "pantalla",
-  "duracion_min": 10,
+  "duracion_min": 6,
   "curriculo": {
     "area": "Educación Artística",
     "competencia": "CE3",
@@ -17,190 +17,199 @@
   "practica": {
     "secuencia": "ninguna",
     "compas": "4/4",
-    "tempo": 96
+    "tempo": 120
   },
   "entrada": {
     "modo": "toque"
   },
   "contenido": {
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: se queda en sol mayor (con fa#) y en pentagrama, no con personajes: transportado a do bajaría a sol3, fuera de la tesitura de 2.º ciclo. Los silencios se absorben en la nota anterior. Tempo original 148: a 120. El 2026-09-11 pasa a horizontal, como el Himno (214): en vertical el recuadro salía ancho y las notas a la derecha. Tempo 96.",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el primer tema de la Serenata es una pregunta que sube por el acorde y una respuesta que baja, y eso es lo que se distingue: pregunta o respuesta. Seis estímulos: las dos frases en sol mayor, las dos en fa mayor y las dos en la mayor, con violín, para que no se aprenda la altura sino el gesto. Tema cotejado con la partitura de Wikipedia en inglés.",
     "consigna": "actividad.c240.consigna",
-    "representacion": "pentagrama",
-    "botonesPorCarril": false,
-    "tempo": 96,
-    "ejercicios": [
+    "opciones": [
       {
-        "titulo": "actividad.c240.ej1",
-        "notas": [
-          {
-            "nota": "G4",
-            "pulsos": 1.5
-          },
-          {
-            "nota": "D4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "G4",
-            "pulsos": 1.5
-          },
-          {
-            "nota": "D4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "G4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "D4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "G4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "B4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "D5",
-            "pulsos": 2
-          }
-        ]
+        "clave": "pregunta",
+        "icono": "flecha-arriba",
+        "color": "verde"
       },
       {
-        "titulo": "actividad.c240.ej2",
-        "notas": [
-          {
-            "nota": "C5",
-            "pulsos": 1.5
-          },
-          {
-            "nota": "A4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "C5",
-            "pulsos": 1.5
-          },
-          {
-            "nota": "A4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "C5",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "A4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "F#4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "A4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "D4",
-            "pulsos": 2
-          }
-        ]
-      },
-      {
-        "titulo": "actividad.c240.ej3",
-        "notas": [
-          {
-            "nota": "G4",
-            "pulsos": 1.5
-          },
-          {
-            "nota": "D4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "G4",
-            "pulsos": 1.5
-          },
-          {
-            "nota": "D4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "G4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "D4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "G4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "B4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "D5",
-            "pulsos": 2
-          },
-          {
-            "nota": "C5",
-            "pulsos": 1.5
-          },
-          {
-            "nota": "A4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "C5",
-            "pulsos": 1.5
-          },
-          {
-            "nota": "A4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "C5",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "A4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "F#4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "A4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "D4",
-            "pulsos": 2
-          }
-        ]
+        "clave": "respuesta",
+        "icono": "flecha-abajo",
+        "color": "azul"
       }
     ],
-    "clave": "sol"
+    "estimulos": [
+      {
+        "notas": [
+          "G4",
+          "D4",
+          "G4",
+          "D4",
+          "G4",
+          "D4",
+          "G4",
+          "B4",
+          "D5"
+        ],
+        "duraciones": [
+          1.5,
+          0.5,
+          1.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          2
+        ],
+        "tempo": 120,
+        "instrumento": "violin",
+        "respuesta": "pregunta"
+      },
+      {
+        "notas": [
+          "C5",
+          "A4",
+          "C5",
+          "A4",
+          "C5",
+          "A4",
+          "F#4",
+          "A4",
+          "D4"
+        ],
+        "duraciones": [
+          1.5,
+          0.5,
+          1.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          2
+        ],
+        "tempo": 120,
+        "instrumento": "violin",
+        "respuesta": "respuesta"
+      },
+      {
+        "notas": [
+          "F4",
+          "C4",
+          "F4",
+          "C4",
+          "F4",
+          "C4",
+          "F4",
+          "A4",
+          "C5"
+        ],
+        "duraciones": [
+          1.5,
+          0.5,
+          1.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          2
+        ],
+        "tempo": 120,
+        "instrumento": "violin",
+        "respuesta": "pregunta"
+      },
+      {
+        "notas": [
+          "A#4",
+          "G4",
+          "A#4",
+          "G4",
+          "A#4",
+          "G4",
+          "E4",
+          "G4",
+          "C4"
+        ],
+        "duraciones": [
+          1.5,
+          0.5,
+          1.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          2
+        ],
+        "tempo": 120,
+        "instrumento": "violin",
+        "respuesta": "respuesta"
+      },
+      {
+        "notas": [
+          "A4",
+          "E4",
+          "A4",
+          "E4",
+          "A4",
+          "E4",
+          "A4",
+          "C#5",
+          "E5"
+        ],
+        "duraciones": [
+          1.5,
+          0.5,
+          1.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          2
+        ],
+        "tempo": 120,
+        "instrumento": "violin",
+        "respuesta": "pregunta"
+      },
+      {
+        "notas": [
+          "D5",
+          "B4",
+          "D5",
+          "B4",
+          "D5",
+          "B4",
+          "G#4",
+          "B4",
+          "E4"
+        ],
+        "duraciones": [
+          1.5,
+          0.5,
+          1.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          2
+        ],
+        "tempo": 120,
+        "instrumento": "violin",
+        "respuesta": "respuesta"
+      }
+    ]
   },
   "evaluacion": {
     "autocorrectiva": true,
     "reporta": [
-      "completado",
-      "desvio_medio_con_signo",
-      "desviacion_tipica"
+      "completado"
     ]
   },
   "enunciado": "actividad.c240.enunciado",
-  "personaje": "rex",
+  "personaje": "simon",
   "pistas": [
     "actividad.c240.pista1",
     "actividad.c240.pista2"

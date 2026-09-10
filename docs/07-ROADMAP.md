@@ -2914,6 +2914,31 @@ textos, niveles, camino, y la sección de instrumentos.
       **La 308 «¿De quién es esta música?» se retira** a petición del autor:
       no tenía sentido como actividad de niños; su paso del camino desaparece con ella.
 
+- [x] **Cada obra con el tipo de actividad que le pega**, en vez de nueve karaokes iguales.
+      El autor lo pidió el 2026-09-11: «variedad, por favor». El reparto, por lo que cada
+      obra tiene de especial:
+      - **346 Marcha Radetzky → percusión corporal**, entera y sin bucle: es la de las palmas
+        del concierto de Año Nuevo. Palmas, muslos, pies y chasquidos con la flauta debajo.
+      - **347 El Danubio azul → percusión corporal de vals**: pie en el uno, palmas en el dos
+        y el tres, dos frases enteras. Es el 3/4 en el cuerpo.
+      - **343 Preludio de Bach → mapa (seguir)**: cuatro bloques, cuatro acordes, el mismo
+        arpegio. Lo que se ve es que cambia el color y no el dibujo.
+      - **345 La gruta → palmear el ritmo (tocar a tiempo)** tres veces: a 72, 96 y 120, como
+        la pieza, que empieza despacio y acaba corriendo.
+      - **240 La Serenata → ¿pregunta o respuesta? (elección)**, con violín y en tres tonos,
+        para oír el gesto y no la altura.
+      - **238 La mañana** se queda como karaoke de cinco bandas con personajes; **239 la nana
+        de Brahms**, un pulsador con personajes; **344 Para Elisa**, pentagrama horizontal
+        con sostenidos; **214 el Himno**, pentagrama; **216 la 5.ª**, bandas de color.
+      - Nuevas: **348 «Cada obra con su nombre»** (emparejar con las grabaciones de verdad del
+        banco, ocho obras en dos tableros) y **349 «La primavera de Vivaldi con figuras»**
+        (karaoke horizontal leído por figuras: corcheas, semicorcheas y negra con puntillo;
+        cotejada con fr.wikipedia).
+      Con eso hay obras en ocho tipos distintos: karaoke en cuatro representaciones, cuerpo,
+      seguir, tocar a tiempo, elección y emparejar. Faltan letras: solo tienen letra cotejada
+      «Debajo un botón» (sale en la 137) y «Backe, backe Kuchen» (en alemán); la de
+      «Estrellita» en español sigue por confirmar.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

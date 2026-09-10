@@ -1,11 +1,11 @@
 {
   "id": "c3-47-el-danubio-azul",
   "version": 1,
-  "tipo": "karaoke",
+  "tipo": "cuerpo",
   "titulo": "El Danubio azul",
-  "descripcion": "El primer vals de «El Danubio azul» de Strauss en el pentagrama, con un solo pulsador: la melodía sube por el acorde y responde desde arriba. Tres partes: la primera frase, la segunda y las dos.",
+  "descripcion": "El primer vals de «El Danubio azul» entero, con el cuerpo: el pie en el uno y las palmas en el dos y el tres, con la melodía debajo. Así se siente el tres por cuatro.",
   "etapa": "primaria-c3",
-  "eje": "altura",
+  "eje": "cuerpo",
   "lugar": "pantalla",
   "duracion_min": 10,
   "curriculo": {
@@ -17,330 +17,218 @@
   "practica": {
     "secuencia": "ninguna",
     "compas": "3/4",
-    "tempo": 100
+    "tempo": 108
   },
   "entrada": {
-    "modo": "toque"
+    "modo": "ninguna"
   },
   "contenido": {
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la melodía es la voz superior del arreglo simplificado para piano de Mutopia (N. Kouremenos, CC BY-SA 4.0, en do mayor), cotejada compás a compás con su partitura renderizada; los acordes se reducen a su nota más aguda, que es la melodía. Sube hasta la5 y por eso no lleva ABC (el validador la daría por fuera de tesitura): no se canta, se toca. Tempo 100 por negra; el original es un vals a unas 132. Las dos frases acaban en la nota que hace de anacrusa de la siguiente: en la primera parte se ha quedado el si3 como arranque de la segunda. El 2026-09-11 pasa a horizontal, como el Himno (214): en vertical el recuadro salía ancho y las notas a la derecha. Tempo 100.",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: un vals con el cuerpo: el pie en el uno y las palmas en el dos y el tres, mientras la melodía suena con la flauta. Es la forma más directa de sentir el 3/4. Entero y sin bucle: dos frases de ocho compases, la anacrusa en el tercer tiempo. La melodía es la voz superior del arreglo simplificado de Mutopia (N. Kouremenos, CC BY-SA 4.0), cotejada con su partitura renderizada.",
     "consigna": "actividad.c347.consigna",
-    "representacion": "pentagrama",
-    "clave": "sol",
-    "botonesPorCarril": false,
-    "tempo": 100,
-    "ejercicios": [
+    "tempo": 108,
+    "bucle": false,
+    "instrumento": "flauta",
+    "patron": [
       {
-        "titulo": "actividad.c347.ej1",
-        "notas": [
-          {
-            "nota": "C4",
-            "pulsos": 1
-          },
-          {
-            "nota": "C4",
-            "pulsos": 1
-          },
-          {
-            "nota": "E4",
-            "pulsos": 1
-          },
-          {
-            "nota": "G4",
-            "pulsos": 1
-          },
-          {
-            "nota": "G4",
-            "pulsos": 2
-          },
-          {
-            "nota": "G5",
-            "pulsos": 1
-          },
-          {
-            "nota": "G5",
-            "pulsos": 2
-          },
-          {
-            "nota": "E5",
-            "pulsos": 1
-          },
-          {
-            "nota": "E5",
-            "pulsos": 2
-          },
-          {
-            "nota": "C4",
-            "pulsos": 1
-          },
-          {
-            "nota": "C4",
-            "pulsos": 1
-          },
-          {
-            "nota": "E4",
-            "pulsos": 1
-          },
-          {
-            "nota": "G4",
-            "pulsos": 1
-          },
-          {
-            "nota": "G4",
-            "pulsos": 2
-          },
-          {
-            "nota": "G5",
-            "pulsos": 1
-          },
-          {
-            "nota": "G5",
-            "pulsos": 2
-          },
-          {
-            "nota": "F5",
-            "pulsos": 1
-          },
-          {
-            "nota": "F5",
-            "pulsos": 2
-          }
-        ]
+        "zona": "palmas"
       },
       {
-        "titulo": "actividad.c347.ej2",
-        "notas": [
-          {
-            "nota": "B3",
-            "pulsos": 1
-          },
-          {
-            "nota": "B3",
-            "pulsos": 1
-          },
-          {
-            "nota": "D4",
-            "pulsos": 1
-          },
-          {
-            "nota": "A4",
-            "pulsos": 1
-          },
-          {
-            "nota": "A4",
-            "pulsos": 2
-          },
-          {
-            "nota": "A5",
-            "pulsos": 1
-          },
-          {
-            "nota": "A5",
-            "pulsos": 2
-          },
-          {
-            "nota": "F5",
-            "pulsos": 1
-          },
-          {
-            "nota": "F5",
-            "pulsos": 2
-          },
-          {
-            "nota": "B3",
-            "pulsos": 1
-          },
-          {
-            "nota": "B3",
-            "pulsos": 1
-          },
-          {
-            "nota": "D4",
-            "pulsos": 1
-          },
-          {
-            "nota": "A4",
-            "pulsos": 1
-          },
-          {
-            "nota": "A4",
-            "pulsos": 2
-          },
-          {
-            "nota": "A5",
-            "pulsos": 1
-          },
-          {
-            "nota": "A5",
-            "pulsos": 2
-          },
-          {
-            "nota": "E5",
-            "pulsos": 1
-          },
-          {
-            "nota": "E5",
-            "pulsos": 2
-          }
-        ]
+        "zona": "pies"
       },
       {
-        "titulo": "actividad.c347.ej3",
-        "notas": [
-          {
-            "nota": "C4",
-            "pulsos": 1
-          },
-          {
-            "nota": "C4",
-            "pulsos": 1
-          },
-          {
-            "nota": "E4",
-            "pulsos": 1
-          },
-          {
-            "nota": "G4",
-            "pulsos": 1
-          },
-          {
-            "nota": "G4",
-            "pulsos": 2
-          },
-          {
-            "nota": "G5",
-            "pulsos": 1
-          },
-          {
-            "nota": "G5",
-            "pulsos": 2
-          },
-          {
-            "nota": "E5",
-            "pulsos": 1
-          },
-          {
-            "nota": "E5",
-            "pulsos": 2
-          },
-          {
-            "nota": "C4",
-            "pulsos": 1
-          },
-          {
-            "nota": "C4",
-            "pulsos": 1
-          },
-          {
-            "nota": "E4",
-            "pulsos": 1
-          },
-          {
-            "nota": "G4",
-            "pulsos": 1
-          },
-          {
-            "nota": "G4",
-            "pulsos": 2
-          },
-          {
-            "nota": "G5",
-            "pulsos": 1
-          },
-          {
-            "nota": "G5",
-            "pulsos": 2
-          },
-          {
-            "nota": "F5",
-            "pulsos": 1
-          },
-          {
-            "nota": "F5",
-            "pulsos": 2
-          },
-          {
-            "nota": "B3",
-            "pulsos": 1
-          },
-          {
-            "nota": "B3",
-            "pulsos": 1
-          },
-          {
-            "nota": "D4",
-            "pulsos": 1
-          },
-          {
-            "nota": "A4",
-            "pulsos": 1
-          },
-          {
-            "nota": "A4",
-            "pulsos": 2
-          },
-          {
-            "nota": "A5",
-            "pulsos": 1
-          },
-          {
-            "nota": "A5",
-            "pulsos": 2
-          },
-          {
-            "nota": "F5",
-            "pulsos": 1
-          },
-          {
-            "nota": "F5",
-            "pulsos": 2
-          },
-          {
-            "nota": "B3",
-            "pulsos": 1
-          },
-          {
-            "nota": "B3",
-            "pulsos": 1
-          },
-          {
-            "nota": "D4",
-            "pulsos": 1
-          },
-          {
-            "nota": "A4",
-            "pulsos": 1
-          },
-          {
-            "nota": "A4",
-            "pulsos": 2
-          },
-          {
-            "nota": "A5",
-            "pulsos": 1
-          },
-          {
-            "nota": "A5",
-            "pulsos": 2
-          },
-          {
-            "nota": "E5",
-            "pulsos": 1
-          },
-          {
-            "nota": "E5",
-            "pulsos": 2
-          }
-        ]
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "palmas"
       }
+    ],
+    "melodia": [
+      "C4",
+      "C4",
+      "E4",
+      "G4",
+      "G4",
+      null,
+      "G5",
+      "G5",
+      null,
+      "E5",
+      "E5",
+      null,
+      "C4",
+      "C4",
+      "E4",
+      "G4",
+      "G4",
+      null,
+      "G5",
+      "G5",
+      null,
+      "F5",
+      "F5",
+      null,
+      "B3",
+      "B3",
+      "D4",
+      "A4",
+      "A4",
+      null,
+      "A5",
+      "A5",
+      null,
+      "F5",
+      "F5",
+      null,
+      "B3",
+      "B3",
+      "D4",
+      "A4",
+      "A4",
+      null,
+      "A5",
+      "A5",
+      null,
+      "E5",
+      "E5",
+      null
     ]
   },
   "evaluacion": {
-    "autocorrectiva": true,
+    "autocorrectiva": false,
     "reporta": [
-      "completado",
-      "desvio_medio_con_signo",
-      "desviacion_tipica"
+      "completado"
     ]
   },
   "enunciado": "actividad.c347.enunciado",

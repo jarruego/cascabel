@@ -1,13 +1,13 @@
 {
   "id": "c3-45-en-la-gruta-del-rey-de-la-montana",
   "version": 1,
-  "tipo": "karaoke",
+  "tipo": "tocar-a-tiempo",
   "titulo": "En la gruta del rey de la montaña",
-  "descripcion": "El tema de «En la gruta del rey de la montaña» de Grieg, en el pentagrama con sus sostenidos y un solo pulsador. Tres partes: la primera frase, la segunda y las dos.",
+  "descripcion": "El ritmo de «En la gruta del rey de la montaña» a palmas, tres veces: despacio, más rápido y corriendo, como hace la pieza.",
   "etapa": "primaria-c3",
-  "eje": "altura",
+  "eje": "pulso",
   "lugar": "pantalla",
-  "duracion_min": 10,
+  "duracion_min": 8,
   "curriculo": {
     "area": "Educación Artística",
     "competencia": "CE3",
@@ -17,225 +17,84 @@
   "practica": {
     "secuencia": "ninguna",
     "compas": "4/4",
-    "tempo": 120
+    "tempo": 72,
+    "figuras": [
+      "negra",
+      "corchea",
+      "blanca"
+    ]
   },
   "entrada": {
-    "modo": "toque"
+    "modo": "microfono-palmada",
+    "alternativa": "toque"
   },
   "contenido": {
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la pieza empieza lenta y acelera hasta el final; aquí va a un solo tempo (152 por corchea, 76 por negra), que es el del principio. Transportada a re menor para que el do sostenido sea la única alteración y la tesitura quede entre la3 y fa4. Los silencios finales se absorben en la nota anterior. El 2026-09-11 pasa a horizontal, como el Himno (214): en vertical el recuadro salía ancho y las notas a la derecha. Tempo 120.",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: lo que tiene esta pieza es que empieza despacio y acaba corriendo, y eso es lo que se toca: el mismo ritmo de cuatro compases tres veces, a 72, a 96 y a 120. Se palmea el ritmo de la melodía (corcheas y negras), no el pulso. Ritmo sacado de la partitura de Wikipedia en inglés (fis8 gis ais b cis ais cis4 | d8 ais d4 cis8 ais cis4 | … | d8 ais d4 cis4 r4); el silencio final se escribe como blanca.",
     "consigna": "actividad.c345.consigna",
-    "representacion": "pentagrama",
-    "clave": "sol",
-    "botonesPorCarril": false,
-    "tempo": 120,
+    "tempo": 72,
     "ejercicios": [
       {
         "titulo": "actividad.c345.ej1",
-        "notas": [
-          {
-            "nota": "A3",
-            "pulsos": 1
-          },
-          {
-            "nota": "B3",
-            "pulsos": 1
-          },
-          {
-            "nota": "C#4",
-            "pulsos": 1
-          },
-          {
-            "nota": "D4",
-            "pulsos": 1
-          },
-          {
-            "nota": "E4",
-            "pulsos": 1
-          },
-          {
-            "nota": "C#4",
-            "pulsos": 1
-          },
-          {
-            "nota": "E4",
-            "pulsos": 2
-          },
-          {
-            "nota": "F4",
-            "pulsos": 1
-          },
-          {
-            "nota": "C#4",
-            "pulsos": 1
-          },
-          {
-            "nota": "F4",
-            "pulsos": 2
-          },
-          {
-            "nota": "E4",
-            "pulsos": 1
-          },
-          {
-            "nota": "C#4",
-            "pulsos": 1
-          },
-          {
-            "nota": "E4",
-            "pulsos": 2
-          }
-        ]
+        "silabas": [
+          "ti-ti",
+          "ti-ti",
+          "ti-ti",
+          "ta",
+          "ti-ti",
+          "ta",
+          "ti-ti",
+          "ta",
+          "ti-ti",
+          "ti-ti",
+          "ti-ti",
+          "ta",
+          "ti-ti",
+          "ta",
+          "ta-a"
+        ],
+        "tempo": 72
       },
       {
         "titulo": "actividad.c345.ej2",
-        "notas": [
-          {
-            "nota": "A3",
-            "pulsos": 1
-          },
-          {
-            "nota": "B3",
-            "pulsos": 1
-          },
-          {
-            "nota": "C#4",
-            "pulsos": 1
-          },
-          {
-            "nota": "D4",
-            "pulsos": 1
-          },
-          {
-            "nota": "E4",
-            "pulsos": 1
-          },
-          {
-            "nota": "C#4",
-            "pulsos": 1
-          },
-          {
-            "nota": "E4",
-            "pulsos": 2
-          },
-          {
-            "nota": "F4",
-            "pulsos": 1
-          },
-          {
-            "nota": "C#4",
-            "pulsos": 1
-          },
-          {
-            "nota": "F4",
-            "pulsos": 2
-          },
-          {
-            "nota": "E4",
-            "pulsos": 4
-          }
-        ]
+        "silabas": [
+          "ti-ti",
+          "ti-ti",
+          "ti-ti",
+          "ta",
+          "ti-ti",
+          "ta",
+          "ti-ti",
+          "ta",
+          "ti-ti",
+          "ti-ti",
+          "ti-ti",
+          "ta",
+          "ti-ti",
+          "ta",
+          "ta-a"
+        ],
+        "tempo": 96
       },
       {
         "titulo": "actividad.c345.ej3",
-        "notas": [
-          {
-            "nota": "A3",
-            "pulsos": 1
-          },
-          {
-            "nota": "B3",
-            "pulsos": 1
-          },
-          {
-            "nota": "C#4",
-            "pulsos": 1
-          },
-          {
-            "nota": "D4",
-            "pulsos": 1
-          },
-          {
-            "nota": "E4",
-            "pulsos": 1
-          },
-          {
-            "nota": "C#4",
-            "pulsos": 1
-          },
-          {
-            "nota": "E4",
-            "pulsos": 2
-          },
-          {
-            "nota": "F4",
-            "pulsos": 1
-          },
-          {
-            "nota": "C#4",
-            "pulsos": 1
-          },
-          {
-            "nota": "F4",
-            "pulsos": 2
-          },
-          {
-            "nota": "E4",
-            "pulsos": 1
-          },
-          {
-            "nota": "C#4",
-            "pulsos": 1
-          },
-          {
-            "nota": "E4",
-            "pulsos": 2
-          },
-          {
-            "nota": "A3",
-            "pulsos": 1
-          },
-          {
-            "nota": "B3",
-            "pulsos": 1
-          },
-          {
-            "nota": "C#4",
-            "pulsos": 1
-          },
-          {
-            "nota": "D4",
-            "pulsos": 1
-          },
-          {
-            "nota": "E4",
-            "pulsos": 1
-          },
-          {
-            "nota": "C#4",
-            "pulsos": 1
-          },
-          {
-            "nota": "E4",
-            "pulsos": 2
-          },
-          {
-            "nota": "F4",
-            "pulsos": 1
-          },
-          {
-            "nota": "C#4",
-            "pulsos": 1
-          },
-          {
-            "nota": "F4",
-            "pulsos": 2
-          },
-          {
-            "nota": "E4",
-            "pulsos": 4
-          }
-        ]
+        "silabas": [
+          "ti-ti",
+          "ti-ti",
+          "ti-ti",
+          "ta",
+          "ti-ti",
+          "ta",
+          "ti-ti",
+          "ta",
+          "ti-ti",
+          "ti-ti",
+          "ti-ti",
+          "ta",
+          "ti-ti",
+          "ta",
+          "ta-a"
+        ],
+        "tempo": 120
       }
     ]
   },
@@ -248,7 +107,7 @@
     ]
   },
   "enunciado": "actividad.c345.enunciado",
-  "personaje": "rex",
+  "personaje": "milo",
   "pistas": [
     "actividad.c345.pista1",
     "actividad.c345.pista2"

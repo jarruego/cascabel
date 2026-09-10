@@ -1,11 +1,11 @@
 {
   "id": "c3-46-marcha-radetzky",
   "version": 1,
-  "tipo": "karaoke",
+  "tipo": "cuerpo",
   "titulo": "Marcha Radetzky",
-  "descripcion": "El comienzo de la «Marcha Radetzky» de Strauss, la de las palmas del concierto de Año Nuevo, en el pentagrama con un solo pulsador. Tres partes: la llamada, el balanceo y todo seguido.",
+  "descripcion": "La «Marcha Radetzky», la de las palmas del concierto de Año Nuevo, entera con percusión corporal: palmas, muslos, pies y chasquidos, con la melodía debajo.",
   "etapa": "primaria-c3",
-  "eje": "altura",
+  "eje": "cuerpo",
   "lugar": "pantalla",
   "duracion_min": 10,
   "curriculo": {
@@ -20,263 +20,152 @@
     "tempo": 108
   },
   "entrada": {
-    "modo": "toque"
+    "modo": "ninguna"
   },
   "contenido": {
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: está en 2/2 y aquí el pulso es la negra a 108 (54 por blanca, la original va a 108 por blanca: la mitad). Los silencios se absorben en la nota anterior y las dos apoyaturas se quitan. Sube a mi5, el techo de 3.º ciclo. El 2026-09-11 pasa a horizontal, como el Himno (214): en vertical el recuadro salía ancho y las notas a la derecha. Tempo 108.",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la Marcha Radetzky es la de las palmas del concierto de Año Nuevo, y por eso va con el cuerpo, entera y sin bucle: la llamada (do do do) con palmas, la bajada con muslos, el sol largo con los pies, el balanceo de mi y re sostenido con chasquidos y el cierre con palmas. La melodía suena con la flauta debajo. El reparto de zonas es una propuesta. Melodía cotejada con la partitura de Wikipedia en inglés (Lilypond, do mayor, 2/2); pulso la negra a 108.",
     "consigna": "actividad.c346.consigna",
-    "representacion": "pentagrama",
-    "clave": "sol",
-    "botonesPorCarril": false,
     "tempo": 108,
-    "ejercicios": [
+    "bucle": false,
+    "instrumento": "flauta",
+    "patron": [
       {
-        "titulo": "actividad.c346.ej1",
-        "notas": [
-          {
-            "nota": "C5",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "C5",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "C5",
-            "pulsos": 1
-          },
-          {
-            "nota": "C5",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "C5",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "C5",
-            "pulsos": 1
-          },
-          {
-            "nota": "E5",
-            "pulsos": 1
-          },
-          {
-            "nota": "D5",
-            "pulsos": 1
-          },
-          {
-            "nota": "C5",
-            "pulsos": 1.5
-          },
-          {
-            "nota": "B4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "A4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "G#4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "A4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "B4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "C5",
-            "pulsos": 1
-          },
-          {
-            "nota": "D5",
-            "pulsos": 1
-          },
-          {
-            "nota": "G4",
-            "pulsos": 3
-          }
-        ]
+        "zona": "palmas",
+        "pulsos": 0.5
       },
       {
-        "titulo": "actividad.c346.ej2",
-        "notas": [
-          {
-            "nota": "E5",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "D#5",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "E5",
-            "pulsos": 1
-          },
-          {
-            "nota": "E5",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "D#5",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "E5",
-            "pulsos": 1
-          },
-          {
-            "nota": "E5",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "D#5",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "E5",
-            "pulsos": 1
-          },
-          {
-            "nota": "D5",
-            "pulsos": 1
-          },
-          {
-            "nota": "C5",
-            "pulsos": 1
-          }
-        ]
+        "zona": "palmas",
+        "pulsos": 0.5
       },
       {
-        "titulo": "actividad.c346.ej3",
-        "notas": [
-          {
-            "nota": "C5",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "C5",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "C5",
-            "pulsos": 1
-          },
-          {
-            "nota": "C5",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "C5",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "C5",
-            "pulsos": 1
-          },
-          {
-            "nota": "E5",
-            "pulsos": 1
-          },
-          {
-            "nota": "D5",
-            "pulsos": 1
-          },
-          {
-            "nota": "C5",
-            "pulsos": 1.5
-          },
-          {
-            "nota": "B4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "A4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "G#4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "A4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "B4",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "C5",
-            "pulsos": 1
-          },
-          {
-            "nota": "D5",
-            "pulsos": 1
-          },
-          {
-            "nota": "G4",
-            "pulsos": 3
-          },
-          {
-            "nota": "E5",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "D#5",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "E5",
-            "pulsos": 1
-          },
-          {
-            "nota": "E5",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "D#5",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "E5",
-            "pulsos": 1
-          },
-          {
-            "nota": "E5",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "D#5",
-            "pulsos": 0.5
-          },
-          {
-            "nota": "E5",
-            "pulsos": 1
-          },
-          {
-            "nota": "D5",
-            "pulsos": 1
-          },
-          {
-            "nota": "C5",
-            "pulsos": 1
-          }
-        ]
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "palmas",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 1.5
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "muslos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "pies",
+        "pulsos": 3
+      },
+      {
+        "zona": "pitos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "pitos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pitos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "pitos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pitos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "pitos",
+        "pulsos": 0.5
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
       }
+    ],
+    "melodia": [
+      "C5",
+      "C5",
+      "C5",
+      "C5",
+      "C5",
+      "C5",
+      "E5",
+      "D5",
+      "C5",
+      "B4",
+      "A4",
+      "G#4",
+      "A4",
+      "B4",
+      "C5",
+      "D5",
+      "G4",
+      "E5",
+      "D#5",
+      "E5",
+      "E5",
+      "D#5",
+      "E5",
+      "E5",
+      "D#5",
+      "E5",
+      "D5",
+      "C5"
     ]
   },
   "evaluacion": {
-    "autocorrectiva": true,
+    "autocorrectiva": false,
     "reporta": [
-      "completado",
-      "desvio_medio_con_signo",
-      "desviacion_tipica"
+      "completado"
     ]
   },
   "enunciado": "actividad.c346.enunciado",

@@ -40,17 +40,17 @@ lista exactamente los tipos que hay en `src/motor/registro.ts`, con sus cifras a
 
 | Tipo | Mecánica | Actividades |
 |---|---|---|
-| `eleccion` | Suena o se muestra algo; se elige entre 2–4 opciones grandes | 57 |
-| `karaoke` | Musicograma que avanza: las notas llegan y se tocan al pasar | 19 |
+| `eleccion` | Suena o se muestra algo; se elige entre 2–4 opciones grandes | 58 |
+| `karaoke` | Musicograma que avanza: las notas llegan y se tocan al pasar | 15 |
 | `rejilla` | Cuadrícula altura × tiempo | 10 |
 | `guia-aula` | Pantalla del maestro: consigna, pulso, coreografía, ficha | 9 |
 | `lienzo` | Creación libre sin evaluación | 8 |
+| `tocar-a-tiempo` | Golpear en el momento correcto | 8 |
+| `cuerpo` | Percusión corporal: pitos, palmas, muslos y pies en cuatro filas | 7 |
 | `referencia` | Consulta del lenguaje musical, con sonido. No es un ejercicio | 7 |
-| `tocar-a-tiempo` | Golpear en el momento correcto | 7 |
 | `ordenar` | Secuencia por altura, duración o forma | 6 |
-| `cuerpo` | Percusión corporal: pitos, palmas, muslos y pies en cuatro filas | 5 |
-| `seguir` | Reproducción con cursor sincronizado | 5 |
-| `emparejar` | Dos conjuntos, toque de dos en dos | 4 |
+| `seguir` | Reproducción con cursor sincronizado | 6 |
+| `emparejar` | Dos conjuntos, toque de dos en dos | 5 |
 | `cantar` | Detección de altura con retorno visual | 3 |
 | `compases` | Colocar las barras de compás donde el pulso las pide | 3 |
 | `memoria` | Cartas boca abajo: un dibujo y su sonido. Se destapan dos y la pareja se queda a la vista | 3 |
