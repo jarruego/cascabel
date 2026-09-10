@@ -61,17 +61,31 @@ export function useVuelta(url: string, listo: boolean): void {
 
   const clave = claveDeScroll(url);
   useEffect(() => {
+    /*
+      La altura se apunta CADA VEZ que se desplaza, no al salir. Se apuntaba al desmontar
+      y llegaba tarde: para cuando corre la limpieza del efecto, React ya ha quitado la
+      lista del DOM, la página mide lo que mide la actividad recién montada y `scrollY`
+      es cero. Se guardaba un cero encima de la posición buena, y «Volver» subía arriba
+      del todo. El autor lo vio el 2026-09-10: «mantiene el filtro, excepto el scroll».
+    */
+    let pendiente = 0;
     const guardar = () => {
+      pendiente = 0;
       try {
         sessionStorage.setItem(clave, String(window.scrollY));
       } catch {
         // Se pierde la posición y nada más.
       }
     };
+    const alDesplazar = () => {
+      if (!pendiente) pendiente = requestAnimationFrame(guardar);
+    };
+    window.addEventListener('scroll', alDesplazar, { passive: true });
     window.addEventListener('pagehide', guardar);
     return () => {
+      window.removeEventListener('scroll', alDesplazar);
       window.removeEventListener('pagehide', guardar);
-      guardar();
+      if (pendiente) cancelAnimationFrame(pendiente);
     };
   }, [clave]);
 
