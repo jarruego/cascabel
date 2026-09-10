@@ -2852,6 +2852,13 @@ textos, niveles, camino, y la sección de instrumentos.
 - [x] **La barra de abajo la presentan los personajes.** Dora saluda en Actividades, Sol
       baila en el Camino, Milo palmea en el Taller y Rex busca en Criterios, cada uno sobre
       un disco de su color; la sección actual llena el disco. Los iconos grises se han ido.
+      Con esto y el karaoke, de las diez poses se usan ocho; `escucha` y `calla` siguen sin
+      salir. **Pendiente, por orden de lo que aporta**: `escucha` mientras suena el estímulo
+      en elección y dictados; `calla` en los silencios (percusión corporal, rejilla, «ahora
+      no puedo hacer ruido»); `canta` en canta la nota y el afinador y `palmea` al grabar
+      palmadas; `baila` durante la reproducción de musicogramas y seguir; las notas con
+      personaje en escala, coloca la nota y canta la nota; Rex buscando cuando el catálogo
+      no encuentra nada y la cabecera de cada etapa del Camino con su personaje.
 
 - [x] **Karaoke con la pandilla: cuatro canciones a una, dos, tres y cuatro bandas.** La
       representación nueva `personaje` hace que cada nota baje con su personaje y que el
