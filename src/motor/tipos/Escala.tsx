@@ -138,6 +138,30 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
     if (resuelta) return;
     void sonar(nota);
     const nuevas = [...puestas, nota];
+
+    // La escala mayor de la tónica pedida, no cualquiera: las últimas ocho notas tienen
+    // que formarla Y empezar en ella. Se mira antes que nada: la última nota de la escala
+    // es también la tónica, y sin este orden se tomaría por un «empezar de nuevo».
+    const ultimas = nuevas.slice(-objetivo.length);
+    if (esEscalaMayor(ultimas) && sinOctava(ultimas[0]!) === sinOctava(tonica)) {
+      setPuestas(nuevas);
+      setResuelta(true);
+      return;
+    }
+
+    /*
+      Tocar la tónica es empezar de nuevo: la pauta se vacía y queda solo esa nota. Antes
+      «vuelve a empezar en do» se decía y no se hacía —el do se añadía detrás de lo anterior,
+      la distancia desde la última nota mala era otro salto, y volvía a avisar—. Lo vio el
+      autor el 2026-09-10.
+    */
+    if (sinOctava(nota) === sinOctava(tonica)) {
+      setPuestas([nota]);
+      setUltimoFueSalto(false);
+      setPistaVisible(false);
+      return;
+    }
+
     setPuestas(nuevas);
     const salto = distancia(puestas[puestas.length - 1]!, nota) === null;
     setUltimoFueSalto(salto);
@@ -145,12 +169,7 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
       setPistaVisible(true);
       if (relojPista.current !== null) window.clearTimeout(relojPista.current);
       relojPista.current = window.setTimeout(() => setPistaVisible(false), PISTA_MS);
-      return;
     }
-    // La escala mayor de la tónica pedida, no cualquiera: las últimas ocho notas tienen
-    // que formarla Y empezar en ella.
-    const ultimas = nuevas.slice(-objetivo.length);
-    if (esEscalaMayor(ultimas) && sinOctava(ultimas[0]!) === sinOctava(tonica)) setResuelta(true);
   };
 
   const teclas: Array<{ nota: string; negra: boolean; indice: number }> = [];
