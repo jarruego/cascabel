@@ -1784,14 +1784,30 @@ p {
   width: auto;
   height: auto;
   padding: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
   border: 2px solid var(--linea);
   border-radius: var(--r-s);
   background: var(--papel);
   cursor: pointer;
 }
+/* Encendida: el color de su nota (código Boomwhacker, `ui/coloresNota.ts`); si la fila no
+   tiene nota, el turquesa de siempre. */
 .rejilla__celda[data-encendida] {
-  background: var(--vivo-turquesa);
-  border-color: var(--vivo-turquesa);
+  background: var(--color-nota, var(--vivo-turquesa));
+  border-color: var(--color-nota, var(--vivo-turquesa));
+}
+/* El personaje de la nota, dentro de la casilla cuando la rejilla es pequeña. */
+.rejilla__personaje {
+  display: block;
+  height: 78%;
+  pointer-events: none;
+}
+.rejilla__personaje .personaje {
+  display: block;
+  height: 100%;
+  width: auto;
 }
 /* La columna que suena se resalta: así el niño VE el pulso además de oírlo. */
 .rejilla__celda[data-columna-activa] {

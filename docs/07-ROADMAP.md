@@ -2843,6 +2843,12 @@ textos, niveles, camino, y la sección de instrumentos.
       demás ya usaban bombo (108, 135, 341, 010, 224) o caja (005), y en la 022 los golpes
       son del kit. No queda ninguna pandereta respondiendo como tambor.
 
+- [x] **Las casillas de la rejilla se encienden con el color de su nota**, el código
+      Boomwhacker que ya usan el piano y el musicograma, en las diez actividades de rejilla.
+      Y con doce casillas o menos —dictado de sol y mi, sol-mi-la, la rueda del compás—
+      dentro va el personaje de la nota: Milo en el mi, Sol en el sol. Lo pidió el autor
+      para la 130.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

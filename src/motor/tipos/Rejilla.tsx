@@ -6,6 +6,9 @@ import { MARIMBA, Sampler } from '@/audio/sampler';
 import { aMidiSMF, aMusicXML, descargar, type NotaExportable } from '@/datos/exportar';
 import { Reaccion } from '@/ui/Reaccion';
 import { mantenerALaVista } from '@/ui/seguirColumna';
+import { colorDe } from '@/ui/coloresNota';
+import { personajeDe } from '@/ui/personajes';
+import { Personaje } from '@/ui/Personaje';
 import { pistaPara } from '../maquinaEleccion';
 import { BarraAcciones } from '@/ui/BarraAcciones';
 import {
@@ -110,6 +113,14 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
   const [primerRitmo, setPrimerRitmo] = useState(false);
 
   const notas = contenido.notas ?? ['C5', 'A4', 'G4', 'F4', 'D4', 'C4'].slice(0, filas);
+  /*
+    Una casilla encendida lleva el color de su nota —el código Boomwhacker que comparten el
+    piano y el musicograma— y, cuando la rejilla es pequeña y las casillas grandes, dentro
+    va el personaje de esa nota: Milo en la fila del mi, Sol en la del sol. Lo pidió el
+    autor el 2026-09-10 para el dictado de sol y mi. Con muchas casillas el dibujo no cabe
+    y se queda solo el color, que ya dice cuál es.
+  */
+  const conPersonajes = filas * columnas <= 12;
 
   useEffect(() => {
     if (estado.fase !== 'completada' || yaTerminada.current) return;
@@ -315,6 +326,8 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
             const encendida = estado.encendidas.has(k);
             const sobra = estado.sobran.has(k);
             const falta = estado.faltan.has(k);
+            const nota = notas[f];
+            const personaje = nota ? personajeDe(nota) : null;
             return (
               <button
                 key={k}
@@ -326,8 +339,15 @@ export default function Rejilla({ actividad, alTerminar }: PropsActividad) {
                 data-columna-activa={c === columnaActual || undefined}
                 aria-pressed={encendida}
                 aria-label={`${notas[f] ?? f + 1}, ${t('rejilla.pulso')} ${c + 1}`}
+                style={nota ? ({ '--color-nota': colorDe(nota) } as CSSProperties) : undefined}
                 onClick={() => void tocarCelda(f, c)}
-              />
+              >
+                {encendida && conPersonajes && personaje && (
+                  <span className="rejilla__personaje">
+                    <Personaje nombre={personaje} tamano={64} />
+                  </span>
+                )}
+              </button>
             );
           }),
         )}
