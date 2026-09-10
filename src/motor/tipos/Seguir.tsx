@@ -196,10 +196,24 @@ export default function Seguir({ actividad, alTerminar, alSalir }: PropsActivida
     /** Programa el sonido de una vuelta. La N empieza en `inicio + N * duracionVuelta`. */
     const programarVuelta = (n: number) => {
       const base = inicio + n * duracionVuelta;
-      desfases.forEach((desfase, i) => {
-        const nota = contenido.notas?.[i];
-        if (nota) sampler.current?.tocar(nota, (base + desfase) / 1000, msPorPulso / 1000);
-      });
+      if (contenido.notas && !rejilla) {
+        /*
+          Con bloques, las notas van **una por pulso**, no una por bloque. `desfases` aquí
+          son los arranques de los bloques, y colgar de ellos las notas hacía que un mapa de
+          sesenta y cuatro pulsos con cuatro bloques sonara cuatro notas separadas cinco
+          segundos: «pasan muchos segundos entre nota y nota, infumable», dijo el autor el
+          2026-09-11 del Preludio y del Cisne. Un `null` es un pulso en el que no empieza
+          nota: la anterior sigue sonando lo que le quede.
+        */
+        contenido.notas.forEach((nota, i) => {
+          if (nota) sampler.current?.tocar(nota, (base + i * msPorPulso) / 1000, msPorPulso / 1000);
+        });
+      } else {
+        desfases.forEach((desfase, i) => {
+          const nota = contenido.notas?.[i];
+          if (nota) sampler.current?.tocar(nota, (base + desfase) / 1000, msPorPulso / 1000);
+        });
+      }
       /*
         **El ritmo suena, golpe a golpe.** Antes, sin `notas` declaradas no se programaba
         ningún sonido: solo corría el metrónomo marcando negras, así que se leía «ti-ti» y se

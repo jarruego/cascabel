@@ -2967,6 +2967,11 @@ textos, niveles, camino, y la sección de instrumentos.
       Mutopia (violín primero, CC BY-SA, solo las alturas): la llamada con su eco piano y la
       frase fuerte —«la parte más famosa viene justo después», dijo el autor— con el suyo.
 
+- [x] **Los mapas (seguir) sonaban una nota por bloque, no por pulso.** El Preludio (343), el
+      Cisne (241) y el mapa del Himno (304) tocaban cuatro notas separadas cinco segundos:
+      «infumable». Con bloques, las notas van ahora una por pulso; con sílabas, como antes.
+      No era el tempo.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
