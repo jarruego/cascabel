@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-10",
-  "total": 161,
+  "total": 162,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -1480,6 +1480,25 @@
         "competencia": "CE3",
         "criterio": "3.1",
         "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c2-41-el-cisne",
+      "titulo": "El cisne",
+      "descripcion": "«El cisne» de Saint-Saëns entero, como un mapa de cuatro frases que se sigue mientras suena: sale, vuelve más alto, se aleja y se va.",
+      "etapa": "primaria-c2",
+      "eje": "cultura",
+      "tipo": "seguir",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
       "herramienta": false

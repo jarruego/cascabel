@@ -2934,7 +2934,16 @@ textos, niveles, camino, y la sección de instrumentos.
         banco, ocho obras en dos tableros) y **349 «La primavera de Vivaldi con figuras»**
         (karaoke horizontal leído por figuras: corcheas, semicorcheas y negra con puntillo;
         cotejada con fr.wikipedia).
-      Con eso hay obras en ocho tipos distintos: karaoke en cuatro representaciones, cuerpo,
+      Y **241 «El cisne»** (Saint-Saëns) entero como mapa de cuatro frases: la melodía sale
+      de una partitura CC0 de Commons (`Cygne saint saens fa majeur.svg`), leída compás a
+      compás. Del resto del Carnaval, Commons tiene siete temas en imagen (dominio público):
+      el León, las Gallinas, los Canguros, el Acuario, los de orejas largas, el Cuco y el
+      Final; el Cuco es do y la bemol, la misma tercera que sol-mi, y queda anotado en la 029.
+      **El cascanueces sigue sin fuente**: ninguna Wikipedia (en, de, fr, ru, ja, zh) tiene
+      partitura en texto de ningún número, Commons no tiene imagen del tema y la descarga de
+      IMSLP no se puede hacer desde un guion. Queda para un PDF de dominio público bajado a
+      mano y leído compás a compás.
+      Con eso hay obras en nueve tipos distintos: karaoke en cuatro representaciones, cuerpo,
       seguir, tocar a tiempo, elección y emparejar. Faltan letras: solo tienen letra cotejada
       «Debajo un botón» (sale en la 137) y «Backe, backe Kuchen» (en alemán); la de
       «Estrellita» en español sigue por confirmar.

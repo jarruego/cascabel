@@ -27,7 +27,7 @@
     "modo": "toque"
   },
   "contenido": {
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la melodía es propia: no hay ninguna canción tradicional de solo dos notas con partitura en texto que se pueda cotejar (los cantos de sol-mi de Kodály en inglés no están transcritos en Wikipedia). Una maestra debe decir si el canto es cantable a los cuatro años y si conviene cambiarlo por uno de su repertorio.",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la melodía es propia: no hay ninguna canción tradicional de solo dos notas con partitura en texto que se pueda cotejar (los cantos de sol-mi de Kodály en inglés no están transcritos en Wikipedia). Una maestra debe decir si el canto es cantable a los cuatro años y si conviene cambiarlo por uno de su repertorio. Nota del 2026-09-11: «El cuco en el fondo del bosque» de El carnaval de los animales (tema 09 en Commons, dominio público) es exactamente ese canto, do y la bemol, una tercera mayor descendente: lo mismo que sol-mi. La melodía sigue siendo propia, pero el canto del cuco no es una invención.",
     "consigna": "actividad.inf29.consigna",
     "representacion": "personaje",
     "orientacion": "vertical",
