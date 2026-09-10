@@ -17,7 +17,7 @@
   "practica": {
     "secuencia": "ninguna",
     "compas": "4/4",
-    "tempo": 96,
+    "tempo": 66,
     "figuras": [
       "corchea",
       "semicorchea",
@@ -28,14 +28,50 @@
     "modo": "toque"
   },
   "contenido": {
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el tema del primer movimiento (fr.wikipedia, Lilypond, mi mayor: e8 | gis8 gis gis fis16 e b'4. b16 a | ×2 | gis8 a16 b a8 gis fis8 dis b), transportado a do y una octava abajo para que quede entre sol3 y sol4. Va por figuras, no por altura: lo que se lee es el ritmo (corchea, dos semicorcheas, negra con puntillo). Sin ABC porque baja a sol3. Tempo 96 por negra; el original es un Allegro más vivo.",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el tema del primer movimiento (fr.wikipedia, Lilypond, mi mayor: e8 | gis8 gis gis fis16 e b'4. b16 a | ×2 | gis8 a16 b a8 gis fis8 dis b), transportado a do y una octava abajo para que quede entre sol3 y sol4. Va por figuras, no por altura: lo que se lee es el ritmo (corchea, dos semicorcheas, negra con puntillo). Sin ABC porque baja a sol3. Tempo 96 por negra; el original es un Allegro más vivo. El 2026-09-11 el autor la vio muy rápida y muy compleja: baja de 96 a 66 por negra, y cada frase se toca dos veces seguidas, que es lo que hace el propio concierto (el tutti la enuncia fuerte y la repite piano). Así es el doble de larga y da tiempo a leer las figuras.",
     "consigna": "actividad.c349.consigna",
     "representacion": "figura",
-    "tempo": 96,
+    "tempo": 66,
     "ejercicios": [
       {
         "titulo": "actividad.c349.ej1",
         "notas": [
+          {
+            "nota": "C4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "C4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "F4",
+            "pulsos": 0.25
+          },
           {
             "nota": "C4",
             "pulsos": 0.5
@@ -140,6 +176,70 @@
           {
             "nota": "G3",
             "pulsos": 1
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "C4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "F4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "F4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "F4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "B3",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G3",
+            "pulsos": 1
           }
         ]
       },
@@ -181,6 +281,106 @@
           {
             "nota": "F4",
             "pulsos": 0.25
+          },
+          {
+            "nota": "C4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "C4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "F4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "C4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1.5
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "F4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "F4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.25
+          },
+          {
+            "nota": "F4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "E4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "D4",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "B3",
+            "pulsos": 0.5
+          },
+          {
+            "nota": "G3",
+            "pulsos": 1
           },
           {
             "nota": "E4",

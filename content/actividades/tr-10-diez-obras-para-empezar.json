@@ -1,5 +1,5 @@
 {
-  "id": "c3-40-diez-obras-para-empezar",
+  "id": "tr-10-diez-obras-para-empezar",
   "version": 1,
   "tipo": "referencia",
   "titulo": "Catorce obras para empezar",
@@ -21,7 +21,7 @@
     "modo": "toque"
   },
   "contenido": {
-    "consigna": "actividad.c340.consigna",
+    "consigna": "actividad.tr10.consigna",
     "secciones": [
       {
         "titulo": "Barroco",
@@ -116,7 +116,7 @@
       "completado"
     ]
   },
-  "enunciado": "actividad.c340.enunciado",
+  "enunciado": "actividad.tr10.enunciado",
   "personaje": "doby",
   "herramienta": true,
   "creditos": [

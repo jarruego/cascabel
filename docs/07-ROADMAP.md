@@ -2959,9 +2959,12 @@ textos, niveles, camino, y la sección de instrumentos.
       largas: la fila medía el ancho visible y la etiqueta pegada solo aguanta dentro de su
       fila; ahora la fila mide lo que mide la tira.
 
-- [x] **La 340 «Diez obras para empezar» pasa al Taller** (`herramienta: true`): es un
-      reproductor de obras para poner en clase, no un ejercicio, dijo el autor el 2026-09-11.
-      Sigue en el catálogo, porque tiene criterio curricular.
+- [x] **«Diez obras para empezar» es solo del Taller**: era la 340 y ya estaba marcada como
+      herramienta, pero el catálogo solo excluye la familia `tr-`, así que seguía saliendo
+      entre las actividades. Pasa a ser **910** (`tr-10`): es un reproductor de obras para
+      poner en clase, no un ejercicio, dijo el autor el 2026-09-11. **La 349 Primavera** baja
+      de 96 a 66 y cada frase se toca dos veces, como hace el concierto (fuerte y su eco
+      piano): iba muy rápida y era muy compleja.
 
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
