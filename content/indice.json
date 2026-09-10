@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-10",
-  "total": 145,
+  "total": 146,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -1335,7 +1335,7 @@
     {
       "id": "c3-01-tonos-y-semitonos",
       "titulo": "Tonos y semitonos",
-      "descripcion": "Construir la escala de sol mayor en el teclado viendo cómo se escribe. Se empieza en sol a propósito: es la que obliga a un sostenido.",
+      "descripcion": "Construir la escala de do mayor en el teclado viendo cómo se escribe: todas blancas, y los semitonos donde no hay negra.",
       "etapa": "primaria-c3",
       "eje": "notacion",
       "tipo": "escala",
@@ -2069,6 +2069,25 @@
         "competencia": "CE1",
         "criterio": "1.2",
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-42-la-escala-de-sol-mayor",
+      "titulo": "La escala de sol mayor",
+      "descripcion": "Construir la escala de sol mayor en el teclado viendo cómo se escribe. Empezar en sol obliga a un sostenido: es lo que enseña que el patrón manda sobre las teclas.",
+      "etapa": "primaria-c3",
+      "eje": "notacion",
+      "tipo": "escala",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 15,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
       "herramienta": false

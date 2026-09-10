@@ -55,11 +55,11 @@ lista exactamente los tipos que hay en `src/motor/registro.ts`, con sus cifras a
 | `cuerpo` | Percusión corporal: pitos, palmas, muslos y pies en cuatro filas | 3 |
 | `memoria` | Cartas boca abajo: un dibujo y su sonido. Se destapan dos y la pareja se queda a la vista | 3 |
 | `eco` | Dos niños por turnos: uno propone un ritmo y el otro lo repite | 2 |
+| `escala` | Construir una escala contando tonos y semitonos | 2 |
 | `pads` | El kit de percusión, para tocarlo: pads por familias y pulso opcional | 2 |
 | `pentagrama` | Colocar o leer sobre pauta real | 2 |
 | `teclado` | Teclado de piano de una a tres octavas | 2 |
 | `acompanamientos` | Bases en bucle para cantar encima, con transporte | 1 |
-| `escala` | Construir una escala contando tonos y semitonos | 1 |
 | `paisaje` | Grabar sonido del entorno y escucharlo (no sale del aparato) | 1 |
 | `pistas` | Secuenciador de cuatro voces: voz, percusión, piano y flauta | 1 |
 

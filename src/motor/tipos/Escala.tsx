@@ -91,7 +91,7 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
   */
   const [ultimoFueSalto, setUltimoFueSalto] = useState(false);
   const textoPista = ultimoFueSalto
-    ? t('escala.saltoVuelve')
+    ? t('escala.saltoVuelve', { nota: nombreDe(tonica) })
     : t(pistaPara(actividad.pistas, 1) ?? 'escala.casi');
   useEffect(() => {
     if (resuelta || puestas.length !== objetivo.length) return;

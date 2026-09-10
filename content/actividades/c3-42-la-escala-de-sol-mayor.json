@@ -1,9 +1,9 @@
 {
-  "id": "c3-01-tonos-y-semitonos",
+  "id": "c3-42-la-escala-de-sol-mayor",
   "version": 1,
   "tipo": "escala",
-  "titulo": "Tonos y semitonos",
-  "descripcion": "Construir la escala de do mayor en el teclado viendo cómo se escribe: todas blancas, y los semitonos donde no hay negra.",
+  "titulo": "La escala de sol mayor",
+  "descripcion": "Construir la escala de sol mayor en el teclado viendo cómo se escribe. Empezar en sol obliga a un sostenido: es lo que enseña que el patrón manda sobre las teclas.",
   "etapa": "primaria-c3",
   "eje": "notacion",
   "lugar": "pantalla",
@@ -22,8 +22,8 @@
     "modo": "toque"
   },
   "contenido": {
-    "consigna": "actividad.c301.consigna",
-    "tonica": "C4",
+    "consigna": "actividad.c342.consigna",
+    "tonica": "G4",
     "desde": 4,
     "octavas": 2,
     "instrumento": "piano"
@@ -35,12 +35,12 @@
       "aciertos"
     ]
   },
-  "enunciado": "actividad.c301.enunciado",
-  "personaje": "simon",
+  "enunciado": "actividad.c342.enunciado",
+  "personaje": "rex",
   "pistas": [
-    "actividad.c301.pista1",
-    "actividad.c301.pista2",
-    "actividad.c301.pista3"
+    "actividad.c342.pista1",
+    "actividad.c342.pista2",
+    "actividad.c342.pista3"
   ],
   "creditos": [
     {
