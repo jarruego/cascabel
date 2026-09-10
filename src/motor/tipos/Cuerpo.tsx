@@ -3,6 +3,7 @@ import { useCarril } from '@/app/preferencias';
 import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { SonidosDelCuerpo, ZONAS, type Zona } from '@/audio/cuerpo';
 import { IconoParar, IconoTocar } from '@/ui/Simbolos';
+import { Icono } from '@/ui/Icono';
 import { BarraAcciones } from '@/ui/BarraAcciones';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
@@ -30,6 +31,14 @@ import type { PropsActividad } from '../tipos';
  * hace el niño con su cuerpo. Por eso hay bucle y por eso se puede seguir mirando: la
  * pantalla marca qué toca y cuándo, como un director.
  */
+
+/** El dibujo de cada zona: chasquear los dedos, palmas, la pierna y el pie. OpenMoji. */
+const ICONO_ZONA: Record<Zona, string> = {
+  pitos: 'chasquido',
+  palmas: 'palmas',
+  muslos: 'muslo',
+  pies: 'pie',
+};
 
 type Estado = { sonando: boolean; indice: number };
 type Accion = { tipo: 'sonando'; valor: boolean } | { tipo: 'indice'; valor: number };
@@ -159,7 +168,12 @@ export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
       <div className="cuerpo__rejilla">
         {ZONAS.map((zona) => (
           <div key={zona} className="cuerpo__fila" data-zona={zona}>
-            <span className="cuerpo__etiqueta">{t(`cuerpo.${zona}`)}</span>
+            {/* Un dibujo encima del nombre: para quien no lee, y para que «chasquidos» no
+                haya que explicarlo. Lo pidió el autor el 2026-09-10. */}
+            <span className="cuerpo__etiqueta">
+              <Icono nombre={ICONO_ZONA[zona]} tamano={26} />
+              {t(`cuerpo.${zona}`)}
+            </span>
             <div className="cuerpo__golpes">
               {patron.map((g, i) => (
                 <span

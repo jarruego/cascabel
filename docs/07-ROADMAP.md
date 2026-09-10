@@ -2722,6 +2722,10 @@ textos, niveles, camino, y la sección de instrumentos.
       para felicitar sube de seis a ocho de cada diez —sigue marcado como pendiente de
       revisión pedagógica— y vale para karaoke y canta la nota, que usan la misma regla.
 
+- [x] **Percusión corporal: «chasquidos» en vez de «pitos», y un dibujo sobre cada fila.**
+      Chasquear los dedos, palmas, la pierna y el pie, de OpenMoji, encima del nombre de
+      cada zona; el nombre interno de la zona no cambia, solo lo que se lee.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

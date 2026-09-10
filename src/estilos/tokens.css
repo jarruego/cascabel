@@ -3577,10 +3577,15 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 }
 .cuerpo__etiqueta {
   flex: 0 0 auto;
-  width: 5.5rem;
+  width: 6rem;
   padding-right: var(--e-2);
-  font-size: var(--t-s);
+  /* El dibujo encima del nombre, los dos pegados a la derecha, contra los golpes. */
+  display: grid;
+  justify-items: end;
+  gap: 2px;
+  font-size: var(--t-xs);
   font-weight: 700;
+  line-height: 1.1;
   color: var(--color-zona, var(--tinta-2));
   text-align: right;
 }
