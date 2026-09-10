@@ -3,7 +3,6 @@ import { useCarril } from '@/app/preferencias';
 import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { SonidosDelCuerpo, ZONAS, type Zona } from '@/audio/cuerpo';
 import { IconoParar, IconoTocar } from '@/ui/Simbolos';
-import { Icono } from '@/ui/Icono';
 import { BarraAcciones } from '@/ui/BarraAcciones';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
@@ -172,7 +171,13 @@ export default function Cuerpo({ actividad, alTerminar }: PropsActividad) {
             {/* Un dibujo encima del nombre: para quien no lee, y para que «chasquidos» no
                 haya que explicarlo. Lo pidió el autor el 2026-09-10. */}
             <span className="cuerpo__etiqueta">
-              <Icono nombre={ICONO_ZONA[zona]} tamano={26} />
+              {/* El dibujo, del color de su zona: el SVG hace de máscara y el color lo pone
+                  la fila. Así los cuatro se distinguen por color además de por forma. */}
+              <span
+                className="cuerpo__icono"
+                aria-hidden="true"
+                style={{ maskImage: `url(/iconos/${ICONO_ZONA[zona]}.svg)`, WebkitMaskImage: `url(/iconos/${ICONO_ZONA[zona]}.svg)` }}
+              />
               {t(`cuerpo.${zona}`)}
             </span>
             <div className="cuerpo__golpes">

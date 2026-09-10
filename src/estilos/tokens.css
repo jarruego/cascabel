@@ -3596,7 +3596,18 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
   margin-bottom: clamp(2px, calc(var(--alto-fila) * 0.15), var(--e-2));
 }
 /* El dibujo de la zona encoge con la fila, para que no sea él quien la estire. */
-.cuerpo__etiqueta img { height: min(26px, calc(var(--alto-fila) * 0.55)); width: auto; }
+.cuerpo__icono {
+  display: block;
+  width: min(26px, calc(var(--alto-fila) * 0.55));
+  height: min(26px, calc(var(--alto-fila) * 0.55));
+  background: var(--color-zona, var(--tinta-2));
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
 /* Y con las filas al mínimo, el nombre en una línea corta. */
 .cuerpo__etiqueta { white-space: nowrap; }
 .cuerpo__etiqueta {
