@@ -2816,7 +2816,8 @@ textos, niveles, camino, y la sección de instrumentos.
       del catálogo la primera vez, con «Entendido»: no una pantalla que haya que cerrar. El
       logotipo se sirve desde `public/marca/` (PNG de la web, con el fondo quitado; el SVG
       vendrá) y es marca, fuera de las licencias: `TRADEMARK.md`. Nunca en la pantalla de
-      actividad. Queda para más adelante un campo en el JSON que enlace cada actividad con
+      actividad. **Cómo se dice**: Cascabel es «una herramienta más de cocomusic», no «su
+      parte interactiva», y el creador visible es cocomusic: no se nombra al autor. Queda para más adelante un campo en el JSON que enlace cada actividad con
       su ficha imprimible de cocomusic.es.
 
 - [x] **Las canciones y temas, cotejados con partitura.** Con las de Wikipedia en Lilypond
