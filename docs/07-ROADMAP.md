@@ -2734,6 +2734,15 @@ textos, niveles, camino, y la sección de instrumentos.
       hechas para ver lo que queda; va en la URL como los demás filtros y «quitar filtros»
       también lo quita.
 
+- [x] **136 «Estrellita con el cuerpo»**: la primera canción entera con percusión corporal.
+      Cuarenta y ocho pulsos con la letra sílaba a sílaba debajo; la tira se sale de la
+      pantalla y se desplaza sola siguiendo al golpe que toca. Melodía en dominio público;
+      la letra en español es la adaptación tradicional y su origen queda por confirmar:
+      PENDIENTE en el JSON. Candidatas para más: tradicionales anónimas —«Debajo de un
+      botón», «Cucú, cantaba la rana», «Al corro de la patata», «Tengo una muñeca vestida
+      de azul», «Antón Pirulero», «Que llueva»— y «Los pollitos dicen», de Ismael Parraguez
+      (†1917). Cada una se verifica antes de entrar.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

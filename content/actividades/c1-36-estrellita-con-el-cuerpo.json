@@ -1,0 +1,265 @@
+{
+  "id": "c1-36-estrellita-con-el-cuerpo",
+  "version": 1,
+  "tipo": "cuerpo",
+  "titulo": "Estrellita con el cuerpo",
+  "descripcion": "Cantar «Estrellita, ¿dónde estás?» entera acompañándola con el cuerpo: cada sílaba tiene su golpe, y la tira sigue sola a la canción.",
+  "etapa": "primaria-c1",
+  "eje": "cuerpo",
+  "lugar": "hibrida",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Práctica instrumental, vocal y corporal"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "4/4",
+    "tempo": 92
+  },
+  "entrada": {
+    "modo": "ninguna"
+  },
+  "contenido": {
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: (1) la melodía es «Ah! vous dirai-je, maman», anónima del siglo XVIII y en dominio público; la letra en español —«Estrellita, ¿dónde estás?»— es la adaptación tradicional que circula como anónima, pero hay que confirmar su origen antes de dar por buena la primera estrofa (CLAUDE.md §10: todo repertorio se verifica contra una fuente de dominio público). (2) El reparto de zonas —palmas en las sílabas del arranque, muslos en las del medio y pies en la nota larga; chasquidos para abrir las frases del medio— es una propuesta de percusión corporal, no un arreglo canónico.",
+    "consigna": "actividad.c136.consigna",
+    "tempo": 92,
+    "patron": [
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "silencio"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "silencio"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "silencio"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "pitos"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "silencio"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "silencio"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "muslos"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "palmas"
+      },
+      {
+        "zona": "pies"
+      },
+      {
+        "zona": "silencio"
+      }
+    ],
+    "silabas": [
+      "Es",
+      "tre",
+      "lli",
+      "ta",
+      "dón",
+      "de es",
+      "tás",
+      "",
+      "Quie",
+      "ro",
+      "ver",
+      "te",
+      "ti",
+      "ti",
+      "lar",
+      "",
+      "En",
+      "el",
+      "cie",
+      "lo",
+      "o en",
+      "el",
+      "mar",
+      "",
+      "Un",
+      "dia",
+      "man",
+      "te",
+      "de",
+      "ver",
+      "dad",
+      "",
+      "Es",
+      "tre",
+      "lli",
+      "ta",
+      "dón",
+      "de es",
+      "tás",
+      "",
+      "Quie",
+      "ro",
+      "ver",
+      "te",
+      "ti",
+      "ti",
+      "lar",
+      ""
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c136.enunciado",
+  "personaje": "doby",
+  "pistas": [
+    "actividad.c136.pista1",
+    "actividad.c136.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "«Ah! vous dirai-je, maman» (melodía de «Estrellita, ¿dónde estás?»)",
+      "autor": "Anónimo, Francia, siglo XVIII",
+      "fuente": "Dominio público; variaciones K. 265 de Mozart (1781-82) sobre la misma melodía",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "Letra en español «Estrellita, ¿dónde estás?», primera estrofa",
+      "autor": "Tradicional, anónima",
+      "fuente": "Adaptación tradicional al español; origen por confirmar",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    },
+    {
+      "obra": "Pitos, muslos y pies (sintetizados)",
+      "autor": "Proyecto cocomusic",
+      "fuente": "tools/muestras-cuerpo.py",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

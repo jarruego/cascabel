@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-10",
-  "total": 146,
+  "total": 147,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -644,6 +644,25 @@
         "competencia": "CE1",
         "criterio": "1.1",
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c1-36-estrellita-con-el-cuerpo",
+      "titulo": "Estrellita con el cuerpo",
+      "descripcion": "Cantar «Estrellita, ¿dónde estás?» entera acompañándola con el cuerpo: cada sílaba tiene su golpe, y la tira sigue sola a la canción.",
+      "etapa": "primaria-c1",
+      "eje": "cuerpo",
+      "tipo": "cuerpo",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Práctica instrumental, vocal y corporal"
       },
       "estado": "borrador",
       "herramienta": false

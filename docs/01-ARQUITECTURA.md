@@ -49,10 +49,10 @@ lista exactamente los tipos que hay en `src/motor/registro.ts`, con sus cifras a
 | `tocar-a-tiempo` | Golpear en el momento correcto | 7 |
 | `ordenar` | Secuencia por altura, duración o forma | 6 |
 | `seguir` | Reproducción con cursor sincronizado | 5 |
+| `cuerpo` | Percusión corporal: pitos, palmas, muslos y pies en cuatro filas | 4 |
 | `emparejar` | Dos conjuntos, toque de dos en dos | 4 |
 | `cantar` | Detección de altura con retorno visual | 3 |
 | `compases` | Colocar las barras de compás donde el pulso las pide | 3 |
-| `cuerpo` | Percusión corporal: pitos, palmas, muslos y pies en cuatro filas | 3 |
 | `memoria` | Cartas boca abajo: un dibujo y su sonido. Se destapan dos y la pareja se queda a la vista | 3 |
 | `eco` | Dos niños por turnos: uno propone un ritmo y el otro lo repite | 2 |
 | `escala` | Construir una escala contando tonos y semitonos | 2 |
