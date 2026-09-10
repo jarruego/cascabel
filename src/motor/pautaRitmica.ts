@@ -67,6 +67,7 @@ export interface Pauta {
 /** El glifo de una duración en pulsos, con la plica hacia abajo. */
 export function glifoDe(pulsos: number): string {
   if (pulsos >= 4) return GLIFO.redonda;
+  if (pulsos >= 3) return GLIFO.blancaAbajo + GLIFO.puntillo;
   if (pulsos >= 2) return GLIFO.blancaAbajo;
   if (pulsos >= 1.5) return GLIFO.negraAbajo + GLIFO.puntillo;
   if (pulsos >= 1) return GLIFO.negraAbajo;
@@ -81,6 +82,7 @@ export function glifoDe(pulsos: number): string {
  */
 export function anchoDe(pulsos: number): number {
   if (pulsos >= 4) return 7;
+  if (pulsos >= 3) return 6.5;
   if (pulsos >= 2) return 5.5;
   if (pulsos >= 1) return 4;
   return 3;

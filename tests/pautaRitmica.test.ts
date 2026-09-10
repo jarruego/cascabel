@@ -44,6 +44,8 @@ describe('la pauta de «pon las barras»', () => {
     expect(glifoDe(2)).toBe(GLIFO.blancaAbajo);
     expect(glifoDe(4)).toBe(GLIFO.redonda);
     expect(glifoDe(1.5)).toBe(GLIFO.negraAbajo + GLIFO.puntillo);
+    // Tres pulsos es una blanca con puntillo, no una blanca: en 3/4 es el compás entero.
+    expect(glifoDe(3)).toBe(GLIFO.blancaAbajo + GLIFO.puntillo);
   });
 
   it('la cifra de compás se escribe con los dígitos de Bravura', () => {
