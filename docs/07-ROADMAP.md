@@ -2700,6 +2700,11 @@ textos, niveles, camino, y la sección de instrumentos.
       `tr-05` → 905). Delante del título en el catálogo, el camino, la explicación, la ficha
       y los criterios; el buscador lo entiende; y un test vigila que no se repita ninguno.
 
+- [x] **«Tonos y semitonos» construye la escala de do mayor**, no la de sol: empieza en do,
+      todas las teclas son blancas y los semitonos caen entre mi-fa y si-do. Las últimas
+      ocho notas tienen que formar la escala Y empezar en do. Un salto avisa en el acto:
+      «vuelve a empezar en do».
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

@@ -84,7 +84,15 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
   const objetivo = escalaDesde(tonica, MAYOR);
   const [pistaVisible, setPistaVisible] = useState(false);
   const relojPista = useRef<number | null>(null);
-  const textoPista = t(pistaPara(actividad.pistas, 1) ?? 'escala.casi');
+  /*
+    Un salto —más de un tono entre dos notas— también avisa, y avisa de lo que hay que
+    hacer: volver a empezar en la tónica. Lo pidió el autor el 2026-09-10 para la escala de
+    do mayor. Como se evalúan las últimas ocho notas, volver a empezar es tocar do otra vez.
+  */
+  const [ultimoFueSalto, setUltimoFueSalto] = useState(false);
+  const textoPista = ultimoFueSalto
+    ? t('escala.saltoVuelve')
+    : t(pistaPara(actividad.pistas, 1) ?? 'escala.casi');
   useEffect(() => {
     if (resuelta || puestas.length !== objetivo.length) return;
     setPistaVisible(true);
@@ -123,12 +131,26 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
     alTerminar({ actividadId: actividad.id, completada: true, aciertos: 1, intentos: 1 });
   }, [resuelta, actividad.id, alTerminar]);
 
+  /** La misma nota sin la octava: la escala tiene que empezar en la tónica, en la que sea. */
+  const sinOctava = (n: string) => n.replace(/\d/g, '');
+
   const anadir = (nota: string) => {
     if (resuelta) return;
     void sonar(nota);
     const nuevas = [...puestas, nota];
     setPuestas(nuevas);
-    if (esEscalaMayor(nuevas.slice(-objetivo.length))) setResuelta(true);
+    const salto = distancia(puestas[puestas.length - 1]!, nota) === null;
+    setUltimoFueSalto(salto);
+    if (salto) {
+      setPistaVisible(true);
+      if (relojPista.current !== null) window.clearTimeout(relojPista.current);
+      relojPista.current = window.setTimeout(() => setPistaVisible(false), PISTA_MS);
+      return;
+    }
+    // La escala mayor de la tónica pedida, no cualquiera: las últimas ocho notas tienen
+    // que formarla Y empezar en ella.
+    const ultimas = nuevas.slice(-objetivo.length);
+    if (esEscalaMayor(ultimas) && sinOctava(ultimas[0]!) === sinOctava(tonica)) setResuelta(true);
   };
 
   const teclas: Array<{ nota: string; negra: boolean; indice: number }> = [];
