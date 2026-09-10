@@ -4,7 +4,8 @@ import { t } from '@/i18n';
 /**
  * «Un proyecto de cocomusic», con el logotipo y el enlace a la web.
  *
- * Cascabel es la parte interactiva de cocomusic.es, y la app tiene que decirlo donde un
+ * Cascabel es una herramienta más de cocomusic.es —no «su parte interactiva», y sin nombrar
+ * a nadie: el creador es cocomusic, lo dijo el autor el 2026-09-10—, y hay que decirlo donde un
  * adulto lo busque: el pie del catálogo, los créditos, «acerca de» en Ajustes y la ficha
  * del maestro. **Nunca en la pantalla de actividad ni en su modal**: esa pantalla es del
  * niño y ahí no entra nada que no sea la actividad. Lo pidió el autor el 2026-09-10.
