@@ -45,10 +45,10 @@ lista exactamente los tipos que hay en `src/motor/registro.ts`, con sus cifras a
 | `rejilla` | Cuadrícula altura × tiempo | 10 |
 | `guia-aula` | Pantalla del maestro: consigna, pulso, coreografía, ficha | 9 |
 | `lienzo` | Creación libre sin evaluación | 8 |
+| `seguir` | Reproducción con cursor sincronizado | 8 |
 | `tocar-a-tiempo` | Golpear en el momento correcto | 8 |
 | `cuerpo` | Percusión corporal: pitos, palmas, muslos y pies en cuatro filas | 7 |
 | `referencia` | Consulta del lenguaje musical, con sonido. No es un ejercicio | 7 |
-| `seguir` | Reproducción con cursor sincronizado | 7 |
 | `ordenar` | Secuencia por altura, duración o forma | 6 |
 | `emparejar` | Dos conjuntos, toque de dos en dos | 5 |
 | `cantar` | Detección de altura con retorno visual | 3 |

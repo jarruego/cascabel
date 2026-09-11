@@ -8,6 +8,8 @@ import { vibrarPulso } from '@/ui/vibracion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
+import { Personaje } from '@/ui/Personaje';
+import type { Personaje as NombrePersonaje } from '@/ui/personajes';
 import { BarraAcciones } from '@/ui/BarraAcciones';
 import { IconoParar, IconoRepetir, IconoSiguiente, IconoTocar } from '@/ui/Simbolos';
 import { Reaccion } from '@/ui/Reaccion';
@@ -34,6 +36,12 @@ interface Bloque {
   /** Texto o sílaba que se muestra. */
   texto?: string;
   icono?: string;
+  /**
+   * Un personaje de la pandilla en vez de un dibujo: el de la nota que suena en ese bloque.
+   * Está quieto hasta que le toca, canta mientras suena y vuelve a quedarse quieto. Lo pidió
+   * el autor el 2026-09-12 a partir de la canción con pictogramas (011): «que salgan todos».
+   */
+  personaje?: NombrePersonaje;
   color?: string;
   /** Pulsos que dura este bloque. */
   pulsos?: number;
@@ -329,6 +337,9 @@ export default function Seguir({ actividad, alTerminar, alSalir }: PropsActivida
               style={b.color ? { borderColor: `var(--eje-${b.color})` } : undefined}
             >
               {b.icono && <Icono nombre={b.icono} tamano={44} />}
+              {b.personaje && (
+                <Personaje nombre={b.personaje} pose={i === actual ? 'canta' : 'neutro'} tamano={64} />
+              )}
               {b.texto && <span className="seguir__texto">{t(b.texto)}</span>}
             </li>
           ))}
@@ -352,6 +363,7 @@ export default function Seguir({ actividad, alTerminar, alSalir }: PropsActivida
                 style={{ bottom: `${Math.max(-12, (seg / 4) * 100)}%` }}
               >
                 {b.icono && <Icono nombre={b.icono} tamano={40} />}
+                {b.personaje && <Personaje nombre={b.personaje} pose={Math.abs(seg) < 0.18 ? 'canta' : 'neutro'} tamano={56} />}
                 {b.texto && <span>{t(b.texto)}</span>}
               </div>
             );

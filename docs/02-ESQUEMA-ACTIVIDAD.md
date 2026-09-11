@@ -90,6 +90,10 @@ todo sigue como antes. Los ejercicios se escriben a mano, porque la progresión 
 pandilla). Es la progresión que al autor le gustó de la 214, y se escribe con tres
 `ejercicios` cuyas `notas` son la primera mitad, la segunda y la suma.
 
+**Un bloque de un mapa puede ser un personaje** (`bloques[].personaje`) en vez de un dibujo:
+el de la nota que suena en él. Se queda quieto hasta que le toca, canta mientras suena y da
+un botecito. Es la canción con pictogramas (011) con la pandilla entera: la 141.
+
 **Los mapas (`seguir`) con `notas`** las escriben de dos maneras, y se distingue por la
 cuenta: **tantas notas como casillas** (una por bloque o por sílaba: la canción con
 pictogramas) o **tantas como pulsos** (la forma de una obra: `null` donde no empieza nota).

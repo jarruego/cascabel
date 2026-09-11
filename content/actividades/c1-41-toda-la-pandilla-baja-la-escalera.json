@@ -1,0 +1,152 @@
+{
+  "id": "c1-41-toda-la-pandilla-baja-la-escalera",
+  "version": 1,
+  "tipo": "seguir",
+  "titulo": "Toda la pandilla baja la escalera",
+  "descripcion": "Los ocho personajes en fila: la melodía baja de Doby a Dora por toda la escalera y vuelve a subir, y cada uno canta cuando le toca. Es el comienzo de «Joy to the World».",
+  "etapa": "primaria-c1",
+  "eje": "altura",
+  "lugar": "hibrida",
+  "duracion_min": 6,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "2/4",
+    "tempo": 84
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la melodía es la primera frase de «Joy to the World» (Händel/Lowell Mason, 1839, dominio público), cotejada con la partitura de Wikipedia en inglés (Lilypond, re mayor) y transportada a do: baja toda la escala de do' a do y vuelve a subir, y por eso salen los ocho personajes, Doby arriba y Dora abajo. La corchea con puntillo y semicorchea del primer compás se escriben como dos corcheas: una casilla de un cuarto de pulso no cabe. Es un villancico en inglés; aquí no lleva letra y vale por su escala. Confirmar tempo. La última nota se alarga a un compás entero para que el bucle cuadre: en la partitura vale tres corcheas y sigue con la anacrusa de la frase siguiente.",
+    "consigna": "actividad.c141.consigna",
+    "tempo": 84,
+    "bucle": true,
+    "bloques": [
+      {
+        "personaje": "doby",
+        "color": "altura"
+      },
+      {
+        "personaje": "simon",
+        "color": "altura",
+        "pulsos": 0.5
+      },
+      {
+        "personaje": "laia",
+        "color": "altura",
+        "pulsos": 0.5
+      },
+      {
+        "personaje": "sol",
+        "color": "altura",
+        "pulsos": 1.5
+      },
+      {
+        "personaje": "fara",
+        "color": "altura",
+        "pulsos": 0.5
+      },
+      {
+        "personaje": "milo",
+        "color": "altura"
+      },
+      {
+        "personaje": "rex",
+        "color": "altura"
+      },
+      {
+        "personaje": "dora",
+        "color": "altura",
+        "pulsos": 1.5
+      },
+      {
+        "personaje": "sol",
+        "color": "altura",
+        "pulsos": 0.5
+      },
+      {
+        "personaje": "laia",
+        "color": "altura",
+        "pulsos": 1.5
+      },
+      {
+        "personaje": "laia",
+        "color": "altura",
+        "pulsos": 0.5
+      },
+      {
+        "personaje": "simon",
+        "color": "altura",
+        "pulsos": 1.5
+      },
+      {
+        "personaje": "simon",
+        "color": "altura",
+        "pulsos": 0.5
+      },
+      {
+        "personaje": "doby",
+        "color": "altura",
+        "pulsos": 2
+      },
+      {
+        "personaje": "doby",
+        "color": "altura",
+        "pulsos": 2
+      }
+    ],
+    "notas": [
+      "C5",
+      "B4",
+      "A4",
+      "G4",
+      "F4",
+      "E4",
+      "D4",
+      "C4",
+      "G4",
+      "A4",
+      "A4",
+      "B4",
+      "B4",
+      "C5",
+      "C5"
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c141.enunciado",
+  "personaje": "doby",
+  "pistas": [
+    "actividad.c141.pista1",
+    "actividad.c141.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "«Joy to the World», primera frase",
+      "autor": "Melodía atribuida a Georg Friedrich Händel, arreglada por Lowell Mason (1839)",
+      "fuente": "Dominio público; cotejada con la partitura de Wikipedia en inglés (Lilypond, re mayor) y transportada a do",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador",
+  "musica": {
+    "abc": "X:1\nT:Joy to the World\nC:G. F. Händel / Lowell Mason\nM:2/4\nL:1/8\nK:C\nc2 B A | G3 F | E2 D2 | C3 G | A3 A | B3 B | c4 | c4 |]"
+  }
+}

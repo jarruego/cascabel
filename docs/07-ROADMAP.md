@@ -3006,6 +3006,12 @@ textos, niveles, camino, y la sección de instrumentos.
       kit del Taller también. La **017** «Palmas y muslos» enseña solo las filas que usa: la
       percusión corporal quita las zonas vacías.
 
+- [x] **141 «Toda la pandilla baja la escalera»**: la canción con pictogramas (011) con los
+      ocho personajes. Un bloque de un mapa puede ser ahora un personaje (`bloques[].personaje`),
+      que canta cuando le toca y da un botecito. La melodía es la primera frase de «Joy to the
+      World» (Wikipedia en inglés, Lilypond), que baja toda la escala de do' a do y vuelve a
+      subir: Doby arriba, Dora abajo, y los seis en medio en orden.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

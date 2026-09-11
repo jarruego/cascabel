@@ -1986,6 +1986,17 @@ p {
 .seguir__bloque[data-pasado] {
   opacity: 0.5;
 }
+/* Con personajes, el que canta salta un poco: cambia el dibujo Y se mueve, para que el
+   cambio de pose no pase desapercibido en una tira de quince. */
+.seguir__bloque[data-actual] .personaje { animation: seguir-canta 500ms ease-out; }
+@keyframes seguir-canta {
+  0% { transform: translateY(0); }
+  40% { transform: translateY(-8px) scale(1.08); }
+  100% { transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .seguir__bloque[data-actual] .personaje { animation: none; }
+}
 @media (prefers-reduced-motion: reduce) {
   .seguir__bloque[data-actual] { transform: none; border-width: 7px; }
 }

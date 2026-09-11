@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-11",
-  "total": 161,
+  "total": 162,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -732,6 +732,25 @@
       "eje": "pulso",
       "tipo": "karaoke",
       "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c1-41-toda-la-pandilla-baja-la-escalera",
+      "titulo": "Toda la pandilla baja la escalera",
+      "descripcion": "Los ocho personajes en fila: la melodía baja de Doby a Dora por toda la escalera y vuelve a subir, y cada uno canta cuando le toca. Es el comienzo de «Joy to the World».",
+      "etapa": "primaria-c1",
+      "eje": "altura",
+      "tipo": "seguir",
+      "lugar": "hibrida",
       "microfono": false,
       "duracion_min": 6,
       "curriculo": {
