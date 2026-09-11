@@ -17,7 +17,7 @@
 export const MAX_POR_VUELTA = 5;
 
 /** Generador pequeño y determinista (mulberry32): para barajar igual en el test que en la app. */
-function azarDe(semilla: number): () => number {
+export function azarDe(semilla: number): () => number {
   let a = semilla >>> 0;
   return () => {
     a = (a + 0x6d2b79f5) >>> 0;
@@ -28,7 +28,7 @@ function azarDe(semilla: number): () => number {
   };
 }
 
-function barajado<T>(lista: T[], azar: () => number): T[] {
+export function barajado<T>(lista: readonly T[], azar: () => number): T[] {
   const copia = [...lista];
   for (let i = copia.length - 1; i > 0; i--) {
     const j = Math.floor(azar() * (i + 1));

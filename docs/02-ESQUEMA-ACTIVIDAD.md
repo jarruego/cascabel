@@ -90,6 +90,15 @@ todo sigue como antes. Los ejercicios se escriben a mano, porque la progresión 
 pandilla). Es la progresión que al autor le gustó de la 214, y se escribe con tres
 `ejercicios` cuyas `notas` son la primera mitad, la segunda y la suma.
 
+**El pentagrama dibuja líneas adicionales y puede preguntar por rondas.** Los sitios van de
+la línea 0 (do4, la primera adicional por debajo) a la 7 (do6, la segunda por arriba) y del
+espacio 0 al 6; `motor/pentagramaPosiciones.ts` dice qué adicionales lleva cada uno. Con dos
+octavas una nota tiene dos o tres sitios, así que cada opción lleva `clave` única («do5») y
+`nombre` («do»), y `contenido.porRonda` hace que cada ronda dibuje solo ese número de sitios
+**sin dos del mismo nombre** y pregunte uno de ellos: la pedida tiene un solo sitio posible.
+Cada sitio se pregunta una vez (`motor/rondasPentagrama.ts`, con test). Sin `porRonda` se
+dibujan todos siempre, como en la 201.
+
 **Los estímulos con `ritmo` admiten `pulso`** (`antes`, `fondo` o `ambos`; en el estímulo o en
 `contenido.pulso` para toda la elección): el pulso de negra, más flojo y de otro timbre, un
 compás antes del ritmo y/o debajo de él. Es lo que hace que «¿negra o blanca?» (125) tenga

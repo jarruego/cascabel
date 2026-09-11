@@ -8,10 +8,12 @@ import { Reaccion } from '@/ui/Reaccion';
 import { BASE_MS, POR_CARACTER_MS } from '../maquinaReaccion';
 import { Progreso } from '@/ui/Progreso';
 import { barajarSinRepetir } from '../seleccionEstimulos';
+import { rondasPentagrama } from '../rondasPentagrama';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import {
   desplazamientoY,
+  lineasAdicionales,
   notaDe,
   type Clave,
   type Sitio,
@@ -38,7 +40,10 @@ import {
  */
 
 interface Opcion {
+  /** Única por sitio: en dos octavas hay tres «do», así que aquí va «do4», «do5», «do6». */
   clave: string;
+  /** Lo que se dice y se lee: «do». Si falta, es la clave, como en las actividades de una octava. */
+  nombre?: string;
   linea?: number;
   espacio?: number;
 }
@@ -57,6 +62,12 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
     clave?: Clave;
     opciones: Opcion[];
     rondas?: number;
+    /**
+     * Cuántos sitios se dibujan en cada ronda, sin dos del mismo nombre, preguntando uno de
+     * ellos. Sin esto se dibujan todos siempre, que es lo de las actividades de una octava.
+     * Ver `motor/rondasPentagrama.ts`.
+     */
+    porRonda?: number;
   };
 
   const carril = useCarril(actividad.etapa);
@@ -101,17 +112,32 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
   const ARRIBA = Math.round((ALTO - 4 * SEPARACION) / 2);
   const INICIO = Math.round(INICIO_POR_ESPACIO * SEPARACION);
   const paso = Math.max(tam + 12, Math.round(SEPARACION * 2.6));
-  const ancho = Math.max(320, INICIO + contenido.opciones.length * paso + 12);
+  const columnas = Math.min(contenido.porRonda ?? Infinity, contenido.opciones.length);
+  const ancho = Math.max(320, INICIO + columnas * paso + 12);
 
+  // Con `porRonda`, cada ronda dibuja un puñado de sitios sin nombre repetido y pregunta
+  // uno; la lista de rondas la decide `rondasPentagrama`, con su test.
+  const [rondas] = useState(() =>
+    contenido.porRonda
+      ? rondasPentagrama(
+          contenido.opciones.map((o) => o.nombre ?? o.clave),
+          contenido.porRonda,
+          Math.floor(Math.random() * 2 ** 31),
+        )
+      : null,
+  );
   // Las rondas son las opciones barajadas, sin dos iguales seguidas. Decía «barajadas» y
   // no lo estaban: salían sol, la, si, do, sol, la, si, do, y así se acierta sin mirar.
   const [preguntas] = useState(() => {
+    if (rondas) return rondas.map((r) => contenido.opciones[r.pedida]!.clave);
     const base = contenido.opciones.map((o) => o.clave);
     const n = contenido.rondas ?? base.length;
     const salida: string[] = [];
     while (salida.length < n) salida.push(...base);
     return barajarSinRepetir(salida.slice(0, n), Math.floor(Math.random() * 2 ** 31));
   });
+  const nombreDeClave = (clave: string) =>
+    contenido.opciones.find((o) => o.clave === clave)?.nombre ?? clave;
 
   const [estado, despachar] = useReducer(
     (e: EstadoEleccion, a: AccionEleccion) => reducir(e, a, preguntas.length),
@@ -217,6 +243,14 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
 
   const pista = pistaPara(actividad.pistas, estado.fallosAqui);
 
+  // Lo que hay en la pauta esta ronda, con su columna: todo, o lo que diga la ronda.
+  const visibles: Array<{ o: Opcion; columna: number }> = rondas
+    ? rondas[Math.min(estado.indice, rondas.length - 1)]!.dibujadas.map((i, columna) => ({
+        o: contenido.opciones[i]!,
+        columna,
+      }))
+    : contenido.opciones.map((o, columna) => ({ o, columna }));
+
   /*
     La pista de un fallo se queda lo que tarda en leerse, y se va antes si se responde.
 
@@ -259,7 +293,7 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
       <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
 
       <p className="pentagrama__pedida" aria-live="polite">
-        {pedida && t(`nota.${pedida}`)}
+        {pedida && t(`nota.${nombreDeClave(pedida)}`)}
       </p>
 
       {/* El marco es lo único que se desplaza, y solo de lado. */}
@@ -272,7 +306,23 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
           exige (75 / 60 / 48 px). La nota se ve pequeña y correcta; el dedo tiene sitio.
           Son <button> nativos, así que Tab y Enter funcionan sin escribir nada.
         */}
-        {contenido.opciones.map((o) => {
+        {/* Las líneas adicionales de los sitios de fuera, del ancho de una cabeza y algo
+            más, a la altura exacta de su línea: sin ellas, un do agudo flotaría en blanco. */}
+        {visibles.flatMap(({ o, columna }) =>
+          lineasAdicionales(sitioDe(o)).map((l) => (
+            <span
+              key={`${o.clave}-${'linea' in l ? l.linea : ''}`}
+              className="pentagrama__adicional"
+              aria-hidden="true"
+              style={{
+                width: Math.round(SEPARACION * 2.2),
+                left: INICIO + columna * paso + tam / 2 - Math.round(SEPARACION * 1.1),
+                top: ARRIBA + desplazamientoY(l, SEPARACION) - 1,
+              }}
+            />
+          )),
+        )}
+        {visibles.map(({ o, columna }) => {
           const sitio = sitioDe(o);
           const nota = notaDe(sitio, clave);
           const y = ARRIBA + desplazamientoY(sitio, SEPARACION);
@@ -284,10 +334,10 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
               style={{
                 width: tam,
                 height: tam,
-                left: INICIO + contenido.opciones.indexOf(o) * paso,
+                left: INICIO + columna * paso,
                 top: y - tam / 2,
               }}
-              aria-label={t(`nota.${o.clave}`)}
+              aria-label={t(`nota.${o.nombre ?? o.clave}`)}
               aria-disabled={estado.fase !== 'estimulo' || undefined}
               onClick={() => void elegir(o)}
             >

@@ -1,0 +1,144 @@
+{
+  "id": "c3-50-las-quince-notas-de-do-a-do",
+  "version": 1,
+  "tipo": "pentagrama",
+  "titulo": "Las quince notas: de do a do",
+  "descripcion": "Dos octavas en clave de sol, del do central (una línea adicional por debajo) al do agudo (dos por arriba). Cada ronda dibuja seis sitios sin dos del mismo nombre y pregunta uno.",
+  "etapa": "primaria-c3",
+  "eje": "notacion",
+  "lugar": "pantalla",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "notas": [
+      "do",
+      "re",
+      "mi",
+      "fa",
+      "sol",
+      "la",
+      "si",
+      "do'",
+      "re'",
+      "mi'",
+      "fa'",
+      "sol'",
+      "la'",
+      "si'"
+    ],
+    "secuencia": "ninguna",
+    "compas": "libre"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "$comment": "Pedida por el autor el 2026-09-12 tras la 201 y la 242: «las 15 notas de DO a DO en clave de sol». Como la misma nota está en dos o tres posiciones, cada ronda dibuja solo seis sitios sin nombre repetido y pregunta uno de ellos, así que la pedida tiene un único sitio; cada uno de los quince se pregunta una vez. PENDIENTE DE REVISIÓN PEDAGÓGICA: si seis por ronda es mucho para leer de un vistazo en 5.º, bajar `porRonda` a cuatro o cinco.",
+    "consigna": "actividad.c350.consigna",
+    "clave": "sol",
+    "porRonda": 6,
+    "opciones": [
+      {
+        "clave": "do4",
+        "nombre": "do",
+        "linea": 0
+      },
+      {
+        "clave": "re4",
+        "nombre": "re",
+        "espacio": 0
+      },
+      {
+        "clave": "mi4",
+        "nombre": "mi",
+        "linea": 1
+      },
+      {
+        "clave": "fa4",
+        "nombre": "fa",
+        "espacio": 1
+      },
+      {
+        "clave": "sol4",
+        "nombre": "sol",
+        "linea": 2
+      },
+      {
+        "clave": "la4",
+        "nombre": "la",
+        "espacio": 2
+      },
+      {
+        "clave": "si4",
+        "nombre": "si",
+        "linea": 3
+      },
+      {
+        "clave": "do5",
+        "nombre": "do",
+        "espacio": 3
+      },
+      {
+        "clave": "re5",
+        "nombre": "re",
+        "linea": 4
+      },
+      {
+        "clave": "mi5",
+        "nombre": "mi",
+        "espacio": 4
+      },
+      {
+        "clave": "fa5",
+        "nombre": "fa",
+        "linea": 5
+      },
+      {
+        "clave": "sol5",
+        "nombre": "sol",
+        "espacio": 5
+      },
+      {
+        "clave": "la5",
+        "nombre": "la",
+        "linea": 6
+      },
+      {
+        "clave": "si5",
+        "nombre": "si",
+        "espacio": 6
+      },
+      {
+        "clave": "do6",
+        "nombre": "do",
+        "linea": 7
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c350.enunciado",
+  "personaje": "rex",
+  "pistas": [
+    "actividad.c350.pista1",
+    "actividad.c350.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

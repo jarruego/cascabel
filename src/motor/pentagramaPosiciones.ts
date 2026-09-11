@@ -27,18 +27,47 @@ const PRIMERA_LINEA: Record<Clave, { nombre: NombreNota; octava: number }> = {
 /**
  * Cuántos grados de escala hay que subir desde la primera línea.
  * Cada línea sube dos grados; cada espacio, uno más que la línea de debajo.
+ *
+ * Las líneas adicionales siguen la misma cuenta: la **línea 0** es la primera adicional
+ * por debajo (do4 en clave de sol), la **6** y la **7** son las dos primeras por arriba
+ * (la5 y do6); el **espacio 0** cuelga bajo la primera línea (re4) y los espacios 5 y 6
+ * van encima de la quinta y de la sexta (sol5 y si5). Es lo que hace falta para las dos
+ * octavas de do a do que se leen en 3.º ciclo (2026-09-12); más allá no hay actividad que
+ * lo pida, y se sigue rechazando para que un error de escritura no dibuje una nota en el
+ * limbo.
  */
 function gradosDesdeAbajo(sitio: Sitio): number {
   if ('linea' in sitio) {
-    if (sitio.linea < 1 || sitio.linea > 5) {
-      throw new Error(`Línea fuera del pentagrama: ${sitio.linea}. Son 1 a 5, de abajo arriba.`);
+    if (sitio.linea < 0 || sitio.linea > 7) {
+      throw new Error(`Línea fuera del pentagrama: ${sitio.linea}. Son 0 a 7, de abajo arriba.`);
     }
     return (sitio.linea - 1) * 2;
   }
-  if (sitio.espacio < 1 || sitio.espacio > 4) {
-    throw new Error(`Espacio fuera del pentagrama: ${sitio.espacio}. Son 1 a 4, de abajo arriba.`);
+  if (sitio.espacio < 0 || sitio.espacio > 6) {
+    throw new Error(`Espacio fuera del pentagrama: ${sitio.espacio}. Son 0 a 6, de abajo arriba.`);
   }
   return (sitio.espacio - 1) * 2 + 1;
+}
+
+/** ¿Está dentro de las cinco líneas? Lo de fuera lleva líneas adicionales. */
+export function dentroDelPentagrama(sitio: Sitio): boolean {
+  const g = gradosDesdeAbajo(sitio);
+  return g >= 0 && g <= 8;
+}
+
+/**
+ * Las líneas adicionales que hay que dibujar para un sitio, como líneas (0 por debajo; 6 y
+ * 7 por arriba). Una nota EN una adicional la lleva; una nota encima de la primera
+ * adicional por arriba (si5, espacio 6) lleva la de debajo; y la que cuelga bajo la
+ * primera línea (re4, espacio 0) no lleva ninguna, que es lo que se ve en cualquier
+ * partitura.
+ */
+export function lineasAdicionales(sitio: Sitio): Sitio[] {
+  const g = gradosDesdeAbajo(sitio);
+  const lineas: Sitio[] = [];
+  for (let n = 0; (n - 1) * 2 >= g; n--) lineas.push({ linea: n });
+  for (let n = 6; (n - 1) * 2 <= g; n++) lineas.push({ linea: n });
+  return lineas;
 }
 
 export interface NotaEnPentagrama {

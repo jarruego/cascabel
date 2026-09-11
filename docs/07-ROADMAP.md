@@ -3028,6 +3028,14 @@ textos, niveles, camino, y la sección de instrumentos.
 - [x] **El Danubio (347) con violín**, la melodía al 100 % y los golpes al 45 %: la percusión
       corporal tiene ahora también `volumenGolpes`, para cuando manda la melodía.
 
+- [x] **350 «Las quince notas: de do a do»**: dos octavas en clave de sol con líneas
+      adicionales (línea 0 a 7, espacio 0 a 6 en `pentagramaPosiciones.ts`, con test). Como
+      la misma nota está en dos o tres sitios, cada ronda dibuja seis sin nombre repetido y
+      pregunta uno —la regla del autor: «tú dibujas las notas que te interesan, nunca una
+      repetida, y la pedida solo tiene un sitio»—; cada sitio se pregunta una vez, en orden
+      barajado y sin dos seguidas del mismo nombre (`rondasPentagrama.ts`, con test). Las
+      opciones llevan ahora `clave` única y `nombre`; las de una octava no cambian.
+
 - [x] **La escala (301, 342) avisa con un solo mensaje**: «ese paso no sigue el patrón,
       empieza de nuevo en sol». Los seis mensajes por clase de fallo liaban («hay muchas
       explicaciones según la tecla y lía más», 2026-09-12); qué ha pasado ya lo dice el paso

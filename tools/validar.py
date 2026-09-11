@@ -253,6 +253,10 @@ def _reglas_de_ejercicio(datos: dict, contenido: dict, etapa: str, r: Resultado)
         opciones = contenido.get("parejas")
     elif datos.get("tipo") == "ordenar":
         opciones = contenido.get("elementos")
+    elif datos.get("tipo") == "pentagrama" and contenido.get("porRonda"):
+        # Con `porRonda` la pauta dibuja solo ese numero de sitios cada vez: el banco de
+        # opciones puede tener las quince notas de do a do sin que haya quince en pantalla.
+        opciones = (contenido.get("opciones") or [])[: int(contenido["porRonda"])]
     else:
         opciones = contenido.get("opciones")
 

@@ -1373,6 +1373,8 @@ p {
 .pentagrama__sitio[aria-disabled="true"] {
   cursor: default;
 }
+/* Las líneas adicionales, del grosor de las de la pauta. */
+.pentagrama__adicional { position: absolute; height: 2px; background: var(--tinta); }
 /* La cabeza de nota: del tamaño que tendría de verdad en la pauta, no del hitbox. */
 .pentagrama__nota {
   width: 16px;

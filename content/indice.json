@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-11",
-  "total": 162,
+  "total": 163,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -2289,6 +2289,25 @@
       "etapa": "primaria-c3",
       "eje": "notacion",
       "tipo": "karaoke",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-50-las-quince-notas-de-do-a-do",
+      "titulo": "Las quince notas: de do a do",
+      "descripcion": "Dos octavas en clave de sol, del do central (una línea adicional por debajo) al do agudo (dos por arriba). Cada ronda dibuja seis sitios sin dos del mismo nombre y pregunta uno.",
+      "etapa": "primaria-c3",
+      "eje": "notacion",
+      "tipo": "pentagrama",
       "lugar": "pantalla",
       "microfono": false,
       "duracion_min": 8,

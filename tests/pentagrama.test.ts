@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import {
+  dentroDelPentagrama,
   desplazamientoY,
+  lineasAdicionales,
   notaDe,
   sitiosDelPentagrama,
 } from '../src/motor/pentagramaPosiciones';
@@ -71,11 +73,41 @@ describe('posiciones en clave de fa', () => {
   });
 });
 
+describe('líneas adicionales: las dos octavas de do a do', () => {
+  it('la línea 0 es el do central y la 7 el do agudo; entre medias, quince notas', () => {
+    expect(notaDe({ linea: 0 })).toMatchObject({ nombre: 'do', octava: 4 });
+    expect(notaDe({ espacio: 0 })).toMatchObject({ nombre: 're', octava: 4 });
+    expect(notaDe({ espacio: 5 })).toMatchObject({ nombre: 'sol', octava: 5 });
+    expect(notaDe({ linea: 6 })).toMatchObject({ nombre: 'la', octava: 5 });
+    expect(notaDe({ espacio: 6 })).toMatchObject({ nombre: 'si', octava: 5 });
+    expect(notaDe({ linea: 7 })).toMatchObject({ nombre: 'do', octava: 6 });
+  });
+
+  it('cada sitio lleva las adicionales que se ven en una partitura', () => {
+    expect(lineasAdicionales({ linea: 0 })).toEqual([{ linea: 0 }]);
+    // Re4 cuelga bajo la primera línea: sin adicional.
+    expect(lineasAdicionales({ espacio: 0 })).toEqual([]);
+    expect(lineasAdicionales({ linea: 1 })).toEqual([]);
+    expect(lineasAdicionales({ espacio: 5 })).toEqual([]);
+    expect(lineasAdicionales({ linea: 6 })).toEqual([{ linea: 6 }]);
+    // Si5 va encima de la primera adicional y la lleva debajo.
+    expect(lineasAdicionales({ espacio: 6 })).toEqual([{ linea: 6 }]);
+    expect(lineasAdicionales({ linea: 7 })).toEqual([{ linea: 6 }, { linea: 7 }]);
+  });
+
+  it('distingue lo de dentro de lo de fuera', () => {
+    expect(dentroDelPentagrama({ linea: 1 })).toBe(true);
+    expect(dentroDelPentagrama({ linea: 5 })).toBe(true);
+    expect(dentroDelPentagrama({ espacio: 0 })).toBe(false);
+    expect(dentroDelPentagrama({ espacio: 5 })).toBe(false);
+  });
+});
+
 describe('límites', () => {
   it('rechaza líneas y espacios que no existen', () => {
-    expect(() => notaDe({ linea: 0 })).toThrow(/1 a 5/);
-    expect(() => notaDe({ linea: 6 })).toThrow(/1 a 5/);
-    expect(() => notaDe({ espacio: 5 })).toThrow(/1 a 4/);
+    expect(() => notaDe({ linea: -1 })).toThrow(/0 a 7/);
+    expect(() => notaDe({ linea: 8 })).toThrow(/0 a 7/);
+    expect(() => notaDe({ espacio: 7 })).toThrow(/0 a 6/);
   });
 
   it('hay nueve sitios y salen ordenados de grave a agudo', () => {
