@@ -90,6 +90,14 @@ todo sigue como antes. Los ejercicios se escriben a mano, porque la progresión 
 pandilla). Es la progresión que al autor le gustó de la 214, y se escribe con tres
 `ejercicios` cuyas `notas` son la primera mitad, la segunda y la suma.
 
+**`etiquetas`: por qué palabras se encuentra una actividad.** El buscador del catálogo lee
+el código, el título, el eje, el tipo, el criterio, **las etiquetas** y **la práctica**
+declarada (figuras, compás, método, notas, secuencia, traducidas a como se dicen: «6/8» es
+también «seis por ocho»). La descripción no entra, para no ahogar la búsqueda en ruido: lo
+que la descripción sabe y el título no dice —«anacrusa», «Grieg», «contratiempo»— va a
+`etiquetas`, de dos a diez palabras en minúscula. Todas las actividades llevan alguna;
+`tests/busqueda.test.ts` lo exige y comprueba que «anacrusa» encuentra la 329.
+
 **El pentagrama dibuja líneas adicionales y puede preguntar por rondas.** Los sitios van de
 la línea −1 (segunda adicional por debajo: do2 en clave de fa) a la 7 (segunda por arriba:
 do6 en clave de sol) y del espacio −1 al 6; `motor/pentagramaPosiciones.ts` dice qué adicionales lleva cada uno. Con dos

@@ -118,5 +118,16 @@
       "licencia": "MIT"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "coro",
+    "voces",
+    "soprano",
+    "contralto",
+    "tenor",
+    "bajo",
+    "tesitura",
+    "cantar",
+    "herramienta"
+  ]
 }

@@ -272,5 +272,17 @@
       "licencia": "CC0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "bailes",
+    "españa",
+    "compás",
+    "pasodoble",
+    "jota",
+    "muiñeira",
+    "sardana",
+    "sevillanas",
+    "habanera",
+    "chotis"
+  ]
 }

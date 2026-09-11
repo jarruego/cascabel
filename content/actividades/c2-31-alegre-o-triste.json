@@ -253,5 +253,14 @@
       "licencia": "Propia"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "modo",
+    "mayor",
+    "menor",
+    "carácter",
+    "alegre",
+    "triste",
+    "tonalidad"
+  ]
 }

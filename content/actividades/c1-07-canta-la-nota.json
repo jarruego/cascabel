@@ -58,5 +58,13 @@
       "licencia": "CC0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "afinación",
+    "micrófono",
+    "cantar",
+    "voz",
+    "sol mi la",
+    "entonación"
+  ]
 }

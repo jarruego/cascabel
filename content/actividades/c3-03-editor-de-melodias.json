@@ -66,5 +66,15 @@
     }
   ],
   "herramienta": true,
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "componer",
+    "editor",
+    "midi",
+    "musicxml",
+    "exportar",
+    "partitura",
+    "crear",
+    "melodía"
+  ]
 }

@@ -211,5 +211,14 @@
       "licencia": "Dominio público"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "beethoven",
+    "quinta sinfonía",
+    "motivo",
+    "karaoke",
+    "a tiempo",
+    "colores",
+    "corcheas"
+  ]
 }

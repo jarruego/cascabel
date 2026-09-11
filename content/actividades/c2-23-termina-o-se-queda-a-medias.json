@@ -209,5 +209,14 @@
       "licencia": "Propia"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "frase",
+    "pregunta respuesta",
+    "cadencia",
+    "conclusiva",
+    "suspensiva",
+    "forma",
+    "tónica"
+  ]
 }

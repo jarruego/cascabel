@@ -95,5 +95,14 @@
       "licencia": "CC0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "eco rítmico",
+    "palmas",
+    "blanca",
+    "negra",
+    "corcheas",
+    "duración",
+    "micrófono"
+  ]
 }

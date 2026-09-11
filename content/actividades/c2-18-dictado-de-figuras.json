@@ -149,5 +149,15 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "dictado rítmico",
+    "figuras",
+    "negra",
+    "blanca",
+    "corcheas",
+    "silencio",
+    "escritura",
+    "compás"
+  ]
 }

@@ -150,5 +150,14 @@
       "licencia": "CC0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "escala",
+    "subir bajar",
+    "colores",
+    "boomwhacker",
+    "altura",
+    "cinco notas",
+    "pentatónica"
+  ]
 }

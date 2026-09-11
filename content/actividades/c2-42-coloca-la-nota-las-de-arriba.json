@@ -108,5 +108,15 @@
       "licencia": "OFL-1.1"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "pentagrama",
+    "clave de sol",
+    "lectura",
+    "líneas adicionales",
+    "agudo",
+    "do5",
+    "do6",
+    "líneas y espacios"
+  ]
 }

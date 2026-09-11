@@ -127,5 +127,17 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "revision-pedagogica"
+  "estado": "revision-pedagogica",
+  "etiquetas": [
+    "consulta",
+    "obras famosas",
+    "audición",
+    "bach",
+    "vivaldi",
+    "mozart",
+    "beethoven",
+    "grieg",
+    "strauss",
+    "saint-saëns"
+  ]
 }

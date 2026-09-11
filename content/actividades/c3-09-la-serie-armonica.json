@@ -53,5 +53,14 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "armónicos",
+    "serie armónica",
+    "cuerda",
+    "proporciones",
+    "fracciones",
+    "física del sonido",
+    "longitud"
+  ]
 }

@@ -154,5 +154,14 @@
       "licencia": "Propia"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "intensidad",
+    "dinámica",
+    "forte",
+    "piano",
+    "fuerte",
+    "suave",
+    "matices"
+  ]
 }

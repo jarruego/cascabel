@@ -52,5 +52,17 @@
     }
   ],
   "herramienta": true,
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "percusión",
+    "kit",
+    "bombo",
+    "caja",
+    "pandereta",
+    "claves",
+    "triángulo",
+    "familias",
+    "grabar",
+    "herramienta"
+  ]
 }

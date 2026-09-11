@@ -35,6 +35,14 @@ interface Entrada {
   curriculo: unknown;
   estado: string;
   herramienta: boolean;
+  etiquetas: string[];
+  practica: {
+    figuras: string[];
+    compas: string | null;
+    metodo: string[];
+    notas: string[];
+    secuencia: string | null;
+  };
 }
 
 const indice = JSON.parse(
@@ -58,6 +66,8 @@ function comoDeberiaSer(a: Record<string, never>): Entrada {
     lugar?: string;
     entrada?: { modo?: string };
     duracion_min?: number;
+    etiquetas?: string[];
+    practica?: { figuras?: string[]; compas?: string; metodo?: string[]; notas?: string[]; secuencia?: string };
     curriculo: unknown;
     estado?: string;
     herramienta?: boolean;
@@ -75,6 +85,14 @@ function comoDeberiaSer(a: Record<string, never>): Entrada {
     curriculo: entrada.curriculo,
     estado: entrada.estado ?? 'borrador',
     herramienta: entrada.herramienta ?? false,
+    etiquetas: entrada.etiquetas ?? [],
+    practica: {
+      figuras: entrada.practica?.figuras ?? [],
+      compas: entrada.practica?.compas ?? null,
+      metodo: entrada.practica?.metodo ?? [],
+      notas: entrada.practica?.notas ?? [],
+      secuencia: entrada.practica?.secuencia ?? null,
+    },
   };
 }
 

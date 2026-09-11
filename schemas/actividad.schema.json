@@ -466,6 +466,17 @@
           "description": "De donde se ha cotejado."
         }
       }
+    },
+    "etiquetas": {
+      "type": "array",
+      "maxItems": 10,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 40
+      },
+      "description": "Palabras por las que un maestro buscaría esto y que el título no dice: sinónimos («anacrusa»), obras, compositores, instrumentos, conceptos. Las lee el buscador del catálogo; no se muestran."
     }
   },
   "allOf": [

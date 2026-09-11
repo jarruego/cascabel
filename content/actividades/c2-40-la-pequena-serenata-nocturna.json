@@ -231,5 +231,13 @@
   "estado": "borrador",
   "musica": {
     "abc": "X:1\nT:Pequeña serenata nocturna\nC:W. A. Mozart\nM:4/4\nL:1/8\nK:G\nG3 D G3 D | G D G B d4 | c3 A c3 A | c A ^F A D4 |]"
-  }
+  },
+  "etiquetas": [
+    "pequeña serenata nocturna",
+    "mozart",
+    "eine kleine nachtmusik",
+    "pregunta respuesta",
+    "frase",
+    "arpegio"
+  ]
 }

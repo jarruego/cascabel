@@ -166,5 +166,13 @@
       "licencia": "Propia"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "articulación",
+    "legato",
+    "staccato",
+    "ligado",
+    "picado",
+    "carácter"
+  ]
 }

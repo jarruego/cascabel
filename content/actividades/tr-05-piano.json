@@ -71,5 +71,14 @@
     }
   ],
   "herramienta": true,
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "piano",
+    "teclado",
+    "instrumento",
+    "grabar",
+    "teclas negras",
+    "octavas",
+    "herramienta"
+  ]
 }

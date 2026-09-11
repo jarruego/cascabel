@@ -206,5 +206,13 @@
       "licencia": "Propia"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "acorde",
+    "polifonía",
+    "voces",
+    "contar notas",
+    "armonía",
+    "oído"
+  ]
 }

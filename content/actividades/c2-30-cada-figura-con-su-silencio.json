@@ -164,5 +164,15 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "silencios",
+    "figuras",
+    "redonda",
+    "blanca",
+    "negra",
+    "corchea",
+    "equivalencias",
+    "parejas"
+  ]
 }

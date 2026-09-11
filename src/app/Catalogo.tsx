@@ -7,6 +7,7 @@ import { despertarAudio } from '@/audio/AudioEngine';
 import { desmarcar, leerTodo } from '@/datos/progreso';
 import { Modal } from '@/ui/Modal';
 import { t } from '@/i18n';
+import { encaja, palabrasDePractica, type PracticaBuscable } from './busqueda';
 import { useVuelta } from './vuelta';
 import { IconoAjustes } from '@/ui/Simbolos';
 import { codigoDe } from '@/motor/codigo';
@@ -47,6 +48,9 @@ interface Entrada {
   tipo: TipoActividad;
   curriculo?: { competencia?: string | null; criterio?: string | null };
   estado?: string;
+  /** Palabras por las que se busca y el título no dice. Ver `busqueda.ts`. */
+  etiquetas?: string[];
+  practica?: PracticaBuscable;
 }
 
 const ETAPAS: Array<{ valor: Etapa; clave: string }> = [
@@ -167,14 +171,14 @@ export default function Catalogo() {
    * Sin retardo: son unas decenas de actividades y filtrar es instantáneo, así que meter
    * un `debounce` solo añadiría una espera que no hace falta.
    *
+   * Lo que se busca y dónde está en `busqueda.ts`, con su test: el código, el título, el eje,
+   * el tipo, el criterio, las etiquetas y la práctica (figuras, compás, método, notas).
    * Se normaliza quitando los acentos por los dos lados. Un maestro con prisa escribe
    * «ritmico» sin tilde, y que eso no encuentre «rítmico» es exactamente el tipo de detalle
    * que hace pensar que el buscador está roto.
    */
-  const normalizar = (x: string) =>
-    x.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
-  const aguja = normalizar(busqueda.trim());
+  const aguja = busqueda.trim();
   const visibles = (entradas ?? []).filter((e) => {
     if (etapa && e.etapa !== etapa) return false;
     if (eje && e.eje !== eje) return false;
@@ -183,10 +187,10 @@ export default function Catalogo() {
     if (!aguja) return true;
     // Se busca también por eje, por criterio y por código: «pulso», «3.1» o «107» son
     // búsquedas legítimas.
-    const pajar = normalizar(
-      `${codigoDe(e.id)} ${e.titulo} ${t(`eje.${e.eje}`)} ${e.tipo} ${e.curriculo?.criterio ?? ''}`,
-    );
-    return aguja.split(/\s+/).every((palabra) => pajar.includes(palabra));
+    const pajar =
+      `${codigoDe(e.id)} ${e.titulo} ${t(`eje.${e.eje}`)} ${e.tipo} ${e.curriculo?.criterio ?? ''} ` +
+      `${(e.etiquetas ?? []).join(' ')} ${palabrasDePractica(e.practica)}`;
+    return encaja(aguja, pajar);
   });
 
   /*

@@ -316,5 +316,13 @@
   "estado": "borrador",
   "pistas": [
     "actividad.c114.pista1"
+  ],
+  "etiquetas": [
+    "figuras",
+    "negra",
+    "corchea",
+    "a tiempo",
+    "lectura rítmica",
+    "juego"
   ]
 }

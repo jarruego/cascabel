@@ -199,5 +199,14 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "negra",
+    "blanca",
+    "redonda",
+    "duración",
+    "a tiempo",
+    "animales",
+    "pulso lento"
+  ]
 }

@@ -112,5 +112,17 @@
     }
   ],
   "herramienta": true,
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "componer",
+    "pistas",
+    "voces",
+    "arreglo",
+    "flauta",
+    "piano",
+    "bajo",
+    "percusión",
+    "textura",
+    "silenciar"
+  ]
 }

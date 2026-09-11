@@ -121,5 +121,14 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "familias",
+    "cuerda",
+    "viento",
+    "percusión",
+    "clasificación",
+    "timbre",
+    "instrumentos"
+  ]
 }

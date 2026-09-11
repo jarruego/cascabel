@@ -65,5 +65,14 @@
       "licencia": "CC0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "componer",
+    "crear",
+    "frase",
+    "dieciséis pulsos",
+    "octava",
+    "cuadrícula",
+    "bucle"
+  ]
 }

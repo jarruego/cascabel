@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "eleccion",
   "titulo": "El ratón y el elefante",
-  "descripcion": "Intensidad: fuerte o suave. Mismo sonido a dos volúmenes.",
+  "descripcion": "Agudo o grave con el mismo instrumento en dos registros: el ratón suena finito y el elefante hondo. La descripción decía «intensidad» y no lo era (corregido el 2026-09-12).",
   "etapa": "infantil",
   "eje": "timbre",
   "lugar": "pantalla",
@@ -86,5 +86,14 @@
       "fuente": "https://openmoji.org",
       "licencia": "CC BY-SA 4.0"
     }
+  ],
+  "etiquetas": [
+    "agudo",
+    "grave",
+    "altura",
+    "cualidades del sonido",
+    "animales",
+    "ratón",
+    "elefante"
   ]
 }

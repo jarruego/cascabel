@@ -354,5 +354,16 @@
     }
   ],
   "herramienta": true,
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "consulta",
+    "figuras",
+    "silencios",
+    "compases",
+    "tempos",
+    "matices",
+    "lenguaje musical",
+    "teoría",
+    "herramienta"
+  ]
 }

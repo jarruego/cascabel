@@ -330,5 +330,14 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "compás",
+    "dos por cuatro",
+    "tres por cuatro",
+    "cuatro por cuatro",
+    "seis por ocho",
+    "acento",
+    "oído"
+  ]
 }

@@ -180,5 +180,15 @@
     }
   ],
   "herramienta": true,
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "acompañamiento",
+    "base",
+    "playback",
+    "cantar",
+    "tonalidad",
+    "transportar",
+    "bucle",
+    "herramienta"
+  ]
 }

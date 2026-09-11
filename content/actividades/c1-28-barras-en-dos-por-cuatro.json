@@ -91,5 +91,13 @@
     "actividad.c128.pista2"
   ],
   "creditos": [],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "compás",
+    "barras",
+    "líneas divisorias",
+    "dos por cuatro",
+    "binario",
+    "contar pulsos"
+  ]
 }

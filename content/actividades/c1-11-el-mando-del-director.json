@@ -52,5 +52,14 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "tempo",
+    "dinámica",
+    "intensidad",
+    "director",
+    "velocidad",
+    "fuerte",
+    "suave"
+  ]
 }

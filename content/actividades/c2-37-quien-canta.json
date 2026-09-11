@@ -92,5 +92,14 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "voz",
+    "solista",
+    "coro",
+    "coro infantil",
+    "voz humana",
+    "timbre",
+    "cantar"
+  ]
 }

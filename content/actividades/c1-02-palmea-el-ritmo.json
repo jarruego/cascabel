@@ -107,5 +107,14 @@
       "licencia": "Propia"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "palmas",
+    "eco rítmico",
+    "imitación",
+    "negra",
+    "corcheas",
+    "silencio",
+    "micrófono"
+  ]
 }

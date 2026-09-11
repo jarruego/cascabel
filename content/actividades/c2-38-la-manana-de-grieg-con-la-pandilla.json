@@ -270,5 +270,15 @@
   "estado": "borrador",
   "musica": {
     "abc": "X:1\nT:La mañana\nC:Edvard Grieg\nM:6/8\nL:1/8\nK:C\nG E D C D E | G E D C D/2 E/2 D/2 E/2 | G E G A E A | G E D C3 |]"
-  }
+  },
+  "etiquetas": [
+    "la mañana",
+    "grieg",
+    "peer gynt",
+    "personajes",
+    "pandilla",
+    "karaoke",
+    "seis por ocho",
+    "amanecer"
+  ]
 }

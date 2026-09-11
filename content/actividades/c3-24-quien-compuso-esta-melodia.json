@@ -359,5 +359,14 @@
       "licencia": "Dominio público"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "compositores",
+    "bach",
+    "mozart",
+    "beethoven",
+    "melodías famosas",
+    "historia",
+    "audición"
+  ]
 }

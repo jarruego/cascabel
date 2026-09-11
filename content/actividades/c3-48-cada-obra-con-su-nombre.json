@@ -177,5 +177,16 @@
       "licencia": "Dominio público"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "obras famosas",
+    "grieg",
+    "strauss",
+    "beethoven",
+    "vivaldi",
+    "saint-saëns",
+    "bach",
+    "audición",
+    "parejas"
+  ]
 }

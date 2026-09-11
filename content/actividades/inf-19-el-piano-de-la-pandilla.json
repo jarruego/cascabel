@@ -53,5 +53,15 @@
       "licencia": "CC0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "piano",
+    "teclado",
+    "personajes",
+    "pandilla",
+    "dora",
+    "doby",
+    "explorar",
+    "octava"
+  ]
 }

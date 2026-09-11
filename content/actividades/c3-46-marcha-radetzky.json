@@ -322,5 +322,14 @@
   "estado": "borrador",
   "musica": {
     "abc": "X:1\nT:Marcha Radetzky\nC:Johann Strauss I\nM:4/4\nL:1/8\nK:C\nc c c2 c c c2 | e2 d2 c3 B | A ^G A B c2 d2 | G6 e ^d | e2 e ^d e2 e ^d | e2 d2 c2 z2 |]"
-  }
+  },
+  "etiquetas": [
+    "marcha radetzky",
+    "strauss",
+    "concierto de año nuevo",
+    "percusión corporal",
+    "marcha",
+    "palmas",
+    "trompeta"
+  ]
 }

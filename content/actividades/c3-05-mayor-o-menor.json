@@ -168,5 +168,14 @@
       "fuente": "https://openmoji.org",
       "licencia": "CC BY-SA 4.0"
     }
+  ],
+  "etiquetas": [
+    "modo",
+    "mayor",
+    "menor",
+    "acorde",
+    "tercera",
+    "tonalidad",
+    "armonía"
   ]
 }

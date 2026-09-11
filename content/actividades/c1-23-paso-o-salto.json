@@ -163,5 +163,13 @@
       "licencia": "Propia"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "intervalo",
+    "segunda",
+    "grado conjunto",
+    "salto",
+    "altura",
+    "melodía"
+  ]
 }

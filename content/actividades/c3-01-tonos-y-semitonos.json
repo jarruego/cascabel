@@ -48,5 +48,14 @@
       "licencia": "CC0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "escala",
+    "do mayor",
+    "tono",
+    "semitono",
+    "teclado",
+    "patrón",
+    "teclas blancas"
+  ]
 }

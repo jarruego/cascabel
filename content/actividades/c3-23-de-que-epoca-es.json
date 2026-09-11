@@ -112,5 +112,14 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "historia de la música",
+    "épocas",
+    "compositores",
+    "barroco",
+    "clasicismo",
+    "romanticismo",
+    "contexto"
+  ]
 }

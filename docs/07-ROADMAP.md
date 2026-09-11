@@ -3028,6 +3028,15 @@ textos, niveles, camino, y la sección de instrumentos.
 - [x] **El Danubio (347) con violín**, la melodía al 100 % y los golpes al 45 %: la percusión
       corporal tiene ahora también `volumenGolpes`, para cuando manda la melodía.
 
+- [x] **El buscador encuentra por concepto, no solo por título.** «Anacrusa» no encontraba la
+      329 (2026-09-12). Ahora el índice lleva `etiquetas` (nuevo campo del esquema, escrito a
+      mano en las 167 actividades: sinónimos, obras, compositores, instrumentos) y la práctica
+      declarada, que `app/busqueda.ts` traduce a palabras («6/8» → «seis por ocho», «laminas» →
+      «xilófono»), con test. La descripción se queda fuera a propósito: «nota» y «pulso» están
+      en decenas. De paso, la descripción de la inf-03 decía «intensidad» y es de altura.
+      **Pendiente**: la pasada a los títulos que no nombran lo que trabajan (lista propuesta al
+      autor el 2026-09-12).
+
 - [x] **Dos fichas en el Taller: el pentagrama en clave de sol (tr-15) y en clave de fa
       (tr-16)**, enteros, de do a do con sus líneas adicionales. Al tocar una nota suena y
       arriba sale su nombre con su personaje al lado. Y lo mismo en las seis de pregunta:

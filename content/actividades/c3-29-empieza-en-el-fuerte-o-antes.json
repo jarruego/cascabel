@@ -198,5 +198,14 @@
       "licencia": "Propia"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "anacrusa",
+    "pulso fuerte",
+    "acento",
+    "entrada",
+    "tético",
+    "anacrúsico",
+    "comienzo"
+  ]
 }

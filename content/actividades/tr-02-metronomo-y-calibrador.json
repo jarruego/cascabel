@@ -52,5 +52,14 @@
   "enunciado": "actividad.tr02.enunciado",
   "personaje": "sol",
   "herramienta": true,
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "metrónomo",
+    "tempo",
+    "pulso",
+    "calibración",
+    "latencia",
+    "proyector",
+    "herramienta"
+  ]
 }

@@ -88,5 +88,11 @@
   "estado": "borrador",
   "pistas": [
     "actividad.c202.pista1"
+  ],
+  "etiquetas": [
+    "dictado rítmico",
+    "cuadrícula",
+    "escribir ritmo",
+    "ocho pulsos"
   ]
 }

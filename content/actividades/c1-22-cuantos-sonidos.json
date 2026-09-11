@@ -163,5 +163,12 @@
       "licencia": "Propia"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "contar sonidos",
+    "discriminación",
+    "negras",
+    "corcheas",
+    "atención"
+  ]
 }

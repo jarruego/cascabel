@@ -91,5 +91,12 @@
   "estado": "borrador",
   "pistas": [
     "actividad.inf05paisaje.pista1"
+  ],
+  "etiquetas": [
+    "paisaje sonoro",
+    "sonidos del entorno",
+    "escucha",
+    "ilustración",
+    "timbre"
   ]
 }

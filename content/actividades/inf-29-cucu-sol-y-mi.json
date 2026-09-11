@@ -274,5 +274,15 @@
   "estado": "borrador",
   "musica": {
     "abc": "X:1\nT:Cucú, ¿dónde estás?\nC:cocomusic\nM:2/4\nL:1/4\nK:C\nG E | G E | G/2 G/2 E | E E | G E | G E | G/2 G/2 E | E E | G E | G/2 G/2 E | G E | E2 |]"
-  }
+  },
+  "etiquetas": [
+    "cucú",
+    "sol mi",
+    "tercera menor",
+    "kodály",
+    "personajes",
+    "pandilla",
+    "karaoke",
+    "dos notas"
+  ]
 }

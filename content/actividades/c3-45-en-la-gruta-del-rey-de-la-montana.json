@@ -156,5 +156,15 @@
   "estado": "borrador",
   "musica": {
     "abc": "X:1\nT:En la gruta del rey de la montaña\nC:Edvard Grieg\nM:4/4\nL:1/8\nK:Dm\nA, B, ^C D E ^C E2 | F ^C F2 E ^C E2 | A, B, ^C D E ^C E2 | F ^C F2 E4 |]"
-  }
+  },
+  "etiquetas": [
+    "gruta del rey de la montaña",
+    "grieg",
+    "peer gynt",
+    "accelerando",
+    "palmas",
+    "ritmo",
+    "tempo",
+    "romanticismo"
+  ]
 }

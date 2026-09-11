@@ -96,5 +96,15 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "animales",
+    "granja",
+    "vaca",
+    "oveja",
+    "gallo",
+    "cerdo",
+    "timbre",
+    "grabaciones"
+  ]
 }

@@ -61,5 +61,12 @@
   },
   "enunciado": "actividad.c110.enunciado",
   "personaje": "rex",
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "cotidiáfono",
+    "instrumentos caseros",
+    "reciclado",
+    "manualidad",
+    "imprimible"
+  ]
 }

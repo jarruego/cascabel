@@ -217,5 +217,14 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "compás",
+    "binario",
+    "ternario",
+    "acento",
+    "dos por cuatro",
+    "tres por cuatro",
+    "pulso fuerte"
+  ]
 }

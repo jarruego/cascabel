@@ -187,5 +187,15 @@
   "estado": "borrador",
   "pistas": [
     "actividad.inf10.pista1"
+  ],
+  "etiquetas": [
+    "timbre",
+    "parejas",
+    "tambor",
+    "campana",
+    "palmas",
+    "voz",
+    "animales",
+    "cajas"
   ]
 }

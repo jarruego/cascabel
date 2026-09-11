@@ -60,5 +60,13 @@
   "estado": "borrador",
   "pistas": [
     "actividad.tr01.pista1"
+  ],
+  "etiquetas": [
+    "afinador",
+    "micrófono",
+    "afinación",
+    "cantar",
+    "nota",
+    "herramienta"
   ]
 }

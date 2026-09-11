@@ -56,5 +56,15 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "grafía",
+    "dibujar",
+    "agudo",
+    "grave",
+    "lienzo",
+    "crear",
+    "trazo",
+    "libre"
+  ]
 }

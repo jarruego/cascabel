@@ -138,5 +138,13 @@
       "licencia": "Propia"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "alteraciones",
+    "sostenido",
+    "bemol",
+    "semitono",
+    "notación",
+    "oído"
+  ]
 }

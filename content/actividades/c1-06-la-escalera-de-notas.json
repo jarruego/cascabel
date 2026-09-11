@@ -156,5 +156,12 @@
   "estado": "borrador",
   "pistas": [
     "actividad.c106.pista1"
+  ],
+  "etiquetas": [
+    "grave",
+    "agudo",
+    "ordenar",
+    "altura",
+    "escalera"
   ]
 }

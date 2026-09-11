@@ -145,5 +145,14 @@
   "enunciado": "actividad.tr09.enunciado",
   "personaje": "doby",
   "herramienta": true,
-  "estado": "revision-pedagogica"
+  "estado": "revision-pedagogica",
+  "etiquetas": [
+    "consulta",
+    "historia de la música",
+    "épocas",
+    "compositores",
+    "estilos",
+    "biografías",
+    "herramienta"
+  ]
 }

@@ -33,6 +33,18 @@ for (const f of ficheros) {
     // Si además es un instrumento: sale en la pantalla de Instrumentos, y si tiene criterio
     // curricular sale también en el catálogo. Ser las dos cosas no es duplicar.
     herramienta: a.herramienta ?? false,
+    // Lo que busca el buscador del catálogo además del título: las palabras clave de la
+    // actividad y lo que declara de práctica (figuras, compás, método, notas, secuencia).
+    // Pedido por el autor el 2026-09-12: «anacrusa» no encontraba la 329 porque el título
+    // no lo dice. Son unos pocos bytes por actividad.
+    etiquetas: a.etiquetas ?? [],
+    practica: {
+      figuras: a.practica?.figuras ?? [],
+      compas: a.practica?.compas ?? null,
+      metodo: a.practica?.metodo ?? [],
+      notas: a.practica?.notas ?? [],
+      secuencia: a.practica?.secuencia ?? null,
+    },
   });
 }
 

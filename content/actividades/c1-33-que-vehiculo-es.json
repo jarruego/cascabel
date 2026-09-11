@@ -115,5 +115,16 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "vehículos",
+    "moto",
+    "tren",
+    "avión",
+    "helicóptero",
+    "ambulancia",
+    "barco",
+    "sonidos del entorno",
+    "escucha"
+  ]
 }

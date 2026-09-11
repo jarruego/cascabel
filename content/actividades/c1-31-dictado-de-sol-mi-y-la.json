@@ -87,5 +87,12 @@
       "licencia": "CC0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "dictado melódico",
+    "sol mi la",
+    "kodály",
+    "cuadrícula",
+    "pentatónica"
+  ]
 }

@@ -96,5 +96,12 @@
   "estado": "borrador",
   "pistas": [
     "actividad.c103pulso.pista1"
+  ],
+  "etiquetas": [
+    "silencio",
+    "silencio de negra",
+    "pulso interior",
+    "palmas",
+    "contar"
   ]
 }

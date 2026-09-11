@@ -97,5 +97,12 @@
       "licencia": "CC0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "dictado melódico",
+    "pentatónica",
+    "do re mi sol la",
+    "cuadrícula",
+    "seis notas"
+  ]
 }

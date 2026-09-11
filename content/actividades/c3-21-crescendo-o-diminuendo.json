@@ -214,5 +214,14 @@
       "licencia": "Propia"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "dinámica",
+    "intensidad",
+    "crescendo",
+    "diminuendo",
+    "decrescendo",
+    "matices",
+    "reguladores"
+  ]
 }

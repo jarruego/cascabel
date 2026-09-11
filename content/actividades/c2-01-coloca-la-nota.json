@@ -109,5 +109,14 @@
       "licencia": "OFL-1.1"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "pentagrama",
+    "clave de sol",
+    "lectura",
+    "líneas y espacios",
+    "línea adicional",
+    "do re mi fa sol la si",
+    "do4"
+  ]
 }

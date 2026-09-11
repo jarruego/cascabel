@@ -179,5 +179,14 @@
       "licencia": "Propia"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "consonancia",
+    "disonancia",
+    "armonía",
+    "intervalos",
+    "dos notas",
+    "acorde",
+    "oído"
+  ]
 }

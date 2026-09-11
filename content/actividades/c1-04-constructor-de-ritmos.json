@@ -54,5 +54,13 @@
   "estado": "borrador",
   "pistas": [
     "actividad.c104.pista1"
+  ],
+  "etiquetas": [
+    "cuadrícula",
+    "secuenciador",
+    "crear",
+    "improvisar",
+    "alturas",
+    "libre"
   ]
 }

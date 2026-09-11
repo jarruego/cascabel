@@ -153,5 +153,13 @@
       "licencia": "Propia"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "ascendente",
+    "descendente",
+    "dirección",
+    "escalera",
+    "altura",
+    "flechas"
+  ]
 }

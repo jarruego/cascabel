@@ -51,5 +51,15 @@
       "licencia": "CC0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "bombo",
+    "caja",
+    "pandereta",
+    "claves",
+    "percusión",
+    "timbre",
+    "explorar",
+    "libre"
+  ]
 }

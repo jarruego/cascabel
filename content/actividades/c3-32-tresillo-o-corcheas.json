@@ -159,5 +159,14 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "tresillo",
+    "corcheas",
+    "subdivisión",
+    "binaria",
+    "ternaria",
+    "figuras",
+    "oído"
+  ]
 }

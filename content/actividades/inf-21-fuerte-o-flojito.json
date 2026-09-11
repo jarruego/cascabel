@@ -118,5 +118,15 @@
       "licencia": "Propia"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "intensidad",
+    "fuerte",
+    "suave",
+    "flojo",
+    "dinámica",
+    "cualidades del sonido",
+    "león",
+    "mariposa"
+  ]
 }

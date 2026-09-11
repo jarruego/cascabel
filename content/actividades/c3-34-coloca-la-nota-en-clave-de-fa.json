@@ -97,5 +97,15 @@
       "licencia": "CC0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "pentagrama",
+    "clave de fa",
+    "lectura",
+    "graves",
+    "líneas adicionales",
+    "do2",
+    "do3",
+    "líneas y espacios"
+  ]
 }

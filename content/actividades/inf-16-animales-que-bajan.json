@@ -223,5 +223,15 @@
   "estado": "borrador",
   "musica": {
     "abc": "X:1\nT:Campanero\nC:Anónima francesa del siglo XVIII («Frère Blaise», ms. de 1780)\nM:4/4\nL:1/4\nK:D\nD E F D | D E F D | F G A2 | F G A2 |]"
-  }
+  },
+  "etiquetas": [
+    "a tiempo",
+    "animales",
+    "oso",
+    "pájaro",
+    "grave agudo",
+    "melodía",
+    "karaoke",
+    "lento"
+  ]
 }

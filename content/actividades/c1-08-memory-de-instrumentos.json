@@ -196,5 +196,15 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "timbre",
+    "parejas",
+    "tambor",
+    "triángulo",
+    "piano",
+    "guitarra",
+    "violín",
+    "kalimba"
+  ]
 }

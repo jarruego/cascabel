@@ -87,5 +87,13 @@
   "estado": "borrador",
   "pistas": [
     "actividad.inf09.pista1"
+  ],
+  "etiquetas": [
+    "eco",
+    "palmas",
+    "imitación",
+    "silencio",
+    "cuatro pulsos",
+    "micrófono"
   ]
 }

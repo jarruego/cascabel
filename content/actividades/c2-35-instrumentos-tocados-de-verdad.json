@@ -110,5 +110,15 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "timbre",
+    "violín",
+    "trompeta",
+    "saxofón",
+    "acordeón",
+    "guitarra eléctrica",
+    "grabaciones",
+    "reconocer instrumentos"
+  ]
 }

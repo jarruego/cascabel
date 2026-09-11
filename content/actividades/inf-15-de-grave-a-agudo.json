@@ -115,5 +115,14 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "grave",
+    "agudo",
+    "ordenar",
+    "campanas",
+    "altura",
+    "montessori",
+    "seriar"
+  ]
 }

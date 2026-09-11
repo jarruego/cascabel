@@ -148,5 +148,14 @@
   "estado": "borrador",
   "musica": {
     "abc": "X:1\nT:Joy to the World\nC:G. F. Händel / Lowell Mason\nM:2/4\nL:1/8\nK:C\nc2 B A | G3 F | E2 D2 | C3 G | A3 A | B3 B | c4 | c4 |]"
-  }
+  },
+  "etiquetas": [
+    "joy to the world",
+    "händel",
+    "escala",
+    "personajes",
+    "pandilla",
+    "do re mi fa sol la si",
+    "escalera"
+  ]
 }

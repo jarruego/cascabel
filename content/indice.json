@@ -19,7 +19,25 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "negra",
+        "corcheas",
+        "sílabas rítmicas",
+        "kodály",
+        "musicograma",
+        "bucle"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "corchea"
+        ],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-02-palmea-el-ritmo",
@@ -38,7 +56,30 @@
         "saber": "D. Práctica instrumental, vocal y corporal"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "palmas",
+        "eco rítmico",
+        "imitación",
+        "negra",
+        "corcheas",
+        "silencio",
+        "micrófono"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "corchea",
+          "silencio-negra"
+        ],
+        "compas": "2/4",
+        "metodo": [
+          "orff",
+          "kodaly"
+        ],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-03-el-pulso-escondido",
@@ -57,7 +98,24 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "silencio",
+        "silencio de negra",
+        "pulso interior",
+        "palmas",
+        "contar"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "silencio-negra"
+        ],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-04-constructor-de-ritmos",
@@ -76,7 +134,22 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "cuadrícula",
+        "secuenciador",
+        "crear",
+        "improvisar",
+        "alturas",
+        "libre"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-05-musicograma-a-b",
@@ -95,7 +168,22 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "musicograma",
+        "forma",
+        "audición activa",
+        "wuytack",
+        "partes",
+        "estructura"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-06-la-escalera-de-notas",
@@ -114,7 +202,21 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "grave",
+        "agudo",
+        "ordenar",
+        "altura",
+        "escalera"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-07-canta-la-nota",
@@ -133,7 +235,28 @@
         "saber": "D. Práctica instrumental, vocal y corporal"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "afinación",
+        "micrófono",
+        "cantar",
+        "voz",
+        "sol mi la",
+        "entonación"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [
+          "kodaly"
+        ],
+        "notas": [
+          "sol",
+          "mi",
+          "la"
+        ],
+        "secuencia": "vocal-kodaly"
+      }
     },
     {
       "id": "c1-08-memory-de-instrumentos",
@@ -152,7 +275,26 @@
         "saber": "D. Escucha y percepción: cualidades del sonido y familias instrumentales"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "timbre",
+        "parejas",
+        "tambor",
+        "triángulo",
+        "piano",
+        "guitarra",
+        "violín",
+        "kalimba"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [
+          "willems"
+        ],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-09-percusion-corporal",
@@ -171,7 +313,26 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "percusión corporal",
+        "pies",
+        "muslos",
+        "palmas",
+        "pitos",
+        "chasquidos",
+        "proyector"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "4/4",
+        "metodo": [
+          "orff",
+          "bapne"
+        ],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-10-construye-un-cotidiofono",
@@ -190,7 +351,21 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "cotidiáfono",
+        "instrumentos caseros",
+        "reciclado",
+        "manualidad",
+        "imprimible"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-11-el-mando-del-director",
@@ -209,7 +384,23 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "tempo",
+        "dinámica",
+        "intensidad",
+        "director",
+        "velocidad",
+        "fuerte",
+        "suave"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-12-la-rueda-del-compas",
@@ -228,7 +419,22 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "compás",
+        "círculo",
+        "cíclico",
+        "cuatro por cuatro",
+        "pulsos",
+        "geometría"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-13-pregunta-y-respuesta",
@@ -247,7 +453,21 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "pregunta respuesta",
+        "improvisar",
+        "frase rítmica",
+        "diálogo",
+        "crear"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-14-notas-que-caen",
@@ -266,7 +486,25 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "figuras",
+        "negra",
+        "corchea",
+        "a tiempo",
+        "lectura rítmica",
+        "juego"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "corchea"
+        ],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-15-ritmo-de-ocho",
@@ -285,7 +523,26 @@
         "saber": "D. Práctica instrumental, vocal y corporal"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "eco rítmico",
+        "memoria",
+        "patrón largo",
+        "ocho pulsos",
+        "palmas",
+        "negra",
+        "corchea"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "corchea"
+        ],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-16-compon-con-la-escala",
@@ -304,7 +561,32 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "componer",
+        "crear",
+        "escala",
+        "octava",
+        "cuadrícula",
+        "bucle",
+        "melodía"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [
+          "do",
+          "re",
+          "mi",
+          "fa",
+          "sol",
+          "la",
+          "si",
+          "do'"
+        ],
+        "secuencia": "laminas"
+      }
     },
     {
       "id": "c1-18-la-escalera-que-cae",
@@ -323,7 +605,26 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "escala",
+        "subir bajar",
+        "colores",
+        "boomwhacker",
+        "altura",
+        "cinco notas",
+        "pentatónica"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "blanca"
+        ],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "vocal-kodaly"
+      }
     },
     {
       "id": "c1-19-adivina-quien-baja",
@@ -342,7 +643,27 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "negra",
+        "blanca",
+        "redonda",
+        "duración",
+        "a tiempo",
+        "animales",
+        "pulso lento"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "blanca",
+          "redonda"
+        ],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-20-manos-y-pies",
@@ -361,7 +682,23 @@
         "saber": "D. Práctica instrumental, vocal y corporal"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "percusión corporal",
+        "palmas",
+        "muslos",
+        "pies",
+        "ostinato",
+        "sílabas",
+        "orff"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-21-eco-a-dos",
@@ -380,7 +717,22 @@
         "saber": "D. Práctica instrumental, vocal y corporal"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "eco",
+        "parejas",
+        "imitación",
+        "micrófono",
+        "palmas",
+        "cooperar"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-22-cuantos-sonidos",
@@ -399,7 +751,21 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "contar sonidos",
+        "discriminación",
+        "negras",
+        "corcheas",
+        "atención"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-23-paso-o-salto",
@@ -418,7 +784,22 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "intervalo",
+        "segunda",
+        "grado conjunto",
+        "salto",
+        "altura",
+        "melodía"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-24-dictado-de-ta-y-ti-ti",
@@ -437,7 +818,25 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "dictado rítmico",
+        "negra",
+        "corcheas",
+        "sílabas",
+        "kodály",
+        "escritura"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "corchea"
+        ],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-25-negra-o-blanca",
@@ -456,7 +855,25 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "duración",
+        "negra",
+        "blanca",
+        "figuras",
+        "dictado",
+        "pulso"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "blanca"
+        ],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-26-vals-o-marcha",
@@ -475,7 +892,24 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "compás",
+        "binario",
+        "ternario",
+        "tres por cuatro",
+        "dos por cuatro",
+        "bailar",
+        "desfilar",
+        "acento"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-27-ordena-las-figuras",
@@ -494,7 +928,27 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "figuras",
+        "duración",
+        "corchea",
+        "negra",
+        "blanca",
+        "ordenar",
+        "valores"
+      ],
+      "practica": {
+        "figuras": [
+          "corchea",
+          "negra",
+          "blanca"
+        ],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-28-barras-en-dos-por-cuatro",
@@ -513,7 +967,25 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "compás",
+        "barras",
+        "líneas divisorias",
+        "dos por cuatro",
+        "binario",
+        "contar pulsos"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "blanca"
+        ],
+        "compas": "2/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-29-cual-es-mas-aguda",
@@ -532,7 +1004,21 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "agudo",
+        "grave",
+        "altura",
+        "comparar",
+        "discriminación auditiva"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-30-dictado-de-sol-y-mi",
@@ -551,7 +1037,25 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "dictado melódico",
+        "sol mi",
+        "kodály",
+        "tercera menor",
+        "cuadrícula",
+        "entonación"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [
+          "sol",
+          "mi"
+        ],
+        "secuencia": "vocal-kodaly"
+      }
     },
     {
       "id": "c1-31-dictado-de-sol-mi-y-la",
@@ -570,7 +1074,25 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "dictado melódico",
+        "sol mi la",
+        "kodály",
+        "cuadrícula",
+        "pentatónica"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [
+          "sol",
+          "mi",
+          "la"
+        ],
+        "secuencia": "vocal-kodaly"
+      }
     },
     {
       "id": "c1-32-quien-canta-en-el-bosque",
@@ -589,7 +1111,24 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "animales",
+        "pájaro",
+        "rana",
+        "búho",
+        "abeja",
+        "sonidos de la naturaleza",
+        "timbre",
+        "escucha"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-33-que-vehiculo-es",
@@ -608,7 +1147,25 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "vehículos",
+        "moto",
+        "tren",
+        "avión",
+        "helicóptero",
+        "ambulancia",
+        "barco",
+        "sonidos del entorno",
+        "escucha"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-34-sonidos-de-la-calle",
@@ -627,7 +1184,24 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "ciudad",
+        "bocina",
+        "autobús",
+        "campana",
+        "martillo",
+        "ambulancia",
+        "sonidos del entorno",
+        "paisaje sonoro"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-35-memory-de-instrumentos",
@@ -646,7 +1220,22 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "memory",
+        "memoria",
+        "parejas",
+        "timbre",
+        "instrumentos",
+        "cartas"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-36-estrellita-con-el-cuerpo",
@@ -665,7 +1254,23 @@
         "saber": "D. Práctica instrumental, vocal y corporal"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "estrellita",
+        "twinkle",
+        "canción",
+        "percusión corporal",
+        "cantar",
+        "letra",
+        "mozart"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-37-debajo-un-boton-con-el-cuerpo",
@@ -684,7 +1289,22 @@
         "saber": "D. Práctica instrumental, vocal y corporal"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "debajo un botón",
+        "canción popular",
+        "percusión corporal",
+        "cantar",
+        "letra",
+        "corcheas"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "2/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-38-au-clair-de-la-lune",
@@ -703,7 +1323,23 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "au clair de la lune",
+        "canción francesa",
+        "do re mi",
+        "personajes",
+        "pandilla",
+        "karaoke",
+        "tres notas"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-39-el-pastel-de-sol-laia-milo-y-dora",
@@ -722,7 +1358,28 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "backe backe kuchen",
+        "canción alemana",
+        "sol la mi do",
+        "personajes",
+        "pandilla",
+        "karaoke",
+        "cuatro notas"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [
+          "sol",
+          "la",
+          "mi",
+          "do"
+        ],
+        "secuencia": "vocal-kodaly"
+      }
     },
     {
       "id": "c1-40-debajo-un-boton-con-la-pandilla",
@@ -741,7 +1398,23 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "debajo un botón",
+        "canción popular",
+        "personajes",
+        "pandilla",
+        "karaoke",
+        "a tiempo",
+        "letra"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "2/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c1-41-toda-la-pandilla-baja-la-escalera",
@@ -760,7 +1433,23 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "joy to the world",
+        "händel",
+        "escala",
+        "personajes",
+        "pandilla",
+        "do re mi fa sol la si",
+        "escalera"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "2/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-01-coloca-la-nota",
@@ -779,7 +1468,34 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "pentagrama",
+        "clave de sol",
+        "lectura",
+        "líneas y espacios",
+        "línea adicional",
+        "do re mi fa sol la si",
+        "do4"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "libre",
+        "metodo": [
+          "kodaly"
+        ],
+        "notas": [
+          "do",
+          "re",
+          "mi",
+          "fa",
+          "sol",
+          "la",
+          "si",
+          "do'"
+        ],
+        "secuencia": "flauta"
+      }
     },
     {
       "id": "c2-02-dictado-ritmico",
@@ -798,7 +1514,20 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "dictado rítmico",
+        "cuadrícula",
+        "escribir ritmo",
+        "ocho pulsos"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-03-dictado-melodico",
@@ -817,7 +1546,21 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "dictado melódico",
+        "cuadrícula",
+        "agudo grave",
+        "escribir melodía",
+        "seis notas"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-04-flauta-digitaciones",
@@ -836,7 +1579,22 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "flauta dulce",
+        "digitación",
+        "posiciones",
+        "si la sol",
+        "agujeros",
+        "parejas"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "flauta"
+      }
     },
     {
       "id": "c2-05-toca-con-la-flauta",
@@ -855,7 +1613,22 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "flauta dulce",
+        "afinación",
+        "micrófono",
+        "si la sol",
+        "soplar",
+        "digitación"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "flauta"
+      }
     },
     {
       "id": "c2-06-pon-las-barras",
@@ -874,7 +1647,25 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "compás",
+        "barras",
+        "líneas divisorias",
+        "cuatro por cuatro",
+        "duraciones",
+        "sumar pulsos"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "blanca"
+        ],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-07-improvisa-en-pentatonica",
@@ -893,7 +1684,31 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "pentatónica",
+        "improvisar",
+        "láminas",
+        "orff",
+        "bordón",
+        "xilófono",
+        "crear"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [
+          "orff"
+        ],
+        "notas": [
+          "do",
+          "re",
+          "mi",
+          "sol",
+          "la"
+        ],
+        "secuencia": "laminas"
+      }
     },
     {
       "id": "c2-08-ordena-el-rondo",
@@ -912,7 +1727,22 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "rondó",
+        "forma",
+        "estructura",
+        "a b a",
+        "estribillo",
+        "ordenar"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-09-adagio-andante-allegro",
@@ -931,7 +1761,22 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "tempo",
+        "velocidad",
+        "adagio",
+        "andante",
+        "allegro",
+        "términos italianos"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-10-ostinato-a-dos-planos",
@@ -950,7 +1795,24 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "ostinato",
+        "orff",
+        "percusión corporal",
+        "grupos",
+        "proyector",
+        "polirritmia"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "4/4",
+        "metodo": [
+          "orff"
+        ],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-11-instrumentos-del-mundo",
@@ -969,7 +1831,25 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "instrumentos del mundo",
+        "sitar",
+        "koto",
+        "kalimba",
+        "gaita",
+        "banjo",
+        "steel drum",
+        "timbre",
+        "culturas"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": null
+      }
     },
     {
       "id": "c2-12-canon-a-dos-voces",
@@ -988,7 +1868,27 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "canon",
+        "dos voces",
+        "polifonía",
+        "entradas",
+        "cantar",
+        "grupos",
+        "proyector"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "blanca",
+          "corchea"
+        ],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "vocal-kodaly"
+      }
     },
     {
       "id": "c2-13-graba-tu-paisaje-sonoro",
@@ -1007,7 +1907,23 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "paisaje sonoro",
+        "grabar",
+        "escucha",
+        "entorno",
+        "murray schafer",
+        "salida",
+        "silencio"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": null
+      }
     },
     {
       "id": "c2-14-himno-de-la-alegria",
@@ -1026,7 +1942,28 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "himno de la alegría",
+        "beethoven",
+        "novena sinfonía",
+        "pentagrama",
+        "karaoke",
+        "a tiempo",
+        "colores"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "blanca",
+          "puntillo",
+          "corchea"
+        ],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-15-lee-las-figuras",
@@ -1045,7 +1982,27 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "figuras",
+        "negra",
+        "blanca",
+        "corchea",
+        "duración",
+        "lectura rítmica",
+        "a tiempo"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "blanca",
+          "corchea"
+        ],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-16-cuatro-bandas",
@@ -1064,7 +2021,27 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "beethoven",
+        "quinta sinfonía",
+        "motivo",
+        "karaoke",
+        "a tiempo",
+        "colores",
+        "corcheas"
+      ],
+      "practica": {
+        "figuras": [
+          "corchea",
+          "blanca",
+          "silencio-corchea"
+        ],
+        "compas": "2/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-17-que-instrumento-suena",
@@ -1083,7 +2060,23 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "timbre",
+        "violín",
+        "flauta",
+        "piano",
+        "guitarra",
+        "xilófono",
+        "reconocer instrumentos"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-18-dictado-de-figuras",
@@ -1102,7 +2095,29 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "dictado rítmico",
+        "figuras",
+        "negra",
+        "blanca",
+        "corcheas",
+        "silencio",
+        "escritura",
+        "compás"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "blanca",
+          "corchea",
+          "silencio-negra"
+        ],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-19-dos-por-cuatro-o-tres-por-cuatro",
@@ -1121,7 +2136,23 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "compás",
+        "binario",
+        "ternario",
+        "acento",
+        "dos por cuatro",
+        "tres por cuatro",
+        "pulso fuerte"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-20-forte-o-piano",
@@ -1140,7 +2171,23 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "intensidad",
+        "dinámica",
+        "forte",
+        "piano",
+        "fuerte",
+        "suave",
+        "matices"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-21-ligado-o-picado",
@@ -1159,7 +2206,22 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "articulación",
+        "legato",
+        "staccato",
+        "ligado",
+        "picado",
+        "carácter"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-22-sube-baja-o-se-repite",
@@ -1178,7 +2240,23 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "dirección melódica",
+        "ascendente",
+        "descendente",
+        "repetida",
+        "perfil",
+        "altura",
+        "melodía"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-23-termina-o-se-queda-a-medias",
@@ -1197,7 +2275,23 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "frase",
+        "pregunta respuesta",
+        "cadencia",
+        "conclusiva",
+        "suspensiva",
+        "forma",
+        "tónica"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-24-familias-de-instrumentos",
@@ -1216,7 +2310,23 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "familias",
+        "cuerda",
+        "viento",
+        "percusión",
+        "clasificación",
+        "timbre",
+        "instrumentos"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-25-barras-en-tres-por-cuatro",
@@ -1235,7 +2345,26 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "compás",
+        "barras",
+        "líneas divisorias",
+        "tres por cuatro",
+        "ternario",
+        "vals",
+        "sumar pulsos"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "blanca"
+        ],
+        "compas": "3/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-26-ordena-las-cinco-figuras",
@@ -1254,7 +2383,31 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "figuras",
+        "valores",
+        "semicorchea",
+        "corchea",
+        "negra",
+        "blanca",
+        "redonda",
+        "duración",
+        "ordenar"
+      ],
+      "practica": {
+        "figuras": [
+          "semicorchea",
+          "corchea",
+          "negra",
+          "blanca",
+          "redonda"
+        ],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-28-vals-marcha-o-tango",
@@ -1273,7 +2426,24 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "bailes",
+        "vals",
+        "marcha",
+        "tango",
+        "habanera",
+        "compás",
+        "ritmo",
+        "kit"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-29-dictado-pentatonico",
@@ -1292,7 +2462,27 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "dictado melódico",
+        "pentatónica",
+        "do re mi sol la",
+        "cuadrícula",
+        "seis notas"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [
+          "do",
+          "re",
+          "mi",
+          "sol",
+          "la"
+        ],
+        "secuencia": "vocal-kodaly"
+      }
     },
     {
       "id": "c2-30-cada-figura-con-su-silencio",
@@ -1311,7 +2501,33 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "silencios",
+        "figuras",
+        "redonda",
+        "blanca",
+        "negra",
+        "corchea",
+        "equivalencias",
+        "parejas"
+      ],
+      "practica": {
+        "figuras": [
+          "redonda",
+          "blanca",
+          "negra",
+          "corchea",
+          "silencio-redonda",
+          "silencio-blanca",
+          "silencio-negra",
+          "silencio-corchea"
+        ],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-31-alegre-o-triste",
@@ -1330,7 +2546,23 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "modo",
+        "mayor",
+        "menor",
+        "carácter",
+        "alegre",
+        "triste",
+        "tonalidad"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-32-acelera-o-frena",
@@ -1349,7 +2581,22 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "tempo",
+        "accelerando",
+        "ritardando",
+        "rallentando",
+        "velocidad",
+        "agógica"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-33-sol-la-o-si",
@@ -1368,7 +2615,26 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "flauta dulce",
+        "sol la si",
+        "reconocer notas",
+        "oído",
+        "altura",
+        "referencia"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [
+          "sol",
+          "la",
+          "si"
+        ],
+        "secuencia": "flauta"
+      }
     },
     {
       "id": "c2-34-palmea-con-blancas",
@@ -1387,7 +2653,30 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "eco rítmico",
+        "palmas",
+        "blanca",
+        "negra",
+        "corcheas",
+        "duración",
+        "micrófono"
+      ],
+      "practica": {
+        "figuras": [
+          "blanca",
+          "negra",
+          "corchea"
+        ],
+        "compas": "4/4",
+        "metodo": [
+          "orff",
+          "kodaly"
+        ],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-35-instrumentos-tocados-de-verdad",
@@ -1406,7 +2695,24 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "timbre",
+        "violín",
+        "trompeta",
+        "saxofón",
+        "acordeón",
+        "guitarra eléctrica",
+        "grabaciones",
+        "reconocer instrumentos"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-36-que-estilo-suena",
@@ -1425,7 +2731,24 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "estilos",
+        "géneros",
+        "rock",
+        "vals",
+        "rap",
+        "salsa",
+        "música popular",
+        "audición"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-37-quien-canta",
@@ -1444,7 +2767,23 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "voz",
+        "solista",
+        "coro",
+        "coro infantil",
+        "voz humana",
+        "timbre",
+        "cantar"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-38-la-manana-de-grieg-con-la-pandilla",
@@ -1463,7 +2802,24 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "la mañana",
+        "grieg",
+        "peer gynt",
+        "personajes",
+        "pandilla",
+        "karaoke",
+        "seis por ocho",
+        "amanecer"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "6/8",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-39-la-nana-de-brahms-con-la-pandilla",
@@ -1482,7 +2838,24 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "nana",
+        "canción de cuna",
+        "brahms",
+        "wiegenlied",
+        "personajes",
+        "pandilla",
+        "karaoke",
+        "tres por cuatro"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "3/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-40-la-pequena-serenata-nocturna",
@@ -1501,7 +2874,22 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "pequeña serenata nocturna",
+        "mozart",
+        "eine kleine nachtmusik",
+        "pregunta respuesta",
+        "frase",
+        "arpegio"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-41-el-cisne",
@@ -1520,7 +2908,23 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "el cisne",
+        "saint-saëns",
+        "carnaval de los animales",
+        "violonchelo",
+        "mapa",
+        "frases",
+        "audición"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "libre",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c2-42-coloca-la-nota-las-de-arriba",
@@ -1539,7 +2943,34 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "pentagrama",
+        "clave de sol",
+        "lectura",
+        "líneas adicionales",
+        "agudo",
+        "do5",
+        "do6",
+        "líneas y espacios"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "libre",
+        "metodo": [
+          "kodaly"
+        ],
+        "notas": [
+          "do'",
+          "re'",
+          "mi'",
+          "fa'",
+          "sol'",
+          "la'",
+          "si'"
+        ],
+        "secuencia": "flauta"
+      }
     },
     {
       "id": "c3-01-tonos-y-semitonos",
@@ -1558,7 +2989,23 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "escala",
+        "do mayor",
+        "tono",
+        "semitono",
+        "teclado",
+        "patrón",
+        "teclas blancas"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "laminas"
+      }
     },
     {
       "id": "c3-02-sincopa-y-contratiempo",
@@ -1577,7 +3024,26 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "síncopa",
+        "contratiempo",
+        "acento desplazado",
+        "eco rítmico",
+        "palmas",
+        "micrófono"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "corchea",
+          "sincopa"
+        ],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-03-editor-de-melodias",
@@ -1596,7 +3062,28 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": true
+      "herramienta": true,
+      "etiquetas": [
+        "componer",
+        "editor",
+        "midi",
+        "musicxml",
+        "exportar",
+        "partitura",
+        "crear",
+        "melodía"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "blanca",
+          "redonda"
+        ],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-04-mapa-de-una-obra",
@@ -1615,7 +3102,24 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "forma",
+        "estructura",
+        "frases",
+        "a a b a",
+        "beethoven",
+        "novena",
+        "himno de la alegría",
+        "mapa"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-05-mayor-o-menor",
@@ -1634,7 +3138,23 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "modo",
+        "mayor",
+        "menor",
+        "acorde",
+        "tercera",
+        "tonalidad",
+        "armonía"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-06-el-seis-por-ocho",
@@ -1653,7 +3173,25 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "seis por ocho",
+        "compás compuesto",
+        "subdivisión ternaria",
+        "dalcroze",
+        "movimiento",
+        "cuerpo",
+        "proyector"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "6/8",
+        "metodo": [
+          "dalcroze"
+        ],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-07-componed-un-rondo",
@@ -1672,7 +3210,26 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "rondó",
+        "componer",
+        "proyecto",
+        "grupos",
+        "estribillo",
+        "copla",
+        "forma",
+        "orff"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "4/4",
+        "metodo": [
+          "orff"
+        ],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-09-la-serie-armonica",
@@ -1691,7 +3248,23 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "armónicos",
+        "serie armónica",
+        "cuerda",
+        "proporciones",
+        "fracciones",
+        "física del sonido",
+        "longitud"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-10-ritmo-de-doce",
@@ -1710,7 +3283,28 @@
         "saber": "D. Práctica instrumental, vocal y corporal"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "eco rítmico",
+        "memoria",
+        "doce pulsos",
+        "síncopa",
+        "contratiempo",
+        "silencio",
+        "palmas"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "corchea",
+          "sincopa",
+          "silencio-negra"
+        ],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-11-melodia-larga",
@@ -1729,7 +3323,32 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "componer",
+        "crear",
+        "frase",
+        "dieciséis pulsos",
+        "octava",
+        "cuadrícula",
+        "bucle"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [
+          "do",
+          "re",
+          "mi",
+          "fa",
+          "sol",
+          "la",
+          "si",
+          "do'"
+        ],
+        "secuencia": "laminas"
+      }
     },
     {
       "id": "c3-12-compon-por-pistas",
@@ -1748,7 +3367,29 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": true
+      "herramienta": true,
+      "etiquetas": [
+        "componer",
+        "pistas",
+        "voces",
+        "arreglo",
+        "flauta",
+        "piano",
+        "bajo",
+        "percusión",
+        "textura",
+        "silenciar"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "blanca"
+        ],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-13-los-cuatro-sonidos",
@@ -1767,7 +3408,24 @@
         "saber": "D. Práctica instrumental, vocal y corporal"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "percusión corporal",
+        "pitos",
+        "palmas",
+        "muslos",
+        "pies",
+        "silencio",
+        "contratiempo",
+        "chasquidos"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-14-eco-largo",
@@ -1786,7 +3444,22 @@
         "saber": "D. Práctica instrumental, vocal y corporal"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "eco",
+        "memoria rítmica",
+        "parejas",
+        "diez golpes",
+        "imitación",
+        "micrófono"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-15-que-intervalo-es",
@@ -1805,7 +3478,23 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "intervalos",
+        "segunda",
+        "tercera",
+        "quinta",
+        "octava",
+        "oído",
+        "distancia"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-16-tono-o-semitono",
@@ -1824,7 +3513,22 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "tono",
+        "semitono",
+        "intervalo",
+        "distancia",
+        "teclado",
+        "oído"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-17-sostenido-o-bemol",
@@ -1843,7 +3547,22 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "alteraciones",
+        "sostenido",
+        "bemol",
+        "semitono",
+        "notación",
+        "oído"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-18-escala-mayor-o-menor",
@@ -1862,7 +3581,23 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "escala",
+        "modo",
+        "mayor",
+        "menor",
+        "tercera",
+        "oído",
+        "tonalidad"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-20-que-compas-es",
@@ -1881,7 +3616,23 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "compás",
+        "dos por cuatro",
+        "tres por cuatro",
+        "cuatro por cuatro",
+        "seis por ocho",
+        "acento",
+        "oído"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-21-crescendo-o-diminuendo",
@@ -1900,7 +3651,23 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "dinámica",
+        "intensidad",
+        "crescendo",
+        "diminuendo",
+        "decrescendo",
+        "matices",
+        "reguladores"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-22-ordena-las-epocas",
@@ -1919,7 +3686,25 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "historia de la música",
+        "épocas",
+        "edad media",
+        "renacimiento",
+        "barroco",
+        "clasicismo",
+        "romanticismo",
+        "siglo xx",
+        "ordenar"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-23-de-que-epoca-es",
@@ -1938,7 +3723,23 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "historia de la música",
+        "épocas",
+        "compositores",
+        "barroco",
+        "clasicismo",
+        "romanticismo",
+        "contexto"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-24-quien-compuso-esta-melodia",
@@ -1957,7 +3758,23 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "compositores",
+        "bach",
+        "mozart",
+        "beethoven",
+        "melodías famosas",
+        "historia",
+        "audición"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-25-el-compas-de-doce",
@@ -1976,7 +3793,23 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "flamenco",
+        "compás de doce",
+        "bulería",
+        "soleá",
+        "palmas",
+        "acentos",
+        "ciclo"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "libre",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-29-empieza-en-el-fuerte-o-antes",
@@ -1995,7 +3828,23 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "anacrusa",
+        "pulso fuerte",
+        "acento",
+        "entrada",
+        "tético",
+        "anacrúsico",
+        "comienzo"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-32-tresillo-o-corcheas",
@@ -2014,7 +3863,27 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "tresillo",
+        "corcheas",
+        "subdivisión",
+        "binaria",
+        "ternaria",
+        "figuras",
+        "oído"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "corchea",
+          "tresillo"
+        ],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-33-en-el-pulso-o-a-contratiempo",
@@ -2033,7 +3902,23 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "contratiempo",
+        "pulso",
+        "reggae",
+        "flamenco",
+        "claves",
+        "bombo",
+        "acento"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-34-coloca-la-nota-en-clave-de-fa",
@@ -2052,7 +3937,32 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "pentagrama",
+        "clave de fa",
+        "lectura",
+        "graves",
+        "líneas adicionales",
+        "do2",
+        "do3",
+        "líneas y espacios"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [
+          "do",
+          "re",
+          "mi",
+          "fa",
+          "sol",
+          "la",
+          "si"
+        ],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-35-suena-bien-o-roza",
@@ -2071,7 +3981,23 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "consonancia",
+        "disonancia",
+        "armonía",
+        "intervalos",
+        "dos notas",
+        "acorde",
+        "oído"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-36-cuantas-notas-a-la-vez",
@@ -2090,7 +4016,22 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "acorde",
+        "polifonía",
+        "voces",
+        "contar notas",
+        "armonía",
+        "oído"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-37-la-orquesta-tocada-de-verdad",
@@ -2109,7 +4050,26 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "orquesta",
+        "violonchelo",
+        "clarinete",
+        "oboe",
+        "tuba",
+        "trompa",
+        "contrabajo",
+        "arpa",
+        "clave",
+        "timbre"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-38-ocho-estilos",
@@ -2128,7 +4088,26 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "estilos",
+        "géneros",
+        "rock",
+        "jazz",
+        "hip hop",
+        "reggae",
+        "salsa",
+        "bossa nova",
+        "electrónica",
+        "vals"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-39-de-quien-es-esta-obra",
@@ -2147,7 +4126,25 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "compositores",
+        "obras famosas",
+        "audición",
+        "orquesta",
+        "bach",
+        "vivaldi",
+        "mozart",
+        "beethoven",
+        "historia"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-42-la-escala-de-sol-mayor",
@@ -2166,7 +4163,25 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "escala",
+        "sol mayor",
+        "sostenido",
+        "fa sostenido",
+        "tono",
+        "semitono",
+        "patrón",
+        "teclado",
+        "armadura"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "laminas"
+      }
     },
     {
       "id": "c3-43-el-preludio-de-bach",
@@ -2185,7 +4200,24 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "bach",
+        "preludio",
+        "clave bien temperado",
+        "arpegio",
+        "acordes",
+        "mapa",
+        "barroco",
+        "audición"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-44-para-elisa",
@@ -2204,7 +4236,24 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "para elisa",
+        "für elise",
+        "beethoven",
+        "pentagrama",
+        "sostenido",
+        "karaoke",
+        "piano",
+        "clasicismo"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "libre",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-45-en-la-gruta-del-rey-de-la-montana",
@@ -2223,7 +4272,28 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "gruta del rey de la montaña",
+        "grieg",
+        "peer gynt",
+        "accelerando",
+        "palmas",
+        "ritmo",
+        "tempo",
+        "romanticismo"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "corchea",
+          "blanca"
+        ],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-46-marcha-radetzky",
@@ -2242,7 +4312,23 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "marcha radetzky",
+        "strauss",
+        "concierto de año nuevo",
+        "percusión corporal",
+        "marcha",
+        "palmas",
+        "trompeta"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-47-el-danubio-azul",
@@ -2261,7 +4347,23 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "danubio azul",
+        "strauss",
+        "vals",
+        "tres por cuatro",
+        "percusión corporal",
+        "violín",
+        "ternario"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "3/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-48-cada-obra-con-su-nombre",
@@ -2280,7 +4382,25 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "obras famosas",
+        "grieg",
+        "strauss",
+        "beethoven",
+        "vivaldi",
+        "saint-saëns",
+        "bach",
+        "audición",
+        "parejas"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-49-la-primavera-de-vivaldi-con-figuras",
@@ -2299,7 +4419,29 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "primavera",
+        "vivaldi",
+        "cuatro estaciones",
+        "figuras",
+        "semicorcheas",
+        "puntillo",
+        "karaoke",
+        "barroco",
+        "lectura rítmica"
+      ],
+      "practica": {
+        "figuras": [
+          "corchea",
+          "semicorchea",
+          "puntillo"
+        ],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-50-las-quince-notas-de-do-a-do",
@@ -2318,7 +4460,39 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "pentagrama",
+        "clave de sol",
+        "lectura",
+        "dos octavas",
+        "líneas adicionales",
+        "do4",
+        "do6",
+        "líneas y espacios"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "libre",
+        "metodo": [],
+        "notas": [
+          "do",
+          "re",
+          "mi",
+          "fa",
+          "sol",
+          "la",
+          "si",
+          "do'",
+          "re'",
+          "mi'",
+          "fa'",
+          "sol'",
+          "la'",
+          "si'"
+        ],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-51-clave-de-fa-las-dos-octavas",
@@ -2337,7 +4511,32 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "pentagrama",
+        "clave de fa",
+        "lectura",
+        "dos octavas",
+        "líneas adicionales",
+        "do2",
+        "do4",
+        "graves"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [
+          "do",
+          "re",
+          "mi",
+          "fa",
+          "sol",
+          "la",
+          "si"
+        ],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "c3-52-clave-de-fa-la-octava-aguda",
@@ -2356,7 +4555,32 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "pentagrama",
+        "clave de fa",
+        "lectura",
+        "do central",
+        "línea adicional",
+        "do3",
+        "do4",
+        "líneas y espacios"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [
+          "do",
+          "re",
+          "mi",
+          "fa",
+          "sol",
+          "la",
+          "si"
+        ],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-01-semaforo-del-sonido",
@@ -2375,7 +4599,25 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "sonido",
+        "silencio",
+        "atención",
+        "escucha",
+        "semáforo",
+        "willems"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [
+          "willems",
+          "dalcroze"
+        ],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-02-largo-o-corto",
@@ -2394,12 +4636,27 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "duración",
+        "largo",
+        "corto",
+        "cualidades del sonido",
+        "caracol",
+        "conejo"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-03-el-raton-y-el-elefante",
       "titulo": "El ratón y el elefante",
-      "descripcion": "Intensidad: fuerte o suave. Mismo sonido a dos volúmenes.",
+      "descripcion": "Agudo o grave con el mismo instrumento en dos registros: el ratón suena finito y el elefante hondo. La descripción decía «intensidad» y no lo era (corregido el 2026-09-12).",
       "etapa": "infantil",
       "eje": "timbre",
       "tipo": "eleccion",
@@ -2413,7 +4670,23 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "agudo",
+        "grave",
+        "altura",
+        "cualidades del sonido",
+        "animales",
+        "ratón",
+        "elefante"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-04-el-pajaro-y-el-oso",
@@ -2432,7 +4705,23 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "agudo",
+        "grave",
+        "altura",
+        "cualidades del sonido",
+        "animales",
+        "pájaro",
+        "oso"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-05-paisaje-sonoro",
@@ -2451,7 +4740,21 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "paisaje sonoro",
+        "sonidos del entorno",
+        "escucha",
+        "ilustración",
+        "timbre"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-06-dibuja-el-sonido",
@@ -2470,7 +4773,24 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "grafía",
+        "dibujar",
+        "agudo",
+        "grave",
+        "lienzo",
+        "crear",
+        "trazo",
+        "libre"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-08-camina-corre-para",
@@ -2489,7 +4809,26 @@
         "saber": "H. Interés e iniciativa en la participación en manifestaciones artísticas y corporales"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "dalcroze",
+        "movimiento",
+        "tempo",
+        "rápido",
+        "lento",
+        "parar",
+        "cuerpo",
+        "proyector"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "4/4",
+        "metodo": [
+          "dalcroze"
+        ],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-09-eco-de-palmas",
@@ -2508,7 +4847,25 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "eco",
+        "palmas",
+        "imitación",
+        "silencio",
+        "cuatro pulsos",
+        "micrófono"
+      ],
+      "practica": {
+        "figuras": [
+          "negra",
+          "silencio-negra"
+        ],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-10-cajas-de-sonidos",
@@ -2527,7 +4884,24 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "timbre",
+        "parejas",
+        "tambor",
+        "campana",
+        "palmas",
+        "voz",
+        "animales",
+        "cajas"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-11-cancion-con-pictogramas",
@@ -2546,7 +4920,29 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "pictogramas",
+        "canción",
+        "sol mi la",
+        "kodály",
+        "seguir",
+        "personajes",
+        "anticipar"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [
+          "kodaly"
+        ],
+        "notas": [
+          "sol",
+          "mi",
+          "la"
+        ],
+        "secuencia": "vocal-kodaly"
+      }
     },
     {
       "id": "inf-12-danza-de-corro",
@@ -2565,7 +4961,26 @@
         "saber": "H. Interés e iniciativa en la participación en manifestaciones artísticas y corporales"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "danza",
+        "corro",
+        "baile",
+        "coreografía",
+        "movimiento",
+        "proyector",
+        "pulso"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "4/4",
+        "metodo": [
+          "dalcroze",
+          "orff"
+        ],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-13-quien-ha-sonado",
@@ -2584,7 +4999,21 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "timbre",
+        "pequeña percusión",
+        "instrumentos",
+        "reconocer",
+        "escucha"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-14-el-cuento-sonoro",
@@ -2603,7 +5032,22 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "cuento",
+        "sonorizar",
+        "crear",
+        "agudo grave",
+        "narración",
+        "grupo"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-15-de-grave-a-agudo",
@@ -2622,7 +5066,26 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "grave",
+        "agudo",
+        "ordenar",
+        "campanas",
+        "altura",
+        "montessori",
+        "seriar"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [
+          "montessori",
+          "willems"
+        ],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-16-animales-que-bajan",
@@ -2641,7 +5104,24 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "a tiempo",
+        "animales",
+        "oso",
+        "pájaro",
+        "grave agudo",
+        "melodía",
+        "karaoke",
+        "lento"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-17-palmas-y-muslos",
@@ -2660,7 +5140,22 @@
         "saber": "H. Interés e iniciativa en la participación en manifestaciones artísticas y corporales"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "percusión corporal",
+        "palmas",
+        "muslos",
+        "alternar",
+        "coordinación",
+        "ostinato"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "4/4",
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-18-cuatro-instrumentos",
@@ -2679,7 +5174,24 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "bombo",
+        "caja",
+        "pandereta",
+        "claves",
+        "percusión",
+        "timbre",
+        "explorar",
+        "libre"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-19-el-piano-de-la-pandilla",
@@ -2698,7 +5210,24 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "piano",
+        "teclado",
+        "personajes",
+        "pandilla",
+        "dora",
+        "doby",
+        "explorar",
+        "octava"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-20-rapido-o-despacio",
@@ -2717,7 +5246,23 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "tempo",
+        "velocidad",
+        "rápido",
+        "lento",
+        "conejo",
+        "tortuga",
+        "pulso"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-21-fuerte-o-flojito",
@@ -2736,7 +5281,24 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "intensidad",
+        "fuerte",
+        "suave",
+        "flojo",
+        "dinámica",
+        "cualidades del sonido",
+        "león",
+        "mariposa"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-22-cuantos-golpes",
@@ -2755,7 +5317,22 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "contar",
+        "golpes",
+        "tambor",
+        "números",
+        "uno dos tres",
+        "escucha"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-23-sube-o-baja",
@@ -2774,7 +5351,22 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "ascendente",
+        "descendente",
+        "dirección",
+        "escalera",
+        "altura",
+        "flechas"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-24-que-animal-es",
@@ -2793,7 +5385,24 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "animales",
+        "perro",
+        "gato",
+        "león",
+        "elefante",
+        "timbre",
+        "grabaciones",
+        "escucha"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-25-los-animales-de-la-granja",
@@ -2812,7 +5421,24 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "animales",
+        "granja",
+        "vaca",
+        "oveja",
+        "gallo",
+        "cerdo",
+        "timbre",
+        "grabaciones"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-26-que-suena-en-casa",
@@ -2831,7 +5457,23 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "casa",
+        "puerta",
+        "timbre",
+        "teléfono",
+        "reloj",
+        "sonidos cotidianos",
+        "escucha"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-27-que-tiempo-hace",
@@ -2850,7 +5492,24 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "naturaleza",
+        "lluvia",
+        "viento",
+        "tormenta",
+        "olas",
+        "mar",
+        "trueno",
+        "sonidos del entorno"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-28-memory-de-animales",
@@ -2869,7 +5528,22 @@
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "memory",
+        "memoria",
+        "parejas",
+        "animales",
+        "cartas",
+        "timbre"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "inf-29-cucu-sol-y-mi",
@@ -2888,7 +5562,27 @@
         "saber": "F. Lenguaje y expresión musical – el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",
-      "herramienta": false
+      "herramienta": false,
+      "etiquetas": [
+        "cucú",
+        "sol mi",
+        "tercera menor",
+        "kodály",
+        "personajes",
+        "pandilla",
+        "karaoke",
+        "dos notas"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "2/4",
+        "metodo": [],
+        "notas": [
+          "sol",
+          "mi"
+        ],
+        "secuencia": "vocal-kodaly"
+      }
     },
     {
       "id": "tr-01-afinador-visual",
@@ -2907,7 +5601,22 @@
         "saber": null
       },
       "estado": "borrador",
-      "herramienta": true
+      "herramienta": true,
+      "etiquetas": [
+        "afinador",
+        "micrófono",
+        "afinación",
+        "cantar",
+        "nota",
+        "herramienta"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "tr-02-metronomo-y-calibrador",
@@ -2926,7 +5635,23 @@
         "saber": null
       },
       "estado": "borrador",
-      "herramienta": true
+      "herramienta": true,
+      "etiquetas": [
+        "metrónomo",
+        "tempo",
+        "pulso",
+        "calibración",
+        "latencia",
+        "proyector",
+        "herramienta"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "tr-03-caja-de-sonidos",
@@ -2945,7 +5670,23 @@
         "saber": null
       },
       "estado": "borrador",
-      "herramienta": true
+      "herramienta": true,
+      "etiquetas": [
+        "caja de sonidos",
+        "dibujar",
+        "grafía",
+        "flauta",
+        "lienzo",
+        "explorar",
+        "herramienta"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "tr-05-piano",
@@ -2964,7 +5705,31 @@
         "saber": "D. Práctica instrumental, vocal y corporal"
       },
       "estado": "borrador",
-      "herramienta": true
+      "herramienta": true,
+      "etiquetas": [
+        "piano",
+        "teclado",
+        "instrumento",
+        "grabar",
+        "teclas negras",
+        "octavas",
+        "herramienta"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [
+          "do",
+          "re",
+          "mi",
+          "fa",
+          "sol",
+          "la",
+          "si"
+        ],
+        "secuencia": "laminas"
+      }
     },
     {
       "id": "tr-06-kit-de-percusion",
@@ -2983,7 +5748,26 @@
         "saber": "D. Práctica instrumental, vocal y corporal"
       },
       "estado": "borrador",
-      "herramienta": true
+      "herramienta": true,
+      "etiquetas": [
+        "percusión",
+        "kit",
+        "bombo",
+        "caja",
+        "pandereta",
+        "claves",
+        "triángulo",
+        "familias",
+        "grabar",
+        "herramienta"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "tr-07-como-era-esto",
@@ -3002,7 +5786,25 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": true
+      "herramienta": true,
+      "etiquetas": [
+        "consulta",
+        "figuras",
+        "silencios",
+        "compases",
+        "tempos",
+        "matices",
+        "lenguaje musical",
+        "teoría",
+        "herramienta"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "tr-08-acompanamientos",
@@ -3021,7 +5823,24 @@
         "saber": "D. Práctica instrumental, vocal y corporal"
       },
       "estado": "borrador",
-      "herramienta": true
+      "herramienta": true,
+      "etiquetas": [
+        "acompañamiento",
+        "base",
+        "playback",
+        "cantar",
+        "tonalidad",
+        "transportar",
+        "bucle",
+        "herramienta"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "tr-09-quien-es-quien",
@@ -3040,7 +5859,23 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "revision-pedagogica",
-      "herramienta": true
+      "herramienta": true,
+      "etiquetas": [
+        "consulta",
+        "historia de la música",
+        "épocas",
+        "compositores",
+        "estilos",
+        "biografías",
+        "herramienta"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "tr-10-diez-obras-para-empezar",
@@ -3059,7 +5894,26 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "revision-pedagogica",
-      "herramienta": true
+      "herramienta": true,
+      "etiquetas": [
+        "consulta",
+        "obras famosas",
+        "audición",
+        "bach",
+        "vivaldi",
+        "mozart",
+        "beethoven",
+        "grieg",
+        "strauss",
+        "saint-saëns"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "tr-11-bailes-y-compases",
@@ -3078,7 +5932,26 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": true
+      "herramienta": true,
+      "etiquetas": [
+        "bailes",
+        "españa",
+        "compás",
+        "pasodoble",
+        "jota",
+        "muiñeira",
+        "sardana",
+        "sevillanas",
+        "habanera",
+        "chotis"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "tr-12-los-instrumentos-por-familias",
@@ -3097,7 +5970,25 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": true
+      "herramienta": true,
+      "etiquetas": [
+        "consulta",
+        "instrumentos",
+        "familias",
+        "cuerda",
+        "viento",
+        "percusión",
+        "voz",
+        "timbre",
+        "herramienta"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "tr-13-las-voces-del-coro",
@@ -3116,7 +6007,25 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": true
+      "herramienta": true,
+      "etiquetas": [
+        "coro",
+        "voces",
+        "soprano",
+        "contralto",
+        "tenor",
+        "bajo",
+        "tesitura",
+        "cantar",
+        "herramienta"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "tr-14-ritmos-del-mundo",
@@ -3135,7 +6044,25 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "borrador",
-      "herramienta": true
+      "herramienta": true,
+      "etiquetas": [
+        "ritmos",
+        "clave cubana",
+        "tresillo",
+        "habanera",
+        "campana africana",
+        "swing",
+        "kit",
+        "culturas",
+        "herramienta"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "tr-15-el-pentagrama-en-clave-de-sol",
@@ -3154,7 +6081,39 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": true
+      "herramienta": true,
+      "etiquetas": [
+        "pentagrama",
+        "clave de sol",
+        "consulta",
+        "notas",
+        "líneas adicionales",
+        "personajes",
+        "ficha",
+        "herramienta"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": "libre",
+        "metodo": [],
+        "notas": [
+          "do",
+          "re",
+          "mi",
+          "fa",
+          "sol",
+          "la",
+          "si",
+          "do'",
+          "re'",
+          "mi'",
+          "fa'",
+          "sol'",
+          "la'",
+          "si'"
+        ],
+        "secuencia": "ninguna"
+      }
     },
     {
       "id": "tr-16-el-pentagrama-en-clave-de-fa",
@@ -3173,7 +6132,32 @@
         "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
-      "herramienta": true
+      "herramienta": true,
+      "etiquetas": [
+        "pentagrama",
+        "clave de fa",
+        "consulta",
+        "notas",
+        "líneas adicionales",
+        "personajes",
+        "ficha",
+        "herramienta"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [
+          "do",
+          "re",
+          "mi",
+          "fa",
+          "sol",
+          "la",
+          "si"
+        ],
+        "secuencia": "ninguna"
+      }
     }
   ]
 }

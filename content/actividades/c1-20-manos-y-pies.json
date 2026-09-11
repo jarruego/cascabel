@@ -101,5 +101,14 @@
       "licencia": "CC0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "percusión corporal",
+    "palmas",
+    "muslos",
+    "pies",
+    "ostinato",
+    "sílabas",
+    "orff"
+  ]
 }

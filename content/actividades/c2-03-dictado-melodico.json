@@ -94,5 +94,12 @@
   "estado": "borrador",
   "pistas": [
     "actividad.c203.pista1"
+  ],
+  "etiquetas": [
+    "dictado melódico",
+    "cuadrícula",
+    "agudo grave",
+    "escribir melodía",
+    "seis notas"
   ]
 }

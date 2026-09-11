@@ -97,5 +97,13 @@
     "actividad.c206.pista1",
     "actividad.c206.pista2"
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "compás",
+    "barras",
+    "líneas divisorias",
+    "cuatro por cuatro",
+    "duraciones",
+    "sumar pulsos"
+  ]
 }

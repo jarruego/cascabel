@@ -114,5 +114,16 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "historia de la música",
+    "épocas",
+    "edad media",
+    "renacimiento",
+    "barroco",
+    "clasicismo",
+    "romanticismo",
+    "siglo xx",
+    "ordenar"
+  ]
 }

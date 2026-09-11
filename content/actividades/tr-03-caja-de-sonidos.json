@@ -68,5 +68,14 @@
     }
   ],
   "herramienta": true,
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "caja de sonidos",
+    "dibujar",
+    "grafía",
+    "flauta",
+    "lienzo",
+    "explorar",
+    "herramienta"
+  ]
 }

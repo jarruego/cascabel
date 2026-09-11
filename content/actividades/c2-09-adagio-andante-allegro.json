@@ -153,5 +153,13 @@
       "fuente": "https://openmoji.org",
       "licencia": "CC BY-SA 4.0"
     }
+  ],
+  "etiquetas": [
+    "tempo",
+    "velocidad",
+    "adagio",
+    "andante",
+    "allegro",
+    "términos italianos"
   ]
 }

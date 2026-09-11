@@ -183,5 +183,15 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "compás",
+    "binario",
+    "ternario",
+    "tres por cuatro",
+    "dos por cuatro",
+    "bailar",
+    "desfilar",
+    "acento"
+  ]
 }

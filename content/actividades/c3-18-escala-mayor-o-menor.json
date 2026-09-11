@@ -182,5 +182,14 @@
       "licencia": "Propia"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "escala",
+    "modo",
+    "mayor",
+    "menor",
+    "tercera",
+    "oído",
+    "tonalidad"
+  ]
 }

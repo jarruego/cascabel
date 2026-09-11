@@ -128,5 +128,17 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "estilos",
+    "géneros",
+    "rock",
+    "jazz",
+    "hip hop",
+    "reggae",
+    "salsa",
+    "bossa nova",
+    "electrónica",
+    "vals"
+  ]
 }

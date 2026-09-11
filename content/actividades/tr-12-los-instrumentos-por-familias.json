@@ -174,5 +174,16 @@
       "licencia": "MIT"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "consulta",
+    "instrumentos",
+    "familias",
+    "cuerda",
+    "viento",
+    "percusión",
+    "voz",
+    "timbre",
+    "herramienta"
+  ]
 }

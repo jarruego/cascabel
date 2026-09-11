@@ -126,5 +126,14 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "figuras",
+    "duración",
+    "corchea",
+    "negra",
+    "blanca",
+    "ordenar",
+    "valores"
+  ]
 }

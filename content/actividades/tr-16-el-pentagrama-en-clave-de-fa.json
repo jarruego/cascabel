@@ -130,5 +130,15 @@
       "licencia": "CC0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "pentagrama",
+    "clave de fa",
+    "consulta",
+    "notas",
+    "líneas adicionales",
+    "personajes",
+    "ficha",
+    "herramienta"
+  ]
 }

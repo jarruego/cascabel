@@ -64,5 +64,15 @@
   },
   "enunciado": "actividad.inf08.enunciado",
   "personaje": "doby",
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "dalcroze",
+    "movimiento",
+    "tempo",
+    "rápido",
+    "lento",
+    "parar",
+    "cuerpo",
+    "proyector"
+  ]
 }

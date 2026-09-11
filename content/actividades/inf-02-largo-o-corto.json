@@ -107,5 +107,13 @@
       "fuente": "https://openmoji.org",
       "licencia": "CC BY-SA 4.0"
     }
+  ],
+  "etiquetas": [
+    "duración",
+    "largo",
+    "corto",
+    "cualidades del sonido",
+    "caracol",
+    "conejo"
   ]
 }

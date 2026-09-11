@@ -128,5 +128,14 @@
       "licencia": "CC BY-SA 4.0"
     }
   ],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "timbre",
+    "violín",
+    "flauta",
+    "piano",
+    "guitarra",
+    "xilófono",
+    "reconocer instrumentos"
+  ]
 }

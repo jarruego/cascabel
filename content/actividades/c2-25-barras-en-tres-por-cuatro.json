@@ -99,5 +99,14 @@
     "actividad.c225.pista2"
   ],
   "creditos": [],
-  "estado": "borrador"
+  "estado": "borrador",
+  "etiquetas": [
+    "compás",
+    "barras",
+    "líneas divisorias",
+    "tres por cuatro",
+    "ternario",
+    "vals",
+    "sumar pulsos"
+  ]
 }
