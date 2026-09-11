@@ -1354,9 +1354,6 @@ p {
   min-height: 1.1em;
   margin: 0;
 }
-/* En la ficha, el sitio que se acaba de tocar se queda señalado hasta el siguiente: crece,
-   porque el color ya es el de la nota. */
-.pentagrama__sitio[data-tocada] .pentagrama__nota { transform: scale(1.35); outline: 3px solid var(--tinta); outline-offset: 1px; }
 /* La ficha del Taller: el nombre en mayúsculas y al doble, que es lo que se está enseñando,
    y el personaje al doble entrando con un botecito. Lo pidió el autor el 2026-09-12. */
 .pentagrama[data-ficha] .pentagrama__pedida {

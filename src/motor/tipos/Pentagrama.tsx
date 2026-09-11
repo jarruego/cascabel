@@ -233,6 +233,8 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
 
   /** En la ficha, el último sitio tocado: su nombre y su personaje van arriba. */
   const [tocada, setTocada] = useState<Opcion | null>(null);
+  /** Y todos los tocados hasta ahora: cada uno se queda con su color. Se descubre tocando. */
+  const [tocadas, setTocadas] = useState<Set<string>>(() => new Set());
   const elegir = useCallback(
     async (o: Opcion) => {
       const nota = notaDe(sitioDe(o), clave);
@@ -255,6 +257,7 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
       // En la ficha no hay pregunta: se enseña el nombre y quién es, y ya.
       if (libre) {
         setTocada(o);
+        setTocadas((s) => new Set(s).add(o.clave));
         return;
       }
       despachar({ tipo: 'elegir', clave: o.clave, respuesta: pedida ?? '' });
@@ -389,7 +392,6 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
               }}
               aria-label={t(`nota.${o.nombre ?? o.clave}`)}
               aria-disabled={(!libre && estado.fase !== 'estimulo') || undefined}
-              data-tocada={(libre && tocada?.clave === o.clave) || undefined}
               onClick={() => void elegir(o)}
             >
               {/* La cabeza de nota, del tamaño real que tendría en la pauta. Sin el nombre
@@ -400,8 +402,9 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
                 style={{
                   width: Math.round(SEPARACION * 1.25),
                   height: Math.round(SEPARACION * 0.9),
-                  // En la ficha cada cabeza lleva el color de su nota; en las de pregunta, no.
-                  ...(libre ? { background: colorDe(cientifica(o)) } : {}),
+                  // En la ficha la cabeza toma el color de su nota al tocarla, y se lo queda:
+                  // el pentagrama se colorea según se descubre. En las de pregunta, nunca.
+                  ...(libre && tocadas.has(o.clave) ? { background: colorDe(cientifica(o)) } : {}),
                 }}
               />
               <span className="visualmente-oculto">{nota.nombre}</span>
