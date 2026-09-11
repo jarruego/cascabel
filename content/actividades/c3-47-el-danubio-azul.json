@@ -23,11 +23,11 @@
     "modo": "ninguna"
   },
   "contenido": {
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: un vals con el cuerpo: el pie en el uno y las palmas en el dos y el tres, mientras la melodía suena con la flauta. Es la forma más directa de sentir el 3/4. Entero y sin bucle: el primer vals completo, treinta y tres compases del arreglo, la anacrusa en el tercer tiempo. Cada frase de ocho compases cambia la pareja de golpes del dos y el tres —palmas, muslos, palmas, chasquidos— para que las cuatro zonas trabajen; el pie va siempre en el uno. Melodía al 100 %. La melodía es la voz superior del arreglo simplificado de Mutopia (N. Kouremenos, CC BY-SA 4.0), cotejada con su partitura renderizada.",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: un vals con el cuerpo: el pie en el uno y las palmas en el dos y el tres, mientras la melodía suena con la flauta. Es la forma más directa de sentir el 3/4. Entero y sin bucle: el primer vals completo, treinta y tres compases del arreglo, la anacrusa en el tercer tiempo. Cada frase de ocho compases cambia la pareja de golpes del dos y el tres —palmas, muslos, palmas, chasquidos— para que las cuatro zonas trabajen; el pie va siempre en el uno. Melodía al 100 %. La melodía es la voz superior del arreglo simplificado de Mutopia (N. Kouremenos, CC BY-SA 4.0), cotejada con su partitura renderizada. El 2026-09-12: la melodía con violín, que es lo que la toca en la orquesta y se oye más claro que la flauta en este registro, al 100 %; los golpes a un 45 %, para que acompañen y no tapen (campo nuevo `volumenGolpes`).",
     "consigna": "actividad.c347.consigna",
     "tempo": 108,
     "bucle": false,
-    "instrumento": "flauta",
+    "instrumento": "violin",
     "patron": [
       {
         "zona": "palmas"
@@ -432,7 +432,8 @@
       null,
       null
     ],
-    "volumenMelodia": 1
+    "volumenMelodia": 1,
+    "volumenGolpes": 0.45
   },
   "evaluacion": {
     "autocorrectiva": false,

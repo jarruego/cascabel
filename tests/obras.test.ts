@@ -54,8 +54,10 @@ describe('las obras y canciones del contenido', () => {
       const patron = a.contenido.patron as unknown[];
       const melodia = a.contenido.melodia as unknown[] | undefined;
       if (melodia && melodia.length !== patron.length) malos.push(`${a.id}: ${melodia.length} notas para ${patron.length} golpes`);
-      const v = a.contenido.volumenMelodia as number | undefined;
-      if (v !== undefined && (v < 0 || v > 1)) malos.push(`${a.id}: volumenMelodia ${v}`);
+      for (const campo of ['volumenMelodia', 'volumenGolpes'] as const) {
+        const v = a.contenido[campo] as number | undefined;
+        if (v !== undefined && (v < 0 || v > 1)) malos.push(`${a.id}: ${campo} ${v}`);
+      }
     }
     expect(malos).toEqual([]);
   });

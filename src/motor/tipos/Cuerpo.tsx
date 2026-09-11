@@ -77,6 +77,8 @@ export default function Cuerpo({ actividad, alTerminar, alSalir }: PropsActivida
     bucle?: boolean;
     /** Volumen de la melodía, de 0 a 1. Por defecto la mitad: acompaña a los golpes. */
     volumenMelodia?: number;
+    /** Volumen de los golpes, de 0 a 1. Por defecto entero; menos cuando manda la melodía. */
+    volumenGolpes?: number;
   };
 
   const carril = useCarril(actividad.etapa);
@@ -184,7 +186,7 @@ export default function Cuerpo({ actividad, alTerminar, alSalir }: PropsActivida
         const g = patron[siguiente % patron.length]!;
         const cuando = inicio + posicionDe(siguiente) * segundosPorPulso;
         if (g.zona !== 'silencio') {
-          sonidos.current?.golpear(g.zona, cuando);
+          sonidos.current?.golpear(g.zona, cuando, contenido.volumenGolpes ?? 1);
         }
         // La nota de ese golpe, bajita y de lo que dura el golpe.
         const nota = contenido.melodia?.[siguiente % patron.length];

@@ -53,7 +53,8 @@ export class SonidosDelCuerpo {
     );
   }
 
-  golpear(zona: Zona, cuando?: number): void {
+  /** @param volumen de 0 a 1: por defecto entero. Bajo una melodía que manda, menos. */
+  golpear(zona: Zona, cuando?: number, volumen = 1): void {
     const ctx = obtenerContexto();
     const versiones = this.buffers.get(zona);
     if (!versiones?.length || !this.salida) return;
@@ -63,7 +64,9 @@ export class SonidosDelCuerpo {
 
     const fuente = ctx.createBufferSource();
     fuente.buffer = versiones[i]!;
-    fuente.connect(this.salida);
+    const g = ctx.createGain();
+    g.gain.value = Math.max(0, Math.min(1, volumen));
+    fuente.connect(g).connect(this.salida);
     registrarFuente(fuente);
     fuente.start(cuando ?? ctx.currentTime);
   }

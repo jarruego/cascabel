@@ -3024,6 +3024,9 @@ textos, niveles, camino, y la sección de instrumentos.
 - [x] **Al acertar, el sonido se corta** en elección, emparejar y memory: seguir sonando
       debajo del «¡bien!» era ruido. Al fallar se deja, que el niño puede querer oírlo otra vez.
 
+- [x] **El Danubio (347) con violín**, la melodía al 100 % y los golpes al 45 %: la percusión
+      corporal tiene ahora también `volumenGolpes`, para cuando manda la melodía.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
