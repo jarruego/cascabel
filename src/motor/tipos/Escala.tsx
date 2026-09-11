@@ -91,12 +91,16 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
   const [fallo, setFallo] = useState<FalloDePaso | null>(null);
   /** Fallos en esta vuelta: cada uno trae la siguiente pista de la actividad. */
   const [fallos, setFallos] = useState(0);
-  // Qué ha pasado y qué pedía el patrón, y detrás la pista de ESTA actividad, que es la
-  // que enseña algo más: dónde caen los semitonos en do, por qué en sol hace falta la negra.
-  const pistaActividad = pistaPara(actividad.pistas, fallos);
+  /*
+    Un solo mensaje, sea cual sea el fallo: «ese paso no sigue el patrón, empieza de nuevo».
+    Había seis, uno por clase de fallo —tono donde tocaba semitono, salto, baja...— y el
+    autor los quitó el 2026-09-12: «hay muchas explicaciones según la tecla y lía más». Qué
+    ha pasado ya lo dice el paso tachado en la pauta. La pista de la actividad se añade a
+    partir del segundo fallo seguido, que es cuando hace falta algo más que «otra vez».
+  */
+  const pistaActividad = pistaPara(actividad.pistas, fallos - 1);
   const textoPista =
-    t(`escala.fallo.${fallo ?? 'salto'}`, { nota: nombreDe(tonica) }) +
-    (pistaActividad ? ` ${t(pistaActividad)}` : '');
+    t('escala.fallo', { nota: nombreDe(tonica) }) + (pistaActividad ? ` ${t(pistaActividad)}` : '');
   /** Pasos del patrón ya dados bien: el paso malo, si lo hay, no cuenta. */
   const pasosDados = Math.max(0, puestas.length - 1 - (fallo === null ? 0 : 1));
   const primera = Math.max(0, puestas.length - caben);
