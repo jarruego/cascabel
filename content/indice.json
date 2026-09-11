@@ -83,7 +83,7 @@
     },
     {
       "id": "c1-03-el-pulso-escondido",
-      "titulo": "El pulso escondido",
+      "titulo": "El pulso escondido en los silencios",
       "descripcion": "Cuatro ritmos con silencios en sitios distintos. Hay que palmear solo donde hay sonido y seguir contando el pulso por dentro donde no lo hay.",
       "etapa": "primaria-c1",
       "eje": "pulso",
@@ -369,7 +369,7 @@
     },
     {
       "id": "c1-11-el-mando-del-director",
-      "titulo": "El mando del director",
+      "titulo": "El mando del director: tempo y volumen",
       "descripcion": "Dos deslizadores, tempo y dinámica, sobre una pieza real.",
       "etapa": "primaria-c1",
       "eje": "cultura",
@@ -628,7 +628,7 @@
     },
     {
       "id": "c1-19-adivina-quien-baja",
-      "titulo": "Adivina quién baja",
+      "titulo": "Adivina quién baja: negra, blanca y redonda",
       "descripcion": "Bajan círculos vacíos, despacio y bien separados, y el animal solo aparece si tocas a tiempo.",
       "etapa": "primaria-c1",
       "eje": "pulso",
@@ -769,7 +769,7 @@
     },
     {
       "id": "c1-23-paso-o-salto",
-      "titulo": "¿Paso o salto?",
+      "titulo": "¿Paso o salto? El primer intervalo",
       "descripcion": "Dos notas: o están al lado (un paso) o lejos (un salto). El primer intervalo, sin llamarlo así.",
       "etapa": "primaria-c1",
       "eje": "altura",
@@ -2006,7 +2006,7 @@
     },
     {
       "id": "c2-16-cuatro-bandas",
-      "titulo": "Cuatro bandas",
+      "titulo": "La Quinta de Beethoven en cuatro bandas",
       "descripcion": "El motivo más conocido de la historia en cuatro bandas de color, cada una con su botón justo debajo. Tres cortas y una larga, dos veces.",
       "etapa": "primaria-c2",
       "eje": "pulso",
@@ -2260,7 +2260,7 @@
     },
     {
       "id": "c2-23-termina-o-se-queda-a-medias",
-      "titulo": "¿Termina o se queda a medias?",
+      "titulo": "Pregunta y respuesta: ¿termina o se queda a medias?",
       "descripcion": "Una frase que acaba en la nota de casa suena a punto final; una que se para en otra, a pregunta. Es la primera idea de forma: la pregunta y la respuesta.",
       "etapa": "primaria-c2",
       "eje": "altura",
@@ -2531,7 +2531,7 @@
     },
     {
       "id": "c2-31-alegre-o-triste",
-      "titulo": "¿Alegre o triste?",
+      "titulo": "¿Alegre o triste? Mayor y menor",
       "descripcion": "La misma melodía en modo mayor y en modo menor. Con el acorde se aprende en 5.º; aquí se oye antes, como carácter: alegre o triste.",
       "etapa": "primaria-c2",
       "eje": "altura",
@@ -2566,7 +2566,7 @@
     },
     {
       "id": "c2-32-acelera-o-frena",
-      "titulo": "¿Acelera o frena?",
+      "titulo": "¿Acelera o frena? Accelerando y ritardando",
       "descripcion": "Un pulso que cada vez va más deprisa, o cada vez más despacio. Accelerando y ritardando: el tempo que cambia mientras suena.",
       "etapa": "primaria-c2",
       "eje": "pulso",
@@ -3268,7 +3268,7 @@
     },
     {
       "id": "c3-10-ritmo-de-doce",
-      "titulo": "Ritmo de doce",
+      "titulo": "Ritmo de doce pulsos",
       "descripcion": "Tres ritmos de doce pulsos con negras, corcheas, silencios, una síncopa y un contratiempo, cada uno ordenado de otra manera. Lo difícil es acordarse de las tres partes de cuatro.",
       "etapa": "primaria-c3",
       "eje": "pulso",
@@ -3778,7 +3778,7 @@
     },
     {
       "id": "c3-25-el-compas-de-doce",
-      "titulo": "El compás de doce",
+      "titulo": "El compás flamenco de doce",
       "descripcion": "El compás flamenco de doce tiempos, con los acentos en el 3, el 6, el 8, el 10 y el 12. En bucle, para palmearlo encima hasta que salga solo.",
       "etapa": "primaria-c3",
       "eje": "cultura",
@@ -3813,7 +3813,7 @@
     },
     {
       "id": "c3-29-empieza-en-el-fuerte-o-antes",
-      "titulo": "¿Empieza en el fuerte o antes?",
+      "titulo": "La anacrusa: ¿empieza en el fuerte o antes?",
       "descripcion": "Un ritmo que empieza justo en el pulso fuerte, o uno que empieza un pulso antes: la anacrusa. Se oye antes de que se entienda.",
       "etapa": "primaria-c3",
       "eje": "notacion",
@@ -3966,7 +3966,7 @@
     },
     {
       "id": "c3-35-suena-bien-o-roza",
-      "titulo": "¿Suenan bien juntas o rozan?",
+      "titulo": "Consonancia y disonancia: ¿suenan bien o rozan?",
       "descripcion": "Dos notas a la vez. Unas encajan y otras rozan: consonancia y disonancia, que es de lo que está hecha la armonía.",
       "etapa": "primaria-c3",
       "eje": "altura",
@@ -4584,7 +4584,7 @@
     },
     {
       "id": "inf-01-semaforo-del-sonido",
-      "titulo": "El semáforo del sonido",
+      "titulo": "El semáforo del sonido y el silencio",
       "descripcion": "Suena o no suena. El niño mantiene el dedo en el círculo mientras hay sonido y lo suelta en el silencio.",
       "etapa": "infantil",
       "eje": "timbre",
@@ -4655,7 +4655,7 @@
     },
     {
       "id": "inf-03-el-raton-y-el-elefante",
-      "titulo": "El ratón y el elefante",
+      "titulo": "El ratón y el elefante: agudo y grave",
       "descripcion": "Agudo o grave con el mismo instrumento en dos registros: el ratón suena finito y el elefante hondo. La descripción decía «intensidad» y no lo era (corregido el 2026-09-12).",
       "etapa": "infantil",
       "eje": "timbre",
@@ -4690,7 +4690,7 @@
     },
     {
       "id": "inf-04-el-pajaro-y-el-oso",
-      "titulo": "El pájaro y el oso",
+      "titulo": "El pájaro y el oso: agudo y grave",
       "descripcion": "Agudo o grave con el mismo instrumento en dos registros. No cambiar de timbre a la vez.",
       "etapa": "infantil",
       "eje": "altura",

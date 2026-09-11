@@ -31,7 +31,7 @@
     },
     {
       "id": "C1-03",
-      "titulo": "El pulso escondido",
+      "titulo": "El pulso escondido en los silencios",
       "etapa": "primaria-c1",
       "eje": "pulso",
       "lugar": "pantalla",
@@ -135,7 +135,7 @@
     },
     {
       "id": "C1-11",
-      "titulo": "El mando del director",
+      "titulo": "El mando del director: tempo y volumen",
       "etapa": "primaria-c1",
       "eje": "cultura",
       "lugar": "pantalla",
@@ -226,7 +226,7 @@
     },
     {
       "id": "C1-19",
-      "titulo": "Adivina quién baja",
+      "titulo": "Adivina quién baja: negra, blanca y redonda",
       "etapa": "primaria-c1",
       "eje": "pulso",
       "lugar": "pantalla",
@@ -278,7 +278,7 @@
     },
     {
       "id": "C1-23",
-      "titulo": "¿Paso o salto?",
+      "titulo": "¿Paso o salto? El primer intervalo",
       "etapa": "primaria-c1",
       "eje": "altura",
       "lugar": "pantalla",
@@ -642,7 +642,7 @@
     },
     {
       "id": "C2-16",
-      "titulo": "Cuatro bandas",
+      "titulo": "La Quinta de Beethoven en cuatro bandas",
       "etapa": "primaria-c2",
       "eje": "altura",
       "lugar": "pantalla",
@@ -733,7 +733,7 @@
     },
     {
       "id": "C2-23",
-      "titulo": "¿Termina o se queda a medias?",
+      "titulo": "Pregunta y respuesta: ¿termina o se queda a medias?",
       "etapa": "primaria-c2",
       "eje": "altura",
       "lugar": "pantalla",
@@ -824,7 +824,7 @@
     },
     {
       "id": "C2-31",
-      "titulo": "¿Alegre o triste?",
+      "titulo": "¿Alegre o triste? Mayor y menor",
       "etapa": "primaria-c2",
       "eje": "altura",
       "lugar": "pantalla",
@@ -837,7 +837,7 @@
     },
     {
       "id": "C2-32",
-      "titulo": "¿Acelera o frena?",
+      "titulo": "¿Acelera o frena? Accelerando y ritardando",
       "etapa": "primaria-c2",
       "eje": "pulso",
       "lugar": "pantalla",
@@ -1019,7 +1019,7 @@
     },
     {
       "id": "C3-10",
-      "titulo": "Ritmo de doce",
+      "titulo": "Ritmo de doce pulsos",
       "etapa": "primaria-c3",
       "eje": "pulso",
       "lugar": "pantalla",
@@ -1201,7 +1201,7 @@
     },
     {
       "id": "C3-25",
-      "titulo": "El compás de doce",
+      "titulo": "El compás flamenco de doce",
       "etapa": "primaria-c3",
       "eje": "cultura",
       "lugar": "pantalla",
@@ -1240,7 +1240,7 @@
     },
     {
       "id": "C3-29",
-      "titulo": "¿Empieza en el fuerte o antes?",
+      "titulo": "La anacrusa: ¿empieza en el fuerte o antes?",
       "etapa": "primaria-c3",
       "eje": "notacion",
       "lugar": "pantalla",
@@ -1318,7 +1318,7 @@
     },
     {
       "id": "C3-35",
-      "titulo": "¿Suenan bien juntas o rozan?",
+      "titulo": "Consonancia y disonancia: ¿suenan bien o rozan?",
       "etapa": "primaria-c3",
       "eje": "altura",
       "lugar": "pantalla",
@@ -1396,7 +1396,7 @@
     },
     {
       "id": "INF-01",
-      "titulo": "El semáforo del sonido",
+      "titulo": "El semáforo del sonido y el silencio",
       "etapa": "infantil",
       "eje": "timbre",
       "lugar": "pantalla",
@@ -1422,7 +1422,7 @@
     },
     {
       "id": "INF-03",
-      "titulo": "El ratón y el elefante",
+      "titulo": "El ratón y el elefante: agudo y grave",
       "etapa": "infantil",
       "eje": "timbre",
       "lugar": "pantalla",
@@ -1435,7 +1435,7 @@
     },
     {
       "id": "INF-04",
-      "titulo": "El pájaro y el oso",
+      "titulo": "El pájaro y el oso: agudo y grave",
       "etapa": "infantil",
       "eje": "altura",
       "lugar": "pantalla",

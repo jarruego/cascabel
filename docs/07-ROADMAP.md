@@ -3034,8 +3034,10 @@ textos, niveles, camino, y la sección de instrumentos.
       declarada, que `app/busqueda.ts` traduce a palabras («6/8» → «seis por ocho», «laminas» →
       «xilófono»), con test. La descripción se queda fuera a propósito: «nota» y «pulso» están
       en decenas. De paso, la descripción de la inf-03 decía «intensidad» y es de altura.
-      **Pendiente**: la pasada a los títulos que no nombran lo que trabajan (lista propuesta al
-      autor el 2026-09-12).
+      Y quince títulos que no decían lo que trabajan lo dicen ahora sin perder el gancho:
+      «La anacrusa: ¿empieza en el fuerte o antes?», «El ratón y el elefante: agudo y grave»,
+      «La Quinta de Beethoven en cuatro bandas»… Los demás se quedan: la búsqueda la hacen las
+      etiquetas, y un catálogo de títulos de índice de libro pierde el encanto.
 
 - [x] **Dos fichas en el Taller: el pentagrama en clave de sol (tr-15) y en clave de fa
       (tr-16)**, enteros, de do a do con sus líneas adicionales. Al tocar una nota suena y

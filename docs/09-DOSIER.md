@@ -168,16 +168,16 @@ Reparto por esfuerzo: **20 actividades S, 30 M y 4 L**. Reparto por lugar: 41 en
 
 ## Infantil (3–6 años)
 
-**INF-01 · El semáforo del sonido** — timbre · pantalla · elección · S
+**INF-01 · El semáforo del sonido y el silencio** — timbre · pantalla · elección · S
 Suena o no suena. El niño toca el círculo verde mientras hay sonido y lo suelta en el silencio. Con voz, instrumento y sonidos del entorno. *CE3 · crit. 3.5 · saber F.*
 
 **INF-02 · ¿Largo o corto?** — timbre · pantalla · elección · S
 Dos dibujos: una serpiente y una hormiga. Suena un sonido y el niño elige. La duración se ve, se oye y se dibuja. *CE2 · crit. 2.1 · saber F.*
 
-**INF-03 · El ratón y el elefante** — timbre · pantalla · elección · S
+**INF-03 · El ratón y el elefante: agudo y grave** — timbre · pantalla · elección · S
 Intensidad: fuerte o suave. Mismo sonido a dos volúmenes; el niño señala qué animal lo ha hecho. *CE2 · crit. 2.1 · saber F.*
 
-**INF-04 · El pájaro y el oso** — altura · pantalla · elección · S
+**INF-04 · El pájaro y el oso: agudo y grave** — altura · pantalla · elección · S
 Agudo o grave, con el mismo instrumento en dos registros. El error más común es cambiar de timbre a la vez; aquí no se cambia. *CE2 · crit. 2.1 · saber F.*
 
 **INF-05 · Paisaje sonoro: ¿qué suena?** — timbre · pantalla · elección · M
@@ -221,7 +221,7 @@ Lectura rítmica con sílabas Kodály: la figura se ilumina mientras se dice. Ne
 **C1-02 · Palmea el ritmo** — pulso · pantalla · tocar a tiempo · L · **micrófono**
 Cuatro compases sobre una base musical real. Mide desvío medio con signo y desviación típica, no solo aciertos: un niño desfasado pero regular tiene buen pulso. *CE3 · crit. 3.1 · saber D.*
 
-**C1-03 · El pulso escondido** — pulso · pantalla · tocar a tiempo · M
+**C1-03 · El pulso escondido en los silencios** — pulso · pantalla · tocar a tiempo · M
 Suena una canción y hay que marcar el pulso tocando la pantalla. Distingue pulso de ritmo, que es la confusión número uno de la etapa. *CE3 · crit. 3.1 · saber D.*
 
 **C1-04 · Constructor de melodías** — creación · pantalla · rejilla · M
@@ -246,7 +246,7 @@ Pies, rodillas, palmas y chasquidos notados como un trigrama de colores que avan
 **C1-10 · Construye un cotidiáfono** — timbre · fuera de pantalla · guía de aula · S
 Ficha imprimible y vídeo: construir un instrumento con materiales del entorno y clasificarlo por cómo suena. Saber básico literal del primer ciclo. *CE4 · crit. 4.2 · saber D (construcción asistida).*
 
-**C1-11 · El mando del director** — cultura · pantalla · lienzo · S
+**C1-11 · El mando del director: tempo y volumen** — cultura · pantalla · lienzo · S
 Dos deslizadores, tempo y dinámica, sobre una pieza real. El niño dirige y oye el efecto. Introduce carácter y tempo, los parámetros del primer ciclo. *CE3 · crit. 3.2 · saber D.*
 
 **C1-12 · La rueda del compás** — pulso · pantalla · rejilla · M

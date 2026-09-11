@@ -2,7 +2,7 @@
   "id": "inf-03-el-raton-y-el-elefante",
   "version": 1,
   "tipo": "eleccion",
-  "titulo": "El ratón y el elefante",
+  "titulo": "El ratón y el elefante: agudo y grave",
   "descripcion": "Agudo o grave con el mismo instrumento en dos registros: el ratón suena finito y el elefante hondo. La descripción decía «intensidad» y no lo era (corregido el 2026-09-12).",
   "etapa": "infantil",
   "eje": "timbre",

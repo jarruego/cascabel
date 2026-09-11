@@ -2,7 +2,7 @@
   "id": "inf-01-semaforo-del-sonido",
   "version": 1,
   "tipo": "eleccion",
-  "titulo": "El semáforo del sonido",
+  "titulo": "El semáforo del sonido y el silencio",
   "descripcion": "Suena o no suena. El niño mantiene el dedo en el círculo mientras hay sonido y lo suelta en el silencio.",
   "etapa": "infantil",
   "eje": "timbre",

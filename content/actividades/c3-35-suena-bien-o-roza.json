@@ -2,7 +2,7 @@
   "id": "c3-35-suena-bien-o-roza",
   "version": 1,
   "tipo": "eleccion",
-  "titulo": "¿Suenan bien juntas o rozan?",
+  "titulo": "Consonancia y disonancia: ¿suenan bien o rozan?",
   "descripcion": "Dos notas a la vez. Unas encajan y otras rozan: consonancia y disonancia, que es de lo que está hecha la armonía.",
   "etapa": "primaria-c3",
   "eje": "altura",

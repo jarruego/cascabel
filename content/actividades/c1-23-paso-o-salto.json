@@ -2,7 +2,7 @@
   "id": "c1-23-paso-o-salto",
   "version": 1,
   "tipo": "eleccion",
-  "titulo": "¿Paso o salto?",
+  "titulo": "¿Paso o salto? El primer intervalo",
   "descripcion": "Dos notas: o están al lado (un paso) o lejos (un salto). El primer intervalo, sin llamarlo así.",
   "etapa": "primaria-c1",
   "eje": "altura",
