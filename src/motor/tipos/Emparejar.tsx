@@ -7,7 +7,7 @@ import { pistaPara } from '../maquinaEleccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
-import { sonarMuestra, sonarNota } from '../sonarMuestra';
+import { pararMuestra, sonarMuestra, sonarNota } from '../sonarMuestra';
 import { pararTodo } from '@/audio/AudioEngine';
 import { sonarEstimulo } from '../sonarEstimulo';
 import {
@@ -124,6 +124,12 @@ export default function Emparejar({ actividad, alTerminar }: PropsActividad) {
   const mensajeDeFallo = t(pistaPara(actividad.pistas, estado.fallosAqui) ?? 'comun.escuchaOtraVez');
   useEffect(() => {
     if (estado.fase !== 'comprobando' || !estado.ultima) return;
+    // Al acertar, el sonido se corta: ya ha dicho lo que tenía que decir, y seguir sonando
+    // debajo del «¡bien!» era ruido. Lo pidió el autor el 2026-09-12.
+    if (estado.ultima.acierto) {
+      pararMuestra();
+      pararTodo();
+    }
     // Tras el acierto, enseguida; tras el fallo, lo que tarda en leerse la pista.
     const id = window.setTimeout(
       () => despachar({ tipo: 'seguir' }),

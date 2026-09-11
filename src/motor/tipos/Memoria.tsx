@@ -6,7 +6,7 @@ import { Icono } from '@/ui/Icono';
 import { Reaccion } from '@/ui/Reaccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
-import { sonarMuestra, sonarNota } from '../sonarMuestra';
+import { pararMuestra, sonarMuestra, sonarNota } from '../sonarMuestra';
 import {
   INICIAL_MEMORIA,
   barajar,
@@ -90,6 +90,11 @@ export default function Memoria({ actividad, alTerminar }: PropsActividad) {
   // encajan siguen así, si no se tapan. El tiempo es para mirarlas, no para castigar.
   useEffect(() => {
     if (estado.fase !== 'comprobando') return;
+    // Pareja hecha: el sonido se corta, que ya ha dicho lo suyo (autor, 2026-09-12).
+    if (estado.turno?.acierto) {
+      pararMuestra();
+      pararTodo();
+    }
     const id = window.setTimeout(() => despachar({ tipo: 'seguir' }), estado.turno?.acierto ? 900 : 1400);
     return () => window.clearTimeout(id);
   }, [estado.fase, estado.turno]);

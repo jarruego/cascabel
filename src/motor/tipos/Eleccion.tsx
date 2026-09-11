@@ -126,6 +126,12 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
   */
   useEffect(() => {
     if (estado.fase !== 'bien' && estado.fase !== 'casi') return;
+    // Al acertar, el estímulo se corta: seguir sonando debajo del «¡bien!» era ruido. Al
+    // fallar se deja, que el niño puede querer oírlo otra vez. Lo pidió el autor el 2026-09-12.
+    if (estado.fase === 'bien') {
+      audioRef.current?.pause();
+      pararTodo();
+    }
     const id = window.setTimeout(() => despachar({ tipo: 'seguir' }), esperaMs(estado.fase));
     return () => window.clearTimeout(id);
   }, [estado.fase, estado.intentos, estado.indice, total]);

@@ -3021,6 +3021,9 @@ textos, niveles, camino, y la sección de instrumentos.
       queda a un tercio, que es lo que permite seguir la canción, y la nota se toca fuerte en
       el momento de acertarla.
 
+- [x] **Al acertar, el sonido se corta** en elección, emparejar y memory: seguir sonando
+      debajo del «¡bien!» era ruido. Al fallar se deja, que el niño puede querer oírlo otra vez.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
