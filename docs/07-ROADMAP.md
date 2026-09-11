@@ -3045,6 +3045,9 @@ textos, niveles, camino, y la sección de instrumentos.
       sostiene y deja oír los batidos; tres pulsos en vez de dos; y la séptima mayor como
       disonancia en lugar de una segunda grave que apenas se notaba.
 
+- [x] **La Radetzky (346) con trompeta** y los golpes al 30 %: la flauta no se oía bien debajo
+      de las palmas, y la trompeta es quien lleva la marcha en la banda.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
