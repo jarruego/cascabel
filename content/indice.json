@@ -61,8 +61,8 @@
     },
     {
       "id": "c1-04-constructor-de-ritmos",
-      "titulo": "Constructor de sonidos",
-      "descripcion": "Cuadrícula libre: se colocan sonidos de cuatro alturas y se escuchan. No hay respuesta correcta. Se llamó «constructor de ritmos», pero lo que se construye son sonidos en el tiempo, no solo ritmo (2026-09-12).",
+      "titulo": "Constructor de melodías",
+      "descripcion": "Cuadrícula libre: se colocan sonidos de cuatro alturas y se escuchan. No hay respuesta correcta. Se llamó «constructor de ritmos», pero lo que sale es una melodía (2026-09-12).",
       "etapa": "primaria-c1",
       "eje": "creacion",
       "tipo": "rejilla",
