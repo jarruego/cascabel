@@ -403,14 +403,137 @@
     },
     "ficha": {
       "type": "object",
-      "description": "Textos propios del dosier imprimible. Opcional: sin esto se usa la guia generica del tipo de actividad.",
+      "description": "Textos propios de la ficha del maestro (dos caras). Todo opcional: sin un campo se usa la guía genérica del tipo. Se escriben para ESTA actividad, en español y para leer de pie.",
       "additionalProperties": false,
       "properties": {
-        "comoFunciona": {
+        "aprende": {
           "type": "string",
-          "maxLength": 600
+          "maxLength": 240
+        },
+        "vocabulario": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "type": "string",
+            "maxLength": 30
+          }
+        },
+        "agrupamiento": {
+          "type": "string",
+          "maxLength": 60
+        },
+        "material": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "pasos": {
+          "type": "array",
+          "maxItems": 7,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "titulo"
+            ],
+            "properties": {
+              "min": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 30
+              },
+              "titulo": {
+                "type": "string",
+                "maxLength": 70
+              },
+              "detalle": {
+                "type": "string",
+                "maxLength": 260
+              }
+            }
+          }
+        },
+        "enPantalla": {
+          "type": "string",
+          "maxLength": 520
         },
         "sinPantalla": {
+          "type": "string",
+          "maxLength": 520
+        },
+        "masFacil": {
+          "type": "string",
+          "maxLength": 520
+        },
+        "masDificil": {
+          "type": "string",
+          "maxLength": 520
+        },
+        "variante": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "titulo",
+            "texto"
+          ],
+          "properties": {
+            "titulo": {
+              "type": "string",
+              "maxLength": 40
+            },
+            "texto": {
+              "type": "string",
+              "maxLength": 520
+            }
+          }
+        },
+        "ideas": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "type": "string",
+            "maxLength": 260
+          }
+        },
+        "loTiene": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "type": "string",
+            "maxLength": 160
+          }
+        },
+        "errores": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "error",
+              "remedio"
+            ],
+            "properties": {
+              "error": {
+                "type": "string",
+                "maxLength": 120
+              },
+              "remedio": {
+                "type": "string",
+                "maxLength": 220
+              }
+            }
+          }
+        },
+        "indicadores": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "string",
+            "maxLength": 28
+          }
+        },
+        "comoFunciona": {
           "type": "string",
           "maxLength": 600
         },
@@ -428,15 +551,15 @@
         },
         "indicador1": {
           "type": "string",
-          "maxLength": 600
+          "maxLength": 60
         },
         "indicador2": {
           "type": "string",
-          "maxLength": 600
+          "maxLength": 60
         },
         "indicador3": {
           "type": "string",
-          "maxLength": 600
+          "maxLength": 60
         }
       }
     },

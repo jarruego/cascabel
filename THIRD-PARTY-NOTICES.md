@@ -40,7 +40,7 @@ que se sepa por qué está en `package.json`.
 
 | Paquete | Licencia | Por qué está y por qué no viaja |
 |---|---|---|
-| abcjs | MIT | Instalada para cuando se dibuje desde notación ABC. Ninguna línea de código la importa, y `vite.config.ts` la sacó de `manualChunks` precisamente por eso: nombrar un paquete ahí obliga a Rollup a empaquetarlo aunque no lo use nadie |
+| abcjs | MIT | Dibuja la partitura de la ficha del maestro desde la notación ABC del JSON. Solo la carga `app/Ficha.tsx`, con `import()` dinámico: va en su propio trozo y no en el bundle de las actividades |
 | Tone.js | MIT | Igual: instalada para el transporte, todavía sin usar |
 | pitchy | MIT | El detector de tono **no la usa**. `public/worklets/tono-processor.js` implementa NSDF/McLeod directamente, porque un worklet se carga por URL y no por `import`. Ver abajo |
 

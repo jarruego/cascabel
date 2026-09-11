@@ -135,8 +135,22 @@ export interface Actividad {
    * que su tipo no cubre.
    */
   ficha?: {
-    comoFunciona?: string;
+    aprende?: string;
+    vocabulario?: string[];
+    agrupamiento?: string;
+    material?: string;
+    pasos?: Array<{ min?: number; titulo: string; detalle?: string }>;
+    enPantalla?: string;
     sinPantalla?: string;
+    masFacil?: string;
+    masDificil?: string;
+    variante?: { titulo: string; texto: string };
+    ideas?: string[];
+    loTiene?: string[];
+    errores?: Array<{ error: string; remedio: string }>;
+    indicadores?: string[];
+    /** Los campos de la primera ficha, que siguen valiendo como respaldo. */
+    comoFunciona?: string;
     ampliacion?: string;
     refuerzo?: string;
     observar?: string;

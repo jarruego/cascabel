@@ -1,41 +1,40 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router';
 import { cargarActividad } from '@/datos/cargar';
 import { duracionLegible } from '@/motor/duracion';
 import { codigoDe } from '@/motor/codigo';
 import { t, existe } from '@/i18n';
 import { Icono } from '@/ui/Icono';
-import { APP, carrilPorDefecto, OBJETIVO_TACTIL } from '@/config';
+import { APP } from '@/config';
 import type { Actividad } from '@/motor/tipos';
 
 /**
- * Dosier imprimible del maestro, generado **desde el mismo JSON** que ejecuta la actividad.
+ * La ficha del maestro, generada **desde el mismo JSON** que ejecuta la actividad.
  *
- * **No es la actividad en papel, y ese fue el error de la primera versión.** Lo que hace
- * valiosa a una actividad de pantalla es justamente lo que no se puede imprimir: que suena,
- * que responde y que se autocorrige. Una fotocopia de eso es una fotocopia de lo que sobra.
- * Lo que sí se traslada al papel —y lo que un maestro necesita de verdad— es el **criterio**:
- * cómo llevarla al aula, qué proponer después, qué mirar mientras la hacen y qué parte del
- * currículo cubre para poder justificarla en la programación.
+ * **No es la actividad en papel.** Lo que hace valiosa a una actividad de pantalla es lo
+ * que no se puede imprimir: que suena, que responde y que se autocorrige. Lo que sí va al
+ * papel es el **criterio**: qué se aprende, cómo llevarla al aula paso a paso, la música
+ * con la que se trabaja, cómo sacarle más y qué mirar mientras la hacen.
  *
- * Tres hojas, cada una con un lector y un momento distintos:
+ * **Dos caras de una sola hoja**, y es una decisión del autor (2026-09-12): «me gusta que
+ * las fichas se puedan imprimir por las dos caras en una sola hoja». La cara 1 es para dar
+ * la clase y la 2 para sacarle más y anotar. Una tercera solo si una actividad no cabe de
+ * ninguna manera, y antes de eso se acorta.
  *
- *  1. **Cómo llevarla al aula.** Se lee antes de la clase, de pie y con prisa. Va primero lo
- *     que hay que decidir —cuánto dura, qué hace falta, si se puede sin dispositivos— y
- *     después las propuestas.
- *  2. **Currículo.** Se consulta al programar o cuando hay que justificar algo. Mantiene
- *     **separadas las dos capas** de `CLAUDE.md` §9: lo normativo se cita literal, y la
- *     práctica («negra», «4/4») va aparte y marcada como convención, no como currículo.
- *  3. **Hoja de seguimiento.** Se rellena a mano durante o después de la clase.
+ * **La ficha es de esta actividad y de ninguna otra.** No nombra la anterior ni la
+ * siguiente del camino: se lee sola, sin la app delante. Y va **sin paja**: fuera el
+ * apartado de accesibilidad (es cómo está hecha la app, no algo que el maestro haga), fuera
+ * los avisos sobre capas normativas y datos, que están en `docs/`. Lo único que se queda
+ * por obligación es la atribución CC BY-SA del pie, en pequeño.
  *
  * **Sobre los datos de los niños.** La hoja de seguimiento tiene una columna de nombres, y
  * eso no contradice la regla 3: ese papel es del maestro, se escribe a mano y **no entra en
- * la aplicación jamás**. La regla prohíbe que nosotros tratemos datos personales, no que un
- * maestro tome notas en su cuaderno. Va dicho impreso en la propia hoja para que no haya
- * duda de quién custodia ese papel.
+ * la aplicación jamás**. Va dicho en una frase del pie.
  *
- * Sin librería de PDF: el navegador ya sabe imprimir, y meter jsPDF serían trescientos
- * kilobytes para hacer peor lo que el sistema hace bien.
+ * Los textos de cada apartado salen del bloque `ficha` del JSON, escrito para esa actividad;
+ * si falta alguno, se cae a la guía genérica del tipo (`ficha.tipo.<tipo>.<campo>`), que es
+ * lo que hace que ninguna ficha salga con un hueco. Sin librería de PDF: el navegador ya
+ * sabe imprimir. La partitura la dibuja abcjs, cargada solo aquí y solo si hay ABC.
  */
 
 const ETAPA: Record<string, string> = {
@@ -45,32 +44,84 @@ const ETAPA: Record<string, string> = {
   'primaria-c3': 'etapa.c3',
 };
 
+/** Lo que una actividad puede traer escrito para su ficha. Todo opcional. */
+interface FichaPropia {
+  aprende?: string;
+  vocabulario?: string[];
+  agrupamiento?: string;
+  material?: string;
+  pasos?: Array<{ min?: number; titulo: string; detalle?: string }>;
+  enPantalla?: string;
+  sinPantalla?: string;
+  masFacil?: string;
+  masDificil?: string;
+  variante?: { titulo: string; texto: string };
+  ideas?: string[];
+  loTiene?: string[];
+  errores?: Array<{ error: string; remedio: string }>;
+  indicadores?: string[];
+  // Los campos de la primera ficha, que siguen valiendo como respaldo.
+  comoFunciona?: string;
+  ampliacion?: string;
+  refuerzo?: string;
+  observar?: string;
+  indicador1?: string;
+  indicador2?: string;
+  indicador3?: string;
+}
+
+/** Las columnas de seguimiento cuando ni la actividad ni su tipo dicen otras. */
+const INDICADORES_DE_RESPALDO = ['ficha.ind1', 'ficha.ind2', 'ficha.ind3'] as const;
+
 /** Traduce si existe la clave; si no, devuelve el texto tal cual. */
 function tr(clave: string | undefined): string {
   if (!clave) return '';
   return existe(clave) ? t(clave) : clave;
 }
 
-/**
- * Texto de tipo de actividad. Cada tipo tiene su guía —cómo funciona, cómo hacerla sin
- * dispositivos, qué proponer para ampliar y para reforzar, y qué observar—, y una actividad
- * concreta puede sobreescribir cualquiera de ellos desde su JSON con el bloque `ficha`.
- *
- * Que la guía venga del TIPO y no de cada actividad es lo mismo que hace el motor con los
- * componentes: escribir 53 dosieres a mano habría envejecido igual de mal que escribir 53
- * componentes.
- */
-function guia(actividad: Actividad, campo: string): string {
-  const propio = (actividad.ficha as Record<string, string> | undefined)?.[campo];
+/** El texto de un campo: el propio de la actividad, o el de su tipo. */
+function guia(actividad: Actividad, propio: string | undefined, campoDelTipo: string): string {
   if (propio) return tr(propio);
-  const porTipo = `ficha.tipo.${actividad.tipo}.${campo}`;
-  return existe(porTipo) ? t(porTipo) : '';
+  const clave = `ficha.tipo.${actividad.tipo}.${campoDelTipo}`;
+  return existe(clave) ? t(clave) : '';
 }
 
 /** El texto de una duración, ya traducido. Igual que en el itinerario. */
 function cuantoDura(minutos: number): string {
   const { clave, valores } = duracionLegible(minutos);
   return t(clave, valores);
+}
+
+/**
+ * La partitura, dibujada con abcjs a partir del ABC del JSON. Se carga aquí y solo aquí:
+ * es la única pantalla que la necesita, y son ciento y pico kilobytes que no tienen por qué
+ * ir en el bundle de las actividades.
+ */
+function Partitura({ abc }: { abc: string }) {
+  const el = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    let cancelado = false;
+    void (async () => {
+      try {
+        const abcjs = await import('abcjs');
+        if (cancelado || !el.current) return;
+        abcjs.renderAbc(el.current, abc, {
+          responsive: 'resize',
+          staffwidth: 700,
+          paddingtop: 0,
+          paddingbottom: 0,
+          paddingleft: 0,
+          paddingright: 0,
+        });
+      } catch {
+        // Sin abcjs la ficha se imprime igual: la letra y el texto siguen ahí.
+      }
+    })();
+    return () => {
+      cancelado = true;
+    };
+  }, [abc]);
+  return <div className="ficha__partitura" ref={el} aria-label={t('ficha.musica')} />;
 }
 
 export default function Ficha() {
@@ -91,64 +142,59 @@ export default function Ficha() {
   if (fallo) return <main className="ficha"><p role="alert">{t('actividad.noEncontrada')}</p></main>;
   if (!actividad) return <main className="ficha"><p>{t('catalogo.cargando')}</p></main>;
 
+  const f = (actividad.ficha ?? {}) as FichaPropia;
   const c = actividad.contenido as Record<string, unknown>;
-  const pasos = c.pasos as Array<{ titulo: string; detalle?: string; duracion?: string }> | undefined;
-  const materiales = c.materiales as string[] | undefined;
-  const carril = carrilPorDefecto(actividad.etapa);
   const conMicrofono = actividad.entrada.modo.startsWith('microfono');
+  const herramienta = Boolean(actividad.herramienta);
+  const lugar = existe(`ficha.lugar.${actividad.lugar}`) ? t(`ficha.lugar.${actividad.lugar}`) : actividad.lugar;
+  const abc = actividad.musica?.abc;
+
+  // Los pasos: los escritos para la ficha, o los de la guía de aula, que ahí SON la actividad.
+  const pasosGuia = c.pasos as Array<{ titulo: string; detalle?: string; duracion?: string }> | undefined;
+  const pasos =
+    f.pasos ??
+    pasosGuia?.map((p) => ({ min: Number.parseInt(p.duracion ?? '', 10) || undefined, titulo: tr(p.titulo), detalle: tr(p.detalle) }));
+
+  const enPantalla = guia(actividad, f.enPantalla ?? f.comoFunciona, 'comoFunciona');
+  const sinPantalla = guia(actividad, f.sinPantalla, 'sinPantalla');
+  const masFacil = guia(actividad, f.masFacil ?? f.refuerzo, 'refuerzo');
+  const masDificil = guia(actividad, f.masDificil ?? f.ampliacion, 'ampliacion');
+  const loTiene = f.loTiene ?? [guia(actividad, f.observar, 'observar')].filter(Boolean);
+  const indicadores = [0, 1, 2].map(
+    (i) =>
+      f.indicadores?.[i] ||
+      guia(actividad, f[`indicador${i + 1}` as 'indicador1'], `indicador${i + 1}`) ||
+      t(INDICADORES_DE_RESPALDO[i]!),
+  );
+  const creditos = (actividad.creditos ?? [])
+    .map((cr) => `${cr.obra}${cr.autor ? `, ${cr.autor}` : ''} (${cr.licencia})`)
+    .join(' · ');
 
   /**
-   * Identidad de la actividad y atribución, como **marca de agua en el margen** de cada
-   * página impresa.
-   *
-   * Estaban dentro de cada hoja, y repetir tres veces el mismo título y la misma atribución
-   * costaba casi cuatro centímetros de alto en un documento donde el alto es justo lo que
-   * escasea. Al imprimir se colocan con `position: fixed` y desplazamiento negativo, así que
-   * **caen dentro del margen de `@page`**: se ven en todas las páginas y no ocupan ni una
-   * línea del contenido.
-   *
-   * La atribución tiene que ir impresa igualmente: la CC BY-SA obliga también en papel, y es
-   * lo que permite que otro maestro sepa de dónde salió la hoja. Que no ocupe sitio no
-   * significa que pueda faltar.
+   * Cabecera y pie de cada cara, en el margen: gris, pequeño y lejos del contenido. Con
+   * `position: fixed` se repiten en cada página impresa sin gastar una línea. El pie lleva
+   * el logotipo de cocomusic y su dirección, que en el papel es lo único que lleva al resto
+   * del material, y la atribución, que la CC BY-SA obliga también en papel.
    */
-  const marcas = (
+  const marcas = (cara: number) => (
     <>
-      <p className="ficha__marca ficha__marca--sup">
-        {t(ETAPA[actividad.etapa] ?? '')} · {t(`eje.${actividad.eje}`)} · {actividad.titulo}
+      <p className="ficha__marca ficha__marca--sup" aria-hidden="true">
+        <span>
+          {t(ETAPA[actividad.etapa] ?? '')} · {t(`eje.${actividad.eje}`)} · {actividad.titulo}
+        </span>
+        <span>{t('ficha.hojaDe', { n: cara, m: 2 })}</span>
       </p>
       <p className="ficha__marca ficha__marca--inf">
-        <span>
-          {APP.nombre} · {APP.proyecto} · CC BY-SA 4.0
+        <span className="ficha__logo">
+          <img src="/marca/cocomusic.png" alt="" width="24" height="13" />
+          <a href={APP.webProyecto} target="_blank" rel="noopener">
+            cocomusic.es
+          </a>{' '}
+          · {APP.nombre} · CC BY-SA 4.0
         </span>
         <span>{actividad.id}</span>
       </p>
     </>
-  );
-
-  /**
-   * Título de cada hoja. Solo la primera lleva `h1`: el documento es uno, aunque se imprima
-   * en tres páginas, y tres `h1` le dicen a un lector de pantalla que hay tres documentos.
-   */
-  const tituloHoja = (hoja: number, clave: string) => (
-    <header className="ficha__cabecera">
-      <div>
-        {hoja === 1 ? (
-          <>
-            <p className="ficha__sobretitulo">
-              <span className="codigo">{codigoDe(actividad.id)}</span> · {t(ETAPA[actividad.etapa] ?? '')} ·{' '}
-              {t(`eje.${actividad.eje}`)}
-            </p>
-            <h1>{actividad.titulo}</h1>
-            <p className="ficha__subtitulo">{t(clave)}</p>
-          </>
-        ) : (
-          <h2 className="ficha__tituloHoja">{t(clave)}</h2>
-        )}
-      </div>
-      <p className="ficha__hojaNum" aria-hidden="true">
-        {hoja}/3
-      </p>
-    </header>
   );
 
   return (
@@ -163,27 +209,26 @@ export default function Ficha() {
         <p className="ficha__consejo">{t('ficha.consejo')}</p>
       </div>
 
-      {marcas}
-
-      {/* ───────────── Hoja 1: cómo llevarla al aula ───────────── */}
+      {/* ───────────── Cara 1: dar la clase ───────────── */}
       <article className="ficha__hoja">
-        {tituloHoja(1, 'ficha.hoja1')}
+        {marcas(1)}
+        <p className="ficha__sobre">
+          <span className="codigo">{codigoDe(actividad.id)}</span> · {t(ETAPA[actividad.etapa] ?? '')} ·{' '}
+          {t(`eje.${actividad.eje}`)}
+        </p>
+        <h1>{actividad.titulo}</h1>
+        {actividad.descripcion && <p className="ficha__entradilla">{actividad.descripcion}</p>}
 
-        {/*
-          Lo primero es lo que hay que decidir antes de entrar en clase, no la explicación.
-          Un maestro que mira esta hoja de pie necesita saber en tres segundos si le cabe en
-          la sesión y si le hace falta algo que no tiene.
-        */}
-        <dl className="ficha__ficha-tecnica">
+        {/* La ficha técnica: seis datos con su etiqueta, para leer uno sin leer los demás.
+            Estaban en una línea seguida y «2/4 · 72 ppm» no se sabía de qué era. */}
+        <dl className="ficha__tecnica">
           <div>
             <dt>{t('ficha.duracion')}</dt>
-            {/* «min» es texto y estaba escrito aquí dentro. Va por `t()` como todo lo
-                demás, y de paso por la misma regla que el itinerario. */}
             <dd>{actividad.duracion_min ? cuantoDura(actividad.duracion_min) : '—'}</dd>
           </div>
           <div>
             <dt>{t('ficha.donde')}</dt>
-            <dd>{t(`ficha.lugar.${actividad.lugar ?? 'pantalla'}`)}</dd>
+            <dd>{lugar}</dd>
           </div>
           <div>
             <dt>{t('ficha.microfono')}</dt>
@@ -191,242 +236,233 @@ export default function Ficha() {
           </div>
           <div>
             <dt>{t('ficha.agrupamiento')}</dt>
-            <dd>{t(actividad.tipo === 'guia-aula' ? 'ficha.grupoClase' : 'ficha.grupoIndividual')}</dd>
+            <dd>{f.agrupamiento ?? (actividad.tipo === 'guia-aula' ? t('ficha.grupoClase') : t('ficha.grupoIndividual'))}</dd>
+          </div>
+          <div>
+            <dt>{t('ficha.compasTempo')}</dt>
+            <dd>
+              {actividad.practica?.compas && actividad.practica.compas !== 'libre' ? actividad.practica.compas : '—'}
+              {actividad.practica?.tempo ? ` · ${actividad.practica.tempo} ppm` : ''}
+            </dd>
+          </div>
+          <div>
+            <dt>{t('ficha.material')}</dt>
+            <dd>{f.material ?? t('ficha.sinMaterial')}</dd>
           </div>
         </dl>
 
-        {actividad.descripcion && <p className="ficha__entradilla">{actividad.descripcion}</p>}
-
-        <section>
-          <h2>{t('ficha.comoFunciona')}</h2>
-          <p>{guia(actividad, 'comoFunciona')}</p>
-          {actividad.enunciado && (
-            <p className="ficha__consigna">
-              <strong>{t('ficha.loQueSeDice')}</strong> «{t(actividad.enunciado)}»
-            </p>
-          )}
-        </section>
-
-        {/* La letra, si la canción la tiene cotejada: es para el maestro, que la canta o la
-            lee; en la pantalla del niño lo que hay que cantar suena. */}
-        {actividad.letra && (
+        {(f.aprende || f.vocabulario?.length) && (
           <section>
-            <h2>{t('ficha.letra')}</h2>
-            <p className="ficha__letra" lang={actividad.letra.idioma}>
-              {actividad.letra.texto.split('\n').map((verso, i) => (
-                <span key={i}>
-                  {verso}
-                  <br />
-                </span>
-              ))}
-            </p>
-            {actividad.letra.fuente && <p className="ficha__aclaracion">{actividad.letra.fuente}</p>}
+            <h2>{t('ficha.aprende')}</h2>
+            {f.aprende && <p className="ficha__aprende">{f.aprende}</p>}
+            {f.vocabulario && f.vocabulario.length > 0 && (
+              <ul className="ficha__vocab">
+                {f.vocabulario.map((v) => (
+                  <li key={v}>{v}</li>
+                ))}
+              </ul>
+            )}
           </section>
         )}
 
-        {/* Los pasos solo los tienen las guías de aula, y ahí SON la actividad. */}
-        {pasos && (
-          <section>
-            <h2>{t('ficha.pasos')}</h2>
+        <section>
+          <h2>{t('ficha.comoVa')}</h2>
+          {actividad.enunciado && (
+            <div className="ficha__consigna">
+              <p className="ficha__sobre ficha__sobre--consigna">{t('ficha.loQueOye')}</p>
+              <p>«{t(actividad.enunciado)}»</p>
+            </div>
+          )}
+          {pasos && pasos.length > 0 && (
             <ol className="ficha__pasos">
-              {pasos.map((p) => (
-                <li key={p.titulo}>
-                  <strong>{tr(p.titulo)}</strong>
-                  {p.duracion && <span className="ficha__duracion"> · {p.duracion}</span>}
-                  {p.detalle && <div>{tr(p.detalle)}</div>}
+              {pasos.map((p, i) => (
+                <li key={i}>
+                  <span className="ficha__min">{p.min ? `${p.min}′` : ''}</span>
+                  <span>
+                    <b>{p.titulo}</b>
+                    {p.detalle ? ` ${p.detalle}` : ''}
+                  </span>
                 </li>
               ))}
             </ol>
-          </section>
-        )}
-
-        <section className="ficha__propuestas">
-          <h2>{t('ficha.propuestas')}</h2>
-          <div className="ficha__dosColumnas">
-            <div>
-              <h3>{t('ficha.sinPantalla')}</h3>
-              <p>{guia(actividad, 'sinPantalla')}</p>
-            </div>
-            <div>
-              <h3>{t('ficha.ampliacion')}</h3>
-              <p>{guia(actividad, 'ampliacion')}</p>
-            </div>
-            <div>
-              <h3>{t('ficha.refuerzo')}</h3>
-              <p>{guia(actividad, 'refuerzo')}</p>
-            </div>
-            <div>
-              <h3>{t('ficha.observar')}</h3>
-              <p>{guia(actividad, 'observar')}</p>
-            </div>
-          </div>
+          )}
         </section>
 
-        {materiales && materiales.length > 0 && (
+        {(abc || actividad.letra) && (
           <section>
-            <h2>{t('ficha.materiales')}</h2>
-            <ul className="ficha__materiales">
-              {materiales.map((m) => (
-                <li key={m}>{tr(m)}</li>
-              ))}
-            </ul>
+            <h2>{t('ficha.musica')}</h2>
+            {abc && <Partitura abc={abc} />}
+            {actividad.letra && (
+              <p className="ficha__letra" lang={actividad.letra.idioma}>
+                {actividad.letra.texto}
+              </p>
+            )}
+            {actividad.letra?.fuente && <p className="ficha__nota">{actividad.letra.fuente}</p>}
           </section>
         )}
 
+        {enPantalla && (
+          <section>
+            <h2>{t('ficha.enPantalla')}</h2>
+            <p>{enPantalla}</p>
+          </section>
+        )}
       </article>
 
-      {/* ───────────── Hoja 2: currículo ───────────── */}
+      {/* ───────────── Cara 2: sacarle más y anotar ───────────── */}
       <article className="ficha__hoja">
-        {tituloHoja(2, 'ficha.hoja2')}
+        {marcas(2)}
+
+        <section>
+          <h2>{t('ficha.sacarMas')}</h2>
+          <div className="ficha__bloques">
+            {sinPantalla && (
+              <div>
+                <h3>{t('ficha.sinPantalla')}</h3>
+                <p>{sinPantalla}</p>
+              </div>
+            )}
+            {masFacil && (
+              <div>
+                <h3>{t('ficha.masFacil')}</h3>
+                <p>{masFacil}</p>
+              </div>
+            )}
+            {masDificil && (
+              <div>
+                <h3>{t('ficha.masDificil')}</h3>
+                <p>{masDificil}</p>
+              </div>
+            )}
+            {f.variante && (
+              <div>
+                <h3>{f.variante.titulo}</h3>
+                <p>{f.variante.texto}</p>
+              </div>
+            )}
+          </div>
+          {f.ideas && f.ideas.length > 0 && (
+            <>
+              <h3 className="ficha__ideasTitulo">{t('ficha.ideas')}</h3>
+              <ul className="ficha__lista">
+                {f.ideas.map((idea) => (
+                  <li key={idea}>{idea}</li>
+                ))}
+              </ul>
+            </>
+          )}
+        </section>
+
+        {(loTiene.length > 0 || f.errores?.length) && (
+          <section>
+            <h2>{t('ficha.queMirar')}</h2>
+            <div className="ficha__mirar">
+              {loTiene.length > 0 && (
+                <div>
+                  <p className="ficha__sobre">{t('ficha.loTiene')}</p>
+                  <ul className="ficha__lista">
+                    {loTiene.map((x) => (
+                      <li key={x}>{x}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {f.errores && f.errores.length > 0 && (
+                <div>
+                  <p className="ficha__sobre">{t('ficha.errores')}</p>
+                  <ul className="ficha__lista">
+                    {f.errores.map((e) => (
+                      <li key={e.error}>
+                        <b>{e.error}</b> → {e.remedio}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
 
         <section>
           <h2>{t('ficha.curriculo')}</h2>
-          {/*
-            Capa NORMATIVA: literal del real decreto. Aquí no se parafrasea nada, y si un
-            criterio no está confirmado se imprime el hueco en vez de inventarlo.
-          */}
-          <table className="ficha__tabla">
-            <tbody>
-              <tr>
-                <th scope="row">{t('ficha.area')}</th>
-                <td>{actividad.curriculo.area}</td>
-              </tr>
-              <tr>
-                <th scope="row">{t('ficha.competencia')}</th>
-                <td>{actividad.curriculo.competencia ?? t('ficha.sinConfirmar')}</td>
-              </tr>
-              <tr>
-                <th scope="row">{t('ficha.criterioLargo')}</th>
-                <td>{actividad.curriculo.criterio ?? t('ficha.sinConfirmar')}</td>
-              </tr>
-              <tr>
-                <th scope="row">{t('ficha.saber')}</th>
-                <td>{actividad.curriculo.saber ?? t('ficha.sinConfirmar')}</td>
-              </tr>
-            </tbody>
-          </table>
-          <p className="ficha__aclaracion">{t('ficha.avisoNormativo')}</p>
+          <dl className="ficha__curri">
+            <dt>{t('ficha.competencia')}</dt>
+            <dd>
+              {actividad.curriculo.competencia ?? t('ficha.sinConfirmar')} · {actividad.curriculo.area}
+            </dd>
+            <dt>{t('ficha.criterioLargo')}</dt>
+            <dd>{actividad.curriculo.criterio ?? t('ficha.sinConfirmar')}</dd>
+            <dt>{t('ficha.saber')}</dt>
+            <dd>{actividad.curriculo.saber ?? t('ficha.sinConfirmar')}</dd>
+            {actividad.practica && (actividad.practica.figuras?.length || actividad.practica.notas?.length || actividad.practica.compas) && (
+              <>
+                <dt>{t('ficha.practica')}</dt>
+                <dd>
+                  {[
+                    actividad.practica.compas && actividad.practica.compas !== 'libre' ? actividad.practica.compas : '',
+                    actividad.practica.figuras?.join(', ') ?? '',
+                    actividad.practica.notas?.join(' ') ?? '',
+                  ]
+                    .filter(Boolean)
+                    .join(' · ')}
+                </dd>
+              </>
+            )}
+            {actividad.practica?.metodo && actividad.practica.metodo.length > 0 && (
+              <>
+                <dt>{t('ficha.metodo')}</dt>
+                <dd>{actividad.practica.metodo.join(', ')}</dd>
+              </>
+            )}
+          </dl>
         </section>
 
-        {actividad.practica && (
+        {!herramienta && (
           <section>
-            <h2>{t('ficha.practica')}</h2>
-            {/*
-              Capa de PRÁCTICA, separada a propósito. «Negra» y «4/4» son convención
-              pedagógica: el real decreto no nombra ninguna figura. Mezclar las dos capas es
-              lo que hace que una programación no se sostenga cuando alguien la revisa.
-            */}
-            <ul className="ficha__practica">
-              {actividad.practica.compas && (
-                <li>
-                  <strong>{t('ficha.compas')}</strong> {actividad.practica.compas}
-                </li>
-              )}
-              {actividad.practica.tempo && (
-                <li>
-                  <strong>{t('ficha.tempo')}</strong> {actividad.practica.tempo} ppm
-                </li>
-              )}
-              {actividad.practica.figuras && actividad.practica.figuras.length > 0 && (
-                <li>
-                  <strong>{t('ficha.figuras')}</strong> {actividad.practica.figuras.join(', ')}
-                </li>
-              )}
-              {actividad.practica.secuencia && actividad.practica.secuencia !== 'ninguna' && (
-                <li>
-                  <strong>{t('ficha.secuencia')}</strong> {actividad.practica.secuencia}
-                </li>
-              )}
-            </ul>
-            <p className="ficha__aclaracion">{t('ficha.avisoPractica')}</p>
-          </section>
-        )}
-
-        <section>
-          <h2>{t('ficha.accesibilidad')}</h2>
-          <ul className="ficha__practica">
-            <li>{t('ficha.accTactil').replace('{px}', String(OBJETIVO_TACTIL[carril]))}</li>
-            {conMicrofono && <li>{t('ficha.accMicrofono')}</li>}
-            <li>{t('ficha.accColor')}</li>
-            <li>{t('ficha.accAudio')}</li>
-          </ul>
-        </section>
-
-        {actividad.creditos && actividad.creditos.length > 0 && (
-          <section>
-            <h2>{t('ficha.creditos')}</h2>
-            <ul className="ficha__creditos">
-              {actividad.creditos.map((cr) => (
-                <li key={cr.obra}>
-                  <strong>{cr.obra}</strong> — {cr.autor} · {cr.licencia}
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
-
-      </article>
-
-      {/* ───────────── Hoja 3: seguimiento ───────────── */}
-      <article className="ficha__hoja">
-        {tituloHoja(3, 'ficha.hoja3')}
-
-        <section>
-          <h2>{t('ficha.seguimiento')}</h2>
-          <p className="ficha__entradilla">{t('ficha.seguimientoIntro')}</p>
-
-          {/* Solo fecha y grupo: la app no recoge ninguno de los dos, se escriben a mano. */}
-          <div className="ficha__datos">
-            <span>{t('ficha.fecha')} ____ / ____ / ______</span>
-            <span>{t('ficha.grupo')} ______________________</span>
-          </div>
-
-          {/*
-            Tres indicadores y no cinco: una rejilla que no se puede rellenar mientras das
-            clase no se rellena nunca. Los indicadores salen del eje de la actividad, así que
-            son distintos en una de pulso y en una de altura.
-          */}
-          <table className="ficha__seguimiento">
-            <thead>
-              <tr>
-                <th scope="col" className="ficha__colNombre">
-                  {t('ficha.alumno')}
-                </th>
-                <th scope="col">{guia(actividad, 'indicador1') || t('ficha.ind1')}</th>
-                <th scope="col">{guia(actividad, 'indicador2') || t('ficha.ind2')}</th>
-                <th scope="col">{guia(actividad, 'indicador3') || t('ficha.ind3')}</th>
-                <th scope="col" className="ficha__colNotas">
-                  {t('ficha.notas')}
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {Array.from({ length: 14 }, (_, i) => (
-                <tr key={i}>
-                  <td />
-                  <td />
-                  <td />
-                  <td />
-                  <td />
+            <h2>{t('ficha.seguimiento')}</h2>
+            {/* Solo fecha y grupo: la app no recoge ninguno de los dos, se escriben a mano. */}
+            <div className="ficha__datos">
+              <span>{t('ficha.fecha')} ____ / ____ / ______</span>
+              <span>{t('ficha.grupo')} ______________________</span>
+            </div>
+            {/* Tres indicadores y no cinco: una rejilla que no se puede rellenar mientras das
+                clase no se rellena nunca. Salen de «qué mirar». */}
+            <table className="ficha__seguimiento">
+              <thead>
+                <tr>
+                  <th scope="col" className="ficha__colNombre">
+                    {t('ficha.alumno')}
+                  </th>
+                  {indicadores.map((ind, i) => (
+                    <th scope="col" key={i}>
+                      {ind}
+                    </th>
+                  ))}
+                  <th scope="col" className="ficha__colNotas">
+                    {t('ficha.notas')}
+                  </th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {Array.from({ length: 12 }, (_, i) => (
+                  <tr key={i}>
+                    <td />
+                    <td />
+                    <td />
+                    <td />
+                    <td />
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </section>
+        )}
 
-          <p className="ficha__leyenda">{t('ficha.leyenda')}</p>
-          {/* Va impreso: es la diferencia entre «la app no guarda datos» y «este papel es
-              tuyo», y las dos cosas hay que decirlas. */}
-          <p className="ficha__aclaracion">{t('ficha.avisoDatos')}</p>
-          {/* Va impreso a propósito: en el papel, la dirección es lo único que lleva al
-              resto del material. */}
-          <p className="ficha__masRecursos">
-            {t('ficha.masRecursos')}{' '}
-            <a href={APP.webProyecto} target="_blank" rel="noopener">
-              cocomusic.es
-            </a>
-          </p>
-        </section>
-
+        <p className="ficha__nota ficha__pie">
+          {!herramienta && `${t('ficha.leyenda')} `}
+          {t('ficha.pie')}
+          {creditos ? ` ${creditos}.` : ''}
+        </p>
       </article>
     </main>
   );

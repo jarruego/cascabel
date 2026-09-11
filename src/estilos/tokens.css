@@ -2186,9 +2186,8 @@ p {
    los caracteres agrupados de tres en tres. */
 
 /* ── ficha imprimible ──────────────────────────────────────────────────────
-   Una ficha NO es la pantalla en papel: en pantalla hay un ejercicio
-   interactivo, y en papel hacen falta el enunciado, todo el contenido
-   desplegado y sitio para escribir. */
+   Dos caras de una sola hoja: la 1 para dar la clase, la 2 para sacarle más y
+   anotar. En pantalla se ve como papel; al imprimir, el papel es el papel. */
 .ficha {
   max-width: 860px;
   margin: 0 auto;
@@ -2201,262 +2200,161 @@ p {
   gap: var(--e-3);
   margin-bottom: var(--e-5);
 }
-.ficha__consejo { flex: 1 1 240px; color: var(--tinta-2); font-size: 0.85em; margin: 0; }
+.ficha__consejo { flex-basis: 100%; margin: 0; font-size: 0.9em; color: var(--tinta-2); }
 
-/* Cada hoja es una página impresa. Sin marco: el recuadro no decía nada que no dijera ya
-   el espacio en blanco, y en una hoja densa un borde solo añade ruido. Lo que separa una
-   hoja de la siguiente en pantalla es un filete fino y aire, que es lo justo.
-
-   El cuerpo baja a 15px. La ficha no la lee un niño a un metro: la lee un adulto con la
-   hoja en la mano, y a ese tamaño cabe una sección más por página, que es lo que evita que
-   un bloque se parta por la mitad al imprimir. */
 .ficha__hoja {
-  padding: 0 0 var(--e-5);
+  position: relative;
+  padding: var(--e-6) var(--e-5) var(--e-7);
   margin-bottom: var(--e-6);
   font-size: 15px;
   line-height: 1.45;
-  background: none;
   color: var(--tinta);
-}
-.ficha__hoja + .ficha__hoja { border-top: 1px solid var(--linea); padding-top: var(--e-6); }
-.ficha__cabecera {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: var(--e-4);
-  padding-bottom: var(--e-3);
-  margin-bottom: var(--e-4);
-  border-bottom: 2px solid var(--linea);
-}
-.ficha__cabecera h1 { margin: 0; font-size: 1.45em; line-height: 1.2; }
-.ficha__sobretitulo {
-  margin: 0 0 var(--e-1);
-  font-size: 0.8em;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--tinta-2);
-}
-.ficha__hojaNum { margin: 0; color: var(--tinta-2); font-size: 0.85em; white-space: nowrap; }
-.ficha__subtitulo {
-  margin: var(--e-1) 0 0;
-  font-size: 0.9em;
-  font-weight: 600;
-  color: var(--tinta-2);
-}
-.ficha__tituloHoja {
-  margin: 0;
-  font-size: 1.2em;
-  /* Sin las mayúsculas ni el filete de los h2 de sección: este encabeza la hoja entera. */
-  text-transform: none;
-  letter-spacing: 0;
-  border: none;
-  padding: 0;
-  color: var(--tinta);
-}
-
-/* Marca de agua: identidad de la actividad arriba, atribución abajo.
-   En pantalla es una línea gris discreta; al imprimir se va al margen de la página. */
-.ficha__marca {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: var(--e-2);
-  margin: 0 0 var(--e-3);
-  font-size: 0.76em;
-  letter-spacing: 0.04em;
-  color: var(--tinta-2);
-}
-.ficha__marca--inf { display: none; }
-
-/* Ficha técnica: lo que hay que decidir antes de entrar en clase. Va primero y en rejilla
-   porque se lee de un vistazo, no en orden. */
-/* Los cuatro datos en UNA línea mientras quepan. Es flex y no grid a propósito: con
-   `flex-grow: 1` el dato que no cabe salta de línea y **ocupa todo el ancho él solo**, así
-   que su texto no se corta en dos renglones estrechos. Una rejilla habría mantenido las
-   columnas y partido la palabra. */
-.ficha__ficha-tecnica {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--e-3) var(--e-5);
-  margin: 0 0 var(--e-4);
-  padding: var(--e-3) var(--e-4);
-  background: var(--fondo);
-  border-radius: var(--radio);
-}
-.ficha__ficha-tecnica div { flex: 1 1 auto; margin: 0; }
-.ficha__ficha-tecnica dt {
-  font-size: 0.75em;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--tinta-2);
-}
-.ficha__ficha-tecnica dd { margin: 1px 0 0; font-size: 0.95em; white-space: nowrap; }
-
-.ficha__entradilla { color: var(--tinta-2); margin: 0 0 var(--e-4); }
-.ficha__hoja h2 {
-  margin: var(--e-4) 0 var(--e-2);
-  font-size: 0.82em;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--tinta-2);
-  border-bottom: 1px solid var(--linea);
-  padding-bottom: 3px;
-}
-.ficha__hoja h3 { margin: 0 0 var(--e-0); font-size: 0.95em; }
-.ficha__hoja p { margin: 0 0 var(--e-2); }
-.ficha__consigna { padding-left: var(--e-3); border-left: 3px solid var(--linea); }
-
-/* Las cuatro propuestas en dos columnas: caben en media página y se comparan de un vistazo,
-   que es como se decide qué hacer con el grupo que va más rápido. */
-.ficha__dosColumnas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: var(--e-3) var(--e-5);
-}
-.ficha__dosColumnas p { margin: 0; font-size: 0.94em; }
-
-.ficha__pasos { padding-left: 1.2em; margin: 0; }
-.ficha__pasos li { margin-bottom: 9px; }
-.ficha__duracion { color: var(--tinta-2); }
-.ficha__materiales, .ficha__practica, .ficha__creditos { padding-left: 1.2em; margin: 0; }
-.ficha__materiales li, .ficha__practica li, .ficha__creditos li { margin-bottom: var(--e-2); }
-.ficha__creditos { font-size: 0.9em; }
-
-.ficha__tabla { width: 100%; border-collapse: collapse; }
-.ficha__tabla th, .ficha__tabla td {
-  padding: var(--e-2) var(--e-3) var(--e-2) 0;
-  text-align: left;
-  vertical-align: top;
-  border-bottom: 1px solid var(--linea);
-}
-.ficha__tabla th { width: 180px; font-weight: 600; color: var(--tinta-2); }
-
-/* Las aclaraciones que separan currículo de práctica. Van en pequeño pero NO se esconden:
-   son lo que evita que alguien cite como normativo algo que no lo es. */
-.ficha__aclaracion {
-  margin: var(--e-2) 0 0;
-  padding: var(--e-2) 11px;
-  font-size: 0.82em;
-  line-height: 1.4;
-  color: var(--tinta-2);
-  background: var(--fondo);
-  border-left: 3px solid var(--linea);
-  border-radius: 0 var(--radio) var(--radio) 0;
-}
-
-.ficha__datos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--e-6);
-  margin: var(--e-3) 0 var(--e-4);
-  color: var(--tinta-2);
-}
-
-/* Hoja de seguimiento. Filas altas a propósito: hay que poder escribir a mano dentro. */
-.ficha__seguimiento { width: 100%; border-collapse: collapse; font-size: 0.9em; }
-.ficha__seguimiento th, .ficha__seguimiento td {
+  background: var(--superficie);
   border: 1px solid var(--linea);
-  padding: var(--e-2) var(--e-2);
-  text-align: left;
+  border-radius: var(--r-m);
 }
-.ficha__seguimiento thead th {
+.ficha__hoja h1 { font-size: 1.9em; line-height: 1.1; margin: 0 0 var(--e-2); text-wrap: balance; }
+.ficha__hoja h2 {
   font-size: 0.8em;
-  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--tinta-2);
-  vertical-align: bottom;
+  letter-spacing: 0.08em;
+  color: var(--acento);
+  margin: var(--e-5) 0 var(--e-2);
+  padding-bottom: 3px;
+  border-bottom: 1.5px solid var(--acento);
 }
-.ficha__seguimiento tbody td { height: 27px; }
+.ficha__hoja h3 { font-size: 1em; margin: 0 0 var(--e-1); }
+.ficha__hoja p { margin: 0 0 var(--e-2); }
+.ficha__hoja section { margin: 0; }
+.ficha__sobre {
+  font-size: 0.8em;
+  color: var(--tinta-2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 var(--e-1);
+}
+.ficha__sobre .codigo { font-weight: 700; color: var(--tinta); }
+.ficha__entradilla { font-size: 1.02em; }
+
+/* Cabecera y pie, en el margen: gris, pequeño y separado del contenido. */
+.ficha__marca {
+  position: absolute;
+  left: var(--e-5);
+  right: var(--e-5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--e-4);
+  margin: 0;
+  font-size: 0.7em;
+  color: var(--tinta-2);
+}
+.ficha__marca--sup { top: var(--e-2); text-transform: uppercase; letter-spacing: 0.04em; }
+.ficha__marca--inf { bottom: var(--e-2); }
+.ficha__logo { display: inline-flex; align-items: center; gap: var(--e-1); }
+.ficha__logo img { height: 14px; width: auto; opacity: 0.85; }
+.ficha__logo a { color: inherit; }
+
+/* La ficha técnica: seis datos con su etiqueta, en dos filas de tres. */
+.ficha__tecnica {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--e-2) var(--e-4);
+  margin: var(--e-3) 0 0;
+  padding: var(--e-3) 0;
+  border-top: 1px solid var(--linea);
+  border-bottom: 1px solid var(--linea);
+  font-size: 0.92em;
+  font-variant-numeric: tabular-nums;
+}
+.ficha__tecnica div { min-width: 0; }
+.ficha__tecnica dt { font-size: 0.78em; text-transform: uppercase; letter-spacing: 0.05em; color: var(--tinta-2); }
+.ficha__tecnica dd { margin: 0; font-weight: 700; }
+
+.ficha__aprende { font-size: 1.1em; line-height: 1.35; }
+.ficha__vocab { display: flex; flex-wrap: wrap; gap: var(--e-1); margin: 0; padding: 0; list-style: none; }
+.ficha__vocab li { padding: 1px var(--e-2); border: 1px solid var(--linea); border-radius: 3px; font-size: 0.9em; }
+
+/* Lo que oye el niño: el enunciado tal cual, resaltado. */
+.ficha__consigna {
+  padding: var(--e-2) var(--e-3);
+  margin: 0 0 var(--e-3);
+  color: var(--tinta);
+  background: var(--suave-verde, #e6f0ee);
+  border-left: 3px solid var(--acento-2);
+}
+.ficha__sobre--consigna { color: var(--acento-2); }
+.ficha__consigna p:last-child { margin: 0; }
+
+.ficha__pasos { margin: 0; padding: 0; list-style: none; display: grid; gap: var(--e-1) var(--e-2); }
+.ficha__pasos li { display: grid; grid-template-columns: 2.2em 1fr; gap: var(--e-2); }
+.ficha__min { color: var(--tinta-2); font-variant-numeric: tabular-nums; font-size: 0.92em; }
+
+.ficha__partitura { margin: 0 0 var(--e-2); overflow: hidden; }
+.ficha__partitura svg { max-width: 100%; height: auto; }
+.ficha__letra { white-space: pre-line; font-style: italic; color: var(--tinta-2); line-height: 1.5; }
+.ficha__nota { font-size: 0.85em; color: var(--tinta-2); }
+
+.ficha__bloques { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--e-3) var(--e-5); }
+.ficha__ideasTitulo { margin-top: var(--e-3); }
+.ficha__lista { margin: 0; padding-left: 1.2em; }
+.ficha__lista li { margin-bottom: var(--e-1); }
+.ficha__mirar { display: grid; grid-template-columns: 1fr 1fr; gap: var(--e-3) var(--e-5); }
+.ficha__mirar li b { color: var(--acento-2); }
+
+.ficha__curri { display: grid; grid-template-columns: max-content 1fr; gap: var(--e-1) var(--e-3); margin: 0; font-size: 0.92em; }
+.ficha__curri dt { color: var(--tinta-2); }
+.ficha__curri dd { margin: 0; }
+
+.ficha__datos { display: flex; flex-wrap: wrap; gap: var(--e-2) var(--e-5); margin: 0 0 var(--e-2); color: var(--tinta-2); font-size: 0.92em; }
+.ficha__seguimiento { width: 100%; border-collapse: collapse; font-size: 0.9em; }
+.ficha__seguimiento th, .ficha__seguimiento td { border: 1px solid var(--linea); padding: 5px 7px; text-align: left; vertical-align: top; }
+.ficha__seguimiento th { font-weight: 700; color: var(--tinta); background: var(--fondo); }
+.ficha__seguimiento tbody td { height: 24px; }
 .ficha__colNombre { width: 28%; }
-.ficha__colNotas { width: 26%; }
-.ficha__leyenda { margin: var(--e-3) 0 0; font-size: 0.85em; color: var(--tinta-2); }
+.ficha__colNotas { width: 24%; }
+.ficha__pie { margin-top: var(--e-3); }
 .actividad__ficha { color: var(--acento-2); font-size: 0.9em; }
 
 @media print {
-  /* Márgenes de la propia página: sin esto, el navegador deja los suyos y el diseño se
-     descuadra según quién imprima. Arriba y abajo van más holgados que a los lados porque
-     ahí es donde viven las marcas de agua, colocadas DENTRO del margen. */
-  @page { margin: 17mm 14mm 16mm; }
+  /* Márgenes de la propia página, holgados arriba y abajo: ahí viven cabecera y pie,
+     DENTRO del margen y lejos del contenido. Antes se solapaban. */
+  @page { size: A4; margin: 20mm 16mm; }
 
-  /* Nada de cajas en el papel. Va explícito y con `all` para el borde: una caja impresa
-     no aporta nada y roba dos centímetros de ancho por hoja. */
-  .ficha,
-  .ficha__hoja,
-  .ficha__hoja + .ficha__hoja,
-  .ficha article,
-  .ficha section {
+  .ficha { max-width: none; padding: 0; margin: 0; }
+  .ficha__hoja {
     border: none;
     border-radius: 0;
-    box-shadow: none;
     background: none;
-  }
-  .ficha { max-width: none; padding: 0; margin: 0; }
-  .ficha__hoja,
-  .ficha__hoja + .ficha__hoja {
-    border: none;
-    /* En puntos y no en píxeles: el punto es la unidad del papel, y así el resultado no
-       depende de a cuántos píxeles decida imprimir cada navegador. */
-    font-size: 10.5pt;
-    line-height: 1.4;
     padding: 0;
     margin: 0;
-    background: none;
+    /* En puntos y no en píxeles: el punto es la unidad del papel. */
+    font-size: 10.5pt;
+    line-height: 1.4;
     color: #000;
-    /* Una hoja, una página. La última no fuerza salto, o sale una página en blanco. */
-    break-after: page;
+    page-break-after: always;
   }
-  .ficha__hoja:last-child { break-after: auto; }
-
-  .ficha__cabecera,
-  .ficha__hoja h2 { border-color: #000; }
-  .ficha__tituloHoja { border: none; }
-  .ficha__hoja h2 { color: #000; }
-  .ficha__sobretitulo,
-  .ficha__hojaNum,
-  .ficha__entradilla,
-  .ficha__duracion,
-  .ficha__leyenda,
-  .ficha__aclaracion,
-  .ficha__datos { color: #333; }
-
-  /* Los fondos suaves desaparecen o salen sucios en una impresora de colegio: se
-     sustituyen por un borde, que sí imprime. */
-  .ficha__ficha-tecnica,
-  .ficha__aclaracion { background: none; border: 1px solid #999; }
-  .ficha__ficha-tecnica { padding: var(--e-3) var(--e-3); }
-  .ficha__tabla th, .ficha__tabla td { border-color: #000; }
-  .ficha__seguimiento th, .ficha__seguimiento td { border-color: #000; }
-  .ficha__seguimiento tbody td { height: 34px; }
-
-  .ficha__pasos li,
-  .ficha__dosColumnas div,
-  .ficha__seguimiento tr { break-inside: avoid; }
-  .ficha__hoja h2 { break-after: avoid; }
+  .ficha__hoja:last-child { page-break-after: auto; }
+  .ficha__hoja h2 { margin-top: 5mm; }
+  .ficha__consigna { background: #eef3f2; }
+  .ficha__seguimiento th { background: #f2f2f2; }
+  .ficha__seguimiento tbody td { height: 6.5mm; }
 
   /*
-    Las marcas se sacan del flujo y se colocan con desplazamiento negativo, de modo que
-    caen DENTRO del margen de `@page`: se repiten en todas las páginas y no gastan ni una
-    línea de contenido, que era justo el problema —repetir título y atribución tres veces
-    costaba casi cuatro centímetros de alto.
-
-    `position: fixed` es lo que hace que un elemento se repita en cada página al imprimir.
-    Por eso las marcas viven en el `<main>` y no dentro de cada hoja: si estuvieran dentro
-    de los tres `<article>`, se apilarían las tres en cada página.
+    Cabecera y pie: `position: fixed` es lo que hace que se repitan en cada página al
+    imprimir, y el desplazamiento negativo los mete en el margen de `@page`.
   */
   .ficha__marca {
     position: fixed;
     left: 0;
     right: 0;
-    margin: 0;
-    font-size: 7.5pt;
-    line-height: 1;
+    font-size: 7pt;
     color: #777;
   }
-  .ficha__marca--sup { top: -11mm; }
-  .ficha__marca--inf { bottom: -10mm; display: flex; }
+  .ficha__marca--sup { top: -12mm; }
+  .ficha__marca--inf { bottom: -13mm; }
+  .ficha__logo img { height: 5mm; }
+  section, .ficha__partitura, .ficha__seguimiento { break-inside: avoid; }
 }
 
 /*

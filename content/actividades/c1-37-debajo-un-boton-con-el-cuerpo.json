@@ -244,5 +244,91 @@
     "cantar",
     "letra",
     "corcheas"
-  ]
+  ],
+  "musica": {
+    "abc": "X:1\nT:Debajo un botón\nC:Tradicional española\nM:2/4\nL:1/16\nQ:1/4=72\nK:C\nC3D E2F2 | G2G2 G4 | A3A c2F2 | G2G2 G4 |\nw: De-ba-jo~un bo-tón, ton, ton, que~en-con-tró Mar-tín, tin, tin,\nF3G A2F2 | E2E2 E4 | D3E F2D2 | C2C2 C4 |]\nw: ha-bí-a~un ra-tón, ton, ton, ay, qué chi-qui-tín, tin, tin!"
+  },
+  "ficha": {
+    "aprende": "Cambiar de sonido corporal sin perder el pulso, y sentir que las corcheas de «de-ba-jo un» caben en el mismo tiempo que el «ton, ton».",
+    "vocabulario": [
+      "pulso",
+      "palmas",
+      "muslos",
+      "pies",
+      "chasquidos",
+      "eco",
+      "frase"
+    ],
+    "agrupamiento": "Toda la clase, de pie",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "De pie y en semicírculo,",
+        "detalle": "mirando a la pantalla. Marcar el pulso con el pie mientras se explica: «las palabras con las manos, el eco con los pies»."
+      },
+      {
+        "min": 2,
+        "titulo": "Cantarla sin golpes.",
+        "detalle": "Con la flauta de la pantalla, dos veces. Que salga la letra entera antes de mover nada; «de-ba» va rápido, como al hablar."
+      },
+      {
+        "min": 2,
+        "titulo": "Solo las manos.",
+        "detalle": "Palmas en «debajo un botón» y muslos en «que encontró Martín». Los ecos se cantan quietos, sin golpe."
+      },
+      {
+        "min": 2,
+        "titulo": "Entra el eco.",
+        "detalle": "«Ton, ton» con los pies y «tin, tin» con chasquidos. Quien no sabe chasquear, da dos toques en el pecho: el sitio importa, el sonido no."
+      },
+      {
+        "min": 2,
+        "titulo": "Entera con la pantalla,",
+        "detalle": "mirando el cursor. Dos vueltas seguidas; en la segunda, sin cantar, solo el cuerpo."
+      },
+      {
+        "min": 1,
+        "titulo": "Sin pantalla.",
+        "detalle": "Se apaga y se hace igual, con el pie del maestro de metrónomo. La app hace de director solo hasta que sobra."
+      }
+    ],
+    "enPantalla": "Cuatro filas —chasquidos, palmas, muslos y pies— con el patrón marcado y un cursor que lo recorre mientras la flauta canta la melodía. Lo que sale por el altavoz es la señal, no el sonido: el sonido lo hacen los niños con el cuerpo, y la pantalla hace de director. Se puede repetir las veces que haga falta y no hay puntuación ni fallo: al acabar, el personaje dice que ha sonado.",
+    "sinPantalla": "Es su forma natural: el maestro canta y marca el pulso con el pie. En corro, cada niño hace el eco al de su derecha: «ton, ton» pasa de uno a otro alrededor del círculo.",
+    "masFacil": "Todo con palmas, sin cambiar de sonido, hasta que la letra y el pulso vayan juntos. Después solo el eco con los pies. El cambio de gesto es lo que cuesta, no el gesto.",
+    "masDificil": "Mitad de la clase canta las palabras y la otra mitad solo hace los ecos, y se cambian. Luego a canon: el segundo grupo entra en «que encontró».",
+    "variante": {
+      "titulo": "Con instrumentos",
+      "texto": "Los ecos con pequeña percusión: claves en «ton, ton», triángulo en «tin, tin». Las palabras siguen con el cuerpo, que es lo que se está aprendiendo."
+    },
+    "ideas": [
+      "Inventar un cuarto sonido para «¡ay!» (un salto, un giro) y decidir entre todos cuál se queda.",
+      "Cambiar la letra: otro animal que rime con «ton» y otro nombre que rime con «tin», y volver a hacerla con el texto nuevo.",
+      "Grabar a la clase con el móvil del maestro y escucharse: ¿se oye el cambio de sonido o suena todo igual?"
+    ],
+    "loTiene": [
+      "Mantiene el pulso al cambiar de palmas a pies, sin frenar en el cambio.",
+      "Dice «de-ba» rápido: dos palmadas en un pulso, no en dos.",
+      "Lo hace sin mirar la pantalla en la segunda vuelta."
+    ],
+    "errores": [
+      {
+        "error": "Se para en el eco para pensar qué sonido toca",
+        "remedio": "decidlo antes en voz alta: «pies» en cada «ton»."
+      },
+      {
+        "error": "Palmea todas las sílabas igual y «debajo» sale a cuatro golpes",
+        "remedio": "cantar «de-ba» como una sola palmada larga y luego partirla."
+      },
+      {
+        "error": "Se adelanta en «tin, tin»",
+        "remedio": "que lo diga solo con la boca una vuelta, sin chasquear."
+      }
+    ],
+    "indicadores": [
+      "Pulso",
+      "Cambia a tiempo",
+      "Sin mirar"
+    ]
+  }
 }
