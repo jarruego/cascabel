@@ -3028,6 +3028,15 @@ textos, niveles, camino, y la sección de instrumentos.
 - [x] **El Danubio (347) con violín**, la melodía al 100 % y los golpes al 45 %: la percusión
       corporal tiene ahora también `volumenGolpes`, para cuando manda la melodía.
 
+- [x] **Con palmas era difícil acertar, y era el detector.** Simulado con el fichero de
+      verdad y una cola de sala realista (RT60 0,5 s): cada palmada daba DOS onsets, el
+      segundo a 112 ms al salir del refractario, porque la cola seguía sobre el umbral; ese
+      onset llegaba 600 ms antes del hueco siguiente y lo quemaba. Ahora el detector dispara
+      solo en la SUBIDA de energía (cuatro veces el máximo de los últimos tres bloques), que
+      es lo que es un ataque: una cola que decae no dispara y una segunda palmada encima de
+      la cola sí. Cuatro negras con cola son cuatro, y cuatro corcheas a 120 también. Tests
+      en `onsets.test.ts`, mina apuntada en `CLAUDE.md` §8.
+
 - [x] **Tras un fallo se corrige al instante en elección, pentagrama y emparejar.** La
       fase de fallo bloqueaba 1,2 s (elección, pentagrama) o el tiempo de lectura entero
       (emparejar) y el toque rápido para corregir se perdía: «no me valida la nota» (242).

@@ -101,6 +101,23 @@ function palmada(x: Float32Array, enSegundos: number, amplitud = 0.5): void {
   }
 }
 
+/**
+ * Una palmada en un aula de verdad: el golpe y después la cola difusa de la sala, que cae
+ * sesenta decibelios en `rt60` segundos. Es lo que el test de arriba no tenía, y lo que
+ * hacía que cada palmada diera dos onsets.
+ */
+function palmadaConCola(x: Float32Array, enSegundos: number, rt60 = 0.5, amplitud = 0.5): void {
+  palmada(x, enSegundos, amplitud);
+  const inicio = Math.round(enSegundos * TASA);
+  const largo = Math.round(rt60 * 1.5 * TASA);
+  let s = 4242 + inicio;
+  for (let i = 0; i < largo && inicio + i < x.length; i++) {
+    s = (s * 1103515245 + 12345) & 0x7fffffff;
+    const ruido = (s / 0x7fffffff) * 2 - 1;
+    x[inicio + i] = x[inicio + i]! + ruido * amplitud * 0.25 * Math.exp((-6.91 * i) / (rt60 * TASA));
+  }
+}
+
 describe('el detector de palmadas', () => {
   let det: ReturnType<typeof cargar>;
 
@@ -144,6 +161,39 @@ describe('el detector de palmadas', () => {
     palmada(x, 1.06, 0.08);
     det.dar(x);
     expect(det.onsets.length).toBe(1);
+  });
+
+  it('el fallo que hubo: una palmada con cola de sala es UNA, no dos', () => {
+    /*
+      Con RT60 de medio segundo, a los 110 ms —al salir del refractario— la cola sigue muy
+      por encima del umbral, y el detector volvía a disparar a los 112 ms. Ese segundo onset
+      llegaba seiscientos milisegundos antes del hueco siguiente y lo quemaba: «con palmas es
+      difícil acertar», dijo el autor el 2026-09-12. Ahora solo dispara la SUBIDA.
+    */
+    for (const rt60 of [0.3, 0.5, 0.8]) {
+      const d = cargar();
+      const x = sala(4);
+      palmadaConCola(x, 1.0, rt60);
+      d.dar(x);
+      expect(d.onsets.length, `rt60 ${rt60}`).toBe(1);
+    }
+  });
+
+  it('cuatro negras a 84 con cola de sala son cuatro, y cuatro corcheas a 120 también', () => {
+    const negras = cargar();
+    const x = sala(6);
+    for (let k = 0; k < 4; k++) palmadaConCola(x, 1.0 + k * (60 / 84));
+    negras.dar(x);
+    expect(negras.onsets.length).toBe(4);
+
+    // Las corcheas a 120 ppm van a 250 ms: la segunda cae ENCIMA de la cola de la primera
+    // y tiene que contarse igual. Es lo que impide arreglar la cola alargando el refractario.
+    const corcheas = cargar();
+    const y = sala(4);
+    for (let k = 0; k < 4; k++) palmadaConCola(y, 1.0 + k * 0.25);
+    corcheas.dar(y);
+    expect(corcheas.onsets.length).toBe(4);
+    expect(corcheas.onsets.map((o) => Math.round((o.tiempo - 1) * 100))).toEqual([0, 25, 50, 75]);
   });
 
   it('el instante que reporta es el de la palmada, no el del bloque', () => {

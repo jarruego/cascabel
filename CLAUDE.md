@@ -290,7 +290,11 @@ Y ahora las minas propiamente dichas:
 - Análisis **siempre en `AudioWorklet`**, nunca en el hilo principal.
 - Filtrado de señal infantil: gating por RMS + umbral de claridad > 0,85 + mediana de 3–5 lecturas.
 - Periodo refractario de 100–120 ms en el detector de palmadas, o una palmada genera 3–4
-  onsets por las reflexiones de la sala.
+  onsets por las reflexiones de la sala. **Y se dispara en la subida de energía, no por
+  estar sobre el umbral**: la cola difusa de un aula dura medio segundo y al salir del
+  refractario sigue por encima del umbral; sin esto cada palmada daba dos onsets y el
+  segundo quemaba el hueco siguiente (2026-09-12, con test que simula la cola).
+  Alargar el refractario no vale: se comería las corcheas a 120.
 - **iOS**: `getUserMedia` redirige la salida de audio (baja el volumen); `echoCancellation`
   se ignora; hay bugs recurrentes de `AudioWorklet`; y el bug WebKit 185448 hace que
   `getUserMedia` falle en PWA instalada en pantalla de inicio. **No tenemos ningún

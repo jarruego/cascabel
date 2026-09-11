@@ -65,6 +65,9 @@ class OnsetProcessor extends AudioWorkletProcessor {
     const dt = 1 / sampleRate;
     this.a = rc / (rc + dt);
     this.muestrasVistas = 0;
+    // La energía de los últimos bloques (~8 ms), para disparar solo en la SUBIDA. Ver abajo.
+    this.recientes = [0, 0, 0];
+    this.saltoMinimo = 4;
   }
 
   process(entradas) {
@@ -108,13 +111,38 @@ class OnsetProcessor extends AudioWorkletProcessor {
       energia > this.factorUmbral * this.media && energia > this.sueloAbsoluto;
     const fueraDeRefractario = posicion - this.ultimoOnset > this.refractario;
 
-    if (superaUmbral && fueraDeRefractario) {
+    /*
+      **Se dispara en la subida, no por estar arriba.**
+
+      Una palmada en un aula no se acaba en ocho milisegundos: deja una cola difusa que
+      tarda medio segundo en caer sesenta decibelios, y a los 110 ms —justo al salir del
+      refractario— esa cola sigue muy por encima del umbral, que se quedó congelado en el
+      silencio de la sala. Simulado el 2026-09-12 con el fichero de verdad: con RT60 de
+      0,5 s cada palmada daba DOS onsets, a 0 y a 112 ms, y en un pasillo tres. El segundo
+      llegaba seiscientos milisegundos antes del hueco siguiente y lo quemaba: el autor lo
+      vio como «con palmas es difícil acertar, ¿el propio ruido de las palmas activa el
+      siguiente y lo da como malo?». Sí.
+
+      Un onset es un ATAQUE: la energía tiene que haber saltado respecto a los últimos
+      bloques —cuatro veces, seis decibelios—. Una cola que decae nunca sube, así que no
+      dispara por muy alta que esté; una segunda palmada encima de la cola sí, porque salta
+      de golpe. Se compara con el máximo de tres bloques y no solo con el anterior porque la
+      cola es ruido y de un bloque al siguiente baila: contra un solo bloque, un hueco de la
+      cola seguido de un pico volvía a disparar a los 175 ms. Alargar el refractario no
+      valía: a 120 ppm las corcheas van a 250 ms y cualquier refractario que tapara la cola
+      se comería la corchea.
+    */
+    const esAtaque = energia > this.saltoMinimo * Math.max(...this.recientes);
+
+    if (superaUmbral && fueraDeRefractario && esAtaque) {
       this.ultimoOnset = posicion;
       this.port.postMessage({
         tiempo: currentTime + picoIndice / sampleRate,
         energia,
       });
     }
+    this.recientes.shift();
+    this.recientes.push(energia);
 
     /*
       La media solo sube con lo que NO es un golpe.
