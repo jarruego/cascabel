@@ -224,7 +224,7 @@ Cuatro compases sobre una base musical real. Mide desvío medio con signo y desv
 **C1-03 · El pulso escondido** — pulso · pantalla · tocar a tiempo · M
 Suena una canción y hay que marcar el pulso tocando la pantalla. Distingue pulso de ritmo, que es la confusión número uno de la etapa. *CE3 · crit. 3.1 · saber D.*
 
-**C1-04 · Constructor de ritmos** — creación · pantalla · rejilla · M
+**C1-04 · Constructor de sonidos** — creación · pantalla · rejilla · M
 Cuatro casillas donde colocar negra, dos corcheas o silencio. Suena en bucle sobre una base. No hay respuesta incorrecta: solo composiciones distintas. *CE3 · crit. 3.2 · saber D.*
 
 **C1-05 · Musicograma A-B** — cultura · pantalla · seguir · M

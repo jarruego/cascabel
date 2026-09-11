@@ -3028,6 +3028,9 @@ textos, niveles, camino, y la sección de instrumentos.
 - [x] **El Danubio (347) con violín**, la melodía al 100 % y los golpes al 45 %: la percusión
       corporal tiene ahora también `volumenGolpes`, para cuando manda la melodía.
 
+- [x] **La 104 se llama «Constructor de sonidos»**, no «de ritmos»: lo que se construye son
+      sonidos de cuatro alturas en el tiempo (2026-09-12). El id y la URL no cambian.
+
 - [x] **Con palmas era difícil acertar, y era el detector.** Simulado con el fichero de
       verdad y una cola de sala realista (RT60 0,5 s): cada palmada daba DOS onsets, el
       segundo a 112 ms al salir del refractario, porque la cola seguía sobre el umbral; ese
