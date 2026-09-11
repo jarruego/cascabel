@@ -317,13 +317,25 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
   const conPista = estado.fase === 'casi' || (estado.fase === 'estimulo' && pistaVisible);
 
   return (
-    <section className="actividad pentagrama" data-carril={carril} aria-labelledby="consigna" ref={seccion}>
+    <section
+      className="actividad pentagrama"
+      data-carril={carril}
+      data-ficha={libre || undefined}
+      aria-labelledby="consigna"
+      ref={seccion}
+    >
       <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
 
       <p className="pentagrama__pedida" aria-live="polite">
         {/* En la ficha: el personaje de la nota tocada y su nombre. Antes de tocar nada, la
             consigna, para que la fila no esté vacía. */}
-        {libre && personajeDeTocada && <Personaje nombre={personajeDeTocada} pose="canta" tamano={56} />}
+        {/* En la ficha el personaje sale al doble y con su entrada: es el momento de la
+            ficha, y la clave del elemento hace que la entrada vuelva a correr con cada nota. */}
+        {libre && personajeDeTocada && (
+          <span className="pentagrama__quien" key={tocada?.clave}>
+            <Personaje nombre={personajeDeTocada} pose="canta" tamano={112} />
+          </span>
+        )}
         {libre ? (tocada ? t(`nota.${tocada.nombre ?? tocada.clave}`) : t(contenido.consigna)) : pedida && t(`nota.${nombreDeClave(pedida)}`)}
       </p>
 
