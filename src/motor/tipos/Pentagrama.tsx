@@ -328,7 +328,7 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
 
       <p className="pentagrama__pedida" aria-live="polite">
         {/* En la ficha: el personaje de la nota tocada y su nombre. Antes de tocar nada, la
-            consigna, para que la fila no esté vacía. */}
+            fila está vacía y ya: la consigna la lee el adulto en la explicación. */}
         {/* En la ficha el personaje sale al doble y con su entrada: es el momento de la
             ficha, y la clave del elemento hace que la entrada vuelva a correr con cada nota. */}
         {libre && personajeDeTocada && (
@@ -336,7 +336,7 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
             <Personaje nombre={personajeDeTocada} pose="canta" tamano={112} />
           </span>
         )}
-        {libre ? (tocada ? t(`nota.${tocada.nombre ?? tocada.clave}`) : t(contenido.consigna)) : pedida && t(`nota.${nombreDeClave(pedida)}`)}
+        {libre ? tocada && t(`nota.${tocada.nombre ?? tocada.clave}`) : pedida && t(`nota.${nombreDeClave(pedida)}`)}
       </p>
 
       {/* El marco es lo único que se desplaza, y solo de lado. */}

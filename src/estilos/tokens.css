@@ -1359,7 +1359,7 @@ p {
 /* La ficha del Taller: el nombre en mayúsculas y al doble, que es lo que se está enseñando,
    y el personaje al doble entrando con un botecito. Lo pidió el autor el 2026-09-12. */
 .pentagrama[data-ficha] .pentagrama__pedida {
-  font-size: clamp(56px, 18vmin, 88px);
+  font-size: clamp(44px, 14vmin, 68px);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
