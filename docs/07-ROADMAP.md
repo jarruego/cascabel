@@ -3040,6 +3040,10 @@ textos, niveles, camino, y la sección de instrumentos.
       todos los instrumentos y ajustado `desde` en esos cinco; la herramienta avisa desde
       ahora si un recorte arranca en silencio.
 
+- [x] **«¿Suenan bien juntas o rozan?» (335), más exagerada**: órgano en vez de piano, que
+      sostiene y deja oír los batidos; tres pulsos en vez de dos; y la séptima mayor como
+      disonancia en lugar de una segunda grave que apenas se notaba.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

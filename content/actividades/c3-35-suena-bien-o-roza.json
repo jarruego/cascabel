@@ -22,7 +22,7 @@
   },
   "contenido": {
     "consigna": "actividad.c335.consigna",
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: como consonancias se usan la tercera, la quinta y la octava, y como disonancias la segunda menor y el tritono. Es la partición de manual y deja fuera a propósito los casos discutidos, como la cuarta y la séptima.",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: como consonancias se usan la tercera, la quinta y la octava, y como disonancias la segunda menor, el tritono y la séptima mayor. Es la partición de manual y deja fuera a propósito los casos discutidos, como la cuarta y la séptima menor. El 2026-09-12 el autor pidió exagerar más: «algunas no se notan casi». Pasa del piano al órgano, que sostiene y tiene armónicos, y es donde los batidos de una segunda menor se oyen de verdad; los dos sonidos duran tres pulsos en vez de dos; el sol-la bemol se escribe sol-sol sostenido, que es lo que el motor entiende; y la disonancia más suave (si3-do4, grave) se cambia por una séptima mayor (do4-si4).",
     "opciones": [
       {
         "clave": "consonante",
@@ -43,7 +43,7 @@
         ],
         "duraciones": [
           0,
-          2
+          3
         ],
         "respuesta": "consonante"
       },
@@ -54,7 +54,7 @@
         ],
         "duraciones": [
           0,
-          2
+          3
         ],
         "respuesta": "disonante"
       },
@@ -65,7 +65,7 @@
         ],
         "duraciones": [
           0,
-          2
+          3
         ],
         "respuesta": "consonante"
       },
@@ -76,7 +76,7 @@
         ],
         "duraciones": [
           0,
-          2
+          3
         ],
         "respuesta": "disonante"
       },
@@ -87,7 +87,7 @@
         ],
         "duraciones": [
           0,
-          2
+          3
         ],
         "respuesta": "disonante"
       },
@@ -98,7 +98,7 @@
         ],
         "duraciones": [
           0,
-          2
+          3
         ],
         "respuesta": "consonante"
       },
@@ -109,18 +109,18 @@
         ],
         "duraciones": [
           0,
-          2
+          3
         ],
         "respuesta": "consonante"
       },
       {
         "notas": [
           "G4",
-          "Ab4"
+          "G#4"
         ],
         "duraciones": [
           0,
-          2
+          3
         ],
         "respuesta": "disonante"
       },
@@ -131,23 +131,23 @@
         ],
         "duraciones": [
           0,
-          2
+          3
         ],
         "respuesta": "consonante"
       },
       {
         "notas": [
-          "B3",
-          "C4"
+          "C4",
+          "B4"
         ],
         "duraciones": [
           0,
-          2
+          3
         ],
         "respuesta": "disonante"
       }
     ],
-    "instrumento": "piano"
+    "instrumento": "organo"
   },
   "evaluacion": {
     "autocorrectiva": true,
