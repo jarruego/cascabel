@@ -3031,6 +3031,10 @@ textos, niveles, camino, y la sección de instrumentos.
       reconocía: ahora el violín toca la melodía, una nota por golpe, en la escucha y anclada
       al primer golpe del niño mientras palmea. Campo `melodia` del tipo, con test de cuenta.
 
+- [x] **En los mapas con una nota por pulso se ve la nota que suena**, con su personaje
+      apareciendo con cada una: en el Preludio (343) se ve qué notas forman cada acorde, y en
+      el Cisne y el mapa del Himno, quién canta. Con una nota por bloque no hace falta.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

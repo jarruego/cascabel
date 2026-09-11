@@ -9,7 +9,8 @@ import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
 import { Icono } from '@/ui/Icono';
 import { Personaje } from '@/ui/Personaje';
-import type { Personaje as NombrePersonaje } from '@/ui/personajes';
+import { personajeDe, type Personaje as NombrePersonaje } from '@/ui/personajes';
+import { nombreDe } from '@/ui/coloresNota';
 import { BarraAcciones } from '@/ui/BarraAcciones';
 import { IconoParar, IconoRepetir, IconoSiguiente, IconoTocar } from '@/ui/Simbolos';
 import { Reaccion } from '@/ui/Reaccion';
@@ -85,6 +86,20 @@ export default function Seguir({ actividad, alTerminar, alSalir }: PropsActivida
   const modo = contenido.modo ?? 'tira';
   const [sonando, setSonando] = useState(false);
   const [actual, setActual] = useState(-1);
+  /*
+    La nota que suena, con su personaje, cuando el mapa lleva una nota por pulso: el
+    Preludio (343) cambia de acorde y con esto se VE qué notas lo forman —Dora, Milo, Sol,
+    Doby— apareciendo una tras otra. Lo pidió el autor el 2026-09-12. Solo cuando las notas
+    van por pulso: con una nota por bloque, el bloque ya la enseña.
+  */
+  const totalPulsos = bloques.reduce((s, b) => s + (b.pulsos ?? 1), 0);
+  const porPulso = Boolean(contenido.notas && contenido.notas.length === totalPulsos && contenido.notas.length !== bloques.length);
+  const [pulsoActual, setPulsoActual] = useState(-1);
+  const notaVisible = (() => {
+    if (!porPulso || pulsoActual < 0) return null;
+    for (let i = pulsoActual; i >= 0; i--) if (contenido.notas![i]) return contenido.notas![i]!;
+    return null;
+  })();
   /** El último bloque que ya dio su golpecito. El bucle corre a 60 por segundo. */
   const ultimoVibrado = useRef(-1);
   /** Segundos que faltan para cada bloque. Negativo = ya ha pasado. Solo en modo `cae`. */
@@ -130,6 +145,7 @@ export default function Seguir({ actividad, alTerminar, alSalir }: PropsActivida
     rafId.current = null;
     setSonando(false);
     setActual(-1);
+    setPulsoActual(-1);
   }, []);
 
   useEffect(() => parar, [parar]);
@@ -269,6 +285,7 @@ export default function Seguir({ actividad, alTerminar, alSalir }: PropsActivida
         if (indice >= 0) vibrarPulso(indice === 0);
       }
       setActual(indice);
+      if (porPulso) setPulsoActual(transcurrido >= 0 ? Math.floor(dentro / msPorPulso) : -1);
 
       if (modo === 'cae') {
         setRestantes(
@@ -373,6 +390,18 @@ export default function Seguir({ actividad, alTerminar, alSalir }: PropsActivida
 
       {/* La instrucción no se repite aquí: la cuenta el personaje al entrar y se vuelve a
           leer pulsándolo. Y la acción va donde va en todas, en la botonera de abajo. */}
+      {/* El personaje de la nota que suena, apareciendo con cada nota. */}
+      {porPulso && (
+        <div className="seguir__nota" aria-hidden="true">
+          {notaVisible && personajeDe(notaVisible) && (
+            <span key={`${pulsoActual}-${notaVisible}`} className="seguir__nota-pop">
+              <Personaje nombre={personajeDe(notaVisible)!} pose="canta" tamano={72} />
+              <span>{nombreDe(notaVisible)}</span>
+            </span>
+          )}
+        </div>
+      )}
+
       <BarraAcciones>
         {terminada ? (
           <>

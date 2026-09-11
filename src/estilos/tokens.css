@@ -1942,6 +1942,27 @@ p {
   vista. `safe center` centra los patrones cortos y deja de centrar cuando no caben, que si
   no recortaría el principio.
 */
+/* La nota que suena, con su personaje: aparece con cada nota y se va con la siguiente. */
+.seguir__nota {
+  display: grid;
+  place-items: center;
+  min-height: 100px;
+}
+.seguir__nota-pop {
+  display: grid;
+  place-items: center;
+  gap: 2px;
+  font-weight: 700;
+  animation: seguir-pop 260ms ease-out;
+}
+@keyframes seguir-pop {
+  0% { transform: scale(0.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .seguir__nota-pop { animation: none; }
+}
+
 .seguir__tira {
   display: flex;
   flex-wrap: nowrap;
