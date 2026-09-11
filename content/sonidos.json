@@ -1,6 +1,6 @@
 {
   "$comment": "Banco de sonidos reales. Cada entrada apunta a un fichero de Wikimedia Commons; tools/sonidos.py lo baja, comprueba la licencia por API, lo recorta y escribe aqui lo verificado. La pantalla de creditos lee este fichero: es la atribucion que exige la CC BY, y sale de datos, no de memoria.",
-  "generado": "2026-09-10",
+  "generado": "2026-09-11",
   "sonidos": [
     {
       "id": "perro",
@@ -728,28 +728,31 @@
       "nombre": "Tormenta",
       "commons": "File:Rhumphries - rbh-thunder-storm.ogg",
       "segundos": 8,
+      "desde": 3.7,
+      "$comment": "Desde 3,7 s (2026-09-12): la grabación empieza con casi cuatro segundos de lluvia floja y el primer trueno cae a los cuatro; el niño oía lluvia y ya había contestado. Ahora arranca por el trueno.",
       "verificado": {
         "licencia": "CC BY 3.0",
         "licencia_url": "https://creativecommons.org/licenses/by/3.0",
         "autor": "RHumphries",
         "url": "https://commons.wikimedia.org/wiki/File:Rhumphries_-_rbh-thunder-storm.ogg",
-        "fecha": "2026-09-10"
+        "fecha": "2026-09-11"
       }
     },
     {
       "id": "olas",
       "categoria": "casa",
       "nombre": "Olas del mar",
-      "commons": "File:Meeresrauschen.ogg",
-      "desde": 26,
-      "segundos": 8,
-      "$comment": "Cambiada el 2026-09-10: la anterior (Tropical Beach) era rumor grave continuo —«parece un tren»—. Esta tiene el vaivén de cada ola claro y sin graves.",
+      "commons": "File:Sea waves.wav",
+      "desde": 9,
+      "segundos": 9,
+      "$comment": "Cambiada el 2026-09-12: la de Meeresrauschen sonaba a goteo raro. Esta es una ola que crece y rompe; lleva un paso alto a 220 Hz porque la grabación es casi todo retumbo grave, que un altavoz de móvil no da y que lo emborrona todo.",
+      "filtros": "highpass=f=220",
       "verificado": {
-        "licencia": "CC BY 2.5",
-        "licencia_url": "https://creativecommons.org/licenses/by/2.5",
-        "autor": "L. Ginzkey",
-        "url": "https://commons.wikimedia.org/wiki/File:Meeresrauschen.ogg",
-        "fecha": "2026-09-10"
+        "licencia": "CC BY-SA 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "autor": "Ganesh Mohan T",
+        "url": "https://commons.wikimedia.org/wiki/File:Sea_waves.wav",
+        "fecha": "2026-09-11"
       }
     },
     {

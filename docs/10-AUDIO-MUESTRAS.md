@@ -147,7 +147,9 @@ olas, avión, tren y teléfono se «cambiaron» y siguieron sonando igual durant
 Ahora el nombre en caché lleva un hash del título de Commons, la extensión sale de la ruta
 de la URL (Commons añade `?utm_source=…`) y ffmpeg recibe `-vn` porque algunos originales
 son vídeo. Al cambiar un sonido, se comprueba el `.opus` resultante decodificándolo, no la
-salida de la herramienta.
+salida de la herramienta. Cada entrada admite además `filtros`, una cadena de filtros de
+ffmpeg que se aplica antes de normalizar: las olas llevan `highpass=f=220` porque la
+grabación era casi todo retumbo grave, que un altavoz de móvil no da y que lo emborrona.
 
 En Commons está además el catálogo entero de **Kevin MacLeod** (CC BY 3.0), que es de donde
 salen los estilos, y las grabaciones de **Musopen** y del proyecto Open Goldberg (dominio

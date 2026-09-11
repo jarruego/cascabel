@@ -130,9 +130,12 @@ def pico_db(fichero: Path, desde: float, segundos: float) -> float:
     return float(m.group(1))
 
 
-def convertir(origen: Path, destino: Path, desde: float, segundos: float) -> None:
+def convertir(origen: Path, destino: Path, desde: float, segundos: float, extra: str = "") -> None:
     ganancia = PICO_DB - pico_db(origen, desde, segundos)
-    filtros = ",".join([
+    # `extra`: filtros de ffmpeg propios del sonido, antes de normalizar. Sirve para quitar el
+    # retumbo grave de una grabación de olas que un altavoz de móvil no reproduce y que en
+    # cambio lo emborrona todo (2026-09-12). Se declara en el manifiesto y se ve en los créditos.
+    filtros = ",".join(([extra] if extra else []) + [
         f"volume={ganancia:.2f}dB",
         "afade=t=in:st=0:d=0.03",
         f"afade=t=out:st={max(0.0, segundos - 0.35):.2f}:d=0.35",
@@ -179,7 +182,7 @@ def main() -> int:
             huella = hashlib.sha1(s["commons"].encode("utf-8")).hexdigest()[:10]
             crudo = CACHE / f"{s['id']}-{huella}{extension}"
             descargar(m["url"], crudo)
-            convertir(crudo, destino, float(s.get("desde", 0)), float(s["segundos"]))
+            convertir(crudo, destino, float(s.get("desde", 0)), float(s["segundos"]), str(s.get("filtros", "")))
             s["verificado"] = {
                 "licencia": m["licencia"],
                 "licencia_url": m["licencia_url"],

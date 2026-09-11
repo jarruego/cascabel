@@ -2993,6 +2993,11 @@ textos, niveles, camino, y la sección de instrumentos.
       (gato, pájaro, lluvia, reloj, abeja, a un cuarto). Elección aplica ya el `volumen` a los
       sonidos grabados, que antes solo valía para las notas.
 
+- [x] **Olas y tormenta de la 027.** Las olas de Meeresrauschen sonaban «a goteo raro»: ahora
+      es una ola que crece y rompe («Sea waves», Commons, CC BY-SA 4.0) con un paso alto a
+      220 Hz, que es el primer uso del campo `filtros` del manifiesto. Y la tormenta empieza
+      por el trueno: la grabación traía cuatro segundos de lluvia floja antes del primero.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
