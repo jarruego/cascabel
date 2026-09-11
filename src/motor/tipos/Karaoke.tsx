@@ -155,6 +155,10 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
   const [fase, setFase] = useState<Fase>('listo');
   const [ahora, setAhora] = useState(0);
   const [acertadas, setAcertadas] = useState<Set<number>>(new Set());
+  /** Las acertadas, para leerlas desde el planificador sin esperar al render. */
+  const acertadasRef = useRef<Set<number>>(new Set());
+  /** Qué notas se han programado ya: cada una suena UNA vez, alta o baja. */
+  const programadas = useRef<Set<number>>(new Set());
   const [pasadas, setPasadas] = useState<Set<number>>(new Set());
   const [evaluacion, setEvaluacion] = useState<EvaluacionRitmica | null>(null);
   /**
@@ -296,15 +300,29 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
       porque es lo que permite seguir la canción; pero a un tercio, para que lo que se oye
       de verdad sea lo que uno toca.
     */
-    tiempos.forEach((s, i) => {
-      sampler.current?.tocar(notas[i]!.nota, t0 + s, notas[i]!.pulsos * segundosPorPulso * 0.9, VOLUMEN_GUIA);
-    });
+    // Las notas no se programan aquí de golpe: las programa el bucle justo antes de que
+    // lleguen, y así cada una suena una sola vez, alta si ya está acertada y baja si no.
+    // Antes la guía baja iba programada de antemano y la acertada se tocaba encima, y las
+    // dos se solapaban: «que sea solo una vez», pidió el autor el 2026-09-12.
+    acertadasRef.current = new Set();
+    programadas.current = new Set();
+    void segundosPorPulso;
 
     setFase('sonando');
 
     const bucle = () => {
       const ctxAhora = obtenerContexto().currentTime;
       setAhora(ctxAhora - t0);
+
+      // Programar, con 120 ms de adelanto, las notas que van a llegar: una sola vez cada
+      // una. Si el niño ya la ha acertado (llegó un poco antes), suena fuerte; si no, baja.
+      tiempos.forEach((s, i) => {
+        if (programadas.current.has(i) || t0 + s > ctxAhora + 0.12) return;
+        programadas.current.add(i);
+        const n = notas[i]!;
+        const fuerte = acertadasRef.current.has(i);
+        sampler.current?.tocar(n.nota, Math.max(t0 + s, ctxAhora), n.pulsos * (60 / bpm) * 0.9, fuerte ? 1 : VOLUMEN_GUIA);
+      });
 
       // Una nota se apaga cuando su ventana se cierra del todo, no cuando cruza la línea.
       const limite = TOLERANCIA_MS[carril].casi;
@@ -357,8 +375,9 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
     });
     if (mejor < 0) return;
     setAcertadas((a) => new Set(a).add(mejor));
-    // La nota acertada, ahora y fuerte: es el premio, y es lo que se oye por encima de la guía.
-    sampler.current?.tocar(notas[mejor]!.nota, undefined, notas[mejor]!.pulsos * (60 / bpm) * 0.9, 1);
+    acertadasRef.current.add(mejor);
+    // Si la nota aún no ha sonado, sonará fuerte cuando llegue; si el golpe llega un pelín
+    // tarde y ya sonó baja, no se repite: una sola vez, que si no se solapan.
 
     // El nombre de la nota, subiendo y desvaneciéndose. Es lo que convierte «he acertado»
     // en «he acertado un SOL»: la recompensa y el contenido son la misma cosa.

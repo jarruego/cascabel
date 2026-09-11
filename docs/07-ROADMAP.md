@@ -3016,10 +3016,11 @@ textos, niveles, camino, y la sección de instrumentos.
       sonido» con otras notas, y el autor lo vio (2026-09-12). Su frase «arriba agudo, abajo
       grave» pasa al enunciado de la 006.
 
-- [x] **En los karaokes, la guía suena bajita y la nota acertada, fuerte.** Antes sonaba
-      todo a tope tocara o no el niño, y no había diferencia entre acertar y mirar. La guía se
-      queda a un tercio, que es lo que permite seguir la canción, y la nota se toca fuerte en
-      el momento de acertarla.
+- [x] **En los karaokes, cada nota suena una sola vez: fuerte si se acierta, baja si no.**
+      Antes sonaba todo a tope tocara o no el niño; luego la guía baja iba programada de
+      antemano y la acertada se tocaba encima, y se solapaban. Ahora el bucle programa cada
+      nota 120 ms antes de que llegue, alta si ya está acertada y baja si no; un golpe que
+      llega un pelín tarde no la repite.
 
 - [x] **Al acertar, el sonido se corta** en elección, emparejar y memory: seguir sonando
       debajo del «¡bien!» era ruido. Al fallar se deja, que el niño puede querer oírlo otra vez.
