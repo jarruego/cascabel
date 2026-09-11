@@ -89,7 +89,9 @@
         ],
         "respuesta": "blanca"
       }
-    ]
+    ],
+    "pulso": "ambos",
+    "$comment": "Con el pulso de negra de fondo y un compás de entrada: lo pidió el autor el 2026-09-12, porque «negra o blanca» es comparar con el pulso, y el pulso no sonaba."
   },
   "evaluacion": {
     "autocorrectiva": true,

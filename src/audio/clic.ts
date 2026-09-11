@@ -12,16 +12,20 @@ import { obtenerContexto, registrarFuente, salidaMaestra } from './AudioEngine';
  *
  * @param tiempo    instante del `AudioContext`, no del reloj del sistema
  * @param acentuado el primero del compás, o el «¡ya!» de una cuenta atrás
+ * @param suave     el pulso de fondo de un dictado de figuras: más grave, de otro timbre y
+ *                  a menos de la mitad de volumen, para que se distinga del clic que marca
+ *                  el ritmo sin taparlo
  */
-export function clic(tiempo: number, acentuado = false): void {
+export function clic(tiempo: number, acentuado = false, suave = false): void {
   const ctx = obtenerContexto();
   const osc = ctx.createOscillator();
   const gain = ctx.createGain();
-  osc.frequency.value = acentuado ? 1000 : 800;
+  osc.type = suave ? 'triangle' : 'sine';
+  osc.frequency.value = suave ? 440 : acentuado ? 1000 : 800;
   // Rampa exponencial y no lineal: el oído percibe el volumen en logaritmo, y una rampa
   // lineal hacia cero se oye como un chasquido al final en vez de como una caída.
   gain.gain.setValueAtTime(0.001, tiempo);
-  gain.gain.exponentialRampToValueAtTime(acentuado ? 0.35 : 0.2, tiempo + 0.002);
+  gain.gain.exponentialRampToValueAtTime(suave ? 0.09 : acentuado ? 0.35 : 0.2, tiempo + 0.002);
   gain.gain.exponentialRampToValueAtTime(0.001, tiempo + 0.03);
   osc.connect(gain).connect(salidaMaestra());
   registrarFuente(osc);

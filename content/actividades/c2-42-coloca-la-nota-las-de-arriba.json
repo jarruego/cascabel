@@ -1,9 +1,9 @@
 {
-  "id": "c2-01-coloca-la-nota",
+  "id": "c2-42-coloca-la-nota-las-de-arriba",
   "version": 1,
   "tipo": "pentagrama",
-  "titulo": "Coloca la nota: las cinco de abajo",
-  "descripcion": "Clave de sol y las cinco notas de la mitad de abajo del pentagrama: mi, fa, sol, la y si. Nota dibujada pequeña, zona de toque grande.",
+  "titulo": "Coloca la nota: las cinco de arriba",
+  "descripcion": "Clave de sol y las cinco notas de la mitad de arriba del pentagrama: si, do, re, mi y fa. La pareja de la 201.",
   "etapa": "primaria-c2",
   "eje": "notacion",
   "lugar": "pantalla",
@@ -16,11 +16,11 @@
   },
   "practica": {
     "notas": [
-      "mi",
-      "fa",
-      "sol",
-      "la",
-      "si"
+      "si",
+      "do'",
+      "re'",
+      "mi'",
+      "fa'"
     ],
     "secuencia": "flauta",
     "compas": "libre",
@@ -32,33 +32,33 @@
     "modo": "toque"
   },
   "contenido": {
-    "consigna": "actividad.c201.consigna",
+    "consigna": "actividad.c242.consigna",
     "clave": "sol",
     "rondas": 10,
     "objetivo_px": 60,
     "opciones": [
       {
+        "clave": "si",
+        "linea": 3
+      },
+      {
+        "clave": "do",
+        "espacio": 3
+      },
+      {
+        "clave": "re",
+        "linea": 4
+      },
+      {
         "clave": "mi",
-        "linea": 1
+        "espacio": 4
       },
       {
         "clave": "fa",
-        "espacio": 1
-      },
-      {
-        "clave": "sol",
-        "linea": 2
-      },
-      {
-        "clave": "la",
-        "espacio": 2
-      },
-      {
-        "clave": "si",
-        "linea": 3
+        "linea": 5
       }
     ],
-    "$comment": "El 2026-09-12 el autor pidió que abarcara «las 5 notas de abajo del pentagrama»: mi en la primera línea, fa, sol, la y si en la tercera. Antes eran sol, la, si y do. Las cinco de arriba van en la 242."
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la pareja de la 201, con «las 5 notas más arriba del pentagrama» (pedida el 2026-09-12). Se han tomado las cinco posiciones más altas DENTRO del pentagrama —si en la tercera línea, do, re, mi y fa en la quinta—, así que el si se repite en las dos actividades como bisagra. La alternativa era do-re-mi-fa-sol con el sol sentado encima de la quinta línea, fuera del pentagrama; el motor solo dibuja líneas 1-5 y espacios 1-4. Confirmar cuál conviene en 3.º."
   },
   "evaluacion": {
     "autocorrectiva": true,
@@ -67,10 +67,10 @@
       "completado"
     ]
   },
-  "enunciado": "actividad.c201.enunciado",
-  "personaje": "dora",
+  "enunciado": "actividad.c242.enunciado",
+  "personaje": "fara",
   "pistas": [
-    "actividad.c201.pista1"
+    "actividad.c242.pista1"
   ],
   "creditos": [
     {

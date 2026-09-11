@@ -177,6 +177,7 @@
           "idea": "Cinco líneas y cuatro espacios. Antes de escribir en él hay que poder leer una nota sin contar desde abajo cada vez.",
           "actividades": [
             "c2-01-coloca-la-nota",
+            "c2-42-coloca-la-nota-las-de-arriba",
             "c2-15-lee-las-figuras",
             "tr-07-como-era-esto",
             "c2-22-sube-baja-o-se-repite"

@@ -136,7 +136,9 @@
         "tempo": 92,
         "respuesta": "doscorcheas"
       }
-    ]
+    ],
+    "pulso": "ambos",
+    "$comment": "Con el pulso de negra de fondo y un compás de entrada (2026-09-12): el tresillo son tres en UN pulso, y sin el pulso no hay contra qué contarlos."
   },
   "evaluacion": {
     "autocorrectiva": true,

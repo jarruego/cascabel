@@ -90,6 +90,11 @@ todo sigue como antes. Los ejercicios se escriben a mano, porque la progresión 
 pandilla). Es la progresión que al autor le gustó de la 214, y se escribe con tres
 `ejercicios` cuyas `notas` son la primera mitad, la segunda y la suma.
 
+**Los estímulos con `ritmo` admiten `pulso`** (`antes`, `fondo` o `ambos`; en el estímulo o en
+`contenido.pulso` para toda la elección): el pulso de negra, más flojo y de otro timbre, un
+compás antes del ritmo y/o debajo de él. Es lo que hace que «¿negra o blanca?» (125) tenga
+con qué compararse. Los dictados de figuras lo llevan; los de compás y de acento, no.
+
 **Tocar a tiempo admite una melodía debajo** (`contenido.melodia`, una nota por golpe del
 patrón, e `instrumento`): suena en la escucha y, anclada al primer golpe del niño, mientras
 palmea. Es lo que hace que el ritmo de la Gruta (345) se reconozca como la Gruta.

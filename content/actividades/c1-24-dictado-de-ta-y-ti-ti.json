@@ -131,7 +131,9 @@
         ],
         "respuesta": "r4"
       }
-    ]
+    ],
+    "pulso": "ambos",
+    "$comment": "Con el pulso de negra de fondo y un compás de entrada (2026-09-12): el ti-ti se oye como «dos en un pulso» solo si el pulso suena."
   },
   "evaluacion": {
     "autocorrectiva": true,

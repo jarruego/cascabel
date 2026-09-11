@@ -125,7 +125,9 @@
         ],
         "respuesta": "d2"
       }
-    ]
+    ],
+    "pulso": "ambos",
+    "$comment": "Con el pulso de negra de fondo y un compás de entrada (2026-09-12), como en los demás dictados de figuras."
   },
   "evaluacion": {
     "autocorrectiva": true,

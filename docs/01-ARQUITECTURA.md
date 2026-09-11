@@ -53,11 +53,11 @@ lista exactamente los tipos que hay en `src/motor/registro.ts`, con sus cifras a
 | `emparejar` | Dos conjuntos, toque de dos en dos | 5 |
 | `cantar` | Detección de altura con retorno visual | 3 |
 | `compases` | Colocar las barras de compás donde el pulso las pide | 3 |
+| `pentagrama` | Colocar o leer sobre pauta real | 3 |
 | `eco` | Dos niños por turnos: uno propone un ritmo y el otro lo repite | 2 |
 | `escala` | Construir una escala contando tonos y semitonos | 2 |
 | `memoria` | Cartas boca abajo: un dibujo y su sonido. Se destapan dos y la pareja se queda a la vista | 2 |
 | `pads` | El kit de percusión, para tocarlo: pads por familias y pulso opcional | 2 |
-| `pentagrama` | Colocar o leer sobre pauta real | 2 |
 | `teclado` | Teclado de piano de una a tres octavas | 2 |
 | `acompanamientos` | Bases en bucle para cantar encima, con transporte | 1 |
 | `paisaje` | Grabar sonido del entorno y escucharlo (no sale del aparato) | 1 |

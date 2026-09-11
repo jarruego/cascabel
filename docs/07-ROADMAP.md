@@ -3028,6 +3028,15 @@ textos, niveles, camino, y la sección de instrumentos.
 - [x] **El Danubio (347) con violín**, la melodía al 100 % y los golpes al 45 %: la percusión
       corporal tiene ahora también `volumenGolpes`, para cuando manda la melodía.
 
+- [x] **El pulso de negra debajo de los dictados de figuras** (124, 125, 218, 332): un compás
+      de pulso de entrada y el pulso de fondo mientras suena el ritmo, más flojo y de otro
+      timbre. «¿Negra o blanca?» pedía comparar con un pulso que no sonaba (2026-09-12).
+      Campo `pulso` del estímulo, con test. No va en los de compás ni de acento.
+
+- [x] **La 201 abarca las cinco notas de abajo del pentagrama** (mi, fa, sol, la, si) y la
+      nueva **242** las cinco de arriba (si, do, re, mi, fa), con el si de bisagra: el motor
+      dibuja solo dentro del pentagrama, y el sol de encima queda como pregunta pedagógica.
+
 - [x] **La escala (301, 342) avisa de cualquier paso fuera del patrón**, no solo del salto:
       un tono donde toca un semitono, un semitono donde toca un tono, una nota repetida o una
       que baja. El aviso dice qué ha sido y qué pedía el patrón, y hay que empezar de nuevo en

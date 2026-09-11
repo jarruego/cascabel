@@ -94,3 +94,38 @@ describe('qué suena y qué no', () => {
     expect(ev.map((e) => e.en)).toEqual([0, 0, 1, 1]);
   });
 });
+
+describe('el pulso debajo de un dictado de figuras', () => {
+  // A 60 ppm el pulso es un segundo. Dos negras y una blanca: cuatro pulsos.
+  const ritmo = { ritmo: [1, 1, 2], respuesta: 'x' };
+
+  it('sin pedirlo, no hay pulso: el ritmo empieza en cero', () => {
+    const ev = eventosDe(ritmo, 60);
+    expect(ev.filter((e) => e.tipo === 'pulso')).toHaveLength(0);
+    expect(ev[0]).toMatchObject({ en: 0, tipo: 'clic' });
+  });
+
+  it('«antes»: un compás de pulso y el ritmo después, ya sin pulso', () => {
+    const ev = eventosDe({ ...ritmo, pulso: 'antes' }, 60, 4);
+    expect(ev.filter((e) => e.tipo === 'pulso').map((e) => e.en)).toEqual([0, 1, 2, 3]);
+    expect(ev.filter((e) => e.tipo === 'clic').map((e) => e.en)).toEqual([4, 5, 6]);
+    expect(duracionDe({ ...ritmo, pulso: 'antes' }, 60, 4)).toBe(8);
+  });
+
+  it('«fondo»: el ritmo empieza en cero y el pulso va debajo, uno por negra', () => {
+    const ev = eventosDe({ ...ritmo, pulso: 'fondo' }, 60, 4);
+    expect(ev.filter((e) => e.tipo === 'clic').map((e) => e.en)).toEqual([0, 1, 2]);
+    expect(ev.filter((e) => e.tipo === 'pulso').map((e) => e.en)).toEqual([0, 1, 2, 3]);
+  });
+
+  it('«ambos»: la entrada y el fondo, y el compás de entrada es el de la actividad', () => {
+    const ev = eventosDe({ ...ritmo, pulso: 'ambos' }, 60, 2);
+    expect(ev.filter((e) => e.tipo === 'pulso').map((e) => e.en)).toEqual([0, 1, 2, 3, 4, 5]);
+    expect(ev.filter((e) => e.tipo === 'clic').map((e) => e.en)).toEqual([2, 3, 4]);
+  });
+
+  it('un tresillo no deja al último pulso fuera por el redondeo', () => {
+    const ev = eventosDe({ ritmo: [1, 0.3333, 0.3333, 0.3334, 1], pulso: 'fondo', respuesta: 'x' }, 60);
+    expect(ev.filter((e) => e.tipo === 'pulso')).toHaveLength(3);
+  });
+});

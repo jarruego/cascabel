@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-11",
-  "total": 161,
+  "total": 162,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -764,8 +764,8 @@
     },
     {
       "id": "c2-01-coloca-la-nota",
-      "titulo": "Coloca la nota en el pentagrama",
-      "descripcion": "Clave de sol, y una nota que hay que situar en su línea o su espacio. Nota dibujada pequeña, zona de toque grande.",
+      "titulo": "Coloca la nota: las cinco de abajo",
+      "descripcion": "Clave de sol y las cinco notas de la mitad de abajo del pentagrama: mi, fa, sol, la y si. Nota dibujada pequeña, zona de toque grande.",
       "etapa": "primaria-c2",
       "eje": "notacion",
       "tipo": "pentagrama",
@@ -1518,6 +1518,25 @@
         "competencia": "CE1",
         "criterio": "1.2",
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c2-42-coloca-la-nota-las-de-arriba",
+      "titulo": "Coloca la nota: las cinco de arriba",
+      "descripcion": "Clave de sol y las cinco notas de la mitad de arriba del pentagrama: si, do, re, mi y fa. La pareja de la 201.",
+      "etapa": "primaria-c2",
+      "eje": "notacion",
+      "tipo": "pentagrama",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
       "herramienta": false

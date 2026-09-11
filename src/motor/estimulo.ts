@@ -36,6 +36,15 @@ export interface Estimulo {
   /** Índices del ritmo que llevan acento: es lo que distingue un dos por cuatro de un tres. */
   acentos?: number[];
   /**
+   * El pulso de negra, más flojo y de otro timbre, para que el ritmo se oiga CONTRA algo.
+   * `antes`: un compás de pulso y después el ritmo. `fondo`: el pulso sigue debajo del ritmo.
+   * `ambos`: las dos cosas. Sin él, «¿negra o blanca?» pedía comparar con un pulso que nadie
+   * había dado: lo pidió el autor el 2026-09-12 para la 125 y los demás dictados de figuras.
+   * No va en los de compás ni de acento (219, 320, 329): ahí el pulso que hay que oír es el
+   * del propio ritmo.
+   */
+  pulso?: 'antes' | 'fondo' | 'ambos';
+  /**
    * Golpes del kit de percusión, uno por celda: `bombo`, `caja`, `charles`... Varios en la
    * misma celda van con `+` («bombo+charles»), y la celda vacía es un silencio.
    */
@@ -54,6 +63,8 @@ export interface Estimulo {
 export type Evento =
   | { en: number; tipo: 'nota'; nota: string; duracion: number; volumen: number }
   | { en: number; tipo: 'clic'; acentuado: boolean }
+  /** El pulso de fondo: otro timbre y más flojo que el clic del ritmo. */
+  | { en: number; tipo: 'pulso' }
   | { en: number; tipo: 'golpe'; golpe: string; acentuado: boolean };
 
 /** Lo que dura un picado, en segundos: lo justo para que se oiga el ataque y nada más. */
@@ -71,10 +82,13 @@ export function suena(e: Estimulo): boolean {
  * y entonces se suman. Lo que no se mezcla es el fichero de audio: si hay `audio`, lo demás
  * se ignora, porque un fichero ya es el sonido entero.
  */
-export function eventosDe(e: Estimulo, tempoPorDefecto = 84): Evento[] {
+export function eventosDe(e: Estimulo, tempoPorDefecto = 84, pulsosPorCompas = 4): Evento[] {
   const bpm = e.tempo ?? tempoPorDefecto;
   const pulso = 60 / bpm;
   const eventos: Evento[] = [];
+
+  // Con pulso «antes» o «ambos», el ritmo empieza un compás más tarde: el compás de pulso.
+  const entrada = e.ritmo?.length && e.pulso && e.pulso !== 'fondo' ? pulsosPorCompas * pulso : 0;
 
   if (e.notas?.length) {
     const volumen = e.volumen ?? 0.85;
@@ -113,11 +127,17 @@ export function eventosDe(e: Estimulo, tempoPorDefecto = 84): Evento[] {
 
   if (e.ritmo?.length) {
     const acentos = new Set(e.acentos ?? []);
-    let t = 0;
+    let t = entrada;
     e.ritmo.forEach((pulsos, i) => {
       if (pulsos > 0) eventos.push({ en: t, tipo: 'clic', acentuado: acentos.has(i) });
       t += Math.abs(pulsos) * pulso;
     });
+    if (e.pulso) {
+      // El pulso: durante la entrada, y con «fondo» o «ambos» también debajo del ritmo. Se
+      // redondea el final para que un tresillo (0,3333 × 3) no deje al último pulso fuera.
+      const hasta = e.pulso === 'antes' ? entrada : Math.round((t / pulso) * 1000) / 1000 * pulso;
+      for (let p = 0; p * pulso < hasta - 1e-6; p++) eventos.push({ en: p * pulso, tipo: 'pulso' });
+    }
   }
 
   if (e.patron?.length) {
@@ -134,11 +154,12 @@ export function eventosDe(e: Estimulo, tempoPorDefecto = 84): Evento[] {
 }
 
 /** Cuándo termina de sonar, en segundos. Sirve para saber cuándo se puede volver a pulsar. */
-export function duracionDe(e: Estimulo, tempoPorDefecto = 84): number {
+export function duracionDe(e: Estimulo, tempoPorDefecto = 84, pulsosPorCompas = 4): number {
   const bpm = e.tempo ?? tempoPorDefecto;
   const pulso = 60 / bpm;
   const notas = (e.notas ?? []).reduce((s, _, i) => s + (e.duraciones?.[i] ?? 1), 0) * pulso;
-  const ritmo = (e.ritmo ?? []).reduce((s, p) => s + Math.abs(p), 0) * pulso;
+  const entrada = e.ritmo?.length && e.pulso && e.pulso !== 'fondo' ? pulsosPorCompas * pulso : 0;
+  const ritmo = entrada + (e.ritmo ?? []).reduce((s, p) => s + Math.abs(p), 0) * pulso;
   const patron = (e.patron?.length ?? 0) * (e.celda ?? 1) * pulso;
   return Math.max(notas, ritmo, patron);
 }

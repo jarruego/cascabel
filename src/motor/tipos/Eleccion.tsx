@@ -54,6 +54,8 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
     estimulos: Estimulo[];
     /** Timbre de los estímulos con notas. Ver `audio/instrumentos.ts`. */
     instrumento?: string;
+    /** El pulso de negra debajo de los ritmos, para toda la actividad. Ver `estimulo.ts`. */
+    pulso?: 'antes' | 'fondo' | 'ambos';
   };
 
   // El tamaño sale del CARRIL, no de la etapa: un niño de 4.º y uno de 3.º comparten
@@ -105,11 +107,16 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
     // Notas, ritmo o golpes: se programan contra el reloj del audio y nunca lanzan. Antes se
     // corta lo que quede del anterior: repetir a mitad de una escala no superpone dos.
     pararTodo();
-    void sonarEstimulo(estimulo, {
-      instrumento: estimulo.instrumento ?? contenido.instrumento,
-      tempo: actividad.practica?.tempo,
-    });
-  }, [estimulo, contenido.instrumento, actividad.practica?.tempo]);
+    void sonarEstimulo(
+      { ...estimulo, pulso: estimulo.pulso ?? contenido.pulso },
+      {
+        instrumento: estimulo.instrumento ?? contenido.instrumento,
+        tempo: actividad.practica?.tempo,
+        // El compás de entrada del pulso dura lo que el compás de la actividad.
+        pulsosPorCompas: Number(actividad.practica?.compas?.split('/')[0]) || 4,
+      },
+    );
+  }, [estimulo, contenido.instrumento, contenido.pulso, actividad.practica?.tempo, actividad.practica?.compas]);
 
   // Suena al llegar a cada estímulo nuevo, y al volver a él tras un fallo.
   useEffect(() => {

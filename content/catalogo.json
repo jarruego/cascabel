@@ -1,7 +1,7 @@
 {
   "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa, y también si usa un código que aquí no está. El hueco de C1-17 es intencionado: ese código nunca llegó a reservarse y los ids no se renumeran, porque un id puede estar dentro de una URL compartida.",
   "generado": "2026-09-10",
-  "total": 162,
+  "total": 163,
   "actividades": [
     {
       "id": "C1-01",
@@ -447,7 +447,7 @@
     },
     {
       "id": "C2-01",
-      "titulo": "Coloca la nota",
+      "titulo": "Coloca la nota: las cinco de abajo",
       "etapa": "primaria-c2",
       "eje": "notacion",
       "lugar": "pantalla",
@@ -455,7 +455,7 @@
       "microfono": false,
       "esfuerzo": "S",
       "curriculo": "CE3 · crit. 3.1 · saber D",
-      "descripcion": "Pentagrama real y una nota que hay que situar. Hitbox de 60 px sobre nota pequeña.",
+      "descripcion": "Pentagrama real y las cinco notas de la mitad de abajo: mi, fa, sol, la y si. Hitbox de 60 px sobre nota pequeña.",
       "estado": "hecha"
     },
     {
@@ -2107,6 +2107,19 @@
       "esfuerzo": "S",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Los ocho personajes en fila; cada uno canta cuando le toca.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C2-42",
+      "titulo": "Coloca la nota: las cinco de arriba",
+      "etapa": "primaria-c2",
+      "eje": "notacion",
+      "lugar": "pantalla",
+      "tipo": "pentagrama",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "La pareja de la 201: si, do, re, mi y fa, la mitad de arriba del pentagrama.",
       "estado": "hecha"
     }
   ]

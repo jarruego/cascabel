@@ -46,11 +46,11 @@ async function kitDePercusion(): Promise<Percusion> {
  */
 export async function sonarEstimulo(
   e: Estimulo,
-  opciones: { instrumento?: string; tempo?: number } = {},
+  opciones: { instrumento?: string; tempo?: number; pulsosPorCompas?: number } = {},
 ): Promise<number | null> {
   try {
     await despertarAudio();
-    const eventos = eventosDe(e, opciones.tempo);
+    const eventos = eventosDe(e, opciones.tempo, opciones.pulsosPorCompas);
     if (!eventos.length) return null;
 
     // Lo que haga falta se carga ANTES de fijar el instante cero: si no, la primera nota
@@ -68,6 +68,7 @@ export async function sonarEstimulo(
       const t = cero + ev.en;
       if (ev.tipo === 'nota') sampler?.tocar(ev.nota, t, ev.duracion, ev.volumen);
       else if (ev.tipo === 'clic') clic(t, ev.acentuado);
+      else if (ev.tipo === 'pulso') clic(t, false, true);
       else if (KIT.includes(ev.golpe as Golpe)) {
         // El acento en percusión es volumen: no hay otra forma de acentuar un bombo.
         kit?.golpear(ev.golpe as Golpe, t, ev.acentuado ? 1 : 0.6);
