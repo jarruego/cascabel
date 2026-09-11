@@ -97,7 +97,9 @@ octavas una nota tiene dos o tres sitios, así que cada opción lleva `clave` ú
 `nombre` («do»), y `contenido.porRonda` hace que cada ronda dibuje solo ese número de sitios
 **sin dos del mismo nombre** y pregunte uno de ellos: la pedida tiene un solo sitio posible.
 Cada sitio se pregunta una vez (`motor/rondasPentagrama.ts`, con test). Sin `porRonda` se
-dibujan todos siempre, como en la 201.
+dibujan todos siempre. Con `modo: "libre"` no hay pregunta: es la ficha del Taller (tr-15,
+tr-16), que dibuja el pentagrama entero y al tocar un sitio suena y enseña arriba el nombre
+de la nota con su personaje. `instrumento` cambia el timbre (piano para la clave de fa).
 
 **Los estímulos con `ritmo` admiten `pulso`** (`antes`, `fondo` o `ambos`; en el estímulo o en
 `contenido.pulso` para toda la elección): el pulso de negra, más flojo y de otro timbre, un

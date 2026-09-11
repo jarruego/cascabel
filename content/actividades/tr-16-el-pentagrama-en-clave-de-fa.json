@@ -1,0 +1,134 @@
+{
+  "id": "tr-16-el-pentagrama-en-clave-de-fa",
+  "version": 1,
+  "tipo": "pentagrama",
+  "titulo": "El pentagrama en clave de fa",
+  "descripcion": "Ficha de consulta: las quince notas de do a do en clave de fa, con sus líneas adicionales. Al tocar una suena y sale su nombre con su personaje.",
+  "etapa": "primaria-c3",
+  "eje": "notacion",
+  "lugar": "pantalla",
+  "duracion_min": 5,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "notas": [
+      "do",
+      "re",
+      "mi",
+      "fa",
+      "sol",
+      "la",
+      "si"
+    ]
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "$comment": "Ficha del Taller, pedida por el autor el 2026-09-12: el pentagrama de fa completo, de do2 a do4, sin pregunta. Al tocar un sitio suena la nota (piano, que llega tan abajo) y arriba sale su nombre con su personaje.",
+    "consigna": "actividad.tr16.consigna",
+    "clave": "fa",
+    "modo": "libre",
+    "instrumento": "piano",
+    "opciones": [
+      {
+        "clave": "do2",
+        "nombre": "do",
+        "linea": -1
+      },
+      {
+        "clave": "re2",
+        "nombre": "re",
+        "espacio": -1
+      },
+      {
+        "clave": "mi2",
+        "nombre": "mi",
+        "linea": 0
+      },
+      {
+        "clave": "fa2",
+        "nombre": "fa",
+        "espacio": 0
+      },
+      {
+        "clave": "sol2",
+        "nombre": "sol",
+        "linea": 1
+      },
+      {
+        "clave": "la2",
+        "nombre": "la",
+        "espacio": 1
+      },
+      {
+        "clave": "si2",
+        "nombre": "si",
+        "linea": 2
+      },
+      {
+        "clave": "do3",
+        "nombre": "do",
+        "espacio": 2
+      },
+      {
+        "clave": "re3",
+        "nombre": "re",
+        "linea": 3
+      },
+      {
+        "clave": "mi3",
+        "nombre": "mi",
+        "espacio": 3
+      },
+      {
+        "clave": "fa3",
+        "nombre": "fa",
+        "linea": 4
+      },
+      {
+        "clave": "sol3",
+        "nombre": "sol",
+        "espacio": 4
+      },
+      {
+        "clave": "la3",
+        "nombre": "la",
+        "linea": 5
+      },
+      {
+        "clave": "si3",
+        "nombre": "si",
+        "espacio": 5
+      },
+      {
+        "clave": "do4",
+        "nombre": "do",
+        "linea": 6
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.tr16.enunciado",
+  "personaje": "fara",
+  "herramienta": true,
+  "creditos": [
+    {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

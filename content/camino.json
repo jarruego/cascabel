@@ -176,6 +176,7 @@
           "titulo": "El pentagrama de verdad",
           "idea": "Cinco líneas y cuatro espacios. Antes de escribir en él hay que poder leer una nota sin contar desde abajo cada vez.",
           "actividades": [
+            "tr-15-el-pentagrama-en-clave-de-sol",
             "c2-01-coloca-la-nota",
             "c2-42-coloca-la-nota-las-de-arriba",
             "c2-15-lee-las-figuras",
@@ -276,6 +277,7 @@
             "c3-17-sostenido-o-bemol",
             "c3-18-escala-mayor-o-menor",
             "c3-50-las-quince-notas-de-do-a-do",
+            "tr-16-el-pentagrama-en-clave-de-fa",
             "c3-34-coloca-la-nota-en-clave-de-fa",
             "c3-52-clave-de-fa-la-octava-aguda",
             "c3-51-clave-de-fa-las-dos-octavas",

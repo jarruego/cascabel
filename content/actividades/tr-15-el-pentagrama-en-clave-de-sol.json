@@ -1,0 +1,142 @@
+{
+  "id": "tr-15-el-pentagrama-en-clave-de-sol",
+  "version": 1,
+  "tipo": "pentagrama",
+  "titulo": "El pentagrama en clave de sol",
+  "descripcion": "Ficha de consulta: las quince notas de do a do en clave de sol, con sus líneas adicionales. Al tocar una suena y sale su nombre con su personaje.",
+  "etapa": "primaria-c2",
+  "eje": "notacion",
+  "lugar": "pantalla",
+  "duracion_min": 5,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "notas": [
+      "do",
+      "re",
+      "mi",
+      "fa",
+      "sol",
+      "la",
+      "si",
+      "do'",
+      "re'",
+      "mi'",
+      "fa'",
+      "sol'",
+      "la'",
+      "si'"
+    ],
+    "secuencia": "ninguna",
+    "compas": "libre"
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "$comment": "Ficha del Taller, pedida por el autor el 2026-09-12: el pentagrama de sol completo, de do4 a do6, sin pregunta. Al tocar un sitio suena la nota y arriba sale su nombre con su personaje.",
+    "consigna": "actividad.tr15.consigna",
+    "clave": "sol",
+    "modo": "libre",
+    "instrumento": "piano",
+    "opciones": [
+      {
+        "clave": "do4",
+        "nombre": "do",
+        "linea": 0
+      },
+      {
+        "clave": "re4",
+        "nombre": "re",
+        "espacio": 0
+      },
+      {
+        "clave": "mi4",
+        "nombre": "mi",
+        "linea": 1
+      },
+      {
+        "clave": "fa4",
+        "nombre": "fa",
+        "espacio": 1
+      },
+      {
+        "clave": "sol4",
+        "nombre": "sol",
+        "linea": 2
+      },
+      {
+        "clave": "la4",
+        "nombre": "la",
+        "espacio": 2
+      },
+      {
+        "clave": "si4",
+        "nombre": "si",
+        "linea": 3
+      },
+      {
+        "clave": "do5",
+        "nombre": "do",
+        "espacio": 3
+      },
+      {
+        "clave": "re5",
+        "nombre": "re",
+        "linea": 4
+      },
+      {
+        "clave": "mi5",
+        "nombre": "mi",
+        "espacio": 4
+      },
+      {
+        "clave": "fa5",
+        "nombre": "fa",
+        "linea": 5
+      },
+      {
+        "clave": "sol5",
+        "nombre": "sol",
+        "espacio": 5
+      },
+      {
+        "clave": "la5",
+        "nombre": "la",
+        "linea": 6
+      },
+      {
+        "clave": "si5",
+        "nombre": "si",
+        "espacio": 6
+      },
+      {
+        "clave": "do6",
+        "nombre": "do",
+        "linea": 7
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.tr15.enunciado",
+  "personaje": "sol",
+  "herramienta": true,
+  "creditos": [
+    {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

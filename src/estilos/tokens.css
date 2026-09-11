@@ -1343,6 +1343,10 @@ p {
 /* Apretado pero legible: es una palabra, y en vertical `vmin` la hace crecer con el
    ancho, que es lo que allí hay. */
 .pentagrama__pedida {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--e-2);
   font-size: clamp(28px, 9vmin, 44px);
   font-weight: 700;
   line-height: 1.1;
@@ -1350,6 +1354,8 @@ p {
   min-height: 1.1em;
   margin: 0;
 }
+/* En la ficha, el sitio que se acaba de tocar se queda señalado hasta el siguiente. */
+.pentagrama__sitio[data-tocada] .pentagrama__nota { background: var(--acento-2); }
 .pentagrama .progreso { margin: 0 auto; }
 .pentagrama__sitio {
   position: absolute;

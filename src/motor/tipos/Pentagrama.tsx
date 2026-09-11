@@ -3,6 +3,9 @@ import { OBJETIVO_TACTIL } from '@/config';
 import { useCarril } from '@/app/preferencias';
 import { useInsinuarDesplazamiento } from '@/ui/insinuarDesplazamiento';
 import { MARIMBA, Sampler } from '@/audio/sampler';
+import { muestrasDe } from '@/audio/instrumentos';
+import { Personaje } from '@/ui/Personaje';
+import { personajeDe } from '@/ui/personajes';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { Reaccion } from '@/ui/Reaccion';
 import { BASE_MS, POR_CARACTER_MS } from '../maquinaReaccion';
@@ -68,7 +71,16 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
      * Ver `motor/rondasPentagrama.ts`.
      */
     porRonda?: number;
+    /**
+     * `libre`: la ficha del Taller. No pregunta nada: se dibujan todos los sitios y al tocar
+     * uno suena y arriba sale su nombre con su personaje al lado. Lo pidió el autor el
+     * 2026-09-12: «dos fichas, una con el pentagrama de fa completo y otra con el de sol».
+     */
+    modo?: 'libre';
+    /** Timbre. Por defecto la marimba; para las dos octavas de la clave de fa, el piano. */
+    instrumento?: string;
   };
+  const libre = contenido.modo === 'libre';
 
   const carril = useCarril(actividad.etapa);
   /** La caja que se desplaza de lado: al entrar se insinúa que hay más. */
@@ -118,7 +130,7 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
   // Con `porRonda`, cada ronda dibuja un puñado de sitios sin nombre repetido y pregunta
   // uno; la lista de rondas la decide `rondasPentagrama`, con su test.
   const [rondas] = useState(() =>
-    contenido.porRonda
+    contenido.porRonda && !libre
       ? rondasPentagrama(
           contenido.opciones.map((o) => o.nombre ?? o.clave),
           contenido.porRonda,
@@ -129,6 +141,7 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
   // Las rondas son las opciones barajadas, sin dos iguales seguidas. Decía «barajadas» y
   // no lo estaban: salían sol, la, si, do, sol, la, si, do, y así se acierta sin mirar.
   const [preguntas] = useState(() => {
+    if (libre) return [];
     if (rondas) return rondas.map((r) => contenido.opciones[r.pedida]!.clave);
     const base = contenido.opciones.map((o) => o.clave);
     const n = contenido.rondas ?? base.length;
@@ -217,6 +230,8 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
     });
   }, [estado.fase, estado.aciertos, estado.intentos, actividad.id, alTerminar]);
 
+  /** En la ficha, el último sitio tocado: su nombre y su personaje van arriba. */
+  const [tocada, setTocada] = useState<Opcion | null>(null);
   const elegir = useCallback(
     async (o: Opcion) => {
       const nota = notaDe(sitioDe(o), clave);
@@ -224,7 +239,7 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
       try {
         await despertarAudio();
         if (!sampler.current) {
-          const s = new Sampler(MARIMBA);
+          const s = new Sampler(contenido.instrumento ? muestrasDe(contenido.instrumento) : MARIMBA);
           await s.cargar();
           sampler.current = s;
         }
@@ -236,15 +251,28 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
       } catch {
         // Sin sonido la actividad sigue: el niño ve el resultado igual.
       }
+      // En la ficha no hay pregunta: se enseña el nombre y quién es, y ya.
+      if (libre) {
+        setTocada(o);
+        return;
+      }
       despachar({ tipo: 'elegir', clave: o.clave, respuesta: pedida ?? '' });
     },
-    [clave, pedida, sitioDe],
+    [clave, pedida, sitioDe, libre, contenido.instrumento],
   );
+  const personajeDeTocada = tocada
+    ? (() => {
+        const n = notaDe(sitioDe(tocada), clave);
+        return personajeDe(`${n.vexflow.split('/')[0]!.toUpperCase()}${n.octava}`);
+      })()
+    : null;
 
   const pista = pistaPara(actividad.pistas, estado.fallosAqui);
 
   // Lo que hay en la pauta esta ronda, con su columna: todo, o lo que diga la ronda.
-  const visibles: Array<{ o: Opcion; columna: number }> = rondas
+  const visibles: Array<{ o: Opcion; columna: number }> = libre
+    ? contenido.opciones.map((o, columna) => ({ o, columna }))
+    : rondas
     ? rondas[Math.min(estado.indice, rondas.length - 1)]!.dibujadas.map((i, columna) => ({
         o: contenido.opciones[i]!,
         columna,
@@ -293,7 +321,10 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
       <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
 
       <p className="pentagrama__pedida" aria-live="polite">
-        {pedida && t(`nota.${nombreDeClave(pedida)}`)}
+        {/* En la ficha: el personaje de la nota tocada y su nombre. Antes de tocar nada, la
+            consigna, para que la fila no esté vacía. */}
+        {libre && personajeDeTocada && <Personaje nombre={personajeDeTocada} pose="canta" tamano={56} />}
+        {libre ? (tocada ? t(`nota.${tocada.nombre ?? tocada.clave}`) : t(contenido.consigna)) : pedida && t(`nota.${nombreDeClave(pedida)}`)}
       </p>
 
       {/* El marco es lo único que se desplaza, y solo de lado. */}
@@ -338,7 +369,8 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
                 top: y - tam / 2,
               }}
               aria-label={t(`nota.${o.nombre ?? o.clave}`)}
-              aria-disabled={estado.fase !== 'estimulo' || undefined}
+              aria-disabled={(!libre && estado.fase !== 'estimulo') || undefined}
+              data-tocada={(libre && tocada?.clave === o.clave) || undefined}
               onClick={() => void elegir(o)}
             >
               {/* La cabeza de nota, del tamaño real que tendría en la pauta. Sin el nombre
@@ -355,13 +387,13 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
       </div>
       </div>
 
-      <Progreso hechos={estado.indice} total={preguntas.length} />
+      {!libre && <Progreso hechos={estado.indice} total={preguntas.length} />}
 
       {/* Sin botonera: se juega tocando los sitios de la pauta, y no hay nada que hacerle a
           la actividad desde fuera. El «¡completada!» lo dice la modal de enhorabuena. */}
       {/* La pista de un fallo dura lo que tarda en leerse: ver `pistaVisible`. */}
       <Reaccion
-        tono={estado.fase === 'bien' ? 'bien' : conPista ? 'casi' : 'neutro'}
+        tono={libre ? 'neutro' : estado.fase === 'bien' ? 'bien' : conPista ? 'casi' : 'neutro'}
         personaje={actividad.personaje}
         /* La pista no bloquea: tras el refractario (`esperaMs`) se puede corregir al momento,
            y cualquier respuesta nueva es la que la quita. Por eso aquí no hay `alCerrar`. */

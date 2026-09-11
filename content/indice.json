@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-11",
-  "total": 165,
+  "total": 167,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -3133,6 +3133,44 @@
         "competencia": "CE1",
         "criterio": "1.2",
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": true
+    },
+    {
+      "id": "tr-15-el-pentagrama-en-clave-de-sol",
+      "titulo": "El pentagrama en clave de sol",
+      "descripcion": "Ficha de consulta: las quince notas de do a do en clave de sol, con sus líneas adicionales. Al tocar una suena y sale su nombre con su personaje.",
+      "etapa": "primaria-c2",
+      "eje": "notacion",
+      "tipo": "pentagrama",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": true
+    },
+    {
+      "id": "tr-16-el-pentagrama-en-clave-de-fa",
+      "titulo": "El pentagrama en clave de fa",
+      "descripcion": "Ficha de consulta: las quince notas de do a do en clave de fa, con sus líneas adicionales. Al tocar una suena y sale su nombre con su personaje.",
+      "etapa": "primaria-c3",
+      "eje": "notacion",
+      "tipo": "pentagrama",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 5,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
       },
       "estado": "borrador",
       "herramienta": true
