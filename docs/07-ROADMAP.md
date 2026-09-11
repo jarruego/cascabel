@@ -2987,6 +2987,12 @@ textos, niveles, camino, y la sección de instrumentos.
       siguen: la segunda frase de la Serenata, el trío de la Radetzky, El cascanueces y el
       resto del Carnaval, y Tárrega.
 
+- [x] **«¿Fuerte o flojito?» (021) con sonidos de verdad.** Con el xilófono todo sonaba suave
+      y la primera vez siempre parecía flojito. Ahora lo fuerte es fuerte por naturaleza y por
+      volumen (león, trueno, aplausos, martillo, timbre) y lo flojito es discreto y bajito
+      (gato, pájaro, lluvia, reloj, abeja, a un cuarto). Elección aplica ya el `volumen` a los
+      sonidos grabados, que antes solo valía para las notas.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

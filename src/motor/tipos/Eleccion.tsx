@@ -92,6 +92,10 @@ export default function Eleccion({ actividad, alTerminar }: PropsActividad) {
     if (estimulo.audio) {
       audioRef.current?.pause();
       const a = new Audio(`/audio/${estimulo.audio}`);
+      // El volumen del estímulo vale también para los sonidos grabados: «¿fuerte o flojito?»
+      // (021) pone un león a tope y un gato bajito. Todo el banco está normalizado al mismo
+      // pico, así que sin esto un rugido y un maullido sonarían igual de fuerte.
+      a.volume = Math.max(0, Math.min(1, estimulo.volumen ?? 1));
       audioRef.current = a;
       void a.play().catch(() => {
         // Sin gesto previo el navegador bloquea la reproducción: no es un error del niño.

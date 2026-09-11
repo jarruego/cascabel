@@ -36,67 +36,57 @@
     ],
     "estimulos": [
       {
-        "notas": [
-          "E4",
-          "G4",
-          "E4",
-          "G4"
-        ],
+        "audio": "sonidos/animales/leon.opus",
         "volumen": 1,
         "respuesta": "fuerte"
       },
       {
-        "notas": [
-          "E4",
-          "G4",
-          "E4",
-          "G4"
-        ],
-        "volumen": 0.18,
+        "audio": "sonidos/casa/trueno.opus",
+        "volumen": 1,
+        "respuesta": "fuerte"
+      },
+      {
+        "audio": "sonidos/casa/aplausos.opus",
+        "volumen": 1,
+        "respuesta": "fuerte"
+      },
+      {
+        "audio": "sonidos/casa/martillo.opus",
+        "volumen": 1,
+        "respuesta": "fuerte"
+      },
+      {
+        "audio": "sonidos/casa/timbre-colegio.opus",
+        "volumen": 0.95,
+        "respuesta": "fuerte"
+      },
+      {
+        "audio": "sonidos/animales/gato.opus",
+        "volumen": 0.25,
         "respuesta": "flojito"
       },
       {
-        "notas": [
-          "G4",
-          "E4",
-          "D4",
-          "E4"
-        ],
-        "volumen": 0.18,
+        "audio": "sonidos/animales/pajaro.opus",
+        "volumen": 0.3,
         "respuesta": "flojito"
       },
       {
-        "notas": [
-          "G4",
-          "E4",
-          "D4",
-          "E4"
-        ],
-        "volumen": 1,
-        "respuesta": "fuerte"
+        "audio": "sonidos/casa/lluvia.opus",
+        "volumen": 0.25,
+        "respuesta": "flojito"
       },
       {
-        "notas": [
-          "D4",
-          "E4",
-          "G4",
-          "A4"
-        ],
-        "volumen": 1,
-        "respuesta": "fuerte"
+        "audio": "sonidos/casa/reloj.opus",
+        "volumen": 0.3,
+        "respuesta": "flojito"
       },
       {
-        "notas": [
-          "D4",
-          "E4",
-          "G4",
-          "A4"
-        ],
-        "volumen": 0.18,
+        "audio": "sonidos/animales/abeja.opus",
+        "volumen": 0.3,
         "respuesta": "flojito"
       }
     ],
-    "instrumento": "xilofono"
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el 2026-09-12 el autor pidió sonidos de verdad en vez de notas: con el xilófono todo sonaba suave y la primera vez siempre parecía flojito. Ahora lo fuerte es fuerte por naturaleza y por volumen (león, trueno, aplausos, martillo, timbre del colegio, a tope) y lo flojito es discreto y bajito (gato, pájaro, lluvia, reloj, abeja, a un cuarto). Dos pistas de qué es la intensidad: el carácter del sonido y su volumen. Confirmar que a los cuatro años no se confunde «fuerte» con «grande» o «que da miedo»."
   },
   "evaluacion": {
     "autocorrectiva": true,
