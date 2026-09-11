@@ -91,8 +91,8 @@ pandilla). Es la progresión que al autor le gustó de la 214, y se escribe con 
 `ejercicios` cuyas `notas` son la primera mitad, la segunda y la suma.
 
 **El pentagrama dibuja líneas adicionales y puede preguntar por rondas.** Los sitios van de
-la línea 0 (do4, la primera adicional por debajo) a la 7 (do6, la segunda por arriba) y del
-espacio 0 al 6; `motor/pentagramaPosiciones.ts` dice qué adicionales lleva cada uno. Con dos
+la línea −1 (segunda adicional por debajo: do2 en clave de fa) a la 7 (segunda por arriba:
+do6 en clave de sol) y del espacio −1 al 6; `motor/pentagramaPosiciones.ts` dice qué adicionales lleva cada uno. Con dos
 octavas una nota tiene dos o tres sitios, así que cada opción lleva `clave` única («do5») y
 `nombre` («do»), y `contenido.porRonda` hace que cada ronda dibuje solo ese número de sitios
 **sin dos del mismo nombre** y pregunte uno de ellos: la pedida tiene un solo sitio posible.

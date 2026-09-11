@@ -2,8 +2,8 @@
   "id": "c2-42-coloca-la-nota-las-de-arriba",
   "version": 1,
   "tipo": "pentagrama",
-  "titulo": "Coloca la nota: las cinco de arriba",
-  "descripcion": "Clave de sol y las cinco notas de la mitad de arriba del pentagrama: si, do, re, mi y fa. La pareja de la 201.",
+  "titulo": "Clave de sol: la octava aguda",
+  "descripcion": "Del do del tercer espacio al do de encima del pentagrama, con dos líneas adicionales: la mitad aguda de las dos octavas de la clave de sol.",
   "etapa": "primaria-c2",
   "eje": "notacion",
   "lugar": "pantalla",
@@ -16,11 +16,13 @@
   },
   "practica": {
     "notas": [
-      "si",
       "do'",
       "re'",
       "mi'",
-      "fa'"
+      "fa'",
+      "sol'",
+      "la'",
+      "si'"
     ],
     "secuencia": "flauta",
     "compas": "libre",
@@ -34,31 +36,51 @@
   "contenido": {
     "consigna": "actividad.c242.consigna",
     "clave": "sol",
-    "rondas": 10,
     "objetivo_px": 60,
     "opciones": [
       {
-        "clave": "si",
-        "linea": 3
-      },
-      {
-        "clave": "do",
+        "clave": "do5",
+        "nombre": "do",
         "espacio": 3
       },
       {
-        "clave": "re",
+        "clave": "re5",
+        "nombre": "re",
         "linea": 4
       },
       {
-        "clave": "mi",
+        "clave": "mi5",
+        "nombre": "mi",
         "espacio": 4
       },
       {
-        "clave": "fa",
+        "clave": "fa5",
+        "nombre": "fa",
         "linea": 5
+      },
+      {
+        "clave": "sol5",
+        "nombre": "sol",
+        "espacio": 5
+      },
+      {
+        "clave": "la5",
+        "nombre": "la",
+        "linea": 6
+      },
+      {
+        "clave": "si5",
+        "nombre": "si",
+        "espacio": 6
+      },
+      {
+        "clave": "do6",
+        "nombre": "do",
+        "linea": 7
       }
     ],
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la pareja de la 201, con «las 5 notas más arriba del pentagrama» (pedida el 2026-09-12). Se han tomado las cinco posiciones más altas DENTRO del pentagrama —si en la tercera línea, do, re, mi y fa en la quinta—, así que el si se repite en las dos actividades como bisagra. La alternativa era do-re-mi-fa-sol con el sol sentado encima de la quinta línea, fuera del pentagrama; el motor solo dibuja líneas 1-5 y espacios 1-4. Confirmar cuál conviene en 3.º."
+    "$comment": "La pareja de la 201: do5-do6, con el do del medio en las dos (2026-09-12). Cada ronda dibuja `porRonda` sitios sin dos del mismo nombre y pregunta uno: la pedida tiene un solo sitio (el do sale dos veces en la octava y no se dibujan los dos a la vez). Cada sitio se pregunta una vez.",
+    "porRonda": 6
   },
   "evaluacion": {
     "autocorrectiva": true,

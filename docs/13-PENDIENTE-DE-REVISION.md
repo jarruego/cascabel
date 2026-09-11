@@ -81,73 +81,73 @@ En cada una, lo que hace falta es una de tres respuestas: **vale**, **cámbialo 
 
 "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la melodía entera (17 compases de 6/4, una nota por negra) sale de la partitura «Cygne saint saens fa majeur.svg» de Wikimedia Commons (CC0), la versión original de violonchelo en sol mayor transportada a fa mayor; las corcheas se reducen a la primera del par y los bemoles se escriben como sostenidos (si bemol = la sostenido, mi bemol = re sostenido) porque el motor solo escribe sostenidos. El compás es 6/4 y la ficha dice «libre» porque el esquema no lo admite. Las cuatro frases son las de la partitura; los nombres de los bloques son una lectura del autor. Suena con la marimba del motor: lo que se enseña es la forma, no el timbre.", "consigna": "actividad.c241.consigna", "tempo": 84, "bucle": true, "bloques": [
 
-## 18. `content/actividades/c2-42-coloca-la-nota-las-de-arriba.json` (línea 61)
-
-], "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la pareja de la 201, con «las 5 notas más arriba del pentagrama» (pedida el 2026-09-12). Se han tomado las cinco posiciones más altas DENTRO del pentagrama —si en la tercera línea, do, re, mi y fa en la quinta—, así que el si se repite en las dos actividades como bisagra. La alternativa era do-re-mi-fa-sol con el sol sentado encima de la quinta línea, fuera del pentagrama; el motor solo dibuja líneas 1-5 y espacios 1-4. Confirmar cuál conviene en 3.º." },
-
-## 19. `content/actividades/c3-04-mapa-de-una-obra.json` (línea 120)
+## 18. `content/actividades/c3-04-mapa-de-una-obra.json` (línea 120)
 
 ], "notas": [ "E4", "E4", "F4", "G4", "G4", "F4", "E4", "D4", "C4", "C4", "D4", "E4", "E4", "D4", "D4", null, "E4", "E4", "F4", "G4", "G4", "F4", "E4", "D4", "C4", "C4", "D4", "E4", "D4", "C4", "C4", null, "D4", "D4", "E4", "C4", "D4", "E4", "E4", "C4", "D4", "E4", "E4", "D4", "C4", "D4", "G3", null, "E4", "E4", "F4", "G4", "G4", "F4", "E4", "D4", "C4", "C4", "D4", "E4", "D4", "C4", "C4", null ], "bucle": true, "$comment": "Reescrito el 2026-09-10 con la partitura de «Ode to Joy» de Wikipedia (Lilypond, sol mayor) transportada a do: cuatro frases de cuatro compases de 4/4, una nota por negra. Antes había 30 notas para 32 pulsos y las frases no cuadraban con los bloques. Simplificaciones, una nota por pulso: la negra con puntillo y corchea del final de las frases A se escribe negra y negra; en la frase B, las parejas de corcheas (mi-fa) se escriben con su primera nota; la blanca final de cada frase es una nota y un silencio. La segunda frase A acaba en do y la primera en re, como en la partitura: el mapa las llama a las dos A porque es la misma frase con final distinto. PENDIENTE DE REVISIÓN PEDAGÓGICA: si la maestra prefiere A-A'-B-A'." }, "enunciado": "actividad.c304.enunciado", "personaje": "fara", "pistas": [ "actividad.c304.pista1", "actividad.c304.pista2" ], "creditos": [
 
-## 20. `content/actividades/c3-18-escala-mayor-o-menor.json` (línea 25)
+## 19. `content/actividades/c3-18-escala-mayor-o-menor.json` (línea 25)
 
 "consigna": "actividad.c318.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la escala menor se presenta en su forma natural, que es la que se enseña primero. La armónica y la melódica no entran en Primaria.", "opciones": [
 
-## 21. `content/actividades/c3-20-que-compas-es.json` (línea 26)
+## 20. `content/actividades/c3-20-que-compas-es.json` (línea 26)
 
 "consigna": "actividad.c320.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el 6/8 se hace sonar con seis corcheas y acento en la primera y la cuarta, que es su subdivisión ternaria; el 4/4 lleva acento solo en el uno, sin el acento secundario del tres, para no confundirlo con dos compases de 2/4.", "opciones": [
 
-## 22. `content/actividades/c3-24-quien-compuso-esta-melodia.json` (línea 25)
+## 21. `content/actividades/c3-24-quien-compuso-esta-melodia.json` (línea 25)
 
 "consigna": "actividad.c324.consigna", "$comment": "Cotejadas con partituras de dominio público en texto (Lilypond de Wikipedia): Himno de la alegría, Pequeña serenata nocturna, Canción de cuna de Brahms, Preludio en do de Bach, Para Elisa y, desde el 2026-09-11, «La mañana» de Grieg (no.wikipedia): coincide nota por nota. PENDIENTE DE REVISIÓN PEDAGÓGICA: «Recuerdos de la Alhambra» de Tárrega sigue de memoria: la única partitura libre encontrada (Mutopia, CC BY-SA 3.0) es el arreglo de guitarra con trémolo y no se ha podido leer la melodía con seguridad. Confirmar contra IMSLP o retirarla. Todas están simplificadas a una voz y a las figuras del ciclo.", "opciones": [
 
-## 23. `content/actividades/c3-25-el-compas-de-doce.json` (línea 27)
+## 22. `content/actividades/c3-25-el-compas-de-doce.json` (línea 27)
 
 "consigna": "actividad.c325.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el compás de doce se presenta con los acentos de la soleá y la bulería (3, 6, 8, 10 y 12), que es la forma más habitual de enseñarlo. Los acentos suenan una quinta más agudos para que se distingan sin depender del color.", "tempo": 168, "bucle": true, "bloques": [
 
-## 24. `content/actividades/c3-34-coloca-la-nota-en-clave-de-fa.json` (línea 25)
+## 23. `content/actividades/c3-34-coloca-la-nota-en-clave-de-fa.json` (línea 34)
 
-"consigna": "actividad.c334.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la clave de fa se lee en 6.º en algunas programaciones y en ninguna en otras. Está aquí porque el motor la tiene y porque quien toca un instrumento grave la necesita; si la maestra la considera fuera de nivel, se quita del camino y se deja como herramienta.", "clave": "fa", "rondas": 7, "opciones": [
+"consigna": "actividad.c334.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la clave de fa se lee en 6.º en algunas programaciones y en ninguna en otras. Está aquí porque el motor la tiene y porque quien toca un instrumento grave la necesita; si la maestra la considera fuera de nivel, se quita del camino y se deja como herramienta. El 2026-09-12 pasa a ser la octava grave, do2-do3, con dos adicionales por debajo; la aguda es la 352 y las dos octavas la 351. Cada ronda dibuja `porRonda` sitios sin dos del mismo nombre y pregunta uno: la pedida tiene un solo sitio (el do sale dos veces en la octava y no se dibujan los dos a la vez). Cada sitio se pregunta una vez.", "clave": "fa", "opciones": [
 
-## 25. `content/actividades/c3-35-suena-bien-o-roza.json` (línea 25)
+## 24. `content/actividades/c3-35-suena-bien-o-roza.json` (línea 25)
 
 "consigna": "actividad.c335.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: como consonancias se usan la tercera, la quinta y la octava, y como disonancias la segunda menor, el tritono y la séptima mayor. Es la partición de manual y deja fuera a propósito los casos discutidos, como la cuarta y la séptima menor. El 2026-09-12 el autor pidió exagerar más: «algunas no se notan casi». Pasa del piano al órgano, que sostiene y tiene armónicos, y es donde los batidos de una segunda menor se oyen de verdad; los dos sonidos duran tres pulsos en vez de dos; el sol-la bemol se escribe sol-sol sostenido, que es lo que el motor entiende; y la disonancia más suave (si3-do4, grave) se cambia por una séptima mayor (do4-si4).", "opciones": [
 
-## 26. `content/actividades/c3-38-ocho-estilos.json` (línea 25)
+## 25. `content/actividades/c3-38-ocho-estilos.json` (línea 25)
 
 "consigna": "actividad.c338.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: todos los fragmentos son piezas de Kevin MacLeod (CC BY 3.0) compuestas en cada estilo. Son ejemplos de manual, limpios y reconocibles; no son grabaciones históricas.", "opciones": [
 
-## 27. `content/actividades/c3-43-el-preludio-de-bach.json` (línea 26)
+## 26. `content/actividades/c3-43-el-preludio-de-bach.json` (línea 26)
 
 "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el Preludio como mapa: cuatro compases, cuatro acordes, y el mismo dibujo de arpegio en todos. Lo que se enseña es que la música cambia de color (de acorde) sin cambiar de dibujo. El pulso es la semicorchea a 176 (44 por negra, el tope del esquema es 180): a 100 iba «extremadamente lenta», dijo el autor el 2026-09-11; el original va a unas 70 por negra. Los nombres de los acordes están en cifrado de aula (do, re menor, sol séptima, do); una maestra debe decir si en 3.º ciclo se nombran así o solo por color. Notas cotejadas con la partitura de Wikipedia en inglés, juntando las tres voces en un arpegio.", "consigna": "actividad.c343.consigna", "tempo": 176, "bucle": true, "bloques": [
 
-## 28. `content/actividades/c3-44-para-elisa.json` (línea 26)
+## 27. `content/actividades/c3-44-para-elisa.json` (línea 26)
 
 "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el pulso es la corchea (3/8) a 84 y las semicorcheas son medio pulso; los silencios de semicorchea se han absorbido en la nota anterior. Sin ABC y compás «libre» en la ficha: el esquema no admite 3/8. El comienzo se cotejó con la partitura de Wikipedia en inglés (Lilypond) y la frase entera —hasta el la de la primera casilla de repetición— con la edición de Mutopia (WoO 59, typesetting de dominio público): el 2026-09-11 el autor notó que la melodía se cortaba a falta de pocas notas, porque el bloque de Wikipedia acaba antes del final de la frase. Va en horizontal como el Himno.", "consigna": "actividad.c344.consigna", "representacion": "pentagrama", "botonesPorCarril": false, "tempo": 84, "ejercicios": [
 
-## 29. `content/actividades/c3-45-en-la-gruta-del-rey-de-la-montana.json` (línea 32)
+## 28. `content/actividades/c3-45-en-la-gruta-del-rey-de-la-montana.json` (línea 32)
 
 "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: lo que tiene esta pieza es que empieza despacio y acaba corriendo, y eso es lo que se toca: el mismo ritmo de cuatro compases tres veces, a 72, a 96 y a 120. Se palmea el ritmo de la melodía (corcheas y negras), no el pulso. Ritmo sacado de la partitura de Wikipedia en inglés (fis8 gis ais b cis ais cis4 | d8 ais d4 cis8 ais cis4 | … | d8 ais d4 cis4 r4); el silencio final se escribe como blanca. El 2026-09-12 se añade la melodía debajo (violín, una nota por golpe, en re menor una octava abajo): a ritmo de negra no se reconocía la pieza. Suena en la escucha y, anclada al primer golpe del niño, mientras palmea.", "consigna": "actividad.c345.consigna", "tempo": 72, "ejercicios": [
 
-## 30. `content/actividades/c3-46-marcha-radetzky.json` (línea 26)
+## 29. `content/actividades/c3-46-marcha-radetzky.json` (línea 26)
 
 "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la Marcha Radetzky es la de las palmas del concierto de Año Nuevo, y por eso va con el cuerpo, entera y sin bucle: la llamada (do do do) con palmas, la bajada con muslos, el sol largo con los pies, el balanceo de mi y re sostenido con chasquidos y el cierre con palmas. La melodía suena con la flauta debajo. El reparto de zonas es una propuesta. Melodía cotejada con la partitura de Wikipedia en inglés (Lilypond, do mayor, 2/2); pulso la negra a 108. El 2026-09-11 la melodía sube al 100 % y el pasaje se toca dos veces seguidas, como en la marcha, que repite su primera parte: el autor pidió la canción más larga, y la partitura en texto de Wikipedia solo trae este pasaje. El resto de la marcha (el trío) queda para cuando haya fuente. El 2026-09-12: los golpes bajan al 30 % y la melodía pasa a la trompeta, que es quien lleva esta marcha en la banda y corta por encima de las palmas mejor que la flauta.", "consigna": "actividad.c346.consigna", "tempo": 108, "bucle": false, "instrumento": "trompeta", "patron": [
 
-## 31. `content/actividades/c3-47-el-danubio-azul.json` (línea 26)
+## 30. `content/actividades/c3-47-el-danubio-azul.json` (línea 26)
 
 "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: un vals con el cuerpo: el pie en el uno y las palmas en el dos y el tres, mientras la melodía suena con la flauta. Es la forma más directa de sentir el 3/4. Entero y sin bucle: el primer vals completo, treinta y tres compases del arreglo, la anacrusa en el tercer tiempo. Cada frase de ocho compases cambia la pareja de golpes del dos y el tres —palmas, muslos, palmas, chasquidos— para que las cuatro zonas trabajen; el pie va siempre en el uno. Melodía al 100 %. La melodía es la voz superior del arreglo simplificado de Mutopia (N. Kouremenos, CC BY-SA 4.0), cotejada con su partitura renderizada. El 2026-09-12: la melodía con violín, que es lo que la toca en la orquesta y se oye más claro que la flauta en este registro, al 100 %; los golpes a un 45 %, para que acompañen y no tapen (campo nuevo `volumenGolpes`).", "consigna": "actividad.c347.consigna", "tempo": 108, "bucle": false, "instrumento": "violin", "patron": [
 
-## 32. `content/actividades/c3-48-cada-obra-con-su-nombre.json` (línea 25)
+## 31. `content/actividades/c3-48-cada-obra-con-su-nombre.json` (línea 25)
 
 "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: las grabaciones son las del banco (Musopen y otras de Commons, verificadas por API), las mismas que usan la 339 y la 340; aquí se unen con el nombre de la obra y no con el compositor, que es un paso antes. Los iconos son una asociación libre (el sol para La mañana, el castillo para la Gruta, la bailarina para el vals, el corazón para Elisa, la mariposa para la Primavera): confirmar que ayudan y no despistan. El criterio curricular (CE1 1.1) se ha copiado de la 339.", "consigna": "actividad.c348.consigna", "ejercicios": [
 
-## 33. `content/actividades/c3-49-la-primavera-de-vivaldi-con-figuras.json` (línea 31)
+## 32. `content/actividades/c3-49-la-primavera-de-vivaldi-con-figuras.json` (línea 31)
 
 "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el ritornello entero del primer movimiento (trece compases), cotejado con la partitura de Mutopia (Vivaldi, op. 8, «Spring», violín primero, edición CC BY-SA 3.0; solo se usan las alturas) y, el comienzo, con fr.wikipedia. Transportado de mi mayor a do y una octava abajo, entre sol3 y la4. Va por figuras, no por altura: lo que se lee es el ritmo (corchea, dos semicorcheas, negra con puntillo). La primera parte es la llamada y su eco piano; la segunda, la frase fuerte —«la parte más famosa viene justo después», dijo el autor el 2026-09-11— y su eco. Los silencios de corchea se absorben en la nota anterior y el trino final se escribe como negra. Sin ABC porque baja a sol3. Tempo 66 por negra.", "consigna": "actividad.c349.consigna", "representacion": "figura", "tempo": 66, "ejercicios": [
 
-## 34. `content/actividades/c3-50-las-quince-notas-de-do-a-do.json` (línea 41)
+## 33. `content/actividades/c3-50-las-quince-notas-de-do-a-do.json` (línea 41)
 
 "$comment": "Pedida por el autor el 2026-09-12 tras la 201 y la 242: «las 15 notas de DO a DO en clave de sol». Como la misma nota está en dos o tres posiciones, cada ronda dibuja solo seis sitios sin nombre repetido y pregunta uno de ellos, así que la pedida tiene un único sitio; cada uno de los quince se pregunta una vez. PENDIENTE DE REVISIÓN PEDAGÓGICA: si seis por ronda es mucho para leer de un vistazo en 5.º, bajar `porRonda` a cuatro o cinco.", "consigna": "actividad.c350.consigna", "clave": "sol", "porRonda": 6, "opciones": [
+
+## 34. `content/actividades/c3-51-clave-de-fa-las-dos-octavas.json` (línea 34)
+
+"consigna": "actividad.c351.consigna", "$comment": "Las dos octavas de la clave de fa, do2-do4, pareja de la 350 (2026-09-12). Cada ronda dibuja `porRonda` sitios sin dos del mismo nombre y pregunta uno: la pedida tiene un solo sitio (el do sale dos veces en la octava y no se dibujan los dos a la vez). Cada sitio se pregunta una vez. PENDIENTE DE REVISIÓN PEDAGÓGICA: si siete por ronda es mucho para leer de un vistazo, bajar `porRonda`.", "clave": "fa", "opciones": [
 
 ## 35. `content/actividades/inf-21-fuerte-o-flojito.json` (línea 89)
 

@@ -103,11 +103,27 @@ describe('líneas adicionales: las dos octavas de do a do', () => {
   });
 });
 
+describe('las dos octavas de la clave de fa: de do2 a do4', () => {
+  it('la línea −1 es do2 y la 6 es do4, el do central, que en sol va en la línea 0', () => {
+    expect(notaDe({ linea: -1 }, 'fa')).toMatchObject({ nombre: 'do', octava: 2 });
+    expect(notaDe({ espacio: -1 }, 'fa')).toMatchObject({ nombre: 're', octava: 2 });
+    expect(notaDe({ linea: 0 }, 'fa')).toMatchObject({ nombre: 'mi', octava: 2 });
+    expect(notaDe({ linea: 6 }, 'fa')).toMatchObject({ nombre: 'do', octava: 4 });
+    expect(notaDe({ linea: 6 }, 'fa')).toEqual(notaDe({ linea: 0 }, 'sol'));
+  });
+
+  it('el do2 lleva dos adicionales por debajo y el re2 solo la de encima', () => {
+    expect(lineasAdicionales({ linea: -1 })).toEqual([{ linea: 0 }, { linea: -1 }]);
+    expect(lineasAdicionales({ espacio: -1 })).toEqual([{ linea: 0 }]);
+  });
+});
+
 describe('límites', () => {
   it('rechaza líneas y espacios que no existen', () => {
-    expect(() => notaDe({ linea: -1 })).toThrow(/0 a 7/);
-    expect(() => notaDe({ linea: 8 })).toThrow(/0 a 7/);
-    expect(() => notaDe({ espacio: 7 })).toThrow(/0 a 6/);
+    expect(() => notaDe({ linea: -2 })).toThrow(/-1 a 7/);
+    expect(() => notaDe({ linea: 8 })).toThrow(/-1 a 7/);
+    expect(() => notaDe({ espacio: -2 })).toThrow(/-1 a 6/);
+    expect(() => notaDe({ espacio: 7 })).toThrow(/-1 a 6/);
   });
 
   it('hay nueve sitios y salen ordenados de grave a agudo', () => {

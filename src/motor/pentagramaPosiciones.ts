@@ -29,22 +29,22 @@ const PRIMERA_LINEA: Record<Clave, { nombre: NombreNota; octava: number }> = {
  * Cada línea sube dos grados; cada espacio, uno más que la línea de debajo.
  *
  * Las líneas adicionales siguen la misma cuenta: la **línea 0** es la primera adicional
- * por debajo (do4 en clave de sol), la **6** y la **7** son las dos primeras por arriba
- * (la5 y do6); el **espacio 0** cuelga bajo la primera línea (re4) y los espacios 5 y 6
- * van encima de la quinta y de la sexta (sol5 y si5). Es lo que hace falta para las dos
- * octavas de do a do que se leen en 3.º ciclo (2026-09-12); más allá no hay actividad que
- * lo pida, y se sigue rechazando para que un error de escritura no dibuje una nota en el
- * limbo.
+ * por debajo y la **−1** la segunda; la **6** y la **7** son las dos primeras por arriba.
+ * Los espacios igual: el **0** cuelga bajo la primera línea, el **−1** bajo la primera
+ * adicional, y el 5 y el 6 van encima de la quinta y de la sexta. Es lo que hace falta para
+ * las dos octavas de do a do de cada clave (2026-09-12): en sol, de do4 (línea 0) a do6
+ * (línea 7); en fa, de do2 (línea −1) a do4 (línea 6). Más allá no hay actividad que lo
+ * pida, y se sigue rechazando para que un error de escritura no dibuje una nota en el limbo.
  */
 function gradosDesdeAbajo(sitio: Sitio): number {
   if ('linea' in sitio) {
-    if (sitio.linea < 0 || sitio.linea > 7) {
-      throw new Error(`Línea fuera del pentagrama: ${sitio.linea}. Son 0 a 7, de abajo arriba.`);
+    if (sitio.linea < -1 || sitio.linea > 7) {
+      throw new Error(`Línea fuera del pentagrama: ${sitio.linea}. Son -1 a 7, de abajo arriba.`);
     }
     return (sitio.linea - 1) * 2;
   }
-  if (sitio.espacio < 0 || sitio.espacio > 6) {
-    throw new Error(`Espacio fuera del pentagrama: ${sitio.espacio}. Son 0 a 6, de abajo arriba.`);
+  if (sitio.espacio < -1 || sitio.espacio > 6) {
+    throw new Error(`Espacio fuera del pentagrama: ${sitio.espacio}. Son -1 a 6, de abajo arriba.`);
   }
   return (sitio.espacio - 1) * 2 + 1;
 }

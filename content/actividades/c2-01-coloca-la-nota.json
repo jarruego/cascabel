@@ -2,8 +2,8 @@
   "id": "c2-01-coloca-la-nota",
   "version": 1,
   "tipo": "pentagrama",
-  "titulo": "Coloca la nota: las cinco de abajo",
-  "descripcion": "Clave de sol y las cinco notas de la mitad de abajo del pentagrama: mi, fa, sol, la y si. Nota dibujada pequeña, zona de toque grande.",
+  "titulo": "Clave de sol: la octava grave",
+  "descripcion": "Del do de debajo del pentagrama, con su línea adicional, al do del tercer espacio: la mitad grave de las dos octavas de la clave de sol.",
   "etapa": "primaria-c2",
   "eje": "notacion",
   "lugar": "pantalla",
@@ -16,11 +16,14 @@
   },
   "practica": {
     "notas": [
+      "do",
+      "re",
       "mi",
       "fa",
       "sol",
       "la",
-      "si"
+      "si",
+      "do'"
     ],
     "secuencia": "flauta",
     "compas": "libre",
@@ -34,31 +37,51 @@
   "contenido": {
     "consigna": "actividad.c201.consigna",
     "clave": "sol",
-    "rondas": 10,
     "objetivo_px": 60,
     "opciones": [
       {
-        "clave": "mi",
+        "clave": "do4",
+        "nombre": "do",
+        "linea": 0
+      },
+      {
+        "clave": "re4",
+        "nombre": "re",
+        "espacio": 0
+      },
+      {
+        "clave": "mi4",
+        "nombre": "mi",
         "linea": 1
       },
       {
-        "clave": "fa",
+        "clave": "fa4",
+        "nombre": "fa",
         "espacio": 1
       },
       {
-        "clave": "sol",
+        "clave": "sol4",
+        "nombre": "sol",
         "linea": 2
       },
       {
-        "clave": "la",
+        "clave": "la4",
+        "nombre": "la",
         "espacio": 2
       },
       {
-        "clave": "si",
+        "clave": "si4",
+        "nombre": "si",
         "linea": 3
+      },
+      {
+        "clave": "do5",
+        "nombre": "do",
+        "espacio": 3
       }
     ],
-    "$comment": "El 2026-09-12 el autor pidió que abarcara «las 5 notas de abajo del pentagrama»: mi en la primera línea, fa, sol, la y si en la tercera. Antes eran sol, la, si y do. Las cinco de arriba van en la 242."
+    "$comment": "El 2026-09-12 el autor pidió que las dos mitades trabajaran ocho notas cada una con el do del medio en las dos: aquí do4-do5. Cada ronda dibuja `porRonda` sitios sin dos del mismo nombre y pregunta uno: la pedida tiene un solo sitio (el do sale dos veces en la octava y no se dibujan los dos a la vez). Cada sitio se pregunta una vez.",
+    "porRonda": 6
   },
   "evaluacion": {
     "autocorrectiva": true,

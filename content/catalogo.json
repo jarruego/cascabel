@@ -1,7 +1,7 @@
 {
   "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa, y también si usa un código que aquí no está. El hueco de C1-17 es intencionado: ese código nunca llegó a reservarse y los ids no se renumeran, porque un id puede estar dentro de una URL compartida.",
   "generado": "2026-09-10",
-  "total": 164,
+  "total": 166,
   "actividades": [
     {
       "id": "C1-01",
@@ -447,7 +447,7 @@
     },
     {
       "id": "C2-01",
-      "titulo": "Coloca la nota: las cinco de abajo",
+      "titulo": "Clave de sol: la octava grave",
       "etapa": "primaria-c2",
       "eje": "notacion",
       "lugar": "pantalla",
@@ -455,7 +455,7 @@
       "microfono": false,
       "esfuerzo": "S",
       "curriculo": "CE3 · crit. 3.1 · saber D",
-      "descripcion": "Pentagrama real y las cinco notas de la mitad de abajo: mi, fa, sol, la y si. Hitbox de 60 px sobre nota pequeña.",
+      "descripcion": "Do4-do5 con su línea adicional; cada ronda dibuja seis sitios sin nombre repetido.",
       "estado": "hecha"
     },
     {
@@ -1305,7 +1305,7 @@
     },
     {
       "id": "C3-34",
-      "titulo": "Coloca la nota en clave de fa",
+      "titulo": "Clave de fa: la octava grave",
       "etapa": "primaria-c3",
       "eje": "notacion",
       "lugar": "pantalla",
@@ -1313,7 +1313,7 @@
       "microfono": false,
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
-      "descripcion": "Las notas de la clave de fa, la de los instrumentos graves. La cuarta línea es fa y a partir de ahí todo se deduce, igual que con el sol.",
+      "descripcion": "Do2-do3 con dos líneas adicionales por debajo; cada ronda dibuja siete sitios sin nombre repetido.",
       "estado": "hecha"
     },
     {
@@ -2111,7 +2111,7 @@
     },
     {
       "id": "C2-42",
-      "titulo": "Coloca la nota: las cinco de arriba",
+      "titulo": "Clave de sol: la octava aguda",
       "etapa": "primaria-c2",
       "eje": "notacion",
       "lugar": "pantalla",
@@ -2119,12 +2119,12 @@
       "microfono": false,
       "esfuerzo": "S",
       "curriculo": "CE3 · crit. 3.1 · saber D",
-      "descripcion": "La pareja de la 201: si, do, re, mi y fa, la mitad de arriba del pentagrama.",
+      "descripcion": "Do5-do6 con dos líneas adicionales; cada ronda dibuja seis sitios sin nombre repetido.",
       "estado": "hecha"
     },
     {
       "id": "C3-50",
-      "titulo": "Las quince notas: de do a do",
+      "titulo": "Clave de sol: las dos octavas",
       "etapa": "primaria-c3",
       "eje": "notacion",
       "lugar": "pantalla",
@@ -2132,7 +2132,33 @@
       "microfono": false,
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 3.1 · saber D",
-      "descripcion": "Dos octavas con líneas adicionales; cada ronda dibuja seis sitios sin nombre repetido.",
+      "descripcion": "Do4-do6 con líneas adicionales; cada ronda dibuja seis sitios sin nombre repetido.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C3-51",
+      "titulo": "Clave de fa: las dos octavas",
+      "etapa": "primaria-c3",
+      "eje": "notacion",
+      "lugar": "pantalla",
+      "tipo": "pentagrama",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Do2-do4 con líneas adicionales; cada ronda dibuja siete sitios sin nombre repetido.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C3-52",
+      "titulo": "Clave de fa: la octava aguda",
+      "etapa": "primaria-c3",
+      "eje": "notacion",
+      "lugar": "pantalla",
+      "tipo": "pentagrama",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "Do3-do4: acaba en el do central, donde se juntan las dos claves.",
       "estado": "hecha"
     }
   ]

@@ -257,7 +257,7 @@ La app hace una frase rítmica de dos compases y el niño inventa la respuesta c
 
 ## Segundo ciclo (3.º–4.º)
 
-**C2-01 · Coloca la nota** — notación · pantalla · pentagrama · S
+**C2-01 · Clave de sol: la octava grave** — notación · pantalla · pentagrama · S
 Pentagrama real, clave de sol, y una nota que hay que situar en su línea o espacio. Nota dibujada pequeña, hitbox de 60 px. *CE3 · crit. 3.1 · saber D.*
 
 **C2-02 · Dictado rítmico** — notación · pantalla · rejilla · M

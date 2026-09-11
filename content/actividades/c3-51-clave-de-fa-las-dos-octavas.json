@@ -1,9 +1,9 @@
 {
-  "id": "c3-34-coloca-la-nota-en-clave-de-fa",
+  "id": "c3-51-clave-de-fa-las-dos-octavas",
   "version": 1,
   "tipo": "pentagrama",
-  "titulo": "Clave de fa: la octava grave",
-  "descripcion": "La clave de fa, la de los instrumentos graves: del do de dos líneas adicionales por debajo al do del segundo espacio.",
+  "titulo": "Clave de fa: las dos octavas",
+  "descripcion": "Las quince notas de do2 a do4 en clave de fa, con sus líneas adicionales. Cada ronda dibuja siete sitios sin dos del mismo nombre y pregunta uno.",
   "etapa": "primaria-c3",
   "eje": "notacion",
   "lugar": "pantalla",
@@ -30,8 +30,8 @@
     "modo": "toque"
   },
   "contenido": {
-    "consigna": "actividad.c334.consigna",
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la clave de fa se lee en 6.º en algunas programaciones y en ninguna en otras. Está aquí porque el motor la tiene y porque quien toca un instrumento grave la necesita; si la maestra la considera fuera de nivel, se quita del camino y se deja como herramienta. El 2026-09-12 pasa a ser la octava grave, do2-do3, con dos adicionales por debajo; la aguda es la 352 y las dos octavas la 351. Cada ronda dibuja `porRonda` sitios sin dos del mismo nombre y pregunta uno: la pedida tiene un solo sitio (el do sale dos veces en la octava y no se dibujan los dos a la vez). Cada sitio se pregunta una vez.",
+    "consigna": "actividad.c351.consigna",
+    "$comment": "Las dos octavas de la clave de fa, do2-do4, pareja de la 350 (2026-09-12). Cada ronda dibuja `porRonda` sitios sin dos del mismo nombre y pregunta uno: la pedida tiene un solo sitio (el do sale dos veces en la octava y no se dibujan los dos a la vez). Cada sitio se pregunta una vez. PENDIENTE DE REVISIÓN PEDAGÓGICA: si siete por ronda es mucho para leer de un vistazo, bajar `porRonda`.",
     "clave": "fa",
     "opciones": [
       {
@@ -73,6 +73,41 @@
         "clave": "do3",
         "nombre": "do",
         "espacio": 2
+      },
+      {
+        "clave": "re3",
+        "nombre": "re",
+        "linea": 3
+      },
+      {
+        "clave": "mi3",
+        "nombre": "mi",
+        "espacio": 3
+      },
+      {
+        "clave": "fa3",
+        "nombre": "fa",
+        "linea": 4
+      },
+      {
+        "clave": "sol3",
+        "nombre": "sol",
+        "espacio": 4
+      },
+      {
+        "clave": "la3",
+        "nombre": "la",
+        "linea": 5
+      },
+      {
+        "clave": "si3",
+        "nombre": "si",
+        "espacio": 5
+      },
+      {
+        "clave": "do4",
+        "nombre": "do",
+        "linea": 6
       }
     ],
     "porRonda": 7
@@ -83,11 +118,11 @@
       "completado"
     ]
   },
-  "enunciado": "actividad.c334.enunciado",
-  "personaje": "dora",
+  "enunciado": "actividad.c351.enunciado",
+  "personaje": "rex",
   "pistas": [
-    "actividad.c334.pista1",
-    "actividad.c334.pista2"
+    "actividad.c351.pista1",
+    "actividad.c351.pista2"
   ],
   "creditos": [
     {

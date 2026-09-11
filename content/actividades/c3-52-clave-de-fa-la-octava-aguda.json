@@ -1,0 +1,101 @@
+{
+  "id": "c3-52-clave-de-fa-la-octava-aguda",
+  "version": 1,
+  "tipo": "pentagrama",
+  "titulo": "Clave de fa: la octava aguda",
+  "descripcion": "Del do del segundo espacio al do de encima del pentagrama, en la primera línea adicional: el do central, el mismo que en clave de sol va debajo.",
+  "etapa": "primaria-c3",
+  "eje": "notacion",
+  "lugar": "pantalla",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "notas": [
+      "do",
+      "re",
+      "mi",
+      "fa",
+      "sol",
+      "la",
+      "si"
+    ]
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c352.consigna",
+    "$comment": "La pareja de la 334: do3-do4, con el do del medio en las dos (2026-09-12). El do4 de la primera adicional por arriba es el do central, el mismo que en clave de sol va en la primera adicional por debajo: es lo que junta los dos pentagramas. Cada ronda dibuja `porRonda` sitios sin dos del mismo nombre y pregunta uno: la pedida tiene un solo sitio (el do sale dos veces en la octava y no se dibujan los dos a la vez). Cada sitio se pregunta una vez.",
+    "clave": "fa",
+    "opciones": [
+      {
+        "clave": "do3",
+        "nombre": "do",
+        "espacio": 2
+      },
+      {
+        "clave": "re3",
+        "nombre": "re",
+        "linea": 3
+      },
+      {
+        "clave": "mi3",
+        "nombre": "mi",
+        "espacio": 3
+      },
+      {
+        "clave": "fa3",
+        "nombre": "fa",
+        "linea": 4
+      },
+      {
+        "clave": "sol3",
+        "nombre": "sol",
+        "espacio": 4
+      },
+      {
+        "clave": "la3",
+        "nombre": "la",
+        "linea": 5
+      },
+      {
+        "clave": "si3",
+        "nombre": "si",
+        "espacio": 5
+      },
+      {
+        "clave": "do4",
+        "nombre": "do",
+        "linea": 6
+      }
+    ],
+    "porRonda": 7
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.c352.enunciado",
+  "personaje": "simon",
+  "pistas": [
+    "actividad.c352.pista1",
+    "actividad.c352.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador"
+}

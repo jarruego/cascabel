@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-11",
-  "total": 163,
+  "total": 165,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -764,8 +764,8 @@
     },
     {
       "id": "c2-01-coloca-la-nota",
-      "titulo": "Coloca la nota: las cinco de abajo",
-      "descripcion": "Clave de sol y las cinco notas de la mitad de abajo del pentagrama: mi, fa, sol, la y si. Nota dibujada pequeña, zona de toque grande.",
+      "titulo": "Clave de sol: la octava grave",
+      "descripcion": "Del do de debajo del pentagrama, con su línea adicional, al do del tercer espacio: la mitad grave de las dos octavas de la clave de sol.",
       "etapa": "primaria-c2",
       "eje": "notacion",
       "tipo": "pentagrama",
@@ -1524,8 +1524,8 @@
     },
     {
       "id": "c2-42-coloca-la-nota-las-de-arriba",
-      "titulo": "Coloca la nota: las cinco de arriba",
-      "descripcion": "Clave de sol y las cinco notas de la mitad de arriba del pentagrama: si, do, re, mi y fa. La pareja de la 201.",
+      "titulo": "Clave de sol: la octava aguda",
+      "descripcion": "Del do del tercer espacio al do de encima del pentagrama, con dos líneas adicionales: la mitad aguda de las dos octavas de la clave de sol.",
       "etapa": "primaria-c2",
       "eje": "notacion",
       "tipo": "pentagrama",
@@ -2037,8 +2037,8 @@
     },
     {
       "id": "c3-34-coloca-la-nota-en-clave-de-fa",
-      "titulo": "Coloca la nota en clave de fa",
-      "descripcion": "Las notas de la clave de fa, la de los instrumentos graves. La cuarta línea es fa y a partir de ahí todo se deduce, igual que con el sol.",
+      "titulo": "Clave de fa: la octava grave",
+      "descripcion": "La clave de fa, la de los instrumentos graves: del do de dos líneas adicionales por debajo al do del segundo espacio.",
       "etapa": "primaria-c3",
       "eje": "notacion",
       "tipo": "pentagrama",
@@ -2303,8 +2303,46 @@
     },
     {
       "id": "c3-50-las-quince-notas-de-do-a-do",
-      "titulo": "Las quince notas: de do a do",
-      "descripcion": "Dos octavas en clave de sol, del do central (una línea adicional por debajo) al do agudo (dos por arriba). Cada ronda dibuja seis sitios sin dos del mismo nombre y pregunta uno.",
+      "titulo": "Clave de sol: las dos octavas",
+      "descripcion": "Las quince notas de do4 a do6, del do de debajo del pentagrama al de encima, con sus líneas adicionales. Cada ronda dibuja seis sitios sin dos del mismo nombre y pregunta uno.",
+      "etapa": "primaria-c3",
+      "eje": "notacion",
+      "tipo": "pentagrama",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-51-clave-de-fa-las-dos-octavas",
+      "titulo": "Clave de fa: las dos octavas",
+      "descripcion": "Las quince notas de do2 a do4 en clave de fa, con sus líneas adicionales. Cada ronda dibuja siete sitios sin dos del mismo nombre y pregunta uno.",
+      "etapa": "primaria-c3",
+      "eje": "notacion",
+      "tipo": "pentagrama",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE3",
+        "criterio": "3.1",
+        "saber": "D. Lenguajes y práctica musical"
+      },
+      "estado": "borrador",
+      "herramienta": false
+    },
+    {
+      "id": "c3-52-clave-de-fa-la-octava-aguda",
+      "titulo": "Clave de fa: la octava aguda",
+      "descripcion": "Del do del segundo espacio al do de encima del pentagrama, en la primera línea adicional: el do central, el mismo que en clave de sol va debajo.",
       "etapa": "primaria-c3",
       "eje": "notacion",
       "tipo": "pentagrama",

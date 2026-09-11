@@ -3028,6 +3028,15 @@ textos, niveles, camino, y la sección de instrumentos.
 - [x] **El Danubio (347) con violín**, la melodía al 100 % y los golpes al 45 %: la percusión
       corporal tiene ahora también `volumenGolpes`, para cuando manda la melodía.
 
+- [x] **Los dos pentagramas completos, en seis actividades** (2026-09-12): en clave de sol
+      la octava grave (201, do4-do5), la aguda (242, do5-do6) y las dos octavas (350); en
+      clave de fa la grave (334, do2-do3, con dos adicionales por debajo: línea −1), la
+      aguda (352, do3-do4) y las dos octavas (351). Las mitades comparten el do del medio, y
+      el do central junta las dos claves: primera adicional por debajo en sol, primera por
+      arriba en fa. Todas dibujan por rondas sin nombre repetido (seis sitios en 2.º ciclo,
+      siete en 3.º). Títulos «Clave de X: la octava grave / la octava aguda / las dos
+      octavas», en vez de «las de abajo / las de arriba».
+
 - [x] **350 «Las quince notas: de do a do»**: dos octavas en clave de sol con líneas
       adicionales (línea 0 a 7, espacio 0 a 6 en `pentagramaPosiciones.ts`, con test). Como
       la misma nota está en dos o tres sitios, cada ronda dibuja seis sin nombre repetido y
