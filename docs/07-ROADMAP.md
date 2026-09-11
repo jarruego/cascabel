@@ -3030,9 +3030,11 @@ textos, niveles, camino, y la sección de instrumentos.
 
 - [x] **Dos fichas en el Taller: el pentagrama en clave de sol (tr-15) y en clave de fa
       (tr-16)**, enteros, de do a do con sus líneas adicionales. Al tocar una nota suena y
-      arriba sale su nombre en mayúsculas y al doble, con su personaje al doble entrando
-      con un botecito elástico. Es el `modo: libre` del pentagrama; la clave de fa suena con
-      piano, que llega al do2.
+      arriba sale su nombre con su personaje al lado. Y lo mismo en las seis de pregunta:
+      el nombre pedido en mayúsculas y del color de la nota, con su personaje entrando con
+      un botecito elástico, y cada cabeza toma su color al tocarla (en la ficha se lo queda;
+      en las de pregunta, solo esa ronda, para no acertar por el color). Es el `modo: libre`
+      del pentagrama; la clave de fa suena con piano, que llega al do2.
 
 - [x] **Los dos pentagramas completos, en seis actividades** (2026-09-12): en clave de sol
       la octava grave (201, do4-do5), la aguda (242, do5-do6) y las dos octavas (350); en

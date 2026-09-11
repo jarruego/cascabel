@@ -120,7 +120,8 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
     nombre, la pauta y la barra van juntos en el centro. Ciento veinte píxeles es lo que se
     llevan el nombre, la barra y los huecos.
   */
-  const ALTO = Math.max(160, Math.min(340, altoSeccion - 120));
+  // Ciento cincuenta: el nombre con su personaje al lado, la barra y los huecos.
+  const ALTO = Math.max(160, Math.min(340, altoSeccion - 150));
   const SEPARACION = Math.max(14, Math.min(34, Math.floor((ALTO - tam) / 10)));
   const ARRIBA = Math.round((ALTO - 4 * SEPARACION) / 2);
   const INICIO = Math.round(INICIO_POR_ESPACIO * SEPARACION);
@@ -150,8 +151,6 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
     while (salida.length < n) salida.push(...base);
     return barajarSinRepetir(salida.slice(0, n), Math.floor(Math.random() * 2 ** 31));
   });
-  const nombreDeClave = (clave: string) =>
-    contenido.opciones.find((o) => o.clave === clave)?.nombre ?? clave;
 
   const [estado, despachar] = useReducer(
     (e: EstadoEleccion, a: AccionEleccion) => reducir(e, a, preguntas.length),
@@ -233,8 +232,15 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
 
   /** En la ficha, el último sitio tocado: su nombre y su personaje van arriba. */
   const [tocada, setTocada] = useState<Opcion | null>(null);
-  /** Y todos los tocados hasta ahora: cada uno se queda con su color. Se descubre tocando. */
+  /**
+   * Los sitios tocados: cada uno toma el color de su nota al tocarlo y se lo queda. En la
+   * ficha, para siempre: el pentagrama se descubre tocando. En las de pregunta, solo lo que
+   * dura la ronda: si el color se quedara, en la ronda siguiente se acertaría por el color.
+   */
   const [tocadas, setTocadas] = useState<Set<string>>(() => new Set());
+  useEffect(() => {
+    if (!libre) setTocadas(new Set());
+  }, [estado.indice, libre]);
   const elegir = useCallback(
     async (o: Opcion) => {
       const nota = notaDe(sitioDe(o), clave);
@@ -255,9 +261,9 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
         // Sin sonido la actividad sigue: el niño ve el resultado igual.
       }
       // En la ficha no hay pregunta: se enseña el nombre y quién es, y ya.
+      setTocadas((s) => new Set(s).add(o.clave));
       if (libre) {
         setTocada(o);
-        setTocadas((s) => new Set(s).add(o.clave));
         return;
       }
       despachar({ tipo: 'elegir', clave: o.clave, respuesta: pedida ?? '' });
@@ -269,7 +275,9 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
     const n = notaDe(sitioDe(o), clave);
     return `${n.vexflow.split('/')[0]!.toUpperCase()}${n.octava}`;
   };
-  const personajeDeTocada = tocada ? personajeDe(cientifica(tocada)) : null;
+  /** Lo que va arriba: en la ficha, la nota tocada; en las de pregunta, la pedida. */
+  const arriba = libre ? tocada : (contenido.opciones.find((o) => o.clave === pedida) ?? null);
+  const personajeArriba = arriba ? personajeDe(cientifica(arriba)) : null;
 
   const pista = pistaPara(actividad.pistas, estado.fallosAqui);
 
@@ -333,20 +341,19 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
       <p
         className="pentagrama__pedida"
         aria-live="polite"
-        /* En la ficha, el nombre va del color de la nota (código Boomwhacker), como la
-           cabeza en la pauta. En las de pregunta no: el color delataría la respuesta. */
-        style={libre && tocada ? { color: colorDe(cientifica(tocada)) } : undefined}
+        /* El nombre va del color de la nota (código Boomwhacker). Las cabezas de la pauta
+           siguen en negro hasta que se tocan, así que el color no delata el sitio. */
+        style={arriba ? { color: colorDe(cientifica(arriba)) } : undefined}
       >
-        {/* En la ficha: el personaje de la nota tocada y su nombre. Antes de tocar nada, la
-            fila está vacía y ya: la consigna la lee el adulto en la explicación. */}
-        {/* En la ficha el personaje sale al doble y con su entrada: es el momento de la
-            ficha, y la clave del elemento hace que la entrada vuelva a correr con cada nota. */}
-        {libre && personajeDeTocada && (
-          <span className="pentagrama__quien" key={tocada?.clave}>
-            <Personaje nombre={personajeDeTocada} pose="canta" tamano={112} />
+        {/* El personaje de la nota, al lado del nombre, entrando con cada nota nueva: en la
+            ficha es el de la tocada; en las de pregunta, el de la pedida, que es quien
+            pregunta. La clave del elemento hace que la entrada vuelva a correr. */}
+        {arriba && personajeArriba && (
+          <span className="pentagrama__quien" key={arriba.clave}>
+            <Personaje nombre={personajeArriba} pose="canta" tamano={80} />
           </span>
         )}
-        {libre ? tocada && t(`nota.${tocada.nombre ?? tocada.clave}`) : pedida && t(`nota.${nombreDeClave(pedida)}`)}
+        {arriba && t(`nota.${arriba.nombre ?? arriba.clave}`)}
       </p>
 
       {/* El marco es lo único que se desplaza, y solo de lado. */}
@@ -402,9 +409,8 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
                 style={{
                   width: Math.round(SEPARACION * 1.25),
                   height: Math.round(SEPARACION * 0.9),
-                  // En la ficha la cabeza toma el color de su nota al tocarla, y se lo queda:
-                  // el pentagrama se colorea según se descubre. En las de pregunta, nunca.
-                  ...(libre && tocadas.has(o.clave) ? { background: colorDe(cientifica(o)) } : {}),
+                  // La cabeza toma el color de su nota al tocarla. Ver `tocadas`.
+                  ...(tocadas.has(o.clave) ? { background: colorDe(cientifica(o)) } : {}),
                 }}
               />
               <span className="visualmente-oculto">{nota.nombre}</span>

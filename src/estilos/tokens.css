@@ -1350,17 +1350,14 @@ p {
   font-size: clamp(28px, 9vmin, 44px);
   font-weight: 700;
   line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: var(--acento-2);
   min-height: 1.1em;
   margin: 0;
 }
-/* La ficha del Taller: el nombre en mayúsculas y al doble, que es lo que se está enseñando,
-   y el personaje al doble entrando con un botecito. Lo pidió el autor el 2026-09-12. */
-.pentagrama[data-ficha] .pentagrama__pedida {
-  font-size: clamp(44px, 14vmin, 68px);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
+/* El personaje de la nota, al lado del nombre, entrando con un botecito elástico. Igual
+   en la ficha del Taller y en las de pregunta (2026-09-12). */
 .pentagrama__quien { display: inline-block; line-height: 0; }
 @media (prefers-reduced-motion: no-preference) {
   .pentagrama__quien { animation: pentagrama-aparece 550ms cubic-bezier(0.34, 1.56, 0.64, 1); }
