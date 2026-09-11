@@ -3,7 +3,7 @@
   "version": 1,
   "tipo": "lienzo",
   "titulo": "Dibuja el sonido",
-  "descripcion": "Lienzo libre donde cada trazo suena. Grafía no convencional, sin evaluación.",
+  "descripcion": "Lienzo libre donde cada trazo suena: arriba agudo, abajo grave. Grafía no convencional, sin evaluación. Se puede elegir el instrumento.",
   "etapa": "infantil",
   "eje": "creacion",
   "lugar": "pantalla",
@@ -31,7 +31,8 @@
       "A4",
       "F4"
     ],
-    "elegirInstrumento": true
+    "elegirInstrumento": true,
+    "$comment": "El 2026-09-12 se retiró la 007 «El caracol: sube y baja», que era este mismo lienzo con otras notas: el autor preguntó si no eran iguales, y lo eran. Su frase («arriba agudo, abajo grave») pasa aquí."
   },
   "evaluacion": {
     "autocorrectiva": false,

@@ -3012,6 +3012,10 @@ textos, niveles, camino, y la sección de instrumentos.
       World» (Wikipedia en inglés, Lilypond), que baja toda la escala de do' a do y vuelve a
       subir: Doby arriba, Dora abajo, y los seis en medio en orden.
 
+- [x] **La 007 «El caracol: sube y baja» se retira**: era el mismo lienzo que la 006 «Dibuja el
+      sonido» con otras notas, y el autor lo vio (2026-09-12). Su frase «arriba agudo, abajo
+      grave» pasa al enunciado de la 006.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

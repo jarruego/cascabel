@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-11",
-  "total": 162,
+  "total": 161,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -2456,7 +2456,7 @@
     {
       "id": "inf-06-dibuja-el-sonido",
       "titulo": "Dibuja el sonido",
-      "descripcion": "Lienzo libre donde cada trazo suena. Grafía no convencional, sin evaluación.",
+      "descripcion": "Lienzo libre donde cada trazo suena: arriba agudo, abajo grave. Grafía no convencional, sin evaluación. Se puede elegir el instrumento.",
       "etapa": "infantil",
       "eje": "creacion",
       "tipo": "lienzo",
@@ -2467,25 +2467,6 @@
         "area": "Comunicación y Representación de la Realidad",
         "competencia": "CE4",
         "criterio": "4.1",
-        "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
-      },
-      "estado": "borrador",
-      "herramienta": false
-    },
-    {
-      "id": "inf-07-el-caracol-sube-y-baja",
-      "titulo": "El caracol: sube y baja",
-      "descripcion": "Lienzo libre de altura: se dibuja con el dedo y lo que se dibuja suena. Arriba agudo, abajo grave.",
-      "etapa": "infantil",
-      "eje": "altura",
-      "tipo": "lienzo",
-      "lugar": "pantalla",
-      "microfono": false,
-      "duracion_min": 6,
-      "curriculo": {
-        "area": "Comunicación y Representación de la Realidad",
-        "competencia": "CE3",
-        "criterio": "3.5",
         "saber": "F. Lenguaje y expresión musical — el sonido, el silencio y sus cualidades"
       },
       "estado": "borrador",

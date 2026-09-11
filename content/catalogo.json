@@ -1,7 +1,7 @@
 {
   "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa, y también si usa un código que aquí no está. El hueco de C1-17 es intencionado: ese código nunca llegó a reservarse y los ids no se renumeran, porque un id puede estar dentro de una URL compartida.",
   "generado": "2026-09-10",
-  "total": 163,
+  "total": 162,
   "actividades": [
     {
       "id": "C1-01",
@@ -1470,19 +1470,6 @@
       "esfuerzo": "M",
       "curriculo": "CE3 · crit. 4.1 · saber F",
       "descripcion": "Lienzo libre donde cada trazo suena. Grafía no convencional, sin evaluación.",
-      "estado": "hecha"
-    },
-    {
-      "id": "INF-07",
-      "titulo": "El caracol: sube y baja",
-      "etapa": "infantil",
-      "eje": "altura",
-      "lugar": "pantalla",
-      "tipo": "lienzo",
-      "microfono": false,
-      "esfuerzo": "S",
-      "curriculo": "CE3 · crit. 3.5 · saber F",
-      "descripcion": "Glissando continuo con el dedo, como la flauta de émbolo de Willems.",
       "estado": "hecha"
     },
     {
