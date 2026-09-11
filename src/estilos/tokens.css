@@ -2730,6 +2730,12 @@ p {
   border-color: var(--vivo-verde);
   transform: scale(1.25);
 }
+/* Casi: dentro de la ventana ancha, pero no cuenta. Medio lleno, para que se distinga del
+   verde por la FORMA y no solo por el color (§6), y sin crecer: crecer es del acierto. */
+.tocar__marcas li[data-marca='casi'] {
+  border-color: var(--vivo-amarillo);
+  background: linear-gradient(90deg, var(--vivo-amarillo) 50%, var(--superficie) 50%);
+}
 /* Quemado: golpeado antes de tiempo. Gris como el que se pasó de largo, y con la raya
    por en medio que dice «este ya no». */
 .tocar__marcas li[data-marca='quemado'] {

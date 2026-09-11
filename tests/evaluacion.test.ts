@@ -1,5 +1,13 @@
 import { describe, expect, it } from 'vitest';
-import { bastanteBien, calidadDe, calidadDeMensaje, evaluarRitmo, mensajeRitmico } from '@/motor/evaluacion';
+import {
+  bastanteBien,
+  calidadDe,
+  calidadDeMensaje,
+  evaluarRitmo,
+  marcaDeGolpe,
+  mensajeRitmico,
+  type MarcaEnVivo,
+} from '@/motor/evaluacion';
 
 /**
  * Estos tests protegen la decisión pedagógica más importante del proyecto: que un
@@ -187,5 +195,76 @@ describe('el mensaje al acabar la vuelta y la calidad de la serie salen de la mi
     const r = evaluarRitmo(ocho, ocho.map((e, i) => e + (i % 2 ? -170 : 170)), 'primaria-c1');
     expect(r.aciertos).toBe(8);
     expect(mensajeRitmico(r, ocho.length)).toBe('masRegular');
+  });
+});
+
+describe('la marca en vivo dice lo mismo que la evaluación final', () => {
+  // Primaria 1.º ciclo: bien ±180 ms, casi ±300 ms.
+  const rejilla = [0, 500, 1000, 1500];
+  const libres: MarcaEnVivo[] = ['pendiente', 'pendiente', 'pendiente', 'pendiente'];
+
+  it('dentro de «bien» se enciende en verde', () => {
+    expect(marcaDeGolpe(rejilla, libres, 520, 'primaria-c1')).toEqual({ indice: 1, marca: 'acertado' });
+  });
+
+  it('el fallo que hubo: en la ventana ancha ya no es verde, es «casi»', () => {
+    expect(marcaDeGolpe(rejilla, libres, 750, 'primaria-c1')).toEqual({ indice: 1, marca: 'casi' });
+  });
+
+  it('antes de tiempo quema el hueco, y el siguiente golpe a ese hueco sobra', () => {
+    // Un segundo toque pegado al primero: el primer hueco ya tiene su golpe, así que va al
+    // segundo, y llega 350 ms antes. Igual que al final.
+    const primero: MarcaEnVivo[] = ['acertado', 'pendiente', 'pendiente', 'pendiente'];
+    expect(marcaDeGolpe(rejilla, primero, 150, 'primaria-c1')).toEqual({ indice: 1, marca: 'quemado' });
+    const quemadas: MarcaEnVivo[] = ['acertado', 'quemado', 'pendiente', 'pendiente'];
+    expect(marcaDeGolpe(rejilla, quemadas, 500, 'primaria-c1')).toBeNull();
+  });
+
+  it('pasado el último hueco, sobra', () => {
+    expect(marcaDeGolpe(rejilla, libres, 2000, 'primaria-c1')).toBeNull();
+  });
+
+  /** Las marcas que deja una serie de golpes dados uno a uno, como en la actividad. */
+  const enVivo = (esperados: number[], golpes: number[]): MarcaEnVivo[] => {
+    const marcas: MarcaEnVivo[] = esperados.map(() => 'pendiente');
+    for (const g of golpes) {
+      const r = marcaDeGolpe(esperados, marcas, g, 'primaria-c1');
+      if (r) marcas[r.indice] = r.marca;
+    }
+    return marcas;
+  };
+
+  it('los verdes en vivo son exactamente los aciertos del final', () => {
+    // Bien, un doble toque que quema el segundo, dos que sobran, uno casi y uno perdido.
+    const golpes = [10, 150, 500, 760, 1250];
+    const marcas = enVivo(rejilla, golpes);
+    const final = evaluarRitmo(rejilla, golpes, 'primaria-c1');
+    expect(marcas).toEqual(['acertado', 'quemado', 'casi', 'pendiente']);
+    expect(marcas.filter((m) => m === 'acertado')).toHaveLength(final.aciertos);
+    expect(final.sobrantes).toBe(2);
+  });
+
+  it('y lo mismo con doscientas series al azar: verde donde cuenta, a medias donde es casi', () => {
+    // Un generador fijo, para que el test sea el mismo cada vez.
+    let semilla = 12345;
+    const azar = () => {
+      semilla = (semilla * 1103515245 + 12345) % 2147483648;
+      return semilla / 2147483648;
+    };
+    for (let serie = 0; serie < 200; serie++) {
+      const esperados = [0, 500, 1000, 1500, 2000, 2500];
+      const cuantos = 2 + Math.floor(azar() * 9);
+      const golpes = Array.from({ length: cuantos }, () => Math.floor(azar() * 3200) - 200).sort((a, b) => a - b);
+      const marcas = enVivo(esperados, golpes);
+      const final = evaluarRitmo(esperados, golpes, 'primaria-c1');
+      const verdes = marcas.map((m, i) => (m === 'acertado' ? i : -1)).filter((i) => i >= 0);
+      const aciertos = final.emparejados
+        .map((e, i) => (e.calidad === 'perfecto' || e.calidad === 'bien' ? i : -1))
+        .filter((i) => i >= 0);
+      expect(verdes, `serie ${serie}: ${golpes.join(' ')}`).toEqual(aciertos);
+      const medias = marcas.map((m, i) => (m === 'casi' ? i : -1)).filter((i) => i >= 0);
+      const casis = final.emparejados.map((e, i) => (e.calidad === 'casi' ? i : -1)).filter((i) => i >= 0);
+      expect(medias, `serie ${serie}: ${golpes.join(' ')}`).toEqual(casis);
+    }
   });
 });

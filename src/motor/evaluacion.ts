@@ -126,6 +126,38 @@ export function evaluarRitmo(
   };
 }
 
+/** Lo que ve el niño en cada hueco mientras responde. `casi`: dentro de la ventana ancha, pero no cuenta. */
+export type MarcaEnVivo = 'pendiente' | 'acertado' | 'casi' | 'pasado' | 'quemado';
+
+/**
+ * Qué hace un golpe con el patrón mientras el niño responde: la misma regla que
+ * `evaluarRitmo`, pero de un golpe en uno. Devuelve el hueco y lo que le pasa, o `null` si
+ * el golpe sobra.
+ *
+ * Estaba escrita aparte en el componente y se había separado de la de arriba: encendía en
+ * verde todo lo que caía en la ventana ancha (`casi`), y al final solo contaban `perfecto`
+ * y `bien`. El autor lo vio el 2026-09-12 en «Palmea el ritmo»: «se marcan verdes los pulsos
+ * acertados pero luego me da un feedback de que casi acierto». Ahora el verde es lo que
+ * cuenta, y lo que cae en la ventana ancha se marca a medias, como lo que es.
+ */
+export function marcaDeGolpe(
+  esperadosMs: readonly number[],
+  marcas: readonly MarcaEnVivo[],
+  golpeMs: number,
+  quien: Carril | Etapa,
+): { indice: number; marca: 'acertado' | 'casi' | 'quemado' } | null {
+  const limite = ventana(quien).casi;
+  // El primer hueco que no tiene ya su golpe y cuya ventana no ha pasado: es el `j` de
+  // `evaluarRitmo`. Un hueco quemado sigue siendo «el siguiente» hasta que pasa su ventana.
+  const indice = esperadosMs.findIndex(
+    (e, i) => marcas[i] !== 'acertado' && marcas[i] !== 'casi' && golpeMs <= e + limite,
+  );
+  if (indice === -1 || marcas[indice] === 'quemado') return null;
+  if (golpeMs < esperadosMs[indice]! - limite) return { indice, marca: 'quemado' };
+  const calidad = calidadDe(golpeMs - esperadosMs[indice]!, quien);
+  return { indice, marca: calidad === 'casi' ? 'casi' : 'acertado' };
+}
+
 /**
  * Qué se le dice al niño al acabar una vuelta. Es UNA regla, y la usan el mensaje del
  * personaje y la calidad que se anota en la serie: el autor vio el 2026-09-10 que en

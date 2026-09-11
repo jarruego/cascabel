@@ -345,6 +345,23 @@ un error. El número vive donde se decide.
    piano también se toca con el teclado del ordenador, que el eco es para dos, que la
    tonalidad se sube hasta que la clase cante cómoda. Nada de esto es para quien va a jugar.
 
+### Lo que se enciende en vivo es lo que cuenta al final
+
+En «tocar a tiempo» cada golpe enciende su marca al instante, y esa marca sigue **la misma
+regla** que el mensaje del final (`marcaDeGolpe` y `evaluarRitmo`, en `motor/evaluacion.ts`,
+con un test que comprueba que los verdes en vivo son exactamente los aciertos). Estaba
+separado: el verde encendía todo lo que caía en la ventana ancha, y al final solo contaba lo
+que caía en la estrecha. El autor lo vio en «Palmea el ritmo» (102): «se marcan verdes los
+pulsos acertados pero luego me da un feedback de que casi acierto». Ahora hay tres marcas
+que dicen tres cosas: verde y grande, cuenta; medio llena, casi; gris, se fue.
+
+Y de la misma vuelta: **el ¡ya! es la entrada**. La cuenta va «tres, dos, uno, ¡ya!» y el
+golpe dado con el ¡ya! es el primero, no uno perdido por llegar «antes de la fase». La fase es
+lo que se ve; la ventana, que se abre medio pulso antes del ¡ya!, es lo que vale
+(`motor/entradaRitmica.ts`). Y con el micrófono escuchando **la cuenta no suena**: el clic
+salía por el altavoz, volvía por el micrófono con el retardo del aparato y el detector lo
+tomaba por la primera palmada.
+
 ### Lo que no aparece nunca en la pantalla del niño
 
 Milisegundos, cents, porcentaje de regularidad, desviación típica. `CLAUDE.md` §7 pide esos

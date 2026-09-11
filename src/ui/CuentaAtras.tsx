@@ -35,12 +35,24 @@ interface Props {
   bpm?: number;
   /** Se llama en cada número, por si alguien quiere añadir algo más. */
   alContar?: (queda: number) => void;
+  /**
+   * Sin clics: solo los números. Es para cuando el micrófono está escuchando palmadas, en
+   * que nuestro propio clic entra por el micrófono con el retardo del altavoz y el detector
+   * lo toma por la primera palmada del niño. Lo cazó el autor el 2026-09-12: «coge el
+   * primer tono antes de darle». La cuenta se sigue viendo, y en tempo.
+   */
+  silenciosa?: boolean;
+  /**
+   * Si se da, tocar la cuenta no la salta: es un golpe. En «tocar a tiempo» el ¡ya! es la
+   * entrada, y el que se adelanta medio pulso tiene que poder darlo aquí encima.
+   */
+  alTocar?: () => void;
 }
 
 /** Sin tempo declarado, 75 ppm: un paso andando, ni agobiante ni lento. */
 const MS_POR_DEFECTO = 800;
 
-export function CuentaAtras({ desde = 3, alTerminar, bpm, alContar }: Props) {
+export function CuentaAtras({ desde = 3, alTerminar, bpm, alContar, silenciosa = false, alTocar }: Props) {
   const [queda, setQueda] = useState(desde);
   /*
     Las funciones del padre van en referencias y no en las dependencias del efecto.
@@ -71,7 +83,7 @@ export function CuentaAtras({ desde = 3, alTerminar, bpm, alContar }: Props) {
     // aquí lo que importa es que el sonido y el dígito lleguen juntos, y son cuatro eventos,
     // no una rejilla rítmica. Para eso sí haría falta el `lookahead` (CLAUDE.md §7).
     try {
-      clic(obtenerContexto().currentTime, queda <= 0);
+      if (!silenciosa) clic(obtenerContexto().currentTime, queda <= 0);
     } catch {
       // Sin audio la cuenta se ve igual. Nunca es motivo para no empezar.
     }
@@ -83,19 +95,19 @@ export function CuentaAtras({ desde = 3, alTerminar, bpm, alContar }: Props) {
     alContarRef.current?.(queda);
     const id = window.setTimeout(() => setQueda((n) => n - 1), intervalo);
     return () => window.clearTimeout(id);
-  }, [queda, intervalo]);
+  }, [queda, intervalo, silenciosa]);
 
   return (
     <button
       type="button"
       className="cuenta"
-      onClick={alTerminar}
-      aria-label={t('cuenta.saltar')}
+      onClick={alTocar ?? alTerminar}
+      aria-label={t(alTocar ? 'cuenta.empiezaAlYa' : 'cuenta.saltar')}
     >
       <span className="cuenta__numero" key={queda} aria-live="assertive">
         {queda > 0 ? queda : t('cuenta.ya')}
       </span>
-      <span className="cuenta__pista">{t('cuenta.saltar')}</span>
+      <span className="cuenta__pista">{t(alTocar ? 'cuenta.empiezaAlYa' : 'cuenta.saltar')}</span>
     </button>
   );
 }

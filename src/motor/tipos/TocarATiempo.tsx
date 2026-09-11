@@ -6,7 +6,8 @@ import { MARIMBA, Sampler } from '@/audio/sampler';
 import { muestrasDe } from '@/audio/instrumentos';
 import { DetectorDePalmadas } from '@/escucha/palmadas';
 import { useCarril } from '@/app/preferencias';
-import { calidadDeMensaje, evaluarRitmo, mensajeRitmico, type EvaluacionRitmica } from '../evaluacion';
+import { calidadDeMensaje, evaluarRitmo, mensajeRitmico, type EvaluacionRitmica, marcaDeGolpe, type MarcaEnVivo } from '../evaluacion';
+import { CUENTA_PULSOS, entradaDeVuelta } from '@/motor/entradaRitmica';
 import {
   aMilisegundos,
   anclarEn,
@@ -36,15 +37,8 @@ import { CuentaAtras } from '@/ui/CuentaAtras';
  * la vez son inutilizables. El toque no es el plan B, es el plan A en clase entera.
  */
 
-/**
- * Pulsos de entrada entre el ejemplo y la respuesta: un compás.
- *
- * Es lo que da un director y lo que un niño necesita para colocarse. Menos no da tiempo, y
- * más deja al grupo sin saber si ya ha empezado.
- */
 /** La melodía, si la hay, por debajo de los golpes: acompaña, no manda. */
 const VOLUMEN_MELODIA = 0.7;
-const CUENTA_PULSOS = 4;
 
 type Fase = 'listo' | 'cuenta' | 'escuchando' | 'respondiendo' | 'resultado';
 
@@ -75,7 +69,7 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
   const [ronda, setRonda] = useState(0);
   // Solo importa el `set`: la vía se decide al primer golpe y el valor no se dibuja
   // desde que la instrucción salió de la pantalla.
-  const [, setConMicrofono] = useState(false);
+  const [conMicrofono, setConMicrofono] = useState(false);
   const [avisoMicro, setAvisoMicro] = useState<string | null>(null);
   const [evaluacion, setEvaluacion] = useState<EvaluacionRitmica | null>(null);
   /** Se acabó el tiempo sin que el niño tocara nada. No es un fallo: es que no empezó. */
@@ -132,10 +126,11 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
   const origen = useRef<number | null>(null);
   const cierre = useRef<number | null>(null);
   const temporizadores = useRef<number[]>([]);
+  /** Desde cuándo cuenta un golpe, en el reloj de audio. Ver `entradaDeVuelta`. */
+  const ventana = useRef(Infinity);
 
-  /** Estado de cada golpe esperado mientras el niño responde. */
-  /** `quemado`: golpeado antes de tiempo. Se ve gris, como `pasado`, y ya no se recupera. */
-  const [marcas, setMarcas] = useState<Array<'pendiente' | 'acertado' | 'pasado' | 'quemado'>>([]);
+  /** Estado de cada golpe esperado mientras el niño responde. La regla es `marcaDeGolpe`. */
+  const [marcas, setMarcas] = useState<MarcaEnVivo[]>([]);
   /** Las marcas, para leerlas desde `tocar` sin que dependa de ellas. */
   const marcasRef = useRef(marcas);
   marcasRef.current = marcas;
@@ -265,15 +260,15 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
     });
 
     /*
-      Fase de respuesta: empieza tras UN COMPÁS ENTERO de entrada, como la da un director.
+      La entrada: un compás de cuenta —tres, dos, uno— y el ¡ya!, que ES el primer golpe.
 
-      Antes empezaba un solo pulso después del patrón, y la cuenta atrás dura más que eso:
-      a 84 ppm son casi dos segundos frente a 0,7. Los primeros golpes esperados caían con
-      la cuenta todavía en pantalla, y `tocar()` los descartaba porque la fase aún no era
-      'respondiendo'. El niño no podía acertar el principio hiciera lo que hiciera.
+      Los instantes salen de `entradaDeVuelta`, con su test. Aquí se programan tres relojes:
+      la cuenta en pantalla al acabar el ejemplo, la ventana desde la que cuenta un golpe y
+      la pantalla de responder, que llega medio pulso después del ¡ya! para que se vea.
     */
     const finPatron = inicio + rejilla!.pulsos * msPorPulso;
-    const inicioRespuesta = finPatron + CUENTA_PULSOS * msPorPulso;
+    const entrada = entradaDeVuelta(finPatron, bpm);
+    ventana.current = entrada.ventanaDesdeMs;
 
     /*
       **Los instantes esperados no se calculan aquí.** Se calculan cuando el niño da su
@@ -307,14 +302,15 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
       Y la fase de respuesta la marca EL RELOJ, no el final de la cuenta atrás.
 
       Encadenarla al callback de un componente ataba un instante musical a una cadena de
-      `setTimeout` de React. Medio pulso de margen por delante para que un golpe algo
-      adelantado en la primera nota cuente: entrar un poco antes es lo normal, y descartarlo
-      sería castigar precisamente al que ha anticipado bien.
+      `setTimeout` de React. La fase es solo lo que se ve: un golpe dado con la cuenta aún en
+      pantalla cuenta igual si ha entrado en la ventana, que se abre medio pulso antes del
+      ¡ya!. Es lo que hace que la palmada dada justo con el ¡ya! sea la primera y no una
+      perdida.
     */
     temporizadores.current.push(
       window.setTimeout(
         () => setFase('respondiendo'),
-        inicioRespuesta - msPorPulso * 0.5 - ctx.currentTime * 1000,
+        entrada.respondiendoDesdeMs - ctx.currentTime * 1000,
       ),
     );
 
@@ -328,7 +324,7 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
     temporizadores.current.push(
       window.setTimeout(
         () => terminar(),
-        inicioRespuesta + (rejilla!.pulsos + 4) * msPorPulso - ctx.currentTime * 1000,
+        entrada.entradaMs + (rejilla!.pulsos + 4) * msPorPulso - ctx.currentTime * 1000,
       ),
     );
   }, [actividad.entrada.modo, bpm, carril, intentarMicrofono, rejilla]);
@@ -350,14 +346,16 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
   }, [carril]);
 
   const tocar = useCallback((instanteMs?: number, desde: 'palmada' | 'toque' = 'toque') => {
-    if (fase !== 'respondiendo') return;
+    // Lo que vale es la ventana, no la fase: con la cuenta aún en pantalla ya se puede entrar.
+    if (fase !== 'respondiendo' && fase !== 'cuenta') return;
+    const ahora = instanteMs ?? obtenerContexto().currentTime * 1000;
+    if (ahora < ventana.current) return;
 
     // La primera respuesta elige la vía; después se ignora la otra.
     via.current ??= desde;
     if (via.current !== desde) return;
     setViaVisible(via.current);
 
-    const ahora = instanteMs ?? obtenerContexto().currentTime * 1000;
     const msPorPulso = 60000 / bpm;
 
     /*
@@ -371,8 +369,9 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
     if (origen.current === null) {
       origen.current = ahora;
       esperados.current = anclarEn(rejilla!, ahora, bpm);
-      // La melodía va con el niño: anclada a su primer golpe, como la rejilla.
-      sonarMelodia(esperados.current);
+      // La melodía va con el niño: anclada a su primer golpe, como la rejilla. Con palmadas
+      // no: saldría por el altavoz, entraría por el micrófono y el detector la contaría.
+      if (desde === 'toque') sonarMelodia(esperados.current);
       const ultimo = esperados.current[esperados.current.length - 1]!;
       cierre.current = window.setTimeout(
         terminar,
@@ -383,29 +382,20 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
     golpes.current.push(ahora);
 
     /*
-      La marca en vivo sigue la misma regla que la evaluación final (`evaluarRitmo`): el
-      golpe se compara con el primer hueco que aún no ha pasado. Dentro de la ventana, en
-      verde; antes de tiempo, el hueco se quema y se queda en gris —es lo que hace que
-      aporrear no rellene nada—; y si ese hueco ya está quemado, el golpe sobra. Es retorno
-      inmediato: el niño ve lo que ha pasado sin esperar al final.
+      La marca en vivo es la misma regla que la evaluación final, en `marcaDeGolpe`: verde lo
+      que cuenta, a medias lo que cae en la ventana ancha, quemado lo que se adelanta, y
+      sobra lo demás. Es retorno inmediato: el niño ve lo que ha pasado sin esperar al final,
+      y lo que ve al final es lo mismo que ha visto.
     */
-    const limite = TOLERANCIA_MS[carril].casi;
-    let mejor = -1;
-    let quema = false;
-    let sobra = false;
-    const siguiente = esperados.current.findIndex((e) => ahora <= e + limite);
-    if (siguiente === -1) sobra = true;
-    else if (marcasRef.current[siguiente] === 'quemado' || marcasRef.current[siguiente] === 'acertado') sobra = true;
-    else if (ahora < esperados.current[siguiente]! - limite) quema = true;
-    else mejor = siguiente;
-    if (quema) {
-      setMarcas((m) => {
-        const n = [...m];
-        n[siguiente] = 'quemado';
-        return n;
-      });
+    const marca = marcaDeGolpe(esperados.current, marcasRef.current, ahora, carril);
+    if (marca) {
+      // La referencia se actualiza aquí mismo, no al repintar: dos golpes seguidos antes de
+      // que React pinte tienen que ver el segundo lo que ha hecho el primero.
+      const nuevas = [...marcasRef.current];
+      nuevas[marca.indice] = marca.marca;
+      marcasRef.current = nuevas;
+      setMarcas(nuevas);
     }
-    void sobra;
 
     /*
       **Todo golpe suena; el acierto suena MÁS.**
@@ -427,15 +417,7 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
       es silencioso. Con micrófono, el retorno lo dan los círculos.
     */
     if (desde === 'toque') clicYa(false);
-    if (mejor >= 0) {
-      if (desde === 'toque') sampler.current?.tocar('C5', undefined, 0.9);
-      setMarcas((m) => {
-        if (m[mejor] === 'acertado') return m;
-        const n = [...m];
-        n[mejor] = 'acertado';
-        return n;
-      });
-    }
+    if (desde === 'toque' && marca?.marca === 'acertado') sampler.current?.tocar('C5', undefined, 0.9);
   }, [fase, carril, bpm, terminar, rejilla]);
 
   /*
@@ -534,7 +516,17 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
         /* La cuenta ya no cambia la fase: eso lo hace el reloj. Aquí solo cuenta, en
            tempo, con su clic por número. Un compás menos el «¡ya!», que cae encima del
            primer golpe. */
-        <CuentaAtras desde={CUENTA_PULSOS - 1} bpm={bpm} alTerminar={() => {}} />
+        <CuentaAtras
+          desde={CUENTA_PULSOS - 1}
+          bpm={bpm}
+          alTerminar={() => {}}
+          /* Con el micrófono escuchando, la cuenta no suena: nuestro clic volvía por el
+             micrófono y era «la primera palmada». Ver `CuentaAtras`. */
+          silenciosa={conMicrofono}
+          /* Y tocarla es dar el golpe: el ¡ya! es la entrada, y el que se adelanta un poco
+             la da aquí encima. */
+          alTocar={() => tocar(undefined, 'toque')}
+        />
       )}
 
       {fase === 'escuchando' && <p className="estado-actividad">{t('tocar.escucha')}</p>}

@@ -3028,6 +3028,16 @@ textos, niveles, camino, y la sección de instrumentos.
 - [x] **El Danubio (347) con violín**, la melodía al 100 % y los golpes al 45 %: la percusión
       corporal tiene ahora también `volumenGolpes`, para cuando manda la melodía.
 
+- [x] **«Palmea el ritmo» (102) decía «casi» con todo en verde**, y cogía el primer golpe
+      antes de darlo. Eran dos cosas. La marca en vivo encendía en verde la ventana ancha y
+      el final solo contaba la estrecha: ahora las dos salen de `marcaDeGolpe` (con test de
+      que los verdes en vivo son los aciertos del final) y lo que cae en la ventana ancha se
+      ve medio lleno. Y el ¡ya! caía un pulso antes de la entrada: la palmada dada con él se
+      descartaba y, con micrófono, el clic del ¡ya! volvía por el micrófono y era «la primera
+      palmada». Ahora el ¡ya! ES la entrada (`motor/entradaRitmica.ts`, con test), la ventana
+      se abre medio pulso antes aunque la cuenta siga en pantalla, la cuenta calla cuando el
+      micrófono escucha, y con palmadas tampoco suena la melodía de debajo.
+
 - [x] **Tocar a tiempo con la melodía debajo.** La Gruta (345) a ritmo de negra no se
       reconocía: ahora el violín toca la melodía, una nota por golpe, en la escucha y anclada
       al primer golpe del niño mientras palmea. Campo `melodia` del tipo, con test de cuenta.
