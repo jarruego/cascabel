@@ -95,10 +95,11 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
     Un solo mensaje, sea cual sea el fallo: «ese paso no sigue el patrón, empieza de nuevo».
     Había seis, uno por clase de fallo —tono donde tocaba semitono, salto, baja...— y el
     autor los quitó el 2026-09-12: «hay muchas explicaciones según la tecla y lía más». Qué
-    ha pasado ya lo dice el paso tachado en la pauta. La pista de la actividad se añade a
-    partir del segundo fallo seguido, que es cuando hace falta algo más que «otra vez».
+    ha pasado ya lo dice el paso tachado en la pauta. La única pista de la actividad es el
+    patrón mismo, y va detrás: «...y sigue el patrón: tono, tono, semitono...». Nada de
+    coletillas sobre teclas: «eso sobra, indica solo que siga el patrón».
   */
-  const pistaActividad = pistaPara(actividad.pistas, fallos - 1);
+  const pistaActividad = pistaPara(actividad.pistas, fallos);
   const textoPista =
     t('escala.fallo', { nota: nombreDe(tonica) }) + (pistaActividad ? ` ${t(pistaActividad)}` : '');
   /** Pasos del patrón ya dados bien: el paso malo, si lo hay, no cuenta. */

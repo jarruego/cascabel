@@ -3031,8 +3031,9 @@ textos, niveles, camino, y la sección de instrumentos.
 - [x] **La escala (301, 342) avisa con un solo mensaje**: «ese paso no sigue el patrón,
       empieza de nuevo en sol». Los seis mensajes por clase de fallo liaban («hay muchas
       explicaciones según la tecla y lía más», 2026-09-12); qué ha pasado ya lo dice el paso
-      tachado. La pista de la actividad entra a partir del segundo fallo seguido. Y del
-      enunciado se va «un tono son dos teclas; un semitono, la de al lado».
+      tachado. La única pista de las dos actividades es el patrón mismo, detrás del mensaje;
+      las de «un semitono es la tecla de al lado» se van. Y del enunciado se va «un tono son
+      dos teclas; un semitono, la de al lado».
 
 - [x] **La 104 se llama «Constructor de melodías»**, no «de ritmos»: con cuatro alturas lo
       que sale es una melodía (2026-09-12). El id y la URL no cambian.

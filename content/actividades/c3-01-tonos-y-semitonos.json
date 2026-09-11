@@ -38,9 +38,7 @@
   "enunciado": "actividad.c301.enunciado",
   "personaje": "simon",
   "pistas": [
-    "actividad.c301.pista1",
-    "actividad.c301.pista2",
-    "actividad.c301.pista3"
+    "actividad.c301.pista1"
   ],
   "creditos": [
     {
