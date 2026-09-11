@@ -192,6 +192,10 @@ def main() -> int:
             }
             hechos += 1
             print(f"✓ {s['categoria']}/{s['id']}  {m['licencia']}  · {m['autor'][:50]}")
+            # Aviso si el recorte arranca en silencio: el oboe de la 337 tardaba cuatro segundos
+            # en sonar (2026-09-12). Se mira el primer medio segundo del .opus ya hecho.
+            if pico_db(destino, 0, 0.5) < PICO_DB - 25:
+                print(f"  ⚠ {s['id']} arranca en silencio: ajusta `desde` en el manifiesto")
         except Exception as exc:  # noqa: BLE001
             fallos.append(f"{s['id']}: {exc}")
             s.pop("verificado", None)

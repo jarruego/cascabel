@@ -3035,6 +3035,11 @@ textos, niveles, camino, y la sección de instrumentos.
       apareciendo con cada una: en el Preludio (343) se ve qué notas forman cada acorde, y en
       el Cisne y el mapa del Himno, quién canta. Con una nota por bloque no hace falta.
 
+- [x] **El oboe de la 337 tardaba cuatro segundos en sonar**, y con él el saxofón, el
+      contrabajo, el acordeón y el violín, que arrancaban en silencio. Medido el arranque de
+      todos los instrumentos y ajustado `desde` en esos cinco; la herramienta avisa desde
+      ahora si un recorte arranca en silencio.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

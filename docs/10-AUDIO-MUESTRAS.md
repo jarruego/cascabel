@@ -147,7 +147,10 @@ olas, avión, tren y teléfono se «cambiaron» y siguieron sonando igual durant
 Ahora el nombre en caché lleva un hash del título de Commons, la extensión sale de la ruta
 de la URL (Commons añade `?utm_source=…`) y ffmpeg recibe `-vn` porque algunos originales
 son vídeo. Al cambiar un sonido, se comprueba el `.opus` resultante decodificándolo, no la
-salida de la herramienta. Cada entrada admite además `filtros`, una cadena de filtros de
+salida de la herramienta. La herramienta avisa si un recorte arranca en silencio (más de 25 dB por debajo del pico
+en su primer medio segundo): el oboe de «La orquesta tocada de verdad» tardaba cuatro
+segundos en sonar y nadie lo vio hasta que el autor lo oyó. Se arregla con `desde`.
+Cada entrada admite además `filtros`, una cadena de filtros de
 ffmpeg que se aplica antes de normalizar: las olas llevan `highpass=f=220` porque la
 grabación era casi todo retumbo grave, que un altavoz de móvil no da y que lo emborrona.
 

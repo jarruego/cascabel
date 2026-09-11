@@ -775,12 +775,14 @@
       "nombre": "Violín",
       "commons": "File:Violin G major scale.ogg",
       "segundos": 9,
+      "desde": 0.9,
+      "$comment": "Desde 0.9 s (2026-09-12): la grabación arrancaba con silencio y el oboe tardaba más de cuatro segundos en sonar.",
       "verificado": {
         "licencia": "CC BY-SA 3.0",
         "licencia_url": "http://creativecommons.org/licenses/by-sa/3.0/",
         "autor": "Myself",
         "url": "https://commons.wikimedia.org/wiki/File:Violin_G_major_scale.ogg",
-        "fecha": "2026-09-10"
+        "fecha": "2026-09-11"
       }
     },
     {
@@ -817,12 +819,14 @@
       "nombre": "Saxofón",
       "commons": "File:Jazz Funk no1 (saxophone).flac",
       "segundos": 8,
+      "desde": 4.1,
+      "$comment": "Desde 4.1 s (2026-09-12): la grabación arrancaba con silencio y el oboe tardaba más de cuatro segundos en sonar.",
       "verificado": {
         "licencia": "CC BY-SA 4.0",
         "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
         "autor": "Claude Reid",
         "url": "https://commons.wikimedia.org/wiki/File:Jazz_Funk_no1_(saxophone).flac",
-        "fecha": "2026-09-10"
+        "fecha": "2026-09-11"
       }
     },
     {
@@ -859,12 +863,14 @@
       "nombre": "Oboe",
       "commons": "File:Ferling Oboe Study No 28 Aaron Hill.ogg",
       "segundos": 8,
+      "desde": 4.4,
+      "$comment": "Desde 4.4 s (2026-09-12): la grabación arrancaba con silencio y el oboe tardaba más de cuatro segundos en sonar.",
       "verificado": {
         "licencia": "Public domain",
         "licencia_url": "",
         "autor": "Aaron Hill Oboe / Franz Wilhelm Ferling (1796–1874) Bearbeitung (Video entfernt): Lewenstein",
         "url": "https://commons.wikimedia.org/wiki/File:Ferling_Oboe_Study_No_28_Aaron_Hill.ogg",
-        "fecha": "2026-09-10"
+        "fecha": "2026-09-11"
       }
     },
     {
@@ -901,12 +907,14 @@
       "nombre": "Acordeón",
       "commons": "File:Accordion chords-01.ogg",
       "segundos": 8,
+      "desde": 1.5,
+      "$comment": "Desde 1.5 s (2026-09-12): la grabación arrancaba con silencio y el oboe tardaba más de cuatro segundos en sonar.",
       "verificado": {
         "licencia": "CC BY-SA 3.0",
         "licencia_url": "http://creativecommons.org/licenses/by-sa/3.0/",
         "autor": "No machine-readable author provided. Clngre~commonswiki assumed (based on copyright claims).",
         "url": "https://commons.wikimedia.org/wiki/File:Accordion_chords-01.ogg",
-        "fecha": "2026-09-10"
+        "fecha": "2026-09-11"
       }
     },
     {
@@ -985,12 +993,14 @@
       "nombre": "Contrabajo",
       "commons": "File:Jazz walking bass on double bass.oga",
       "segundos": 8,
+      "desde": 2.3,
+      "$comment": "Desde 2.3 s (2026-09-12): la grabación arrancaba con silencio y el oboe tardaba más de cuatro segundos en sonar.",
       "verificado": {
         "licencia": "CC BY 2.5",
         "licencia_url": "https://creativecommons.org/licenses/by/2.5",
         "autor": "Serolillo",
         "url": "https://commons.wikimedia.org/wiki/File:Jazz_walking_bass_on_double_bass.oga",
-        "fecha": "2026-09-10"
+        "fecha": "2026-09-11"
       }
     },
     {
