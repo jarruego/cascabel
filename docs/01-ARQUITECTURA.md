@@ -50,8 +50,8 @@ lista exactamente los tipos que hay en `src/motor/registro.ts`, con sus cifras a
 | `lienzo` | Creación libre sin evaluación | 7 |
 | `referencia` | Consulta del lenguaje musical, con sonido. No es un ejercicio | 7 |
 | `ordenar` | Secuencia por altura, duración o forma | 6 |
+| `pentagrama` | Colocar o leer sobre pauta real | 6 |
 | `emparejar` | Dos conjuntos, toque de dos en dos | 5 |
-| `pentagrama` | Colocar o leer sobre pauta real | 4 |
 | `cantar` | Detección de altura con retorno visual | 3 |
 | `compases` | Colocar las barras de compás donde el pulso las pide | 3 |
 | `eco` | Dos niños por turnos: uno propone un ritmo y el otro lo repite | 2 |
