@@ -72,6 +72,8 @@ const ENTRADA_S = VENTANA_S;
 const LINEA_PCT = 22;
 /** Separación entre líneas del pentagrama, en píxeles. */
 const SEP = 14;
+/** La guía, bajita: lo que suena fuerte es la nota que se acierta. */
+const VOLUMEN_GUIA = 0.33;
 /** Altura libre por encima de la quinta línea, para las notas agudas. */
 const MARGEN_ARRIBA = 46;
 
@@ -287,8 +289,15 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
     setEvaluacion(null);
 
     const segundosPorPulso = 60 / bpm;
+    /*
+      La guía suena bajita y la nota que el niño acierta suena fuerte, en el momento de
+      tocarla. Antes sonaba todo a tope tocara o no, y «toques o no la nota, siempre suena»
+      (el autor, 2026-09-12): no había diferencia entre acertar y mirar. La guía se queda,
+      porque es lo que permite seguir la canción; pero a un tercio, para que lo que se oye
+      de verdad sea lo que uno toca.
+    */
     tiempos.forEach((s, i) => {
-      sampler.current?.tocar(notas[i]!.nota, t0 + s, notas[i]!.pulsos * segundosPorPulso * 0.9);
+      sampler.current?.tocar(notas[i]!.nota, t0 + s, notas[i]!.pulsos * segundosPorPulso * 0.9, VOLUMEN_GUIA);
     });
 
     setFase('sonando');
@@ -348,6 +357,8 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
     });
     if (mejor < 0) return;
     setAcertadas((a) => new Set(a).add(mejor));
+    // La nota acertada, ahora y fuerte: es el premio, y es lo que se oye por encima de la guía.
+    sampler.current?.tocar(notas[mejor]!.nota, undefined, notas[mejor]!.pulsos * (60 / bpm) * 0.9, 1);
 
     // El nombre de la nota, subiendo y desvaneciéndose. Es lo que convierte «he acertado»
     // en «he acertado un SOL»: la recompensa y el contenido son la misma cosa.

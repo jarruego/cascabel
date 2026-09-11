@@ -3016,6 +3016,11 @@ textos, niveles, camino, y la sección de instrumentos.
       sonido» con otras notas, y el autor lo vio (2026-09-12). Su frase «arriba agudo, abajo
       grave» pasa al enunciado de la 006.
 
+- [x] **En los karaokes, la guía suena bajita y la nota acertada, fuerte.** Antes sonaba
+      todo a tope tocara o no el niño, y no había diferencia entre acertar y mirar. La guía se
+      queda a un tercio, que es lo que permite seguir la canción, y la nota se toca fuerte en
+      el momento de acertarla.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el
