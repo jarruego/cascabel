@@ -223,6 +223,8 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
     Sin reloj se quedaba flotando después de cualquier toque —lo vio el autor—; con 1,2 s
     no daba tiempo de leerla. Ahora dura lo que la tarjeta de elogio con ese mismo texto,
     tres segundos y medio más lo que mida la frase, y cualquier respuesta nueva la quita.
+    Y no bloquea: la fase «casi» dura solo el refractario del doble toque (`esperaMs`), así
+    que quien ya sabe qué ha pasado corrige al momento, con la pista aún encima.
   */
   const [pistaVisible, setPistaVisible] = useState(false);
   /*
@@ -311,15 +313,8 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
       <Reaccion
         tono={estado.fase === 'bien' ? 'bien' : conPista ? 'casi' : 'neutro'}
         personaje={actividad.personaje}
-        /* Mientras se espera a que se lea la pista, un toque la cierra y vuelve la pregunta. */
-        alCerrar={
-          estado.fase === 'casi'
-            ? () => {
-                setPistaVisible(false);
-                despachar({ tipo: 'seguir' });
-              }
-            : undefined
-        }
+        /* La pista no bloquea: tras el refractario (`esperaMs`) se puede corregir al momento,
+           y cualquier respuesta nueva es la que la quita. Por eso aquí no hay `alCerrar`. */
       >
         {estado.fase === 'bien' && t('comun.bien')}
         {conPista && (pista ? t(pista) : t('comun.casi'))}

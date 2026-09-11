@@ -58,6 +58,19 @@ export const POR_CARACTER_MS = 45;
 export const TRAS_ACIERTO_MS = 900;
 
 /**
+ * Lo que se tarda en volver a admitir una respuesta tras un fallo, cuando la pista NO
+ * bloquea: lo justo para tragarse el doble toque de un niño de cuatro años, y nada más.
+ *
+ * En elección, pentagrama y emparejar la corrección es la respuesta siguiente, así que la
+ * pista se queda encima sin bloquear y se puede corregir al instante. Estaba en 1,2 s y el
+ * autor lo vio el 2026-09-12 en «coloca la nota»: «cuando me equivoco y toco rápido para
+ * corregir, no me valida la nota». Los tipos donde la corrección se PINTA sobre el tablero
+ * —compases, ordenar, escala— sí bloquean, porque quitarla al primer toque la haría
+ * ilegible: ahí rige `esperaTrasRespuesta` y el cierre por toque de `sePuedeCerrar`.
+ */
+export const REFRACTARIO_MS = 350;
+
+/**
  * Cuánto se espera tras una respuesta antes de que la actividad siga sola.
  *
  * **El acierto y el fallo no valen lo mismo.** Tras un acierto no hay nada que leer y se

@@ -3028,6 +3028,15 @@ textos, niveles, camino, y la sección de instrumentos.
 - [x] **El Danubio (347) con violín**, la melodía al 100 % y los golpes al 45 %: la percusión
       corporal tiene ahora también `volumenGolpes`, para cuando manda la melodía.
 
+- [x] **Tras un fallo se corrige al instante en elección, pentagrama y emparejar.** La
+      fase de fallo bloqueaba 1,2 s (elección, pentagrama) o el tiempo de lectura entero
+      (emparejar) y el toque rápido para corregir se perdía: «no me valida la nota» (242).
+      Ahora dura solo el refractario del doble toque (`REFRACTARIO_MS`, 350 ms) y la pista se
+      queda encima sin bloquear lo que tarda en leerse, o hasta que se acierta. Emparejar
+      estrena el mismo mecanismo de pista que los otros dos. Compases, ordenar y escala
+      siguen bloqueando, con el cierre por toque de abajo, porque su corrección se pinta
+      sobre el tablero.
+
 - [x] **La pista de un fallo se cierra con un toque desde los dos segundos**, y la
       actividad sigue: la pregunta vuelve (elección, pentagrama, emparejar), se vuelve a
       colocar u ordenar (compases, ordenar), la escala empieza de nuevo. Antes había que

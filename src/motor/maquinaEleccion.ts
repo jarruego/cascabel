@@ -1,3 +1,5 @@
+import { REFRACTARIO_MS, TRAS_ACIERTO_MS } from './maquinaReaccion';
+
 /**
  * Máquina de estados del tipo «elección».
  *
@@ -10,9 +12,10 @@
  *
  *  - Un fallo NUNCA avanza, NUNCA resta y NUNCA termina. Repite el estímulo y da pista.
  *  - No hay vidas, ni cronómetro, ni puntuación durante el juego.
- *  - Mientras hay feedback en pantalla no se aceptan más respuestas. Un niño de cuatro
- *    años da tres toques seguidos por costumbre, y sin esto contaríamos tres intentos y
- *    encadenaríamos tres avances.
+ *  - Tras una respuesta hay un instante en que no se acepta otra. Un niño de cuatro años
+ *    da tres toques seguidos por costumbre, y sin esto contaríamos tres intentos y
+ *    encadenaríamos tres avances. Tras un fallo ese instante es solo el refractario: la
+ *    pista se queda encima sin bloquear y se puede corregir al momento.
  */
 
 export type FaseEleccion = 'estimulo' | 'bien' | 'casi' | 'completada';
@@ -81,11 +84,13 @@ export function reducir(
   }
 }
 
-/** Milisegundos que se muestra el feedback antes de continuar. */
+/**
+ * Milisegundos hasta que se vuelve a admitir respuesta. Tras un acierto, lo que dura el
+ * «¡bien!»; tras un fallo, solo el refractario: la pista no se va con la fase —el componente
+ * la deja lo que tarda en leerse— y el niño corrige cuando quiere.
+ */
 export function esperaMs(fase: FaseEleccion): number {
-  // Al fallar se da más tiempo: hay una pista que leer o escuchar, y meter prisa a un
-  // niño que acaba de equivocarse es justo lo que CLAUDE.md §4 prohíbe.
-  return fase === 'casi' ? 1200 : 900;
+  return fase === 'casi' ? REFRACTARIO_MS : TRAS_ACIERTO_MS;
 }
 
 /**

@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { REFRACTARIO_MS } from '@/motor/maquinaReaccion';
 import {
   ESTADO_INICIAL,
   esperaMs,
@@ -90,9 +91,12 @@ describe('máquina del tipo elección', () => {
     expect(e).toEqual(congelado);
   });
 
-  it('da más tiempo tras un fallo que tras un acierto', () => {
-    // Meter prisa a un niño que acaba de equivocarse es lo que CLAUDE.md §4 prohíbe.
-    expect(esperaMs('casi')).toBeGreaterThan(esperaMs('bien'));
+  it('tras un fallo se puede corregir al instante: solo el refractario del doble toque', () => {
+    // La pista se queda encima sin bloquear. Lo pidió el autor el 2026-09-12: «cuando me
+    // equivoco y toco rápido para corregir, no me valida la nota».
+    expect(esperaMs('casi')).toBe(REFRACTARIO_MS);
+    expect(esperaMs('casi')).toBeLessThan(esperaMs('bien'));
+    expect(esperaMs('casi')).toBeLessThan(1000);
   });
 
   describe('pistas', () => {

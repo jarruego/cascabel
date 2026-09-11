@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { CIERRE_DESDE_MS, TRAS_ACIERTO_MS, esperaTrasRespuesta, sePuedeCerrar } from '../src/motor/maquinaReaccion';
+import { CIERRE_DESDE_MS, REFRACTARIO_MS, TRAS_ACIERTO_MS, esperaTrasRespuesta, sePuedeCerrar } from '../src/motor/maquinaReaccion';
 import { createElement, Fragment } from 'react';
 import {
   BASE_MS,
@@ -117,5 +117,13 @@ describe('cerrar la tarjeta con un toque', () => {
   it('a partir de los dos segundos, sí', () => {
     expect(sePuedeCerrar(CIERRE_DESDE_MS)).toBe(true);
     expect(sePuedeCerrar(10000)).toBe(true);
+  });
+});
+
+describe('el refractario tras un fallo que no bloquea', () => {
+  it('es lo justo para un doble toque: menos que el «¡bien!» y muy por debajo de leer nada', () => {
+    expect(REFRACTARIO_MS).toBeGreaterThan(0);
+    expect(REFRACTARIO_MS).toBeLessThan(TRAS_ACIERTO_MS);
+    expect(REFRACTARIO_MS).toBeLessThan(esperaTrasRespuesta(false, 'Casi.'));
   });
 });

@@ -2,7 +2,7 @@ import { useCallback, useEffect, useLayoutEffect, useReducer, useRef, useState }
 import { OBJETIVO_TACTIL } from '@/config';
 import { useCarril } from '@/app/preferencias';
 import { Reaccion } from '@/ui/Reaccion';
-import { esperaTrasRespuesta } from '../maquinaReaccion';
+import { BASE_MS, POR_CARACTER_MS, REFRACTARIO_MS, TRAS_ACIERTO_MS } from '../maquinaReaccion';
 import { pistaPara } from '../maquinaEleccion';
 import { t } from '@/i18n';
 import type { PropsActividad } from '../tipos';
@@ -130,13 +130,42 @@ export default function Emparejar({ actividad, alTerminar }: PropsActividad) {
       pararMuestra();
       pararTodo();
     }
-    // Tras el acierto, enseguida; tras el fallo, lo que tarda en leerse la pista.
+    // Tras el acierto, lo que dura el «¡bien!»; tras el fallo, solo el refractario: la
+    // pista se queda encima sin bloquear (ver `pistaVisible`) y se corrige al momento.
     const id = window.setTimeout(
       () => despachar({ tipo: 'seguir' }),
-      esperaTrasRespuesta(estado.ultima.acierto, mensajeDeFallo),
+      estado.ultima.acierto ? TRAS_ACIERTO_MS : REFRACTARIO_MS,
     );
     return () => window.clearTimeout(id);
+  }, [estado.fase, estado.ultima]);
+
+  /*
+    La pista de un fallo se queda lo que tarda en leerse, sin bloquear, y se va antes si se
+    acierta. Es el mismo mecanismo que en elección y pentagrama: la fase «comprobando» dura
+    el refractario y borra `ultima`, así que sin esto la tarjeta se iría a los 350 ms.
+  */
+  const [pistaVisible, setPistaVisible] = useState(false);
+  const relojPista = useRef<number | null>(null);
+  useEffect(() => {
+    if (estado.fase !== 'comprobando' || !estado.ultima) return;
+    if (estado.ultima.acierto) {
+      setPistaVisible(false);
+      return;
+    }
+    setPistaVisible(true);
+    if (relojPista.current !== null) window.clearTimeout(relojPista.current);
+    relojPista.current = window.setTimeout(
+      () => setPistaVisible(false),
+      BASE_MS + mensajeDeFallo.length * POR_CARACTER_MS,
+    );
   }, [estado.fase, estado.ultima, mensajeDeFallo]);
+  useEffect(
+    () => () => {
+      if (relojPista.current !== null) window.clearTimeout(relojPista.current);
+    },
+    [],
+  );
+  const conPista = estado.ultima?.acierto === false || (estado.fase === 'eligiendo' && pistaVisible);
 
   useEffect(() => {
     if (estado.fase !== 'completada' || yaTerminada.current) return;
@@ -233,26 +262,14 @@ export default function Emparejar({ actividad, alTerminar }: PropsActividad) {
       {/* Sin botonera: aquí no hay ninguna acción SOBRE la actividad. Se juega tocando las
           fichas, y una barra vacía abajo sería una franja de pantalla perdida. */}
       <Reaccion
-        tono={
-          estado.ultima?.acierto === false
-            ? 'casi'
-            : estado.ultima?.acierto === true
-              ? 'bien'
-              : 'neutro'
-        }
+        tono={estado.ultima?.acierto === true ? 'bien' : conPista ? 'casi' : 'neutro'}
         personaje={actividad.personaje}
-        /* Tras un fallo, un toque desde los dos segundos cierra la pista y se sigue. */
-        alCerrar={
-          estado.fase === 'comprobando' && estado.ultima?.acierto === false
-            ? () => despachar({ tipo: 'seguir' })
-            : undefined
-        }
       >
         {estado.ultima?.acierto === true && t('comun.bien')}
         {/* La pista de esta actividad si la trae, y si no la frase de siempre. Es lo que
-            distingue «escucha otra vez» de «escucha los dos seguidos: ¿se parecen?». */}
-        {estado.ultima?.acierto === false &&
-          t(pistaPara(actividad.pistas, estado.fallosAqui) ?? 'comun.escuchaOtraVez')}
+            distingue «escucha otra vez» de «escucha los dos seguidos: ¿se parecen?». No
+            bloquea: se puede seguir tocando fichas con ella encima. */}
+        {conPista && mensajeDeFallo}
       </Reaccion>
 
       {/* Sin barra de progreso: el tablero se vacía solo: las parejas resueltas se quedan fijas y las que faltan son las que quedan.

@@ -144,15 +144,21 @@ comprueba antes de dar una actividad por pulida.
 
 ### Cómo se reacciona
 
-11. **La reacción va abajo, con el personaje, y se va sola — o la cierra un toque.** Nunca un
-    párrafo fijo encima de la actividad. Cuando la pista bloquea la actividad mientras se lee,
-    **desde los dos segundos un toque en cualquier sitio (o Escape) la cierra y la actividad
-    sigue**: la pregunta vuelve, la escala empieza de nuevo. Antes de los dos segundos no,
-    porque ese toque es el de la actividad (`sePuedeCerrar`, con test; lo pidió el autor el
-    2026-09-12). El toque que cierra no llega al botón de debajo.
-    Tiempos en `motor/maquinaReaccion.ts`: **900 ms** al acertar; al fallar,
-    **3 500 ms más 45 ms por carácter**, porque hay que leerlo. La pista que sale tras un
-    fallo se queda visible ese mismo tiempo, no desaparece al reintentar.
+11. **La reacción va abajo, con el personaje, y no bloquea si no hace falta.** Nunca un
+    párrafo fijo encima de la actividad. Hay dos casos, y `motor/maquinaReaccion.ts` los
+    fija con test:
+    - **Donde la corrección es la respuesta siguiente** —elección, pentagrama, emparejar—
+      la pista **no bloquea**: tras un fallo se vuelve a admitir respuesta a los
+      **350 ms** (`REFRACTARIO_MS`, lo justo para tragarse un doble toque) y la pista se queda
+      encima lo que tarda en leerse (**3 500 ms más 45 ms por carácter**) o hasta que se
+      acierta. Lo pidió el autor el 2026-09-12: «cuando me equivoco y toco rápido para
+      corregir, no me valida la nota».
+    - **Donde la corrección se pinta sobre el tablero** —compases, ordenar, escala— la
+      tarjeta sí bloquea mientras se lee, porque quitarla al primer toque haría ilegible lo
+      que marca. Ahí, **desde los dos segundos un toque en cualquier sitio (o Escape) la
+      cierra y la actividad sigue** (`sePuedeCerrar`); antes no, porque ese toque es el de
+      la actividad. El toque que cierra no llega al botón de debajo.
+    Al acertar, **900 ms** de «¡bien!» en todos.
 12. **Se felicita con un fallo de cada cinco** (`motor/evaluacion.ts`): `fallosPermitidos`
     es la parte entera de `total × 0,2` —con cuatro pulsos no se perdona ninguno, con ocho
     uno—, los golpes de más cuentan en contra, y «regular pero desfasado» exige haber dado
