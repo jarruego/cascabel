@@ -3032,8 +3032,9 @@ textos, niveles, camino, y la sección de instrumentos.
       (tr-16)**, enteros, de do a do con sus líneas adicionales. Al tocar una nota suena y
       arriba sale su nombre con su personaje al lado. Y lo mismo en las seis de pregunta:
       el nombre pedido en mayúsculas y del color de la nota, con su personaje entrando con
-      un botecito elástico, y cada cabeza toma su color al tocarla (en la ficha se lo queda;
-      en las de pregunta, solo esa ronda, para no acertar por el color). Es el `modo: libre`
+      un botecito elástico, y la cabeza toma su color al acertarla (en la ficha, toda la que
+      se toca y se lo queda; en las de pregunta, solo la acertada y solo esa ronda, para no
+      acertar por el color). Es el `modo: libre`
       del pentagrama; la clave de fa suena con piano, que llega al do2.
 
 - [x] **Los dos pentagramas completos, en seis actividades** (2026-09-12): en clave de sol

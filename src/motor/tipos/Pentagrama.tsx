@@ -233,9 +233,10 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
   /** En la ficha, el último sitio tocado: su nombre y su personaje van arriba. */
   const [tocada, setTocada] = useState<Opcion | null>(null);
   /**
-   * Los sitios tocados: cada uno toma el color de su nota al tocarlo y se lo queda. En la
-   * ficha, para siempre: el pentagrama se descubre tocando. En las de pregunta, solo lo que
-   * dura la ronda: si el color se quedara, en la ronda siguiente se acertaría por el color.
+   * Los sitios coloreados: cada uno toma el color de su nota y se lo queda. En la ficha,
+   * toda nota tocada y para siempre: el pentagrama se descubre tocando. En las de pregunta,
+   * solo la acertada y solo lo que dura la ronda: si el color se quedara, en la ronda
+   * siguiente se acertaría por el color; y colorear la fallada sería premiar el fallo.
    */
   const [tocadas, setTocadas] = useState<Set<string>>(() => new Set());
   useEffect(() => {
@@ -261,7 +262,8 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
         // Sin sonido la actividad sigue: el niño ve el resultado igual.
       }
       // En la ficha no hay pregunta: se enseña el nombre y quién es, y ya.
-      setTocadas((s) => new Set(s).add(o.clave));
+      // En la ficha, toda nota tocada toma su color; en las de pregunta, solo la acertada.
+      if (libre || o.clave === pedida) setTocadas((s) => new Set(s).add(o.clave));
       if (libre) {
         setTocada(o);
         return;
