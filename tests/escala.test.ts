@@ -6,6 +6,7 @@ import {
   distanciasDe,
   escalaDesde,
   esEscalaMayor,
+  falloAlAnadir,
   gradosConSemitono,
 } from '@/motor/escala';
 
@@ -100,5 +101,35 @@ describe('distancias de una secuencia', () => {
 
   it('marca como desconocida una distancia que no es ni tono ni semitono', () => {
     expect(distanciasDe(['C4', 'E4'])).toEqual([null]);
+  });
+});
+
+describe('construir la escala paso a paso: cualquier paso fuera del patrón avisa', () => {
+  it('la escala entera, nota a nota, no falla en ningún paso', () => {
+    const sol = escalaDesde('G4');
+    sol.forEach((nota, i) => {
+      expect(falloAlAnadir(sol.slice(0, i), nota, 'G4')).toBeNull();
+    });
+  });
+
+  it('el fallo que pidió el autor: fa natural en vez de fa sostenido es un semitono donde toca un tono', () => {
+    expect(falloAlAnadir(['G4', 'A4', 'B4', 'C5', 'D5', 'E5'], 'F5', 'G4')).toBe('semitono');
+  });
+
+  it('y un tono donde toca un semitono también avisa', () => {
+    // De si a do sostenido, cuando en sol mayor de si se va a do.
+    expect(falloAlAnadir(['G4', 'A4', 'B4'], 'C#5', 'G4')).toBe('tono');
+  });
+
+  it('un salto, una nota repetida y una que baja', () => {
+    expect(falloAlAnadir(['G4', 'A4'], 'D5', 'G4')).toBe('salto');
+    expect(falloAlAnadir(['G4', 'A4'], 'A4', 'G4')).toBe('repite');
+    expect(falloAlAnadir(['G4', 'A4'], 'G4', 'G4')).toBe('baja');
+  });
+
+  it('la escala empieza en la tónica, en la octava que sea', () => {
+    expect(falloAlAnadir([], 'A4', 'G4')).toBe('empieza');
+    expect(falloAlAnadir([], 'G5', 'G4')).toBeNull();
+    expect(falloAlAnadir(['G5'], 'A5', 'G4')).toBeNull();
   });
 });

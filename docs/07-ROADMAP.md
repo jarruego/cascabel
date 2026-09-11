@@ -3028,6 +3028,14 @@ textos, niveles, camino, y la sección de instrumentos.
 - [x] **El Danubio (347) con violín**, la melodía al 100 % y los golpes al 45 %: la percusión
       corporal tiene ahora también `volumenGolpes`, para cuando manda la melodía.
 
+- [x] **La escala (301, 342) avisa de cualquier paso fuera del patrón**, no solo del salto:
+      un tono donde toca un semitono, un semitono donde toca un tono, una nota repetida o una
+      que baja. El aviso dice qué ha sido y qué pedía el patrón, y hay que empezar de nuevo en
+      la tónica (hasta entonces las teclas suenan pero no escriben). La regla es
+      `falloAlAnadir` en `motor/escala.ts`, con test. El patrón —tono, tono, semitono, tono,
+      tono, tono, semitono— está siempre a la vista encima de la pauta, rellenándose paso a
+      paso, y la explicación de las dos actividades empieza por él.
+
 - [x] **«Palmea el ritmo» (102) decía «casi» con todo en verde**, y cogía el primer golpe
       antes de darlo. Eran dos cosas. La marca en vivo encendía en verde la ventana ancha y
       el final solo contaba la estrecha: ahora las dos salen de `marcaDeGolpe` (con test de

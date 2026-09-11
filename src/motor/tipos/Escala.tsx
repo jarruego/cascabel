@@ -6,7 +6,7 @@ import { Sampler, aMidi } from '@/audio/sampler';
 import { muestrasDe } from '@/audio/instrumentos';
 import { colorDe, nombreDe } from '@/ui/coloresNota';
 import { alturaEnPauta, yDeLinea } from '../alturaEnPauta';
-import { distancia, escalaDesde, esEscalaMayor, MAYOR, type Distancia } from '../escala';
+import { distancia, escalaDesde, falloAlAnadir, MAYOR, type Distancia, type FalloDePaso } from '../escala';
 import { Reaccion } from '@/ui/Reaccion';
 import { pistaPara } from '../maquinaEleccion';
 import { t } from '@/i18n';
@@ -61,10 +61,9 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
   /*
     La pauta es un rótulo que avanza: se escribe sin parar, y cuando ya no cabe una nota
     más, la de la izquierda desaparece y las demás corren un sitio. Lo pidió el autor el
-    2026-09-10: así hay movimiento, la pauta cabe siempre y sobra el «empezar otra vez»
-    —una escala mal empezada se arregla siguiendo, no borrando—. Lo que se evalúa son las
-    ÚLTIMAS ocho notas: en cuanto forman la escala mayor, está. Cuántas caben lo dice el
-    ancho de la pauta, que se mide.
+    2026-09-10: así hay movimiento y la pauta cabe siempre. Empezar de nuevo es tocar la
+    tónica, y desde el 2026-09-12 es lo que toca tras cualquier paso fuera del patrón (ver
+    `anadir`). Cuántas caben lo dice el ancho de la pauta, que se mide.
   */
   const pauta = useRef<HTMLDivElement | null>(null);
   const [anchoPauta, setAnchoPauta] = useState(0);
@@ -78,37 +77,28 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
   const caben = Math.max(3, Math.floor((anchoPauta - 40) / 46));
 
   /*
-    La pista de «no es una escala mayor» sale UNA vez, al llegar a ocho notas sin acertar,
-    y se queda seis segundos: lo pidió el autor el 2026-09-10, y basta para leerla. No se
-    repite después —quien sigue tocando ya sabe lo que busca—. El tono y el texto de la
-    tarjeta salen de la misma condición; cuando miraban condiciones distintas, el texto se
-    quedaba flotando sin su caja.
+    La escala se construye nota a nota siguiendo el patrón, y **cualquier paso fuera del
+    patrón avisa y obliga a empezar de nuevo**: un tono donde toca un semitono, un semitono
+    donde toca un tono, un salto, una nota repetida o una que baja. Antes solo avisaba el
+    salto y una escala mal empezada «se arreglaba siguiendo»; el autor lo cambió el
+    2026-09-12 para la escala de sol mayor. La regla es `falloAlAnadir`, con test.
+
+    Tras un fallo la pauta se queda como está, con el paso malo tachado, y el aviso dice qué
+    ha pasado y qué toca; se queda hasta que se empieza de nuevo, porque es una instrucción
+    y no un comentario. Las teclas suenan pero no escriben hasta que se toca la tónica.
   */
-  const PISTA_MS = 6000;
-  const objetivo = escalaDesde(tonica, MAYOR);
-  const [pistaVisible, setPistaVisible] = useState(false);
-  const relojPista = useRef<number | null>(null);
-  /*
-    Un salto —más de un tono entre dos notas— también avisa, y avisa de lo que hay que
-    hacer: volver a empezar en la tónica. Lo pidió el autor el 2026-09-10 para la escala de
-    do mayor. Como se evalúan las últimas ocho notas, volver a empezar es tocar do otra vez.
-  */
-  const [ultimoFueSalto, setUltimoFueSalto] = useState(false);
-  const textoPista = ultimoFueSalto
-    ? t('escala.saltoVuelve', { nota: nombreDe(tonica) })
-    : t(pistaPara(actividad.pistas, 1) ?? 'escala.casi');
-  useEffect(() => {
-    if (resuelta || puestas.length !== objetivo.length) return;
-    setPistaVisible(true);
-    if (relojPista.current !== null) window.clearTimeout(relojPista.current);
-    relojPista.current = window.setTimeout(() => setPistaVisible(false), PISTA_MS);
-  }, [puestas.length, resuelta, objetivo.length]);
-  useEffect(
-    () => () => {
-      if (relojPista.current !== null) window.clearTimeout(relojPista.current);
-    },
-    [],
-  );
+  const objetivo = escalaDesde(puestas[0] ?? tonica, MAYOR);
+  const [fallo, setFallo] = useState<FalloDePaso | null>(null);
+  /** Fallos en esta vuelta: cada uno trae la siguiente pista de la actividad. */
+  const [fallos, setFallos] = useState(0);
+  // Qué ha pasado y qué pedía el patrón, y detrás la pista de ESTA actividad, que es la
+  // que enseña algo más: dónde caen los semitonos en do, por qué en sol hace falta la negra.
+  const pistaActividad = pistaPara(actividad.pistas, fallos);
+  const textoPista =
+    t(`escala.fallo.${fallo ?? 'salto'}`, { nota: nombreDe(tonica) }) +
+    (pistaActividad ? ` ${t(pistaActividad)}` : '');
+  /** Pasos del patrón ya dados bien: el paso malo, si lo hay, no cuenta. */
+  const pasosDados = Math.max(0, puestas.length - 1 - (fallo === null ? 0 : 1));
   const primera = Math.max(0, puestas.length - caben);
   const visibles = puestas.slice(primera);
   const sampler = useRef<Sampler | null>(null);
@@ -141,39 +131,37 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
   const anadir = (nota: string) => {
     if (resuelta) return;
     void sonar(nota);
+    const f = falloAlAnadir(puestas, nota, tonica, MAYOR);
     const nuevas = [...puestas, nota];
-
-    // La escala mayor de la tónica pedida, no cualquiera: las últimas ocho notas tienen
-    // que formarla Y empezar en ella. Se mira antes que nada: la última nota de la escala
-    // es también la tónica, y sin este orden se tomaría por un «empezar de nuevo».
-    const ultimas = nuevas.slice(-objetivo.length);
-    if (esEscalaMayor(ultimas) && sinOctava(ultimas[0]!) === sinOctava(tonica)) {
-      setPuestas(nuevas);
-      setResuelta(true);
-      return;
-    }
 
     /*
       Tocar la tónica es empezar de nuevo: la pauta se vacía y queda solo esa nota. Antes
       «vuelve a empezar en do» se decía y no se hacía —el do se añadía detrás de lo anterior,
       la distancia desde la última nota mala era otro salto, y volvía a avisar—. Lo vio el
-      autor el 2026-09-10.
+      autor el 2026-09-10. La excepción es la octava que cierra la escala: se mira antes.
     */
     if (sinOctava(nota) === sinOctava(tonica)) {
+      if (f === null && nuevas.length === objetivo.length) {
+        setPuestas(nuevas);
+        setResuelta(true);
+        return;
+      }
       setPuestas([nota]);
-      setUltimoFueSalto(false);
-      setPistaVisible(false);
+      setFallo(null);
       return;
     }
 
-    setPuestas(nuevas);
-    const salto = distancia(puestas[puestas.length - 1]!, nota) === null;
-    setUltimoFueSalto(salto);
-    if (salto) {
-      setPistaVisible(true);
-      if (relojPista.current !== null) window.clearTimeout(relojPista.current);
-      relojPista.current = window.setTimeout(() => setPistaVisible(false), PISTA_MS);
+    // Tras un fallo, hasta la tónica no se escribe nada: la tecla suena y el aviso sigue.
+    if (fallo !== null) return;
+    // Una escala que no empieza en la tónica no ha empezado: se avisa y no se escribe.
+    if (f === 'empieza') {
+      setFallo(f);
+      setFallos((n) => n + 1);
+      return;
     }
+    setPuestas(nuevas);
+    setFallo(f);
+    if (f !== null) setFallos((n) => n + 1);
   };
 
   const teclas: Array<{ nota: string; negra: boolean; indice: number }> = [];
@@ -195,6 +183,21 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
   return (
     <section className="actividad escala" data-carril={carril} aria-labelledby="consigna">
       <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
+
+      {/* El patrón, siempre a la vista: es lo que se está construyendo. Cada paso se rellena
+          al darlo bien; el que se ha dado mal se queda sin rellenar. Lo pidió el autor el
+          2026-09-12: «haz énfasis en el patrón que buscamos». */}
+      <ol className="escala__patron" aria-label={t('escala.patron')}>
+        {MAYOR.map((paso, i) => (
+          <li
+            key={i}
+            data-distancia={paso === 1 ? 'semitono' : 'tono'}
+            data-hecho={i < pasosDados || undefined}
+          >
+            {t(paso === 1 ? 'escala.semitono' : 'escala.tono')}
+          </li>
+        ))}
+      </ol>
 
       {/* La pauta. Se escribe sola según se toca: ver cómo se escribe lo que suena es la
           mitad de la actividad, y esperar al final la perdería. */}
@@ -239,8 +242,13 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
       {/* Las distancias, entre nota y nota. Un tono se dibuja el doble de largo que un
           semitono: la palabra dice qué es y el tamaño dice cuánto mide. */}
       <ol className="escala__distancias" aria-label={t('escala.distancias')}>
-        {distancias.slice(Math.max(0, distancias.length - (caben - 1))).map((d, j) => (
-          <li key={distancias.length - Math.min(distancias.length, caben - 1) + j} data-distancia={d ?? 'otra'}>
+        {distancias.slice(Math.max(0, distancias.length - (caben - 1))).map((d, j, lista) => (
+          <li
+            key={distancias.length - Math.min(distancias.length, caben - 1) + j}
+            data-distancia={d ?? 'otra'}
+            /* El paso que se ha dado mal va tachado: se ve qué ha sido y que no vale. */
+            data-mal={(fallo !== null && j === lista.length - 1) || undefined}
+          >
             {t(d === 'tono' ? 'escala.tono' : d === 'semitono' ? 'escala.semitono' : 'escala.salto')}
           </li>
         ))}
@@ -277,8 +285,8 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
 
       {/* Solo el «casi». Al resolverla salta la modal de enhorabuena, y decirlo dos veces
           en medio segundo es lo que el autor señaló como repetición. */}
-      <Reaccion tono={pistaVisible && !resuelta ? 'casi' : 'neutro'} personaje={actividad.personaje}>
-        {pistaVisible && !resuelta && textoPista}
+      <Reaccion tono={fallo !== null && !resuelta ? 'casi' : 'neutro'} personaje={actividad.personaje}>
+        {fallo !== null && !resuelta && textoPista}
       </Reaccion>
     </section>
   );

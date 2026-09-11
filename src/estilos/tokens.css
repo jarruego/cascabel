@@ -3585,6 +3585,36 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 .escala__distancias li[data-distancia='tono'] { border-color: var(--vivo-azul); }
 .escala__distancias li[data-distancia='semitono'] { border-color: var(--vivo-naranja); }
 .escala__distancias li[data-distancia='otra'] { border-style: dashed; color: var(--tinta-2); }
+/* El paso que se ha dado mal: tachado y a rayas. Se ve qué ha sido y que no vale. */
+.escala__distancias li[data-mal] { text-decoration: line-through; border-style: dashed; color: var(--tinta-2); }
+
+/* El patrón de la escala, encima de la pauta: siete pasos que se rellenan al darlos bien.
+   Mismo color que la etiqueta de la distancia: azul el tono, naranja el semitono. */
+.escala__patron {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0 0 var(--e-2);
+  padding: 0;
+  list-style: none;
+}
+.escala__patron li {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  font-size: var(--t-xs);
+  line-height: 1.05;
+  text-align: center;
+  white-space: pre-line;
+  border-radius: var(--r-s);
+  background: var(--fondo);
+  border: 2px solid var(--linea);
+}
+.escala__patron li[data-distancia='tono'] { border-color: var(--vivo-azul); }
+.escala__patron li[data-distancia='semitono'] { border-color: var(--vivo-naranja); }
+.escala__patron li[data-hecho][data-distancia='tono'] { background: var(--vivo-azul); color: #fff; }
+.escala__patron li[data-hecho][data-distancia='semitono'] { background: var(--vivo-naranja); color: #fff; }
 
 .escala__teclado {
   position: relative;

@@ -70,6 +70,42 @@ export function esEscalaMayor(notas: string[]): boolean {
   return notas.slice(1).every((n, i) => aMidi(n) - aMidi(notas[i]!) === MAYOR[i]);
 }
 
+/** Qué ha pasado cuando la nota tocada no es la que tocaba. */
+export type FalloDePaso = 'empieza' | 'repite' | 'baja' | 'semitono' | 'tono' | 'salto';
+
+/**
+ * Qué pasa al añadir `nota` a las que ya hay, si se está construyendo la escala de `tonica`.
+ * `null` cuando es justo la que tocaba.
+ *
+ * La escala se construye **nota a nota siguiendo el patrón**, y cualquier paso fuera de él
+ * es un fallo: un tono donde toca un semitono (`tono`), un semitono donde toca un tono
+ * (`semitono`), más de un tono (`salto`), la misma nota (`repite`), una más grave (`baja`),
+ * o empezar por otra que no sea la tónica (`empieza`). Antes solo avisaba el salto, y una
+ * escala con un paso mal «se arreglaba siguiendo»; el autor lo cambió el 2026-09-12 para la
+ * escala de sol mayor: «si se hace un semitono o tono fuera de lugar también hay que avisar
+ * y empezar de nuevo». Es lo que hace que el patrón —tono, tono, semitono, tono, tono,
+ * tono, semitono— sea lo que se aprende, y no «llegar arriba como sea».
+ *
+ * La tónica vale en la octava que sea: la escala se mide desde la primera nota puesta.
+ */
+export function falloAlAnadir(
+  puestas: readonly string[],
+  nota: string,
+  tonica: string,
+  patron: readonly number[] = MAYOR,
+): FalloDePaso | null {
+  const sinOctava = (n: string) => n.replace(/\d/g, '');
+  if (puestas.length === 0) return sinOctava(nota) === sinOctava(tonica) ? null : 'empieza';
+  const esperada = escalaDesde(puestas[0]!, patron)[puestas.length];
+  if (esperada === undefined || nota === esperada) return null;
+  const paso = aMidi(nota) - aMidi(puestas[puestas.length - 1]!);
+  if (paso === 0) return 'repite';
+  if (paso < 0) return 'baja';
+  if (paso === 1) return 'semitono';
+  if (paso === 2) return 'tono';
+  return 'salto';
+}
+
 /**
  * Dónde caen los semitonos de una escala, contando grados desde la tónica.
  *
