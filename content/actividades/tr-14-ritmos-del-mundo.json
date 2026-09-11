@@ -1,5 +1,5 @@
 {
-  "id": "c3-31-ritmos-del-mundo",
+  "id": "tr-14-ritmos-del-mundo",
   "version": 1,
   "tipo": "referencia",
   "titulo": "Ritmos del mundo",
@@ -21,7 +21,7 @@
     "modo": "toque"
   },
   "contenido": {
-    "consigna": "actividad.c331.consigna",
+    "consigna": "actividad.tr14.consigna",
     "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la clave de son se presenta en su forma 3-2, la campana de 6/8 con el patrón estándar de doce corcheas, y el swing con el charles en tresillos con la corchea del medio en silencio. Son las versiones de manual; quien las toque de otra forma tiene razón también.",
     "secciones": [
       {
@@ -193,7 +193,7 @@
       "completado"
     ]
   },
-  "enunciado": "actividad.c331.enunciado",
+  "enunciado": "actividad.tr14.enunciado",
   "personaje": "sol",
   "herramienta": true,
   "creditos": [

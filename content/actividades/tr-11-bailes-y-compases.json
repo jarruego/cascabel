@@ -1,5 +1,5 @@
 {
-  "id": "c3-26-bailes-y-compases",
+  "id": "tr-11-bailes-y-compases",
   "version": 1,
   "tipo": "referencia",
   "titulo": "Bailes de España y sus compases",
@@ -21,7 +21,7 @@
     "modo": "toque"
   },
   "contenido": {
-    "consigna": "actividad.c326.consigna",
+    "consigna": "actividad.tr11.consigna",
     "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: los compases son los de manual —pasodoble en 2/4, jota y sevillanas en 3/4, muiñeira y sardana en 6/8, chotis en 4/4, habanera en 2/4 con su célula de corchea con puntillo—; varios de estos bailes se escriben también en otros compases según la región o la fuente, y aquí se ha elegido uno por baile para no confundir.",
     "secciones": [
       {
@@ -261,7 +261,7 @@
       "completado"
     ]
   },
-  "enunciado": "actividad.c326.enunciado",
+  "enunciado": "actividad.tr11.enunciado",
   "personaje": "sol",
   "herramienta": true,
   "creditos": [

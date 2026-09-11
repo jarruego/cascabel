@@ -1,5 +1,5 @@
 {
-  "id": "c3-27-los-instrumentos-por-familias",
+  "id": "tr-12-los-instrumentos-por-familias",
   "version": 1,
   "tipo": "referencia",
   "titulo": "Los instrumentos, por familias",
@@ -21,7 +21,7 @@
     "modo": "toque"
   },
   "contenido": {
-    "consigna": "actividad.c327.consigna",
+    "consigna": "actividad.tr12.consigna",
     "secciones": [
       {
         "titulo": "Cuerda",
@@ -151,7 +151,7 @@
       "completado"
     ]
   },
-  "enunciado": "actividad.c327.enunciado",
+  "enunciado": "actividad.tr12.enunciado",
   "personaje": "rex",
   "herramienta": true,
   "creditos": [

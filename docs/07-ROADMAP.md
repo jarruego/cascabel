@@ -3048,6 +3048,13 @@ textos, niveles, camino, y la sección de instrumentos.
 - [x] **La Radetzky (346) con trompeta** y los golpes al 30 %: la flauta no se oía bien debajo
       de las palmas, y la trompeta es quien lleva la marcha en la banda.
 
+- [x] **Las cuatro consultas de 3.º ciclo pasan al Taller** con código 9xx: bailes y compases
+      (911), los instrumentos por familias (912), las voces del coro (913) y ritmos del mundo
+      (914). Eran «referencia» marcadas como herramienta, pero el catálogo solo excluye la
+      familia `tr-` y seguían saliendo entre las actividades; el autor lo vio en la 330 y la
+      331. El editor de melodías (303) y compón por pistas (312) se quedan en los dos sitios:
+      son herramienta y actividad con criterio.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

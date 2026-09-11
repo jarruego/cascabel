@@ -97,11 +97,11 @@ En cada una, lo que hace falta es una de tres respuestas: **vale**, **cámbialo 
 
 "consigna": "actividad.c325.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el compás de doce se presenta con los acentos de la soleá y la bulería (3, 6, 8, 10 y 12), que es la forma más habitual de enseñarlo. Los acentos suenan una quinta más agudos para que se distingan sin depender del color.", "tempo": 168, "bucle": true, "bloques": [
 
-## 22. `content/actividades/c3-26-bailes-y-compases.json` (línea 25)
+## 22. `content/actividades/tr-11-bailes-y-compases.json` (línea 25)
 
 "consigna": "actividad.c326.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: los compases son los de manual —pasodoble en 2/4, jota y sevillanas en 3/4, muiñeira y sardana en 6/8, chotis en 4/4, habanera en 2/4 con su célula de corchea con puntillo—; varios de estos bailes se escriben también en otros compases según la región o la fuente, y aquí se ha elegido uno por baile para no confundir.", "secciones": [
 
-## 23. `content/actividades/c3-31-ritmos-del-mundo.json` (línea 25)
+## 23. `content/actividades/tr-14-ritmos-del-mundo.json` (línea 25)
 
 "consigna": "actividad.c331.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la clave de son se presenta en su forma 3-2, la campana de 6/8 con el patrón estándar de doce corcheas, y el swing con el charles en tresillos con la corchea del medio en silencio. Son las versiones de manual; quien las toque de otra forma tiene razón también.", "secciones": [
 

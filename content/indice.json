@@ -1960,44 +1960,6 @@
       "herramienta": false
     },
     {
-      "id": "c3-26-bailes-y-compases",
-      "titulo": "Bailes de España y sus compases",
-      "descripcion": "Consulta de bailes y de su compás, con el ritmo sonando: vals, pasodoble, jota, muiñeira, sardana, sevillanas, habanera, chotis y bulería.",
-      "etapa": "primaria-c3",
-      "eje": "cultura",
-      "tipo": "referencia",
-      "lugar": "pantalla",
-      "microfono": false,
-      "duracion_min": 10,
-      "curriculo": {
-        "area": "Educación Artística",
-        "competencia": "CE1",
-        "criterio": "1.2",
-        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
-      },
-      "estado": "borrador",
-      "herramienta": true
-    },
-    {
-      "id": "c3-27-los-instrumentos-por-familias",
-      "titulo": "Los instrumentos, por familias",
-      "descripcion": "Consulta de instrumentos agrupados por familia, cada uno con su sonido: cuerda, viento, percusión y voz.",
-      "etapa": "primaria-c3",
-      "eje": "timbre",
-      "tipo": "referencia",
-      "lugar": "pantalla",
-      "microfono": false,
-      "duracion_min": 8,
-      "curriculo": {
-        "area": "Educación Artística",
-        "competencia": "CE1",
-        "criterio": "1.2",
-        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
-      },
-      "estado": "borrador",
-      "herramienta": true
-    },
-    {
       "id": "c3-29-empieza-en-el-fuerte-o-antes",
       "titulo": "¿Empieza en el fuerte o antes?",
       "descripcion": "Un ritmo que empieza justo en el pulso fuerte, o uno que empieza un pulso antes: la anacrusa. Se oye antes de que se entienda.",
@@ -2015,44 +1977,6 @@
       },
       "estado": "borrador",
       "herramienta": false
-    },
-    {
-      "id": "c3-30-las-voces-del-coro",
-      "titulo": "Las voces del coro",
-      "descripcion": "Consulta de las cuatro voces de un coro —soprano, contralto, tenor y bajo—, cada una sonando en su altura.",
-      "etapa": "primaria-c3",
-      "eje": "timbre",
-      "tipo": "referencia",
-      "lugar": "pantalla",
-      "microfono": false,
-      "duracion_min": 6,
-      "curriculo": {
-        "area": "Educación Artística",
-        "competencia": "CE1",
-        "criterio": "1.2",
-        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
-      },
-      "estado": "borrador",
-      "herramienta": true
-    },
-    {
-      "id": "c3-31-ritmos-del-mundo",
-      "titulo": "Ritmos del mundo",
-      "descripcion": "Consulta de ritmos que se repiten en músicas de medio mundo, tocados con el kit: la clave cubana, el tresillo, la habanera, la campana africana y el swing.",
-      "etapa": "primaria-c3",
-      "eje": "cultura",
-      "tipo": "referencia",
-      "lugar": "pantalla",
-      "microfono": false,
-      "duracion_min": 10,
-      "curriculo": {
-        "area": "Educación Artística",
-        "competencia": "CE1",
-        "criterio": "1.2",
-        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
-      },
-      "estado": "borrador",
-      "herramienta": true
     },
     {
       "id": "c3-32-tresillo-o-corcheas",
@@ -3059,6 +2983,82 @@
         "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
       },
       "estado": "revision-pedagogica",
+      "herramienta": true
+    },
+    {
+      "id": "tr-11-bailes-y-compases",
+      "titulo": "Bailes de España y sus compases",
+      "descripcion": "Consulta de bailes y de su compás, con el ritmo sonando: vals, pasodoble, jota, muiñeira, sardana, sevillanas, habanera, chotis y bulería.",
+      "etapa": "primaria-c3",
+      "eje": "cultura",
+      "tipo": "referencia",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": true
+    },
+    {
+      "id": "tr-12-los-instrumentos-por-familias",
+      "titulo": "Los instrumentos, por familias",
+      "descripcion": "Consulta de instrumentos agrupados por familia, cada uno con su sonido: cuerda, viento, percusión y voz.",
+      "etapa": "primaria-c3",
+      "eje": "timbre",
+      "tipo": "referencia",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": true
+    },
+    {
+      "id": "tr-13-las-voces-del-coro",
+      "titulo": "Las voces del coro",
+      "descripcion": "Consulta de las cuatro voces de un coro —soprano, contralto, tenor y bajo—, cada una sonando en su altura.",
+      "etapa": "primaria-c3",
+      "eje": "timbre",
+      "tipo": "referencia",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 6,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
+      "herramienta": true
+    },
+    {
+      "id": "tr-14-ritmos-del-mundo",
+      "titulo": "Ritmos del mundo",
+      "descripcion": "Consulta de ritmos que se repiten en músicas de medio mundo, tocados con el kit: la clave cubana, el tresillo, la habanera, la campana africana y el swing.",
+      "etapa": "primaria-c3",
+      "eje": "cultura",
+      "tipo": "referencia",
+      "lugar": "pantalla",
+      "microfono": false,
+      "duracion_min": 10,
+      "curriculo": {
+        "area": "Educación Artística",
+        "competencia": "CE1",
+        "criterio": "1.2",
+        "saber": "A. Recepción y análisis: escucha activa y comentario de obras"
+      },
+      "estado": "borrador",
       "herramienta": true
     }
   ]

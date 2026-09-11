@@ -1,5 +1,5 @@
 {
-  "id": "c3-30-las-voces-del-coro",
+  "id": "tr-13-las-voces-del-coro",
   "version": 1,
   "tipo": "referencia",
   "titulo": "Las voces del coro",
@@ -21,7 +21,7 @@
     "modo": "toque"
   },
   "contenido": {
-    "consigna": "actividad.c330.consigna",
+    "consigna": "actividad.tr13.consigna",
     "instrumento": "voz",
     "secciones": [
       {
@@ -107,7 +107,7 @@
       "completado"
     ]
   },
-  "enunciado": "actividad.c330.enunciado",
+  "enunciado": "actividad.tr13.enunciado",
   "personaje": "doby",
   "herramienta": true,
   "creditos": [
