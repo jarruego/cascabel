@@ -90,6 +90,11 @@ todo sigue como antes. Los ejercicios se escriben a mano, porque la progresión 
 pandilla). Es la progresión que al autor le gustó de la 214, y se escribe con tres
 `ejercicios` cuyas `notas` son la primera mitad, la segunda y la suma.
 
+**Tocar a tiempo admite una melodía debajo** (`contenido.melodia`, una nota por golpe del
+patrón, e `instrumento`): suena en la escucha y, anclada al primer golpe del niño, mientras
+palmea. Es lo que hace que el ritmo de la Gruta (345) se reconozca como la Gruta.
+`tests/obras.test.ts` comprueba la cuenta.
+
 **Un bloque de un mapa puede ser un personaje** (`bloques[].personaje`) en vez de un dibujo:
 el de la nota que suena en él. Se queda quieto hasta que le toca, canta mientras suena y da
 un botecito. Es la canción con pictogramas (011) con la pandilla entera: la 141.

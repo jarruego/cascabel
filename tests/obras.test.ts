@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
+import { rejillaDesdeSilabas } from '@/motor/rejillaRitmica';
 
 /*
   Lo que se rompió el 2026-09-11 sin que ningún test avisara, ahora con test:
@@ -57,6 +58,21 @@ describe('las obras y canciones del contenido', () => {
       for (const campo of ['volumenMelodia', 'volumenGolpes'] as const) {
         const v = a.contenido[campo] as number | undefined;
         if (v !== undefined && (v < 0 || v > 1)) malos.push(`${a.id}: ${campo} ${v}`);
+      }
+    }
+    expect(malos).toEqual([]);
+  });
+
+  it('en tocar a tiempo, la melodía tiene una nota por golpe del patrón', () => {
+    const malos: string[] = [];
+    for (const a of actividades.filter((x) => x.tipo === 'tocar-a-tiempo')) {
+      const melodia = a.contenido.melodia as string[] | undefined;
+      if (!melodia) continue;
+      const ejercicios = (a.contenido.ejercicios as Array<{ silabas?: string[] }> | undefined) ?? [a.contenido as { silabas?: string[] }];
+      for (const e of ejercicios) {
+        if (!e.silabas) continue;
+        const golpes = rejillaDesdeSilabas(e.silabas).golpes.length;
+        if (golpes !== melodia.length) malos.push(`${a.id}: ${melodia.length} notas para ${golpes} golpes`);
       }
     }
     expect(malos).toEqual([]);

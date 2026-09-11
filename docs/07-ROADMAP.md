@@ -3027,6 +3027,10 @@ textos, niveles, camino, y la sección de instrumentos.
 - [x] **El Danubio (347) con violín**, la melodía al 100 % y los golpes al 45 %: la percusión
       corporal tiene ahora también `volumenGolpes`, para cuando manda la melodía.
 
+- [x] **Tocar a tiempo con la melodía debajo.** La Gruta (345) a ritmo de negra no se
+      reconocía: ahora el violín toca la melodía, una nota por golpe, en la escucha y anclada
+      al primer golpe del niño mientras palmea. Campo `melodia` del tipo, con test de cuenta.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

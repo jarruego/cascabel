@@ -3,6 +3,7 @@ import { clicYa } from '@/audio/clic';
 import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { TOLERANCIA_MS } from '@/config';
 import { MARIMBA, Sampler } from '@/audio/sampler';
+import { muestrasDe } from '@/audio/instrumentos';
 import { DetectorDePalmadas } from '@/escucha/palmadas';
 import { useCarril } from '@/app/preferencias';
 import { calidadDeMensaje, evaluarRitmo, mensajeRitmico, type EvaluacionRitmica } from '../evaluacion';
@@ -41,6 +42,8 @@ import { CuentaAtras } from '@/ui/CuentaAtras';
  * Es lo que da un director y lo que un niño necesita para colocarse. Menos no da tiempo, y
  * más deja al grupo sin saber si ya ha empezado.
  */
+/** La melodía, si la hay, por debajo de los golpes: acompaña, no manda. */
+const VOLUMEN_MELODIA = 0.7;
 const CUENTA_PULSOS = 4;
 
 type Fase = 'listo' | 'cuenta' | 'escuchando' | 'respondiendo' | 'resultado';
@@ -50,6 +53,15 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
     consigna: string;
     silabas: string[];
     repeticiones?: number;
+    /**
+     * Una nota por golpe, para que el ritmo que se palmea sea el de una melodía que se
+     * reconoce. Suena debajo en la escucha y, anclada al primer golpe del niño, mientras
+     * toca. Lo pidió el autor el 2026-09-12 para la Gruta: «a ritmo de negra es muy difícil
+     * reconocer la canción». Tantas notas como golpes tiene el patrón.
+     */
+    melodia?: string[];
+    /** Timbre de la melodía. Por defecto la flauta. */
+    instrumento?: string;
     /** Lo pone `conSerie`: qué ejercicio es de cuántos. Con serie, cada ejercicio es UNA vuelta. */
     serie?: { n: number; total: number };
     tempo?: number;
@@ -80,6 +92,18 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
   const [pulsoActual, setPulsoActual] = useState(-1);
 
   const sampler = useRef<Sampler | null>(null);
+  const samplerMelodia = useRef<Sampler | null>(null);
+  /** Programa la melodía en esos instantes (ms del reloj de audio), una nota por golpe. */
+  const sonarMelodia = (instantesMs: number[]) => {
+    const melodia = contenido.melodia;
+    if (!melodia || !samplerMelodia.current) return;
+    instantesMs.forEach((ms, i) => {
+      const nota = melodia[i];
+      if (!nota) return;
+      const siguiente = instantesMs[i + 1] ?? ms + 60000 / bpm;
+      samplerMelodia.current!.tocar(nota, ms / 1000, ((siguiente - ms) / 1000) * 0.95, VOLUMEN_MELODIA);
+    });
+  };
   const detector = useRef<DetectorDePalmadas | null>(null);
   const golpes = useRef<number[]>([]);
   const esperados = useRef<number[]>([]);
@@ -191,6 +215,15 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
         // Sin muestras se sigue: el metrónomo del navegador basta para marcar el patrón.
       }
     }
+    if (contenido.melodia && !samplerMelodia.current) {
+      const m = new Sampler(muestrasDe(contenido.instrumento ?? 'flauta'));
+      try {
+        await m.cargar();
+        samplerMelodia.current = m;
+      } catch {
+        // Sin melodía se sigue: el ritmo es la actividad.
+      }
+    }
 
     if (actividad.entrada.modo.startsWith('microfono') && !detector.current) {
       await intentarMicrofono();
@@ -208,6 +241,7 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
     golpesEscucha.forEach((ms) => {
       sampler.current?.tocar('C5', ms / 1000, 0.9);
     });
+    sonarMelodia(golpesEscucha);
 
     // Y el cursor va por SÍLABAS, que es lo que hay escrito en pantalla. Mezclarlos es lo
     // que hacía que a partir del primer «ti-ti» se iluminara la casilla equivocada.
@@ -337,6 +371,8 @@ export default function TocarATiempo({ actividad, alTerminar }: PropsActividad) 
     if (origen.current === null) {
       origen.current = ahora;
       esperados.current = anclarEn(rejilla!, ahora, bpm);
+      // La melodía va con el niño: anclada a su primer golpe, como la rejilla.
+      sonarMelodia(esperados.current);
       const ultimo = esperados.current[esperados.current.length - 1]!;
       cierre.current = window.setTimeout(
         terminar,

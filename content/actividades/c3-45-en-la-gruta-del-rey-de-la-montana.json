@@ -29,7 +29,7 @@
     "alternativa": "toque"
   },
   "contenido": {
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: lo que tiene esta pieza es que empieza despacio y acaba corriendo, y eso es lo que se toca: el mismo ritmo de cuatro compases tres veces, a 72, a 96 y a 120. Se palmea el ritmo de la melodía (corcheas y negras), no el pulso. Ritmo sacado de la partitura de Wikipedia en inglés (fis8 gis ais b cis ais cis4 | d8 ais d4 cis8 ais cis4 | … | d8 ais d4 cis4 r4); el silencio final se escribe como blanca.",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: lo que tiene esta pieza es que empieza despacio y acaba corriendo, y eso es lo que se toca: el mismo ritmo de cuatro compases tres veces, a 72, a 96 y a 120. Se palmea el ritmo de la melodía (corcheas y negras), no el pulso. Ritmo sacado de la partitura de Wikipedia en inglés (fis8 gis ais b cis ais cis4 | d8 ais d4 cis8 ais cis4 | … | d8 ais d4 cis4 r4); el silencio final se escribe como blanca. El 2026-09-12 se añade la melodía debajo (violín, una nota por golpe, en re menor una octava abajo): a ritmo de negra no se reconocía la pieza. Suena en la escucha y, anclada al primer golpe del niño, mientras palmea.",
     "consigna": "actividad.c345.consigna",
     "tempo": 72,
     "ejercicios": [
@@ -96,7 +96,34 @@
         ],
         "tempo": 120
       }
-    ]
+    ],
+    "melodia": [
+      "A3",
+      "B3",
+      "C#4",
+      "D4",
+      "E4",
+      "C#4",
+      "E4",
+      "F4",
+      "C#4",
+      "F4",
+      "E4",
+      "C#4",
+      "E4",
+      "A3",
+      "B3",
+      "C#4",
+      "D4",
+      "E4",
+      "C#4",
+      "E4",
+      "F4",
+      "C#4",
+      "F4",
+      "E4"
+    ],
+    "instrumento": "violin"
   },
   "evaluacion": {
     "autocorrectiva": true,
