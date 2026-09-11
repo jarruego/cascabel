@@ -144,8 +144,13 @@ comprueba antes de dar una actividad por pulida.
 
 ### Cómo se reacciona
 
-11. **La reacción va abajo, con el personaje, y se va sola.** Nunca un párrafo fijo encima
-    de la actividad. Tiempos en `motor/maquinaReaccion.ts`: **900 ms** al acertar; al fallar,
+11. **La reacción va abajo, con el personaje, y se va sola — o la cierra un toque.** Nunca un
+    párrafo fijo encima de la actividad. Cuando la pista bloquea la actividad mientras se lee,
+    **desde los dos segundos un toque en cualquier sitio (o Escape) la cierra y la actividad
+    sigue**: la pregunta vuelve, la escala empieza de nuevo. Antes de los dos segundos no,
+    porque ese toque es el de la actividad (`sePuedeCerrar`, con test; lo pidió el autor el
+    2026-09-12). El toque que cierra no llega al botón de debajo.
+    Tiempos en `motor/maquinaReaccion.ts`: **900 ms** al acertar; al fallar,
     **3 500 ms más 45 ms por carácter**, porque hay que leerlo. La pista que sale tras un
     fallo se queda visible ese mismo tiempo, no desaparece al reintentar.
 12. **Se felicita con un fallo de cada cinco** (`motor/evaluacion.ts`): `fallosPermitidos`

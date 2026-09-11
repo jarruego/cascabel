@@ -241,6 +241,12 @@ export default function Emparejar({ actividad, alTerminar }: PropsActividad) {
               : 'neutro'
         }
         personaje={actividad.personaje}
+        /* Tras un fallo, un toque desde los dos segundos cierra la pista y se sigue. */
+        alCerrar={
+          estado.fase === 'comprobando' && estado.ultima?.acierto === false
+            ? () => despachar({ tipo: 'seguir' })
+            : undefined
+        }
       >
         {estado.ultima?.acierto === true && t('comun.bien')}
         {/* La pista de esta actividad si la trae, y si no la frase de siempre. Es lo que

@@ -3028,6 +3028,14 @@ textos, niveles, camino, y la sección de instrumentos.
 - [x] **El Danubio (347) con violín**, la melodía al 100 % y los golpes al 45 %: la percusión
       corporal tiene ahora también `volumenGolpes`, para cuando manda la melodía.
 
+- [x] **La pista de un fallo se cierra con un toque desde los dos segundos**, y la
+      actividad sigue: la pregunta vuelve (elección, pentagrama, emparejar), se vuelve a
+      colocar u ordenar (compases, ordenar), la escala empieza de nuevo. Antes había que
+      esperar a que se leyera entera. Los dos segundos evitan cerrarla con el toque de la
+      propia actividad; el toque que cierra no llega al botón de debajo. `sePuedeCerrar` en
+      `maquinaReaccion.ts`, con test, y `alCerrar` en `Reaccion`. Las tarjetas de resultado
+      con botones (karaoke, cantar, eco, tocar a tiempo, rejilla) no bloquean y no cambian.
+
 - [x] **El pulso de negra debajo de los dictados de figuras** (124, 125, 218, 332): un compás
       de pulso de entrada y el pulso de fondo mientras suena el ritmo, más flojo y de otro
       timbre. «¿Negra o blanca?» pedía comparar con un pulso que no sonaba (2026-09-12).

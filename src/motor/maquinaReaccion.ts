@@ -103,6 +103,24 @@ export function seVe(tono: TonoReaccion, texto: string): boolean {
 }
 
 /**
+ * A partir de cuándo un toque cierra la tarjeta que está bloqueando la actividad.
+ *
+ * La pista de un fallo dura lo que tarda en leerse, y la actividad espera. Quien ya la ha
+ * leído —o ya sabe lo que pasa— no tiene por qué esperar: desde los dos segundos, un toque
+ * en cualquier sitio la cierra y la actividad sigue. Dos segundos y no cero porque el toque
+ * que la cerraría en el primer instante es el mismo con el que el niño estaba haciendo la
+ * actividad: cerrarla sin querer sería peor que esperar. Lo pidió el autor el 2026-09-12:
+ * «a los 2 seg de aparecer, si clicas fuera se cerrará [...] para que no se cierre por
+ * accidente al clicar haciendo la actividad».
+ */
+export const CIERRE_DESDE_MS = 2000;
+
+/** ¿Un toque ahora cierra la tarjeta? `transcurridoMs` desde que apareció. */
+export function sePuedeCerrar(transcurridoMs: number): boolean {
+  return transcurridoMs >= CIERRE_DESDE_MS;
+}
+
+/**
  * Cuánto se queda en pantalla, o `null` si no se va solo.
  *
  * `null` no significa «para siempre»: significa que **lo quita el niño al responder**, no un

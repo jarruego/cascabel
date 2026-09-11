@@ -311,6 +311,15 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
       <Reaccion
         tono={estado.fase === 'bien' ? 'bien' : conPista ? 'casi' : 'neutro'}
         personaje={actividad.personaje}
+        /* Mientras se espera a que se lea la pista, un toque la cierra y vuelve la pregunta. */
+        alCerrar={
+          estado.fase === 'casi'
+            ? () => {
+                setPistaVisible(false);
+                despachar({ tipo: 'seguir' });
+              }
+            : undefined
+        }
       >
         {estado.fase === 'bien' && t('comun.bien')}
         {conPista && (pista ? t(pista) : t('comun.casi'))}

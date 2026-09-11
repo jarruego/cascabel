@@ -295,6 +295,8 @@ export default function Ordenar({ actividad, alTerminar }: PropsActividad) {
       <Reaccion
         tono={estado.fase === 'revisando' ? 'casi' : 'neutro'}
         personaje={actividad.personaje}
+        /* Un toque desde los dos segundos cierra la corrección y se vuelve a ordenar. */
+        alCerrar={estado.fase === 'revisando' ? () => despachar({ tipo: 'seguir' }) : undefined}
       >
         {/* Solo «casi». El «¡completada!» lo decía aquí y otra vez medio segundo después en
             la modal de enhorabuena, que es la que se queda: al terminar ya hay pantalla. */}

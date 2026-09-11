@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { TRAS_ACIERTO_MS, esperaTrasRespuesta } from '../src/motor/maquinaReaccion';
+import { CIERRE_DESDE_MS, TRAS_ACIERTO_MS, esperaTrasRespuesta, sePuedeCerrar } from '../src/motor/maquinaReaccion';
 import { createElement, Fragment } from 'react';
 import {
   BASE_MS,
@@ -105,5 +105,17 @@ describe('cuánto se espera tras una respuesta', () => {
     const pista = 'Cada compás tiene que sumar exactamente tres pulsos.';
     expect(esperaTrasRespuesta(false, pista)).toBe(BASE_MS + pista.length * POR_CARACTER_MS);
     expect(esperaTrasRespuesta(false, pista)).toBeGreaterThan(esperaTrasRespuesta(false, 'Casi.'));
+  });
+});
+
+describe('cerrar la tarjeta con un toque', () => {
+  it('en los dos primeros segundos, no: ese toque es el de la actividad', () => {
+    expect(sePuedeCerrar(0)).toBe(false);
+    expect(sePuedeCerrar(CIERRE_DESDE_MS - 1)).toBe(false);
+  });
+
+  it('a partir de los dos segundos, sí', () => {
+    expect(sePuedeCerrar(CIERRE_DESDE_MS)).toBe(true);
+    expect(sePuedeCerrar(10000)).toBe(true);
   });
 });

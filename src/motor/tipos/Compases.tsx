@@ -205,6 +205,8 @@ export default function Compases({ actividad, alTerminar }: PropsActividad) {
       <Reaccion
         tono={estado.fase === 'revisando' ? 'casi' : 'neutro'}
         personaje={actividad.personaje}
+        /* Un toque desde los dos segundos cierra la corrección y se vuelve a colocar. */
+        alCerrar={estado.fase === 'revisando' ? () => despachar({ tipo: 'seguir' }) : undefined}
       >
         {/*
             Aquí la frase genérica NO es genérica: «aquí no cierra el compás» y «aquí cerraba

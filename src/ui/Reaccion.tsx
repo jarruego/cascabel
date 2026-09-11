@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Personaje } from './Personaje';
 import { NOMBRES, type Personaje as Nombre } from './personajes';
-import { duracionMs, seVe, textoDe, type TonoReaccion } from '@/motor/maquinaReaccion';
+import { duracionMs, seVe, sePuedeCerrar, textoDe, type TonoReaccion } from '@/motor/maquinaReaccion';
 import { t } from '@/i18n';
 
 /**
@@ -65,11 +65,20 @@ export function Reaccion({
   tono,
   personaje = 'dora',
   children,
+  alCerrar,
 }: {
   /** `neutro` para lo que no es un juicio, como «sigue el dibujo mientras suena». */
   tono: TonoReaccion;
   personaje?: Nombre;
   children?: React.ReactNode;
+  /**
+   * Si la tarjeta está bloqueando la actividad —la pista de un fallo mientras se espera a
+   * que se lea—, quien la monta pasa aquí qué hacer cuando el niño la cierra: seguir con
+   * la pregunta, empezar la escala de nuevo. Con esto, desde los dos segundos
+   * (`sePuedeCerrar`) un toque en cualquier sitio, o Escape, la cierra. Sin esto la
+   * tarjeta no se cierra tocando: es el caso de las que no bloquean nada.
+   */
+  alCerrar?: () => void;
 }) {
   const texto = textoDe(children);
   const pedida = seVe(tono, texto);
@@ -121,6 +130,47 @@ export function Reaccion({
       así que dos reacciones con las mismas palabras son la misma y la tarjeta no se mueve.
     */
   }, [pedida, tono, texto, personaje, ms]);
+
+  /*
+    El toque que cierra.
+
+    Se escucha el `click` en captura, en el documento entero, y **se le para la propagación**
+    cuando cae dentro de la actividad: si no, el mismo toque que cierra la pista llegaría al
+    botón de debajo como respuesta a la pregunta siguiente, que ya estaría en marcha. Fuera de
+    la actividad —«volver», los ajustes— el toque sigue su camino y además cierra.
+
+    La función va en una referencia para que el efecto no se rehaga con cada repintado del
+    padre, que la pasa como una flecha nueva cada vez; lo que arma y desarma el oído es que
+    haya tarjeta y que sea de las que se cierran.
+  */
+  const alCerrarRef = useRef(alCerrar);
+  alCerrarRef.current = alCerrar;
+  const cerrable = Boolean(alCerrar);
+  useEffect(() => {
+    if (!puesto || saliendo || !cerrable) return;
+    const desde = performance.now();
+    const cerrar = () => {
+      setSaliendo(true);
+      alCerrarRef.current?.();
+    };
+    const alTocar = (ev: MouseEvent) => {
+      if (!sePuedeCerrar(performance.now() - desde)) return;
+      if (ev.target instanceof Element && ev.target.closest('.actividad')) {
+        ev.stopPropagation();
+        ev.preventDefault();
+      }
+      cerrar();
+    };
+    const alTeclear = (ev: KeyboardEvent) => {
+      if (ev.key === 'Escape') cerrar();
+    };
+    document.addEventListener('click', alTocar, true);
+    document.addEventListener('keydown', alTeclear);
+    return () => {
+      document.removeEventListener('click', alTocar, true);
+      document.removeEventListener('keydown', alTeclear);
+    };
+  }, [puesto, saliendo, cerrable]);
 
   const frase =
     puesto && puesto.tono !== 'neutro' ? t(`reaccion.${puesto.personaje}.${puesto.tono}`) : '';

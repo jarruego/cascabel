@@ -285,7 +285,19 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
 
       {/* Solo el «casi». Al resolverla salta la modal de enhorabuena, y decirlo dos veces
           en medio segundo es lo que el autor señaló como repetición. */}
-      <Reaccion tono={fallo !== null && !resuelta ? 'casi' : 'neutro'} personaje={actividad.personaje}>
+      <Reaccion
+        tono={fallo !== null && !resuelta ? 'casi' : 'neutro'}
+        personaje={actividad.personaje}
+        /* Cerrar el aviso es empezar de nuevo: la pauta se vacía y se espera la tónica. */
+        alCerrar={
+          fallo !== null && !resuelta
+            ? () => {
+                setPuestas([]);
+                setFallo(null);
+              }
+            : undefined
+        }
+      >
         {fallo !== null && !resuelta && textoPista}
       </Reaccion>
     </section>
