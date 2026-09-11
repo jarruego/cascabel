@@ -6,6 +6,7 @@ import { MARIMBA, Sampler } from '@/audio/sampler';
 import { muestrasDe } from '@/audio/instrumentos';
 import { Personaje } from '@/ui/Personaje';
 import { personajeDe } from '@/ui/personajes';
+import { colorDe } from '@/ui/coloresNota';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { Reaccion } from '@/ui/Reaccion';
 import { BASE_MS, POR_CARACTER_MS } from '../maquinaReaccion';
@@ -260,12 +261,12 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
     },
     [clave, pedida, sitioDe, libre, contenido.instrumento],
   );
-  const personajeDeTocada = tocada
-    ? (() => {
-        const n = notaDe(sitioDe(tocada), clave);
-        return personajeDe(`${n.vexflow.split('/')[0]!.toUpperCase()}${n.octava}`);
-      })()
-    : null;
+  /** «C4», «D5»…: lo que entienden el personaje y el color. */
+  const cientifica = (o: Opcion) => {
+    const n = notaDe(sitioDe(o), clave);
+    return `${n.vexflow.split('/')[0]!.toUpperCase()}${n.octava}`;
+  };
+  const personajeDeTocada = tocada ? personajeDe(cientifica(tocada)) : null;
 
   const pista = pistaPara(actividad.pistas, estado.fallosAqui);
 
@@ -326,7 +327,13 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
     >
       <h1 id="consigna" className="visualmente-oculto">{t(contenido.consigna)}</h1>
 
-      <p className="pentagrama__pedida" aria-live="polite">
+      <p
+        className="pentagrama__pedida"
+        aria-live="polite"
+        /* En la ficha, el nombre va del color de la nota (código Boomwhacker), como la
+           cabeza en la pauta. En las de pregunta no: el color delataría la respuesta. */
+        style={libre && tocada ? { color: colorDe(cientifica(tocada)) } : undefined}
+      >
         {/* En la ficha: el personaje de la nota tocada y su nombre. Antes de tocar nada, la
             fila está vacía y ya: la consigna la lee el adulto en la explicación. */}
         {/* En la ficha el personaje sale al doble y con su entrada: es el momento de la
@@ -390,7 +397,12 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
               <span
                 className="pentagrama__nota"
                 aria-hidden="true"
-                style={{ width: Math.round(SEPARACION * 1.25), height: Math.round(SEPARACION * 0.9) }}
+                style={{
+                  width: Math.round(SEPARACION * 1.25),
+                  height: Math.round(SEPARACION * 0.9),
+                  // En la ficha cada cabeza lleva el color de su nota; en las de pregunta, no.
+                  ...(libre ? { background: colorDe(cientifica(o)) } : {}),
+                }}
               />
               <span className="visualmente-oculto">{nota.nombre}</span>
             </button>
