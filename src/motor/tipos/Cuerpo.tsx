@@ -86,6 +86,12 @@ export default function Cuerpo({ actividad, alTerminar, alSalir }: PropsActivida
   const [estado, despachar] = useReducer(reducir, { sonando: false, indice: -1 });
   const sampler = useRef<Sampler | null>(null);
   const bucle = contenido.bucle ?? true;
+  /*
+    Solo las filas que el patrón usa, en el orden de siempre. «Palmas y muslos» (017)
+    enseñaba cuatro filas y dos estaban vacías todo el rato: el autor pidió quitarlas el
+    2026-09-12. Una canción entera que use las cuatro las sigue teniendo.
+  */
+  const zonas = ZONAS.filter((z) => patron.some((g) => g.zona === z));
   /** La canción ha llegado al final: el personaje felicita y se ofrece repetir o terminar. */
   const [terminada, setTerminada] = useState(false);
   // Subido de 0,35 a 0,5 el 2026-09-10: bajo los golpes, a 0,35 la flauta no se oía.
@@ -228,9 +234,9 @@ export default function Cuerpo({ actividad, alTerminar, alSalir }: PropsActivida
       <div
         className="cuerpo__rejilla"
         ref={rejilla}
-        style={{ ['--filas' as string]: contenido.silabas ? 5 : 4, ['--pulsos' as string]: patron.length }}
+        style={{ ['--filas' as string]: zonas.length + (contenido.silabas ? 1 : 0), ['--pulsos' as string]: patron.length }}
       >
-        {ZONAS.map((zona) => (
+        {zonas.map((zona) => (
           <div key={zona} className="cuerpo__fila" data-zona={zona}>
             {/* Un dibujo encima del nombre: para quien no lee, y para que «chasquidos» no
                 haya que explicarlo. Lo pidió el autor el 2026-09-10. */}

@@ -53,17 +53,7 @@
           "C4"
         ],
         "respuesta": "baja",
-        "instrumento": "trompeta"
-      },
-      {
-        "notas": [
-          "D5",
-          "A4",
-          "F4",
-          "D4"
-        ],
-        "respuesta": "baja",
-        "instrumento": "violin"
+        "instrumento": "glockenspiel"
       },
       {
         "notas": [
@@ -74,7 +64,38 @@
           "F5"
         ],
         "respuesta": "sube",
-        "instrumento": "clarinete"
+        "instrumento": "xilofono"
+      },
+      {
+        "notas": [
+          "E5",
+          "C5",
+          "G4",
+          "E4"
+        ],
+        "respuesta": "baja",
+        "instrumento": "marimba"
+      },
+      {
+        "notas": [
+          "G3",
+          "C4",
+          "E4",
+          "G4",
+          "C5"
+        ],
+        "respuesta": "sube",
+        "instrumento": "vibrafono"
+      },
+      {
+        "notas": [
+          "D5",
+          "A4",
+          "F4",
+          "D4"
+        ],
+        "respuesta": "baja",
+        "instrumento": "flauta-dulce"
       },
       {
         "notas": [
@@ -89,16 +110,18 @@
       },
       {
         "notas": [
+          "G5",
           "E5",
           "C5",
           "G4",
           "E4"
         ],
         "respuesta": "baja",
-        "instrumento": "flauta"
+        "instrumento": "piano"
       }
     ],
-    "instrumento": "xilofono"
+    "instrumento": "glockenspiel",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el 2026-09-12 se cambian los instrumentos por los de ataque claro y altura nítida —piano, glockenspiel, xilófono, marimba, vibráfono y flauta dulce— y se quitan la trompeta, el clarinete y el violín, en los que a un niño de cuatro años le cuesta oír la altura. Ocho estímulos, cinco por partida, cuatro sube y cuatro baja, siempre por el acorde (saltos grandes) para que la dirección sea evidente. Confirmar que la flauta dulce no confunde por el soplo."
   },
   "evaluacion": {
     "autocorrectiva": true,

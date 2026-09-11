@@ -1,0 +1,9 @@
+<svg viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+  <!-- Claves: dos palos de madera cruzados. Dibujo propio de Cascabel (Apache-2.0 / CC BY-SA 4.0), en el estilo plano de los iconos OpenMoji que lo rodean. -->
+  <g stroke="#3f2a14" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="#a57939" d="M12 54 L54 14 c2-2 6-2 8 0 s2 6 0 8 L20 62 c-2 2-6 2-8 0 s-2-6 0-8z"/>
+    <path fill="#c58f4a" d="M14 56 L56 16"/>
+    <path fill="#a57939" d="M18 12 L60 54 c2 2 2 6 0 8 s-6 2-8 0 L10 20 c-2-2-2-6 0-8 s6-2 8 0z"/>
+    <path fill="#c58f4a" d="M16 16 L58 58" stroke="#e0b070"/>
+  </g>
+</svg>

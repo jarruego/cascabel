@@ -4017,6 +4017,9 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
 }
 
 .pads__nombre { line-height: 1.1; text-align: center; }
+/* El dibujo del instrumento, encima del nombre. Al golpear, el pad se tiñe y el dibujo se
+   queda: es lo que hace que el color no sea la única señal de qué pad es. */
+.pads__dibujo { display: block; line-height: 0; }
 .pads__letra {
   font-size: var(--t-xs);
   font-weight: 400;

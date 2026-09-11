@@ -2998,6 +2998,14 @@ textos, niveles, camino, y la sección de instrumentos.
       220 Hz, que es el primer uso del campo `filtros` del manifiesto. Y la tormenta empieza
       por el trueno: la grabación traía cuatro segundos de lluvia floja antes del primero.
 
+- [x] **Tres de Infantil, a petición del autor (2026-09-12).** La **023** «¿Sube o baja?» va
+      con instrumentos de altura nítida —piano, glockenspiel, xilófono, marimba, vibráfono y
+      flauta dulce— y ocho estímulos por el acorde; fuera trompeta, clarinete y violín. La
+      **018** «Cuatro instrumentos» lleva el dibujo de cada uno en el pad (pandereta y bombo
+      de Commons, CC0; las claves dibujadas aquí; la caja con el tambor de OpenMoji), y el
+      kit del Taller también. La **017** «Palmas y muslos» enseña solo las filas que usa: la
+      percusión corporal quita las zonas vacías.
+
 **Pendiente de ver en el aparato**: que la reacción del constructor no tape la cuadrícula
 en un móvil en vertical, que ninguna otra pantalla enseñe barra al crecer algo, que la
 app instalada en Android se ponga al día sola al abrirla tras un despliegue, y que el

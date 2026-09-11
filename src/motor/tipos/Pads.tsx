@@ -4,6 +4,7 @@ import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { KIT, Percusion, type Golpe } from '@/audio/percusion';
 import { Metronomo } from '@/audio/metronomo';
 import { IconoGrabar, IconoParar, IconoTocar } from '@/ui/Simbolos';
+import { Icono } from '@/ui/Icono';
 import { GrabadorDeEventos, reproducir, type Grabacion } from '../grabacionEventos';
 import { Retos } from '@/ui/Retos';
 import { BarraAcciones } from '@/ui/BarraAcciones';
@@ -70,6 +71,20 @@ const TECLAS = [
 const LETRAS = ['1', '2', '3', '4', '5', 'Q', 'W', 'E', 'R', 'T'];
 
 const TEMPOS = [60, 84, 108];
+
+/**
+ * El dibujo de cada golpe, para que el pad se reconozca por la forma además de por el color
+ * y el nombre: lo pidió el autor el 2026-09-12 para «Cuatro instrumentos». Los que no
+ * tienen dibujo (charles, plato, triángulo, caja china) siguen solo con su nombre.
+ */
+const ICONO_GOLPE: Partial<Record<Golpe, string>> = {
+  bombo: 'bombo',
+  caja: 'tambor',
+  tom: 'tambor-grande',
+  bongo: 'tambor-grande',
+  pandereta: 'pandereta',
+  claves: 'claves',
+};
 
 export default function Pads({ actividad, alTerminar }: PropsActividad) {
   const contenido = actividad.contenido as {
@@ -305,6 +320,11 @@ export default function Pads({ actividad, alTerminar }: PropsActividad) {
               if (!deslizando.current) void golpear(golpe);
             }}
           >
+            {ICONO_GOLPE[golpe] && (
+              <span className="pads__dibujo" aria-hidden="true">
+                <Icono nombre={ICONO_GOLPE[golpe]!} tamano={Math.round(reparto.lado * 0.48)} />
+              </span>
+            )}
             <span className="pads__nombre">{t('golpe.' + golpe)}</span>
             {letrasQwerty && LETRAS[i] && <span className="pads__letra">{LETRAS[i]}</span>}
           </button>

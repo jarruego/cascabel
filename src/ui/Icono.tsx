@@ -36,6 +36,7 @@ const DISPONIBLES = new Set([
   'mono', 'nino', 'nota-musical', 'oso', 'pajaro',
   'partitura', 'pausa', 'perro', 'pulgar', 'rana',
   'raton', 'reproducir', 'silencio', 'sol', 'tambor',
+  'bombo', 'pandereta', 'claves',
   'tambor-grande', 'teclado', 'tortuga', 'trompeta', 'unicornio',
   'violin', 'voz',
   // Añadidos el 2026-09-10 para las actividades de lenguaje, historia y estilos.
