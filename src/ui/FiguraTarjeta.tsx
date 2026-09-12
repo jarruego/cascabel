@@ -2,7 +2,8 @@ import { useState, type ReactNode } from 'react';
 import type { Eje } from '@/motor/tipos';
 import { Icono } from './Icono';
 import { Personaje } from './Personaje';
-import { GLIFOS, esGlifo } from './glifos';
+import { Glifo } from './Glifo';
+import { esGlifo } from './glifos';
 import { POSES, type Personaje as NombrePersonaje, type Pose } from './personajes';
 
 /**
@@ -92,9 +93,7 @@ export function FiguraTarjeta({ figura, personaje, tipo, eje }: Props) {
   if ('glifo' in f) {
     return (
       <Mancha>
-        <span className="tarjeta__glifo" aria-hidden="true">
-          {esGlifo(f.glifo) ? GLIFOS[f.glifo] : GLIFOS['clave-sol']}
-        </span>
+        <Glifo nombre={esGlifo(f.glifo) ? f.glifo : 'clave-sol'} tamano={44} className="tarjeta__glifo" />
       </Mancha>
     );
   }

@@ -712,24 +712,12 @@ p {
 .tarjeta__figura img { display: block; max-width: 100%; height: auto; }
 /* El signo, con Bravura y del tamaño del icono. Los glifos sobresalen de su caja por
    arriba y por abajo (la clave de sol, sobre todo): la altura de línea les deja sitio. */
-/* La cifra escrita en el sitio de un icono: Bravura, centrada en la caja del icono. */
-.icono--cifra {
-  display: inline-grid;
-  place-items: center;
-  font-family: var(--f-musica);
-  line-height: 1;
-  color: currentColor;
-}
+/* La cifra escrita en el sitio de un icono: un `Glifo` (SVG) del color del texto. */
+.icono--cifra { display: inline-block; vertical-align: middle; color: currentColor; }
 .tarjeta__figura .icono--cifra { color: #fff; }
-.tarjeta__glifo {
-  display: block;
-  text-align: center;
-  font-family: var(--f-musica);
-  font-size: 2.1rem;
-  line-height: 1;
-  /* Los siete colores de eje son oscuros: el signo va en blanco encima de todos. */
-  color: #fff;
-}
+/* El signo de la tarjeta: un `Glifo` (SVG centrado por su caja real), en blanco porque los
+   siete colores de eje son oscuros. */
+.tarjeta__glifo { display: block; color: #fff; }
 
 /* ── filtros del catálogo ──────────────────────────────────────────────────
    Sin etiqueta visible: la opción «todos» de cada desplegable se llama como la categoría,

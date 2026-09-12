@@ -21,7 +21,8 @@
  * engordan el bundle y el service worker los precachea para el modo sin conexión.
  */
 
-import { CIFRAS } from './cifras';
+import { esCifra } from './cifras';
+import { Glifo } from './Glifo';
 
 interface Props {
   nombre: string;
@@ -77,19 +78,8 @@ export function Icono({ nombre, tamano = 48, alt = '' }: Props) {
   const real = ALIAS[nombre] ?? nombre;
 
   // Un número se escribe, no se dibuja: ver `cifras.ts`. Ocupa la caja del icono.
-  const cifra = CIFRAS[real];
-  if (cifra !== undefined) {
-    return (
-      <span
-        className="icono icono--cifra"
-        style={{ width: tamano, height: tamano, fontSize: tamano * 0.8 }}
-        role={alt ? 'img' : undefined}
-        aria-label={alt || undefined}
-        aria-hidden={alt === '' ? true : undefined}
-      >
-        {cifra}
-      </span>
-    );
+  if (esCifra(real)) {
+    return <Glifo nombre={real} tamano={tamano} className="icono icono--cifra" alt={alt} />;
   }
 
   if (!DISPONIBLES.has(real)) {

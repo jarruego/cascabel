@@ -3126,6 +3126,15 @@ textos, niveles, camino, y la sección de instrumentos.
       y en la última lámina el botón grande se apagaba en vez de cerrar. El botón ocupa siempre la fila de arriba de
       la botonera, con el mismo ancho diga «escuchar» o «parar».
 
+- [x] **Los signos de Bravura, centrados por su caja** (2026-09-13): claves, notas y
+      pentagrama salían descolgados en las tarjetas porque una fuente musical dibuja cada
+      signo respecto a la línea del pentagrama, no respecto a su caja de carácter (la clave
+      de sol baja 0,66 em y la negra sube 0,88). Ahora `ui/Glifo.tsx` dibuja el signo en un
+      SVG cuadrado cuyo `viewBox` es la caja real del glifo, medida en nuestro
+      `Bravura.woff2` con fontTools y guardada en `ui/glifos.ts` (`cuadroDe`, con test).
+      Vale para las figuras de las tarjetas y para las cifras de los iconos; el pentagrama
+      pasa al ancho (staff5LinesWide).
+
 - [x] **El tic a la izquierda y los números escritos** (2026-09-13): el tic de «hecha» pasa
       del borde derecho, en verde, al izquierdo, sobre la barra del eje y de su mismo color,
       para que la figura de la derecha quede sola. Y los iconos uno, dos, tres y cuatro ya no
