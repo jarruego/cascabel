@@ -3102,6 +3102,11 @@ textos, niveles, camino, y la sección de instrumentos.
       barajado y sin dos seguidas del mismo nombre (`rondasPentagrama.ts`, con test). Las
       opciones llevan ahora `clave` única y `nombre`; las de una octava no cambian.
 
+- [x] **El rap de la 236 es rap** (2026-09-12): el clip era una base instrumental sin voz.
+      Ahora suena «Emazteen fabore», del proyecto Etxepare rap (CC BY-SA 4.0, verificado en
+      Commons): voz rapeando sobre base, en euskera, con un poema de 1545 de letra; el tramo
+      se eligió midiendo dónde entra la base. La 338 sigue con la base de hip hop de MacLeod.
+
 - [x] **La escala (301, 342) avisa con un solo mensaje**: «ese paso no sigue el patrón,
       empieza de nuevo en sol». Los seis mensajes por clase de fallo liaban («hay muchas
       explicaciones según la tecla y lía más», 2026-09-12); qué ha pasado ya lo dice el paso

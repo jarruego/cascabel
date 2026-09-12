@@ -1,6 +1,6 @@
 {
   "$comment": "Banco de sonidos reales. Cada entrada apunta a un fichero de Wikimedia Commons; tools/sonidos.py lo baja, comprueba la licencia por API, lo recorta y escribe aqui lo verificado. La pantalla de creditos lee este fichero: es la atribucion que exige la CC BY, y sale de datos, no de memoria.",
-  "generado": "2026-09-11",
+  "generado": "2026-09-12",
   "sonidos": [
     {
       "id": "perro",
@@ -1242,14 +1242,16 @@
       "id": "rap",
       "categoria": "estilos",
       "nombre": "Rap",
-      "commons": "File:Cloud rap beat.ogg",
-      "segundos": 11,
+      "commons": "File:Emazteen fabore - Bernard Etxepare Etxepare rap.mp3",
+      "segundos": 20,
+      "desde": 34,
+      "$comment": "Cambiado el 2026-09-12: el anterior («Cloud rap beat», CC0) era una base instrumental sin voz y «no parecía rap». Este es un rap de verdad, con voz y base, en euskera: un poema de Bernard Etxepare (1545) rapeado por Imanol Epelde dentro del proyecto Etxepare rap. Contenido limpio por construcción (es literatura del siglo XVI). El tramo desde 34 s es donde entra la base con la voz encima, medido por energía.",
       "verificado": {
-        "licencia": "CC0",
-        "licencia_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
-        "autor": "Zanahary",
-        "url": "https://commons.wikimedia.org/wiki/File:Cloud_rap_beat.ogg",
-        "fecha": "2026-09-10"
+        "licencia": "CC BY-SA 4.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "autor": "ImanolEpelde27zapata",
+        "url": "https://commons.wikimedia.org/wiki/File:Emazteen_fabore_-_Bernard_Etxepare_Etxepare_rap.mp3",
+        "fecha": "2026-09-12"
       }
     },
     {

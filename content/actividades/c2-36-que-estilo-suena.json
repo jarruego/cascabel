@@ -22,7 +22,7 @@
   },
   "contenido": {
     "consigna": "actividad.c236.consigna",
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: los fragmentos de rock, vals y salsa son piezas de Kevin MacLeod (CC BY 3.0) compuestas «en el estilo de», y el rap es una base instrumental CC0. Son ejemplos limpios de manual; no son grabaciones históricas de cada estilo.",
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: los fragmentos de rock, vals y salsa son piezas de Kevin MacLeod (CC BY 3.0) compuestas «en el estilo de», y el rap es «Emazteen fabore» del proyecto Etxepare rap (CC BY-SA 4.0): un rap de verdad, con voz y base, en euskera, sobre un poema de 1545. El anterior era una base instrumental sin voz y el autor lo señaló el 2026-09-12: «no parece rap». Son ejemplos limpios de manual; no son grabaciones históricas de cada estilo.",
     "opciones": [
       {
         "clave": "rock",
