@@ -677,8 +677,8 @@ p {
   vertical-align: 0.1em;
 }
 .tarjeta__meta { font-size: 0.85em; color: var(--tinta-2); }
-/* Tarjeta con personaje: el dibujo a la izquierda, un 30 %, y el texto a la derecha. */
-.tarjeta__conFigura { display: grid; grid-template-columns: 30% 1fr; gap: var(--e-2); align-items: start; }
+/* Tarjeta con personaje: el texto a la izquierda y el dibujo a la derecha, un 30 %. */
+.tarjeta__conFigura { display: grid; grid-template-columns: 1fr 30%; gap: var(--e-2); align-items: start; }
 .tarjeta__conFigura .personaje { display: block; margin: 0 auto; }
 
 /* ── filtros del catálogo ──────────────────────────────────────────────────

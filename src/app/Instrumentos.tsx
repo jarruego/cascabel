@@ -95,12 +95,12 @@ export default function Instrumentos() {
               onClick={() => void despertarAudio().catch(() => {})}
             >
               <span className="tarjeta__titulo">{e.titulo}</span>
-              {/* Las presentaciones de la pandilla llevan al personaje en pequeño a la
-                  izquierda, en una pose al azar, y el texto a la derecha (2026-09-12). */}
+              {/* Las presentaciones de la pandilla llevan el texto a la izquierda y al
+                  personaje en pequeño a la derecha, en una pose al azar (2026-09-12). */}
               {e.tipo === 'presentacion' && e.personaje ? (
                 <span className="tarjeta__conFigura">
-                  <Personaje nombre={e.personaje} pose={poseAlAzar()} tamano={64} />
                   {e.descripcion && <span className="tarjeta__meta">{e.descripcion}</span>}
+                  <Personaje nombre={e.personaje} pose={poseAlAzar()} tamano={64} />
                 </span>
               ) : (
                 e.descripcion && <span className="tarjeta__meta">{e.descripcion}</span>

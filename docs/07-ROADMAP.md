@@ -3113,7 +3113,7 @@ textos, niveles, camino, y la sección de instrumentos.
       cada uno con lo suyo y sin repetirse: Dora la base y la casa, Rex descubrir sonidos,
       Fara la calma y el silencio, Laia inventar, Simón distinguir dos sonidos que se parecen,
       Doby hacerlo juntos. En el Taller, sus tarjetas llevan al personaje en pequeño, a la
-      izquierda, en una pose al azar. Y las láminas que piden escuchar algo lo llevan
+      derecha, en una pose al azar. Y las láminas que piden escuchar algo lo llevan
       (`sonido`, un estímulo como los de elección) con un botón de escuchar y parar, uno o
       dos por presentación y uno de ellos la nota del personaje, sola, con voz y dos segundos;
       los pulsos van en bucle hasta que se para, encadenados contra el reloj de audio
