@@ -11,7 +11,7 @@ definición: están sin verificar, que es distinto y peor de dejar callado.
 En cada una, lo que hace falta es una de tres respuestas: **vale**, **cámbialo por esto**, o
 **depende, y depende de esto**.
 
-65 puntos esperando respuesta.
+66 puntos esperando respuesta.
 
 ## 1. `content/actividades/c1-26-vals-o-marcha.json` (línea 25)
 
@@ -217,58 +217,62 @@ En cada una, lo que hace falta es una de tres respuestas: **vale**, **cámbialo 
 
 "$comment": "Presentación de Milo, pedida por el autor el 2026-09-12: «una ficha de Milo para presentárselo a la clase, diez modales seguidas, una por cada svg». Los textos salen de docs/14 (nota mi, amarillo, alegría, el bromista, se ríe contigo y no de ti, lo suyo es el ritmo como juego) y de las frases que Milo dice en la app. Las poses van en orden de relato: saludar, presentarse, cantar su nota, palmear, escuchar, callar, buscar el pulso, bailar, animar, celebrar. PENDIENTE DE REVISIÓN PEDAGÓGICA: el criterio curricular; es una presentación, no una tarea.", "consigna": "actividad.tr17.consigna", "laminas": [
 
-## 52. `content/criterios.json` (línea 2)
+## 52. `content/actividades/tr-18-sol-se-presenta.json` (línea 27)
+
+"$comment": "Presentación de Sol, la segunda del tipo (2026-09-12). El autor pidió que cada personaje diga lo suyo y no lo mismo: Sol es energía y movimiento —«la música se siente y se expresa con el cuerpo» (docs/14)—, lleva el pulso en el cuerpo, el tempo y el compás, y no es un astro. Por eso todas sus láminas piden hacer algo de pie, y el orden va del movimiento al control: bailar, buscar el pulso con el pie, el compás de dos y de tres, rápido o despacio, cantar moviéndose, parar como una estatua. Sus frases son las que dice en la app: «¡Eso es! Lo llevas en el cuerpo» y «Venga, otra vez. Que el cuerpo lo sabe». PENDIENTE DE REVISIÓN PEDAGÓGICA: el criterio curricular; es una presentación, no una tarea.", "consigna": "actividad.tr18.consigna", "laminas": [
+
+## 53. `content/criterios.json` (línea 2)
 
 "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: los textos de las competencias son los del real decreto tal como los recoge docs/03-CURRICULO.md; los resúmenes de los criterios de Primaria NO son el texto del BOE —no está en el repositorio— sino una lectura de la progresión del bloque D, y hay que sustituirlos por el criterio literal de cada ciclo antes de dar la pantalla por buena. Los de Infantil 3.5 y 3.6 sí son literales.", "etapas": [
 
-## 53. `src/config.ts` (línea 115)
+## 54. `src/config.ts` (línea 115)
 
 **Pendiente de revisión pedagógica.** Las cifras son las convencionales que ya estaban documentadas; lo que se decide aquí es el eje por el que se indexan.
 
-## 54. `src/motor/afinacion.ts` (línea 67)
+## 55. `src/motor/afinacion.ts` (línea 67)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: los tres números salen de que la precisión de canto infantil mejora con la edad, que es lo convencional en la literatura coral, pero **dónde poner cada uno lo dice una maestra oyendo a un niño**, no un desarrollador.
 
-## 55. `src/motor/eco.ts` (línea 27)
+## 56. `src/motor/eco.ts` (línea 27)
 
 **PENDIENTE DE REVISIÓN PEDAGÓGICA.** Que un eco a otra velocidad cuente como bueno es un criterio, no un hecho: en un aula de conservatorio no lo sería. Aquí se ha elegido que sí, porque a estas edades reconocer la forma rítmica va antes que sostener el tempo, y porque la alternativa —marcarlo como fallo— desanima justo a quien lo ha entendido. Se informa aparte, así que el maestro ve las dos cosas.
 
-## 56. `src/motor/evaluacion.ts` (línea 197)
+## 57. `src/motor/evaluacion.ts` (línea 197)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: el número. Que tenga que haber un punto a partir del cual se felicita es claro —si no, «bien» no significaría nada—; que ese punto sea un fallo de cada cinco es una elección del autor (2026-09-10), y quien puede decir si a los siete años eso es exigente o blando es una maestra viendo a la clase.
 
-## 57. `src/motor/musicograma.ts` (línea 32)
+## 58. `src/motor/musicograma.ts` (línea 32)
 
 `vertical` —las figuras caen— no exige ningún sentido de lectura, así que sirve antes de saber leer y es la natural para el ritmo. `horizontal` —las figuras vienen de la derecha— reproduce cómo se recorre una partitura, así que es la que corresponde cuando lo que se está aprendiendo es a leer. **PENDIENTE DE REVISIÓN PEDAGÓGICA**: la correspondencia entre edades y representaciones de la tabla es la convención habitual (Kodály para las sílabas, código Boomwhacker para los colores), pero dónde está el salto de una a otra lo dice una maestra, no un desarrollador.
 
-## 58. `src/motor/pautaRitmica.ts` (línea 14)
+## 59. `src/motor/pautaRitmica.ts` (línea 14)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: las figuras sin altura van todas en la **tercera línea, con la plica hacia abajo**. Es la convención de los cuadernos de lectura rítmica sobre pentagrama (y la de la fila de percusión indeterminada de Gould, *Behind Bars*, cap. de percusión); la alternativa es una pauta de una sola línea sin clave, la de percusión, que aquí no se ha elegido porque la actividad quiere enseñar la pauta entera.
 
-## 59. `src/motor/rejillaRitmica.ts` (línea 9)
+## 60. `src/motor/rejillaRitmica.ts` (línea 9)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: el repertorio de sílabas de abajo es el convencional del método Kodály tal como se enseña en España, pero hay variantes regionales («ti-ri-ti-ri» frente a «ta-fa-te-fe» para semicorcheas, por ejemplo). Lo ha fijado un desarrollador.
 
-## 60. `src/motor/repaso.ts` (línea 18)
+## 61. `src/motor/repaso.ts` (línea 18)
 
 **PENDIENTE DE REVISIÓN PEDAGÓGICA.** Los tres intervalos son una convención razonable, no una medida. Con un curso de uso real se sabrá si a un niño de siete años le vale una semana o si hacen falta tres días.
 
-## 61. `tools/auditoria.mjs` (línea 272)
+## 62. `tools/auditoria.mjs` (línea 272)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA. Los saberes se escriben a mano en cada JSON y aquí no hay forma de saber cuál es la redacción buena: el real decreto está en el BOE y este proyecto no lo tiene delante. Lo que sí se ve es cuándo una redacción la usa **una sola actividad** y otra parecida la usan treinta, que casi siempre significa que alguien escribió el mismo saber de dos maneras — pasó con el F de Infantil, que estaba de cuatro formas distintas y partía en cuatro un grupo que es uno.
 
-## 62. `tools/dificultad.mjs` (línea 73)
+## 63. `tools/dificultad.mjs` (línea 73)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: los topes de esta tabla. Lo que se puede afirmar sin una maestra es que **la de elegir y la de seguir son distintas**; dónde está exactamente el techo de cada edad, no.
 
-## 63. `tools/dificultad.mjs` (línea 251)
+## 64. `tools/dificultad.mjs` (línea 251)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: los topes. Salen de la duración razonable por etapa dividida entre lo que tarda una pregunta con su escucha, no de ninguna fuente.
 
-## 64. `tools/muestras-provisionales.py` (línea 98)
+## 65. `tools/muestras-provisionales.py` (línea 98)
 
 PENDIENTE DE REVISIÓN PEDAGÓGICA: se usan tres campanas separadas por quintas justas (relación 3:2) porque la diferencia de altura tiene que ser inconfundible para un niño de 3 a 6 años. Es la opción convencional en material Montessori de campanas, donde se empieza por intervalos grandes antes de afinar el oído a los pequeños. Una maestra puede querer terceras o la escala pentatónica.
 
-## 65. `tools/muestras-provisionales.py` (línea 144)
+## 66. `tools/muestras-provisionales.py` (línea 144)
 
 Los tempos son los convencionales de los diccionarios de música: adagio 66, andante 92 y allegro 138 pulsos por minuto. PENDIENTE DE REVISIÓN PEDAGÓGICA: los rangos varían según la fuente y a esta edad lo que importa es que se distingan, no la precisión.

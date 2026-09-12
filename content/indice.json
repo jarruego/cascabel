@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-12",
-  "total": 168,
+  "total": 169,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -6193,6 +6193,46 @@
         "metodo": [],
         "notas": [
           "mi"
+        ],
+        "secuencia": "ninguna"
+      }
+    },
+    {
+      "id": "tr-18-sol-se-presenta",
+      "titulo": "Sol se presenta",
+      "descripcion": "Diez láminas para proyectar y presentar a Sol a la clase: la nota sol, azul, energía y movimiento, la música que se siente en el cuerpo. Una lámina por pose, con una frase suya y algo que hacer de pie.",
+      "etapa": "infantil",
+      "eje": "cuerpo",
+      "tipo": "presentacion",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": null,
+        "criterio": null,
+        "saber": "F. El lenguaje y la expresión musicales"
+      },
+      "estado": "borrador",
+      "herramienta": true,
+      "etiquetas": [
+        "sol",
+        "personajes",
+        "pandilla",
+        "nota sol",
+        "azul",
+        "presentación",
+        "proyector",
+        "movimiento",
+        "pulso",
+        "compás"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [
+          "sol"
         ],
         "secuencia": "ninguna"
       }

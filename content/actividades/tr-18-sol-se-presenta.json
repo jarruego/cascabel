@@ -1,0 +1,172 @@
+{
+  "id": "tr-18-sol-se-presenta",
+  "version": 1,
+  "tipo": "presentacion",
+  "titulo": "Sol se presenta",
+  "descripcion": "Diez láminas para proyectar y presentar a Sol a la clase: la nota sol, azul, energía y movimiento, la música que se siente en el cuerpo. Una lámina por pose, con una frase suya y algo que hacer de pie.",
+  "etapa": "infantil",
+  "eje": "cuerpo",
+  "lugar": "hibrida",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": null,
+    "criterio": null,
+    "saber": "F. El lenguaje y la expresión musicales"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "notas": [
+      "sol"
+    ]
+  },
+  "entrada": {
+    "modo": "ninguna"
+  },
+  "contenido": {
+    "$comment": "Presentación de Sol, la segunda del tipo (2026-09-12). El autor pidió que cada personaje diga lo suyo y no lo mismo: Sol es energía y movimiento —«la música se siente y se expresa con el cuerpo» (docs/14)—, lleva el pulso en el cuerpo, el tempo y el compás, y no es un astro. Por eso todas sus láminas piden hacer algo de pie, y el orden va del movimiento al control: bailar, buscar el pulso con el pie, el compás de dos y de tres, rápido o despacio, cantar moviéndose, parar como una estatua. Sus frases son las que dice en la app: «¡Eso es! Lo llevas en el cuerpo» y «Venga, otra vez. Que el cuerpo lo sabe». PENDIENTE DE REVISIÓN PEDAGÓGICA: el criterio curricular; es una presentación, no una tarea.",
+    "consigna": "actividad.tr18.consigna",
+    "laminas": [
+      {
+        "personaje": "sol",
+        "pose": "saluda",
+        "titulo": "actividad.tr18.l1t",
+        "texto": "actividad.tr18.l1d"
+      },
+      {
+        "personaje": "sol",
+        "pose": "baila",
+        "titulo": "actividad.tr18.l2t",
+        "texto": "actividad.tr18.l2d"
+      },
+      {
+        "personaje": "sol",
+        "pose": "busca",
+        "titulo": "actividad.tr18.l3t",
+        "texto": "actividad.tr18.l3d"
+      },
+      {
+        "personaje": "sol",
+        "pose": "palmea",
+        "titulo": "actividad.tr18.l4t",
+        "texto": "actividad.tr18.l4d"
+      },
+      {
+        "personaje": "sol",
+        "pose": "escucha",
+        "titulo": "actividad.tr18.l5t",
+        "texto": "actividad.tr18.l5d"
+      },
+      {
+        "personaje": "sol",
+        "pose": "canta",
+        "titulo": "actividad.tr18.l6t",
+        "texto": "actividad.tr18.l6d"
+      },
+      {
+        "personaje": "sol",
+        "pose": "calla",
+        "titulo": "actividad.tr18.l7t",
+        "texto": "actividad.tr18.l7d"
+      },
+      {
+        "personaje": "sol",
+        "pose": "neutro",
+        "titulo": "actividad.tr18.l8t",
+        "texto": "actividad.tr18.l8d"
+      },
+      {
+        "personaje": "sol",
+        "pose": "anima",
+        "titulo": "actividad.tr18.l9t",
+        "texto": "actividad.tr18.l9d"
+      },
+      {
+        "personaje": "sol",
+        "pose": "celebra",
+        "titulo": "actividad.tr18.l10t",
+        "texto": "actividad.tr18.l10d"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.tr18.enunciado",
+  "personaje": "sol",
+  "herramienta": true,
+  "etiquetas": [
+    "sol",
+    "personajes",
+    "pandilla",
+    "nota sol",
+    "azul",
+    "presentación",
+    "proyector",
+    "movimiento",
+    "pulso",
+    "compás"
+  ],
+  "ficha": {
+    "aprende": "Conocer a Sol: su nombre, que es la nota sol y de color azul, que lo suyo es el movimiento, y que el pulso y el compás se sienten con el cuerpo antes que con la cabeza.",
+    "vocabulario": [
+      "sol",
+      "azul",
+      "pulso",
+      "compás",
+      "rápido",
+      "despacio",
+      "estatua",
+      "fuerte"
+    ],
+    "agrupamiento": "Grupo clase, de pie, con proyector",
+    "material": "Ninguno. Sitio para moverse",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "De pie y con sitio,",
+        "detalle": "un brazo de distancia entre niños. Sol viene a clase y con Sol no se está sentado."
+      },
+      {
+        "min": 4,
+        "titulo": "Las diez láminas,",
+        "detalle": "leyendo cada una y haciendo lo que pide: buscar el pulso con el pie, palmear el fuerte, correr o andar, subir los brazos con «sol», quedarse de estatua."
+      },
+      {
+        "min": 2,
+        "titulo": "Con música de verdad.",
+        "detalle": "Poner una marcha y un vals cortos y repetir el juego de estatua: música, movimiento; silencio, estatua."
+      },
+      {
+        "min": 1,
+        "titulo": "Repasar.",
+        "detalle": "¿Cómo se llama? ¿Qué nota es? ¿De qué color? ¿Qué le gusta? ¿Es el sol del cielo?"
+      }
+    ],
+    "enPantalla": "Diez láminas seguidas. En cada una Sol aparece grande, en una pose distinta, con una frase suya en letra grande y un texto para que el maestro lo lea. Se pasa con los botones de abajo o con las flechas del teclado, y unos puntos dicen por dónde vas. No hay nada que acertar ni final: se sale por «volver».",
+    "sinPantalla": "Con Sol impresa en grande o dibujada en la pizarra en azul. Se cuenta lámina a lámina y todo se hace con el cuerpo: pulso con el pie, compás con palmas y rodillas, correr y andar, estatuas. El maestro pone el pulso con un pandero.",
+    "masFacil": "Solo cuatro láminas: hola, la música se baila, busca el pulso con el pie y estatua. Con tres años, el juego de estatua ya es la lección entera; el compás de dos y de tres, otro día.",
+    "masDificil": "En la lámina del compás, dividir la clase: unos palmean el fuerte y otros los flojos, y se cambian. En la de rápido o despacio, que un niño elija la velocidad con el pandero y los demás la sigan.",
+    "variante": {
+      "titulo": "Con la nota",
+      "texto": "En cada lámina tocar la nota sol en el piano de la app o en un xilófono, y subir los brazos al oírla. Al final, cantar «sol» todos a la vez, de pie, mientras Sol celebra."
+    },
+    "ideas": [
+      "Inventar el paso de Sol: un movimiento para cuando suena su nota, y usarlo en la siguiente canción que se cante.",
+      "Buscar el pulso en casa: en el reloj, en la lavadora, en el corazón, y contárselo a la clase.",
+      "Comparar a Sol con Milo, que ya conocen: Milo juega con las palmas, Sol se mueve entera. ¿Qué diría cada uno de la misma canción?"
+    ]
+  },
+  "creditos": [
+    {
+      "obra": "Sol y sus diez poses",
+      "autor": "cocomusic",
+      "fuente": "Personajes de la metodología cocomusic: no están cubiertos por las licencias del código ni de los contenidos (ver TRADEMARK.md)",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

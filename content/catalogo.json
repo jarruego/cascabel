@@ -1,7 +1,7 @@
 {
   "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa, y también si usa un código que aquí no está. El hueco de C1-17 es intencionado: ese código nunca llegó a reservarse y los ids no se renumeran, porque un id puede estar dentro de una URL compartida.",
   "generado": "2026-09-10",
-  "total": 169,
+  "total": 170,
   "actividades": [
     {
       "id": "C1-01",
@@ -2198,6 +2198,19 @@
       "esfuerzo": "S",
       "curriculo": "Infantil · saber F",
       "descripcion": "Diez láminas para proyectar: Milo, la nota mi, se presenta a la clase.",
+      "estado": "hecha"
+    },
+    {
+      "id": "TR-18",
+      "titulo": "Sol se presenta",
+      "etapa": "infantil",
+      "eje": "cuerpo",
+      "lugar": "hibrida",
+      "tipo": "presentacion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "Infantil · saber F",
+      "descripcion": "Diez láminas para proyectar: Sol, la nota sol, energía y movimiento, se presenta de pie.",
       "estado": "hecha"
     }
   ]
