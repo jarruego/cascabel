@@ -2202,9 +2202,13 @@ p {
 }
 .ficha__consejo { flex-basis: 100%; margin: 0; font-size: 0.9em; color: var(--tinta-2); }
 
+/* La tabla que sostiene la ficha: cabecera y pie se repiten en cada página impresa. */
+.ficha__papel { width: 100%; border-collapse: collapse; }
+.ficha__papel > thead > tr > td,
+.ficha__papel > tfoot > tr > td,
+.ficha__papel > tbody > tr > td { padding: 0; vertical-align: top; }
 .ficha__hoja {
-  position: relative;
-  padding: var(--e-6) var(--e-5) var(--e-7);
+  padding: var(--e-3) var(--e-5) var(--e-3);
   margin-bottom: var(--e-6);
   font-size: 15px;
   line-height: 1.45;
@@ -2236,21 +2240,18 @@ p {
 .ficha__sobre .codigo { font-weight: 700; color: var(--tinta); }
 .ficha__entradilla { font-size: 1.02em; }
 
-/* Cabecera y pie, en el margen: gris, pequeño y separado del contenido. */
+/* Cabecera y pie: gris, pequeño y separado del contenido. */
 .ficha__marca {
-  position: absolute;
-  left: var(--e-5);
-  right: var(--e-5);
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: var(--e-4);
   margin: 0;
+  padding: var(--e-2) var(--e-5);
   font-size: 0.7em;
   color: var(--tinta-2);
 }
-.ficha__marca--sup { top: var(--e-2); text-transform: uppercase; letter-spacing: 0.04em; }
-.ficha__marca--inf { bottom: var(--e-2); }
+.ficha__marca--sup { text-transform: uppercase; letter-spacing: 0.04em; }
 .ficha__logo { display: inline-flex; align-items: center; gap: var(--e-1); }
 .ficha__logo img { height: 14px; width: auto; opacity: 0.85; }
 .ficha__logo a { color: inherit; }
@@ -2317,11 +2318,18 @@ p {
 .actividad__ficha { color: var(--acento-2); font-size: 0.9em; }
 
 @media print {
-  /* Márgenes de la propia página, holgados arriba y abajo: ahí viven cabecera y pie,
-     DENTRO del margen y lejos del contenido. Antes se solapaban. */
-  @page { size: A4; margin: 20mm 16mm; }
+  /* El margen de la página es lo único que separa cabecera y pie del borde del papel. */
+  @page { size: A4; margin: 10mm 14mm; }
 
   .ficha { max-width: none; padding: 0; margin: 0; }
+  /*
+    Cabecera y pie en cada página: `thead` y `tfoot` se repiten al imprimir y reservan su
+    sitio, así que van arriba y abajo del todo y el contenido nunca los pisa, pasen dos,
+    tres o cuatro páginas. Lo ideal son dos; el contenido manda.
+  */
+  .ficha__papel > thead { display: table-header-group; }
+  .ficha__papel > tfoot { display: table-footer-group; }
+  .ficha__cara2 { page-break-before: always; }
   .ficha__hoja {
     border: none;
     border-radius: 0;
@@ -2329,32 +2337,32 @@ p {
     padding: 0;
     margin: 0;
     /* En puntos y no en píxeles: el punto es la unidad del papel. */
-    font-size: 10.5pt;
-    line-height: 1.4;
+    font-size: 9.5pt;
+    line-height: 1.35;
     color: #000;
-    page-break-after: always;
   }
-  .ficha__hoja:last-child { page-break-after: auto; }
-  .ficha__hoja h2 { margin-top: 5mm; }
+  /* Apretado: la cara 1 con partitura tiene que caber en una página. */
+  .ficha__hoja h1 { font-size: 20pt; margin-bottom: 1.5mm; }
+  .ficha__hoja h2 { margin: 3mm 0 1.5mm; }
+  .ficha__hoja p { margin-bottom: 1.5mm; }
+  .ficha__tecnica { padding: 2mm 0; margin-top: 2mm; gap: 1.5mm 6mm; }
+  .ficha__consigna { padding: 2mm 3mm; margin-bottom: 2mm; }
+  .ficha__pasos { gap: 0.8mm 2mm; }
+  .ficha__letra { line-height: 1.3; }
+  .ficha__partitura { margin-bottom: 1mm; }
   .ficha__consigna { background: #eef3f2; }
   .ficha__seguimiento th { background: #f2f2f2; }
-  .ficha__seguimiento tbody td { height: 6.5mm; }
+  .ficha__seguimiento tbody td { height: 5.8mm; }
+  .ficha__seguimiento th, .ficha__seguimiento td { padding: 1mm 2mm; }
 
-  /*
-    Cabecera y pie: `position: fixed` es lo que hace que se repitan en cada página al
-    imprimir, y el desplazamiento negativo los mete en el margen de `@page`.
-  */
-  .ficha__marca {
-    position: fixed;
-    left: 0;
-    right: 0;
-    font-size: 7pt;
-    color: #777;
-  }
-  .ficha__marca--sup { top: -12mm; }
-  .ficha__marca--inf { bottom: -13mm; }
+  .ficha__marca { font-size: 7pt; color: #777; padding: 0; }
+  .ficha__marca--sup { padding-bottom: 5mm; }
+  .ficha__marca--inf { padding-top: 4mm; }
+  .ficha__pie { margin-top: 2mm; font-size: 7.5pt; }
   .ficha__logo img { height: 5mm; }
-  section, .ficha__partitura, .ficha__seguimiento { break-inside: avoid; }
+  /* Solo lo que no se puede partir: la partitura y las filas de la tabla. Partir una
+     sección sí se puede, y no partirla era lo que abría cuatro páginas. */
+  .ficha__partitura, .ficha__seguimiento { break-inside: avoid; }
 }
 
 /*
@@ -5243,3 +5251,14 @@ body:has(.lienzo[data-ampliado]) .nav { display: none; }
    y dos reglas del mismo selector a mil setecientas líneas de distancia es cómo se acaba
    cambiando una y no la otra. */
 .lienzo > *:first-child { padding-top: var(--e-2); }
+
+/* La ficha impresa no arrastra el hueco de la barra de navegación ni el relleno de pie de
+   la pantalla: esas reglas van más arriba con la misma especificidad y ganaban a las del
+   bloque de impresión de la ficha. Va al final a propósito: es la última palabra. */
+@media print {
+  .ficha,
+  main.ficha {
+    padding: 0;
+    margin: 0;
+  }
+}

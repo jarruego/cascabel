@@ -3028,6 +3028,19 @@ textos, niveles, camino, y la sección de instrumentos.
 - [x] **El Danubio (347) con violín**, la melodía al 100 % y los golpes al 45 %: la percusión
       corporal tiene ahora también `volumenGolpes`, para cuando manda la melodía.
 
+- [x] **La ficha impresa, comprobada en papel** (2026-09-12): imprimiendo la 137 a PDF con
+      Chrome sin cabeza salían cuatro páginas, la cabecera dentro del contenido y el pie
+      encima de la tabla. Chrome no saca al margen los elementos fijos con desplazamiento
+      negativo ni implementa las cajas de margen de `@page`; lo único que repite en cada
+      página y reserva su sitio es el `thead`/`tfoot` de una tabla, y así va ahora la ficha:
+      cabecera arriba del todo y pie abajo del todo en cada página, pasen las que pasen, sin
+      pisar nunca el contenido. Fuera el «no partir secciones», que abría páginas; la
+      partitura sin título ni autor y al 75 %; la letra no se repite en texto si la partitura
+      ya la lleva; 9,5 pt en papel; la tabla de seguimiento (diez filas) no se parte. Lo ideal
+      son dos páginas y la 137 sale en dos exactas; según el contenido pueden ser tres o
+      cuatro, y eso lo decide el contenido, no un ajuste a base de imprimir. Para comprobar
+      una ficha: `chrome --headless --print-to-pdf` contra la build servida en local y
+      `pypdfium2` para ver las páginas.
 - [x] **La ficha del maestro, en dos caras y sin paja** (2026-09-12): qué se aprende y su
       vocabulario, cómo va (lo que oye el niño y los pasos con minutos), la partitura dibujada
       con abcjs desde el ABC del JSON, en la pantalla; y detrás, para sacarle más (sin

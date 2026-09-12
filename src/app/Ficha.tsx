@@ -105,9 +105,20 @@ function Partitura({ abc }: { abc: string }) {
       try {
         const abcjs = await import('abcjs');
         if (cancelado || !el.current) return;
-        abcjs.renderAbc(el.current, abc, {
+        /*
+          Sin las líneas de título y autor del ABC: el apartado ya se llama «La música» y la
+          atribución va en el pie, y las dos líneas se llevaban dos centímetros que en la
+          cara 1 son los que decidían si la partitura cabía o saltaba de página (visto el
+          2026-09-12 imprimiendo la 137). Y algo más pequeña por lo mismo.
+        */
+        const sinCabecera = abc
+          .split('\n')
+          .filter((linea) => !/^[TC]:/.test(linea))
+          .join('\n');
+        abcjs.renderAbc(el.current, sinCabecera, {
           responsive: 'resize',
           staffwidth: 700,
+          scale: 0.75,
           paddingtop: 0,
           paddingbottom: 0,
           paddingleft: 0,
@@ -148,6 +159,9 @@ export default function Ficha() {
   const herramienta = Boolean(actividad.herramienta);
   const lugar = existe(`ficha.lugar.${actividad.lugar}`) ? t(`ficha.lugar.${actividad.lugar}`) : actividad.lugar;
   const abc = actividad.musica?.abc;
+  // Si la partitura ya lleva la letra bajo las notas (líneas «w:»), el texto de la letra no
+  // se repite: son cinco líneas que en la cara 1 deciden si cabe (137, 2026-09-12).
+  const letraEnPartitura = Boolean(abc && /^w:/m.test(abc));
 
   // Los pasos: los escritos para la ficha, o los de la guía de aula, que ahí SON la actividad.
   const pasosGuia = c.pasos as Array<{ titulo: string; detalle?: string; duracion?: string }> | undefined;
@@ -171,30 +185,39 @@ export default function Ficha() {
     .join(' · ');
 
   /**
-   * Cabecera y pie de cada cara, en el margen: gris, pequeño y lejos del contenido. Con
-   * `position: fixed` se repiten en cada página impresa sin gastar una línea. El pie lleva
-   * el logotipo de cocomusic y su dirección, que en el papel es lo único que lleva al resto
-   * del material, y la atribución, que la CC BY-SA obliga también en papel.
+   * Cabecera y pie de cada página impresa: arriba del todo y abajo del todo, pasen las
+   * páginas que pasen, y sin pisar nunca el contenido.
+   *
+   * El único mecanismo que Chrome respeta al imprimir para eso es la tabla: el `thead` y el
+   * `tfoot` de una tabla se repiten en cada página y reservan su sitio. `position: fixed`
+   * con desplazamiento negativo no vale —Chrome recorta lo negativo y pinta encima del
+   * contenido— y las cajas de margen de `@page` no las implementa. Por eso la ficha entera
+   * va dentro de una tabla de presentación: cabecera, contenido (las dos caras, cada una en
+   * su fila) y pie. Se decidió el 2026-09-12 tras imprimir a PDF: «el encabezado siempre
+   * pegado arriba del todo y el pie abajo, independientemente del tamaño del contenido».
+   *
+   * El pie lleva el logotipo de cocomusic y su dirección, que en el papel es lo único que
+   * lleva al resto del material, y la atribución, que la CC BY-SA obliga también en papel.
    */
-  const marcas = (cara: number) => (
-    <>
-      <p className="ficha__marca ficha__marca--sup" aria-hidden="true">
-        <span>
-          {t(ETAPA[actividad.etapa] ?? '')} · {t(`eje.${actividad.eje}`)} · {actividad.titulo}
-        </span>
-        <span>{t('ficha.hojaDe', { n: cara, m: 2 })}</span>
-      </p>
-      <p className="ficha__marca ficha__marca--inf">
-        <span className="ficha__logo">
-          <img src="/marca/cocomusic.png" alt="" width="24" height="13" />
-          <a href={APP.webProyecto} target="_blank" rel="noopener">
-            cocomusic.es
-          </a>{' '}
-          · {APP.nombre} · CC BY-SA 4.0
-        </span>
-        <span>{actividad.id}</span>
-      </p>
-    </>
+  const cabecera = (
+    <p className="ficha__marca ficha__marca--sup" aria-hidden="true">
+      <span>
+        {t(ETAPA[actividad.etapa] ?? '')} · {t(`eje.${actividad.eje}`)} · {actividad.titulo}
+      </span>
+      <span>{codigoDe(actividad.id)}</span>
+    </p>
+  );
+  const pie = (
+    <p className="ficha__marca ficha__marca--inf">
+      <span className="ficha__logo">
+        <img src="/marca/cocomusic.png" alt="" width="24" height="13" />
+        <a href={APP.webProyecto} target="_blank" rel="noopener">
+          cocomusic.es
+        </a>{' '}
+        · {APP.nombre} · CC BY-SA 4.0
+      </span>
+      <span>{actividad.id}</span>
+    </p>
   );
 
   return (
@@ -209,9 +232,22 @@ export default function Ficha() {
         <p className="ficha__consejo">{t('ficha.consejo')}</p>
       </div>
 
+      <table className="ficha__papel" role="presentation">
+        <thead>
+          <tr>
+            <td>{cabecera}</td>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <td>{pie}</td>
+          </tr>
+        </tfoot>
+        <tbody>
       {/* ───────────── Cara 1: dar la clase ───────────── */}
+      <tr>
+      <td>
       <article className="ficha__hoja">
-        {marcas(1)}
         <p className="ficha__sobre">
           <span className="codigo">{codigoDe(actividad.id)}</span> · {t(ETAPA[actividad.etapa] ?? '')} ·{' '}
           {t(`eje.${actividad.eje}`)}
@@ -292,7 +328,7 @@ export default function Ficha() {
           <section>
             <h2>{t('ficha.musica')}</h2>
             {abc && <Partitura abc={abc} />}
-            {actividad.letra && (
+            {actividad.letra && !letraEnPartitura && (
               <p className="ficha__letra" lang={actividad.letra.idioma}>
                 {actividad.letra.texto}
               </p>
@@ -308,10 +344,13 @@ export default function Ficha() {
           </section>
         )}
       </article>
+      </td>
+      </tr>
 
       {/* ───────────── Cara 2: sacarle más y anotar ───────────── */}
+      <tr className="ficha__cara2">
+      <td>
       <article className="ficha__hoja">
-        {marcas(2)}
 
         <section>
           <h2>{t('ficha.sacarMas')}</h2>
@@ -444,7 +483,7 @@ export default function Ficha() {
                 </tr>
               </thead>
               <tbody>
-                {Array.from({ length: 12 }, (_, i) => (
+                {Array.from({ length: 10 }, (_, i) => (
                   <tr key={i}>
                     <td />
                     <td />
@@ -464,6 +503,10 @@ export default function Ficha() {
           {creditos ? ` ${creditos}.` : ''}
         </p>
       </article>
+      </td>
+      </tr>
+        </tbody>
+      </table>
     </main>
   );
 }
