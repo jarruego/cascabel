@@ -75,7 +75,7 @@ const TEMPOS = [60, 84, 108];
 /**
  * El dibujo de cada golpe, para que el pad se reconozca por la forma además de por el color
  * y el nombre: lo pidió el autor el 2026-09-12 para «Cuatro instrumentos». Los que no
- * tienen dibujo (charles, plato, triángulo, caja china) siguen solo con su nombre.
+ * tienen dibujo (charles, plato, caja china) siguen solo con su nombre.
  */
 const ICONO_GOLPE: Partial<Record<Golpe, string>> = {
   bombo: 'bombo',
@@ -84,6 +84,7 @@ const ICONO_GOLPE: Partial<Record<Golpe, string>> = {
   bongo: 'tambor-grande',
   pandereta: 'pandereta',
   claves: 'claves',
+  triangulo: 'triangulo',
 };
 
 export default function Pads({ actividad, alTerminar }: PropsActividad) {

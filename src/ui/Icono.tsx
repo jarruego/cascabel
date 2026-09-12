@@ -2,9 +2,10 @@
  * Iconos de actividad.
  *
  * Son **Noto Color Emoji** de Google (Apache-2.0): el autor eligió ese estilo el 2026-09-12
- * frente a Fluent, Twemoji y OpenMoji, por ese orden. Los cuatro que no son un emoji —la
- * kalimba (OpenMoji), la pandereta y el bombo (Commons) y las claves (dibujo propio)— se
- * quedan como estaban. Se sirven desde `/iconos`, nunca desde un CDN: la regla 1 del
+ * frente a Fluent, Twemoji y OpenMoji, por ese orden. **Es la norma para cualquier icono
+ * nuevo**: se busca en las cuatro por ese orden y, si ninguna lo tiene, se dibuja aquí
+ * (como las claves y el triángulo) o se coge de Commons con licencia CC0 (la pandereta y
+ * el bombo). Nunca un icono prestado de otra cosa: un triángulo no es una campana. Se sirven desde `/iconos`, nunca desde un CDN: la regla 1 del
  * proyecto prohíbe cualquier petición fuera de nuestro origen.
  *
  * **Por qué a color y no monocromos.** La regla 3 de `docs/04-DISENO-UI.md` pide iconos
@@ -58,11 +59,12 @@ const DISPONIBLES = new Set([
   'lluvia', 'viento', 'trueno', 'olas',
   // La bicicleta y las tres zonas de la percusión corporal, el 2026-09-10.
   'bicicleta', 'chasquido', 'muslo', 'pie',
+  // Instrumentos que sí son emoji y faltaban, y el triángulo dibujado aquí (2026-09-12).
+  'flauta', 'maracas', 'arpa', 'trombon', 'triangulo',
 ]);
 
 /** Nombres antiguos que ya se usaban en los JSON de contenido. */
 const ALIAS: Record<string, string> = {
-  triangulo: 'campana',
   musica: 'nota-musical',
 };
 

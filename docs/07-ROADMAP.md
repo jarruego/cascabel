@@ -3132,7 +3132,15 @@ textos, niveles, camino, y la sección de instrumentos.
       (Apache-2.0, sin modificar, 405 KB frente a los 500 de antes); los cuatro que no lo son
       —kalimba, pandereta, bombo y claves— siguen como estaban. Comprobados en una hoja de
       contacto a 64 y 32 px con Chrome sin interfaz. `tambor-grande` pasa a ser el tambor
-      largo (🪘) para que no sea el mismo dibujo que el tambor.
+      largo (🪘) para que no sea el mismo dibujo que el tambor. **Y es la norma para
+      cualquier icono nuevo**: se busca en las cuatro bibliotecas por ese orden y, si
+      ninguna lo tiene, dibujo propio o Commons CC0; nunca un icono prestado de otra cosa.
+      Al aplicarla: el triángulo dejaba de ser una campana (ninguna de las cuatro tiene el
+      instrumento, ni OpenMoji en sus extras: dibujado a mano, como las claves, y ya sale en
+      su pad), y entran de Noto la flauta, las maracas, el arpa y el trombón, que faltaban;
+      las dos actividades de flauta llevan ahora la flauta en su tarjeta. Sin dibujo en
+      ninguna parte siguen el charles, el plato, la caja china, el xilófono, la flauta dulce,
+      las castañuelas y el metrónomo.
 
 - [x] **Toda tarjeta lleva su figura** (2026-09-12): como las presentaciones de la pandilla
       llevan al personaje, el resto de tarjetas del catálogo y del Taller llevan a la derecha,
