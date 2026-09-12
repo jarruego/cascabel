@@ -65,11 +65,10 @@
             "F4"
           ],
           "duraciones": [
-            5
+            2
           ],
           "tempo": 60,
-          "instrumento": "flauta",
-          "volumen": 0.5,
+          "instrumento": "voz",
           "respuesta": ""
         }
       },

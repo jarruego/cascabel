@@ -46,19 +46,13 @@
         "texto": "actividad.tr22.l3d",
         "sonido": {
           "notas": [
-            "A4",
-            "A4",
-            "B4",
-            "G4"
+            "A4"
           ],
           "duraciones": [
-            2,
-            2,
-            2,
-            3
+            2
           ],
-          "tempo": 72,
-          "instrumento": "flauta",
+          "tempo": 60,
+          "instrumento": "voz",
           "respuesta": ""
         }
       },

@@ -3115,8 +3115,9 @@ textos, niveles, camino, y la sección de instrumentos.
       Doby hacerlo juntos. En el Taller, sus tarjetas llevan al personaje en pequeño, a la
       izquierda, en una pose al azar. Y las láminas que piden escuchar algo lo llevan
       (`sonido`, un estímulo como los de elección) con un botón de escuchar y parar, uno o
-      dos por presentación y uno de ellos la nota del personaje, con flauta, que la sostiene;
-      los pulsos van en bucle hasta que se para. El botón ocupa siempre la fila de arriba de
+      dos por presentación y uno de ellos la nota del personaje, sola, con voz y dos segundos;
+      los pulsos van en bucle hasta que se para, encadenados contra el reloj de audio
+      (`desde` en `sonarEstimulo`), que es lo que hace que no cojeen. El botón ocupa siempre la fila de arriba de
       la botonera, con el mismo ancho diga «escuchar» o «parar».
 
 - [x] **El rap de la 236 es rap** (2026-09-12): el clip era una base instrumental sin voz.

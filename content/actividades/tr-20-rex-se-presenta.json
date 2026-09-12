@@ -58,15 +58,13 @@
         "texto": "actividad.tr20.l5d",
         "sonido": {
           "notas": [
-            "C4",
             "D4"
           ],
           "duraciones": [
-            1,
-            3
+            2
           ],
           "tempo": 60,
-          "instrumento": "flauta",
+          "instrumento": "voz",
           "respuesta": ""
         }
       },

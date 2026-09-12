@@ -46,7 +46,17 @@ async function kitDePercusion(): Promise<Percusion> {
  */
 export async function sonarEstimulo(
   e: Estimulo,
-  opciones: { instrumento?: string; tempo?: number; pulsosPorCompas?: number } = {},
+  opciones: {
+    instrumento?: string;
+    tempo?: number;
+    pulsosPorCompas?: number;
+    /**
+     * Instante del reloj de audio en que empieza, para encadenar vueltas sin hueco: un
+     * bucle que arranca «ahora» cada vez cojea lo que tarde el temporizador. Si no se da,
+     * empieza enseguida.
+     */
+    desde?: number;
+  } = {},
 ): Promise<number | null> {
   try {
     await despertarAudio();
@@ -63,7 +73,7 @@ export async function sonarEstimulo(
     ]);
 
     const ctx = obtenerContexto();
-    const cero = ctx.currentTime + 0.08;
+    const cero = opciones.desde ?? ctx.currentTime + 0.08;
     for (const ev of eventos) {
       const t = cero + ev.en;
       if (ev.tipo === 'nota') sampler?.tocar(ev.nota, t, ev.duracion, ev.volumen);

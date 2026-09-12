@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { obtenerContexto, pararTodo } from '@/audio/AudioEngine';
 import { BarraAcciones } from '@/ui/BarraAcciones';
 import { IconoAnterior, IconoParar, IconoSiguiente, IconoTocar } from '@/ui/Simbolos';
-import type { Estimulo } from '../estimulo';
+import { duracionDe, type Estimulo } from '../estimulo';
 import { sonarEstimulo } from '../sonarEstimulo';
 import { Personaje } from '@/ui/Personaje';
 import type { Personaje as NombrePersonaje, Pose } from '@/ui/personajes';
@@ -119,22 +119,36 @@ export default function Presentacion({ actividad, alTerminar }: PropsActividad) 
       await a.play().catch(() => setSonando(false));
       return;
     }
-    // Una vuelta; si la lámina pide bucle y nadie ha parado, otra, sin hueco.
-    const unaVuelta = async () => {
-      const acaba = await sonarEstimulo(sonido, { tempo: sonido.tempo });
+    /*
+      El bucle se encadena CONTRA EL RELOJ DE AUDIO, no contra el temporizador: cada vuelta
+      empieza exactamente donde acaba la anterior (`desde`), y el temporizador solo sirve
+      para programar la siguiente un poco antes. Arrancar cada vuelta «ahora» cojeaba lo
+      que tardara el temporizador, y un pulso que cojea no es un pulso (2026-09-12).
+    */
+    const periodo = duracionDe(sonido, sonido.tempo);
+    const unaVuelta = async (desde: number) => {
+      const acaba = await sonarEstimulo(sonido, { tempo: sonido.tempo, desde });
       if (acaba === null || !activo.current) {
         setSonando(false);
         return;
       }
+      if (!l.bucle) {
+        fin.current = window.setTimeout(
+          () => setSonando(false),
+          Math.max(0, (acaba - obtenerContexto().currentTime) * 1000),
+        );
+        return;
+      }
+      // La vuelta siguiente empieza donde acaba el patrón entero, silencios incluidos.
+      const arranque = desde + periodo;
       fin.current = window.setTimeout(
         () => {
-          if (activo.current && l.bucle) void unaVuelta();
-          else setSonando(false);
+          if (activo.current) void unaVuelta(arranque);
         },
-        Math.max(0, (acaba - obtenerContexto().currentTime) * 1000 - (l.bucle ? 500 : 0)),
+        Math.max(0, (arranque - obtenerContexto().currentTime) * 1000 - 250),
       );
     };
-    await unaVuelta();
+    await unaVuelta(obtenerContexto().currentTime + 0.1);
   }, [parar]);
 
   const l = contenido.laminas[lamina];
