@@ -3126,6 +3126,11 @@ textos, niveles, camino, y la sección de instrumentos.
       y en la última lámina el botón grande se apagaba en vez de cerrar. El botón ocupa siempre la fila de arriba de
       la botonera, con el mismo ancho diga «escuchar» o «parar».
 
+- [x] **«Metrónomo y calibrador» (tr-02), retirada** (2026-09-13): era una guía de texto de
+      tres pasos sobre el metrónomo y la calibración, y ni es una actividad ni una
+      herramienta; la calibración de latencia vive en Ajustes y el pulso lo dan las
+      actividades. El código TR-02 queda reservado en el catálogo como retirada.
+
 - [x] **Las flechas se escriben con Bravura** (2026-09-13): las de emoji van dentro de un
       botón azul que no pega con nada, y en las cuatro bibliotecas son así. SMuFL tiene
       flechas planas (arrowBlackUp y arrowBlackDown), así que van por el mismo camino que las

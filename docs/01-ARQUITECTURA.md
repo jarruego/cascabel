@@ -43,7 +43,7 @@ lista exactamente los tipos que hay en `src/motor/registro.ts`, con sus cifras a
 | `eleccion` | Suena o se muestra algo; se elige entre 2–4 opciones grandes | 58 |
 | `karaoke` | Musicograma que avanza: las notas llegan y se tocan al pasar | 15 |
 | `rejilla` | Cuadrícula altura × tiempo | 10 |
-| `guia-aula` | Pantalla del maestro: consigna, pulso, coreografía, ficha | 9 |
+| `guia-aula` | Pantalla del maestro: consigna, pulso, coreografía, ficha | 8 |
 | `pentagrama` | Colocar o leer sobre pauta real | 8 |
 | `presentacion` | Láminas para proyectar: un personaje en cada pose, con su frase y su texto | 8 |
 | `seguir` | Reproducción con cursor sincronizado | 8 |

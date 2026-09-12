@@ -1768,8 +1768,8 @@
       "microfono": true,
       "esfuerzo": "S",
       "curriculo": "Herramienta",
-      "descripcion": "Metrónomo de aula con acento visual y calibración de latencia de 20 segundos.",
-      "estado": "hecha"
+      "descripcion": "Retirada el 2026-09-13: era una guía de texto sobre el metrónomo y la calibración, no una actividad ni una herramienta. La calibración vive en Ajustes.",
+      "estado": "retirada"
     },
     {
       "id": "TR-03",

@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-12",
-  "total": 175,
+  "total": 174,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -6221,45 +6221,6 @@
       "personaje": "laia",
       "figura": {
         "icono": "diana"
-      },
-      "practica": {
-        "figuras": [],
-        "compas": null,
-        "metodo": [],
-        "notas": [],
-        "secuencia": "ninguna"
-      }
-    },
-    {
-      "id": "tr-02-metronomo-y-calibrador",
-      "titulo": "Metrónomo y calibrador",
-      "descripcion": "Metrónomo de aula con acento visual y calibración de latencia de 20 segundos. Se proyecta: el niño no está delante de una pantalla, la mira el aula entera.",
-      "etapa": "primaria-c1",
-      "eje": "pulso",
-      "tipo": "guia-aula",
-      "lugar": "hibrida",
-      "microfono": false,
-      "duracion_min": 45,
-      "curriculo": {
-        "area": "Educación Artística",
-        "competencia": null,
-        "criterio": null,
-        "saber": null
-      },
-      "estado": "borrador",
-      "herramienta": true,
-      "etiquetas": [
-        "metrónomo",
-        "tempo",
-        "pulso",
-        "calibración",
-        "latencia",
-        "proyector",
-        "herramienta"
-      ],
-      "personaje": "sol",
-      "figura": {
-        "icono": "reloj"
       },
       "practica": {
         "figuras": [],
