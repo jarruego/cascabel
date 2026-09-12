@@ -3041,7 +3041,9 @@ textos, niveles, camino, y la sección de instrumentos.
       cuatro, y eso lo decide el contenido, no un ajuste a base de imprimir. **La hoja de
       seguimiento es una tercera página opcional**, con una casilla antes de imprimir: con la
       tabla en la cara 2, 162 de 167 fichas se iban a tres páginas por el largo de sus
-      textos (contado en caracteres, sin imprimir); sin ella casi todas caben en dos. Para comprobar
+      textos (contado en caracteres, sin imprimir); sin ella casi todas caben en dos. Y cada
+      cara mide una página entera en papel: el `tfoot` se repite pegado al final de lo que
+      ocupa la tabla en cada página, y con una cara corta el pie quedaba tras el contenido. Para comprobar
       una ficha: `chrome --headless --print-to-pdf` contra la build servida en local y
       `pypdfium2` para ver las páginas.
 - [x] **La ficha del maestro, en dos caras y sin paja** (2026-09-12): qué se aprende y su
