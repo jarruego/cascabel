@@ -21,6 +21,8 @@
  * engordan el bundle y el service worker los precachea para el modo sin conexión.
  */
 
+import { CIFRAS } from './cifras';
+
 interface Props {
   nombre: string;
   tamano?: number;
@@ -46,7 +48,7 @@ const DISPONIBLES = new Set([
   'flecha-arriba', 'flecha-abajo', 'igual', 'fuerte', 'flojo',
   'castillo', 'pluma', 'corona', 'corazon', 'radio',
   'bailarina', 'bailarin', 'palmas',
-  'uno', 'dos', 'tres', 'cuatro',
+  // uno, dos, tres y cuatro ya no son ficheros: se escriben con Bravura (`cifras.ts`).
   // La mariposa: el autor pidió para «flojito» un animal que no haga ruido. El gato de
   // OpenMoji de entonces tenía rayas y parecía un tigre, que es justo lo contrario.
   'mariposa',
@@ -73,6 +75,22 @@ const ALIAS: Record<string, string> = {
 
 export function Icono({ nombre, tamano = 48, alt = '' }: Props) {
   const real = ALIAS[nombre] ?? nombre;
+
+  // Un número se escribe, no se dibuja: ver `cifras.ts`. Ocupa la caja del icono.
+  const cifra = CIFRAS[real];
+  if (cifra !== undefined) {
+    return (
+      <span
+        className="icono icono--cifra"
+        style={{ width: tamano, height: tamano, fontSize: tamano * 0.8 }}
+        role={alt ? 'img' : undefined}
+        aria-label={alt || undefined}
+        aria-hidden={alt === '' ? true : undefined}
+      >
+        {cifra}
+      </span>
+    );
+  }
 
   if (!DISPONIBLES.has(real)) {
     // Nunca un hueco: un círculo se ve y se detecta en revisión. Un icono que falta en

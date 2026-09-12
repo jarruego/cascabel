@@ -682,7 +682,7 @@ p {
 /*
   Toda tarjeta lleva su figura a la derecha, un 30 %: icono, signo musical o personaje
   (`ui/FiguraTarjeta.tsx`). Cuando la actividad está hecha, `.tarjeta--hecha` reserva el
-  tic en el relleno derecho y el 70/30 se reparte sobre lo que queda.
+  tic en el relleno izquierdo y el 70/30 se reparte sobre lo que queda.
 */
 .tarjeta__conFigura { display: grid; grid-template-columns: 1fr 30%; gap: var(--e-2); align-items: center; }
 .tarjeta__conFigura > .tarjeta__meta { min-width: 0; }
@@ -712,6 +712,15 @@ p {
 .tarjeta__figura img { display: block; max-width: 100%; height: auto; }
 /* El signo, con Bravura y del tamaño del icono. Los glifos sobresalen de su caja por
    arriba y por abajo (la clave de sol, sobre todo): la altura de línea les deja sitio. */
+/* La cifra escrita en el sitio de un icono: Bravura, centrada en la caja del icono. */
+.icono--cifra {
+  display: inline-grid;
+  place-items: center;
+  font-family: var(--f-musica);
+  line-height: 1;
+  color: currentColor;
+}
+.tarjeta__figura .icono--cifra { color: #fff; }
 .tarjeta__glifo {
   display: block;
   text-align: center;
@@ -1123,19 +1132,23 @@ p {
 /* El tic de hecha: una franja verde en el borde derecho de la tarjeta, de arriba a abajo,
    con el tic en blanco centrado. Plana, sin borde ni sombra. Se pulsa para quitar la marca,
    y por eso la tarjeta hecha deja sitio a la derecha: el texto no pasa por debajo. */
-.tarjeta--hecha { padding-right: calc(var(--e-4) + 44px); }
+/*
+  El tic de «hecha»: una franja en el borde IZQUIERDO, sobre la barra del eje y de su mismo
+  color, con el tic en blanco. Era verde y a la derecha; el autor lo pasó a la izquierda y
+  al color de la tarjeta el 2026-09-13, para que la figura de la derecha quede sola y el eje
+  siga diciéndose con su color. La tarjeta se abre por la izquierda lo que mide la franja.
+*/
+.tarjeta--hecha { padding-left: calc(var(--e-4) + 36px); }
 .tarjeta__hecha {
   position: absolute;
-  /* Tapa el borde de la tarjeta por arriba, abajo y a la derecha, y hereda su esquina. */
-  inset: -2px -2px -2px auto;
+  /* Tapa el borde de la tarjeta por arriba, abajo y a la izquierda, y hereda su esquina. */
+  inset: -2px auto -2px -8px;
   width: 44px;
   display: grid;
   place-items: center;
-  border-radius: 0 var(--r-m) var(--r-m) 0;
-  /* Verde rebajado con la superficie, como si tuviera menos opacidad, y un borde como el de
-     la tarjeta en un tono más fuerte del mismo verde. Lo pidió el autor el 2026-09-10. */
-  background: color-mix(in srgb, var(--vivo-verde) 55%, var(--superficie));
-  border: 2px solid color-mix(in srgb, var(--vivo-verde) 85%, var(--superficie));
+  border-radius: var(--r-m) 0 0 var(--r-m);
+  background: var(--color-eje, var(--linea));
+  border: 2px solid var(--color-eje, var(--linea));
   color: #fff;
   font-size: 1.25em;
   font-weight: 700;

@@ -3126,6 +3126,13 @@ textos, niveles, camino, y la sección de instrumentos.
       y en la última lámina el botón grande se apagaba en vez de cerrar. El botón ocupa siempre la fila de arriba de
       la botonera, con el mismo ancho diga «escuchar» o «parar».
 
+- [x] **El tic a la izquierda y los números escritos** (2026-09-13): el tic de «hecha» pasa
+      del borde derecho, en verde, al izquierdo, sobre la barra del eje y de su mismo color,
+      para que la figura de la derecha quede sola. Y los iconos uno, dos, tres y cuatro ya no
+      son la tecla de emoji: `ui/Icono` escribe la cifra con Bravura (las de compás, SMuFL
+      U+E081–E084, `ui/cifras.ts`), en el mismo sitio y tamaño que un icono, y en blanco
+      sobre la mancha de la tarjeta. Los cuatro SVG se borraron.
+
 - [x] **Los iconos son Noto Color Emoji** (2026-09-12): al ver la pandereta y el bombo de
       Commons, el autor prefirió ese estilo al de OpenMoji y fijó el orden: Noto, Fluent,
       Twemoji y OpenMoji. Los noventa nombres que son un emoji se bajaron de Noto

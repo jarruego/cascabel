@@ -417,10 +417,11 @@ export default function Catalogo() {
               <span className="tarjeta__titulo">
                 <span className="codigo">{codigoDe(e.id)}</span> {e.titulo}
               </span>
-              {/* El tic es una franja verde en el borde derecho, de arriba a abajo, con el
-                  tic en blanco: plano y sin adorno, como pidió el autor el 2026-09-10. Se
-                  puede pulsar para quitar la marca; va dentro del enlace de la tarjeta, así
-                  que para no abrir la actividad se para el clic aquí. */}
+              {/* El tic es una franja en el borde izquierdo, del color del eje, de arriba a
+                  abajo y con el tic en blanco: plano y sin adorno (2026-09-10, y a la
+                  izquierda y en su color desde el 2026-09-13). Se puede pulsar para quitar la
+                  marca; va dentro del enlace de la tarjeta, así que para no abrir la
+                  actividad se para el clic aquí. */}
               {hechas.has(e.id) && (
                   <span
                     className="tarjeta__hecha"
@@ -442,8 +443,8 @@ export default function Catalogo() {
                     ✓
                   </span>
                 )}
-              {/* Texto a la izquierda y la figura a la derecha, un 30 %. Con el tic verde
-                  la tarjeta lleva más relleno a la derecha (`.tarjeta--hecha`), así que el
+              {/* Texto a la izquierda y la figura a la derecha, un 30 %. Con el tic la
+                  tarjeta lleva más relleno a la izquierda (`.tarjeta--hecha`), así que el
                   reparto se hace sobre lo que queda y nada se esconde detrás del tic. */}
               <span className="tarjeta__conFigura">
                 <span className="tarjeta__meta">
