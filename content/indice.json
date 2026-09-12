@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-12",
-  "total": 167,
+  "total": 168,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -6155,6 +6155,44 @@
           "sol",
           "la",
           "si"
+        ],
+        "secuencia": "ninguna"
+      }
+    },
+    {
+      "id": "tr-17-milo-se-presenta",
+      "titulo": "Milo se presenta",
+      "descripcion": "Diez láminas para proyectar y presentar a Milo a la clase: quién es, la nota mi, el amarillo, su carácter de bromista y lo suyo, el ritmo. Una lámina por pose, con una frase suya y un texto para leer en voz alta.",
+      "etapa": "infantil",
+      "eje": "altura",
+      "tipo": "presentacion",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": null,
+        "criterio": null,
+        "saber": "F. El lenguaje y la expresión musicales"
+      },
+      "estado": "borrador",
+      "herramienta": true,
+      "etiquetas": [
+        "milo",
+        "personajes",
+        "pandilla",
+        "nota mi",
+        "amarillo",
+        "presentación",
+        "proyector",
+        "ritmo"
+      ],
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [
+          "mi"
         ],
         "secuencia": "ninguna"
       }

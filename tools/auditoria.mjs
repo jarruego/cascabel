@@ -75,6 +75,7 @@ const AYUDA_POR_TIPO = {
   teclado: 'teclado.libre',
   pads: 'pads.libre',
   referencia: 'referencia.paraConsultar',
+  presentacion: 'presentacion.pasa',
 };
 
 const hallazgos = [];

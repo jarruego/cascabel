@@ -22,6 +22,7 @@ import Referencia from './tipos/Referencia';
 import Acompanamientos from './tipos/Acompanamientos';
 import Eco from './tipos/Eco';
 import Memoria from './tipos/Memoria';
+import Presentacion from './tipos/Presentacion';
 import { conSerie } from './tipos/Serie';
 
 /**
@@ -54,6 +55,7 @@ export const REGISTRO: Partial<Record<TipoActividad, ComponentType<PropsActivida
   referencia: Referencia,
   acompanamientos: Acompanamientos,
   eco: Eco,
+  presentacion: Presentacion,
   // Los diez tipos de docs/01-ARQUITECTURA.md están implementados.
   // Añadir una actividad NO toca este fichero: se escribe un JSON.
   // rejilla, pentagrama, seguir, 'tocar-a-tiempo' -> fase 2

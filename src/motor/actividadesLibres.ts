@@ -34,6 +34,7 @@ export const TIPOS_LIBRES = [
   'cuerpo',
   'eco',
   'guia-aula',
+  'presentacion',
 ] as const satisfies readonly TipoActividad[];
 
 export function esLibre(tipo: TipoActividad): boolean {
@@ -78,6 +79,7 @@ export const HECHA_CUANDO: Record<TipoActividad, string> = {
   seguir: 'al acabar la primera vuelta, en bucle o no; la enhorabuena la da dentro, con «otra vez»',
   cuerpo: 'al acabar la primera vuelta del patrón; una canción entera se toca una vez y ofrece repetir o terminar',
   'guia-aula': 'al llegar al último paso',
+  presentacion: 'al llegar a la última lámina',
   eco: 'cuando los dos han tocado y se comparan',
   lienzo: 'al hacer sonar el primer trazo',
   teclado: 'al tocar la primera tecla',

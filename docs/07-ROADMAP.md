@@ -3102,6 +3102,14 @@ textos, niveles, camino, y la sección de instrumentos.
       barajado y sin dos seguidas del mismo nombre (`rondasPentagrama.ts`, con test). Las
       opciones llevan ahora `clave` única y `nombre`; las de una octava no cambian.
 
+- [x] **Tipo «presentación» y «Milo se presenta» (tr-17)** (2026-09-12): láminas para
+      proyectar, una por pose del personaje, con su frase en grande y un texto para leer en
+      voz alta; se pasan con botones o con las flechas. Milo estrena el tipo con sus diez
+      poses en orden de relato (saluda, se presenta, canta su nota, palmea, escucha, calla,
+      busca el pulso, baila, anima, celebra), con lo que dice docs/14 de él y sin hablar de
+      la pandilla. Siguiente: cuando el autor la dé por buena, la de los otros siete, cada
+      una un JSON.
+
 - [x] **El rap de la 236 es rap** (2026-09-12): el clip era una base instrumental sin voz.
       Ahora suena «Emazteen fabore», del proyecto Etxepare rap (CC BY-SA 4.0, verificado en
       Commons): voz rapeando sobre base, en euskera, con un poema de 1545 de letra; el tramo

@@ -38,6 +38,8 @@ export type TipoActividad =
   | 'pads'
   /** Consulta del lenguaje musical, con sonido. No es un ejercicio. Ver Referencia.tsx. */
   | 'referencia'
+  /** Láminas para proyectar, con un personaje en cada una. Ver Presentacion.tsx. */
+  | 'presentacion'
   /** Bases en bucle para cantar encima, con transporte. Ver Acompanamientos.tsx. */
   | 'acompanamientos'
   /** Dos niños por turnos: uno propone y otro repite. Ver Eco.tsx. */

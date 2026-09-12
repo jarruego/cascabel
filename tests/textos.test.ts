@@ -54,7 +54,7 @@ describe('la guía por tipo de actividad del dosier imprimible', () => {
   // Si a un tipo le falta un campo, esa sección sale en blanco en el papel.
   const TIPOS = [
     'eleccion', 'emparejar', 'ordenar', 'rejilla', 'pentagrama', 'seguir',
-    'tocar-a-tiempo', 'cantar', 'lienzo', 'guia-aula', 'teclado', 'karaoke',
+    'tocar-a-tiempo', 'cantar', 'lienzo', 'guia-aula', 'teclado', 'karaoke', 'presentacion',
   ];
   const CAMPOS = [
     'comoFunciona', 'sinPantalla', 'ampliacion', 'refuerzo', 'observar',

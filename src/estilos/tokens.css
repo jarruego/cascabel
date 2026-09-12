@@ -2409,6 +2409,47 @@ p {
   text-align: center;
 }
 
+/* ── presentación ──────────────────────────────────────────────────────────
+   La pantalla del maestro para presentar a un personaje: se lee a ocho metros. */
+.presentacion {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: var(--e-3);
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--e-4) var(--e-5) var(--e-8);
+  text-align: center;
+}
+.presentacion__figura { line-height: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .presentacion__figura { animation: presentacion-entra 550ms cubic-bezier(0.34, 1.56, 0.64, 1); }
+}
+@keyframes presentacion-entra {
+  0% { transform: scale(0.6) translateY(12px); opacity: 0; }
+  70% { transform: scale(1.06) translateY(-4px); opacity: 1; }
+  100% { transform: scale(1) translateY(0); }
+}
+.presentacion__titulo {
+  margin: 0;
+  max-width: 22ch;
+  font-size: clamp(28px, 5.5vw, 64px);
+  line-height: 1.1;
+  color: var(--tinta);
+  text-wrap: balance;
+}
+.presentacion__texto {
+  margin: 0;
+  max-width: 48ch;
+  font-size: clamp(18px, 2.6vw, 34px);
+  line-height: 1.35;
+  color: var(--tinta-2);
+  text-wrap: pretty;
+}
+.presentacion__puntos { display: flex; gap: var(--e-2); margin: var(--e-2) 0 0; padding: 0; list-style: none; }
+.presentacion__puntos li { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--tinta-2); }
+.presentacion__puntos li[data-actual] { background: var(--acento); border-color: var(--acento); }
+
 /* ── barra de navegación permanente ────────────────────────────────────────
    Abajo y no arriba por una razón física: el pulgar de un niño no llega a la
    parte de arriba de una tablet que sostiene con las dos manos. Es la misma

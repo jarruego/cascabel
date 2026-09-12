@@ -62,6 +62,7 @@ lista exactamente los tipos que hay en `src/motor/registro.ts`, con sus cifras a
 | `acompanamientos` | Bases en bucle para cantar encima, con transporte | 1 |
 | `paisaje` | Grabar sonido del entorno y escucharlo (no sale del aparato) | 1 |
 | `pistas` | Secuenciador de cuatro voces: voz, percusión, piano y flauta | 1 |
+| `presentacion` | Láminas para proyectar: un personaje en cada pose, con su frase y su texto | 1 |
 
 **Antes de crear un tipo nuevo**, comprueba que el caso no cabe en uno existente. Casi
 siempre cabe.

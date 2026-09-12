@@ -49,6 +49,7 @@ const POR_TIPO: Partial<Record<TipoActividad, Resolver>> = {
   teclado: { comoVa: 'teclado.libre', paraElAdulto: 'teclado.qwerty' },
   pads: { comoVa: 'pads.libre', paraElAdulto: 'pads.qwerty' },
   referencia: { comoVa: 'referencia.paraConsultar' },
+  presentacion: { comoVa: 'presentacion.pasa' },
   memoria: { comoVa: 'memoria.comoVa' },
   acompanamientos: { paraElAdulto: 'acomp.paraCantar' },
   eco: { paraElAdulto: 'eco.aDos' },
