@@ -32,7 +32,7 @@
       },
       {
         "clave": "triangulo",
-        "icono": "campana",
+        "icono": "triangulo",
         "etiqueta": "opcion.triangulo",
         "audio": "muestras/percusion/triangulo-1.opus"
       },
