@@ -3158,10 +3158,12 @@ textos, niveles, camino, y la sección de instrumentos.
       nombre en `ui/glifos.ts`). Con el tic verde, el relleno derecho de `.tarjeta--hecha`
       reserva el tic y el 70/30 se reparte sobre lo que queda. Las 167 figuras se eligieron
       una a una; `tests/figuras.test.ts` exige que ninguna se quede con la de reserva del eje
-      y que el icono y el signo existan. Debajo de cada figura va un disco del color del eje,
-      rebajado con la superficie como el tic verde y del mismo tamaño en todas: es lo que
-      hace que un emoji con sombras, un signo en negro y un personaje a color se vean de la
-      misma serie (pedido el 2026-09-12). Y de paso, dos cosas que salieron al oír la nota de
+      y que el icono y el signo existan. Debajo de cada figura va una mancha orgánica y
+      plana del color vivo del eje, del mismo tamaño en todas: es lo que hace que un emoji
+      con sombras, un signo en negro y un personaje a color se vean de la misma serie. Se
+      probó primero un disco rebajado y el autor lo quiso a todo color y con forma menos
+      geométrica; son tres formas y a cada actividad le toca siempre la misma, por su id
+      (2026-09-12). Y de paso, dos cosas que salieron al oír la nota de
       los personajes: **el sampler no sostenía** —la envolvente caía exponencialmente desde
       el ataque, como una marimba, y la voz de dos segundos dejaba de oírse a los 0,7—, y
       ahora los instrumentos que sostienen tienen meseta hasta los últimos 120 ms y repiten

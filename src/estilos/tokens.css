@@ -687,19 +687,27 @@ p {
 .tarjeta__conFigura { display: grid; grid-template-columns: 1fr 30%; gap: var(--e-2); align-items: center; }
 .tarjeta__conFigura > .tarjeta__meta { min-width: 0; }
 /*
-  El disco de detrás de la figura: del color del eje, rebajado con la superficie igual que
-  el tic verde, y del mismo tamaño en todas las tarjetas. Un emoji con sombras, un signo en
-  negro y un personaje a color no se parecen en nada; sobre el mismo disco sí son una serie.
+  La mancha de detrás de la figura: una forma orgánica y plana, del color vivo del eje, del
+  mismo tamaño en todas las tarjetas. Un emoji con sombras, un signo en negro y un personaje
+  a color no se parecen en nada; sobre la misma mancha sí son una serie. La forma la pone
+  `ui/FiguraTarjeta.tsx` (tres, por id); el color, la variable del eje.
 */
 .tarjeta__figura {
+  position: relative;
   display: grid;
   place-items: center;
-  width: 72px;
-  height: 72px;
+  width: 76px;
+  height: 76px;
   margin: 0 auto;
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--color-eje, var(--linea)) 22%, var(--superficie));
 }
+.tarjeta__mancha {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: var(--color-eje, var(--linea));
+}
+.tarjeta__figura > :not(.tarjeta__mancha) { position: relative; }
 .tarjeta__figura .personaje,
 .tarjeta__figura img { display: block; max-width: 100%; height: auto; }
 /* El signo, con Bravura y del tamaño del icono. Los glifos sobresalen de su caja por
@@ -710,7 +718,8 @@ p {
   font-family: var(--f-musica);
   font-size: 2.1rem;
   line-height: 1;
-  color: var(--tinta);
+  /* Los siete colores de eje son oscuros: el signo va en blanco encima de todos. */
+  color: #fff;
 }
 
 /* ── filtros del catálogo ──────────────────────────────────────────────────
