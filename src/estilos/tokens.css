@@ -2332,6 +2332,15 @@ p {
   .ficha__papel > tfoot { display: table-footer-group; }
   .ficha__cara2 { page-break-before: always; }
   .ficha__hoja {
+    /*
+      Cada cara mide una página entera: el `tfoot` se repite pegado al final de lo que la
+      tabla ocupa en cada página, así que si la cara fuera corta el pie quedaría tras el
+      contenido y no abajo (lo vio el autor el 2026-09-12). La página son 277 mm de alto
+      útil con los márgenes de `@page`; cabecera y pie se llevan unos 18; el resto, menos
+      un poco de holgura para que un redondeo no abra una página en blanco.
+    */
+    box-sizing: border-box;
+    min-height: 246mm;
     border: none;
     border-radius: 0;
     background: none;
