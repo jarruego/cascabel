@@ -95,7 +95,7 @@ export default function Instrumentos() {
                   las presentaciones de la pandilla, y en el resto su icono o su signo. */}
               <span className="tarjeta__conFigura">
                 <span className="tarjeta__meta">{e.descripcion}</span>
-                <FiguraTarjeta id={e.id} figura={e.figura} personaje={e.personaje} tipo={e.tipo} eje={e.eje} />
+                <FiguraTarjeta figura={e.figura} personaje={e.personaje} tipo={e.tipo} eje={e.eje} />
               </span>
             </Link>
           </li>

@@ -689,8 +689,8 @@ p {
 /*
   La mancha de detrás de la figura: una forma orgánica y plana, del color vivo del eje, del
   mismo tamaño en todas las tarjetas. Un emoji con sombras, un signo en negro y un personaje
-  a color no se parecen en nada; sobre la misma mancha sí son una serie. La forma la pone
-  `ui/FiguraTarjeta.tsx` (tres, por id); el color, la variable del eje.
+  a color no se parecen en nada; sobre la misma mancha sí son una serie. La forma la genera
+  `ui/FiguraTarjeta.tsx` al azar; el color lo pone la variable del eje.
 */
 .tarjeta__figura {
   position: relative;

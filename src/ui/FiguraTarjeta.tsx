@@ -1,4 +1,4 @@
-import type React from 'react';
+import { useState, type ReactNode } from 'react';
 import type { Eje } from '@/motor/tipos';
 import { Icono } from './Icono';
 import { Personaje } from './Personaje';
@@ -31,8 +31,6 @@ function poseAlAzar(): Pose {
 }
 
 interface Props {
-  /** El id de la actividad: decide qué mancha le toca. */
-  id: string;
   figura?: Figura | null;
   personaje?: NombrePersonaje | null;
   tipo?: string;
@@ -41,38 +39,51 @@ interface Props {
 
 /*
   La mancha de detrás: una forma orgánica y plana, del color VIVO del eje —el autor probó el
-  disco rebajado y lo prefirió a todo color (2026-09-12)—. Es lo que hace que un emoji, un
-  signo de Bravura y un personaje parezcan de la misma familia. Tres formas distintas, y a
-  cada actividad le toca siempre la misma (por su id), para que la lista no sea una fila de
-  círculos iguales ni cambie de forma cada vez que se entra.
+  disco rebajado y lo prefirió a todo color, y después «hasta aleatoria» (2026-09-12)—. Es
+  lo que hace que un emoji, un signo de Bravura y un personaje parezcan de la misma familia.
+  Se genera al azar en cada tarjeta y en cada visita, como la pose de los personajes: siete
+  puntos alrededor de un círculo, cada uno a una distancia distinta del centro, unidos con
+  curvas suaves. El radio nunca baja del 80 % para que la figura de encima quede dentro.
 */
-const MANCHAS = [
-  'M50 4C72 2 96 18 96 44S78 96 52 96 4 76 4 50 28 6 50 4Z',
-  'M46 6C70 0 98 16 94 44S82 98 54 96 2 74 6 46 24 10 46 6Z',
-  'M54 4C80 6 98 30 92 56S66 100 40 94 0 62 8 36 30 2 54 4Z',
-];
-
-function manchaDe(id: string): string {
-  let h = 0;
-  for (const c of id) h = (h * 31 + c.charCodeAt(0)) % 9973;
-  return MANCHAS[h % MANCHAS.length] ?? MANCHAS[0]!;
+export function manchaAlAzar(azar: () => number = Math.random): string {
+  const N = 7;
+  const puntos = Array.from({ length: N }, (_, i) => {
+    const angulo = (i / N) * Math.PI * 2 + azar() * 0.35;
+    const radio = 40 + azar() * 8; // entre 40 y 48 sobre un lienzo de 100
+    return { x: 50 + Math.cos(angulo) * radio, y: 50 + Math.sin(angulo) * radio };
+  });
+  // Catmull-Rom cerrado convertido a Bézier cúbicas: pasa por los puntos sin picos.
+  const f = (n: number) => n.toFixed(1);
+  let d = `M${f(puntos[0]!.x)} ${f(puntos[0]!.y)}`;
+  for (let i = 0; i < N; i++) {
+    const p0 = puntos[(i - 1 + N) % N]!;
+    const p1 = puntos[i]!;
+    const p2 = puntos[(i + 1) % N]!;
+    const p3 = puntos[(i + 2) % N]!;
+    const c1 = { x: p1.x + (p2.x - p0.x) / 6, y: p1.y + (p2.y - p0.y) / 6 };
+    const c2 = { x: p2.x - (p3.x - p1.x) / 6, y: p2.y - (p3.y - p1.y) / 6 };
+    d += `C${f(c1.x)} ${f(c1.y)} ${f(c2.x)} ${f(c2.y)} ${f(p2.x)} ${f(p2.y)}`;
+  }
+  return d + 'Z';
 }
 
-function Mancha({ id, children }: { id: string; children: React.ReactNode }) {
+function Mancha({ children }: { children: ReactNode }) {
+  // Una por montaje: no cambia mientras la tarjeta esté en pantalla.
+  const [d] = useState(manchaAlAzar);
   return (
     <span className="tarjeta__figura">
       <svg className="tarjeta__mancha" viewBox="0 0 100 100" aria-hidden="true">
-        <path d={manchaDe(id)} />
+        <path d={d} />
       </svg>
       {children}
     </span>
   );
 }
 
-export function FiguraTarjeta({ id, figura, personaje, tipo, eje }: Props) {
+export function FiguraTarjeta({ figura, personaje, tipo, eje }: Props) {
   if (tipo === 'presentacion' && personaje) {
     return (
-      <Mancha id={id}>
+      <Mancha>
         <Personaje nombre={personaje} pose={poseAlAzar()} tamano={56} />
       </Mancha>
     );
@@ -80,7 +91,7 @@ export function FiguraTarjeta({ id, figura, personaje, tipo, eje }: Props) {
   const f = figura ?? POR_EJE[eje];
   if ('glifo' in f) {
     return (
-      <Mancha id={id}>
+      <Mancha>
         <span className="tarjeta__glifo" aria-hidden="true">
           {esGlifo(f.glifo) ? GLIFOS[f.glifo] : GLIFOS['clave-sol']}
         </span>
@@ -88,7 +99,7 @@ export function FiguraTarjeta({ id, figura, personaje, tipo, eje }: Props) {
     );
   }
   return (
-    <Mancha id={id}>
+    <Mancha>
       <Icono nombre={f.icono} tamano={48} />
     </Mancha>
   );

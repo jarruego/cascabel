@@ -450,7 +450,7 @@ export default function Catalogo() {
                   {t(`eje.${e.eje}`)} · {e.tipo}
                   {e.curriculo?.criterio ? ` · crit. ${e.curriculo.criterio}` : ''}
                 </span>
-                <FiguraTarjeta id={e.id} figura={e.figura} personaje={e.personaje} tipo={e.tipo} eje={e.eje} />
+                <FiguraTarjeta figura={e.figura} personaje={e.personaje} tipo={e.tipo} eje={e.eje} />
               </span>
             </Link>
           </li>

@@ -3161,9 +3161,10 @@ textos, niveles, camino, y la sección de instrumentos.
       y que el icono y el signo existan. Debajo de cada figura va una mancha orgánica y
       plana del color vivo del eje, del mismo tamaño en todas: es lo que hace que un emoji
       con sombras, un signo en negro y un personaje a color se vean de la misma serie. Se
-      probó primero un disco rebajado y el autor lo quiso a todo color y con forma menos
-      geométrica; son tres formas y a cada actividad le toca siempre la misma, por su id
-      (2026-09-12). Y de paso, dos cosas que salieron al oír la nota de
+      probó primero un disco rebajado y el autor lo quiso a todo color, con forma menos
+      geométrica y «hasta aleatoria»: la mancha se genera al azar en cada tarjeta y en cada
+      visita (siete puntos a distancia irregular del centro, unidos con curvas suaves,
+      `manchaAlAzar` con test), como la pose de los personajes (2026-09-12). Y de paso, dos cosas que salieron al oír la nota de
       los personajes: **el sampler no sostenía** —la envolvente caía exponencialmente desde
       el ataque, como una marimba, y la voz de dos segundos dejaba de oírse a los 0,7—, y
       ahora los instrumentos que sostienen tienen meseta hasta los últimos 120 ms y repiten
