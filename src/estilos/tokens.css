@@ -2327,23 +2327,33 @@ p {
 
   .ficha { max-width: none; padding: 0; margin: 0; }
   /*
-    Cabecera y pie en cada página: `thead` y `tfoot` se repiten al imprimir y reservan su
-    sitio, así que van arriba y abajo del todo y el contenido nunca los pisa, pasen dos,
-    tres o cuatro páginas. Lo ideal son dos; el contenido manda.
+    Cabecera y pie en cada página, pegados arriba y abajo del todo, y sin saber cuánto mide
+    la página. Dos piezas que se reparten el trabajo:
+    - `thead` y `tfoot` se repiten en cada página y RESERVAN el sitio: sus celdas tienen una
+      altura fija, así que el contenido para antes de llegar abajo.
+    - El texto de cabecera y pie va `position: fixed`, que al imprimir se repite en todas
+      las páginas anclado al borde de la zona útil, esté donde esté ese borde.
+    Antes cada cara medía 246 mm fijos, calculados para A4 con 10 mm de margen; en «guardar
+    como PDF» cuadraba y en una impresora de verdad no: el driver de la Epson del autor
+    declara menos zona útil, la cara ya no cabía y cada una saltaba a otra página
+    (2026-09-12). Con esto ya no hay ninguna medida que dependa de la impresora.
   */
   .ficha__papel > thead { display: table-header-group; }
   .ficha__papel > tfoot { display: table-footer-group; }
+  .ficha__papel > thead > tr > td,
+  .ficha__papel > tfoot > tr > td { height: 9mm; }
+  .ficha__marca {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 9mm;
+    box-sizing: border-box;
+  }
+  .ficha__marca--sup { top: 0; align-items: flex-start; }
+  .ficha__marca--inf { bottom: 0; align-items: flex-end; }
   .ficha__cara2 { page-break-before: always; }
   .ficha__hoja {
-    /*
-      Cada cara mide una página entera: el `tfoot` se repite pegado al final de lo que la
-      tabla ocupa en cada página, así que si la cara fuera corta el pie quedaría tras el
-      contenido y no abajo (lo vio el autor el 2026-09-12). La página son 277 mm de alto
-      útil con los márgenes de `@page`; cabecera y pie se llevan unos 18; el resto, menos
-      un poco de holgura para que un redondeo no abra una página en blanco.
-    */
     box-sizing: border-box;
-    min-height: 246mm;
     border: none;
     border-radius: 0;
     background: none;
@@ -2369,8 +2379,6 @@ p {
   .ficha__seguimiento th, .ficha__seguimiento td { padding: 1mm 2mm; }
 
   .ficha__marca { font-size: 7pt; color: #777; padding: 0; }
-  .ficha__marca--sup { padding-bottom: 5mm; }
-  .ficha__marca--inf { padding-top: 4mm; }
   .ficha__pie { margin-top: 5mm; font-size: 7.5pt; }
   .ficha__logo img { height: 5mm; }
   /* Solo lo que no se puede partir: la partitura y las filas de la tabla. Partir una

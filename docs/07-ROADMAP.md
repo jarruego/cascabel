@@ -3123,6 +3123,15 @@ textos, niveles, camino, y la sección de instrumentos.
       (`desde` en `sonarEstimulo`), que es lo que hace que no cojeen. El botón ocupa siempre la fila de arriba de
       la botonera, con el mismo ancho diga «escuchar» o «parar».
 
+- [x] **La ficha se imprime igual en la impresora que en el PDF** (2026-09-12): en
+      «guardar como PDF» salían dos páginas y en la Epson del autor cada cara saltaba a otra
+      hoja. La causa: cada cara medía 246 mm fijos, calculados para A4 con 10 mm de margen,
+      y el driver de la impresora declara menos zona útil. Ahora no hay ninguna medida que
+      dependa de la impresora: `thead` y `tfoot` solo reservan el sitio (celdas de 9 mm) y
+      el texto de cabecera y pie va `position: fixed`, que al imprimir se repite en cada
+      página anclado al borde de la zona útil, esté donde esté. Comprobado en headless con
+      márgenes de 10 y de 25 mm: cabecera arriba y pie abajo en los dos casos.
+
 - [x] **El rap de la 236 es rap** (2026-09-12): el clip era una base instrumental sin voz.
       Ahora suena «Emazteen fabore», del proyecto Etxepare rap (CC BY-SA 4.0, verificado en
       Commons): voz rapeando sobre base, en euskera, con un poema de 1545 de letra; el tramo
