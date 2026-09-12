@@ -245,6 +245,9 @@
     "letra",
     "corcheas"
   ],
+  "figura": {
+    "icono": "palmas"
+  },
   "musica": {
     "abc": "X:1\nT:Debajo un botón\nC:Tradicional española\nM:2/4\nL:1/16\nQ:1/4=72\nK:C\nC3D E2F2 | G2G2 G4 | A3A c2F2 | G2G2 G4 |\nw: De-ba-jo~un bo-tón, ton, ton, que~en-con-tró Mar-tín, tin, tin,\nF3G A2F2 | E2E2 E4 | D3E F2D2 | C2C2 C4 |]\nw: ha-bí-a~un ra-tón, ton, ton, ay, qué chi-qui-tín, tin, tin!"
   },

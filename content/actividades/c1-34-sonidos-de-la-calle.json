@@ -203,5 +203,8 @@
     "ambulancia",
     "sonidos del entorno",
     "paisaje sonoro"
-  ]
+  ],
+  "figura": {
+    "icono": "coche"
+  }
 }

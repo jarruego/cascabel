@@ -248,5 +248,8 @@
     "redonda",
     "duración",
     "ordenar"
-  ]
+  ],
+  "figura": {
+    "glifo": "redonda"
+  }
 }

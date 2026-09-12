@@ -364,5 +364,8 @@
     "karaoke",
     "seis por ocho",
     "amanecer"
-  ]
+  ],
+  "figura": {
+    "icono": "gallo"
+  }
 }

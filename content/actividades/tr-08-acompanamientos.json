@@ -245,5 +245,8 @@
     "transportar",
     "bucle",
     "herramienta"
-  ]
+  ],
+  "figura": {
+    "icono": "guitarra"
+  }
 }

@@ -200,5 +200,8 @@
     "clasicismo",
     "romanticismo",
     "contexto"
-  ]
+  ],
+  "figura": {
+    "icono": "corona"
+  }
 }

@@ -1,6 +1,6 @@
 import { despertarAudio, obtenerContexto } from '@/audio/AudioEngine';
 import { clic } from '@/audio/clic';
-import { muestrasDe } from '@/audio/instrumentos';
+import { samplerPara } from '@/audio/instrumentos';
 import { KIT, Percusion, type Golpe } from '@/audio/percusion';
 import { Sampler } from '@/audio/sampler';
 import { eventosDe, type Estimulo } from './estimulo';
@@ -23,7 +23,7 @@ async function samplerDe(instrumento?: string): Promise<Sampler> {
   const clave = instrumento ?? 'por-defecto';
   let entrada = samplers.get(clave);
   if (!entrada) {
-    const sampler = new Sampler(muestrasDe(instrumento));
+    const sampler = samplerPara(instrumento);
     entrada = { sampler, cargando: sampler.cargar() };
     samplers.set(clave, entrada);
   }

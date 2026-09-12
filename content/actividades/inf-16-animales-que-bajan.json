@@ -312,5 +312,8 @@
     "melodía",
     "karaoke",
     "lento"
-  ]
+  ],
+  "figura": {
+    "icono": "gato"
+  }
 }

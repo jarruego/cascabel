@@ -4,7 +4,7 @@ import { useInsinuarDesplazamiento } from '@/ui/insinuarDesplazamiento';
 import { OBJETIVO_TACTIL } from '@/config';
 import { despertarAudio, latenciaMs, obtenerContexto } from '@/audio/AudioEngine';
 import { Sampler } from '@/audio/sampler';
-import { muestrasDe } from '@/audio/instrumentos';
+import { samplerPara } from '@/audio/instrumentos';
 import { TOLERANCIA_MS } from '@/config';
 import { bastanteBien, evaluarRitmo, type EvaluacionRitmica } from '../evaluacion';
 import { yDeLinea } from '../alturaEnPauta';
@@ -275,7 +275,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
     await despertarAudio();
     if (!sampler.current) {
       try {
-        const s = new Sampler(muestrasDe(contenido.instrumento));
+        const s = samplerPara(contenido.instrumento);
         await s.cargar();
         sampler.current = s;
       } catch {

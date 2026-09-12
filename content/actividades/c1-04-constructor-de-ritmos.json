@@ -141,5 +141,8 @@
     "improvisar",
     "alturas",
     "libre"
-  ]
+  ],
+  "figura": {
+    "icono": "bombilla"
+  }
 }

@@ -210,5 +210,8 @@
     "arpa",
     "clave",
     "timbre"
-  ]
+  ],
+  "figura": {
+    "icono": "violin"
+  }
 }

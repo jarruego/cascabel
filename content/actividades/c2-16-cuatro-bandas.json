@@ -299,5 +299,8 @@
     "a tiempo",
     "colores",
     "corcheas"
-  ]
+  ],
+  "figura": {
+    "icono": "puerta"
+  }
 }

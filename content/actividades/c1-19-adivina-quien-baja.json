@@ -292,5 +292,8 @@
     "a tiempo",
     "animales",
     "pulso lento"
-  ]
+  ],
+  "figura": {
+    "glifo": "redonda"
+  }
 }

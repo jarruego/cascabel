@@ -138,5 +138,8 @@
     "frase rítmica",
     "diálogo",
     "crear"
-  ]
+  ],
+  "figura": {
+    "icono": "bombilla"
+  }
 }

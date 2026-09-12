@@ -157,5 +157,8 @@
     "si la sol",
     "soplar",
     "digitación"
-  ]
+  ],
+  "figura": {
+    "icono": "nota-musical"
+  }
 }

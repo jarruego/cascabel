@@ -213,5 +213,8 @@
     "blanca",
     "ordenar",
     "valores"
-  ]
+  ],
+  "figura": {
+    "icono": "caracol"
+  }
 }

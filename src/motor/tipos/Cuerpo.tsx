@@ -3,7 +3,7 @@ import { useCarril } from '@/app/preferencias';
 import { despertarAudio, obtenerContexto, pararTodo } from '@/audio/AudioEngine';
 import { SonidosDelCuerpo, ZONAS, type Zona } from '@/audio/cuerpo';
 import { Sampler } from '@/audio/sampler';
-import { muestrasDe } from '@/audio/instrumentos';
+import { samplerPara } from '@/audio/instrumentos';
 import { IconoParar, IconoRepetir, IconoSiguiente, IconoTocar } from '@/ui/Simbolos';
 import { Reaccion } from '@/ui/Reaccion';
 import { BarraAcciones } from '@/ui/BarraAcciones';
@@ -160,7 +160,7 @@ export default function Cuerpo({ actividad, alTerminar, alSalir }: PropsActivida
         sonidos.current = s;
       }
       if (contenido.melodia && !sampler.current) {
-        const s = new Sampler(muestrasDe(contenido.instrumento ?? 'flauta'));
+        const s = samplerPara(contenido.instrumento ?? 'flauta');
         await s.cargar();
         sampler.current = s;
       }

@@ -236,5 +236,8 @@
     "pandilla",
     "do re mi fa sol la si",
     "escalera"
-  ]
+  ],
+  "figura": {
+    "icono": "flecha-abajo"
+  }
 }

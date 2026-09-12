@@ -219,5 +219,8 @@
     "bossa nova",
     "electrónica",
     "vals"
-  ]
+  ],
+  "figura": {
+    "icono": "radio"
+  }
 }

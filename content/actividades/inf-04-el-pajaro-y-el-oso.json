@@ -200,5 +200,8 @@
     "animales",
     "pájaro",
     "oso"
-  ]
+  ],
+  "figura": {
+    "icono": "oso"
+  }
 }

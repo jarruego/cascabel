@@ -203,5 +203,8 @@
     "personajes",
     "ficha",
     "herramienta"
-  ]
+  ],
+  "figura": {
+    "glifo": "clave-sol"
+  }
 }

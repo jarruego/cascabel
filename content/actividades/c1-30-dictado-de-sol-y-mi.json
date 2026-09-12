@@ -171,5 +171,8 @@
     "tercera menor",
     "cuadrícula",
     "entonación"
-  ]
+  ],
+  "figura": {
+    "icono": "mano"
+  }
 }

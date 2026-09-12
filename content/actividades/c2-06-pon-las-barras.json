@@ -184,5 +184,8 @@
     "cuatro por cuatro",
     "duraciones",
     "sumar pulsos"
-  ]
+  ],
+  "figura": {
+    "icono": "cuatro"
+  }
 }

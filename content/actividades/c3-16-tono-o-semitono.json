@@ -217,5 +217,8 @@
     "distancia",
     "teclado",
     "oído"
-  ]
+  ],
+  "figura": {
+    "icono": "lupa"
+  }
 }

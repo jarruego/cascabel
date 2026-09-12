@@ -395,5 +395,8 @@
     "karaoke",
     "a tiempo",
     "letra"
-  ]
+  ],
+  "figura": {
+    "icono": "raton"
+  }
 }

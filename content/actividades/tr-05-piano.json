@@ -135,5 +135,8 @@
     "teclas negras",
     "octavas",
     "herramienta"
-  ]
+  ],
+  "figura": {
+    "icono": "teclado"
+  }
 }

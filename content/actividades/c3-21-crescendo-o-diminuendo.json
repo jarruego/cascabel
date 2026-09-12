@@ -296,5 +296,8 @@
     "decrescendo",
     "matices",
     "reguladores"
-  ]
+  ],
+  "figura": {
+    "icono": "fuerte"
+  }
 }

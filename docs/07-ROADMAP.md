@@ -3126,6 +3126,22 @@ textos, niveles, camino, y la sección de instrumentos.
       y en la última lámina el botón grande se apagaba en vez de cerrar. El botón ocupa siempre la fila de arriba de
       la botonera, con el mismo ancho diga «escuchar» o «parar».
 
+- [x] **Toda tarjeta lleva su figura** (2026-09-12): como las presentaciones de la pandilla
+      llevan al personaje, el resto de tarjetas del catálogo y del Taller llevan a la derecha,
+      en un 30 %, un icono de `public/iconos` o un signo musical de Bravura, representativo
+      de lo que se hace (`figura` en el JSON, `ui/FiguraTarjeta.tsx`, tabla de signos con
+      nombre en `ui/glifos.ts`). Con el tic verde, el relleno derecho de `.tarjeta--hecha`
+      reserva el tic y el 70/30 se reparte sobre lo que queda. Las 167 figuras se eligieron
+      una a una; `tests/figuras.test.ts` exige que ninguna se quede con la de reserva del eje
+      y que el icono y el signo existan. Y de paso, dos cosas que salieron al oír la nota de
+      los personajes: **el sampler no sostenía** —la envolvente caía exponencialmente desde
+      el ataque, como una marimba, y la voz de dos segundos dejaba de oírse a los 0,7—, y
+      ahora los instrumentos que sostienen tienen meseta hasta los últimos 120 ms y repiten
+      el tramo central de la muestra si la nota dura más que ella (`envolvente` y
+      `haceFaltaBucle` en `audio/sampler.ts`, con test; el sampler se construye solo en
+      `samplerPara`, que es quien sabe si sostiene); y la nota de las presentaciones dura
+      2,5 pulsos a 60, que son los dos segundos pedidos.
+
 - [x] **La ficha se imprime igual en la impresora que en el PDF** (2026-09-12): en
       «guardar como PDF» salían dos páginas y en la Epson del autor cada cara saltaba a otra
       hoja. La causa: cada cara medía 246 mm fijos, calculados para A4 con 10 mm de margen,

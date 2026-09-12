@@ -262,5 +262,8 @@
     "claves",
     "bombo",
     "acento"
-  ]
+  ],
+  "figura": {
+    "icono": "claves"
+  }
 }

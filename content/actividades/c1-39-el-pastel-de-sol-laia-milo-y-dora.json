@@ -409,5 +409,8 @@
     "pandilla",
     "karaoke",
     "cuatro notas"
-  ]
+  ],
+  "figura": {
+    "icono": "sol"
+  }
 }

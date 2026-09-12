@@ -347,5 +347,8 @@
     "pandilla",
     "karaoke",
     "tres notas"
-  ]
+  ],
+  "figura": {
+    "icono": "luna"
+  }
 }

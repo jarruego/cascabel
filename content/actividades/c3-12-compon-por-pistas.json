@@ -184,5 +184,8 @@
     "percusión",
     "textura",
     "silenciar"
-  ]
+  ],
+  "figura": {
+    "icono": "altavoz"
+  }
 }

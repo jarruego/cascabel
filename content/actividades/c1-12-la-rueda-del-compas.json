@@ -143,5 +143,8 @@
     "cuatro por cuatro",
     "pulsos",
     "geometría"
-  ]
+  ],
+  "figura": {
+    "glifo": "acento"
+  }
 }

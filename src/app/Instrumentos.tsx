@@ -5,8 +5,8 @@ import { despertarAudio } from '@/audio/AudioEngine';
 import { t } from '@/i18n';
 import { useVuelta } from './vuelta';
 import type { Eje } from '@/motor/tipos';
-import { Personaje } from '@/ui/Personaje';
-import { POSES, type Personaje as NombrePersonaje, type Pose } from '@/ui/personajes';
+import { FiguraTarjeta, type Figura } from '@/ui/FiguraTarjeta';
+import type { Personaje as NombrePersonaje } from '@/ui/personajes';
 
 /**
  * Los instrumentos y las herramientas del aula, en su propia pantalla.
@@ -32,11 +32,7 @@ interface Entrada {
   descripcion?: string;
   herramienta?: boolean;
   personaje?: NombrePersonaje | null;
-}
-
-/** Una pose al azar por tarjeta y por visita: cada vez que se entra, la pandilla cambia. */
-function poseAlAzar(): Pose {
-  return POSES[Math.floor(Math.random() * POSES.length)] ?? 'neutro';
+  figura?: Figura | null;
 }
 
 export default function Instrumentos() {
@@ -95,16 +91,12 @@ export default function Instrumentos() {
               onClick={() => void despertarAudio().catch(() => {})}
             >
               <span className="tarjeta__titulo">{e.titulo}</span>
-              {/* Las presentaciones de la pandilla llevan el texto a la izquierda y al
-                  personaje en pequeño a la derecha, en una pose al azar (2026-09-12). */}
-              {e.tipo === 'presentacion' && e.personaje ? (
-                <span className="tarjeta__conFigura">
-                  {e.descripcion && <span className="tarjeta__meta">{e.descripcion}</span>}
-                  <Personaje nombre={e.personaje} pose={poseAlAzar()} tamano={64} />
-                </span>
-              ) : (
-                e.descripcion && <span className="tarjeta__meta">{e.descripcion}</span>
-              )}
+              {/* Texto a la izquierda y la figura a la derecha, un 30 %: el personaje en
+                  las presentaciones de la pandilla, y en el resto su icono o su signo. */}
+              <span className="tarjeta__conFigura">
+                <span className="tarjeta__meta">{e.descripcion}</span>
+                <FiguraTarjeta figura={e.figura} personaje={e.personaje} tipo={e.tipo} eje={e.eje} />
+              </span>
             </Link>
           </li>
         ))}

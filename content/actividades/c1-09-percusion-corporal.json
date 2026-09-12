@@ -163,5 +163,8 @@
     "pitos",
     "chasquidos",
     "proyector"
-  ]
+  ],
+  "figura": {
+    "icono": "nino"
+  }
 }

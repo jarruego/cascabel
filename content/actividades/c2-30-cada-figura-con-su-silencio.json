@@ -248,5 +248,8 @@
     "corchea",
     "equivalencias",
     "parejas"
-  ]
+  ],
+  "figura": {
+    "glifo": "silencio-negra"
+  }
 }

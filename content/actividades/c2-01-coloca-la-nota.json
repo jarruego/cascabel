@@ -192,5 +192,8 @@
     "línea adicional",
     "do re mi fa sol la si",
     "do4"
-  ]
+  ],
+  "figura": {
+    "glifo": "clave-sol"
+  }
 }

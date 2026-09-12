@@ -560,5 +560,8 @@
     "percusión corporal",
     "violín",
     "ternario"
-  ]
+  ],
+  "figura": {
+    "icono": "olas"
+  }
 }

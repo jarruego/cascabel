@@ -268,5 +268,8 @@
     "mapa",
     "frases",
     "audición"
-  ]
+  ],
+  "figura": {
+    "icono": "olas"
+  }
 }

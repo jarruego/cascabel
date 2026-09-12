@@ -59,11 +59,39 @@ export const MARIMBA: Muestra[] = [
   { nota: 'C6', url: '/audio/muestras/marimba/c6.opus' },
 ];
 
+/**
+ * Hasta cuándo se mantiene una nota a todo volumen antes de la caída, en segundos desde el
+ * ataque. Es la diferencia entre golpear y soplar, y estaba mal para los dos: la envolvente
+ * caía exponencialmente desde el ataque, que es lo que hace una marimba, y una voz o una
+ * flauta de dos segundos dejaban de oírse a los 0,7 (lo notó el autor el 2026-09-12 con
+ * la nota de los personajes). Un instrumento que sostiene se mantiene hasta casi el final
+ * y cae en los últimos 120 ms; uno percusivo cae desde el principio.
+ */
+export const CAIDA_S = 0.12;
+export const ATAQUE_S = 0.008;
+export function envolvente(sostenido: boolean, duracion: number): { mantenerHasta: number } {
+  if (!sostenido) return { mantenerHasta: ATAQUE_S };
+  return { mantenerHasta: Math.max(ATAQUE_S, duracion - CAIDA_S) };
+}
+
+/**
+ * Si la nota dura más que el tramo útil de la muestra (hasta donde empieza su caída, el
+ * 75 %), hay que repetir el tramo central; si no, la muestra se acaba antes que la nota.
+ * `velocidad` estira o encoge la muestra: a 1,19 dura un 16 % menos.
+ */
+export function haceFaltaBucle(duracionMuestra: number, velocidad: number, duracion: number): boolean {
+  return duracion > (duracionMuestra * 0.75) / velocidad;
+}
+
 export class Sampler {
   private buffers = new Map<number, AudioBuffer>();
   private salida: GainNode | null = null;
 
-  constructor(private muestras: Muestra[]) {}
+  /** @param sostenido si el instrumento mantiene la nota (flauta, voz) o se apaga (marimba). */
+  constructor(
+    private muestras: Muestra[],
+    private sostenido = false,
+  ) {}
 
   async cargar(): Promise<void> {
     const ctx = obtenerContexto();
@@ -150,11 +178,20 @@ export class Sampler {
     const fuente = ctx.createBufferSource();
     fuente.buffer = buffer;
     fuente.playbackRate.value = velocidad;
+    if (this.sostenido && haceFaltaBucle(buffer.duration, velocidad, duracion)) {
+      // El mismo tramo central que en `sostener`: fuera quedan el ataque y la caída.
+      fuente.loop = true;
+      fuente.loopStart = buffer.duration * 0.35;
+      fuente.loopEnd = buffer.duration * 0.75;
+    }
 
-    // Envolvente: sin el release, cortar la muestra produce un clic muy audible.
+    // Envolvente: sin el release, cortar la muestra produce un clic muy audible. Y en los
+    // instrumentos que sostienen, meseta hasta casi el final: ver `envolvente`.
+    const { mantenerHasta } = envolvente(this.sostenido, duracion);
     const env = ctx.createGain();
     env.gain.setValueAtTime(0.0001, t);
-    env.gain.exponentialRampToValueAtTime(volumen, t + 0.008);
+    env.gain.exponentialRampToValueAtTime(volumen, t + ATAQUE_S);
+    if (mantenerHasta > ATAQUE_S) env.gain.setValueAtTime(volumen, t + mantenerHasta);
     env.gain.exponentialRampToValueAtTime(0.0001, t + duracion);
 
     fuente.connect(env).connect(this.salida);

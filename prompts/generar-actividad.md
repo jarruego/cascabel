@@ -74,6 +74,9 @@ acepta lo que salga sin pasar por `tools/validar.py`.**
 >   modelo.
 > - Un título con gancho que, si cabe con naturalidad, nombre el concepto; el resto de
 >   palabras de búsqueda van a `etiquetas`, no al título.
+> - `figura`: el dibujo de su tarjeta, representativo de lo que SE HACE y no del eje:
+>   `{"icono": "palmas"}` con un nombre de `public/iconos`, o `{"glifo": "corchea"}` con un
+>   signo de `src/ui/glifos.ts` (claves, figuras, silencio, alteraciones, dinámicas...).
 >
 > ### Esquema
 >

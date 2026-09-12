@@ -230,5 +230,8 @@
     "rallentando",
     "velocidad",
     "agógica"
-  ]
+  ],
+  "figura": {
+    "icono": "moto"
+  }
 }

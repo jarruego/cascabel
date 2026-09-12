@@ -175,5 +175,8 @@
     "timbre",
     "instrumentos",
     "cartas"
-  ]
+  ],
+  "figura": {
+    "icono": "violin"
+  }
 }

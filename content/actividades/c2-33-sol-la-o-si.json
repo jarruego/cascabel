@@ -255,5 +255,8 @@
     "oído",
     "altura",
     "referencia"
-  ]
+  ],
+  "figura": {
+    "icono": "lupa"
+  }
 }

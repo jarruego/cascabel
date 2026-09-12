@@ -247,5 +247,8 @@
     "ligado",
     "picado",
     "carácter"
-  ]
+  ],
+  "figura": {
+    "icono": "rana"
+  }
 }

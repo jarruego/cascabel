@@ -10,6 +10,8 @@ import { t } from '@/i18n';
 import { encaja, palabrasDePractica, type PracticaBuscable } from './busqueda';
 import { useVuelta } from './vuelta';
 import { IconoAjustes } from '@/ui/Simbolos';
+import { FiguraTarjeta, type Figura } from '@/ui/FiguraTarjeta';
+import type { Personaje as NombrePersonaje } from '@/ui/personajes';
 import { codigoDe } from '@/motor/codigo';
 import type { Eje, TipoActividad } from '@/motor/tipos';
 import type { Etapa } from '@/config';
@@ -51,6 +53,9 @@ interface Entrada {
   /** Palabras por las que se busca y el título no dice. Ver `busqueda.ts`. */
   etiquetas?: string[];
   practica?: PracticaBuscable;
+  /** El dibujo de la tarjeta. Ver `ui/FiguraTarjeta.tsx`. */
+  figura?: Figura | null;
+  personaje?: NombrePersonaje | null;
 }
 
 const ETAPAS: Array<{ valor: Etapa; clave: string }> = [
@@ -437,9 +442,15 @@ export default function Catalogo() {
                     ✓
                   </span>
                 )}
-              <span className="tarjeta__meta">
-                {t(`eje.${e.eje}`)} · {e.tipo}
-                {e.curriculo?.criterio ? ` · crit. ${e.curriculo.criterio}` : ''}
+              {/* Texto a la izquierda y la figura a la derecha, un 30 %. Con el tic verde
+                  la tarjeta lleva más relleno a la derecha (`.tarjeta--hecha`), así que el
+                  reparto se hace sobre lo que queda y nada se esconde detrás del tic. */}
+              <span className="tarjeta__conFigura">
+                <span className="tarjeta__meta">
+                  {t(`eje.${e.eje}`)} · {e.tipo}
+                  {e.curriculo?.criterio ? ` · crit. ${e.curriculo.criterio}` : ''}
+                </span>
+                <FiguraTarjeta figura={e.figura} personaje={e.personaje} tipo={e.tipo} eje={e.eje} />
               </span>
             </Link>
           </li>

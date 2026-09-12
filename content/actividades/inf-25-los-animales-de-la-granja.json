@@ -180,5 +180,8 @@
     "cerdo",
     "timbre",
     "grabaciones"
-  ]
+  ],
+  "figura": {
+    "icono": "vaca"
+  }
 }

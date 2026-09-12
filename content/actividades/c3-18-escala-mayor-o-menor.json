@@ -270,5 +270,8 @@
     "tercera",
     "oído",
     "tonalidad"
-  ]
+  ],
+  "figura": {
+    "icono": "sol"
+  }
 }

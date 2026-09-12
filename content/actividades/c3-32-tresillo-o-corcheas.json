@@ -247,5 +247,8 @@
     "ternaria",
     "figuras",
     "oído"
-  ]
+  ],
+  "figura": {
+    "glifo": "corchea"
+  }
 }

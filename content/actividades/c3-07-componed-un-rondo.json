@@ -154,5 +154,8 @@
     "copla",
     "forma",
     "orff"
-  ]
+  ],
+  "figura": {
+    "icono": "bombilla"
+  }
 }

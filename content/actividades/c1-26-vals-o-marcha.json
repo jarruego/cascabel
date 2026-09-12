@@ -271,5 +271,8 @@
     "bailar",
     "desfilar",
     "acento"
-  ]
+  ],
+  "figura": {
+    "icono": "bailarina"
+  }
 }

@@ -250,5 +250,8 @@
     "salto",
     "altura",
     "melodía"
-  ]
+  ],
+  "figura": {
+    "icono": "conejo"
+  }
 }

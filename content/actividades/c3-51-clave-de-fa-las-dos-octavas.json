@@ -221,5 +221,8 @@
     "do2",
     "do4",
     "graves"
-  ]
+  ],
+  "figura": {
+    "glifo": "pentagrama"
+  }
 }

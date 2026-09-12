@@ -172,5 +172,8 @@
     "cuadrícula",
     "escribir ritmo",
     "ocho pulsos"
-  ]
+  ],
+  "figura": {
+    "icono": "tambor"
+  }
 }

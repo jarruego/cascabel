@@ -209,5 +209,8 @@
     "estilos",
     "biografías",
     "herramienta"
-  ]
+  ],
+  "figura": {
+    "icono": "corona"
+  }
 }

@@ -300,5 +300,8 @@
     "dos por cuatro",
     "tres por cuatro",
     "pulso fuerte"
-  ]
+  ],
+  "figura": {
+    "glifo": "acento"
+  }
 }

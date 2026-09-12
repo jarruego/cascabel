@@ -408,5 +408,8 @@
     "a tiempo",
     "lectura rítmica",
     "juego"
-  ]
+  ],
+  "figura": {
+    "glifo": "negra"
+  }
 }

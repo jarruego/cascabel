@@ -447,5 +447,8 @@
     "melodías famosas",
     "historia",
     "audición"
-  ]
+  ],
+  "figura": {
+    "icono": "bombilla"
+  }
 }

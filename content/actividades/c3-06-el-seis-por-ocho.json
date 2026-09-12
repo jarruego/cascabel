@@ -151,5 +151,8 @@
     "movimiento",
     "cuerpo",
     "proyector"
-  ]
+  ],
+  "figura": {
+    "icono": "bailarin"
+  }
 }

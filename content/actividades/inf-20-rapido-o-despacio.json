@@ -229,5 +229,8 @@
     "conejo",
     "tortuga",
     "pulso"
-  ]
+  ],
+  "figura": {
+    "icono": "conejo"
+  }
 }

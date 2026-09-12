@@ -233,5 +233,8 @@
     "silencio",
     "escritura",
     "compás"
-  ]
+  ],
+  "figura": {
+    "glifo": "blanca"
+  }
 }

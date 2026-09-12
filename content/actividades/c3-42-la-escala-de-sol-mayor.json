@@ -143,5 +143,8 @@
     "patrón",
     "teclado",
     "armadura"
-  ]
+  ],
+  "figura": {
+    "glifo": "sostenido"
+  }
 }

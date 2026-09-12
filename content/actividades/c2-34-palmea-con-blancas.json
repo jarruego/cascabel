@@ -178,5 +178,8 @@
     "corcheas",
     "duración",
     "micrófono"
-  ]
+  ],
+  "figura": {
+    "icono": "palmas"
+  }
 }

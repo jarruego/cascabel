@@ -1,4 +1,4 @@
-import { MARIMBA, type Muestra } from './sampler';
+import { MARIMBA, Sampler, type Muestra } from './sampler';
 
 /**
  * Qué instrumento suena en una actividad.
@@ -405,6 +405,14 @@ export function sostiene(nombre: string | undefined): boolean {
 /** Las muestras de un instrumento. Si no existe, marimba: la actividad tiene que sonar. */
 export function muestrasDe(nombre: string | undefined): Muestra[] {
   return (nombre && INSTRUMENTOS[nombre]) || MARIMBA;
+}
+
+/**
+ * El sampler de un instrumento, sabiendo si sostiene: es el único sitio donde se
+ * construye uno, para que ningún tipo se olvide de decírselo (2026-09-12).
+ */
+export function samplerPara(nombre: string | undefined): Sampler {
+  return new Sampler(muestrasDe(nombre), sostiene(nombre));
 }
 
 /** Los nombres disponibles, para que una pantalla de ajustes pueda ofrecerlos. */

@@ -186,5 +186,8 @@
     "ternario",
     "vals",
     "sumar pulsos"
-  ]
+  ],
+  "figura": {
+    "icono": "tres"
+  }
 }

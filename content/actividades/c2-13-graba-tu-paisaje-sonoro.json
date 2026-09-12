@@ -135,5 +135,8 @@
     "murray schafer",
     "salida",
     "silencio"
-  ]
+  ],
+  "figura": {
+    "icono": "microfono"
+  }
 }

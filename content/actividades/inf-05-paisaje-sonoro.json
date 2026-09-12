@@ -171,5 +171,8 @@
     "escucha",
     "ilustración",
     "timbre"
-  ]
+  ],
+  "figura": {
+    "icono": "arbol"
+  }
 }

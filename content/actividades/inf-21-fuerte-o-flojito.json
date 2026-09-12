@@ -202,5 +202,8 @@
     "cualidades del sonido",
     "león",
     "mariposa"
-  ]
+  ],
+  "figura": {
+    "icono": "mariposa"
+  }
 }

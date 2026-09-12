@@ -147,5 +147,8 @@
     "movimiento",
     "proyector",
     "pulso"
-  ]
+  ],
+  "figura": {
+    "icono": "fiesta"
+  }
 }

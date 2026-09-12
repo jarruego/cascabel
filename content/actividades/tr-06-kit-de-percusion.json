@@ -119,5 +119,8 @@
     "familias",
     "grabar",
     "herramienta"
-  ]
+  ],
+  "figura": {
+    "icono": "bombo"
+  }
 }

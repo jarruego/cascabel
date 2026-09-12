@@ -198,5 +198,8 @@
     "altura",
     "montessori",
     "seriar"
-  ]
+  ],
+  "figura": {
+    "icono": "campana"
+  }
 }

@@ -224,5 +224,8 @@
     "semitono",
     "notación",
     "oído"
-  ]
+  ],
+  "figura": {
+    "glifo": "bemol"
+  }
 }

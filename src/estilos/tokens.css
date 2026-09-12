@@ -677,9 +677,25 @@ p {
   vertical-align: 0.1em;
 }
 .tarjeta__meta { font-size: 0.85em; color: var(--tinta-2); }
-/* Tarjeta con personaje: el texto a la izquierda y el dibujo a la derecha, un 30 %. */
-.tarjeta__conFigura { display: grid; grid-template-columns: 1fr 30%; gap: var(--e-2); align-items: start; }
-.tarjeta__conFigura .personaje { display: block; margin: 0 auto; }
+/*
+  Toda tarjeta lleva su figura a la derecha, un 30 %: icono, signo musical o personaje
+  (`ui/FiguraTarjeta.tsx`). Cuando la actividad está hecha, `.tarjeta--hecha` reserva el
+  tic en el relleno derecho y el 70/30 se reparte sobre lo que queda.
+*/
+.tarjeta__conFigura { display: grid; grid-template-columns: 1fr 30%; gap: var(--e-2); align-items: center; }
+.tarjeta__conFigura > .tarjeta__meta { min-width: 0; }
+.tarjeta__conFigura .personaje,
+.tarjeta__conFigura img { display: block; margin: 0 auto; max-width: 100%; height: auto; }
+/* El signo, con Bravura y del tamaño del icono. Los glifos sobresalen de su caja por
+   arriba y por abajo (la clave de sol, sobre todo): la altura de línea les deja sitio. */
+.tarjeta__glifo {
+  display: block;
+  text-align: center;
+  font-family: var(--f-musica);
+  font-size: 2.4rem;
+  line-height: 1.8;
+  color: var(--tinta-2);
+}
 
 /* ── filtros del catálogo ──────────────────────────────────────────────────
    Sin etiqueta visible: la opción «todos» de cada desplegable se llama como la categoría,

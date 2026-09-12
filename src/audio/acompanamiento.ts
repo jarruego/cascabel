@@ -1,6 +1,6 @@
 import { obtenerContexto } from './AudioEngine';
 import { Sampler } from './sampler';
-import { muestrasDe } from './instrumentos';
+import { samplerPara } from './instrumentos';
 import { Percusion, type Golpe } from './percusion';
 
 /**
@@ -114,7 +114,7 @@ export class Acompanamiento {
 
   async cargar(): Promise<void> {
     if (this.patron.bordon && !this.sampler) {
-      const s = new Sampler(muestrasDe(this.patron.instrumento ?? 'marimba'));
+      const s = samplerPara(this.patron.instrumento ?? 'marimba');
       await s.cargar();
       this.sampler = s;
     }

@@ -134,5 +134,8 @@
     "micrófono",
     "palmas",
     "cooperar"
-  ]
+  ],
+  "figura": {
+    "icono": "dos"
+  }
 }

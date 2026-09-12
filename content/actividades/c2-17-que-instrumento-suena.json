@@ -211,5 +211,8 @@
     "guitarra",
     "xilófono",
     "reconocer instrumentos"
-  ]
+  ],
+  "figura": {
+    "icono": "teclado"
+  }
 }

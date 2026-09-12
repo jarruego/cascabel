@@ -271,5 +271,8 @@
     "voz",
     "animales",
     "cajas"
-  ]
+  ],
+  "figura": {
+    "icono": "altavoz"
+  }
 }

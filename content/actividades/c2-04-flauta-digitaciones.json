@@ -190,5 +190,8 @@
     "si la sol",
     "agujeros",
     "parejas"
-  ]
+  ],
+  "figura": {
+    "icono": "mano"
+  }
 }

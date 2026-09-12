@@ -363,5 +363,8 @@
     "pandilla",
     "karaoke",
     "dos notas"
-  ]
+  ],
+  "figura": {
+    "icono": "pajaro"
+  }
 }

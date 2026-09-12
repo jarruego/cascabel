@@ -180,5 +180,8 @@
     "eco rítmico",
     "palmas",
     "micrófono"
-  ]
+  ],
+  "figura": {
+    "glifo": "acento"
+  }
 }

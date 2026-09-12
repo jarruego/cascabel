@@ -242,5 +242,8 @@
     "ordenar",
     "altura",
     "escalera"
-  ]
+  ],
+  "figura": {
+    "icono": "flecha-arriba"
+  }
 }

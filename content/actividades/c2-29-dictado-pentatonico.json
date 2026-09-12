@@ -178,5 +178,8 @@
     "do re mi sol la",
     "cuadrícula",
     "seis notas"
-  ]
+  ],
+  "figura": {
+    "icono": "estrella"
+  }
 }

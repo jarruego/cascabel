@@ -292,5 +292,8 @@
     "contar notas",
     "armonía",
     "oído"
-  ]
+  ],
+  "figura": {
+    "icono": "tres"
+  }
 }

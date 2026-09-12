@@ -180,5 +180,8 @@
     "mar",
     "trueno",
     "sonidos del entorno"
-  ]
+  ],
+  "figura": {
+    "icono": "lluvia"
+  }
 }

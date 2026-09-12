@@ -139,5 +139,8 @@
     "agudo grave",
     "narración",
     "grupo"
-  ]
+  ],
+  "figura": {
+    "icono": "castillo"
+  }
 }

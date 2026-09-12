@@ -140,5 +140,8 @@
     "velocidad",
     "fuerte",
     "suave"
-  ]
+  ],
+  "figura": {
+    "icono": "fuerte"
+  }
 }

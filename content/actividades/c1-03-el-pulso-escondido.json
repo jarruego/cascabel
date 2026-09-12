@@ -181,5 +181,8 @@
     "pulso interior",
     "palmas",
     "contar"
-  ]
+  ],
+  "figura": {
+    "glifo": "silencio-negra"
+  }
 }

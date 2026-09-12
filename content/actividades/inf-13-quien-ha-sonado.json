@@ -183,5 +183,8 @@
     "instrumentos",
     "reconocer",
     "escucha"
-  ]
+  ],
+  "figura": {
+    "icono": "tambor"
+  }
 }

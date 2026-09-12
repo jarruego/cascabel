@@ -415,5 +415,8 @@
     "lenguaje musical",
     "teoría",
     "herramienta"
-  ]
+  ],
+  "figura": {
+    "icono": "lupa"
+  }
 }

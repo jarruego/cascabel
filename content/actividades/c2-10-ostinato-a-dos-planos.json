@@ -156,5 +156,8 @@
     "grupos",
     "proyector",
     "polirritmia"
-  ]
+  ],
+  "figura": {
+    "icono": "muslo"
+  }
 }

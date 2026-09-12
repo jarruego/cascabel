@@ -191,5 +191,8 @@
     "do5",
     "do6",
     "líneas y espacios"
-  ]
+  ],
+  "figura": {
+    "glifo": "pentagrama"
+  }
 }

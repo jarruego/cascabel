@@ -179,5 +179,8 @@
     "reloj",
     "sonidos cotidianos",
     "escucha"
-  ]
+  ],
+  "figura": {
+    "icono": "telefono"
+  }
 }

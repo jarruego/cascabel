@@ -195,5 +195,8 @@
     "personajes",
     "ficha",
     "herramienta"
-  ]
+  ],
+  "figura": {
+    "glifo": "clave-fa"
+  }
 }

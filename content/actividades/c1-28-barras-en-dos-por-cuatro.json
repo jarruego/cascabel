@@ -177,5 +177,8 @@
     "dos por cuatro",
     "binario",
     "contar pulsos"
-  ]
+  ],
+  "figura": {
+    "icono": "dos"
+  }
 }

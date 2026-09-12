@@ -235,5 +235,8 @@
     "escalera",
     "altura",
     "flechas"
-  ]
+  ],
+  "figura": {
+    "icono": "flecha-arriba"
+  }
 }

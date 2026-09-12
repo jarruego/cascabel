@@ -272,5 +272,8 @@
     "seguir",
     "personajes",
     "anticipar"
-  ]
+  ],
+  "figura": {
+    "icono": "sol"
+  }
 }

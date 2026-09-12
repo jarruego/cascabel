@@ -142,5 +142,8 @@
     "doby",
     "explorar",
     "octava"
-  ]
+  ],
+  "figura": {
+    "icono": "teclado"
+  }
 }

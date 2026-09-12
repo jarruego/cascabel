@@ -3,7 +3,7 @@ import { useCarril } from '@/app/preferencias';
 import { useInsinuarDesplazamiento } from '@/ui/insinuarDesplazamiento';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { Sampler, aMidi } from '@/audio/sampler';
-import { muestrasDe } from '@/audio/instrumentos';
+import { samplerPara } from '@/audio/instrumentos';
 import { colorDe, nombreDe } from '@/ui/coloresNota';
 import { alturaEnPauta, yDeLinea } from '../alturaEnPauta';
 import { distancia, escalaDesde, falloAlAnadir, MAYOR, type Distancia, type FalloDePaso } from '../escala';
@@ -114,7 +114,7 @@ export default function Escala({ actividad, alTerminar }: PropsActividad) {
     try {
       await despertarAudio();
       if (!sampler.current) {
-        const s = new Sampler(muestrasDe(contenido.instrumento));
+        const s = samplerPara(contenido.instrumento);
         await s.cargar();
         sampler.current = s;
       }

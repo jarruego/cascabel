@@ -194,5 +194,8 @@
     "ostinato",
     "sílabas",
     "orff"
-  ]
+  ],
+  "figura": {
+    "icono": "pie"
+  }
 }

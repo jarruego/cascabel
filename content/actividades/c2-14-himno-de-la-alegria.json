@@ -410,5 +410,8 @@
     "karaoke",
     "a tiempo",
     "colores"
-  ]
+  ],
+  "figura": {
+    "icono": "fiesta"
+  }
 }

@@ -209,5 +209,8 @@
     "clasificación",
     "timbre",
     "instrumentos"
-  ]
+  ],
+  "figura": {
+    "icono": "trompeta"
+  }
 }

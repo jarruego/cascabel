@@ -40,6 +40,8 @@ for (const f of ficheros) {
     etiquetas: a.etiquetas ?? [],
     // El personaje: la tarjeta del Taller lo enseña en las presentaciones de la pandilla.
     personaje: a.personaje ?? null,
+    // La figura de la tarjeta: icono o signo. Ver `ui/FiguraTarjeta.tsx`.
+    figura: a.figura ?? null,
     practica: {
       figuras: a.practica?.figuras ?? [],
       compas: a.practica?.compas ?? null,

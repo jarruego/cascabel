@@ -221,5 +221,8 @@
     "mozart",
     "beethoven",
     "historia"
-  ]
+  ],
+  "figura": {
+    "icono": "trompeta"
+  }
 }

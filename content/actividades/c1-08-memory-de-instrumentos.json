@@ -280,5 +280,8 @@
     "guitarra",
     "violín",
     "kalimba"
-  ]
+  ],
+  "figura": {
+    "icono": "guitarra"
+  }
 }

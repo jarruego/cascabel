@@ -169,5 +169,8 @@
     "silencio",
     "cuatro pulsos",
     "micrófono"
-  ]
+  ],
+  "figura": {
+    "icono": "palmas"
+  }
 }

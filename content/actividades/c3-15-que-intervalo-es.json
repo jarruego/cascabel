@@ -250,5 +250,8 @@
     "octava",
     "oído",
     "distancia"
-  ]
+  ],
+  "figura": {
+    "icono": "flecha-arriba"
+  }
 }

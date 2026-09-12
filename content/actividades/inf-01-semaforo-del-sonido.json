@@ -185,5 +185,8 @@
     "escucha",
     "semáforo",
     "willems"
-  ]
+  ],
+  "figura": {
+    "icono": "silencio"
+  }
 }

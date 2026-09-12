@@ -208,5 +208,8 @@
     "a b a",
     "estribillo",
     "ordenar"
-  ]
+  ],
+  "figura": {
+    "glifo": "repeticion"
+  }
 }

@@ -184,5 +184,8 @@
     "silencio",
     "contratiempo",
     "chasquidos"
-  ]
+  ],
+  "figura": {
+    "icono": "chasquido"
+  }
 }

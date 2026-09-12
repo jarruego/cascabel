@@ -142,5 +142,8 @@
     "reciclado",
     "manualidad",
     "imprimible"
-  ]
+  ],
+  "figura": {
+    "icono": "martillo"
+  }
 }

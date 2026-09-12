@@ -192,5 +192,8 @@
     "contratiempo",
     "silencio",
     "palmas"
-  ]
+  ],
+  "figura": {
+    "icono": "tambor"
+  }
 }

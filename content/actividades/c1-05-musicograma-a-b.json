@@ -177,5 +177,8 @@
     "wuytack",
     "partes",
     "estructura"
-  ]
+  ],
+  "figura": {
+    "icono": "partitura"
+  }
 }

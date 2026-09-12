@@ -179,5 +179,8 @@
     "voz humana",
     "timbre",
     "cantar"
-  ]
+  ],
+  "figura": {
+    "icono": "cantante"
+  }
 }

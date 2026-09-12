@@ -1,11 +1,30 @@
 import { describe, expect, it } from 'vitest';
-import { MARIMBA, aMidi, elegirMuestra } from '../src/audio/sampler';
+import { MARIMBA, aMidi, elegirMuestra, envolvente, haceFaltaBucle, ATAQUE_S, CAIDA_S } from '../src/audio/sampler';
 
 /**
  * Si el `playbackRate` está mal, TODO el proyecto desafina y no lo nota nadie hasta que un
  * niño canta encima y el detector de tono le dice que está equivocado. Es el tipo de fallo
  * que hay que atrapar con un test y no con el oído.
  */
+describe('envolvente', () => {
+  it('un instrumento percusivo cae desde el ataque', () => {
+    expect(envolvente(false, 2).mantenerHasta).toBe(ATAQUE_S);
+  });
+  it('uno que sostiene se mantiene hasta los últimos 120 ms', () => {
+    expect(envolvente(true, 2).mantenerHasta).toBeCloseTo(2 - CAIDA_S, 5);
+  });
+  it('una nota cortísima no se mantiene más de lo que dura', () => {
+    expect(envolvente(true, 0.05).mantenerHasta).toBe(ATAQUE_S);
+  });
+  it('repite el tramo central solo si la nota dura más que la muestra', () => {
+    // Muestra de 3 s: útil hasta el 75 %, 2,25 s. Una nota de 2 s cabe; una de 4, no.
+    expect(haceFaltaBucle(3, 1, 2)).toBe(false);
+    expect(haceFaltaBucle(3, 1, 4)).toBe(true);
+    // Estirada tres semitonos hacia arriba (1,19) dura menos: 1,89 s, y la de 2 ya no cabe.
+    expect(haceFaltaBucle(3, 1.189, 2)).toBe(true);
+  });
+});
+
 describe('sampler', () => {
   it('convierte nombres de nota a MIDI', () => {
     expect(aMidi('C4')).toBe(60); // do central

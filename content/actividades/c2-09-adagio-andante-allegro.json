@@ -240,5 +240,8 @@
     "andante",
     "allegro",
     "términos italianos"
-  ]
+  ],
+  "figura": {
+    "icono": "tortuga"
+  }
 }

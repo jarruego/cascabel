@@ -255,5 +255,8 @@
     "tercera",
     "tonalidad",
     "armonía"
-  ]
+  ],
+  "figura": {
+    "icono": "luna"
+  }
 }

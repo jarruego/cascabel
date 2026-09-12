@@ -233,5 +233,8 @@
     "novena",
     "himno de la alegría",
     "mapa"
-  ]
+  ],
+  "figura": {
+    "icono": "lupa"
+  }
 }

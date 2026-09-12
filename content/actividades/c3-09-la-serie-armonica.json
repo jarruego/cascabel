@@ -141,5 +141,8 @@
     "fracciones",
     "física del sonido",
     "longitud"
-  ]
+  ],
+  "figura": {
+    "icono": "guitarra"
+  }
 }

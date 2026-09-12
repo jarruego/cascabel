@@ -145,5 +145,8 @@
     "voz",
     "sol mi la",
     "entonación"
-  ]
+  ],
+  "figura": {
+    "icono": "microfono"
+  }
 }

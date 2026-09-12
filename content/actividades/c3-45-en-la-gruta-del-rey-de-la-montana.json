@@ -245,5 +245,8 @@
     "ritmo",
     "tempo",
     "romanticismo"
-  ]
+  ],
+  "figura": {
+    "icono": "moto"
+  }
 }

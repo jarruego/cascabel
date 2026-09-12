@@ -157,5 +157,8 @@
     "animales",
     "cartas",
     "timbre"
-  ]
+  ],
+  "figura": {
+    "icono": "perro"
+  }
 }

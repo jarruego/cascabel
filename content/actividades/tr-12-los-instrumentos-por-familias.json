@@ -240,5 +240,8 @@
     "voz",
     "timbre",
     "herramienta"
-  ]
+  ],
+  "figura": {
+    "icono": "violin"
+  }
 }

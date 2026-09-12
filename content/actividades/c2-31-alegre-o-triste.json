@@ -335,5 +335,8 @@
     "alegre",
     "triste",
     "tonalidad"
-  ]
+  ],
+  "figura": {
+    "icono": "sol"
+  }
 }

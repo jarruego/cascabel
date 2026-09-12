@@ -291,5 +291,8 @@
     "suspensiva",
     "forma",
     "tónica"
-  ]
+  ],
+  "figura": {
+    "icono": "pausa"
+  }
 }

@@ -2,7 +2,7 @@ import { useCallback, useEffect, useReducer, useRef, useState } from 'react';
 import { useCarril } from '@/app/preferencias';
 import { despertarAudio, obtenerContexto, pararTodo } from '@/audio/AudioEngine';
 import { Sampler } from '@/audio/sampler';
-import { instrumentosDisponibles, muestrasDe } from '@/audio/instrumentos';
+import { instrumentosDisponibles, samplerPara } from '@/audio/instrumentos';
 import { Percusion, type Golpe } from '@/audio/percusion';
 import { colorDe } from '@/ui/coloresNota';
 import { IconoDescargar, IconoLimpiar, IconoParar, IconoTocar } from '@/ui/Simbolos';
@@ -105,7 +105,7 @@ export default function Pistas({ actividad, alTerminar }: PropsActividad) {
       if (p.clase !== 'melodica') continue;
       const nombre = instrumentos[p.clave] ?? p.instrumento ?? 'marimba';
       if (samplers.current.has(nombre)) continue;
-      const s = new Sampler(muestrasDe(nombre));
+      const s = samplerPara(nombre);
       await s.cargar();
       samplers.current.set(nombre, s);
     }

@@ -140,5 +140,8 @@
     "teclado",
     "patrón",
     "teclas blancas"
-  ]
+  ],
+  "figura": {
+    "icono": "teclado"
+  }
 }

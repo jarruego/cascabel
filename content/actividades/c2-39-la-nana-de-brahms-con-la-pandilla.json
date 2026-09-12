@@ -568,5 +568,8 @@
     "pandilla",
     "karaoke",
     "tres por cuatro"
-  ]
+  ],
+  "figura": {
+    "icono": "luna"
+  }
 }

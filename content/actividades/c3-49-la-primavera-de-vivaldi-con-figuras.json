@@ -958,5 +958,8 @@
     "karaoke",
     "barroco",
     "lectura rítmica"
-  ]
+  ],
+  "figura": {
+    "icono": "mariposa"
+  }
 }

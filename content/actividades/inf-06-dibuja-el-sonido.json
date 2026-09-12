@@ -145,5 +145,8 @@
     "crear",
     "trazo",
     "libre"
-  ]
+  ],
+  "figura": {
+    "icono": "pluma"
+  }
 }

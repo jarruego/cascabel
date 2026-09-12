@@ -267,5 +267,8 @@
     "dos notas",
     "acorde",
     "oído"
-  ]
+  ],
+  "figura": {
+    "icono": "chispas"
+  }
 }

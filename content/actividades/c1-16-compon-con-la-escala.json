@@ -158,5 +158,8 @@
     "cuadrícula",
     "bucle",
     "melodía"
-  ]
+  ],
+  "figura": {
+    "icono": "teclado"
+  }
 }

@@ -140,5 +140,8 @@
     "timbre",
     "explorar",
     "libre"
-  ]
+  ],
+  "figura": {
+    "icono": "pandereta"
+  }
 }

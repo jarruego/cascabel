@@ -202,5 +202,8 @@
     "palmas",
     "acentos",
     "ciclo"
-  ]
+  ],
+  "figura": {
+    "icono": "palmas"
+  }
 }

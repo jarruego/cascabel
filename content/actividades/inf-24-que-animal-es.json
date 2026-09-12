@@ -180,5 +180,8 @@
     "timbre",
     "grabaciones",
     "escucha"
-  ]
+  ],
+  "figura": {
+    "icono": "leon"
+  }
 }

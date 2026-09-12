@@ -448,5 +448,8 @@
     "karaoke",
     "piano",
     "clasicismo"
-  ]
+  ],
+  "figura": {
+    "icono": "corazon"
+  }
 }

@@ -335,6 +335,28 @@
       "type": "string",
       "description": "Clave de i18n con la frase que se le dice al nino, nunca texto literal. La lee un adulto en voz alta y sale en la ficha del maestro. Se llamaba 'locucion' y llevaba un campo 'audio' para una grabacion; el 2026-09-08 se decidio que no va a haber grabaciones, y un nombre que promete audio para algo que es texto es la clase de mentira que se queda para siempre. Ver docs/adr/0006."
     },
+    "figura": {
+      "description": "El dibujo de la tarjeta en el catalogo y el Taller, a la derecha del texto: un icono de public/iconos (por nombre) o un signo musical de Bravura (por nombre, ver src/ui/glifos.ts). Representativo de lo que se hace, no del eje. Las presentaciones de la pandilla no lo llevan: enseñan al personaje.",
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["icono"],
+          "properties": { "icono": { "type": "string", "pattern": "^[a-z-]+$" } }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["glifo"],
+          "properties": {
+            "glifo": {
+              "type": "string",
+              "enum": ["clave-sol", "clave-fa", "redonda", "blanca", "negra", "corchea", "silencio-negra", "sostenido", "bemol", "calderon", "forte", "piano", "acento", "repeticion", "segno", "coda", "pentagrama"]
+            }
+          }
+        }
+      ]
+    },
     "personaje": {
       "type": "string",
       "enum": [

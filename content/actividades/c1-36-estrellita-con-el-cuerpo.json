@@ -406,5 +406,8 @@
     "cantar",
     "letra",
     "mozart"
-  ]
+  ],
+  "figura": {
+    "icono": "estrella"
+  }
 }

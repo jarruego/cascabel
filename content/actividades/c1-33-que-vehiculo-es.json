@@ -205,5 +205,8 @@
     "barco",
     "sonidos del entorno",
     "escucha"
-  ]
+  ],
+  "figura": {
+    "icono": "tren"
+  }
 }

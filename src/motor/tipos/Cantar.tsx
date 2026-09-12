@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useCarril } from '@/app/preferencias';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { Sampler, aMidi } from '@/audio/sampler';
-import { muestrasDe, sostiene } from '@/audio/instrumentos';
+import { sostiene, samplerPara } from '@/audio/instrumentos';
 import { DetectorDeTono } from '@/escucha/tono';
 import {
   desviacionEnCents,
@@ -157,7 +157,7 @@ export default function Cantar({ actividad, alTerminar }: PropsActividad) {
     await despertarAudio();
     if (!sampler.current) {
       try {
-        const s = new Sampler(muestrasDe(contenido.instrumento));
+        const s = samplerPara(contenido.instrumento);
         await s.cargar();
         sampler.current = s;
       } catch {

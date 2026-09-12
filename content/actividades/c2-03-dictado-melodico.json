@@ -180,5 +180,8 @@
     "agudo grave",
     "escribir melodía",
     "seis notas"
-  ]
+  ],
+  "figura": {
+    "icono": "pluma"
+  }
 }

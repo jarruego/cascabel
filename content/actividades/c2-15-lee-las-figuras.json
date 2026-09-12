@@ -256,5 +256,8 @@
     "duración",
     "lectura rítmica",
     "a tiempo"
-  ]
+  ],
+  "figura": {
+    "glifo": "negra"
+  }
 }

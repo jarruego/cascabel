@@ -249,5 +249,8 @@
     "negras",
     "corcheas",
     "atención"
-  ]
+  ],
+  "figura": {
+    "icono": "cuatro"
+  }
 }

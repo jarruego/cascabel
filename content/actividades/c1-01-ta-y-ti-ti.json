@@ -158,5 +158,8 @@
     "kodály",
     "musicograma",
     "bucle"
-  ]
+  ],
+  "figura": {
+    "glifo": "corchea"
+  }
 }

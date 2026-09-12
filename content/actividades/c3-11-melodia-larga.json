@@ -152,5 +152,8 @@
     "octava",
     "cuadrícula",
     "bucle"
-  ]
+  ],
+  "figura": {
+    "icono": "pluma"
+  }
 }

@@ -189,5 +189,8 @@
     "cualidades del sonido",
     "caracol",
     "conejo"
-  ]
+  ],
+  "figura": {
+    "icono": "caracol"
+  }
 }

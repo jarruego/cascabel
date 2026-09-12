@@ -2,8 +2,8 @@ import { useCallback, useEffect, useReducer, useRef, useState } from 'react';
 import { OBJETIVO_TACTIL } from '@/config';
 import { useCarril } from '@/app/preferencias';
 import { useInsinuarDesplazamiento } from '@/ui/insinuarDesplazamiento';
-import { MARIMBA, Sampler } from '@/audio/sampler';
-import { muestrasDe } from '@/audio/instrumentos';
+import { Sampler } from '@/audio/sampler';
+import { samplerPara } from '@/audio/instrumentos';
 import { Personaje } from '@/ui/Personaje';
 import { personajeDe } from '@/ui/personajes';
 import { colorDe } from '@/ui/coloresNota';
@@ -249,7 +249,7 @@ export default function Pentagrama({ actividad, alTerminar }: PropsActividad) {
       try {
         await despertarAudio();
         if (!sampler.current) {
-          const s = new Sampler(contenido.instrumento ? muestrasDe(contenido.instrumento) : MARIMBA);
+          const s = samplerPara(contenido.instrumento);
           await s.cargar();
           sampler.current = s;
         }

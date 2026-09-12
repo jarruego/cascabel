@@ -181,5 +181,8 @@
     "palmas",
     "negra",
     "corchea"
-  ]
+  ],
+  "figura": {
+    "icono": "tambor"
+  }
 }

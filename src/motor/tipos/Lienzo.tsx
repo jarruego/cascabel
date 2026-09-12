@@ -3,7 +3,7 @@ import { useCarril } from '@/app/preferencias';
 import { OBJETIVO_TACTIL } from '@/config';
 import { despertarAudio } from '@/audio/AudioEngine';
 import { Sampler } from '@/audio/sampler';
-import { instrumentosDisponibles, muestrasDe, sostiene } from '@/audio/instrumentos';
+import { instrumentosDisponibles, sostiene, samplerPara } from '@/audio/instrumentos';
 import { Acompanamiento, type Patron } from '@/audio/acompanamiento';
 import { IconoLimpiar, IconoParar, IconoTocar } from '@/ui/Simbolos';
 import { Retos } from '@/ui/Retos';
@@ -164,7 +164,7 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
       cargado.current = instrumento;
     }
     if (!sampler.current) {
-      const s = new Sampler(muestrasDe(instrumento));
+      const s = samplerPara(instrumento);
       await s.cargar();
       sampler.current = s;
     }

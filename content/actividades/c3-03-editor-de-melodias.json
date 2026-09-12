@@ -136,5 +136,8 @@
     "partitura",
     "crear",
     "melodía"
-  ]
+  ],
+  "figura": {
+    "icono": "partitura"
+  }
 }

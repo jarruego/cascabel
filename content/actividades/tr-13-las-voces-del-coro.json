@@ -179,5 +179,8 @@
     "tesitura",
     "cantar",
     "herramienta"
-  ]
+  ],
+  "figura": {
+    "icono": "voz"
+  }
 }
