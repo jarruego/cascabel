@@ -20,7 +20,7 @@ mejor.
 |---|---|---|
 | **FluidR3_GM** (Frank Wen) vía `gleitz/midi-js-soundfonts` | **MIT** | Los doce instrumentos afinados, la voz muestreada y los seis del mundo |
 | **VCSL** (Versilian Studios) | **CC0** | La marimba y, desde hoy, el kit de percusión de aula |
-| **OpenMoji** | **CC BY-SA 4.0** | Los 48 iconos |
+| **Noto Color Emoji** | Apache-2.0 | Los iconos de actividad (antes OpenMoji, hasta el 2026-09-12) |
 | **Andika** y **Bravura** | **OFL-1.1** | Tipografía de lectores nóveles y símbolos musicales SMuFL |
 
 Todo se sirve desde nuestro origen. Ninguna petición sale fuera: es la regla 1 y es lo que

@@ -1,7 +1,7 @@
 import { Icono } from './Icono';
 
 interface Props {
-  /** Dibujo de OpenMoji. Si no hay, el botón lo dice con el signo o con el texto. */
+  /** Dibujo de `ui/Icono`. Si no hay, el botón lo dice con el signo o con el texto. */
   icono?: string;
   /**
    * Un signo musical en Unicode —una negra, un sostenido, un «2/4»— dibujado con Bravura.

@@ -1,9 +1,11 @@
 /**
  * Iconos de actividad.
  *
- * Son **OpenMoji** (CC BY-SA 4.0), el mismo licenciamiento que nuestros contenidos, así que
- * no añaden ninguna obligación nueva. Se sirven desde `/iconos`, nunca desde un CDN: la
- * regla 1 del proyecto prohíbe cualquier petición fuera de nuestro origen.
+ * Son **Noto Color Emoji** de Google (Apache-2.0): el autor eligió ese estilo el 2026-09-12
+ * frente a Fluent, Twemoji y OpenMoji, por ese orden. Los cuatro que no son un emoji —la
+ * kalimba (OpenMoji), la pandereta y el bombo (Commons) y las claves (dibujo propio)— se
+ * quedan como estaban. Se sirven desde `/iconos`, nunca desde un CDN: la regla 1 del
+ * proyecto prohíbe cualquier petición fuera de nuestro origen.
  *
  * **Por qué a color y no monocromos.** La regla 3 de `docs/04-DISENO-UI.md` pide iconos
  * *concretos*: un tambor dibujado vale más que un pictograma abstracto, y ese más que la
@@ -45,7 +47,7 @@ const DISPONIBLES = new Set([
   'bailarina', 'bailarin', 'palmas',
   'uno', 'dos', 'tres', 'cuatro',
   // La mariposa: el autor pidió para «flojito» un animal que no haga ruido. El gato de
-  // OpenMoji tiene rayas y parecía un tigre, que es justo lo contrario.
+  // OpenMoji de entonces tenía rayas y parecía un tigre, que es justo lo contrario.
   'mariposa',
   // Y veinticuatro más el 2026-09-10 con el banco de sonidos reales: animales de granja y
   // de bosque, vehículos, casa, tiempo, y tres instrumentos.

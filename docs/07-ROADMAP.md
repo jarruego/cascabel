@@ -3126,6 +3126,14 @@ textos, niveles, camino, y la sección de instrumentos.
       y en la última lámina el botón grande se apagaba en vez de cerrar. El botón ocupa siempre la fila de arriba de
       la botonera, con el mismo ancho diga «escuchar» o «parar».
 
+- [x] **Los iconos son Noto Color Emoji** (2026-09-12): al ver la pandereta y el bombo de
+      Commons, el autor prefirió ese estilo al de OpenMoji y fijó el orden: Noto, Fluent,
+      Twemoji y OpenMoji. Los noventa nombres que son un emoji se bajaron de Noto
+      (Apache-2.0, sin modificar, 405 KB frente a los 500 de antes); los cuatro que no lo son
+      —kalimba, pandereta, bombo y claves— siguen como estaban. Comprobados en una hoja de
+      contacto a 64 y 32 px con Chrome sin interfaz. `tambor-grande` pasa a ser el tambor
+      largo (🪘) para que no sea el mismo dibujo que el tambor.
+
 - [x] **Toda tarjeta lleva su figura** (2026-09-12): como las presentaciones de la pandilla
       llevan al personaje, el resto de tarjetas del catálogo y del Taller llevan a la derecha,
       en un 30 %, un icono de `public/iconos` o un signo musical de Bravura, representativo

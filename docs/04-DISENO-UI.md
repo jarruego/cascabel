@@ -136,7 +136,7 @@ comprueba antes de dar una actividad por pulida.
    «Con palmas»; con voz, «Ahora no puedo hacer ruido» (sale, no se recuerda) y
    «¡Empezar!». Nunca dos modales seguidas. Al abrirse enfoca su caja, no el primer botón.
 9. **Todo botón de la botonera lleva su símbolo** (`ui/Simbolos.tsx`), de una línea y del
-   mismo grosor; los OpenMoji de color son contenido, no señales. Una botonera con la
+   mismo grosor; los emoji de color son contenido, no señales. Una botonera con la
    mitad de iconos «no tiene criterio».
 10. **Ningún literal en componentes.** Todo pasa por `t('clave')`, incluidas las opciones
     de las actividades (`opcion.*`): hay un test que comprueba que cada opción del
