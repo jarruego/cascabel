@@ -246,7 +246,6 @@ export default function Ficha() {
             {t('ficha.incluirSeguimiento')}
           </label>
         )}
-        <p className="ficha__consejo">{t('ficha.consejo')}</p>
       </div>
 
       <table className="ficha__papel" role="presentation">
@@ -265,10 +264,7 @@ export default function Ficha() {
       <tr>
       <td>
       <article className="ficha__hoja">
-        <p className="ficha__sobre">
-          <span className="codigo">{codigoDe(actividad.id)}</span> · {t(ETAPA[actividad.etapa] ?? '')} ·{' '}
-          {t(`eje.${actividad.eje}`)}
-        </p>
+        {/* Sin sobretítulo: la cabecera de la página ya dice código, etapa, eje y título. */}
         <h1>{actividad.titulo}</h1>
         {actividad.descripcion && <p className="ficha__entradilla">{actividad.descripcion}</p>}
 

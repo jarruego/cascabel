@@ -2200,7 +2200,6 @@ p {
   gap: var(--e-3);
   margin-bottom: var(--e-5);
 }
-.ficha__consejo { flex-basis: 100%; margin: 0; font-size: 0.9em; color: var(--tinta-2); }
 .ficha__opcion { display: inline-flex; align-items: center; gap: var(--e-1); font-size: 0.95em; }
 .ficha__opcion input { width: 22px; height: 22px; }
 
