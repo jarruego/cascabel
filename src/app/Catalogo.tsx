@@ -209,8 +209,12 @@ export default function Catalogo() {
     **Pero una actividad que ADEMÁS sea herramienta sí sale aquí**, aunque también salga en
     Instrumentos: el editor de melodías tiene criterio curricular, y un maestro que busca por
     el 4.1 tiene que encontrarlo. Ser las dos cosas no es duplicar.
+
+    Las presentaciones de la pandilla llevan el prefijo de las herramientas porque están en
+    el Taller, pero son algo que se hace en clase, con su ficha y su sitio en el camino de
+    Infantil: salen aquí también (lo pidió el autor el 2026-09-13).
   */
-  const actividades = visibles.filter((e) => !e.id.startsWith('tr-'));
+  const actividades = visibles.filter((e) => !e.id.startsWith('tr-') || e.tipo === 'presentacion');
 
   if (fallo) return <main className="catalogo"><p role="alert">{t('catalogo.fallo')}</p></main>;
   if (!entradas) return <main className="catalogo"><p>{t('catalogo.cargando')}</p></main>;

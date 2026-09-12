@@ -3126,6 +3126,11 @@ textos, niveles, camino, y la sección de instrumentos.
       y en la última lámina el botón grande se apagaba en vez de cerrar. El botón ocupa siempre la fila de arriba de
       la botonera, con el mismo ancho diga «escuchar» o «parar».
 
+- [x] **Las presentaciones de la pandilla salen en el catálogo** (2026-09-13): el catálogo
+      excluía todo `tr-` y las ocho presentaciones llevan ese prefijo por estar en el Taller.
+      Ahora salen en los dos sitios: son algo que se hace en clase, con ficha y con su paso
+      en el camino de Infantil.
+
 - [x] **Los signos de Bravura, centrados por su caja** (2026-09-13): claves, notas y
       pentagrama salían descolgados en las tarjetas porque una fuente musical dibuja cada
       signo respecto a la línea del pentagrama, no respecto a su caja de carácter (la clave
