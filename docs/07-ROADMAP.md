@@ -3126,6 +3126,16 @@ textos, niveles, camino, y la sección de instrumentos.
       y en la última lámina el botón grande se apagaba en vez de cerrar. El botón ocupa siempre la fila de arriba de
       la botonera, con el mismo ancho diga «escuchar» o «parar».
 
+- [x] **Avión, barco y tren de «¿Qué vehículo es?», cambiados** (2026-09-13): el autor no
+      distinguía el avión ni la bocina del barco, y el tren sonaba sucio. Ahora el avión es
+      un reactor aterrizando por encima de quien graba, en Tegel, con el silbido subiendo y
+      el paso (Fritz Schlüter, CC BY-SA 3.0); el barco, la bocina grave de un crucero
+      despidiéndose de Bremerhaven, un bocinazo entero (CC0); y el tren, el traqueteo
+      rítmico de un mercancías pasando cerca en el desierto de Wirikuta (felix.blume, CC0),
+      elegido en vez de su bocina para que no se confunda con la del barco de la misma
+      actividad. Los tramos se eligieron con el espectrograma y la sonoridad por segundo, no
+      de oído: hay que escucharlos en clase.
+
 - [x] **Las presentaciones de la pandilla salen en el catálogo** (2026-09-13): el catálogo
       excluía todo `tr-` y las ocho presentaciones llevan ese prefijo por haber nacido en
       el Taller. Ahora salen en actividades y ya no en el Taller (`herramienta: false`): son

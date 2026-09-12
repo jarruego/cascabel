@@ -1,6 +1,6 @@
 {
   "$comment": "Banco de sonidos reales. Cada entrada apunta a un fichero de Wikimedia Commons; tools/sonidos.py lo baja, comprueba la licencia por API, lo recorta y escribe aqui lo verificado. La pantalla de creditos lee este fichero: es la atribucion que exige la CC BY, y sale de datos, no de memoria.",
-  "generado": "2026-09-12",
+  "generado": "2026-09-13",
   "sonidos": [
     {
       "id": "perro",
@@ -244,32 +244,32 @@
       "id": "tren",
       "categoria": "vehiculos",
       "nombre": "Tren de vapor",
-      "commons": "File:Steam Loco 520 @ Yantaringa South Australia 1991.ogg",
-      "segundos": 7,
-      "desde": 114,
-      "$comment": "Cambiado el 2026-09-10: el anterior duraba 3,4 s. Este es el resoplido rítmico de una locomotora de vapor en marcha, el tramo más rítmico de la grabación.",
+      "commons": "File:Train passing by in the Wirikuta Desert (Mexico, SLP).wav",
+      "segundos": 8,
+      "$comment": "Cambiado el 2026-09-13: la locomotora de vapor «tenía un sonido sucio». Este es un tren de mercancías pasando cerca en el desierto de Wirikuta, grabado limpio: se toma el traqueteo rítmico de las ruedas en las juntas, que es lo que hace que un tren suene a tren y no se confunda con la bocina del barco de la misma actividad. La bocina del tren está antes en la grabación y no se usa por eso.",
+      "desde": 80,
       "verificado": {
-        "licencia": "CC BY-SA 4.0",
-        "licencia_url": "https://creativecommons.org/licenses/by-sa/4.0",
-        "autor": "K.Tregenza",
-        "url": "https://commons.wikimedia.org/wiki/File:Steam_Loco_520_@_Yantaringa_South_Australia_1991.ogg",
-        "fecha": "2026-09-10"
+        "licencia": "CC0",
+        "licencia_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "autor": "https://freesound.org/people/felix.blume/",
+        "url": "https://commons.wikimedia.org/wiki/File:Train_passing_by_in_the_Wirikuta_Desert_(Mexico,_SLP).wav",
+        "fecha": "2026-09-13"
       }
     },
     {
       "id": "avion",
       "categoria": "vehiculos",
       "nombre": "Avión que pasa",
-      "commons": "File:428086 inspectorj airplane-boeing-flyby-right-to-left-a.wav",
-      "desde": 11,
-      "segundos": 7,
-      "$comment": "Cambiado el 2026-09-10: el reactor «overhead» anterior era un rumor sin forma. Este es un avión que pasa de derecha a izquierda, con la subida y la bajada que lo hacen reconocible.",
+      "commons": "File:2011-06-05 19-32 Berlin TXL Airplane Flyover plus Wingtip Vortex.ogg",
+      "segundos": 9,
+      "$comment": "Cambiado el 2026-09-13: el avión que pasaba de lado «no se distinguía bien». Este aterriza por encima del que graba, en Tegel: el silbido de las turbinas sube durante seis segundos y pasa encima a los 28 de la grabación. Se toma la subida y el paso.",
+      "desde": 20,
       "verificado": {
-        "licencia": "CC BY 4.0",
-        "licencia_url": "https://creativecommons.org/licenses/by/4.0",
-        "autor": "InspectorJ",
-        "url": "https://commons.wikimedia.org/wiki/File:428086_inspectorj_airplane-boeing-flyby-right-to-left-a.wav",
-        "fecha": "2026-09-10"
+        "licencia": "CC BY-SA 3.0",
+        "licencia_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "autor": "Fritz Schlüter",
+        "url": "https://commons.wikimedia.org/wiki/File:2011-06-05_19-32_Berlin_TXL_Airplane_Flyover_plus_Wingtip_Vortex.ogg",
+        "fecha": "2026-09-13"
       }
     },
     {
@@ -305,14 +305,16 @@
       "id": "barco",
       "categoria": "vehiculos",
       "nombre": "Sirena de barco",
-      "commons": "File:WWS IcebreakerKunashipssiren.ogg",
-      "segundos": 5,
+      "commons": "File:Cruise ship Albatros ship horn.ogg",
+      "segundos": 7.5,
+      "desde": 12.3,
+      "$comment": "Cambiado el 2026-09-13: la sirena del rompehielos «tampoco se distinguía». Esto es la bocina grave de un crucero despidiéndose de Bremerhaven, tres bocinazos: se toma el segundo entero, con su silencio delante.",
       "verificado": {
-        "licencia": "CC BY 4.0",
-        "licencia_url": "https://creativecommons.org/licenses/by/4.0",
-        "autor": "Work With Sounds / Museum of Municipal Engineering",
-        "url": "https://commons.wikimedia.org/wiki/File:WWS_IcebreakerKunashipssiren.ogg",
-        "fecha": "2026-09-10"
+        "licencia": "CC0",
+        "licencia_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "autor": "Tvabutzku1234",
+        "url": "https://commons.wikimedia.org/wiki/File:Cruise_ship_Albatros_ship_horn.ogg",
+        "fecha": "2026-09-13"
       }
     },
     {
