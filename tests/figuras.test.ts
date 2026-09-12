@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { esGlifo } from '../src/ui/glifos';
-import { esCifra } from '../src/ui/cifras';
+import { esIconoEscrito } from '../src/ui/iconosEscritos';
 
 /**
  * Toda tarjeta lleva su figura (2026-09-12: «todas las tarjetas con un icono, imagen,
@@ -39,7 +39,7 @@ describe('figura de la tarjeta', () => {
       .filter(
         (a) =>
           a.figura?.icono &&
-          !esCifra(a.figura.icono) &&
+          !esIconoEscrito(a.figura.icono) &&
           !existsSync(join(RAIZ, 'public', 'iconos', `${a.figura.icono}.svg`)),
       )
       .map((a) => `${a.id}: ${a.figura?.icono}`);

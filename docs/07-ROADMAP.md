@@ -3126,6 +3126,13 @@ textos, niveles, camino, y la sección de instrumentos.
       y en la última lámina el botón grande se apagaba en vez de cerrar. El botón ocupa siempre la fila de arriba de
       la botonera, con el mismo ancho diga «escuchar» o «parar».
 
+- [x] **Las flechas se escriben con Bravura** (2026-09-13): las de emoji van dentro de un
+      botón azul que no pega con nada, y en las cuatro bibliotecas son así. SMuFL tiene
+      flechas planas (arrowBlackUp y arrowBlackDown), así que van por el mismo camino que las
+      cifras: `ui/iconosEscritos.ts` dice qué nombres de icono se escriben con un glifo en
+      vez de cargar un fichero, y el contenido no cambia. Los dos SVG se borraron. De paso,
+      los créditos de iconos de 83 actividades seguían diciendo OpenMoji: ya dicen Noto.
+
 - [x] **Avión, barco y tren de «¿Qué vehículo es?», cambiados** (2026-09-13): el autor no
       distinguía el avión ni la bocina del barco, y el tren sonaba sucio. Ahora el avión es
       un reactor aterrizando por encima de quien graba, en Tegel, con el silbido subiendo y

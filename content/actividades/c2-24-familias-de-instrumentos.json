@@ -195,9 +195,9 @@
     },
     {
       "obra": "Iconos",
-      "autor": "OpenMoji · HfG Schwäbisch Gmünd",
-      "fuente": "https://openmoji.org",
-      "licencia": "CC BY-SA 4.0"
+      "autor": "Noto Color Emoji · Google",
+      "fuente": "https://github.com/googlefonts/noto-emoji",
+      "licencia": "Apache-2.0"
     }
   ],
   "estado": "borrador",

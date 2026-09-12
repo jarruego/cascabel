@@ -21,7 +21,7 @@
  * engordan el bundle y el service worker los precachea para el modo sin conexión.
  */
 
-import { esCifra } from './cifras';
+import { ICONOS_ESCRITOS } from './iconosEscritos';
 import { Glifo } from './Glifo';
 
 interface Props {
@@ -46,10 +46,11 @@ const DISPONIBLES = new Set([
   'tambor-grande', 'teclado', 'tortuga', 'trompeta', 'unicornio',
   'violin', 'voz',
   // Añadidos el 2026-09-10 para las actividades de lenguaje, historia y estilos.
-  'flecha-arriba', 'flecha-abajo', 'igual', 'fuerte', 'flojo',
+  'igual', 'fuerte', 'flojo',
   'castillo', 'pluma', 'corona', 'corazon', 'radio',
   'bailarina', 'bailarin', 'palmas',
-  // uno, dos, tres y cuatro ya no son ficheros: se escriben con Bravura (`cifras.ts`).
+  // uno, dos, tres, cuatro y las dos flechas no son ficheros: se escriben con Bravura
+  // (`iconosEscritos.ts`).
   // La mariposa: el autor pidió para «flojito» un animal que no haga ruido. El gato de
   // OpenMoji de entonces tenía rayas y parecía un tigre, que es justo lo contrario.
   'mariposa',
@@ -77,9 +78,11 @@ const ALIAS: Record<string, string> = {
 export function Icono({ nombre, tamano = 48, alt = '' }: Props) {
   const real = ALIAS[nombre] ?? nombre;
 
-  // Un número se escribe, no se dibuja: ver `cifras.ts`. Ocupa la caja del icono.
-  if (esCifra(real)) {
-    return <Glifo nombre={real} tamano={tamano} className="icono icono--cifra" alt={alt} />;
+  // Un número o una flecha se escriben, no se dibujan: ver `iconosEscritos.ts`. Ocupan la
+  // caja del icono.
+  const escrito = ICONOS_ESCRITOS[real];
+  if (escrito) {
+    return <Glifo nombre={escrito} tamano={tamano} className="icono icono--cifra" alt={alt} />;
   }
 
   if (!DISPONIBLES.has(real)) {

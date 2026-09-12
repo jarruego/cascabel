@@ -38,6 +38,10 @@ export const GLIFOS = {
   dos: { codigo: '\uE082', caja: [0.02, -0.257, 0.426, 0.254] }, // timeSig2
   tres: { codigo: '\uE083', caja: [0.02, -0.251, 0.401, 0.249] }, // timeSig3
   cuatro: { codigo: '\uE084', caja: [0.02, -0.25, 0.45, 0.251] }, // timeSig4
+  // Flechas: las de emoji van dentro de un botón azul que no pega con nada (lo dijo el autor
+  // el 2026-09-13); las de SMuFL son una flecha y nada más.
+  'flecha-arriba': { codigo: '\uEB60', caja: [0.0, 0.0, 0.228, 0.527] }, // arrowBlackUp
+  'flecha-abajo': { codigo: '\uEB64', caja: [0.0, 0.0, 0.228, 0.527] }, // arrowBlackDown
 } as const satisfies Record<string, Glifo>;
 
 export type NombreGlifo = keyof typeof GLIFOS;
