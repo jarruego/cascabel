@@ -55,13 +55,33 @@
         "personaje": "rex",
         "pose": "canta",
         "titulo": "actividad.tr20.l5t",
-        "texto": "actividad.tr20.l5d"
+        "texto": "actividad.tr20.l5d",
+        "sonido": {
+          "notas": [
+            "C4",
+            "D4"
+          ],
+          "duraciones": [
+            1,
+            2
+          ],
+          "respuesta": ""
+        }
       },
       {
         "personaje": "rex",
         "pose": "palmea",
         "titulo": "actividad.tr20.l6t",
-        "texto": "actividad.tr20.l6d"
+        "texto": "actividad.tr20.l6d",
+        "sonido": {
+          "patron": [
+            "caja",
+            "caja",
+            "caja"
+          ],
+          "tempo": 84,
+          "respuesta": ""
+        }
       },
       {
         "personaje": "rex",

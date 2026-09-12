@@ -43,25 +43,78 @@
         "personaje": "sol",
         "pose": "busca",
         "titulo": "actividad.tr18.l3t",
-        "texto": "actividad.tr18.l3d"
+        "texto": "actividad.tr18.l3d",
+        "sonido": {
+          "ritmo": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "tempo": 96,
+          "respuesta": ""
+        }
       },
       {
         "personaje": "sol",
         "pose": "palmea",
         "titulo": "actividad.tr18.l4t",
-        "texto": "actividad.tr18.l4d"
+        "texto": "actividad.tr18.l4d",
+        "sonido": {
+          "patron": [
+            "bombo",
+            "claves",
+            "bombo",
+            "claves",
+            "bombo",
+            "claves",
+            "claves",
+            "bombo",
+            "claves",
+            "claves"
+          ],
+          "tempo": 96,
+          "respuesta": ""
+        }
       },
       {
         "personaje": "sol",
         "pose": "escucha",
         "titulo": "actividad.tr18.l5t",
-        "texto": "actividad.tr18.l5d"
+        "texto": "actividad.tr18.l5d",
+        "sonido": {
+          "ritmo": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "tempo": 150,
+          "respuesta": ""
+        }
       },
       {
         "personaje": "sol",
         "pose": "canta",
         "titulo": "actividad.tr18.l6t",
-        "texto": "actividad.tr18.l6d"
+        "texto": "actividad.tr18.l6d",
+        "sonido": {
+          "notas": [
+            "G4"
+          ],
+          "duraciones": [
+            2
+          ],
+          "respuesta": ""
+        }
       },
       {
         "personaje": "sol",

@@ -43,7 +43,23 @@
         "personaje": "simon",
         "pose": "neutro",
         "titulo": "actividad.tr23.l3t",
-        "texto": "actividad.tr23.l3d"
+        "texto": "actividad.tr23.l3d",
+        "sonido": {
+          "notas": [
+            "E4",
+            "E4",
+            "E4",
+            "F4"
+          ],
+          "duraciones": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "tempo": 72,
+          "respuesta": ""
+        }
       },
       {
         "personaje": "simon",
@@ -55,25 +71,70 @@
         "personaje": "simon",
         "pose": "canta",
         "titulo": "actividad.tr23.l5t",
-        "texto": "actividad.tr23.l5d"
+        "texto": "actividad.tr23.l5d",
+        "sonido": {
+          "notas": [
+            "B4"
+          ],
+          "duraciones": [
+            2
+          ],
+          "respuesta": ""
+        }
       },
       {
         "personaje": "simon",
         "pose": "calla",
         "titulo": "actividad.tr23.l6t",
-        "texto": "actividad.tr23.l6d"
+        "texto": "actividad.tr23.l6d",
+        "sonido": {
+          "notas": [
+            "C4",
+            "G4"
+          ],
+          "duraciones": [
+            1,
+            2
+          ],
+          "respuesta": ""
+        }
       },
       {
         "personaje": "simon",
         "pose": "palmea",
         "titulo": "actividad.tr23.l7t",
-        "texto": "actividad.tr23.l7d"
+        "texto": "actividad.tr23.l7d",
+        "sonido": {
+          "notas": [
+            "C4",
+            "C4"
+          ],
+          "duraciones": [
+            1,
+            1
+          ],
+          "volumenes": [
+            1,
+            0.25
+          ],
+          "respuesta": ""
+        }
       },
       {
         "personaje": "simon",
         "pose": "baila",
         "titulo": "actividad.tr23.l8t",
-        "texto": "actividad.tr23.l8d"
+        "texto": "actividad.tr23.l8d",
+        "sonido": {
+          "notas": [
+            "C4",
+            "D4",
+            "E4",
+            "F4",
+            "G4"
+          ],
+          "respuesta": ""
+        }
       },
       {
         "personaje": "simon",

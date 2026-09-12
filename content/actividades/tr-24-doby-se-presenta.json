@@ -43,13 +43,47 @@
         "personaje": "doby",
         "pose": "canta",
         "titulo": "actividad.tr24.l3t",
-        "texto": "actividad.tr24.l3d"
+        "texto": "actividad.tr24.l3d",
+        "sonido": {
+          "notas": [
+            "C4",
+            "D4",
+            "E4",
+            "F4",
+            "G4",
+            "A4",
+            "B4",
+            "C5"
+          ],
+          "duraciones": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2
+          ],
+          "tempo": 96,
+          "respuesta": ""
+        }
       },
       {
         "personaje": "doby",
         "pose": "palmea",
         "titulo": "actividad.tr24.l4t",
-        "texto": "actividad.tr24.l4d"
+        "texto": "actividad.tr24.l4d",
+        "sonido": {
+          "ritmo": [
+            1,
+            0.5,
+            0.5,
+            1
+          ],
+          "tempo": 84,
+          "respuesta": ""
+        }
       },
       {
         "personaje": "doby",

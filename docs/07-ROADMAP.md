@@ -3113,7 +3113,10 @@ textos, niveles, camino, y la sección de instrumentos.
       cada uno con lo suyo y sin repetirse: Dora la base y la casa, Rex descubrir sonidos,
       Fara la calma y el silencio, Laia inventar, Simón distinguir dos sonidos que se parecen,
       Doby hacerlo juntos. En el Taller, sus tarjetas llevan al personaje en pequeño, a la
-      izquierda, en una pose al azar.
+      izquierda, en una pose al azar. Y las láminas que piden escuchar algo lo llevan
+      (`sonido`, un estímulo como los de elección) con un botón de escuchar y parar: la nota
+      del personaje, tres palmas, la campana que se apaga, dos notas para comparar, la
+      escalera hasta el do de arriba.
 
 - [x] **El rap de la 236 es rap** (2026-09-12): el clip era una base instrumental sin voz.
       Ahora suena «Emazteen fabore», del proyecto Etxepare rap (CC BY-SA 4.0, verificado en

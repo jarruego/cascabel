@@ -43,7 +43,22 @@
         "personaje": "laia",
         "pose": "canta",
         "titulo": "actividad.tr22.l3t",
-        "texto": "actividad.tr22.l3d"
+        "texto": "actividad.tr22.l3d",
+        "sonido": {
+          "notas": [
+            "A4",
+            "A4",
+            "B4",
+            "G4"
+          ],
+          "duraciones": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "respuesta": ""
+        }
       },
       {
         "personaje": "laia",

@@ -1,6 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { obtenerContexto, pararTodo } from '@/audio/AudioEngine';
 import { BarraAcciones } from '@/ui/BarraAcciones';
-import { IconoAnterior, IconoSiguiente } from '@/ui/Simbolos';
+import { IconoAnterior, IconoParar, IconoSiguiente, IconoTocar } from '@/ui/Simbolos';
+import type { Estimulo } from '../estimulo';
+import { sonarEstimulo } from '../sonarEstimulo';
 import { Personaje } from '@/ui/Personaje';
 import type { Personaje as NombrePersonaje, Pose } from '@/ui/personajes';
 import { t } from '@/i18n';
@@ -24,6 +27,13 @@ interface Lamina {
   titulo: string;
   /** Clave de i18n del texto que lee el maestro. */
   texto: string;
+  /**
+   * Lo que el personaje pide escuchar en esa lámina, si pide algo: su nota, tres palmas,
+   * una campana que se apaga, dos notas para comparar. Se describe como un estímulo de
+   * elección (`motor/estimulo.ts`) y sale un botón de escuchar y parar. Lo pidió el autor
+   * el 2026-09-12: «dicen escucha esta canción, busca el sonido…».
+   */
+  sonido?: Estimulo;
 }
 
 export default function Presentacion({ actividad, alTerminar }: PropsActividad) {
@@ -72,6 +82,45 @@ export default function Presentacion({ actividad, alTerminar }: PropsActividad) 
     return () => window.removeEventListener('resize', medir);
   }, []);
 
+  /*
+    El botón de escuchar: suena lo que la lámina pide, y el mismo botón para. Las notas y
+    los ritmos van por `sonarEstimulo`, contra el reloj de audio; los sonidos grabados, por
+    un elemento de audio. Al cambiar de lámina se para todo: lo que suena es de esa lámina.
+  */
+  const [sonando, setSonando] = useState(false);
+  const audio = useRef<HTMLAudioElement | null>(null);
+  const fin = useRef<number | null>(null);
+  const parar = useCallback(() => {
+    if (fin.current !== null) window.clearTimeout(fin.current);
+    fin.current = null;
+    audio.current?.pause();
+    audio.current = null;
+    pararTodo();
+    setSonando(false);
+  }, []);
+  useEffect(() => parar, [lamina, parar]);
+  const escuchar = useCallback(async (sonido: Estimulo) => {
+    parar();
+    setSonando(true);
+    if (sonido.audio) {
+      const a = new Audio(`/audio/${sonido.audio}`);
+      a.volume = Math.max(0, Math.min(1, sonido.volumen ?? 1));
+      a.onended = () => setSonando(false);
+      audio.current = a;
+      await a.play().catch(() => setSonando(false));
+      return;
+    }
+    const acaba = await sonarEstimulo(sonido, { tempo: sonido.tempo });
+    if (acaba === null) {
+      setSonando(false);
+      return;
+    }
+    fin.current = window.setTimeout(
+      () => setSonando(false),
+      Math.max(0, (acaba - obtenerContexto().currentTime) * 1000),
+    );
+  }, [parar]);
+
   const l = contenido.laminas[lamina];
   if (!l) return null;
 
@@ -95,6 +144,17 @@ export default function Presentacion({ actividad, alTerminar }: PropsActividad) 
       </ol>
 
       <BarraAcciones>
+        {l.sonido && (
+          <button
+            type="button"
+            className="boton-repetir"
+            data-sonando={sonando || undefined}
+            onClick={() => (sonando ? parar() : void escuchar(l.sonido!))}
+          >
+            {sonando ? <IconoParar /> : <IconoTocar />}
+            {sonando ? t('accion.parar') : t('accion.escuchar')}
+          </button>
+        )}
         <div className="acciones__grupo" role="group" aria-label={t('presentacion.laminas')}>
           <button
             type="button"

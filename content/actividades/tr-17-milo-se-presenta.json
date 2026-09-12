@@ -43,13 +43,31 @@
         "personaje": "milo",
         "pose": "canta",
         "titulo": "actividad.tr17.l3t",
-        "texto": "actividad.tr17.l3d"
+        "texto": "actividad.tr17.l3d",
+        "sonido": {
+          "notas": [
+            "E4"
+          ],
+          "duraciones": [
+            2
+          ],
+          "respuesta": ""
+        }
       },
       {
         "personaje": "milo",
         "pose": "palmea",
         "titulo": "actividad.tr17.l4t",
-        "texto": "actividad.tr17.l4d"
+        "texto": "actividad.tr17.l4d",
+        "sonido": {
+          "ritmo": [
+            1,
+            1,
+            1
+          ],
+          "tempo": 84,
+          "respuesta": ""
+        }
       },
       {
         "personaje": "milo",

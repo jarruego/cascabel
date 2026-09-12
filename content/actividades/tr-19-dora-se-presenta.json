@@ -43,13 +43,42 @@
         "personaje": "dora",
         "pose": "canta",
         "titulo": "actividad.tr19.l3t",
-        "texto": "actividad.tr19.l3d"
+        "texto": "actividad.tr19.l3d",
+        "sonido": {
+          "notas": [
+            "C4"
+          ],
+          "duraciones": [
+            2
+          ],
+          "respuesta": ""
+        }
       },
       {
         "personaje": "dora",
         "pose": "escucha",
         "titulo": "actividad.tr19.l4t",
-        "texto": "actividad.tr19.l4d"
+        "texto": "actividad.tr19.l4d",
+        "sonido": {
+          "notas": [
+            "C4",
+            "D4",
+            "E4",
+            "F4",
+            "G4",
+            "G4"
+          ],
+          "duraciones": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            2
+          ],
+          "tempo": 84,
+          "respuesta": ""
+        }
       },
       {
         "personaje": "dora",
@@ -61,7 +90,16 @@
         "personaje": "dora",
         "pose": "palmea",
         "titulo": "actividad.tr19.l6t",
-        "texto": "actividad.tr19.l6d"
+        "texto": "actividad.tr19.l6d",
+        "sonido": {
+          "ritmo": [
+            1,
+            1,
+            1
+          ],
+          "tempo": 84,
+          "respuesta": ""
+        }
       },
       {
         "personaje": "dora",

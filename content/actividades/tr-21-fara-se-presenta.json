@@ -43,7 +43,11 @@
         "personaje": "fara",
         "pose": "escucha",
         "titulo": "actividad.tr21.l3t",
-        "texto": "actividad.tr21.l3d"
+        "texto": "actividad.tr21.l3d",
+        "sonido": {
+          "audio": "sonidos/casa/campana.opus",
+          "respuesta": ""
+        }
       },
       {
         "personaje": "fara",
@@ -55,13 +59,28 @@
         "personaje": "fara",
         "pose": "canta",
         "titulo": "actividad.tr21.l5t",
-        "texto": "actividad.tr21.l5d"
+        "texto": "actividad.tr21.l5d",
+        "sonido": {
+          "notas": [
+            "F4"
+          ],
+          "duraciones": [
+            3
+          ],
+          "volumen": 0.4,
+          "respuesta": ""
+        }
       },
       {
         "personaje": "fara",
         "pose": "busca",
         "titulo": "actividad.tr21.l6t",
-        "texto": "actividad.tr21.l6d"
+        "texto": "actividad.tr21.l6d",
+        "sonido": {
+          "audio": "sonidos/casa/lluvia.opus",
+          "volumen": 0.6,
+          "respuesta": ""
+        }
       },
       {
         "personaje": "fara",
