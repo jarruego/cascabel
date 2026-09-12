@@ -121,7 +121,7 @@
   },
   "enunciado": "actividad.tr23.enunciado",
   "personaje": "simon",
-  "herramienta": true,
+  "herramienta": false,
   "etiquetas": [
     "simón",
     "personajes",

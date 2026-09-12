@@ -119,7 +119,7 @@
   },
   "enunciado": "actividad.tr17.enunciado",
   "personaje": "milo",
-  "herramienta": true,
+  "herramienta": false,
   "etiquetas": [
     "milo",
     "personajes",

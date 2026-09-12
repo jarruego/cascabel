@@ -3127,9 +3127,10 @@ textos, niveles, camino, y la sección de instrumentos.
       la botonera, con el mismo ancho diga «escuchar» o «parar».
 
 - [x] **Las presentaciones de la pandilla salen en el catálogo** (2026-09-13): el catálogo
-      excluía todo `tr-` y las ocho presentaciones llevan ese prefijo por estar en el Taller.
-      Ahora salen en los dos sitios: son algo que se hace en clase, con ficha y con su paso
-      en el camino de Infantil.
+      excluía todo `tr-` y las ocho presentaciones llevan ese prefijo por haber nacido en
+      el Taller. Ahora salen en actividades y ya no en el Taller (`herramienta: false`): son
+      algo que se hace en clase, con ficha y con su paso en el camino de Infantil. Como una
+      herramienta, no llevan «qué mirar» ni hoja de seguimiento: no hay nada que acertar.
 
 - [x] **Los signos de Bravura, centrados por su caja** (2026-09-13): claves, notas y
       pentagrama salían descolgados en las tarjetas porque una fuente musical dibuja cada

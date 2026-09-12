@@ -119,7 +119,7 @@
   },
   "enunciado": "actividad.tr20.enunciado",
   "personaje": "rex",
-  "herramienta": true,
+  "herramienta": false,
   "etiquetas": [
     "rex",
     "personajes",

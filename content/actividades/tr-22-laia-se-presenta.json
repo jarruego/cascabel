@@ -108,7 +108,7 @@
   },
   "enunciado": "actividad.tr22.enunciado",
   "personaje": "laia",
-  "herramienta": true,
+  "herramienta": false,
   "etiquetas": [
     "laia",
     "personajes",

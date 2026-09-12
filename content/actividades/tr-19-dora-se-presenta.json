@@ -119,7 +119,7 @@
   },
   "enunciado": "actividad.tr19.enunciado",
   "personaje": "dora",
-  "herramienta": true,
+  "herramienta": false,
   "etiquetas": [
     "dora",
     "personajes",

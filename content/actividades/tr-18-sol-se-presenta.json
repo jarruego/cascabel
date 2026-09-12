@@ -122,7 +122,7 @@
   },
   "enunciado": "actividad.tr18.enunciado",
   "personaje": "sol",
-  "herramienta": true,
+  "herramienta": false,
   "etiquetas": [
     "sol",
     "personajes",

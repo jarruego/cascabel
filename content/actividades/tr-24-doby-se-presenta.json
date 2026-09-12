@@ -120,7 +120,7 @@
   },
   "enunciado": "actividad.tr24.enunciado",
   "personaje": "doby",
-  "herramienta": true,
+  "herramienta": false,
   "etiquetas": [
     "doby",
     "personajes",

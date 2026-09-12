@@ -210,9 +210,9 @@ export default function Catalogo() {
     Instrumentos: el editor de melodías tiene criterio curricular, y un maestro que busca por
     el 4.1 tiene que encontrarlo. Ser las dos cosas no es duplicar.
 
-    Las presentaciones de la pandilla llevan el prefijo de las herramientas porque están en
-    el Taller, pero son algo que se hace en clase, con su ficha y su sitio en el camino de
-    Infantil: salen aquí también (lo pidió el autor el 2026-09-13).
+    Las presentaciones de la pandilla llevan el prefijo de las herramientas porque nacieron
+    en el Taller, pero son algo que se hace en clase, con su ficha y su sitio en el camino de
+    Infantil: salen aquí, y ya no en el Taller (lo pidió el autor el 2026-09-13).
   */
   const actividades = visibles.filter((e) => !e.id.startsWith('tr-') || e.tipo === 'presentacion');
 

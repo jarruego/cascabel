@@ -173,7 +173,8 @@ export default function Ficha() {
   const f = JSON.parse(sinMarca(JSON.stringify(actividad.ficha ?? {}))) as FichaPropia;
   const c = actividad.contenido as Record<string, unknown>;
   const conMicrofono = actividad.entrada.modo.startsWith('microfono');
-  const herramienta = Boolean(actividad.herramienta);
+  // Una presentación de la pandilla tampoco lleva hoja de seguimiento: no hay nada que acertar.
+  const herramienta = Boolean(actividad.herramienta) || actividad.tipo === 'presentacion';
   const lugar = existe(`ficha.lugar.${actividad.lugar}`) ? t(`ficha.lugar.${actividad.lugar}`) : actividad.lugar;
   const abc = actividad.musica?.abc;
   // Si la partitura ya lleva la letra bajo las notas (líneas «w:»), el texto de la letra no

@@ -28,6 +28,7 @@ const actividades = readdirSync(DIR)
     id: string;
     duracion_min?: number;
     herramienta?: boolean;
+    tipo?: string;
     ficha?: Ficha;
   });
 
@@ -57,7 +58,10 @@ describe('la ficha del maestro', () => {
     const malas = actividades
       .filter((a) => {
         const f = a.ficha!;
-        if (a.herramienta) return Boolean(f.loTiene?.length || f.indicadores?.length);
+        // Una presentación de la pandilla no tiene nada que acertar: como una herramienta.
+        if (a.herramienta || a.tipo === 'presentacion') {
+          return Boolean(f.loTiene?.length || f.indicadores?.length);
+        }
         return !(f.loTiene?.length && f.errores?.length && f.indicadores?.length === 3);
       })
       .map((a) => a.id);

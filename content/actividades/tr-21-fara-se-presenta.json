@@ -112,7 +112,7 @@
   },
   "enunciado": "actividad.tr21.enunciado",
   "personaje": "fara",
-  "herramienta": true,
+  "herramienta": false,
   "etiquetas": [
     "fara",
     "personajes",
