@@ -3138,9 +3138,18 @@ textos, niveles, camino, y la sección de instrumentos.
       Al aplicarla: el triángulo dejaba de ser una campana (ninguna de las cuatro tiene el
       instrumento, ni OpenMoji en sus extras: dibujado a mano, como las claves, y ya sale en
       su pad), y entran de Noto la flauta, las maracas, el arpa y el trombón, que faltaban;
-      las dos actividades de flauta llevan ahora la flauta en su tarjeta. Sin dibujo en
-      ninguna parte siguen el charles, el plato, la caja china, el xilófono, la flauta dulce,
-      las castañuelas y el metrónomo.
+      las dos actividades de flauta llevan ahora la flauta en su tarjeta. Después se repasó
+      **todo el contenido** opción por opción (icono contra el texto de la opción): cuatro
+      palabras con icono propio salían con otro —el triángulo de los dos memory y de «¿Quién
+      ha sonado?» como campana, los cisnes de Chaikovski como pájaro, el banjo como guitarra
+      y el timbre de casa como campana— y ya llevan el suyo (cisne, banjo y timbre de
+      recepción, de Noto). Sin dibujo en ninguna de las cuatro bibliotecas siguen la gaita,
+      el koto, el sitar y el tambor metálico (que salen como trompeta, guitarra y tambor en
+      «Instrumentos del mundo»), y el charles, el plato, la caja china, el xilófono, la
+      flauta dulce, las castañuelas y el metrónomo. Las metáforas para conceptos —tortuga y
+      conejo para el tempo, sol y luna para mayor y menor, delfín y rana para ligado y
+      picado— no son iconos prestados: son la forma concreta de decir algo que no tiene
+      dibujo.
 
 - [x] **Toda tarjeta lleva su figura** (2026-09-12): como las presentaciones de la pandilla
       llevan al personaje, el resto de tarjetas del catálogo y del Taller llevan a la derecha,

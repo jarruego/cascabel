@@ -61,6 +61,9 @@ const DISPONIBLES = new Set([
   'bicicleta', 'chasquido', 'muslo', 'pie',
   // Instrumentos que sí son emoji y faltaban, y el triángulo dibujado aquí (2026-09-12).
   'flauta', 'maracas', 'arpa', 'trombon', 'triangulo',
+  // Al repasar el contenido con la norma: el cisne, el banjo y el timbre tenían icono
+  // propio y salían como pájaro, guitarra y campana.
+  'cisne', 'banjo', 'timbre',
 ]);
 
 /** Nombres antiguos que ya se usaban en los JSON de contenido. */
