@@ -1,6 +1,6 @@
 {
   "generado": "2026-09-12",
-  "total": 169,
+  "total": 175,
   "actividades": [
     {
       "id": "c1-01-ta-y-ti-ti",
@@ -28,6 +28,7 @@
         "musicograma",
         "bucle"
       ],
+      "personaje": "milo",
       "practica": {
         "figuras": [
           "negra",
@@ -66,6 +67,7 @@
         "silencio",
         "micrófono"
       ],
+      "personaje": "milo",
       "practica": {
         "figuras": [
           "negra",
@@ -106,6 +108,7 @@
         "palmas",
         "contar"
       ],
+      "personaje": "fara",
       "practica": {
         "figuras": [
           "negra",
@@ -143,6 +146,7 @@
         "alturas",
         "libre"
       ],
+      "personaje": "laia",
       "practica": {
         "figuras": [],
         "compas": "4/4",
@@ -177,6 +181,7 @@
         "partes",
         "estructura"
       ],
+      "personaje": "fara",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -210,6 +215,7 @@
         "altura",
         "escalera"
       ],
+      "personaje": "dora",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -244,6 +250,7 @@
         "sol mi la",
         "entonación"
       ],
+      "personaje": "laia",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -286,6 +293,7 @@
         "violín",
         "kalimba"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -323,6 +331,7 @@
         "chasquidos",
         "proyector"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": "4/4",
@@ -359,6 +368,7 @@
         "manualidad",
         "imprimible"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -394,6 +404,7 @@
         "fuerte",
         "suave"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -428,6 +439,7 @@
         "pulsos",
         "geometría"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [],
         "compas": "4/4",
@@ -461,6 +473,7 @@
         "diálogo",
         "crear"
       ],
+      "personaje": "laia",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -495,6 +508,7 @@
         "lectura rítmica",
         "juego"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [
           "negra",
@@ -533,6 +547,7 @@
         "negra",
         "corchea"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [
           "negra",
@@ -571,6 +586,7 @@
         "bucle",
         "melodía"
       ],
+      "personaje": "laia",
       "practica": {
         "figuras": [],
         "compas": "4/4",
@@ -615,6 +631,7 @@
         "cinco notas",
         "pentatónica"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [
           "negra",
@@ -653,6 +670,7 @@
         "animales",
         "pulso lento"
       ],
+      "personaje": "milo",
       "practica": {
         "figuras": [
           "negra",
@@ -692,6 +710,7 @@
         "sílabas",
         "orff"
       ],
+      "personaje": "milo",
       "practica": {
         "figuras": [],
         "compas": "4/4",
@@ -726,6 +745,7 @@
         "palmas",
         "cooperar"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -759,6 +779,7 @@
         "corcheas",
         "atención"
       ],
+      "personaje": "milo",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -793,6 +814,7 @@
         "altura",
         "melodía"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -827,6 +849,7 @@
         "kodály",
         "escritura"
       ],
+      "personaje": "dora",
       "practica": {
         "figuras": [
           "negra",
@@ -864,6 +887,7 @@
         "dictado",
         "pulso"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [
           "negra",
@@ -903,6 +927,7 @@
         "desfilar",
         "acento"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -938,6 +963,7 @@
         "ordenar",
         "valores"
       ],
+      "personaje": "dora",
       "practica": {
         "figuras": [
           "corchea",
@@ -976,6 +1002,7 @@
         "binario",
         "contar pulsos"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [
           "negra",
@@ -1012,6 +1039,7 @@
         "comparar",
         "discriminación auditiva"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -1046,6 +1074,7 @@
         "cuadrícula",
         "entonación"
       ],
+      "personaje": "dora",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -1082,6 +1111,7 @@
         "cuadrícula",
         "pentatónica"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -1122,6 +1152,7 @@
         "timbre",
         "escucha"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -1159,6 +1190,7 @@
         "sonidos del entorno",
         "escucha"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -1195,6 +1227,7 @@
         "sonidos del entorno",
         "paisaje sonoro"
       ],
+      "personaje": "fara",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -1229,6 +1262,7 @@
         "instrumentos",
         "cartas"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -1264,6 +1298,7 @@
         "letra",
         "mozart"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": "4/4",
@@ -1298,6 +1333,7 @@
         "letra",
         "corcheas"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": "2/4",
@@ -1333,6 +1369,7 @@
         "karaoke",
         "tres notas"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": "4/4",
@@ -1368,6 +1405,7 @@
         "karaoke",
         "cuatro notas"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": "4/4",
@@ -1408,6 +1446,7 @@
         "a tiempo",
         "letra"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [],
         "compas": "2/4",
@@ -1443,6 +1482,7 @@
         "do re mi fa sol la si",
         "escalera"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": "2/4",
@@ -1478,6 +1518,7 @@
         "do re mi fa sol la si",
         "do4"
       ],
+      "personaje": "dora",
       "practica": {
         "figuras": [],
         "compas": "libre",
@@ -1521,6 +1562,7 @@
         "escribir ritmo",
         "ocho pulsos"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [],
         "compas": "4/4",
@@ -1554,6 +1596,7 @@
         "escribir melodía",
         "seis notas"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -1588,6 +1631,7 @@
         "agujeros",
         "parejas"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -1622,6 +1666,7 @@
         "soplar",
         "digitación"
       ],
+      "personaje": "laia",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -1656,6 +1701,7 @@
         "duraciones",
         "sumar pulsos"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [
           "negra",
@@ -1694,6 +1740,7 @@
         "xilófono",
         "crear"
       ],
+      "personaje": "laia",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -1736,6 +1783,7 @@
         "estribillo",
         "ordenar"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -1770,6 +1818,7 @@
         "allegro",
         "términos italianos"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -1804,6 +1853,7 @@
         "proyector",
         "polirritmia"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": "4/4",
@@ -1843,6 +1893,7 @@
         "timbre",
         "culturas"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -1878,6 +1929,7 @@
         "grupos",
         "proyector"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [
           "negra",
@@ -1917,6 +1969,7 @@
         "salida",
         "silencio"
       ],
+      "personaje": "fara",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -1952,6 +2005,7 @@
         "a tiempo",
         "colores"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [
           "negra",
@@ -1992,6 +2046,7 @@
         "lectura rítmica",
         "a tiempo"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [
           "negra",
@@ -2031,6 +2086,7 @@
         "colores",
         "corcheas"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [
           "corchea",
@@ -2070,6 +2126,7 @@
         "xilófono",
         "reconocer instrumentos"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -2106,6 +2163,7 @@
         "escritura",
         "compás"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [
           "negra",
@@ -2146,6 +2204,7 @@
         "tres por cuatro",
         "pulso fuerte"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -2181,6 +2240,7 @@
         "suave",
         "matices"
       ],
+      "personaje": "fara",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -2215,6 +2275,7 @@
         "picado",
         "carácter"
       ],
+      "personaje": "laia",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -2250,6 +2311,7 @@
         "altura",
         "melodía"
       ],
+      "personaje": "dora",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -2285,6 +2347,7 @@
         "forma",
         "tónica"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -2320,6 +2383,7 @@
         "timbre",
         "instrumentos"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -2355,6 +2419,7 @@
         "vals",
         "sumar pulsos"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [
           "negra",
@@ -2395,6 +2460,7 @@
         "duración",
         "ordenar"
       ],
+      "personaje": "dora",
       "practica": {
         "figuras": [
           "semicorchea",
@@ -2437,6 +2503,7 @@
         "ritmo",
         "kit"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -2470,6 +2537,7 @@
         "cuadrícula",
         "seis notas"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -2512,6 +2580,7 @@
         "equivalencias",
         "parejas"
       ],
+      "personaje": "dora",
       "practica": {
         "figuras": [
           "redonda",
@@ -2556,6 +2625,7 @@
         "triste",
         "tonalidad"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -2590,6 +2660,7 @@
         "velocidad",
         "agógica"
       ],
+      "personaje": "milo",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -2624,6 +2695,7 @@
         "altura",
         "referencia"
       ],
+      "personaje": "laia",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -2663,6 +2735,7 @@
         "duración",
         "micrófono"
       ],
+      "personaje": "milo",
       "practica": {
         "figuras": [
           "blanca",
@@ -2706,6 +2779,7 @@
         "grabaciones",
         "reconocer instrumentos"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -2742,6 +2816,7 @@
         "música popular",
         "audición"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -2777,6 +2852,7 @@
         "timbre",
         "cantar"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -2813,6 +2889,7 @@
         "seis por ocho",
         "amanecer"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": "6/8",
@@ -2849,6 +2926,7 @@
         "karaoke",
         "tres por cuatro"
       ],
+      "personaje": "fara",
       "practica": {
         "figuras": [],
         "compas": "3/4",
@@ -2883,6 +2961,7 @@
         "frase",
         "arpegio"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [],
         "compas": "4/4",
@@ -2918,6 +2997,7 @@
         "frases",
         "audición"
       ],
+      "personaje": "fara",
       "practica": {
         "figuras": [],
         "compas": "libre",
@@ -2954,6 +3034,7 @@
         "do6",
         "líneas y espacios"
       ],
+      "personaje": "fara",
       "practica": {
         "figuras": [],
         "compas": "libre",
@@ -2999,6 +3080,7 @@
         "patrón",
         "teclas blancas"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -3033,6 +3115,7 @@
         "palmas",
         "micrófono"
       ],
+      "personaje": "milo",
       "practica": {
         "figuras": [
           "negra",
@@ -3073,6 +3156,7 @@
         "crear",
         "melodía"
       ],
+      "personaje": "laia",
       "practica": {
         "figuras": [
           "negra",
@@ -3113,6 +3197,7 @@
         "himno de la alegría",
         "mapa"
       ],
+      "personaje": "fara",
       "practica": {
         "figuras": [],
         "compas": "4/4",
@@ -3148,6 +3233,7 @@
         "tonalidad",
         "armonía"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -3183,6 +3269,7 @@
         "cuerpo",
         "proyector"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [],
         "compas": "6/8",
@@ -3221,6 +3308,7 @@
         "forma",
         "orff"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": "4/4",
@@ -3258,6 +3346,7 @@
         "física del sonido",
         "longitud"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -3293,6 +3382,7 @@
         "silencio",
         "palmas"
       ],
+      "personaje": "milo",
       "practica": {
         "figuras": [
           "negra",
@@ -3333,6 +3423,7 @@
         "cuadrícula",
         "bucle"
       ],
+      "personaje": "laia",
       "practica": {
         "figuras": [],
         "compas": "4/4",
@@ -3380,6 +3471,7 @@
         "textura",
         "silenciar"
       ],
+      "personaje": "laia",
       "practica": {
         "figuras": [
           "negra",
@@ -3419,6 +3511,7 @@
         "contratiempo",
         "chasquidos"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": "4/4",
@@ -3453,6 +3546,7 @@
         "imitación",
         "micrófono"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -3488,6 +3582,7 @@
         "oído",
         "distancia"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -3522,6 +3617,7 @@
         "teclado",
         "oído"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -3556,6 +3652,7 @@
         "notación",
         "oído"
       ],
+      "personaje": "dora",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -3591,6 +3688,7 @@
         "oído",
         "tonalidad"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -3626,6 +3724,7 @@
         "acento",
         "oído"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -3661,6 +3760,7 @@
         "matices",
         "reguladores"
       ],
+      "personaje": "fara",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -3698,6 +3798,7 @@
         "siglo xx",
         "ordenar"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -3733,6 +3834,7 @@
         "romanticismo",
         "contexto"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -3768,6 +3870,7 @@
         "historia",
         "audición"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -3803,6 +3906,7 @@
         "acentos",
         "ciclo"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [],
         "compas": "libre",
@@ -3838,6 +3942,7 @@
         "anacrúsico",
         "comienzo"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -3873,6 +3978,7 @@
         "figuras",
         "oído"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [
           "negra",
@@ -3912,6 +4018,7 @@
         "bombo",
         "acento"
       ],
+      "personaje": "milo",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -3948,6 +4055,7 @@
         "do3",
         "líneas y espacios"
       ],
+      "personaje": "dora",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -3991,6 +4099,7 @@
         "acorde",
         "oído"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -4025,6 +4134,7 @@
         "armonía",
         "oído"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -4063,6 +4173,7 @@
         "clave",
         "timbre"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -4101,6 +4212,7 @@
         "electrónica",
         "vals"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -4138,6 +4250,7 @@
         "beethoven",
         "historia"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -4175,6 +4288,7 @@
         "teclado",
         "armadura"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -4211,6 +4325,7 @@
         "barroco",
         "audición"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": "4/4",
@@ -4247,6 +4362,7 @@
         "piano",
         "clasicismo"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [],
         "compas": "libre",
@@ -4283,6 +4399,7 @@
         "tempo",
         "romanticismo"
       ],
+      "personaje": "milo",
       "practica": {
         "figuras": [
           "negra",
@@ -4322,6 +4439,7 @@
         "palmas",
         "trompeta"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [],
         "compas": "4/4",
@@ -4357,6 +4475,7 @@
         "violín",
         "ternario"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [],
         "compas": "3/4",
@@ -4394,6 +4513,7 @@
         "audición",
         "parejas"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -4431,6 +4551,7 @@
         "barroco",
         "lectura rítmica"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [
           "corchea",
@@ -4471,6 +4592,7 @@
         "do6",
         "líneas y espacios"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": "libre",
@@ -4522,6 +4644,7 @@
         "do4",
         "graves"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -4566,6 +4689,7 @@
         "do4",
         "líneas y espacios"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -4608,6 +4732,7 @@
         "semáforo",
         "willems"
       ],
+      "personaje": "fara",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -4645,6 +4770,7 @@
         "caracol",
         "conejo"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -4680,6 +4806,7 @@
         "ratón",
         "elefante"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -4715,6 +4842,7 @@
         "pájaro",
         "oso"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -4748,6 +4876,7 @@
         "ilustración",
         "timbre"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -4784,6 +4913,7 @@
         "trazo",
         "libre"
       ],
+      "personaje": "laia",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -4820,6 +4950,7 @@
         "cuerpo",
         "proyector"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": "4/4",
@@ -4856,6 +4987,7 @@
         "cuatro pulsos",
         "micrófono"
       ],
+      "personaje": "milo",
       "practica": {
         "figuras": [
           "negra",
@@ -4895,6 +5027,7 @@
         "animales",
         "cajas"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -4930,6 +5063,7 @@
         "personajes",
         "anticipar"
       ],
+      "personaje": "fara",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -4971,6 +5105,7 @@
         "proyector",
         "pulso"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": "4/4",
@@ -5007,6 +5142,7 @@
         "reconocer",
         "escucha"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5041,6 +5177,7 @@
         "narración",
         "grupo"
       ],
+      "personaje": "fara",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5076,6 +5213,7 @@
         "montessori",
         "seriar"
       ],
+      "personaje": "dora",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5115,6 +5253,7 @@
         "karaoke",
         "lento"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [],
         "compas": "4/4",
@@ -5149,6 +5288,7 @@
         "coordinación",
         "ostinato"
       ],
+      "personaje": "milo",
       "practica": {
         "figuras": [],
         "compas": "4/4",
@@ -5185,6 +5325,7 @@
         "explorar",
         "libre"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5221,6 +5362,7 @@
         "explorar",
         "octava"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5256,6 +5398,7 @@
         "tortuga",
         "pulso"
       ],
+      "personaje": "milo",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5292,6 +5435,7 @@
         "león",
         "mariposa"
       ],
+      "personaje": "fara",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5326,6 +5470,7 @@
         "uno dos tres",
         "escucha"
       ],
+      "personaje": "milo",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5360,6 +5505,7 @@
         "altura",
         "flechas"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5396,6 +5542,7 @@
         "grabaciones",
         "escucha"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5432,6 +5579,7 @@
         "timbre",
         "grabaciones"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5467,6 +5615,7 @@
         "sonidos cotidianos",
         "escucha"
       ],
+      "personaje": "fara",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5503,6 +5652,7 @@
         "trueno",
         "sonidos del entorno"
       ],
+      "personaje": "fara",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5537,6 +5687,7 @@
         "cartas",
         "timbre"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5573,6 +5724,7 @@
         "karaoke",
         "dos notas"
       ],
+      "personaje": "simon",
       "practica": {
         "figuras": [],
         "compas": "2/4",
@@ -5610,6 +5762,7 @@
         "nota",
         "herramienta"
       ],
+      "personaje": "laia",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5645,6 +5798,7 @@
         "proyector",
         "herramienta"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5680,6 +5834,7 @@
         "explorar",
         "herramienta"
       ],
+      "personaje": "laia",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5715,6 +5870,7 @@
         "octavas",
         "herramienta"
       ],
+      "personaje": "dora",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5761,6 +5917,7 @@
         "grabar",
         "herramienta"
       ],
+      "personaje": "milo",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5798,6 +5955,7 @@
         "teoría",
         "herramienta"
       ],
+      "personaje": "dora",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5834,6 +5992,7 @@
         "bucle",
         "herramienta"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5869,6 +6028,7 @@
         "biografías",
         "herramienta"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5907,6 +6067,7 @@
         "strauss",
         "saint-saëns"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5945,6 +6106,7 @@
         "habanera",
         "chotis"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -5982,6 +6144,7 @@
         "timbre",
         "herramienta"
       ],
+      "personaje": "rex",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -6019,6 +6182,7 @@
         "cantar",
         "herramienta"
       ],
+      "personaje": "doby",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -6056,6 +6220,7 @@
         "culturas",
         "herramienta"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -6092,6 +6257,7 @@
         "ficha",
         "herramienta"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [],
         "compas": "libre",
@@ -6143,6 +6309,7 @@
         "ficha",
         "herramienta"
       ],
+      "personaje": "fara",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -6162,7 +6329,7 @@
     {
       "id": "tr-17-milo-se-presenta",
       "titulo": "Milo se presenta",
-      "descripcion": "Diez láminas para proyectar y presentar a Milo a la clase: quién es, la nota mi, el amarillo, su carácter de bromista y lo suyo, el ritmo. Una lámina por pose, con una frase suya y un texto para leer en voz alta.",
+      "descripcion": "Milo, la nota mi: el bromista. Jugar con el ritmo y reírse con los demás.",
       "etapa": "infantil",
       "eje": "altura",
       "tipo": "presentacion",
@@ -6187,6 +6354,7 @@
         "proyector",
         "ritmo"
       ],
+      "personaje": "milo",
       "practica": {
         "figuras": [],
         "compas": null,
@@ -6200,7 +6368,7 @@
     {
       "id": "tr-18-sol-se-presenta",
       "titulo": "Sol se presenta",
-      "descripcion": "Diez láminas para proyectar y presentar a Sol a la clase: la nota sol, azul, energía y movimiento, la música que se siente en el cuerpo. Una lámina por pose, con una frase suya y algo que hacer de pie.",
+      "descripcion": "Sol, la nota sol: energía y movimiento. La música se siente en el cuerpo.",
       "etapa": "infantil",
       "eje": "cuerpo",
       "tipo": "presentacion",
@@ -6227,12 +6395,241 @@
         "pulso",
         "compás"
       ],
+      "personaje": "sol",
       "practica": {
         "figuras": [],
         "compas": null,
         "metodo": [],
         "notas": [
           "sol"
+        ],
+        "secuencia": "ninguna"
+      }
+    },
+    {
+      "id": "tr-19-dora-se-presenta",
+      "titulo": "Dora se presenta",
+      "descripcion": "Dora, la nota do: la base. Se empieza seguro y se vuelve a casa.",
+      "etapa": "infantil",
+      "eje": "altura",
+      "tipo": "presentacion",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": null,
+        "criterio": null,
+        "saber": "F. El lenguaje y la expresión musicales"
+      },
+      "estado": "borrador",
+      "herramienta": true,
+      "etiquetas": [
+        "dora",
+        "personajes",
+        "pandilla",
+        "nota do",
+        "rojo",
+        "presentación",
+        "proyector"
+      ],
+      "personaje": "dora",
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [
+          "do"
+        ],
+        "secuencia": "ninguna"
+      }
+    },
+    {
+      "id": "tr-20-rex-se-presenta",
+      "titulo": "Rex se presenta",
+      "descripcion": "Rex, la nota re: el explorador. Escuchar para descubrir qué suena.",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "tipo": "presentacion",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": null,
+        "criterio": null,
+        "saber": "F. El lenguaje y la expresión musicales"
+      },
+      "estado": "borrador",
+      "herramienta": true,
+      "etiquetas": [
+        "rex",
+        "personajes",
+        "pandilla",
+        "nota re",
+        "naranja",
+        "presentación",
+        "proyector"
+      ],
+      "personaje": "rex",
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [
+          "re"
+        ],
+        "secuencia": "ninguna"
+      }
+    },
+    {
+      "id": "tr-21-fara-se-presenta",
+      "titulo": "Fara se presenta",
+      "descripcion": "Fara, la nota fa: la calma. Parar y escuchar también es hacer música.",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "tipo": "presentacion",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": null,
+        "criterio": null,
+        "saber": "F. El lenguaje y la expresión musicales"
+      },
+      "estado": "borrador",
+      "herramienta": true,
+      "etiquetas": [
+        "fara",
+        "personajes",
+        "pandilla",
+        "nota fa",
+        "verde",
+        "presentación",
+        "proyector"
+      ],
+      "personaje": "fara",
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [
+          "fa"
+        ],
+        "secuencia": "ninguna"
+      }
+    },
+    {
+      "id": "tr-22-laia-se-presenta",
+      "titulo": "Laia se presenta",
+      "descripcion": "Laia, la nota la: la imaginación. La música también se inventa.",
+      "etapa": "infantil",
+      "eje": "creacion",
+      "tipo": "presentacion",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": null,
+        "criterio": null,
+        "saber": "F. El lenguaje y la expresión musicales"
+      },
+      "estado": "borrador",
+      "herramienta": true,
+      "etiquetas": [
+        "laia",
+        "personajes",
+        "pandilla",
+        "nota la",
+        "lila",
+        "presentación",
+        "proyector"
+      ],
+      "personaje": "laia",
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [
+          "la"
+        ],
+        "secuencia": "ninguna"
+      }
+    },
+    {
+      "id": "tr-23-simon-se-presenta",
+      "titulo": "Simón se presenta",
+      "descripcion": "Simón, la nota si: la escucha fina. Distinguir dos sonidos que se parecen.",
+      "etapa": "infantil",
+      "eje": "altura",
+      "tipo": "presentacion",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": null,
+        "criterio": null,
+        "saber": "F. El lenguaje y la expresión musicales"
+      },
+      "estado": "borrador",
+      "herramienta": true,
+      "etiquetas": [
+        "simón",
+        "personajes",
+        "pandilla",
+        "nota si",
+        "rosa",
+        "presentación",
+        "proyector"
+      ],
+      "personaje": "simon",
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [
+          "si"
+        ],
+        "secuencia": "ninguna"
+      }
+    },
+    {
+      "id": "tr-24-doby-se-presenta",
+      "titulo": "Doby se presenta",
+      "descripcion": "Doby, el do de arriba: la unión. Juntos formamos la música.",
+      "etapa": "infantil",
+      "eje": "cuerpo",
+      "tipo": "presentacion",
+      "lugar": "hibrida",
+      "microfono": false,
+      "duracion_min": 8,
+      "curriculo": {
+        "area": "Comunicación y Representación de la Realidad",
+        "competencia": null,
+        "criterio": null,
+        "saber": "F. El lenguaje y la expresión musicales"
+      },
+      "estado": "borrador",
+      "herramienta": true,
+      "etiquetas": [
+        "doby",
+        "personajes",
+        "pandilla",
+        "nota do agudo",
+        "multicolor",
+        "presentación",
+        "proyector"
+      ],
+      "personaje": "doby",
+      "practica": {
+        "figuras": [],
+        "compas": null,
+        "metodo": [],
+        "notas": [
+          "do"
         ],
         "secuencia": "ninguna"
       }

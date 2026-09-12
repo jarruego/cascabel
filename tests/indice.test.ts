@@ -36,6 +36,7 @@ interface Entrada {
   estado: string;
   herramienta: boolean;
   etiquetas: string[];
+  personaje: string | null;
   practica: {
     figuras: string[];
     compas: string | null;
@@ -67,6 +68,7 @@ function comoDeberiaSer(a: Record<string, never>): Entrada {
     entrada?: { modo?: string };
     duracion_min?: number;
     etiquetas?: string[];
+    personaje?: string;
     practica?: { figuras?: string[]; compas?: string; metodo?: string[]; notas?: string[]; secuencia?: string };
     curriculo: unknown;
     estado?: string;
@@ -86,6 +88,7 @@ function comoDeberiaSer(a: Record<string, never>): Entrada {
     estado: entrada.estado ?? 'borrador',
     herramienta: entrada.herramienta ?? false,
     etiquetas: entrada.etiquetas ?? [],
+    personaje: entrada.personaje ?? null,
     practica: {
       figuras: entrada.practica?.figuras ?? [],
       compas: entrada.practica?.compas ?? null,

@@ -1,0 +1,169 @@
+{
+  "id": "tr-20-rex-se-presenta",
+  "version": 1,
+  "tipo": "presentacion",
+  "titulo": "Rex se presenta",
+  "descripcion": "Rex, la nota re: el explorador. Escuchar para descubrir qué suena.",
+  "etapa": "infantil",
+  "eje": "timbre",
+  "lugar": "hibrida",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": null,
+    "criterio": null,
+    "saber": "F. El lenguaje y la expresión musicales"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "notas": [
+      "re"
+    ]
+  },
+  "entrada": {
+    "modo": "ninguna"
+  },
+  "contenido": {
+    "$comment": "Presentación de Rex (2026-09-12), con su carácter y su función de docs/14, y sin repetir a los demás: cada personaje dice lo suyo. Sus dos últimas frases son las que dice en la app. PENDIENTE DE REVISIÓN PEDAGÓGICA: el criterio curricular; es una presentación, no una tarea.",
+    "consigna": "actividad.tr20.consigna",
+    "laminas": [
+      {
+        "personaje": "rex",
+        "pose": "saluda",
+        "titulo": "actividad.tr20.l1t",
+        "texto": "actividad.tr20.l1d"
+      },
+      {
+        "personaje": "rex",
+        "pose": "busca",
+        "titulo": "actividad.tr20.l2t",
+        "texto": "actividad.tr20.l2d"
+      },
+      {
+        "personaje": "rex",
+        "pose": "escucha",
+        "titulo": "actividad.tr20.l3t",
+        "texto": "actividad.tr20.l3d"
+      },
+      {
+        "personaje": "rex",
+        "pose": "neutro",
+        "titulo": "actividad.tr20.l4t",
+        "texto": "actividad.tr20.l4d"
+      },
+      {
+        "personaje": "rex",
+        "pose": "canta",
+        "titulo": "actividad.tr20.l5t",
+        "texto": "actividad.tr20.l5d"
+      },
+      {
+        "personaje": "rex",
+        "pose": "palmea",
+        "titulo": "actividad.tr20.l6t",
+        "texto": "actividad.tr20.l6d"
+      },
+      {
+        "personaje": "rex",
+        "pose": "baila",
+        "titulo": "actividad.tr20.l7t",
+        "texto": "actividad.tr20.l7d"
+      },
+      {
+        "personaje": "rex",
+        "pose": "calla",
+        "titulo": "actividad.tr20.l8t",
+        "texto": "actividad.tr20.l8d"
+      },
+      {
+        "personaje": "rex",
+        "pose": "anima",
+        "titulo": "actividad.tr20.l9t",
+        "texto": "actividad.tr20.l9d"
+      },
+      {
+        "personaje": "rex",
+        "pose": "celebra",
+        "titulo": "actividad.tr20.l10t",
+        "texto": "actividad.tr20.l10d"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.tr20.enunciado",
+  "personaje": "rex",
+  "herramienta": true,
+  "etiquetas": [
+    "rex",
+    "personajes",
+    "pandilla",
+    "nota re",
+    "naranja",
+    "presentación",
+    "proyector"
+  ],
+  "ficha": {
+    "aprende": "Conocer a Rex: su nombre, que es la nota re y de color naranja, que es el explorador, y que escuchar con atención sirve para descubrir qué suena, de dónde viene y cómo se hace.",
+    "vocabulario": [
+      "rex",
+      "re",
+      "naranja",
+      "explorar",
+      "descubrir",
+      "pista",
+      "sonido",
+      "contar"
+    ],
+    "agrupamiento": "Grupo clase, con proyector",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Con los ojos cerrados,",
+        "detalle": "un minuto de silencio antes de encender nada: ¿qué se oye? Rex viene a enseñarnos a descubrir sonidos."
+      },
+      {
+        "min": 4,
+        "titulo": "Las diez láminas,",
+        "detalle": "leyendo cada una y haciendo lo que pide: cerrar los ojos, señalar de dónde viene la voz del maestro, contar golpes, cantar re."
+      },
+      {
+        "min": 2,
+        "titulo": "Exploración corta.",
+        "detalle": "Tres sonidos hechos por el maestro escondido tras la mesa: una llave, un papel, una palmada. Descubrir cuál es cada uno."
+      },
+      {
+        "min": 1,
+        "titulo": "Repasar.",
+        "detalle": "¿Cómo se llama? ¿Qué nota es? ¿De qué color? ¿Qué hace Rex antes de responder?"
+      }
+    ],
+    "enPantalla": "Diez láminas seguidas. En cada una Rex aparece grande, en una pose distinta, con una frase suya en letra grande y un texto para que el maestro lo lea. Se pasa con los botones de abajo o con las flechas del teclado, y unos puntos dicen por dónde vas. No hay nada que acertar ni final: se sale por «volver».",
+    "sinPantalla": "Con Rex impreso en grande o dibujado en naranja. Cada lámina se convierte en una pequeña exploración: un sonido escondido que hay que descubrir, contar o localizar con los ojos cerrados.",
+    "masFacil": "Cuatro láminas: hola, cierro los ojos, ¿qué ha sonado?, lo has descubierto. Y solo dos sonidos muy distintos para descubrir: un tambor y una campanilla.",
+    "masDificil": "Descubrir con más detalle: no solo qué suena, sino si es de madera o de metal, si está cerca o lejos, si suena una vez o muchas. Y que un niño esconda el sonido y los demás exploren.",
+    "variante": {
+      "titulo": "La caja de Rex",
+      "texto": "Una caja con objetos que suenan: llaves, un bote de arroz, un papel, una cuchara. Un niño hace sonar uno sin que se vea y la clase, ojos cerrados, descubre cuál. Rex en la pantalla, escuchando."
+    },
+    "ideas": [
+      "Salir al patio con Rex a cazar sonidos y hacer la lista de los descubiertos.",
+      "Un mapa de la clase con los sonidos de cada sitio: la puerta, la ventana, el pasillo.",
+      "Comparar a Rex con Simón cuando lo conozcan: los dos escuchan, pero Rex busca qué suena y Simón busca en qué se diferencian dos sonidos."
+    ]
+  },
+  "creditos": [
+    {
+      "obra": "Rex y sus diez poses",
+      "autor": "cocomusic",
+      "fuente": "Personajes de la metodología cocomusic: no están cubiertos por las licencias del código ni de los contenidos (ver TRADEMARK.md)",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

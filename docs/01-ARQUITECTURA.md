@@ -45,6 +45,7 @@ lista exactamente los tipos que hay en `src/motor/registro.ts`, con sus cifras a
 | `rejilla` | Cuadrícula altura × tiempo | 10 |
 | `guia-aula` | Pantalla del maestro: consigna, pulso, coreografía, ficha | 9 |
 | `pentagrama` | Colocar o leer sobre pauta real | 8 |
+| `presentacion` | Láminas para proyectar: un personaje en cada pose, con su frase y su texto | 8 |
 | `seguir` | Reproducción con cursor sincronizado | 8 |
 | `tocar-a-tiempo` | Golpear en el momento correcto | 8 |
 | `cuerpo` | Percusión corporal: pitos, palmas, muslos y pies en cuatro filas | 7 |
@@ -58,7 +59,6 @@ lista exactamente los tipos que hay en `src/motor/registro.ts`, con sus cifras a
 | `escala` | Construir una escala contando tonos y semitonos | 2 |
 | `memoria` | Cartas boca abajo: un dibujo y su sonido. Se destapan dos y la pareja se queda a la vista | 2 |
 | `pads` | El kit de percusión, para tocarlo: pads por familias y pulso opcional | 2 |
-| `presentacion` | Láminas para proyectar: un personaje en cada pose, con su frase y su texto | 2 |
 | `teclado` | Teclado de piano de una a tres octavas | 2 |
 | `acompanamientos` | Bases en bucle para cantar encima, con transporte | 1 |
 | `paisaje` | Grabar sonido del entorno y escucharlo (no sale del aparato) | 1 |

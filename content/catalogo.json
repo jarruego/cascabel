@@ -1,7 +1,7 @@
 {
   "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa, y también si usa un código que aquí no está. El hueco de C1-17 es intencionado: ese código nunca llegó a reservarse y los ids no se renumeran, porque un id puede estar dentro de una URL compartida.",
   "generado": "2026-09-10",
-  "total": 170,
+  "total": 176,
   "actividades": [
     {
       "id": "C1-01",
@@ -2197,7 +2197,7 @@
       "microfono": false,
       "esfuerzo": "S",
       "curriculo": "Infantil · saber F",
-      "descripcion": "Diez láminas para proyectar: Milo, la nota mi, se presenta a la clase.",
+      "descripcion": "Milo, la nota mi: el bromista. Jugar con el ritmo y reírse con los demás.",
       "estado": "hecha"
     },
     {
@@ -2210,7 +2210,85 @@
       "microfono": false,
       "esfuerzo": "S",
       "curriculo": "Infantil · saber F",
-      "descripcion": "Diez láminas para proyectar: Sol, la nota sol, energía y movimiento, se presenta de pie.",
+      "descripcion": "Sol, la nota sol: energía y movimiento. La música se siente en el cuerpo.",
+      "estado": "hecha"
+    },
+    {
+      "id": "TR-19",
+      "titulo": "Dora se presenta",
+      "etapa": "infantil",
+      "eje": "altura",
+      "lugar": "hibrida",
+      "tipo": "presentacion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "Infantil · saber F",
+      "descripcion": "Dora, la nota do: la base. Se empieza seguro y se vuelve a casa.",
+      "estado": "hecha"
+    },
+    {
+      "id": "TR-20",
+      "titulo": "Rex se presenta",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "lugar": "hibrida",
+      "tipo": "presentacion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "Infantil · saber F",
+      "descripcion": "Rex, la nota re: el explorador. Escuchar para descubrir qué suena.",
+      "estado": "hecha"
+    },
+    {
+      "id": "TR-21",
+      "titulo": "Fara se presenta",
+      "etapa": "infantil",
+      "eje": "timbre",
+      "lugar": "hibrida",
+      "tipo": "presentacion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "Infantil · saber F",
+      "descripcion": "Fara, la nota fa: la calma. Parar y escuchar también es hacer música.",
+      "estado": "hecha"
+    },
+    {
+      "id": "TR-22",
+      "titulo": "Laia se presenta",
+      "etapa": "infantil",
+      "eje": "creacion",
+      "lugar": "hibrida",
+      "tipo": "presentacion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "Infantil · saber F",
+      "descripcion": "Laia, la nota la: la imaginación. La música también se inventa.",
+      "estado": "hecha"
+    },
+    {
+      "id": "TR-23",
+      "titulo": "Simón se presenta",
+      "etapa": "infantil",
+      "eje": "altura",
+      "lugar": "hibrida",
+      "tipo": "presentacion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "Infantil · saber F",
+      "descripcion": "Simón, la nota si: la escucha fina. Distinguir dos sonidos que se parecen.",
+      "estado": "hecha"
+    },
+    {
+      "id": "TR-24",
+      "titulo": "Doby se presenta",
+      "etapa": "infantil",
+      "eje": "cuerpo",
+      "lugar": "hibrida",
+      "tipo": "presentacion",
+      "microfono": false,
+      "esfuerzo": "S",
+      "curriculo": "Infantil · saber F",
+      "descripcion": "Doby, el do de arriba: la unión. Juntos formamos la música.",
       "estado": "hecha"
     }
   ]

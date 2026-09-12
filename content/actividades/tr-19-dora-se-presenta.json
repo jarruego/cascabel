@@ -1,0 +1,169 @@
+{
+  "id": "tr-19-dora-se-presenta",
+  "version": 1,
+  "tipo": "presentacion",
+  "titulo": "Dora se presenta",
+  "descripcion": "Dora, la nota do: la base. Se empieza seguro y se vuelve a casa.",
+  "etapa": "infantil",
+  "eje": "altura",
+  "lugar": "hibrida",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": null,
+    "criterio": null,
+    "saber": "F. El lenguaje y la expresión musicales"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "notas": [
+      "do"
+    ]
+  },
+  "entrada": {
+    "modo": "ninguna"
+  },
+  "contenido": {
+    "$comment": "Presentación de Dora (2026-09-12), con su carácter y su función de docs/14, y sin repetir a los demás: cada personaje dice lo suyo. Sus dos últimas frases son las que dice en la app. PENDIENTE DE REVISIÓN PEDAGÓGICA: el criterio curricular; es una presentación, no una tarea.",
+    "consigna": "actividad.tr19.consigna",
+    "laminas": [
+      {
+        "personaje": "dora",
+        "pose": "saluda",
+        "titulo": "actividad.tr19.l1t",
+        "texto": "actividad.tr19.l1d"
+      },
+      {
+        "personaje": "dora",
+        "pose": "neutro",
+        "titulo": "actividad.tr19.l2t",
+        "texto": "actividad.tr19.l2d"
+      },
+      {
+        "personaje": "dora",
+        "pose": "canta",
+        "titulo": "actividad.tr19.l3t",
+        "texto": "actividad.tr19.l3d"
+      },
+      {
+        "personaje": "dora",
+        "pose": "escucha",
+        "titulo": "actividad.tr19.l4t",
+        "texto": "actividad.tr19.l4d"
+      },
+      {
+        "personaje": "dora",
+        "pose": "busca",
+        "titulo": "actividad.tr19.l5t",
+        "texto": "actividad.tr19.l5d"
+      },
+      {
+        "personaje": "dora",
+        "pose": "palmea",
+        "titulo": "actividad.tr19.l6t",
+        "texto": "actividad.tr19.l6d"
+      },
+      {
+        "personaje": "dora",
+        "pose": "calla",
+        "titulo": "actividad.tr19.l7t",
+        "texto": "actividad.tr19.l7d"
+      },
+      {
+        "personaje": "dora",
+        "pose": "baila",
+        "titulo": "actividad.tr19.l8t",
+        "texto": "actividad.tr19.l8d"
+      },
+      {
+        "personaje": "dora",
+        "pose": "anima",
+        "titulo": "actividad.tr19.l9t",
+        "texto": "actividad.tr19.l9d"
+      },
+      {
+        "personaje": "dora",
+        "pose": "celebra",
+        "titulo": "actividad.tr19.l10t",
+        "texto": "actividad.tr19.l10d"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.tr19.enunciado",
+  "personaje": "dora",
+  "herramienta": true,
+  "etiquetas": [
+    "dora",
+    "personajes",
+    "pandilla",
+    "nota do",
+    "rojo",
+    "presentación",
+    "proyector"
+  ],
+  "ficha": {
+    "aprende": "Conocer a Dora: su nombre, que es la nota do y de color rojo, que es la primera y la base, y que con ella se empieza seguro y se vuelve a casa cuando algo se tuerce.",
+    "vocabulario": [
+      "dora",
+      "do",
+      "rojo",
+      "casa",
+      "empezar",
+      "seguro",
+      "respirar",
+      "despacio"
+    ],
+    "agrupamiento": "Grupo clase, con proyector",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Sentados y tranquilos,",
+        "detalle": "hoy viene Dora, la primera de la pandilla. Preguntar quién sabe cuál es la primera nota."
+      },
+      {
+        "min": 4,
+        "titulo": "Las diez láminas,",
+        "detalle": "leyendo cada una y parando donde pide algo: cantar do grave, dar tres palmas para empezar juntos, respirar despacio."
+      },
+      {
+        "min": 2,
+        "titulo": "Buscar la casa.",
+        "detalle": "Cantar una canción que conozcan y parar antes de la última nota: ¿a qué nota quiere volver? Casi siempre, a do."
+      },
+      {
+        "min": 1,
+        "titulo": "Repasar.",
+        "detalle": "¿Cómo se llama? ¿Qué nota es? ¿De qué color? ¿Qué hace Dora cuando algo sale mal?"
+      }
+    ],
+    "enPantalla": "Diez láminas seguidas. En cada una Dora aparece grande, en una pose distinta, con una frase suya en letra grande y un texto para que el maestro lo lea. Se pasa con los botones de abajo o con las flechas del teclado, y unos puntos dicen por dónde vas. No hay nada que acertar ni final: se sale por «volver».",
+    "sinPantalla": "Con Dora impresa en grande o dibujada en rojo en la pizarra. Se cuenta lámina a lámina y en cada una se hace lo que Dora hace: cantar do, escuchar una vez entera, tres palmas para empezar, respirar.",
+    "masFacil": "Cuatro láminas: hola, la nota de casa, tres palmas para empezar y no pasa nada. Con tres años, «do es la casa» y «empezamos juntos» ya es la lección.",
+    "masDificil": "Cantar la escalera entera desde do y volver a do, y que digan qué se siente al llegar abajo. Y hablar de qué significa empezar seguro: saber por dónde, no tener prisa.",
+    "variante": {
+      "titulo": "Con la nota",
+      "texto": "Tocar do en el piano de la app o en el xilófono en cada lámina, la lámina más grande, la de la izquierda del todo. Al final, cantar do todos a la vez, grave y tranquilo."
+    },
+    "ideas": [
+      "Hacer una «casa» de cartulina roja con Dora dentro y colgarla donde se cante: es a donde vuelven las canciones.",
+      "Empezar cada clase de música con las tres palmas de Dora, siempre iguales.",
+      "Comparar a Dora con Sol, que ya conocen: Sol se mueve, Dora empieza despacio y seguro. ¿Qué diría cada una antes de cantar?"
+    ]
+  },
+  "creditos": [
+    {
+      "obra": "Dora y sus diez poses",
+      "autor": "cocomusic",
+      "fuente": "Personajes de la metodología cocomusic: no están cubiertos por las licencias del código ni de los contenidos (ver TRADEMARK.md)",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

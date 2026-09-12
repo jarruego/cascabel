@@ -38,6 +38,8 @@ for (const f of ficheros) {
     // Pedido por el autor el 2026-09-12: «anacrusa» no encontraba la 329 porque el título
     // no lo dice. Son unos pocos bytes por actividad.
     etiquetas: a.etiquetas ?? [],
+    // El personaje: la tarjeta del Taller lo enseña en las presentaciones de la pandilla.
+    personaje: a.personaje ?? null,
     practica: {
       figuras: a.practica?.figuras ?? [],
       compas: a.practica?.compas ?? null,

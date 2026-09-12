@@ -1,0 +1,169 @@
+{
+  "id": "tr-24-doby-se-presenta",
+  "version": 1,
+  "tipo": "presentacion",
+  "titulo": "Doby se presenta",
+  "descripcion": "Doby, el do de arriba: la unión. Juntos formamos la música.",
+  "etapa": "infantil",
+  "eje": "cuerpo",
+  "lugar": "hibrida",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": null,
+    "criterio": null,
+    "saber": "F. El lenguaje y la expresión musicales"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "notas": [
+      "do"
+    ]
+  },
+  "entrada": {
+    "modo": "ninguna"
+  },
+  "contenido": {
+    "$comment": "Presentación de Doby (2026-09-12), con su carácter y su función de docs/14, y sin repetir a los demás: cada personaje dice lo suyo. Sus dos últimas frases son las que dice en la app. PENDIENTE DE REVISIÓN PEDAGÓGICA: el criterio curricular; es una presentación, no una tarea.",
+    "consigna": "actividad.tr24.consigna",
+    "laminas": [
+      {
+        "personaje": "doby",
+        "pose": "saluda",
+        "titulo": "actividad.tr24.l1t",
+        "texto": "actividad.tr24.l1d"
+      },
+      {
+        "personaje": "doby",
+        "pose": "neutro",
+        "titulo": "actividad.tr24.l2t",
+        "texto": "actividad.tr24.l2d"
+      },
+      {
+        "personaje": "doby",
+        "pose": "canta",
+        "titulo": "actividad.tr24.l3t",
+        "texto": "actividad.tr24.l3d"
+      },
+      {
+        "personaje": "doby",
+        "pose": "palmea",
+        "titulo": "actividad.tr24.l4t",
+        "texto": "actividad.tr24.l4d"
+      },
+      {
+        "personaje": "doby",
+        "pose": "baila",
+        "titulo": "actividad.tr24.l5t",
+        "texto": "actividad.tr24.l5d"
+      },
+      {
+        "personaje": "doby",
+        "pose": "escucha",
+        "titulo": "actividad.tr24.l6t",
+        "texto": "actividad.tr24.l6d"
+      },
+      {
+        "personaje": "doby",
+        "pose": "busca",
+        "titulo": "actividad.tr24.l7t",
+        "texto": "actividad.tr24.l7d"
+      },
+      {
+        "personaje": "doby",
+        "pose": "calla",
+        "titulo": "actividad.tr24.l8t",
+        "texto": "actividad.tr24.l8d"
+      },
+      {
+        "personaje": "doby",
+        "pose": "anima",
+        "titulo": "actividad.tr24.l9t",
+        "texto": "actividad.tr24.l9d"
+      },
+      {
+        "personaje": "doby",
+        "pose": "celebra",
+        "titulo": "actividad.tr24.l10t",
+        "texto": "actividad.tr24.l10d"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.tr24.enunciado",
+  "personaje": "doby",
+  "herramienta": true,
+  "etiquetas": [
+    "doby",
+    "personajes",
+    "pandilla",
+    "nota do agudo",
+    "multicolor",
+    "presentación",
+    "proyector"
+  ],
+  "ficha": {
+    "aprende": "Conocer a Doby: su nombre, que es el do agudo y de todos los colores, que cierra la escalera y la pandilla, y que la música se hace juntos: escuchando a los demás, empezando y parando a la vez, sin dejar a nadie fuera.",
+    "vocabulario": [
+      "doby",
+      "do agudo",
+      "juntos",
+      "corro",
+      "eco",
+      "a la vez",
+      "escalera",
+      "todos"
+    ],
+    "agrupamiento": "Grupo clase, con proyector",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "En corro,",
+        "detalle": "cogidos de la mano. Doby es el último de la pandilla y viene a juntarlos a todos."
+      },
+      {
+        "min": 4,
+        "titulo": "Las diez láminas,",
+        "detalle": "leyendo cada una y haciendo lo que pide: cantar la escalera hasta el do de arriba, el eco de muchas manos, moverse en corro, parar todos a la vez."
+      },
+      {
+        "min": 2,
+        "titulo": "La canción de todos.",
+        "detalle": "Una canción que sepan, cantada en corro escuchando a los de al lado; parar en seco cuando el maestro levante la mano. Tres veces."
+      },
+      {
+        "min": 1,
+        "titulo": "Repasar.",
+        "detalle": "¿Cómo se llama? ¿Qué nota es? ¿De qué colores? ¿Qué dice Doby cuando sale bien?"
+      }
+    ],
+    "enPantalla": "Diez láminas seguidas. En cada una Doby aparece grande, en una pose distinta, con una frase suya en letra grande y un texto para que el maestro lo lea. Se pasa con los botones de abajo o con las flechas del teclado, y unos puntos dicen por dónde vas. No hay nada que acertar ni final: se sale por «volver».",
+    "sinPantalla": "Con Doby impreso en grande o dibujado con todos los colores. Todo se hace en grupo: la escalera cantada, el eco de palmas, el corro, parar a la vez. Doby no tiene sentido a solas.",
+    "masFacil": "Cuatro láminas: hola, juntos formamos la música, el eco entre todos, lo habéis conseguido. Con tres años, el corro y el eco de palmas ya son la lección.",
+    "masDificil": "Cantar en canon una canción muy conocida, la clase en dos mitades: es lo más «juntos» que hay. Y hablar de por qué Doby dice «habéis» y no «has».",
+    "variante": {
+      "titulo": "Con la nota",
+      "texto": "Tocar do grave y do agudo en el piano de la app: el mismo nombre, uno abajo y otro arriba. Cantar la escalera entera de Dora a Doby, todos a la vez, subiendo los brazos."
+    },
+    "ideas": [
+      "Un mural con los ocho de la pandilla en escalera, Dora abajo y Doby arriba, hecho entre toda la clase.",
+      "Inventar un saludo de la clase con palmas que se haga siempre a la vez, para empezar y para acabar.",
+      "Ahora que conocen a todos: cada niño elige su personaje favorito y dice por qué. Doby diría que hacen falta todos."
+    ]
+  },
+  "creditos": [
+    {
+      "obra": "Doby y sus diez poses",
+      "autor": "cocomusic",
+      "fuente": "Personajes de la metodología cocomusic: no están cubiertos por las licencias del código ni de los contenidos (ver TRADEMARK.md)",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

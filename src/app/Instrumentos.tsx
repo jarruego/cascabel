@@ -5,6 +5,8 @@ import { despertarAudio } from '@/audio/AudioEngine';
 import { t } from '@/i18n';
 import { useVuelta } from './vuelta';
 import type { Eje } from '@/motor/tipos';
+import { Personaje } from '@/ui/Personaje';
+import { POSES, type Personaje as NombrePersonaje, type Pose } from '@/ui/personajes';
 
 /**
  * Los instrumentos y las herramientas del aula, en su propia pantalla.
@@ -26,8 +28,15 @@ interface Entrada {
   id: string;
   titulo: string;
   eje: Eje;
+  tipo?: string;
   descripcion?: string;
   herramienta?: boolean;
+  personaje?: NombrePersonaje | null;
+}
+
+/** Una pose al azar por tarjeta y por visita: cada vez que se entra, la pandilla cambia. */
+function poseAlAzar(): Pose {
+  return POSES[Math.floor(Math.random() * POSES.length)] ?? 'neutro';
 }
 
 export default function Instrumentos() {
@@ -86,7 +95,16 @@ export default function Instrumentos() {
               onClick={() => void despertarAudio().catch(() => {})}
             >
               <span className="tarjeta__titulo">{e.titulo}</span>
-              {e.descripcion && <span className="tarjeta__meta">{e.descripcion}</span>}
+              {/* Las presentaciones de la pandilla llevan al personaje en pequeño a la
+                  izquierda, en una pose al azar, y el texto a la derecha (2026-09-12). */}
+              {e.tipo === 'presentacion' && e.personaje ? (
+                <span className="tarjeta__conFigura">
+                  <Personaje nombre={e.personaje} pose={poseAlAzar()} tamano={64} />
+                  {e.descripcion && <span className="tarjeta__meta">{e.descripcion}</span>}
+                </span>
+              ) : (
+                e.descripcion && <span className="tarjeta__meta">{e.descripcion}</span>
+              )}
             </Link>
           </li>
         ))}

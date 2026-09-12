@@ -1,0 +1,169 @@
+{
+  "id": "tr-21-fara-se-presenta",
+  "version": 1,
+  "tipo": "presentacion",
+  "titulo": "Fara se presenta",
+  "descripcion": "Fara, la nota fa: la calma. Parar y escuchar también es hacer música.",
+  "etapa": "infantil",
+  "eje": "timbre",
+  "lugar": "hibrida",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": null,
+    "criterio": null,
+    "saber": "F. El lenguaje y la expresión musicales"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "notas": [
+      "fa"
+    ]
+  },
+  "entrada": {
+    "modo": "ninguna"
+  },
+  "contenido": {
+    "$comment": "Presentación de Fara (2026-09-12), con su carácter y su función de docs/14, y sin repetir a los demás: cada personaje dice lo suyo. Sus dos últimas frases son las que dice en la app. PENDIENTE DE REVISIÓN PEDAGÓGICA: el criterio curricular; es una presentación, no una tarea.",
+    "consigna": "actividad.tr21.consigna",
+    "laminas": [
+      {
+        "personaje": "fara",
+        "pose": "saluda",
+        "titulo": "actividad.tr21.l1t",
+        "texto": "actividad.tr21.l1d"
+      },
+      {
+        "personaje": "fara",
+        "pose": "calla",
+        "titulo": "actividad.tr21.l2t",
+        "texto": "actividad.tr21.l2d"
+      },
+      {
+        "personaje": "fara",
+        "pose": "escucha",
+        "titulo": "actividad.tr21.l3t",
+        "texto": "actividad.tr21.l3d"
+      },
+      {
+        "personaje": "fara",
+        "pose": "neutro",
+        "titulo": "actividad.tr21.l4t",
+        "texto": "actividad.tr21.l4d"
+      },
+      {
+        "personaje": "fara",
+        "pose": "canta",
+        "titulo": "actividad.tr21.l5t",
+        "texto": "actividad.tr21.l5d"
+      },
+      {
+        "personaje": "fara",
+        "pose": "busca",
+        "titulo": "actividad.tr21.l6t",
+        "texto": "actividad.tr21.l6d"
+      },
+      {
+        "personaje": "fara",
+        "pose": "palmea",
+        "titulo": "actividad.tr21.l7t",
+        "texto": "actividad.tr21.l7d"
+      },
+      {
+        "personaje": "fara",
+        "pose": "baila",
+        "titulo": "actividad.tr21.l8t",
+        "texto": "actividad.tr21.l8d"
+      },
+      {
+        "personaje": "fara",
+        "pose": "anima",
+        "titulo": "actividad.tr21.l9t",
+        "texto": "actividad.tr21.l9d"
+      },
+      {
+        "personaje": "fara",
+        "pose": "celebra",
+        "titulo": "actividad.tr21.l10t",
+        "texto": "actividad.tr21.l10d"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.tr21.enunciado",
+  "personaje": "fara",
+  "herramienta": true,
+  "etiquetas": [
+    "fara",
+    "personajes",
+    "pandilla",
+    "nota fa",
+    "verde",
+    "presentación",
+    "proyector"
+  ],
+  "ficha": {
+    "aprende": "Conocer a Fara: su nombre, que es la nota fa y de color verde, que es la calma, y que parar, respirar y escuchar hasta el final también es hacer música.",
+    "vocabulario": [
+      "fara",
+      "fa",
+      "verde",
+      "silencio",
+      "calma",
+      "suave",
+      "despacio",
+      "hasta el final"
+    ],
+    "agrupamiento": "Grupo clase, con proyector",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Luz baja y voz baja.",
+        "detalle": "Fara viene a clase y con Fara se habla bajito. Un minuto de silencio para empezar, escuchando la clase."
+      },
+      {
+        "min": 4,
+        "titulo": "Las diez láminas,",
+        "detalle": "leyendo cada una en voz baja y haciendo lo que pide: escuchar un sonido hasta que se apaga, cantar fa flojito, palmas de lluvia, moverse como el agua."
+      },
+      {
+        "min": 2,
+        "titulo": "El sonido que se apaga.",
+        "detalle": "Un triángulo o una campana: se toca una vez y todos levantan la mano cuando ya no se oye nada. Tres veces."
+      },
+      {
+        "min": 1,
+        "titulo": "Repasar, bajito.",
+        "detalle": "¿Cómo se llama? ¿Qué nota es? ¿De qué color? ¿Qué es lo que más le gusta a Fara?"
+      }
+    ],
+    "enPantalla": "Diez láminas seguidas. En cada una Fara aparece grande, en una pose distinta, con una frase suya en letra grande y un texto para que el maestro lo lea. Se pasa con los botones de abajo o con las flechas del teclado, y unos puntos dicen por dónde vas. No hay nada que acertar ni final: se sale por «volver».",
+    "sinPantalla": "Con Fara impresa en grande o dibujada en verde. Todo se hace en voz baja: escuchar un sonido hasta el final, cantar fa como un secreto, la lluvia de palmas flojitas, moverse como el agua.",
+    "masFacil": "Cuatro láminas: hola, el silencio también es música, palmas flojitas y has escuchado con calma. El juego del sonido que se apaga es suficiente para una sesión.",
+    "masDificil": "Hablar del silencio dentro de una canción: cantar una que conozcan y hacer un silencio a mitad, todos a la vez, contando por dentro. Y de los sonidos pequeños de casa que solo se oyen de noche.",
+    "variante": {
+      "titulo": "Con la nota",
+      "texto": "Tocar fa en el piano de la app o en el xilófono muy flojito en cada lámina, y escuchar hasta que se apaga. Al final, cantar fa todos a la vez, casi sin voz."
+    },
+    "ideas": [
+      "Un minuto de Fara al empezar cada clase: silencio, ojos cerrados, y contar después qué se ha oído.",
+      "Grabar los sonidos pequeños del patio con el móvil del maestro y escucharlos en clase.",
+      "Comparar a Fara con Sol: Sol se mueve con energía y Fara despacio como el agua. Moverse de las dos maneras con la misma música."
+    ]
+  },
+  "creditos": [
+    {
+      "obra": "Fara y sus diez poses",
+      "autor": "cocomusic",
+      "fuente": "Personajes de la metodología cocomusic: no están cubiertos por las licencias del código ni de los contenidos (ver TRADEMARK.md)",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

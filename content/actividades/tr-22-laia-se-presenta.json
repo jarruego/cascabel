@@ -1,0 +1,169 @@
+{
+  "id": "tr-22-laia-se-presenta",
+  "version": 1,
+  "tipo": "presentacion",
+  "titulo": "Laia se presenta",
+  "descripcion": "Laia, la nota la: la imaginación. La música también se inventa.",
+  "etapa": "infantil",
+  "eje": "creacion",
+  "lugar": "hibrida",
+  "duracion_min": 8,
+  "curriculo": {
+    "area": "Comunicación y Representación de la Realidad",
+    "competencia": null,
+    "criterio": null,
+    "saber": "F. El lenguaje y la expresión musicales"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "notas": [
+      "la"
+    ]
+  },
+  "entrada": {
+    "modo": "ninguna"
+  },
+  "contenido": {
+    "$comment": "Presentación de Laia (2026-09-12), con su carácter y su función de docs/14, y sin repetir a los demás: cada personaje dice lo suyo. Sus dos últimas frases son las que dice en la app. PENDIENTE DE REVISIÓN PEDAGÓGICA: el criterio curricular; es una presentación, no una tarea.",
+    "consigna": "actividad.tr22.consigna",
+    "laminas": [
+      {
+        "personaje": "laia",
+        "pose": "saluda",
+        "titulo": "actividad.tr22.l1t",
+        "texto": "actividad.tr22.l1d"
+      },
+      {
+        "personaje": "laia",
+        "pose": "neutro",
+        "titulo": "actividad.tr22.l2t",
+        "texto": "actividad.tr22.l2d"
+      },
+      {
+        "personaje": "laia",
+        "pose": "canta",
+        "titulo": "actividad.tr22.l3t",
+        "texto": "actividad.tr22.l3d"
+      },
+      {
+        "personaje": "laia",
+        "pose": "busca",
+        "titulo": "actividad.tr22.l4t",
+        "texto": "actividad.tr22.l4d"
+      },
+      {
+        "personaje": "laia",
+        "pose": "palmea",
+        "titulo": "actividad.tr22.l5t",
+        "texto": "actividad.tr22.l5d"
+      },
+      {
+        "personaje": "laia",
+        "pose": "baila",
+        "titulo": "actividad.tr22.l6t",
+        "texto": "actividad.tr22.l6d"
+      },
+      {
+        "personaje": "laia",
+        "pose": "escucha",
+        "titulo": "actividad.tr22.l7t",
+        "texto": "actividad.tr22.l7d"
+      },
+      {
+        "personaje": "laia",
+        "pose": "calla",
+        "titulo": "actividad.tr22.l8t",
+        "texto": "actividad.tr22.l8d"
+      },
+      {
+        "personaje": "laia",
+        "pose": "anima",
+        "titulo": "actividad.tr22.l9t",
+        "texto": "actividad.tr22.l9d"
+      },
+      {
+        "personaje": "laia",
+        "pose": "celebra",
+        "titulo": "actividad.tr22.l10t",
+        "texto": "actividad.tr22.l10d"
+      }
+    ]
+  },
+  "evaluacion": {
+    "autocorrectiva": false,
+    "reporta": [
+      "completado"
+    ]
+  },
+  "enunciado": "actividad.tr22.enunciado",
+  "personaje": "laia",
+  "herramienta": true,
+  "etiquetas": [
+    "laia",
+    "personajes",
+    "pandilla",
+    "nota la",
+    "lila",
+    "presentación",
+    "proyector"
+  ],
+  "ficha": {
+    "aprende": "Conocer a Laia: su nombre, que es la nota la y de color lila, que es la imaginación, y que la música también se inventa: con dos notas, con objetos, con el cuerpo, y sin que nada esté mal.",
+    "vocabulario": [
+      "laia",
+      "la",
+      "lila",
+      "inventar",
+      "crear",
+      "probar",
+      "sorpresa",
+      "tuyo"
+    ],
+    "agrupamiento": "Grupo clase, con proyector",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Una pregunta para empezar:",
+        "detalle": "¿quién ha inventado alguna vez una canción? Laia viene a decirnos que se puede."
+      },
+      {
+        "min": 4,
+        "titulo": "Las diez láminas,",
+        "detalle": "leyendo cada una y haciendo lo que pide: cambiar la nota la, buscar un objeto que suene, inventar unas palmas, un movimiento, un silencio sorpresa."
+      },
+      {
+        "min": 2,
+        "titulo": "La canción de la clase.",
+        "detalle": "Entre todos, dos notas (sol y mi valen) y cuatro palabras: una canción nueva de ocho segundos. Cantarla dos veces."
+      },
+      {
+        "min": 1,
+        "titulo": "Repasar.",
+        "detalle": "¿Cómo se llama? ¿Qué nota es? ¿De qué color? ¿Qué dice Laia cuando algo no convence?"
+      }
+    ],
+    "enPantalla": "Diez láminas seguidas. En cada una Laia aparece grande, en una pose distinta, con una frase suya en letra grande y un texto para que el maestro lo lea. Se pasa con los botones de abajo o con las flechas del teclado, y unos puntos dicen por dónde vas. No hay nada que acertar ni final: se sale por «volver».",
+    "sinPantalla": "Con Laia impresa en grande o dibujada en lila. Cada lámina es una invención pequeña: una nota cambiada, un objeto que suena, unas palmas nuevas, un movimiento raro, una pausa sorpresa.",
+    "masFacil": "Cuatro láminas: hola, yo invento música, yo un ritmo y tú otro, eso suena a tuyo. Con tres años, inventar unas palmas ya es crear.",
+    "masDificil": "Que cada niño invente una frase de tres notas en el xilófono y la clase la repita: la primera composición con público. Y hablar de qué es que algo «suene a tuyo».",
+    "variante": {
+      "titulo": "Con la nota",
+      "texto": "Tocar la en el piano de la app o en el xilófono y luego una nota más, la que cada uno quiera: ya es una melodía inventada. Al final, cada uno canta su «la» a su manera."
+    },
+    "ideas": [
+      "Una caja de instrumentos inventados con cosas de casa, con el nombre que le ponga cada niño.",
+      "Dibujar la música que se inventa: rayas largas para sonidos largos, puntos para cortos, y tocarla después leyendo el dibujo.",
+      "Comparar a Laia con Dora: Dora dice por dónde empezar y Laia dice que se puede cambiar. Las dos hacen falta."
+    ]
+  },
+  "creditos": [
+    {
+      "obra": "Laia y sus diez poses",
+      "autor": "cocomusic",
+      "fuente": "Personajes de la metodología cocomusic: no están cubiertos por las licencias del código ni de los contenidos (ver TRADEMARK.md)",
+      "licencia": "Propia"
+    }
+  ],
+  "estado": "borrador"
+}

@@ -3109,8 +3109,11 @@ textos, niveles, camino, y la sección de instrumentos.
       busca el pulso, baila, anima, celebra), con lo que dice docs/14 de él y sin hablar de
       la pandilla. **Sol** (tr-18) es la segunda, y dice lo suyo y no lo de Milo: energía y
       movimiento, el pulso con el pie, el compás de dos y de tres, rápido o despacio, parar
-      como una estatua; todas sus láminas se hacen de pie. Siguiente: los otros seis, cada uno
-      con su carácter y su función.
+      como una estatua; todas sus láminas se hacen de pie. Y los otros seis (tr-19 a tr-24),
+      cada uno con lo suyo y sin repetirse: Dora la base y la casa, Rex descubrir sonidos,
+      Fara la calma y el silencio, Laia inventar, Simón distinguir dos sonidos que se parecen,
+      Doby hacerlo juntos. En el Taller, sus tarjetas llevan al personaje en pequeño, a la
+      izquierda, en una pose al azar.
 
 - [x] **El rap de la 236 es rap** (2026-09-12): el clip era una base instrumental sin voz.
       Ahora suena «Emazteen fabore», del proyecto Etxepare rap (CC BY-SA 4.0, verificado en
