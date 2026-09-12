@@ -2368,7 +2368,7 @@ p {
   .ficha__marca { font-size: 7pt; color: #777; padding: 0; }
   .ficha__marca--sup { padding-bottom: 5mm; }
   .ficha__marca--inf { padding-top: 4mm; }
-  .ficha__pie { margin-top: 2mm; font-size: 7.5pt; }
+  .ficha__pie { margin-top: 5mm; font-size: 7.5pt; }
   .ficha__logo img { height: 5mm; }
   /* Solo lo que no se puede partir: la partitura y las filas de la tabla. Partir una
      sección sí se puede, y no partirla era lo que abría cuatro páginas. */
