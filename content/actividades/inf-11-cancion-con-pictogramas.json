@@ -169,6 +169,85 @@
     ]
   },
   "enunciado": "actividad.inf11.enunciado",
+  "ficha": {
+    "aprende": "Seguir con los ojos una canción de sol, mi y la dibujada con pictogramas, y saber qué dibujo viene antes de oírlo, porque cada uno canta siempre la misma nota.",
+    "vocabulario": [
+      "dibujo",
+      "canción",
+      "sol",
+      "mi",
+      "la",
+      "seguir",
+      "arriba",
+      "abajo"
+    ],
+    "agrupamiento": "Grupo clase, con proyector",
+    "material": "Ninguno. Sin pantalla, la fila de dibujos en la pizarra o en tarjetas.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Escuchar entera sin señalar.",
+        "detalle": "Sentados frente a la pantalla. Suena la canción una vuelta y solo se mira cómo se van encendiendo los dibujos. Nadie canta todavía."
+      },
+      {
+        "min": 2,
+        "titulo": "Seguir con el dedo en el aire.",
+        "detalle": "Segunda y tercera vuelta: cada niño va señalando en el aire el dibujo que se enciende. El maestro señala en la pantalla para que vean que el dedo va con la música, no detrás."
+      },
+      {
+        "min": 1,
+        "titulo": "Cantar con los dibujos.",
+        "detalle": "Cantar la melodía con «la» o con los nombres sol, mi, la mientras siguen los dibujos. Es corta y se repite: en la tercera vuelta ya la llevan."
+      },
+      {
+        "min": 1,
+        "titulo": "¿Qué dibujo viene?",
+        "detalle": "Parar la app a mitad de una frase y preguntar cuál se enciende después. Se escucha para comprobar. Repetir en dos o tres sitios distintos."
+      },
+      {
+        "min": 1,
+        "titulo": "Sin pantalla.",
+        "detalle": "Apagar y cantarla entera, con el maestro señalando los dibujos en la pizarra o en el aire. La pantalla hace de director solo hasta que sobra."
+      }
+    ],
+    "enPantalla": "Una fila de dibujos, uno por trozo de canción, y una melodía corta sobre sol, mi y la que suena en bucle. Cada dibujo se enciende cuando le toca y se apaga al pasar al siguiente; el mismo dibujo suena siempre en la misma nota, así que al segundo o tercer paso el niño ya sabe cómo va a sonar el que viene. No hay que tocar nada: se mira, se señala y se canta. No hay respuesta correcta ni final; se para cuando el maestro quiere.",
+    "sinPantalla": "Dibujar los pictogramas en fila en la pizarra, o ponerlos en tarjetas en el suelo. El maestro canta la melodía sobre sol, mi y la y va señalando cada dibujo al cantarlo; la clase mira y luego canta con él. Después señala un niño mientras los demás cantan: se ve enseguida si el dedo va con la voz. Con las tarjetas en el suelo, los niños pueden ir pisando cada dibujo al cantarlo.",
+    "masFacil": "Solo la primera frase, en bucle, hasta que salga. Escuchar dos vueltas antes de señalar nada: escuchar y seguir a la vez es una tarea doble. El maestro señala con ellos, dibujo a dibujo, y canta más alto en «la» y más bajo en «mi» exagerando con la mano para que se vea que la melodía sube y baja.",
+    "masDificil": "Cantar los nombres de las notas y acompañar con los gestos de la mano: sol con la mano abierta de lado, mi con la mano plana, la con la mano colgando (PENDIENTE DE REVISIÓN PEDAGÓGICA). Tapar un dibujo con la mano y cantarlo igual, de memoria. O cantar la canción sin la app, con la clase señalando ella sola en la pizarra.",
+    "variante": {
+      "titulo": "Cada uno su dibujo",
+      "texto": "Repartir la clase en tres grupos: uno canta sol, otro mi, otro la. Cuando se enciende su dibujo, canta su grupo, y el resto se calla. Al principio el maestro señala a cada grupo; después lo hace la pantalla sola. Obliga a mirar el dibujo que viene, no el que ya ha pasado."
+    },
+    "ideas": [
+      "Inventar otra canción con los mismos tres dibujos: se colocan en otro orden en la pizarra y se canta lo que sale.",
+      "Dibujar cada niño su propio pictograma para sol, mi y la, y hacer la fila con los dibujos de la clase.",
+      "Cantar la melodía con la letra de un nombre o un animal en cada dibujo y ver que la nota no cambia aunque cambie la palabra."
+    ],
+    "loTiene": [
+      "Mira el dibujo que se enciende, no el que ya ha pasado.",
+      "Canta más alto en «la» y más bajo en «mi» al ir con los dibujos.",
+      "Dice qué dibujo viene antes de que se encienda."
+    ],
+    "errores": [
+      {
+        "error": "Su dedo va siempre un dibujo por detrás",
+        "remedio": "no es un problema: es la primera fase. Cantar con él y señalar juntos dos vueltas más; la anticipación llega sola."
+      },
+      {
+        "error": "Canta todo en la misma altura, como recitando",
+        "remedio": "hacer «la» de puntillas y «mi» agachados, y cantar así una vuelta entera. El cuerpo enseña la altura antes que el oído."
+      },
+      {
+        "error": "Se distrae cuando la canción vuelve a empezar",
+        "remedio": "parar al final de cada vuelta y preguntar por cuál empieza. Dos vueltas seguidas como mucho al principio."
+      }
+    ],
+    "indicadores": [
+      "Sigue el dibujo",
+      "Sol, mi, la",
+      "Anticipa"
+    ]
+  },
   "personaje": "fara",
   "creditos": [
     {

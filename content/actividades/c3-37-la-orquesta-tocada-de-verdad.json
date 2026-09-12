@@ -111,6 +111,85 @@
     "actividad.c337.pista1",
     "actividad.c337.pista2"
   ],
+  "ficha": {
+    "aprende": "Reconocer de oído violonchelo, clarinete, oboe, tuba, trompa, contrabajo, arpa y clave en grabaciones reales, y decir de qué familia es cada uno.",
+    "vocabulario": [
+      "cuerda frotada",
+      "cuerda pulsada",
+      "viento madera",
+      "viento metal",
+      "grave",
+      "nasal",
+      "arpa",
+      "clave"
+    ],
+    "agrupamiento": "Grupo clase con proyector; luego por parejas en tablet",
+    "material": "Ninguno (opcional: fotos grandes de los ocho instrumentos)",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Ocho instrumentos, cuatro familias.",
+        "detalle": "Antes de la app, nombrar los ocho y agruparlos en la pizarra: se frotan (violonchelo, contrabajo), se soplan por madera (clarinete, oboe) o por metal (tuba, trompa), se pulsan (arpa, clave)."
+      },
+      {
+        "min": 2,
+        "titulo": "Escuchar sin contestar.",
+        "detalle": "Proyecta tres o cuatro grabaciones y, en cada una, pregunta solo dos cosas: ¿se frota, se sopla o se pulsa? ¿Es grave o agudo? Con eso la familia sale sola."
+      },
+      {
+        "min": 2,
+        "titulo": "Contestar en grupo.",
+        "detalle": "Una vuelta proyectada. Se escucha entera, se dice la familia en voz alta y luego el nombre; uno toca el botón. Si no es, la pista del personaje ayuda y se vuelve a oír."
+      },
+      {
+        "min": 2,
+        "titulo": "Por parejas en tablet.",
+        "detalle": "Una vuelta cada pareja. El que no toca dice antes la familia; el otro elige el instrumento. Se cambian los papeles a mitad."
+      },
+      {
+        "min": 1,
+        "titulo": "Los que se confunden.",
+        "detalle": "Cierra con las parejas difíciles seguidas: oboe y clarinete, tuba y contrabajo, arpa y clave. Oír una tras otra y decir en qué se nota la diferencia."
+      }
+    ],
+    "enPantalla": "Suena una grabación real de uno de los ocho instrumentos y aparecen sus nombres en botones con dibujo. El niño escucha, puede repetirla, y toca el que cree. Si no es, el personaje da una pista (los graves, la madera, los que se pulsan) y se vuelve a oír para probar otra vez; si es, «¡bien!» y viene otro. Diez grabaciones en vueltas de cinco; el oboe y el violonchelo salen dos veces. Sin tiempo ni puntuación.",
+    "sinPantalla": "Con las fotos de los ocho instrumentos en la pizarra y grabaciones que pongas tú, o con lo que haya a mano: si algún alumno o alguien del conservatorio del pueblo trae un violonchelo, un clarinete o un oboe, mejor que cualquier altavoz. Los niños señalan la foto o se colocan en cuatro rincones: se frota, se sopla por madera, se sopla por metal, se pulsa. Primero la familia, luego el nombre.",
+    "masFacil": "Baja a dos opciones muy distintas, que la app no puede pero tú sí con las fotos: tuba o arpa, oboe o contrabajo. Nombra las dos en voz alta antes de que suene. Y pregunta solo por la familia: «¿se frota, se sopla o se pulsa?». El nombre viene después, cuando la familia está segura.",
+    "masDificil": "Que digan la familia y el instrumento antes de que acabe la grabación, y luego una razón: «es grave y se sopla: tuba». Después, cerrar los ojos y oír las parejas parecidas seguidas: oboe y clarinete, arpa y clave, tuba y contrabajo. Y buscar cada instrumento en un fragmento de orquesta grabado: ¿cuándo entra la trompa?",
+    "variante": {
+      "titulo": "El instrumento con el cuerpo",
+      "texto": "Cada instrumento con un gesto: frotar el brazo para el violonchelo y el contrabajo (más abajo para el contrabajo), soplar con los dedos en fila para clarinete y oboe, el puño en la boca para la tuba y la mano en el pabellón para la trompa, pulsar cuerdas en el aire para el arpa y teclas para el clave. Suena la grabación y toda la clase contesta con el gesto, sin hablar."
+    },
+    "ideas": [
+      "Ver un vídeo de orquesta con el sonido quitado y adivinar qué instrumento está sonando solo por cómo se toca; luego con sonido para comprobarlo.",
+      "Escuchar «El carnaval de los animales» de Saint-Saëns y buscar el contrabajo del elefante y el clarinete del cuco.",
+      "Ordenar los ocho instrumentos del más grave al más agudo en la pizarra, oyéndolos otra vez, y discutir dónde va la trompa."
+    ],
+    "loTiene": [
+      "Dice la familia (se frota, se sopla, se pulsa) antes de decir el nombre, y acierta la familia.",
+      "Distingue el oboe del clarinete y el arpa del clave en la segunda escucha.",
+      "Espera a oír la grabación entera antes de tocar."
+    ],
+    "errores": [
+      {
+        "error": "Confunde tuba y contrabajo: oye grave y elige cualquiera de los dos",
+        "remedio": "oír los dos seguidos y fijarse en el ataque: el contrabajo se frota y el sonido se estira; la tuba se sopla y va a golpes de aire."
+      },
+      {
+        "error": "Confunde arpa y clave: los dos se pulsan",
+        "remedio": "escuchar cuánto dura la nota: en el arpa se queda sonando; en el clave se corta enseguida y suena metálico."
+      },
+      {
+        "error": "Contesta por el dibujo del botón sin haber escuchado",
+        "remedio": "pedir que repita la grabación con el botón y diga la familia en voz alta antes de tocar."
+      }
+    ],
+    "indicadores": [
+      "Familia",
+      "Oboe/clarinete",
+      "Escucha entera"
+    ]
+  },
   "creditos": [
     {
       "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",

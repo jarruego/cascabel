@@ -95,6 +95,84 @@
     "actividad.c302.pista1",
     "actividad.c302.pista2"
   ],
+  "ficha": {
+    "aprende": "Palmear una síncopa (ti-ta-ti) y un contratiempo (sh-ti) sin que se le vaya el pulso del pie: el acento cae entre dos pulsos y no encima de uno.",
+    "vocabulario": [
+      "pulso",
+      "síncopa",
+      "contratiempo",
+      "acento",
+      "ti-ta-ti",
+      "sh-ti",
+      "eco"
+    ],
+    "agrupamiento": "Grupo clase de pie; luego por parejas en tablet",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "El pie manda.",
+        "detalle": "De pie, marcando el pulso con el pie a la velocidad de la app, sin manos. Se explica que hoy las palmas van a caer a veces entre dos pies, y que el pie no se mueve por eso."
+      },
+      {
+        "min": 2,
+        "titulo": "Decirla antes de tocarla.",
+        "detalle": "Primer ritmo: ta, ti-ta-ti, ta. Se dice a coro con el pie sonando. En «ti-ta-ti», la sílaba larga cae en el hueco entre dos pies. Cuando se dice bien, se palmea."
+      },
+      {
+        "min": 3,
+        "titulo": "Eco con la app.",
+        "detalle": "Cada niño escucha el ritmo y lo repite con palmas al micrófono, o tocando el botón si el micrófono no va. Los cuatro ritmos en orden: la síncopa va cambiando de sitio. Repetir cuantas veces haga falta."
+      },
+      {
+        "min": 1,
+        "titulo": "El contratiempo.",
+        "detalle": "Cuarto ritmo: sh-ti, sh-ti, ta, ta. El pie cae en «sh» y la palma justo después. Que digan «sh» bien fuerte con la boca: el silencio también se pronuncia."
+      },
+      {
+        "min": 1,
+        "titulo": "Mirar el resumen.",
+        "detalle": "Adelantado o atrasado, no el porcentaje. Quien va siempre un poco tarde con el pulso firme lo tiene: solo le falta entrar antes."
+      }
+    ],
+    "enPantalla": "Suena un ritmo de cuatro pulsos con su clic y unos puntos que lo dibujan; luego el niño lo repite con palmas al micrófono o tocando un botón grande. Los golpes que entran a tiempo se encienden en verde y los que se escapan quedan en gris, nunca en rojo. Hay cuatro ritmos: una síncopa en medio, dos seguidas, la síncopa al final y un compás entero a contratiempo. Se puede repetir cada uno las veces que se quiera y no hay tiempo. Al final da el desvío: si ha ido adelantado o atrasado, y cuánto.",
+    "sinPantalla": "Eco de palmadas: tú haces el ritmo con el pie marcando el pulso y ellos lo repiten. Empieza por ta, ti-ta-ti, ta y ve cambiando la síncopa de sitio, como hace la app. Para el contratiempo, la clase entera dice «sh» en cada pulso y palmea justo después; luego la mitad hace el pulso con el pie y la otra mitad el contratiempo con palmas, y se cambian. Con claves o cajas chinas el acento se oye más claro que con las manos.",
+    "masFacil": "Baja al primer ritmo y quédate ahí: una sola síncopa en medio. Antes de palmear, se dice con sílabas mientras el pie marca, y se palmea solo cuando la boca lo dice bien: un ritmo que no se puede decir no se puede tocar. Si la síncopa sigue cayendo encima del pulso, que la haga andando, el pie en el pulso y la palma en el hueco, muy despacio. Y que toque el botón en vez de palmear si el micrófono se confunde.",
+    "masDificil": "Ponlo en bucle: los cuatro ritmos seguidos sin parar. Después, el pie marcando el pulso mientras las manos hacen la síncopa: dos planos a la vez. Por parejas, uno hace el pulso con los muslos y el otro el contratiempo con palmas, y se cambian sin parar. Y que inventen un ritmo de cuatro pulsos con una síncopa donde ellos quieran y lo escriban con sílabas para que otro lo toque.",
+    "variante": {
+      "titulo": "Con instrumentos",
+      "texto": "Reparte claves, cajas chinas y panderos. Un grupo toca solo el pulso con el pandero; otro, el ritmo con síncopa con las claves. Sobre un pulso que suena de verdad se oye clarísimo cuándo la síncopa cae en el hueco. Después el grupo del pulso deja de tocar y el otro tiene que sostener la síncopa solo."
+    },
+    "ideas": [
+      "Buscar síncopas en músicas que conozcan: escuchar un fragmento de salsa o de reggae y levantar la mano cuando el acento cae entre pulsos.",
+      "Escribir en la pizarra los cuatro ritmos con figuras (negra, corchea-negra-corchea, silencio de corchea y corchea) y unir cada uno con sus sílabas.",
+      "Hacer un rap corto de cuatro versos donde una palabra caiga a contratiempo a propósito."
+    ],
+    "loTiene": [
+      "Mantiene el pie en el pulso mientras palmea la síncopa en el hueco.",
+      "Dice ti-ta-ti con la sílaba larga entre dos pulsos antes de palmearla.",
+      "Palmea el contratiempo sh-ti sin que la palma se adelante al hueco."
+    ],
+    "errores": [
+      {
+        "error": "Palmea la síncopa encima del pulso y le sale ta-ta-ta",
+        "remedio": "decirla con la boca mientras el pie marca, hasta que la sílaba larga caiga entre dos pies; luego palmear."
+      },
+      {
+        "error": "El pie se para o se mueve con las palmas",
+        "remedio": "que un compañero le marque el pulso en el hombro mientras él palmea, o que ande por el aula al pulso."
+      },
+      {
+        "error": "En el contratiempo se adelanta y cae en el pulso",
+        "remedio": "pronunciar «sh» en voz alta en cada pulso; la palma va después de la boca."
+      }
+    ],
+    "indicadores": [
+      "Pie firme",
+      "Síncopa en el hueco",
+      "Contratiempo"
+    ]
+  },
   "etiquetas": [
     "síncopa",
     "contratiempo",

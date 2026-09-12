@@ -44,6 +44,85 @@
     ]
   },
   "enunciado": "actividad.inf19.enunciado",
+  "ficha": {
+    "aprende": "Encontrar a cada uno de la pandilla en su tecla y saber que hacia la derecha suena más agudo: Dora es la más grave y Doby el más agudo.",
+    "vocabulario": [
+      "tecla",
+      "pandilla",
+      "dora",
+      "doby",
+      "fara",
+      "grave",
+      "agudo",
+      "escalera"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet",
+    "material": "Ninguno. Sin pantalla, un metalófono o unas láminas de aula.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Cada tecla, uno de la pandilla.",
+        "detalle": "Mirar el piano: ocho teclas blancas y un personaje en cada una. Dora a la izquierda, la más grave; Doby a la derecha, el más agudo, y en medio los demás. Tocar a Dora y a Doby y oír la diferencia."
+      },
+      {
+        "min": 2,
+        "titulo": "Tocar libre.",
+        "detalle": "Cada niño toca lo que quiera y escucha. Con un dedo, deslizando, con varios. No hay nada que hacer bien: es un instrumento, y lo primero es probarlo."
+      },
+      {
+        "min": 1,
+        "titulo": "Buscar a alguien.",
+        "detalle": "El maestro pide: «toca a Fara», «toca a Dora», «toca a Doby». El niño lo busca y lo toca. Después al revés: el maestro toca uno sin decir quién y el niño lo señala."
+      },
+      {
+        "min": 1,
+        "titulo": "Los retos de la app.",
+        "detalle": "Hacer los tres retos que propone la pantalla, uno detrás de otro. Son cortos, no tienen puntuación y se pueden repetir."
+      },
+      {
+        "min": 1,
+        "titulo": "La escalera de Dora a Doby.",
+        "detalle": "Tocar las ocho teclas seguidas, de izquierda a derecha, de una en una, y oír que la escalera sube. Después bajarla: de Doby a Dora."
+      }
+    ],
+    "enPantalla": "Un piano de una octava sin teclas negras, con un personaje de la pandilla en cada tecla: Dora en la de la izquierda, Doby en la de la derecha, y Fara y los demás entre medias. Al tocar una tecla suena su nota, con un sonido de marimba, y se ve quién es. Se toca con el dedo o deslizando. No hay ejercicio ni corrección: es un instrumento. La app propone tres retos cortos para buscar personajes y se acaba cuando el maestro lo dice.",
+    "sinPantalla": "Un metalófono o unas láminas Orff de una octava, con un dibujo o una pegatina de cada personaje en su lámina: Dora en la más larga, Doby en la más corta. Se hace lo mismo: tocar libre, buscar «a Fara», subir la escalera. Si hay un solo instrumento, se pasa en corro y cada niño busca a uno de la pandilla y lo toca. El piano de la pantalla no sustituye al instrumento: lo pone al alcance cuando no hay treinta.",
+    "masFacil": "Solo dos personajes: Dora y Doby, los de los extremos. ¿Cuál suena hondo? ¿Cuál finito? Que los toque muchas veces seguidas, alternando. Después, un tercero en medio, Fara. Ocho personajes a la vez pueden ser demasiados para un niño de tres años; con tres ya hay escalera.",
+    "masDificil": "Cantar el nombre del personaje a la vez que se toca, con su altura. Tocar dos seguidos y que otro niño diga quiénes eran. Sacar de oído una cancioncita de dos o tres notas que la clase conozca, buscando los personajes que suenan igual. O jugar a ojos cerrados: el maestro toca a uno y el niño dice quién ha sonado.",
+    "variante": {
+      "titulo": "La pandilla en fila",
+      "texto": "Ocho niños de pie, en fila, cada uno con el nombre de un personaje. El maestro toca una tecla y el niño que es ese personaje da un paso al frente. Después, toca la escalera de Dora a Doby y los niños van saliendo uno a uno, de izquierda a derecha. Se ve la escalera con los cuerpos antes de verla con las teclas."
+    },
+    "ideas": [
+      "Dibujar el piano de la pandilla en papel, con los ocho personajes en fila, y colgarlo en clase para señalar a quién se toca.",
+      "Inventar una canción de tres personajes tocando sus teclas en el orden que se quiera, y ponerle una letra con sus nombres.",
+      "Comparar con el metalófono de clase: buscar en él a Dora y a Doby, y ver que la lámina larga suena hondo y la corta finito."
+    ],
+    "loTiene": [
+      "Encuentra a Dora y a Doby sin probar todas las teclas.",
+      "Sabe que hacia la derecha suena más agudo, y lo dice a su manera.",
+      "Toca de Dora a Doby de una en una, sin saltarse ninguna."
+    ],
+    "errores": [
+      {
+        "error": "Toca con la palma entera y suenan varias a la vez",
+        "remedio": "poner un solo dedo, el índice, y pedir «a uno de la pandilla cada vez». Un minuto de tocar libre antes ayuda."
+      },
+      {
+        "error": "Toca siempre la misma tecla",
+        "remedio": "pedir por su nombre a los otros personajes y celebrar cada uno que encuentra."
+      },
+      {
+        "error": "Busca al personaje por el dibujo sin escuchar",
+        "remedio": "tapar los dibujos con la mano, tocar a Dora y a Doby y preguntar cuál era la honda."
+      }
+    ],
+    "indicadores": [
+      "Encuentra al personaje",
+      "Grave a la izquierda",
+      "Sube la escalera"
+    ]
+  },
   "personaje": "doby",
   "creditos": [
     {

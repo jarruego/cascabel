@@ -43,6 +43,85 @@
   "pistas": [
     "actividad.inf18.pista1"
   ],
+  "ficha": {
+    "aprende": "Que el bombo, la caja, la pandereta y las claves suenan distinto: reconocer cada uno por su sonido, nombrarlo, y decir cuál es el más grave y cuál suena a lluvia.",
+    "vocabulario": [
+      "bombo",
+      "caja",
+      "pandereta",
+      "claves",
+      "grave",
+      "lluvia",
+      "escuchar",
+      "tocar"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet",
+    "material": "Ninguno. Sin pantalla, los cuatro instrumentos de aula, o los que haya.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Tocar libre.",
+        "detalle": "Cada niño toca los cuatro botones como quiera, sin consigna. Solo escuchar lo que sale. Si aporrea, no pasa nada: es lo primero que hace todo el mundo con un instrumento nuevo."
+      },
+      {
+        "min": 1,
+        "titulo": "Uno a uno, con su nombre.",
+        "detalle": "Tocar el bombo y decir «bombo»; la caja, «caja»; la pandereta y las claves. Poner palabra a cómo suena: el bombo, hondo; la caja, seco; la pandereta, como lluvia; las claves, toc."
+      },
+      {
+        "min": 2,
+        "titulo": "Buscar el que se pide.",
+        "detalle": "El maestro pregunta: «¿cuál es el más grave?», «¿cuál se parece a la lluvia?», «¿cuál hace toc, como madera?». El niño lo toca y se comprueba escuchando."
+      },
+      {
+        "min": 1,
+        "titulo": "Adivinar con los ojos cerrados.",
+        "detalle": "Por parejas: uno toca un instrumento y el otro, sin mirar, dice cuál era. Se cambian. Reconocer sin ver es lo que muestra que se ha escuchado."
+      },
+      {
+        "min": 1,
+        "titulo": "Los de verdad.",
+        "detalle": "Si hay bombo, caja, pandereta o claves en el aula, tocarlos ahora y comparar: ¿suenan como en la app? Un instrumento de verdad siempre gana."
+      }
+    ],
+    "enPantalla": "Cuatro botones grandes con un dibujo cada uno: el bombo, la caja, la pandereta y las claves. Al tocar uno, suena; se pueden tocar seguidos, deslizando el dedo de uno a otro, o dos a la vez. No hay pulso detrás, ni grabación, ni tarea: es un instrumento para probar. No hay respuesta correcta ni final; se acaba cuando el maestro dice. Lo que se aprende, a esta edad, es que cada uno suena distinto y que se puede elegir cuál tocar.",
+    "sinPantalla": "Con los instrumentos de verdad se hace igual y mejor: los cuatro sobre una mesa, y los niños los prueban por turnos. Si en clase solo hay uno de cada, se pasan en corro: cada niño lo toca una vez y lo pasa. Después, escondidos tras la mesa: el maestro toca uno y los niños dicen cuál. Si no hay pandereta, una lata con arroz suena a lluvia; si no hay bombo, una caja de cartón grande golpeada con la palma.",
+    "masFacil": "Dos instrumentos en vez de cuatro, los que menos se parecen: el bombo y las claves. Tocar uno, nombrarlo, tocar el otro, nombrarlo, y preguntar solo por esos dos. Cuando los distingue sin pensar, entra la pandereta, y la caja al final, que es la que más se parece a las otras.",
+    "masDificil": "Tocar dos instrumentos seguidos y que el niño diga cuáles y en qué orden: «primero el bombo, luego las claves». Inventar un ritmo corto de tres golpes, con dos instrumentos distintos, y que otro niño lo repita. O pedir un sonido que no está: «¿con cuál harías un trueno?», «¿y unos pasos?», y que explique por qué.",
+    "variante": {
+      "titulo": "Orquesta de cuatro",
+      "texto": "Cuatro niños, uno por instrumento, delante de la clase, con la app o con los de verdad. El maestro hace de director: señala a uno y suena; señala a dos y suenan los dos; cierra el puño y silencio. Después dirige un niño. Es la primera vez que tocan juntos y que alguien manda callar con un gesto."
+    },
+    "ideas": [
+      "Un cuento con cuatro personajes, uno por instrumento: el gigante es el bombo, la lluvia es la pandereta, el pájaro carpintero son las claves. Al nombrarlos, suenan.",
+      "Buscar en casa cosas que suenen como cada uno y traerlas: una olla, una lata con arroz, dos cucharas de madera.",
+      "Tocar los cuatro por orden de más grave a más agudo, y discutir dónde va la pandereta, que no está claro."
+    ],
+    "loTiene": [
+      "Dice cuál es el bombo sin mirar, solo por el sonido.",
+      "Toca la pandereta cuando se le pide «el que suena a lluvia».",
+      "Nombra los cuatro al tocarlos."
+    ],
+    "errores": [
+      {
+        "error": "Aporrea los cuatro botones a la vez todo el rato",
+        "remedio": "dejarle un minuto de tocar libre y después pedir uno solo: «ahora solo el bombo, tres veces»."
+      },
+      {
+        "error": "Toca siempre el mismo, el que más le gusta",
+        "remedio": "tapar ese botón con la mano un rato y pedir los otros por su nombre."
+      },
+      {
+        "error": "No distingue la caja de las claves",
+        "remedio": "tocar la caja y las claves de verdad, mirando de qué están hechas: piel y madera. Luego otra vez sin mirar."
+      }
+    ],
+    "indicadores": [
+      "Distingue de oído",
+      "Nombra",
+      "Lo encuentra"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

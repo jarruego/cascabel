@@ -92,6 +92,79 @@
   "pistas": [
     "actividad.inf05paisaje.pista1"
   ],
+  "ficha": {
+    "aprende": "Saber de qué está hecho lo que suena sin verlo: si es metal que brilla como una campana, piel que retumba como un tambor, o madera que da un toc seco.",
+    "vocabulario": [
+      "metal",
+      "piel",
+      "madera",
+      "campana",
+      "tambor",
+      "claves",
+      "escuchar"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o por parejas en tablet",
+    "material": "Ninguno. Sin pantalla, un triángulo o campanilla, un tambor y unas claves.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Tres materiales en la mano.",
+        "detalle": "Pasar por el corro algo de metal, algo de madera y un tambor. Golpearlos con un dedo y ponerles palabra: el metal brilla y sigue sonando, la madera hace toc y se calla, la piel hace bum."
+      },
+      {
+        "min": 1,
+        "titulo": "Ojos cerrados.",
+        "detalle": "El maestro toca uno de los tres escondido detrás de la mesa. Los niños dicen el material y después se enseña el instrumento para comprobar."
+      },
+      {
+        "min": 2,
+        "titulo": "En la app.",
+        "detalle": "Suena y un niño toca la campana, el tambor o la madera. Los demás lo dicen bajito antes de que toque. Si no coincide, se vuelve a oír y se prueba otra vez."
+      },
+      {
+        "min": 1,
+        "titulo": "Buscar en la clase.",
+        "detalle": "Cada niño toca con un dedo algo del aula y dice de qué está hecho: la pata de la silla, la mesa, el radiador. La clase escucha y dice si suena a campana, a tambor o a madera."
+      }
+    ],
+    "enPantalla": "Tres botones grandes: una campana, un tambor y unas claves de madera. La app pregunta «¿Qué ha sonado?» y suena uno de los tres: un brillo de metal que dura, un golpe seco de madera o el bum de la piel del tambor. El niño toca el que cree. Si toca otro, el personaje le pregunta si sonaba a metal, a piel o a madera, y puede volver a oírlo y elegir de nuevo. Al acertar, «¡bien!» y viene el siguiente. Seis sonidos y termina.",
+    "sinPantalla": "Tres tarjetas en el suelo: campana, tambor y claves. El maestro, con los tres instrumentos escondidos tras un biombo o una caja, toca uno. Los niños van a la tarjeta que toca, o la señalan desde el sitio. Después se enseña el instrumento y se golpea a la vista para que unan el sonido con el material. Si no hay triángulo, sirve una cucharilla en un vaso de cristal; si no hay tambor, una caja de cartón.",
+    "masFacil": "Quédate con dos: campana y tambor, que son los que menos se parecen. Enseña el instrumento, tócalo a la vista, escóndelo y vuelve a tocarlo enseguida. Di el nombre del material en voz alta cada vez que suene, hasta que lo digan ellos. La madera entra cuando los otros dos ya salen sin pensar.",
+    "masDificil": "Dos sonidos del mismo material que suenen distinto: campana y triángulo, claves y caja china. ¿Son los dos de metal? Y al revés: un niño elige un objeto de la clase, lo toca escondido y los demás dicen el material. Producir el sonido para que otro lo adivine cuesta más que reconocerlo.",
+    "variante": {
+      "titulo": "Paseo de escucha",
+      "texto": "Una vuelta por el pasillo o el patio en silencio, parando en cada cosa que suene: la puerta metálica, la valla, un banco de madera, la papelera. Se golpea con un dedo, se escucha y se dice el material. Al volver, se dibuja en la pizarra lo que era de metal, lo que era de madera y lo que retumbaba como un tambor."
+    },
+    "ideas": [
+      "Una caja de sonidos del aula: reunir en una cesta un objeto de cada material y usarla de ahora en adelante para adivinar con los ojos cerrados.",
+      "Dibujar el paisaje sonoro de la clase: cada niño dibuja una cosa que suena y la coloca en el mural del metal, la madera o la piel.",
+      "Hacer un instrumento de cada material con cosas de casa: una lata con arroz, dos cucharas de madera, una caja de zapatos con un globo tenso de parche."
+    ],
+    "loTiene": [
+      "Toca la campana, el tambor o la madera según el sonido, sin ver el instrumento.",
+      "Espera a que el sonido acabe antes de tocar el botón.",
+      "Dice el material al tocar algo de la clase: «esto es metal, brilla»."
+    ],
+    "errores": [
+      {
+        "error": "Toca el tambor con todo lo que suena fuerte",
+        "remedio": "tocar la campana fuerte y el tambor flojito: lo que cambia el material es cómo suena, no cuánto."
+      },
+      {
+        "error": "Confunde la campana con la madera: los dos son un golpe",
+        "remedio": "que escuche cuánto dura: el metal sigue sonando un rato y la madera se calla enseguida. Levantar la mano mientras suene."
+      },
+      {
+        "error": "Toca antes de que acabe el sonido",
+        "remedio": "manos en las rodillas hasta que se apague, y solo entonces se toca."
+      }
+    ],
+    "indicadores": [
+      "Metal, piel, madera",
+      "Espera al final",
+      "Nombra el material"
+    ]
+  },
   "etiquetas": [
     "paisaje sonoro",
     "sonidos del entorno",

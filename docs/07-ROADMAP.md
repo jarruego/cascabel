@@ -3028,6 +3028,22 @@ textos, niveles, camino, y la sección de instrumentos.
 - [x] **El Danubio (347) con violín**, la melodía al 100 % y los golpes al 45 %: la percusión
       corporal tiene ahora también `volumenGolpes`, para cuando manda la melodía.
 
+- [x] **La ficha del maestro, en dos caras y sin paja** (2026-09-12): qué se aprende y su
+      vocabulario, cómo va (lo que oye el niño y los pasos con minutos), la partitura dibujada
+      con abcjs desde el ABC del JSON, en la pantalla; y detrás, para sacarle más (sin
+      pantalla, más fácil, más difícil, variante e ideas), qué mirar (lo tiene quien, errores
+      y qué hacer), currículo y práctica, y el seguimiento con las tres columnas que salen de
+      «qué mirar». Fuera accesibilidad, avisos y créditos como bloque; la atribución va en el
+      pie con el logotipo y la dirección de cocomusic. Ficha técnica con etiquetas. Cabecera y
+      pie en el margen. El bloque `ficha` del esquema admite todos esos campos.
+- [x] **Ficha propia en las 167 actividades** (2026-09-12): escritas por lotes a partir del
+      expediente de cada una (enunciado, pistas, práctica, contenido), validadas campo a
+      campo (longitudes, minutos que suman la duración, sin castigar el error, sin nombrar
+      otras actividades) e integradas en su JSON. `tests/fichas.test.ts` exige que ninguna
+      se quede con la guía genérica del tipo. Las decisiones que piden criterio musical van
+      marcadas «(PENDIENTE DE REVISIÓN PEDAGÓGICA)» dentro del texto de la ficha (serie
+      armónica, arpegios del Preludio, habanera del tango, fononimia de sol-mi-la…).
+
 - [x] **El buscador encuentra por concepto, no solo por título.** «Anacrusa» no encontraba la
       329 (2026-09-12). Ahora el índice lleva `etiquetas` (nuevo campo del esquema, escrito a
       mano en las 167 actividades: sinónimos, obras, compositores, instrumentos) y la práctica

@@ -94,6 +94,85 @@
     "actividad.c102.pista1",
     "actividad.c102.pista2"
   ],
+  "ficha": {
+    "aprende": "Repetir con las palmas cuatro ritmos de dos compases con negras, un silencio y ti-ti, entrando a tiempo después de escucharlos enteros.",
+    "vocabulario": [
+      "eco",
+      "palmas",
+      "ta",
+      "ti-ti",
+      "silencio",
+      "pulso",
+      "escuchar",
+      "repetir"
+    ],
+    "agrupamiento": "Toda la clase de pie con proyector; o individual, en tablet",
+    "material": "Ninguno. Si se usa el micrófono, silencio en el aula mientras se palmea",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Eco sin pantalla.",
+        "detalle": "Palmea tú «ta ta ta ta» y que lo repitan. Luego «ta ta ti-ti ta». Marca el pulso con el pie todo el rato para que vean dónde caen las palmas."
+      },
+      {
+        "min": 1,
+        "titulo": "Primer ritmo: solo negras.",
+        "detalle": "En la app, escuchar los dos compases y repetirlos. Que cuenten por dentro uno-dos-tres-cuatro mientras suena: las palmas van encima de los números."
+      },
+      {
+        "min": 1,
+        "titulo": "Segundo y cuarto: entra el ti-ti.",
+        "detalle": "Dos rápidas donde antes había una. Que lo digan antes de palmearlo: «ta ta ti-ti ta». El cuarto ritmo empieza por ti-ti: avísalo."
+      },
+      {
+        "min": 1,
+        "titulo": "Tercero: el silencio.",
+        "detalle": "«ta sh ti-ti ta»: en el sh no se palmea, pero el pie sigue. Que hagan el sh con los puños cerrados, para que se vea que no dan."
+      },
+      {
+        "min": 1,
+        "titulo": "Repetir el que menos ha salido.",
+        "detalle": "Míralo en el resumen: si la clase va tarde pero junta, el pulso está bien; solo hay que entrar antes. Repetid ese ritmo con una señal tuya de entrada."
+      }
+    ],
+    "enPantalla": "El personaje palmea un ritmo de dos compases y el niño lo repite justo después, con palmas al micrófono o tocando el botón grande si no hay micrófono o no se da permiso. Cada palmada que entra a tiempo enciende su punto en verde; las que se escapan quedan en gris, nunca en rojo. Hay cuatro ritmos: todo negras, con un ti-ti, con un silencio y con dos ti-ti. Se puede volver a oír el modelo con el botón de repetir. Al final la app dice si se ha ido por delante o por detrás, no solo cuántas palmadas han entrado.",
+    "sinPantalla": "Eco de palmas de toda la vida: tú palmeas dos compases y la clase los repite. Usa los cuatro ritmos en este orden: ta ta ta ta; ta ta ti-ti ta; ta sh ti-ti ta; ti-ti ta ti-ti ta. Marca el pulso con el pie y no pares entre modelo y eco: el eco entra en el pulso siguiente. Luego, en corro, un niño propone y el resto repite.",
+    "masFacil": "Quédate en el primer ritmo, solo negras, y baja la velocidad con el ajuste de la app. Que lo digan con la voz antes de palmearlo: un ritmo que no se puede decir no se puede tocar. Si el ti-ti no sale, que lo hagan como una sola palmada larga y después la partan. Con el micrófono, acerca la tablet o pasa al botón: lo que importa es el ritmo, no el aparato.",
+    "masDificil": "Que hagan el ritmo con los pies mientras las manos marcan el pulso, o al revés. O que palmeen el eco sin oír el modelo entero: solo el primer compás, y completen el segundo de memoria. Y para acabar, que un niño invente un ritmo de cuatro pulsos con ta, ti-ti y sh, y la clase lo repita.",
+    "variante": {
+      "titulo": "Con instrumentos",
+      "texto": "Cada fila de la clase con un instrumento: claves, pandero, caja china. El modelo lo palmea la app y cada fila lo repite con su instrumento, por turnos. Después las tres filas a la vez: si el ritmo está bien, suena como uno solo aunque sean tres timbres."
+    },
+    "ideas": [
+      "Escribir los cuatro ritmos en la pizarra con sílabas y que la clase adivine cuál ha sonado antes de repetirlo.",
+      "Poner nombres de la clase a los ritmos: «Pa-blo Ma-ri-na» es ti-ti ti-ti; buscar qué nombres se parecen a cada patrón.",
+      "Encadenar los cuatro ritmos seguidos, sin parar, como una frase de ocho compases."
+    ],
+    "loTiene": [
+      "Entra en el pulso siguiente al modelo, sin esperar ni adelantarse.",
+      "Da dos palmadas rápidas en ti-ti y una sola en ta.",
+      "No palmea en el sh y sigue marcando el pulso con el pie."
+    ],
+    "errores": [
+      {
+        "error": "Empieza a palmear antes de que el modelo termine",
+        "remedio": "que escuche con las manos en los muslos y las levante solo cuando el personaje acabe."
+      },
+      {
+        "error": "Palmea en el silencio",
+        "remedio": "hacer el sh con los puños cerrados o diciendo «sh» en voz alta; el hueco se oye mejor si se dice."
+      },
+      {
+        "error": "Todas las palmadas van tarde pero juntas",
+        "remedio": "el pulso está bien; dale una señal de entrada (un gesto o un «ya») en vez de repetir el ritmo."
+      }
+    ],
+    "indicadores": [
+      "Entra a tiempo",
+      "Ti-ti",
+      "Respeta el silencio"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

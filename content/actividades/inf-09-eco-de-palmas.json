@@ -88,6 +88,80 @@
   "pistas": [
     "actividad.inf09.pista1"
   ],
+  "ficha": {
+    "aprende": "Escuchar cuatro pulsos de palmas y repetirlos igual, ni antes ni después, dejando vacío el hueco donde no ha sonado nada.",
+    "vocabulario": [
+      "eco",
+      "palmas",
+      "escuchar",
+      "esperar",
+      "hueco",
+      "silencio",
+      "ta",
+      "pulso"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o de uno en uno en tablet",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Ta, ta, ta, ta con la voz.",
+        "detalle": "Sentados. El maestro dice «ta, ta, ta, ta» despacio, con una palmada en cada «ta», y los niños lo repiten. Después con un hueco: «ta, sh, ta, ta», llevándose el dedo a la boca en el «sh»."
+      },
+      {
+        "min": 1,
+        "titulo": "Eco sin pantalla.",
+        "detalle": "El maestro palmea cuatro pulsos y la clase responde en eco, con las manos en las rodillas mientras escucha. Tres o cuatro ecos, primero sin hueco y luego con él."
+      },
+      {
+        "min": 2,
+        "titulo": "En la app.",
+        "detalle": "Suenan las palmas y un niño las repite palmeando ante el micrófono o tocando el botón grande. Los demás palmean bajito con él. Tres ecos: sin hueco, con hueco en medio y con hueco al final."
+      },
+      {
+        "min": 1,
+        "titulo": "El hueco vacío.",
+        "detalle": "Repetir solo el eco del hueco al final: «ta, ta, ta, sh». Manos abiertas y quietas en el «sh», que se vea el silencio. Quien lo hace bien, lo hace para la clase."
+      }
+    ],
+    "enPantalla": "Cuatro puntos en fila y un pulso tranquilo. Suenan cuatro palmas —o tres y un hueco— y después le toca al niño: da las palmadas ante el micrófono o toca el botón grande. Cada palmada que entra a tiempo enciende su punto en verde; la que se escapa se queda gris, sin sonido feo ni pantalla roja. Se puede volver a escuchar y repetir. Si no hay micrófono, se toca en la pantalla y funciona igual. Tres ecos y termina: el personaje dice cómo ha ido.",
+    "sinPantalla": "Eco de palmas, sin más: el maestro palmea cuatro pulsos y la clase los devuelve. Es la actividad de ritmo más antigua que existe. Para el hueco, las manos se abren y se quedan quietas, o se dice «sh» con el dedo en la boca. En corro, el eco puede pasar de un niño al de su derecha: cada uno repite lo que ha hecho el anterior, y se ve enseguida dónde se cuela una palmada de más.",
+    "masFacil": "Solo el primer eco, «ta, ta, ta, ta», sin hueco, hasta que salga. Decir «ta» en voz alta con cada palmada: lo que se puede decir se puede tocar. Bajar el pulso si la app lo permite, o hacerlo sin pantalla más despacio. Y el maestro palmea a la vez que el niño en el eco, mano con mano si hace falta, antes de dejarle solo.",
+    "masDificil": "Sin decir «ta»: solo escuchar y palmear. Dos huecos en los cuatro pulsos: «ta, sh, ta, sh». Que un niño invente el modelo y la clase haga el eco. O el eco con los pies en vez de con las manos, sentados, que suena distinto y obliga a escuchar el hueco de otra manera.",
+    "variante": {
+      "titulo": "Eco con instrumentos",
+      "texto": "El maestro palmea y los niños responden con claves, con un tambor o con un pandero, uno cada vez. El hueco se hace levantando la baqueta y sin tocar. Después al revés: el modelo con el tambor y el eco con palmas, para que se oiga que el ritmo es el mismo aunque cambie el sonido."
+    },
+    "ideas": [
+      "Ecos con el nombre de cada niño: «Ma-rí-a» son tres palmadas y un hueco; la clase repite el nombre con las manos.",
+      "Eco de pies y de palmas mezclados: dos palmadas y dos pisotones, a ver si el eco cambia de sitio en el momento justo.",
+      "Un eco muy flojito y otro muy fuerte, con el mismo ritmo: repetir también la fuerza, no solo las palmadas."
+    ],
+    "loTiene": [
+      "Espera a que acaben las cuatro palmas antes de empezar el eco.",
+      "Deja el hueco vacío, con las manos abiertas, y sigue con el siguiente pulso.",
+      "Palmea al pulso, sin correr al final."
+    ],
+    "errores": [
+      {
+        "error": "Empieza a palmear a la vez que suena el modelo",
+        "remedio": "manos en las rodillas mientras se escucha; solo se levantan cuando se calla la app."
+      },
+      {
+        "error": "Rellena el hueco con una palmada",
+        "remedio": "decir «sh» con el dedo en la boca en el hueco, y palmear solo en los «ta». Luego quitar la voz y dejar el gesto."
+      },
+      {
+        "error": "Va cada vez más rápido y acaba antes de tiempo",
+        "remedio": "decir «ta» con cada palmada, despacio, o palmear con las manos en los muslos, que frena."
+      }
+    ],
+    "indicadores": [
+      "Espera su turno",
+      "Respeta el hueco",
+      "Al pulso"
+    ]
+  },
   "etiquetas": [
     "eco",
     "palmas",

@@ -299,6 +299,85 @@
     "actividad.c139.pista1",
     "actividad.c139.pista2"
   ],
+  "ficha": {
+    "aprende": "Tocar sol, la, mi y do a tiempo siguiendo a Sol, Laia, Milo y Dora por su banda, y notar que casi siempre vienen de dos en dos y que la canción baja cuando llegan Milo y Dora.",
+    "vocabulario": [
+      "sol",
+      "la",
+      "mi",
+      "do",
+      "de dos en dos",
+      "grave",
+      "a tiempo",
+      "pastel"
+    ],
+    "agrupamiento": "Por parejas en tablet, o grupo clase con proyector",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Cuatro personajes, cuatro notas.",
+        "detalle": "Presenta a Sol (sol), Laia (la), Milo (mi) y Dora (do), y canta sus notas con la mano: Laia arriba del todo, Sol justo debajo, Milo más abajo, Dora la más grave."
+      },
+      {
+        "min": 1,
+        "titulo": "Cantar el pastel.",
+        "detalle": "Es una canción alemana sobre hacer un pastel; aquí se canta con los nombres: «Sol-Sol-Lai-a-Lai-a, Sol, Mi-lo, Do-ra». Que oigan que va de dos en dos y que baja al final de cada frase."
+      },
+      {
+        "min": 1,
+        "titulo": "Colocar los dedos.",
+        "detalle": "Cuatro dedos, uno en cada pulsador, sin tocar. Se pone la app y solo se mira: Sol y Laia bajan por parejas; Milo y Dora aparecen cuando la canción baja."
+      },
+      {
+        "min": 2,
+        "titulo": "Tocar con la app.",
+        "detalle": "Primer y segundo ejercicio, tocando cuando cada personaje llega a la línea. Si uno se despista, deja pasar la pareja y entra en la siguiente: Sol-Sol vuelve enseguida."
+      },
+      {
+        "min": 1,
+        "titulo": "Tercer ejercicio y cierre.",
+        "detalle": "El tercero es más largo. Después, cantar la canción sin la app con la mano en cuatro alturas: hombros, cabeza, cintura, rodillas."
+      }
+    ],
+    "enPantalla": "Cuatro bandas verticales, una por personaje: Sol (sol), Laia (la), Milo (mi) y Dora (do), cada una con su pulsador abajo. La melodía de «Backe, backe Kuchen» baja por las bandas: casi siempre vienen de dos en dos —Sol, Sol, Laia, Laia— y de vez en cuando aparecen Milo y Dora, que son las notas graves. Hay que tocar el pulsador de cada uno cuando llega a la línea; al hacerlo a tiempo, la nota suena y se ilumina. No hay marcador mientras se juega ni se puede perder; al acabar, un resumen. Son tres ejercicios.",
+    "sinPantalla": "Canta la melodía con los nombres de los personajes y que los niños la sigan con la mano en cuatro alturas: cabeza para Laia, hombros para Sol, cintura para Milo, rodillas para Dora. O cuatro niños de pie en fila, de más alto a más grave, que dan un paso adelante cuando les toca. Con un xilófono, se dejan solo do, mi, sol y la, y se toca la canción despacio mientras la clase canta los nombres.",
+    "masFacil": "Que toquen solo a Sol, que abre cada frase dos veces seguidas: entrar en él es seguir la canción. Después Sol y Laia, que van juntos y de dos en dos; Milo y Dora se dejan pasar. Cantar los nombres en voz alta mientras se toca ayuda a ver quién viene. Y más despacio, si hace falta.",
+    "masDificil": "Cantar el nombre de cada nota mientras se toca. Por parejas: uno lleva a Sol y Laia, el otro a Milo y Dora, y hay que entrar cada uno en lo suyo sin adelantarse. Después, tocar la melodía en un xilófono con solo esas cuatro láminas, sin la app, a la misma velocidad.",
+    "variante": {
+      "titulo": "Con cuatro láminas",
+      "texto": "Se quitan del xilófono todas las láminas menos do, mi, sol y la. Se proyecta la app y un niño toca en las láminas lo que baja mientras otro toca los pulsadores. La clase canta los nombres. Al cambiar de turno, se cambian los dos. Con cuatro láminas no hay nota que suene mal, y la canción sale entera."
+    },
+    "ideas": [
+      "Contar de qué va la canción alemana (un panadero que llama a hacer un pastel con siete cosas) e inventar entre todos las siete cosas en español.",
+      "Escribir la canción en la pizarra con cuatro rayas de altura y leerla señalando, notando dónde va por parejas y dónde baja.",
+      "Inventar una melodía nueva de ocho notas solo con Sol, Laia, Milo y Dora, que también vaya de dos en dos, y tocarla en el xilófono."
+    ],
+    "loTiene": [
+      "Toca Sol-Sol-Laia-Laia a tiempo, sin adelantarse a la segunda de cada pareja.",
+      "Entra en Milo y Dora cuando la canción baja, sin quedarse en Sol.",
+      "Canta la canción con los nombres de las cuatro notas sin la app."
+    ],
+    "errores": [
+      {
+        "error": "Toca a Laia en la segunda Sol porque espera que cambie",
+        "remedio": "cantar «Sol-Sol» en voz alta antes de tocar: la pareja se repite antes de cambiar."
+      },
+      {
+        "error": "Se queda en Sol y Laia y no baja a Milo y Dora",
+        "remedio": "una vuelta solo mirando, diciendo «bajan» cuando aparezcan los dos graves."
+      },
+      {
+        "error": "Se despista y deja de tocar hasta el final",
+        "remedio": "esperar al siguiente Sol-Sol, que abre cada frase, y volver a entrar ahí."
+      }
+    ],
+    "indicadores": [
+      "De dos en dos",
+      "Baja a tiempo",
+      "Canta con nombres"
+    ]
+  },
   "creditos": [
     {
       "obra": "«Backe, backe Kuchen», primera estrofa",

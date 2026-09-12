@@ -89,6 +89,85 @@
     "actividad.c334.pista1",
     "actividad.c334.pista2"
   ],
+  "ficha": {
+    "aprende": "Colocar las notas de la octava grave en clave de fa, del do de dos líneas adicionales por debajo al do del segundo espacio, partiendo del fa de la cuarta línea.",
+    "vocabulario": [
+      "clave de fa",
+      "cuarta línea",
+      "línea adicional",
+      "espacio",
+      "grave",
+      "do",
+      "fa",
+      "pentagrama"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet",
+    "material": "Ninguno (opcional: pentagrama de cinta en el suelo)",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "La clave abraza la cuarta línea.",
+        "detalle": "Dibuja en la pizarra el pentagrama con la clave de fa: los dos puntos rodean la cuarta línea y ahí vive el fa. Todo se cuenta desde ahí."
+      },
+      {
+        "min": 2,
+        "titulo": "Bajar desde el fa.",
+        "detalle": "Con el dedo en la pizarra: fa en la cuarta línea, mi en el tercer espacio, re en la tercera línea, do en el segundo espacio... hasta el do de las dos líneas adicionales de abajo. Cantarlo a la vez, bajando de verdad."
+      },
+      {
+        "min": 3,
+        "titulo": "En la tablet.",
+        "detalle": "Cada niño o pareja hace las rondas: la app dibuja siete sitios, pide una nota y hay que tocar su sitio. Al tocar suena. Quien duda, cuenta desde el fa bajando: línea, espacio, línea."
+      },
+      {
+        "min": 1,
+        "titulo": "Los dos do.",
+        "detalle": "Parar y mirar los dos extremos: el do grave de las dos líneas adicionales y el do del segundo espacio. Tocarlos seguidos y oír la octava."
+      },
+      {
+        "min": 1,
+        "titulo": "Escribir uno.",
+        "detalle": "Cierra pidiendo a cada niño que escriba una nota en clave de fa en la pizarra y diga su nombre. Si no coincide, se cuenta desde el fa y se mueve."
+      }
+    ],
+    "enPantalla": "Una pauta grande con la clave de fa y, en cada ronda, siete notas dibujadas en sitios distintos, nunca dos con el mismo nombre. La app dice una nota —«re», «la»…— y el niño toca la que cree. Al tocarla suena, así que si es otra se oye que no es la altura pedida; el personaje da una pista (la cuarta línea es fa; cuenta bajando de una en una) y se puede tocar otra. Cada sitio se pregunta una vez; al acabar todas las notas de la octava, termina. Sin tiempo ni puntuación.",
+    "sinPantalla": "Pentagrama grande en el suelo con cinta de carrocero, con la clave de fa dibujada en un papel en la cuarta línea y dos trozos cortos de cinta debajo para las líneas adicionales. El maestro dice una nota y un niño se pone de pie en su sitio; la clase la canta. Para comprobar, se cuenta desde el fa en voz alta. La pauta se entiende con los pies antes que con los ojos.",
+    "masFacil": "Solo las líneas: sol, si, re, fa, la, de abajo arriba, con una tarjeta pegada en la cuarta línea que diga «fa». Cuando las líneas estén seguras, entran los espacios, y al final el do de las dos líneas adicionales. También ayuda cantar cada nota al tocarla: la app la hace sonar y el oído confirma lo que dicen los ojos.",
+    "masDificil": "Dictar melodías de tres notas en clave de fa para que las escriban en papel pautado y luego las toquen en el piano grave. Y al revés: dar una nota en clave de sol y pedir la misma en clave de fa, para ver que el do del segundo espacio de la de fa está una octava por debajo del do de la primera línea adicional de la de sol.",
+    "variante": {
+      "titulo": "Con el instrumento grave",
+      "texto": "Si hay un metalófono bajo o un piano, se toca lo que se lee: el maestro escribe una nota en clave de fa en la pizarra, un niño la busca en el instrumento y la clase dice si es la que está escrita. Leer para tocar es lo que da sentido a la clave de fa: es la de los instrumentos graves."
+    },
+    "ideas": [
+      "Escuchar un violonchelo o un contrabajo y decidir entre todos por qué esos instrumentos leen en clave de fa y no en clave de sol.",
+      "Escribir el nombre de cada niño con las notas que tenga (do, re, mi, fa, sol, la, si) en clave de fa y tocarlo en el piano.",
+      "Un bajo sencillo para una canción del aula, con dos o tres notas graves escritas en clave de fa, tocado en el metalófono bajo."
+    ],
+    "loTiene": [
+      "Encuentra el fa de la cuarta línea sin contar, como punto de partida.",
+      "Baja desde el fa alternando línea y espacio y llega al do de las dos líneas adicionales.",
+      "Al tocar una nota, escucha si es más grave o más aguda que la pedida y se corrige solo."
+    ],
+    "errores": [
+      {
+        "error": "Lee la pauta como si fuera clave de sol: toca «mi» en la primera línea",
+        "remedio": "señalar la clave y decir su nombre antes de cada ronda: «clave de fa, la cuarta línea es fa». Contar desde ahí."
+      },
+      {
+        "error": "Cuenta las líneas de arriba abajo",
+        "remedio": "poner el dedo en la primera línea, la de abajo, y subir contando; o mejor, partir siempre del fa de la cuarta."
+      },
+      {
+        "error": "Toca el sitio del do agudo cuando se pide el do grave",
+        "remedio": "recordar que hay dos do: el del segundo espacio y el de las dos líneas adicionales. Tocar los dos y oír cuál es más grave."
+      }
+    ],
+    "indicadores": [
+      "Fa de la cuarta",
+      "Cuenta bajando",
+      "Se corrige oyendo"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

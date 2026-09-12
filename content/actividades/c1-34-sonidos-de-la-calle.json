@@ -100,6 +100,85 @@
   "pistas": [
     "actividad.c134.pista1"
   ],
+  "ficha": {
+    "aprende": "Reconocer seis sonidos de la calle —un coche y su bocina, un perro, un patio de niños, una campana, un tren y una ambulancia— y separar los que son máquinas de los que son personas o animales.",
+    "vocabulario": [
+      "calle",
+      "coche",
+      "bocina",
+      "perro",
+      "patio",
+      "campana",
+      "tren",
+      "ambulancia"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o individual en tablet",
+    "material": "Ninguno. Para la parte sin pantalla, seis tarjetas con los dibujos",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Cerrar los ojos en la calle.",
+        "detalle": "Pide que se imaginen en la acera con los ojos cerrados y digan qué se oye. Apunta en la pizarra lo que salga y pon al lado los seis de la app: coche, perro, patio, campana, tren, ambulancia."
+      },
+      {
+        "min": 1,
+        "titulo": "Tres grupos.",
+        "detalle": "Máquinas (coche, tren, ambulancia), seres vivos (perro, los niños del patio) y la campana, que no es ni una cosa ni otra: suena y se queda resonando. Que los coloquen en el grupo con el dedo."
+      },
+      {
+        "min": 2,
+        "titulo": "Responder en la pantalla.",
+        "detalle": "Suena uno. Antes de tocar, la clase dice en voz baja el grupo: «máquina», «vivo» o «campana». El que sale toca. Si no acierta, se oye otra vez y se busca la pista: sirena, ladrido, silbato, muchas voces."
+      },
+      {
+        "min": 1,
+        "titulo": "El coche tiene dos sonidos.",
+        "detalle": "Pon seguidos el coche que pasa y la bocina, y el tren que pasa y su silbato: son el mismo vehículo con dos sonidos. Que digan cuál es cuál."
+      },
+      {
+        "min": 1,
+        "titulo": "Lo hacen ellos.",
+        "detalle": "Un niño imita con la voz uno de los seis y la clase señala la tarjeta. El patio se hace entre todos a la vez."
+      }
+    ],
+    "enPantalla": "Suena un trozo de calle grabado de verdad —una campana que resuena, una bocina de coche, un patio lleno de niños, un tren que pasa o silba, un perro que ladra, una ambulancia con sirena— y salen seis botones grandes con su dibujo. El niño toca el que cree. Si no acierta, el personaje recuerda la pista de cada uno (el tren resopla o silba, el perro ladra, la campana se queda resonando, la ambulancia lleva sirena) y se vuelve a oír. Al acertar, «¡bien!» y el siguiente. Se acaba al terminar las preguntas de la vuelta.",
+    "sinPantalla": "Seis tarjetas en el suelo. Tú, de espaldas, imitas: «mec-mec» para la bocina, «guau» para el perro, un «dooong» largo con la mano en la garganta para la campana, «chu-chu» o un silbido para el tren, «ni-no-ni-no» para la ambulancia; el patio lo hace media clase hablando a la vez mientras la otra media adivina. Los niños pisan la tarjeta y dicen si es máquina, ser vivo o campana. Luego imita un niño y adivinan los demás.",
+    "masFacil": "Deja dos tarjetas que no se parezcan: la campana (una nota larga que se apaga) y el perro (ladridos cortos). Nombra las dos antes de que suene. Después añade la ambulancia, que tiene sirena, y al final el coche y el tren, que son los dos motores y se pueden confundir.",
+    "masDificil": "Que digan qué han oído antes de tocar: «una sirena», «muchas voces», «un motor que pasa». Que separen los sonidos en los que avisan de algo (bocina, sirena, campana) y los que no. Y con los ojos cerrados, respondiendo solo con la voz, sin ver los botones.",
+    "variante": {
+      "titulo": "Paisaje de la calle",
+      "texto": "La clase se reparte en grupos: coches, perros, campana, tren, ambulancia y patio. Un niño hace de director y va señalando: cuando señala a un grupo, ese suena; cuando cierra la mano, se calla. Al final la calle entera suena a la vez y se van apagando los sonidos de uno en uno hasta que solo queda la campana."
+    },
+    "ideas": [
+      "Salir a la puerta del colegio dos minutos en silencio y anotar todo lo que se oye; después clasificarlo en máquinas, personas, animales y otras cosas.",
+      "Dibujar el sonido de la campana como una línea que empieza gorda y se va afinando, y compararla con la de la sirena, que sube y baja.",
+      "Inventar un paseo por el barrio con la voz: se sale de casa, ladra un perro, pasa un tren, suena la campana, y hacerlo en orden entre todos."
+    ],
+    "loTiene": [
+      "Reconoce los seis y dice el grupo: «es una máquina», «es un animal».",
+      "Sabe que la bocina y el coche que pasa son el mismo vehículo.",
+      "Imita uno de los seis con la voz y los demás lo reconocen."
+    ],
+    "errores": [
+      {
+        "error": "Confunde el coche que pasa con el tren que pasa: los dos son un motor que se acerca y se va",
+        "remedio": "oírlos seguidos y esperar el silbato o el traqueteo: si no llega, es el coche."
+      },
+      {
+        "error": "Toca «patio» con cualquier sonido de gente o de perro",
+        "remedio": "preguntar si son muchas voces a la vez o un solo ladrido."
+      },
+      {
+        "error": "Toca antes de que el sonido acabe",
+        "remedio": "que diga el grupo en voz alta mientras suena y toque solo cuando se apague."
+      }
+    ],
+    "indicadores": [
+      "Reconoce los seis",
+      "Dice el grupo",
+      "Lo imita"
+    ]
+  },
   "creditos": [
     {
       "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",

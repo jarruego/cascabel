@@ -447,6 +447,90 @@
     "actividad.c347.pista1",
     "actividad.c347.pista2"
   ],
+  "ficha": {
+    "aprende": "Sentir el tres por cuatro de «El Danubio azul» con el cuerpo: el pie en el uno y dos golpes en el dos y el tres, hasta el final del vals sin perder el uno.",
+    "vocabulario": [
+      "vals",
+      "tres por cuatro",
+      "uno",
+      "pie",
+      "palmas",
+      "muslos",
+      "chasquidos",
+      "frase"
+    ],
+    "agrupamiento": "Toda la clase, de pie, con proyector",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Contar a tres.",
+        "detalle": "De pie: uno, dos, tres, uno, dos, tres, con el uno más fuerte. Primero solo con la voz; luego el pie en el uno y las manos quietas."
+      },
+      {
+        "min": 2,
+        "titulo": "Pie, palma, palma.",
+        "detalle": "Sin música todavía: pie en el uno y dos palmas en el dos y el tres, muchas veces seguidas. Es el gesto de todo el vals; que salga solo antes de poner la melodía."
+      },
+      {
+        "min": 2,
+        "titulo": "Con el violín, la primera frase.",
+        "detalle": "Poner la app y hacer solo los ocho primeros compases: la melodía sube do, mi, sol y espera dos tiempos, y las palmas siguen aunque el violín se pare. Quien se descoloca, vuelve al pie."
+      },
+      {
+        "min": 3,
+        "titulo": "Entero, cambiando de zona.",
+        "detalle": "El vals completo, sin parar: cada frase de ocho compases cambia lo del dos y el tres —palmas, muslos, palmas, chasquidos— y el pie siempre en el uno. Avisar del cambio la primera vez."
+      },
+      {
+        "min": 1,
+        "titulo": "Segunda pasada, sin avisar.",
+        "detalle": "Otra vez entero mirando el cursor, sin que el maestro diga nada. Es larga: aguantar hasta el final es parte de la actividad."
+      },
+      {
+        "min": 1,
+        "titulo": "Bailarlo.",
+        "detalle": "Cierra sin pantalla: el maestro tararea el vals y la clase da el paso de vals en el sitio, pie en el uno y dos pasitos cortos. El cuerpo ya sabe dónde está el uno."
+      }
+    ],
+    "enPantalla": "Cuatro filas —chasquidos, palmas, muslos y pies— con el patrón marcado y un cursor que lo recorre mientras el violín toca el primer vals de «El Danubio azul» entero, de principio a fin. El pie va siempre en el uno; el dos y el tres cambian de fila en cada frase: palmas, muslos, palmas, chasquidos. Lo que sale por el altavoz es la melodía y una señal suave de los golpes: el sonido lo pone el cuerpo. No hay nada que tocar ni puntuación; se repite cuando se quiere y al acabar el personaje dice que ha sonado.",
+    "sinPantalla": "Tararea tú el vals o pon la grabación y marca el uno con la mano, como un director de vals. La clase hace pie, palma, palma, y tú cambias la zona del dos y el tres cada ocho compases tocándote los muslos o chasqueando para que te imiten. Con la grabación de orquesta de verdad se hace igual: el uno se oye en el bajo, y donde la melodía espera, las palmas siguen. En corro, es un baile.",
+    "masFacil": "Solo el pie en el uno, sin manos, hasta que caiga siempre en el mismo sitio con la melodía. Después pie y una sola palma en el dos, dejando el tres vacío. Y sin cambiar de zona: todo el vals con palmas. Si se descolocan en las esperas de la melodía (do, mi, sol y dos tiempos de silencio), contar en voz alta esos dos tiempos.",
+    "masDificil": "Mitad de la clase solo el pie del uno y la otra mitad solo el dos y el tres, y se cambian a mitad del vals. Después, bailarlo por parejas en el sitio con el paso de vals mientras la app suena, sin palmas. Y para quien va sobrado: cambiar de zona cada cuatro compases en vez de cada ocho, decidiendo ellos el orden antes de empezar.",
+    "variante": {
+      "titulo": "El uno pasa por el corro",
+      "texto": "En corro: el uno se da con el pie y pasa al siguiente niño en cada compás, como una pelota que da la vuelta; todos hacen las palmas del dos y el tres. Quien tiene el uno lo dice en voz alta. Así el uno se oye moverse por la sala y nadie puede despistarse mucho tiempo: en el siguiente compás le toca a otro."
+    },
+    "ideas": [
+      "Escuchar «El Danubio azul» con la orquesta y contar cuántos valses distintos hay dentro: levantar la mano cuando cambie la melodía.",
+      "Comparar con una marcha: pie, palma (a dos) frente a pie, palma, palma (a tres). Poner una canción y decidir a cuál se parece.",
+      "Inventar entre todos un vals de ocho compases con el metalófono, con el uno en la nota grave, y hacerle el mismo patrón de cuerpo."
+    ],
+    "loTiene": [
+      "Mantiene el pie en el uno durante todo el vals, también en las esperas de la melodía.",
+      "Cambia de palmas a muslos o chasquidos al empezar la frase sin frenar el pulso.",
+      "Aguanta hasta el final: si se descoloca, vuelve al pie y sigue en vez de pararse."
+    ],
+    "errores": [
+      {
+        "error": "Da tres palmas en vez de pie, palma, palma: el uno no se oye",
+        "remedio": "solo el pie, sin manos, contando «UNO, dos, tres» con el uno más fuerte, hasta que el pie caiga siempre ahí."
+      },
+      {
+        "error": "Sigue palmeando a dos, como en una marcha, y se descoloca a los pocos compases",
+        "remedio": "andar en el sitio a tres pasos (largo, corto, corto) con la melodía antes de volver a las palmas."
+      },
+      {
+        "error": "Se para cuando el violín espera, después de «do, mi, sol»",
+        "remedio": "contar en voz alta los dos tiempos de espera: la melodía se para, el compás no."
+      }
+    ],
+    "indicadores": [
+      "Pie en el uno",
+      "Cambia de zona",
+      "Hasta el final"
+    ]
+  },
   "creditos": [
     {
       "obra": "«El Danubio azul», op. 314, primer vals",

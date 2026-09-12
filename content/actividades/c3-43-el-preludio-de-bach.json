@@ -128,6 +128,85 @@
     "actividad.c343.pista1",
     "actividad.c343.pista2"
   ],
+  "ficha": {
+    "aprende": "Seguir el comienzo del Preludio de Bach con la vista y oír que el arpegio no cambia y el acorde sí: do, re menor, sol séptima y vuelta a do.",
+    "vocabulario": [
+      "arpegio",
+      "acorde",
+      "preludio",
+      "compás",
+      "bloque",
+      "color",
+      "volver a casa",
+      "bach"
+    ],
+    "agrupamiento": "Toda la clase, con proyector",
+    "material": "Ninguno (opcional: teclado o metalófono para tocar do, mi, sol)",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Qué es un arpegio.",
+        "detalle": "Sin la app: tocar o cantar do, mi, sol, do de una en una, subiendo. Eso es un arpegio: las notas de un acorde, pero seguidas. Es el único dibujo de toda la pieza."
+      },
+      {
+        "min": 2,
+        "titulo": "Escuchar sin seguir.",
+        "detalle": "Poner el bucle una vez entera, ojos cerrados. Preguntar solo: ¿la música cambia o es siempre igual? Casi todos dirán que cambia, aunque el dibujo sea el mismo. Ahí está la lección."
+      },
+      {
+        "min": 2,
+        "titulo": "Mirar el mapa.",
+        "detalle": "Otra vez, mirando: cuatro bloques y un cursor. El primero y el último tienen el mismo color porque son el mismo acorde, do. Levantar la mano al entrar en el tercero: es el que pide volver a casa."
+      },
+      {
+        "min": 2,
+        "titulo": "Seguirlo con la mano.",
+        "detalle": "Toda la clase dibuja en el aire el arpegio que sube en cada bloque, y cambia de mano al cambiar de bloque. Dos vueltas del bucle."
+      },
+      {
+        "min": 1,
+        "titulo": "Ponerle nombre a cada bloque.",
+        "detalle": "Do, re menor, sol séptima, do. Se dicen en voz alta con el cursor y se cierra oyéndolo una última vez, sin más consigna que escuchar."
+      }
+    ],
+    "enPantalla": "Cuatro bloques en fila, uno por compás, y un cursor que los recorre mientras el piano toca el arpegio de Bach en bucle. Cada bloque lleva el nombre de su acorde y un color: el primero y el último son iguales porque los dos son do; el segundo (re menor) y el tercero (sol séptima) van de otro color. El niño no toca nada: mira, escucha y nota dónde cambia el color de la música. No hay respuesta ni final: se para cuando el maestro quiere y se puede volver a poner.",
+    "sinPantalla": "Dibuja cuatro cajas en la pizarra, la primera y la cuarta del mismo color, y toca o pon el comienzo del Preludio señalando la caja que suena. Si hay teclado o metalófono, toca tú el arpegio despacio en cada acorde: do-mi-sol-do, re-fa-la-do, sol-si-re-fa, do-mi-sol-do (PENDIENTE DE REVISIÓN PEDAGÓGICA), y que la clase levante la mano cuando note que ha cambiado de caja. Con la voz sale igual: cantar el arpegio de do y luego el de re menor, y oír que el color cambia aunque el dibujo sea el mismo.",
+    "masFacil": "Quédate con dos bloques: el primero y el segundo. Es un solo cambio, de do a re menor, y se oye claro. Que levanten la mano al cambiar. Cuando salga, añadir el tercero y el cuarto. Y antes de todo, cantar el arpegio de do (do, mi, sol, do) hasta que se reconozca solo, sin el piano.",
+    "masDificil": "Que sean ellos quienes señalen el bloque en la pizarra mientras suena, sin cursor. Luego, cantar la nota más grave de cada bloque: do, do, si, do (PENDIENTE DE REVISIÓN PEDAGÓGICA), y oír cómo el tercer bloque baja un poco y pide volver. Y para quien va sobrado: tocar el arpegio de do y el de re menor en el metalófono a la vez que la app, cada uno en su bloque.",
+    "variante": {
+      "titulo": "Los acordes con el cuerpo",
+      "texto": "Cada bloque, una postura: de pie con los brazos abiertos para do (casa), agachados para re menor, de puntillas para sol séptima (la que pide volver) y otra vez brazos abiertos para el do final. Suena el bucle y la clase cambia de postura con el cursor. Después, sin pantalla: el maestro toca o canta y la clase cambia cuando lo oye, no cuando lo ve."
+    },
+    "ideas": [
+      "Escuchar el Preludio entero (dos minutos) y contar en cuántos compases el arpegio cambia de acorde: ¿es siempre el mismo dibujo?",
+      "Tocar el arpegio de do en el metalófono con cuatro niños, una nota cada uno, subiendo en orden; luego cambiar una sola lámina y oír que el acorde ya es otro.",
+      "Dibujar un mapa propio de otra pieza corta con cajas de colores: el mismo color donde suene igual."
+    ],
+    "loTiene": [
+      "Levanta la mano al entrar en el tercer bloque, el que pide volver a casa.",
+      "Dice que el primero y el último suenan igual porque son el mismo acorde.",
+      "Cambia de mano en el uno de cada bloque, sin ir detrás del cursor, en la segunda vuelta."
+    ],
+    "errores": [
+      {
+        "error": "Dice que toda la pieza suena igual",
+        "remedio": "poner solo el primer y el segundo bloque seguidos y cantar la nota grave de cada uno: do y luego re. Si la grave cambia, ha cambiado el acorde."
+      },
+      {
+        "error": "Va detrás del cursor, cambiando de mano cuando ya ha cambiado el bloque",
+        "remedio": "contar los pulsos del bloque en voz alta y cambiar en el uno; ir detrás es la primera fase, anticipar viene después."
+      },
+      {
+        "error": "Confunde el arpegio (el dibujo) con el acorde (el color)",
+        "remedio": "tocar do, mi, sol de una en una y luego las tres a la vez: mismas notas; el arpegio es el acorde desplegado."
+      }
+    ],
+    "indicadores": [
+      "Tercer bloque",
+      "Primero = último",
+      "Anticipa el cambio"
+    ]
+  },
   "creditos": [
     {
       "obra": "Preludio n.º 1 en do mayor, BWV 846, compases 1-4",

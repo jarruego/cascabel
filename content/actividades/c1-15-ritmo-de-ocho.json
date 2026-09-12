@@ -85,6 +85,85 @@
   "pistas": [
     "actividad.c115.pista1"
   ],
+  "ficha": {
+    "aprende": "Escuchar entero un ritmo de ocho pulsos con negras y ti-ti, guardarlo en la memoria y repetirlo con las palmas de principio a fin sin parar en medio.",
+    "vocabulario": [
+      "ocho pulsos",
+      "ta",
+      "ti-ti",
+      "memoria",
+      "eco",
+      "palmas",
+      "de cuatro en cuatro",
+      "entero"
+    ],
+    "agrupamiento": "Toda la clase de pie con proyector; o individual, en tablet",
+    "material": "Ninguno. Silencio en el aula si se usa el micrófono",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Cuatro y cuatro con la voz.",
+        "detalle": "Di el primer ritmo en dos mitades: «ta ti-ti ta ta», eco, «ti-ti ti-ti ta ta», eco. Después las dos mitades seguidas. Ocho se cuenta de cuatro en cuatro."
+      },
+      {
+        "min": 2,
+        "titulo": "Primer ritmo con la app.",
+        "detalle": "Escuchar entero, sin mover las manos, y repetir. Que cuenten el «uno» de la segunda mitad con la cabeza: ahí es donde se suele cortar el hilo."
+      },
+      {
+        "min": 2,
+        "titulo": "Segundo ritmo: empieza por ti-ti.",
+        "detalle": "Avísalo antes: arranca con dos rápidas. Quien dude, que diga las sílabas en voz baja mientras palmea."
+      },
+      {
+        "min": 2,
+        "titulo": "Tercero: dos ti-ti seguidos.",
+        "detalle": "«ta ta ti-ti ti-ti ta ti-ti ta ta». Cuatro rápidas en medio. Si se atropellan, decirlo primero dos veces y palmear después."
+      },
+      {
+        "min": 1,
+        "titulo": "Resumen y repetir uno.",
+        "detalle": "Mira el desvío: si va tarde pero junto, es entrada, no ritmo. Repetid con una señal tuya el ritmo que menos haya salido."
+      }
+    ],
+    "enPantalla": "El personaje palmea un ritmo de ocho pulsos con ta y ti-ti, y el niño lo repite justo después, con palmas al micrófono o tocando el botón grande si no hay micrófono o no se da permiso. Cada palmada que entra a tiempo enciende su punto en verde; las que se escapan quedan en gris, nunca en rojo. Hay tres ritmos, cada uno con los ti-ti en otro sitio. Se puede volver a oír el modelo antes de responder. Al final dice si se ha ido por delante o por detrás, no solo cuántas han entrado.",
+    "sinPantalla": "Eco de palmas de ocho pulsos: tú palmeas el ritmo entero, con el pie marcando el pulso, y la clase lo repite. Los tres ritmos son: ta ti-ti ta ta ti-ti ti-ti ta ta; ti-ti ta ta ti-ti ta ta ti-ti ta; ta ta ti-ti ti-ti ta ti-ti ta ta. Primero en dos mitades con eco cada una, después entero. Luego en corro: un niño propone ocho pulsos y los demás repiten.",
+    "masFacil": "Baja el tempo y parte el ritmo: cuatro pulsos, eco, otros cuatro, eco. Un patrón que todavía no se puede cantar tampoco se puede tocar: que lo digan con sílabas antes de palmearlo. Si el problema es la memoria y no el ritmo, escuchar el modelo dos veces con el botón antes de responder no es trampa: es lo que hace un músico.",
+    "masDificil": "Que hagan el ritmo con los pies mientras las manos marcan el pulso. Que respondan sin haber oído el modelo entero: solo los primeros cuatro pulsos, y completen los otros cuatro de memoria de la vez anterior. O que encadenen los tres ritmos seguidos, veinticuatro pulsos sin parar, como una frase larga. Y que uno invente un ritmo de ocho y la clase lo repita.",
+    "variante": {
+      "titulo": "Teléfono rítmico",
+      "texto": "En fila de cinco: la app le enseña el ritmo al primero, que lo palmea al segundo, y así hasta el último, que lo palmea para la clase. Se compara con el original en la app: ¿ha llegado entero o se ha quedado un ti-ti por la fila? Es media lección sobre por qué se escribe la música."
+    },
+    "ideas": [
+      "Escribir los tres ritmos en la pizarra con sílabas y adivinar cuál ha sonado antes de repetirlo.",
+      "Poner palabras: «ta ti-ti ta ta» puede ser «pan, pera, pan, pan»; inventar una lista de la compra de ocho pulsos.",
+      "Hacer el ritmo con instrumentos: claves en ta y maracas en ti-ti, en dos grupos, a la vez."
+    ],
+    "loTiene": [
+      "Repite los ocho pulsos enteros, sin parar a la mitad.",
+      "Entra en el pulso siguiente al modelo, sin esperar ni adelantarse.",
+      "Coloca los ti-ti donde iban, no donde le salen."
+    ],
+    "errores": [
+      {
+        "error": "Repite bien los cuatro primeros y se queda en blanco",
+        "remedio": "que cuente «cinco» con la cabeza al empezar la segunda mitad; y practicar solo la segunda mitad como eco corto."
+      },
+      {
+        "error": "Pone los ti-ti en otro sitio, aunque el número de palmadas sea el mismo",
+        "remedio": "decir el ritmo con sílabas antes de palmearlo; el sitio se oye en la voz."
+      },
+      {
+        "error": "Empieza a palmear antes de que el modelo acabe",
+        "remedio": "manos en los muslos hasta la última palmada del personaje; escuchar entero es parte del ejercicio."
+      }
+    ],
+    "indicadores": [
+      "Los ocho enteros",
+      "Entra a tiempo",
+      "Ti-ti en su sitio"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

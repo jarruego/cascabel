@@ -91,6 +91,66 @@
     "actividad.c312.pista2",
     "actividad.c312.pista3"
   ],
+  "ficha": {
+    "aprende": "Montar una pieza con cuatro voces —flauta, piano, bajo y percusión— y oír qué aporta cada una silenciándola, para que no todas hagan lo mismo.",
+    "vocabulario": [
+      "pista",
+      "voz",
+      "bajo",
+      "percusión",
+      "silenciar",
+      "arreglo",
+      "textura",
+      "bucle"
+    ],
+    "agrupamiento": "Por parejas en tablet, o grupo clase con proyector",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 3,
+        "titulo": "Percusión sola.",
+        "detalle": "Bombo, caja y charles en dieciséis casillas. Que enciendan el bombo en la 1 y la 9, la caja en la 5 y la 13, y escuchen en bucle. Cambiar una cosa por vuelta hasta que el ritmo guste."
+      },
+      {
+        "min": 4,
+        "titulo": "Entra el bajo.",
+        "detalle": "Tres notas graves: do, mi, sol. Pocas y largas: una cada cuatro casillas. Que oigan cómo cambia el ritmo cuando entra el bajo, y que lo silencien y lo vuelvan a poner."
+      },
+      {
+        "min": 4,
+        "titulo": "Piano y flauta.",
+        "detalle": "El piano con las notas de do a sol, la flauta con las agudas. La flauta puede ir más rápida; el piano, más quieto. Si todo suena a la vez no se oye nada: dejar huecos."
+      },
+      {
+        "min": 4,
+        "titulo": "Silenciar y volver.",
+        "detalle": "Con las cuatro sonando, quitar una: ¿qué se ha ido? Ponerla otra vez. Hacerlo con cada voz. Lo que no se echa de menos se cambia o se quita."
+      },
+      {
+        "min": 3,
+        "titulo": "Cambiar el instrumento.",
+        "detalle": "A cada pista se le puede cambiar el instrumento. Que prueben la melodía con otro timbre y decidan cuál queda mejor con el resto."
+      },
+      {
+        "min": 2,
+        "titulo": "Escuchar las piezas.",
+        "detalle": "Cada pareja pone la suya. La clase dice qué voz lleva la melodía y qué voz lleva el ritmo."
+      }
+    ],
+    "enPantalla": "Cuatro cuadrículas apiladas, una por voz: flauta con cinco notas agudas, piano con cinco notas medias, bajo con tres notas graves y percusión con charles, caja y bombo. Dieciséis columnas, una por pulso. Se encienden casillas y las cuatro voces suenan juntas en bucle a 92. Cada pista tiene un botón para silenciarla sin borrarla y otro para cambiarle el instrumento. Se puede guardar en el dispositivo como MIDI o MusicXML. No hay respuesta correcta ni final.",
+    "sinPantalla": "Cuatro grupos, uno por voz, con la cuadrícula de dieciséis columnas en la pizarra: el grupo de percusión con palmas y pies, el del bajo cantando grave con «bom», el del piano con el metalófono y el de la flauta con la flauta o la voz aguda. Tú señalas las columnas al pulso. Para silenciar una voz, ese grupo se calla una vuelta: lo que falta se oye enseguida.",
+    "masFacil": "Empezad con dos pistas: la percusión y el bajo. Cuando eso suene bien en bucle, una melodía en el piano con tres notas. Cuatro voces a la vez son muchas decisiones para quien todavía no oye ninguna por separado. Y dad una plantilla: el bombo en la 1 y la 9 ya puesto.",
+    "masDificil": "Una regla por voz: el bajo solo en el primer pulso de cada cuatro; la flauta sin repetir dos casillas seguidas; el piano solo donde la flauta calla. Después, que la pieza tenga dos partes: ocho columnas con las cuatro voces y ocho con solo dos. Y guardarla para abrirla en un editor de partituras.",
+    "variante": {
+      "titulo": "Por turnos",
+      "texto": "Cuatro niños en la misma tablet, uno por pista. Cada uno solo toca la suya y tiene que escuchar lo que hacen los demás antes de añadir. Al final, cada uno silencia su propia pista y dice qué aportaba. Se cambian de pista y se vuelve a empezar."
+    },
+    "ideas": [
+      "Escuchar una canción conocida y decir qué hace cada voz: ¿hay bajo?, ¿cuántas notas toca?, ¿qué lleva la melodía?",
+      "Guardar la pieza en MusicXML y abrirla en un editor de partituras del aula para verla escrita en cuatro pentagramas.",
+      "Tocar la pieza de la pantalla con instrumentos de verdad: metalófono, flauta, xilófono bajo y pequeña percusión."
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

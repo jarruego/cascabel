@@ -139,6 +139,85 @@
     "actividad.c345.pista1",
     "actividad.c345.pista2"
   ],
+  "ficha": {
+    "aprende": "Palmear el ritmo de «En la gruta del rey de la montaña» —seis cortas y una larga— tres veces seguidas, cada vez más rápido, sin apretar las manos ni adelantarse.",
+    "vocabulario": [
+      "ritmo",
+      "corchea",
+      "negra",
+      "ti-ti",
+      "ta",
+      "accelerando",
+      "grieg",
+      "palmas"
+    ],
+    "agrupamiento": "Toda la clase, de pie, con proyector; luego en tablet",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Escuchar la pieza.",
+        "detalle": "Poner la primera parte sin palmear, solo oír el violín: empieza en los graves, despacio, y en la pieza de verdad acaba corriendo. Preguntar: ¿de qué huye el que anda por la gruta?"
+      },
+      {
+        "min": 2,
+        "titulo": "Decirlo antes de palmearlo.",
+        "detalle": "Ti-ti, ti-ti, ti-ti, ta: seis cortas y una larga. Luego ti-ti, ta, ti-ti, ta. Toda la clase lo dice con la boca, sin manos, a la velocidad lenta, hasta que salga entero."
+      },
+      {
+        "min": 2,
+        "titulo": "Despacio, con palmas.",
+        "detalle": "Primera parte a la velocidad lenta. Se escucha y se repite con palmas; los puntos se encienden en verde al entrar. El violín sigue las palmadas desde la primera. Dos pasadas."
+      },
+      {
+        "min": 2,
+        "titulo": "Más rápido y corriendo.",
+        "detalle": "Segunda y tercera parte: el mismo ritmo, a más velocidad. Recordar la pista: las manos sueltas llegan mejor. Si la última no sale entera, no pasa nada: es la que corre."
+      },
+      {
+        "min": 1,
+        "titulo": "Mirar el desvío.",
+        "detalle": "Al acabar, mirar el desvío medio, no el porcentaje: si va tarde con poca dispersión, el pulso es bueno y solo entra tarde. Cerrar con la pieza entera grabada, si hay tiempo, sin palmas."
+      }
+    ],
+    "enPantalla": "Se oye el ritmo de la gruta con el violín debajo (una nota por golpe) y después hay que repetirlo con palmas ante el micrófono o tocando un botón grande. Los puntos del ritmo se encienden en verde cuando la palmada entra a tiempo y se quedan en gris si se escapa; nunca en rojo. Tres partes con el mismo ritmo: despacio, más rápido y corriendo, como hace la pieza. Al final da el desvío medio con signo: si se va tarde o pronto. Si el micrófono no funciona, el botón hace lo mismo.",
+    "sinPantalla": "Eco de palmadas: tú palmeas ti-ti, ti-ti, ti-ti, ta y la clase lo repite; luego ti-ti, ta, ti-ti, ta; luego todo seguido. Cada vuelta un poco más rápida, como en la pieza, hasta que las manos ya no lleguen: ahí se para y se vuelve a la lenta. Con la grabación de Grieg, palmear encima del violín: es lo mismo que hace la app, con la orquesta de verdad.",
+    "masFacil": "Quédate en la velocidad lenta y en los cuatro primeros golpes: ti-ti, ti-ti, ti-ti, ta. Decirlo con la boca hasta que salga, y solo después palmear. Si la palmada se adelanta, palmear sobre los muslos, que frena. La parte que corre se deja para cuando la lenta salga dos veces seguidas.",
+    "masDificil": "Palmear el ritmo con las manos mientras el pie marca el pulso de negra: dos planos a la vez. Después, la parte que corre con los ojos cerrados, solo con el violín. Y para quien va sobrado: tocar el ritmo en claves o caja china sobre la grabación de Grieg, siguiendo el accelerando de la orquesta hasta el final.",
+    "variante": {
+      "titulo": "La gruta en corro",
+      "texto": "En corro y agachados, como escondidos en la gruta. Se palmea despacio en la primera parte, cada uno un poco más erguido en la segunda, y en la tercera, de pie y corriendo. Al acabar, un salto y silencio: es lo que hace la orquesta al final. Sin pantalla, el maestro marca la velocidad con el pie y sube poco a poco."
+    },
+    "ideas": [
+      "Escuchar «En la gruta del rey de la montaña» entera y marcar con la mano cuándo entra cada instrumento nuevo; contar cuántas veces se repite el mismo ritmo.",
+      "Inventar un ritmo propio de cuatro compases y tocarlo tres veces, cada vez más rápido: ¿hasta qué velocidad se sostiene?",
+      "Dibujar la gruta mientras suena la pieza: ¿qué cambia en el dibujo cuando la música corre?"
+    ],
+    "loTiene": [
+      "Dice el ritmo con ti-ti y ta antes de palmearlo, sin saltarse la larga.",
+      "Entra en verde en la velocidad lenta y en la media, con las manos sueltas.",
+      "Mantiene el ritmo cuando corre, aunque alguna palmada se escape."
+    ],
+    "errores": [
+      {
+        "error": "Palmea todas las sílabas igual y las seis cortas salen tan largas como la ta",
+        "remedio": "decir «ti-ti» como una sola palabra rápida y «ta» estirada, con la boca, antes de las manos."
+      },
+      {
+        "error": "Aprieta las manos en la parte que corre y llega tarde",
+        "remedio": "palmear con dos dedos sobre la palma o sobre los muslos: menos fuerza, más velocidad."
+      },
+      {
+        "error": "Se adelanta en la ta, porque ya sabe que viene",
+        "remedio": "decir «ta-a» en voz alta aguantando la vocal, y volver una vez a la velocidad lenta."
+      }
+    ],
+    "indicadores": [
+      "Dice el ritmo",
+      "Verde en la lenta",
+      "Aguanta corriendo"
+    ]
+  },
   "creditos": [
     {
       "obra": "«En la gruta del rey de la montaña», de la suite Peer Gynt n.º 1, op. 46",

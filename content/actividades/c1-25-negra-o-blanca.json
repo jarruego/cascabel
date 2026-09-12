@@ -104,6 +104,85 @@
   "pistas": [
     "actividad.c125.pista1"
   ],
+  "ficha": {
+    "aprende": "Oír si unos golpes van uno por pulso, negras, o dejan un pulso vacío entre medias, blancas, comparándolos con el pulso que suena de fondo.",
+    "vocabulario": [
+      "pulso",
+      "negra",
+      "blanca",
+      "golpe",
+      "hueco",
+      "uno-dos-tres-cuatro",
+      "largo",
+      "corto"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet; dos con proyector",
+    "material": "Ninguno. Opcional: claves o pandero",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Contar el pulso en voz alta.",
+        "detalle": "Uno-dos-tres-cuatro con el pie, toda la clase. Tú palmeas negras: una en cada número. Luego blancas: solo en el uno y en el tres. Que digan qué ha cambiado: en las blancas hay un hueco."
+      },
+      {
+        "min": 1,
+        "titulo": "Dos preguntas con proyector.",
+        "detalle": "Suena el pulso, un compás de entrada y los golpes. Nadie toca: la clase cuenta en voz alta y dice si ha sonado en todos los números o solo en el uno y el tres. Enseña el botón de repetir."
+      },
+      {
+        "min": 2,
+        "titulo": "En tablet.",
+        "detalle": "Seis preguntas. Contar en voz baja con el pulso de fondo y tocar negra o blanca. Si dudan, repetir y contar con los dedos: si el dos y el cuatro quedan vacíos, son blancas."
+      },
+      {
+        "min": 1,
+        "titulo": "Palmearlas.",
+        "detalle": "Tú dices «negras» y la clase palmea una por pulso con tu pie; dices «blancas» y palmean en el uno y el tres, con las manos quietas en el dos y el cuatro. Cambia sin avisar."
+      },
+      {
+        "min": 1,
+        "titulo": "Lo dictan ellos.",
+        "detalle": "Un niño palmea negras o blancas sobre tu pulso y la clase dice cuál ha sido. Producir el hueco es más difícil que oírlo, y se ve quién lo tiene."
+      }
+    ],
+    "enPantalla": "Suena el pulso de fondo, un compás de entrada, y después cuatro pulsos con golpes: o hay un golpe en cada pulso, negras, o solo en el primero y en el tercero, blancas. El niño toca uno de los dos botones grandes: negra o blanca. Si toca el otro, el personaje da una pista («cuenta en voz alta: las negras suenan en todos y las blancas solo en el uno y en el tres») y se puede corregir al momento; al acertar, «¡bien!» y viene la siguiente. Botón de repetir siempre en el mismo sitio. Termina al acabar la vuelta.",
+    "sinPantalla": "Dos tarjetas en el suelo, una con una negra y otra con una blanca. Tú marcas el pulso con el pie o con las claves, cuentas un compás de entrada y palmeas cuatro pulsos: una palmada en cada uno, o solo en el uno y en el tres. Los niños cuentan en voz baja y van a la tarjeta que toca. Después que dicte un niño mientras tú llevas el pulso. Es lo mismo que en la pantalla: la duración se oye en el hueco entre golpes, y el pulso es lo que hace que el hueco se pueda contar.",
+    "masFacil": "Que cuenten en voz alta, no baja, y que muevan la mano en cada golpe: en las negras la mano no para, en las blancas se queda quieta en el dos y en el cuatro. Si aun así dudan, palmea tú negras y blancas seguidas, sin pulso de fondo, para que oigan solo el contraste: seguidas o con hueco. Luego vuelve a la app. Y nombra en voz alta lo que van a oír las dos primeras veces: «esto son negras».",
+    "masDificil": "Que digan cuántas figuras han sonado: cuatro negras o dos blancas. Después, que palmeen lo que acaban de oír encima del pulso, a la primera. Mezcla después, en la pizarra, negras y blancas en el mismo compás (negra, negra, blanca) y que lo dicten y lo escriban. Y para los que van sobrados, la redonda: un solo golpe en el uno y tres pulsos de hueco.",
+    "variante": {
+      "titulo": "Andando",
+      "texto": "Toda la clase de pie, andando al pulso que tú marcas con el pandero. Cuando palmeas negras, un paso por pulso, como caminar; cuando palmeas blancas, un paso y una pausa con los dos pies juntos, como andar despacio. Cambia sin avisar y que cambien ellos. El hueco de la blanca se siente en las piernas antes de que se oiga, y los que dudan en la tablet suelen sacarlo así."
+    },
+    "ideas": [
+      "Dictado en papel con cuatro casillas: una raya por golpe, y dejar vacías las casillas donde no ha sonado nada.",
+      "Buscar en una canción que ya sepan una nota que dure dos pulsos y cantarla marcando el pulso con el pie.",
+      "Inventar por parejas un compás con negras y blancas, escribirlo y que otra pareja lo palmee sobre el pulso."
+    ],
+    "loTiene": [
+      "Cuenta uno-dos-tres-cuatro con el pulso de fondo mientras suenan los golpes.",
+      "Dice negra si suena en todos y blanca si solo en el uno y el tres, sin repetir.",
+      "Palmea blancas sobre el pulso dejando el dos y el cuatro en silencio."
+    ],
+    "errores": [
+      {
+        "error": "Contesta negra siempre que oye golpes, sin contar",
+        "remedio": "que cuente con los dedos y mire cuáles se quedan sin golpe; con el dos y el cuatro vacíos, son blancas."
+      },
+      {
+        "error": "Al palmear blancas, las manos siguen en el dos y el cuatro",
+        "remedio": "que diga «ta-a» aguantando la a hasta el siguiente golpe, con las manos pegadas hasta que acabe."
+      },
+      {
+        "error": "Toca antes de que suenen los cuatro pulsos",
+        "remedio": "manos en la mesa hasta que se acabe el compás; con el pulso de fondo no hay prisa."
+      }
+    ],
+    "indicadores": [
+      "Cuenta el pulso",
+      "Negra o blanca",
+      "Palmea el hueco"
+    ]
+  },
   "creditos": [
     {
       "obra": "Iconos",

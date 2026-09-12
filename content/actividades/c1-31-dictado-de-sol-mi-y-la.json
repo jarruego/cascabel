@@ -79,6 +79,85 @@
     "actividad.c131.pista1",
     "actividad.c131.pista2"
   ],
+  "ficha": {
+    "aprende": "Escribir en una cuadrícula de tres filas una melodía de cuatro notas con sol, mi y la, oyendo cuándo la nota sube un escalón a la y cuándo baja a mi.",
+    "vocabulario": [
+      "sol",
+      "mi",
+      "la",
+      "arriba",
+      "en medio",
+      "abajo",
+      "dictado",
+      "vecina"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o parejas en tablet",
+    "material": "Ninguno. Para la parte sin pantalla, pizarra y gomets de tres colores",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Sol, mi, y la vecina de arriba.",
+        "detalle": "Canta «sol-mi» con la mano y después «sol-la-sol»: la está justo encima de sol, un pasito. Que lo repitan con la mano en tres alturas: la arriba del todo, sol en medio, mi abajo."
+      },
+      {
+        "min": 1,
+        "titulo": "Tres filas.",
+        "detalle": "Enseña la cuadrícula: la arriba, sol en medio, mi abajo; cuatro columnas. Toca las tres filas seguidas para que oigan la escalera."
+      },
+      {
+        "min": 2,
+        "titulo": "Primer dictado.",
+        "detalle": "Suena dos veces; la clase lo canta con la mano en las tres alturas. Un niño toca las casillas en orden y se escucha en bucle. Si algo no cuadra, se cambia esa casilla y se vuelve a oír."
+      },
+      {
+        "min": 1,
+        "titulo": "Segundo y tercer dictado.",
+        "detalle": "Otros niños. Antes de tocar, que canten con los nombres: «sol-la-sol-mi». Fíjate en si distinguen la subida pequeña a la de la bajada grande a mi."
+      },
+      {
+        "min": 1,
+        "titulo": "Leer lo escrito.",
+        "detalle": "Se cantan los tres dictados mirando solo la cuadrícula, con la mano. Sin la app."
+      }
+    ],
+    "enPantalla": "Una cuadrícula de tres filas y cuatro columnas: la arriba, sol en medio y mi abajo. Suena una melodía de cuatro notas hecha con esas tres, a paso tranquilo. El niño toca una casilla por columna y oye cada nota al tocarla; puede escuchar en bucle lo que ha puesto y compararlo con el dictado. Si no coincide, el personaje recuerda que la está justo encima de sol y que la mano sube a la y baja a mi, y se corrige la casilla que haga falta. Al cuadrar, viene el siguiente. Son tres dictados.",
+    "sinPantalla": "En la pizarra, tres filas —la, sol, mi— y cuatro columnas. Canta una melodía de cuatro notas dos veces mientras la clase la sigue con la mano en tres alturas. Cuatro niños pegan un gomet cada uno en su columna, en la fila que creen. La clase canta lo que hay en la pizarra con los nombres y lo compara con tu voz. Si una casilla no cuadra, se mueve el gomet y se vuelve a cantar. Cambia la melodía para otros cuatro.",
+    "masFacil": "Vuelve un momento a solo sol y mi, y mete la solo en la última nota de cada dictado. Canta tú con los nombres la primera vez que suene. Deja fija la primera casilla. Y que la mano se mueva a tres alturas muy claras: cabeza, hombro, cintura.",
+    "masDificil": "Una sola escucha y a colocar, sin bucle. Que uno invente una melodía de cuatro notas con las tres filas y la cante con «la» para que otro la escriba en la pizarra. Y que expliquen con palabras la diferencia entre subir de sol a la (un pasito) y bajar de sol a mi (un salto).",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "Cuatro niños en fila son las cuatro notas: de puntillas con los brazos arriba si es la, de pie si es sol, agachados si es mi. Suena el dictado, cada uno se coloca, y la clase canta la fila de izquierda a derecha con la mano. Se cambian los cuatro y se canta otra."
+    },
+    "ideas": [
+      "Cantar frases cortas del aula con sol, mi y la («va-mos a co-mer») y escribirlas en la cuadrícula.",
+      "Buscar en canciones conocidas el momento en que la melodía sube un pasito de sol a la, y marcarlo con la mano.",
+      "Inventar una melodía de cuatro casillas que empiece en sol y acabe en mi, y elegir entre todos una para el saludo de la clase."
+    ],
+    "loTiene": [
+      "Sube la mano un poco en la y la baja mucho en mi, sin confundir las dos.",
+      "Canta el dictado con los nombres de las tres notas antes de tocar.",
+      "Escucha lo que ha puesto y corrige una casilla sin que se lo digan."
+    ],
+    "errores": [
+      {
+        "error": "Pone la cuando la nota solo se queda en sol, porque cualquier nota alta le parece la",
+        "remedio": "cantar «sol-sol» y «sol-la» seguidos, con la mano quieta en el primero y subiendo un poco en el segundo."
+      },
+      {
+        "error": "Confunde la con mi: oye que la nota cambia pero no si sube o baja",
+        "remedio": "tocar la fila de arriba y la de abajo seguidas y seguirlas con la mano: la sube, mi baja."
+      },
+      {
+        "error": "Toca las cuatro casillas de golpe sin cantar",
+        "remedio": "una casilla por nota mientras se canta el dictado con los nombres."
+      }
+    ],
+    "indicadores": [
+      "Tres alturas",
+      "Canta con nombres",
+      "Comprueba"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

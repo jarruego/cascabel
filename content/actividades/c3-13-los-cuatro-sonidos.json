@@ -81,6 +81,85 @@
     "actividad.c313.pista1",
     "actividad.c313.pista2"
   ],
+  "ficha": {
+    "aprende": "Encadenar pitos, palmas, muslos y pies sin perder el pulso, y contar el silencio como un golpe más: las manos paran, el pulso no.",
+    "vocabulario": [
+      "pitos",
+      "palmas",
+      "muslos",
+      "pies",
+      "silencio",
+      "pulso",
+      "contratiempo",
+      "agudo y grave"
+    ],
+    "agrupamiento": "Toda la clase, de pie, mirando la pantalla proyectada",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Los cuatro sonidos.",
+        "detalle": "De pie. Pitos arriba, palmas, muslos, pies abajo: de agudo a grave, en el mismo orden que el cuerpo. Que hagan cada uno cuatro veces con el pulso a 88 de la pantalla."
+      },
+      {
+        "min": 2,
+        "titulo": "Leer el dibujo.",
+        "detalle": "Cuatro filas en la pantalla, una por sonido, y el hueco del silencio. Que digan el patrón con las sílabas sin moverse: ti, ta, sh, ta, ti-ti, ta, ti, taa. El «sh» se dice en voz alta."
+      },
+      {
+        "min": 3,
+        "titulo": "Con el cursor.",
+        "detalle": "Hacerlo con el cursor de la pantalla, en bucle, a la velocidad que viene. El silencio se marca con la cabeza: las manos quietas, el pulso sigue. Quien no sabe chasquear, dos dedos en el pecho."
+      },
+      {
+        "min": 3,
+        "titulo": "Aislar lo difícil.",
+        "detalle": "Parar: palmas-silencio-palmas cuatro veces seguidas, después los dos muslos rápidos y los pies. Volver al patrón entero."
+      },
+      {
+        "min": 2,
+        "titulo": "Sin pantalla.",
+        "detalle": "Se apaga y se hace igual con tu pie de metrónomo, dos vueltas seguidas. Si el silencio aguanta sin pantalla, está hecho."
+      }
+    ],
+    "enPantalla": "Cuatro filas —pitos, palmas, muslos y pies—, de arriba abajo del sonido más agudo al más grave, con el patrón marcado y un hueco donde va el silencio. Un cursor lo recorre en bucle a 88 mientras suena una señal en cada golpe. Lo que sale por el altavoz no es el sonido: el sonido lo hace el cuerpo, y la pantalla hace de director. Se puede repetir las veces que haga falta y no hay puntuación: al acabar, el personaje dice que ha sonado.",
+    "sinPantalla": "Es su forma natural, y a donde hay que llegar: tú llevas el pulso con el pie y la clase hace el patrón en corro. El silencio se hace con las manos abiertas y quietas a la vista de todos, que es lo que hace que se cuente. En corro, un niño dirige señalando en su cuerpo el sonido que viene, un pulso por delante, y los demás le siguen: el director es la pantalla.",
+    "masFacil": "Dos sonidos, palmas y muslos, con el silencio en medio: palmas, silencio, muslos, silencio. Cuando aguanten el hueco, se añaden los pies, y los pitos al final: chasquear es lo que menos sale, y dos dedos en el pecho valen igual, porque el sitio importa y el sonido no. Bajar el tempo.",
+    "masDificil": "Dos grupos: uno hace el patrón y el otro solo palmea en el silencio, rellenando el hueco a contratiempo. Después, en canon: el segundo grupo entra cuando el primero va por el tercer golpe. Y una vuelta sin sonido, solo el gesto, para ver si el pulso sigue por dentro.",
+    "variante": {
+      "titulo": "Por parejas, frente a frente",
+      "texto": "Uno hace el patrón y el otro solo hace el silencio: en el hueco, da una palmada contra las manos de su pareja. Los dos tienen que llevar el mismo pulso para encontrarse en el tercer tiempo. Se cambian los papeles cada dos vueltas."
+    },
+    "ideas": [
+      "Inventar por grupos un patrón de ocho pulsos con los cuatro sonidos y un silencio, dibujarlo en cuatro filas y que otro grupo lo lea.",
+      "Mover el silencio de sitio: ponerlo en el primer pulso, en el último, y ver cuál es el más difícil de aguantar.",
+      "Hacer el patrón como acompañamiento de una canción que la clase conozca en cuatro por cuatro."
+    ],
+    "loTiene": [
+      "Aguanta el silencio sin rellenarlo y entra a tiempo en la palma siguiente.",
+      "Cambia de sonido sin frenar el pulso en el cambio.",
+      "Hace el patrón entero sin pantalla, con el pie del maestro."
+    ],
+    "errores": [
+      {
+        "error": "Rellena el silencio con una palma",
+        "remedio": "hacer solo palmas-silencio-palmas con las manos abiertas y quietas en el hueco, diciendo «sh» en voz alta."
+      },
+      {
+        "error": "Los dos muslos rápidos le salen como uno solo o como dos lentos",
+        "remedio": "decir «ti-ti» en un pulso mientras se toca, y hacerlo primero sin sonido, solo el gesto."
+      },
+      {
+        "error": "Se para en el cambio de pies a pitos para pensar",
+        "remedio": "decirlo antes en voz alta, un sonido por delante: cuando hace pies, ya dice «pitos»."
+      }
+    ],
+    "indicadores": [
+      "Aguanta el silencio",
+      "Cambia sin frenar",
+      "Sin pantalla"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

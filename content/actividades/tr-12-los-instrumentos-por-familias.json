@@ -152,6 +152,61 @@
     ]
   },
   "enunciado": "actividad.tr12.enunciado",
+  "ficha": {
+    "aprende": "Decir a qué familia pertenece un instrumento por cómo se hace su sonido, cuerda, viento, percusión o voz, y reconocer la familia con los ojos cerrados.",
+    "vocabulario": [
+      "familia",
+      "cuerda",
+      "viento",
+      "percusión",
+      "timbre",
+      "frotar",
+      "soplar",
+      "golpear"
+    ],
+    "agrupamiento": "Grupo clase, con proyector y altavoz; luego en tablet",
+    "material": "Ninguno. Si los hay, un instrumento real de cada familia",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Proyectar y explicar la regla.",
+        "detalle": "Las familias van por cómo se hace el sonido, no por cómo se ven: se frota o se pulsa una cuerda, se sopla, se golpea, o se canta. Abrir la de cuerda."
+      },
+      {
+        "min": 2,
+        "titulo": "La familia de cuerda, entera.",
+        "detalle": "Tocar uno a uno sus instrumentos y oírlos. ¿Qué tienen en común? Que en todos hay una cuerda que vibra. Fijarse en que suenan parecido aunque no se parezcan."
+      },
+      {
+        "min": 2,
+        "titulo": "Viento y percusión.",
+        "detalle": "Lo mismo con las otras dos familias. En viento, buscar el aire; en percusión, el golpe. Un niño hace el gesto de tocar cada instrumento mientras suena."
+      },
+      {
+        "min": 2,
+        "titulo": "Con los ojos cerrados.",
+        "detalle": "El maestro toca un instrumento sin decir cuál. La clase levanta un dedo si es cuerda, dos si es viento, tres si es percusión. Después se abre la ficha y se ve si era esa."
+      },
+      {
+        "min": 1,
+        "titulo": "La voz.",
+        "detalle": "Oír la voz y preguntar: ¿en qué familia va? Tiene cuerdas, las vocales, y usa aire. Por eso tiene familia propia."
+      }
+    ],
+    "enPantalla": "Cuatro secciones, cuerda, viento, percusión y voz, cada una con sus instrumentos. Al tocar uno suena y se lee cómo se hace su sonido y una línea con lo que hay que saber de él. Hay buscador por nombre. No hay pregunta, ni corrección, ni final: es la consulta para oír un instrumento que en el aula no hay, y para comparar dos de la misma familia uno detrás de otro, que es cuando se oye lo que tienen en común.",
+    "sinPantalla": "Con lo que haya en el aula: una guitarra o un violín por la cuerda, una flauta por el viento, un pandero y unas claves por la percusión, y la voz del maestro. Se tocan detrás de un biombo o con los niños de espaldas, y se señala una de cuatro tarjetas con el dibujo de la familia. Lo que no hay, se hace con el gesto: frotar, soplar, golpear.",
+    "masFacil": "Dos familias solamente, y las más distintas: cuerda y percusión. Un instrumento de cada, oído tres veces seguidas. Después, con los ojos cerrados, solo esas dos. Cuando lo tengan, entra el viento; la voz, al final. Cuatro familias de golpe son demasiadas para una sesión.",
+    "masDificil": "Dos instrumentos de la misma familia, uno detrás de otro, y decir cuál es cuál: violín y violonchelo, flauta y clarinete, bombo y caja. Y los que engañan: el piano tiene cuerdas pero se golpean, ¿en qué familia va? Que lo discutan y lo miren en la ficha. La discusión es la sesión.",
+    "variante": {
+      "titulo": "Con dibujo",
+      "texto": "Cada niño dibuja un instrumento inventado y dice de qué familia sería: qué se frota, se sopla o se golpea en él. Se presentan a la clase y, si hay material, se construye uno sencillo: gomas sobre una caja para cuerda, un tubo para viento, un bote con arroz para percusión."
+    },
+    "ideas": [
+      "Traer de casa fotos o nombres de instrumentos que tengan y colocarlos en un mural por familias.",
+      "Escuchar una obra de orquesta e ir levantando la mano cuando entra una familia nueva.",
+      "Buscar instrumentos del mundo que no estén en la ficha y decidir entre todos en qué familia irían."
+    ]
+  },
   "personaje": "rex",
   "herramienta": true,
   "creditos": [

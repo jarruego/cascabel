@@ -344,6 +344,56 @@
     ]
   },
   "enunciado": "actividad.tr07.enunciado",
+  "ficha": {
+    "aprende": "Consultar por su cuenta cómo se llama y cómo suena una figura, un silencio, un compás, una distancia entre notas, un tempo o un matiz, sin levantar la mano.",
+    "vocabulario": [
+      "figura",
+      "silencio",
+      "compás",
+      "intervalo",
+      "tempo",
+      "matiz",
+      "buscar",
+      "consultar"
+    ],
+    "agrupamiento": "Grupo clase con proyector para explicar; o en tablet",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Enseñar la consulta.",
+        "detalle": "Proyectada: siete secciones, un buscador arriba y un botón de oír en todo lo que suena. No es un ejercicio: es para mirar cuando haga falta."
+      },
+      {
+        "min": 2,
+        "titulo": "Oír las figuras.",
+        "detalle": "Abrir solo la sección de figuras y escuchar seguidas la redonda, la blanca, la negra y la corchea. Contar los pulsos de cada una con la mano."
+      },
+      {
+        "min": 1,
+        "titulo": "Buscar una.",
+        "detalle": "Decir un término, «corchea», «forte», «silencio de negra», y que un niño lo encuentre con el buscador y lo explique con sus palabras."
+      },
+      {
+        "min": 1,
+        "titulo": "Dejarla a mano.",
+        "detalle": "Queda abierta en la tablet del rincón para quien se atasque en otra tarea. Decirlo en voz alta: «si no te acuerdas, mira ahí»."
+      }
+    ],
+    "enPantalla": "Siete secciones: figuras, silencios, compases, notas, distancias entre notas, tempos y matices. Cada término aparece con su signo, una línea de explicación y, si puede sonar, un botón para oírlo en el piano: una corchea se oye durar la mitad que una negra, un forte suena más que un piano. Arriba hay un buscador que encuentra por el nombre o por lo que hace. No hay preguntas, ni respuestas correctas, ni final: es una consulta, como el mural del aula pero con sonido.",
+    "sinPantalla": "Es el mural del aula de toda la vida: las figuras con su valor, los compases, los matices pegados en la pared. La diferencia es que aquí suena. Sin pantalla, el maestro toca cada figura en las claves mientras los niños cuentan pulsos, y los matices se hacen con la voz: pianissimo en un susurro, fortissimo sin gritar.",
+    "masFacil": "Abridla juntos y escuchad solo una sección, la de las figuras: redonda, blanca, negra y corchea. Con esas cuatro entradas ya hay bastante para una sesión. Dejad las distancias entre notas y los matices para más adelante. Si un niño no sabe qué buscar, que toque los botones de oír de arriba abajo.",
+    "masDificil": "Que busquen ellos: decid un término y que lo encuentren, lo oigan y lo expliquen con sus palabras a otro niño. Después, al revés: el maestro toca algo en el piano, una corchea, un forte, y hay que encontrar en la consulta cómo se llama. Buscar es la mitad de saber usar una referencia.",
+    "variante": {
+      "titulo": "El diccionario de clase",
+      "texto": "Cada niño elige un término de la consulta, lo escucha y lo explica en una tarjeta con un dibujo y una frase suya. Las tarjetas se cuelgan en la pared por secciones, y así la clase tiene su propio mural, hecho a partir de lo que ha oído."
+    },
+    "ideas": [
+      "Un juego de pistas: el maestro describe un término sin decir su nombre («dura dos pulsos») y hay que encontrarlo en la consulta.",
+      "Tener la consulta abierta en una tablet mientras se hace un dictado rítmico, para comprobar la figura que no se recuerda.",
+      "Poner por parejas el tempo de canciones que conozcan: buscar «andante» o «allegro» y decidir cuál es cada una."
+    ]
+  },
   "personaje": "dora",
   "creditos": [
     {

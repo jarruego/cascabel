@@ -140,6 +140,85 @@
     "actividad.c209.pista1",
     "actividad.c209.pista2"
   ],
+  "ficha": {
+    "aprende": "Decir si un pulso va despacio, a paso normal o deprisa y llamarlo con su nombre italiano: adagio, andante o allegro, sea cual sea el instrumento que lo toca.",
+    "vocabulario": [
+      "tempo",
+      "adagio",
+      "andante",
+      "allegro",
+      "despacio",
+      "deprisa",
+      "pulso",
+      "velocidad"
+    ],
+    "agrupamiento": "Toda la clase, de pie, con proyector",
+    "material": "Ninguno. Si hay, claves o un pandero para la parte sin pantalla",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Tres palabras, tres pasos.",
+        "detalle": "Andante es andar como quien pasea. Adagio, más lento, como con sueño. Allegro, deprisa, como llegando tarde. Di cada palabra y que se muevan por la clase a ese paso."
+      },
+      {
+        "min": 1,
+        "titulo": "El pie manda.",
+        "detalle": "Suena el primer pulso de la app y todos lo marcan con el pie sin decir nada. Pregunta: «¿el pie va como paseando, como con sueño o como corriendo?»."
+      },
+      {
+        "min": 2,
+        "titulo": "Responder en la pantalla.",
+        "detalle": "Sale un niño por pregunta. Antes de tocar, la clase anda al paso del pulso. Si no acierta, se vuelve a oír con el pie y se compara con el anterior: ¿más rápido o más lento?"
+      },
+      {
+        "min": 1,
+        "titulo": "Cambia el instrumento, no la velocidad.",
+        "detalle": "Haz notar que unas veces son claves, otras un triángulo o un bongó. Un triángulo lento es adagio aunque suene fino; un bongó rápido es allegro aunque suene grave."
+      },
+      {
+        "min": 1,
+        "titulo": "Lo hacen ellos.",
+        "detalle": "Un niño da palmadas a una velocidad y dice, o la clase adivina, si es adagio, andante o allegro. Que prueben a pasar de una a otra sin parar."
+      }
+    ],
+    "enPantalla": "Suena un pulso seguido, ocho golpes iguales, tocados por claves, caja china, caja, bongó, triángulo o tom, y aparecen tres botones grandes: adagio, andante y allegro. El niño toca el que cree. Si no acierta, no pasa nada: el personaje recuerda que adagio es despacio, andante como quien pasea y allegro deprisa, y sugiere marcar el pulso con el pie; se puede volver a oír y tocar otra vez. Al acertar, «¡bien!» y otro pulso. Termina al acabar las preguntas de la vuelta.",
+    "sinPantalla": "Con unas claves o con palmas, da un pulso seguido a una de las tres velocidades y los niños andan por la clase a ese paso. Cuando pares, van a pisar una de tres tarjetas en el suelo: adagio, andante, allegro. Cambia de velocidad sin avisar, y alguna vez repite la misma dos veces seguidas. Después, que un niño lleve las claves y los demás anden y adivinen.",
+    "masFacil": "Solo dos opciones, adagio y allegro, muy separadas: el pulso con sueño y el pulso corriendo. Nombra las dos en voz alta antes de que suene. Cuando salga, mete andante en medio y compáralo siempre con el anterior: «¿más rápido o más lento que el de antes?». Si dudan con la palabra, di «lento», «normal» y «rápido» y añade el italiano después.",
+    "masDificil": "Que respondan sin moverse, solo escuchando. Que digan con qué instrumento sonaba además del tempo. Que uno dé palmadas a una velocidad y otro la nombre, y luego cambie despacio de adagio a allegro sin saltos, para que la clase diga cuándo pasa por andante. Y buscar en una canción conocida si es adagio, andante o allegro.",
+    "variante": {
+      "titulo": "El director del tempo",
+      "texto": "Un niño es el director: lleva las claves y cambia de velocidad cuando quiere. La clase anda a su paso y, cada vez que cambia, dice el nombre nuevo en voz alta. Después el director tiene que responder a lo que pida la clase: «¡adagio!», «¡allegro!», y cambiar sin parar el pulso. Se cambia de director cada minuto."
+    },
+    "ideas": [
+      "Cantar una canción que sepan tres veces: adagio, andante y allegro, y decir en cuál se entiende mejor la letra y en cuál apetece más bailar.",
+      "Escuchar el principio de tres piezas de verdad y ponerles la palabra: hay muchos allegros y adagios en Vivaldi, Mozart y Beethoven.",
+      "Poner tempo a las cosas del día: ¿a qué velocidad se anda al patio? ¿y a la fila? Escribirlo en italiano."
+    ],
+    "loTiene": [
+      "Marca el pulso con el pie antes de responder y anda a ese paso.",
+      "Responde bien aunque cambie el instrumento entre una pregunta y otra.",
+      "Da palmadas a una de las tres velocidades cuando se le pide por su nombre."
+    ],
+    "errores": [
+      {
+        "error": "Dice allegro a los instrumentos agudos como el triángulo y adagio a los graves como el tom",
+        "remedio": "poner seguidos un triángulo lento y un bongó rápido, andando con el pie: manda el paso, no el sonido."
+      },
+      {
+        "error": "Confunde andante con las otras dos, porque no tiene con qué compararlo",
+        "remedio": "andar por la clase al paso del pulso: si es como pasear, es andante."
+      },
+      {
+        "error": "Toca antes de oír tres o cuatro golpes",
+        "remedio": "esperar a haber dado cuatro pasos con el pulso antes de decidir."
+      }
+    ],
+    "indicadores": [
+      "Pie con el pulso",
+      "Sin importar timbre",
+      "Lo produce"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

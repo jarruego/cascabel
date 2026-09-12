@@ -89,6 +89,80 @@
     "actividad.c229.pista1",
     "actividad.c229.pista2"
   ],
+  "ficha": {
+    "aprende": "Oír una melodía de seis notas con do, re, mi, sol y la, y escribirla en una cuadrícula de cinco filas: cada nombre es una fila, arriba las agudas y abajo las graves.",
+    "vocabulario": [
+      "dictado",
+      "pentatónica",
+      "do",
+      "re",
+      "mi",
+      "sol",
+      "la",
+      "cuadrícula"
+    ],
+    "agrupamiento": "Grupo clase con proyector, después por parejas en tablet",
+    "material": "Pizarra con una cuadrícula de cinco filas y seis columnas, y gomets o tiza",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Cantar las cinco notas.",
+        "detalle": "Do, re, mi, sol, la, subiendo con la mano, y bajando. Sin fa ni si. Cantar do-re-mi-sol-mi-do con nombres, dos veces: es el primer dictado, y cantarlo antes es la mitad del trabajo."
+      },
+      {
+        "min": 1,
+        "titulo": "La cuadrícula.",
+        "detalle": "En la pizarra, cinco filas con su nombre (la arriba, do abajo) y seis columnas. Enseñar que la fila es la nota y la columna el orden. Colocar juntos el primer do."
+      },
+      {
+        "min": 2,
+        "titulo": "Primer dictado con el proyector.",
+        "detalle": "Se oye entero, se canta con nombres, y un niño enciende las casillas. Se escucha lo que ha quedado: si algo no cuadra, se oye el original otra vez y se cambia esa casilla."
+      },
+      {
+        "min": 3,
+        "titulo": "Jugar en tablet,",
+        "detalle": "de uno en uno o por parejas. Regla: oír, cantar con nombres, y solo después tocar. Tres dictados; el personaje avisa qué casilla no coincide y se corrige al momento."
+      }
+    ],
+    "enPantalla": "Suena una melodía de seis notas con do, re, mi, sol y la, al pulso, y debajo hay una cuadrícula de cinco filas por seis columnas: cada fila es una nota (la arriba, do abajo) y cada columna un tiempo. El niño toca una casilla por columna para escribir lo que ha oído; al tocarla suena, y puede escuchar su versión en bucle y compararla con el original con el botón de repetir. Si una casilla no coincide, el personaje lo señala y se cambia. Tres dictados, todos empiezan y acaban en do, y termina, sin puntuación.",
+    "sinPantalla": "Cuadrícula en la pizarra con las cinco filas y seis columnas, y gomets o tiza. Tú cantas o tocas en el xilófono la melodía con las placas do, re, mi, sol y la (quita el fa y el si). La clase la canta con nombres y un niño pega un gomet en cada columna. Después se canta lo escrito y se compara con lo que sonó. Con los gomets en el suelo, además, se puede andar la melodía.",
+    "masFacil": "Quédate en tres filas —do, mi, sol— y cuatro columnas, y da ya puestas la primera y la última casilla, que siempre son do. Canta la melodía nota a nota, parando en cada una hasta que esté colocada. Y usa la pista del salto: en la cuarta nota la melodía sube de golpe y luego vuelve a bajar.",
+    "masDificil": "Dictados de ocho notas o con dos casillas seguidas iguales. Que lo escriban en papel pautado en lugar de en la cuadrícula. O al revés: que cada niño invente una melodía de seis notas en la cuadrícula, la cante con nombres y otro la escriba de oído.",
+    "variante": {
+      "titulo": "Por parejas",
+      "texto": "Uno inventa una melodía de seis notas en la cuadrícula, con do al principio y al final, y la toca en la tablet tapando la pantalla. El otro la canta con nombres y la escribe en su cuadrícula de papel. Se destapa y se compara. Después se cambian. Componer y dictar a la vez: quien dicta tiene que cantar claro para que el otro pueda."
+    },
+    "ideas": [
+      "Cantar canciones pentatónicas (sin fa ni si) que la clase sepa y buscar dónde está el salto de mi a sol.",
+      "Pasar una melodía de la cuadrícula al pentagrama: cada fila, una nota en la pauta.",
+      "Tocar en el xilófono con solo las placas do, re, mi, sol y la, inventando melodías que empiecen y acaben en do."
+    ],
+    "loTiene": [
+      "Canta la melodía con nombres antes de tocar ninguna casilla.",
+      "Coloca cada nota en su fila, con las agudas arriba y las graves abajo.",
+      "Escucha lo que ha escrito y lo compara con el original antes de dar por hecho."
+    ],
+    "errores": [
+      {
+        "error": "Escribe la melodía al revés: las agudas abajo",
+        "remedio": "cantar do-re-mi-sol-la subiendo con la mano y señalar en la cuadrícula: la mano sube, la fila sube."
+      },
+      {
+        "error": "Pone el salto de mi a sol como un paso, en re o mi",
+        "remedio": "cantar solo esas dos notas con la mano: si la mano da un salto grande, la casilla también."
+      },
+      {
+        "error": "Toca casillas sin haber cantado la melodía",
+        "remedio": "oírla con el botón y cantarla con nombres tres veces; la voz la escribe antes que el dedo."
+      }
+    ],
+    "indicadores": [
+      "Canta con nombres",
+      "Fila correcta",
+      "Compara"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

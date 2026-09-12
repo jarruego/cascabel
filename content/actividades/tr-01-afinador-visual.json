@@ -61,6 +61,61 @@
   "pistas": [
     "actividad.tr01.pista1"
   ],
+  "ficha": {
+    "aprende": "Cantar una nota que suena en la flauta, do, re, mi, sol, la o do agudo, y ver en una aguja si la voz está encima, más alta o más baja, sin nada que acertar.",
+    "vocabulario": [
+      "afinar",
+      "nota",
+      "agudo",
+      "grave",
+      "aguja",
+      "micrófono",
+      "sostener",
+      "respirar"
+    ],
+    "agrupamiento": "Grupo clase con un niño al micrófono, o individual",
+    "material": "Ninguno. Va mejor en un aula tranquila; el micrófono del propio aparato basta.",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Calentar en grupo.",
+        "detalle": "Sin pantalla, todos a la vez: sirenas con la voz, de grave a agudo y vuelta, y un «mmm» largo. Que nadie cante solo todavía."
+      },
+      {
+        "min": 1,
+        "titulo": "Enseñar la aguja.",
+        "detalle": "Abrir la herramienta y dar permiso al micrófono cuando lo pida. El maestro canta un do y muestra cómo la aguja se mueve; si se va arriba o abajo, no pasa nada."
+      },
+      {
+        "min": 3,
+        "titulo": "Cantar en grupo con la aguja.",
+        "detalle": "Suena el do en la flauta y toda la clase lo canta a la vez; la aguja enseña la media. Luego el sol y el do agudo. Se compara con la mano: ¿estamos encima?"
+      },
+      {
+        "min": 3,
+        "titulo": "De uno en uno, quien quiera.",
+        "detalle": "Los voluntarios eligen su nota. Respirar hondo y sostenerla sin apretar. Si la aguja está baja, pensar en «ligero»; si está alta, soltar los hombros."
+      },
+      {
+        "min": 1,
+        "titulo": "Cerrar.",
+        "detalle": "Cantar el do todos juntos sin la pantalla y decidir de oído si suena igual que antes."
+      }
+    ],
+    "enPantalla": "Seis notas para elegir: do, re, mi, sol, la y do agudo. Al tocar una suena en la flauta y una aguja se mueve con la voz del niño: en el centro cuando está encima, a un lado si canta más alto y al otro si canta más bajo. No hay puntuación, ni final, ni nada que acertar: es un espejo de la voz. El sonido del micrófono no sale del aparato. Si el micrófono no está disponible o no se da permiso, la herramienta sigue sirviendo para oír las notas y cantarlas igual.",
+    "sinPantalla": "Toca la nota en la flauta o en el metalófono y canta tú encima; luego que la repitan. La clase hace de aguja: pulgar arriba si el compañero canta más alto, abajo si más bajo, y mano plana si está encima. El oído del grupo afina antes que cualquier pantalla, y nadie canta solo si no quiere.",
+    "masFacil": "Empieza por la nota que elija el niño, aunque no sea una de las seis: que cante lo que le salga y toca tú en el metalófono la nota más cercana. Pedir una nota concreta a quien aún no la encuentra es pedirle dos cosas a la vez. Cantad siempre en grupo antes que en solitario, y con «uuuh» en vez de con la boca abierta.",
+    "masDificil": "Dos notas seguidas, do y sol, y luego do y mi: que las cante sin volver a oírlas. Después, que sostenga la nota diez segundos sin que la aguja se mueva. Y por último, que cante la nota antes de tocarla y compruebe si la tenía en la cabeza.",
+    "variante": {
+      "titulo": "Por parejas",
+      "texto": "Un niño canta y el otro, de espaldas a la pantalla, dice si le parece alto, bajo o encima; luego miran la aguja y comprueban. Se cambian. Lo que se entrena es el oído del que escucha, no solo la voz del que canta."
+    },
+    "ideas": [
+      "Un coro de tres notas: un grupo canta do, otro mi y otro sol a la vez, y se pasa el micrófono para ver cada uno.",
+      "Buscar la nota del aula: ¿a qué altura suena el zumbido del fluorescente o el timbre del recreo? Cantarlo y ver la aguja.",
+      "Usar el afinador para afinar las flautas de la clase antes de tocar: soplar suave y ver si el do está encima."
+    ]
+  },
   "etiquetas": [
     "afinador",
     "micrófono",

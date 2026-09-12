@@ -128,6 +128,17 @@ cuenta: **tantas notas como casillas** (una por bloque o por sílaba: la canció
 pictogramas) o **tantas como pulsos** (la forma de una obra: `null` donde no empieza nota).
 `tests/obras.test.ts` comprueba que sea una de las dos y `motor/notasDelMapa.ts` es la regla.
 
+**La ficha del maestro** (`ficha`) se escribe para cada actividad y es lo que se imprime en
+dos caras: `aprende` (una frase), `vocabulario`, `agrupamiento`, `material`, `pasos` (de
+cuatro a seis, con `min` que suman `duracion_min`), `enPantalla`, `sinPantalla`, `masFacil`,
+`masDificil`, `variante`, `ideas`, `loTiene`, `errores` y `indicadores` (las tres columnas
+del seguimiento). Las herramientas del Taller no llevan `loTiene`, `errores` ni
+`indicadores`. Si falta un campo, la ficha cae a la guía genérica del tipo
+(`ficha.tipo.<tipo>.*` en `es.json`), así que nunca sale un hueco; pero toda actividad nueva
+lleva la suya: `tests/fichas.test.ts` lo exige. Se escribe en español, para un maestro que la
+lee de pie, específica de la actividad y sin castigar el error. El encargo completo, con
+ejemplo, está en `prompts/generar-actividad.md`.
+
 **La letra** (`letra: { idioma, texto, fuente }`) es opcional y sale solo en la ficha del
 maestro: en la pantalla del niño lo que hay que cantar suena. Entra únicamente una letra
 cotejada y de dominio público; una traducción moderna tiene autor aunque circule como

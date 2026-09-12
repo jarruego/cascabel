@@ -305,6 +305,90 @@
     "actividad.c346.pista1",
     "actividad.c346.pista2"
   ],
+  "ficha": {
+    "aprende": "Tocar entera la «Marcha Radetzky» con el cuerpo —palmas, muslos, pies y chasquidos— cambiando de zona con la melodía sin perder el pulso de la marcha.",
+    "vocabulario": [
+      "marcha",
+      "pulso",
+      "palmas",
+      "muslos",
+      "pies",
+      "chasquidos",
+      "llamada",
+      "balanceo"
+    ],
+    "agrupamiento": "Toda la clase, de pie, con proyector",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Reconocerla.",
+        "detalle": "Poner la trompeta una vez sin hacer nada: es la que se aplaude en el concierto de Año Nuevo. Marcar el pulso de marcha con el pie, andando en el sitio, sin más."
+      },
+      {
+        "min": 2,
+        "titulo": "Solo la llamada.",
+        "detalle": "Do, do, do: tres palmas iguales y una espera; dos veces. Es la parte que ya saben aplaudir. Que salga con la trompeta antes de meter nada más."
+      },
+      {
+        "min": 2,
+        "titulo": "La bajada y la nota larga.",
+        "detalle": "Mi, re, do, si, la: muslos en la bajada, y en el sol largo, los pies. Decirlo con «bajo, bajo» y «piso» antes de hacerlo. Enlazar con la llamada."
+      },
+      {
+        "min": 2,
+        "titulo": "El balanceo.",
+        "detalle": "Cuando la trompeta hace mi, re sostenido, mi, son chasquidos: tres veces seguidas. Quien no chasquea, dos toques en el pecho: importa el sitio, no el sonido. Cierre con palmas."
+      },
+      {
+        "min": 2,
+        "titulo": "Entera con la pantalla.",
+        "detalle": "El pasaje se toca dos veces seguidas, como en la marcha. Mirar el cursor y cambiar de zona sin frenar. Si alguien se descoloca, espera a la llamada y vuelve a entrar."
+      },
+      {
+        "min": 1,
+        "titulo": "Sin pantalla.",
+        "detalle": "Se apaga y se hace igual con el maestro tarareando la trompeta y el pie de metrónomo. La pantalla dirige solo hasta que sobra."
+      }
+    ],
+    "enPantalla": "Cuatro filas —chasquidos, palmas, muslos y pies— con el patrón marcado y un cursor que lo recorre mientras la trompeta toca la marcha entera, dos veces seguidas, sin bucle. Lo que sale por el altavoz es la melodía y una señal suave de los golpes: el sonido lo hacen los niños con el cuerpo y la pantalla hace de director. No se toca nada ni hay puntuación; se puede repetir las veces que haga falta y al acabar el personaje dice que ha sonado.",
+    "sinPantalla": "Tararea tú la trompeta o pon la grabación de la marcha y dirige con las manos, como en el concierto: palmas en «do, do, do», muslos en la bajada, pies en el sol largo y chasquidos en el balanceo. Al principio, di la zona en voz alta justo antes de que llegue («¡muslos!»). Cuando salga, deja de avisar y dirige solo con el gesto. La grabación de verdad, con la orquesta, es el mejor final.",
+    "masFacil": "Todo con palmas, siguiendo el ritmo de la melodía sin cambiar de zona, hasta que el pulso de la marcha vaya solo. Después, solo dos zonas: palmas en la llamada y pies en el sol largo; lo demás, quietos y cantando. El cambio de gesto es lo que cuesta, no el gesto. Y el balanceo con chasquidos, el último en entrar.",
+    "masDificil": "Mitad de la clase hace la llamada y la bajada, y la otra mitad el sol largo y el balanceo; luego se cambian. Después, la segunda vuelta del pasaje en canon: el segundo grupo entra cuando el primero va por la bajada. Y para quien va sobrado: la marcha entera con la grabación de orquesta, sin pantalla, aplaudiendo fuerte y flojo como manda el director de Año Nuevo.",
+    "variante": {
+      "titulo": "Fuerte y flojo",
+      "texto": "Como en el concierto de Año Nuevo: el director pide a la sala aplausos flojos en unas partes y fuertes en otras. Un niño hace de director delante y sube o baja las manos; la clase toca el patrón entero pero con la fuerza que él pide. El director cambia cada vuelta. Trabaja el matiz sin decir la palabra, y quien dirige tiene que ir por delante de la música."
+    },
+    "ideas": [
+      "Ver el final del concierto de Año Nuevo y fijarse en cuándo aplaude el público y cuándo el director lo para: ¿se puede seguir con el patrón de clase?",
+      "Inventar otro reparto de zonas para la misma marcha (pies en la llamada, palmas en el balanceo) y votar cuál suena mejor.",
+      "Desfilar por el patio con la marcha: los pies llevan el pulso y las manos hacen solo la llamada."
+    ],
+    "loTiene": [
+      "Da las tres palmas de la llamada iguales y respeta la espera, con la trompeta.",
+      "Cambia de palmas a muslos y de pies a chasquidos sin frenar el pulso.",
+      "Entra en la segunda vuelta del pasaje sin mirar la pantalla."
+    ],
+    "errores": [
+      {
+        "error": "Da cuatro palmas en la llamada, llenando la espera",
+        "remedio": "cantar «do, do, do, y» con la «y» en silencio y las manos quietas, antes de volver a palmear."
+      },
+      {
+        "error": "Se queda en las palmas cuando la trompeta ya baja",
+        "remedio": "decir la zona en voz alta antes de que llegue («¡muslos!») una vuelta entera; luego solo con el gesto del maestro."
+      },
+      {
+        "error": "Se para en el balanceo para pensar si es chasquido o palma",
+        "remedio": "hacer solo el balanceo tres veces seguidas, con los toques en el pecho si no chasquea, y meterlo después en la marcha."
+      }
+    ],
+    "indicadores": [
+      "Llamada",
+      "Cambia de zona",
+      "Sin mirar"
+    ]
+  },
   "creditos": [
     {
       "obra": "«Marcha Radetzky», op. 228, comienzo",

@@ -120,6 +120,85 @@
     "actividad.c338.pista1",
     "actividad.c338.pista2"
   ],
+  "ficha": {
+    "aprende": "Reconocer de oído rock, jazz, hip hop, reggae, vals, salsa, bossa nova y electrónica en veinte segundos, fijándose en los instrumentos, el ritmo y la velocidad.",
+    "vocabulario": [
+      "rock",
+      "jazz",
+      "hip hop",
+      "reggae",
+      "vals",
+      "salsa",
+      "bossa nova",
+      "electrónica"
+    ],
+    "agrupamiento": "Grupo clase con proyector; luego por parejas en tablet",
+    "material": "Ninguno (opcional: altavoz para bailar cada estilo)",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Tres preguntas para cada fragmento.",
+        "detalle": "Escribir en la pizarra: ¿qué instrumentos suenan?, ¿cómo va el ritmo?, ¿a qué velocidad? Poner dos fragmentos sin contestar y responder solo a esas tres preguntas."
+      },
+      {
+        "min": 2,
+        "titulo": "Los que se mueven distinto.",
+        "detalle": "De pie: con el vals se balancea a tres; con el reggae se relaja en el contratiempo; con la salsa se mueven los pies rápido. Poner uno de cada y moverse antes de nombrarlos."
+      },
+      {
+        "min": 2,
+        "titulo": "Contestar en grupo.",
+        "detalle": "Una vuelta proyectada. Se oye entero, se contestan las tres preguntas en voz alta, se decide y uno toca. Si no es, la pista del personaje y otra escucha."
+      },
+      {
+        "min": 3,
+        "titulo": "Por parejas en tablet.",
+        "detalle": "Una vuelta cada pareja, con auriculares o volumen bajo. Uno dice los instrumentos que oye, el otro elige. A mitad se cambian."
+      },
+      {
+        "min": 1,
+        "titulo": "Los que se parecen.",
+        "detalle": "Cierra con reggae y bossa nova seguidos, los dos suaves: en uno los acentos van a contratiempo y en el otro la guitarra se balancea. Que digan en qué lo han notado."
+      }
+    ],
+    "enPantalla": "Suenan veinte segundos de un estilo y aparecen los ocho nombres en botones. El niño escucha, puede repetir, y toca el que cree. Si no es, el personaje le recuerda en qué fijarse (el contratiempo del reggae, el bombo del hip hop, el swing del jazz) y se vuelve a oír; si es, «¡bien!» y viene otro. Doce fragmentos en vueltas de cinco; el jazz, el reggae, el hip hop y la electrónica salen dos veces. Sin tiempo ni puntuación.",
+    "sinPantalla": "Con grabaciones que traigas tú y ocho tarjetas con los nombres en la pizarra: se oye el fragmento, se contestan las tres preguntas y se señala la tarjeta. Mejor todavía con el cuerpo: cada estilo con su forma de moverse, y la clase contesta bailando. Sin altavoz, se puede hacer con lo que sepa el maestro: un vals cantado a tres, una base de hip hop con la boca, unas palmas de salsa.",
+    "masFacil": "Quédate con cuatro estilos muy distintos entre sí: vals, rock, hip hop y bossa nova, y pon solo las tarjetas de esos cuatro. Nombra las opciones antes de que suene y contesta primero a la velocidad: ¿va rápido o tranquilo? Después, a los instrumentos. Deja el jazz y la salsa para cuando los cuatro primeros salgan seguros.",
+    "masDificil": "Contestar antes de que acaben los veinte segundos, con una razón: «guitarra a contratiempo y tranquilo: reggae». Después, buscar en cada estilo el instrumento que lleva el ritmo (la batería del rock, la máquina de la electrónica, las congas de la salsa) y marcarlo con el cuerpo. Y traer de casa una canción y decir a cuál de los ocho se parece más y por qué.",
+    "variante": {
+      "titulo": "Cada estilo, un baile",
+      "texto": "Antes de nombrar nada, mover el cuerpo. La clase de pie y sin hablar: suena el fragmento y cada uno se mueve como le pida la música. Luego se para y se miran: ¿todos se han balanceado a tres? Era el vals. ¿Han ido a golpes con la cabeza? Hip hop. El nombre llega al final, cuando el cuerpo ya lo ha reconocido."
+    },
+    "ideas": [
+      "Hacer una base de hip hop con la boca (bombo, caja, charles) y encima recitar un texto de clase a ritmo.",
+      "Tocar el mismo pulso en tres estilos con instrumentos de aula: a tres para el vals, a contratiempo con claves para el reggae, con congas o cajas para la salsa.",
+      "Preguntar en casa qué estilo escuchaban los abuelos y traer un ejemplo para colocarlo entre los ocho, o añadir uno nuevo a la lista."
+    ],
+    "loTiene": [
+      "Nombra los instrumentos que oye y la velocidad antes de decir el estilo.",
+      "Distingue reggae de bossa nova y jazz de salsa en la segunda escucha.",
+      "Reconoce el vals por el tres y el reggae por el contratiempo, con el cuerpo."
+    ],
+    "errores": [
+      {
+        "error": "Llama rock a todo lo rápido y bossa nova a todo lo lento",
+        "remedio": "quitar la velocidad de la lista y contestar solo por los instrumentos: ¿hay batería, guitarra, máquinas, congas?"
+      },
+      {
+        "error": "Confunde reggae y bossa nova, los dos suaves",
+        "remedio": "marcar el pulso con el pie: si la guitarra cae cuando el pie está en el aire, es reggae; si se balancea con el pie, bossa."
+      },
+      {
+        "error": "Contesta a los tres segundos, sin oír el fragmento entero",
+        "remedio": "que cuente cuántos instrumentos entran antes de tocar: en veinte segundos casi siempre entra alguno más."
+      }
+    ],
+    "indicadores": [
+      "Instrumentos",
+      "Reggae/bossa",
+      "Con el cuerpo"
+    ]
+  },
   "creditos": [
     {
       "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",

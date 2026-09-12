@@ -40,6 +40,90 @@
   "pistas": [
     "actividad.c342.pista1"
   ],
+  "ficha": {
+    "aprende": "Construir la escala de sol mayor en el teclado siguiendo el patrón tono, tono, semitono, tono, tono, tono, semitono, y explicar por qué hace falta el fa sostenido.",
+    "vocabulario": [
+      "tono",
+      "semitono",
+      "patrón",
+      "sostenido",
+      "fa sostenido",
+      "escala",
+      "tecla negra",
+      "armadura"
+    ],
+    "agrupamiento": "Grupo clase con proyector; luego por parejas en tablet",
+    "material": "El teclado dibujado en la pizarra; metalófono o teclado del aula, si lo hay",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "El patrón, con el cuerpo.",
+        "detalle": "De pie. Decir el patrón entero: tono, tono, semitono, tono, tono, tono, semitono. Un paso grande por cada tono y uno pequeño por cada semitono, andando en el sitio, hasta que se diga de memoria."
+      },
+      {
+        "min": 3,
+        "titulo": "Recordar do mayor.",
+        "detalle": "En el teclado de la pizarra, seguir el patrón desde do y ver que sale toda por blancas: entre mi y fa y entre si y do no hay tecla negra, y ahí están los dos semitonos. Lo que se enseña es a mirar si hay negra en medio."
+      },
+      {
+        "min": 3,
+        "titulo": "Construirla proyectada.",
+        "detalle": "La app desde sol. Un niño toca y la clase dice antes de cada tecla «tono» o «semitono». En el sexto paso, desde mi, hace falta un tono y la blanca siguiente está a semitono: la tecla negra, fa sostenido. Si un paso no toca, la app avisa y se vuelve a sol."
+      },
+      {
+        "min": 4,
+        "titulo": "Por parejas en tablet.",
+        "detalle": "Cada pareja construye la escala dos veces: primero mirando la pauta que se escribe, luego diciendo el patrón en voz alta antes de tocar. Si la app avisa, no pasa nada: se vuelve a sol y se mira dónde falta la negra."
+      },
+      {
+        "min": 2,
+        "titulo": "Leer lo que se ha escrito.",
+        "detalle": "Mirar la pauta escrita: siete notas y un sostenido en el fa. Explicar que ese sostenido, puesto al principio del pentagrama, es la armadura de sol mayor: avisa de que todos los fa son sostenidos."
+      },
+      {
+        "min": 1,
+        "titulo": "Cantarla.",
+        "detalle": "Cantar la escala de sol subiendo y bajando con los nombres, y con el metalófono si lo hay: se aparta la lámina de fa y se pone la de fa sostenido."
+      }
+    ],
+    "enPantalla": "Un teclado grande de dos octavas con el sol marcado y, encima, un pentagrama vacío. El niño toca las teclas de una en una y cada nota aparece escrita en la pauta; entre nota y nota se escribe si el paso ha sido tono o semitono. Si un paso no sigue el patrón, la app lo dice con calma y se vuelve a empezar desde sol, sin contar intentos. Al llegar al sol de arriba con las siete notas bien, la escala suena entera y se ve el fa sostenido escrito en su sitio.",
+    "sinPantalla": "Con el teclado dibujado en la pizarra: se va señalando desde sol y la clase dice en cada paso «tono» o «semitono» mirando si hay tecla negra en medio. Al llegar a mi, ¿dónde está el tono? En la negra. Con un metalófono, se tapan las láminas que no entran y se cambia la de fa por la de fa sostenido: al tocar de seguido, la escala suena redonda. Y con la voz: cantar do mayor y luego sol mayor con fa natural, y oír que la sexta nota queda baja.",
+    "masFacil": "Empieza por do mayor, donde el patrón sale andando por las blancas, y solo después pasa a sol. Deja el patrón escrito grande en la pizarra y ve señalándolo paso a paso mientras el niño toca. Si aun así cuesta, construir solo la primera mitad (sol, la, si, do) y parar: la segunda mitad, con la negra, se hace otro día.",
+    "masDificil": "La misma escala desde re: aparecen dos sostenidos (fa y do), y ahí se ve que el patrón manda sobre las teclas. Luego desde fa, donde no hace falta un sostenido sino un bemol (si bemol). Y para quien va sobrado: construir sol mayor sin mirar el teclado, solo diciendo los nombres y cantando, y comprobarlo después en la app.",
+    "variante": {
+      "titulo": "Escala humana",
+      "texto": "Ocho niños en fila, cada uno con una nota en un cartel: sol, la, si, do, re, mi, fa, sol. Se dice el patrón y se avanza: en cada tono, un paso grande; en cada semitono, uno pequeño. Al llegar a mi, el siguiente paso pide un tono y el cartel dice fa: no cabe. Ese niño da la vuelta al cartel y aparece fa sostenido. La clase canta la escala mientras la fila la anda."
+    },
+    "ideas": [
+      "Buscar el fa sostenido en canciones que la clase toca con la flauta: mirar la armadura y descubrir cuáles están en sol mayor.",
+      "Escribir la escala de sol mayor en el cuaderno pautado, con el sostenido al principio como armadura, y cantarla a primera vista al día siguiente.",
+      "Comparar con la escala menor desde el mismo sol: otro patrón, y oír cómo cambia el color."
+    ],
+    "loTiene": [
+      "Dice el patrón entero sin mirar y lo aplica paso a paso desde sol.",
+      "Elige la tecla negra al llegar a fa y explica que entre mi y fa solo hay un semitono.",
+      "Construye la escala en la app sin aviso, o se corrige solo al primer aviso."
+    ],
+    "errores": [
+      {
+        "error": "Toca fa natural después de mi, contando por nombres y no por pasos",
+        "remedio": "mirar el teclado: entre mi y fa no hay negra, así que es semitono; el tono pide saltar a la negra."
+      },
+      {
+        "error": "Toca do sostenido entre si y do, por seguir dando pasos grandes",
+        "remedio": "señalar que entre si y do tampoco hay negra: el tercer paso del patrón es el semitono y ahí no se salta."
+      },
+      {
+        "error": "Se queda parado cuando la app avisa y no vuelve a empezar",
+        "remedio": "decirle en voz alta el paso donde estaba y volver a sol juntos: el aviso solo dice dónde mirar."
+      }
+    ],
+    "indicadores": [
+      "Dice el patrón",
+      "Fa sostenido",
+      "Se corrige solo"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

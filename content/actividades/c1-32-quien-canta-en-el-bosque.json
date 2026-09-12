@@ -90,6 +90,85 @@
   "pistas": [
     "actividad.c132.pista1"
   ],
+  "ficha": {
+    "aprende": "Reconocer de oído el canto del pájaro, el croar de la rana, el ulular del búho y el zumbido de la abeja, y decir con qué palabra se llama cada sonido.",
+    "vocabulario": [
+      "pájaro",
+      "rana",
+      "búho",
+      "abeja",
+      "canta",
+      "croa",
+      "ulula",
+      "zumba"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o individual en tablet",
+    "material": "Ninguno. Para la parte sin pantalla, cuatro tarjetas con los animales dibujados",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Cuatro animales, cuatro verbos.",
+        "detalle": "Di los cuatro con su gesto: el pájaro canta (dedos que pían), la rana croa (garganta hinchada), el búho ulula (manos en la boca, «uh-uh»), la abeja zumba (dedo que vuela). Que los imiten."
+      },
+      {
+        "min": 1,
+        "titulo": "El bosque, de día y de noche.",
+        "detalle": "Pregunta quién canta de día y quién de noche. El búho es el de la noche; los otros tres, del día. Es la pista para cuando dudan."
+      },
+      {
+        "min": 2,
+        "titulo": "Responder en la pantalla.",
+        "detalle": "Suena un animal. Antes de tocar, la clase hace su gesto en silencio; el que sale mira los gestos y toca. Si no acierta, se vuelve a oír y se fija en si es seguido o con pausas."
+      },
+      {
+        "min": 1,
+        "titulo": "Imitar el sonido.",
+        "detalle": "Después de cada acierto, todos imitan el sonido con la voz durante unos segundos: el zumbido sin parar, el «uh-uh» grave con pausas, el «croac», el pío agudo."
+      },
+      {
+        "min": 1,
+        "titulo": "Lo hacen ellos.",
+        "detalle": "Un niño de espaldas hace uno de los cuatro sonidos con la voz y la clase señala la tarjeta. Cambian de niño tres o cuatro veces."
+      }
+    ],
+    "enPantalla": "Suena un animal del bosque grabado de verdad y aparecen cuatro botones grandes con dibujo: pájaro, rana, búho y abeja. El niño toca el que cree que ha sonado. Si no acierta, no pasa nada: el personaje da una pista («la abeja no para, el búho hace uh-uh con pausas») y se puede escuchar otra vez y volver a tocar. Al acertar, «¡bien!» y viene el siguiente sonido. Cada animal sale dos veces, en distinto orden, y se acaba al terminar las preguntas de la vuelta.",
+    "sinPantalla": "Cuatro tarjetas en el suelo con los dibujos. Tú, de espaldas o detrás de la puerta, haces uno de los sonidos con la voz: un «pío-pío» agudo, un «croac» de garganta, un «uh-uh» grave y lento, un «zzzz» seguido. Los niños van a pisar la tarjeta que toca. Pide que digan el verbo al llegar: «la rana croa». Luego, que lo haga un niño y adivinen los demás.",
+    "masFacil": "Deja solo dos animales que no se parezcan en nada: el búho (grave, con pausas) y la abeja (agudo, seguido). Nombra las dos opciones en voz alta antes de que suene y haz el gesto tú mientras suena. Cuando salga, mete la rana, y el pájaro al final.",
+    "masDificil": "Que digan el verbo antes de tocar: «canta», «croa», «ulula» o «zumba». Que expliquen en qué se han fijado: «es seguido», «es grave», «tiene pausas». Y con los ojos tapados, que respondan solo por el sonido, sin ver los botones hasta después.",
+    "variante": {
+      "titulo": "El bosque en corro",
+      "texto": "La clase en corro es el bosque: cada niño elige uno de los cuatro animales. Cuando el maestro dice «de noche», solo ululan los búhos; cuando dice «de día», suenan los otros tres a la vez. Un niño en el centro, con los ojos cerrados, señala de dónde viene la abeja o dónde está la rana."
+    },
+    "ideas": [
+      "Salir al patio y escuchar en silencio un minuto: ¿qué animales se oyen? Hacer una lista y decir con qué verbo suena cada uno.",
+      "Inventar un cuento corto del bosque en el que cada animal entra con su sonido hecho por un grupo de la clase.",
+      "Dibujar cada sonido como una línea: seguida para la abeja, puntos para el búho, saltos para el pájaro."
+    ],
+    "loTiene": [
+      "Toca el animal correcto sin volver a oírlo, y dice su verbo: «el búho ulula».",
+      "Imita los cuatro sonidos con la voz de forma que los demás los reconozcan.",
+      "Explica en qué se fija: «la abeja no para; el búho hace pausas»."
+    ],
+    "errores": [
+      {
+        "error": "Confunde la rana con el búho, que son los dos graves",
+        "remedio": "oír los dos seguidos fijándose en la pausa: el búho la deja, la rana repite el croac corto."
+      },
+      {
+        "error": "Toca el pájaro con cualquier sonido agudo, también la abeja",
+        "remedio": "imitar los dos: el pájaro sube y baja, la abeja es una sola nota seguida."
+      },
+      {
+        "error": "Toca antes de que acabe el sonido",
+        "remedio": "que haga el gesto del animal mientras suena y toque solo cuando se apague."
+      }
+    ],
+    "indicadores": [
+      "Reconoce los cuatro",
+      "Dice el verbo",
+      "Lo imita"
+    ]
+  },
   "creditos": [
     {
       "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",

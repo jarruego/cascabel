@@ -143,6 +143,61 @@
     ]
   },
   "enunciado": "actividad.tr09.enunciado",
+  "ficha": {
+    "aprende": "Situar a un compositor en su época y saber buscar por su cuenta, por nombre o por siglo, quién hizo qué y cuándo.",
+    "vocabulario": [
+      "época",
+      "compositor",
+      "estilo",
+      "siglo",
+      "barroco",
+      "romanticismo",
+      "biografía",
+      "buscar"
+    ],
+    "agrupamiento": "Grupo clase, con proyector; después individual en tablet",
+    "material": "Ninguno. Opcional: una cuerda y pinzas para la línea del tiempo",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Proyectar la sección de épocas.",
+        "detalle": "Leer juntos la línea del tiempo, de la Edad Media al siglo XX. El maestro pregunta: ¿cuál es la más antigua? ¿En cuál vivimos nosotros?"
+      },
+      {
+        "min": 2,
+        "titulo": "Un compositor en voz alta.",
+        "detalle": "El maestro abre uno conocido, Beethoven o Mozart, y lee su ficha. La clase dice en qué época va y por qué lo sabe: por los años."
+      },
+      {
+        "min": 2,
+        "titulo": "Buscar por pistas.",
+        "detalle": "El maestro dice un siglo o un nombre y los niños lo encuentran con el buscador. Quien lo encuentra lee la línea de explicación a los demás."
+      },
+      {
+        "min": 2,
+        "titulo": "Un estilo.",
+        "detalle": "Abrir uno de los siete estilos y leer qué lo distingue. Pensar entre todos si han oído algo así: en casa, en una película, en una fiesta."
+      },
+      {
+        "min": 1,
+        "titulo": "Cerrar con un nombre.",
+        "detalle": "Cada niño dice un compositor o un estilo que recuerde y en qué época va. Sin buscarlo: de memoria, con lo que se ha quedado."
+      }
+    ],
+    "enPantalla": "Tres secciones, épocas, compositores y estilos, y un buscador arriba. Al tocar una entrada se abre su ficha: el nombre, los años o el siglo y una línea de explicación con lo que hay que saber. Seis épocas, once compositores y siete estilos. No suena nada: es una consulta para leer y buscar, como un diccionario. No hay pregunta, ni corrección, ni final: se cierra cuando se ha encontrado lo que se buscaba.",
+    "sinPantalla": "Una cuerda de pared a pared con seis tramos, uno por época, escritos en cartulina. Los compositores en tarjetas con nombre y años; cada niño cuelga la suya con una pinza en el tramo que le toca, mirando la fecha. Los estilos, en tarjetas de otro color, se cuelgan al final de la cuerda. La línea del tiempo se queda en el aula todo el curso.",
+    "masFacil": "Proyectar solo la sección de épocas y que el maestro lea. Después, tres compositores muy separados en el tiempo, uno del Barroco, uno del Clasicismo y uno del siglo XX, y solo la pregunta de cuál es el más antiguo. Buscar en la tablet viene después, cuando ya tienen dos o tres nombres puestos en su sitio.",
+    "masDificil": "Cada niño elige un compositor, lee su ficha y lo presenta a la clase en un minuto sin mirar la pantalla: cuándo vivió, de qué época es y una cosa que le haya llamado la atención. Después, buscar por pistas indirectas: «un compositor que se quedó sordo», «un estilo que nació en América». Buscar con una pista es más difícil que buscar con el nombre.",
+    "variante": {
+      "titulo": "Quién soy",
+      "texto": "Un niño abre una ficha sin que los demás la vean y lee dos pistas: la época y un dato. El resto busca en su tablet quién puede ser y levanta la mano cuando lo tiene. Quien lo encuentra lee la siguiente. Vale también con estilos: «soy de los años cincuenta y se baila»."
+    },
+    "ideas": [
+      "Hacer un mural cronológico con retratos dibujados por los niños y colgar a cada compositor en su siglo.",
+      "Buscar en la biblioteca del colegio o en casa una obra de cada época y traer el nombre apuntado para escucharla otro día.",
+      "Escribir la ficha de un músico de hoy que les guste, con el mismo formato: nombre, años, estilo y una línea de explicación."
+    ]
+  },
   "personaje": "doby",
   "herramienta": true,
   "estado": "revision-pedagogica",

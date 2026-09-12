@@ -97,6 +97,85 @@
     "actividad.c206.pista1",
     "actividad.c206.pista2"
   ],
+  "ficha": {
+    "aprende": "Poner las barras de compás en 4/4 sumando pulsos, no contando figuras: una blanca vale dos y una negra uno, así que dos compases pueden tener distinto número de figuras.",
+    "vocabulario": [
+      "compás",
+      "barra",
+      "pulso",
+      "cuatro por cuatro",
+      "negra",
+      "blanca",
+      "sumar",
+      "cifra"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o parejas en tablet",
+    "material": "Pizarra y tiza para la parte sin pantalla",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "La cifra de arriba.",
+        "detalle": "Escribe 4/4 y explica que el cuatro de arriba dice cuántos pulsos entran en cada compás. Todos marcan el pulso con el pie contando «uno, dos, tres, cuatro» varias veces."
+      },
+      {
+        "min": 2,
+        "titulo": "Negra uno, blanca dos.",
+        "detalle": "Dibuja las dos figuras y palméalas contando: la negra ocupa un número, la blanca dos. Pregunta cuántas negras llenan un compás (cuatro), cuántas blancas (dos), y si una blanca y dos negras lo llenan (sí)."
+      },
+      {
+        "min": 3,
+        "titulo": "Primera línea en la app.",
+        "detalle": "Se lee la fila contando en voz alta y sumando con los dedos. Cuando la suma llega a cuatro, un niño toca entre esa figura y la siguiente. Si sobra o falta, la app lo dice y se cuenta de nuevo desde la última barra buena."
+      },
+      {
+        "min": 3,
+        "titulo": "Segunda y tercera línea.",
+        "detalle": "Otros niños. Antes de cada barra, que digan la suma en voz alta: «dos más uno más uno, cuatro». Fíjate en quién cuenta figuras: se ve porque pone barras cada cuatro símbolos con blancas en medio."
+      },
+      {
+        "min": 2,
+        "titulo": "Comprobar con palmas.",
+        "detalle": "Palmear una línea terminada contando «uno, dos, tres, cuatro» por compás, con el «uno» fuerte. Si cada barra cae justo antes de un «uno», está bien puesta."
+      }
+    ],
+    "enPantalla": "Una línea de negras y blancas seguidas, sin dividir, con el 4/4 al principio. El niño toca en el hueco entre dos figuras y aparece una barra. La app comprueba que entre barra y barra los pulsos suman exactamente cuatro; si una barra deja un compás corto o largo, lo dice con una pista distinta según sobre o falte, y la barra se quita tocándola otra vez. Cuando toda la línea está bien dividida suena con su acento en el «uno» y viene la siguiente. Son tres líneas, y cada una mezcla negras y blancas de otra forma.",
+    "sinPantalla": "Escribe en la pizarra una fila de diez o doce figuras mezclando negras y blancas, con el 4/4 delante. La clase cuenta en voz alta señalando y sumando, y un niño con tiza traza la barra cuando la suma llega a cuatro; el siguiente compás empieza otra vez en uno. Al acabar, se palmea la línea entera con el «uno» fuerte y se comprueba que las barras caen bien. Cambia el orden de las figuras y repite con otro niño.",
+    "masFacil": "Empieza con una fila solo de negras: barra cada cuatro figuras, donde contar figuras y contar pulsos da lo mismo. Luego solo blancas: barra cada dos. Y después mezcla, pero deja puesta la primera barra para que se vea el tamaño del compás. Contar con los dedos, levantando uno por negra y dos por blanca, ayuda mucho.",
+    "masDificil": "Da la misma fila sin cifra y que averigüen si cuadra en 4/4 o en 2/4. Escribe la misma fila en 3/4 en la pizarra y que vean que las barras caen en otro sitio sin cambiar ninguna figura. Y que escriban ellos una fila de siete figuras que tenga exactamente tres compases de 4/4.",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "Los niños son las figuras, en fila, con una tarjeta de negra o de blanca cada uno. Otro niño pasa contando y sumando en voz alta; el que cierra cada compás levanta el brazo como barra. Los de la blanca cuentan dos números ellos solos. Después se cambia el orden de la fila y las barras caen en otros niños."
+    },
+    "ideas": [
+      "Escribir en la pizarra el ritmo de una frase de la clase («hoy toca educación física») con negras y blancas y poner las barras en 4/4.",
+      "Leer una canción de 4/4 que ya canten mirando las barras, y dar una palmada fuerte en cada «uno».",
+      "Dictado al revés: el maestro palmea tres compases de 4/4 con negras y blancas y la clase los escribe con sus barras."
+    ],
+    "loTiene": [
+      "Suma en voz alta «dos más uno más uno» y pone la barra al llegar a cuatro.",
+      "Cierra un compás de dos blancas sin esperar a una tercera figura.",
+      "Palmea la línea con el «uno» fuerte y nota solo si un compás le queda corto o largo."
+    ],
+    "errores": [
+      {
+        "error": "Pone barras cada cuatro figuras aunque haya blancas en medio",
+        "remedio": "palmear el compás que ha cerrado contando; si pasa de cuatro, la barra iba antes."
+      },
+      {
+        "error": "Deja un compás de tres porque cuenta la blanca como uno",
+        "remedio": "decir «uno-dos» encima de la blanca con las dos manos abiertas."
+      },
+      {
+        "error": "Vuelve a contar desde el principio de la línea en cada barra y se lía",
+        "remedio": "contar solo desde la última barra puesta: cada compás empieza en uno."
+      }
+    ],
+    "indicadores": [
+      "Suma pulsos",
+      "Blanca = dos",
+      "Comprueba"
+    ]
+  },
   "estado": "borrador",
   "etiquetas": [
     "compás",

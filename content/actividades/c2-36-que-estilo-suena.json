@@ -91,6 +91,85 @@
   "pistas": [
     "actividad.c236.pista1"
   ],
+  "ficha": {
+    "aprende": "Reconocer rock, vals, rap y salsa en veinte segundos de música y decir en qué se ha fijado: la guitarra eléctrica, el compás de tres, la voz hablada sobre una base, la percusión con metales.",
+    "vocabulario": [
+      "estilo",
+      "rock",
+      "vals",
+      "rap",
+      "salsa",
+      "batería",
+      "compás de tres",
+      "metales"
+    ],
+    "agrupamiento": "Grupo clase con proyector; después por parejas",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Cuatro nombres en la pizarra.",
+        "detalle": "Escribe rock, vals, rap y salsa y pregunta quién ha oído alguno. Que digan dónde: en casa, en una boda, en el móvil."
+      },
+      {
+        "min": 2,
+        "titulo": "Una seña por estilo.",
+        "detalle": "Antes de jugar, escucha con ellos un fragmento de cada uno y ponle su seña: guitarra fuerte y batería, uno-dos-tres balanceado, voz que habla sobre un ritmo, percusión y trompetas."
+      },
+      {
+        "min": 3,
+        "titulo": "Primera vuelta con el cuerpo.",
+        "detalle": "Suena el fragmento; la clase mueve el cuerpo antes de contestar: cabeza para el rock, balanceo para el vals, hombros para el rap, caderas para la salsa. Luego se toca la opción."
+      },
+      {
+        "min": 1,
+        "titulo": "Segunda vuelta por parejas.",
+        "detalle": "Cada pareja decide y explica a la otra en qué se ha fijado."
+      },
+      {
+        "min": 1,
+        "titulo": "Cerrar.",
+        "detalle": "¿Cuál os apetece bailar? ¿Cuál se canta y cuál se habla?"
+      }
+    ],
+    "enPantalla": "Suenan unos veinte segundos de música y el niño toca uno de los cuatro estilos: rock, vals, rap o salsa. Puede oír el fragmento otra vez con el botón de repetir. Si toca uno que no es, el personaje le da una pista —cuenta con el pie: si sale uno-dos-tres es vals; si hay guitarra eléctrica fuerte, rock— y vuelve a intentarlo sin que pase nada. Cada estilo sale dos veces; la vuelta termina con las ocho escuchas. Los fragmentos son ejemplos de manual, no grabaciones famosas.",
+    "sinPantalla": "Prepara un fragmento de cada estilo en el equipo de música del aula y cuatro carteles en las cuatro esquinas: rock, vals, rap, salsa. Suena el fragmento, los niños bailan como les pida y cuando paras la música van andando a la esquina que creen. Sin altavoz también sale: tú das el patrón con la boca y el cuerpo —guitarra rasgada, un-dos-tres marcado, hablar a ritmo sobre palmas, claves de salsa— y ellos señalan el cartel.",
+    "masFacil": "Empieza con dos estilos que no se parecen en nada: vals y rap. Uno se balancea de tres en tres y el otro habla sobre un ritmo cuadrado. Cuando salga, mete el rock, que se reconoce por la guitarra eléctrica. La salsa, la última. Si dudan con todo, no es el oído: es que aún no tienen nombre para lo que oyen. Escucha cada fragmento con ellos y nómbralo antes de jugar.",
+    "masDificil": "Que expliquen la decisión con dos datos: qué instrumentos oyen y cómo va el pulso (de dos, de tres, de cuatro). Después, que traigan de casa una canción y la clase adivine si encaja en alguno de los cuatro estilos o en ninguno: descubrir que hay muchos más estilos es el siguiente paso.",
+    "variante": {
+      "titulo": "Cuatro esquinas",
+      "texto": "Cuatro carteles en las esquinas del aula. Suena el fragmento con la pantalla proyectada y los niños se desplazan bailando a la esquina del estilo. Al parar la música se comprueba en la app. Quien está en otra esquina se cambia sin más: lo importante es que el cuerpo llegue antes que la palabra."
+    },
+    "ideas": [
+      "Buscar de dónde viene cada estilo y ponerlo en un mapa: el vals de Viena, la salsa del Caribe y Nueva York, el rock y el rap de Estados Unidos.",
+      "Hacer una base de rap en clase con palmas y muslos y que cada grupo escriba cuatro versos sobre la escuela para decirlos encima.",
+      "Bailar un vals de verdad en parejas contando uno-dos-tres, con un paso largo y dos cortos."
+    ],
+    "loTiene": [
+      "Reconoce el vals por el compás de tres, no solo por el sonido.",
+      "Nombra un instrumento que ha oído para justificar su elección.",
+      "Se mueve de forma distinta con cada estilo antes de contestar."
+    ],
+    "errores": [
+      {
+        "error": "Confunde rock y salsa porque las dos van rápidas y fuertes",
+        "remedio": "fijarse en los instrumentos: guitarra eléctrica y batería en el rock; trompetas y percusión de mano en la salsa."
+      },
+      {
+        "error": "Contesta rap a todo lo que tiene ritmo marcado",
+        "remedio": "preguntar si la voz canta o habla. En el rap la voz habla; en los demás no hay voz o canta."
+      },
+      {
+        "error": "No encuentra el uno-dos-tres del vals",
+        "remedio": "balancearse con él de lado a lado y contar en voz alta; el uno cae siempre al mismo lado."
+      }
+    ],
+    "indicadores": [
+      "Vals por el tres",
+      "Nombra instrumento",
+      "Se mueve distinto"
+    ]
+  },
   "creditos": [
     {
       "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",

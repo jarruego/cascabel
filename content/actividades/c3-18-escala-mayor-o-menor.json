@@ -163,6 +163,85 @@
     "actividad.c318.pista1",
     "actividad.c318.pista2"
   ],
+  "ficha": {
+    "aprende": "Distinguir de oído una escala mayor de una menor escuchándola entera, y saber que la tercera nota es la que cambia: en la menor está medio tono más abajo.",
+    "vocabulario": [
+      "escala",
+      "mayor",
+      "menor",
+      "tercera",
+      "luminosa",
+      "oscura",
+      "tono",
+      "semitono"
+    ],
+    "agrupamiento": "Grupo clase con proyector; después por parejas en tablet",
+    "material": "Ninguno (un teclado o metalófono del aula si se hace sin pantalla)",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Antes de la pantalla, cantar do-re-mi.",
+        "detalle": "Canta con la clase do, re, mi y luego do, re, mi bemol (el mi «un poco más abajo»). Que digan cuál suena alegre y cuál más apagada. Ponerles ya el nombre: mayor y menor."
+      },
+      {
+        "min": 2,
+        "titulo": "Las dos escalas de do, enteras.",
+        "detalle": "Pon la escala de do mayor y la de do menor. La primera vez, solo escuchar; la segunda, levantar la mano justo cuando suena la tercera nota."
+      },
+      {
+        "min": 3,
+        "titulo": "Cinco preguntas en la pantalla.",
+        "detalle": "Por turnos o por parejas. Antes de tocar mayor o menor, que lo digan en voz baja al compañero; la app confirma. Repetir la escala cuantas veces haga falta."
+      },
+      {
+        "min": 1,
+        "titulo": "Las que empiezan en re, la y sol.",
+        "detalle": "Comentar que la escala no siempre empieza en do: cambia la primera nota, pero la diferencia sigue estando en la tercera."
+      },
+      {
+        "min": 1,
+        "titulo": "Cantarla nosotros.",
+        "detalle": "Cierra cantando do-re-mi-fa-sol en mayor y luego en menor con el nombre de las notas, y que elijan cuál cantar la última vez."
+      }
+    ],
+    "enPantalla": "Suena una escala de ocho notas subiendo al piano, desde do, re, sol o la, y hay dos botones grandes: mayor y menor. El niño toca uno. Si no es, el personaje recuerda que la diferencia está en la tercera nota y la escala vuelve a sonar para intentarlo otra vez; si es, «¡bien!» y viene la siguiente. Hay un botón para repetir la escala tantas veces como se quiera. Cinco preguntas por vuelta, sin tiempo ni puntuación; en otra vuelta salen escalas distintas.",
+    "sinPantalla": "Con un teclado, un metalófono o la voz: toca la escala mayor y la menor desde la misma nota (do-re-mi… y do-re-mi bemol…) y que señalen una de dos tarjetas en el suelo, una con «mayor» y otra con «menor». Sin instrumento, cántalas tú con «la-la-la» y que respondan con el pulgar arriba o de lado. Si el metalófono tiene la lámina de mi bemol, cambia solo esa por la de mi: verán que la diferencia está en una sola lámina.",
+    "masFacil": "Quédate en las escalas que empiezan en do y pon solo las tres primeras notas: do-re-mi frente a do-re-mi bemol. Que las canten después de oírlas. Cuando eso salga, alarga a cinco notas, y solo al final a las ocho. Ayuda también decir «alegre» y «apagada» antes que «mayor» y «menor», y poner el nombre después.",
+    "masDificil": "Toca tú las escalas en un teclado bajando en vez de subiendo: la tercera nota queda casi al final y hay que aguantar la atención. O pedir que, en vez de decir mayor o menor, canten la tercera nota de la escala que acaban de oír y luego la otra. Producir la diferencia es más difícil que reconocerla.",
+    "variante": {
+      "titulo": "Con canciones",
+      "texto": "Canta el principio de una canción conocida en mayor y repítelo bajando la tercera nota (con «la-la»). Que digan cuál es la de verdad y cómo cambia el carácter. Casi todas las canciones del aula son mayores; buscar entre las que se saben alguna en menor es un buen debate."
+    },
+    "ideas": [
+      "Dibujar en la pizarra las dos escalas como escaleras y marcar el peldaño de la tercera nota: en la menor está medio escalón más bajo.",
+      "Escuchar en clase un fragmento en mayor y otro en menor y hablar de qué sensación da cada uno, sin decir antes cuál es cuál.",
+      "Tocar en el metalófono la escala mayor de do y luego bajar solo el mi: que oigan que con una lámina cambia toda la escala."
+    ],
+    "loTiene": [
+      "Espera a que suene la tercera nota antes de tocar mayor o menor.",
+      "Canta las tres primeras notas de la escala que acaba de oír y distingue si el mi está más bajo.",
+      "Acierta también cuando la escala empieza en re, la o sol, no solo en do."
+    ],
+    "errores": [
+      {
+        "error": "Contesta en cuanto suena la primera nota, sin esperar a la tercera",
+        "remedio": "que cuente con los dedos hasta tres mientras suena y solo entonces elija."
+      },
+      {
+        "error": "Llama menor a todo lo que suena grave",
+        "remedio": "poner las dos escalas desde la misma nota, seguidas: la altura es igual, solo cambia el mi."
+      },
+      {
+        "error": "Las oye distintas pero cambia los nombres",
+        "remedio": "decir en voz alta «luminosa, mayor» y «oscura, menor» antes de cada escucha, hasta que el nombre vaya solo."
+      }
+    ],
+    "indicadores": [
+      "Espera la tercera",
+      "Canta las tres",
+      "Desde otra nota"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

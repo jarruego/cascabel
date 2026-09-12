@@ -257,6 +257,85 @@
     "actividad.inf29.pista1",
     "actividad.inf29.pista2"
   ],
+  "ficha": {
+    "aprende": "Distinguir sol (la nota alta) de mi (la baja) en el canto del cucú y tocar a Sol o a Milo justo cuando llegan a la línea, mirando quién viene.",
+    "vocabulario": [
+      "sol",
+      "mi",
+      "cucú",
+      "alto",
+      "bajo",
+      "personaje",
+      "línea",
+      "pulso"
+    ],
+    "agrupamiento": "Con proyector y un niño tocando, o por parejas en tablet",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Cantar el cucú.",
+        "detalle": "Sin pantalla: el maestro canta «cu-cú» con sol y mi, la mano alta en sol y baja en mi. La clase repite en eco varias veces, con el mismo gesto."
+      },
+      {
+        "min": 1,
+        "titulo": "Presentar a Sol y a Milo.",
+        "detalle": "En pantalla: Sol es la nota alta y Milo la baja. Cada uno baja por su carril y tiene su pulsador. Cantar «cu-cú» señalándolos."
+      },
+      {
+        "min": 2,
+        "titulo": "Primer ejercicio.",
+        "detalle": "Un niño toca mientras la clase canta «cu-cú» con sol y mi. Pedir que ponga el dedo encima del pulsador antes de que llegue el personaje: se mira el que viene."
+      },
+      {
+        "min": 1,
+        "titulo": "Segundo y tercero,",
+        "detalle": "cambiando de niño. Hay «sol-sol» rápidos, dos en un pulso, y un mi largo al final: la mano se queda abajo mientras dura."
+      },
+      {
+        "min": 1,
+        "titulo": "Sin pantalla.",
+        "detalle": "Se apaga y se canta el cucú con la mano: alta en sol, baja en mi. La pantalla hace de director solo hasta que sobra."
+      }
+    ],
+    "enPantalla": "Dos carriles verticales, uno por nota, y dos pulsadores grandes abajo: Sol, la nota alta, y Milo, la baja. Por cada carril baja su personaje y el niño toca su pulsador cuando cruza la línea. Al acertar, la nota se ilumina y suena el sol o el mi; si llega tarde o toca al otro, no pasa nada: sigue bajando el siguiente. Hay tres ejercicios cortos a 84 pulsos por minuto, con algunos «sol-sol» rápidos y un mi largo al final. No hay marcador mientras se juega; al acabar, un resumen dice si iba adelantado o atrasado.",
+    "sinPantalla": "El maestro canta el cucú con sol y mi, con la mano alta en sol y baja en mi, y los niños cantan en eco haciendo el mismo gesto. Después, dos niños son Sol y Milo, de pie: cuando el maestro canta sol, la clase señala a Sol; cuando canta mi, a Milo. Con un metalófono, solo las láminas sol y mi, que un niño toque lo que la clase canta.",
+    "masFacil": "Canta tú «cu-cú» muy despacio y que solo señalen con la mano arriba o abajo, sin tocar. En pantalla, que toque solo a Milo, que es siempre la nota que cierra, y deje pasar a Sol: entrar en algunas es mejor que perseguirlas todas. Los «sol-sol» rápidos se pueden cantar como uno solo al principio.",
+    "masDificil": "Que cante «sol» y «mi» con el nombre de la nota mientras toca, no solo «cu-cú». Después, que la mitad de la clase cante solo los sol y la otra mitad solo los mi, y se cambien. Con un metalófono, seguir la melodía en las láminas sol y mi en vez de en los pulsadores.",
+    "variante": {
+      "titulo": "El cuco escondido",
+      "texto": "Un niño se esconde en el aula y canta «cu-cú» con sol y mi; la clase le contesta con el mismo cucú y adivina desde dónde canta. Luego el maestro canta a veces el cucú bien, sol y mi, y a veces al revés, mi y sol, y la clase dice si el cuco canta bien o está resfriado."
+    },
+    "ideas": [
+      "Inventar palabras de dos sílabas para cantar con sol y mi, «ho-la», «ven-ga», «Ma-rio», y pasar la lista de la clase cantando cada nombre.",
+      "Buscar sonidos de dos notas fuera del aula, el timbre de una casa, la sirena de una ambulancia, y decir si son como el cucú.",
+      "Dibujar en la pizarra el cucú como dos escalones, uno alto para sol y uno bajo para mi, y seguirlo con el dedo mientras se canta."
+    ],
+    "loTiene": [
+      "Pone el dedo encima del pulsador antes de que llegue el personaje: mira el que viene, no el que ya pasó.",
+      "Canta sol alto y mi bajo, con la mano en su sitio, sin pantalla.",
+      "Toca los dos «sol-sol» rápidos en un solo pulso, no en dos."
+    ],
+    "errores": [
+      {
+        "error": "Toca cuando el personaje ya ha pasado la línea",
+        "remedio": "cantar «cu-cú» en voz alta con la clase mientras toca: la voz llega antes que el dedo."
+      },
+      {
+        "error": "Aporrea los dos pulsadores a la vez",
+        "remedio": "bajar el tempo y pedir que toque solo a Milo una vuelta; luego solo a Sol; luego los dos."
+      },
+      {
+        "error": "Canta sol y mi a la misma altura",
+        "remedio": "hacer el gesto con la mano bien exagerado, alta en sol y baja en mi, y cantarlo en eco con el maestro."
+      }
+    ],
+    "indicadores": [
+      "Anticipa",
+      "Sol alto, mi bajo",
+      "Sol-sol rápido"
+    ]
+  },
   "creditos": [
     {
       "obra": "«Cucú, ¿dónde estás?», canto de sol y mi",

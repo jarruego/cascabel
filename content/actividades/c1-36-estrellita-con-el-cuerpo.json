@@ -287,6 +287,90 @@
     "actividad.c136.pista1",
     "actividad.c136.pista2"
   ],
+  "ficha": {
+    "aprende": "Cantar «Estrellita, ¿dónde estás?» entera dando un golpe corporal por sílaba y cambiando de palmas a muslos y a pies sin que se pare la canción.",
+    "vocabulario": [
+      "sílaba",
+      "palmas",
+      "muslos",
+      "pies",
+      "chasquidos",
+      "frase",
+      "pulso",
+      "estrellita"
+    ],
+    "agrupamiento": "Toda la clase, de pie, con proyector",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "De pie, en semicírculo,",
+        "detalle": "mirando a la pantalla. Marca el pulso con el pie mientras explicas: «cada sílaba, un golpe; la pantalla dice con qué parte del cuerpo»."
+      },
+      {
+        "min": 2,
+        "titulo": "Solo la boca.",
+        "detalle": "Se canta entera con la flauta de la app, dos veces, sin golpes. Que la letra salga sola: «Es-tre-lli-ta, dón-de es-tás», con «de es» en una sola sílaba."
+      },
+      {
+        "min": 2,
+        "titulo": "Solo las palmas.",
+        "detalle": "Una palmada por sílaba en toda la canción, sin cambiar de sonido. La nota larga del final de cada frase («tás», «lar») se deja sonar sin golpe extra."
+      },
+      {
+        "min": 2,
+        "titulo": "Entran muslos y pies.",
+        "detalle": "Palmas al empezar cada frase, muslos en las sílabas del medio y los pies en la nota larga. Se hace frase a frase, parando entre una y otra, mirando la tira."
+      },
+      {
+        "min": 2,
+        "titulo": "Entera con la pantalla,",
+        "detalle": "con los chasquidos abriendo «en el cielo» y «un diamante». Quien no chasquea, da dos toques en el pecho. Dos vueltas seguidas; en la segunda, sin cantar, solo el cuerpo."
+      },
+      {
+        "min": 1,
+        "titulo": "Sin pantalla.",
+        "detalle": "Se apaga y se hace igual, con el pie del maestro de metrónomo. La app dirige solo hasta que sobra."
+      }
+    ],
+    "enPantalla": "Cuatro filas —chasquidos, palmas, muslos y pies— con un golpe marcado por sílaba de la canción y un cursor que las recorre mientras una flauta toca la melodía de «Estrellita». Lo que suena por el altavoz es la melodía, no los golpes: los golpes los hacen los niños con el cuerpo y la pantalla les dice cuándo y con qué. Va a paso tranquilo y se puede repetir las veces que haga falta. No hay puntuación ni marcador: al acabar, el personaje dice que ha sonado, y se vuelve a empezar si se quiere.",
+    "sinPantalla": "Es su forma natural: el maestro canta «Estrellita» y marca el pulso con el pie, y la clase da un golpe por sílaba. Para que se vea el cambio de sonido sin la tira, el maestro señala su cuerpo un poco antes de cada cambio: las manos, los muslos, los pies. En corro, la canción se puede pasar de frase en frase: un niño canta «Estrellita, ¿dónde estás?» con sus golpes y el de al lado sigue con «quiero verte titilar».",
+    "masFacil": "Todo con palmas, una por sílaba, hasta que la letra y los golpes vayan juntos sin pensar. Luego solo dos sonidos: palmas en las palabras y pies en la nota larga del final de cada frase. Los chasquidos se dejan para el final o se cambian por dos toques en el pecho. Y más despacio: la canción aguanta.",
+    "masDificil": "Media clase canta y la otra media solo hace el cuerpo, y se cambian. Después, que cada mitad haga una sola fila de la tira a la vez: unos las palmas, otros los pies. Y a canon: el segundo grupo entra en «¿dónde estás?» y hay que mantener el propio golpe sin seguir al otro.",
+    "variante": {
+      "titulo": "Con instrumentos",
+      "texto": "Las sílabas siguen con el cuerpo, pero la nota larga del final de cada frase se da con un triángulo o un pandero: un niño con el instrumento se encarga solo de «tás» y «lar». Los chasquidos que abren «en el cielo» y «un diamante» pueden ser claves. El cuerpo lleva la letra y los instrumentos marcan dónde acaba cada frase."
+    },
+    "ideas": [
+      "Cambiar la letra y dejar los golpes: inventar otra estrofa con las mismas sílabas («Ca-ra-co-la, ¿dón-de vas?») y comprobar que el cuerpo sigue igual.",
+      "Hacer «Estrellita» solo con el cuerpo, sin cantar, y que otra clase adivine qué canción es por los golpes.",
+      "Grabar a la clase con el móvil del maestro y escuchar: ¿se oye el cambio de palmas a pies o suena todo igual?"
+    ],
+    "loTiene": [
+      "Da un golpe por sílaba, con «de es» en uno solo, sin añadir golpes en la nota larga.",
+      "Cambia de palmas a muslos y a pies sin frenar la canción.",
+      "En la segunda vuelta lo hace sin cantar y sin mirar la pantalla."
+    ],
+    "errores": [
+      {
+        "error": "Da dos golpes en «dón-de es-tás» donde va uno, y se adelanta al resto",
+        "remedio": "decir la letra hablada muy despacio y dar la palmada solo cuando cambia la sílaba."
+      },
+      {
+        "error": "Sigue con palmas cuando la tira ya ha pasado a muslos",
+        "remedio": "que un compañero le diga «muslos» un poco antes del cambio, y después que lo diga él mismo en voz alta."
+      },
+      {
+        "error": "Canta bien pero los golpes van detrás de la voz",
+        "remedio": "una vuelta solo con el cuerpo, sin cantar, mirando el cursor; la voz vuelve después."
+      }
+    ],
+    "indicadores": [
+      "Golpe por sílaba",
+      "Cambia a tiempo",
+      "Sin pantalla"
+    ]
+  },
   "creditos": [
     {
       "obra": "«Ah! vous dirai-je, maman» (melodía de «Estrellita, ¿dónde estás?»)",

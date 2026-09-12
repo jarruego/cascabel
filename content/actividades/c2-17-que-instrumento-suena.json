@@ -102,6 +102,80 @@
     "actividad.c217.pista1",
     "actividad.c217.pista2"
   ],
+  "ficha": {
+    "aprende": "Reconocer de oído el violín, la flauta, el piano, la guitarra y el xilófono, aunque suenen en dos notas distintas, fijándose en cómo empieza y cuánto dura el sonido.",
+    "vocabulario": [
+      "timbre",
+      "violín",
+      "flauta",
+      "piano",
+      "guitarra",
+      "xilófono",
+      "se apaga",
+      "se sostiene"
+    ],
+    "agrupamiento": "Grupo clase con proyector, después individual en tablet",
+    "material": "Ninguno. Si hay en el aula, una flauta, una guitarra o un xilófono para tocarlos de verdad",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Oír los cinco seguidos,",
+        "detalle": "con la app proyectada: tocar el botón de repetir de cada uno y nombrarlo. Preguntar cuál se apaga solo (piano, guitarra, xilófono) y cuál sigue sonando mientras se quiera (violín, flauta)."
+      },
+      {
+        "min": 2,
+        "titulo": "Jugar con el proyector.",
+        "detalle": "Un niño sale a tocar; el resto responde con las manos: escuchar entero antes de decir nada. Cada instrumento sonará dos veces, en una nota grave y en otra aguda, y sigue siendo el mismo."
+      },
+      {
+        "min": 3,
+        "titulo": "Jugar en tablet,",
+        "detalle": "de uno en uno o por parejas. El botón de repetir se puede usar siempre; si no es, el personaje da una pista y se vuelve a elegir."
+      },
+      {
+        "min": 1,
+        "titulo": "Poner en común.",
+        "detalle": "Preguntar cuáles se han confundido. Casi siempre guitarra y piano, o piano y xilófono: oírlos seguidos y fijarse en cuánto dura el sonido."
+      }
+    ],
+    "enPantalla": "Suena un instrumento y aparecen cinco botones grandes con su dibujo y su nombre: violín, flauta, piano, guitarra y xilófono. El niño puede volver a oírlo con el botón de repetir y toca uno. Si no es, el personaje da una pista (si el sonido se apaga o se sostiene) y puede volver a elegir; si acierta, «¡bien!» y viene el siguiente. Cada instrumento suena dos veces en la ronda, en do y en la, para que se vea que el timbre no cambia con la nota. Termina al acabar la ronda, sin puntuación.",
+    "sinPantalla": "Si hay en el aula una flauta, una guitarra o un xilófono, tócalos detrás de un biombo o de espaldas a la clase y que señalen una tarjeta con el dibujo. Para los que no haya, imítalos con la voz: «ñiii» sostenido para el violín, «plom» que se apaga para el piano, «toc» seco para el xilófono. Las tarjetas en el suelo y los niños las pisan.",
+    "masFacil": "Tapa tres botones y deja dos que se parezcan poco: flauta o xilófono, violín o guitarra. Nombra en voz alta las dos opciones antes de que suene. Si dudan aun así, no es el oído, es el nombre: enseña el dibujo mientras suena, varias veces, sin preguntar nada.",
+    "masDificil": "Que respondan con los ojos cerrados y de una sola escucha. Que digan antes cómo empieza el sonido («se toca y se apaga» o «se sostiene») y luego el nombre. O que expliquen con una palabra por qué lo saben: «vibra», «sopla», «es de madera».",
+    "variante": {
+      "titulo": "Con los ojos cerrados",
+      "texto": "Toda la clase con los ojos cerrados y la pantalla proyectada. Suena, y cada niño levanta tantos dedos como el número del instrumento que tú has escrito en la pizarra (1 violín, 2 flauta, 3 piano…). Se abren los ojos, se mira y se oye otra vez. Nadie ve lo que ha elegido el vecino hasta el final."
+    },
+    "ideas": [
+      "Traer a clase el instrumento que alguien tenga en casa y que su dueño lo toque: una sola nota grave y una aguda, como en la app.",
+      "Dibujar los cinco en la pizarra y escribir al lado cómo se hace sonar: frotar, soplar, teclear, pulsar, golpear.",
+      "Escuchar un trozo corto de música donde toquen dos de los cinco a la vez, y levantar la mano cuando se oiga la flauta."
+    ],
+    "loTiene": [
+      "Nombra el instrumento tras oírlo entero, tanto en do como en la.",
+      "Distingue la guitarra del piano por cómo se apaga el sonido.",
+      "Dice si el sonido se sostiene o se apaga antes de decir cuál es."
+    ],
+    "errores": [
+      {
+        "error": "Confunde piano y guitarra en las dos rondas",
+        "remedio": "oírlos seguidos con el botón de repetir y buscar solo una cosa: la guitarra se apaga antes y suena a cuerda que roza."
+      },
+      {
+        "error": "Toca un botón antes de que el sonido termine",
+        "remedio": "manos en las rodillas hasta que se apague, y repetirlo una vez más antes de elegir."
+      },
+      {
+        "error": "Cambia de respuesta cuando el mismo instrumento suena en la nota aguda",
+        "remedio": "tocar las dos notas seguidas y preguntar qué ha cambiado y qué no: la nota cambia, el instrumento no."
+      }
+    ],
+    "indicadores": [
+      "Oye entero",
+      "Piano y guitarra",
+      "Se apaga o sigue"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

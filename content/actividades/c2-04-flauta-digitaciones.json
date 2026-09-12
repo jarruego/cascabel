@@ -89,6 +89,85 @@
     "actividad.c204.pista1",
     "actividad.c204.pista2"
   ],
+  "ficha": {
+    "aprende": "Reconocer la digitación de si, la y sol en la flauta dulce: el pulgar siempre tapado detrás, y delante un dedo para si, dos para la y tres para sol.",
+    "vocabulario": [
+      "flauta dulce",
+      "digitación",
+      "agujero",
+      "pulgar",
+      "tapar",
+      "si",
+      "la",
+      "sol"
+    ],
+    "agrupamiento": "Grupo clase con proyector; después parejas con flauta",
+    "material": "Una flauta dulce por niño si las hay; si no, la del maestro",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "La flauta en la mano.",
+        "detalle": "Mano izquierda arriba, pulgar detrás. Enseña los tres dibujos: círculo negro es agujero tapado, blanco es abierto. El de la izquierda del dibujo es el del pulgar, y en estas tres notas va siempre tapado."
+      },
+      {
+        "min": 2,
+        "titulo": "Un dedo, dos dedos, tres dedos.",
+        "detalle": "Sin soplar: si tapa el primer agujero de delante, la tapa dos, sol tapa tres. Que coloquen los dedos en su flauta mientras dices cada nota. Cada nota que baja añade un dedo."
+      },
+      {
+        "min": 3,
+        "titulo": "Emparejar en la app.",
+        "detalle": "Se toca una nota y suena; luego se busca su dibujo. Antes de tocar el dibujo, que digan cuántos agujeros negros tiene que tener. La pareja hecha se queda unida con una línea."
+      },
+      {
+        "min": 2,
+        "titulo": "Comprobar soplando.",
+        "detalle": "Con las parejas hechas, cada niño pone la digitación de si y sopla flojo; luego la y sol. Se compara con la nota de la app: ¿suena igual?"
+      },
+      {
+        "min": 1,
+        "titulo": "Cierre.",
+        "detalle": "El maestro dice una nota y toda la clase pone los dedos sin soplar; luego enseña un dibujo y todos dicen la nota."
+      }
+    ],
+    "enPantalla": "Dos columnas. A la izquierda, tres fichas con los nombres de las notas: si, la y sol; al tocar una, suena con la flauta. A la derecha, tres dibujos de la flauta con los agujeros: negros los tapados, blancos los abiertos, y a la izquierda del dibujo el del pulgar. El niño toca una nota y después el dibujo que cree que es su digitación; si lo es, se quedan unidas con una línea. Si no, no pasa nada: la pista recuerda que cada nota que baja añade un dedo, y se prueba otra. Termina con las tres parejas hechas.",
+    "sinPantalla": "Tres tarjetas con los nombres de las notas y tres con los dibujos de la digitación, boca abajo en la mesa, en grupos de tres o cuatro. Por turnos, un niño levanta una de cada clase; si van juntas, se las queda. Para que suene, el maestro o un niño con flauta toca la nota al levantar la tarjeta del nombre. Mejor aún: al levantar un dibujo, el niño pone esa digitación en su flauta y sopla, y así se oye si es la nota que ha dicho.",
+    "masFacil": "Empieza con dos parejas: si (un dedo) y sol (tres dedos), que se ven muy distintas en el dibujo. Cuando salga, mete la. Que cuenten los círculos negros de delante en voz alta antes de tocar, y que pongan los dedos en su propia flauta mirando el dibujo: la mano entiende el dibujo antes que el ojo.",
+    "masDificil": "Emparejar solo de oído: tapa la columna de los nombres con la mano, toca una nota y que digan cuál es antes de buscar el dibujo. Que expliquen la regla con sus palabras: «cada dedo que tapo, la nota baja». Y con la flauta en la mano, que toquen las tres seguidas bajando y subiendo, si-la-sol-la-si, mirando solo los dibujos.",
+    "variante": {
+      "titulo": "Por parejas, con flauta",
+      "texto": "Uno enseña un dibujo de la app (o una tarjeta) y el otro pone esa digitación y sopla; el primero dice si ha sonado la nota que tocaba. Se cambian. Después al revés: uno toca una nota en su flauta escondiendo los dedos y el otro tiene que señalar su dibujo solo de oído."
+    },
+    "ideas": [
+      "Tocar una melodía de tres notas con si, la y sol —«si-si-la-la-sol», por ejemplo— leyendo los dibujos de las digitaciones en la pizarra en lugar de los nombres.",
+      "Hacer las tres digitaciones en una flauta dibujada grande en la pizarra: salir y pintar de negro los agujeros de cada nota.",
+      "Descubrir qué pasa si el pulgar se destapa o si un dedo no cierra bien: soplar y escuchar cómo cambia la nota."
+    ],
+    "loTiene": [
+      "Dice cuántos agujeros tapa cada nota antes de tocar el dibujo: uno si, dos la, tres sol.",
+      "Pone en su flauta la digitación de un dibujo sin mirar a los demás.",
+      "Reconoce la nota de oído y va directo a su dibujo."
+    ],
+    "errores": [
+      {
+        "error": "Cuenta el círculo del pulgar como un agujero de delante y le salen dos dedos para si",
+        "remedio": "señalar en el dibujo cuál es el de detrás: ese va siempre tapado y no se cuenta."
+      },
+      {
+        "error": "Confunde la y sol, que solo se diferencian en un dedo",
+        "remedio": "poner las dos digitaciones seguidas en la flauta y soplar: la que baja es sol, con tres."
+      },
+      {
+        "error": "Toca los dibujos al azar hasta que salga la línea",
+        "remedio": "pedir que diga en voz alta la nota y el número de dedos antes de tocar el dibujo."
+      }
+    ],
+    "indicadores": [
+      "Cuenta agujeros",
+      "Dedos en la flauta",
+      "De oído"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

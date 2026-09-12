@@ -101,6 +101,85 @@
     "actividad.c133.pista1",
     "actividad.c133.pista2"
   ],
+  "ficha": {
+    "aprende": "Reconocer un vehículo solo por su sonido —moto, tren, avión, helicóptero, ambulancia o barco— y decir qué le delata: motor, sirena, silbato o golpeteo.",
+    "vocabulario": [
+      "moto",
+      "tren",
+      "avión",
+      "helicóptero",
+      "ambulancia",
+      "barco",
+      "sirena",
+      "motor"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o individual en tablet",
+    "material": "Ninguno. Para la parte sin pantalla, seis tarjetas con los vehículos dibujados",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Seis vehículos, cada uno con su sonido.",
+        "detalle": "Nombra los seis y pide que imiten cada uno con la voz: el motor de la moto, el silbato del tren, el rugido largo del avión, el «tac-tac-tac» del helicóptero, la sirena que sube y baja, la bocina grave del barco."
+      },
+      {
+        "min": 1,
+        "titulo": "En qué fijarse.",
+        "detalle": "Tres preguntas para cualquier sonido: ¿es un motor?, ¿es una sirena?, ¿va y viene o se queda? Escríbelas en la pizarra o dilas con gestos."
+      },
+      {
+        "min": 2,
+        "titulo": "Responder en la pantalla.",
+        "detalle": "Suena un vehículo. La clase lo imita en voz baja antes de que el que sale toque. Si no acierta, se vuelve a escuchar contestando las tres preguntas en voz alta."
+      },
+      {
+        "min": 1,
+        "titulo": "Los que se parecen.",
+        "detalle": "Pon seguidos el avión y el helicóptero, y la moto y el barco. Que digan la diferencia: el helicóptero golpea, el avión es liso; la moto es aguda y el barco, una bocina grave."
+      },
+      {
+        "min": 1,
+        "titulo": "Lo hacen ellos.",
+        "detalle": "Un niño imita con la voz uno de los seis y los demás señalan la tarjeta. Tres o cuatro turnos."
+      }
+    ],
+    "enPantalla": "Suena un vehículo grabado de verdad —una moto que pasa, un tren o su silbato, un avión, el golpeteo de un helicóptero, la sirena de una ambulancia, la bocina de un barco— y aparecen seis botones grandes con su dibujo. El niño toca el que cree. Si no acierta, el personaje da una pista («el helicóptero hace tac-tac-tac; el avión es un rugido largo que se va») y se puede volver a oír y tocar otra vez. Al acertar, «¡bien!» y viene el siguiente. Se acaba al terminar las preguntas de la vuelta.",
+    "sinPantalla": "Seis tarjetas en el suelo. Tú, de espaldas, imitas uno de los vehículos con la voz: «brrrum» que pasa para la moto, «chu-chu» y un silbido para el tren, un «uuuh» largo que se aleja para el avión, «tac-tac-tac» rápido para el helicóptero, «ni-no-ni-no» para la ambulancia, un «booom» grave para el barco. Los niños pisan la tarjeta. Después, que lo imite un niño y adivinen los demás; los sonidos difíciles de imitar (el avión) se pueden hacer entre varios.",
+    "masFacil": "Deja solo dos tarjetas muy distintas: la ambulancia (sirena que sube y baja) y el helicóptero (golpeteo). Di las dos opciones en voz alta antes de que suene. Cuando salgan, añade el tren, que tiene silbato, y por último los tres motores, que son los que más se parecen.",
+    "masDificil": "Que digan antes de tocar qué han oído: «una sirena», «un motor que se va», «un silbato». Que clasifiquen los seis en dos grupos, los que tienen motor y los que no, o los que van por tierra, mar y aire. Y con los ojos cerrados, respondiendo solo con la voz.",
+    "variante": {
+      "titulo": "La ciudad en marcha",
+      "texto": "La clase se reparte en seis grupos, uno por vehículo, y cada grupo ensaya su sonido con la voz. Un niño hace de guardia y señala a un grupo: ese suena y los demás callan. Después señala a dos a la vez: ¿se distinguen? Al final suena la ciudad entera y hay que ir apagando los vehículos de uno en uno."
+    },
+    "ideas": [
+      "Escuchar un minuto desde la ventana y anotar qué vehículos pasan sin verlos, solo de oído.",
+      "Dibujar cada sonido como una línea en la pizarra: la sirena sube y baja, el avión es una raya que baja poco a poco, el helicóptero son puntos.",
+      "Inventar un viaje sonoro: salir de casa en moto, coger el tren, subir a un barco, y hacerlo con la voz por grupos, en orden."
+    ],
+    "loTiene": [
+      "Reconoce los seis a la primera y nombra la pista: «era la sirena».",
+      "Distingue el helicóptero del avión sin volver a oírlos.",
+      "Imita un vehículo con la voz de modo que los demás lo reconocen."
+    ],
+    "errores": [
+      {
+        "error": "Confunde avión y helicóptero: los dos vuelan y los dos hacen ruido de motor",
+        "remedio": "oírlos seguidos y dar palmadas con el helicóptero: el avión no deja dar palmadas, es liso."
+      },
+      {
+        "error": "Toca «tren» con cualquier sonido que pasa de largo",
+        "remedio": "preguntar si ha oído silbato o chu-chu; si no, es otro motor que pasa."
+      },
+      {
+        "error": "Toca sin esperar a que acabe el sonido",
+        "remedio": "que imite el sonido mientras suena y toque solo cuando se apague."
+      }
+    ],
+    "indicadores": [
+      "Reconoce los seis",
+      "Dice la pista",
+      "Lo imita"
+    ]
+  },
   "creditos": [
     {
       "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",

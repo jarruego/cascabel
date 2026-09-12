@@ -160,6 +160,85 @@
   "pistas": [
     "actividad.c335.pista1"
   ],
+  "ficha": {
+    "aprende": "Distinguir de oído dos notas que encajan (consonancia) de dos que rozan (disonancia), y decir por qué rozan las que están a medio tono.",
+    "vocabulario": [
+      "consonancia",
+      "disonancia",
+      "intervalo",
+      "medio tono",
+      "tercera",
+      "quinta",
+      "octava",
+      "rozar"
+    ],
+    "agrupamiento": "Grupo clase con proyector; luego por parejas en tablet",
+    "material": "Ninguno (opcional: un teclado o metalófono)",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Dos que encajan, dos que rozan.",
+        "detalle": "Sin la app: toca o canta a dos voces do y sol (encajan) y luego do y do sostenido (rozan). Preguntar qué sienten: ¿se quedarían oyéndolo o pide que cambie?"
+      },
+      {
+        "min": 2,
+        "titulo": "Escuchar proyectado.",
+        "detalle": "Pon dos ejemplos sin responder. Las notas suenan con el órgano y aguantan tres pulsos: pedir silencio total y oír si el sonido está quieto o «vibra». Lo que vibra, roza."
+      },
+      {
+        "min": 2,
+        "titulo": "Contestar en grupo.",
+        "detalle": "Vuelta proyectada: se escucha, se decide con el gesto de «encaja» (manos juntas) o «roza» (manos frotándose) y uno toca el botón."
+      },
+      {
+        "min": 1,
+        "titulo": "Por parejas en tablet.",
+        "detalle": "Cada pareja hace una vuelta. El que no toca dice antes «encaja» o «roza» en voz baja; si no coinciden, se vuelve a oír."
+      },
+      {
+        "min": 1,
+        "titulo": "Cantarlo.",
+        "detalle": "Cierra a dos voces: media clase canta do y la otra sol, y se mantiene. Luego la segunda mitad sube a do sostenido y se oye rozar. Volver a sol para acabar en calma."
+      }
+    ],
+    "enPantalla": "Suenan dos notas a la vez con el órgano, que aguanta el sonido tres pulsos: unas veces encajan (una tercera, una quinta o una octava, como do-sol o do-do agudo) y otras rozan (dos notas a medio tono, como do-do sostenido, o fa-si). Aparecen dos botones grandes: «suenan bien» y «rozan». El niño toca uno. Si no es, el personaje recuerda que las que rozan suelen estar muy pegadas y las dos notas vuelven a sonar; si es, «¡bien!» y viene otra pareja. Diez parejas en vueltas de cinco, sin tiempo ni puntuación.",
+    "sinPantalla": "Con un teclado, un metalófono o dos flautas: toca dos notas a la vez y mantenlas. Do y sol, do y mi, do y do agudo para las que encajan; do y do sostenido, mi y fa, fa y si para las que rozan. Dos tarjetas en el suelo, «encajan» y «rozan», y los niños se colocan junto a la que han oído. Con dos voces de la clase también sale: es más difícil de afinar, pero el roce se oye igual.",
+    "masFacil": "Quédate con las parejas más claras: la octava (do-do agudo) y la quinta (do-sol) para encajar, y las de medio tono (do-do sostenido, mi-fa) para rozar. Deja fuera fa-si y do-si, que rozan menos. Antes de cada ejemplo, di en voz alta las dos opciones y haz el gesto. Y déjalo sonar entero: el roce se oye al aguantar, no al principio.",
+    "masDificil": "Que las produzcan ellos en el teclado: un niño toca dos teclas y la clase decide si encajan o rozan; luego pedir que encuentren una pareja que roce y otra que encaje partiendo de la misma nota. Después, poner nombre a lo que encaja: tercera, quinta, octava. Y una pregunta abierta para pensar: ¿por qué las canciones usan las que rozan, si rozan?",
+    "variante": {
+      "titulo": "Tensión y descanso",
+      "texto": "Toca una pareja que roza (mi y fa) y, sin parar, mueve una nota hasta que encaje (mi y sol). Los niños levantan los brazos en la tensión y los bajan cuando descansa. Repetir con otras parejas. La disonancia no es fea: es la que pide que pase algo, y eso es lo que hace avanzar la música."
+    },
+    "ideas": [
+      "Escuchar un fragmento de música con una disonancia clara y levantar la mano cuando se oiga rozar, y bajarla cuando descanse.",
+      "Cantar un canon sencillo a dos voces y buscar los momentos en que las dos voces encajan mejor.",
+      "Construir con el metalófono un acorde de tres notas que encaje (do, mi, sol) y estropearlo cambiando una sola lámina."
+    ],
+    "loTiene": [
+      "Distingue do-sol de do-do sostenido a la primera escucha y usa las palabras encaja y roza.",
+      "Aguanta las dos notas hasta el final antes de decidir, sin responder al primer golpe.",
+      "Explica que las que rozan están muy pegadas, a medio tono."
+    ],
+    "errores": [
+      {
+        "error": "Dice «rozan» a las parejas más agudas o más fuertes, sin fijarse en si encajan",
+        "remedio": "volver a oír do-sol y do-do sostenido seguidos, con el gesto: lo que cambia es el roce, no la altura ni el volumen."
+      },
+      {
+        "error": "Contesta en el primer instante, cuando aún no se ha oído el roce",
+        "remedio": "pedir que cuente los tres pulsos con el dedo y decida en el tercero."
+      },
+      {
+        "error": "Toma la octava (do-do agudo) por una sola nota y duda",
+        "remedio": "cantar las dos notas por separado, grave y aguda: son dos, pero encajan tanto que parecen una."
+      }
+    ],
+    "indicadores": [
+      "Encaja o roza",
+      "Aguanta el sonido",
+      "Medio tono"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

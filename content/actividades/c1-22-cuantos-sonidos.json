@@ -144,6 +144,85 @@
     "actividad.c122.pista1",
     "actividad.c122.pista2"
   ],
+  "ficha": {
+    "aprende": "Contar cuántos sonidos suenan seguidos, de uno a cuatro, incluso cuando dos van rápidos en el hueco de uno, y decirlo con seguridad.",
+    "vocabulario": [
+      "contar",
+      "sonido",
+      "uno",
+      "dos",
+      "tres",
+      "cuatro",
+      "rápido",
+      "ti-ti"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet; la primera, proyectada",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Contar con los dedos.",
+        "detalle": "Tú tocas en el xilófono, o das palmadas, dos o tres sonidos separados y ellos levantan un dedo por cada uno. Primero muy despacio; luego dos rápidos juntos: siguen siendo dos dedos."
+      },
+      {
+        "min": 1,
+        "titulo": "La primera pregunta, con proyector.",
+        "detalle": "Suena el xilófono y nadie contesta todavía: cada uno levanta los dedos y después se compara. Enseña el botón de repetir: oírlo otra vez es lo primero que se hace cuando hay duda."
+      },
+      {
+        "min": 2,
+        "titulo": "Las lentas.",
+        "detalle": "En tablet, las primeras preguntas van despacio: sol sol sol, mi sol, sol mi sol mi, un la solo. Dedos arriba mientras suena y luego tocar el número."
+      },
+      {
+        "min": 1,
+        "titulo": "Las rápidas.",
+        "detalle": "Avísales: ahora algunos van muy rápido, ti-ti, dos en el hueco de uno. Que cuenten los dedos, no los huecos. Si se lían, repetir y contar en voz alta."
+      },
+      {
+        "min": 1,
+        "titulo": "Lo hacen ellos.",
+        "detalle": "Por parejas, uno palmea de uno a cuatro sonidos, con alguno rápido, y el otro dice cuántos. Producir es más difícil que reconocer y se ve quién lo ha entendido."
+      }
+    ],
+    "enPantalla": "Suena un xilófono con uno, dos, tres o cuatro sonidos seguidos, y el niño toca uno de los cuatro números grandes. Las primeras preguntas van con sonidos bien separados; después aparecen los rápidos, dos en el hueco de uno, como ti-ti, y es a propósito. Si toca otro número, el personaje le da una pista («escúchalo otra vez y levanta un dedo por cada sonido») y puede corregir al momento; al acertar, «¡bien!» y viene la siguiente. Botón de repetir siempre en el mismo sitio. Termina al acabar la vuelta.",
+    "sinPantalla": "Cuatro tarjetas en el suelo con los números del uno al cuatro, o con uno, dos, tres o cuatro círculos. Tú tocas en el xilófono, en las claves o con palmas, de uno a cuatro sonidos, unas veces separados y otras con dos rápidos, y los niños van a la tarjeta que toca. Después, uno de ellos hace de xilófono y los demás cuentan. Es la misma actividad, y de pie se ve enseguida quién cuenta y quién sigue a los demás.",
+    "masFacil": "Deja de momento solo las preguntas lentas y que cuenten con los dedos en alto y en voz alta. Si dudan entre tres y cuatro, el problema no es el oído: es contar y recordar a la vez. Que den una palmada suave por cada sonido mientras suena, así el cuerpo cuenta por ellos. Para los rápidos, que los digan primero como «ti-ti» y luego los cuenten: son dos, aunque vayan juntos.",
+    "masDificil": "Que digan además cuáles van rápidos: «tres, y los dos primeros son ti-ti». Después, que lo repitan con palmas exactamente como ha sonado, con los rápidos rápidos. Y por parejas, que uno invente series de hasta seis sonidos mezclando lentos y rápidos y el otro las cuente: seis ya no se cuenta con una mano y hay que recordar.",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "Cada sonido que se cuenta se hace con una parte distinta: uno en las palmas, dos en los muslos, tres en los pies, cuatro en los hombros. Cuando suena la serie, en vez de tocar el número, la clase responde con el gesto que le corresponde. Los rápidos se hacen rápidos también: dos toques de muslo seguidos en un solo pulso. Así la respuesta se ve desde la mesa del maestro sin mirar ninguna pantalla."
+    },
+    "ideas": [
+      "Dictado de puntos: tú tocas la serie y ellos dibujan un punto por sonido, juntos si van rápidos y separados si van lentos.",
+      "Buscar palabras con tantas sílabas como sonidos: «sol», «pera», «tomate», «chocolate», y palmearlas.",
+      "Contar sonidos en una canción que ya sepan: ¿cuántos hay en el primer verso? Cantarlo despacio con los dedos."
+    ],
+    "loTiene": [
+      "Levanta un dedo por cada sonido mientras suena, también en los rápidos.",
+      "Espera a que acabe la serie antes de tocar un número.",
+      "Cuenta bien cuatro sonidos cuando dos de ellos van como ti-ti."
+    ],
+    "errores": [
+      {
+        "error": "Cuenta dos sonidos rápidos como uno solo",
+        "remedio": "repetirlo y decirlo con sílabas, «ti-ti ta»: los dos rápidos son dos dedos aunque quepan en un pulso."
+      },
+      {
+        "error": "Contesta antes de que termine de sonar",
+        "remedio": "que ponga las manos sobre la mesa hasta el último sonido y solo entonces toque el número."
+      },
+      {
+        "error": "Siempre elige cuatro cuando la serie es larga",
+        "remedio": "que cuente en voz alta con los dedos y mire su mano antes de tocar: la mano no se equivoca."
+      }
+    ],
+    "indicadores": [
+      "Cuenta con dedos",
+      "Espera al final",
+      "Rápidos son dos"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

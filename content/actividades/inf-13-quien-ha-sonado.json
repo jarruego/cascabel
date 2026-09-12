@@ -78,6 +78,79 @@
   "pistas": [
     "actividad.inf13.pista1"
   ],
+  "ficha": {
+    "aprende": "Reconocer quién ha sonado sin verlo: el golpe del tambor, el brillo del triángulo o una persona cantando.",
+    "vocabulario": [
+      "tambor",
+      "triángulo",
+      "voz",
+      "golpe",
+      "brilla",
+      "cantar",
+      "escuchar"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o por parejas en tablet",
+    "material": "Ninguno. Sin pantalla, un tambor y un triángulo de aula.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Los tres a la vista.",
+        "detalle": "Golpear el tambor, tocar el triángulo y cantar una nota, uno detrás de otro, a la vista de todos. Ponerles palabra: el tambor da un golpe, el triángulo brilla y sigue sonando, la voz canta."
+      },
+      {
+        "min": 1,
+        "titulo": "Escondidos.",
+        "detalle": "El maestro, detrás de la mesa, toca uno de los tres o canta. Los niños señalan la tarjeta o hacen el gesto: golpe con el puño, dedo que tiembla para el triángulo, mano en la garganta para la voz."
+      },
+      {
+        "min": 2,
+        "titulo": "En la app.",
+        "detalle": "Suena y un niño toca el tambor, el triángulo o la voz. Los demás hacen el gesto antes de que toque. Si no coincide, se escucha otra vez con la pista del personaje y se prueba de nuevo."
+      },
+      {
+        "min": 1,
+        "titulo": "Ahora suenan ellos.",
+        "detalle": "Un niño elige tambor, triángulo o su propia voz y suena escondido. La clase adivina quién ha sido. Producir es más difícil que reconocer, y se ve quién lo tiene claro."
+      }
+    ],
+    "enPantalla": "Tres botones grandes: un tambor, un triángulo y una boca que canta. La app pregunta «¿Quién ha sonado?» y suena uno de los tres: un golpe seco de tambor, el brillo largo del triángulo o una voz cantando una nota. El niño toca el que ha sido. Si toca otro, el personaje le pregunta si era un golpe, algo que brilla o alguien cantando, y puede oírlo de nuevo y volver a elegir. Al acertar, «¡bien!» y viene el siguiente. Seis sonidos y termina.",
+    "sinPantalla": "Tres tarjetas en el suelo: tambor, triángulo y una boca. El maestro, escondido tras un biombo o una caja grande, golpea el tambor, toca el triángulo o canta una nota. Los niños van a la tarjeta que toca o la señalan desde su sitio. Después, el propio niño que ha acertado pasa detrás del biombo y suena él. Si no hay triángulo, sirve una campanilla o una cucharilla en un vaso: lo que importa es que brille y dure.",
+    "masFacil": "Dos opciones: tambor y voz, que no se parecen en nada. Enséñale el instrumento, tócalo a la vista, escóndelo y tócalo enseguida. Di el nombre en voz alta cada vez que suene. El triángulo entra cuando los otros dos salen sin pensar, y al principio pon el triángulo y el tambor, dejando la voz para el final.",
+    "masDificil": "Cuatro o cinco sonidos en vez de tres: añade claves y pandereta de verdad, y que digan cuál de todos ha sido. Dos sonidos seguidos: «primero ha sonado… y después…». O el triángulo tocado corto, apagándolo con la mano, para que tengan que reconocerlo por el timbre y no por lo que dura.",
+    "variante": {
+      "titulo": "Orquesta escondida",
+      "texto": "Tres niños detrás del biombo, uno con el tambor, otro con el triángulo y otro que canta. El maestro señala a uno sin que la clase lo vea, y ese suena. La clase dice quién ha sido. Cada pocos turnos se cambian los tres de detrás, para que todos toquen y todos adivinen."
+    },
+    "ideas": [
+      "El mismo juego con sonidos de la clase: la puerta, una silla que se arrastra, un lápiz que cae. ¿Quién ha sonado?",
+      "Un cuento corto en el que cada personaje tiene un sonido: el gigante es el tambor, el hada es el triángulo, el niño es la voz. Al nombrarlos, suena su instrumento.",
+      "Grabar con el móvil del maestro a tres niños haciendo un sonido cada uno y adivinar al día siguiente quién era cada cual."
+    ],
+    "loTiene": [
+      "Toca el tambor, el triángulo o la voz según el sonido, sin ver quién ha sido.",
+      "Espera a que el sonido acabe antes de tocar.",
+      "Hace el gesto correcto —puño, dedo que tiembla, mano en la garganta— al oírlo."
+    ],
+    "errores": [
+      {
+        "error": "Toca el tambor con cualquier sonido fuerte",
+        "remedio": "tocar el triángulo fuerte y el tambor flojito: quién suena no depende de cuánto suena."
+      },
+      {
+        "error": "Confunde la voz con el triángulo porque los dos duran",
+        "remedio": "cantar y tocar el triángulo a la vez y preguntar cuál es una persona. Poner la mano en la garganta al cantar: la voz vibra dentro."
+      },
+      {
+        "error": "Toca antes de que acabe el sonido",
+        "remedio": "manos en las rodillas hasta que se apague, y luego se toca."
+      }
+    ],
+    "indicadores": [
+      "Tambor, triángulo, voz",
+      "Espera al final",
+      "Hace el gesto"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

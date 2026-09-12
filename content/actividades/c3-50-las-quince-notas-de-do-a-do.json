@@ -132,6 +132,85 @@
     "actividad.c350.pista1",
     "actividad.c350.pista2"
   ],
+  "ficha": {
+    "aprende": "Situar cualquiera de las quince notas de do4 a do6 en clave de sol, incluidas las de líneas adicionales, contando desde el sol de la segunda línea.",
+    "vocabulario": [
+      "clave de sol",
+      "línea adicional",
+      "octava",
+      "línea",
+      "espacio",
+      "do central",
+      "agudo",
+      "grave"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet",
+    "material": "Ninguno. Para la versión sin pantalla, pizarra pautada o cinta de carrocero.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "En la pizarra, el pentagrama con la clave de sol.",
+        "detalle": "Marcar el sol de la segunda línea y el do central en su línea adicional por debajo. Recordar que el do de arriba lleva dos líneas adicionales y que entre medias hay otro do, en el tercer espacio."
+      },
+      {
+        "min": 1,
+        "titulo": "Contar en voz alta,",
+        "detalle": "subiendo desde el sol: la, si, do, re… línea, espacio, línea, espacio; y bajando: fa, mi, re, do. Los niños dicen los nombres a coro mientras el maestro señala cada sitio."
+      },
+      {
+        "min": 3,
+        "titulo": "En la tablet, primera vuelta.",
+        "detalle": "Cada niño hace una ronda tras otra: la app nombra una nota y hay que tocar su sitio entre seis dibujadas. Si no sale a la primera, leer la pista y volver a contar desde el sol."
+      },
+      {
+        "min": 2,
+        "titulo": "Segunda vuelta, por parejas:",
+        "detalle": "uno cuenta en voz alta y el otro toca. Se cambian a mitad. Lo que se aprende es contar, no adivinar."
+      },
+      {
+        "min": 1,
+        "titulo": "Cierre en la pizarra.",
+        "detalle": "Un niño dibuja una nota con línea adicional y la clase la nombra. Comprobar que se cuenta de abajo arriba."
+      }
+    ],
+    "enPantalla": "Un pentagrama en clave de sol con seis notas dibujadas, ninguna con el mismo nombre. La app pregunta «¿Dónde va esta nota?» y dice el nombre; el niño toca la que cree que es, y al tocarla suena. Si no es esa, el personaje da una pista —cuenta desde el sol de la segunda línea; las líneas adicionales cuentan igual— y se puede volver a tocar. Al acertar, «¡bien!» y viene otra ronda con otras seis. Termina cuando se han pedido las quince, cada una una vez.",
+    "sinPantalla": "Pentagrama en el suelo con cinta de carrocero, con una línea adicional por debajo y dos por encima. El maestro dice una nota y un niño se coloca de pie en su sitio: sobre la línea o en el hueco. Los demás comprueban contando desde el sol de la segunda línea. También en la pizarra: se dibujan seis notas y se pide una, igual que la app.",
+    "masFacil": "Quédate en una sola octava, de do4 a do5, que solo tiene una línea adicional, la de abajo. Pon una marca en el sol de la segunda línea y en el do central para que sirvan de faro, y deja que cuenten con el dedo sobre la pantalla. Si sigue costando, solo las notas de las líneas: mi, sol, si, re, fa.",
+    "masDificil": "Que la nota que se pide no se nombre: se toca en el teclado o la canta el maestro, y el niño la localiza de oído en la pauta. O a la inversa: dibujar una nota con dos líneas adicionales en la pizarra y que la nombren sin contar, de golpe, como quien lee una palabra.",
+    "variante": {
+      "titulo": "Dictado en la pizarra",
+      "texto": "El maestro dice cuatro nombres seguidos —do, la, fa, do agudo— y cada niño los escribe en su hoja pautada, con sus líneas adicionales. Luego se corrige en la pizarra entre todos y se toca la secuencia en el teclado para oír si sube o baja como lo escrito."
+    },
+    "ideas": [
+      "Escribir en la hoja pautada una melodía corta de cinco notas con al menos una línea adicional, y que otro compañero la toque en el teclado a primera vista.",
+      "Buscar en una partitura de verdad (una canción del libro) todas las notas con línea adicional y nombrarlas: ¿salen más las de abajo o las de arriba?",
+      "Hacer el mismo recorrido en el teclado: quince teclas blancas de do a do, mirando cómo cada octava vuelve a empezar."
+    ],
+    "loTiene": [
+      "Sitúa el do central en su línea adicional por debajo y el do agudo en la segunda por encima, sin dudar.",
+      "Cuenta desde el sol de la segunda línea alternando línea y espacio, hacia arriba y hacia abajo.",
+      "Distingue las notas del mismo nombre: sabe que hay un do abajo, otro en el tercer espacio y otro arriba."
+    ],
+    "errores": [
+      {
+        "error": "Cuenta las líneas de arriba abajo y nombra la nota al revés",
+        "remedio": "poner el dedo en el sol de la segunda línea y contar en voz alta hacia arriba: la, si, do; hacia abajo: fa, mi, re, do."
+      },
+      {
+        "error": "Se salta las líneas adicionales y coloca el do agudo justo encima del pentagrama",
+        "remedio": "dibujar en la pizarra el tramo de encima: fa en la quinta línea, sol encima, la en la primera adicional, si en el hueco, do en la segunda."
+      },
+      {
+        "error": "Toca un do cuando se pide re: elige por la cercanía, no por el nombre",
+        "remedio": "que diga el nombre de cada una de las seis dibujadas antes de tocar; se toca solo cuando ha nombrado la pedida."
+      }
+    ],
+    "indicadores": [
+      "Líneas adicionales",
+      "Cuenta desde sol",
+      "Do agudo y grave"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

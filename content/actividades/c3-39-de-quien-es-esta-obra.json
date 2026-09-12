@@ -123,6 +123,85 @@
     "actividad.c339.pista1",
     "actividad.c339.pista2"
   ],
+  "ficha": {
+    "aprende": "Reconocer doce obras famosas en grabaciones reales y decir quién las compuso: Beethoven, Mozart, Bach, Vivaldi, Brahms, Grieg, Tárrega, Chaikovski y Saint-Saëns.",
+    "vocabulario": [
+      "compositor",
+      "obra",
+      "orquesta",
+      "solista",
+      "sinfonía",
+      "concierto",
+      "serenata",
+      "nana"
+    ],
+    "agrupamiento": "Grupo clase con proyector; luego por parejas en tablet",
+    "material": "Ninguno (opcional: los nueve nombres en tarjetas para la pizarra)",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Nueve nombres, doce obras.",
+        "detalle": "Poner los nueve compositores en la pizarra y, junto a cada uno, lo que suena: las cuatro notas de la Quinta, el amanecer de Grieg, el elefante con contrabajo, la guitarra de Tárrega. Sin música todavía."
+      },
+      {
+        "min": 3,
+        "titulo": "Escuchar sin contestar.",
+        "detalle": "Proyecta cuatro fragmentos. Tras cada uno, preguntar solo: ¿qué instrumento manda? ¿Orquesta entera, piano solo, guitarra? Eso ya descarta a la mitad."
+      },
+      {
+        "min": 3,
+        "titulo": "Contestar en grupo.",
+        "detalle": "Una vuelta proyectada. Se oye entero, se dice primero el instrumento y luego el nombre, y uno toca. Si no es, la pista del personaje y otra escucha; nadie se queda sin oírla."
+      },
+      {
+        "min": 3,
+        "titulo": "Por parejas en tablet.",
+        "detalle": "Una vuelta cada pareja, con el volumen bajo o auriculares. Uno describe lo que oye; el otro elige. Se cambian a mitad."
+      },
+      {
+        "min": 1,
+        "titulo": "Los que repiten.",
+        "detalle": "Cierra con los tres compositores que salen dos veces: Grieg (la mañana y la gruta), Beethoven (la Quinta y Para Elisa) y Saint-Saëns (el elefante y el acuario). ¿Se parecen entre sí las dos obras?"
+      }
+    ],
+    "enPantalla": "Suena un trozo de una obra famosa grabada por orquesta o solista y aparecen los nueve compositores en botones. El niño escucha, puede repetir, y toca el que cree. Si no es, el personaje le da una pista (la mañana y la gruta son de Grieg; el elefante y el acuario, de Saint-Saëns) y se vuelve a oír; si es, «¡bien!» y viene otro. Doce fragmentos en vueltas de cinco; Grieg, Beethoven y Saint-Saëns salen dos veces. Sin tiempo ni puntuación.",
+    "sinPantalla": "Con las grabaciones que tengas y los nueve nombres en tarjetas en el suelo: suena el fragmento y los niños se colocan junto al nombre. Si no hay grabación, canta o tararea tú los comienzos que se reconocen tarareados: las cuatro notas de la Quinta, el balanceo de Para Elisa, la nana de Brahms, la subida de la mañana de Grieg. Y para los que no se tararean, describe: «un contrabajo haciendo de elefante».",
+    "masFacil": "Reduce a tres o cuatro compositores con obras muy distintas: Beethoven (la Quinta), Grieg (la mañana), Tárrega (la guitarra) y Brahms (la nana), tapando el resto de nombres en la pizarra. Nombra las opciones antes de que suene y pregunta primero por el instrumento: solo con «guitarra» ya es Tárrega. Deja Bach, Mozart y Vivaldi para más adelante.",
+    "masDificil": "Decir el compositor y el título de la obra, no solo el nombre: «Grieg, En la gruta del rey de la montaña». Después, situar a cada compositor en su época en la pizarra (Bach y Vivaldi en el Barroco, Mozart en el Clasicismo, Brahms, Grieg y Chaikovski en el Romanticismo) y ver si la música lo delata. Y para quien va sobrado: adivinar con el fragmento a medias, en los primeros cinco segundos.",
+    "variante": {
+      "titulo": "Lo que cuenta la música",
+      "texto": "Antes del nombre, la historia: se oye el fragmento con los ojos cerrados y cada niño dice en una palabra qué ve: un amanecer, un elefante, unos cisnes, un castillo bajo la montaña, una nana. Luego se comprueba en la app y se descubre que muchas obras llevan la historia en el título. El compositor se recuerda mejor pegado a su historia que suelto."
+    },
+    "ideas": [
+      "Elegir una de las doce obras y escucharla entera en clase, siguiendo con la mano cuándo entra el instrumento que manda.",
+      "Hacer un mural con los nueve compositores por orden de nacimiento y colgar debajo el título de cada obra oída.",
+      "Ilustrar el acuario de Saint-Saëns o la gruta de Grieg mientras suena, y explicar qué parte de la música ha dado cada idea del dibujo."
+    ],
+    "loTiene": [
+      "Dice el instrumento que manda (orquesta, piano, guitarra) antes de dar el nombre.",
+      "Reconoce las dos obras de Grieg y las dos de Beethoven como del mismo autor.",
+      "Escucha el fragmento entero y pide repetirlo cuando duda, en vez de tocar al azar."
+    ],
+    "errores": [
+      {
+        "error": "Elige siempre a Beethoven o Mozart, los nombres que más suenan",
+        "remedio": "oír seguidos la Quinta y la serenata de Mozart y decir en qué se diferencian; luego ponerle a cada uno de los otros siete una obra suya con su historia."
+      },
+      {
+        "error": "Confunde la gruta de Grieg con la Quinta de Beethoven: las dos van fuertes",
+        "remedio": "fijarse en cómo empiezan: la Quinta a golpes desde el primer segundo; la gruta despacio, en los graves, y va acelerando."
+      },
+      {
+        "error": "Toca antes de que el fragmento acabe",
+        "remedio": "pedir que repita con el botón y que diga el instrumento en voz alta antes de tocar."
+      }
+    ],
+    "indicadores": [
+      "Instrumento",
+      "Mismo autor",
+      "Escucha entera"
+    ]
+  },
   "creditos": [
     {
       "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",

@@ -147,6 +147,79 @@
   "pistas": [
     "actividad.c221.pista1"
   ],
+  "ficha": {
+    "aprende": "Oír si las notas van unidas (ligado) o separadas y cortas (picado), y hacerlo con la voz: «aaaa» que cambia de nota o «pa pa pa».",
+    "vocabulario": [
+      "ligado",
+      "picado",
+      "legato",
+      "staccato",
+      "articulación",
+      "unido",
+      "separado"
+    ],
+    "agrupamiento": "Grupo clase con proyector, después individual en tablet",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Delfín y rana.",
+        "detalle": "Con la mano en el aire: el delfín nada en una sola curva, sin salir del agua; la rana da saltitos. Cantar cinco notas de las dos maneras: «aaaaa» cambiando de nota y «pa pa pa pa pa»."
+      },
+      {
+        "min": 1,
+        "titulo": "Ponerle nombre.",
+        "detalle": "Unido es ligado; cortito y separado es picado. Escribir las dos palabras en la pizarra con su dibujo: una curva sobre las notas y un puntito encima de cada una."
+      },
+      {
+        "min": 2,
+        "titulo": "Oír con el proyector.",
+        "detalle": "Suenan las cinco notas en la flauta. La clase lo hace con la mano (curva o saltitos) antes de que un niño salga a tocar el botón. Repetir con el botón si hace falta."
+      },
+      {
+        "min": 2,
+        "titulo": "Jugar en tablet,",
+        "detalle": "de uno en uno. Antes de tocar, que lo canten en voz baja como lo han oído: la boca dice la respuesta. Si no es, el personaje da una pista y se vuelve a elegir."
+      }
+    ],
+    "enPantalla": "Suenan cinco o seis notas de flauta: unas veces unidas, sin cortes entre una y otra, y otras veces cortas y separadas. Debajo hay dos botones grandes: ligado, con el delfín, y picado, con la rana. El niño puede volver a oírlas con el botón de repetir y toca uno. Si no es, el personaje le propone cantarlo («aaaa» o «pa pa pa») y puede volver a elegir; si acierta, «¡bien!» y viene la siguiente. Las mismas notas salen de las dos maneras: se oye la articulación, no la melodía. Ocho y termina, sin puntuación.",
+    "sinPantalla": "Canta tú cinco notas ligadas o picadas, o tócalas en la flauta o el xilófono, y que respondan con la mano: una curva en el aire para ligado, saltitos para picado. Con dos tarjetas en el suelo, el delfín y la rana, se pisa una. Después ellos: un niño canta «aaaa» o «pa pa pa» con la melodía que quiera y los demás dicen cuál es.",
+    "masFacil": "Exagera: el ligado muy unido y lento, el picado muy corto, casi como golpes. Siempre las mismas cinco notas subiendo, do-re-mi-fa-sol. Antes de oír, cantar las dos maneras entre todos, para que la boca sepa qué buscar. Si dudan con las palabras, quedarse en «delfín» y «rana» un rato y poner los nombres después.",
+    "masDificil": "Que lo canten ellos: la misma frase, primero ligada y luego picada, y que la clase diga si lo ha hecho igual. O mezclar: tres notas ligadas y dos picadas, y que digan dónde cambia. Y buscar en la flauta del aula cómo se hace: ligado es soplar seguido y solo mover los dedos; picado es decir «tu» en cada nota.",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "La clase se mueve por el aula según lo que suena: cuando la frase es ligada, andan deslizando los pies sin levantarlos, como patinando; cuando es picada, a saltitos. Tú cambias sin avisar. Se ve de un vistazo quién lo oye, y el cuerpo entiende la articulación antes que la palabra."
+    },
+    "ideas": [
+      "Escuchar un trozo corto de música y levantar la mano cuando la melodía vaya picada.",
+      "Dibujar una melodía conocida como línea continua o como puntos, según cómo la cante la clase.",
+      "En la flauta, tocar si-la-sol de las dos maneras: soplando seguido o diciendo «tu» en cada nota."
+    ],
+    "loTiene": [
+      "Dice ligado o picado tras oír la frase entera, aunque las notas sean las mismas.",
+      "Canta cinco notas unidas y luego separadas cuando se le pide.",
+      "Lo dibuja en el aire: curva para ligado, saltitos para picado."
+    ],
+    "errores": [
+      {
+        "error": "Dice picado cuando la frase va rápida y ligado cuando va lenta",
+        "remedio": "oír dos frases de la misma velocidad y distinta articulación; preguntar si entre nota y nota hay un huequito o no."
+      },
+      {
+        "error": "Canta «pa pa pa» pero alarga cada nota y salen unidas",
+        "remedio": "que el «pa» sea un toque: cerrar la boca tras cada nota, como si se apagara una vela cinco veces."
+      },
+      {
+        "error": "Toca el botón antes de que acaben las notas",
+        "remedio": "escuchar con la mano dibujando en el aire y tocar solo cuando la mano se pare."
+      }
+    ],
+    "indicadores": [
+      "Ligado o picado",
+      "Lo canta",
+      "Lo dibuja"
+    ]
+  },
   "creditos": [
     {
       "obra": "Orquesta: cuerda, madera y metal",

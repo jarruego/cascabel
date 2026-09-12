@@ -82,6 +82,80 @@
   "pistas": [
     "actividad.inf27.pista1"
   ],
+  "ficha": {
+    "aprende": "Reconocer con los ojos cerrados la lluvia, el viento, la tormenta y las olas grabadas de verdad, y decir qué las distingue: gotitas, soplido, golpe, ir y venir.",
+    "vocabulario": [
+      "lluvia",
+      "viento",
+      "tormenta",
+      "trueno",
+      "olas",
+      "mar",
+      "gotas",
+      "escuchar"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o por parejas en tablet",
+    "material": "Ninguno. Opcional: papel de seda, un bote con arroz y un cartón grande para imitarlos.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "¿Qué tiempo hace hoy?",
+        "detalle": "Nombrar los cuatro, lluvia, viento, tormenta y olas, e imitarlos con la voz y las manos: dedos en la mesa para la lluvia, soplido para el viento, golpe para el trueno."
+      },
+      {
+        "min": 1,
+        "titulo": "Los cuatro dibujos.",
+        "detalle": "En la pantalla: la nube que llueve, el viento, el rayo y el mar. Señalar y nombrar cada uno."
+      },
+      {
+        "min": 2,
+        "titulo": "Cierra los ojos y escucha.",
+        "detalle": "Suena uno; se escucha entero con los ojos cerrados y un niño toca el dibujo. Si no era, se repite y otro lo intenta."
+      },
+      {
+        "min": 1,
+        "titulo": "Qué nos ha dicho el sonido.",
+        "detalle": "La lluvia son muchas gotitas seguidas; las olas van y vienen despacio; el viento sopla largo; la tormenta tiene el trueno, que da un golpe. Volver a oír el que más costó."
+      }
+    ],
+    "enPantalla": "Cuatro dibujos grandes: la lluvia, el viento, la tormenta y las olas. Suena la grabación de uno, hecha al aire libre, y el niño toca el dibujo. Si toca otro, el personaje le recuerda que la lluvia son muchas gotitas seguidas y que las olas van y vienen despacio, y se vuelve a oír para corregir al momento. Al acertar, «¡bien!» y sale el siguiente. El botón de volver a escuchar está siempre en el mismo sitio. Termina a los cinco sonidos, sin puntuación.",
+    "sinPantalla": "Hazlos tú con objetos: los dedos sobre la mesa para la lluvia, un soplido largo o una hoja de papel agitada para el viento, un golpe en un cartón grande para el trueno, y un bote de arroz inclinado despacio de un lado a otro para las olas. Los niños, de espaldas, señalan una de cuatro tarjetas. Luego los hacen ellos por grupos y adivinan los demás.",
+    "masFacil": "Solo dos, los más distintos: la lluvia, que son gotitas seguidas, y la tormenta, que da un golpe. Nómbralos antes de que suene. Si el viento y las olas se confunden —los dos son largos—, ponlos seguidos con el botón de repetir y mueve la mano: el viento sopla seguido, las olas van y vuelven.",
+    "masDificil": "Sin mirar los dibujos: se dice el nombre con los ojos cerrados. Después, que un grupo de niños haga uno de los cuatro con el cuerpo o con objetos del aula y otro grupo adivine. Hacer unas olas que van y vienen despacio, con todo el grupo a la vez, es mucho más difícil que reconocerlas.",
+    "variante": {
+      "titulo": "La tormenta en clase",
+      "texto": "Toda la clase hace una tormenta que va creciendo: primero frotan las manos (el viento), luego dan golpecitos en el muslo (las gotas), después palmas (la lluvia fuerte) y un golpe en el suelo con los pies (el trueno). Luego se deshace en orden inverso hasta el silencio. El maestro dirige con las manos, subiendo y bajando."
+    },
+    "ideas": [
+      "Pintar cada sonido con una línea: puntitos para la lluvia, una línea ondulada para las olas, una raya larga para el viento y un zigzag para el trueno.",
+      "Escuchar por la ventana un día de lluvia o de viento y decir entre todos qué se oye de verdad y qué no.",
+      "Poner una de las grabaciones de fondo mientras se cuenta un cuento y parar cuando cambie el tiempo."
+    ],
+    "loTiene": [
+      "Escucha el sonido entero antes de tocar el dibujo.",
+      "Distingue el viento de las olas, que son los dos sonidos largos.",
+      "Explica cada uno con sus palabras: gotitas, soplido, golpe, va y viene."
+    ],
+    "errores": [
+      {
+        "error": "Confunde el viento con las olas",
+        "remedio": "oírlos seguidos con el botón de repetir y mover la mano con el sonido: el viento sopla seguido, las olas van y vuelven."
+      },
+      {
+        "error": "Toca la tormenta en cuanto oye algo fuerte",
+        "remedio": "esperar a que se acabe: en la tormenta hay un golpe de trueno; en la lluvia, por fuerte que sea, no."
+      },
+      {
+        "error": "Se asusta con el trueno o se tapa los oídos",
+        "remedio": "bajar el volumen y avisar antes: «ahora viene el golpe». No hace falta oírlo fuerte para reconocerlo."
+      }
+    ],
+    "indicadores": [
+      "Escucha entero",
+      "Viento u olas",
+      "Lo describe"
+    ]
+  },
   "creditos": [
     {
       "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",

@@ -99,6 +99,85 @@
     ]
   },
   "enunciado": "actividad.c325.enunciado",
+  "ficha": {
+    "aprende": "Contar el compás flamenco de doce en voz alta y dar la palmada en sus cinco acentos —3, 6, 8, 10 y 12— sin salirse del ciclo cuando vuelve a empezar.",
+    "vocabulario": [
+      "compás de doce",
+      "acento",
+      "ciclo",
+      "palmas",
+      "soleá",
+      "bulería",
+      "flamenco",
+      "fuerte"
+    ],
+    "agrupamiento": "Toda la clase, de pie, con proyector",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Contar sin palmas.",
+        "detalle": "De pie, mirando a la pantalla. Se pone el bucle y toda la clase cuenta en voz alta del uno al doce, sin dar palmas, hasta que el «uno» vuelva a caer siempre en el mismo sitio."
+      },
+      {
+        "min": 2,
+        "titulo": "Solo el tres y el seis.",
+        "detalle": "Se cuenta igual y se da palmada solo en el tres y en el seis. El principio del ciclo va de tres en tres: es la parte que sale sola."
+      },
+      {
+        "min": 2,
+        "titulo": "Entran el ocho, el diez y el doce.",
+        "detalle": "Ahora las palmadas van de dos en dos: ocho, diez, doce. Es donde el compás se aprieta y donde cuesta. Decir los números fuertes más alto que los flojos."
+      },
+      {
+        "min": 2,
+        "titulo": "El ciclo entero con la pantalla.",
+        "detalle": "Cuenta y palmada en los cinco fuertes, varias vueltas seguidas sin parar. El maestro señala con la mano el uno de cada vuelta para que nadie se quede fuera al reengancharse."
+      },
+      {
+        "min": 1,
+        "titulo": "Sin contar.",
+        "detalle": "Solo palmas, sin voz, dos vueltas. Y luego con la pantalla apagada: si el ciclo sigue solo, ya está."
+      }
+    ],
+    "enPantalla": "Doce casillas en fila, en bucle, que se van encendiendo con un cursor mientras suena una nota en cada tiempo. Las del 3, 6, 8, 10 y 12 llevan el dibujo de las palmas y suenan más agudas que las demás, para que el acento se vea y se oiga a la vez. El niño no toca nada: mira, cuenta y da la palmada en los fuertes. No hay respuesta que dar ni final: se para cuando el maestro quiere y se puede volver a poner las veces que haga falta.",
+    "sinPantalla": "Escribe los doce números en la pizarra en fila y rodea el 3, el 6, el 8, el 10 y el 12. Cuenta tú en voz alta señalando cada número al mismo ritmo, y la clase da la palmada en los rodeados. Cuando salga, deja de señalar y sigue solo con la voz; luego, solo con las palmas. Es exactamente lo que hace la app, con la ventaja de que todos te miran a ti.",
+    "masFacil": "Baja la velocidad contando tú más despacio, sin la app, y quédate en la primera mitad: uno, dos, TRES, cuatro, cinco, SEIS, que va de tres en tres y sale sola. Cuando esa mitad esté segura, añade solo el doce, y después el ocho y el diez. También ayuda andar el ciclo: un paso por número y la palmada encima del paso en los fuertes.",
+    "masDificil": "Divide la clase en dos: una mitad cuenta y la otra da solo las palmadas, y se cambian. Después, en corro, cada niño dice un número y la palmada la da quien tiene un fuerte: el ciclo pasa alrededor del círculo y nadie puede despistarse. Y para quien lo lleva muy seguro: contar en silencio y dar solo las cinco palmadas, con la pantalla apagada.",
+    "variante": {
+      "titulo": "Palmas sordas y claras",
+      "texto": "Como en el flamenco de verdad: en los tiempos flojos se da una palma sorda, con las manos ahuecadas, y en los fuertes una palma clara, de dedos sobre la palma. Así suenan los doce tiempos y el acento se oye por el timbre, no solo por el golpe (PENDIENTE DE REVISIÓN PEDAGÓGICA)."
+    },
+    "ideas": [
+      "Escuchar una soleá o una bulería grabada y buscar el doce: levantar la mano cuando se oiga el acento del tres.",
+      "Repartir instrumentos: los flojos con las claves y los fuertes con el cajón o el bombo, y tocar el ciclo como una pequeña orquesta.",
+      "Comparar con el vals: contar uno, dos, tres muchas veces y ver que aquí el «tres» fuerte también aparece, pero el ciclo no acaba ahí."
+    ],
+    "loTiene": [
+      "Da las cinco palmadas en el 3, el 6, el 8, el 10 y el 12 varias vueltas seguidas sin parar.",
+      "Se reengancha en la vuelta siguiente si se despista, en vez de quedarse parado.",
+      "Lo hace con la pantalla apagada, solo contando."
+    ],
+    "errores": [
+      {
+        "error": "Da palmada en el nueve y el once, siguiendo el «de tres en tres» del principio",
+        "remedio": "decir en voz alta la segunda mitad como pares: OCHO, DIEZ, DOCE, y dar las tres palmadas seguidas antes de meterlas en el ciclo."
+      },
+      {
+        "error": "Cuenta del uno al doce y se para al llegar, sin volver a empezar",
+        "remedio": "señalar el uno de cada vuelta con la mano y encadenar el doce con el uno en voz alta: «DOCE-y-uno»."
+      },
+      {
+        "error": "Palmea todos los tiempos igual, sin acento",
+        "remedio": "que diga los números flojos en susurro y los fuertes en voz alta, y solo después vuelva a las palmas."
+      }
+    ],
+    "indicadores": [
+      "Cinco acentos",
+      "Se reengancha",
+      "Sin pantalla"
+    ]
+  },
   "personaje": "sol",
   "creditos": [
     {

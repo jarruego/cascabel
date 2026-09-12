@@ -104,6 +104,80 @@
   "pistas": [
     "actividad.inf04.pista1"
   ],
+  "ficha": {
+    "aprende": "Oír si una nota de piano está arriba, aguda como un pájaro, o abajo, grave como un oso, y señalarlo.",
+    "vocabulario": [
+      "agudo",
+      "grave",
+      "arriba",
+      "abajo",
+      "pájaro",
+      "oso",
+      "piano",
+      "teclas"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o por parejas en tablet",
+    "material": "Ninguno. Sin pantalla, un teclado o un metalófono, o solo la voz.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "El pájaro canta arriba, el oso gruñe abajo.",
+        "detalle": "Imitar los dos con la voz: «pío» finito, «grrr» hondo. Al pájaro se le señala el cielo; al oso, el suelo."
+      },
+      {
+        "min": 1,
+        "titulo": "El piano tiene un lado de pájaros y otro de osos.",
+        "detalle": "En el piano de pantalla o en un teclado, tocar una tecla de la derecha del todo y otra de la izquierda del todo. Que lo oigan dos veces."
+      },
+      {
+        "min": 2,
+        "titulo": "En la app.",
+        "detalle": "Suena una nota de piano y un niño toca el pájaro o el oso. Los demás señalan el cielo o el suelo. Si no sale, se vuelve a oír."
+      },
+      {
+        "min": 1,
+        "titulo": "Vosotros sois el piano.",
+        "detalle": "El maestro señala a un niño: pájaro. El niño hace «pío» agudo. Otro: oso. «Grrr» grave. Rápido, por toda la clase."
+      }
+    ],
+    "enPantalla": "Dos botones grandes: el pájaro y el oso. La app pregunta «¿Agudo como el pájaro o grave como el oso?» y suena una nota de piano de dos segundos, muy aguda o muy grave; siempre el piano, para que lo único que cambie sea la altura. El niño toca el animal. Si toca el otro, el personaje le recuerda que el pájaro canta arriba, finito, y el oso gruñe abajo, hondo, y se puede escuchar otra vez y volver a tocar. Al acertar, «¡bien!» y otra nota. Seis y termina.",
+    "sinPantalla": "Dos tarjetas en el suelo, pájaro y oso, y un teclado, un metalófono o la voz del maestro escondida tras un libro. Suena una nota de arriba del todo o de abajo del todo y los niños van a la tarjeta o señalan el cielo o el suelo. Con la voz: un «uuu» muy agudo o muy grave, sin cambiar de fuerza ni de duración, para que solo cambie lo alto o lo bajo.",
+    "masFacil": "Usa solo las dos notas más lejanas del piano, la de la izquierda del todo y la de la derecha del todo, y tócalas a la vista: ver la mano ir a un lado ayuda. Acompaña cada nota con la voz del maestro imitándola («pío» o «grrr»). Y una sola pregunta cada vez: «¿es el pájaro?», sí o no.",
+    "masDificil": "Acerca las notas: en vez de los extremos, una del medio hacia arriba y otra del medio hacia abajo. O tres animales: pájaro, gato y oso, con agudo, medio y grave. También cambiar de instrumento sin avisar —piano, flauta, voz— para comprobar que reconocen lo agudo y lo grave aunque cambie el timbre.",
+    "variante": {
+      "titulo": "El ascensor",
+      "texto": "Los niños agachados en el suelo. El maestro toca en el teclado, o canta, una nota grave, otra media, otra aguda, y ellos suben el cuerpo con la altura: oso en el suelo, de pie en el medio, pájaro con los brazos arriba y de puntillas. Luego al revés, bajando. Sin turnos y sin pantalla, toda la clase a la vez."
+    },
+    "ideas": [
+      "Un cuento en que un pájaro y un oso se hablan: el maestro toca una nota antes de cada frase y los niños dicen quién habla.",
+      "Buscar en la clase un sonido de pájaro (un vaso golpeado con una cucharilla) y uno de oso (el tambor grande) y grabarlos con el móvil.",
+      "Dibujar en un papel grande un pájaro arriba y un oso abajo, y cada vez que suene una nota, poner una pegatina a la altura que toque."
+    ],
+    "loTiene": [
+      "Toca el pájaro con las notas agudas y el oso con las graves, con el piano y con la voz.",
+      "Señala el cielo o el suelo mientras suena, antes de tocar el botón.",
+      "Imita con la voz la nota que ha oído: finita o honda."
+    ],
+    "errores": [
+      {
+        "error": "Toca el oso cuando la nota suena fuerte, aunque sea aguda",
+        "remedio": "tocar la misma tecla aguda flojito y fuerte: sigue siendo pájaro. Lo que cambia es lo hondo, no lo fuerte."
+      },
+      {
+        "error": "Confunde el pájaro con el sonido corto y el oso con el largo",
+        "remedio": "tocar la tecla grave muy corta y la aguda muy larga, y nombrar el animal en cada una."
+      },
+      {
+        "error": "Contesta sin escuchar, siempre el mismo animal",
+        "remedio": "que haga primero el gesto (cielo o suelo) con los ojos cerrados, y luego abra los ojos y toque."
+      }
+    ],
+    "indicadores": [
+      "Agudo y grave",
+      "Gesto arriba/abajo",
+      "Lo imita"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

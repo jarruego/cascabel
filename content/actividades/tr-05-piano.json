@@ -55,6 +55,61 @@
     ]
   },
   "enunciado": "actividad.tr05.enunciado",
+  "ficha": {
+    "aprende": "Encontrar do, re, mi, fa, sol, la y si en un piano con teclas negras, sacar una melodía de oído y grabarla para volver a oírla.",
+    "vocabulario": [
+      "tecla",
+      "do",
+      "octava",
+      "negras",
+      "blancas",
+      "grave",
+      "agudo",
+      "grabar"
+    ],
+    "agrupamiento": "Individual o parejas en tablet; con proyector para explicar",
+    "material": "Ninguno. Auriculares si hay varias tablets en el aula.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Encontrar el do.",
+        "detalle": "Con el proyector: las teclas negras van de dos en dos y de tres en tres; el do está a la izquierda del grupo de dos. Que lo busquen en las tres octavas."
+      },
+      {
+        "min": 2,
+        "titulo": "Tocar los nombres.",
+        "detalle": "Cada niño toca la escala de do a do diciendo los nombres. Luego solo con los colores, tapando el nombre con el dedo."
+      },
+      {
+        "min": 2,
+        "titulo": "Sacar algo de oído.",
+        "detalle": "El maestro canta o toca cuatro notas, el principio de una canción que sepan, y cada uno las busca en el piano. Vale probar y equivocarse."
+      },
+      {
+        "min": 2,
+        "titulo": "Grabar y escuchar.",
+        "detalle": "Grabar lo que han sacado con el botón de grabar y oírlo. ¿Se parece a lo que cantó el maestro?"
+      },
+      {
+        "min": 1,
+        "titulo": "Enseñarlo.",
+        "detalle": "Dos o tres niños ponen su grabación para la clase y dicen qué notas usaron."
+      }
+    ],
+    "enPantalla": "Un piano de tres octavas con teclas blancas y negras; cada tecla lleva su color y el nombre de la nota, y suena al tocarla o al deslizar el dedo. Se puede ver más o menos teclado, quitar las negras, y tocar con las letras del teclado del ordenador. Un botón de grabar guarda lo tocado en el aparato para volver a oírlo. No hay ejercicio, ni corrección, ni final: es un instrumento. Hay una lista de retos para quien quiera empezar por algo.",
+    "sinPantalla": "Un metalófono o unas láminas Orff hacen lo mismo y mejor: el teclado en pantalla no sustituye al instrumento real, lo pone al alcance cuando no hay treinta. Para encontrar el do sin piano, un dibujo grande del teclado en la pizarra con los grupos de dos y tres negras, y los niños salen a señalar.",
+    "masFacil": "Quita las teclas negras y deja una sola octava: un piano entero delante de un niño que busca el do es un bosque. Que toque solo con el índice y diga el nombre en voz alta en cada tecla. Buscar por el color vale tanto como buscar por el nombre; lo importante es que sepa cuál usa.",
+    "masDificil": "Con las tres octavas y las negras: encontrar todos los do y tocarlos del más grave al más agudo. Sacar de oído una melodía entera y escribir los nombres de las notas en papel para que otro la toque. Y tocar con dos dedos: el pulgar en do, el índice en mi.",
+    "variante": {
+      "titulo": "Pregunta y respuesta",
+      "texto": "Por parejas, un piano cada uno o el mismo compartido: un niño toca una frase corta y el otro contesta con otra distinta. Sin hablar, solo con el piano. Luego se graba la conversación entera y se escucha."
+    },
+    "ideas": [
+      "Hacer el «piano humano»: siete niños en fila, cada uno con el nombre y el color de una nota, y el maestro los toca en el hombro.",
+      "Buscar en el piano la nota más grave y la más aguda de la voz de cada niño y apuntar entre qué teclas cabe la clase.",
+      "Componer una melodía de cinco notas solo con las teclas negras, grabarla y ponerle título."
+    ]
+  },
   "personaje": "dora",
   "creditos": [
     {

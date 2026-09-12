@@ -101,6 +101,80 @@
   "pistas": [
     "actividad.inf22.pista1"
   ],
+  "ficha": {
+    "aprende": "Contar uno, dos o tres golpes de tambor solo con el oído, levantando un dedo por golpe mientras suenan, y decir después cuántos han sido.",
+    "vocabulario": [
+      "golpe",
+      "uno",
+      "dos",
+      "tres",
+      "contar",
+      "dedos",
+      "tambor",
+      "escuchar"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o por parejas en tablet",
+    "material": "Ninguno. Sin pantalla, un tambor o un pandero.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Golpes a la vista.",
+        "detalle": "El maestro da uno, dos o tres golpes en el tambor, despacio, y los niños levantan un dedo por cada golpe mientras suenan. Al acabar, miran la mano y dicen el número."
+      },
+      {
+        "min": 1,
+        "titulo": "Golpes que no se ven.",
+        "detalle": "Lo mismo con el tambor escondido tras la mesa. Contar sonidos es contar sin ver, que cuesta más: los dedos se levantan mientras suena, no después."
+      },
+      {
+        "min": 2,
+        "titulo": "En la app.",
+        "detalle": "Suenan los golpes —de bombo, de caja o de tom— y un niño levanta los dedos y toca el número. Los demás cuentan con los dedos en alto. Si no coincide, se escucha otra vez con los dedos preparados."
+      },
+      {
+        "min": 1,
+        "titulo": "Ahora los dan ellos.",
+        "detalle": "Un niño da en el tambor los golpes que quiera, uno, dos o tres, y para. La clase dice cuántos. Dar el número justo y parar es tan difícil como contar."
+      }
+    ],
+    "enPantalla": "Tres botones grandes con el uno, el dos y el tres. Suenan uno, dos o tres golpes de tambor, despacio, cada vez con un tambor distinto: bombo, caja o tom. El niño cuenta con los dedos mientras suenan y toca el número. Si toca otro, el personaje le recuerda que levante un dedo por golpe y mire al final cuántos tiene, y puede oírlo de nuevo y volver a elegir. Al acertar, «¡bien!» y viene el siguiente. Seis rondas y termina.",
+    "sinPantalla": "Un tambor o un pandero escondido tras la mesa, o a la espalda del maestro. Uno, dos o tres golpes despacio, y los niños levantan los dedos y dicen el número, o van a la tarjeta del suelo con el número que toca. Cambia de instrumento cuando puedas —tambor, claves, palmas— para que cuenten golpes y no se fijen en el sonido. Y con el cuerpo: dan tantos saltos como golpes han oído.",
+    "masFacil": "Solo uno y dos, sin el tres, hasta que salga. Golpes muy separados, con un segundo entero entre uno y otro. Contar en voz alta con el niño mientras suenan: «uno… dos». Y a la vista, con el tambor delante, antes de esconderlo. Levantar el dedo con cada golpe es la clave: que lo haga grande, con el brazo arriba.",
+    "masDificil": "Hasta cuatro o cinco golpes. Golpes más juntos, que dejan menos tiempo para contar. Dos grupos de golpes con un hueco en medio: «dos… y tres», y preguntar por cada grupo. O al revés: el maestro dice un número y el niño da exactamente esos golpes en el tambor y para, sin uno de más.",
+    "variante": {
+      "titulo": "Saltos contados",
+      "texto": "De pie y en el sitio. El maestro toca uno, dos o tres golpes con el tambor escondido, y los niños dan tantos saltos como golpes han oído, después de que el tambor se calle, no mientras suena. Quien quiera, cuenta en voz alta al saltar. Se ve de un vistazo quién ha contado y nadie tiene que tocar ningún número."
+    },
+    "ideas": [
+      "Contar golpes de cosas de la clase: cuántas veces ha sonado la puerta, cuántas palmadas ha dado el maestro, cuántos toques en la ventana.",
+      "Un juego de eco con números: el maestro da dos golpes y el niño responde con dos; da tres y responde con tres, sin decir nada.",
+      "Dibujar los golpes: un círculo por cada golpe oído, y luego tocarlos otra vez leyendo el dibujo."
+    ],
+    "loTiene": [
+      "Levanta un dedo por golpe mientras suena, no al acabar.",
+      "Toca el número que dicen sus dedos, aunque cambie el tambor.",
+      "Da uno, dos o tres golpes en el tambor cuando se lo piden, y para."
+    ],
+    "errores": [
+      {
+        "error": "Cuenta de memoria al final y se lía",
+        "remedio": "que levante los dedos mientras suenan los golpes, con el brazo en alto, y solo mire la mano al acabar."
+      },
+      {
+        "error": "Cuenta uno de más porque el tambor sigue vibrando",
+        "remedio": "decir el número en voz alta con cada golpe: si no hay «cuatro» dicho, no hay cuatro."
+      },
+      {
+        "error": "Toca siempre el tres, sea lo que sea",
+        "remedio": "solo uno y dos un rato, con los golpes muy separados, y volver al tres cuando esos dos salgan."
+      }
+    ],
+    "indicadores": [
+      "Un dedo por golpe",
+      "Acierta el número",
+      "Los produce"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

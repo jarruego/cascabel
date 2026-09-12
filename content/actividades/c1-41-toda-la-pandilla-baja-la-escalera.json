@@ -131,6 +131,85 @@
     "actividad.c141.pista1",
     "actividad.c141.pista2"
   ],
+  "ficha": {
+    "aprende": "Seguir con los ojos y con la voz una melodía que baja toda la escala de do agudo a do grave, personaje a personaje, y adivinar quién canta después porque va de vecino en vecino.",
+    "vocabulario": [
+      "escalera",
+      "escala",
+      "vecino",
+      "baja",
+      "sube",
+      "agudo",
+      "grave",
+      "pandilla"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o parejas en tablet",
+    "material": "Ninguno. Para la parte sin pantalla, ocho tarjetas con los personajes o pizarra",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Los ocho en la escalera.",
+        "detalle": "Presenta la fila: Doby arriba, luego Simón, Laia, Sol, Fara, Milo, Rex y Dora abajo. Canta la escalera bajando con los nombres y que la mano de cada niño baje escalón a escalón."
+      },
+      {
+        "min": 1,
+        "titulo": "Solo escuchar.",
+        "detalle": "Se pone la app una vuelta sin decir nada. Es el comienzo de «Joy to the World», un villancico, sin letra: la melodía baja de Doby a Dora y vuelve a subir."
+      },
+      {
+        "min": 2,
+        "titulo": "Mirar y adivinar.",
+        "detalle": "Segunda vuelta. Antes de que se ilumine cada personaje, la clase dice quién viene: «después de Doby, Simón; después de Simón, Laia». Va de vecino en vecino, así que se puede adivinar."
+      },
+      {
+        "min": 1,
+        "titulo": "Cantar con ellos.",
+        "detalle": "Tercera vuelta cantando los nombres a la vez que se iluminan, con la mano bajando y subiendo. La subida final, «Sol, Laia, Simón, Doby», es la que más cuesta: va a saltos."
+      },
+      {
+        "min": 1,
+        "titulo": "Sin pantalla.",
+        "detalle": "Se apaga y se canta la escalera bajando y la subida final, con la mano. ¿Sale sin mirar?"
+      }
+    ],
+    "enPantalla": "Los ocho personajes de la pandilla en fila, de más alto a más grave: Doby arriba y Dora abajo. Suena el comienzo de «Joy to the World» a paso tranquilo y cada personaje se ilumina cuando la melodía pasa por su nota: baja la escalera de uno en uno —Doby, Simón, Laia, Sol, Fara, Milo, Rex, Dora— y después vuelve a subir a saltos hasta Doby. No hay que tocar nada: se mira, se escucha y se canta. Va en bucle, así que se puede ver las veces que se quiera, y no hay respuesta correcta ni puntuación.",
+    "sinPantalla": "Ocho niños de pie en fila, de más alto a más grave, con una tarjeta cada uno: Doby, Simón, Laia, Sol, Fara, Milo, Rex y Dora. El maestro canta la melodía con los nombres y cada niño da un paso adelante cuando suena el suyo. La clase señala con la mano quién canta. Sin niños en fila, se dibuja la escalera en la pizarra con los ocho nombres y se va señalando mientras se canta; después señala un niño.",
+    "masFacil": "Solo la bajada: parar la app en Dora y volver a empezar. Cantar la escalera bajando con los nombres antes de ponerla, despacio, con la mano. Y que no adivinen todavía: que solo señalen con el dedo al que se ilumina, aunque vayan un poco detrás; adelantarse viene después.",
+    "masDificil": "Adivinar en voz alta quién viene antes de que se ilumine, también en la subida final, que va a saltos (Sol, Laia, Simón, Doby) y no de vecino en vecino. Cantar los nombres con la altura de verdad, no solo decirlos. Y en la pizarra, dibujar la melodía como una línea que baja y sube, sin nombres.",
+    "variante": {
+      "titulo": "Escalera humana",
+      "texto": "Ocho niños en fila hacen la escalera en el suelo del aula, cada uno un escalón más bajo (de pie, de rodillas, sentados, tumbados...). Otro niño «baja» la escalera tocando a cada uno en el hombro mientras suena la app, y el tocado canta su nombre. En la subida final tiene que saltar escalones. Se cambian los papeles cada vuelta."
+    },
+    "ideas": [
+      "Tocar la escalera bajando en un xilófono, lámina a lámina, y descubrir que las láminas van de grande a pequeña como los personajes de grave a agudo.",
+      "Buscar en canciones que ya se saben trocitos que bajen la escalera de vecino en vecino, y cantarlos con los nombres de la pandilla.",
+      "Escuchar «Joy to the World» entero y levantar la mano cada vez que vuelve la bajada de la escalera."
+    ],
+    "loTiene": [
+      "Dice quién viene antes de que se ilumine, en la bajada, sin equivocarse de vecino.",
+      "La mano baja escalón a escalón con la melodía y sube a saltos al final.",
+      "Canta la escalera bajando con los ocho nombres sin la pantalla."
+    ],
+    "errores": [
+      {
+        "error": "Salta personajes al adivinar: de Doby pasa a Laia",
+        "remedio": "señalar la fila con el dedo tocando a todos, sin saltarse ninguno, mientras se canta despacio."
+      },
+      {
+        "error": "En la subida final sigue nombrando vecinos y se descoloca",
+        "remedio": "parar antes de la subida y avisar: «ahora va a saltos», cantándola aparte dos veces."
+      },
+      {
+        "error": "Mira al personaje que ya se ha apagado en vez del que viene",
+        "remedio": "una vuelta con el dedo un escalón por delante de la luz, adivinando."
+      }
+    ],
+    "indicadores": [
+      "Adivina el vecino",
+      "Mano baja y sube",
+      "Canta sin pantalla"
+    ]
+  },
   "creditos": [
     {
       "obra": "«Joy to the World», primera frase",

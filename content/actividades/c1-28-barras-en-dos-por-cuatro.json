@@ -90,6 +90,84 @@
     "actividad.c128.pista1",
     "actividad.c128.pista2"
   ],
+  "ficha": {
+    "aprende": "Contar pulsos y no figuras: poner una barra cada dos pulsos en 2/4 sabiendo que una blanca ya vale los dos.",
+    "vocabulario": [
+      "compás",
+      "barra",
+      "pulso",
+      "dos por cuatro",
+      "negra",
+      "blanca",
+      "uno-dos"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o parejas en tablet",
+    "material": "Pizarra y tiza para la parte sin pantalla",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Uno-dos, uno-dos.",
+        "detalle": "Todos marcan el pulso con el pie y dicen «uno-dos». Explica que en 2/4 cada compás tiene dos pulsos y que la barra va detrás de cada «dos»."
+      },
+      {
+        "min": 1,
+        "titulo": "La negra vale uno, la blanca vale dos.",
+        "detalle": "Dibuja las dos figuras en la pizarra y palméalas: la negra un pulso, la blanca dos. Pregunta: «¿cuántas negras caben en un compás? ¿y blancas?»."
+      },
+      {
+        "min": 3,
+        "titulo": "Primera línea en la app.",
+        "detalle": "Se lee la fila en voz alta contando «uno-dos» y señalando cada figura. Un niño toca entre dos figuras para poner la barra donde la cuenta llega a dos. Si sobra o falta, se cuenta de nuevo desde la última barra buena."
+      },
+      {
+        "min": 2,
+        "titulo": "Segunda y tercera línea.",
+        "detalle": "Otros niños. Antes de tocar, que digan cuántas figuras hay en el compás que van a cerrar: a veces dos negras y a veces una blanca sola."
+      },
+      {
+        "min": 1,
+        "titulo": "Comprobar con palmas.",
+        "detalle": "Se palmea una línea entera terminada, diciendo «uno-dos» en cada compás. Si la barra está bien, el «uno» cae siempre justo después de ella."
+      }
+    ],
+    "enPantalla": "Una línea de negras y blancas seguidas, sin barras, con el 2/4 al principio. El niño toca en el hueco entre dos figuras y ahí aparece una barra. La app comprueba que los pulsos entre barra y barra suman dos: si una barra corta un compás a medias o deja tres pulsos, lo señala con una pista distinta según sobre o falte, y la barra se quita tocándola otra vez. Al cerrar bien todos los compases suena la línea con su acento y viene la siguiente. Son tres líneas.",
+    "sinPantalla": "Escribe en la pizarra una fila de seis u ocho figuras mezclando negras y blancas, con el 2/4 delante. Toda la clase cuenta «uno-dos» señalando mientras un niño sale con la tiza: cada vez que la cuenta dice «dos», traza la barra. Con la blanca, que la clase diga «uno-dos» encima de ella sola, para que se vea que ella cierra el compás. Al acabar, se palmea la línea entera con el «uno» fuerte.",
+    "masFacil": "Empieza con una línea solo de negras: barra cada dos figuras, donde contar figuras y contar pulsos da lo mismo. Luego una línea solo de blancas: barra detrás de cada una. Y solo entonces mézclalas. Deja puesta la primera barra para que se vea el tamaño del compás.",
+    "masDificil": "Da la misma fila sin decir el compás y que descubran si cuadra en 2/4. Después, la misma fila en 3/4 en la pizarra: las barras caen en otro sitio sin que cambie ninguna figura. Y que escriban ellos una fila de cinco figuras que tenga exactamente tres compases.",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "Los niños son las figuras: cada uno lleva una tarjeta con negra o blanca y se ponen en fila. Otro niño pasa contando «uno-dos» y toca el hombro del que cierra cada compás; ese levanta el brazo como barra. Los de la blanca cuentan «uno-dos» ellos solos y levantan el brazo sin esperar a nadie."
+    },
+    "ideas": [
+      "Escribir con figuras el ritmo de una palabra larga («chocolate», «mariposa») en 2/4 y poner las barras.",
+      "Leer una canción de 2/4 que ya canten mirando dónde caen las barras, y dar una palmada en cada «uno».",
+      "Dictado al revés: el maestro palmea cuatro compases de 2/4 y la clase los escribe con negras y blancas y sus barras."
+    ],
+    "loTiene": [
+      "Pone la barra detrás de una blanca sola sin esperar a una segunda figura.",
+      "Cuenta «uno-dos» en voz alta sobre la línea y no cuenta símbolos.",
+      "Detecta un compás de tres pulsos al palmearlo y lo corrige solo."
+    ],
+    "errores": [
+      {
+        "error": "Pone la barra cada dos figuras aunque una sea blanca",
+        "remedio": "palmear el compás que ha cerrado contando: si llega a tres, la barra iba antes."
+      },
+      {
+        "error": "Deja la blanca a medias: la barra cae justo detrás de una negra y una blanca",
+        "remedio": "decir «uno-dos» encima de la blanca con las dos manos abiertas: ella sola llena un compás."
+      },
+      {
+        "error": "Cuenta desde el principio de la línea cada vez y se lía",
+        "remedio": "contar solo desde la última barra puesta: cada compás empieza en «uno»."
+      }
+    ],
+    "indicadores": [
+      "Cuenta pulsos",
+      "Blanca = dos",
+      "Comprueba"
+    ]
+  },
   "creditos": [],
   "estado": "borrador",
   "etiquetas": [

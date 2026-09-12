@@ -322,6 +322,84 @@
     "actividad.c320.pista1",
     "actividad.c320.pista2"
   ],
+  "ficha": {
+    "aprende": "Reconocer de oído si una serie de clics va de dos en dos, de tres en tres, de cuatro en cuatro o en seis por ocho, contando desde el clic fuerte hasta el siguiente.",
+    "vocabulario": [
+      "compás",
+      "pulso fuerte",
+      "acento",
+      "dos por cuatro",
+      "tres por cuatro",
+      "cuatro por cuatro",
+      "seis por ocho"
+    ],
+    "agrupamiento": "Grupo clase con proyector; después por parejas en tablet",
+    "material": "Ninguno (pandero o claves si se hace sin pantalla)",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Contar desde el fuerte.",
+        "detalle": "Con el pandero: UNO-dos, UNO-dos-tres, UNO-dos-tres-cuatro, y la clase cuenta en voz alta. Lo que se cuenta hasta el siguiente fuerte es el compás."
+      },
+      {
+        "min": 2,
+        "titulo": "El seis por ocho, aparte.",
+        "detalle": "Palmea UNO-dos-tres CUATRO-cinco-seis rápido y que lo sientan como dos balanceos. Compararlo con un tres por cuatro lento: los mismos números, distinto vaivén."
+      },
+      {
+        "min": 3,
+        "titulo": "Preguntas en la pantalla, toda la clase.",
+        "detalle": "Proyectadas: escuchar, contar en voz alta desde el fuerte y solo entonces tocar uno de los cuatro botones. Repetir la serie si hay dudas."
+      },
+      {
+        "min": 2,
+        "titulo": "Por parejas.",
+        "detalle": "En tablet: uno cuenta con los dedos y el otro toca. Se cambian en cada pregunta."
+      },
+      {
+        "min": 1,
+        "titulo": "Cierre con el cuerpo.",
+        "detalle": "Di un compás y que caminen marcándolo: pisada fuerte en el uno. Con el seis por ocho, balanceándose de lado a lado."
+      }
+    ],
+    "enPantalla": "Suena una serie de clics con unos más fuertes que otros, y hay cuatro botones: dos por cuatro, tres por cuatro, cuatro por cuatro y seis por ocho. El niño cuenta desde el clic fuerte y toca uno. Si no es, el personaje le recuerda que diga «uno» en el fuerte y cuente hasta el siguiente, y los clics vuelven a sonar para probar otra vez. Si es, «¡bien!» y otra serie. Se puede repetir la escucha con el botón de siempre; no hay reloj ni puntuación. Cinco preguntas por vuelta, y cada vuelta cambia las series.",
+    "sinPantalla": "Con un pandero o unas claves: toca tú series de pulsos con el acento en el primero, de dos, de tres, de cuatro o en seis por ocho (rápido y de tres en tres). Cuatro tarjetas en el suelo con los compases escritos y que se pongan al lado de la que creen. O con el cuerpo: dos pasos, tres pasos, cuatro pasos, o un balanceo por cada grupo de tres.",
+    "masFacil": "Deja solo dos compases, dos por cuatro y tres por cuatro, y exagera el fuerte tocándolo tú con el pandero mientras los flojos van con los dedos. Cuenta tú en voz alta las primeras veces y que ellos digan solo el último número antes del siguiente fuerte. El seis por ocho se deja para cuando el dos, el tres y el cuatro salgan seguros.",
+    "masDificil": "Que cada niño invente una serie de ocho clics con el compás que quiera y la toque con claves para que otro la adivine: producir el acento es más difícil que oírlo. O ponerles canciones que sepan y pedir el compás marcándolo antes con el pie: un vals conocido, una marcha, una canción de corro.",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "Antes de responder, que caminen la serie: pisada fuerte en cada acento y pasos normales entre medias. Contar los pasos entre dos pisadas fuertes da el compás sin pensar. Para el seis por ocho, mecerse de lado a lado: cada vaivén es un grupo de tres."
+    },
+    "ideas": [
+      "Escuchar tres canciones de la clase y decidir entre todos su compás, marcándolo con el pie antes de votar.",
+      "Escribir en la pizarra una fila de doce pulsos y ponerle barras de compás según lo que se ha oído: primero en dos por cuatro, luego en tres.",
+      "Dirigir: enseñar el gesto de dos, tres y cuatro tiempos y que un niño dirija mientras el resto palmea el compás."
+    ],
+    "loTiene": [
+      "Dice «uno» en el clic fuerte y sigue contando hasta el siguiente sin adelantarse.",
+      "Distingue el seis por ocho del tres por cuatro por el vaivén de tres en tres.",
+      "Adivina el compás de una canción conocida marcándolo con el pie."
+    ],
+    "errores": [
+      {
+        "error": "Empieza a contar en el primer clic que oye, aunque no sea el fuerte",
+        "remedio": "que espere en silencio al primer fuerte y solo entonces diga «uno»."
+      },
+      {
+        "error": "Cuenta el fuerte siguiente como último número y dice cuatro en un tres por cuatro",
+        "remedio": "decir «UNO, dos, tres, UNO»: el fuerte siempre vuelve a ser uno, nunca es el último."
+      },
+      {
+        "error": "Llama tres por cuatro a todo seis por ocho",
+        "remedio": "que se balancee: si cabe un vaivén por cada tres clics y van rápido, es seis por ocho."
+      }
+    ],
+    "indicadores": [
+      "Cuenta desde el fuerte",
+      "Distingue 6/8",
+      "Compás en canciones"
+    ]
+  },
   "creditos": [
     {
       "obra": "Iconos",

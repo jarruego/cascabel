@@ -88,6 +88,80 @@
   "pistas": [
     "actividad.inf02.pista1"
   ],
+  "ficha": {
+    "aprende": "Notar si un sonido dura mucho o se acaba enseguida, y decirlo con el caracol (largo) y el conejo (corto).",
+    "vocabulario": [
+      "largo",
+      "corto",
+      "dura",
+      "se acaba",
+      "caracol",
+      "conejo",
+      "flauta",
+      "claves"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o por parejas en tablet",
+    "material": "Ninguno. Sin pantalla: unas claves y un triángulo, y tiza o rotulador.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Un sonido largo y uno corto.",
+        "detalle": "El maestro hace «aaaa» largo con la voz y un «pa» corto. Los niños lo repiten. Largo: el caracol, que tarda. Corto: el conejo, que salta y ya está."
+      },
+      {
+        "min": 1,
+        "titulo": "Dibujarlo en el aire.",
+        "detalle": "Mientras dura el sonido, la mano va de izquierda a derecha; cuando se acaba, se para. El largo hace una raya larga; el corto, un puntito."
+      },
+      {
+        "min": 2,
+        "titulo": "En la app.",
+        "detalle": "Suena y un niño toca el caracol o el conejo. Los demás dibujan la raya en el aire mientras suena. Se espera siempre a que se acabe antes de tocar."
+      },
+      {
+        "min": 1,
+        "titulo": "Dibujarlo en la pizarra.",
+        "detalle": "Dos o tres sonidos más, hechos por el maestro con claves y triángulo; un niño dibuja cada uno: raya larga o punto."
+      }
+    ],
+    "enPantalla": "Dos botones grandes: el caracol y el conejo. La app pregunta «¿Ha sonado largo o corto?» y suena algo: un golpe de claves o de caja china, que se acaba al momento, o una nota de flauta o un triángulo, que siguen sonando un rato. El niño toca el animal. Si no acierta, el personaje le recuerda que el largo sigue sonando un ratito y el corto se acaba enseguida, y puede oírlo otra vez y volver a tocar. Al acertar, «¡bien!» y viene otro. Seis sonidos y termina.",
+    "sinPantalla": "Dos tarjetas en el suelo, caracol y conejo. El maestro, de espaldas para que no vean el gesto, hace sonar las claves (corto), el triángulo (largo), un «sss» corto o un «aaaa» largo con la voz. Los niños van a la tarjeta o la señalan. Después, en la pizarra, cada sonido se dibuja: raya larga o punto. La duración se oye, se ve y se dibuja.",
+    "masFacil": "Exagera el contraste: un «aaaa» de cinco segundos frente a un «pa» seco, hechos con la voz y mirando al niño, para que vea la boca abierta mientras dura. Acompaña cada sonido con la mano que se desplaza y se para; el gesto le dice cuándo se ha acabado. Nombra el animal antes de que suene: «vamos a ver si es caracol o conejo».",
+    "masDificil": "Sonidos de duración parecida, como un triángulo que se apaga con la mano a los dos segundos frente a uno que se deja vibrar. O tres animales en vez de dos: conejo, caracol y tortuga (larguísimo). Y al revés: el maestro señala un animal y el niño produce con la voz un sonido de esa duración para que lo adivine otro.",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "Los niños de pie. Mientras el sonido dura, caminan despacio como un caracol; cuando es corto, dan un salto de conejo y se quedan quietos. El maestro hace los sonidos con la voz y los instrumentos, sin avisar cuál viene. Toda la clase a la vez, sin turnos, y se ve de un vistazo quién escucha hasta el final."
+    },
+    "ideas": [
+      "Con un rotulador y papel continuo, dibujar una tira de sonidos: rayas y puntos en el orden en que suenan. Luego «leerla» entre todos con la voz.",
+      "Buscar cosas de clase que suenan largo (una campanilla, un vaso) y cosas que suenan corto (un lápiz sobre la mesa, una palmada).",
+      "Inventar un cuento con dos personajes: el caracol solo dice cosas largas y el conejo, cortas."
+    ],
+    "loTiene": [
+      "Espera a que el sonido se acabe antes de tocar el animal.",
+      "Mueve la mano mientras dura el sonido y la para cuando se acaba.",
+      "Dibuja una raya para el largo y un punto para el corto sin que se lo digan."
+    ],
+    "errores": [
+      {
+        "error": "Toca el conejo nada más empezar el sonido, sin esperar a ver si sigue",
+        "remedio": "manos en las rodillas hasta que el maestro baje la mano; solo entonces se toca."
+      },
+      {
+        "error": "Confunde largo con fuerte: el triángulo le parece corto por ser flojito",
+        "remedio": "poner la mano en el aire mientras suena y esperar: ¿sigue? Entonces es largo, aunque sea flojito."
+      },
+      {
+        "error": "Dibuja todos los sonidos con rayas del mismo tamaño",
+        "remedio": "dibujarlo a la vez que suena, sin levantar el rotulador hasta que se acaba."
+      }
+    ],
+    "indicadores": [
+      "Espera al final",
+      "Largo y corto",
+      "Lo dibuja"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

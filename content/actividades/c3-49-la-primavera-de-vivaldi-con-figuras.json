@@ -848,6 +848,85 @@
     "actividad.c349.pista1",
     "actividad.c349.pista2"
   ],
+  "ficha": {
+    "aprende": "Leer y tocar a tiempo el ritmo del comienzo de «La primavera»: corcheas, dos semicorcheas rápidas y una negra con puntillo que dura tres corcheas.",
+    "vocabulario": [
+      "corchea",
+      "semicorchea",
+      "negra con puntillo",
+      "puntillo",
+      "figura",
+      "eco",
+      "ritornello",
+      "vivaldi"
+    ],
+    "agrupamiento": "Grupo clase con proyector; luego individual en tablet",
+    "material": "Ninguno (opcional: las tres figuras dibujadas grandes en la pizarra)",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Tararearla.",
+        "detalle": "Sin la app: casi todos la reconocen. Tararear el comienzo y notar que hay un eco: lo mismo, más flojo. Vivaldi lo escribió así."
+      },
+      {
+        "min": 2,
+        "titulo": "Las tres figuras con la boca.",
+        "detalle": "En la pizarra: corchea (ti), dos semicorcheas (ti-ri) y negra con puntillo (ta-a-a, tres corcheas). Decir la llamada entera: ti, ti, ti, ti, ti-ri, ta-a-a. Sin manos, hasta que salga sola."
+      },
+      {
+        "min": 2,
+        "titulo": "La llamada y su eco, proyectada.",
+        "detalle": "Primera parte: un niño toca cuando cada figura llega a la línea y el resto palmea flojo. El eco suena más suave, con las mismas figuras. Aguantar la negra con puntillo: tocar una vez y esperar tres corcheas."
+      },
+      {
+        "min": 2,
+        "titulo": "La parte famosa y el ritornello.",
+        "detalle": "Segunda parte: la frase fuerte y su eco, con las mismas figuras y las semicorcheas en otro sitio. Tercera: todo seguido en tablet, una vez cada niño."
+      },
+      {
+        "min": 1,
+        "titulo": "Mirar el desvío.",
+        "detalle": "Al acabar, mirar el desvío medio, no el porcentaje: si va tarde con poca dispersión, el pulso es bueno y solo entra tarde. Cerrar con la grabación de orquesta, palmeando la llamada encima."
+      }
+    ],
+    "enPantalla": "Las figuras del comienzo de «La primavera» —corcheas, parejas de semicorcheas y negras con puntillo— vienen de la derecha hacia una línea fija mientras suena la melodía. El niño toca un botón cuando cada figura llega a la línea; al entrar a tiempo, la figura se ilumina. Las que se escapan pasan sin más, sin rojo ni marcador. Tres partes: la llamada con su eco, la frase famosa con el suyo, y el ritornello entero de trece compases. Al final da el desvío medio, para saber si se va tarde o pronto.",
+    "sinPantalla": "Canta o pon la grabación del comienzo de «La primavera» y que den una palmada en cada figura, aguantando en las negras con puntillo. En la pizarra, escribir la llamada con las tres figuras y señalarla mientras se dice con ti, ti-ri y ta-a-a. Después, en dos grupos: uno hace la llamada fuerte y el otro el eco flojo, como escribió Vivaldi. Sin pauta, es lo mismo; la pantalla añade ver la figura venir.",
+    "masFacil": "Baja el tempo en la app. Si las semicorcheas se escapan, que toquen solo las corcheas y la negra con puntillo, y dejen pasar la pareja rápida: entrar en las lentas a tiempo enseña más que perseguir las rápidas. Quédate en la primera parte, la llamada y su eco, hasta que salga dos veces seguidas.",
+    "masDificil": "Decir el nombre de la figura mientras se toca: «corchea, corchea, dos semicorcheas, puntillo». Después, palmear la llamada mientras el pie marca la negra: las semicorcheas son dos por medio pulso. Y para quien va sobrado: escribir en el cuaderno pautado el ritmo de la llamada solo de oído y comprobarlo en la app.",
+    "variante": {
+      "titulo": "Llamada y eco por grupos",
+      "texto": "Dos grupos frente a frente: uno es la llamada y el otro el eco. Suena la app y cada grupo palmea solo su parte, el eco más flojo, como en la orquesta de Vivaldi. Luego se cambian. Al final, los dos grupos a la vez en el ritornello entero. Se oye la forma de la pieza con el cuerpo: pregunta y respuesta."
+    },
+    "ideas": [
+      "Escuchar el primer movimiento de «La primavera» entero y levantar la mano cada vez que vuelve el ritornello: ¿cuántas veces?",
+      "Buscar en el movimiento los pájaros (violines agudos), el arroyo y la tormenta, y decidir qué figura usaría Vivaldi para cada uno.",
+      "Inventar un ritmo de cuatro tiempos con corcheas, semicorcheas y una negra con puntillo, escribirlo en la pizarra y tocarlo con eco."
+    ],
+    "loTiene": [
+      "Toca las dos semicorcheas rápidas y seguidas, como una sola palabra, y entra a tiempo.",
+      "Aguanta la negra con puntillo tres corcheas sin volver a tocar.",
+      "Dice el ritmo de la llamada con ti, ti-ri y ta-a-a sin mirar la pantalla."
+    ],
+    "errores": [
+      {
+        "error": "Toca las dos semicorcheas como dos corcheas, y llega tarde a la larga",
+        "remedio": "decir «ti-ri» como una sola palabra rápida, con la boca, y palmear solo esa pareja varias veces."
+      },
+      {
+        "error": "Toca dos o tres veces en la negra con puntillo, para llenar la espera",
+        "remedio": "contar en voz alta «ta-a-a» (tres corcheas) y tocar solo en la primera."
+      },
+      {
+        "error": "Entra siempre tarde, mirando la figura cuando ya está en la línea",
+        "remedio": "mirar la figura que viene y tocar cuando la ve llegar; comparar el desvío medio de dos intentos."
+      }
+    ],
+    "indicadores": [
+      "Semicorcheas",
+      "Aguanta el puntillo",
+      "Dice el ritmo"
+    ]
+  },
   "creditos": [
     {
       "obra": "«La primavera», concierto n.º 1 de Las cuatro estaciones, op. 8, primer movimiento, ritornello",

@@ -118,6 +118,84 @@
     "actividad.c316.pista1",
     "actividad.c316.pista2"
   ],
+  "ficha": {
+    "aprende": "Oír si dos notas seguidas están a un tono o a un semitono, y saber que en el piano el semitono son dos teclas pegadas y el tono deja una tecla en medio.",
+    "vocabulario": [
+      "tono",
+      "semitono",
+      "tecla",
+      "medio tono",
+      "mi-fa",
+      "si-do",
+      "distancia"
+    ],
+    "agrupamiento": "Grupo clase con proyector; después individual en tablet",
+    "material": "Ninguno. Un teclado del aula, o uno dibujado en la pizarra con sus teclas negras.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Dos teclas pegadas.",
+        "detalle": "En el teclado del aula o de la pizarra: mi-fa son dos teclas seguidas sin negra en medio, un semitono. Do-re dejan una negra en medio: un tono. Tocarlas y oírlas."
+      },
+      {
+        "min": 1,
+        "titulo": "Cantarlas.",
+        "detalle": "Cantar do-re y mi-fa seguidas varias veces. El semitono es un pasito; el tono, un paso. Con la mano: un dedo de separación, dos dedos."
+      },
+      {
+        "min": 3,
+        "titulo": "En la pantalla.",
+        "detalle": "Suenan dos notas y se toca tono o semitono. No siempre empiezan en do: hay pares con teclas negras. Que canten el paso antes de decidir."
+      },
+      {
+        "min": 1,
+        "titulo": "Con la pista.",
+        "detalle": "Ante la duda, repetir y pensar en el teclado: ¿hay tecla en medio o no?"
+      },
+      {
+        "min": 1,
+        "titulo": "Cerrar.",
+        "detalle": "En la pizarra, marcar mi-fa y si-do en la escala de do: los dos semitonos. Los demás pasos son tonos."
+      }
+    ],
+    "enPantalla": "Suenan dos notas seguidas en el piano, muy cerca una de otra, y el niño toca «tono» o «semitono». Hay diez pares, algunos con teclas negras (la-si bemol, do sostenido-re, fa sostenido-sol), para que se oiga la distancia y no el nombre. Se puede volver a oír. Si toca la opción que no es, el personaje le recuerda que piense si hay una tecla en medio y lo intenta otra vez. Termina al acabar los pares, sin puntuación.",
+    "sinPantalla": "En un teclado o metalófono del aula, toca dos notas pegadas o con una en medio y que señalen una de dos tarjetas: una con dos teclas juntas dibujadas, otra con una tecla en medio. Con el teclado dibujado en la pizarra, un niño señala las dos teclas que ha oído y la clase comprueba si hay negra entre ellas. Con la voz, canta tú do-re y mi-fa y que digan cuál es el pasito.",
+    "masFacil": "Solo pares desde do: do-re (tono) y mi-fa (semitono), hasta que se oiga la diferencia en la pareja. Tocarlos seguidos, uno tras otro, antes de preguntar por uno solo. Mostrar el teclado mientras suena: ver la tecla de en medio ayuda a oírla. Los pares con teclas negras, para después.",
+    "masDificil": "Que canten la segunda nota antes de que suene cuando se les dice «tono» o «semitono» desde una nota dada. Que construyan en el metalófono la escala de do y digan dónde están los dos semitonos sin mirar. Y que busquen el semitono en una melodía de flauta que estén tocando.",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "Un paso grande para el tono, un pasito con los pies juntos para el semitono. Suena el par y la clase se mueve a la vez. Después, un niño anda la escala de do por el aula: cinco pasos y dos pasitos, en mi-fa y si-do, mientras la clase la canta."
+    },
+    "ideas": [
+      "Andar la escala de do en el teclado de la pizarra y marcar con un gomet los dos sitios sin tecla negra: mi-fa y si-do.",
+      "Dictado de dos notas: el maestro toca cinco pares en el metalófono y cada niño escribe T o S.",
+      "Buscar en una canción de flauta conocida dónde hay un semitono y tocarlo solo, despacio, para oírlo."
+    ],
+    "loTiene": [
+      "Distingue tono y semitono cuando el par no empieza en do.",
+      "Señala en el teclado si hay una tecla en medio o no.",
+      "Sabe que mi-fa y si-do son los semitonos de la escala de do."
+    ],
+    "errores": [
+      {
+        "error": "Contesta semitono a todo, porque todos los pares suenan cerca",
+        "remedio": "tocar do-re y mi-fa seguidos en el teclado, mirando las teclas: uno deja hueco, el otro no."
+      },
+      {
+        "error": "Se guía por el nombre y dice tono en mi-fa porque «son dos notas seguidas»",
+        "remedio": "contar teclas en el teclado, con las negras: entre mi y fa no hay ninguna."
+      },
+      {
+        "error": "Duda en los pares con teclas negras",
+        "remedio": "enseñar en el teclado que la negra es una tecla más: do sostenido-re son dos teclas pegadas."
+      }
+    ],
+    "indicadores": [
+      "Desde otra nota",
+      "Tecla en medio",
+      "Mi-fa y si-do"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

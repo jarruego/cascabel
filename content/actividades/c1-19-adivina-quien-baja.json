@@ -185,6 +185,90 @@
   "pistas": [
     "actividad.c119.pista1"
   ],
+  "ficha": {
+    "aprende": "Tocar en el momento justo con un pulso lento, y aguantar sin tocar los dos pulsos de una blanca y los cuatro de una redonda, contándolos por dentro.",
+    "vocabulario": [
+      "pulso",
+      "negra",
+      "blanca",
+      "redonda",
+      "a tiempo",
+      "aguantar",
+      "contar",
+      "línea"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet; el primero, proyectado",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "El pulso lento, con el pie.",
+        "detalle": "Un pulso por segundo, como un reloj. Toda la clase marca con el pie y cuenta «uno, dos, tres, cuatro» en voz alta. Este es el pulso que va a llevar la app: lento a propósito."
+      },
+      {
+        "min": 1,
+        "titulo": "Mirar sin tocar, con proyector.",
+        "detalle": "Arranca el primer ejercicio y que nadie toque: solo contar cuántos pulsos pasan entre un círculo y el siguiente. Casi siempre dos. El animal no aparece si nadie toca, y eso les pica."
+      },
+      {
+        "min": 2,
+        "titulo": "Primer ejercicio: todo blancas.",
+        "detalle": "Cada uno en su tablet. Toca, cuenta «dos», toca. Al acertar sale el animal: pájaro, conejo, oso, gato, ratón. Que digan el nombre del que aparece."
+      },
+      {
+        "min": 2,
+        "titulo": "Segundo: negras y una redonda.",
+        "detalle": "El conejo y el ratón van seguidos, un pulso cada uno; el pájaro dura tres; y el oso del final, cuatro. Contar «uno, dos, tres, cuatro» con el pie y no tocar hasta el siguiente."
+      },
+      {
+        "min": 1,
+        "titulo": "Tercero: el largo.",
+        "detalle": "Junta los dos anteriores. Al terminar, mira el resumen: si va tarde pero siempre igual, es entrada, no pulso. Se puede repetir el que quieran."
+      },
+      {
+        "min": 1,
+        "titulo": "Sin pantalla.",
+        "detalle": "Tú cantas «oooso» aguantando cuatro pulsos, «gaaato» dos, «conejo» uno, y ellos dan una palmada al empezar cada animal y cuentan el hueco con el pie."
+      }
+    ],
+    "enPantalla": "Bajan círculos vacíos, despacio y bien separados, hacia una línea. Si se toca justo cuando el círculo cruza la línea, se rellena y aparece el animal que llevaba dentro: pájaro, conejo, oso, gato o ratón. Si se toca antes o después, el círculo pasa vacío y viene el siguiente, sin más. La distancia entre círculos es la duración: los hay de uno, dos, tres y cuatro pulsos, a un pulso por segundo. Tres ejercicios, del más regular al más mezclado. Sin marcador mientras se juega; al final, un resumen, y se puede repetir.",
+    "sinPantalla": "Cinco tarjetas con los animales boca abajo en la pizarra. Tú marcas el pulso con el pie, cantas una nota y aguantas: «pá-ja-rooo» dos pulsos, «ooooso» cuatro, «conejo» uno. Los niños dan una palmada justo al empezar cada animal y cuentan los pulsos con los dedos. Quien diga bien cuántos ha durado le da la vuelta a la tarjeta. Lo que se practica es lo mismo: entrar en el momento justo y aguantar el hueco.",
+    "masFacil": "Quédate en el primer ejercicio, donde todo dura dos pulsos: toca, cuenta «dos», toca. Di tú «ya» en cada línea la primera vuelta, para que el dedo tenga una señal. Si se les escapan círculos, que dejen pasar alguno y entren en el siguiente: acertar tres es mejor que perseguir seis. Y que cuenten en voz alta, no por dentro, hasta que el pie y la voz vayan juntos.",
+    "masDificil": "Que digan la figura al tocar: «blanca», «negra», «redonda». Que hagan dos cosas a la vez: el pie marca todos los pulsos y la mano solo toca los círculos. Después, el tercer ejercicio con los ojos cerrados la segunda mitad, contando: si el animal aparece, han contado bien. Y al final, que adivinen qué animal viene antes de que aparezca, porque en el primer ejercicio el orden se repite.",
+    "variante": {
+      "titulo": "Animales de pie",
+      "texto": "Cinco niños de pie, uno por animal. La clase marca el pulso con palmas suaves. Tú señalas a uno y enseñas con los dedos cuántos pulsos dura: el niño hace su sonido (pío, muuu del oso, miau, iiic) y lo alarga justo esos pulsos, y se sienta al acabar. Los demás comprueban contando. Después, que sea un niño quien dirige con los dedos."
+    },
+    "ideas": [
+      "Dictado de duración en papel: tú tocas cuatro notas de distinta duración en el xilófono y ellos dibujan círculos más o menos separados.",
+      "Inventar por parejas un ritmo con los cinco animales, escribirlo con círculos y que la otra pareja lo palmee.",
+      "Buscar en una canción que ya sepan una nota que dure mucho, y contar entre todos cuántos pulsos aguanta."
+    ],
+    "loTiene": [
+      "Toca cuando el círculo llega a la línea, ni al verlo arriba ni cuando ya ha pasado.",
+      "Aguanta la redonda del oso cuatro pulsos sin tocar en medio.",
+      "Dice cuántos pulsos ha durado un animal sin mirar la pantalla."
+    ],
+    "errores": [
+      {
+        "error": "Toca en cuanto ve el círculo aparecer arriba",
+        "remedio": "que mire solo la línea y cuente en voz alta los pulsos que faltan; el círculo de arriba todavía no toca."
+      },
+      {
+        "error": "En las largas toca dos o tres veces para asegurar",
+        "remedio": "el pie marca el pulso y la mano solo entra al principio; que diga «uno, dos, tres, cuatro» con el dedo levantado."
+      },
+      {
+        "error": "Va siempre un poco tarde",
+        "remedio": "mira el resumen: si el retraso es igual en todos, el pulso está bien; di tú «ya» en un ejercicio para que ajuste la entrada."
+      }
+    ],
+    "indicadores": [
+      "A tiempo",
+      "Aguanta la larga",
+      "Cuenta pulsos"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

@@ -115,6 +115,85 @@
     "actividad.c211m.pista1",
     "actividad.c211m.pista2"
   ],
+  "ficha": {
+    "aprende": "Reconocer de oído el sitar, el koto, la kalimba, la gaita, el banjo y el tambor metálico, aunque suenen en notas distintas, fijándose en de qué están hechos.",
+    "vocabulario": [
+      "timbre",
+      "sitar",
+      "koto",
+      "kalimba",
+      "gaita",
+      "banjo",
+      "tambor metálico",
+      "cuerda pulsada"
+    ],
+    "agrupamiento": "Grupo clase con proyector, después por parejas en tablet",
+    "material": "Ninguno. Si hay, un mapa del mundo para señalar de dónde viene cada uno",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Presentar los seis,",
+        "detalle": "con la pantalla proyectada: tocar cada botón, oírlo y decir de dónde viene: el sitar de la India, el koto de Japón, la kalimba de África, la gaita de Escocia y Galicia, el banjo de Estados Unidos y el tambor metálico de Trinidad."
+      },
+      {
+        "min": 3,
+        "titulo": "Agruparlos por material.",
+        "detalle": "Preguntar de qué está hecho cada uno: sitar, koto y banjo tienen cuerdas; la kalimba y el tambor metálico son de metal que se pulsa o se golpea; la gaita es aire. Con eso ya hay tres grupos y solo hay que afinar dentro de cada uno."
+      },
+      {
+        "min": 4,
+        "titulo": "Jugar en pantalla,",
+        "detalle": "por parejas o con el proyector y un niño que sale a tocar. Escuchar entero antes de elegir: cada instrumento suena dos veces en la ronda, en una nota grave y en otra aguda, y sigue siendo el mismo."
+      },
+      {
+        "min": 2,
+        "titulo": "Poner en común las confusiones.",
+        "detalle": "Preguntar cuál ha costado más. Casi siempre sitar y koto: volver a oírlos seguidos y buscar el zumbido que deja el sitar detrás de la nota."
+      },
+      {
+        "min": 1,
+        "titulo": "Cerrar con el mapa.",
+        "detalle": "Señalar en el mapa o en la pizarra los seis sitios, y que cada niño diga en voz alta el nombre del instrumento que más le ha gustado."
+      }
+    ],
+    "enPantalla": "Suena un instrumento y aparecen seis botones grandes con su dibujo y su nombre: sitar, koto, kalimba, gaita, banjo y tambor metálico. El niño puede volver a oírlo con el botón de repetir y después toca uno. Si no es, el personaje le da una pista (cuerda, metal o aire) y puede volver a elegir. Si acierta, «¡bien!» y viene el siguiente. Cada instrumento suena dos veces en la ronda, en una nota grave y en otra aguda: el timbre no cambia con la nota. Termina al acabar la ronda, sin puntuación.",
+    "sinPantalla": "Sin los instrumentos reales no se puede hacer igual, pero sí la mitad que importa: reparte seis tarjetas con el dibujo y el nombre y pon en la pizarra tres columnas: cuerda, metal, aire. Que las coloquen y las defiendan. Después, con los altavoces del aula y la pantalla tapada, tú reproduces uno y ellos levantan la tarjeta.",
+    "masFacil": "Tapa la mitad de los botones con la mano o pídeles que elijan solo entre dos que se parecen poco: gaita o banjo, kalimba o sitar. Antes de que suene, nombra en voz alta las opciones que quedan. Si dudan aun con dos, no es el oído, es el nombre: repasa las tarjetas con el dibujo.",
+    "masDificil": "Que digan la familia antes de decir el instrumento: «cuerda… y es el koto». Después, que respondan con los ojos cerrados, escuchándolo una sola vez. Y que expliquen con una palabra por qué lo saben: «zumba», «es seco», «no para de sonar».",
+    "variante": {
+      "titulo": "Por parejas",
+      "texto": "Uno hace de radio: elige un instrumento sin que el otro vea la pantalla, lo hace sonar con el botón de repetir, y el compañero contesta en voz alta. Luego cambian. Quien pone el sonido tiene que saber cuál es antes que quien lo adivina."
+    },
+    "ideas": [
+      "Buscar en clase un objeto que suene parecido a cada uno: una goma tensada para el banjo, un bote metálico para el tambor metálico, soplar en una botella para la gaita.",
+      "Hacer una ficha de un instrumento por grupo: de dónde es, de qué está hecho, cómo se toca, y presentarla al resto con el sonido de la app.",
+      "Escuchar una pieza corta de cada instrumento y decir con qué momento del día o qué paisaje les pega, sin que haya respuesta buena."
+    ],
+    "loTiene": [
+      "Nombra el instrumento después de oírlo entero, tanto en la nota grave como en la aguda.",
+      "Distingue el sitar del koto por el zumbido que deja detrás.",
+      "Dice de qué está hecho antes de decir cuál es."
+    ],
+    "errores": [
+      {
+        "error": "Confunde el sitar con el koto una y otra vez",
+        "remedio": "oírlos seguidos con el botón de repetir y buscar solo una cosa: el koto se apaga seco y el sitar sigue zumbando."
+      },
+      {
+        "error": "Toca un botón antes de que el sonido termine",
+        "remedio": "pedir que lo escuche entero con las manos en las rodillas y que lo repita una vez más antes de elegir."
+      },
+      {
+        "error": "Cambia de respuesta cuando suena el mismo instrumento en la nota aguda",
+        "remedio": "tocar las dos notas seguidas con el botón de repetir y preguntar qué ha cambiado y qué no: la nota cambia, el instrumento no."
+      }
+    ],
+    "indicadores": [
+      "Oye entero",
+      "Sitar y koto",
+      "Dice el material"
+    ]
+  },
   "creditos": [
     {
       "obra": "Instrumentos de General MIDI (FluidR3_GM)",

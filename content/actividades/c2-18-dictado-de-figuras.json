@@ -141,6 +141,80 @@
     "actividad.c218.pista1",
     "actividad.c218.pista2"
   ],
+  "ficha": {
+    "aprende": "Oír un compás de cuatro pulsos y elegir cómo se escribe: dónde va la blanca, dónde las dos corcheas y en qué pulso cae el silencio.",
+    "vocabulario": [
+      "compás",
+      "pulso",
+      "negra",
+      "blanca",
+      "corcheas",
+      "silencio",
+      "dictado",
+      "cuatro pulsos"
+    ],
+    "agrupamiento": "Grupo clase con proyector, después individual en tablet",
+    "material": "Ninguno. Pizarra para escribir los cuatro compases",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Escribir los cuatro compases en la pizarra.",
+        "detalle": "Negra-negra-blanca; blanca-ti-ti-negra; negra-silencio-negra-negra; ti-ti-negra-silencio-negra. Palmearlos los cuatro con el pie contando «uno, dos, tres, cuatro», y decir en cuáles hay un pulso que no suena."
+      },
+      {
+        "min": 2,
+        "titulo": "Oír uno con el proyector.",
+        "detalle": "Suena un compás de entrada con el pulso y luego el dictado. Contar con el pie, señalar en la pizarra cuál ha sonado y comprobar con la app. Dos o tres veces entre todos."
+      },
+      {
+        "min": 3,
+        "titulo": "Jugar en tablet,",
+        "detalle": "de uno en uno. Se puede repetir el dictado con el botón las veces que haga falta; si no es, el personaje da una pista y se vuelve a elegir."
+      },
+      {
+        "min": 1,
+        "titulo": "Poner en común.",
+        "detalle": "Preguntar qué compás ha costado más: suele ser el de la blanca al principio, que se confunde con negra y silencio. Palmear los dos seguidos: la blanca se sostiene, el silencio no."
+      }
+    ],
+    "enPantalla": "Suena un pulso de negra de fondo, un compás de entrada, y después un compás de cuatro pulsos con negras, blancas, corcheas o un silencio. Aparecen cuatro compases escritos y el niño toca el que ha sonado. Puede volver a oírlo con el botón de repetir. Si no es, el personaje da una pista (en qué pulso no suena nada, o dónde hay un golpe seguido de un hueco largo) y puede volver a elegir; si acierta, «¡bien!» y viene el siguiente. Ocho dictados y termina, sin puntuación.",
+    "sinPantalla": "Escribe los cuatro compases en la pizarra, numerados. Tú palmeas uno con el pie marcando el pulso —un compás de «uno, dos, tres, cuatro» antes, como hace la app— y ellos levantan tantos dedos como el número del compás que ha sonado. Después les toca a ellos: uno palmea, los demás señalan. En el silencio, las manos abiertas y quietas, para que se vea.",
+    "masFacil": "Deja solo dos compases en la pizarra o tapa dos botones: negra-negra-blanca frente a negra-silencio-negra-negra, que se distinguen en si el segundo pulso suena. Antes de que suene, leer los dos en voz alta con «ta», «ta-a», «ti-ti» y «sh» para el silencio. Y bajar el tempo si se pasan contando.",
+    "masDificil": "Que escriban el compás en papel antes de mirar las opciones, y después comprueben. O que inventen un quinto compás con las mismas figuras, lo palmeen a la clase y los demás lo escriban. Sin contar en voz alta, solo con el pie, cuesta más y es el siguiente paso.",
+    "variante": {
+      "titulo": "Por parejas",
+      "texto": "Uno palmea uno de los cuatro compases de la pizarra sin decir cuál, y el otro lo señala. Se cambian cada dos. Quien palmea tiene que contar el compás de entrada en voz baja y hacer el silencio quieto: si no se ve el hueco, el otro no puede adivinarlo."
+    },
+    "ideas": [
+      "Encadenar los cuatro compases en la pizarra y palmearlos seguidos como una pieza de cuatro compases, con el pie llevando el pulso.",
+      "Buscar en una canción que la clase sepa un sitio donde haya un silencio de negra: un pulso donde nadie canta.",
+      "Dictado al revés: la clase inventa un compás entre todos, se escribe y se palmea; después se cambia una sola figura y se vuelve a escribir."
+    ],
+    "loTiene": [
+      "Cuenta los cuatro pulsos con el pie mientras suena y sabe en cuál no suena nada.",
+      "Distingue la blanca (un golpe y un hueco largo) del silencio (ningún golpe).",
+      "Escucha el compás entero antes de tocar una opción."
+    ],
+    "errores": [
+      {
+        "error": "Confunde la blanca con negra y silencio",
+        "remedio": "palmear los dos seguidos con las manos juntas: en la blanca se quedan apretadas dos pulsos, en el silencio se abren."
+      },
+      {
+        "error": "Toca la opción cuando aún está sonando el compás de entrada",
+        "remedio": "contar en voz alta «uno, dos, tres, cuatro» del compás de entrada y escuchar el siguiente con las manos en las rodillas."
+      },
+      {
+        "error": "Elige siempre el compás de las corcheas cuando oye algo rápido",
+        "remedio": "preguntar en qué pulso van las corcheas: al principio o después de la blanca; oírlo de nuevo contando con el pie."
+      }
+    ],
+    "indicadores": [
+      "Cuenta el pulso",
+      "Blanca y silencio",
+      "Oye entero"
+    ]
+  },
   "creditos": [
     {
       "obra": "Iconos",

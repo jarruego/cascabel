@@ -108,6 +108,56 @@
     ]
   },
   "enunciado": "actividad.tr13.enunciado",
+  "ficha": {
+    "aprende": "Ordenar las cuatro voces de un coro de la más aguda a la más grave, soprano, contralto, tenor y bajo, y reconocer cuál suena con los ojos cerrados.",
+    "vocabulario": [
+      "soprano",
+      "contralto",
+      "tenor",
+      "bajo",
+      "agudo",
+      "grave",
+      "coro",
+      "voz"
+    ],
+    "agrupamiento": "Grupo clase, con proyector y altavoz",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Proyectar y oír las cuatro.",
+        "detalle": "De arriba abajo: soprano, contralto, tenor y bajo. La mano sube o baja con cada una. Preguntar: ¿cuál es la más aguda? ¿La más grave?"
+      },
+      {
+        "min": 2,
+        "titulo": "Imitar con la voz.",
+        "detalle": "Oír la soprano y cantar «a» encima, lo más parecido posible. Luego la contralto. El tenor y el bajo son voces de adulto: imitarlos lo más grave que se pueda, sin apretar la garganta."
+      },
+      {
+        "min": 1,
+        "titulo": "Con los ojos cerrados.",
+        "detalle": "El maestro toca una voz sin decirla. La clase señala arriba si es de mujer, abajo si es de hombre. Después, cuál de las dos."
+      },
+      {
+        "min": 2,
+        "titulo": "Las voces que conocemos.",
+        "detalle": "¿Qué voz tiene el maestro? ¿Y el conserje, la directora? ¿Y la nuestra? Un niño de diez años canta a la altura de una soprano o una contralto, y la voz cambia al crecer."
+      }
+    ],
+    "enPantalla": "Las cuatro voces del coro, de la más aguda a la más grave: soprano, contralto, tenor y bajo. Al tocar una suena una voz cantando en su altura y se lee dónde se coloca en el coro y qué la distingue. Hay buscador. No hay pregunta ni final: sirve para oír una voz de hombre en un aula donde no la hay, y para comparar dos seguidas, la soprano y el bajo, y sentir la distancia que hay entre ellas.",
+    "sinPantalla": "El maestro canta una frase en su voz y después la misma frase lo más agudo y lo más grave que puede: eso ya son dos voces. Si hay dos adultos en el colegio con voces distintas, un hombre y una mujer, pedirles que canten la misma frase. Los niños ponen la mano a la altura de cada voz: arriba, en medio, abajo. Y escuchar un coro de verdad cuando se pueda: la fiesta del colegio, el coro del pueblo.",
+    "masFacil": "Solo las dos de los extremos: soprano y bajo. Oírlas alternadas y decir cuál suena, con la mano arriba o abajo. El tenor y la contralto, las del medio, se dejan para cuando los extremos estén claros. Y siempre con el gesto de la mano: la altura se entiende con el cuerpo antes que con el nombre.",
+    "masDificil": "Oír las cuatro desordenadas y ordenarlas de memoria, sin mirar. Después, cantar una canción de la clase dos veces, una lo más agudo que salga cómodo y otra lo más grave, y decir a qué voz del coro se ha acercado cada vez. Y en una grabación de coro, levantar la mano cuando entre una voz nueva.",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "Cuatro niños de pie, uno por voz, en escalera: el bajo agachado, el tenor de rodillas, la contralto sentada en una silla y la soprano de pie. Cuando suena una voz, el que la tiene levanta la mano. Después se cambian los papeles. Ver la escalera con el cuerpo fija el orden mejor que cualquier lista."
+    },
+    "ideas": [
+      "Escuchar un coro de cuatro voces y contar cuántas voces distintas se oyen entrar, con los ojos cerrados.",
+      "Preguntar en casa qué voz cree tener cada uno y hacer una lista de la clase: ¿hay más sopranos o más bajos en las familias?",
+      "Buscar instrumentos que suenen a la altura de cada voz: la flauta como soprano, el violonchelo como bajo."
+    ]
+  },
   "personaje": "doby",
   "herramienta": true,
   "creditos": [

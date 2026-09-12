@@ -197,6 +197,85 @@
     "actividad.c216.pista1",
     "actividad.c216.pista2"
   ],
+  "ficha": {
+    "aprende": "Tocar el botón de la banda por la que baja cada nota de la Quinta de Beethoven —tres cortas y una larga, dos veces— con un dedo preparado en cada botón.",
+    "vocabulario": [
+      "motivo",
+      "corta",
+      "larga",
+      "banda",
+      "beethoven",
+      "sinfonía",
+      "corchea",
+      "silencio"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet u ordenador",
+    "material": "Ninguno. En ordenador, las teclas 1, 2, 3 y 4",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Cantar el motivo.",
+        "detalle": "Sin pantalla: «pa-pa-pa-PAAAM». Todos lo conocen aunque no sepan de dónde es. Decir que es el principio de la Quinta sinfonía de Beethoven y que solo son cuatro notas: tres cortas y una larga."
+      },
+      {
+        "min": 2,
+        "titulo": "Ver bajar las bandas.",
+        "detalle": "Con la app proyectada, sin tocar: cuatro bandas de color y las notas bajando por ellas. Las tres cortas bajan por la misma banda y la larga por otra. La segunda vez cambia de bandas, pero el ritmo es el mismo."
+      },
+      {
+        "min": 3,
+        "titulo": "Tocar con los dedos preparados.",
+        "detalle": "Por parejas: un dedo en cada botón antes de empezar; se toca cuando la nota llega abajo. El compañero canta «pa-pa-pa-paaam» a la vez. Cambiar de papel."
+      },
+      {
+        "min": 2,
+        "titulo": "El tercer ejercicio, entero.",
+        "detalle": "Dos veces seguidas el motivo. Hay un silencio antes de cada grupo de tres: esperar en él, sin tocar, es parte del ritmo."
+      },
+      {
+        "min": 1,
+        "titulo": "Leer el resumen.",
+        "detalle": "Mirar si van pronto o tarde. Adelantarse en la primera nota corta es lo más habitual: el silencio de antes engaña."
+      }
+    ],
+    "enPantalla": "Cuatro bandas verticales de colores, cada una con su botón grande justo debajo. Las notas de la Quinta bajan por las bandas: tres cortas seguidas por una y una larga por otra, y luego otra vez con dos bandas distintas. El niño toca el botón de la banda cuando la nota llega abajo (en ordenador, las teclas 1 a 4). Si entra a tiempo, la nota se ilumina; si no, sigue y viene la siguiente, sin marcador. Tres ejercicios cortos y un resumen final que dice si iba pronto o tarde.",
+    "sinPantalla": "Cuatro aros o cuatro cartulinas de colores en el suelo, en fila. Tú cantas «pa-pa-pa-paaam» y un niño salta o pisa: tres veces en un color y una vez, larga, en otro. Después con palmas: tres palmadas y una palmada larga con las manos juntas y quietas. Los demás cuentan el silencio del principio en voz baja: «y, pa-pa-pa-paaam».",
+    "masFacil": "Baja el tempo. Si aun así se adelantan, que toquen solo la nota larga y canten las tres cortas con la boca: el momento que importa es el «paaam». Después al revés: las tres cortas con el botón y la larga cantada. Y con un solo dedo, moviéndolo de banda, antes de usar dos manos.",
+    "masDificil": "Que toquen con los ojos cerrados la segunda vez, contando el silencio: el motivo se repite y el ritmo es el mismo. O que dividan las bandas entre dos: uno las de la izquierda y otro las de la derecha, y tienen que turnarse sin avisarse.",
+    "variante": {
+      "titulo": "Con instrumentos",
+      "texto": "Dos instrumentos: claves para las tres notas cortas y un pandero o un bombo para la larga. Un niño con cada uno, la pantalla marca el momento y cada uno toca solo lo suyo. El del pandero tiene que aguantar su golpe sin volver a tocar hasta el siguiente «paaam»."
+    },
+    "ideas": [
+      "Escuchar el principio de la Quinta de Beethoven con la orquesta entera y contar cuántas veces aparece el motivo en el primer minuto: sale muchísimas, y no siempre igual de fuerte.",
+      "Inventar palabras que quepan en el motivo: tres sílabas cortas y una larga, como «cho-co-la-TE». Cada grupo propone una y la clase la canta con la melodía.",
+      "Dibujar el motivo con puntos: tres pequeños y uno grande, y comparar con cómo se escribe de verdad: tres corcheas y una blanca."
+    ],
+    "loTiene": [
+      "Espera el silencio del principio y entra en la primera corta a tiempo.",
+      "Toca la larga una sola vez y no vuelve a tocar hasta el siguiente grupo.",
+      "Cambia de banda en la segunda vuelta sin mirar el botón."
+    ],
+    "errores": [
+      {
+        "error": "Toca antes de tiempo la primera nota corta",
+        "remedio": "contar el silencio en voz alta («y») antes de «pa-pa-pa» y mirar la nota bajar hasta el final de la banda."
+      },
+      {
+        "error": "Da golpes de más durante la nota larga",
+        "remedio": "cantar «paaam» alargándolo con el dedo pegado al botón, sin levantarlo, hasta que empiece la siguiente."
+      },
+      {
+        "error": "Toca la banda correcta pero mira el botón y llega tarde",
+        "remedio": "poner los dedos en los cuatro botones antes de empezar y fijar la vista en las bandas; en ordenador, las teclas 1 a 4."
+      }
+    ],
+    "indicadores": [
+      "Espera el silencio",
+      "Larga una vez",
+      "Cambia de banda"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

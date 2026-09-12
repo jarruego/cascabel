@@ -41,6 +41,85 @@
     ]
   },
   "enunciado": "actividad.inf06.enunciado",
+  "ficha": {
+    "aprende": "Que un trazo puede sonar: arriba agudo, abajo grave. Dibujar a propósito para conseguir el sonido que quiere, y repetirlo.",
+    "vocabulario": [
+      "agudo",
+      "grave",
+      "arriba",
+      "abajo",
+      "trazo",
+      "dibujar",
+      "escuchar",
+      "instrumento"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet",
+    "material": "Ninguno. Sin pantalla, papel grande y un rotulador.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "La sirena con la voz.",
+        "detalle": "El maestro dibuja en el aire una línea que sube y la canta subiendo; una que baja y la canta bajando. Los niños hacen lo mismo con la mano y la voz: arriba finito, abajo hondo."
+      },
+      {
+        "min": 2,
+        "titulo": "Dibujar libre.",
+        "detalle": "Cada niño dibuja con el dedo lo que quiera y escucha lo que sale. No hay que hacer nada bien: solo dibujar y oír. Si alguno no arranca, el maestro dibuja una línea primero."
+      },
+      {
+        "min": 1,
+        "titulo": "Cambiar de instrumento.",
+        "detalle": "Elegir otro instrumento y dibujar lo mismo. ¿Suena igual de agudo arriba? El dibujo manda en la altura; el instrumento, en el color del sonido."
+      },
+      {
+        "min": 1,
+        "titulo": "Dibujar algo pedido.",
+        "detalle": "«Una montaña», «una escalera que baja», «un pájaro que vuela alto». Se dibuja, se escucha y se dice si sonaba como lo pedido."
+      },
+      {
+        "min": 1,
+        "titulo": "Adivinar el dibujo.",
+        "detalle": "Por parejas: uno dibuja sin que el otro mire, y el otro, solo con lo que oye, dice si el trazo subía, bajaba o iba recto."
+      }
+    ],
+    "enPantalla": "Un lienzo en blanco. Al pasar el dedo se dibuja un trazo y suena a la vez: cuanto más arriba, más agudo; cuanto más abajo, más grave. Una línea que sube se oye subir; un zigzag se oye ir y venir. Se puede elegir con qué instrumento suena. No hay respuesta correcta, ni corrección, ni final: se dibuja y se escucha hasta que el maestro dice que se acaba. Lo que se aprende es a hacer el dibujo pensando en el sonido que va a salir.",
+    "sinPantalla": "Papel grande en la pared y un rotulador. El maestro dibuja una línea y la canta con la voz, siguiendo el trazo con el dedo: sube cuando la línea sube, baja cuando baja. Después dibuja un niño y la clase entera canta su línea. También sirve un xilófono puesto de pie, con las láminas cortas arriba: se recorre con la baqueta como si fuera el dibujo.",
+    "masFacil": "Un solo instrumento, sin cambiar. Una sola consigna: «una línea de arriba abajo, despacio». Si el niño rasca sin escuchar, el maestro le coge la mano y hacen juntos un trazo lento mientras cantan lo que suena. Si no arranca, el maestro dibuja primero y el niño solo mira y escucha; luego repite el mismo trazo él.",
+    "masDificil": "Consignas que obligan a decidir: «algo que dé miedo», «algo que se aleja», «una nube y una piedra». O dictado al revés: el maestro canta una línea con la voz —sube, baja, se queda— y el niño la dibuja para que suene igual. Y después comparan: se canta y se pasa el dedo por el dibujo a la vez.",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "Un niño dibuja en la pantalla proyectada y el resto de la clase sigue su trazo con el cuerpo: de puntillas y brazos arriba cuando va agudo, agachados cuando va grave, y con la voz haciendo la sirena. Cada niño dibuja una vez y dirige a los demás con el dedo."
+    },
+    "ideas": [
+      "Un mural de sonidos: cada niño dibuja en papel un trazo, y en otra sesión se cantan uno detrás de otro como si fueran una canción larga.",
+      "Dibujar el sonido de cosas de verdad: la sirena de una ambulancia, un balón que bota, un bostezo. Primero se oye, luego se dibuja, luego se toca en la app.",
+      "Elegir el mismo dibujo con tres instrumentos distintos y decidir con cuál queda mejor. Elegir el timbre ya es componer."
+    ],
+    "loTiene": [
+      "Sube el dedo cuando quiere que suene agudo y lo baja para grave, sin que se lo digan.",
+      "Repite un trazo que le ha gustado para volver a oírlo igual.",
+      "Dibuja una línea que sube cuando el maestro canta subiendo."
+    ],
+    "errores": [
+      {
+        "error": "Rasca la pantalla de un lado a otro sin escuchar lo que sale",
+        "remedio": "parar, pedir un solo trazo lento y cantar con él lo que suena. Después ya vuelve a dibujar libre."
+      },
+      {
+        "error": "Dibuja siempre en la misma zona, abajo o arriba",
+        "remedio": "pedirle «ahora un pájaro» o «ahora un oso» para que tenga que ir a la otra parte del lienzo."
+      },
+      {
+        "error": "Se queda mirando sin tocar",
+        "remedio": "el maestro dibuja primero, sin explicar nada, y le deja el dedo encima del trazo acabado para que lo repase."
+      }
+    ],
+    "indicadores": [
+      "Arriba agudo",
+      "Repite a propósito",
+      "Dibuja lo que oye"
+    ]
+  },
   "personaje": "laia",
   "creditos": [
     {

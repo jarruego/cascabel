@@ -132,6 +132,80 @@
   "pistas": [
     "actividad.inf20.pista1"
   ],
+  "ficha": {
+    "aprende": "Saber si un pulso va deprisa como un conejo o despacio como una tortuga, sea cual sea el instrumento que suene, y moverse con él antes de decidir.",
+    "vocabulario": [
+      "rápido",
+      "despacio",
+      "pulso",
+      "conejo",
+      "tortuga",
+      "deprisa",
+      "lento",
+      "escuchar"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o por parejas en tablet",
+    "material": "Ninguno. Sin pantalla, unas claves o un tambor.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Andar con el pulso.",
+        "detalle": "De pie. El maestro toca las claves despacio y los niños andan; toca deprisa y corren pequeñito. Cambiar varias veces sin avisar. El cuerpo decide antes que la cabeza."
+      },
+      {
+        "min": 1,
+        "titulo": "El conejo y la tortuga.",
+        "detalle": "Sentados. «El conejo va deprisa, la tortuga despacio.» El maestro toca un pulso y los niños dicen el animal, o lo hacen: orejas de conejo o manos lentas de tortuga."
+      },
+      {
+        "min": 2,
+        "titulo": "En la app.",
+        "detalle": "Suena un pulso con un instrumento distinto cada vez y un niño toca el conejo o la tortuga. Los demás hacen el gesto antes de que toque. Si no coincide, se escucha otra vez moviendo el cuerpo."
+      },
+      {
+        "min": 1,
+        "titulo": "Ahora lo hacen ellos.",
+        "detalle": "Un niño da palmas de conejo o de tortuga, sin decir cuál, y la clase adivina. Hacer un pulso rápido y uno lento a propósito es más difícil que reconocerlos."
+      }
+    ],
+    "enPantalla": "Dos botones grandes: el conejo y la tortuga. Suena un pulso de ocho golpes, cada vez con un instrumento distinto —claves, caja china, caja, bongó, triángulo, tom— y muy deprisa o muy despacio. El niño toca el animal. Si toca el otro, el personaje le dice que se mueva con el pulso: si le sale correr, es el conejo; y puede volver a oírlo y elegir de nuevo. Al acertar, «¡bien!» y viene el siguiente. Seis pulsos y termina. El instrumento cambia a propósito, para que lo que se escuche sea la velocidad.",
+    "sinPantalla": "Dos tarjetas en el suelo, conejo y tortuga. El maestro toca un pulso con las claves, con el tambor o con las palmas: ocho golpes muy deprisa o muy despacio. Los niños van a la tarjeta que toca, o hacen el gesto sin levantarse. Cambia de instrumento a menudo, para que no se fijen en el sonido sino en la velocidad. Y mejor aún de pie: que anden o corran con el pulso y luego digan el animal.",
+    "masFacil": "Solo los dos extremos, muy deprisa y muy despacio, con el mismo instrumento, las claves. Que se mueva siempre antes de tocar: si el cuerpo corre, conejo. Di el animal en voz alta con el pulso, «co-ne-jo-co-ne-jo» rápido y «tor-tu-ga» lento, hasta que lo diga él. La app propone ya velocidades muy distintas; sin pantalla, exagera más.",
+    "masDificil": "Un pulso que cambia por el medio: empieza despacio y se acelera, o al revés, y hay que decir cuándo cambia. Tres velocidades: tortuga, persona y conejo. O que el niño produzca: un pulso de tortuga con las palmas y, sin parar, lo convierta en conejo poco a poco, mientras la clase anda con él.",
+    "variante": {
+      "titulo": "Carrera de animales",
+      "texto": "Toda la clase de pie en un extremo del aula. El maestro toca el pulso y avanzan con él: pasitos rápidos de conejo o pasos lentos de tortuga. Cuando el pulso para, todos quietos. No llega nadie el primero: se llega cuando llega el pulso. Cambia de velocidad sin avisar y mira quién cambia con el oído y quién con los ojos."
+    },
+    "ideas": [
+      "Buscar en clase cosas que vayan deprisa y despacio: un reloj, un balón que bota, una puerta que se cierra sola. ¿Conejo o tortuga?",
+      "Cantar una canción que la clase se sepa, primero de tortuga y luego de conejo, y decir cuál gusta más.",
+      "Dibujar el pulso en papel: rayitas juntas para el conejo y separadas para la tortuga, y tocarlo después con las claves siguiendo el dibujo."
+    ],
+    "loTiene": [
+      "Toca el conejo con el pulso rápido y la tortuga con el lento, sea cual sea el instrumento.",
+      "Mueve el cuerpo con el pulso antes de decidir.",
+      "Hace con las palmas un pulso de conejo y uno de tortuga cuando se lo piden."
+    ],
+    "errores": [
+      {
+        "error": "Elige por el instrumento y no por la velocidad: el triángulo siempre tortuga",
+        "remedio": "tocar el triángulo deprisa y el tambor despacio, a la vista, y preguntar cuál corre."
+      },
+      {
+        "error": "Toca a los dos primeros golpes, antes de oír el pulso entero",
+        "remedio": "manos en las rodillas hasta que se acabe, moviendo la cabeza con el pulso."
+      },
+      {
+        "error": "Confunde rápido con fuerte",
+        "remedio": "dar palmas fuertes muy despacio y palmas flojitas muy deprisa: lo fuerte no corre."
+      }
+    ],
+    "indicadores": [
+      "Rápido y despacio",
+      "Se mueve antes",
+      "Lo produce"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

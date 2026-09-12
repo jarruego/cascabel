@@ -55,6 +55,85 @@
   "pistas": [
     "actividad.c104.pista1"
   ],
+  "ficha": {
+    "aprende": "Colocar sonidos de cuatro alturas (do, mi, sol y do agudo) en ocho tiempos, escuchar el resultado en bucle y decidir qué cambiar.",
+    "vocabulario": [
+      "cuadrícula",
+      "casilla",
+      "tiempo",
+      "agudo",
+      "grave",
+      "bucle",
+      "melodía",
+      "escuchar"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet; luego con proyector",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Enseñar la cuadrícula vacía.",
+        "detalle": "Con el proyector, toca una casilla arriba y otra abajo: la de arriba es el do agudo, la de abajo el do grave. Las columnas son los ocho tiempos, de izquierda a derecha."
+      },
+      {
+        "min": 1,
+        "titulo": "Tres sonidos y escuchar.",
+        "detalle": "Cada niño pone solo tres casillas y le da a escuchar. Que oiga la vuelta entera antes de tocar nada más."
+      },
+      {
+        "min": 2,
+        "titulo": "Construir a gusto.",
+        "detalle": "Añadir, quitar, escuchar. Recuérdales que todo lo que pongan suena bien: no hay respuesta correcta, hay decisiones."
+      },
+      {
+        "min": 1,
+        "titulo": "Escuchar la de otro.",
+        "detalle": "Cambio de tablet con el vecino: escuchar la suya entera y decirle una cosa que le guste."
+      },
+      {
+        "min": 1,
+        "titulo": "Compartir dos o tres.",
+        "detalle": "En el proyector, escuchar dos o tres construcciones de la clase y cantarlas con la, la, la mientras el cursor las recorre."
+      }
+    ],
+    "enPantalla": "Una cuadrícula de cuatro filas y ocho columnas. Cada fila es una nota, do agudo arriba, luego sol, mi y do grave abajo, y cada columna es un tiempo. Al tocar una casilla se enciende y suena su nota; al tocarla otra vez se apaga. Con el botón de escuchar, un cursor recorre las ocho columnas en bucle y suena lo que hay encendido, así que cada cambio se oye en la vuelta siguiente. No hay respuesta correcta, ni corrección, ni final: se para cuando el niño quiere.",
+    "sinPantalla": "Cuadrícula de cuatro filas y ocho columnas en la pizarra, con do agudo, sol, mi y do escritos a la izquierda. Cada niño pega un gomet en una casilla y la clase canta el resultado mientras tú señalas las columnas al pulso: donde no hay gomet, silencio. Se puede cantar con nombres de nota o con la, la, la, y se pueden mover gomets y volver a cantar.",
+    "masFacil": "Reduce a dos filas, do y sol, y pide solo cuatro sonidos. Un niño que no sabe por dónde empezar no empieza: ponle tú el primer sonido en la primera columna y que ponga él el siguiente. Y que escuche después de cada casilla, no al final.",
+    "masDificil": "Pon una regla: que empiece y acabe en el do grave; que no haya dos casillas seguidas en la misma fila; o que las columnas cinco a ocho sean el espejo de las cuatro primeras. La regla es lo que convierte tocar casillas en componer. Después, que la clase cante de oído la melodía de otro y adivine qué casillas tenía.",
+    "variante": {
+      "titulo": "Por parejas",
+      "texto": "Uno pone las casillas de las columnas uno a cuatro y el otro las de cinco a ocho, sin hablar. Escuchan el resultado y solo entonces pueden cambiar una casilla cada uno. Se repite tres veces: es componer a cuatro manos y aprender a escuchar lo que ha hecho el otro."
+    },
+    "ideas": [
+      "Tocar la melodía construida en un xilófono con las láminas do, mi, sol y do agudo, leyendo la cuadrícula de la pizarra.",
+      "Ponerle letra: una palabra por casilla encendida, y cantarla.",
+      "Dictado al revés: el maestro construye una melodía de cuatro sonidos con el proyector tapado y la clase la reconstruye de oído."
+    ],
+    "loTiene": [
+      "Escucha la vuelta entera antes de añadir o quitar casillas.",
+      "Sabe decir cuál de sus sonidos es el más agudo y cuál el más grave.",
+      "Cambia algo a propósito y explica qué quería que sonara distinto."
+    ],
+    "errores": [
+      {
+        "error": "Llena todas las casillas y suena un bloque sin forma",
+        "remedio": "poner un tope de seis sonidos; con huecos se oye la melodía."
+      },
+      {
+        "error": "Toca casillas sin darle nunca a escuchar",
+        "remedio": "regla de tres: cada tres casillas, una escucha completa."
+      },
+      {
+        "error": "Pone todos los sonidos en la misma fila",
+        "remedio": "pedir que haya al menos uno arriba y otro abajo, y que oiga la diferencia."
+      }
+    ],
+    "indicadores": [
+      "Escucha antes",
+      "Agudo y grave",
+      "Cambia a propósito"
+    ]
+  },
   "etiquetas": [
     "cuadrícula",
     "secuenciador",

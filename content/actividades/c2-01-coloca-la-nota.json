@@ -95,6 +95,80 @@
   "pistas": [
     "actividad.c201.pista1"
   ],
+  "ficha": {
+    "aprende": "Encontrar en la clave de sol las ocho notas de do a do agudo —del do con línea adicional al do del tercer espacio— contando líneas y espacios desde abajo.",
+    "vocabulario": [
+      "pentagrama",
+      "clave de sol",
+      "línea",
+      "espacio",
+      "línea adicional",
+      "do",
+      "mi",
+      "sol"
+    ],
+    "agrupamiento": "Individual en tablet, o grupo clase con proyector",
+    "material": "Ninguno. Para la parte sin pantalla, cinta de carrocero en el suelo",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Cinco líneas, desde abajo.",
+        "detalle": "Dibuja el pentagrama y numera las líneas de abajo arriba. Las de esta octava: mi en la primera, sol en la segunda, si en la tercera. El do de abajo lleva una rayita suya, la línea adicional."
+      },
+      {
+        "min": 1,
+        "titulo": "Los espacios entre medias.",
+        "detalle": "Entre línea y línea hay un espacio: re cuelga debajo de la primera línea, fa en el primer espacio, la en el segundo, do agudo en el tercero. Cántalos subiendo: do-re-mi-fa-sol-la-si-do."
+      },
+      {
+        "min": 2,
+        "titulo": "En la app.",
+        "detalle": "Salen varias notas dibujadas y se dice una: el niño toca su sitio. Antes de tocar, que cuente en voz alta desde el do de abajo. Si no acierta, la pista recuerda las líneas y se vuelve a intentar."
+      },
+      {
+        "min": 1,
+        "titulo": "Comprobar cantando.",
+        "detalle": "Cada nota bien colocada suena; que la canten con el nombre y que digan si es de línea o de espacio. Repasar al final cuáles tienen línea y cuáles espacio."
+      }
+    ],
+    "enPantalla": "Un pentagrama de verdad en clave de sol con varias notas dibujadas, ninguna repetida, entre el do de debajo del pentagrama —con su línea adicional— y el do del tercer espacio. Se oye el nombre de una nota y el niño toca la que cree que es. Al acertar, suena y viene la siguiente; si no, el personaje recuerda cómo contar las líneas desde abajo y se puede volver a tocar sin que pase nada. Cada una de las ocho notas se pregunta una vez, y se acaba al terminar la ronda.",
+    "sinPantalla": "Cinco líneas de cinta de carrocero en el suelo, largas, y una rayita corta debajo para el do. Se dice una nota y un niño va a ponerse de pie encima de su línea o entre dos líneas, en su espacio. La clase cuenta con él desde abajo: «mi, sol, si» por las líneas. Después, al revés: un niño se coloca y los demás dicen qué nota es. Con la pauta en la pizarra funciona igual, señalando con el dedo.",
+    "masFacil": "Solo las notas de línea: mi, sol, si, y el do de abajo con su rayita. Deja el mi marcado como referencia y que cuenten desde él. Cuando salga, añade los espacios de uno en uno: fa primero, luego la. Que canten subiendo desde do cada vez que cuenten.",
+    "masDificil": "Que digan la nota antes de que se la pregunten, mirando las que hay dibujadas. Escribir en la pizarra una melodía corta de cuatro notas de esta octava para que otro la cante a primera vista. Y que digan de cada nota si es de línea o de espacio sin mirar la pauta.",
+    "variante": {
+      "titulo": "Por parejas, dictando",
+      "texto": "Uno dice una nota y el otro la toca en la app; luego se cambian. El que dicta tiene que comprobar que es la buena mirando la pauta, así que los dos cuentan. Sin app, uno dicta y el otro dibuja la nota en un pentagrama de papel, y después se comprueba cantando desde do."
+    },
+    "ideas": [
+      "Escribir en la pizarra los nombres de los niños con las notas que tengan (mi, sol, la, do) y colocarlas en la pauta.",
+      "Hacer una canción de cuatro notas escrita en la pauta y tocarla en el xilófono leyendo, sin que nadie diga los nombres.",
+      "Buscar en una partitura de verdad el do con línea adicional y contar cuántas veces sale."
+    ],
+    "loTiene": [
+      "Cuenta las líneas de abajo arriba antes de tocar, sin empezar por la de arriba.",
+      "Sabe que el do de abajo lleva su propia línea y lo toca sin dudar.",
+      "Distingue una nota de línea de una de espacio con el nombre."
+    ],
+    "errores": [
+      {
+        "error": "Cuenta las líneas desde arriba y toca la nota simétrica",
+        "remedio": "poner el dedo en el do de abajo y subir contando en voz alta, siempre desde ahí."
+      },
+      {
+        "error": "Confunde una nota de línea con la de su espacio vecino: sol con fa, o con la",
+        "remedio": "preguntar «¿la raya le atraviesa?» antes de tocar; si no la atraviesa, es de espacio."
+      },
+      {
+        "error": "Toca el do del tercer espacio cuando se pide el do de abajo, o al revés",
+        "remedio": "cantar el do grave y el agudo seguidos con la mano, y buscar la rayita del grave."
+      }
+    ],
+    "indicadores": [
+      "Cuenta desde abajo",
+      "Línea adicional",
+      "Línea o espacio"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

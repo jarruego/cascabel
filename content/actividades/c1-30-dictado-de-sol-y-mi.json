@@ -77,6 +77,84 @@
     "actividad.c130.pista1",
     "actividad.c130.pista2"
   ],
+  "ficha": {
+    "aprende": "Escuchar cuatro notas hechas solo con sol y mi y escribirlas en una cuadrícula: sol arriba, mi abajo, en el orden en que suenan.",
+    "vocabulario": [
+      "sol",
+      "mi",
+      "arriba",
+      "abajo",
+      "dictado",
+      "casilla",
+      "cantar"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o parejas en tablet",
+    "material": "Ninguno. Para la parte sin pantalla, pizarra y gomets de dos colores",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Cantar sol y mi.",
+        "detalle": "Canta «sol-mi, sol-mi» con la mano: alta en sol, baja en mi. Es el «cu-cú» de siempre. Que la clase lo repita hasta que la mano vaya sola."
+      },
+      {
+        "min": 1,
+        "titulo": "La cuadrícula.",
+        "detalle": "Enseña las dos filas: la de arriba es sol, la de abajo es mi. Cuatro columnas, cuatro notas. Toca una casilla para que oigan que suena."
+      },
+      {
+        "min": 2,
+        "titulo": "Primer dictado.",
+        "detalle": "Suena la melodía dos veces; la clase la canta con la mano. Un niño toca las casillas en orden. Se escucha en bucle y se compara: si algo no cuadra, se cambia la casilla y se vuelve a oír."
+      },
+      {
+        "min": 1,
+        "titulo": "Segundo y tercer dictado.",
+        "detalle": "Otros niños. Antes de tocar, que canten la melodía con nombres: «sol-sol-mi-sol», por ejemplo. Lo que se puede cantar se puede escribir."
+      },
+      {
+        "min": 1,
+        "titulo": "Cierre.",
+        "detalle": "Se cantan los tres dictados seguidos mirando la cuadrícula, sin la app: leer lo que han escrito."
+      }
+    ],
+    "enPantalla": "Una cuadrícula de dos filas y cuatro columnas: la fila de arriba es sol y la de abajo es mi. Suena una melodía de cuatro notas hechas solo con esas dos, a paso tranquilo. El niño toca una casilla por columna, y cada casilla suena al tocarla. Puede escuchar en bucle lo que ha puesto y compararlo con el dictado. Si no coincide, el personaje sugiere cantarlo o seguirlo con la mano, y se cambia lo que haga falta sin empezar de cero. Al cuadrar, viene el siguiente dictado. Son tres.",
+    "sinPantalla": "Dibuja en la pizarra dos filas y cuatro columnas, con «sol» arriba y «mi» abajo. Canta una melodía de cuatro notas con solo sol y mi, dos veces, mientras la clase la sigue con la mano. Salen cuatro niños, uno por columna, y pegan un gomet en la fila que creen. Después toda la clase canta lo que dice la pizarra y se comprueba con tu voz. Cambia la melodía y repite con otros cuatro.",
+    "masFacil": "Haz dictados de dos notas antes que de cuatro: «sol-mi» y «mi-sol». Canta tú con los nombres mientras suena la app, la primera vez; la segunda, solo con «la». Y deja fija la primera casilla para que sepan por dónde empezar.",
+    "masDificil": "Que escriban el dictado sin escucharlo en bucle: una sola escucha y a colocar. Después, que uno invente una melodía de cuatro notas en la cuadrícula y la cante para que otro la escriba en la pizarra. Y con seis notas en lugar de cuatro, en la pizarra.",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "Cuatro niños en fila son las cuatro notas. Suena el dictado y cada uno se pone de pie si su nota es sol o se queda agachado si es mi. El resto canta la fila de izquierda a derecha con la mano y comprueba. Luego se cambian los cuatro y se canta otra melodía."
+    },
+    "ideas": [
+      "Cantar el nombre de cada niño con sol y mi («Lu-cí-a» = sol-sol-mi) y escribirlo en la cuadrícula.",
+      "Buscar el «cu-cú» de sol y mi en canciones que ya se saben, y cantarlo con la mano.",
+      "Inventar en la cuadrícula una melodía de cuatro casillas para el saludo de la clase y usarla cada mañana."
+    ],
+    "loTiene": [
+      "Pone la mano arriba en sol y abajo en mi mientras escucha, sin mirar a nadie.",
+      "Canta el dictado con los nombres antes de tocar las casillas.",
+      "Escucha lo que ha puesto y cambia una casilla él solo si no cuadra."
+    ],
+    "errores": [
+      {
+        "error": "Toca las casillas de oído sin cantar, y se le escapa la tercera o la cuarta nota",
+        "remedio": "cantar el dictado con los nombres y colocar una casilla por nota mientras se canta."
+      },
+      {
+        "error": "Pone sol y mi al revés: arriba lo grave",
+        "remedio": "tocar las dos filas seguidas y seguirlas con la mano; la de arriba tiene que subir."
+      },
+      {
+        "error": "Coloca las cuatro y no vuelve a escuchar",
+        "remedio": "poner el bucle y cantar encima antes de dar por hecho el dictado."
+      }
+    ],
+    "indicadores": [
+      "Mano arriba y abajo",
+      "Canta con nombres",
+      "Comprueba"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

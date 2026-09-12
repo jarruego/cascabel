@@ -120,6 +120,61 @@
     ]
   },
   "enunciado": "actividad.tr16.enunciado",
+  "ficha": {
+    "aprende": "Encontrar cualquier nota en el pentagrama en clave de fa, del do de dos líneas adicionales por debajo al do central por encima, sin trasladar lo que sabe de la clave de sol.",
+    "vocabulario": [
+      "pentagrama",
+      "clave de fa",
+      "línea",
+      "espacio",
+      "línea adicional",
+      "do central",
+      "grave",
+      "nota"
+    ],
+    "agrupamiento": "Grupo clase con proyector; después individual en tablet",
+    "material": "Ninguno. Opcional: cinta de carrocero para el pentagrama del suelo",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Proyectar y mirar la clave.",
+        "detalle": "Los dos puntos de la clave de fa abrazan la cuarta línea, y esa línea es fa. Desde ahí se cuenta. Avisar: las notas no están donde en la clave de sol; aquí todo suena grave."
+      },
+      {
+        "min": 1,
+        "titulo": "Los dos extremos.",
+        "detalle": "Tocar el do de abajo, con sus dos líneas adicionales, y el do central, con una por arriba. Oír lo bajo que llega el piano: es la parte del pentagrama que la flauta no toca."
+      },
+      {
+        "min": 1,
+        "titulo": "Subir de nota en nota.",
+        "detalle": "Un niño toca desde el do de abajo hacia arriba, línea, espacio, línea, espacio, y la clase canta el nombre que sale con su personaje, aunque no llegue a esa altura con la voz."
+      },
+      {
+        "min": 1,
+        "titulo": "Buscar la que se dice.",
+        "detalle": "El maestro dice una nota, «fa», «la», «el do central», y un niño la toca. Suena y sale el nombre. Fijarse en que el do central es el mismo que el do de abajo de la clave de sol."
+      },
+      {
+        "min": 1,
+        "titulo": "Sin pantalla.",
+        "detalle": "Con el proyector apagado, señalar en la pizarra una línea o un espacio con la clave de fa dibujada y que digan qué nota es. Si dudan, contar desde el fa de la cuarta línea."
+      }
+    ],
+    "enPantalla": "Un pentagrama en clave de fa con las quince notas de do a do y sus líneas adicionales: dos por debajo para el do grave y una por encima para el do central. Al tocar un sitio suena esa nota en el piano, que llega tan abajo, y arriba sale su nombre con su personaje. No hay pregunta, ni respuesta correcta, ni final: es una ficha de consulta para mirar, tocar y oír dónde vive cada nota en la clave de los sonidos graves, y para comprobar una duda mientras se lee.",
+    "sinPantalla": "Pentagrama grande en el suelo con cinta de carrocero, con la clave de fa dibujada en cartulina: sus dos puntos a los lados de la cuarta línea. Los niños se ponen de pie en una línea o un espacio y dicen su nota; el maestro la toca en el piano o en las láminas graves del metalófono para que se oiga. Se camina de abajo arriba nombrando cada nota. En la pizarra pautada, lo mismo con una tiza, empezando siempre por el fa.",
+    "masFacil": "Solo las cinco líneas: sol, si, re, fa, la. Empezar siempre por el fa de la cuarta línea, que la clave señala, y contar desde ahí. Tocarlas en la pantalla y oírlas antes de nombrarlas. Comparar con la clave de sol una sola vez, para ver que las líneas cambian de nombre, y no volver a mezclarlas en la misma sesión.",
+    "masDificil": "Dictado al revés: el maestro toca una nota tapando el nombre con la mano y los niños dicen cuál es por dónde está. Después, la misma nota en las dos claves: el do central en clave de fa, con una línea adicional por arriba, y en clave de sol, con una por abajo. Que lo dibujen en la pizarra: es el mismo sonido escrito en dos sitios. Y escribir cuatro notas en clave de fa para que un compañero las toque.",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "Cada niño es una nota de la clave de fa: se le da un nombre y busca su sitio en el pentagrama del suelo. El maestro toca una nota en la pantalla y el niño que la tiene se agacha, porque son notas graves. Luego toca dos seguidas y se agachan los dos por orden. La clase comprueba con los ojos y con el oído."
+    },
+    "ideas": [
+      "Dibujar el pentagrama en clave de fa con los personajes de las notas en un mural, al lado del de clave de sol, con el do central en medio uniendo los dos.",
+      "Buscar una partitura de piano y localizar en la mano izquierda el fa de la cuarta línea y el do central.",
+      "Cantar las notas graves con la voz más grave que se tenga, y comparar con la altura que suena: ¿cuánto falta para llegar?"
+    ]
+  },
   "personaje": "fara",
   "herramienta": true,
   "creditos": [

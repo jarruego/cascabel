@@ -94,6 +94,79 @@
   "pistas": [
     "actividad.c242.pista1"
   ],
+  "ficha": {
+    "aprende": "Situar en la clave de sol las notas del do del tercer espacio al do de dos líneas adicionales por encima, contando líneas y espacios desde abajo y no de memoria.",
+    "vocabulario": [
+      "pentagrama",
+      "línea",
+      "espacio",
+      "línea adicional",
+      "clave de sol",
+      "agudo",
+      "tercer espacio"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet",
+    "material": "Ninguno. Para la versión sin pantalla, cinta de carrocero o una pauta grande en la pizarra.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Contar desde abajo.",
+        "detalle": "En la pizarra, una pauta. Las líneas se cuentan de abajo arriba: la tercera es si, la cuarta re, la quinta fa. Se dice en voz alta antes de tocar nada."
+      },
+      {
+        "min": 1,
+        "titulo": "Lo que sobresale.",
+        "detalle": "Encima de la quinta línea hay un hueco: sol. Luego una línea corta que se dibuja aposta: la. Otro hueco: si. Y otra línea corta: do. Dibújalas mientras las nombras."
+      },
+      {
+        "min": 2,
+        "titulo": "Jugar.",
+        "detalle": "Cada ronda dibuja seis sitios y pide una nota. Antes de tocar, que el dedo cuente las líneas desde la primera. Al tocar suena y sale su personaje."
+      },
+      {
+        "min": 1,
+        "titulo": "Cerrar.",
+        "detalle": "¿Cuál lleva dos líneas adicionales? El do de arriba. ¿Y cuál va en el tercer espacio? El otro do. Los dos se llaman igual y uno está una octava más agudo."
+      }
+    ],
+    "enPantalla": "Una pauta en clave de sol con seis notas dibujadas, nunca dos con el mismo nombre, entre el do del tercer espacio y el do que lleva dos líneas adicionales por encima. Se dice una nota y el niño toca su sitio. Al tocar suena y aparece su nombre con su personaje; si toca otra, suena esa, se ve cuál era y vuelve a intentarlo. Cada sitio se pregunta una vez y, cuando se han pedido todos, termina. No hay tiempo ni puntuación.",
+    "sinPantalla": "Pauta grande en el suelo con cinta de carrocero, con dos trozos cortos por encima para las líneas adicionales. Tú dices una nota y un niño se pone de pie en su sitio: la en la primera línea corta, do en la segunda, sol en el hueco justo encima de la quinta línea. El resto comprueba contando líneas desde abajo en voz alta. En la pizarra funciona igual con un imán por nota.",
+    "masFacil": "Empieza solo con las que están dentro del pentagrama: do en el tercer espacio, re en la cuarta línea, mi en el cuarto espacio y fa en la quinta línea. Añade las de fuera de una en una: primero sol, el hueco de encima, luego la, la primera línea adicional. Deja marcada en la pizarra una nota ancla, el fa de la quinta línea, y que todas se cuenten a partir de ella.",
+    "masDificil": "Que las nombren por parejas con la octava de abajo: este do es el del tercer espacio, y el otro do, el de la línea adicional de abajo. Después, dictado al revés: tú dices la nota y ellos la escriben en un papel pautado con sus líneas adicionales bien cortas. Y una melodía de cuatro notas en esta octava para tocar en un metalófono o cantar con «uuu»: leer para tocar es lo que da sentido a la pauta.",
+    "variante": {
+      "titulo": "Pauta humana",
+      "texto": "Ocho niños al frente, cada uno con una tarjeta: do, re, mi, fa, sol, la, si, do. Tú señalas un sitio en la pauta proyectada y se levanta quien lleva esa nota; luego se comprueba tocándolo en la app y oyendo su nombre. Después se cambian las tarjetas."
+    },
+    "ideas": [
+      "Buscar en una partitura de flauta las notas que sobresalen por arriba y rodearlas: ¿cuántas líneas adicionales llevan?",
+      "Escribir palabras con notas de esta octava (sol, la, mi, fa) en la pauta y tocarlas: «la-mi-fa» ya suena.",
+      "Dibujar una escalera de ocho peldaños en la pizarra y pegar cada nota en el suyo: la pauta es una escalera con algunos peldaños escondidos."
+    ],
+    "loTiene": [
+      "Cuenta las líneas desde abajo antes de tocar, sin adivinar.",
+      "Coloca el la en la primera línea adicional y el do en la segunda, sin confundirlas.",
+      "Sabe que el do del tercer espacio y el de arriba se llaman igual."
+    ],
+    "errores": [
+      {
+        "error": "Cuenta las líneas de arriba abajo y le sale todo corrido",
+        "remedio": "poner el dedo en la primera línea, la de abajo, y subir de una en una nombrando: mi, sol, si, re, fa."
+      },
+      {
+        "error": "Confunde sol y la, el hueco de encima y la primera línea corta",
+        "remedio": "preguntar si la nota tiene una rayita atravesada; si la tiene, es la; si no, es sol."
+      },
+      {
+        "error": "Toca sin mirar la nota pedida, al primer sitio que ve",
+        "remedio": "que la diga en voz alta y busque su sitio con el dedo en el aire antes de tocar."
+      }
+    ],
+    "indicadores": [
+      "Cuenta desde abajo",
+      "Líneas adicionales",
+      "Dos do"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

@@ -285,6 +285,85 @@
     "actividad.c140.pista1",
     "actividad.c140.pista2"
   ],
+  "ficha": {
+    "aprende": "Tocar «Debajo un botón» nota a nota con un solo pulsador, entrando a tiempo en el «de-ba» rápido del principio de cada frase y en el eco «ton, ton, ton» de dos cortas y una larga.",
+    "vocabulario": [
+      "a tiempo",
+      "rápido",
+      "larga",
+      "corta",
+      "eco",
+      "frase",
+      "pandilla",
+      "botón"
+    ],
+    "agrupamiento": "Por parejas en tablet, o grupo clase con proyector",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Cantarla.",
+        "detalle": "«Debajo un botón» entera, de memoria, dando una palmada por sílaba. Que noten que «de-ba» va rápido, como al hablar, y que el eco «ton, ton, ton» son dos cortas y una larga."
+      },
+      {
+        "min": 1,
+        "titulo": "Un solo pulsador.",
+        "detalle": "Explica que cada nota baja con su personaje de la pandilla, pero solo hay un botón: da igual quién venga, se toca cuando llega a la línea. Se pone la app y solo se mira la primera frase."
+      },
+      {
+        "min": 2,
+        "titulo": "Primer ejercicio.",
+        "detalle": "«Debajo un botón, ton, ton, que encontró Martín, tin, tin», tocando y cantando a la vez. Si «de-ba» se escapa, no pasa nada: se entra en «jo un bo-tón» y se sigue."
+      },
+      {
+        "min": 1,
+        "titulo": "Segundo ejercicio.",
+        "detalle": "«Había un ratón, ton, ton, ¡ay, qué chiquitín, tin, tin!». Que se fijen en que el eco baja: los personajes del «tin, tin» son más bajos que los del «ton, ton»."
+      },
+      {
+        "min": 1,
+        "titulo": "Tercer ejercicio y cierre.",
+        "detalle": "La primera frase otra vez, más larga. Después, cantarla sin la app tocando la mesa con un dedo en cada sílaba."
+      }
+    ],
+    "enPantalla": "Los personajes de la pandilla —Dora, Rex, Milo, Fara, Sol, Laia, Doby— bajan uno detrás de otro, cada uno en la nota que le toca de «Debajo un botón», y abajo hay un solo pulsador. Hay que tocarlo cuando cada personaje llega a la línea, cantando la letra a la vez. Va despacio a propósito, para que el «de-ba» rápido se pueda seguir. Al tocar a tiempo, la nota suena y se ilumina; si se pasa una, se sigue con la siguiente. No hay marcador mientras se juega; al acabar, un resumen de cómo ha ido. Son tres ejercicios.",
+    "sinPantalla": "Canta «Debajo un botón» despacio y que los niños den una palmada por sílaba, o toquen la mesa con un dedo. Marca el pulso con el pie. Para el «de-ba» rápido, dilo hablado varias veces antes de cantar: «de-ba-jo», con las dos primeras juntas. Para el eco, que lo hagan con los pies: «ton, ton» cortos y «ton» largo. En corro, una frase cada niño, y el eco lo hacen los demás.",
+    "masFacil": "Dar «de-ba» por un solo toque: se toca en «de» y se deja pasar «ba». Después, tocar solo los ecos, «ton, ton, ton» y «tin, tin, tin», y cantar el resto sin tocar. Y cantar la letra en voz alta mientras se toca: la boca sabe cuándo viene cada sílaba antes que el dedo.",
+    "masDificil": "Cantar el nombre del personaje que baja en lugar de la letra: «Do-ra, Rex, Mi-lo, Fa-ra, Sol, Sol, Sol». Por parejas: uno toca las palabras y el otro solo los ecos, y se cambian. Después, tocar la melodía en un xilófono siguiendo a los personajes, sin la app.",
+    "variante": {
+      "titulo": "Con percusión",
+      "texto": "Un niño toca el pulsador y la clase acompaña con pequeña percusión: claves en cada sílaba de las palabras y triángulo en los ecos, «ton, ton, ton». El del pulsador lleva la melodía y los demás tienen que entrar a tiempo con él, sobre todo en el «de-ba» rápido, que en las claves son dos golpes muy seguidos."
+    },
+    "ideas": [
+      "Cambiar la letra: otro animal que rime con «ton» y otro nombre que rime con «tin», y volver a tocarla con el texto nuevo.",
+      "Escribir en la pizarra solo el ritmo de la primera frase con rayas cortas y largas, y leerla con palmas antes de cantarla.",
+      "Hacer los ecos «ton, ton, ton» con tres sonidos del cuerpo distintos y decidir entre todos cuál queda mejor."
+    ],
+    "loTiene": [
+      "Toca «de-ba» como dos toques muy seguidos, no como dos sílabas normales.",
+      "Hace el eco con dos toques cortos y uno largo sin añadir un cuarto.",
+      "Canta la letra mientras toca sin que la voz se le vaya por delante del dedo."
+    ],
+    "errores": [
+      {
+        "error": "Toca «de-ba-jo» a tres toques iguales y llega tarde a «botón»",
+        "remedio": "decir «de-ba» hablado muy rápido y dar los dos toques con un solo movimiento de muñeca."
+      },
+      {
+        "error": "Da un toque más en el «ton» largo porque el personaje se queda en la línea",
+        "remedio": "cantar el «ton» largo en voz alta y dejar el dedo quieto hasta que baje el siguiente."
+      },
+      {
+        "error": "Se queda esperando a un personaje concreto y deja pasar los demás",
+        "remedio": "recordar que solo hay un botón: se toca a quien llegue, sea quien sea."
+      }
+    ],
+    "indicadores": [
+      "«De-ba» rápido",
+      "Eco de tres",
+      "Canta y toca"
+    ]
+  },
   "creditos": [
     {
       "obra": "«Debajo un botón», canción infantil",

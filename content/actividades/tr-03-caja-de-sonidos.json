@@ -52,6 +52,61 @@
     ]
   },
   "enunciado": "actividad.tr03.enunciado",
+  "ficha": {
+    "aprende": "Explorar libremente que lo que se dibuja suena: una raya larga es una nota larga, arriba es agudo y abajo es grave, y un hallazgo se puede repetir a propósito.",
+    "vocabulario": [
+      "dibujar",
+      "sonar",
+      "largo",
+      "corto",
+      "agudo",
+      "grave",
+      "flauta",
+      "raya"
+    ],
+    "agrupamiento": "Individual o parejas en tablet; con proyector, por turnos",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Enseñar la caja.",
+        "detalle": "Con el proyector: el maestro hace una raya y suena; una raya larga suena larga; una arriba suena aguda. Sin explicar más."
+      },
+      {
+        "min": 3,
+        "titulo": "Explorar libremente.",
+        "detalle": "Cada niño o pareja dibuja lo que quiera. El maestro no corrige nada, solo pregunta «¿qué has hecho?» y «¿puedes hacerlo otra vez?»."
+      },
+      {
+        "min": 2,
+        "titulo": "Un reto.",
+        "detalle": "Elegir uno de los retos de la pantalla o dar uno: «hazme una lluvia», «algo que suba», «algo muy largo»."
+      },
+      {
+        "min": 2,
+        "titulo": "Cambiar de instrumento.",
+        "detalle": "Con el botón de instrumento, el mismo dibujo con otro sonido. ¿Suena igual de largo? ¿Se nota la diferencia?"
+      },
+      {
+        "min": 2,
+        "titulo": "Enseñar a los demás.",
+        "detalle": "Dos o tres niños muestran su dibujo y lo tocan para la clase. Los demás dicen qué les parece que es."
+      }
+    ],
+    "enPantalla": "Una superficie vacía donde el dedo dibuja y suena. Con la flauta, una raya larga es una nota larga y una corta, una nota corta; arriba suena agudo y abajo grave, con ocho alturas de mi a do agudo. Hay un botón para cambiar de instrumento y una lista de retos para quien no sepa por dónde empezar. No hay respuesta correcta ni final: no se corrige nada porque no hay nada que corregir. Lo que se dibuja se puede volver a tocar.",
+    "sinPantalla": "Instrumentos de aula o botes con arroz, pinzas y papel sobre una mesa, y hojas grandes donde dibujar lo que suena: una raya larga para el triángulo, puntitos para las claves. La exploración libre no necesita pantalla; la pantalla solo la hace silenciosa y deja que cada niño tenga su instrumento.",
+    "masFacil": "Aquí no hay dificultad que bajar. Si un niño no arranca, siéntate a su lado y dibuja tú algo primero, una raya, un punto, y pregúntale qué quiere que hagas ahora. Si dibuja sin escuchar, tápale la pantalla un momento y toca lo que hizo: ¿lo reconoce?",
+    "masDificil": "Ponle una consigna que obligue a decidir: «hazme algo que dé miedo», «algo que se aleje», «una escalera». Una restricción convierte explorar en componer. Después, que dibuje un sonido que otro niño tenga que hacer con la voz sin haberlo oído.",
+    "variante": {
+      "titulo": "Adivinar el dibujo",
+      "texto": "Un niño toca su dibujo con la pantalla tapada y los demás dibujan en un papel lo que creen que ha dibujado: ¿largo o corto, arriba o abajo? Luego se destapa y se compara. No hay que acertar: se trata de ver que la raya y el sonido van juntos."
+    },
+    "ideas": [
+      "Hacer entre todos un paisaje sonoro en el proyector: uno pone el mar, otro los pájaros, otro el viento, y se toca de arriba abajo.",
+      "Dibujar en papel una canción que se sepan, con rayas largas y cortas, y luego pasarla a la caja para oír si se parece.",
+      "Buscar en la caja el sonido de cada animal: ¿el elefante va abajo o arriba? ¿El pájaro es largo o corto?"
+    ]
+  },
   "personaje": "laia",
   "creditos": [
     {

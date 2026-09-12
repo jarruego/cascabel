@@ -37,6 +37,85 @@
     ]
   },
   "enunciado": "actividad.c113.enunciado",
+  "ficha": {
+    "aprende": "Contestar a una frase musical de la app con otra inventada que dure lo mismo, y notar que un diálogo es turnarse: escuchar entera y luego responder.",
+    "vocabulario": [
+      "pregunta",
+      "respuesta",
+      "frase",
+      "turno",
+      "inventar",
+      "escuchar",
+      "diálogo",
+      "improvisar"
+    ],
+    "agrupamiento": "Grupo clase con proyector; después individual, en tablet",
+    "material": "Ninguno. Opcional: un xilófono con sol, la, do, mi y sol agudo",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Hablar por turnos.",
+        "detalle": "Tú haces una pregunta con la voz sin palabras («¿pa-ra-pa-pá?») y un niño contesta con otra tontería. Regla del diálogo: no se contesta hasta que el otro acaba."
+      },
+      {
+        "min": 1,
+        "titulo": "La app pregunta, la clase contesta con palmas.",
+        "detalle": "Con el proyector: suena la frase de la app y toda la clase contesta palmeando lo que le salga, de la misma longitud. Cuatro o cinco veces; cada respuesta distinta."
+      },
+      {
+        "min": 1,
+        "titulo": "Contestar en la pantalla, uno.",
+        "detalle": "Un niño responde tocando las notas del lienzo. Da igual cuáles: que dure lo que la pregunta y que acabe, no que se quede colgada."
+      },
+      {
+        "min": 2,
+        "titulo": "En tablet, cada uno.",
+        "detalle": "Tres o cuatro rondas por niño. Pídeles que repitan una respuesta que les haya gustado: repetir a propósito es empezar a componer."
+      },
+      {
+        "min": 1,
+        "titulo": "Enseñar una respuesta.",
+        "detalle": "Dos o tres niños tocan su respuesta favorita con el proyector, y la clase dice si le ha sonado a «sí», a «no» o a «no sé»."
+      }
+    ],
+    "enPantalla": "La app toca una frase corta con cinco notas y se calla: es la pregunta. Entonces el niño toca en la pantalla lo que quiera con esas mismas notas (sol, la, do, mi y sol agudo): es la respuesta. Cuando acaba, la app hace otra pregunta. No hay respuesta correcta, ni corrección, ni final: todo lo que suene vale, y se para cuando se quiere. Lo único que se pide es esperar a que la pregunta termine.",
+    "sinPantalla": "Tú preguntas y ellos contestan: con la voz en «la la la», con palmas, o con un xilófono al que se le dejan solo sol, la, do, mi y sol agudo. Una pregunta de cuatro pulsos, silencio, y el niño contesta otros cuatro. En corro, la respuesta de uno es la pregunta del siguiente. Es el diálogo de toda la vida y no necesita pantalla; la pantalla solo lo hace posible en una clase llena, con auriculares.",
+    "masFacil": "No hay dificultad que bajar, pero sí niños que no arrancan. Siéntate y contesta tú primero, mal y corto, para que vean que vale. Después, que la respuesta sea repetir la pregunta con una sola nota cambiada. Y con palmas antes que con notas: la respuesta rítmica sale sola; la melódica hay que atreverse.",
+    "masDificil": "Consignas: «contesta con una respuesta que suba», «una que acabe en la nota de la pregunta», «una que sea la pregunta al revés». Después, que empiecen ellos: un niño pregunta en la pantalla y otro responde en un xilófono. Y que la respuesta dure justo lo mismo, contando pulsos con los dedos.",
+    "variante": {
+      "titulo": "Por parejas, sin la app",
+      "texto": "Dos niños, dos xilófonos con las mismas cinco notas. Uno pregunta y el otro contesta, cuatro veces, y se cambian. Regla: mirarse a los ojos antes de contestar y no pisar la frase del otro. La clase escucha y al final dice cuál de las conversaciones le ha parecido una discusión y cuál una charla tranquila, y por qué."
+    },
+    "ideas": [
+      "Buscar preguntas y respuestas en una canción conocida: cantar la primera frase y parar; ¿pide otra o se acaba ahí?",
+      "Conversación a tres: pregunta, respuesta y un tercero que dice la última palabra con una sola nota.",
+      "Grabar con el móvil del maestro cuatro respuestas de la clase y escucharlas mañana: ¿cuál repetirían?"
+    ],
+    "loTiene": [
+      "Espera a que la pregunta termine antes de tocar.",
+      "Su respuesta dura más o menos lo que la pregunta y acaba en un sitio claro.",
+      "Repite una respuesta que le ha gustado, a propósito."
+    ],
+    "errores": [
+      {
+        "error": "Toca mientras suena la pregunta",
+        "remedio": "manos en los muslos hasta el silencio; y contar «uno, dos» antes de empezar, como en una conversación."
+      },
+      {
+        "error": "La respuesta no se acaba nunca",
+        "remedio": "poner tope de cuatro pulsos contando con los dedos, o pedir que termine en la nota más grave."
+      },
+      {
+        "error": "Toca siempre lo mismo, nota por nota, sin escuchar la pregunta",
+        "remedio": "consigna: la respuesta empieza con la nota en que acabó la pregunta."
+      }
+    ],
+    "indicadores": [
+      "Espera su turno",
+      "Frase que acaba",
+      "Repite a propósito"
+    ]
+  },
   "personaje": "laia",
   "creditos": [
     {

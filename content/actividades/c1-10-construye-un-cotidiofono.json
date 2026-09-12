@@ -60,6 +60,80 @@
     ]
   },
   "enunciado": "actividad.c110.enunciado",
+  "ficha": {
+    "aprende": "Clasificar objetos de casa por cómo suenan (se sacude, se golpea o se raspa), construir uno que suene distinto al del vecino y tocarlo al pulso con la clase.",
+    "vocabulario": [
+      "cotidiáfono",
+      "sacudir",
+      "golpear",
+      "raspar",
+      "timbre",
+      "pulso",
+      "maraca",
+      "tambor"
+    ],
+    "agrupamiento": "Toda la clase, en mesas de cuatro, con proyector",
+    "material": "Botellas con arroz, cajas de cartón, tapas metálicas, gomas, cinta y tijeras. La ficha imprimible",
+    "pasos": [
+      {
+        "min": 5,
+        "titulo": "Enseñar los tres montones.",
+        "detalle": "Botellas con arroz, cajas de cartón y tapas metálicas, en tres mesas. Que los toquen, los sacudan y los escuchen antes de construir nada. Pregunta en cada montón: ¿qué hace ruido aquí, el arroz o la botella?"
+      },
+      {
+        "min": 5,
+        "titulo": "Clasificar por cómo suenan.",
+        "detalle": "¿Se sacude, se golpea o se raspa? Tres carteles en la pizarra y cada objeto a su cartel. Es la clasificación de verdad de los instrumentos, y sale sola. Una caja raspada con una regla cambia de cartel: se puede."
+      },
+      {
+        "min": 15,
+        "titulo": "Construir el suyo.",
+        "detalle": "Cada niño hace uno: poco material y mucho probar. La regla es que suene distinto al del compañero de mesa: más arroz, otra tapa, la caja cerrada o abierta. Probar antes de pegar. La ficha tiene tres modelos si alguien no arranca."
+      },
+      {
+        "min": 10,
+        "titulo": "Tocar todos al pulso.",
+        "detalle": "Arranca el pulso de la pantalla. Primero todos a la vez, cuatro pulsos y silencio. Después por familias: solo los que se sacuden, solo los que se golpean, solo los que se raspan. Termina con los tres grupos entrando uno tras otro."
+      }
+    ],
+    "enPantalla": "Es la pantalla del maestro, para proyectar: recuerda los cuatro pasos con su tiempo, lista los materiales y, en el último paso, lleva un pulso que se ve y se oye para que toda la clase toque junta. La ficha imprimible con los modelos se abre desde ahí. Nadie toca la pantalla durante la sesión: lo que suena son los instrumentos recién hechos. No hay respuesta correcta ni final.",
+    "sinPantalla": "Es su forma natural: la pantalla solo lleva el pulso y el orden. Lleva tú el pulso con un pandero o con el pie, y escribe los tres carteles (sacudir, golpear, raspar) en la pizarra para clasificar. Los modelos de la ficha se dibujan en la pizarra en un minuto: botella con arroz, caja con goma, dos tapas. Y para tocar juntos, dirige con la mano: mano cerrada, silencio.",
+    "masFacil": "Recorta pasos antes que acelerarlos: con un solo montón, botellas y arroz, ya hay un instrumento por niño y se hace la sesión entera. Lleva el material medio preparado (botellas ya abiertas, tapas ya agujereadas) y quédate con tocar todos a la vez, sin familias. Media sesión bien hecha vale más que la entera a medias.",
+    "masDificil": "Que cada instrumento tenga dos sonidos: la botella se sacude y también se raspa con una regla. Que un grupo dirija a los demás con gestos: señalar a los que se sacuden, cerrar la mano para callar. Y ostinato: los que golpean hacen ta ta, los que sacuden ti-ti ti-ti, y se mantiene a la vez cuatro vueltas.",
+    "variante": {
+      "titulo": "Cuento sonoro",
+      "texto": "Elige un cuento corto y reparte: la lluvia son las botellas con arroz, los pasos son las cajas, el reloj son las tapas. Lo lees despacio y cada grupo entra cuando sale su palabra. Se ensaya dos veces y se graba con tu móvil para escucharlo mañana."
+    },
+    "ideas": [
+      "Exposición de instrumentos: cada niño explica el suyo en veinte segundos, qué lleva dentro y cómo se toca, y lo hace sonar.",
+      "Acompañar una canción conocida con los instrumentos hechos, cada familia en una parte.",
+      "Buscar en casa un objeto que suene y traerlo: ¿a cuál de los tres carteles va?"
+    ],
+    "loTiene": [
+      "Dice si su instrumento se sacude, se golpea o se raspa, y por qué.",
+      "Toca al pulso de la pantalla y para cuando toca parar.",
+      "Entra solo cuando llaman a su familia y calla en las otras."
+    ],
+    "errores": [
+      {
+        "error": "Tarda toda la sesión en decorar y no llega a tocar",
+        "remedio": "regla de que suene primero: se decora solo después de probarlo al pulso; lo bonito puede esperar a mañana."
+      },
+      {
+        "error": "Al tocar todos, cada uno va a su ritmo",
+        "remedio": "cuatro pulsos y silencio, muchas veces; y que miren tu mano, no su instrumento."
+      },
+      {
+        "error": "Todos hacen la misma maraca",
+        "remedio": "poner en cada mesa un material distinto, para que salgan tres familias por sí solas."
+      }
+    ],
+    "indicadores": [
+      "Clasifica el suyo",
+      "Al pulso",
+      "Entra y calla"
+    ]
+  },
   "personaje": "rex",
   "estado": "borrador",
   "etiquetas": [

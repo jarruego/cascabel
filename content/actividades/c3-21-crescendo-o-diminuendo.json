@@ -201,6 +201,79 @@
   "pistas": [
     "actividad.c321.pista1"
   ],
+  "ficha": {
+    "aprende": "Oír si una nota repetida va a más o a menos, nombrarlo como crescendo o diminuendo, y reconocer el regulador que lo escribe: el ángulo que se abre o se cierra.",
+    "vocabulario": [
+      "crescendo",
+      "diminuendo",
+      "regulador",
+      "intensidad",
+      "fuerte",
+      "suave",
+      "matiz"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o individual en tablet",
+    "material": "Ninguno (dos tarjetas con los reguladores dibujados si se hace sin pantalla)",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Los dos signos en la pizarra.",
+        "detalle": "Dibuja el ángulo que se abre y el que se cierra. Di los nombres despacio: cres-cen-do, di-mi-nuen-do. Que los repitan señalando cada signo."
+      },
+      {
+        "min": 1,
+        "titulo": "Con la voz.",
+        "detalle": "Una nota cantada con «aaa» que crece y después se apaga, siguiendo tu mano, que se abre y se cierra."
+      },
+      {
+        "min": 3,
+        "titulo": "Preguntas en la pantalla.",
+        "detalle": "La misma nota del piano repetida cada vez más fuerte o cada vez más suave. Que dibujen el ángulo en el aire con las manos antes de tocar la respuesta."
+      },
+      {
+        "min": 1,
+        "titulo": "Ahora lo hacen ellos.",
+        "detalle": "Palmas en crescendo desde casi nada hasta fuerte, y vuelta. Un niño dirige con los brazos, y se cambia el director dos veces."
+      }
+    ],
+    "enPantalla": "Suena la misma nota del piano repetida varias veces, cada vez un poco más fuerte o cada vez más suave. En la pantalla hay dos botones con el signo dibujado: el ángulo que se abre (crescendo) y el que se cierra (diminuendo). El niño toca uno. Si no es, el personaje recuerda que el signo dibuja lo que pasa, y la nota vuelve a sonar para intentarlo otra vez; si es, viene la siguiente. Botón de repetir siempre a mano. Cinco preguntas por vuelta, sin prisa ni puntuación.",
+    "sinPantalla": "Con un pandero o con la voz: repite una nota o un golpe seis veces creciendo o apagándote, y que señalen una de dos tarjetas en el suelo con el regulador dibujado. Con el cuerpo: los brazos se abren mientras crece y se cierran mientras baja. Lo mejor es que lo hagan ellos: una fila de niños palmea en crescendo mientras otro, de director, abre los brazos poco a poco.",
+    "masFacil": "Exagera el contraste: empieza casi sin sonido y acaba muy fuerte, o al revés, con más repeticiones. Nombra en voz alta el signo antes de cada escucha señalándolo en la pizarra. Si lo oyen pero se lían con las palabras, usa un rato «va a más» y «va a menos» y añade después el nombre italiano.",
+    "masDificil": "Que sean ellos quienes produzcan el crescendo o el diminuendo con la voz, con palmas o con un instrumento, y que un compañero lo escriba con el regulador en la pizarra. O poner los dos seguidos en una misma frase (crece y luego se apaga) y pedir que dibujen la forma entera: un rombo.",
+    "variante": {
+      "titulo": "Con una canción",
+      "texto": "Cantar una canción conocida de la clase entera en crescendo, estrofa a estrofa, y la última en diminuendo hasta el susurro. Un niño dirige con las manos y decide cuándo empieza cada cambio. Escuchar después dónde se notó más y dónde menos."
+    },
+    "ideas": [
+      "Buscar sonidos que crecen o se apagan solos: un tren que se acerca y se va, una moto, la lluvia que empieza. Dibujarlos con reguladores.",
+      "Escribir en la pizarra una frase rítmica de cuatro compases con un crescendo en los dos primeros y un diminuendo en los otros dos, y tocarla con claves.",
+      "Escuchar un fragmento orquestal con un crescendo largo y levantar la mano cuando se note que ha llegado a lo más fuerte."
+    ],
+    "loTiene": [
+      "Elige crescendo o diminuendo después de oír la serie entera, no en la segunda nota.",
+      "Dibuja en el aire el ángulo abierto o cerrado que corresponde a lo que ha oído.",
+      "Hace un crescendo con palmas o con la voz que crece poco a poco, no de golpe."
+    ],
+    "errores": [
+      {
+        "error": "Cambia los nombres: dice diminuendo cuando va a más",
+        "remedio": "unir la palabra al gesto: «cres-cen-do» abriendo los brazos; el nombre entra por el cuerpo."
+      },
+      {
+        "error": "Al hacerlo ellos, pasan de suave a fuerte en un salto",
+        "remedio": "contar seis palmas y que la tercera sea solo «medio fuerte»; el crescendo se reparte."
+      },
+      {
+        "error": "Contesta antes de que acabe la serie",
+        "remedio": "que espere a la última nota con la mano en la mesa y solo entonces la levante."
+      }
+    ],
+    "indicadores": [
+      "Oye la dirección",
+      "Gesto del signo",
+      "Lo hace gradual"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

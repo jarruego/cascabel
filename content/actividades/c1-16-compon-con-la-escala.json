@@ -56,6 +56,90 @@
     ]
   },
   "enunciado": "actividad.c116.enunciado",
+  "ficha": {
+    "aprende": "Componer una melodía de ocho tiempos con las ocho notas de do a do, escucharla en bucle y cambiarla a propósito hasta que le guste.",
+    "vocabulario": [
+      "escala",
+      "octava",
+      "do",
+      "componer",
+      "bucle",
+      "melodía",
+      "casilla",
+      "tiempo"
+    ],
+    "agrupamiento": "Individual o por parejas en tablet; luego con proyector",
+    "material": "Ninguno. Opcional: xilófono con la escala de do a do",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Subir la escalera.",
+        "detalle": "Con el proyector, enciende la diagonal: do en el tiempo uno, re en el dos... hasta el do agudo en el ocho. Escuchar: es la escala. Cantarla con nombres mientras el cursor sube."
+      },
+      {
+        "min": 1,
+        "titulo": "Bajarla y romperla.",
+        "detalle": "Apaga todo y pon la diagonal al revés. Después quita tres casillas cualquiera y escucha: ya no es la escala, es una melodía. Componer es eso: elegir."
+      },
+      {
+        "min": 3,
+        "titulo": "Componer en tablet.",
+        "detalle": "Cada niño o pareja, con la regla de empezar y acabar en do. Que escuchen la vuelta entera antes de cambiar nada, y que cambien solo una casilla cada vez."
+      },
+      {
+        "min": 2,
+        "titulo": "Cantar la suya.",
+        "detalle": "Con el bucle sonando, cantar la propia melodía con «la» o con nombres de nota. Si no se puede cantar, quizá salta demasiado: probar con notas vecinas."
+      },
+      {
+        "min": 2,
+        "titulo": "Escuchar las de otros.",
+        "detalle": "Cambio de tablet con el vecino: escuchar entera y decirle qué parte le gusta. Después, dos o tres en el proyector, cantadas por toda la clase."
+      },
+      {
+        "min": 1,
+        "titulo": "Tocarla en el xilófono.",
+        "detalle": "Una de las del proyector, leída de la cuadrícula: fila de arriba, do agudo; de abajo, do. Es la primera partitura que leen."
+      }
+    ],
+    "enPantalla": "Una cuadrícula de ocho filas y ocho columnas. Cada fila es una nota, del do agudo arriba al do grave abajo, y cada columna un tiempo. Al tocar una casilla se enciende y suena su nota; al tocarla otra vez se apaga. Con el botón de escuchar, un cursor recorre las ocho columnas en bucle y suena lo que hay encendido, así que cada cambio se oye en la vuelta siguiente. No hay respuesta correcta, ni corrección, ni final: se deja sonando el tiempo que se quiera.",
+    "sinPantalla": "Cuadrícula de ocho por ocho en la pizarra con los nombres de las notas a la izquierda, del do agudo arriba al do abajo. Cada niño pega un gomet y la clase canta el resultado mientras señalas las columnas al pulso; donde no hay gomet, silencio. Con un xilófono, un niño lee la cuadrícula y la toca. Se mueven gomets y se vuelve a cantar: queda expuesto lo que cambia cada decisión.",
+    "masFacil": "Reduce: solo cuatro columnas y solo tres filas (do, mi, sol), tapando el resto con un papel o pidiéndolo. Con la escala entera delante, un niño que no sabe por dónde empezar no empieza. Ponle tú el do en la primera casilla y que ponga él la siguiente. Y que escuche después de cada casilla, no al final.",
+    "masDificil": "Reglas de compositor: que no haya saltos de más de dos filas entre notas seguidas; que la segunda mitad sea el espejo de la primera; que haya un solo sonido por columna, como una voz. Después, dictado al revés: uno construye cuatro sonidos con el proyector tapado y la clase adivina qué casillas eran, de oído, y las canta.",
+    "variante": {
+      "titulo": "A cuatro manos",
+      "texto": "Por parejas, sin hablar: uno pone las columnas uno a cuatro y el otro las cinco a ocho. Escuchan y solo entonces cada uno puede cambiar una casilla del otro. Tres rondas. Al final cantan juntos la melodía y deciden un título. Componer a cuatro manos es escuchar lo que ha hecho el otro antes de tocar lo tuyo."
+    },
+    "ideas": [
+      "Ponerle letra: una sílaba por casilla encendida, y cantarla con el bucle.",
+      "Copiar la melodía en un pentagrama grande de la pizarra, una nota por columna, con ayuda: es la misma cuadrícula con líneas.",
+      "Componer una melodía «triste» y otra «alegre» y decir en qué cambian: ¿en las notas, en los huecos, en los saltos?"
+    ],
+    "loTiene": [
+      "Escucha la vuelta entera antes de añadir o quitar.",
+      "Empieza y acaba en do cuando se le pide.",
+      "Canta su melodía con «la» sin que se le vaya."
+    ],
+    "errores": [
+      {
+        "error": "Enciende dos o tres notas en la misma columna y sale un bloque",
+        "remedio": "regla de una voz: una casilla por columna; si quiere dos, que elija cuál se queda y explique por qué."
+      },
+      {
+        "error": "Salta del do grave al do agudo y no puede cantarlo",
+        "remedio": "pedir que las notas seguidas sean vecinas o casi; probar en el xilófono con dos láminas juntas."
+      },
+      {
+        "error": "Cambia casillas sin parar sin darle a escuchar",
+        "remedio": "regla de tres: cada tres cambios, una vuelta completa en silencio."
+      }
+    ],
+    "indicadores": [
+      "Escucha antes",
+      "De do a do",
+      "La canta"
+    ]
+  },
   "personaje": "laia",
   "creditos": [
     {

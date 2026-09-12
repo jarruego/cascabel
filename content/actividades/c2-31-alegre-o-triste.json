@@ -234,6 +234,79 @@
   "pistas": [
     "actividad.c231.pista1"
   ],
+  "ficha": {
+    "aprende": "Oír la misma melodía en modo mayor y en modo menor y decir si suena alegre y luminosa o un poco triste, sabiendo que solo cambia una nota.",
+    "vocabulario": [
+      "mayor",
+      "menor",
+      "alegre",
+      "triste",
+      "modo",
+      "carácter",
+      "la tercera"
+    ],
+    "agrupamiento": "Grupo clase con proyector, después individual en tablet",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "La misma canción de dos maneras.",
+        "detalle": "Con el proyector, oír una pareja: la misma melodía alegre y luego triste. Preguntar qué ha cambiado sin dar la respuesta. Casi todos dirán «suena triste»; eso es lo que se busca."
+      },
+      {
+        "min": 1,
+        "titulo": "Ponerle nombre.",
+        "detalle": "Alegre y luminosa es mayor; oscura y un poco triste es menor. El sol y la luna en la pizarra. Decir que solo cambia una nota, la tercera, y que eso basta para cambiar el carácter."
+      },
+      {
+        "min": 2,
+        "titulo": "Oír con el proyector.",
+        "detalle": "Suena una melodía al piano. La clase pone cara de sol o de luna antes de que un niño toque el botón. Repetir con el botón siempre que haya dudas: dos escuchas es lo normal."
+      },
+      {
+        "min": 2,
+        "titulo": "Jugar en tablet,",
+        "detalle": "de uno en uno. Oírla dos veces antes de tocar. Si no es, el personaje da una pista y se vuelve a elegir. Ocho melodías y termina."
+      }
+    ],
+    "enPantalla": "Suena una melodía corta al piano, y la misma vuelve a salir más adelante con una sola nota cambiada, la tercera: unas veces suena luminosa y alegre, otras oscura y un poco triste. Debajo hay dos botones grandes: el sol, para alegre, y la luna, para triste. El niño puede volver a oírla con el botón de repetir y toca uno. Si no es, el personaje le propone oírla dos veces fijándose en esa nota y puede volver a elegir; si acierta, «¡bien!» y viene la siguiente. Termina al acabar las ocho, sin puntuación.",
+    "sinPantalla": "En el xilófono o el piano del aula: toca do-re-mi-re-do y después lo mismo con mi bemol en vez de mi (PENDIENTE DE REVISIÓN PEDAGÓGICA). La clase enseña la tarjeta del sol o de la luna, o pone la cara. Con la voz también sale: canta la misma frase dos veces, y en la segunda baja un poco esa nota. Después que digan qué canciones conocidas suenan a sol y cuáles a luna.",
+    "masFacil": "Empieza siempre por la pareja: alegre y triste seguidas, con la misma melodía, para que se oiga el cambio y no haya que recordar. Pon caras y cuerpo: hombros arriba en mayor, hombros caídos en menor. Y deja las palabras «mayor» y «menor» para el final: primero sol y luna, que se entienden.",
+    "masDificil": "Que canten una melodía conocida y la pasen a menor bajando la tercera, con tu ayuda en el xilófono. Escuchar trozos de música de verdad y decidir si es mayor o menor sin la pareja al lado. O buscar música en menor que no sea triste (hay mucha, y bailable) y hablar de por qué se dice alegre y triste si no siempre es así.",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "Suena la melodía y la clase se mueve como suena: en mayor, andar ligero y con los brazos abiertos; en menor, andar despacio y con los hombros caídos. Al cambiar de melodía hay que cambiar de forma de andar sin que nadie lo diga. Después se para y cada uno dice con una palabra cómo se ha sentido: eso también es escuchar."
+    },
+    "ideas": [
+      "Escuchar dos piezas cortas, una en mayor y otra en menor, y dibujar cada una con los colores que pidan.",
+      "Cantar «Cumpleaños feliz» en mayor y en menor (lo tocas tú en el xilófono) y reírse de cómo cambia.",
+      "Buscar en películas o dibujos animados una música de escena alegre y una de escena triste, y decir cuál es mayor."
+    ],
+    "loTiene": [
+      "Dice alegre o triste tras oír la melodía entera, sin necesidad de oír la pareja.",
+      "Sabe que la melodía es la misma y que solo cambia una nota.",
+      "Pone el cuerpo o la cara según suene, en mayor o en menor."
+    ],
+    "errores": [
+      {
+        "error": "Dice triste cuando la melodía va lenta y alegre cuando va rápida",
+        "remedio": "oír la pareja seguida: van igual de rápido y suenan distintas; lo que cambia es una nota, no la velocidad."
+      },
+      {
+        "error": "Contesta lo mismo que en la anterior sin escuchar",
+        "remedio": "oírla dos veces con el botón de repetir y poner la cara antes de tocar."
+      },
+      {
+        "error": "Se queda con «mayor» y «menor» al revés",
+        "remedio": "olvidar las palabras un rato y quedarse con sol y luna; ponerles el nombre al final, cuando el oído ya lo tiene."
+      }
+    ],
+    "indicadores": [
+      "Alegre o triste",
+      "Sabe qué cambia",
+      "Con el cuerpo"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

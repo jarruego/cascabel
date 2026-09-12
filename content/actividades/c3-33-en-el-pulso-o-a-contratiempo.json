@@ -167,6 +167,84 @@
   "pistas": [
     "actividad.c333.pista1"
   ],
+  "ficha": {
+    "aprende": "Oír si las claves suenan a la vez que el bombo o justo entre dos golpes del bombo, y llamar contratiempo a lo segundo.",
+    "vocabulario": [
+      "contratiempo",
+      "pulso",
+      "bombo",
+      "claves",
+      "entre dos pulsos",
+      "reggae",
+      "flamenco"
+    ],
+    "agrupamiento": "Grupo clase con proyector; luego por parejas en tablet",
+    "material": "Ninguno (opcional: bombo o pandero y claves)",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "El pie en el aire.",
+        "detalle": "De pie. Todos marcan un pulso con el pie. El maestro da palmas encima del pie: «en el pulso». Luego da palmas cuando el pie está en el aire: «a contratiempo». Sentirlo antes que oírlo."
+      },
+      {
+        "min": 2,
+        "titulo": "Escuchar proyectado.",
+        "detalle": "Pon dos ejemplos sin responder. El bombo lleva el pulso: la clase lo sigue con el pie y se fija en si las claves caen con el pie o entre pie y pie."
+      },
+      {
+        "min": 2,
+        "titulo": "Contestar en grupo.",
+        "detalle": "Vuelta proyectada: se escucha con el pie puesto, se vota levantando la mano y después uno toca el botón. Si dudan, se vuelve a oír: la app no tiene prisa."
+      },
+      {
+        "min": 1,
+        "titulo": "Por parejas en tablet.",
+        "detalle": "Cada pareja hace una vuelta. El que no toca marca el bombo con el pie y dice «pie» o «aire» al oír las claves."
+      },
+      {
+        "min": 1,
+        "titulo": "Hacerlo con el cuerpo.",
+        "detalle": "Cierra con la clase entera: pie en el pulso y palmas a contratiempo, sin parar, medio minuto. Es lo que hacen las palmas en el flamenco y la guitarra en el reggae."
+      }
+    ],
+    "enPantalla": "Suena un bombo llevando el pulso y, encima, las claves: unas veces caen justo con el bombo y otras entre bombo y bombo. Aparecen dos botones grandes: «en el pulso» y «a contratiempo». El niño toca uno. Si no es, el personaje recuerda lo del pie —si las claves caen cuando el pie está en el aire, es contratiempo— y el ritmo vuelve a sonar para intentarlo otra vez; si es, «¡bien!» y viene el siguiente. Ocho ritmos, en vueltas de cinco, sin tiempo ni puntuación.",
+    "sinPantalla": "Con un bombo o pandero para el pulso y unas claves para lo demás, todo lo hace el maestro: unas veces las claves con el bombo, otras justo en medio. Dos tarjetas en el suelo, «con el bombo» y «entre bombos», y los niños se colocan junto a la que han oído. Luego dos niños con los instrumentos y el resto decide. El pie de la clase no se para nunca.",
+    "masFacil": "Hazlo tú con el cuerpo antes que con la app: pie fuerte en el pulso y palmas exageradas, primero encima y luego en el aire, muy despacio. Que lo hagan contigo sin responder nada, solo sintiendo el «encima» y el «en medio». Cuando el pie de cada niño vaya seguro, vuelve a los ejemplos, y solo a los más lentos.",
+    "masDificil": "Que lo produzcan ellos: uno lleva el bombo y otro las claves, en el pulso o a contratiempo, y la clase decide. Después, dos grupos a la vez: uno palmea el pulso y otro el contratiempo, y se cambian a la señal sin parar. Y para quien lo lleva muy seguro: contratiempo con las palmas mientras se anda el pulso.",
+    "variante": {
+      "titulo": "Reggae y flamenco",
+      "texto": "Pon un fragmento de reggae y que busquen dónde caen los golpes de la guitarra: en el aire, no en el pie. Después, unas palmas de flamenco sobre un pulso lento del maestro: la palma va justo entre pulso y pulso. Los dos estilos usan lo mismo que la actividad, y ahí se entiende para qué sirve."
+    },
+    "ideas": [
+      "Ostinato de clase: un grupo con el pie en el pulso y otro con claves a contratiempo, y encima cantar una canción que sepan.",
+      "Escribir en la pizarra cuatro pulsos y dibujar las claves encima o entre medias: leerlo y palmearlo.",
+      "Inventar un acompañamiento a contratiempo para una canción del aula con pandereta o chasquidos."
+    ],
+    "loTiene": [
+      "Mantiene el pie en el pulso del bombo y no se lo llevan las claves cuando van a contratiempo.",
+      "Da palmas a contratiempo sobre su propio pie durante varios pulsos seguidos.",
+      "Escucha hasta el final del ejemplo antes de decidir."
+    ],
+    "errores": [
+      {
+        "error": "El pie se le va a las claves y acaba marcando el contratiempo como pulso",
+        "remedio": "que marque el bombo con el pie antes de que entren las claves y no lo cambie: el pulso lo lleva el bombo."
+      },
+      {
+        "error": "Dice «contratiempo» a todo lo que suena más agudo o distinto",
+        "remedio": "preguntar solo una cosa: ¿las claves caen con el pie o en el aire? Repetir el ejemplo con el pie muy exagerado."
+      },
+      {
+        "error": "Las palmas a contratiempo se le van juntando al pulso al cabo de pocos golpes",
+        "remedio": "hacerlo muy despacio y decir «pie, pal, pie, pal» en voz alta; subir la velocidad solo cuando se sostenga."
+      }
+    ],
+    "indicadores": [
+      "Pie en el bombo",
+      "Palmas en el aire",
+      "Escucha entera"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

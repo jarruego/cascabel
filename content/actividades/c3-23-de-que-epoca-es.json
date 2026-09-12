@@ -104,6 +104,85 @@
     "actividad.c323.pista1",
     "actividad.c323.pista2"
   ],
+  "ficha": {
+    "aprende": "Reconocer en una escena descrita (un instrumento, un nombre, una forma de sonar) la época de la historia de la música en que ocurre, entre la Edad Media y el siglo XX.",
+    "vocabulario": [
+      "época",
+      "edad media",
+      "barroco",
+      "clasicismo",
+      "romanticismo",
+      "siglo xx",
+      "compositor",
+      "pista"
+    ],
+    "agrupamiento": "Por parejas en tablet, leyendo en voz alta",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Repasar las cinco épocas.",
+        "detalle": "En la pizarra, una palabra por época: Edad Media (monjes, castillos), Barroco (clave, Bach), Clasicismo (Mozart, orquesta ordenada), Romanticismo (piano, sentimientos grandes), siglo XX (grabaciones, máquinas)."
+      },
+      {
+        "min": 1,
+        "titulo": "Leer una escena entre todos.",
+        "detalle": "La primera, proyectada. Buscar en voz alta la pista: qué instrumento sale, qué nombre, cómo suena la música que describe."
+      },
+      {
+        "min": 4,
+        "titulo": "Las escenas por parejas.",
+        "detalle": "Uno lee en voz alta y el otro busca la pista y propone la época; deciden juntos y tocan. Se cambian el papel en cada escena."
+      },
+      {
+        "min": 2,
+        "titulo": "Poner en común las difíciles.",
+        "detalle": "Preguntar qué escenas han hecho dudar y qué pista las resolvía. Apuntar las pistas buenas en la pizarra, debajo de su época."
+      },
+      {
+        "min": 1,
+        "titulo": "Inventar una escena.",
+        "detalle": "Cada pareja escribe en dos líneas una escena de una época, con una pista de verdad, para que otra pareja la adivine al día siguiente."
+      }
+    ],
+    "enPantalla": "Aparece una escena corta escrita (un músico, un lugar, un instrumento, una forma de sonar) y cinco botones: Edad Media, Barroco, Clasicismo, Romanticismo y siglo XX. El niño la lee y toca la época. Si no es, el personaje sugiere buscar una pista concreta en el texto (un instrumento, un nombre) y se puede volver a elegir; si es, «¡bien!» y otra escena. Hay diez escenas, dos por época, repartidas en vueltas de cinco; sin tiempo ni puntuación.",
+    "sinPantalla": "Lee tú las escenas en voz alta, o escribe otras parecidas, y pon cinco tarjetas en el suelo con las épocas. Los niños se colocan junto a la que creen y uno de cada grupo dice qué pista le ha llevado ahí. Se puede hacer como teatro: un niño representa la escena con mímica (tocar un clave, dirigir una orquesta, escuchar la radio) y el resto adivina la época.",
+    "masFacil": "Reduce a tres épocas muy distintas: Edad Media, Barroco y siglo XX. Subraya en cada escena la palabra clave antes de que la lean. Si el problema es la lectura, lee tú la escena dos veces y pide solo la pista, no la época; el nombre de la época se dice después entre todos.",
+    "masDificil": "Quita el texto y da solo la pista: «un clave», «una radio», «un monje», y que digan la época. O al revés: da la época y que inventen la escena con al menos dos pistas ciertas. Producir una escena revela quién ha entendido de verdad qué había y qué no en cada tiempo.",
+    "variante": {
+      "titulo": "Teatro de épocas",
+      "texto": "Por grupos, cada uno prepara una escena de un minuto de una época sin decir cuál: gestos, un instrumento imaginario, una forma de saludar. El resto de la clase adivina y justifica con una pista. Sirve para ver quién mezcla cosas de dos épocas (un móvil en el Barroco) y hablarlo."
+    },
+    "ideas": [
+      "Hacer un mural con una columna por época y pegar dibujos de los instrumentos y compositores que van saliendo.",
+      "Escuchar una obra breve de cada época y escribir entre todos la escena que le pega: dónde suena, quién la oye, cómo van vestidos.",
+      "Buscar en el pueblo o en la ciudad un edificio de alguna de las épocas y pensar qué música sonaba dentro cuando se construyó."
+    ],
+    "loTiene": [
+      "Señala la pista de la escena (un instrumento, un nombre) antes de decir la época.",
+      "Coloca las cinco épocas en orden cuando se le pregunta cuál va antes.",
+      "Inventa una escena de una época con una pista que es de verdad de ese tiempo."
+    ],
+    "errores": [
+      {
+        "error": "Elige la época por una palabra suelta sin leer la escena entera",
+        "remedio": "leerla dos veces en voz alta y buscar dos pistas, no una."
+      },
+      {
+        "error": "Confunde Barroco y Clasicismo, que van seguidos",
+        "remedio": "fijar un ancla en cada uno: el clave y Bach en el Barroco; Mozart y la orquesta en el Clasicismo."
+      },
+      {
+        "error": "Manda al siglo XX todo lo que no sabe",
+        "remedio": "pedir que diga qué pista moderna ha visto (una radio, una grabación); si no la hay, seguir buscando."
+      }
+    ],
+    "indicadores": [
+      "Busca la pista",
+      "Orden de épocas",
+      "Inventa escena"
+    ]
+  },
   "creditos": [
     {
       "obra": "Iconos",

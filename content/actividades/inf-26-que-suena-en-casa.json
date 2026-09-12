@@ -82,6 +82,80 @@
   "pistas": [
     "actividad.inf26.pista1"
   ],
+  "ficha": {
+    "aprende": "Reconocer cuatro sonidos de casa grabados de verdad —la puerta, el timbre, el teléfono y el reloj— y ponerles nombre.",
+    "vocabulario": [
+      "puerta",
+      "timbre",
+      "teléfono",
+      "reloj",
+      "tic-tac",
+      "golpes",
+      "escuchar",
+      "casa"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o de uno en uno en tablet",
+    "material": "Ninguno. Opcional: un reloj de cocina y la puerta del aula, para hacerlo de verdad.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "¿Qué suena en tu casa?",
+        "detalle": "Preguntar qué sonidos hay en casa. Nombrar los cuatro, la puerta, el timbre, el teléfono y el reloj, e imitarlos con la voz: toc-toc, ring, tic-tac."
+      },
+      {
+        "min": 1,
+        "titulo": "Los cuatro dibujos.",
+        "detalle": "En la pantalla, señalar cada uno y preguntar qué hace. Que digan cuál creen que no para nunca."
+      },
+      {
+        "min": 2,
+        "titulo": "Suena algo en casa.",
+        "detalle": "Suena uno; se escucha con los ojos cerrados y un niño toca el dibujo. Si no era, se vuelve a oír y otro lo intenta."
+      },
+      {
+        "min": 1,
+        "titulo": "Cómo es cada sonido.",
+        "detalle": "Al acabar: la puerta son golpes, pocos y secos; el reloj hace tic-tac sin parar; el timbre y el teléfono suenan largo y llaman a alguien."
+      }
+    ],
+    "enPantalla": "Cuatro dibujos grandes: una puerta, un timbre, un teléfono y un reloj. Suena la grabación de uno de ellos y el niño toca el dibujo. Si toca otro, el personaje le recuerda que el reloj hace tic-tac sin parar y que la puerta son golpes, pocos y secos, y el sonido se repite para corregir al momento. Al acertar, «¡bien!» y viene otro. El botón de volver a escuchar está siempre en el mismo sitio. Termina a los cinco sonidos, sin puntuación.",
+    "sinPantalla": "Con lo que hay en el aula: llama a la puerta de verdad, pon un reloj de cocina en la mesa, haz sonar el móvil del maestro y el timbre de una bici o una campanilla. Los niños, de espaldas o con los ojos cerrados, señalan una de cuatro tarjetas o dicen el nombre. También sirve hacerlos con la voz: toc-toc, ring-ring, tic-tac.",
+    "masFacil": "Deja solo dos: el reloj, que no para, y la puerta, que son golpes pocos y secos. Nómbralos antes de que suene. Si el timbre y el teléfono se confunden, es normal: los dos llaman. Ponlos seguidos con el botón de repetir y di en voz alta cuál es cada uno.",
+    "masDificil": "Sin mirar la pantalla: ojos cerrados, se oye el sonido y se dice el nombre antes de abrirlos. Después, que un niño elija uno de los cuatro y lo imite con la voz o con objetos del aula, y los demás adivinen cuál es. Imitar un reloj que no para es más difícil que reconocerlo.",
+    "variante": {
+      "titulo": "¿Qué hacemos cuando suena?",
+      "texto": "Cada sonido tiene un gesto: si es la puerta, se abre con la mano; si es el timbre, se va corriendo a abrir; si es el teléfono, se descuelga y se dice «¿diga?»; si es el reloj, se mira la muñeca. Suena la pantalla y toda la clase hace el gesto sin decir el nombre."
+    },
+    "ideas": [
+      "Un paseo de escucha por el colegio en silencio: apuntar entre todos qué sonidos hay y dibujarlos al volver.",
+      "Construir un reloj con dos claves: tic con una, tac con la otra, y mantenerlo sin parar mientras el maestro cuenta hasta veinte.",
+      "Un cuento sonoro: el maestro lo lee y, cuando aparece la puerta, el timbre, el teléfono o el reloj, la clase hace el sonido."
+    ],
+    "loTiene": [
+      "Reconoce los cuatro sonidos, incluidos el timbre y el teléfono, que se parecen.",
+      "Explica cómo es cada uno: el reloj no para, la puerta son pocos golpes.",
+      "Escucha el sonido entero antes de tocar."
+    ],
+    "errores": [
+      {
+        "error": "Confunde el timbre con el teléfono",
+        "remedio": "oírlos seguidos con el botón de repetir: el timbre suena de una vez; el teléfono llama y para, llama y para."
+      },
+      {
+        "error": "Toca la puerta en cuanto oye un golpe, sin esperar",
+        "remedio": "que cuente los golpes con los dedos antes de tocar: si no se acaban, no es la puerta."
+      },
+      {
+        "error": "Se queda mirando sin tocar nada",
+        "remedio": "preguntarle qué ha oído con la voz («¿hacía tic-tac?») y dejar que lo repita las veces que quiera."
+      }
+    ],
+    "indicadores": [
+      "Los cuatro",
+      "Lo describe",
+      "Escucha entero"
+    ]
+  },
   "creditos": [
     {
       "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",

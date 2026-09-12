@@ -151,6 +151,85 @@
   "pistas": [
     "actividad.c332.pista1"
   ],
+  "ficha": {
+    "aprende": "Oír si un pulso va partido en dos corcheas iguales o en tres, el tresillo, contando contra el pulso de fondo.",
+    "vocabulario": [
+      "tresillo",
+      "corcheas",
+      "pulso",
+      "ti-ti",
+      "tri-o-la",
+      "partido",
+      "binario",
+      "ternario"
+    ],
+    "agrupamiento": "Grupo clase con proyector; luego por parejas en tablet",
+    "material": "Ninguno (opcional: claves y pandero)",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Partir el pulso con la voz.",
+        "detalle": "El maestro marca el pulso con el pie y la clase dice «ta» en cada uno. Después «ti-ti» en cada pulso (dos por golpe) y luego «tri-o-la» (tres por golpe). Cambiar sin parar el pie."
+      },
+      {
+        "min": 2,
+        "titulo": "Escuchar proyectado.",
+        "detalle": "Pon dos ejemplos. Suena un compás de entrada de pulso solo y después el ritmo: hay que encontrar el pulso partido y decir si cabe en «ti-ti» o hace falta «tri-o-la»."
+      },
+      {
+        "min": 2,
+        "titulo": "Contestar en grupo.",
+        "detalle": "Vuelta proyectada: se escucha, se dice en voz alta el pulso partido con sílabas, y se vota antes de tocar el botón. Si al decir «ti-ti» sobra un golpe, es tresillo."
+      },
+      {
+        "min": 1,
+        "titulo": "Por parejas en tablet.",
+        "detalle": "Cada pareja hace una vuelta. Quien no toca lleva el pulso con el pie; quien toca dice la sílaba antes de elegir."
+      },
+      {
+        "min": 1,
+        "titulo": "Palmearlos.",
+        "detalle": "Cierra con un ritmo dicho por el maestro: la clase lo palmea con ti-ti o con tri-o-la según lo que oiga. Los tres golpes en un solo pulso son lo que hay que sentir."
+      }
+    ],
+    "enPantalla": "Suena un pulso de negra de fondo y un compás de entrada para cogerlo; luego, un ritmo corto donde un pulso va partido: en dos golpes iguales o en tres. Aparecen dos botones grandes: «dos corcheas» y «tresillo». El niño toca uno. Si no es, el personaje recuerda lo de «ti-ti» —si sobra un golpe, es tresillo— y el ritmo vuelve a sonar para intentarlo otra vez; si es, «¡bien!» y viene el siguiente. Ocho ritmos, en vueltas de cinco, sin tiempo ni puntuación.",
+    "sinPantalla": "Marca el pulso con el pie y palmea tú ritmos con un pulso partido en dos o en tres. Dos tarjetas en el suelo: «ti-ti» y «tri-o-la». Los niños se colocan junto a la que han oído y lo dicen con la sílaba. Después que lo hagan ellos: uno palmea, los demás eligen tarjeta. Sin pulso de fondo no se puede contar: el pie no se para nunca.",
+    "masFacil": "Quédate en el tempo más lento y exagera tú el contraste con la voz: «ti-ti» muy cuadrado y «tri-o-la» claramente más apretado. Antes de cada ejemplo, que la clase diga las dos sílabas sobre el pie del maestro. Y que primero solo decidan si el pulso partido va «a dos» o «a tres» con los dedos, sin nombres de figuras.",
+    "masDificil": "Que inventen ellos: uno palmea un ritmo de cuatro pulsos con un tresillo escondido y los demás dicen en qué pulso está. Después, escribirlo: cuatro negras en la pizarra y cambiar una por dos corcheas o por un tresillo, y palmear lo escrito. Y mezclar en un mismo ritmo un pulso con ti-ti y otro con tri-o-la, seguidos.",
+    "variante": {
+      "titulo": "Con instrumentos",
+      "texto": "Las claves llevan el pulso, sin parar nunca. El pandero toca lo que va dentro: dos golpes o tres por pulso. Se cambian los papeles cada vuelta. Oír el tresillo contra las claves es más fácil que contra el pie propio, porque el pulso lo pone otro."
+    },
+    "ideas": [
+      "Leer en la pizarra tarjetas de ritmo con negras, corcheas y tresillos, mezcladas, y palmearlas de corrido.",
+      "Andar el pulso por la clase y, a la señal, meter tres pasitos en un solo paso: el tresillo con los pies.",
+      "Buscar tresillos en canciones que sepan: hay palabras de tres sílabas que caben en un pulso, como «mú-si-ca»."
+    ],
+    "loTiene": [
+      "Dice «tri-o-la» en el pulso partido en tres y «ti-ti» en el partido en dos, sin soltar el pie.",
+      "Palmea tres golpes iguales dentro de un solo pulso, sin acelerarse en el siguiente.",
+      "Espera al compás de entrada y coge el pulso antes de decidir."
+    ],
+    "errores": [
+      {
+        "error": "Palmea el tresillo como corchea-corchea-negra, con el tercer golpe fuera del pulso",
+        "remedio": "decir «tri-o-la» sobre un solo golpe del pie, primero muy despacio, y solo después palmearlo."
+      },
+      {
+        "error": "Contesta sin haber cogido el pulso de entrada",
+        "remedio": "que marque el pulso con el pie durante el compás de entrada y no toque hasta el final del ritmo."
+      },
+      {
+        "error": "Confunde tres corcheas seguidas con un tresillo",
+        "remedio": "contar los golpes del pie: tres corcheas ocupan pulso y medio; el tresillo, uno solo."
+      }
+    ],
+    "indicadores": [
+      "Tri-o-la",
+      "Tres en un pulso",
+      "Coge el pulso"
+    ]
+  },
   "creditos": [
     {
       "obra": "Iconos",

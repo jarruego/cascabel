@@ -61,6 +61,80 @@
   "pistas": [
     "actividad.inf28.pista1"
   ],
+  "ficha": {
+    "aprende": "Recordar dónde estaba el sonido de un animal para juntarlo con su dibujo: perro, gato, vaca y gallo.",
+    "vocabulario": [
+      "carta",
+      "pareja",
+      "perro",
+      "gato",
+      "vaca",
+      "gallo",
+      "acordarse",
+      "destapar"
+    ],
+    "agrupamiento": "Grupos de 3 o 4 en tablet, por turnos; o con proyector",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Presentar las cartas.",
+        "detalle": "Ocho cartas boca abajo en dos filas: cuatro con altavoz, que suenan, y cuatro con lupa, con dibujo. Explicar: «cada animal está escondido en dos cartas, su sonido y su dibujo»."
+      },
+      {
+        "min": 1,
+        "titulo": "Primera destapada entre todos.",
+        "detalle": "El maestro destapa una de sonido: suena el gallo. ¿Qué animal es? Ahora una de dibujo. ¿Encaja? Si no, se vuelven a tapar y hay que acordarse de dónde estaba cada una."
+      },
+      {
+        "min": 3,
+        "titulo": "Por turnos.",
+        "detalle": "Cada niño destapa una de sonido y una de dibujo. Antes de tocar la segunda, que diga en voz alta qué animal ha sonado y dónde cree que está su dibujo."
+      },
+      {
+        "min": 1,
+        "titulo": "Repasar.",
+        "detalle": "Con las cuatro parejas a la vista, tocar cada sonido otra vez y decir el nombre. ¿Cuál costó más acordarse de dónde estaba?"
+      }
+    ],
+    "enPantalla": "Ocho cartas boca abajo en dos filas de cuatro: las lilas con altavoz esconden el sonido grabado de un animal y las amarillas con lupa, su dibujo. El niño destapa una de cada: suena un ladrido, un maullido, un mugido o un canto de gallo, y aparece un dibujo. Si son el mismo animal, la pareja se queda a la vista; si no, se vuelven a tapar y hay que acordarse de dónde estaban. No hay límite de intentos ni tiempo. Termina cuando las cuatro parejas, perro, gato, vaca y gallo, están destapadas.",
+    "sinPantalla": "Cuatro tarjetas de dibujo boca abajo sobre la mesa y cuatro tarjetas de sonido, con un altavoz dibujado, cuyo animal solo sabe el maestro por un papel aparte. Cuando un niño destapa una de sonido, el maestro (o un niño detrás de un biombo) hace ese animal con la voz. En grupos de tres o cuatro, por turnos, hasta juntar las cuatro parejas.",
+    "masFacil": "Deja las cuatro cartas de dibujo a la vista y tapa solo las de sonido: así solo hay que recordar dónde ha sonado cada animal, no dos cosas. Si lo que cuesta es el oído y no la memoria, para en cada sonido y pregunta cuál es antes de seguir. Con dos parejas, perro y vaca, se entiende enseguida el juego.",
+    "masDificil": "Que diga el nombre del animal antes de destapar la carta de dibujo, y que señale dónde cree que está sin tocarla. También puede jugarse en silencio: quien sabe la pareja no lo dice, solo la destapa. Con más cartas de sonido que de dibujo, o con los cuatro sonidos oídos una sola vez al principio, hay que recordar más.",
+    "variante": {
+      "titulo": "Memory humano",
+      "texto": "Ocho niños en dos filas, de espaldas a la clase. Cuatro tienen un animal en un papel que solo ven ellos y hacen su sonido cuando les tocan el hombro; los otros cuatro tienen el dibujo y lo enseñan. El resto de la clase juega a encontrar las parejas. Luego se cambian los papeles."
+    },
+    "ideas": [
+      "Hacer el memory de la clase con fotos de sus propias mascotas y sus sonidos grabados con el móvil del maestro.",
+      "Jugar con los ojos cerrados: el maestro toca dos cartas de sonido y hay que decir si eran el mismo animal o no.",
+      "Dibujar las cuatro parejas en un papel doblado por la mitad: a un lado el animal, al otro cómo suena (una línea larga, unos puntitos)."
+    ],
+    "loTiene": [
+      "Vuelve a la carta donde ya sonó un animal en vez de destapar al azar.",
+      "Dice el nombre del animal al oírlo, antes de buscar el dibujo.",
+      "Reconoce los cuatro sonidos: perro, gato, vaca y gallo."
+    ],
+    "errores": [
+      {
+        "error": "Destapa siempre cartas al azar, sin volver a las que ya sonaron",
+        "remedio": "antes de cada turno, preguntar «¿dónde sonó el gato?». Que señale primero y luego destape."
+      },
+      {
+        "error": "Toca la segunda carta antes de que acabe el sonido",
+        "remedio": "que espere a que suene entero y diga el animal en voz alta; luego busca el dibujo."
+      },
+      {
+        "error": "Confunde el gallo con el gato por el nombre",
+        "remedio": "hacer los dos con la voz: el gallo canta subiendo, el gato maúlla. Son animales distintos aunque empiecen igual."
+      }
+    ],
+    "indicadores": [
+      "Se acuerda",
+      "Nombra al oír",
+      "Los cuatro"
+    ]
+  },
   "creditos": [
     {
       "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",

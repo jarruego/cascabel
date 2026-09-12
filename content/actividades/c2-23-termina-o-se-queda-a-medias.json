@@ -190,6 +190,79 @@
   "pistas": [
     "actividad.c223.pista1"
   ],
+  "ficha": {
+    "aprende": "Oír si una frase ha terminado (acaba en do, la nota de casa) o se ha quedado a medias, como una pregunta, y responder con la bandera o la pausa.",
+    "vocabulario": [
+      "pregunta",
+      "respuesta",
+      "termina",
+      "a medias",
+      "nota de casa",
+      "do",
+      "frase"
+    ],
+    "agrupamiento": "Grupo clase con proyector, después individual en tablet",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Una frase hablada a medias.",
+        "detalle": "Di «hoy en el patio vamos a…» y cállate. Todos notan que falta algo. Luego di la frase entera. En música pasa igual: hay frases que se paran a medias y frases que acaban."
+      },
+      {
+        "min": 1,
+        "titulo": "Cantar la nota de casa.",
+        "detalle": "Cantar do-re-mi-fa-sol y pararse en sol: ¿se puede dejar ahí? Bajar sol-fa-mi-re-do: ahora sí. El do es la nota de casa; si la frase llega, ha terminado."
+      },
+      {
+        "min": 2,
+        "titulo": "Oír con el proyector.",
+        "detalle": "Suena una frase al piano. La clase tararea la última nota y decide: bandera o pausa. Un niño toca el botón. Repetir con el botón cuando haya dudas."
+      },
+      {
+        "min": 2,
+        "titulo": "Jugar en tablet,",
+        "detalle": "de uno en uno. Tararear la última nota antes de tocar. Si no es, el personaje da una pista y se vuelve a elegir. Ocho frases y termina."
+      }
+    ],
+    "enPantalla": "Suena una frase corta al piano, de cinco o seis notas. Unas acaban en do, la nota de casa, y suenan a punto final; otras se paran en sol y suenan a pregunta. Debajo hay dos botones grandes: la bandera, si ha terminado, y la pausa, si se ha quedado a medias. El niño puede volver a oírla con el botón de repetir y toca uno. Si no es, el personaje le propone tararear la última nota y preguntarse si podría dejarlo ahí, y puede volver a elegir; si acierta, «¡bien!» y viene la siguiente. Ocho y termina, sin puntuación.",
+    "sinPantalla": "Canta tú o toca en el xilófono frases que acaben en do y frases que se paren en sol. Los niños responden con el cuerpo: sentados en el suelo si ha terminado, de pie y con cara de pregunta si falta algo. Después por parejas de voz: uno canta una frase a medias y el otro tiene que cantar la que la acaba, bajando hasta do.",
+    "masFacil": "Usa siempre las dos mismas frases: do-re-mi-fa-sol (a medias) y sol-fa-mi-re-do (termina), cantadas despacio y con la mano subiendo o bajando. Cuando esas dos estén claras, mete las demás. Y tararear siempre la última nota en voz alta antes de responder: la voz nota si se puede parar ahí.",
+    "masDificil": "Que inventen la respuesta: tú cantas una frase que se queda a medias y ellos, en el xilófono con las placas do-re-mi-fa-sol, buscan una que la termine llegando a do (PENDIENTE DE REVISIÓN PEDAGÓGICA). O que busquen en una canción conocida dónde está la pregunta y dónde la respuesta, cantando solo hasta la mitad y parando.",
+    "variante": {
+      "titulo": "Pregunta y respuesta",
+      "texto": "Por parejas con un xilófono o con la voz: uno hace la pregunta (una frase corta que se pare en sol) y el otro contesta (una frase que acabe en do). Luego se cambian. No hay que inventar mucho: con cuatro notas basta. La clase escucha y dice si la respuesta ha terminado de verdad o se ha quedado también a medias."
+    },
+    "ideas": [
+      "Cantar una canción del aula y parar justo antes del final: sentir que falta algo y acabarla.",
+      "Escuchar el final de una pieza corta y levantar la mano en el momento en que suena a acabado.",
+      "Escribir en la pizarra dos frases habladas, una pregunta y una respuesta, y ponerles música con do, re, mi y sol."
+    ],
+    "loTiene": [
+      "Dice si la frase ha terminado o se ha quedado a medias tras oírla entera.",
+      "Tararea la última nota y sabe si es do, la nota de casa.",
+      "Canta una frase que termine en do cuando se le pide."
+    ],
+    "errores": [
+      {
+        "error": "Toca la bandera en cuanto la frase se para, aunque acabe en sol",
+        "remedio": "tararear la última nota y bajar cantando hasta do: si ha tenido que bajar, no había terminado."
+      },
+      {
+        "error": "Toca la pausa en las frases que bajan hasta do",
+        "remedio": "cantar sol-fa-mi-re-do con la mano bajando hasta la rodilla: cuando la mano llega abajo, ha llegado a casa."
+      },
+      {
+        "error": "Responde antes de que suene la última nota",
+        "remedio": "escuchar con la mano en la barbilla y no moverla hasta que el piano se calle."
+      }
+    ],
+    "indicadores": [
+      "Termina o a medias",
+      "Tararea el final",
+      "Canta hasta do"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

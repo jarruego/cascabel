@@ -37,6 +37,85 @@
     ]
   },
   "enunciado": "actividad.inf14.enunciado",
+  "ficha": {
+    "aprende": "Ponerle sonido a un cuento: elegir un sonido que pegue con lo que pasa —agudo para el pájaro, grave para el oso— y hacerlo justo en el hueco que deja el maestro.",
+    "vocabulario": [
+      "cuento",
+      "sonido",
+      "agudo",
+      "grave",
+      "hueco",
+      "esperar",
+      "personaje",
+      "inventar"
+    ],
+    "agrupamiento": "Grupo clase, con proyector o tablet en el centro",
+    "material": "Un cuento corto con tres o cuatro huecos, preparado por el maestro. Sin pantalla, instrumentos de aula.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Probar el lienzo.",
+        "detalle": "Un par de niños dibujan con el dedo en la pantalla y se escucha: arriba suena agudo, abajo grave. Solo probar, sin cuento todavía."
+      },
+      {
+        "min": 1,
+        "titulo": "Acordar los sonidos.",
+        "detalle": "Decidir entre todos cómo suena cada cosa del cuento: el pájaro, arriba y finito; el oso, abajo y hondo; la lluvia, muchos toques rápidos; el viento, una línea larga que sube y baja."
+      },
+      {
+        "min": 4,
+        "titulo": "El cuento con huecos.",
+        "detalle": "El maestro cuenta y se calla en cada hueco: «y entonces el oso…». Un niño hace el sonido en el lienzo y, cuando acaba, el cuento sigue. En cada hueco, un niño distinto."
+      },
+      {
+        "min": 1,
+        "titulo": "Otra vez, del tirón.",
+        "detalle": "Contarlo de nuevo con los mismos sonidos, más seguido, para que el cuento y los sonidos vayan juntos. Se pueden cambiar los niños que suenan."
+      },
+      {
+        "min": 1,
+        "titulo": "¿Cuál ha quedado mejor?",
+        "detalle": "Sentados, decir qué sonido les ha gustado más y por qué pegaba con el cuento. Hablar de lo que ha sonado, no de quién lo ha hecho."
+      }
+    ],
+    "enPantalla": "Un lienzo en el que cada trazo suena: cuanto más arriba, más agudo; cuanto más abajo, más grave. El cuento lo cuenta el maestro con su voz —la app no habla— y deja huecos; en cada hueco un niño dibuja en la pantalla el sonido que toca: un pájaro es una línea finita arriba, un oso un trazo hondo abajo, la lluvia muchos toques cortos. No hay respuesta correcta ni final: el cuento se acaba cuando el maestro llega al final.",
+    "sinPantalla": "Instrumentos de aula sobre una mesa: un xilófono para lo agudo y lo grave, un tambor, unas claves, un bote con arroz para la lluvia. El maestro cuenta y, en cada hueco, un niño elige el instrumento y hace el sonido. También sin instrumentos, con la voz y el cuerpo: silbidos para el pájaro, un gruñido hondo para el oso, dedos sobre la mesa para la lluvia. Es la forma más antigua de sonorizar un cuento y funciona igual.",
+    "masFacil": "Un cuento con dos huecos y dos sonidos ya decididos: el pájaro arriba y el oso abajo. Antes de empezar, cada niño prueba los dos en el lienzo. En el hueco, el maestro señala arriba o abajo con la mano si el niño duda. Si no arranca, el maestro hace el primer sonido y el niño solo lo repite.",
+    "masDificil": "Que sean ellos quienes inventen el cuento: un niño empieza, otro sigue, y en cada frase alguien pone un sonido. Sonidos con intención: «algo que se aleja» baja de volumen, «algo que da miedo» va muy grave y muy despacio. O dos niños a la vez, uno con el pájaro y otro con el oso, cuando los dos personajes se encuentran.",
+    "variante": {
+      "titulo": "Cuento en cadena",
+      "texto": "En corro, sin pantalla. Cada niño tiene un sonido preparado con la voz o el cuerpo. El maestro cuenta y, al llegar a cada personaje, señala a un niño, que lo hace sonar. Cuando la clase ya se sabe el cuento, no hace falta señalar: cada uno entra solo en su momento, como una orquesta."
+    },
+    "ideas": [
+      "Elegir un cuento que la clase ya conozca y sonorizarlo entero, personaje a personaje, en otra sesión.",
+      "Dibujar en papel los sonidos del cuento en el orden en que suenan: una partitura de dibujos para volver a contarlo otro día.",
+      "Grabar el cuento con los sonidos con el móvil del maestro y escucharlo al día siguiente sin mirar: ¿se entiende lo que pasa solo con oírlo?"
+    ],
+    "loTiene": [
+      "Elige un sonido que pega con lo que pasa: agudo para el pájaro, grave para el oso.",
+      "Espera al hueco y hace el sonido cuando el maestro se calla.",
+      "Para de sonar cuando el cuento sigue."
+    ],
+    "errores": [
+      {
+        "error": "Hace ruido en la pantalla durante todo el cuento, no solo en el hueco",
+        "remedio": "que tenga las manos en las rodillas mientras el maestro habla y un gesto claro —la mano abierta— para entrar."
+      },
+      {
+        "error": "Hace siempre el mismo sonido, pase lo que pase en el cuento",
+        "remedio": "preguntar antes del hueco «¿esto es un pájaro o un oso?» y que señale arriba o abajo antes de tocar."
+      },
+      {
+        "error": "Se queda en blanco cuando le toca",
+        "remedio": "el maestro hace el sonido con la voz, bajito, y el niño lo pasa al lienzo. Nadie se queda sin sonar."
+      }
+    ],
+    "indicadores": [
+      "Sonido que pega",
+      "Entra en el hueco",
+      "Para a tiempo"
+    ]
+  },
   "personaje": "fara",
   "creditos": [
     {

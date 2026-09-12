@@ -82,6 +82,80 @@
   "pistas": [
     "actividad.inf25.pista1"
   ],
+  "ficha": {
+    "aprende": "Reconocer por su sonido a la vaca, la oveja, el gallo y el cerdo de una granja de verdad, y decir cómo habla cada uno: largo o corto, agudo o grave.",
+    "vocabulario": [
+      "vaca",
+      "oveja",
+      "gallo",
+      "cerdo",
+      "granja",
+      "agudo",
+      "grave",
+      "largo"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o por parejas en tablet",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Vamos a la granja.",
+        "detalle": "Contar que estamos en una granja de verdad y que los animales hablan. Que hagan la vaca, la oveja, el gallo y el cerdo con la voz, uno detrás de otro."
+      },
+      {
+        "min": 1,
+        "titulo": "Los cuatro dibujos.",
+        "detalle": "Señalar en la pantalla cada animal y decir su nombre despacio. Preguntar cuál creen que sonará más agudo."
+      },
+      {
+        "min": 2,
+        "titulo": "¿Quién habla?",
+        "detalle": "Suena uno; se escucha entero con los ojos cerrados y un niño toca el dibujo. Si no era, se vuelve a oír y otro lo intenta."
+      },
+      {
+        "min": 1,
+        "titulo": "Cómo habla cada uno.",
+        "detalle": "Al acabar: el gallo canta agudo y largo; la vaca, grave y lento; la oveja tiembla; el cerdo gruñe corto. Hacerlos otra vez con la voz, ahora sabiendo."
+      }
+    ],
+    "enPantalla": "Cuatro dibujos grandes: vaca, oveja, gallo y cerdo. Suena la grabación de uno de ellos, hecha en una granja de verdad, y el niño toca el animal que habla. Si toca otro, el personaje le recuerda que el gallo canta muy agudo y muy largo y que la vaca hace un sonido grave y lento, y se vuelve a oír para corregir al momento. Al acertar, «¡bien!» y sale el siguiente. El botón de volver a escuchar está siempre en el mismo sitio. Termina a los cinco sonidos, sin puntuación.",
+    "sinPantalla": "Tú, o un niño escondido tras la mesa, haces el sonido de un animal de la granja, y los demás señalan una de cuatro tarjetas en el suelo. Con un cuento de granja sale solo: cada vez que aparece un animal, la clase lo hace. También en corro: un niño hace un animal, el de al lado dice cuál es y hace otro, y así da la vuelta.",
+    "masFacil": "Solo dos animales, los más distintos: el gallo (agudo y largo) y la vaca (grave y lenta). Di el nombre de los dos antes de que suene. Si un niño duda entre la oveja y el cerdo, hazlos tú con la voz, exagerando el temblor de la oveja y el gruñido corto del cerdo.",
+    "masDificil": "Escuchar sin mirar los dibujos y decir el nombre antes de abrir los ojos. Después, un niño imita a uno de los cuatro y los demás adivinan: hacer una vaca grave y larga o un gallo que sube hasta arriba es más difícil que reconocerlos.",
+    "variante": {
+      "titulo": "Cada uno su animal",
+      "texto": "Se reparte la clase en cuatro grupos: vacas, ovejas, gallos y cerdos. Suena la grabación en la pantalla y solo se levanta y contesta el grupo del animal que ha hablado, con su propio sonido. Los demás se quedan quietos. Se cambian los papeles cada vuelta."
+    },
+    "ideas": [
+      "Hacer una canción de granja con los cuatro sonidos: cada estrofa un animal, y toda la clase hace su voz en el estribillo.",
+      "Ordenar las cuatro tarjetas del sonido más agudo al más grave, gallo, oveja, cerdo, vaca, y comprobarlo oyéndolos otra vez.",
+      "Dibujar cómo suena cada animal: una línea larga para la vaca, una que sube para el gallo, una que tiembla para la oveja."
+    ],
+    "loTiene": [
+      "Escucha el sonido entero antes de tocar el dibujo.",
+      "Reconoce los cuatro animales, también la oveja y el cerdo, que cuestan más que el gallo.",
+      "Explica con su voz cómo habla cada uno: el gallo largo y agudo, la vaca grave."
+    ],
+    "errores": [
+      {
+        "error": "Toca el dibujo del animal que más le gusta, siempre el mismo",
+        "remedio": "que diga en voz alta lo que ha oído antes de tocar, «ha hecho beee», y luego busque el dibujo."
+      },
+      {
+        "error": "Confunde la oveja con el cerdo",
+        "remedio": "oírlos seguidos con el botón de repetir e imitarlos: la oveja tiembla, el cerdo gruñe corto y seco."
+      },
+      {
+        "error": "Toca antes de que acabe el sonido",
+        "remedio": "cerrar los ojos mientras suena y abrirlos solo cuando se acabe."
+      }
+    ],
+    "indicadores": [
+      "Escucha entero",
+      "Los cuatro",
+      "Lo describe"
+    ]
+  },
   "creditos": [
     {
       "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",

@@ -117,6 +117,66 @@
     ]
   },
   "enunciado": "actividad.tr10.enunciado",
+  "ficha": {
+    "aprende": "Escuchar un fragmento de una obra famosa sabiendo qué buscar en él, y decir quién la escribió y cuándo, con sus propias palabras.",
+    "vocabulario": [
+      "obra",
+      "fragmento",
+      "compositor",
+      "orquesta",
+      "época",
+      "escuchar",
+      "tema",
+      "melodía"
+    ],
+    "agrupamiento": "Grupo clase, con proyector y altavoz",
+    "material": "Altavoz que se oiga bien en toda el aula",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Proyectar y elegir tres.",
+        "detalle": "Hay catorce obras y hoy se escuchan solo tres. El maestro las elige de épocas distintas: una de Bach o Vivaldi, una de Mozart o Beethoven y una de Grieg o Saint-Saëns."
+      },
+      {
+        "min": 3,
+        "titulo": "La primera, con los ojos cerrados.",
+        "detalle": "Leer antes «qué escuchar» en voz alta. Poner el fragmento entero sin hablar. Al acabar, ¿lo han oído? Volver a ponerlo y levantar la mano cuando aparezca."
+      },
+      {
+        "min": 3,
+        "titulo": "La segunda, comparando.",
+        "detalle": "Misma rutina: leer, cerrar los ojos, escuchar. Después comparar con la primera: ¿va más rápida o más lenta? ¿Hay más instrumentos o menos? ¿Cuál es más antigua?"
+      },
+      {
+        "min": 2,
+        "titulo": "La tercera la elige un niño.",
+        "detalle": "Toca la que quiere y lee él lo que hay que escuchar. La clase la oye igual que las otras dos, con los ojos cerrados."
+      },
+      {
+        "min": 2,
+        "titulo": "Moverse con una.",
+        "detalle": "Volver a poner una de las tres y moverse por el aula como pida la música: caminar, flotar, marchar. Pararse cuando pare."
+      },
+      {
+        "min": 1,
+        "titulo": "Apuntar.",
+        "detalle": "En la pizarra, las tres obras con su compositor y su siglo. Se quedan escritas para la próxima sesión."
+      }
+    ],
+    "enPantalla": "Catorce obras, de Bach a Saint-Saëns, cada una con un botón para oír un fragmento grabado, el nombre de quien la escribió, cuándo, y una línea que dice qué escuchar en ella: un tema que vuelve, un instrumento que entra, un cambio de velocidad. Hay buscador por nombre y por compositor. No hay pregunta ni final: el fragmento se repite tantas veces como se quiera y se cierra cuando se ha oído lo que se buscaba.",
+    "sinPantalla": "Tarjetas con el nombre de la obra, el compositor y el retrato, y el maestro canta o toca en la flauta o el piano el tema principal: las cuatro notas de la Quinta de Beethoven o el vals del elefante de El carnaval de los animales se reconocen con dos frases. Los niños cierran los ojos, oyen el tema y buscan la tarjeta que le corresponde. Si en el colegio hay altavoz con las grabaciones, mejor; pero el tema cantado por el maestro ya es la obra.",
+    "masFacil": "Una sola obra por sesión, y de las que ya les suenan de anuncios o dibujos: la Quinta de Beethoven, En la gruta del rey de la montaña, El elefante. Leer qué escuchar y ponerla dos veces seguidas. Con una obra bien oída hay sesión de sobra; las catorce son para todo el curso.",
+    "masDificil": "Poner un fragmento sin decir cuál es y que lo busquen en la lista por lo que oyen: si hay orquesta o un solo instrumento, si es rápida o lenta, si suena antigua. Después, que cada grupo prepare una obra y la presente: quién, cuándo y qué van a escuchar los demás, antes de darle al botón.",
+    "variante": {
+      "titulo": "Con dibujo",
+      "texto": "Mientras suena el fragmento, cada niño dibuja lo que la música le hace ver, sin hablar. Al acabar se enseñan los dibujos y se lee lo que dice la ficha: ¿coincide con lo que ha visto la clase? En la gruta del rey de la montaña, Acuario y El elefante dan mucho de sí."
+    },
+    "ideas": [
+      "Hacer una lista de la clase con las catorce obras y poner una cada mañana a la entrada, hasta completarlas.",
+      "Buscar la misma obra tocada por otro instrumento o cantada, y comparar con el fragmento de la ficha.",
+      "Elegir una obra y montar una coreografía sencilla en grupo, con un movimiento por cada cosa que dice «qué escuchar»."
+    ]
+  },
   "personaje": "doby",
   "herramienta": true,
   "creditos": [

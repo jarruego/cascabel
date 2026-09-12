@@ -77,6 +77,80 @@
   "pistas": [
     "actividad.inf01.pista1"
   ],
+  "ficha": {
+    "aprende": "Distinguir cuándo hay sonido y cuándo silencio, y esperar a que se acabe antes de contestar.",
+    "vocabulario": [
+      "sonido",
+      "silencio",
+      "escuchar",
+      "suena",
+      "verde",
+      "azul",
+      "pandereta",
+      "triángulo"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o por parejas en tablet",
+    "material": "Ninguno. Para la versión sin pantalla, una pandereta o un triángulo.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Silencio de verdad.",
+        "detalle": "Antes de empezar, todos quietos y sin hablar durante unos segundos, para saber qué es el silencio. Luego un golpe de pandereta: eso es el sonido."
+      },
+      {
+        "min": 1,
+        "titulo": "Los dos botones.",
+        "detalle": "Explicar el altavoz verde, para cuando suena algo, y el azul, para el silencio. Nombrarlos juntos en voz alta: «verde, suena; azul, silencio»."
+      },
+      {
+        "min": 1,
+        "titulo": "Escuchar y tocar.",
+        "detalle": "Se pone la app y un niño toca cada vez. La regla: se espera a que la app termine, y luego se toca. Los demás señalan con el dedo en el aire el botón que tocarían."
+      },
+      {
+        "min": 1,
+        "titulo": "Una vuelta más.",
+        "detalle": "Con otro niño, o toda la clase señalando. Comentar al acabar: en el silencio también estamos escuchando."
+      }
+    ],
+    "enPantalla": "Dos botones grandes: un altavoz verde para «suena» y uno azul para «silencio». La app pregunta «¿Suena o hay silencio?» y a continuación se oye una pandereta, un triángulo, una voz que canta… o nada durante dos segundos. El niño toca el botón que cree. Si toca el otro, el personaje le dice que escuche con atención, que el silencio también es música, y puede volver a oírlo y tocar de nuevo. Al acertar, «¡bien!» y viene la siguiente. Seis rondas y termina.",
+    "sinPantalla": "Dos tarjetas en el suelo, una verde con un altavoz y otra azul con un dedo en los labios. El maestro, escondido tras la mesa o de espaldas, hace sonar la pandereta o el triángulo… o no hace nada y cuenta dos segundos en silencio. Los niños señalan la tarjeta o van a ella. Que el maestro se esconda es lo que hace que tengan que escuchar y no mirar.",
+    "masFacil": "Sonidos largos y claros, como un triángulo que sigue vibrando, y silencios más largos, de cuatro o cinco segundos, para que la ausencia se note. Nombra en voz alta cada opción antes de que suene: «ahora puede que suene… o puede que no». Si aun así duda, que cierre los ojos y levante la mano mientras oye algo y la baje en el silencio.",
+    "masDificil": "Sonidos muy flojitos, casi al límite: un roce en la pandereta, un soplo. Hay que escuchar de verdad para saber si ha sonado. O al revés: pedir que produzcan ellos el silencio, uno a uno, durante tres segundos con la clase mirando; hacer silencio a propósito es más difícil que reconocerlo.",
+    "variante": {
+      "titulo": "El semáforo con el cuerpo",
+      "texto": "Los niños andan por la clase mientras suena la pandereta y se quedan quietos como estatuas cuando para. El maestro alterna sonido y silencio sin avisar, con silencios largos y cortos. Es el mismo juego, con el cuerpo en vez del dedo, y funciona con toda la clase a la vez."
+    },
+    "ideas": [
+      "Grabar con el móvil un minuto del patio y otro de la clase en silencio, y escucharlos después: ¿de verdad había silencio?",
+      "Un cuento con una palabra mágica: cuando el maestro la dice, la clase hace silencio total hasta que suena la pandereta.",
+      "Buscar en el aula tres cosas que suenan y tres que no: la silla arrastrada suena, el cojín no."
+    ],
+    "loTiene": [
+      "Espera a que se acabe el sonido o el silencio antes de tocar.",
+      "Toca el altavoz azul en el silencio sin dudar, aunque no haya pasado nada.",
+      "Reconoce como sonido tanto la pandereta como la voz cantada."
+    ],
+    "errores": [
+      {
+        "error": "Toca el verde siempre, también cuando no ha sonado nada",
+        "remedio": "hacer un silencio largo con los ojos cerrados y preguntar: ¿ha sonado algo? Nombrar el botón azul cada vez que toca."
+      },
+      {
+        "error": "Toca antes de que termine la app, sin escuchar",
+        "remedio": "manos en las rodillas hasta que el maestro diga «ya»; después se toca."
+      },
+      {
+        "error": "Cree que la voz cantada no cuenta como sonido",
+        "remedio": "cantar una nota entre todos y preguntar si eso suena. El sonido no es solo el de los instrumentos."
+      }
+    ],
+    "indicadores": [
+      "Espera",
+      "Silencio",
+      "Suena"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

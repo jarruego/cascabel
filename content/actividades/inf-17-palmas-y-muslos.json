@@ -63,6 +63,84 @@
   "pistas": [
     "actividad.inf17.pista1"
   ],
+  "ficha": {
+    "aprende": "Alternar dos palmadas y dos golpes en los muslos sin frenar en el cambio, con un pulso lento, y seguir cuando se apaga la pantalla.",
+    "vocabulario": [
+      "palmas",
+      "muslos",
+      "pulso",
+      "dos",
+      "cambiar",
+      "despacio",
+      "seguido"
+    ],
+    "agrupamiento": "Toda la clase, sentada en el suelo o en sillas",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "El pulso sentados.",
+        "detalle": "Suena el pulso de la app, lento, a 60. Los niños lo marcan con un pie o con la cabeza, sin manos todavía. Que lo oigan antes de tocar."
+      },
+      {
+        "min": 1,
+        "titulo": "Solo palmas.",
+        "detalle": "Una palmada por pulso, todos juntos, con el cursor de la pantalla. Hasta que la clase entera vaya a la vez; si no, es pronto para los muslos."
+      },
+      {
+        "min": 1,
+        "titulo": "Solo muslos.",
+        "detalle": "Lo mismo con las dos manos en los muslos, un golpe por pulso. Es más flojo y se oye menos: escuchar el pulso de la app, no a los vecinos."
+      },
+      {
+        "min": 2,
+        "titulo": "Alternar con la pantalla.",
+        "detalle": "Dos palmas, dos muslos, sin parar, mirando el cursor. Decir «pal-mas, mus-los» en voz alta las primeras vueltas, y luego solo con las manos."
+      },
+      {
+        "min": 1,
+        "titulo": "Sin pantalla.",
+        "detalle": "Apagar y seguir igual, con el maestro haciendo el patrón delante. Quien lo lleva, cierra los ojos y sigue."
+      }
+    ],
+    "enPantalla": "Dos filas, palmas y muslos, con sus golpes marcados: dos en una, dos en la otra, y vuelta a empezar. Un cursor recorre el patrón en bucle a un pulso lento y suena una señal en cada golpe. Nadie toca la pantalla: la señal es solo el director, y el sonido lo hacen los niños con las manos. No hay corrección ni puntuación ni final; se para cuando el patrón sale. Proyectada, sirve para que todo el grupo mire al mismo sitio mientras lo aprende.",
+    "sinPantalla": "Es su forma natural, y de hecho el objetivo es llegar ahí. El maestro hace el patrón delante, grande y despacio: dos palmas, dos muslos, sin parar, diciendo «pal-mas, mus-los» hasta que la clase lo lleva sola. Después se calla y solo hace el gesto. En corro, cada niño puede mirar al de enfrente en vez de al maestro. A los cuatro años, cambiar de sonido a tiempo ya es coordinación.",
+    "masFacil": "Quedarse en un solo sonido, palmas, hasta que vayan todos juntos con el pulso. Después, muslos solos. El cambio se hace primero con la voz: decir «pal-mas, mus-los» sin tocar nada, y luego añadir las manos. Y si aun así se rompe, cuatro palmas y cuatro muslos en vez de dos y dos: menos cambios en cada vuelta.",
+    "masDificil": "Añadir un tercer sonido: dos palmas, dos muslos, dos pies. Partir la clase en dos mitades: una hace las palmas y la otra los muslos, y se cambian. Y después en canon: la segunda mitad empieza cuando la primera va por los muslos, y suenan los dos sonidos a la vez sin que nadie se despiste.",
+    "variante": {
+      "titulo": "Con una canción",
+      "texto": "El mismo patrón, dos palmas y dos muslos, encima de una canción lenta que la clase se sepa. Al principio el maestro la canta y los niños solo hacen las manos; después cantan y tocan a la vez. Cantar mientras se cambia de sonido es un paso más, porque la boca y las manos van cada una a lo suyo."
+    },
+    "ideas": [
+      "Inventar entre todos otro patrón de dos sonidos —dos pies y dos palmas, un muslo y una palma— y probarlo con el mismo pulso.",
+      "Pasar el patrón en corro: un niño hace dos palmas, el siguiente dos muslos, y así alrededor del círculo, sin que se pare el pulso.",
+      "Hacer el patrón muy flojito y luego muy fuerte, sin cambiar la velocidad, y notar que el pulso es el mismo."
+    ],
+    "loTiene": [
+      "Cambia de palmas a muslos sin frenar en el cambio.",
+      "Da dos golpes en cada sitio, no tres ni uno.",
+      "Lo sigue una vuelta entera sin mirar la pantalla."
+    ],
+    "errores": [
+      {
+        "error": "Da tres o cuatro palmas antes de cambiar a los muslos",
+        "remedio": "decir «pal-mas, mus-los» en voz alta con cada par de golpes; cuando lo dice, lo hace."
+      },
+      {
+        "error": "Se para un momento en cada cambio para pensar",
+        "remedio": "el maestro le pone las manos en los muslos justo antes del cambio, dos vueltas, y luego lo deja solo."
+      },
+      {
+        "error": "Mira a los vecinos y cambia siempre un poco tarde",
+        "remedio": "que cierre los ojos y escuche la señal de la app o la voz del maestro. El oído va antes que la vista."
+      }
+    ],
+    "indicadores": [
+      "Cambia sin frenar",
+      "Dos y dos",
+      "Sin mirar"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

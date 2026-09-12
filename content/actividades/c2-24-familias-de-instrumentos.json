@@ -95,6 +95,85 @@
     "actividad.c224.pista1",
     "actividad.c224.pista2"
   ],
+  "ficha": {
+    "aprende": "Decir si un instrumento que suena es de cuerda, de viento o de percusión, pensando en cómo se hace sonar y sin necesidad de saber cuál es.",
+    "vocabulario": [
+      "familia",
+      "cuerda",
+      "viento",
+      "percusión",
+      "frotar",
+      "pulsar",
+      "soplar",
+      "golpear"
+    ],
+    "agrupamiento": "Grupo clase con proyector, después individual en tablet",
+    "material": "Ninguno. Si hay en el aula, una guitarra, una flauta y un pandero para tocarlos",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Tres maneras de hacer sonar.",
+        "detalle": "Con lo que haya en el aula o con gestos: una cuerda se frota o se pulsa, en un tubo se sopla, un parche se golpea. Cada niño hace los tres gestos en el aire mientras se dicen las tres familias."
+      },
+      {
+        "min": 1,
+        "titulo": "Las tres tarjetas.",
+        "detalle": "Cuerda, viento y percusión escritas en la pizarra con su gesto. Preguntar por instrumentos que conozcan y colocarlos: la guitarra, la trompeta, el tambor… El xilófono va a percusión: se golpea con baquetas."
+      },
+      {
+        "min": 2,
+        "titulo": "Oír con el proyector.",
+        "detalle": "Suena uno y la clase hace el gesto de tocarlo (frotar, soplar, golpear) antes de que un niño toque el botón. Repetir con el botón si hace falta. Salen el violín, la gaita, el banjo, el koto…"
+      },
+      {
+        "min": 2,
+        "titulo": "Jugar en tablet,",
+        "detalle": "de uno en uno. Hacer el gesto antes de tocar. Si no es, el personaje da una pista y se vuelve a elegir. Diez sonidos y termina."
+      },
+      {
+        "min": 1,
+        "titulo": "Poner en común.",
+        "detalle": "¿Cuál ha costado? Suele ser el xilófono, que tiene notas pero se golpea, o el koto, que no conocen. La familia se decide por cómo se toca, no por si tiene notas."
+      }
+    ],
+    "enPantalla": "Suena un instrumento —violín, guitarra, banjo, koto, flauta, gaita, xilófono, bombo, caja o triángulo— y aparecen tres botones grandes: cuerda, viento y percusión. No hace falta saber cuál es: solo cómo se hace sonar. El niño puede volver a oírlo con el botón de repetir y toca uno. Si no es, el personaje le pregunta si se toca con las manos en una cuerda, con aire o con un golpe, y puede volver a elegir; si acierta, «¡bien!» y viene el siguiente. Termina al acabar los diez, sin puntuación.",
+    "sinPantalla": "Con los instrumentos del aula tocados a escondidas (guitarra, flauta, pandero, triángulo, xilófono) y tres tarjetas en el suelo: cuerda, viento y percusión. Se pisa una. Para los que no haya, imítalos con la voz y el gesto. Después al revés: tú dices una familia y ellos dicen instrumentos que conozcan de ella, con el gesto de tocarlo.",
+    "masFacil": "Quédate en dos familias con instrumentos muy distintos: viento y percusión, flauta y bombo. Antes de que suene, decir las dos y hacer el gesto. Deja para más adelante el xilófono y el koto. Si dudan con la palabra «percusión», usa «golpear» un rato: la familia se llama por lo que se hace.",
+    "masDificil": "Que digan además el instrumento cuando lo sepan, o que, en la cuerda, distingan si se frota (violín) o se pulsa (guitarra, banjo, koto). Meter en la conversación el piano: tiene cuerdas y se golpean por dentro con martillitos, ¿de qué familia es? Que lo discutan: no hay una sola respuesta y eso es lo interesante.",
+    "variante": {
+      "titulo": "Rincones",
+      "texto": "Tres rincones del aula, uno por familia, con su cartel. Suena un instrumento y cada niño va andando al rincón que cree. Se mira quién está en cada uno, se vuelve a oír y quien quiera cambia de rincón. Solo entonces se toca el botón. Moverse deja pensar sin prisa y nadie se queda señalado por haber ido primero a otro sitio."
+    },
+    "ideas": [
+      "Recortar instrumentos de revistas o dibujarlos y pegarlos en un mural con tres columnas: cuerda, viento y percusión.",
+      "Construir un instrumento de cada familia con material del aula: gomas en una caja, una pajita, una lata con arroz.",
+      "Ver una foto de una orquesta y buscar dónde se sienta cada familia."
+    ],
+    "loTiene": [
+      "Dice la familia de un instrumento que no conoce fijándose en cómo se hace sonar.",
+      "Hace el gesto de tocarlo (frotar, soplar, golpear) mientras suena.",
+      "Pone el xilófono en percusión y explica por qué: se golpea con baquetas."
+    ],
+    "errores": [
+      {
+        "error": "Pone el xilófono en cuerda o viento porque tiene notas",
+        "remedio": "preguntar cómo se toca: con baquetas, golpeando; tener notas no cambia la familia."
+      },
+      {
+        "error": "Pone la gaita en cuerda",
+        "remedio": "oírla otra vez y fijarse en que el sonido no se apaga, se sostiene mientras hay aire; imitarla soplando."
+      },
+      {
+        "error": "Responde sin escuchar el sonido entero",
+        "remedio": "hacer el gesto de tocarlo mientras suena y no tocar hasta que el sonido se acabe."
+      }
+    ],
+    "indicadores": [
+      "Dice la familia",
+      "Hace el gesto",
+      "Xilófono"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

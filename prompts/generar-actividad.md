@@ -61,6 +61,20 @@ acepta lo que salga sin pasar por `tools/validar.py`.**
 > Genera {N} actividades de tipo `{tipo}` para la etapa `{etapa}` y el eje `{eje}`.
 > Cada una debe ser claramente distinta de las demás, no una variación cosmética.
 >
+> ### Lo que toda actividad lleva además del ejercicio
+>
+> - `etiquetas`: de tres a ocho palabras en minúscula por las que un maestro la buscaría y
+>   que el título no dice (sinónimos, obras, compositores, instrumentos, conceptos).
+> - `ficha`: la ficha del maestro, escrita para ESTA actividad: `aprende`, `vocabulario`,
+>   `agrupamiento`, `material`, `pasos` (4–6, con `min` que suman `duracion_min`),
+>   `enPantalla`, `sinPantalla`, `masFacil`, `masDificil`, `variante`, `ideas`, `loTiene`,
+>   `errores` e `indicadores` (tres). Español de España, frases cortas, concreta (sus notas,
+>   sus figuras, su canción), sin jerga, sin castigar nunca el error, sin mencionar otras
+>   actividades. Ver el bloque `ficha` de `c1-37-debajo-un-boton-con-el-cuerpo.json` como
+>   modelo.
+> - Un título con gancho que, si cabe con naturalidad, nombre el concepto; el resto de
+>   palabras de búsqueda van a `etiquetas`, no al título.
+>
 > ### Esquema
 >
 > {pegar aquí schemas/actividad.schema.json}

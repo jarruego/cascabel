@@ -41,6 +41,85 @@
     ]
   },
   "enunciado": "actividad.c112.enunciado",
+  "ficha": {
+    "aprende": "Notar que el compás de cuatro pulsos da vueltas (después del cuatro viene otra vez el uno) y colocar golpes en los pulsos para oír que el uno pesa más.",
+    "vocabulario": [
+      "compás",
+      "pulso",
+      "uno",
+      "rueda",
+      "vuelta",
+      "acento",
+      "agudo",
+      "grave"
+    ],
+    "agrupamiento": "Grupo clase con proyector; luego por parejas, en tablet",
+    "material": "Ninguno. Opcional: tiza para dibujar la rueda en el suelo",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Contar en rueda.",
+        "detalle": "De pie, contad «uno, dos, tres, cuatro» en bucle con el pulso de la pantalla, sin parar. El uno con un pisotón. Pregunta: ¿qué viene después del cuatro? El uno otra vez: es una rueda."
+      },
+      {
+        "min": 1,
+        "titulo": "Un solo golpe en el uno.",
+        "detalle": "Con el proyector, enciende solo la casilla del pulso uno en la fila grave y dale a escuchar. Se oye un golpe y tres huecos, y vuelve. Que marquen el uno con el pie a la vez."
+      },
+      {
+        "min": 1,
+        "titulo": "Rellenar los cuatro.",
+        "detalle": "Añade el dos, el tres y el cuatro en la fila del medio: ahora suenan los cuatro, y el uno sigue siendo el grave. Que digan los números encima."
+      },
+      {
+        "min": 2,
+        "titulo": "Su propio compás, en tablet.",
+        "detalle": "Cada pareja coloca golpes a su gusto en las tres alturas y escucha. Regla única: el uno tiene que estar. Después que quiten el uno y oigan qué pasa: la rueda ya no se nota."
+      },
+      {
+        "min": 1,
+        "titulo": "Bailarlo.",
+        "detalle": "Con el compás de una pareja en el proyector, la clase da un paso en el uno y palmea donde haya golpe. Cuatro vueltas y parar en el uno."
+      }
+    ],
+    "enPantalla": "Los cuatro pulsos de un compás de cuatro por cuatro, en tres alturas: agudo, medio y grave. Se toca una casilla y se enciende con su sonido; se toca otra vez y se apaga. Al escuchar, un cursor recorre los cuatro pulsos y, al llegar al cuatro, vuelve al uno sin parar: el compás da vueltas como una rueda, y cada cambio se oye en la vuelta siguiente. No hay respuesta correcta ni final; se para cuando se quiere.",
+    "sinPantalla": "Dibuja un círculo en el suelo con tiza y marca cuatro puntos, como un reloj con solo cuatro horas. Un niño anda por el círculo con el pulso, uno por punto, y al llegar al cuatro sigue al uno: nunca se acaba. Los demás palmean en el uno. Después reparte los puntos: en el uno un tambor, en el tres claves, y se anda la rueda con sonidos. La cuadrícula en la pizarra con gomets hace lo mismo sin moverse.",
+    "masFacil": "Solo la fila grave y solo dos golpes: el uno y el tres. Con eso ya se oye la rueda. Cuenta tú en voz alta con el cursor, «uno, dos, tres, cuatro», y que solo señalen el uno con el pie. Un niño que no sabe por dónde empezar no empieza: enciéndele tú el uno y que ponga él el siguiente.",
+    "masDificil": "Regla: el uno siempre grave y ningún otro pulso grave. Después, que hagan una rueda «coja» quitando el uno y expliquen por qué cuesta más seguirla. Y dos parejas juntan sus ruedas: la clase cuenta ocho, del uno al cuatro de una y del uno al cuatro de la otra, y se oye que dos compases hacen una frase.",
+    "variante": {
+      "titulo": "Con instrumentos",
+      "texto": "Cuatro niños en corro, uno por pulso, cada uno con un instrumento: tambor en el uno, claves en el dos, pandereta en el tres, triángulo en el cuatro. Suena la rueda de la pantalla y cada uno toca cuando llega su pulso, sin parar, muchas vueltas. Después se pasan los instrumentos una posición: la rueda gira también por dentro."
+    },
+    "ideas": [
+      "Buscar el uno en una canción conocida: cantarla y pisar fuerte cada vez que vuelve, para ver que también da vueltas.",
+      "Rueda de tres: dibujar un triángulo en el suelo y andarlo contando uno, dos, tres. Preguntar en qué se nota la diferencia.",
+      "Dibujar en un folio su rueda de cuatro con un color por golpe y leerla en voz alta al pulso."
+    ],
+    "loTiene": [
+      "Después del cuatro dice «uno» sin frenar ni contar cinco.",
+      "Pisa el uno en cada vuelta mientras suena la rueda.",
+      "Coloca golpes en los cuatro pulsos y dice cuál es el uno de oído."
+    ],
+    "errores": [
+      {
+        "error": "Cuenta hasta cuatro y se para, esperando algo",
+        "remedio": "andar el círculo del suelo, que no tiene final; el cuerpo entiende la rueda antes que la cabeza."
+      },
+      {
+        "error": "Llena las doce casillas y el uno no se oye",
+        "remedio": "tope de cinco golpes, y el uno siempre en la fila grave, para que pese más."
+      },
+      {
+        "error": "Pisa fuerte en todos los pulsos",
+        "remedio": "solo un pie, y solo en el uno; los otros tres se cuentan bajito."
+      }
+    ],
+    "indicadores": [
+      "Vuelve al uno",
+      "Pisa el uno",
+      "Coloca golpes"
+    ]
+  },
   "personaje": "sol",
   "creditos": [
     {

@@ -124,6 +124,85 @@
     "actividad.c351.pista1",
     "actividad.c351.pista2"
   ],
+  "ficha": {
+    "aprende": "Leer las quince notas de do2 a do4 en clave de fa, contando desde el fa de la cuarta línea, y reconocer el do central en su línea adicional por encima.",
+    "vocabulario": [
+      "clave de fa",
+      "cuarta línea",
+      "línea adicional",
+      "do central",
+      "grave",
+      "octava",
+      "línea",
+      "espacio"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet",
+    "material": "Ninguno. Para la versión sin pantalla, pizarra pautada o cinta de carrocero.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "En la pizarra, la clave de fa.",
+        "detalle": "Dibujarla y señalar que sus dos puntos abrazan la cuarta línea: ahí está el fa. Recordar que en esta clave todo suena grave, como la mano izquierda del piano."
+      },
+      {
+        "min": 1,
+        "titulo": "Contar desde el fa,",
+        "detalle": "subiendo: sol, la, si, do (en la línea adicional: el do central); bajando: mi, re, do, si, la, sol… hasta el do de dos líneas adicionales por debajo. A coro, mientras el maestro señala."
+      },
+      {
+        "min": 3,
+        "titulo": "En la tablet, primera vuelta.",
+        "detalle": "Siete notas dibujadas y una pedida. Si no sale, la pista recuerda dónde está el fa; se cuenta otra vez y se toca. Sin prisa: cada nota se pide una sola vez."
+      },
+      {
+        "min": 2,
+        "titulo": "Segunda vuelta, por parejas:",
+        "detalle": "uno nombra en voz alta las siete dibujadas y el otro toca la pedida. Se cambian a mitad."
+      },
+      {
+        "min": 1,
+        "titulo": "Cierre en el teclado.",
+        "detalle": "Tocar do2, do3 y do4 y escuchar lo lejos que están. Preguntar cuál es el do central y dónde se escribe en cada clave."
+      }
+    ],
+    "enPantalla": "Un pentagrama en clave de fa con siete notas dibujadas, todas de nombre distinto. La app dice el nombre de una y el niño toca la que cree; al tocarla suena, grave, como corresponde a esta clave. Si no es esa, el personaje recuerda que el fa está en la cuarta línea y que las líneas adicionales cuentan igual, y se vuelve a intentar sin prisa. Al acertar, «¡bien!» y otra ronda con otras siete. Termina cuando se han pedido las quince, una vez cada una.",
+    "sinPantalla": "Pentagrama de cinta en el suelo con dos líneas adicionales por debajo y una por encima. Se pega un cartel con la clave de fa y otro con «fa» en la cuarta línea. El maestro dice una nota y un niño se coloca; la clase comprueba contando desde el fa. En la pizarra funciona igual: siete notas dibujadas, se pide una y se rodea.",
+    "masFacil": "Solo la octava de arriba, de do3 a do4, que tiene una única línea adicional. Marca el fa de la cuarta línea con un color y deja que el dedo del niño cuente sobre la pantalla. Baja a cuatro o cinco notas por ronda si siete se le hacen muchas de un vistazo. Si sigue costando, solo las de las líneas: sol, si, re, fa, la.",
+    "masDificil": "Pedir la nota tocándola en el teclado, sin decir su nombre: hay que oír que es grave, situarla en la pauta y nombrarla. O poner las dos claves juntas en la pizarra, como en el piano, y pedir el do central en las dos: en clave de fa va encima y en clave de sol debajo.",
+    "variante": {
+      "titulo": "Con el teclado",
+      "texto": "Delante de un teclado o de un piano en pantalla, cada nota que la app pide se busca también en la tecla: la octava más grave, la de la mano izquierda. Al tocar la tecla y oírla, la altura de la pauta y la del sonido llegan juntas, que es lo que hace que la clave de fa deje de ser un dibujo."
+    },
+    "ideas": [
+      "Escribir una línea de bajo de cuatro notas largas (do, sol, la, fa) en clave de fa y tocarla en el teclado mientras otro canta encima.",
+      "Buscar en una partitura de piano dónde aparece el do central en las dos claves y comprobar que es la misma tecla.",
+      "Dictado corto: el maestro toca tres notas graves y los niños las escriben en clave de fa, con línea adicional si hace falta."
+    ],
+    "loTiene": [
+      "Encuentra el fa de la cuarta línea sin contar, y desde ahí cuenta hacia arriba y hacia abajo.",
+      "Sitúa el do central en la primera línea adicional por encima y el do más grave en la segunda por debajo.",
+      "Sabe que en esta clave las notas suenan graves y no las lee como si fueran de clave de sol."
+    ],
+    "errores": [
+      {
+        "error": "Lee la pauta como si fuera clave de sol y nombra la de la segunda línea como sol",
+        "remedio": "señalar los dos puntos de la clave: abrazan la cuarta línea, y esa es fa. Contar desde ahí, no desde abajo."
+      },
+      {
+        "error": "Cuenta las dos líneas adicionales de abajo como una sola",
+        "remedio": "dibujar en la pizarra el tramo de debajo: sol en la primera línea, fa debajo, mi en la primera adicional, re en el hueco, do en la segunda."
+      },
+      {
+        "error": "Toca a lo rápido una nota cercana a la pedida",
+        "remedio": "nombrar en voz alta las siete dibujadas antes de tocar; se toca cuando se ha dicho el nombre de la buena."
+      }
+    ],
+    "indicadores": [
+      "Fa de la 4.ª línea",
+      "Líneas adicionales",
+      "Do central"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

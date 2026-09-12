@@ -87,6 +87,90 @@
     "actividad.c120.pista1",
     "actividad.c120.pista2"
   ],
+  "ficha": {
+    "aprende": "Hacer un patrón de palmas, muslos y pies sin frenar en los cambios, diciendo antes «ta ta ti-ti ta» para que los dos ti-ti entren en un solo pulso.",
+    "vocabulario": [
+      "palmas",
+      "muslos",
+      "pies",
+      "ta",
+      "ti-ti",
+      "pulso",
+      "patrón",
+      "bucle"
+    ],
+    "agrupamiento": "Toda la clase, de pie, con proyector",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Decirlo antes de hacerlo.",
+        "detalle": "Con la pantalla parada, la clase lee las sílabas: «ta ta ti-ti ta, ta ta ti-ti taa». Tres veces, con el pie de pulso. El último «taa» es largo: dura dos pulsos."
+      },
+      {
+        "min": 2,
+        "titulo": "Todo con palmas.",
+        "detalle": "El patrón entero con palmas, sin cambiar de sitio, diciendo las sílabas. Los dos ti-ti son dos palmadas rápidas en el hueco de un ta. En el «taa» final, una sola palmada y quietos."
+      },
+      {
+        "min": 2,
+        "titulo": "Palmas y muslos.",
+        "detalle": "Las palmas se quedan en los ta y los ti-ti bajan a los muslos: dos toques rápidos, uno en cada pierna o los dos juntos, da igual. Lo difícil es volver arriba a tiempo para el ta siguiente."
+      },
+      {
+        "min": 2,
+        "titulo": "Entra el pie.",
+        "detalle": "El ta que viene después de los muslos es un pie. Palmas, palmas, muslos-muslos, pie. La segunda frase igual, pero el pie del final aguanta dos pulsos: se pisa una vez y no se mueve."
+      },
+      {
+        "min": 2,
+        "titulo": "Con la pantalla en bucle.",
+        "detalle": "Arranca la app y que entren cuando lo tengan, no todos a la vez. Dos vueltas diciendo las sílabas, dos vueltas en silencio, solo el cuerpo."
+      },
+      {
+        "min": 1,
+        "titulo": "Sin pantalla.",
+        "detalle": "Para la app y sigue con tu pie de metrónomo. Si el patrón aguanta dos vueltas sin la pantalla, ya es suyo. Si se descompone, vuelve a las sílabas: si se puede decir, se puede tocar."
+      }
+    ],
+    "enPantalla": "Tres filas, una por sonido: palmas, muslos y pies, con el patrón marcado y las sílabas debajo de cada golpe: ta ta ti-ti ta, ta ta ti-ti taa. Un cursor recorre el patrón en bucle, sin parar, y por el altavoz suena solo una señal de cada golpe: el sonido de verdad lo hacen los niños con el cuerpo. La pantalla hace de director, no de instrumento. No hay respuesta que acertar ni final: se entra cuando se puede, se sale cuando se quiere y se para cuando el maestro lo decide.",
+    "sinPantalla": "Es su forma natural, y de hecho el objetivo es acabar ahí. Escribe en la pizarra «ta ta ti-ti ta / ta ta ti-ti taa» y dibuja debajo de cada sílaba una mano, una pierna o un pie. Tú marcas el pulso con el pie y diriges señalando; la clase dice las sílabas y hace el gesto. En corro funciona mejor: se ven las manos de los demás y quien se despista se engancha al de enfrente sin que nadie se lo diga.",
+    "masFacil": "Quita el pie: solo palmas en los ta y muslos en los ti-ti. Alternar dos sitios ya es coordinación. Si los ti-ti salen lentos y el patrón se alarga, que los digan primero como una sola palabra, «titi», con una palmada, y luego la partan en dos sin frenar. Baja el tempo en la app hasta que el cambio de sitio entre a tiempo, y sube de poco en poco.",
+    "masDificil": "Divide la clase en dos: una mitad hace solo las palmas y la otra solo los muslos y los pies, y luego se cambian. Después, en canon: la segunda mitad empieza cuando la primera va por el tercer golpe. Y por último, que cada niño se invente un cuarto sonido para el «taa» largo del final (un chasquido, un giro, un salto) y lo haga sin que el pulso se mueva.",
+    "variante": {
+      "titulo": "Con instrumentos",
+      "texto": "Los mismos tres sitios, pero en pequeña percusión: claves en los ta, maracas en los ti-ti y pandero en el pie. Un tercio de la clase con cada instrumento, y el resto con el cuerpo. Lo que se aprende sigue siendo lo mismo: cambiar de gesto sin que se mueva el pulso. Rotad los instrumentos cada dos vueltas para que todos pasen por los ti-ti, que es donde está el trabajo."
+    },
+    "ideas": [
+      "Inventar por grupos un patrón nuevo con las mismas sílabas en otro orden, escribirlo con dibujos y que la clase lo haga sin haberlo oído.",
+      "Poner el patrón encima de una canción que ya sepan, como acompañamiento: ¿cabe o sobra pulso?",
+      "Grabar a la clase con el móvil del maestro y escucharse: ¿se distinguen los tres sonidos o suena todo a palmas?"
+    ],
+    "loTiene": [
+      "Cambia de palmas a muslos y a pies sin frenar en el cambio.",
+      "Hace los dos ti-ti en un pulso, no en dos.",
+      "Aguanta el pie largo del final dos pulsos sin adelantar la vuelta siguiente."
+    ],
+    "errores": [
+      {
+        "error": "Se queda parado en el cambio de sitio, pensando qué toca",
+        "remedio": "que diga el sitio en voz alta un pulso antes: «muslos» mientras da la segunda palma."
+      },
+      {
+        "error": "Los ti-ti salen lentos y el patrón se alarga",
+        "remedio": "decir «titi» como una sola palabra rápida con una palmada, y luego partirla en dos."
+      },
+      {
+        "error": "Vuelve a empezar antes de que acabe el pie largo",
+        "remedio": "contar «uno, dos» con el pie en el suelo y no levantarlo hasta el dos."
+      }
+    ],
+    "indicadores": [
+      "Cambia sin frenar",
+      "Ti-ti en un pulso",
+      "Aguanta el final"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

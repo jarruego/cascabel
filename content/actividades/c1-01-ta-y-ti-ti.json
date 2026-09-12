@@ -62,6 +62,85 @@
     ]
   },
   "enunciado": "actividad.c101.enunciado",
+  "ficha": {
+    "aprende": "Ver y oír que dos ti-ti caben en el hueco de un ta, siguiendo con el dedo un ritmo de negra y corcheas que suena en bucle sin quedarse atrás.",
+    "vocabulario": [
+      "ta",
+      "ti-ti",
+      "negra",
+      "corcheas",
+      "pulso",
+      "largo",
+      "corto",
+      "bucle"
+    ],
+    "agrupamiento": "Grupo clase, con proyector; o por parejas, en tablet",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Decirlo antes de oírlo.",
+        "detalle": "Escribe en la pizarra «ta ta ti-ti ta» y dilo con la clase: una palmada en cada ta y dos rápidas en ti-ti. Sin pantalla todavía."
+      },
+      {
+        "min": 1,
+        "titulo": "Solo escuchar.",
+        "detalle": "Arranca el bucle y que miren el cursor sin hacer nada. Pregunta: ¿cuál de los cuatro cuadros va distinto? El tercero, el de otro color."
+      },
+      {
+        "min": 1,
+        "titulo": "Seguir con el dedo.",
+        "detalle": "Segunda vuelta: cada niño señala en el aire el cuadro por el que va el cursor. En ti-ti el dedo no va más deprisa: ese cuadro dura lo mismo que un ta."
+      },
+      {
+        "min": 1,
+        "titulo": "Decir las sílabas encima.",
+        "detalle": "Con el bucle sonando, toda la clase dice ta, ta, ti-ti, ta a la vez que el cursor. Después con palmas, sin voz."
+      },
+      {
+        "min": 1,
+        "titulo": "Sin pantalla.",
+        "detalle": "Para el bucle y hazlo igual con tu pie de pulso. Si aguanta dos vueltas seguidas, ya lo tienen."
+      }
+    ],
+    "enPantalla": "Cuatro cuadros grandes en fila: ta, ta, ti-ti, ta. El tercero es de otro color porque lleva dos sonidos. Al pulsar «empezar», el ritmo suena de verdad, no solo el pulso, y un cursor recorre los cuadros una y otra vez, en bucle, hasta que se para. El niño no toca nada: mira, señala o dice las sílabas. No hay respuesta correcta ni final: se para cuando el maestro quiere y se puede volver a arrancar las veces que haga falta.",
+    "sinPantalla": "Dibuja los cuatro cuadros en la pizarra, el tercero partido en dos, y señálalos tú con el puntero mientras dices las sílabas y marcas el pulso con el pie. Después señala en silencio y que sean ellos quienes digan ta y ti-ti. Es exactamente lo mismo, con la ventaja de que puedes pararte en el ti-ti y hacerlo dos veces.",
+    "masFacil": "Quítale el ti-ti: cuatro ta seguidos, señalando cada cuadro, hasta que el pulso vaya con el dedo. Luego vuelve al patrón completo pero solo diciéndolo, sin palmas. El ti-ti cuesta porque son dos sonidos en un pulso: que lo digan primero como una sola palabra, «titi», y luego la partan.",
+    "masDificil": "Que lo hagan con dos sonidos del cuerpo: ta con palmas y ti-ti en los muslos. Después cambia el orden de los cuadros en la pizarra (ti-ti ta ta ta) y que lo sigan sin la pantalla. Y por último, que un niño lo señale para la clase mientras el resto palmea.",
+    "variante": {
+      "titulo": "Con palabras",
+      "texto": "Busca palabras que suenen como las sílabas: «pan» es ta y «pera» es ti-ti. Poned una palabra en cada cuadro (pan, pan, pera, pan) y decid la lista al pulso. Después, que cada grupo invente su lista de la compra con el mismo ritmo."
+    },
+    "ideas": [
+      "Inventar otro patrón de cuatro cuadros con un solo ti-ti en otro sitio, dibujarlo en la pizarra y hacerlo con palmas.",
+      "Buscar en una canción que ya sepan dónde hay un ti-ti: cantarla despacio y señalar la sílaba que va rápida.",
+      "Hacer el patrón con instrumentos de aula: claves en ta y maracas en ti-ti."
+    ],
+    "loTiene": [
+      "Señala el cuadro por el que va el cursor sin ir por detrás.",
+      "Dice «ti-ti» dentro de un pulso, no en dos.",
+      "Sigue el patrón con palmas cuando la pantalla se apaga."
+    ],
+    "errores": [
+      {
+        "error": "Va un cuadro por detrás del cursor",
+        "remedio": "que primero solo escuche una vuelta entera y entre en la segunda; ir detrás es la primera fase, no un problema."
+      },
+      {
+        "error": "En ti-ti da dos palmadas lentas y el patrón se alarga a cinco pulsos",
+        "remedio": "decir «titi» como una sola palabra rápida, con una palmada, y luego partirla en dos sin frenar."
+      },
+      {
+        "error": "Se acelera al llegar al ti-ti",
+        "remedio": "marcar el pulso con el pie y que las palmas caigan encima del pie; el pie no cambia."
+      }
+    ],
+    "indicadores": [
+      "Sigue el cursor",
+      "Ti-ti en un pulso",
+      "Sin pantalla"
+    ]
+  },
   "personaje": "milo",
   "creditos": [
     {

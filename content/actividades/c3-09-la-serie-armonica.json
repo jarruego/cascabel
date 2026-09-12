@@ -38,6 +38,85 @@
     ]
   },
   "enunciado": "actividad.c309.enunciado",
+  "ficha": {
+    "aprende": "Oír que dentro de una nota hay otras más agudas escondidas, y que la mitad de una cuerda suena una octava más alta, dos tercios una quinta y tres cuartos una cuarta.",
+    "vocabulario": [
+      "armónico",
+      "cuerda",
+      "longitud",
+      "mitad",
+      "octava",
+      "quinta",
+      "proporción",
+      "fracción"
+    ],
+    "agrupamiento": "Grupo clase con proyector; luego por parejas en tablet",
+    "material": "Una guitarra o una goma elástica tensada sobre una caja, y una regla.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Una cuerda entera.",
+        "detalle": "Pulsa una cuerda de la guitarra (o la goma) al aire y que escuchen la nota. Pregunta: ¿suena una sola cosa o hay más dentro?"
+      },
+      {
+        "min": 2,
+        "titulo": "La mitad, la tercera parte.",
+        "detalle": "Aprieta la cuerda justo en su mitad y pulsa: suena la octava. En un tercio, la quinta. Mide con la regla y escríbelo en la pizarra: 1/2, 2/3, 3/4. Es la parte de fracciones."
+      },
+      {
+        "min": 3,
+        "titulo": "En la pantalla, de abajo arriba.",
+        "detalle": "Cada pareja toca las cuerdas de la pantalla desde la más larga hasta la más corta. Que digan qué pasa con el sonido cuando la cuerda se acorta y qué dos cuerdas suenan «igual pero más alto»."
+      },
+      {
+        "min": 1,
+        "titulo": "Tocarlas seguidas.",
+        "detalle": "Que toquen dos o tres cuerdas seguidas muy rápido: suenan bien juntas porque son de la misma familia, la de una sola nota."
+      },
+      {
+        "min": 1,
+        "titulo": "Cerrar.",
+        "detalle": "Volver a la guitarra: pulsar la cuerda entera y luego rozarla muy suave justo en la mitad, en el traste doce. Ese sonido de campanita estaba escondido dentro de la nota."
+      }
+    ],
+    "enPantalla": "Seis cuerdas dibujadas de distinta longitud, de la más larga abajo a la más corta arriba, y cada una suena al tocarla: de abajo arriba van de grave a agudo, fa, do, sol, do, mi, sol (PENDIENTE DE REVISIÓN PEDAGÓGICA: confirmar cómo se presentan estas seis notas como los armónicos de una sola nota). No hay respuesta correcta ni final: se toca, se escucha y se compara. Cuanto más corta la cuerda, más agudo el sonido, y eso se ve y se oye a la vez.",
+    "sinPantalla": "Con una guitarra o una goma tensa sobre una caja: cuerda entera, mitad, tercio y cuarto, apretando con el dedo y midiendo con la regla. Cada niño pasa a pulsar y la clase dice si sube o baja. Sin instrumento, seis botellas con agua a alturas distintas, golpeadas con una cuchara: la más llena suena más grave, igual que la cuerda larga.",
+    "masFacil": "Solo dos cuerdas: la entera y la mitad. Que oigan que es «la misma nota, más alta» antes de meter la quinta ni la cuarta. Las fracciones se dejan para después: primero larga-grave y corta-aguda, con el cuerpo agachado para la larga y de puntillas para la corta.",
+    "masDificil": "Que calculen qué longitud tendría la cuerda de la siguiente nota de la serie y la comprueben en la guitarra con la regla. Que canten las seis notas de abajo arriba con sus nombres. Y que busquen en el metalófono do, mi y sol y las toquen juntas: ese acorde está escondido dentro del do.",
+    "variante": {
+      "titulo": "Con la voz",
+      "texto": "Seis niños, una nota cada uno, del fa grave al sol agudo. Entran de uno en uno de abajo arriba y se quedan sonando con «uuu»: la clase oye cómo la nota grave se va llenando. Después entran de arriba abajo y se compara: ¿cuándo suena más lleno?"
+    },
+    "ideas": [
+      "En Matemáticas: dibujar la cuerda en papel cuadriculado, partirla en 1/2, 1/3 y 1/4, y marcar dónde nace cada armónico.",
+      "Buscar en el aula objetos que suenen al golpearlos (una barra, una botella, un tubo) y ordenarlos de largo a corto y de grave a agudo.",
+      "Grabar con el móvil del maestro la cuerda entera de la guitarra y su armónico del traste doce y escucharlos seguidos: ¿se parecen?"
+    ],
+    "loTiene": [
+      "Dice sin dudar que la cuerda más corta suena más aguda, y lo comprueba en la guitarra.",
+      "Reconoce que la mitad de la cuerda da la misma nota más alta: la octava.",
+      "Relaciona una fracción de la cuerda (1/2, 2/3, 3/4) con lo que oye."
+    ],
+    "errores": [
+      {
+        "error": "Toca las cuerdas de la pantalla al azar y no se para a comparar",
+        "remedio": "pedir solo dos cuerdas, la de abajo y la de arriba, y decir con la mano si sube o baja antes de seguir."
+      },
+      {
+        "error": "Cree que la cuerda larga suena más aguda porque «es más grande»",
+        "remedio": "tensar la goma sobre la caja y acortarla con el dedo mientras la pulsa: lo oye en su propia mano."
+      },
+      {
+        "error": "Escribe 1/2 y 1/3 pero no sabe qué nota es cada una",
+        "remedio": "medir la cuerda de la guitarra con la regla, apretar en la mitad y pulsar: la fracción y la nota llegan juntas."
+      }
+    ],
+    "indicadores": [
+      "Corta es aguda",
+      "Oye la octava",
+      "Fracción y nota"
+    ]
+  },
   "personaje": "rex",
   "creditos": [
     {

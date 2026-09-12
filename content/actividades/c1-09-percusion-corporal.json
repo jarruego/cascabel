@@ -61,6 +61,90 @@
     ]
   },
   "enunciado": "actividad.c109.enunciado",
+  "ficha": {
+    "aprende": "Hacer los cuatro sonidos del cuerpo (pies, muslos, palmas y chasquidos) al pulso, cambiar de uno a otro sin frenar y aguantar el suyo cuando la otra mitad de la clase hace otro.",
+    "vocabulario": [
+      "pulso",
+      "pies",
+      "muslos",
+      "palmas",
+      "chasquidos",
+      "pitos",
+      "plano",
+      "alternar"
+    ],
+    "agrupamiento": "Toda la clase, de pie, con proyector",
+    "material": "Ninguno. Espacio para estar de pie sin tocarse",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "De pie, en semicírculo,",
+        "detalle": "mirando la pantalla, con un brazo de distancia entre uno y otro. Arranca el pulso proyectado y que lo marquen con la cabeza, sin nada más, para que entre en el cuerpo."
+      },
+      {
+        "min": 5,
+        "titulo": "Los cuatro planos, uno a uno.",
+        "detalle": "Pies, muslos, palmas y chasquidos, de abajo arriba. Cada uno tiene que sonar distinto: pies fuertes y planos, muslos apagados, palmas claras, chasquidos finos. Quien no chasquea, dos dedos en el pecho."
+      },
+      {
+        "min": 5,
+        "titulo": "Cuatro pulsos en cada plano.",
+        "detalle": "Con el pulso de la pantalla: cuatro pies, cuatro muslos, cuatro palmas, cuatro chasquidos, y vuelta a empezar. Cuenta tú en alto la primera vez («pies, dos, tres, cuatro»); la segunda, solo el pulso."
+      },
+      {
+        "min": 5,
+        "titulo": "Dos y dos.",
+        "detalle": "Dos pies y dos palmas, alternando. Cuesta más de lo que parece: el cambio llega antes. Después dos muslos y dos chasquidos. Si se rompe, vuelve a cuatro y cuatro un momento."
+      },
+      {
+        "min": 8,
+        "titulo": "Por grupos, a la vez.",
+        "detalle": "Media clase hace pies y muslos (dos y dos); la otra media, palmas y chasquidos. Suenan juntas. Después se cambian. Que se escuchen: si se oye una sola cosa, va bien."
+      },
+      {
+        "min": 1,
+        "titulo": "Parar sin pantalla.",
+        "detalle": "Apaga el pulso y haz una vuelta más solo con tu pie de guía. Termina con cuatro pies fuertes todos a la vez: un final claro para que sepan que ha salido."
+      }
+    ],
+    "enPantalla": "Es la pantalla del maestro, para proyectar: lleva el pulso, que se ve y se oye, y recuerda el orden de los cuatro pasos con su tiempo. Nadie toca nada: lo que suena en el aula lo hacen los cuerpos. Se arranca, se para y se vuelve a arrancar en cada paso; no hay respuesta correcta ni resumen al final. Si la pantalla molesta, se apaga y el pulso lo lleva tu pie.",
+    "sinPantalla": "Es su forma natural: tú marcas el pulso con el pie o con un pandero y das el orden en voz alta: «pies... muslos... palmas... chasquidos». Escribe los cuatro planos en la pizarra, de abajo arriba, y señala el que toca. Para el paso de grupos, ponte en medio y señala a cada mitad su plano con la mano. Lo único que añade la pantalla es un pulso que no se acelera.",
+    "masFacil": "Recorta pasos antes que acelerarlos: quédate en dos planos, pies y palmas, y en cuatro y cuatro. Media actividad bien hecha vale más que la entera a medias. Baja el pulso en la pantalla. Quien no chasquea, que dé dos toques en el pecho: el sitio importa, el sonido no. Y di los cambios en voz alta un pulso antes («¡palmas!») hasta que sobre.",
+    "masDificil": "Uno y uno: pies, muslos, palmas, chasquidos, un pulso cada uno, sin parar. Después en canon: la segunda mitad empieza cuando la primera va por muslos. Y que un grupo dirija a los demás con gestos, sin voz: dirigir obliga a tener claro lo que se pide, y eso es un nivel por encima de hacerlo.",
+    "variante": {
+      "titulo": "En corro, pasando el sonido",
+      "texto": "En círculo, cada niño hace un pulso y lo pasa al de su derecha, siempre en el mismo plano. Cuando la vuelta sale sin huecos, se cambia de plano cada vuelta: una de pies, una de muslos, una de palmas, una de chasquidos. El pulso tiene que dar la vuelta entera sin acelerarse."
+    },
+    "ideas": [
+      "Ponerle los cuatro sonidos a una canción que ya sepan: una estrofa con muslos, el estribillo con palmas.",
+      "Inventar por grupos una secuencia de ocho pulsos con los cuatro planos, enseñarla a la clase y que la repitan.",
+      "Escribir los cuatro planos con un dibujo cada uno (pie, pierna, manos, dedos) y leer secuencias de la pizarra."
+    ],
+    "loTiene": [
+      "Cambia de plano en el pulso justo, sin frenar ni adelantarse.",
+      "Hace los cuatro sonidos distinguibles: se oye cuál está haciendo.",
+      "Aguanta pies y muslos mientras la otra mitad hace palmas y chasquidos."
+    ],
+    "errores": [
+      {
+        "error": "Se acelera en las palmas y frena en los pies",
+        "remedio": "una vuelta solo con pies mirando el pulso de la pantalla, y meter las palmas encima sin que el pie cambie."
+      },
+      {
+        "error": "Se para en el cambio de plano para pensar",
+        "remedio": "decir el plano que viene un pulso antes, en voz alta, hasta que no haga falta."
+      },
+      {
+        "error": "En dos grupos, uno se contagia del otro y acaban haciendo lo mismo",
+        "remedio": "que cada mitad mire a un guía suyo y no a la otra; separadlas en el espacio."
+      }
+    ],
+    "indicadores": [
+      "Cambia a tiempo",
+      "Cuatro sonidos",
+      "Aguanta su plano"
+    ]
+  },
   "personaje": "doby",
   "creditos": [
     {

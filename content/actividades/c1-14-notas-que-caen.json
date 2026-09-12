@@ -317,6 +317,90 @@
   "pistas": [
     "actividad.c114.pista1"
   ],
+  "ficha": {
+    "aprende": "Tocar ta y ti-ti en el momento justo en que llegan a la línea, mirando la sílaba que viene y no la que ya ha pasado.",
+    "vocabulario": [
+      "ta",
+      "ti-ti",
+      "negra",
+      "corcheas",
+      "línea",
+      "a tiempo",
+      "antes",
+      "pulso"
+    ],
+    "agrupamiento": "Individual, en tablet; primer ejercicio con proyector",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Decirlo antes de tocarlo.",
+        "detalle": "En la pizarra: «ta ta ti-ti ta, ta ta ti-ti ta». Decidlo al pulso con palmas. Si se puede decir, se puede tocar."
+      },
+      {
+        "min": 1,
+        "titulo": "Mirar sin tocar, con el proyector.",
+        "detalle": "Arranca el primer ejercicio y que solo miren cómo bajan las sílabas y digan cada una al llegar a la línea. Nadie toca todavía."
+      },
+      {
+        "min": 2,
+        "titulo": "Primer ejercicio, tocando.",
+        "detalle": "Cada uno en su tablet. Pista clave: mirar la sílaba que viene, no la que está en la línea; reaccionar cuando ya está encima llega tarde siempre."
+      },
+      {
+        "min": 2,
+        "titulo": "Segundo y tercero.",
+        "detalle": "En el segundo aparece un «taa» largo al final: se toca una vez y se aguanta el dedo. Que digan las sílabas en voz baja mientras tocan."
+      },
+      {
+        "min": 1,
+        "titulo": "Mirar el resumen.",
+        "detalle": "Si las notas van todas tarde pero juntas, el pulso está bien; solo hay que entrar antes. Repetir ese ejercicio pensando en «antes»."
+      },
+      {
+        "min": 1,
+        "titulo": "Sin pantalla.",
+        "detalle": "Palmear los dos compases con tu pie de pulso, mirando a la pared. Lo que se ha aprendido es a anticipar, y eso vale sin tablet."
+      }
+    ],
+    "enPantalla": "Las sílabas ta y ti-ti bajan por la pantalla hasta una línea; justo cuando la tocan es cuando suenan. El niño toca el botón grande en ese momento. Si entra a tiempo, la sílaba se ilumina; si se escapa, sigue bajando la siguiente sin ningún aviso feo. No hay marcador mientras se juega y nadie se queda fuera. Hay tres ejercicios de dos compases; el segundo acaba con un «taa» largo. Al final aparece si se ha ido por delante o por detrás, y se puede repetir.",
+    "sinPantalla": "Escribe los dos compases en la pizarra con sílabas y señálalos con el puntero al pulso, adelantando el puntero un poco para que vean lo que viene: la clase palmea cuando el puntero llega. Después, señala sin decir nada y que palmeen solos. Y por parejas: uno pasa el dedo por una tira de papel con el ritmo escrito, a pulso constante, y el otro palmea cada sílaba cuando el dedo llega.",
+    "masFacil": "Baja el tempo en la app. Si aun así se lían, que toquen solo los ta y dejen pasar los ti-ti: entrar en algunas es mejor que perseguirlas todas. Que digan las sílabas en voz alta mientras bajan, sin tocar, hasta que la voz vaya a tiempo, y solo entonces el dedo. Y recuérdales que el dedo espera encima del botón, no en la mesa.",
+    "masDificil": "Que toquen ta con una mano y ti-ti con la otra. Que canten la sílaba a la vez que tocan. Después, sin pantalla: tú dictas dos compases con ta y ti-ti, ellos lo palmean de memoria y comprueban con el ejercicio parecido. Y para acabar, con los ojos cerrados en la segunda vuelta de un ejercicio que ya sepan.",
+    "variante": {
+      "titulo": "Con instrumentos",
+      "texto": "Claves o caja china en vez del botón: se toca el instrumento cuando la sílaba llega a la línea y la app hace de partitura que se mueve. Con dos instrumentos: claves en ta y maracas en ti-ti, por parejas, mirando la misma tablet. Se oye enseguida si los dos van juntos."
+    },
+    "ideas": [
+      "Escribir con negras y corcheas de verdad, en la pizarra, los dos compases que acaban de tocar con sílabas: la misma cosa con otro dibujo.",
+      "Buscar palabras que suenen como ta (sol) y como ti-ti (luna) y tocar un ejercicio diciéndolas.",
+      "Inventar por parejas un compás con dos ti-ti y hacérselo palmear a la clase."
+    ],
+    "loTiene": [
+      "Toca ta y ti-ti cuando llegan a la línea, no después.",
+      "Da dos toques rápidos en ti-ti y uno en ta, sin alargar.",
+      "Mira la sílaba que viene, no la que ya ha pasado."
+    ],
+    "errores": [
+      {
+        "error": "Toca siempre un poco tarde, todas por igual",
+        "remedio": "el pulso está bien; que diga «ya» un pelín antes de que llegue la sílaba. Es anticipar, no ir más rápido."
+      },
+      {
+        "error": "En ti-ti da un solo toque o tres",
+        "remedio": "decir «ti-ti» en voz alta mientras toca: dos sílabas, dos toques; con dos dedos si hace falta."
+      },
+      {
+        "error": "Mira solo la línea y le pillan las sílabas",
+        "remedio": "tapar la línea con el dedo un momento y que mire arriba, donde nacen."
+      }
+    ],
+    "indicadores": [
+      "A tiempo",
+      "Ti-ti doble",
+      "Mira lo que viene"
+    ]
+  },
   "etiquetas": [
     "figuras",
     "negra",

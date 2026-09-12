@@ -62,6 +62,79 @@
     ]
   },
   "enunciado": "actividad.c307.enunciado",
+  "ficha": {
+    "aprende": "Componer en grupo un rondó de percusión corporal, A-B-A-C-A-D-A, con un estribillo de cuatro compases que todos recuerdan y una copla distinta por equipo.",
+    "vocabulario": [
+      "rondó",
+      "estribillo",
+      "copla",
+      "compás",
+      "percusión corporal",
+      "forma",
+      "cuatro compases"
+    ],
+    "agrupamiento": "Toda la clase; luego grupos de cuatro",
+    "material": "Ninguno. Pequeña percusión del aula si algún grupo la prefiere para su copla.",
+    "pasos": [
+      {
+        "min": 8,
+        "titulo": "Inventar el estribillo A.",
+        "detalle": "Toda la clase junta, con el pulso a 96 en la pantalla. Cuatro compases de percusión corporal que se puedan repetir de memoria: propón dos golpes, que alguien añada los siguientes, y se repite entero hasta que salga sin mirar a nadie."
+      },
+      {
+        "min": 12,
+        "titulo": "Cada grupo, su copla.",
+        "detalle": "Grupos de cuatro. Cada uno inventa cuatro compases distintos del estribillo: serán B, C y D. Pasa por los grupos: si una copla no cabe en cuatro compases, se acorta; si es igual que A, se cambia el primer golpe."
+      },
+      {
+        "min": 12,
+        "titulo": "Montarlo entero.",
+        "detalle": "A-B-A-C-A-D-A, escrito en la pizarra. El estribillo lo hace todo el mundo; cada copla, solo su grupo. Primero con paradas entre partes; después seguido, señalando tú en la pizarra dónde vamos."
+      },
+      {
+        "min": 8,
+        "titulo": "Tocarlo del tirón.",
+        "detalle": "Sin parar y sin que tú lo dirijas: un niño señala la pizarra, o nadie. Si se descoloca, se vuelve a empezar sin drama. Al final, una vuelta más para escucharse: ¿se distingue el estribillo de las coplas?"
+      }
+    ],
+    "enPantalla": "Es la pantalla del maestro, para proyectar: lleva el pulso a 96 en compases de cuatro y muestra el paso en el que está la sesión con su tiempo. Los niños no tocan nada: el rondó se compone y se toca en el aula, con el cuerpo. Se puede parar el pulso mientras un grupo ensaya y volver a ponerlo para montarlo. No hay respuesta correcta ni final: se acaba cuando el rondó suena del tirón.",
+    "sinPantalla": "Es su forma natural: tú llevas el pulso con el pie o con un pandero y la forma A-B-A-C-A-D-A está en la pizarra. Con cuatro tarjetas grandes con las letras, un niño las va levantando en orden mientras se toca, y así nadie necesita mirar al maestro. El pulso puede pasarse a un grupo de claves cuando el resto ya lo lleva por dentro.",
+    "masFacil": "Estribillo de dos compases en vez de cuatro, o solo con palmas y muslos. Coplas con la misma regla: dos compases. Si un grupo no arranca, dale el principio (dos golpes) y que solo invente el final. A-B-A-C-A ya es un rondó: no hacen falta tres coplas para que se entienda la forma.",
+    "masDificil": "Que cada copla use un sonido que el estribillo no tiene, o que una copla sea el estribillo al revés. Cambiar el orden de las coplas sin ensayar y ver si sigue sonando. Y ponerle un final: un último golpe todos a la vez, decidido entre todos.",
+    "variante": {
+      "titulo": "Con instrumentos",
+      "texto": "El estribillo con el cuerpo y las coplas con pequeña percusión: claves un grupo, panderos otro, cajas chinas el tercero. Se oye la forma también por el timbre: cuando vuelve el cuerpo, ha vuelto A. Y al revés en la segunda vuelta: las coplas con el cuerpo y el estribillo con todos los instrumentos a la vez."
+    },
+    "ideas": [
+      "Escuchar «Para Elisa» de Beethoven y levantar la tarjeta A cada vez que vuelve el tema del principio: es un rondó, como el de la clase.",
+      "Grabar el rondó con el móvil del maestro y escucharlo al día siguiente: ¿se sabe cuál es cada copla sin verlo?",
+      "Escribir el rondó en la pizarra con símbolos inventados por cada grupo para sus golpes, y que otro grupo lo toque leyendo."
+    ],
+    "loTiene": [
+      "Hace el estribillo de memoria, sin mirar a nadie, cada vez que vuelve.",
+      "Su grupo entra en su copla a tiempo, sin que el maestro lo señale.",
+      "Cuenta los cuatro compases de su copla y para cuando toca volver a A."
+    ],
+    "errores": [
+      {
+        "error": "Los grupos siguen tocando su copla cuando ya ha vuelto el estribillo",
+        "remedio": "contar en voz alta los cuatro compases de la copla durante el montaje, y dejar de contar cuando salga solo."
+      },
+      {
+        "error": "La copla de un grupo es el estribillo con un golpe cambiado",
+        "remedio": "pedir que empiece con otro sonido: si A empieza con palmas, B empieza con pies."
+      },
+      {
+        "error": "El pulso se acelera en las coplas y se frena en el estribillo",
+        "remedio": "que un niño con claves lleve el pulso durante toda la vuelta, sin tocar el rondó."
+      }
+    ],
+    "indicadores": [
+      "Estribillo de memoria",
+      "Entra en su copla",
+      "Cuenta los compases"
+    ]
+  },
   "personaje": "doby",
   "creditos": [
     {

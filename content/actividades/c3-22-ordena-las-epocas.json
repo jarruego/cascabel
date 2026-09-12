@@ -106,6 +106,79 @@
     "actividad.c322.pista1",
     "actividad.c322.pista2"
   ],
+  "ficha": {
+    "aprende": "Colocar las seis épocas de la historia de la música en orden, de la Edad Media al siglo XX, y asociar Bach, Mozart y Beethoven a Barroco, Clasicismo y Romanticismo.",
+    "vocabulario": [
+      "edad media",
+      "renacimiento",
+      "barroco",
+      "clasicismo",
+      "romanticismo",
+      "siglo xx",
+      "línea del tiempo"
+    ],
+    "agrupamiento": "Por parejas en tablet, o grupo clase con proyector",
+    "material": "Seis tarjetas con el nombre de cada época si se hace sin pantalla",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Los extremos primero.",
+        "detalle": "En la pizarra: la Edad Media es lo más antiguo (castillos, monjes cantando) y el siglo XX lo más reciente (grabaciones, radio). Todo lo demás va en medio."
+      },
+      {
+        "min": 2,
+        "titulo": "Tres compositores, tres épocas.",
+        "detalle": "Bach, Mozart y Beethoven vivieron uno detrás de otro: Barroco, Clasicismo, Romanticismo. Decirlo como una cantinela, tres veces, con un gesto por nombre."
+      },
+      {
+        "min": 3,
+        "titulo": "Los dos ejercicios en la pantalla.",
+        "detalle": "Por parejas: uno toca la época y el otro el hueco donde va; se cambian en el segundo ejercicio. Comprobar la fila entera antes de darla por buena."
+      },
+      {
+        "min": 1,
+        "titulo": "Fila humana.",
+        "detalle": "Seis niños con las tarjetas, desordenados, y la clase los coloca en fila diciendo dónde va cada uno y por qué."
+      }
+    ],
+    "enPantalla": "Aparecen las seis épocas desordenadas como fichas: Edad Media, Renacimiento, Barroco, Clasicismo, Romanticismo y siglo XX. Debajo, seis huecos en fila, de la más antigua a la más reciente. Se toca una ficha y luego el hueco donde va; nada de arrastrar. Si una ficha queda en un sitio que no es el suyo, el personaje da una pista (empezar por los extremos, o el orden Bach-Mozart-Beethoven) y se puede mover otra vez. Hay dos ejercicios; termina cuando las seis están en su sitio.",
+    "sinPantalla": "Seis tarjetas con los nombres en el suelo, o seis niños que las sostienen y se colocan ellos mismos en fila: ordenar con el cuerpo se entiende antes que con el dedo. Que la clase dé las instrucciones («Barroco, un paso a la derecha»). Se puede hacer a ciegas: el maestro dice una época y hay que ponerse antes o después de las que ya están puestas.",
+    "masFacil": "Deja ya colocadas la Edad Media a la izquierda y el siglo XX a la derecha, y ordenar solo las cuatro del medio. Si aún cuesta, quita también el Renacimiento y quédate con las tres de los compositores: Barroco (Bach), Clasicismo (Mozart), Romanticismo (Beethoven). Ordenar el medio no es hacerles la actividad.",
+    "masDificil": "Añadir a cada época una tarjeta con un compositor o un instrumento (un órgano para el Barroco, un piano para el Romanticismo, un sintetizador para el siglo XX) y ordenar las parejas. O pedir la fecha aproximada de cada cambio y dibujar la línea del tiempo a escala en la pizarra: se ve que la Edad Media es larguísima y el Clasicismo, corto.",
+    "variante": {
+      "titulo": "Con audiciones",
+      "texto": "Poner un fragmento breve de cada época, sin decir cuál es, y que la clase lo coloque en la fila oyendo cómo suena: voces solas para lo medieval, clave para el Barroco, orquesta grande para el Romanticismo. La fila queda hecha por el oído y no solo por el nombre."
+    },
+    "ideas": [
+      "Pegar la línea del tiempo en la pared del aula y añadir a cada época lo que se vaya escuchando durante el curso.",
+      "Preguntar en casa qué música oían los abuelos y colocarla en la línea: casi todo cae en el siglo XX y se ve lo cerca que está.",
+      "Investigar por grupos un compositor de cada época y presentarlo en un minuto: quién era y qué instrumento suena en su música."
+    ],
+    "loTiene": [
+      "Coloca la Edad Media la primera y el siglo XX el último sin dudar.",
+      "Sitúa Barroco, Clasicismo y Romanticismo seguidos y en ese orden.",
+      "Comprueba la fila entera antes de dar por terminado."
+    ],
+    "errores": [
+      {
+        "error": "Cambia Barroco y Clasicismo de sitio",
+        "remedio": "repetir la cantinela «Bach, Mozart, Beethoven» y preguntar quién nació antes."
+      },
+      {
+        "error": "Pone el Renacimiento después del Barroco",
+        "remedio": "explicar que «renacer» viene justo después de la Edad Media: es lo segundo de la fila."
+      },
+      {
+        "error": "Toca las fichas al azar hasta que encajan",
+        "remedio": "pedir que diga en voz alta dónde va cada una antes de tocar el hueco."
+      }
+    ],
+    "indicadores": [
+      "Extremos",
+      "Orden del medio",
+      "Comprueba"
+    ]
+  },
   "creditos": [
     {
       "obra": "Iconos",

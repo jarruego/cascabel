@@ -144,6 +144,84 @@
     "actividad.c315.pista1",
     "actividad.c315.pista2"
   ],
+  "ficha": {
+    "aprende": "Distinguir de oído una segunda, una tercera, una quinta y una octava, cantando desde la primera nota y contando nombres de nota hasta llegar a la segunda.",
+    "vocabulario": [
+      "intervalo",
+      "segunda",
+      "tercera",
+      "quinta",
+      "octava",
+      "distancia",
+      "contar notas"
+    ],
+    "agrupamiento": "Grupo clase con proyector; después individual en tablet",
+    "material": "Ninguno. Un metalófono para tocar do-re, do-mi, do-sol y do-do.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Cuatro distancias.",
+        "detalle": "En el metalófono o en la pantalla: do-re, do-mi, do-sol, do-do agudo. Contar las láminas con las dos incluidas: dos, tres, cinco, ocho. Ese número es el nombre del intervalo."
+      },
+      {
+        "min": 2,
+        "titulo": "Cantar y contar.",
+        "detalle": "Suena el par; la clase canta la primera nota y sube por la escala hasta la segunda contando con los dedos: do, re, mi… El dedo al que llega es el intervalo."
+      },
+      {
+        "min": 3,
+        "titulo": "Primera vuelta.",
+        "detalle": "Cada niño en su tablet o todos con el proyector: suena el par y se toca segunda, tercera, quinta u octava. No siempre empiezan en do: que canten desde la nota que suene."
+      },
+      {
+        "min": 1,
+        "titulo": "Segunda vuelta, con pista.",
+        "detalle": "Ante la duda, repetir y quedarse con dos ideas: la octava es la misma nota más aguda; la segunda es la de al lado. Las otras dos están en medio."
+      },
+      {
+        "min": 1,
+        "titulo": "Cerrar.",
+        "detalle": "Cantar entre todos las cuatro distancias desde do, seguidas y con los nombres: do-re, do-mi, do-sol, do-do."
+      }
+    ],
+    "enPantalla": "Suenan dos notas seguidas en el piano y el niño toca una de cuatro opciones: segunda, tercera, quinta u octava. Los pares empiezan en notas distintas (do, sol, mi, re, la, fa), para que no se aprenda la altura sino la distancia. Se puede volver a oír. Si toca la que no es, el personaje le recuerda que cante desde la primera nota y cuente, y lo intenta de nuevo. Doce escuchas y termina, sin puntuación.",
+    "sinPantalla": "En el metalófono: toca dos láminas y que señalen una de cuatro tarjetas con 2, 3, 5 y 8. Que un niño cuente en voz alta las láminas entre las dos, incluidas, para comprobar. Sin instrumento, con la voz: canta tú do y la segunda nota, y la clase sube cantando y contando con los dedos hasta llegar. Con los ojos cerrados se oye mejor.",
+    "masFacil": "Solo dos opciones: segunda y octava, que son las más distintas, la de al lado y la misma más aguda. Después, segunda y quinta. Todos los pares desde do hasta que salga; luego desde otras notas. Y siempre cantar desde la primera nota antes de decidir: contar es lo que hace el trabajo.",
+    "masDificil": "Que canten la segunda nota antes de que suene, cuando se les dice el intervalo: «do y una quinta». Que toquen en el metalófono un intervalo para que otro lo adivine. Y meter los intervalos hacia abajo: la segunda nota más grave que la primera.",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "Cuatro alturas: segunda, manos en las rodillas; tercera, en la cintura; quinta, en los hombros; octava, brazos arriba. Suena el par y la clase lo muestra con el cuerpo a la vez, sin tocar nada. Se ve enseguida quién duda entre dos y cuáles se confunden."
+    },
+    "ideas": [
+      "Buscar los intervalos en canciones que la clase conozca: «Cumpleaños feliz» empieza con una segunda; buscar una que empiece con una quinta y otra con una octava.",
+      "Dictado de intervalos: el maestro toca cinco pares en el metalófono y cada niño escribe 2, 3, 5 u 8.",
+      "Tocar en la flauta o el metalófono una melodía corta y marcar en la partitura dónde hay una segunda y dónde una tercera."
+    ],
+    "loTiene": [
+      "Canta desde la primera nota y cuenta hasta la segunda antes de contestar.",
+      "Reconoce la octava como la misma nota más aguda desde cualquier nota de salida.",
+      "Distingue tercera de quinta, que son las dos que están en medio."
+    ],
+    "errores": [
+      {
+        "error": "Confunde tercera y quinta",
+        "remedio": "cantar do-mi y do-sol seguidas varias veces contando con los dedos: tres dedos, cinco dedos."
+      },
+      {
+        "error": "Contesta octava a todo lo que suena lejos",
+        "remedio": "comparar octava y quinta desde la misma nota: en la octava la segunda nota «es la misma»; en la quinta, no."
+      },
+      {
+        "error": "Contesta antes de que suene la segunda nota",
+        "remedio": "que levante la mano cuando la segunda nota haya acabado, y solo entonces toque."
+      }
+    ],
+    "indicadores": [
+      "Canta y cuenta",
+      "Octava",
+      "Tercera o quinta"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

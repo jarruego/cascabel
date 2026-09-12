@@ -60,6 +60,85 @@
     ]
   },
   "enunciado": "actividad.c210.enunciado",
+  "ficha": {
+    "aprende": "Mantener su ostinato (pies en 1 y 3, o palmas en 2 y 4) mientras el otro grupo hace el contrario, y cambiar de plano a una señal sin que el pulso se pare.",
+    "vocabulario": [
+      "ostinato",
+      "pulso",
+      "plano",
+      "pies",
+      "palmas",
+      "uno y tres",
+      "dos y cuatro",
+      "señal"
+    ],
+    "agrupamiento": "Toda la clase en dos grupos, de pie, con proyector",
+    "material": "Ninguno. Espacio para que los dos grupos estén separados y de cara",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Contar a cuatro con la pantalla.",
+        "detalle": "Todos de pie, mirando el pulso proyectado a 92. Contar en voz alta «uno, dos, tres, cuatro» y dar un paso en el sitio en cada pulso, hasta que el uno caiga siempre en el mismo pie."
+      },
+      {
+        "min": 5,
+        "titulo": "El ostinato de abajo.",
+        "detalle": "Media clase: pies en los pulsos 1 y 3, y nada en el 2 y el 4. Solo eso, en bucle, hasta que salga sin pensarlo. La otra mitad mira y cuenta en voz baja."
+      },
+      {
+        "min": 5,
+        "titulo": "El de arriba.",
+        "detalle": "La otra media clase: palmas en 2 y 4, con los pies quietos. Por separado primero, con el grupo de los pies callado. Cuesta más: el 2 y el 4 son los pulsos débiles y hay que esperar al uno sin hacer nada."
+      },
+      {
+        "min": 8,
+        "titulo": "Los dos a la vez.",
+        "detalle": "Ahora juntos: pies en 1 y 3, palmas en 2 y 4. Entre los dos grupos sale un pulso continuo que nadie hace solo. Si se rompe, para, vuelve a contar a cuatro y entra primero el grupo de los pies."
+      },
+      {
+        "min": 5,
+        "titulo": "Cambiar de plano sin parar.",
+        "detalle": "A tu señal (un brazo en alto en el pulso 1), los grupos se intercambian: quien hacía pies pasa a palmas y al revés, sin que la música se detenga. Repetir el cambio tres o cuatro veces, cada vez con menos aviso."
+      }
+    ],
+    "enPantalla": "Es la pantalla del maestro, para proyectar. Muestra el pulso a 92 en compás de cuatro, con el uno marcado, y debajo los cuatro pasos de la sesión con su tiempo, para que no tengas que recordar el orden. Los niños no tocan nada: miran el pulso y ponen el cuerpo. No hay puntuación ni final: la actividad termina cuando el intercambio de planos sale sin que se detenga el pulso.",
+    "sinPantalla": "Es su forma natural. Marca tú el pulso con un pandero o con el pie, contando «uno, dos, tres, cuatro» en voz alta al principio y solo con el gesto después. Los dos grupos se colocan de cara, separados, para que cada uno oiga al otro como un bloque y no como vecinos sueltos. La señal de cambio puede ser un golpe seco de pandero.",
+    "masFacil": "Que los dos grupos hagan primero el mismo plano: todos pies en 1 y 3, después todos palmas en 2 y 4. Cuando cada uno salga solo, se reparten. Si el grupo de las palmas se adelanta al 1, que cuente «uno» en voz alta y palmee en «dos»: decirlo ayuda a esperar. Baja el pulso a 80 antes que quitar el intercambio.",
+    "masDificil": "Tres planos: un tercer grupo con chasquidos o palmadas en los muslos solo en el pulso 4. O que el cambio de plano lo pida un niño desde delante, con el gesto, en vez de tú: dirigir obliga a saber dónde va el uno mejor que hacerlo.",
+    "variante": {
+      "titulo": "Con instrumentos",
+      "texto": "El plano de abajo con un bombo o un pandero (pulsos 1 y 3) y el de arriba con claves o caja china (2 y 4). El cambio de plano es entonces cambiar de instrumento: se pasa el pandero al vecino en el pulso 4 y se entra en el 1."
+    },
+    "ideas": [
+      "Poner el ostinato de dos planos debajo de una canción que la clase ya sepa: un grupo canta y los otros dos sostienen pies y palmas.",
+      "Inventar entre todos un tercer plano de un solo golpe y decidir en qué pulso va: probar el 2, el 4, y escuchar cuál suena mejor.",
+      "Escribir los dos planos en la pizarra como dos filas de casillas (1 2 3 4) y marcar con una cruz dónde suena cada uno: es la primera partitura de percusión corporal."
+    ],
+    "loTiene": [
+      "Sostiene su plano sin pasarse al del otro grupo cuando suenan los dos a la vez.",
+      "Cambia de pies a palmas a la señal sin frenar ni saltarse un pulso.",
+      "Espera en silencio los pulsos que no le tocan, sin rellenar el hueco."
+    ],
+    "errores": [
+      {
+        "error": "El grupo de las palmas acaba palmeando en 1 y 3, arrastrado por los pies",
+        "remedio": "que cuenten «uno» en voz alta sin hacer nada y palmeen en «dos», dos vueltas, antes de volver a juntarse."
+      },
+      {
+        "error": "Al cambiar de plano se para todo un compás",
+        "remedio": "avisar con el brazo en alto en el 1 y cambiar en el 1 siguiente: el aviso da un compás entero para prepararse."
+      },
+      {
+        "error": "El pulso se acelera cuando entran los dos grupos",
+        "remedio": "volver a la pantalla o al pandero un rato, y bajar a 80 hasta que aguanten cuatro compases sin correr."
+      }
+    ],
+    "indicadores": [
+      "Sostiene su plano",
+      "Cambia a la señal",
+      "Espera el hueco"
+    ]
+  },
   "personaje": "doby",
   "creditos": [
     {

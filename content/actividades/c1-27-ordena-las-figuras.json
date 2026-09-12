@@ -118,6 +118,84 @@
     "actividad.c127.pista1",
     "actividad.c127.pista2"
   ],
+  "ficha": {
+    "aprende": "Que corchea, negra y blanca son tres duraciones, y ordenarlas de oído: la corchea es la más corta y la blanca la que deja más hueco.",
+    "vocabulario": [
+      "corchea",
+      "negra",
+      "blanca",
+      "corta",
+      "larga",
+      "duración",
+      "hueco"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o parejas en tablet",
+    "material": "Tres tarjetas grandes con la corchea, la negra y la blanca dibujadas",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Tres figuras, tres nombres.",
+        "detalle": "Enseña las tarjetas y di el nombre de cada una. Da tres golpes en la mesa con el hueco de cada figura: corcheas seguidas, negras a paso, blancas con silencio en medio."
+      },
+      {
+        "min": 1,
+        "titulo": "Oírlas en la app.",
+        "detalle": "Toca cada ficha de la pantalla y que la clase repita los tres golpes con palmas. Pregunta después de cada una: «¿deja mucho hueco o poco?»."
+      },
+      {
+        "min": 2,
+        "titulo": "Ordenar.",
+        "detalle": "Un niño toca una ficha y luego el hueco donde va: primero la más corta, a la izquierda. La clase puede decir «más corta» o «más larga» para ayudar. Se comprueba escuchando la fila."
+      },
+      {
+        "min": 1,
+        "titulo": "Segundo ejercicio.",
+        "detalle": "Igual, con otro niño. Antes de colocar, que diga el nombre de la figura y que dé sus tres golpes en la mesa."
+      },
+      {
+        "min": 1,
+        "titulo": "Con el cuerpo.",
+        "detalle": "Tres niños con las tarjetas en la mano se ponen en fila de la más corta a la más larga, y la clase da sus golpes de izquierda a derecha."
+      }
+    ],
+    "enPantalla": "Tres fichas desordenadas con la corchea, la negra y la blanca, y tres huecos en fila. Al tocar una ficha suenan tres golpes con el hueco de esa figura: las corcheas van deprisa, las negras a paso, las blancas con un silencio largo entre golpe y golpe. Para colocar, se toca la ficha y luego el hueco; no hay que arrastrar. Si el orden no es de la más corta a la más larga, el personaje da una pista («la que suena más rápido es la más corta») y se cambia lo que haga falta. Hay dos ejercicios.",
+    "sinPantalla": "Con las tres tarjetas boca abajo en la mesa. Un niño levanta una, la clase da sus tres golpes con palmas y decide si va a la izquierda (corta) o a la derecha (larga) de las que ya están puestas. Luego, en fila: tres niños con las tarjetas se ordenan ellos mismos, y el resto lee la fila de izquierda a derecha con palmas, pasando de las corcheas rápidas a la blanca lenta.",
+    "masFacil": "Empieza con dos fichas, la corchea y la blanca, que son las extremas y suenan muy distintas. Cuando salga, mete la negra en medio. También ayuda dejar la blanca ya colocada en el último hueco: solo hay que decidir cuál de las otras dos va primero.",
+    "masDificil": "Que ordenen sin volver a oír las fichas, solo con el nombre y el dibujo, y que comprueben después escuchando. O al revés: tú das los golpes de una figura con la espalda vuelta y ellos dicen cuál es antes de verla. Y con cuatro tarjetas de papel, añadiendo la redonda.",
+    "variante": {
+      "titulo": "Por parejas, de espaldas",
+      "texto": "Uno da tres golpes en la mesa con la duración que elija y el otro, sin mirar, señala la tarjeta que es y la coloca en la fila. Se cambian. El que golpea tiene que decidir antes cuánto hueco deja, y eso es leer la figura al revés: del sonido al dibujo."
+    },
+    "ideas": [
+      "Andar por la clase al paso de cada figura: pasitos rápidos de corchea, paso normal de negra, pasos largos y lentos de blanca, cambiando cuando el maestro enseña otra tarjeta.",
+      "Escribir en la pizarra una fila de cuatro figuras y leerla con palmas, contando el hueco de cada una con los dedos.",
+      "Buscar en una canción que ya sepan una palabra que vaya en corcheas y otra que se quede larga."
+    ],
+    "loTiene": [
+      "Coloca la corchea a la izquierda y la blanca a la derecha sin tener que oírlas dos veces.",
+      "Dice «esta deja más hueco» antes de colocar.",
+      "Da tres golpes de blanca con un silencio de verdad entre ellos, sin acelerarse."
+    ],
+    "errores": [
+      {
+        "error": "Ordena por el dibujo: la que tiene más rabo o más negro le parece más larga",
+        "remedio": "tapar la pantalla y oír las tres seguidas; que decida con los golpes y solo después mire el dibujo."
+      },
+      {
+        "error": "Confunde negra y blanca, que suenan parecidas si no se espera el hueco",
+        "remedio": "contar en voz alta el hueco: «uno» en la negra, «uno-dos» en la blanca."
+      },
+      {
+        "error": "Coloca las tres y no vuelve a escuchar la fila",
+        "remedio": "pedir siempre una escucha final de izquierda a derecha antes de dar por hecha la fila."
+      }
+    ],
+    "indicadores": [
+      "Ordena de oído",
+      "Nombra la figura",
+      "Comprueba"
+    ]
+  },
   "creditos": [
     {
       "obra": "Iconos",

@@ -56,6 +56,84 @@
     ]
   },
   "enunciado": "actividad.c311.enunciado",
+  "ficha": {
+    "aprende": "Componer una melodía de dieciséis pulsos con la escala de do a do, escuchándola en bucle y cambiándola hasta que tenga dos frases de ocho que se respondan.",
+    "vocabulario": [
+      "frase",
+      "pulso",
+      "octava",
+      "escala",
+      "bucle",
+      "pregunta y respuesta",
+      "casilla"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "La cuadrícula.",
+        "detalle": "Ocho filas de do a do y dieciséis columnas. Que enciendan una casilla, la escuchen en bucle y la apaguen: la nota suena cuando el cursor pasa por su columna."
+      },
+      {
+        "min": 3,
+        "titulo": "Primera frase de ocho.",
+        "detalle": "Solo en las ocho primeras columnas. Que empiecen en do y acaben donde quieran, con una nota por pulso o casillas seguidas para las notas largas. Escuchar en bucle y cambiar una sola cosa por vuelta."
+      },
+      {
+        "min": 3,
+        "titulo": "Segunda frase.",
+        "detalle": "Las ocho columnas que faltan: una respuesta que acabe en do. Puede empezar como la primera y cambiar el final, o ser distinta. Escuchar las dieciséis seguidas."
+      },
+      {
+        "min": 3,
+        "titulo": "Ajustar escuchando.",
+        "detalle": "Una vuelta sin tocar, solo oír. Después, una regla: quitar una nota que sobre, o alargar una. Cambio, escucha, decisión."
+      },
+      {
+        "min": 2,
+        "titulo": "Enseñarla.",
+        "detalle": "Cada pareja pone su melodía a la clase, o la canta con «la». Se dice qué tiene: si empieza y acaba en do, si las dos frases se parecen."
+      }
+    ],
+    "enPantalla": "Una cuadrícula de ocho filas, del do grave al do agudo, por dieciséis columnas, una por pulso. Se toca una casilla y se enciende; el cursor recorre las columnas en bucle a 100 y toca cada nota encendida cuando pasa por ella, así que el cambio se oye en la vuelta siguiente. Casillas seguidas en la misma fila son una nota larga. No hay respuesta correcta ni final: se para cuando la melodía gusta. Se puede vaciar y empezar de nuevo.",
+    "sinPantalla": "Cuadrícula en la pizarra: ocho filas con los nombres de do a do y dieciséis columnas. Cada niño pega un gomet en una columna y la clase canta el resultado siguiendo tu dedo, o se toca en el metalófono. Para cambiar, se despega y se pega en otra fila. Dos gomets seguidos en la misma fila son una nota larga, y se cantan sin cortar.",
+    "masFacil": "Solo ocho columnas y cuatro notas: do, re, mi, sol. Que empiece en do y acabe en do, y que se apague todo lo que no se pueda cantar. Si no arranca, pon tú las dos primeras notas y que siga. Con la escala entera y dieciséis huecos, quien no sabe por dónde empezar no empieza.",
+    "masDificil": "Una regla más: la segunda frase es la primera al revés, o empieza igual y cambia solo las dos últimas notas. Que canten su melodía con los nombres de las notas mientras suena. Y que la escriban en el pentagrama del cuaderno: una casilla, una negra; dos seguidas, una blanca.",
+    "variante": {
+      "titulo": "Pregunta y respuesta",
+      "texto": "Un niño compone la primera frase de ocho y el otro tiene que contestarle en las ocho siguientes sin tocar la primera. Se escucha entera y se cambian los papeles. Al final, la pareja decide si la respuesta «contesta» de verdad: si acaba en do, se nota."
+    },
+    "ideas": [
+      "Escribir en el pentagrama la melodía compuesta y tocarla con la flauta o el metalófono al día siguiente, sin la pantalla.",
+      "Ponerle letra: dieciséis sílabas para dieciséis pulsos, y cantarla con la letra.",
+      "Escuchar tres melodías de la clase seguidas y decir en cuál se oyen dos frases y en cuál una sola tirada."
+    ],
+    "loTiene": [
+      "Escucha la vuelta entera antes de cambiar algo.",
+      "Su melodía tiene dos frases de ocho que se distinguen al oírla.",
+      "Usa notas largas (casillas seguidas) a propósito, no solo una nota por pulso."
+    ],
+    "errores": [
+      {
+        "error": "Enciende una casilla en cada columna sin escuchar y sale una tirada sin frases",
+        "remedio": "una vuelta sin tocar, y después apagar una nota de cada dos en la segunda frase para que respire."
+      },
+      {
+        "error": "Enciende dos notas en la misma columna",
+        "remedio": "elegir una: en una melodía suena una nota cada vez. Las dos a la vez son para otro día."
+      },
+      {
+        "error": "Acaba en cualquier nota y la melodía queda «colgada»",
+        "remedio": "poner do en la última casilla y escuchar la diferencia. Después decidir si la prefiere colgada o cerrada."
+      }
+    ],
+    "indicadores": [
+      "Escucha antes",
+      "Dos frases",
+      "Notas largas"
+    ]
+  },
   "personaje": "laia",
   "creditos": [
     {

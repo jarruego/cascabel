@@ -135,6 +135,78 @@
   "pistas": [
     "actividad.c220.pista1"
   ],
+  "ficha": {
+    "aprende": "Distinguir de oído si una frase suena forte o piano, y saber que en la partitura se escriben con una f y una p.",
+    "vocabulario": [
+      "forte",
+      "piano",
+      "fuerte",
+      "suave",
+      "intensidad",
+      "matices"
+    ],
+    "agrupamiento": "Grupo clase con proyector, después individual en tablet",
+    "material": "Ninguno. Dos tarjetas con una f y una p grandes",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Decir la misma frase de dos maneras.",
+        "detalle": "Di «buenos días» fuerte y luego casi en un susurro. Preguntar qué ha cambiado: no las palabras, sino la fuerza. En música eso se llama forte y piano, y se escribe f y p en la pizarra."
+      },
+      {
+        "min": 1,
+        "titulo": "Cantar forte y piano.",
+        "detalle": "Una frase corta que la clase sepa, dos veces: cuando enseñas la tarjeta f, fuerte; cuando enseñas la p, suave. Sin gritar en forte y sin dejar de cantar en piano."
+      },
+      {
+        "min": 2,
+        "titulo": "Oír con el proyector.",
+        "detalle": "Suena la frase al piano y la clase enseña con la mano la tarjeta que toca. Un niño sale a tocar el botón. Aclarar que aquí «piano» no es el instrumento que suena: quiere decir suave."
+      },
+      {
+        "min": 2,
+        "titulo": "Jugar en tablet,",
+        "detalle": "de uno en uno. Se puede repetir con el botón; si no es, el personaje da una pista y se vuelve a elegir. Termina en ocho frases."
+      }
+    ],
+    "enPantalla": "Suena una frase corta al piano, de cuatro o cinco notas, fuerte o muy suave. Debajo hay dos botones grandes: forte, con su f, y piano, con su p. El niño puede volver a oírla con el botón de repetir y toca uno. Si no es, el personaje le recuerda que forte es fuerte y piano es suave, y puede volver a elegir; si acierta, «¡bien!» y viene la siguiente. Las mismas frases salen a veces fuerte y a veces suave, para que se escuche la fuerza y no la melodía. Termina al acabar las ocho, sin puntuación.",
+    "sinPantalla": "Canta tú o toca una frase corta en el xilófono, unas veces forte y otras piano, y que enseñen la tarjeta con la f o con la p. Después la voz: la clase canta la misma frase y tú diriges con las manos, abiertas y grandes para forte, juntas y pequeñas para piano. Al que le toque dirigir decide cómo suena la clase.",
+    "masFacil": "Exagera el contraste: forte muy fuerte y piano casi inaudible, y siempre la misma frase. Antes de que suene, decir las dos opciones en voz alta señalando las tarjetas. Si confunden las palabras y no el sonido, usa de momento «fuerte» y «suave» y pon forte y piano al lado, en la pizarra, hasta que se queden.",
+    "masDificil": "Añade un tercer nivel entre los dos: mezzoforte, ni fuerte ni suave, cantado por ti. O que canten una frase que empiece piano y termine forte, creciendo poco a poco, y busquen cómo se dibuja eso (una cuña que se abre). También que pongan f o p a cada verso de una canción conocida y la canten así.",
+    "variante": {
+      "titulo": "El director",
+      "texto": "Un niño dirige a la clase con las dos tarjetas mientras todos cantan una canción conocida: cuando levanta la f, forte; cuando levanta la p, piano. Cambia de tarjeta cuando quiere, incluso a mitad de verso. La clase tiene que reaccionar sin dejar de cantar. Se cambia de director cada estrofa."
+    },
+    "ideas": [
+      "Buscar en una partitura de verdad (la de una canción del aula) dónde pone f y p, y cantarla respetándolo.",
+      "Grabar la clase con el móvil del maestro cantando forte y piano y escuchar si se nota la diferencia.",
+      "Hacer una lista de sonidos del colegio que son forte (el timbre, el patio) y piano (un lápiz, un susurro)."
+    ],
+    "loTiene": [
+      "Dice forte o piano tras oír la frase entera, sin dudar entre las dos palabras.",
+      "Canta la misma frase forte y piano cuando se le pide, sin gritar ni dejar de sonar.",
+      "Sabe que la f y la p de la partitura son forte y piano."
+    ],
+    "errores": [
+      {
+        "error": "Toca «piano» cuando oye el instrumento, aunque suene fuerte",
+        "remedio": "recordar que aquí piano quiere decir suave: decir «suave» en voz alta mientras se señala la p y volver a oír la frase."
+      },
+      {
+        "error": "En forte grita y la voz se rompe",
+        "remedio": "forte es cantar con más aire, no chillar: hacerlo con la boca bien abierta y sin subir la nota."
+      },
+      {
+        "error": "En piano deja de cantar o solo mueve la boca",
+        "remedio": "piano se tiene que oír: cantar como si el vecino no estuviera, pero que llegue al maestro."
+      }
+    ],
+    "indicadores": [
+      "Forte o piano",
+      "Lo canta así",
+      "f y p"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

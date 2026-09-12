@@ -155,6 +155,84 @@
     "actividad.c305.pista1",
     "actividad.c305.pista2"
   ],
+  "ficha": {
+    "aprende": "Distinguir de oído un acorde mayor de uno menor sabiendo que solo cambia la nota del medio, y decirlo con sus palabras: más abierto o más recogido.",
+    "vocabulario": [
+      "acorde",
+      "mayor",
+      "menor",
+      "tercera",
+      "nota del medio",
+      "abierto",
+      "recogido"
+    ],
+    "agrupamiento": "Grupo clase con proyector; después individual en tablet",
+    "material": "Ninguno. Un teclado o metalófono del aula, si lo hay, para tocar do-mi-sol y do-mi bemol-sol.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Tres notas a la vez.",
+        "detalle": "Toca o pon do-mi-sol y explica que eso es un acorde: tres notas juntas. Luego baja el mi medio tono: do-mi bemol-sol. Solo ha cambiado la del medio."
+      },
+      {
+        "min": 1,
+        "titulo": "Ponerle palabras.",
+        "detalle": "Pon los dos seguidos varias veces. ¿Cómo suena cada uno? Recoge lo que digan: abierto, alegre, cerrado, triste, serio. Todas valen; luego se les da su nombre: mayor y menor."
+      },
+      {
+        "min": 2,
+        "titulo": "Primera vuelta.",
+        "detalle": "Suena el acorde y se toca mayor o menor. Antes de tocar, que abran los brazos si les suena abierto y los crucen si les suena recogido."
+      },
+      {
+        "min": 1,
+        "titulo": "Segunda vuelta, con la pista.",
+        "detalle": "Cuando dudan, se pulsa repetir: solo cambia la nota de en medio. Que intenten cantarla."
+      },
+      {
+        "min": 1,
+        "titulo": "Cerrar.",
+        "detalle": "¿Una canción que suene mayor? ¿Y una que suene menor? Se apuntan para escucharlas otro día."
+      }
+    ],
+    "enPantalla": "Suena un acorde de tres notas en el piano, las tres a la vez, y el niño toca «mayor» o «menor». Los acordes cambian de altura entre escucha y escucha (do, sol, re, la), pero en todos pasa lo mismo: solo se mueve la nota del medio, medio tono. Se puede repetir con el botón de oír otra vez. Si toca la opción que no es, el personaje le recuerda que escuche la nota de en medio y lo intenta de nuevo. Ocho escuchas y termina sin puntuación.",
+    "sinPantalla": "En un teclado o metalófono del aula, toca do-mi-sol y do-mi bemol-sol alternando, y que señalen una de dos tarjetas: un sol abierto para mayor, un sol recogido para menor. Sin instrumento, con tres voces: tres niños cantan do, mi y sol; el del medio baja medio tono cuando tú se lo indiques con la mano, y el resto adivina. Con los ojos cerrados se oye mejor la diferencia.",
+    "masFacil": "Pon siempre los dos acordes seguidos, mayor y luego menor sobre la misma nota, antes de preguntar por uno solo: la diferencia se oye en la pareja, no en el acorde suelto. Exagera con el cuerpo: brazos abiertos y sonrisa en el mayor, hombros cerrados en el menor. No importa si al principio contestan por la sensación y no por la nota del medio: la sensación es el primer paso.",
+    "masDificil": "Que canten la nota del medio de cada acorde después de oírlo, y luego la de abajo y la de arriba: tres notas separadas de una sola pegada. Después, en el metalófono, que conviertan un acorde mayor en menor cambiando ellos la lámina del medio. Y escuchar canciones que conozcan y decidir si están en mayor o en menor: no siempre es fácil, y descubrirlo es la lección.",
+    "variante": {
+      "titulo": "Tres voces en clase",
+      "texto": "Tres grupos, uno por nota del acorde: do, mi y sol. Cantan a la vez con «uuu». A tu señal, el grupo del medio baja medio tono a mi bemol y la clase oye cómo el acorde se recoge. Después le toca al grupo de arriba o al de abajo intentar cambiar algo: se descubre que solo cambiar la del medio convierte mayor en menor."
+    },
+    "ideas": [
+      "Escuchar el principio de dos piezas conocidas, una en mayor y otra en menor, y decidir cuál es cuál sin saber el título.",
+      "Tocar una canción sencilla en el metalófono en mayor y luego con el mi cambiado por mi bemol: la misma canción, otro color.",
+      "Hacer una lista en el aula de palabras para mayor y para menor, con lo que diga la clase, y colgarla."
+    ],
+    "loTiene": [
+      "Distingue mayor y menor cuando el acorde suena en otra altura, no solo en do.",
+      "Dice que lo que cambia es la nota del medio, no todo el acorde.",
+      "Canta la nota del medio de un acorde después de oírlo."
+    ],
+    "errores": [
+      {
+        "error": "Contesta menor a todo lo que suena más grave",
+        "remedio": "poner un mayor y un menor seguidos en la misma altura para que oiga que grave no es menor."
+      },
+      {
+        "error": "Contesta por la sensación general sin escuchar la nota del medio",
+        "remedio": "está bien para empezar; después, repetir el acorde y cantar la nota de en medio antes de decidir."
+      },
+      {
+        "error": "Se queda igual ante los dos acordes de la nota la",
+        "remedio": "tocar la-do sostenido-mi y la-do-mi en el metalófono despacio, nota a nota, y oír cuál se mueve."
+      }
+    ],
+    "indicadores": [
+      "En otra altura",
+      "Nota del medio",
+      "Canta la tercera"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

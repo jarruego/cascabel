@@ -82,6 +82,80 @@
   "pistas": [
     "actividad.inf24.pista1"
   ],
+  "ficha": {
+    "aprende": "Reconocer por el sonido a un perro, un gato, un león y un elefante grabados de verdad, y decir cuáles suenan graves y cuáles finos.",
+    "vocabulario": [
+      "perro",
+      "gato",
+      "león",
+      "elefante",
+      "grave",
+      "agudo",
+      "fino",
+      "escuchar"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o de uno en uno en tablet",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Ojos cerrados.",
+        "detalle": "Antes de la pantalla, imita tú los cuatro animales con la voz y que digan quién es. Nombrarlos primero, despacio: perro, gato, león, elefante."
+      },
+      {
+        "min": 1,
+        "titulo": "Mirar los cuatro dibujos.",
+        "detalle": "En la pantalla, señalar cada animal y preguntar cómo suena. Que lo hagan ellos con la voz antes de que suene la grabación."
+      },
+      {
+        "min": 2,
+        "titulo": "Cinco sonidos.",
+        "detalle": "Suena un animal grabado de verdad; se escucha con los ojos cerrados, se abren y un niño toca el dibujo. Los demás dicen si estaban de acuerdo."
+      },
+      {
+        "min": 1,
+        "titulo": "Gordos y finos.",
+        "detalle": "Al acabar, preguntar: ¿cuáles sonaban gordos y graves? (el león y el elefante) ¿Cuáles finos? (el gato y el perro). Volver a oír uno de cada."
+      }
+    ],
+    "enPantalla": "Cuatro dibujos grandes: perro, gato, león y elefante. Suena la grabación de uno de ellos y el niño toca el que cree que ha sido. Si toca otro, el personaje le da la pista de que el león y el elefante suenan gordos y graves, y el gato y el perro más finos, y el sonido vuelve a oírse para corregir al momento. Al acertar, «¡bien!» y viene otro. Hay un botón para volver a escuchar, siempre en el mismo sitio. Termina a los cinco sonidos, sin puntuación.",
+    "sinPantalla": "El maestro, o un niño detrás de un biombo, hace el sonido de uno de los cuatro animales con la voz, y los demás señalan una de cuatro tarjetas colocadas en el suelo o en la pizarra. También sirve un cuento con los cuatro animales: cada vez que aparece uno, la clase hace su sonido, y después se juega a adivinar cuál está haciendo el maestro.",
+    "masFacil": "Deja solo dos animales muy distintos: elefante y gato, por ejemplo. Antes de que suene, nombra los dos en voz alta señalando su dibujo. Si un niño no distingue el león del perro, imítalos tú despacio: el león ruge largo y grave, el perro ladra corto y más fino.",
+    "masDificil": "Sin mirar los dibujos: se oye el sonido y el niño dice el nombre antes de abrir los ojos. Después, que un niño imite uno de los cuatro animales y otro lo adivine: imitar bien el rugido grave del león o el maullido fino del gato es más difícil que reconocerlo.",
+    "variante": {
+      "titulo": "El zoo en el aula",
+      "texto": "Cuatro rincones del aula, uno por animal, con su dibujo. Suena la grabación en la pantalla y todos van andando al rincón del animal que ha sonado. Quien se equivoca de rincón se cambia cuando lo oye otra vez. Sirve para que se muevan y para ver de un vistazo quién lo reconoce."
+    },
+    "ideas": [
+      "Grabar con el móvil del maestro a la clase imitando cada animal y escucharse: ¿se nota cuál es el elefante y cuál el gato?",
+      "Ordenar los cuatro animales del más grave al más agudo con las tarjetas en el suelo: elefante, león, perro, gato.",
+      "Traer de casa el sonido de una mascota grabado por la familia y adivinar entre todos qué animal es."
+    ],
+    "loTiene": [
+      "Escucha el sonido entero, con los ojos cerrados, antes de tocar.",
+      "Distingue el perro del león aunque los dos ladren o rujan con la boca abierta.",
+      "Sabe decir cuáles suenan graves (león, elefante) y cuáles finos (gato, perro)."
+    ],
+    "errores": [
+      {
+        "error": "Toca el animal que le gusta, sin escuchar",
+        "remedio": "que cierre los ojos hasta que acabe el sonido y diga el nombre en voz alta antes de tocar."
+      },
+      {
+        "error": "Confunde el león con el perro",
+        "remedio": "oírlos seguidos con el botón de repetir: uno ruge largo y grave, el otro ladra corto y más fino."
+      },
+      {
+        "error": "Confunde el elefante con el león",
+        "remedio": "imitarlos con la voz: el elefante barrita como una trompeta, el león ruge con la garganta."
+      }
+    ],
+    "indicadores": [
+      "Escucha entero",
+      "Los cuatro",
+      "Grave o fino"
+    ]
+  },
   "creditos": [
     {
       "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",

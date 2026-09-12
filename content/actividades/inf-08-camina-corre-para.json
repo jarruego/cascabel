@@ -63,6 +63,80 @@
     ]
   },
   "enunciado": "actividad.inf08.enunciado",
+  "ficha": {
+    "aprende": "Andar al pulso, pasar a pasos cortos y rápidos cuando la música se acelera, y quedarse quieto cuando se calla: responder con el cuerpo a lo que se oye.",
+    "vocabulario": [
+      "pulso",
+      "andar",
+      "correr",
+      "parar",
+      "rápido",
+      "lento",
+      "silencio",
+      "estatua"
+    ],
+    "agrupamiento": "Toda la clase, de pie, en un espacio despejado",
+    "material": "Espacio libre para moverse en círculo y un altavoz. Proyector opcional.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Escuchar sin moverse.",
+        "detalle": "Todos sentados en el suelo. Suena el pulso lento, a 84. Se escucha sin hacer nada; si alguno mueve la cabeza o el pie con el pulso, bien, pero nadie se levanta. Primero se oye, después se mueve."
+      },
+      {
+        "min": 3,
+        "titulo": "Caminar al pulso.",
+        "detalle": "De pie, en círculo, un paso por cada golpe del pulso. Sin correr y sin adelantarse. El maestro anda con ellos y dice «paso, paso» hasta que el grupo va junto."
+      },
+      {
+        "min": 3,
+        "titulo": "Correr cuando va rápido.",
+        "detalle": "Subir el pulso al doble. Los pasos se hacen pequeños y rápidos, no zancadas. Bajarlo de nuevo y que noten el cambio: «ahora vuelve a andar». Cambiar varias veces, sin avisar."
+      },
+      {
+        "min": 3,
+        "titulo": "Parar en el silencio.",
+        "detalle": "Parar el pulso de golpe y quedarse quietos como estatuas hasta que vuelva. No gana nadie: solo se para. Repetirlo varias veces, con paradas cada vez más cortas."
+      }
+    ],
+    "enPantalla": "Es la pantalla del maestro, para proyectar o dejar sobre la mesa. Muestra los cuatro pasos de la sesión y lleva el pulso: un clic a 84 con un punto que late, que se puede subir al doble y parar de golpe desde la pantalla. Los niños no tocan nada: escuchan el pulso y se mueven. No hay respuesta correcta ni marcador; la pantalla sirve para que el pulso sea siempre el mismo y para no tener que llevar el ritmo con la voz mientras se mira al grupo.",
+    "sinPantalla": "Es su forma natural. El maestro lleva el pulso con un tambor o con unas claves: golpes lentos para andar, el doble de rápidos para correr, y silencio para parar. Con el instrumento en la mano se puede cambiar de velocidad mirando al grupo y parar justo cuando alguien va a chocar. Un pandero pequeño basta y se oye en el patio.",
+    "masFacil": "Solo andar y parar, sin correr: el cambio de velocidad se deja para otro día. Paradas largas y avisadas al principio («voy a parar»), y luego sin avisar. Si el grupo no va junto, el maestro se pone delante y andan detrás de él en fila, un paso por golpe, antes de volver al círculo.",
+    "masDificil": "Tres velocidades en vez de dos: andar, correr y andar muy despacio como un gigante, con el pulso a la mitad. O que el pulso cambie sin que se vea la pantalla, solo de oído. Y al final, un niño lleva el tambor y decide cuándo se corre y cuándo se para: dirigir obliga a tener claro lo que se pide.",
+    "variante": {
+      "titulo": "Andar como animales",
+      "texto": "Cada velocidad es un animal: elefante para el pulso lento, con pasos pesados; conejo para el rápido, a saltitos cortos; y en el silencio, todos estatuas de piedra. El cambio de animal se hace sin decir nada: lo tiene que decir el pulso, no el maestro."
+    },
+    "ideas": [
+      "Andar al pulso llevando cada uno un instrumento pequeño y tocarlo solo en el silencio: parar los pies y arrancar las manos.",
+      "Dibujar después en papel cómo iba la música: rayitas separadas para andar, juntas para correr, un hueco para el silencio.",
+      "Hacer el juego con una canción que ellos conozcan, cantada por el maestro cada vez más rápido y parando de golpe en mitad de una frase."
+    ],
+    "loTiene": [
+      "Da un paso por pulso, sin adelantarse ni arrastrar los pies.",
+      "Cambia a pasos cortos y rápidos cuando el pulso se dobla, sin chocar con nadie.",
+      "Se queda quieto en el silencio y no arranca hasta que vuelve el pulso."
+    ],
+    "errores": [
+      {
+        "error": "Al subir el pulso da zancadas grandes y se sale del círculo",
+        "remedio": "decirle «pasos de conejo, pequeñitos» y andar a su lado con pasos cortos hasta que los copie."
+      },
+      {
+        "error": "Sigue andando cuando el pulso se para",
+        "remedio": "convertir la parada en estatua con una postura: manos en la cabeza al parar. Es más fácil parar hacia algo que parar sin más."
+      },
+      {
+        "error": "Va mirando los pies del de delante y siempre llega tarde",
+        "remedio": "que ande con las manos en las orejas, escuchando el pulso, o que vaya el primero de la fila un rato."
+      }
+    ],
+    "indicadores": [
+      "Paso por pulso",
+      "Cambia de velocidad",
+      "Para en el silencio"
+    ]
+  },
   "personaje": "doby",
   "estado": "borrador",
   "etiquetas": [

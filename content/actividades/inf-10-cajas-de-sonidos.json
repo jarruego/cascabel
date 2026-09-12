@@ -188,6 +188,80 @@
   "pistas": [
     "actividad.inf10.pista1"
   ],
+  "ficha": {
+    "aprende": "Unir cada sonido con lo que lo hace: el tambor, la campana, las palmas y la voz primero, y cuatro animales después, escuchando antes de decidir.",
+    "vocabulario": [
+      "tambor",
+      "campana",
+      "palmas",
+      "voz",
+      "animal",
+      "pareja",
+      "escuchar",
+      "igual"
+    ],
+    "agrupamiento": "Por parejas en tablet, o grupo clase con proyector",
+    "material": "Ninguno. Sin pantalla, cajas de cartón con un dibujo cada una.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "¿Qué hay en cada caja?",
+        "detalle": "Mirar el primer tablero y nombrar las cuatro cajas: tambor, campana, palmas y voz. Hacer cada sonido con el cuerpo o la boca antes de tocar nada: «bum», «tilín», palmas, «la la»."
+      },
+      {
+        "min": 1,
+        "titulo": "El tablero de los instrumentos.",
+        "detalle": "Se toca una caja, se escucha, y después el sonido que sale de ella. Da igual por cuál se empiece. Tambor, campana, palmas y voz: cuando quedan dos, sale solo."
+      },
+      {
+        "min": 1,
+        "titulo": "El tablero de los animales.",
+        "detalle": "Lo mismo con las cuatro cajas de animales y sus voces de verdad. Cuesta un poco más: que escuchen cada voz entera antes de buscar su caja."
+      },
+      {
+        "min": 1,
+        "titulo": "Las parejas con el cuerpo.",
+        "detalle": "Sin pantalla: el maestro dice «campana» y los niños hacen «tilín» con la voz; dice un animal y hacen su voz. Después al revés: el maestro hace el sonido y ellos dicen la caja."
+      }
+    ],
+    "enPantalla": "Dos columnas. A un lado, cuatro cajas con su dibujo: tambor, campana, palmas y voz. Al otro, cuatro botones que suenan al tocarlos. El niño toca una caja y luego el sonido que cree que sale de ella; si van juntos, se unen con una línea y se quedan así. Si no, no pasa nada: se vuelve a escuchar y se prueba con otro. Cuando quedan dos, es fácil. Hecho el primer tablero, viene el de los cuatro animales, con sus voces de verdad. Termina al unir las ocho parejas.",
+    "sinPantalla": "Cuatro cajas de cartón con un dibujo cada una —tambor, campana, palmas, voz— puestas en fila. El maestro, escondido tras la mesa, hace un sonido: golpea un tambor, agita una campanilla, da palmas o canta. Un niño va a la caja que toca y la levanta. Después, los animales: el maestro hace la voz de cuatro animales, o la hace un niño, y el resto señala la caja. Con tarjetas boca abajo en la mesa se hace en grupos de tres o cuatro, por turnos.",
+    "masFacil": "Empieza con dos parejas en vez de cuatro: tambor y voz, que no se parecen en nada. Toca tú primero cada sonido y di su nombre en voz alta mientras señalas la caja. Deja el tablero de animales para otro día si el primero ha costado. Un tablero lleno no enseña más, solo satura.",
+    "masDificil": "Tapar los dibujos de las cajas con la mano y emparejar solo de oído, dos sonidos que se parezcan. O que un niño invente una pareja nueva: qué sonido hace una puerta, un coche, la lluvia, y con qué lo puede imitar. Y el juego al revés: el niño hace un sonido con la boca o las manos y la clase señala la caja.",
+    "variante": {
+      "titulo": "Cajas de verdad",
+      "texto": "Cuatro cajas de zapatos cerradas, cada una con algo dentro que suene distinto: arroz, canicas, un cascabel, botones. Se agitan, se escuchan y se busca cuál suena igual que la que tiene el maestro. Después se abren y se comprueba. Emparejar de oído sin dibujo que ayude es un paso más."
+    },
+    "ideas": [
+      "Un memory de sonidos con las cajas de zapatos: dos cajas con arroz, dos con canicas, dos con cascabeles. Se agitan de dos en dos y se buscan las iguales.",
+      "Grabar en clase, con el móvil del maestro, cuatro sonidos del aula y adivinar al día siguiente de qué era cada uno.",
+      "Los animales de la granja con la voz: cada niño elige uno, lo hace, y los demás señalan su dibujo en la pizarra."
+    ],
+    "loTiene": [
+      "Escucha la caja entera antes de buscar su pareja.",
+      "Une palmas con palmas y voz con voz sin ir probando todo.",
+      "Nombra el sonido al tocarlo: «tambor», «campana», «gato»."
+    ],
+    "errores": [
+      {
+        "error": "Toca todos los botones seguidos sin escuchar ninguno",
+        "remedio": "parar, tocar uno solo y preguntar «¿qué era?» antes de dejar tocar el siguiente."
+      },
+      {
+        "error": "Toca dos cajas seguidas y no pasa nada",
+        "remedio": "explicar con la mano: primero la caja, luego el sonido. Hacerlo juntos una vez, dedo sobre dedo."
+      },
+      {
+        "error": "Une siempre con el primer sonido que oye",
+        "remedio": "que escuche los cuatro sonidos antes de tocar ninguna caja, y que diga cuál se parece más."
+      }
+    ],
+    "indicadores": [
+      "Escucha antes",
+      "Une parejas",
+      "Nombra el sonido"
+    ]
+  },
   "etiquetas": [
     "timbre",
     "parejas",

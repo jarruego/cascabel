@@ -166,6 +166,85 @@
     "actividad.c241.pista1",
     "actividad.c241.pista2"
   ],
+  "ficha": {
+    "aprende": "Seguir con el dedo una melodía larga, «El cisne» de Saint-Saëns, sabiendo en cuál de sus cuatro frases está la música: sale, vuelve más alto, se aleja y se va.",
+    "vocabulario": [
+      "frase",
+      "melodía",
+      "violonchelo",
+      "mapa",
+      "cisne",
+      "sube",
+      "baja",
+      "final"
+    ],
+    "agrupamiento": "Grupo clase con proyector; después individual en tablet",
+    "material": "Ninguno. Si hay, una grabación de «El cisne» con violonchelo para el cierre.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "El carnaval.",
+        "detalle": "Cuenta que Saint-Saëns escribió una música por animal y que esta es el cisne. Un cisne no corre: se desliza. Que muevan la mano como un cisne por el agua mientras lo explicas."
+      },
+      {
+        "min": 2,
+        "titulo": "Escuchar sin mapa.",
+        "detalle": "Primera escucha con los ojos cerrados. Al acabar, ¿cuántas veces ha empezado algo nuevo? Se apunta lo que digan sin corregir."
+      },
+      {
+        "min": 2,
+        "titulo": "Escuchar con el mapa.",
+        "detalle": "Se proyecta y se mira el cursor sin tocar. Tú nombras cada bloque cuando arranca: sale, vuelve más alto, se aleja, se va. Cuatro frases."
+      },
+      {
+        "min": 2,
+        "titulo": "Seguir con el dedo.",
+        "detalle": "Cada niño en su tablet, o cuatro al frente turnándose por frase. El dedo va con la música, no detrás. Si va detrás no pasa nada: es la primera fase."
+      },
+      {
+        "min": 1,
+        "titulo": "Cerrar.",
+        "detalle": "¿Qué frase os ha gustado más? La segunda empieza igual que la primera y sube más; la última se queda quieta. Si hay una grabación de violonchelo, se oye para despedirse."
+      }
+    ],
+    "enPantalla": "Un mapa con cuatro bloques de colores, uno por frase de «El cisne»: sale, vuelve más alto, se aleja y se va. Un cursor los recorre mientras suena la melodía entera, tocada con una marimba, despacio. No hay que tocar nada: se mira dónde está la música. La segunda frase empieza igual que la primera y sube más; la última acaba en una nota que se queda quieta. Al terminar vuelve a empezar, así que se puede seguir tantas vueltas como haga falta. No se contesta nada y no hay puntuación.",
+    "sinPantalla": "Dibuja en la pizarra cuatro bloques en fila, cada uno con su nombre: sale, vuelve más alto, se aleja, se va. Pon una grabación de «El cisne» con violonchelo y ve señalando tú, con la mano de cisne, el bloque que suena. En la segunda escucha señala un niño. Sin grabación, se hace con la respiración: cada frase es un brazo que se extiende despacio y vuelve, cuatro veces, y en la última el brazo se queda quieto arriba.",
+    "masFacil": "Ponlo dos veces: la primera solo escuchando, sin mapa, y la segunda siguiendo el cursor. Seguir y escuchar a la vez es una tarea doble. Después, tú señalas y ellos solo dicen el nombre del bloque cuando cambia. Si aún se desorientan, cuenta en voz alta el principio de cada frase, «una», «dos», «tres», «cuatro»; la segunda se reconoce porque empieza igual que la primera.",
+    "masDificil": "Que sigan el mapa sin cursor: se tapa y el niño señala el bloque con el dedo, adelantándose al cambio. Después, escuchar la versión de violonchelo con piano y descubrir que el piano hace olas todo el rato por debajo: es el agua. Y que dibujen su propio mapa de otro animal del Carnaval, por ejemplo el elefante, con los bloques que ellos oigan.",
+    "variante": {
+      "titulo": "El cisne con el cuerpo",
+      "texto": "De pie, con espacio. Cada frase es un movimiento distinto y lento: en «sale» se avanza con los brazos abiertos, en «vuelve más alto» se sube de puntillas, en «se aleja» se retrocede y en «se va» se queda quieto. La pantalla proyectada dice cuándo cambiar. El cuerpo aprende la forma antes que los ojos."
+    },
+    "ideas": [
+      "Escuchar otros animales del Carnaval (el elefante, el acuario, las tortugas) y adivinar cuál es cada uno antes de saber el título.",
+      "Pintar el recorrido del cisne en un papel largo mientras suena: una línea que sube en la segunda frase y se para al final.",
+      "Ver un violonchelo de cerca, en foto o de verdad, y compararlo con el violín: por eso suena tan grave y tan tranquilo."
+    ],
+    "loTiene": [
+      "Señala el segundo bloque cuando la melodía vuelve a empezar y sube más.",
+      "Sigue el mapa con el dedo yendo con la música, no detrás del cursor.",
+      "Dice que la última frase se para en una nota que se queda quieta."
+    ],
+    "errores": [
+      {
+        "error": "El dedo va siempre detrás del cursor",
+        "remedio": "ir con la música es la segunda fase; de momento, que diga el nombre del bloque en voz alta justo cuando empieza."
+      },
+      {
+        "error": "No distingue la primera frase de la segunda porque empiezan igual",
+        "remedio": "cantar con «uuu» el principio de cada una y notar que la segunda sube más lejos."
+      },
+      {
+        "error": "Se distrae porque la música es lenta y larga",
+        "remedio": "darle la mano de cisne: la muñeca sigue la melodía y el cuerpo se queda con la música."
+      }
+    ],
+    "indicadores": [
+      "Segunda frase",
+      "Va con la música",
+      "Final quieto"
+    ]
+  },
   "creditos": [
     {
       "obra": "«El cisne», de El carnaval de los animales",

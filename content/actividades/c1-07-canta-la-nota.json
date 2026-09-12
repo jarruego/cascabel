@@ -50,6 +50,85 @@
   "pistas": [
     "actividad.c107.pista1"
   ],
+  "ficha": {
+    "aprende": "Cantar sol, mi y la después de oírlas en la flauta, mantener la nota sin que se caiga y notar si la voz va por encima o por debajo.",
+    "vocabulario": [
+      "sol",
+      "mi",
+      "la",
+      "afinar",
+      "aguja",
+      "respirar",
+      "mantener",
+      "encima"
+    ],
+    "agrupamiento": "Grupo pequeño en tablet, o toda la clase con proyector",
+    "material": "Ninguno. Aula en silencio si se usa el micrófono",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Calentar la voz, todos.",
+        "detalle": "Sirena con la boca en «u», de grave a agudo y vuelta, dos veces. Después una nota cómoda con «la» larga, la mano en la tripa para notar el aire."
+      },
+      {
+        "min": 1,
+        "titulo": "Sol con la flauta de la app.",
+        "detalle": "Suena sol; toda la clase la canta a la vez, larga, con la boca bien abierta. Sin micrófono todavía: primero se oye el grupo, que afina antes que nadie solo."
+      },
+      {
+        "min": 2,
+        "titulo": "Uno al micrófono, los demás escuchan.",
+        "detalle": "Un niño canta sol, después mi, después la, y la aguja se mueve. Los demás miran la aguja y levantan la mano cuando está en el centro. Sin micrófono, la levantan de oído."
+      },
+      {
+        "min": 1,
+        "titulo": "Mi y la, en grupo.",
+        "detalle": "Las tres notas seguidas con la app: sol, mi, la. Mano a media altura en sol, abajo en mi, arriba en la. El gesto ayuda a que la voz llegue."
+      },
+      {
+        "min": 1,
+        "titulo": "Cantar sin la flauta.",
+        "detalle": "Tú das el sol con la voz y la clase canta sol-mi, sol-la. Si la nota se cae, respirar y volver a empezar: no pasa nada."
+      }
+    ],
+    "enPantalla": "Suena una nota en la flauta (sol, mi o la) y el niño la canta y la mantiene. Una aguja se mueve: en el centro cuando está encima, a un lado si la voz va por arriba o por abajo. Se puede repetir la nota con el botón las veces que haga falta. Si el micrófono no está o no se da permiso, la nota suena igual y el niño la canta sin aguja: la actividad sigue. La voz no sale del aparato en ningún momento. Termina cuando se han cantado las tres notas; no hay puntuación.",
+    "sinPantalla": "Canta tú la nota, o tócala en la flauta o el xilófono, y que la repitan: primero toda la clase, después por filas, después quien quiera solo. El resto escucha con la mano en la oreja y la levanta cuando el compañero la clava. Para «mantener», cuenta con los dedos hasta cuatro mientras cantan sin que la nota se caiga. El oído del grupo afina antes que cualquier aguja.",
+    "masFacil": "Empieza por la nota que el niño saque solo, la que sea, y que la mantenga: eso ya es la mitad de la actividad. Después pídele que la suba o la baje un poquito hasta llegar a sol. Cantar en grupo antes que solo: un niño que no se atreve a emitir sonido no está desafinando, está en otra cosa, y se resuelve cantando con todos, sin micrófono, sin aguja y sin nadie mirando.",
+    "masDificil": "Dos notas seguidas sin volver a oír la flauta: sol y luego mi, sol y luego la. Después las tres, sol-mi-la, con la mano subiendo y bajando. Y para quien vaya sobrado: cantar mi cuando suena sol (la nota de abajo), o la cuando suena sol (la de arriba), y comprobar con la aguja.",
+    "variante": {
+      "titulo": "El cuco",
+      "texto": "Sol-mi es el cuco. Uno canta «cu-cu» en sol-mi y otro contesta igual desde la otra punta del aula; el que contesta tiene que caer en las mismas notas. Después el cuco con la: sol-la-sol-mi, y la clase decide de oído si el eco ha llegado a la misma altura."
+    },
+    "ideas": [
+      "Buscar el sol, el mi y el la en el xilófono y tocarlos mientras se cantan con su nombre.",
+      "Cantar el nombre de cada niño en sol-mi (Ma-ría, Pa-blo) a la hora de pasar lista.",
+      "Jugar a «la nota que no se cae»: toda la clase mantiene el sol mientras cuentas hasta ocho, y luego con mi y con la."
+    ],
+    "loTiene": [
+      "Canta sol después de oírla y la aguja se queda en el centro.",
+      "Mantiene la nota cuatro pulsos sin que baje ni se corte.",
+      "Nota si su voz va por encima o por debajo y la corrige él mismo."
+    ],
+    "errores": [
+      {
+        "error": "Canta la nota una octava abajo, con voz de hablar",
+        "remedio": "que haga la sirena hacia arriba y pare en la nota; sol se canta con la voz fina de cantar, no con la de hablar."
+      },
+      {
+        "error": "La nota empieza bien y se va cayendo",
+        "remedio": "respirar hondo antes, mano en la tripa, y cantar menos tiempo: dos pulsos bien valen más que seis cayéndose."
+      },
+      {
+        "error": "No se atreve a cantar solo ante la aguja",
+        "remedio": "que cante con dos compañeros y el micrófono en medio; la aguja es de los tres."
+      }
+    ],
+    "indicadores": [
+      "Sol en el centro",
+      "Mantiene",
+      "Se corrige"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

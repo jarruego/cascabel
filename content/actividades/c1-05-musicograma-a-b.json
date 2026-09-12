@@ -75,6 +75,85 @@
     ]
   },
   "enunciado": "actividad.c105.enunciado",
+  "ficha": {
+    "aprende": "Notar dónde cambia la música y decirlo con dos letras, A cuando suena lo primero y B cuando suena lo otro, siguiendo un musicograma de ocho bloques.",
+    "vocabulario": [
+      "musicograma",
+      "parte",
+      "forma",
+      "a",
+      "b",
+      "cambia",
+      "igual",
+      "distinto"
+    ],
+    "agrupamiento": "Grupo clase, con proyector",
+    "material": "Ninguno. Opcional: dos tarjetas por niño, una con A y otra con B",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Preparar el oído.",
+        "detalle": "Canta dos frases cortas muy distintas, una aguda y otra grave, y pregunta si son iguales. Explica que hoy la música tiene dos partes y vamos a ver dónde cambia."
+      },
+      {
+        "min": 1,
+        "titulo": "Primera vez: solo escuchar.",
+        "detalle": "Arranca el musicograma y que miren el cursor sin hacer nada. Al acabar: ¿cuántas veces ha cambiado la música?"
+      },
+      {
+        "min": 2,
+        "titulo": "Segunda vez: con gesto.",
+        "detalle": "Otra vez desde el principio. En los bloques A, manos arriba; en los B, manos en los muslos. El cambio de gesto es el cambio de parte."
+      },
+      {
+        "min": 1,
+        "titulo": "Decir la forma.",
+        "detalle": "Escribe en la pizarra A A B B A A B B mientras lo dicen. Pregunta cuántos A hay, cuántos B, y si vuelve algo que ya había sonado."
+      },
+      {
+        "min": 1,
+        "titulo": "Tercera vez, con letras.",
+        "detalle": "Cada niño levanta la tarjeta A o B a la vez que el cursor. Si no hay tarjetas, se dice la letra en voz alta."
+      }
+    ],
+    "enPantalla": "Ocho bloques en fila, de dos colores: los de la parte A de un color y los de la parte B de otro, en el orden A A B B A A B B. Al pulsar «empezar», la música suena y un cursor recorre los bloques para que se vea en qué parte estamos. La parte A suena más aguda y la B más grave. El niño no toca nada: mira, hace el gesto o levanta su letra. No hay respuesta correcta ni final: se puede repetir tantas veces como haga falta, y a la tercera casi todos se anticipan al cambio.",
+    "sinPantalla": "Dibuja los ocho bloques en la pizarra con dos colores y toca tú las dos partes con la voz o un xilófono: la A con una nota aguda (do agudo) repetida y la B con una grave (sol), dos pulsos cada bloque. Señala el bloque con el puntero mientras suena. Después que señale un niño y cantes tú, y después que canten ellos y señales tú.",
+    "masFacil": "Reduce a cuatro bloques, A A B B, y exagera el contraste: la A cantada fuerte y la B en susurro, o la A de pie y la B sentados. Ponlo dos veces: la primera solo escuchando, la segunda siguiendo. Escuchar y seguir a la vez es tarea doble, y con seis años conviene darlas por separado.",
+    "masDificil": "Tapa el musicograma y que solo con el oído levanten la letra en cada cambio. Después cambia el orden (A B A B o A A A B) cantándolo tú, y que lo dibujen ellos en un papel con dos colores. Y por último, que inventen una parte C y decidan dónde ponerla.",
+    "variante": {
+      "titulo": "Con movimiento",
+      "texto": "En la parte A se camina al pulso por el aula y en la parte B se queda cada uno quieto en su sitio dando palmas. Al cambiar la música cambia el cuerpo. Luego dos grupos: uno se mueve solo en A y el otro solo en B, y se van turnando como en la música."
+    },
+    "ideas": [
+      "Escuchar una canción que conozcan y buscar dónde cambia (estrofa y estribillo son A y B): dibujar su musicograma con dos colores.",
+      "Pintar la parte A y la parte B con dos dibujos distintos (un sol y una luna) y colocar los ocho bloques en el orden en que han sonado.",
+      "Hacer la forma con instrumentos: A con claves, B con pandero, y que un niño dirija señalando los bloques."
+    ],
+    "loTiene": [
+      "Cambia de gesto justo cuando cambia la música, no un bloque después.",
+      "Dice la forma A A B B A A B B mirando el musicograma.",
+      "Reconoce que la parte A vuelve después de la B."
+    ],
+    "errores": [
+      {
+        "error": "Cambia de gesto en cada bloque, aunque la parte sea la misma",
+        "remedio": "señalar que dos bloques del mismo color son la misma parte: el gesto se mantiene hasta que cambia el color."
+      },
+      {
+        "error": "Levanta la letra un bloque tarde",
+        "remedio": "es la primera fase: que mire el bloque siguiente mientras suena el actual, así se anticipa."
+      },
+      {
+        "error": "No distingue A de B de oído, solo por el color",
+        "remedio": "cantar las dos partes despacio, una detrás de otra, y preguntar cuál suena más alta."
+      }
+    ],
+    "indicadores": [
+      "Cambia a tiempo",
+      "Dice la forma",
+      "Reconoce la vuelta"
+    ]
+  },
   "personaje": "fara",
   "creditos": [
     {

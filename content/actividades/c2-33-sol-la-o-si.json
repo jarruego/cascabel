@@ -161,6 +161,79 @@
     "actividad.c233.pista1",
     "actividad.c233.pista2"
   ],
+  "ficha": {
+    "aprende": "Reconocer de oído sol, la y si, las tres primeras notas de la flauta, a partir de un sol de referencia: la misma, un paso arriba o dos pasos arriba.",
+    "vocabulario": [
+      "sol",
+      "la",
+      "si",
+      "referencia",
+      "un paso",
+      "más agudo",
+      "flauta dulce"
+    ],
+    "agrupamiento": "Grupo clase con proyector, después individual en tablet",
+    "material": "Flautas dulces de los niños, si las tienen; si no, ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Cantar sol, la, si.",
+        "detalle": "Tú das el sol y la clase canta sol-la-si subiendo con la mano, escalón a escalón, y baja si-la-sol. Si tienen flauta, tocarlo después: sol con tres dedos, la con dos, si con uno."
+      },
+      {
+        "min": 1,
+        "titulo": "El sol de referencia.",
+        "detalle": "Explicar el juego: siempre suena primero sol, y después otra nota. Hay que subir cantando desde el sol hasta llegar a ella y contar los pasos: cero es sol, uno es la, dos es si."
+      },
+      {
+        "min": 2,
+        "titulo": "Oír con el proyector.",
+        "detalle": "Suena sol, un hueco, y la segunda nota. La clase canta desde sol hasta la segunda y enseña con los dedos cuántos pasos. Un niño toca el botón. Repetir con el botón las veces que haga falta."
+      },
+      {
+        "min": 2,
+        "titulo": "Jugar en tablet,",
+        "detalle": "de uno en uno. Cantar antes de tocar, aunque sea en voz baja. Si no es, el personaje da una pista y se vuelve a elegir. Ocho y termina."
+      }
+    ],
+    "enPantalla": "Suena un sol de flauta dulce, un silencio corto, y después otra nota más larga: el mismo sol, la o si. Debajo hay tres botones grandes: sol, la y si. El niño puede volver a oír las dos notas con el botón de repetir y toca uno. Si no es, el personaje le propone cantar el sol y subir por la escala hasta la segunda nota contando los pasos, y puede volver a elegir; si acierta, «¡bien!» y viene la siguiente. Termina al acabar las ocho, sin puntuación.",
+    "sinPantalla": "Con tu flauta o con la voz: tocas sol, esperas, y tocas sol, la o si. Ellos cantan desde el sol hasta la nota y enseñan cero, uno o dos dedos. Con tres tarjetas en el suelo, se pisa una. Si tienen flauta, además contestan tocando la nota que creen: si suena igual que la tuya, es esa. La flauta hace de comprobación mejor que cualquier pantalla.",
+    "masFacil": "Quédate en dos opciones: sol o si, que están a dos pasos y se oyen bien distintas. Después sol o la. Canta con ellos la subida desde sol en voz alta y despacio: sol… la… ¿ya está? Y da la referencia dos veces si hace falta: no hay prisa por escuchar la segunda nota.",
+    "masDificil": "Sin sol de referencia: solo la nota, y decir cuál es. O que cierren los ojos y contesten con la flauta, tocando la nota que han oído. También al revés: un niño toca sol y luego otra de las tres en su flauta, y la clase dice cuál ha sido. Y después de si, meter el mi por abajo: dos pasos hacia el otro lado.",
+    "variante": {
+      "titulo": "Con flauta",
+      "texto": "Cada niño con su flauta. Tú tocas sol y después una de las tres notas. Sin decir nada, cada uno toca la nota que cree que ha sido, a la vez, a tu señal. Si la clase suena a una sola nota, está claro; si suena a dos, se repite tu modelo y se vuelve a tocar. La flauta lleva la respuesta en los dedos: tres, dos o uno."
+    },
+    "ideas": [
+      "Tocar en la flauta canciones de tres notas con sol, la y si, y adivinar cuál es solo escuchando el principio.",
+      "Dictado de dos notas: tú tocas sol y otra, y ellos la escriben en la pauta.",
+      "Cantar sol-la-si con nombres en una frase inventada por la clase y tocarla después en la flauta."
+    ],
+    "loTiene": [
+      "Canta desde el sol hasta la segunda nota y dice cuántos pasos ha subido.",
+      "Dice sol, la o si tras oír las dos notas, sin adivinar.",
+      "Toca en la flauta la nota que ha oído, si tiene flauta."
+    ],
+    "errores": [
+      {
+        "error": "Confunde la y si, que están solo a un paso",
+        "remedio": "cantar sol-la-si despacio con la mano en tres escalones y parar en la nota que suena; si ha hecho dos escalones, es si."
+      },
+      {
+        "error": "Dice siempre sol porque oye la referencia y no la segunda nota",
+        "remedio": "levantar el dedo en el silencio del medio y escuchar solo lo que viene después; repetir con el botón."
+      },
+      {
+        "error": "Contesta antes de que suene la segunda nota",
+        "remedio": "esperar a la nota larga con la boca cerrada; la segunda es la que se pregunta, y dura más."
+      }
+    ],
+    "indicadores": [
+      "Sube cantando",
+      "Sol, la o si",
+      "Con la flauta"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

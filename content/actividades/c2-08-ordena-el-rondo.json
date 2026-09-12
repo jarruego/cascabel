@@ -122,6 +122,85 @@
   "pistas": [
     "actividad.c208.pista1"
   ],
+  "ficha": {
+    "aprende": "Ordenar las partes de un rondó sabiendo que la A vuelve siempre entre cada parte nueva: A-B-A, luego A-B-A-C-A, y con una parte más cada vez.",
+    "vocabulario": [
+      "rondó",
+      "forma",
+      "parte",
+      "estribillo",
+      "vuelve",
+      "a b a",
+      "nueva",
+      "orden"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o parejas en tablet",
+    "material": "Tarjetas grandes con las letras A, B, C y D, dos o tres de la A",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "El estribillo vuelve.",
+        "detalle": "Canta una canción que sepan con estribillo y que levanten la mano cada vez que vuelve. Eso es la A del rondó: lo que vuelve siempre entre las partes nuevas."
+      },
+      {
+        "min": 1,
+        "titulo": "Oír las fichas.",
+        "detalle": "Se toca cada ficha de la app para oír su música. Que digan cuál es la A —la que ya han oído más veces— y cuáles son nuevas."
+      },
+      {
+        "min": 2,
+        "titulo": "Primer rondó: A-B-A.",
+        "detalle": "Un niño coloca las fichas tocando ficha y hueco: A, luego B, luego A otra vez. Se escucha entero y se comprueba que la A abre y cierra."
+      },
+      {
+        "min": 2,
+        "titulo": "Con una parte más.",
+        "detalle": "Siguiente rondó: entra C, y la A tiene que volver entre B y C y al final. Antes de colocar, que digan el orden en voz alta con las letras: «A, B, A, C, A»."
+      },
+      {
+        "min": 1,
+        "titulo": "Con el cuerpo.",
+        "detalle": "Cinco niños con tarjetas se ponen en fila en orden de rondó; la clase canta o palmea cada parte al pasar por delante. ¿Cuántas veces sale la A?"
+      }
+    ],
+    "enPantalla": "Fichas desordenadas, cada una con una parte de la música, y una fila de huecos. Al tocar una ficha suena su trozo, así que se oye cuál es la A y cuáles son las partes nuevas. Para colocar, se toca la ficha y luego el hueco; no hay que arrastrar. Si el orden no sigue la regla del rondó, el personaje recuerda que la A vuelve entre cada parte nueva y se cambia lo que haga falta. Cada rondó tiene una parte más que el anterior: A-B-A, después A-B-A-C-A. Se escucha entero al acabar.",
+    "sinPantalla": "Tarjetas con las letras en el suelo, tres A y una B, C y D. El maestro canta o toca cuatro trocitos distintos y nombra cuál es la A. Los niños ordenan las tarjetas en fila según la regla y la clase canta el rondó siguiendo la fila con el dedo. Mejor con el cuerpo: cada niño lleva una tarjeta y se colocan ellos mismos en fila; los de la A tienen que quedar separados por las otras.",
+    "masFacil": "Deja colocada la primera A y la última: ordenar el medio es más fácil que empezar de cero. Empieza solo con A-B-A, y que digan la regla con sus palabras antes de colocar: «la A va al principio, al final y entre medias». Con tarjetas de colores en vez de letras, si las letras confunden.",
+    "masDificil": "Que digan el orden entero antes de oír nada, solo por la regla, y luego comprueben escuchando. Que inventen un rondó con sus propias partes: la A es una palmada fija y B, C y D las improvisa cada uno con el cuerpo. Y contar, en un rondó de cuatro partes nuevas, cuántas veces sale la A.",
+    "variante": {
+      "titulo": "Rondó con el cuerpo",
+      "texto": "La clase inventa una A de ocho pulsos con percusión corporal y la aprende todos. Después, tres niños inventan cada uno una parte nueva (B, C, D) de ocho pulsos. Se hace el rondó entero: todos la A, uno solo la B, todos la A, otro la C, todos la A, otro la D, todos la A. Cambiar de solista cada vuelta."
+    },
+    "ideas": [
+      "Escuchar un rondó de verdad —hay muchos en Mozart y en Haydn— y levantar la mano cada vez que vuelve la A.",
+      "Escribir en la pizarra el orden de las partes de una canción conocida con letras y descubrir si es un rondó o no.",
+      "Inventar un cuento en rondó: una frase que vuelve siempre («y el gato seguía dormido») entre cada cosa que pasa."
+    ],
+    "loTiene": [
+      "Coloca la A al principio, al final y entre cada parte nueva sin que se lo recuerden.",
+      "Reconoce de oído cuál de las fichas es la A antes de colocar nada.",
+      "Dice el orden con las letras antes de tocar: «A, B, A, C, A»."
+    ],
+    "errores": [
+      {
+        "error": "Pone las partes nuevas seguidas, B y C juntas, sin la A entre medias",
+        "remedio": "cantar la fila: al pasar de B a C sin A, preguntar «¿ha vuelto el estribillo?»."
+      },
+      {
+        "error": "Coloca la A al principio y ya no la vuelve a usar",
+        "remedio": "contar las fichas de A que quedan: si sobran, faltan sitios donde volver."
+      },
+      {
+        "error": "Ordena las fichas y no escucha el resultado",
+        "remedio": "una escucha entera antes de dar por hecho el rondó, levantando la mano en cada A."
+      }
+    ],
+    "indicadores": [
+      "A entre partes",
+      "Reconoce la A",
+      "Dice el orden"
+    ]
+  },
   "etiquetas": [
     "rondó",
     "forma",

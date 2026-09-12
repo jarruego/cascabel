@@ -308,6 +308,85 @@
     "actividad.c214.pista1",
     "actividad.c214.pista2"
   ],
+  "ficha": {
+    "aprende": "Tocar cada nota del Himno de la alegría en su momento, anticipando la que viene, y sentir que el mi con puntillo y el re del final no duran lo mismo que las demás.",
+    "vocabulario": [
+      "pentagrama",
+      "línea",
+      "a tiempo",
+      "puntillo",
+      "blanca",
+      "do re mi fa sol",
+      "beethoven",
+      "anticipar"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet u ordenador",
+    "material": "Ninguno. Con ordenador, la barra espaciadora",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Escucharla entera,",
+        "detalle": "con la app proyectada y sin tocar nada. Preguntar quién la conoce: es el Himno de la alegría, de la Novena sinfonía de Beethoven. Cantarla con «la» una vez, siguiendo el cursor."
+      },
+      {
+        "min": 2,
+        "titulo": "Mirar los colores.",
+        "detalle": "Cada color es una nota: parar la pantalla y nombrar las cinco que salen, de do a sol. La melodía se mueve casi siempre a la nota de al lado: sube de mi a sol y baja de sol a do."
+      },
+      {
+        "min": 3,
+        "titulo": "Tocar la primera frase.",
+        "detalle": "Por parejas: uno toca cuando la nota cruza la línea, el otro canta el nombre de la nota. Mirar la que viene, no la que ya ha pasado. Cambiar de papel."
+      },
+      {
+        "min": 2,
+        "titulo": "La segunda vuelta con el final largo.",
+        "detalle": "Fijarse en «mi-re, re»: el mi con puntillo aguanta más y el re corto entra enseguida. Decirlo antes en voz alta, «miii-re, reee», y luego tocarlo."
+      },
+      {
+        "min": 1,
+        "titulo": "Leer el resumen.",
+        "detalle": "Mirar juntos si van tarde o pronto: el desvío que dice la app, no el porcentaje. Ir un poco tarde con regularidad es un buen pulso."
+      }
+    ],
+    "enPantalla": "Un pentagrama con una línea vertical fija y las notas del Himno de la alegría, cada una de un color, que vienen de la derecha en fila. El niño toca el botón grande (o la barra espaciadora) cuando la nota cruza la línea; si entra a tiempo, la nota se ilumina y sale su nombre. Si se pasa o llega pronto, no ocurre nada malo: la nota sigue y viene la siguiente. Hay tres vueltas, y el botón de repetir vuelve a empezar. Al terminar, un resumen dice si iba pronto o tarde, sin puntuación.",
+    "sinPantalla": "Canta tú la melodía con «la» y que den una palmada en cada nota; después que la canten con los nombres: mi, mi, fa, sol, sol, fa, mi, re… Con cinco tarjetas de colores en el suelo (do, re, mi, fa, sol), un niño va pisando la nota que suena mientras los demás cantan. La línea de la pantalla es el pulso del pie.",
+    "masFacil": "Baja el tempo antes de nada. Si siguen entrando tarde, que toquen solo la primera nota de cada compás y dejen pasar el resto: entrar en algunas es mejor que perseguirlas todas. Cantar la melodía en voz alta mientras se toca ayuda a saber cuándo llega la siguiente.",
+    "masDificil": "Que canten el nombre de la nota a la vez que la tocan. Después, que la sigan en el piano de la app en lugar de en el botón: cinco teclas, de do a sol, y hay que dar la tecla correcta en el momento correcto. Y con los ojos cerrados la segunda frase: es igual que la primera hasta el final.",
+    "variante": {
+      "titulo": "Con flauta",
+      "texto": "Quien ya toque la flauta puede seguir la pantalla soplando: son cinco notas, de do a sol. El compañero da al botón para que la app marque el tiempo, y se cambian. Si el do y el re no salen todavía en la flauta, esas dos se cantan."
+    },
+    "ideas": [
+      "Escuchar el final de la Novena sinfonía con el coro y levantar la mano cada vez que vuelve la melodía: aparece muchas veces y cada vez con más instrumentos.",
+      "Escribir en la pizarra los nombres de las notas de la primera frase y contar cuántas veces sale cada una: el mi es la que más veces aparece.",
+      "Tocarla en placas o xilófono con las cinco láminas de do a sol y quitar las demás: así ninguna nota está fuera de sitio."
+    ],
+    "loTiene": [
+      "Toca la nota cuando cruza la línea, no cuando ya ha pasado.",
+      "Mira la nota que viene mientras toca la de ahora.",
+      "Aguanta el mi con puntillo del final y entra en el re corto sin adelantarse."
+    ],
+    "errores": [
+      {
+        "error": "Toca cuando la nota ya ha pasado la línea, siempre tarde",
+        "remedio": "que cante la melodía en voz alta mientras toca: la voz va por delante del dedo."
+      },
+      {
+        "error": "Da dos toques en el mi con puntillo del final",
+        "remedio": "decir «miii-re» antes de tocarlo y hacerlo una vez con la pantalla parada, señalando la nota larga."
+      },
+      {
+        "error": "Mira el botón en vez de la pantalla",
+        "remedio": "poner el dedo en el botón sin mirarlo y fijar la vista en la línea; en ordenador, usar la barra espaciadora."
+      }
+    ],
+    "indicadores": [
+      "A tiempo",
+      "Anticipa",
+      "Nota larga"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

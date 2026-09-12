@@ -89,6 +89,85 @@
     "actividad.c352.pista1",
     "actividad.c352.pista2"
   ],
+  "ficha": {
+    "aprende": "Leer la octava aguda de la clave de fa, del do del segundo espacio al do central, y saber que ese do de encima es el mismo que en clave de sol va debajo.",
+    "vocabulario": [
+      "clave de fa",
+      "do central",
+      "segundo espacio",
+      "línea adicional",
+      "cuarta línea",
+      "octava",
+      "grave",
+      "agudo"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet",
+    "material": "Ninguno. Para la versión sin pantalla, pizarra pautada o cinta de carrocero.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "En la pizarra, las dos claves una encima de otra,",
+        "detalle": "como en el piano. Dibujar el do central en medio: en clave de fa con su línea adicional por encima, en clave de sol con la suya por debajo. Es la misma nota y la misma tecla."
+      },
+      {
+        "min": 1,
+        "titulo": "Contar desde el fa de la cuarta línea.",
+        "detalle": "Subiendo: sol en el cuarto espacio, la en la quinta línea, si encima, do en la adicional. Bajando: mi en el tercer espacio, re en la tercera línea, do en el segundo espacio. A coro."
+      },
+      {
+        "min": 3,
+        "titulo": "En la tablet, primera vuelta.",
+        "detalle": "Siete notas dibujadas y una pedida. Si no sale, la pista recuerda que el fa está en la cuarta línea y se sube de una en una. Son ocho notas y cada una se pide una vez."
+      },
+      {
+        "min": 2,
+        "titulo": "Segunda vuelta, por parejas:",
+        "detalle": "uno nombra en voz alta las siete dibujadas y el otro toca la pedida. Se cambian a mitad."
+      },
+      {
+        "min": 1,
+        "titulo": "Cierre en el teclado.",
+        "detalle": "Tocar el do central y el do de una octava más grave, y decir dónde se escribe cada uno en clave de fa."
+      }
+    ],
+    "enPantalla": "Un pentagrama en clave de fa con siete notas dibujadas, cada una de un nombre. La app pide una por su nombre y el niño toca la que cree; al tocar, suena. Si no era, el personaje recuerda que el fa está en la cuarta línea y que se sube de una en una —fa, sol, la, si, do—; se cuenta otra vez y se toca. Al acertar, «¡bien!» y otra ronda. Termina cuando se han pedido las ocho notas de la octava, del do del segundo espacio al do central.",
+    "sinPantalla": "Pentagrama en el suelo con cinta, con una sola línea adicional por encima. Un cartel con la clave de fa y un pie del maestro en la cuarta línea: «aquí vive el fa». Se dice una nota y un niño se coloca; los demás cuentan desde el fa. Cuando llega el do de arriba, se pone un segundo pentagrama encima en clave de sol y se ve que ese do es el mismo.",
+    "masFacil": "Marca el fa de la cuarta línea y el do del segundo espacio con dos colores y cuenta con el dedo desde el más cercano. Baja a cuatro notas por ronda. Si sigue costando, solo las notas de las líneas —re, fa, la— y luego solo las de los espacios —do, mi, sol— hasta que se mezclen.",
+    "masDificil": "Mezclar las dos claves: la app en clave de fa y la pizarra en clave de sol, y pedir la misma nota en las dos. O quitar el nombre: el maestro toca la nota en el teclado y hay que localizarla en la pauta de oído, sabiendo que en clave de fa es la octava de la mano izquierda.",
+    "variante": {
+      "titulo": "El puente del do central",
+      "texto": "Con dos pentagramas en la pizarra, como el piano, el maestro toca una melodía corta que cruza el do central: sol, la, si, do, re, mi. Los niños dicen en qué momento la melodía pasa de la clave de fa a la de sol, y escriben las notas donde toca: las tres primeras abajo, las tres últimas arriba."
+    },
+    "ideas": [
+      "Escribir en clave de fa una melodía de cinco notas que acabe en el do central y tocarla en el teclado con la mano izquierda.",
+      "Buscar en una partitura de piano tres veces el do central y decir en qué clave está escrito cada vez.",
+      "Cantar la escala de do3 a do4 con los nombres mientras se señala en la pauta de la pizarra: es la tesitura de una voz grave de adulto."
+    ],
+    "loTiene": [
+      "Encuentra el do del segundo espacio y el do central de la línea adicional sin contar desde abajo.",
+      "Sube desde el fa de la cuarta línea nombrando sol, la, si, do sin saltarse ninguna.",
+      "Explica que el do central se escribe encima en clave de fa y debajo en clave de sol, y que es la misma tecla."
+    ],
+    "errores": [
+      {
+        "error": "Nombra la quinta línea como fa, como si fuera clave de sol",
+        "remedio": "señalar los puntos de la clave: abrazan la cuarta línea, que es fa. Una más arriba, la quinta, es la."
+      },
+      {
+        "error": "Pone el do central encima del pentagrama, sin la línea adicional",
+        "remedio": "dibujar en la pizarra la línea corta que atraviesa la nota: sin ella la nota es si, con ella es do."
+      },
+      {
+        "error": "Confunde el do del segundo espacio con el do central",
+        "remedio": "tocar los dos en el teclado, uno tras otro: el de abajo suena más grave. Hay dos do y están a una octava."
+      }
+    ],
+    "indicadores": [
+      "Fa de la 4.ª línea",
+      "Do central",
+      "Sube contando"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

@@ -99,6 +99,80 @@
   "pistas": [
     "actividad.inf21.pista1"
   ],
+  "ficha": {
+    "aprende": "Distinguir un sonido fuerte, como el león o el trueno, de uno flojito, como el gato o la lluvia, y hacerlo con la propia voz: la misma palabra fuerte y flojita.",
+    "vocabulario": [
+      "fuerte",
+      "flojito",
+      "león",
+      "mariposa",
+      "trueno",
+      "lluvia",
+      "escuchar",
+      "barriga"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o por parejas en tablet",
+    "material": "Ninguno. Sin pantalla, un tambor o unas claves.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Rugir y susurrar.",
+        "detalle": "El maestro ruge como un león, fuerte, y hace de mariposa, casi sin voz. Los niños imitan. Después la misma palabra, «hola», fuerte y flojita, con la mano en la barriga: lo fuerte se nota más."
+      },
+      {
+        "min": 1,
+        "titulo": "Palmas fuertes y flojitas.",
+        "detalle": "Dar palmas de león y palmas de mariposa, sin cambiar la velocidad. Que noten que lo fuerte no es más rápido, solo suena más."
+      },
+      {
+        "min": 2,
+        "titulo": "En la app.",
+        "detalle": "Suena un sonido de verdad —un león, un trueno, un gato, la lluvia— y un niño toca el león o la mariposa. Los demás abren los brazos si es fuerte o se ponen el dedo en la boca si es flojito."
+      },
+      {
+        "min": 1,
+        "titulo": "Ahora suenan ellos.",
+        "detalle": "Un niño, escondido, hace un sonido fuerte o flojito con un tambor o con la voz, y la clase adivina. Producirlo es más difícil que reconocerlo."
+      }
+    ],
+    "enPantalla": "Dos botones grandes: el león y la mariposa. Suena un sonido de verdad: un león que ruge, un trueno, aplausos, un martillo o el timbre del colegio, a tope; o un gato, un pájaro, la lluvia, un reloj o una abeja, bajito. El niño toca el león si ha sonado fuerte y la mariposa si ha sonado flojito. Si toca el otro, el personaje le recuerda que ponga la mano en la barriga, y puede oírlo otra vez y volver a elegir. Al acertar, «¡bien!» y viene el siguiente. Cinco sonidos por vuelta.",
+    "sinPantalla": "Dos tarjetas en el suelo, león y mariposa. El maestro, escondido tras la mesa, hace un sonido fuerte o flojito: un golpe de tambor a tope o rozado con los dedos, una palabra gritada o susurrada. Los niños van a la tarjeta que toca. Hazlo también con el mismo sonido las dos veces —el mismo golpe, fuerte y flojo— para que se oiga que lo que cambia es la fuerza, no la cosa que suena. La voz del maestro es el mejor instrumento para esto.",
+    "masFacil": "Solo los extremos: el león y la lluvia, muy fuerte y muy flojito, hasta que salga sin pensar. Di la palabra en voz alta con cada sonido: «¡fuerte!» abriendo los brazos, «flojito» con el dedo en la boca. Sube el volumen del altavoz si lo flojito no se oye en clase; lo flojito tiene que oírse, solo que bajito.",
+    "masDificil": "Tres niveles: fuerte, medio y flojito, con la mariposa, un perro y el león. Un sonido que crece: el maestro empieza a susurrar y termina rugiendo, y los niños levantan la mano cuando ya es fuerte. O que el niño haga el mismo sonido, un «la» cantado, fuerte y flojito sin cambiar de nota, que es lo que cuesta.",
+    "variante": {
+      "titulo": "El director del volumen",
+      "texto": "La clase canta una canción que se sepa. Un niño hace de director: brazos abiertos, se canta fuerte como el león; manos juntas y pequeñas, flojito como la mariposa. Cambia cuando quiere, sin hablar. Después dirige otro. Cantar fuerte sin gritar y flojito sin dejar de cantar es lo que se está aprendiendo."
+    },
+    "ideas": [
+      "Buscar en el patio sonidos de león y de mariposa: el timbre, un coche, las hojas, un pájaro. Hacer una lista con dibujos.",
+      "Contar un cuento en el que el león ruge y la mariposa susurra, y que los niños pongan las voces con la fuerza que toca.",
+      "Tocar una canción con las claves fuerte y flojito sin cambiar la velocidad, y grabarlo con el móvil del maestro para escuchar la diferencia."
+    ],
+    "loTiene": [
+      "Toca el león con los sonidos fuertes y la mariposa con los flojitos, aunque el flojito sea un gato y no una mariposa.",
+      "Dice la misma palabra fuerte y flojita cuando se lo piden.",
+      "Hace el gesto —brazos abiertos o dedo en la boca— antes de tocar."
+    ],
+    "errores": [
+      {
+        "error": "Toca el león porque el sonido es grave o da miedo, aunque suene bajito",
+        "remedio": "el maestro ruge bajito y maúlla a gritos: fuerte es cuánto suena, no quién es."
+      },
+      {
+        "error": "Toca antes de que acabe el sonido",
+        "remedio": "manos en las rodillas hasta que se apague, y luego se toca."
+      },
+      {
+        "error": "Toca siempre el león, sea lo que sea",
+        "remedio": "que ponga la mano en la barriga y diga si la nota: con el gato y la lluvia no se nota nada."
+      }
+    ],
+    "indicadores": [
+      "Fuerte y flojito",
+      "Lo hace con la voz",
+      "Espera al final"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

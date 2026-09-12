@@ -87,6 +87,80 @@
     "actividad.c234.pista1",
     "actividad.c234.pista2"
   ],
+  "ficha": {
+    "aprende": "Repetir con palmas un ritmo de dos compases con blancas, negras y corcheas, haciendo la blanca como una sola palmada y un hueco de un pulso.",
+    "vocabulario": [
+      "blanca",
+      "negra",
+      "corcheas",
+      "ta-a",
+      "ta",
+      "ti-ti",
+      "eco",
+      "pulso"
+    ],
+    "agrupamiento": "Toda la clase con proyector, después individual en tablet",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Decir el ritmo.",
+        "detalle": "Antes de palmear, decirlo: «ta-a, ti-ti, ta, ta, ti-ti, ta-a», con el pie marcando el pulso. En «ta-a» la voz se alarga dos pulsos. Los tres ritmos, hablados."
+      },
+      {
+        "min": 1,
+        "titulo": "Palmear la blanca.",
+        "detalle": "Palmas al pulso; cuando digas «blanca», una palmada y las manos juntas y quietas el pulso siguiente. La blanca es un golpe y un hueco: nunca dos palmadas."
+      },
+      {
+        "min": 2,
+        "titulo": "Eco con el proyector.",
+        "detalle": "Suena el ritmo entero (dos compases) y la clase lo repite a la vez con palmas, diciendo las sílabas en voz baja. Los puntos se encienden en verde en los golpes que entran a tiempo. Tres ritmos."
+      },
+      {
+        "min": 2,
+        "titulo": "Jugar en tablet,",
+        "detalle": "de uno en uno con el micrófono, o tocando el botón si no hay. Escuchar entero, decir el ritmo, y palmear. Al final la app dice si se ha ido por delante o por detrás; no hay que acertar todo, hay que entrar a tiempo."
+      }
+    ],
+    "enPantalla": "Suena un ritmo de dos compases con blancas, negras y corcheas, con el pulso de fondo, y después le toca al niño repetirlo con palmas ante el micrófono o tocando un botón grande. Los golpes que entran a tiempo se encienden en verde; los que no, en gris, nunca en rojo. La blanca aparece como un punto y un hueco: una sola palmada. El modelo se puede repetir sin límite. Tres ritmos, cada uno con la blanca en otro sitio; al final la app dice si se ha ido por delante o por detrás, no solo cuántos han entrado.",
+    "sinPantalla": "Eco de palmadas: tú palmeas los dos compases marcando el pulso con el pie y la clase repite. Antes de palmear, decirlo con sílabas: ta-a para la blanca, ta para la negra, ti-ti para las corcheas. En la blanca, las manos juntas y quietas durante el hueco, para que se vea. Después en corro: cada niño hace de modelo para el siguiente y la clase decide si la blanca ha durado dos pulsos.",
+    "masFacil": "Baja el tempo y quédate en un solo compás: «ta-a, ti-ti» o «ta, ta, ta-a». Decirlo antes de palmear, siempre. Si la blanca sale con dos palmadas, hacerla con una palmada y un abrazo: las manos se quedan cruzadas en el pecho un pulso. Y usar el botón en vez del micrófono si el niño se pone nervioso con él.",
+    "masDificil": "Palmear el ritmo mientras el pie marca el pulso, sin decir las sílabas. O al revés: la clase se parte en dos y una hace el pulso con los pies mientras la otra palmea el ritmo, y se cambian. También inventar un ritmo de dos compases con al menos una blanca y ponérselo a la clase de eco.",
+    "variante": {
+      "titulo": "Con instrumentos",
+      "texto": "El mismo eco con pequeña percusión: las negras y las corcheas en claves y la blanca en el triángulo, que suena y se deja vibrar dos pulsos. Así la blanca no es un hueco, es un sonido largo, y se entiende por qué es una sola palmada. Después vuelta a las palmas, con el triángulo todavía en la cabeza."
+    },
+    "ideas": [
+      "Escribir los tres ritmos en la pizarra con figuras y leerlos con sílabas y con palmas, sin la app.",
+      "Buscar la blanca en una canción del aula: la sílaba que se alarga dos pulsos, y palmearla.",
+      "Eco por parejas: uno inventa dos compases con una blanca y el otro lo repite; después se cambian."
+    ],
+    "loTiene": [
+      "Hace la blanca con una sola palmada y espera el pulso siguiente.",
+      "Dice el ritmo con ta, ta-a y ti-ti antes de palmearlo.",
+      "Entra a tiempo en el primer golpe, sin adelantarse al modelo."
+    ],
+    "errores": [
+      {
+        "error": "Da dos palmadas en la blanca",
+        "remedio": "decir «ta-a» alargando la voz y pegar las manos en la segunda sílaba; la palmada es una, el hueco es el otro pulso."
+      },
+      {
+        "error": "Empieza a palmear antes de que acabe el modelo",
+        "remedio": "manos en las rodillas hasta que suene el último golpe, y contar «uno, dos, tres, cuatro» antes de entrar."
+      },
+      {
+        "error": "Va siempre un poco tarde aunque el ritmo esté bien",
+        "remedio": "el pulso lo tiene: hace falta una señal de entrada; contar el compás de entrada en voz alta con él."
+      }
+    ],
+    "indicadores": [
+      "Blanca de una",
+      "Dice el ritmo",
+      "Entra a tiempo"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

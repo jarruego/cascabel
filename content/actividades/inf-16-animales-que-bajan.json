@@ -200,6 +200,85 @@
   "pistas": [
     "actividad.inf16.pista1"
   ],
+  "ficha": {
+    "aprende": "Tocar en el momento justo, cuando el animal llega a la línea, y no antes: mirar al que viene mientras suena el de ahora. El oso es el más grave y el pájaro el más agudo.",
+    "vocabulario": [
+      "oso",
+      "gato",
+      "conejo",
+      "ratón",
+      "pájaro",
+      "línea",
+      "grave",
+      "agudo"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Los cinco animales y sus voces.",
+        "detalle": "Nombrar al oso, el gato, el conejo, el ratón y el pájaro. Cada uno tiene su nota: el oso suena hondo y el pájaro finito. Se escucha cada animal en la app y se hace su voz con la boca."
+      },
+      {
+        "min": 1,
+        "titulo": "Cantar la melodía despacio.",
+        "detalle": "El maestro canta la melodía con «la» —es la de «Frère Jacques», muy despacio— y los niños dan una palmada por cada nota. Sin pantalla todavía."
+      },
+      {
+        "min": 2,
+        "titulo": "El principio, en la app.",
+        "detalle": "Primera ronda: oso, gato, conejo, oso, dos veces. Los animales bajan y se toca cuando llegan a la línea. Si se toca antes o después, no pasa nada: viene el siguiente igual."
+      },
+      {
+        "min": 1,
+        "titulo": "El final, con el pájaro largo.",
+        "detalle": "Segunda ronda: conejo, ratón y el pájaro, que dura dos pulsos. Se toca una vez y se espera; el error habitual es tocarlo dos veces."
+      },
+      {
+        "min": 1,
+        "titulo": "Entera.",
+        "detalle": "Tercera ronda: la melodía completa, del oso al pájaro. Al acabar, mirar el resumen y celebrar los animales que han entrado a tiempo."
+      }
+    ],
+    "enPantalla": "Los animales bajan por la pantalla, uno detrás de otro, hacia una línea de abajo. Cuando un animal toca la línea, el niño toca la pantalla y suena su nota: el oso grave, el pájaro agudo. Si entra a tiempo, el animal se ilumina. Si toca antes o después, no pasa nada: no hay marcador durante el juego y el siguiente animal viene igual. Va muy despacio, con tiempo de sobra para ver el que llega. Tres rondas —el principio, el final y todo seguido— y al terminar dice cómo ha ido.",
+    "sinPantalla": "El maestro canta la melodía muy despacio, con «la» o con el nombre de cada animal, y los niños dan una palmada en cada nota; en el pájaro, una palmada y las manos quietas hasta el siguiente. Con cinco tarjetas de animales en fila en el suelo, un niño va señalando o pisando la que suena mientras la clase canta. La pauta que baja es lo que añade la pantalla; el juego de entrar a tiempo es el mismo.",
+    "masFacil": "Solo la primera ronda, la del oso, el gato y el conejo, hasta que salga. Que diga «¡ya!» en voz alta cuando el animal toca la línea, antes de tocar con el dedo. El maestro toca con él, mano sobre mano, las primeras veces. Y si aun así se despista, que toque solo en los osos y deje pasar los demás: entrar en algunos es mejor que perseguirlos todos.",
+    "masDificil": "Cantar el nombre del animal a la vez que se toca, o mejor, su voz: «grr» para el oso, «pío» para el pájaro. Por parejas, uno toca los osos y el otro los demás animales, y se cambian. O tocar la melodía en un metalófono, con las cinco notas marcadas con los dibujos de los animales, mientras la app va bajando.",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "Toda la clase de pie frente a la pantalla proyectada, cada animal con un gesto: el oso, agachado con los brazos abiertos; el gato, las manos como garras; el conejo, dos dedos de orejas; el ratón, la nariz que se mueve; el pájaro, los brazos que vuelan. Cuando el animal llega a la línea, todos hacen su gesto. Nadie toca la pantalla: el cuerpo entra a tiempo."
+    },
+    "ideas": [
+      "Cantar «Frère Jacques» entera con la clase, despacio, poniéndole a cada nota el animal que le toca, y ver que la melodía sube y baja como los animales.",
+      "Inventar una melodía de tres animales tocando sus notas en el metalófono en otro orden: oso, pájaro, oso.",
+      "Dibujar los cinco animales en escalera, el oso abajo y el pájaro arriba, y señalarlos mientras se canta."
+    ],
+    "loTiene": [
+      "Toca cuando el animal llega a la línea, no cuando aparece arriba.",
+      "Mira al animal que viene mientras suena el de ahora.",
+      "Deja el pájaro largo: lo toca una vez y espera dos pulsos."
+    ],
+    "errores": [
+      {
+        "error": "Toca en cuanto aparece el animal, arriba del todo",
+        "remedio": "poner un dedo en la línea y decir «aquí» hasta que baje; que diga «ya» en voz alta antes de tocar."
+      },
+      {
+        "error": "Toca dos veces en el pájaro",
+        "remedio": "cantar «pá-jaro» largo con la voz mientras baja, y contar «uno, dos» con la mano quieta."
+      },
+      {
+        "error": "Se queda mirando al animal que ya ha pasado",
+        "remedio": "el maestro señala en la pantalla el que viene; anticipar es lo que se está aprendiendo."
+      }
+    ],
+    "indicadores": [
+      "En la línea",
+      "Mira el que viene",
+      "Pájaro largo"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

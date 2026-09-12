@@ -42,6 +42,61 @@
     ]
   },
   "enunciado": "actividad.tr06.enunciado",
+  "ficha": {
+    "aprende": "Distinguir por el sonido, no solo por el dibujo, los instrumentos de parche, de metal y de madera, y tocar un patrón corto a tiempo con el pulso detrás.",
+    "vocabulario": [
+      "parche",
+      "metal",
+      "madera",
+      "bombo",
+      "caja",
+      "claves",
+      "triángulo",
+      "pulso"
+    ],
+    "agrupamiento": "Individual o parejas en tablet; grupo clase con proyector",
+    "material": "Ninguno. Auriculares si hay varias tablets. Los instrumentos reales del aula, si los hay.",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Las tres familias.",
+        "detalle": "Con el proyector, tocar uno de cada: bombo (parche), triángulo (metal), claves (madera). Cada familia tiene su forma en la pantalla, además de su color."
+      },
+      {
+        "min": 3,
+        "titulo": "Explorar.",
+        "detalle": "Cada niño toca los diez; luego, con los ojos cerrados, un compañero toca uno y él dice de qué familia es."
+      },
+      {
+        "min": 2,
+        "titulo": "Con el pulso.",
+        "detalle": "Encender el metrónomo y tocar solo en el pulso, primero el bombo. Luego un instrumento distinto en cada uno de los cuatro tiempos."
+      },
+      {
+        "min": 2,
+        "titulo": "Grabar.",
+        "detalle": "Grabar cuatro compases con el pulso puesto y oírlos. ¿Va con el pulso o se adelanta?"
+      },
+      {
+        "min": 1,
+        "titulo": "Enseñar.",
+        "detalle": "Dos o tres grabaciones para la clase; los demás dicen qué instrumentos han oído y de qué familia son."
+      }
+    ],
+    "enPantalla": "Diez pads grandes, agrupados por familias: los de parche, los de metal y los de madera, cada familia con su forma y su color. Se tocan con el dedo, se encadenan deslizando, o con las teclas 1 a 5 y Q a T del ordenador. Un botón enciende un pulso detrás, a la velocidad que se elija, y otro graba lo tocado para volver a oírlo. Hay retos sugeridos para quien quiera empezar por algo. No hay ejercicio ni corrección: es un instrumento.",
+    "sinPantalla": "Con los instrumentos de aula de verdad se hace igual y mejor: bombo, caja, pandereta, claves, triángulo, repartidos por familias en tres mesas. Esto sirve cuando no hay para todos, cuando toca trabajar con auriculares o para probar timbres de los que en clase solo hay uno. Para adivinar familias, un niño toca detrás de un biombo y los demás dicen: parche, metal o madera.",
+    "masFacil": "Quita instrumentos hasta dejar dos muy distintos, un bombo y unas claves, y apaga el pulso. Con dos timbres tan distintos la diferencia se oye sin tener que explicarla. Cuando entre el pulso, bájalo a 60 y que toque solo en el primer tiempo.",
+    "masDificil": "Con el pulso a 100, cada niño de la pareja toca solo en un golpe distinto del compás: uno en el 1 y el 3, otro en el 2 y el 4. Grabar un patrón corto y tocar encima con otro instrumento: son dos capas y es el primer paso hacia el ostinato. Después, tocar con las teclas del ordenador sin mirar.",
+    "variante": {
+      "titulo": "Orquesta de tres familias",
+      "texto": "La clase en tres grupos: parche, metal y madera. El maestro dirige desde el proyector señalando una familia, y solo toca esa, en la pantalla o con los instrumentos reales. Dos familias a la vez, todas, ninguna. Luego dirige un niño."
+    },
+    "ideas": [
+      "Grabar un ritmo de cuatro compases y ponerle letra: una frase de la clase que encaje con los golpes.",
+      "Recoger objetos del aula y clasificarlos como el kit: ¿qué suena a parche, a metal, a madera? Una caja de cartón, unas llaves, un lápiz.",
+      "Acompañar una canción que ya sepan con un solo instrumento del kit, tocado solo en el primer tiempo de cada compás."
+    ]
+  },
   "personaje": "milo",
   "creditos": [
     {

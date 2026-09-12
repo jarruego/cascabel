@@ -170,6 +170,61 @@
     ]
   },
   "enunciado": "actividad.tr08.enunciado",
+  "ficha": {
+    "aprende": "Cantar encima de un acompañamiento que no se para, entrando en el tiempo y en un tono que le venga bien a la voz de la clase.",
+    "vocabulario": [
+      "base",
+      "acompañamiento",
+      "bucle",
+      "tono",
+      "más grave",
+      "más agudo",
+      "entrar",
+      "pulso"
+    ],
+    "agrupamiento": "Grupo clase, con altavoz",
+    "material": "Altavoz que se oiga en toda el aula",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Elegir la base.",
+        "detalle": "Poner cada una unos segundos y elegir entre todos la que va con la canción de hoy."
+      },
+      {
+        "min": 2,
+        "titulo": "Palmear encima.",
+        "detalle": "Con la base sonando, palmear el pulso sin cantar. Que la clase entre y salga a la vez, con la mano del maestro."
+      },
+      {
+        "min": 3,
+        "titulo": "Cantar la canción.",
+        "detalle": "Sobre la base, la canción que ya saben. El maestro da la entrada con la mano; si se descoloca, se para la base y se vuelve a entrar."
+      },
+      {
+        "min": 2,
+        "titulo": "Ajustar el tono.",
+        "detalle": "Si suena forzada, bajar con el botón de más grave; si queda apagada, subir. Volver a cantar y comparar: ¿dónde se canta mejor?"
+      },
+      {
+        "min": 2,
+        "titulo": "Otra base para la misma canción.",
+        "detalle": "¿Cambia la canción con otra base? Que digan cuál les gusta más y por qué."
+      }
+    ],
+    "enPantalla": "Seis bases que suenan en bucle, cada una con un bordón, una nota grave y su quinta, y una percusión, con un botón de poner y parar. Solo suena una a la vez. Dos botones, más grave y más agudo, cambian el tono de toda la base para ajustarla a las voces que haya. No hay ejercicio, ni corrección, ni final: es el acompañamiento que un aula sin piano no tiene. Como el bordón no lleva tercera, no dice si es mayor o menor y no choca con casi nada de lo que se cante encima.",
+    "sinPantalla": "Es el piano o la guitarra que el maestro no siempre tiene. Con instrumento propio no hace falta. Sin él, un bordón se hace con dos láminas del metalófono, la grave y su quinta, do y sol, tocadas por un niño en cada pulso, y la percusión con claves o pandero. El resto de la clase canta encima. Cambiar de tono sin instrumento es cambiar las dos láminas.",
+    "masFacil": "Empezad con la base de solo pulso, sin bordón, y que la clase palmee encima antes de cantar. Primero encajar en el tiempo; la afinación viene después. Si la canción no entra, párala y da tú la primera frase a capela, y vuelve a poner la base.",
+    "masDificil": "Que improvisen encima con láminas o con la flauta usando solo do, re, mi, sol y la, la pentatónica: sobre un bordón sin tercera no hay nota que suene mal, y ahí se atreve hasta quien nunca se atreve. Después, cantar la canción en dos grupos: uno la letra y otro sostiene el bordón con la voz.",
+    "variante": {
+      "titulo": "Con el tono de cada uno",
+      "texto": "Un niño canta solo la primera frase y el maestro sube o baja la base hasta que le quede cómoda. Luego otro. Se apunta cuántas veces hubo que bajar: si casi todos cantan mejor más grave, la canción estaba alta para esas voces, y la próxima vez se empieza desde ahí."
+    },
+    "ideas": [
+      "Inventar una letra nueva sobre una base, por grupos, y cantarla a los demás encima del mismo bucle.",
+      "Poner una base de fondo mientras se recita un poema o unas adivinanzas, entrando cada verso en el pulso.",
+      "Buscar entre las seis bases cuál pega con tres canciones distintas del repertorio de la clase, y apuntarlo."
+    ]
+  },
   "personaje": "doby",
   "creditos": [
     {

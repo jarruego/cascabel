@@ -169,6 +169,85 @@
     "actividad.c348.pista1",
     "actividad.c348.pista2"
   ],
+  "ficha": {
+    "aprende": "Reconocer ocho obras famosas en grabaciones reales y unir cada trozo con su nombre: La mañana, la Gruta, el Danubio, Para Elisa, la Primavera, el Elefante, el Acuario y los Cisnes.",
+    "vocabulario": [
+      "obra",
+      "título",
+      "orquesta",
+      "amanecer",
+      "vals",
+      "elefante",
+      "acuario",
+      "cisnes"
+    ],
+    "agrupamiento": "Grupo clase con proyector; luego por parejas en tablet",
+    "material": "Ninguno (opcional: los ocho títulos en tarjetas)",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Ocho títulos, ocho historias.",
+        "detalle": "Leer los ocho títulos y preguntar qué cuenta cada uno antes de oír nada: un amanecer, una gruta bajo la montaña, un baile junto a un río, un elefante, un acuario, unos cisnes, la primavera y una chica llamada Elisa."
+      },
+      {
+        "min": 2,
+        "titulo": "El primer tablero, proyectado.",
+        "detalle": "La mañana, la Gruta, el Danubio y Para Elisa. Se toca cada trozo y se oye entero, sin unir nada; luego la clase decide y un niño toca el trozo y su nombre. Las parejas hechas se quedan unidas."
+      },
+      {
+        "min": 2,
+        "titulo": "El segundo tablero.",
+        "detalle": "La Primavera, el Elefante, el Acuario y los Cisnes. Igual, con una pista para cada uno: el elefante es un contrabajo, el acuario brilla, los cisnes son de cuerda, la primavera tiene pájaros de violín."
+      },
+      {
+        "min": 2,
+        "titulo": "Por parejas en tablet.",
+        "detalle": "Los dos tableros. Uno escucha y describe lo que oye (rápido, grave, con violines); el otro elige el nombre. Se cambian en el segundo tablero."
+      },
+      {
+        "min": 1,
+        "titulo": "Con los ojos cerrados.",
+        "detalle": "Cierra sin pantalla: pon uno de los ocho trozos y que digan el título sin ver los dibujos. Quien quiera, añade quién lo compuso."
+      }
+    ],
+    "enPantalla": "Dos columnas: a un lado, trozos de las grabaciones de verdad, con un dibujo cada uno; al otro, los nombres de las obras. El niño toca un trozo, lo escucha entero (puede repetirlo), y luego toca el nombre que cree. Si encajan, se quedan unidos con una línea; si no, no pasa nada: se puede volver a oír y probar otro. Dos tableros de cuatro parejas: primero La mañana, la Gruta, el Danubio y Para Elisa; luego la Primavera, el Elefante, el Acuario y los Cisnes. Termina al unir las ocho.",
+    "sinPantalla": "Con las grabaciones que tengas y ocho tarjetas con los títulos sobre la mesa, en grupos de tres o cuatro: suena un trozo y quien tiene el turno coloca el título junto a él. Si no hay grabaciones, tararea lo que se pueda tararear (el Danubio, Para Elisa, la Primavera, la Gruta) y describe el resto: «un contrabajo andando muy despacio» es el Elefante. Añade turnos, que es lo que la pantalla no da.",
+    "masFacil": "Empieza con dos parejas y sube de una en una, tapando tarjetas si lo haces en la mesa. Elige primero las más distintas: el Elefante (grave y lento) frente a la Primavera (aguda y rápida), o el Danubio (un vals) frente a Para Elisa (piano solo). Di el título en voz alta y cuenta su historia antes de que suene: el nombre ya lleva la pista.",
+    "masDificil": "Sin dibujos: tapar la columna de los trozos con la mano y unir solo de oído, con el título leído por otro. Después, decir el compositor de cada una (Grieg, Strauss, Beethoven, Vivaldi, Saint-Saëns, Chaikovski) y cuál de ellos tiene dos obras en el tablero. Y para quien va sobrado: escuchar solo los tres primeros segundos y decir el título.",
+    "variante": {
+      "titulo": "Adivina la historia",
+      "texto": "Antes de ver los nombres, se escucha un trozo con los ojos cerrados y cada niño dibuja en un papel lo que ve. Luego se enseñan los dibujos: ¿cuántos han visto agua en el Acuario, un animal pesado en el Elefante, sol en La mañana? Después se abre la app y se comprueba si el título coincide con lo que la música contaba."
+    },
+    "ideas": [
+      "Escuchar entera una de las ocho obras, la que más haya gustado, y seguirla con un mapa dibujado en la pizarra.",
+      "Inventar un título nuevo para una de las obras a partir de lo que cuenta la música, y votar si le va mejor que el original.",
+      "Buscar en casa una música que cuente una historia sin palabras y traerla para añadirla al tablero."
+    ],
+    "loTiene": [
+      "Une el Elefante y la Gruta, los dos graves, con su nombre sin confundirlos.",
+      "Escucha el trozo entero antes de tocar el nombre.",
+      "Da una razón para cada pareja: «es un vals, así que el Danubio»."
+    ],
+    "errores": [
+      {
+        "error": "Confunde el Elefante con la Gruta: los dos empiezan graves y lentos",
+        "remedio": "oír los dos seguidos: el Elefante es un contrabajo solo, bailando; la Gruta es la orquesta que va acelerando."
+      },
+      {
+        "error": "Confunde el Acuario con los Cisnes: los dos son suaves y de cuerda",
+        "remedio": "fijarse en el brillo: en el Acuario hay piano y celesta como gotas; los Cisnes son un oboe largo sobre las cuerdas (PENDIENTE DE REVISIÓN PEDAGÓGICA)."
+      },
+      {
+        "error": "Toca parejas al azar para que la app las vaya dejando",
+        "remedio": "pedir una razón en voz alta antes de tocar el nombre; si no la hay, se vuelve a escuchar."
+      }
+    ],
+    "indicadores": [
+      "Elefante/Gruta",
+      "Escucha entera",
+      "Da una razón"
+    ]
+  },
   "creditos": [
     {
       "obra": "Grabaciones de las ocho obras (Grieg, Strauss, Beethoven, Vivaldi, Saint-Saëns, Chaikovski)",

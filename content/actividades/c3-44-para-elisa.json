@@ -340,6 +340,90 @@
     "actividad.c344.pista1",
     "actividad.c344.pista2"
   ],
+  "ficha": {
+    "aprende": "Tocar a tiempo el comienzo de «Para Elisa» leyendo el pentagrama: el balanceo mi–re sostenido, la bajada y la subida desde el do grave, con un solo pulsador.",
+    "vocabulario": [
+      "pentagrama",
+      "sostenido",
+      "re sostenido",
+      "balanceo",
+      "frase",
+      "entrada",
+      "vuelta",
+      "beethoven"
+    ],
+    "agrupamiento": "Grupo clase con proyector; luego individual en tablet",
+    "material": "Ninguno (opcional: teclado o metalófono con la lámina de re sostenido)",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Cantarla primero.",
+        "detalle": "Sin la app: tararear el comienzo que casi todos conocen. Luego con nombres: mi, re sostenido, mi, re sostenido, mi, si, re, do, la. Es un balanceo y una bajada."
+      },
+      {
+        "min": 2,
+        "titulo": "El re sostenido en la pauta.",
+        "detalle": "Mirar la pauta al pasar las notas: el re con el sostenido delante está entre re y mi, y va y viene con el mi. Son dos notas pegadas, y por eso el balanceo es tan corto."
+      },
+      {
+        "min": 2,
+        "titulo": "La entrada, proyectada.",
+        "detalle": "Primera parte: un niño toca el pulsador cuando cada nota llega a la línea y el resto marca con una palmada floja. La nota se ilumina y sale su nombre al entrar bien. Dos pasadas."
+      },
+      {
+        "min": 2,
+        "titulo": "La vuelta.",
+        "detalle": "Segunda parte: empieza con un si largo, sube mi, sol sostenido, si, do, y vuelve el balanceo. Avisar de que las largas hay que aguantarlas: tocar una vez y esperar."
+      },
+      {
+        "min": 2,
+        "titulo": "Todo seguido, en tablet.",
+        "detalle": "Cada niño hace la tercera parte, la frase entera, una o dos veces. Mirar al acabar el desvío medio que da la app: si va tarde con poca dispersión, el pulso es bueno y solo entra tarde."
+      },
+      {
+        "min": 1,
+        "titulo": "Con los nombres.",
+        "detalle": "Cierra cantando la frase con los nombres de las notas, sin app, mientras alguien la toca en el metalófono si lo hay: mi, re sostenido, mi, re sostenido, mi, si, re, do, la."
+      }
+    ],
+    "enPantalla": "Un pentagrama grande por el que las notas de «Para Elisa» vienen de la derecha hacia una línea fija, con el piano tocándolas. El niño tiene un solo botón y lo toca cuando cada nota llega a la línea; al entrar a tiempo, la nota se ilumina y aparece su nombre. Las que se escapan pasan sin más, sin rojo ni marcador. Tres partes: la entrada (el balanceo y la bajada), la vuelta (desde el si largo) y la frase entera. Al final da el desvío medio, para saber si se va tarde o pronto.",
+    "sinPantalla": "Canta o toca tú el comienzo de «Para Elisa» y que den una palmada en cada nota, aguantando en las largas (el la y el si). Con el pentagrama en la pizarra: escribir el balanceo mi–re sostenido y señalarlo mientras se canta con los nombres. Con un metalófono al que se le cambie la lámina de re por la de re sostenido, un niño toca el balanceo y la clase entra en la bajada con palmas.",
+    "masFacil": "Baja el tempo en la app. Si aun así se escapan, que toquen solo el mi de cada balanceo y dejen pasar el re sostenido: entrar en la mitad de las notas a tiempo enseña más que perseguirlas todas. Y quédate en la primera parte, la entrada, hasta que salga dos veces seguidas; la vuelta y la frase entera son para otro día.",
+    "masDificil": "Cantar el nombre de cada nota a la vez que se toca el pulsador. Después, tocar la frase en el teclado o el metalófono en lugar de en el botón, con el re sostenido de verdad. Y para quien va sobrado: la frase entera con los ojos en la nota que viene, no en la que cruza, y comparar el desvío medio de dos intentos: la meta es acercarse a cero, no acertar más.",
+    "variante": {
+      "titulo": "Balanceo por parejas",
+      "texto": "Dos niños frente a frente: uno es «mi» y el otro «re sostenido». Suena la app y cada uno da una palmada solo en su nota: el balanceo pasa de uno a otro como una pelota. En la bajada (si, re, do, la) palmean los dos a la vez. Luego se cambian los papeles. Es la forma de sentir que las dos notas son distintas aunque estén pegadas."
+    },
+    "ideas": [
+      "Escuchar «Para Elisa» entera grabada y levantar la mano cada vez que vuelve el balanceo del principio: ¿cuántas veces vuelve?",
+      "Escribir el balanceo mi–re sostenido en el cuaderno pautado y probar a cambiarlo por mi–re natural: cantarlo y oír que ya no es lo mismo.",
+      "Inventar entre todos una frase corta que empiece con un balanceo de dos notas pegadas y tocarla en el metalófono."
+    ],
+    "loTiene": [
+      "Entra a tiempo en el balanceo mi–re sostenido sin apretar el botón de más.",
+      "Aguanta las notas largas (el la y el si) sin tocar dos veces.",
+      "Canta la frase con los nombres, con el re sostenido en su sitio."
+    ],
+    "errores": [
+      {
+        "error": "Toca a doble velocidad en el balanceo, una vez por la nota y otra por los nervios",
+        "remedio": "cantar el balanceo despacio con los nombres antes de tocar y palmearlo sobre la mesa a la mitad del tempo."
+      },
+      {
+        "error": "Toca varias veces en el la largo, para llenar la espera",
+        "remedio": "decir en voz alta «la-a-a» mientras dura, contando los tres pulsos, y tocar solo en el primero."
+      },
+      {
+        "error": "Entra siempre un poco tarde, mirando la nota cuando ya cruza la línea",
+        "remedio": "mirar la nota que viene, no la que está en la línea, y tocar cuando la ve llegar: el desvío medio dirá si mejora."
+      }
+    ],
+    "indicadores": [
+      "Balanceo a tiempo",
+      "Aguanta las largas",
+      "Dice los nombres"
+    ]
+  },
   "creditos": [
     {
       "obra": "«Para Elisa» (Bagatela n.º 25, WoO 59), primera frase completa",

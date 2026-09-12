@@ -63,6 +63,80 @@
     ]
   },
   "enunciado": "actividad.inf12.enunciado",
+  "ficha": {
+    "aprende": "Bailar en corro al pulso: girar ocho pasos a un lado y ocho al otro, cuatro al centro y cuatro atrás, todos a la vez y sin que nadie lo diga.",
+    "vocabulario": [
+      "corro",
+      "pulso",
+      "girar",
+      "ocho",
+      "centro",
+      "brazos",
+      "de la mano",
+      "danza"
+    ],
+    "agrupamiento": "Toda la clase, de pie, en corro",
+    "material": "Espacio despejado para un corro y un altavoz. Proyector opcional.",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Hacer el corro y escuchar.",
+        "detalle": "De la mano, quietos, escuchando el pulso a 96. Que lo oigan antes de moverse: se puede marcar con la cabeza o con la rodilla, sin soltar las manos."
+      },
+      {
+        "min": 5,
+        "titulo": "Girar a un lado, ocho pulsos.",
+        "detalle": "Un paso por pulso, contando en voz alta hasta ocho. Después, ocho al otro lado. El maestro cuenta con ellos y anuncia el cambio: «¡y al otro lado!». Repetir hasta que el corro gira sin estirarse."
+      },
+      {
+        "min": 5,
+        "titulo": "Al centro y atrás.",
+        "detalle": "Cuatro pasos hacia dentro levantando los brazos, cuatro hacia fuera bajándolos. Contar «uno, dos, tres, cuatro» al entrar y al salir. El corro se hace pequeño y vuelve a su sitio."
+      },
+      {
+        "min": 8,
+        "titulo": "Todo seguido.",
+        "detalle": "Girar ocho, girar ocho al otro lado, cuatro dentro y cuatro fuera. Contar en alto las primeras vueltas y después solo el pulso. Repetir hasta que salga sin que el maestro lo diga."
+      }
+    ],
+    "enPantalla": "Es la pantalla del maestro, para proyectar o para dejar sobre la mesa. Lleva el pulso a 96 con un contador que se ve de lejos —del uno al ocho para el giro, del uno al cuatro para el centro— y muestra el paso en el que estamos. Los niños no tocan nada: miran el contador si lo necesitan y escuchan el pulso. No hay marcador ni respuesta correcta; la pantalla cuenta por el maestro para que él pueda mirar al corro.",
+    "sinPantalla": "Es su forma natural. El maestro lleva el pulso con un pandero o con las palmas, y cuenta en voz alta: «uno, dos, tres… ocho, ¡y al otro!». Cuando el corro se lo sabe, deja de contar y solo toca. Si hay una canción de corro que la clase ya conozca, sirve de pulso: se canta y se baila encima, pero conviene que sea de cuatro pulsos por frase para que los ochos cuadren.",
+    "masFacil": "Recortar antes que acelerar: solo girar a un lado, ocho pulsos, y parar. Cuando salga, el otro lado. El centro y atrás se deja para otro día. Contar en voz alta todo el rato, y el maestro dentro del corro, de la mano, tirando suave hacia donde toca girar. Media danza bien hecha vale más que la entera a medias.",
+    "masDificil": "Añadir una figura más: cuatro palmadas al pulso en el sitio antes de volver a girar. O partir el corro en dos círculos, uno dentro del otro, que giran en sentidos contrarios. Y que un niño haga de director: se pone en el centro y decide cuándo se cambia de lado, con un gesto y sin hablar.",
+    "variante": {
+      "titulo": "Corro con canción",
+      "texto": "La misma danza sobre una canción de corro que la clase ya cante: se sustituye el pulso de la pantalla por la voz. Cada frase de la canción es una figura: girar a un lado, girar al otro, al centro, atrás. La letra hace de contador y ya no hace falta contar hasta ocho: se cambia cuando cambia la frase."
+    },
+    "ideas": [
+      "Inventar entre todos una figura nueva —un salto, una vuelta sobre sí mismos, agacharse— y meterla en el hueco de los cuatro pasos atrás.",
+      "Bailar la misma danza con el pulso más rápido y más lento, y decir cuál gusta más y por qué.",
+      "Dibujar la danza en papel: flechas para el giro, flechas hacia el centro, y colgarlo en clase para bailarla otro día sin explicar nada."
+    ],
+    "loTiene": [
+      "Da un paso por pulso al girar, sin tirar del de al lado.",
+      "Cambia de sentido a los ocho sin que se lo digan.",
+      "Sube los brazos en los cuatro pasos al centro y los baja al salir."
+    ],
+    "errores": [
+      {
+        "error": "El corro se estira y se rompe al girar",
+        "remedio": "pasos pequeños y el maestro dentro del corro. Si sigue, girar sin darse la mano un rato, y volver a dársela cuando el paso vaya al pulso."
+      },
+      {
+        "error": "Corre en el giro y llega al ocho antes que los demás",
+        "remedio": "contar en voz alta con él y pisar fuerte en el uno de cada ocho, para que note dónde empieza cada vuelta."
+      },
+      {
+        "error": "Al ir al centro se amontonan y se caen hacia dentro",
+        "remedio": "brazos arriba mientras se entra y parar en el cuatro con los pies juntos. Contar el cuatro más alto que los otros."
+      }
+    ],
+    "indicadores": [
+      "Paso por pulso",
+      "Cambia a los ocho",
+      "Centro y atrás"
+    ]
+  },
   "personaje": "doby",
   "estado": "borrador",
   "etiquetas": [

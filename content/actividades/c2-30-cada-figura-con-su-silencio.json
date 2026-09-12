@@ -156,6 +156,80 @@
   "pistas": [
     "actividad.c230.pista1"
   ],
+  "ficha": {
+    "aprende": "Emparejar redonda, blanca, negra y corchea con el silencio que dura lo mismo, oyendo la figura como golpes y el silencio como el hueco que deja.",
+    "vocabulario": [
+      "silencio",
+      "redonda",
+      "blanca",
+      "negra",
+      "corchea",
+      "dura lo mismo",
+      "hueco",
+      "pareja"
+    ],
+    "agrupamiento": "Grupo clase con proyector, después por parejas en tablet",
+    "material": "Ninguno. Ocho tarjetas (cuatro figuras y cuatro silencios) si se hace sin pantalla",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Golpe y hueco.",
+        "detalle": "Palmear negras al pulso y, a tu señal, callar un pulso con las manos abiertas: eso es el silencio de negra, dura igual que ella. Hacerlo con la blanca: dos pulsos de golpe, dos de hueco."
+      },
+      {
+        "min": 1,
+        "titulo": "Los cuatro silencios.",
+        "detalle": "Dibujar en la pizarra cada figura con su silencio al lado: redonda, blanca, negra y corchea. Señalar que los de redonda y blanca son parecidos: el de redonda cuelga de la línea, el de blanca se apoya."
+      },
+      {
+        "min": 2,
+        "titulo": "Emparejar con el proyector.",
+        "detalle": "Un niño toca una figura y la oye; luego un silencio, y se oye el hueco. Preguntar si duran lo mismo antes de decidir. Las parejas hechas se quedan unidas con una línea."
+      },
+      {
+        "min": 2,
+        "titulo": "Jugar en tablet,",
+        "detalle": "de uno en uno o por parejas. Oír la figura y el silencio antes de unir. Si no van juntos, el personaje da una pista y se prueba otra. Termina con las cuatro parejas."
+      }
+    ],
+    "enPantalla": "Dos columnas de fichas: a la izquierda las figuras (redonda, blanca, negra y corchea) y a la derecha sus silencios, desordenados. Al tocar una figura suena como golpes seguidos; al tocar un silencio se oye un golpe, el hueco que dura el silencio, y otro golpe. Se toca una ficha y luego su pareja, sin arrastrar. Si duran lo mismo, se quedan unidas con una línea; si no, el personaje da una pista y se prueba otra. Termina cuando están las cuatro parejas, sin puntuación.",
+    "sinPantalla": "Ocho tarjetas boca abajo en la mesa, en grupos de tres o cuatro: se levantan dos y, para saber si van juntas, se palmea la figura y se hace el silencio con las manos abiertas contando. Si duran lo mismo, la pareja se queda. Con el cuerpo: tú palmeas una figura y la clase responde con el silencio del mismo largo, callada y contando con el pie.",
+    "masFacil": "Empieza con dos parejas: negra y blanca con sus silencios, que suenan muy distintos. Añade la corchea cuando salgan, y la redonda al final, que es la que más se parece a la blanca. Contar en voz alta el hueco de cada silencio con el pie: uno; uno, dos; uno, dos, tres, cuatro.",
+    "masDificil": "Quitar el dibujo y emparejar solo de oído: tú palmeas una figura y ellos señalan el silencio que dura lo mismo. O escribir un compás de 4/4 que mezcle figuras y silencios, y palmearlo con las manos abiertas en los huecos. También que expliquen por qué el silencio de redonda cuelga y el de blanca se apoya, y se inventen una regla para recordarlo.",
+    "variante": {
+      "titulo": "Con instrumentos",
+      "texto": "Cada pareja hecha se toca en el aula: un niño con claves hace la figura (cuatro negras, dos blancas, una redonda o corcheas) y otro tiene que hacer su silencio exacto: quedarse quieto el mismo tiempo, contando con el pie, y volver a entrar a tiempo. La clase dice si el hueco ha durado lo mismo. El silencio se toca, aunque no suene."
+    },
+    "ideas": [
+      "Escribir un ritmo de dos compases con al menos dos silencios distintos y palmearlo entre todos.",
+      "Buscar en una canción del aula un sitio donde nadie canta un pulso entero: ahí hay un silencio de negra.",
+      "Juego del silencio: la clase palmea negras y, cuando enseñas un silencio, calla lo que dura y vuelve a entrar."
+    ],
+    "loTiene": [
+      "Une cada figura con su silencio tras oír las dos fichas.",
+      "Hace el silencio de negra y el de blanca con las manos abiertas, contando el pulso.",
+      "Distingue el silencio de redonda del de blanca por dónde está en la línea."
+    ],
+    "errores": [
+      {
+        "error": "Une la redonda con el silencio de blanca",
+        "remedio": "oír los dos silencios seguidos contando el hueco: uno de ellos aguanta cuatro pulsos; mirar después cuál cuelga y cuál se apoya."
+      },
+      {
+        "error": "Prueba fichas al azar sin escucharlas",
+        "remedio": "regla: primero se oye la figura y se cuenta, luego el silencio y se cuenta; solo se unen si el número coincide."
+      },
+      {
+        "error": "En el silencio sigue palmeando flojito",
+        "remedio": "las manos abiertas y separadas mientras dura el hueco: el silencio se ve, no solo no se oye."
+      }
+    ],
+    "indicadores": [
+      "Une la pareja",
+      "Hace el silencio",
+      "Redonda y blanca"
+    ]
+  },
   "creditos": [
     {
       "obra": "Iconos",

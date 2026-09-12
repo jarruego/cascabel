@@ -453,6 +453,89 @@
     "actividad.c239.pista1",
     "actividad.c239.pista2"
   ],
+  "ficha": {
+    "aprende": "Seguir la nana de Brahms entera tocando cada nota cuando llega, con un solo pulsador, y sentir en el cuerpo un compás de tres lento en el que las notas largas duran de verdad.",
+    "vocabulario": [
+      "nana",
+      "canción de cuna",
+      "compás de tres",
+      "nota larga",
+      "nota corta",
+      "despacio",
+      "balanceo"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet; primero en el proyector",
+    "material": "Ninguno. Opcional: un peluche por niño",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Una canción para dormir.",
+        "detalle": "Es la Canción de cuna de Brahms, la que suena en cajas de música. Escuchadla entera con los ojos cerrados y balanceando el cuerpo como quien mece."
+      },
+      {
+        "min": 2,
+        "titulo": "Mecer de tres en tres.",
+        "detalle": "De pie, un balanceo a cada compás: uno hacia un lado, dos-tres hacia el otro. Que sientan que las frases empiezan un poco antes del balanceo, con las dos notas cortas «mi, mi»."
+      },
+      {
+        "min": 2,
+        "titulo": "Primera mitad.",
+        "detalle": "En la tablet, el único pulsador. Que toquen cuando cada personaje toca la línea, sin prisa, y dejen que Sol se quede en la línea lo que dure."
+      },
+      {
+        "min": 2,
+        "titulo": "Segunda mitad.",
+        "detalle": "Empieza arriba, en el do agudo, y baja. Las notas largas del final de cada frase son el sitio donde respirar."
+      },
+      {
+        "min": 2,
+        "titulo": "Entera.",
+        "detalle": "La tercera parte junta las dos. Quien se adelanta en las largas, cuenta por dentro: sol-dos-tres."
+      },
+      {
+        "min": 1,
+        "titulo": "Mirar el resumen.",
+        "detalle": "Si va adelantado con regularidad, es que tiene prisa para una nana: más balanceo. Lo que importa es el desvío, no el porcentaje."
+      }
+    ],
+    "enPantalla": "Las notas de la nana bajan una a una por la pantalla, cada una con su personaje de la pandilla, y el niño toca el único botón de abajo cuando cada personaje llega a la línea. Las notas largas se ven largas: Sol se queda un rato en la línea. Al entrar a tiempo, la nota se ilumina y suena; si entra tarde o pronto, no pasa nada. Hay tres partes: la primera mitad, la segunda y entera. Va lenta, a paso de nana. No hay marcador mientras se toca; al final dice si ha ido adelantado o atrasado y se puede repetir.",
+    "sinPantalla": "Canta tú la nana con «la, la» o con la letra en alemán (Guten Abend, gut' Nacht) mientras la clase mece un muñeco o los brazos en cuna. Que den un toque suave en el muslo en cada nota: en las largas, el toque y luego quietos hasta la siguiente. En corro, pasa un peluche de mano en mano con cada nota: en las notas largas el peluche se queda en las manos de quien lo tiene.",
+    "masFacil": "Que solo toquen las notas largas, las que empiezan cada compás, y dejen pasar las cortas: mi, mi (pasan) SOL, mi, mi (pasan) SOL. Entrar en pocas notas con el pulso firme vale más que perseguirlas todas. Antes de tocar, que canten la melodía con «la» balanceando el cuerpo de tres en tres. Si la segunda mitad cuesta por el salto al do agudo, quedaos en la primera hasta que salga entera.",
+    "masDificil": "Que cante la melodía a la vez que la toca, con «la» o con la letra. Después, que la toque en el teclado de la app o en un metalófono: siete notas distintas, de do a do. Y para quien la sepa, que se fije en las dos frases que empiezan igual (mi, mi, sol) y diga en qué momento cambian.",
+    "variante": {
+      "titulo": "Nana para el peluche",
+      "texto": "Cada niño trae un peluche o muñeco. Con la app en el proyector, la clase mece al muñeco con el balanceo de tres y un niño toca en la tablet. Cuando la melodía acaba, todos dejan el muñeco dormido en el suelo, muy despacio, sin ruido: el silencio final también es parte de la nana."
+    },
+    "ideas": [
+      "Preguntar en casa qué nana les cantaban de pequeños y traer una a clase: en casi todas las lenguas hay una y suelen balancearse.",
+      "Escuchar la nana cantada por una voz de verdad en alemán y comparar con la versión de caja de música.",
+      "Inventar una letra en castellano para la primera frase, con las mismas sílabas, y cantársela a los de Infantil."
+    ],
+    "loTiene": [
+      "Espera en las notas largas sin tocar de más: un toque por nota, no uno por pulso.",
+      "Entra a tiempo en las dos notas cortas del principio de cada frase.",
+      "Mantiene el balanceo de tres mientras toca la parte entera."
+    ],
+    "errores": [
+      {
+        "error": "Toca varias veces en la nota larga como si fueran varias notas",
+        "remedio": "cantar con él la nota larga contando por dentro: sol-dos-tres, un solo toque al principio."
+      },
+      {
+        "error": "Se adelanta porque la nana es lenta y esperar cuesta",
+        "remedio": "mecer un peluche o el cuerpo de tres en tres mientras toca; el balanceo sujeta la espera."
+      },
+      {
+        "error": "Le sorprende el salto al do agudo del principio de la segunda mitad",
+        "remedio": "cantarlo aparte: do grave y do agudo, con los brazos abajo y arriba, y luego volver a la app."
+      }
+    ],
+    "indicadores": [
+      "Un toque por nota",
+      "Entra a tiempo",
+      "Balanceo de tres"
+    ]
+  },
   "creditos": [
     {
       "obra": "«Canción de cuna» (Wiegenlied), op. 49 n.º 4, primera mitad",

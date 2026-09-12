@@ -73,6 +73,80 @@
   "pistas": [
     "actividad.inf03.pista1"
   ],
+  "ficha": {
+    "aprende": "Reconocer si un sonido es agudo como el ratón o grave como el elefante, aunque sea el mismo instrumento el que suena.",
+    "vocabulario": [
+      "agudo",
+      "grave",
+      "finito",
+      "hondo",
+      "ratón",
+      "elefante",
+      "marimba",
+      "escuchar"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o por parejas en tablet",
+    "material": "Ninguno. Sin pantalla, un xilófono o metalófono de aula.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Voz de ratón y voz de elefante.",
+        "detalle": "El maestro habla finito como un ratón y hondo como un elefante; los niños imitan. De puntillas para el ratón y agachados para el elefante."
+      },
+      {
+        "min": 1,
+        "titulo": "La marimba tiene los dos.",
+        "detalle": "En el metalófono, o en la app, tocar una lámina larga y una corta: la larga es el elefante, la corta el ratón. Mismo instrumento, dos animales."
+      },
+      {
+        "min": 2,
+        "titulo": "En la app.",
+        "detalle": "Suena y un niño toca el ratón o el elefante. Los demás lo dicen con el cuerpo: puntillas o agachados. Si no sale, se escucha otra vez."
+      },
+      {
+        "min": 1,
+        "titulo": "Ahora lo hacéis vosotros.",
+        "detalle": "Un niño toca en el metalófono una lámina, la que quiera, y la clase dice quién ha sonado."
+      }
+    ],
+    "enPantalla": "Dos botones grandes con el ratón y el elefante. La app pregunta «¿Es el ratón o el elefante?» y suena una nota de marimba: muy aguda, de las láminas pequeñas, o muy grave, de las grandes. El niño toca el animal. Si toca el otro, el personaje le recuerda que el elefante es grande y suena hondo, y el ratón pequeño y finito, y puede volver a oírlo y tocar. Al acertar, «¡bien!» y viene la siguiente. Seis sonidos y termina; nunca cambia el instrumento, solo la altura.",
+    "sinPantalla": "Dos tarjetas en el suelo, ratón y elefante. Con un xilófono o metalófono de aula escondido tras la mesa, el maestro toca una lámina de las largas o de las cortas. Los niños van a la tarjeta o hacen el gesto: puntillas para el ratón, agachados para el elefante. Con la voz también funciona: un «iii» finito o un «ooo» hondo, siempre con la misma boca, para que lo que cambie sea la altura y no la persona.",
+    "masFacil": "Solo las dos láminas de los extremos del metalófono, la más larga y la más corta, para que la diferencia sea enorme. Toca la lámina a la vista del niño: ver la lámina grande ayuda a entender que suena hondo. Di el animal en voz alta antes de que suene, dos o tres veces, hasta que lo diga él.",
+    "masDificil": "Acorta la distancia: dos láminas que estén a media escala, una un poco más grave que la otra. O tres animales: ratón, gato y elefante, con agudo, medio y grave. Y a la inversa, que el niño elija un animal y toque en el metalófono una lámina que suene como él para que la clase lo adivine.",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "Toda la clase de pie y con los ojos cerrados. El maestro toca en el metalófono y, sin hablar, los niños suben las manos y se estiran cuando suena el ratón, y se agachan hasta el suelo cuando suena el elefante. Sin turnos: todos a la vez y se ve de un vistazo quién escucha."
+    },
+    "ideas": [
+      "Buscar en la clase objetos que suenen a ratón (una cucharilla en un vaso) y a elefante (un cubo de plástico dado la vuelta).",
+      "Un cuento en el que el ratón y el elefante hablan: los niños ponen la voz de cada uno, finita u honda, según quién hable.",
+      "Ordenar tres o cuatro láminas del metalófono de la más larga a la más corta y tocarlas: se oye cómo el elefante se convierte en ratón."
+    ],
+    "loTiene": [
+      "Toca el elefante con las notas graves y el ratón con las agudas, aunque sea la misma marimba.",
+      "Hace la voz de ratón (finita) y la de elefante (honda) cuando se le pide.",
+      "Se sube de puntillas o se agacha al oír la nota, antes de que nadie lo diga."
+    ],
+    "errores": [
+      {
+        "error": "Toca el elefante cuando el sonido es fuerte, aunque sea agudo",
+        "remedio": "tocar la misma lámina pequeña flojito y fuerte: sigue siendo ratón. Lo que cambia el animal es lo hondo, no lo fuerte."
+      },
+      {
+        "error": "Toca siempre el mismo animal, el que más le gusta",
+        "remedio": "que haga el gesto con el cuerpo antes de tocar: puntillas o agachado. El cuerpo suele acertar antes que el dedo."
+      },
+      {
+        "error": "Confunde grave con lento o largo",
+        "remedio": "tocar una lámina grave rápido y una aguda muy despacio. El elefante sigue siendo elefante aunque corra."
+      }
+    ],
+    "indicadores": [
+      "Agudo y grave",
+      "Voz de animal",
+      "Con el cuerpo"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

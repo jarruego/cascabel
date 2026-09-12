@@ -97,6 +97,84 @@
   "pistas": [
     "actividad.c103pulso.pista1"
   ],
+  "ficha": {
+    "aprende": "Palmear solo en los sonidos y seguir contando el pulso por dentro en los silencios, en cuatro ritmos con el silencio de negra en sitios distintos.",
+    "vocabulario": [
+      "silencio",
+      "pulso",
+      "ta",
+      "sh",
+      "contar",
+      "por dentro",
+      "palmas"
+    ],
+    "agrupamiento": "Toda la clase de pie con proyector; o individual, en tablet",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Contar en voz alta.",
+        "detalle": "Uno-dos-tres-cuatro con el pie, todos a la vez. Después el mismo conteo, pero el «dos» solo con los labios: el pulso sigue aunque no se oiga."
+      },
+      {
+        "min": 1,
+        "titulo": "Primer ritmo: ta sh ta sh.",
+        "detalle": "Escuchar en la app y repetir. Palmada en el uno y en el tres; en el dos y el cuatro, las manos abiertas y quietas mientras la boca dice «sh»."
+      },
+      {
+        "min": 1,
+        "titulo": "Segundo y cuarto: un solo silencio.",
+        "detalle": "«ta ta sh ta» y «ta ta ta sh». El último es el que engaña: el silencio va al final y hay que aguantar el pulso hasta que el ritmo acaba."
+      },
+      {
+        "min": 1,
+        "titulo": "Tercero: dos silencios seguidos.",
+        "detalle": "«ta sh sh ta»: entre las dos palmadas hay dos pulsos vacíos. Que los cuenten con el pie, y que el pie se vea."
+      },
+      {
+        "min": 1,
+        "titulo": "Sin pantalla, sin voz.",
+        "detalle": "Repetir los cuatro ritmos con tu pie de pulso y sin decir sh: el silencio se cuenta por dentro. Si el ta siguiente cae en su sitio, el pulso está escondido pero vivo."
+      }
+    ],
+    "enPantalla": "El personaje toca un ritmo de cuatro pulsos con palmadas y huecos, y el niño lo repite palmeando al micrófono o tocando el botón si no hay micrófono. Los cuatro ritmos son: ta sh ta sh, ta ta sh ta, ta sh sh ta y ta ta ta sh. Las palmadas que entran en su pulso se encienden en verde y las que no, en gris; ni rojo ni sonidos feos. Se puede volver a oír cada ritmo con el botón de repetir. Al terminar, la app dice si el niño ha ido por delante o por detrás, que es lo que interesa con los silencios.",
+    "sinPantalla": "Tú palmeas el ritmo marcando el pulso con el pie, y la clase repite. Haz visible el silencio: en cada sh abre las manos y no des. Luego escóndelo: el pie sigue, pero nada se ve ni se oye en el sh. En corro, pasa el pulso: cada niño hace un pulso, y en el sh el niño al que le toca se queda quieto y el siguiente entra en su sitio.",
+    "masFacil": "Quédate en «ta sh ta sh», que es regular como un balancín, y baja la velocidad. Que digan «sh» en voz alta en el hueco: un silencio que se dice es mucho más fácil que uno que se piensa. Cuando salga, quita la voz y deja el pie; y cuando salga con el pie, quita el pie.",
+    "masDificil": "Que hagan el silencio con un gesto mudo (dedo en los labios, manos arriba) sin dejar de contar. Luego dos ritmos seguidos como una frase de ocho pulsos. Y el reto: palmear el ritmo con las manos mientras los pies caminan el pulso por el aula, silencios incluidos.",
+    "variante": {
+      "titulo": "Con instrumentos",
+      "texto": "Claves para los ta y nada para los sh, con el pulso en un pandero que lleva el maestro. Después, dos grupos: uno toca solo los ta y el otro toca solo en los sh con un triángulo. Si los dos entran bien, entre los dos suena el pulso entero: el silencio de uno es el golpe del otro."
+    },
+    "ideas": [
+      "Escribir los cuatro ritmos en tarjetas con ta y sh y jugar a adivinar cuál se ha oído.",
+      "Buscar silencios en una canción que ya sepan: cantarla y levantar la mano en los huecos donde no se canta.",
+      "Inventar ritmos con dos ta y dos sh en cualquier orden y comprobar cuántos distintos salen."
+    ],
+    "loTiene": [
+      "Mantiene el pie en el pulso durante el silencio y la palmada siguiente cae en su sitio.",
+      "No palmea en los sh, tampoco en el silencio final de «ta ta ta sh».",
+      "Repite «ta sh sh ta» sin acortar los dos huecos."
+    ],
+    "errores": [
+      {
+        "error": "Acorta los silencios y el ritmo se aprieta",
+        "remedio": "contar los pulsos vacíos en voz alta con el pie, y solo después en silencio."
+      },
+      {
+        "error": "Palmea también en el sh, como si fueran cuatro ta",
+        "remedio": "que en el sh abra las manos y las enseñe; el gesto de no dar se aprende antes que la ausencia de gesto."
+      },
+      {
+        "error": "Se para del todo cuando llega el silencio final de «ta ta ta sh»",
+        "remedio": "marcar el cuarto pulso con el pie y no dar por acabado el ritmo hasta que el pie diga cuatro."
+      }
+    ],
+    "indicadores": [
+      "Pulso en el silencio",
+      "No palmea en sh",
+      "Entra a tiempo"
+    ]
+  },
   "etiquetas": [
     "silencio",
     "silencio de negra",

@@ -56,6 +56,85 @@
     "actividad.c205.pista2",
     "actividad.c205.pista3"
   ],
+  "ficha": {
+    "aprende": "Sacar si, la y sol en la flauta dulce con los agujeros bien tapados y el soplo suave y seguido, y oír cuándo la nota está afinada.",
+    "vocabulario": [
+      "flauta dulce",
+      "soplar",
+      "yema",
+      "afinada",
+      "alta o baja",
+      "si",
+      "la",
+      "sol"
+    ],
+    "agrupamiento": "Toda la clase con su flauta; el micrófono, de uno en uno",
+    "material": "Una flauta dulce por niño. Sin flauta, se canta la nota y funciona igual",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Soplar sin dedos.",
+        "detalle": "Flauta en la boca, sin tapar nada, y soplar como para empañar un cristal: flojo y seguido. Que oigan que soplando fuerte la nota chilla y sube. El aire se controla con la barriga, no con los dedos."
+      },
+      {
+        "min": 3,
+        "titulo": "Si, la y sol con la yema.",
+        "detalle": "Pulgar detrás y un dedo para si, dos para la, tres para sol. Tapar con la yema, no con la punta. Todos a la vez, sin soplar, y después cada nota cuatro pulsos largos."
+      },
+      {
+        "min": 5,
+        "titulo": "Con el micrófono, de uno en uno.",
+        "detalle": "En la app sale una nota y su digitación. Un niño la toca y la aguja dice si está afinada, alta o baja; tiene treinta segundos y acaba antes si la sostiene. Los demás escuchan y dicen si suena igual que la de la app."
+      },
+      {
+        "min": 3,
+        "titulo": "Sin micrófono, todos a la vez.",
+        "detalle": "Se pasa la app sin micrófono y toda la clase toca cada nota que sale: si, la, sol, la, si, sol. Cuatro pulsos cada una, y silencio entre nota y nota para colocar los dedos."
+      },
+      {
+        "min": 2,
+        "titulo": "Cierre.",
+        "detalle": "Tocar las seis seguidas como una melodía, despacio, y que digan qué nota les cuesta más: casi siempre sol, que es la de tres dedos."
+      }
+    ],
+    "enPantalla": "Sale una nota —si, la o sol— con el dibujo de su digitación, y una aguja que escucha por el micrófono: se mueve al centro cuando la nota está afinada, arriba si va alta y abajo si va baja. Hay treinta segundos para cada nota, porque hay que colocar los dedos y coger aire, y se acaba antes en cuanto se mantiene. Son seis notas: si, la, sol, la, si, sol. Si no hay micrófono o no se da permiso, la actividad sigue igual: se toca la nota, se escucha la de la app y se pasa a la siguiente. Sin flauta, se canta.",
+    "sinPantalla": "El maestro toca si con su flauta y la clase la repite; luego la y sol. Para afinar sin aguja está el oído del grupo: un niño toca solo y los demás levantan la mano si suena igual que la del maestro, o señalan arriba o abajo si va alta o baja. Casi siempre es cuestión de aire: soplar fuerte sube la nota. Sin flautas, se canta cada nota con el nombre y se compara con la del maestro.",
+    "masFacil": "Solo si, la nota de un dedo, hasta que salga limpia con el soplo suave; luego la. Sol, con tres dedos, se deja para el final: es donde más se escapa el aire. Sin micrófono, para que no haya aguja que mirar: solo oír si suena como la de la app. Y si un niño no sopla, que cante la nota primero.",
+    "masDificil": "Dos notas seguidas sin parar de soplar, cambiando solo los dedos: si-la, la-sol. Después la melodía entera, si-la-sol-la-si-sol, con un pulso por nota. Y que un niño toque una de las tres escondiendo los dedos y los demás digan cuál es de oído.",
+    "variante": {
+      "titulo": "Por parejas, uno mira",
+      "texto": "Uno toca y el otro mira solo los dedos: ¿la yema tapa del todo?, ¿el pulgar está detrás?, ¿el aire es seguido? Le dice una sola cosa que cambiar, y se cambian. Con la app, el que mira lee la aguja y el que toca no la ve: solo oye. Así se afina con el oído y no con los ojos."
+    },
+    "ideas": [
+      "Tocar «si-si-la-la-sol» con la letra de una palabra de cinco sílabas inventada por la clase, y después inventar otra melodía con las tres notas.",
+      "Descubrir qué le pasa a la nota cuando un dedo deja un hueco: soplar con un agujero medio tapado y escuchar el chillido. Es la señal para mirar los dedos.",
+      "Grabar con el móvil del maestro a la clase tocando sol todos a la vez y escuchar si es una sola nota o varias."
+    ],
+    "loTiene": [
+      "Sopla flojo y seguido: la nota sale limpia, sin chillar ni cortarse.",
+      "Tapa con la yema y saca sol, la de tres dedos, sin que se escape el aire.",
+      "Oye si su nota está alta o baja antes de mirar la aguja."
+    ],
+    "errores": [
+      {
+        "error": "Sopla fuerte y la nota sale chillona y alta",
+        "remedio": "soplar como para empañar un cristal, y comprobar que la aguja baja al centro sin mover los dedos."
+      },
+      {
+        "error": "Sol sale como un pitido raro porque un dedo no cierra el agujero",
+        "remedio": "mirar los dedos, apretar con la yema, y soplar sol despacio dos veces."
+      },
+      {
+        "error": "Mira la aguja y mueve los dedos para arreglarlo",
+        "remedio": "tapar la aguja un momento y arreglar el aire: alta es soplar menos, baja es soplar un poco más."
+      }
+    ],
+    "indicadores": [
+      "Soplo suave",
+      "Tapa bien",
+      "Oye la afinación"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

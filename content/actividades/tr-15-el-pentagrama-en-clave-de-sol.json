@@ -128,6 +128,61 @@
     ]
   },
   "enunciado": "actividad.tr15.enunciado",
+  "ficha": {
+    "aprende": "Encontrar cualquier nota en el pentagrama en clave de sol, del do de abajo con su línea adicional al do de arriba con dos, contando las líneas desde abajo y oyéndola.",
+    "vocabulario": [
+      "pentagrama",
+      "clave de sol",
+      "línea",
+      "espacio",
+      "línea adicional",
+      "agudo",
+      "grave",
+      "nota"
+    ],
+    "agrupamiento": "Grupo clase con proyector; después individual en tablet",
+    "material": "Ninguno. Opcional: cinta de carrocero para el pentagrama del suelo",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Proyectar y contar las líneas.",
+        "detalle": "Cinco líneas, y se cuentan desde abajo: la primera es la de abajo. Señalar la clave de sol: su rizo abraza la segunda línea, y esa línea es sol."
+      },
+      {
+        "min": 1,
+        "titulo": "Los dos extremos.",
+        "detalle": "Tocar el do de abajo, con su línea adicional, y el do de arriba, con dos. Oír cuánto suben: son dos octavas. Todo lo demás está en medio."
+      },
+      {
+        "min": 1,
+        "titulo": "Subir de nota en nota.",
+        "detalle": "Un niño toca desde el do de abajo hacia arriba, línea, espacio, línea, espacio, y la clase canta cada nombre que sale con su personaje."
+      },
+      {
+        "min": 1,
+        "titulo": "Buscar la que se dice.",
+        "detalle": "El maestro dice una nota, «mi», «la», «el sol de arriba», y un niño la toca. Suena y sale el nombre: la pantalla confirma, no el maestro."
+      },
+      {
+        "min": 1,
+        "titulo": "Sin pantalla.",
+        "detalle": "Con el proyector apagado, señalar en la pizarra una línea o un espacio y que digan qué nota es. Si dudan, contar desde el sol de la segunda línea."
+      }
+    ],
+    "enPantalla": "Un pentagrama en clave de sol con las quince notas de do a do y sus líneas adicionales: una por debajo para el do grave y dos por encima para el do agudo. Al tocar un sitio suena esa nota en el piano y arriba sale su nombre con su personaje. No hay pregunta, ni respuesta correcta, ni final: es una ficha de consulta para mirar, tocar y oír dónde vive cada nota, y para volver a ella cuando se dude en cualquier ejercicio de lectura.",
+    "sinPantalla": "Pentagrama grande en el suelo con cinta de carrocero, cinco líneas y una más corta abajo y dos arriba. Los niños se ponen de pie sobre una línea o en un espacio y dicen su nota; el maestro la canta o la toca en la flauta para que se oiga. Se camina de abajo arriba nombrando cada nota, y luego se salta: «vete al sol», «ahora al do de arriba». En la pizarra pautada, lo mismo con una tiza.",
+    "masFacil": "Solo las cinco líneas, sin espacios ni líneas adicionales: mi, sol, si, re, fa. Empezar siempre por el sol de la segunda línea, que la clave señala, y contar desde ahí hacia arriba o hacia abajo. Tocarlas en la pantalla y oírlas antes de nombrarlas. Los espacios, cuando las líneas estén; las adicionales, al final.",
+    "masDificil": "Dictado al revés: el maestro toca una nota en la pantalla tapando el nombre con la mano, y los niños dicen cuál es por dónde está. Después, escribir en la pizarra una melodía corta de cuatro notas y que un compañero la toque en la ficha: si suena como la ha pensado, está bien escrita. Y las líneas adicionales: ¿cuántas necesita el do de arriba?",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "Cada niño es una nota: se le da un nombre y busca su sitio en el pentagrama del suelo. El maestro toca una nota en la pantalla y el niño que la tiene da un paso adelante. Luego toca dos seguidas y salen los dos por orden. La clase comprueba con los ojos y con el oído: ¿estaba en su sitio?"
+    },
+    "ideas": [
+      "Dibujar el pentagrama con los personajes de las notas en un mural y colgarlo a la altura de los ojos, para consultarlo sin pantalla.",
+      "Escribir el nombre de cada niño con las notas que lleve dentro: «Mireia» tiene un mi y un re, y colocarlas en la pauta.",
+      "Buscar en una partitura de flauta de la clase el do de arriba y el de abajo y contar cuántas veces salen."
+    ]
+  },
   "personaje": "sol",
   "herramienta": true,
   "creditos": [

@@ -37,6 +37,85 @@
     ]
   },
   "enunciado": "actividad.c111.enunciado",
+  "ficha": {
+    "aprende": "Cambiar la velocidad y la fuerza de una pieza con dos deslizadores y decir qué ha cambiado: más rápido o más lento, más fuerte o más suave.",
+    "vocabulario": [
+      "tempo",
+      "rápido",
+      "lento",
+      "fuerte",
+      "suave",
+      "director",
+      "velocidad",
+      "intensidad"
+    ],
+    "agrupamiento": "Grupo clase con proyector; después por parejas, en tablet",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Escuchar la pieza tal cual.",
+        "detalle": "Sin tocar nada, con el proyector. Que marquen el pulso con la cabeza y digan si va rápida o lenta, fuerte o suave. Así hay con qué comparar."
+      },
+      {
+        "min": 1,
+        "titulo": "Solo el deslizador del tempo.",
+        "detalle": "Un niño lo mueve mientras suena: al máximo, al mínimo, al medio. La clase camina por el sitio al pulso que oye: cuando frena la música, frenan los pies."
+      },
+      {
+        "min": 1,
+        "titulo": "Solo el del volumen.",
+        "detalle": "Otro niño mueve el de fuerte y suave. La clase abre los brazos cuando sube y los encoge cuando baja. Pregunta: ¿ha cambiado la velocidad? No: solo la fuerza."
+      },
+      {
+        "min": 2,
+        "titulo": "Por parejas, en tablet.",
+        "detalle": "Uno dirige y el otro pone el cuerpo: pasos al tempo, brazos según el volumen. Después se cambian. Que prueben rápido y suave, lento y fuerte: van por separado."
+      },
+      {
+        "min": 1,
+        "titulo": "Adivinar lo que ha hecho otro.",
+        "detalle": "Una pareja dirige con el proyector tapado y la clase dice qué ha tocado: ¿tempo, volumen o los dos?"
+      }
+    ],
+    "enPantalla": "Suena una pieza corta y hay dos deslizadores grandes: uno cambia la velocidad y otro la fuerza. El niño mueve el dedo y la música le sigue al momento: más deprisa, más despacio, más fuerte, más suave, y los dos a la vez si quiere. No hay respuesta correcta, ni final, ni nada que corregir: se explora y se para cuando se quiere. Sirve para que la clase oiga que velocidad y fuerza son cosas distintas, porque se cambian por separado.",
+    "sinPantalla": "Tú eres el mando: canta o toca una melodía conocida y que dos niños te dirijan. Uno tiene el cartel de la velocidad y sube o baja la mano; el otro, el de la fuerza, y abre o cierra los brazos. Tú obedeces exagerando. Después cambian los directores. Con instrumentos de aula funciona igual: la clase toca el pulso y los dos directores mandan.",
+    "masFacil": "Un deslizador cada vez: tapa el otro con un papel. Muévelo tú de un extremo al otro, sin medias tintas, y pregunta solo «¿más rápido o más lento?». Que respondan con el cuerpo antes que con palabras: pies para el tempo, brazos para el volumen. Cuando eso salga, se destapa el segundo.",
+    "masDificil": "Dar consignas: «hazme algo que dé miedo», «algo que se aleje», «una fiesta que se acaba». Que decidan qué deslizador va a dónde para conseguirlo y lo expliquen. Después, dirigir una pieza entera con un plan decidido antes: empezar lento y suave, llegar fuerte y rápido, terminar lento. Una restricción convierte explorar en componer.",
+    "variante": {
+      "titulo": "El director de la clase",
+      "texto": "Sin tablet: un niño dirige a la clase entera, que canta una canción conocida. Mano arriba, más fuerte; abajo, más suave; mano rápida, más deprisa. La clase le sigue de verdad, y él descubre que dirigir no es mover las manos: es que te miren. Cada minuto cambia el director."
+    },
+    "ideas": [
+      "Escuchar dos versiones de la misma melodía (una rápida y una lenta, tocadas por ti) y decir cuál es para dormir y cuál para bailar.",
+      "Poner las cuatro palabras (rápido, lento, fuerte, suave) en tarjetas y sacar dos al azar: la clase canta así.",
+      "Dibujar la pieza: una línea que sube cuando es fuerte y baja cuando es suave, mientras suena."
+    ],
+    "loTiene": [
+      "Dice si ha cambiado la velocidad, la fuerza o las dos.",
+      "Consigue un rápido y suave, o un lento y fuerte, a propósito.",
+      "Sigue con el cuerpo lo que otro dirige, sin ver el deslizador."
+    ],
+    "errores": [
+      {
+        "error": "Mueve los dos deslizadores a la vez sin escuchar",
+        "remedio": "uno cada vez y con el dedo quieto tres segundos entre cambio y cambio, para oír lo que ha pasado."
+      },
+      {
+        "error": "Dice «más fuerte» cuando solo ha ido más rápido",
+        "remedio": "ponerlo en el cuerpo: pies para el tempo, brazos para el volumen; si los pies cambian y los brazos no, es tempo."
+      },
+      {
+        "error": "Lo deja todo al máximo y ya",
+        "remedio": "consigna de nana: que consiga dormir al personaje. Explorar tiene que servir para algo."
+      }
+    ],
+    "indicadores": [
+      "Distingue las dos",
+      "A propósito",
+      "Con el cuerpo"
+    ]
+  },
   "personaje": "sol",
   "creditos": [
     {

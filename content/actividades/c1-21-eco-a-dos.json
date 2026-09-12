@@ -39,6 +39,85 @@
     "actividad.c121.pista1",
     "actividad.c121.pista2"
   ],
+  "ficha": {
+    "aprende": "Escuchar un ritmo corto entero antes de repetirlo, y repetirlo igual, con los mismos golpes y los mismos huecos, trabajando en pareja sin que nadie gane.",
+    "vocabulario": [
+      "eco",
+      "ritmo",
+      "golpe",
+      "hueco",
+      "escuchar",
+      "repetir",
+      "pareja",
+      "turno"
+    ],
+    "agrupamiento": "Por parejas, en tablet; los dos de la misma pareja al lado",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Eco de palmas con el maestro.",
+        "detalle": "Tú palmeas un ritmo de cuatro golpes y la clase lo repite. Tres o cuatro rondas, cada una un poco distinta. Regla desde ya: no se empieza hasta que el mío acaba."
+      },
+      {
+        "min": 2,
+        "titulo": "Enseñar el juego, con proyector.",
+        "detalle": "Un niño sale y golpea un ritmo corto en la pantalla; suena la pandereta. Tú lo repites. Enseña el botón de volver a oírlo: escuchar dos veces es lo que hace un músico, no una trampa."
+      },
+      {
+        "min": 3,
+        "titulo": "Primer turno por parejas.",
+        "detalle": "El que propone da tres o cuatro golpes bien separados; el otro lo escucha entero, lo vuelve a oír si quiere y lo repite. Miran juntos el resultado: el parecido es de los dos."
+      },
+      {
+        "min": 3,
+        "titulo": "Se cambian los papeles.",
+        "detalle": "Ahora propone el otro, y pueden subir a cinco o seis golpes. Si el parecido baja, que vuelvan a cuatro: un ritmo largo no es más difícil de tocar, es más difícil de recordar."
+      },
+      {
+        "min": 1,
+        "titulo": "Puesta en común.",
+        "detalle": "Cada pareja dice cuál ha sido su ritmo más difícil de recordar y lo palmea para la clase. Sin comparar parejas: se comparan ritmos."
+      }
+    ],
+    "enPantalla": "Dos niños en la misma tablet, por turnos. Uno golpea un ritmo corto en un botón grande, de hasta seis golpes, y suena una pandereta. Cuando acaba, el otro puede volver a oírlo con el botón de repetir y después lo golpea igual. La app compara las dos ejecuciones entre sí, no con un modelo, y cuenta desde el primer golpe de cada uno: arrancar tarde no importa. El resultado es de la pareja: cuánto se parecen, y si es el mismo ritmo a otra velocidad, lo dice aparte. Nunca dice quién lo ha hecho mejor.",
+    "sinPantalla": "Es el eco de palmas de toda la vida y funciona igual de bien sin nada. Por parejas, de pie y frente a frente: uno palmea tres o cuatro golpes y el otro los repite; luego cambian. La regla es la misma: se escucha entero, se puede pedir «otra vez» una vez, y se responde. Lo que aporta la pantalla es poder volver a oír exactamente lo mismo y una medida del parecido que no se puede hacer de oído; sin ella, que sea la pareja quien decida si ha salido igual, y si dudan, que lo hagan a la vez.",
+    "masFacil": "Bajad a tres golpes, muy separados. Con huecos largos, repetir es contar, y contar sí se puede. Que el que propone diga las sílabas mientras golpea, «ta, ta, ta», y el que repite las diga también antes de tocar. Si el segundo arranca encima del primero, que se siente sobre las manos hasta que el otro acabe: el problema no es de ritmo, es de escucha, y se arregla esperando.",
+    "masDificil": "Subid a seis golpes con ti-ti dentro, o con un hueco de silencio en medio. Que el que repite lo haga sin volver a escucharlo. Después, que el segundo lo repita con otro sonido: palmas en vez de pantalla, o muslos. Y para los que van sobrados, la cadena: el que ha repetido se lo propone a un tercero, y se ve cómo cambia un ritmo al pasar de mano en mano.",
+    "variante": {
+      "titulo": "En corro",
+      "texto": "Toda la clase en círculo. Un niño palmea un ritmo de cuatro golpes y el de su derecha lo repite; luego ese propone uno nuevo al siguiente, y así da la vuelta al corro. Si un ritmo se deforma al pasar de mano en mano, se para y se vuelve al que lo propuso, sin buscar en quién cambió. Al final, la tablet en el centro para comprobar uno de los ritmos que más ha cambiado."
+    },
+    "ideas": [
+      "Escribir con círculos y huecos los ritmos que salieron y que otra pareja los toque leyendo, sin oírlos antes.",
+      "Eco con instrumentos de aula: uno propone en claves y el otro repite en pandero. ¿Se reconoce el mismo ritmo con otro sonido?",
+      "Eco a tres: dos niños proponen a la vez ritmos distintos y un tercero elige cuál repite; después lo hace con el otro."
+    ],
+    "loTiene": [
+      "Espera a que el otro termine antes de empezar a repetir.",
+      "Repite los mismos golpes con los mismos huecos, aunque empiece más tarde.",
+      "Propone ritmos de cuatro o cinco golpes que su pareja puede recordar."
+    ],
+    "errores": [
+      {
+        "error": "Empieza a repetir antes de que el otro acabe",
+        "remedio": "que cuente «uno, dos» en silencio después del último golpe y entonces empiece; es de escucha, no de ritmo."
+      },
+      {
+        "error": "Repite el número de golpes pero todos seguidos, sin los huecos",
+        "remedio": "volver a escucharlo con el botón y decir las sílabas con el hueco: «ta, ta, (nada), ta»."
+      },
+      {
+        "error": "El que propone hace ritmos muy largos que nadie recuerda",
+        "remedio": "poner tope de cuatro golpes a esa pareja unas rondas y subir de uno en uno."
+      }
+    ],
+    "indicadores": [
+      "Escucha entero",
+      "Mismos huecos",
+      "Propone corto"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

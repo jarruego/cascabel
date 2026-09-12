@@ -72,6 +72,85 @@
     ]
   },
   "enunciado": "actividad.c207.enunciado",
+  "ficha": {
+    "aprende": "Improvisar una melodía sobre un bordón con las cinco notas de la pentatónica —do, re, mi, sol, la— y descubrir que repetir una idea es lo que la convierte en música.",
+    "vocabulario": [
+      "improvisar",
+      "pentatónica",
+      "bordón",
+      "láminas",
+      "repetir",
+      "pregunta",
+      "respuesta",
+      "acabar en do"
+    ],
+    "agrupamiento": "Por parejas en tablet, o grupo clase con proyector",
+    "material": "Ninguno. Si hay, xilófonos de aula con las láminas fa y si quitadas",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Escuchar el bordón.",
+        "detalle": "Se pone la app y solo se escucha: un do grave que da vueltas con un bombo y unas claves. Que marquen el pulso con el pie. Todavía no se toca nada."
+      },
+      {
+        "min": 2,
+        "titulo": "Tocar lo que salga.",
+        "detalle": "Cada niño toca las láminas como quiera, sin consigna. Que se fijen en que ninguna nota suena mal: no están fa ni si, las que rozan. Explora sin miedo un par de minutos."
+      },
+      {
+        "min": 2,
+        "titulo": "Repetir una idea.",
+        "detalle": "Que cada uno elija tres o cuatro notas que le hayan gustado y las toque varias veces seguidas, igual. Después que las cambie un poco: una nota distinta al final, o más despacio."
+      },
+      {
+        "min": 2,
+        "titulo": "Pregunta y respuesta.",
+        "detalle": "Por parejas: uno toca una frase corta que acabe en una nota que no sea do (queda abierta) y el otro responde con otra que acabe en do (queda cerrada). Se cambian."
+      },
+      {
+        "min": 1,
+        "titulo": "Escuchar a un compañero.",
+        "detalle": "Dos o tres niños tocan un rato para la clase, y los demás dicen qué han oído: si repetía algo, si acababa en do, si iba con el pulso. Sin decir cuál era mejor."
+      }
+    ],
+    "enPantalla": "Un xilófono en la pantalla con solo las láminas de la pentatónica: do, re, mi, sol y la, en dos octavas. Debajo suena en bucle un bordón grave en do con un bombo y unas claves que marcan el pulso. El niño toca lo que quiera y todo suena bien, porque no están las notas que rozan. No hay respuesta correcta, ni final, ni marcador: se toca hasta que se quiere parar. Hay tres retos para quien quiera una consigna: son ideas para empezar, no pruebas que superar.",
+    "sinPantalla": "Xilófonos o metalófonos de aula con las láminas fa y si quitadas, así solo quedan do, re, mi, sol y la. El maestro, o un niño, hace el bordón: do y sol graves a la vez en cada pulso, o solo do, en un xilófono bajo o con la voz. Otro niño improvisa encima. Con un solo instrumento, se pasa el mazo por turnos en corro: cuatro pulsos cada uno, sin parar el bordón. Sin instrumentos, se canta con «la» sobre un do que sostiene el maestro.",
+    "masFacil": "Aquí no hay dificultad que bajar: no se puede hacer mal. Si un niño no arranca, siéntate a su lado y toca tú algo muy simple primero, dos notas, y que te copie. O dale solo una consigna cerrada: «toca solo do y sol», «toca una nota en cada golpe del bombo». Con menos notas se empieza antes.",
+    "masDificil": "Consignas: empezar y acabar en do; tocar una nota por pulso durante cuatro pulsos y luego callar cuatro; repetir la misma frase tres veces y cambiarla la cuarta; hacer algo que suene a pregunta y algo que suene a respuesta. Y por parejas, uno improvisa y el otro tiene que repetir lo que ha oído: improvisar para que otro lo copie obliga a que se pueda recordar.",
+    "variante": {
+      "titulo": "En corro, con un xilófono",
+      "texto": "Un solo xilófono de aula con las láminas fa y si quitadas, en el centro del corro. El maestro mantiene el bordón en otro instrumento o con la app en el proyector. Cada niño toca cuatro pulsos y pasa el mazo al siguiente sin que se pare el bordón: la cadena entera es una pieza de la clase. Segunda vuelta con una consigna: cada uno empieza donde acabó el anterior."
+    },
+    "ideas": [
+      "Grabar la improvisación de la clase con el móvil del maestro, escucharla al día siguiente y elegir un trocito para repetirlo igual: eso es componer.",
+      "Improvisar sobre un texto: un niño recita una frase corta y otro la contesta en el xilófono, y luego al revés.",
+      "Cantar con «la» sobre el bordón lo que se ha tocado en el xilófono: si se puede cantar, es que se ha oído de verdad."
+    ],
+    "loTiene": [
+      "Repite a propósito una idea de tres o cuatro notas, igual, varias veces.",
+      "Acaba una frase en do cuando se le pide que la cierre.",
+      "Toca con el pulso del bombo, sin pararse a pensar entre nota y nota."
+    ],
+    "errores": [
+      {
+        "error": "Toca todas las láminas seguidas, de arriba abajo, una y otra vez",
+        "remedio": "pedir tres notas solo, elegidas por él, y tocar con ellas un rato."
+      },
+      {
+        "error": "No se atreve a empezar y mira lo que hacen los demás",
+        "remedio": "tocar tú dos notas al pulso y que las copie; luego que cambie una."
+      },
+      {
+        "error": "Toca sin escuchar el bordón, a otra velocidad",
+        "remedio": "un rato solo con el pie marcando el bombo, y después una nota por golpe."
+      }
+    ],
+    "indicadores": [
+      "Repite una idea",
+      "Acaba en do",
+      "Con el pulso"
+    ]
+  },
   "personaje": "laia",
   "creditos": [
     {

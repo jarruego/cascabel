@@ -96,6 +96,85 @@
     "actividad.c235.pista1",
     "actividad.c235.pista2"
   ],
+  "ficha": {
+    "aprende": "Reconocer de oído el violín, la trompeta, el saxofón, el acordeón y la guitarra eléctrica en una frase tocada por un músico, y decir cómo se hace sonar cada uno: frotar, soplar, pulsar, fuelle.",
+    "vocabulario": [
+      "violín",
+      "trompeta",
+      "saxofón",
+      "acordeón",
+      "guitarra eléctrica",
+      "arco",
+      "soplar",
+      "fuelle"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o por parejas en tablet",
+    "material": "Ninguno. Si hay fotos o láminas de los cinco instrumentos, mejor.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Nombrar los cinco antes de oír nada.",
+        "detalle": "Señala las cinco opciones y di cómo se toca cada una: el violín se frota con un arco, la trompeta y el saxofón se soplan, la guitarra eléctrica se pulsa, el acordeón se abre y se cierra."
+      },
+      {
+        "min": 1,
+        "titulo": "Un gesto por instrumento.",
+        "detalle": "La clase imita en el aire: arco, boca en la boquilla, dedos en las cuerdas, fuelle con los brazos. El gesto ayuda a recordar el sonido."
+      },
+      {
+        "min": 3,
+        "titulo": "Primera vuelta, en grupo.",
+        "detalle": "Suena la frase entera antes de contestar. Que hagan el gesto del instrumento antes de tocar la opción; si alguien duda, se vuelve a oír."
+      },
+      {
+        "min": 2,
+        "titulo": "Segunda vuelta, por parejas o individual.",
+        "detalle": "Ahora cada niño decide solo. Los que confunden trompeta y saxofón oyen las dos seguidas: brillante y ronco."
+      },
+      {
+        "min": 1,
+        "titulo": "Cerrar hablando.",
+        "detalle": "¿Cuál os ha gustado más? ¿Cuál se parece a una voz? Poner palabras a lo oído es parte de escuchar."
+      }
+    ],
+    "enPantalla": "Suena la grabación de un músico tocando una frase —no una nota suelta— y el niño toca una de las cinco tarjetas: violín, trompeta, saxofón, acordeón o guitarra eléctrica. Puede repetir la grabación las veces que quiera con el botón de oír otra vez. Si toca una que no es, el personaje le da una pista (el violín se frota, la guitarra zumba, el acordeón suena a varias notas) y lo intenta de nuevo. Cada instrumento sale más de una vez; la vuelta termina al acabar las ocho grabaciones, sin puntuación.",
+    "sinPantalla": "Si en el colegio hay alguno de estos instrumentos, o alguien que toque, nada supera oírlo en vivo y verlo. Si no, cinco láminas en la pizarra y tú describes con la voz cómo suena cada uno: imita el arco con un «uuuiii» ligado, la trompeta con un «pa-pa-pá» brillante, el fuelle con un acorde cantado. Los niños señalan la lámina. También vale con vídeos preparados de antemano, siempre con el instrumento a la vista.",
+    "masFacil": "Deja solo dos instrumentos muy distintos, violín y trompeta, y pon las dos grabaciones seguidas para que se oiga el contraste: frotado y ligado frente a soplado y brillante. Cuando salga, añade la guitarra eléctrica, que zumba, y deja para el final la pareja difícil, trompeta y saxofón. Nombra en voz alta cada opción antes de que suene.",
+    "masDificil": "Que no miren la pantalla: se oye la frase y escriben el nombre en una pizarrita antes de ver las opciones. Después, que digan además la familia: cuerda frotada, cuerda pulsada, viento metal, viento madera (el saxofón cuenta como madera aunque sea de metal) y fuelle con lengüetas. Y que expliquen en qué se han fijado para decidirlo.",
+    "variante": {
+      "titulo": "Orquesta de gestos",
+      "texto": "Cada niño elige uno de los cinco instrumentos y ensaya su gesto en silencio. Suena una grabación y solo se levantan y tocan en el aire los que tienen ese instrumento. Al final, los cinco grupos tocan a la vez mientras tú vas señalando quién entra: un director y su orquesta imaginaria."
+    },
+    "ideas": [
+      "Traer un instrumento de verdad a clase (un familiar, un compañero que vaya al conservatorio) y comparar el sonido en vivo con la grabación: ¿se oye lo mismo?",
+      "Escuchar una pieza con varios de estos instrumentos juntos y levantar la mano cada vez que entra el que le toca a cada grupo.",
+      "Dibujar los cinco instrumentos y escribir al lado con qué se tocan: arco, boquilla, púa, fuelle."
+    ],
+    "loTiene": [
+      "Espera a oír la frase entera antes de tocar una opción.",
+      "Distingue la trompeta del saxofón, la pareja que más se parece.",
+      "Dice cómo se hace sonar el instrumento que ha elegido: se frota, se sopla, se pulsa."
+    ],
+    "errores": [
+      {
+        "error": "Confunde trompeta y saxofón, los dos de viento",
+        "remedio": "poner las dos grabaciones seguidas y ponerles palabra: la trompeta brilla, el saxofón es ronco. Que hagan la boca de cada uno."
+      },
+      {
+        "error": "Toca la opción en cuanto suena la primera nota",
+        "remedio": "pedir que hagan el gesto del instrumento durante toda la frase y solo al terminar toquen."
+      },
+      {
+        "error": "Elige guitarra eléctrica cuando suena el violín",
+        "remedio": "comparar: el violín une las notas como si cantara; la guitarra las suelta una a una. Cantar una frase ligada y otra picada."
+      }
+    ],
+    "indicadores": [
+      "Escucha entera",
+      "Trompeta/saxo",
+      "Dice cómo suena"
+    ]
+  },
   "creditos": [
     {
       "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",

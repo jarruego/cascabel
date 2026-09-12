@@ -42,6 +42,90 @@
     "actividad.c213.pista1",
     "actividad.c213.pista2"
   ],
+  "ficha": {
+    "aprende": "Callarse un minuto entero para oír lo que siempre está sonando, y elegir y grabar unos pocos sonidos cortos que cuenten cómo suena su sitio.",
+    "vocabulario": [
+      "paisaje sonoro",
+      "silencio",
+      "grabar",
+      "escuchar",
+      "cerca",
+      "lejos",
+      "fondo",
+      "borrar"
+    ],
+    "agrupamiento": "Toda la clase fuera, en grupos de 3 o 4 por tablet",
+    "material": "Un dispositivo por grupo con micrófono, papel y lápiz. Ropa para estar fuera",
+    "pasos": [
+      {
+        "min": 3,
+        "titulo": "Antes de salir,",
+        "detalle": "explicar en clase: vamos a escuchar, no a hacer ruido. La app tiene una lista de cosas que buscar, se graba de una en una, cada grabación dura como mucho quince segundos y se queda solo en la tablet: se borra a un clic."
+      },
+      {
+        "min": 5,
+        "titulo": "Salir y sentarse.",
+        "detalle": "En el patio, el parque o la calle, sentados y separados. Nadie habla. Un minuto entero de silencio, cronometrado por ti, con los ojos cerrados si quieren. Después, otro minuto: lo que se oye en el segundo no se oía en el primero."
+      },
+      {
+        "min": 5,
+        "titulo": "Anotar en papel.",
+        "detalle": "Cada uno escribe o dibuja tres sonidos que ha oído: qué es, si está cerca o lejos, si para o sigue. Poner en común en el grupo antes de grabar: así se graba lo que se ha elegido, no lo primero que suena."
+      },
+      {
+        "min": 10,
+        "titulo": "Grabar de uno en uno.",
+        "detalle": "Cada grupo graba los sonidos de su lista: pulsar, esperar en silencio, parar. Cortas y escogidas, no una larga. Escuchar cada una al momento y borrar la que no se oiga bien. El que graba no es el que habla."
+      },
+      {
+        "min": 5,
+        "titulo": "Escuchar juntos.",
+        "detalle": "De vuelta en clase, cada grupo pone dos grabaciones y el resto adivina qué es y dónde estaba. Preguntar cuál es el sonido más lejano que ha entrado."
+      },
+      {
+        "min": 2,
+        "titulo": "Borrar o guardar.",
+        "detalle": "Decidir entre todos qué se guarda en la tablet y qué se borra. Se borra a un clic y no sale del aparato: decirlo en voz alta es parte de la actividad."
+      }
+    ],
+    "enPantalla": "Una lista de seis cosas que buscar y un botón grande de grabar. Se pulsa, se graba en silencio hasta quince segundos y se para; la grabación aparece en la lista, se puede escuchar al momento y se borra a un clic. Todo se queda en la tablet, y la propia pantalla lo dice: es la única actividad de la app que guarda audio, y nada sale del aparato. No hay respuesta correcta ni final: se termina cuando el grupo tiene sus sonidos elegidos. Si el micrófono no funciona, se hace igual con papel.",
+    "sinPantalla": "Es su forma natural: salir, callarse un minuto y anotar en papel lo que se oye. Cada niño dibuja un mapa del sitio y coloca en él los sonidos con una flecha: de dónde vienen, si son fuertes o suaves. De vuelta en clase, se imitan con la voz o con objetos los tres que más se repiten. La grabación es la segunda mitad, no el requisito.",
+    "masFacil": "Dales una sola cosa que buscar en vez de seis: «un sonido que no pare» o «un pájaro». Escuchar dirigido es más fácil que escuchar en general. Acorta el silencio a medio minuto y hazlo dos veces. Y que graben en parejas: uno sostiene la tablet y el otro decide cuándo empezar y parar.",
+    "masDificil": "Que cada grupo grabe con una regla: solo sonidos que se oigan lejos, solo sonidos de personas, o solo los que duran menos de tres segundos. Después, que ordenen sus grabaciones para contar algo: la mañana, un recorrido por el colegio, una hora del día. Ordenar sonidos ya es componer.",
+    "variante": {
+      "titulo": "Dentro del colegio",
+      "texto": "El mismo minuto de silencio en tres sitios: el aula con la puerta cerrada, el pasillo y el comedor vacío. Se graba el mismo sonido —una puerta, unos pasos— en los tres y se compara: el sitio cambia el sonido aunque el objeto sea el mismo."
+    },
+    "ideas": [
+      "Volver al mismo sitio otro día a otra hora y comparar las listas: qué sonidos estaban y ya no, y cuáles son nuevos.",
+      "Hacer un mapa sonoro del colegio en un mural: cada grupo pega el nombre de sus sonidos en el plano, en el lugar donde los oyó.",
+      "Escuchar una grabación con los ojos cerrados y escribir tres palabras de cómo se siente uno oyéndola: no hay respuesta buena."
+    ],
+    "loTiene": [
+      "Aguanta el minuto de silencio sin hablar ni hacer ruido, y nombra después algo que no había oído al principio.",
+      "Graba sonidos cortos elegidos de su lista, no todo lo que suena.",
+      "Escucha su grabación y decide si se queda o se borra."
+    ],
+    "errores": [
+      {
+        "error": "Graba una toma larga con todo mezclado",
+        "remedio": "parar a los quince segundos, escucharla y preguntar qué era lo que quería grabar; volver a grabar solo eso."
+      },
+      {
+        "error": "Habla mientras graba, comentando lo que oye",
+        "remedio": "un gesto acordado para «grabando» (dedo en los labios) y escuchar la toma: la voz tapa el sonido que buscaba."
+      },
+      {
+        "error": "Durante el silencio se mueve y hace ruido con la ropa o los pies",
+        "remedio": "sentarse antes, manos en las rodillas, y empezar el minuto solo cuando todo esté quieto; cronometrarlo a la vista."
+      }
+    ],
+    "indicadores": [
+      "Silencio",
+      "Elige sonidos",
+      "Escucha y decide"
+    ]
+  },
   "estado": "borrador",
   "etiquetas": [
     "paisaje sonoro",

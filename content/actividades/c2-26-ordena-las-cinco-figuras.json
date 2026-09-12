@@ -155,6 +155,80 @@
   "pistas": [
     "actividad.c226.pista1"
   ],
+  "ficha": {
+    "aprende": "Ordenar semicorchea, corchea, negra, blanca y redonda de la más corta a la más larga, oyendo cuánto dura cada una: cada figura dura el doble que la anterior.",
+    "vocabulario": [
+      "semicorchea",
+      "corchea",
+      "negra",
+      "blanca",
+      "redonda",
+      "duración",
+      "el doble",
+      "ordenar"
+    ],
+    "agrupamiento": "Grupo clase con proyector, después por parejas en tablet",
+    "material": "Cinco tarjetas grandes con las figuras, para el suelo",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Oír las cinco.",
+        "detalle": "Con el proyector, tocar cada ficha: suena tres veces y se oye el hueco entre golpe y golpe. Preguntar cuál ha dejado más hueco. Palmear las cinco con la clase: la redonda es un golpe y esperar mucho."
+      },
+      {
+        "min": 1,
+        "titulo": "El doble.",
+        "detalle": "En la pizarra, las cinco en fila de corta a larga. Dos semicorcheas hacen una corchea, dos corcheas una negra, dos negras una blanca, dos blancas una redonda. Decirlo de corrido."
+      },
+      {
+        "min": 2,
+        "titulo": "Ordenar con el proyector.",
+        "detalle": "Un niño toca una ficha, la oye, y luego toca el hueco donde va. La clase dice si es más corta o más larga que la de al lado. Sin arrastrar: ficha y después hueco."
+      },
+      {
+        "min": 2,
+        "titulo": "Jugar en tablet,",
+        "detalle": "de uno en uno o por parejas. Oír cada ficha antes de colocarla. Al terminar, se escucha la fila entera: se tiene que oír cada vez más lento. Dos ejercicios y termina."
+      }
+    ],
+    "enPantalla": "Cinco fichas desordenadas con las figuras: semicorchea, corchea, negra, blanca y redonda. Al tocar una suena tres veces, y se oye cuánto hueco deja entre golpe y golpe. Para colocarla se toca la ficha y después el hueco donde va, de la más corta a la más larga; no hay que arrastrar. Al terminar se escucha la fila y se nota que cada figura va más despacio que la anterior. Si una no está en su sitio, el personaje da una pista y se cambia. Dos ejercicios y termina, sin puntuación.",
+    "sinPantalla": "Cinco tarjetas con las figuras en el suelo, desordenadas. Cinco niños cogen una cada uno y la palmean tres veces con el pulso que tú marcas: la semicorchea muy rápido, la redonda un golpe y esperar cuatro. Después se colocan en fila de la más corta a la más larga, y la clase comprueba palmeando la fila entera de corrido. Se repite con otros cinco.",
+    "masFacil": "Deja ya colocadas la semicorchea al principio y la redonda al final: ordenar el medio es más fácil. O baja a tres figuras: corchea, negra y blanca, que son las que más se usan. Oír cada ficha dos veces antes de colocarla y decir en voz alta «más corta» o «más larga» que la anterior.",
+    "masDificil": "Ordenar sin oír las fichas, solo mirando la figura, y comprobar después escuchando la fila. O al revés: de la más larga a la más corta. También que digan cuántas de una caben en otra: cuántas corcheas hay en una redonda (ocho), cuántas semicorcheas en una negra (cuatro).",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "Cada figura, un movimiento al pulso que tú marcas con el pandero: la redonda es un paso enorme que dura cuatro pulsos, la blanca un paso de dos, la negra un paso normal, las corcheas dos pasitos por pulso y las semicorcheas correr casi sin moverse del sitio. Dices una figura y la clase se mueve así. Después, las cinco seguidas de corta a larga."
+    },
+    "ideas": [
+      "Dibujar un árbol de figuras: una redonda arriba, dos blancas debajo, cuatro negras, ocho corcheas, dieciséis semicorcheas.",
+      "Palmear un ritmo de dos compases que use las cinco figuras y escribirlo en la pizarra.",
+      "Buscar en una canción del aula dónde hay una nota muy larga (blanca o redonda) y dónde van muy rápido."
+    ],
+    "loTiene": [
+      "Coloca las cinco de corta a larga oyendo cada una antes.",
+      "Dice que cada figura dura el doble que la anterior y lo cuenta: dos corcheas, una negra.",
+      "Comprueba la fila al terminar escuchándola, sin que se lo pidan."
+    ],
+    "errores": [
+      {
+        "error": "Ordena por el aspecto de la figura y no por lo que suena",
+        "remedio": "oír dos fichas seguidas con el botón y preguntar cuál deja más hueco; colocar solo esas dos."
+      },
+      {
+        "error": "Cambia blanca y redonda, que son parecidas de ver",
+        "remedio": "palmear las dos contando en voz alta: la blanca aguanta «uno, dos», la redonda «uno, dos, tres, cuatro»."
+      },
+      {
+        "error": "Coloca sin oír, tocando fichas al azar",
+        "remedio": "regla de la actividad: primero se oye, luego se dice «más corta» o «más larga», y luego se toca el hueco."
+      }
+    ],
+    "indicadores": [
+      "Oye antes",
+      "De corta a larga",
+      "Comprueba"
+    ]
+  },
   "creditos": [
     {
       "obra": "Iconos",

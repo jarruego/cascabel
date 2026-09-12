@@ -191,6 +191,84 @@
     "actividad.c329.pista1",
     "actividad.c329.pista2"
   ],
+  "ficha": {
+    "aprende": "Oír si un ritmo arranca en el pulso fuerte o un poco antes, y llamar anacrusa a los clics flojos que suenan antes del primer fuerte.",
+    "vocabulario": [
+      "anacrusa",
+      "pulso fuerte",
+      "acento",
+      "entrada",
+      "clic",
+      "flojo",
+      "tético"
+    ],
+    "agrupamiento": "Grupo clase con proyector; luego por parejas en tablet",
+    "material": "Ninguno (opcional: un pandero)",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Dos canciones para empezar.",
+        "detalle": "Canta el Himno de la alegría («mi, mi, fa, sol»): empieza en el fuerte. Canta «Cumpleaños feliz»: «cum-ple» va antes del fuerte, que cae en «años». Eso es una anacrusa."
+      },
+      {
+        "min": 2,
+        "titulo": "Escuchar proyectado.",
+        "detalle": "Pon dos ejemplos sin responder. La clase marca el pulso con el pie y dice «UNO» cuando oiga el primer clic fuerte. Preguntar: ¿ha sonado algo antes de ese uno?"
+      },
+      {
+        "min": 2,
+        "titulo": "Contestar en grupo.",
+        "detalle": "Vuelta proyectada: se escucha, se cuentan con los dedos los clics que suenan antes del primer fuerte, y se vota antes de que uno toque el botón. Cero clics: en el fuerte; uno o dos: anacrusa."
+      },
+      {
+        "min": 1,
+        "titulo": "Por parejas en tablet.",
+        "detalle": "Cada pareja hace una vuelta. Quien no toca lleva el pulso con el pie y cuenta en voz baja los clics de antes."
+      },
+      {
+        "min": 1,
+        "titulo": "Cantar la anacrusa.",
+        "detalle": "Cierra con «Cumpleaños feliz» y una palmada en «años»: el fuerte llega después de dos sílabas que van por el aire."
+      }
+    ],
+    "enPantalla": "Suena un ritmo de clics, todos iguales salvo los fuertes, que van más marcados: unas veces el primer clic es ya el fuerte y otras suenan uno o dos flojos antes. Aparecen dos botones grandes: «en el fuerte» y «anacrusa». El niño toca uno. Si no es, el personaje recuerda que hay que contar los clics de antes del primer fuerte y el ritmo vuelve a sonar para intentarlo otra vez; si es, «¡bien!» y viene el siguiente. Ocho ritmos, en vueltas de cinco, sin tiempo ni puntuación.",
+    "sinPantalla": "Con un pandero o con la voz: da golpes iguales y marca uno fuerte, unas veces el primero y otras después de uno o dos flojos. Pon en el suelo dos tarjetas, «en el fuerte» y «antes», y que los niños se coloquen junto a la que toca. Luego con canciones que sepan: se canta el principio y se decide si arranca en el fuerte o antes, dando una palmada en el primer fuerte.",
+    "masFacil": "Usa solo los ejemplos más lentos y, antes de cada uno, avisa: «escucha si el primer golpe es fuerte o flojo». Que levanten un dedo por cada clic flojo que suene antes del fuerte: si no levantan ninguno, es en el fuerte. Si aun así dudan, hazlo tú con el pandero exagerando muchísimo el fuerte y dejando un silencio antes de empezar.",
+    "masDificil": "Que sean ellos los que inventen: uno da con el pandero un ritmo con o sin anacrusa y los demás dicen cuál es. Después, con canciones conocidas y sin ayuda de clics: ¿«Estrellita» empieza en el fuerte? ¿Y «Cumpleaños feliz»? Y para los más finos: cuántas notas tiene la anacrusa, una o dos.",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "Todos de pie. Se pone un ejemplo y quien crea que empieza en el fuerte da un pisotón en el primer clic; quien crea que es anacrusa hace un gesto de tomar impulso con los brazos en los flojos y cae en el fuerte. El gesto de impulso es lo que es una anacrusa: coger carrerilla para llegar al uno."
+    },
+    "ideas": [
+      "Buscar en el cancionero de la clase cuáles empiezan con anacrusa y cuáles no, y hacer dos listas en la pared.",
+      "Escribir un ritmo de cuatro pulsos en la pizarra y ponerle delante una anacrusa de una corchea: ver cómo cambia al tocarlo con palmas.",
+      "Dirigir: el maestro hace el gesto de entrada y la clase entra en el fuerte o antes según lo que se cante."
+    ],
+    "loTiene": [
+      "Cuenta con los dedos los clics que suenan antes del primer fuerte y responde según eso.",
+      "Dice «UNO» en el clic fuerte y no en el primero que suena, cuando hay anacrusa.",
+      "Reconoce que «Cumpleaños feliz» empieza con anacrusa al cantarla."
+    ],
+    "errores": [
+      {
+        "error": "Dice siempre «en el fuerte» porque el primer clic que oye lo toma por el uno",
+        "remedio": "que marque el pulso con el pie y espere al clic más fuerte para decir UNO; los de antes se cuentan aparte."
+      },
+      {
+        "error": "Toca antes de que suene el primer fuerte",
+        "remedio": "pedir que oiga al menos hasta el segundo fuerte antes de elegir: así sabe cuántos clics hay en el compás."
+      },
+      {
+        "error": "Confunde el fuerte con el clic más rápido del ejemplo que lleva una corchea",
+        "remedio": "repetir ese ejemplo con el pie: fuerte es el que pisa, no el que va deprisa."
+      }
+    ],
+    "indicadores": [
+      "Cuenta los de antes",
+      "UNO en el fuerte",
+      "Espera a oír"
+    ]
+  },
   "creditos": [
     {
       "obra": "Melodías y ritmos de ejemplo",

@@ -157,6 +157,85 @@
   "pistas": [
     "actividad.c106.pista1"
   ],
+  "ficha": {
+    "aprende": "Ordenar tres, cuatro y cinco notas de la más grave a la más aguda escuchándolas, y decir cuál suena más honda y cuál más fina.",
+    "vocabulario": [
+      "grave",
+      "agudo",
+      "escalera",
+      "ordenar",
+      "sube",
+      "baja",
+      "nota",
+      "escuchar"
+    ],
+    "agrupamiento": "Por parejas en tablet; la primera escalera con proyector",
+    "material": "Ninguno. Opcional: un xilófono para la puesta en común",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Grave y agudo con el cuerpo.",
+        "detalle": "Canta una nota grave agachado y una aguda de puntillas; que te imiten. Grave es abajo y hondo; agudo es arriba y fino."
+      },
+      {
+        "min": 1,
+        "titulo": "La escalera de tres, con proyector.",
+        "detalle": "Tocar las tres fichas para oírlas y decidir entre todos cuál va la primera (la más grave), después la del medio y la última. Enséñales a comprobar tocándolas en orden."
+      },
+      {
+        "min": 2,
+        "titulo": "Cuatro y cinco, en tablet.",
+        "detalle": "Cada niño o pareja hace las dos escaleras siguientes. Regla: tocar todas las fichas antes de colocar nada, y volver a oír la escalera entera al acabar."
+      },
+      {
+        "min": 1,
+        "titulo": "Cantarla.",
+        "detalle": "Con el xilófono o la voz, cantar la escalera de cinco subiendo y bajando: do re mi fa sol, sol fa mi re do. Que suban la mano con la voz."
+      },
+      {
+        "min": 1,
+        "titulo": "Escaleras de la clase.",
+        "detalle": "Tres niños de pie: cada uno canta una nota (grave, media, aguda) y la clase los ordena de izquierda a derecha, como en la pantalla."
+      }
+    ],
+    "enPantalla": "Tres escaleras seguidas: primero tres fichas, luego cuatro, luego cinco. Cada ficha suena al tocarla, así que el niño puede oírlas tantas veces como quiera. Para colocar una, toca la ficha y luego el hueco donde va, de izquierda a derecha, de la más grave a la más aguda; se puede quitar y volver a poner. Al terminar cada escalera se comprueba: si el orden es el de la escalera, suena entera subiendo y el personaje lo celebra; si no, da una pista y se puede cambiar lo que haga falta, sin prisa.",
+    "sinPantalla": "Con un xilófono y tres, cuatro y cinco láminas sueltas puestas en desorden sobre la mesa: tocarlas y colocarlas de la más grave (la más larga) a la más aguda (la más corta). Con la voz: tres niños cantan una nota cada uno y la clase los coloca en fila de grave a agudo, y ellos mismos se agachan o se ponen de puntillas según su nota. Ordenar con el cuerpo se entiende antes que con el dedo.",
+    "masFacil": "Quédate en la escalera de tres y deja ya colocadas la primera y la última ficha: ordenar el medio es mucho más fácil que ordenar desde cero. Toca las fichas de dos en dos y pregunta solo «¿cuál suena más honda?»: comparar dos es lo que se sabe hacer con seis años, cinco de golpe no. Añade el gesto: mano abajo si es grave, arriba si es aguda.",
+    "masDificil": "Que ordenen de aguda a grave, al revés. Que ordenen oyendo cada ficha una sola vez. Que uno desordene las láminas del xilófono a propósito y otro las ordene sin mirar el tamaño, solo de oído. O que canten la escalera de cinco con nombres de nota mientras señalan las fichas.",
+    "variante": {
+      "titulo": "Escalera humana",
+      "texto": "Cinco niños con una lámina de xilófono cada uno (do, re, mi, fa, sol) se mezclan; el resto los toca por turnos y los va colocando en fila de grave a agudo. Al acabar, la fila toca la escalera subiendo y bajando, y cada uno se agacha un poco más cuanto más grave es su nota."
+    },
+    "ideas": [
+      "Dibujar una escalera de cinco peldaños en un folio y escribir en cada uno una nota, del do abajo al sol arriba, y cantarla subiendo con el dedo.",
+      "Buscar sonidos graves y agudos por el aula (golpear una mesa, un vaso, una ventana) y ordenarlos en una escalera de objetos.",
+      "Buscar una canción que sepan que empiece subiendo por la escalera y cantarla haciendo el gesto de subir con la mano."
+    ],
+    "loTiene": [
+      "Coloca las cinco fichas de grave a aguda y la comprobación suena subiendo.",
+      "Toca todas las fichas antes de colocar la primera.",
+      "Dice cuál de dos notas suena más grave."
+    ],
+    "errores": [
+      {
+        "error": "Coloca las fichas en el orden en que aparecen, sin escucharlas",
+        "remedio": "regla: no se coloca ninguna hasta haberlas tocado todas."
+      },
+      {
+        "error": "Confunde grave con flojo y agudo con fuerte",
+        "remedio": "cantar la misma nota grave fuerte y flojito: sigue siendo grave; lo que cambia es la altura, no la fuerza."
+      },
+      {
+        "error": "Acierta las dos de los extremos y se lía con las del medio",
+        "remedio": "comparar las del medio de dos en dos: ¿cuál de estas dos es más honda?"
+      }
+    ],
+    "indicadores": [
+      "Ordena las cinco",
+      "Escucha antes",
+      "Grave o aguda"
+    ]
+  },
   "etiquetas": [
     "grave",
     "agudo",

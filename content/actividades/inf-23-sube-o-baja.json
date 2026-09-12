@@ -134,6 +134,80 @@
   "pistas": [
     "actividad.inf23.pista1"
   ],
+  "ficha": {
+    "aprende": "Oír si una serie de notas va subiendo o bajando y decirlo con la mano en el aire antes de tocar la flecha.",
+    "vocabulario": [
+      "sube",
+      "baja",
+      "agudo",
+      "grave",
+      "escalera",
+      "flecha",
+      "arriba",
+      "abajo"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o por parejas en tablet",
+    "material": "Ninguno. Opcional: dos tarjetas, una con una flecha hacia arriba y otra hacia abajo.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "La mano en el aire.",
+        "detalle": "Sin pantalla todavía: canta tú una escalera que sube (do, mi, sol, do) y que la mano de todos suba con ella; luego una que baja. Nombrarlo cada vez: «sube», «baja»."
+      },
+      {
+        "min": 1,
+        "titulo": "Nombrar las flechas.",
+        "detalle": "Enseña las dos flechas de la pantalla: la que sube y la que baja. Que las señalen con el brazo antes de que suene nada."
+      },
+      {
+        "min": 2,
+        "titulo": "Cinco preguntas.",
+        "detalle": "Suenan cuatro o cinco notas de piano, glockenspiel, xilófono, marimba, vibráfono o flauta dulce. Todos dibujan la dirección en el aire y un niño toca la flecha."
+      },
+      {
+        "min": 1,
+        "titulo": "Otra vuelta cambiando de niño,",
+        "detalle": "o por parejas en tablet. Pide que esperen a oír la última nota antes de tocar: la escalera se sabe cuando se acaba."
+      }
+    ],
+    "enPantalla": "Suenan cuatro o cinco notas seguidas, siempre a saltos grandes, unas veces subiendo y otras bajando, y cada vez con un instrumento distinto: piano, glockenspiel, xilófono, marimba, vibráfono o flauta dulce. Debajo hay dos flechas grandes, una que sube y otra que baja, y el niño toca una. Si toca la otra, el personaje le recuerda que siga las notas con la mano y las notas vuelven a sonar; se corrige al momento. Al acertar, «¡bien!» y viene la siguiente. Termina a las cinco preguntas, sin puntuación.",
+    "sinPantalla": "Con la voz o con un metalófono: tocas o cantas cuatro notas que suben (do, mi, sol, do) o que bajan, y los niños ponen el brazo como una flecha, hacia arriba o hacia abajo. Se puede hacer también con el cuerpo entero: agachados si baja, de puntillas si sube. Dos tarjetas con flechas en el suelo sirven para que un niño vaya a pisar la suya.",
+    "masFacil": "Canta tú las notas con un «uuuh» que sube o baja, exagerando mucho, y acompáñalo con la mano. Deja solo dos notas, la más grave y la más aguda, en vez de cuatro. Si dudan entre las flechas, lo que falta es la palabra: di «sube» y «baja» en voz alta cada vez que señales una.",
+    "masDificil": "Que sea un niño quien toque en el metalófono una escalera que sube o que baja y los demás adivinen: producirla cuesta más que reconocerla. También puedes tocar tú tres notas seguidas, sin saltos, con lo que la dirección se nota menos y hay que escuchar más fino.",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "En vez de flechas, toda la clase de pie: cuando las notas suben, van creciendo hasta ponerse de puntillas con los brazos arriba; cuando bajan, se van encogiendo hasta el suelo. El maestro toca en el metalófono o pone la pantalla y mira quién crece y quién se encoge a tiempo."
+    },
+    "ideas": [
+      "Dibujar en un papel grande las notas que se han oído como una escalera: un punto por nota, cada uno más alto o más bajo que el anterior.",
+      "Buscar en el aula sonidos que suben o bajan: una sirena de juguete, un silbato de émbolo, la voz al preguntar y al afirmar.",
+      "Cantar una canción conocida y parar en un trozo: ¿ahí sube o baja? La mano en el aire lo dice."
+    ],
+    "loTiene": [
+      "Espera a que suene la última nota antes de tocar la flecha.",
+      "Su mano en el aire sube o baja con las notas sin que nadie se lo diga.",
+      "Acierta con instrumentos distintos, no solo con el piano."
+    ],
+    "errores": [
+      {
+        "error": "Toca una flecha cuando aún están sonando las notas",
+        "remedio": "pedirle que cuente las notas con los dedos y toque solo cuando se acaben."
+      },
+      {
+        "error": "Elige siempre la misma flecha, suene lo que suene",
+        "remedio": "volver a la mano en el aire: que dibuje la dirección antes de mirar la pantalla."
+      },
+      {
+        "error": "Con la flauta dulce no lo oye tan claro",
+        "remedio": "repetir esa pregunta con el botón de volver a oír y cantarla tú encima con «uuuh»."
+      }
+    ],
+    "indicadores": [
+      "Espera al final",
+      "Mano en el aire",
+      "Varios timbres"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

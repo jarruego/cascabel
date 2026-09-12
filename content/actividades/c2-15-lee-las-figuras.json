@@ -160,6 +160,85 @@
   "pistas": [
     "actividad.c215.pista1"
   ],
+  "ficha": {
+    "aprende": "Tocar negras, corcheas y blancas cuando llegan a la línea, esperando el doble en la blanca y la mitad en cada corchea, sin cantar ninguna nota.",
+    "vocabulario": [
+      "negra",
+      "blanca",
+      "corchea",
+      "pulso",
+      "el doble",
+      "la mitad",
+      "esperar",
+      "línea"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet u ordenador",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Recordar las tres figuras.",
+        "detalle": "En la pizarra, dibujar negra, blanca y dos corcheas unidas y decir cuánto duran: la negra un pulso, la blanca dos, cada corchea medio. Palmear cada una cuatro veces con el pie llevando el pulso."
+      },
+      {
+        "min": 2,
+        "titulo": "Ver pasar la fila sin tocar.",
+        "detalle": "Con la app proyectada: las figuras vienen de la derecha y cada una ocupa lo que dura. Preguntar cuál tiene más sitio detrás (la blanca) y cuáles van pegadas (las corcheas)."
+      },
+      {
+        "min": 3,
+        "titulo": "Tocar el primer ejercicio.",
+        "detalle": "Por parejas: uno toca al cruzar la línea, el otro dice «ta» en las negras, «ti-ti» en las corcheas y «ta-a» en la blanca. Cambiar de papel."
+      },
+      {
+        "min": 2,
+        "titulo": "El tercero, más largo.",
+        "detalle": "Doce figuras seguidas. Mirar el tamaño de la que viene antes de que llegue: dice cuánto hay que esperar."
+      },
+      {
+        "min": 1,
+        "titulo": "Leer el resumen.",
+        "detalle": "Mirar si van pronto o tarde, no el porcentaje. Ir siempre un poco tarde con regularidad es un pulso firme."
+      }
+    ],
+    "enPantalla": "Una línea de tiempo horizontal con una marca vertical fija. Las figuras —negras, blancas y corcheas— vienen de la derecha, y cada una ocupa en la pantalla el espacio de lo que dura: la blanca es el doble de ancha que la negra, las corcheas van de dos en dos. El niño toca el botón (o la barra espaciadora) cuando la figura cruza la línea; si entra a tiempo, se ilumina. Si no, no pasa nada y viene la siguiente. Tres ejercicios, el último de doce figuras. Al acabar, un resumen dice si iba pronto o tarde.",
+    "sinPantalla": "Escribe una fila de figuras en la pizarra —negra, negra, ti-ti, negra, blanca— y señálalas con el dedo mientras la clase palmea cada una con el pulso del pie. Después, con tarjetas grandes de las tres figuras, un niño va colocándolas en fila y los demás la leen palmeando. La pantalla solo añade que las figuras se mueven solas.",
+    "masFacil": "Baja el tempo. Si aun así entran tarde en las corcheas, que toquen solo negras y blancas y digan «ti-ti» con la boca sin tocar. Y antes de cada ejercicio, leer la fila parada, figura a figura: «ta, ta, ti-ti, ta, ta-a».",
+    "masDificil": "Que digan la sílaba de cada figura a la vez que la tocan: «ta», «ti-ti», «ta-a». Después, que toquen mirando solo el principio de la fila y cierren los ojos a la mitad, contando el pulso. O que escriban en papel la fila que acaban de tocar.",
+    "variante": {
+      "titulo": "Con instrumentos",
+      "texto": "Cada figura con un instrumento: claves para las negras, pandero para la blanca y caja china para las corcheas. Tres niños delante de la pantalla, cada uno espera su figura y toca solo la suya. Hay que mirar la fila entera, no solo la propia."
+    },
+    "ideas": [
+      "Dictado al revés: tú palmeas una fila corta y ellos la escriben con las tres figuras; después se escribe en la pizarra y la clase la lee.",
+      "Buscar en una canción conocida dónde hay una blanca (una sílaba que se alarga) y dónde corcheas (dos sílabas rápidas), y palmear solo esas.",
+      "Hacer la fila con el cuerpo: negra un paso, corcheas dos pasos cortos, blanca un paso y quieto."
+    ],
+    "loTiene": [
+      "Espera el pulso entero de la blanca sin dar un segundo toque.",
+      "Toca las dos corcheas dentro de un pulso, sin frenar.",
+      "Mira la figura que viene y prepara el toque antes de que cruce la línea."
+    ],
+    "errores": [
+      {
+        "error": "Toca dos veces en la blanca, como si fueran dos negras",
+        "remedio": "que diga «ta-a» en voz alta y se quede con el dedo en el aire en el segundo pulso; leer la fila parada antes."
+      },
+      {
+        "error": "Las corcheas le salen como dos negras, y llega tarde a la siguiente",
+        "remedio": "decir «ti-ti» con la boca varias veces sobre un pulso del pie antes de volver a la pantalla."
+      },
+      {
+        "error": "Toca todo al mismo ritmo sin mirar el tamaño de la figura",
+        "remedio": "parar la pantalla y preguntar qué figura viene y cuánto dura; bajar el tempo una vuelta."
+      }
+    ],
+    "indicadores": [
+      "Blanca entera",
+      "Corcheas juntas",
+      "Anticipa"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

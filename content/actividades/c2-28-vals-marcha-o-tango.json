@@ -235,6 +235,85 @@
   "pistas": [
     "actividad.c228.pista1"
   ],
+  "ficha": {
+    "aprende": "Reconocer de oído tres ritmos de baile: el vals, que va de tres en tres; la marcha, de dos en dos; y el tango, con su golpe que llega tarde.",
+    "vocabulario": [
+      "vals",
+      "marcha",
+      "tango",
+      "habanera",
+      "bombo",
+      "caja",
+      "de tres en tres",
+      "de dos en dos"
+    ],
+    "agrupamiento": "Grupo clase con proyector, después individual en tablet",
+    "material": "Ninguno. Un pandero o la mesa para marcar los ritmos",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Bailar los tres.",
+        "detalle": "Sin decir nombres, tú marcas en la mesa: BUM-cha-cha (vals), BUM-cha (marcha) y el tango, BUM-ba-bum-bum, con el segundo golpe cojo. La clase se mueve con cada uno: balanceo, paso firme, paso que se frena."
+      },
+      {
+        "min": 1,
+        "titulo": "Ponerles nombre.",
+        "detalle": "Vals, marcha y tango en la pizarra con su cuenta: «UNO, dos, tres», «UNO, dos», y el tango con un dibujo de golpe largo y golpe corto. Decir la cuenta mientras se marca."
+      },
+      {
+        "min": 2,
+        "titulo": "Oír con el proyector.",
+        "detalle": "Suena el kit. La clase cuenta con el bombo y se mueve antes de que un niño toque el botón. Repetir con el botón si hay dudas. Insistir: el tango se reconoce porque el segundo golpe no cae donde se espera."
+      },
+      {
+        "min": 2,
+        "titulo": "Jugar en tablet,",
+        "detalle": "de uno en uno. Contar con el bombo antes de tocar. Si no es, el personaje da una pista y se vuelve a elegir. Ocho ritmos y termina."
+      },
+      {
+        "min": 1,
+        "titulo": "Poner en común.",
+        "detalle": "¿Cuál se ha confundido más? Si es marcha y tango, oírlos seguidos: los dos van de dos en dos, pero en el tango el bombo cojea."
+      }
+    ],
+    "enPantalla": "Suena un ritmo de baile tocado con bombo y caja: el vals, con un bombo y dos cajas; la marcha, bombo y caja alternando; o el tango, con el ritmo de habanera, en que el segundo golpe llega un poco tarde y suena cojo. Debajo hay tres botones grandes: vals, marcha y tango. El niño puede volver a oírlo con el botón de repetir y toca uno. Si no es, el personaje le propone contar con el bombo y puede volver a elegir; si acierta, «¡bien!» y viene el siguiente. Termina al acabar los ocho, sin puntuación.",
+    "sinPantalla": "Tú en el pandero o la mesa: vals BUM-cha-cha, marcha BUM-cha, y tango con el ritmo de habanera, «BUM-ba-bum-bum», largo-corto-igual-igual (PENDIENTE DE REVISIÓN PEDAGÓGICA). Tres tarjetas en el suelo y se pisa una; o mejor, se baila: balanceo de un pie a otro para el vals, desfile para la marcha y paso largo que se frena para el tango. Después que lo marquen ellos para la clase.",
+    "masFacil": "Quédate en vals y marcha, que se distinguen contando: tres o dos. Deja el tango para cuando esas dos salgan solas. Antes de que suene, decir las dos cuentas en voz alta con el pandero. Y moverse siempre: el cuerpo balancea en el vals y desfila en la marcha antes de que la cabeza sepa el nombre.",
+    "masDificil": "Escuchar trozos cortos de música de verdad (un vals de Strauss, una marcha, un tango) y decir cuál es sin bombo ni caja que ayuden. O que un niño marque uno de los tres ritmos en el pandero y la clase baile lo que corresponde. También que inventen un cuarto ritmo y le pongan nombre.",
+    "variante": {
+      "titulo": "Baile",
+      "texto": "Se despeja el aula. Suena el ritmo del kit en el proyector y la clase baila lo que toca: el vals con balanceo y giro lento, la marcha desfilando en fila, el tango en parejas con paso largo y parada. Cuando cambia el ritmo hay que cambiar de baile sin que nadie lo diga. Es la misma actividad, pero decidida con los pies."
+    },
+    "ideas": [
+      "Escuchar un vals, una marcha y un tango de verdad y buscar el bombo con el pie.",
+      "Inventar una coreografía de ocho pasos para la marcha y otra para el vals, por grupos.",
+      "Contar de dónde vienen los tres bailes (Viena, los desfiles, Buenos Aires) y buscarlos en el mapa."
+    ],
+    "loTiene": [
+      "Dice vals, marcha o tango tras oír el ritmo entero, contando con el bombo.",
+      "Nota que en el tango el segundo golpe llega tarde y lo dice.",
+      "Marca en la mesa el ritmo del vals y el de la marcha cuando se le pide."
+    ],
+    "errores": [
+      {
+        "error": "Confunde marcha y tango, que van los dos de dos en dos",
+        "remedio": "oírlos seguidos con el botón y buscar solo el segundo golpe: en la marcha cae donde se espera, en el tango cojea."
+      },
+      {
+        "error": "Cuenta el vals como de dos porque solo oye el bombo",
+        "remedio": "contar también las cajas: BUM-cha-cha son tres; palmear las cajas y pisar el bombo."
+      },
+      {
+        "error": "Toca antes de que el ritmo haya dado dos vueltas",
+        "remedio": "esperar a que el bombo suene al menos tres veces antes de decidir; moverse mientras tanto."
+      }
+    ],
+    "indicadores": [
+      "Vals, marcha, tango",
+      "Oye el golpe cojo",
+      "Lo marca"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

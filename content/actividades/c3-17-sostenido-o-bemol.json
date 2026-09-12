@@ -119,6 +119,84 @@
   "pistas": [
     "actividad.c317.pista1"
   ],
+  "ficha": {
+    "aprende": "Oír si una nota alterada ha subido medio tono (sostenido) o ha bajado medio tono (bemol), comparándola con la nota natural que suena justo antes.",
+    "vocabulario": [
+      "sostenido",
+      "bemol",
+      "natural",
+      "medio tono",
+      "alteración",
+      "sube",
+      "baja"
+    ],
+    "agrupamiento": "Grupo clase con proyector; después individual en tablet",
+    "material": "Ninguno. Un teclado del aula, o uno dibujado en la pizarra.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "La nota y su vecina.",
+        "detalle": "En el teclado: do y la negra de su derecha, do sostenido, medio tono más agudo. Re y la negra de su izquierda, re bemol, medio tono más grave. Tocarlas seguidas y oír hacia dónde va la segunda."
+      },
+      {
+        "min": 1,
+        "titulo": "Con la mano.",
+        "detalle": "Cantar do y do sostenido con la mano subiendo un poco; re y re bemol con la mano bajando. La segunda nota va hacia arriba o hacia abajo: es lo único que hay que oír."
+      },
+      {
+        "min": 3,
+        "titulo": "En la pantalla.",
+        "detalle": "Suena la nota natural y luego la alterada, y se toca sostenido o bemol. Que muevan la mano con la segunda nota antes de tocar."
+      },
+      {
+        "min": 1,
+        "titulo": "Con la pista.",
+        "detalle": "Ante la duda, repetir y fijarse solo en si la segunda nota va hacia arriba o hacia abajo. La nota natural es la referencia."
+      },
+      {
+        "min": 1,
+        "titulo": "Cerrar.",
+        "detalle": "Dibujar en la pizarra el sostenido y el bemol junto a una nota y decir qué le hace cada uno: subir o bajar medio tono."
+      }
+    ],
+    "enPantalla": "Suena una nota natural en el piano y, justo después, la misma nota alterada: medio tono más aguda o más grave. El niño toca «sostenido» o «bemol». Hay diez pares sobre notas distintas (do, re, fa, mi, si, sol, la), para que se oiga la dirección y no una nota concreta. Se puede volver a oír. Si toca la opción que no es, el personaje le recuerda que se fije en si la segunda nota sube o baja y lo intenta otra vez. Termina al acabar los pares, sin puntuación.",
+    "sinPantalla": "En el teclado del aula: toca una tecla blanca y luego la negra de su derecha o de su izquierda, y que señalen una de dos tarjetas con el sostenido y el bemol dibujados, o que muevan la mano arriba o abajo. Con la voz: canta tú la nota y la misma un poco más alta o más baja, y la clase contesta con el pulgar arriba o abajo. Sin nombres al principio: solo la dirección.",
+    "masFacil": "Solo desde do: do y do sostenido, do y do bemol, alternando, hasta que la dirección se oiga sin dudar. Con el pulgar arriba o abajo antes de las palabras: sostenido y bemol se aprenden después de sube y baja. Y ver la tecla en el teclado mientras suena: la negra de la derecha sube, la de la izquierda baja.",
+    "masDificil": "Que canten la nota alterada antes de que suene, cuando se les dice «fa sostenido» o «si bemol». Que encuentren en el teclado que do sostenido y re bemol son la misma tecla, y expliquen por qué. Y buscar el fa sostenido en una melodía de flauta y tocarlo.",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "De pie: sube medio tono, de puntillas; baja medio tono, doblar un poco las rodillas. Suena el par y la clase se mueve a la vez. Después, un niño hace de nota y dice su nombre; otro le pone la alteración con el gesto, y la clase adivina si es sostenido o bemol."
+    },
+    "ideas": [
+      "Dictado: el maestro toca cinco pares en el teclado y cada niño dibuja el sostenido o el bemol al lado de la nota.",
+      "Buscar en las partituras de flauta del aula qué alteración aparece más; en las canciones con fa sostenido, oírlo y tocarlo solo.",
+      "Explorar en el teclado de la pizarra qué notas naturales no tienen tecla negra a un lado (mi-fa, si-do) y qué pasa con su sostenido y su bemol."
+    ],
+    "loTiene": [
+      "Dice si la segunda nota sube o baja desde cualquier nota de salida.",
+      "Llama sostenido a lo que sube y bemol a lo que baja, sin cambiarlos.",
+      "Señala en el teclado la tecla negra que corresponde a un sostenido y a un bemol."
+    ],
+    "errores": [
+      {
+        "error": "Oye que las dos notas son casi iguales y contesta al azar",
+        "remedio": "cantar la nota natural con la mano quieta y la alterada moviendo la mano: la mano decide."
+      },
+      {
+        "error": "Cambia los nombres: oye que sube y dice bemol",
+        "remedio": "en el teclado, el sostenido va a la negra de la derecha, que suena más arriba: subir es sostenido."
+      },
+      {
+        "error": "Contesta antes de que suene la segunda nota",
+        "remedio": "que levante la mano cuando haya sonado la segunda y solo entonces toque."
+      }
+    ],
+    "indicadores": [
+      "Sube o baja",
+      "Nombre correcto",
+      "En el teclado"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

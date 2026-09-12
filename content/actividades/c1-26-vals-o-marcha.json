@@ -169,6 +169,84 @@
   "pistas": [
     "actividad.c126.pista1"
   ],
+  "ficha": {
+    "aprende": "Notar con el cuerpo si el bombo cae cada dos golpes o cada tres, y llamar a eso marcha o vals antes de saber qué es un compás.",
+    "vocabulario": [
+      "vals",
+      "marcha",
+      "bombo",
+      "caja",
+      "acento",
+      "de dos en dos",
+      "de tres en tres"
+    ],
+    "agrupamiento": "Toda la clase, de pie, con proyector",
+    "material": "Ninguno. Si hay, un pandero o un bombo de aula para la parte sin pantalla",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "De pie y con sitio para moverse.",
+        "detalle": "Explica las dos opciones con el cuerpo, no con palabras: «si el bombo te hace desfilar, es marcha; si te hace dar vueltas, es vals». Haz tú las dos cosas una vez."
+      },
+      {
+        "min": 1,
+        "titulo": "Contar con el bombo.",
+        "detalle": "Suena el primer ritmo de la app y todos cuentan en voz alta sobre el bombo: «uno-dos-tres» o «uno-dos». El bombo siempre es el «uno»; la caja o las claves rellenan."
+      },
+      {
+        "min": 2,
+        "titulo": "Responder en la pantalla.",
+        "detalle": "Sale un niño por pregunta. Antes de tocar, la clase se mueve: desfila o gira. El que toca decide mirando a los demás. Si la pista dice otra cosa, se vuelve a oír y se cuenta otra vez."
+      },
+      {
+        "min": 1,
+        "titulo": "Ahora lo hacen ellos.",
+        "detalle": "Un niño da palmadas de bombo y caja: «fuerte-flojo» o «fuerte-flojo-flojo». Los demás adivinan si es vals o marcha y lo bailan."
+      },
+      {
+        "min": 1,
+        "titulo": "Cierre.",
+        "detalle": "Sentados. Pregunta: «¿en cuál se cuenta hasta tres?». Que lo digan con los dedos: dos dedos para la marcha, tres para el vals."
+      }
+    ],
+    "enPantalla": "Suenan bombo y caja (o bombo y claves) unos compases: «bum-cha» seguido es la marcha, «bum-cha-cha» es el vals. El niño toca uno de los dos botones grandes. Si no acierta, el personaje le recuerda que cuente con el bombo —«uno-dos» o «uno-dos-tres»— y puede volver a escuchar y tocar otra vez. Al acertar, «¡bien!» y viene el siguiente. Los valses van algo más rápidos que las marchas, y hay tres de cada. Termina al acabar las preguntas de la vuelta.",
+    "sinPantalla": "Con un pandero o con las palmas: da un golpe fuerte y dos flojos, o uno fuerte y uno flojo, varias veces seguidas. Los niños se mueven: desfilan cuando es de dos y giran con los brazos abiertos cuando es de tres. Después señalan una de dos tarjetas en el suelo, «vals» y «marcha», y se cambia de ritmo sin avisar.",
+    "masFacil": "Quítale la caja: solo bombo y una palmada tuya en cada acento, muy marcada. Cuenta en voz alta con ellos mientras suena y para el sonido justo después de un «uno». Si aun así dudan, es que no distinguen la palabra: pon un dibujo de un soldado y otro de una pareja bailando en cada botón.",
+    "masDificil": "Que contesten sin moverse, solo escuchando, y que digan el número de golpes antes de tocar. Después, que uno toque bombo y caja en el pandero para que la clase lo adivine: hacer un vals con las manos es más difícil que reconocerlo. Y sin avisar, cambia tú de marcha a vals a mitad: ¿quién se da cuenta?",
+    "variante": {
+      "titulo": "Con dos instrumentos",
+      "texto": "Un niño con el pandero hace de bombo y otro con las claves hace de caja. El del pandero decide si toca cada dos o cada tres, y el de las claves tiene que rellenar sin adelantarse. El resto de la clase baila lo que oye y dice el nombre. Se cambian los papeles cada vuelta."
+    },
+    "ideas": [
+      "Buscar en las canciones que ya cantan en clase cuáles son de dos y cuáles de tres, contando con el bombo imaginario.",
+      "Inventar una marcha para entrar en clase y un vals para recoger, y usarlos de verdad esa semana.",
+      "Dibujar el ritmo en la pizarra con círculos grandes (bombo) y pequeños (caja) y leerlo dando palmas."
+    ],
+    "loTiene": [
+      "Cuenta «uno-dos-tres» encima del vals sin que el bombo se le mueva de sitio.",
+      "Se pone a desfilar o a girar antes de que se le pida que responda.",
+      "Hace con las palmas un vals y una marcha reconocibles."
+    ],
+    "errores": [
+      {
+        "error": "Cuenta todos los golpes seguidos, «uno-dos-tres-cuatro-cinco», sin volver al uno",
+        "remedio": "que ponga la mano en el pecho solo en el bombo y cuente desde ahí cada vez: el bombo es siempre el uno."
+      },
+      {
+        "error": "Dice «vals» cuando el ritmo va rápido y «marcha» cuando va lento",
+        "remedio": "poner dos valses a velocidades distintas seguidos: la velocidad cambia y sigue siendo de tres."
+      },
+      {
+        "error": "Toca el botón antes de que suene el bombo dos veces",
+        "remedio": "pedir que espere a oír tres bombos antes de decidir, contando con los dedos."
+      }
+    ],
+    "indicadores": [
+      "Cuenta con el bombo",
+      "Se mueve",
+      "Lo produce"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

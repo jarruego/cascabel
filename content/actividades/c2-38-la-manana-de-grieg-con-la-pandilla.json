@@ -253,6 +253,90 @@
     "actividad.c238.pista1",
     "actividad.c238.pista2"
   ],
+  "ficha": {
+    "aprende": "Tocar la melodía de «La mañana» de Grieg con cinco pulsadores —Dora (do), Rex (re), Milo (mi), Sol y Laia (la)— entrando en cada nota cuando llega, y sentir cómo la melodía sube y baja de tres en tres.",
+    "vocabulario": [
+      "do",
+      "re",
+      "mi",
+      "sol",
+      "la",
+      "amanecer",
+      "de tres en tres",
+      "a tiempo"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet; primero en el proyector",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Contar el amanecer.",
+        "detalle": "Di que es la música de un amanecer, de una obra de Grieg llamada Peer Gynt. Cierran los ojos y se escucha entera una vez, sin tocar."
+      },
+      {
+        "min": 1,
+        "titulo": "Presentar la pandilla.",
+        "detalle": "Cinco personajes, cinco notas: Dora es do, Rex es re, Milo es mi, Sol es sol y Laia es la. Sol y Laia son los de arriba, los que hacen subir la música."
+      },
+      {
+        "min": 2,
+        "titulo": "Cantarla con los nombres.",
+        "detalle": "Sol-mi-re-do-re-mi, sol-mi-re-do... Cantadla despacio con los nombres de las notas mientras balanceáis el cuerpo de tres en tres."
+      },
+      {
+        "min": 3,
+        "titulo": "Media y media.",
+        "detalle": "Cada niño hace las dos primeras partes. Que mire venir al personaje, no la línea: anticipar es lo que se aprende. Se repite cuantas veces haga falta."
+      },
+      {
+        "min": 2,
+        "titulo": "Entera.",
+        "detalle": "La tercera parte junta las dos mitades. Quien se lía en las notas rápidas de re-mi-re-mi las deja pasar y entra en el siguiente sol."
+      },
+      {
+        "min": 1,
+        "titulo": "Escuchar el resumen.",
+        "detalle": "Mira con ellos si han ido adelantados o atrasados, no el porcentaje: ir siempre un poco tarde con el pulso firme es buena señal."
+      }
+    ],
+    "enPantalla": "Cinco carriles verticales, uno por personaje: Dora, Rex, Milo, Sol y Laia. Cada nota de «La mañana» baja por su carril con la cara de su personaje y el niño toca el botón de abajo cuando llega a la línea. Al entrar a tiempo, la nota se ilumina y suena; si entra tarde o pronto, no pasa nada: sigue bajando la siguiente. Hay tres partes: la primera mitad de la melodía, la segunda y la melodía entera. No hay marcador mientras se toca; al final dice si ha ido adelantado o atrasado y se puede repetir.",
+    "sinPantalla": "Canta tú la melodía con los nombres de las notas y que la clase haga un gesto por nota: manos en la cabeza para sol, hombros para mi, cintura para re, rodillas para do, y brazos arriba para la. Es la melodía con el cuerpo, subiendo y bajando como la música. Con un metalófono, se quitan todas las láminas menos do, re, mi, sol y la, y se toca la melodía sobre las que quedan: casi sale sola.",
+    "masFacil": "Quédate en la primera mitad y tócala en el proyector mientras la clase canta los nombres. Luego, que toque solo Sol, el personaje que abre cada grupo de tres: entrar en una nota de cada tres con el pulso firme vale más que perseguirlas todas. Cuando eso salga, añade Dora, la nota más grave, y después el resto. Si las cuatro notas rápidas del final de la primera parte se atragantan, que las deje pasar.",
+    "masDificil": "Que cante el nombre de cada nota mientras la toca. Después, tocarla en el teclado de la app en lugar de con los cinco pulsadores, o en un metalófono de verdad con las láminas do, re, mi, sol y la. Y para quien lo lleve muy bien: seguir la melodía sin mirar la pantalla, solo de oído, entrando a tiempo con la música.",
+    "variante": {
+      "titulo": "Cinco niños, cinco notas",
+      "texto": "Con la tablet en el proyector, cinco niños al frente, uno por personaje. Cada uno toca solo su nota cuando le llega; los demás cantan. Al terminar rotan: quien era Dora pasa a Rex. Es una melodía repartida, como en una orquesta: nadie la toca entera y suena entera."
+    },
+    "ideas": [
+      "Escuchar «La mañana» completa en la versión de orquesta y descubrir que primero la toca la flauta y luego el oboe; levantar la mano en cada cambio de instrumento.",
+      "Dibujar el amanecer mientras suena: el sol que sube es la melodía que sube a Sol y Laia.",
+      "Inventar una letra corta para la melodía, con seis sílabas por grupo, y cantarla."
+    ],
+    "loTiene": [
+      "Entra en Sol al principio de cada grupo de tres sin esperar a que cruce la línea.",
+      "Toca las cuatro notas rápidas re-mi-re-mi sin frenar el pulso.",
+      "Canta los nombres de la pandilla mientras toca la parte entera."
+    ],
+    "errores": [
+      {
+        "error": "Toca cuando el personaje ya ha pasado la línea",
+        "remedio": "mirar más arriba, al personaje que viene, y cantar su nombre justo antes de que llegue."
+      },
+      {
+        "error": "Se para en las cuatro notas rápidas del final de la primera parte",
+        "remedio": "dejarlas pasar y entrar en el siguiente sol; después practicar solo ese trozo cantando re-mi-re-mi rápido."
+      },
+      {
+        "error": "Toca siempre el mismo botón sea la nota que sea",
+        "remedio": "jugar solo con dos personajes en el proyector, Sol y Dora, hasta que cambie de botón a tiempo."
+      }
+    ],
+    "indicadores": [
+      "Entra a tiempo",
+      "Notas rápidas",
+      "Cambia de botón"
+    ]
+  },
   "creditos": [
     {
       "obra": "«La mañana», de la suite Peer Gynt n.º 1, op. 46",

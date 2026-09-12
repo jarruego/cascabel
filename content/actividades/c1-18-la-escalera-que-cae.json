@@ -142,6 +142,90 @@
   "pistas": [
     "actividad.c118.pista1"
   ],
+  "ficha": {
+    "aprende": "Ver y oír que la melodía sube cuando va de do a sol y baja al volver, y tocar cada nota en su carril justo cuando llega a la línea.",
+    "vocabulario": [
+      "do",
+      "re",
+      "mi",
+      "fa",
+      "sol",
+      "sube",
+      "baja",
+      "carril"
+    ],
+    "agrupamiento": "Individual en tablet; primer ejercicio con proyector",
+    "material": "Ninguno. Opcional: xilófono con do, re, mi, fa y sol",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Cantar la escalera con la mano.",
+        "detalle": "Do re mi fa sol subiendo, la mano sube; sol fa mi re do bajando, la mano baja. Dos veces, despacio. La mano es lo que luego harán los carriles."
+      },
+      {
+        "min": 1,
+        "titulo": "Mirar cómo cae, con proyector.",
+        "detalle": "Primer ejercicio sin tocar: cinco carriles de color, el de la izquierda es do, el de la derecha sol. Que sigan con el dedo en el aire de carril en carril y digan la nota."
+      },
+      {
+        "min": 2,
+        "titulo": "Subir: primer ejercicio en tablet.",
+        "detalle": "Cada nota se toca en su carril cuando llega a la línea. La última, sol, dura dos pulsos: se toca una vez y se aguanta. Cantar el nombre al tocar."
+      },
+      {
+        "min": 2,
+        "titulo": "Bajar y después las dos.",
+        "detalle": "Segundo ejercicio, de sol a do; tercero, sube y baja seguidas. Recuérdales que miren la nota que viene, no la que ya está en la línea."
+      },
+      {
+        "min": 1,
+        "titulo": "Resumen.",
+        "detalle": "Si va tarde pero junto, es entrada, no altura. Mira si se equivoca de carril: eso es lo que importa aquí."
+      },
+      {
+        "min": 1,
+        "titulo": "En el xilófono o cantando.",
+        "detalle": "La escalera entera, subiendo y bajando, con la mano y con la voz, mirando a la pared. Se ha entendido si se ve subir sin pantalla."
+      }
+    ],
+    "enPantalla": "Cinco carriles de color, uno por nota: do a la izquierda, después re, mi y fa, y sol a la derecha, como en un piano. Las notas bajan por su carril y hay que tocar ese carril cuando llegan a la línea; al acertar, la nota se ilumina y aparece su nombre. Como lo grave cae por la izquierda y lo agudo por la derecha, se ve la melodía subir y bajar. Tres ejercicios: la escalera sube, baja, y sube y baja. No hay marcador durante el juego y nadie se queda fuera; al final se puede repetir.",
+    "sinPantalla": "Cinco niños en fila, cada uno con una lámina del xilófono (do, re, mi, fa, sol) o con una nota cantada, de grave a agudo de izquierda a derecha. Tú señalas al pulso y cada uno toca o canta cuando le toca: primero subiendo, luego bajando, luego las dos. El resto de la clase sigue con la mano en el aire. Con cinco tarjetas de color en el suelo se hace igual: la clase palmea cuando señalas cada una.",
+    "masFacil": "Baja el tempo en la app. Si aun así se lían, que toquen solo do y sol, la primera y la última, y dejen pasar las del medio: entrar en algunas es mejor que perseguirlas todas. Que canten los nombres sin tocar hasta que la voz vaya a tiempo. Y con tres láminas, do mi sol, en el xilófono, antes de volver a cinco.",
+    "masDificil": "Que canten el nombre de cada nota a la vez que la tocan. Que toquen la escalera en el xilófono siguiendo la pantalla en vez del carril. Después, con los ojos cerrados la segunda mitad del tercer ejercicio, solo de oído. Y que inventen una escalera que suba tres y baje dos, la dibujen con cinco colores y la clase la cante.",
+    "variante": {
+      "titulo": "Escalera humana",
+      "texto": "Cinco niños de pie, cada uno con su nota, agachados si es grave y de puntillas si es aguda: do casi en el suelo, sol estirado. Los demás cantan la escalera y cada niño se levanta al oír su nota. Después al revés. Y luego una melodía desordenada que dicte otro niño: la escalera se ve en los cuerpos."
+    },
+    "ideas": [
+      "Dibujar en un folio la escalera de cinco peldaños con el color de cada nota y cantarla subiendo con el dedo.",
+      "Buscar una canción que sepan que empiece subiendo o bajando por la escalera y cantarla con la mano.",
+      "Dictado de dirección: tú tocas tres notas en el xilófono y ellos dicen si ha subido, bajado o se ha quedado."
+    ],
+    "loTiene": [
+      "Toca cada nota en su carril, sin equivocarse de columna.",
+      "Dice si la melodía sube o baja antes de que acabe.",
+      "Canta do re mi fa sol subiendo con la mano, sin pantalla."
+    ],
+    "errores": [
+      {
+        "error": "Toca a tiempo pero en el carril de al lado",
+        "remedio": "cantar el nombre en voz alta al tocar; y practicar la escalera en el xilófono para que la mano sepa el orden."
+      },
+      {
+        "error": "Toca todos los carriles a la vez para asegurar",
+        "remedio": "un solo dedo, y el resto de la mano cerrada; que diga la nota antes de tocarla."
+      },
+      {
+        "error": "Mira la línea y le pillan las notas",
+        "remedio": "que mire arriba, donde nacen, y prepare el dedo sobre el carril que viene."
+      }
+    ],
+    "indicadores": [
+      "Carril correcto",
+      "Sube o baja",
+      "Canta la escalera"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

@@ -74,6 +74,85 @@
     "actividad.c135.pista1",
     "actividad.c135.pista2"
   ],
+  "ficha": {
+    "aprende": "Reconocer el sonido de tambor, triángulo, voz, piano, guitarra y violín, y acordarse de en qué carta sonó cada uno para emparejarlo con su dibujo.",
+    "vocabulario": [
+      "tambor",
+      "triángulo",
+      "voz",
+      "piano",
+      "guitarra",
+      "violín",
+      "pareja",
+      "memoria"
+    ],
+    "agrupamiento": "Grupos de 3 o 4 en tablet, o grupo clase con proyector",
+    "material": "Ninguno. Si los hay, un tambor y un triángulo de aula para la parte sin pantalla",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Los seis instrumentos.",
+        "detalle": "Nómbralos y haz el gesto de tocar cada uno: golpear el tambor, dar en el triángulo, cantar, teclear, rasguear, frotar el arco. Que hagan los gestos contigo."
+      },
+      {
+        "min": 1,
+        "titulo": "Dos clases de cartas.",
+        "detalle": "Enseña una lila con el altavoz (suena) y una amarilla con la lupa (dibujo). Explica que la pareja es un sonido con su dibujo, nunca dos dibujos."
+      },
+      {
+        "min": 3,
+        "titulo": "Jugar por turnos.",
+        "detalle": "Cada niño destapa una carta de sonido y dice en voz alta el instrumento antes de buscar su dibujo. Si no es pareja, se tapan y toca otro; la clase intenta recordar dónde estaba cada cosa."
+      },
+      {
+        "min": 1,
+        "titulo": "Los que se parecen.",
+        "detalle": "Cuando salgan guitarra y violín seguidos, párate: los dos tienen cuerdas, pero la guitarra se pellizca y suena corto y el violín se frota y suena largo. Que lo digan con el gesto."
+      },
+      {
+        "min": 1,
+        "titulo": "Cierre.",
+        "detalle": "Con las seis parejas hechas, tocar cada carta de sonido en orden y que la clase haga el gesto del instrumento sin mirar la de dibujo."
+      }
+    ],
+    "enPantalla": "Doce cartas boca abajo en tres filas: seis lilas con un altavoz, que suenan al destaparlas —un golpe de tambor, un triángulo, una voz cantada, una nota de piano, otra de guitarra y otra de violín—, y seis amarillas con lupa, que enseñan el dibujo del instrumento. Se destapan dos, una de cada clase. Si son el mismo instrumento, se quedan destapadas; si no, se vuelven a tapar y se sigue. No hay límite de intentos ni de tiempo. Se acaba cuando las seis parejas están hechas.",
+    "sinPantalla": "Seis tarjetas con los dibujos boca abajo en la mesa y, detrás de un biombo o de la puerta, un adulto o un niño con los instrumentos que haya (tambor, triángulo, la propia voz; el piano, la guitarra y el violín se imitan con la voz o con el gesto). Por turnos, un niño pide «sonido tres» y el de detrás lo hace; luego destapa una tarjeta de dibujo. Si coinciden, se las queda. En grupos de tres o cuatro.",
+    "masFacil": "Deja las seis cartas de dibujo destapadas todo el rato y que solo se tapen las de sonido: así el trabajo es de oído, no de memoria. Cuando eso salga, tápalas todas pero juega con tres parejas muy distintas: tambor, triángulo y voz. Las cartas en dos filas, no en tres.",
+    "masDificil": "Que digan el nombre del instrumento antes de destapar la carta de dibujo, y que solo la destapen si la clase está de acuerdo. Que expliquen cómo suena cada uno con una palabra: seco, brillante, largo. Y jugar con las cartas de sonido reordenadas cada vuelta, para que haya que volver a escuchar.",
+    "variante": {
+      "titulo": "Memory humano",
+      "texto": "Seis niños son las cartas de sonido, de pie y de espaldas: cada uno tiene asignado un instrumento y lo imita con la voz o con un instrumento de aula cuando le tocan el hombro. Otros seis, sentados, son los dibujos y enseñan su tarjeta al ser tocados. El resto juega por turnos a encontrar las parejas; a mitad se cambian los papeles."
+    },
+    "ideas": [
+      "Traer a clase los instrumentos que haya y tocar cada uno detrás de un biombo para adivinarlo: el tambor se golpea, el triángulo se cuelga, el violín se frota.",
+      "Ordenar los seis por familias: los que se golpean, los que tienen cuerdas, el que es una persona. Y buscar uno más para cada familia.",
+      "Dibujar cómo suena cada uno: un punto gordo para el tambor, una estrella para el triángulo, una línea larga para el violín."
+    ],
+    "loTiene": [
+      "Vuelve a la carta donde ya sonó el violín en lugar de destapar al azar.",
+      "Dice el instrumento en voz alta antes de buscar su dibujo.",
+      "Distingue guitarra y violín sin destapar los dos dibujos."
+    ],
+    "errores": [
+      {
+        "error": "Destapa dos cartas de dibujo o dos de sonido",
+        "remedio": "recordar los colores: una lila y una amarilla en cada turno."
+      },
+      {
+        "error": "Confunde guitarra y violín, que son los dos de cuerda",
+        "remedio": "oírlos seguidos y hacer el gesto: pellizcar (corto) o frotar (largo)."
+      },
+      {
+        "error": "Destapa siempre cartas nuevas y no recuerda las que ya oyó",
+        "remedio": "que diga el nombre de cada sonido en voz alta y la clase repita dónde estaba: «tambor, arriba a la izquierda»."
+      }
+    ],
+    "indicadores": [
+      "Recuerda dónde sonó",
+      "Nombra antes",
+      "Reconoce los seis"
+    ]
+  },
   "creditos": [
     {
       "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",

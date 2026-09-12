@@ -262,6 +262,66 @@
     ]
   },
   "enunciado": "actividad.tr11.enunciado",
+  "ficha": {
+    "aprende": "Contar los pulsos de un baile mientras suena y decir si va de dos, de tres o de seis, y de dónde es: pasodoble, jota, muiñeira, sardana, sevillanas, habanera, chotis.",
+    "vocabulario": [
+      "compás",
+      "pulso",
+      "acento",
+      "pasodoble",
+      "jota",
+      "muiñeira",
+      "sardana",
+      "habanera"
+    ],
+    "agrupamiento": "Toda la clase, de pie, con proyector y altavoz",
+    "material": "Altavoz. Opcional: pandero y un mapa de España",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Proyectar y poner el pasodoble.",
+        "detalle": "Dejarlo sonar y marchar por el aula: es de dos, izquierda-derecha. Contar en voz alta «un, dos» pisando fuerte en el uno."
+      },
+      {
+        "min": 2,
+        "titulo": "La jota, de tres.",
+        "detalle": "Poner el ritmo y contar «un, dos, tres» con una palmada fuerte en el uno y dos flojas. Después, un salto pequeño en cada uno."
+      },
+      {
+        "min": 2,
+        "titulo": "La muiñeira y la sardana, de seis.",
+        "detalle": "Se sienten como dos golpes que se reparten en tres: «un-y-y, dos-y-y». Balancearse a un lado en cada golpe grande. Comparar: ¿en qué se parece a la jota? ¿En qué no?"
+      },
+      {
+        "min": 2,
+        "titulo": "Adivinar el compás.",
+        "detalle": "El maestro pone un baile sin decir cuál. La clase cuenta encima con las palmas y dice si es de dos, de tres o de seis. Luego se mira en la ficha y se comprueba."
+      },
+      {
+        "min": 2,
+        "titulo": "El chotis y la habanera.",
+        "detalle": "El chotis, de cuatro, se baila casi sin moverse del sitio, girando. La habanera, de dos pero con su golpe largo y corto: sentirlo balanceándose como en un barco."
+      },
+      {
+        "min": 1,
+        "titulo": "Dónde es cada uno.",
+        "detalle": "Señalar en el mapa: la jota en Aragón, la muiñeira en Galicia, la sardana en Cataluña, las sevillanas en Andalucía, el chotis en Madrid."
+      }
+    ],
+    "enPantalla": "Nueve bailes, cada uno con su compás escrito y un botón que hace sonar su ritmo con la percusión del kit: el pasodoble de dos, la jota y las sevillanas de tres, la muiñeira y la sardana de seis, el chotis de cuatro, la habanera con su golpe largo y corto (PENDIENTE DE REVISIÓN PEDAGÓGICA). Al lado, una línea que dice de dónde es y cómo se baila. Hay buscador. No hay pregunta ni final: el ritmo suena en bucle mientras se cuenta o se baila encima, y se para cuando se quiere.",
+    "sinPantalla": "El maestro marca el compás con el pandero, fuerte en el uno y flojo en los demás, y la clase cuenta y camina encima. Cambiar de dos a tres y a seis sin avisar, y que sean los niños quienes digan cuándo ha cambiado. Con un mapa de España en la pared, cada baile se pone con una chincheta en su sitio a medida que se presenta.",
+    "masFacil": "Solo dos bailes muy distintos: el pasodoble, de dos, y la jota, de tres. Marchar con uno y balancearse con el otro hasta que el cuerpo lo note sin contar. Poner los dos alternados y que digan cuál suena. Los de seis y el chotis, otro día.",
+    "masDificil": "Contar el compás con las palmas y a la vez el acento con el pie: palmas en todos los pulsos, pie solo en el uno. Después, por grupos, inventar cuatro pasos para un baile de tres y otros cuatro para uno de dos, y enseñarlos a la clase. Y buscar una grabación de verdad de una jota o una sardana y contar encima: ¿coincide con lo que dice la ficha?",
+    "variante": {
+      "titulo": "Con instrumentos",
+      "texto": "La clase se reparte: un grupo con panderos marca solo el uno de cada compás, otro con claves marca todos los pulsos, y el resto baila. Se rota en cada baile. Marcar solo el acento obliga a sentir dónde empieza cada compás, que es lo que distingue un baile de otro."
+    },
+    "ideas": [
+      "Preguntar en casa qué baile se baila en las fiestas del pueblo o del barrio y traerlo a clase: ¿está en la lista? ¿De cuántos pulsos es?",
+      "Escribir el compás de cada baile en una tarjeta y jugar a emparejar tarjeta y baile mientras suena el ritmo.",
+      "Montar una pequeña vuelta a España bailada: un paso de cada baile, cambiando de uno a otro sin parar la música."
+    ]
+  },
   "personaje": "sol",
   "herramienta": true,
   "creditos": [

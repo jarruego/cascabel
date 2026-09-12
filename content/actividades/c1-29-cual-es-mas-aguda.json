@@ -114,6 +114,85 @@
     "actividad.c129.pista1",
     "actividad.c129.pista2"
   ],
+  "ficha": {
+    "aprende": "Comparar dos notas seguidas y decir cuál es la más aguda, aunque las toque un instrumento distinto cada vez.",
+    "vocabulario": [
+      "agudo",
+      "grave",
+      "primera",
+      "segunda",
+      "fina",
+      "gorda",
+      "sube",
+      "baja"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o individual en tablet",
+    "material": "Ninguno. Si hay, un xilófono o unas campanas para la parte sin pantalla",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Fina o gorda.",
+        "detalle": "Canta una nota aguda con voz de pájaro y una grave con voz de oso. Que las imiten. Aguda es la fina; grave, la gorda. Usa las dos palabras desde el principio."
+      },
+      {
+        "min": 1,
+        "titulo": "La mano sube con la nota.",
+        "detalle": "Canta dos notas seguidas y que la mano de cada niño suba o baje con ellas. Pregunta: «¿cuál ha ido más arriba, la primera o la segunda?»."
+      },
+      {
+        "min": 2,
+        "titulo": "En la app, con la mano.",
+        "detalle": "Suenan las dos notas. Antes de tocar, todos las cantan y ponen la mano. El que sale toca «la primera» o «la segunda». Si la pista pide oírlas otra vez, se cantan de nuevo."
+      },
+      {
+        "min": 1,
+        "titulo": "Cambia el instrumento, no la pregunta.",
+        "detalle": "Haz notar que unas veces suena el piano, otras la flauta o el violín. Eso no importa: la aguda sigue siendo la fina. Que digan qué instrumento era, de paso."
+      },
+      {
+        "min": 1,
+        "titulo": "Lo hacen ellos.",
+        "detalle": "Un niño canta dos notas, una aguda y una grave en el orden que quiera, y la clase responde con la mano: arriba en la aguda."
+      }
+    ],
+    "enPantalla": "Suenan dos notas, una detrás de otra, tocadas por un xilófono, un piano, una flauta, un violín, unas campanas, una guitarra o un clarinete. Hay dos botones grandes: «la primera» y «la segunda». El niño toca el que cree que es la nota más aguda. Si no acierta, el personaje sugiere cantar las dos o seguirlas con la mano, y se pueden volver a oír y contestar otra vez. Al acertar, «¡bien!» y otra pareja de notas. Termina al acabar las preguntas de la vuelta.",
+    "sinPantalla": "Con la voz o con un xilófono: toca o canta dos notas separadas y los niños levantan un dedo si la más aguda era la primera y dos si era la segunda. Con dos tarjetas en el suelo, «1» y «2», pueden ir a pisar la que toque. Ayuda mucho que sigan cada nota con la mano en el aire antes de responder: la mano suele acertar antes que la palabra.",
+    "masFacil": "Que las dos notas estén muy separadas: en el xilófono, la lámina más grande y la más pequeña. Cántalas tú en voz muy exagerada, de oso y de pájaro. Y quita las palabras «primera» y «segunda» un rato: que respondan solo con la mano arriba o abajo mientras suena, y luego ya se pone nombre.",
+    "masDificil": "Acerca las notas hasta que sean vecinas en el xilófono. Toca las dos en instrumentos distintos —una en el piano y otra con la flauta— para que no se guíen por el timbre. Y añade una tercera opción: «son iguales», con alguna pareja de notas repetidas.",
+    "variante": {
+      "titulo": "Por parejas, de espaldas",
+      "texto": "Uno tiene el xilófono y toca dos láminas cualesquiera; el otro, de espaldas, dice «primera» o «segunda». Después se dan la vuelta y lo comprueban mirando dónde estaban las láminas: la más pequeña es la aguda. Tres rondas y se cambian los papeles."
+    },
+    "ideas": [
+      "Ordenar de grave a agudo los sonidos de la clase: una silla arrastrada, la llave en la puerta, un timbre, el grifo.",
+      "Dibujar en la pizarra dos puntos, uno más alto que otro, y cantar lo que dice el dibujo; después al revés, dibujar lo que se canta.",
+      "Preguntar a las voces de la clase: ¿quién tiene la voz más aguda de este grupo de tres? Sin decir cuál es mejor, solo cuál es más fina."
+    ],
+    "loTiene": [
+      "Levanta la mano más alto en la aguda antes de que se le pregunte.",
+      "Responde bien aunque cambie el instrumento entre una pregunta y otra.",
+      "Canta dos notas, una aguda y una grave, para que otro las compare."
+    ],
+    "errores": [
+      {
+        "error": "Dice «aguda» a la nota más fuerte o a la que dura más",
+        "remedio": "cantar las dos notas con la misma fuerza y la misma duración, y seguirlas con la mano."
+      },
+      {
+        "error": "Responde siempre «la segunda» porque es la última que ha oído",
+        "remedio": "volver a oírlas y cantar la primera nada más acabar la segunda, para tenerla en la boca."
+      },
+      {
+        "error": "Se guía por el instrumento: cree que la flauta siempre es la aguda",
+        "remedio": "tocar dos notas graves con la flauta y dos agudas con la guitarra: el instrumento no manda."
+      }
+    ],
+    "indicadores": [
+      "Mano sube",
+      "Sin importar timbre",
+      "Lo canta"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

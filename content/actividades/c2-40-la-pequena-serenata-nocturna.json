@@ -214,6 +214,85 @@
     "actividad.c240.pista1",
     "actividad.c240.pista2"
   ],
+  "ficha": {
+    "aprende": "Distinguir de oído si una frase musical pregunta o responde: en el primer tema de la Serenata de Mozart, la pregunta sube por el acorde y acaba arriba; la respuesta baja y acaba abajo.",
+    "vocabulario": [
+      "pregunta",
+      "respuesta",
+      "frase",
+      "acorde",
+      "sube",
+      "baja",
+      "violín",
+      "serenata"
+    ],
+    "agrupamiento": "Grupo clase con proyector; después por parejas",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Preguntar con la voz.",
+        "detalle": "Di «¿vienes?» y «sí, voy». Que noten que la voz sube al preguntar y baja al responder. La música hace lo mismo, y hoy lo va a hacer Mozart."
+      },
+      {
+        "min": 1,
+        "titulo": "Escuchar el tema entero.",
+        "detalle": "Pon las dos frases seguidas, pregunta y respuesta, una vez sin contestar nada. Que levanten la mano cuando la música pregunta y la bajen cuando responde."
+      },
+      {
+        "min": 2,
+        "titulo": "Primera vuelta con la mano.",
+        "detalle": "Suena una frase sola. Antes de tocar la opción, la mano dibuja en el aire por dónde va la melodía: si acaba arriba es pregunta; si acaba abajo, respuesta."
+      },
+      {
+        "min": 1,
+        "titulo": "Segunda vuelta por parejas.",
+        "detalle": "Uno decide y el otro dice si está de acuerdo y por qué. La frase empieza a veces más grave o más aguda: lo que cuenta es hacia dónde va al final."
+      },
+      {
+        "min": 1,
+        "titulo": "Cerrar cantando.",
+        "detalle": "Canta tú la pregunta con «pam, pam, pam» y que la clase conteste con la respuesta. Ya saben hablar como Mozart."
+      }
+    ],
+    "enPantalla": "Suena una de las dos frases del primer tema de la «Pequeña serenata nocturna», tocada con violín, y el niño toca «pregunta» o «respuesta». Puede volver a oírla con el botón de repetir. La frase sale unas veces más grave y otras más aguda, para que no se aprenda la altura sino el gesto: si acaba arriba, pregunta; si acaba abajo, respuesta. Si toca la que no es, el personaje le recuerda que se fije en cómo acaba y lo intenta de nuevo. Son seis escuchas y termina sin puntuación.",
+    "sinPantalla": "Canta o toca tú las dos frases con «pam»: la pregunta sube por el acorde (sol-re-sol-re-sol-re-sol-si-re) y la respuesta baja (do-la-do-la-do-la-fa sostenido-la-re). Dos tarjetas en el suelo, una con una flecha hacia arriba y otra hacia abajo. Suena una frase y señalan. Después, en corro: tú cantas la pregunta y cada niño improvisa una respuesta que baje, con la voz o con tres láminas de un metalófono.",
+    "masFacil": "Exagera el contraste con la voz: la pregunta con la ceja levantada y la mano subiendo, la respuesta con la mano bajando hasta la rodilla. Pon las dos frases seguidas antes de cada escucha suelta, para que tengan la pareja fresca. Si el cambio de altura entre escuchas despista, canta tú la frase que acaba de sonar empezando siempre en la misma nota: el gesto es el mismo aunque la altura cambie, y eso es lo que se está aprendiendo.",
+    "masDificil": "Que digan, además de pregunta o respuesta, si esta vez ha sonado más grave o más aguda que la anterior. Después, que inventen su propia pregunta con tres notas que suban y su respuesta con tres que bajen, y las toquen en el metalófono para que la clase adivine cuál es cuál. Y escuchar el primer movimiento de la Serenata entero levantando la mano cada vez que vuelve la pregunta.",
+    "variante": {
+      "titulo": "Diálogo en dos grupos",
+      "texto": "Mitad de la clase es la pregunta y la otra mitad la respuesta. Suena la frase en el proyector y solo se levanta el grupo al que le toca; después ese grupo canta su frase con «pam». Se cambian los papeles a mitad de vuelta. Así se oye la pareja completa cada vez, no solo la mitad."
+    },
+    "ideas": [
+      "Buscar preguntas y respuestas en canciones que ya conocen: cantar la primera frase de una canción del aula y parar; ¿pide que siga o suena acabada?",
+      "Escuchar el principio del primer movimiento de la Serenata en una grabación de orquesta y contar cuántas veces aparece la pregunta.",
+      "Escribir en la pizarra la pregunta y la respuesta con flechas y que cada niño dibuje una pregunta musical propia con tres flechas."
+    ],
+    "loTiene": [
+      "Señala pregunta cuando la frase acaba arriba, aunque haya empezado más grave que la anterior.",
+      "Dibuja con la mano por dónde va la melodía antes de contestar.",
+      "Canta una respuesta que baja cuando el maestro le canta la pregunta."
+    ],
+    "errores": [
+      {
+        "error": "Contesta por la altura de la primera nota, no por cómo acaba",
+        "remedio": "cantar solo las tres últimas notas de la frase con la mano y preguntar: ¿ha subido o ha bajado?"
+      },
+      {
+        "error": "Toca la opción antes de que la frase termine",
+        "remedio": "que espere al silencio con la mano en el aire; la respuesta está en el final."
+      },
+      {
+        "error": "Confunde las dos cuando suenan en la altura más aguda",
+        "remedio": "poner las dos seguidas en esa misma altura y cantarlas con «pam» para oír la pareja."
+      }
+    ],
+    "indicadores": [
+      "Por cómo acaba",
+      "Dibuja la frase",
+      "Responde cantando"
+    ]
+  },
   "creditos": [
     {
       "obra": "«Pequeña serenata nocturna» (Eine kleine Nachtmusik), K. 525, primer tema",

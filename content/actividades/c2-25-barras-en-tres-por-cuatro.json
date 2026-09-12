@@ -98,6 +98,84 @@
     "actividad.c225.pista1",
     "actividad.c225.pista2"
   ],
+  "ficha": {
+    "aprende": "Poner las barras de compás en una fila de negras y blancas contando de tres en tres: una negra vale uno, una blanca dos, y cada compás suma tres.",
+    "vocabulario": [
+      "compás",
+      "barra",
+      "tres por cuatro",
+      "pulso",
+      "negra",
+      "blanca",
+      "sumar"
+    ],
+    "agrupamiento": "Grupo clase con proyector, después por parejas en tablet",
+    "material": "Pizarra y tiza para la fila de figuras",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Sentir el tres.",
+        "detalle": "De pie, contar «UNO, dos, tres» con un pisotón en el uno y palmas en el dos y el tres. Después cantar «Cumpleaños feliz» marcando igual: va de tres en tres."
+      },
+      {
+        "min": 2,
+        "titulo": "Sumar en la pizarra.",
+        "detalle": "Escribir una fila de negras y blancas sin barras. Debajo de cada figura, lo que vale: 1 o 2. Sumar desde el principio y, cuando se llegue a tres, un niño sale a poner la barra con tiza. Seguir hasta el final."
+      },
+      {
+        "min": 2,
+        "titulo": "Hacerlo con el proyector.",
+        "detalle": "El primer ejercicio entre todos: un niño toca entre dos figuras y la app dice si la barra va ahí. Si sobra o falta, contar otra vez en voz alta desde la última barra."
+      },
+      {
+        "min": 3,
+        "titulo": "Jugar en tablet,",
+        "detalle": "de uno en uno o por parejas. Contar con el dedo sobre las figuras antes de tocar. Tres ejercicios; el personaje avisa si una barra sobra o falta y se corrige al momento."
+      },
+      {
+        "min": 1,
+        "titulo": "Comprobar palmeando.",
+        "detalle": "Palmear la fila ya dividida, con un pisotón en el primer pulso de cada compás. Si el pisotón cae siempre justo detrás de una barra, está bien."
+      }
+    ],
+    "enPantalla": "Una fila de negras y blancas sin dividir y, delante, el 3/4. El niño toca entre dos figuras y ahí aparece una barra; si la toca otra vez, se quita. Cada compás tiene que sumar tres pulsos: una negra uno, una blanca dos. La app comprueba sola y distingue si una barra sobra o si falta una, y se corrige al momento sin que pase nada. Se puede oír la fila para contar mientras suena. Son tres ejercicios y termina cuando las barras están en su sitio, sin puntuación.",
+    "sinPantalla": "La fila de figuras en la pizarra y los niños salen a poner las barras con tiza mientras la clase cuenta en voz alta «uno, dos, tres» señalando cada figura. Una blanca se señala dos veces. Con tarjetas grandes en el suelo funciona igual: los niños se ponen de pie entre dos tarjetas haciendo de barra. Después se palmea la fila para comprobar que el pisotón cae siempre tras una barra.",
+    "masFacil": "Empieza con una fila de solo negras: cada tres, una barra, y contar figuras y contar pulsos es lo mismo. Después mete una sola blanca y párate en ella: vale dos, así que se cuenta «uno, dos» sin pasar a la siguiente. Escribe el valor debajo de cada figura (1 o 2) hasta que no haga falta.",
+    "masDificil": "La misma fila sin ayuda de números y sin contar en voz alta. O escribir una fila en la pizarra y que decidan si es de 2/4, de 3/4 o de 4/4 mirando dónde quedan bien las barras. También que inventen una fila de figuras que sume compases exactos de tres y se la pongan a otro para dividirla.",
+    "variante": {
+      "titulo": "El vals",
+      "texto": "Una vez dividida la fila, tocarla en el xilófono o con palmas como un vals: pisotón en el primer pulso de cada compás y dos palmas suaves después. Se nota enseguida si una barra está mal puesta, porque el pisotón cae en mitad de una blanca. Contar y bailar es la misma cosa dicha de dos maneras."
+    },
+    "ideas": [
+      "Buscar canciones que vayan de tres en tres (un vals, «Cumpleaños feliz») y marcar el uno con el pie.",
+      "Escribir el ritmo de un verso hablado con negras y blancas y ponerle las barras en 3/4.",
+      "Hacer la misma fila en 2/4 y ver que las barras se mueven de sitio aunque las figuras no cambien."
+    ],
+    "loTiene": [
+      "Cuenta pulsos y no figuras: señala la blanca dos veces al contar.",
+      "Pone la barra justo donde la suma llega a tres y vuelve a empezar desde uno.",
+      "Sabe decir si una barra sobra o falta y la corrige sin ayuda."
+    ],
+    "errores": [
+      {
+        "error": "Pone una barra cada tres figuras, aunque haya blancas",
+        "remedio": "escribir debajo de cada figura lo que vale y sumar en voz alta; la blanca cuenta «uno, dos» ella sola."
+      },
+      {
+        "error": "Sigue sumando después de tres y pone la barra en cuatro",
+        "remedio": "al llegar a tres, decir «barra» en voz alta y volver a «uno» en la figura siguiente."
+      },
+      {
+        "error": "Deja una blanca cortada por una barra",
+        "remedio": "una blanca no se parte: si al sumar cae en medio, la barra va antes de ella o después, nunca dentro."
+      }
+    ],
+    "indicadores": [
+      "Cuenta pulsos",
+      "Barra en tres",
+      "Se corrige"
+    ]
+  },
   "creditos": [],
   "estado": "borrador",
   "etiquetas": [

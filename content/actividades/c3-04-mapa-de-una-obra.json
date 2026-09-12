@@ -125,6 +125,90 @@
     "actividad.c304.pista1",
     "actividad.c304.pista2"
   ],
+  "ficha": {
+    "aprende": "Reconocer la forma A-A-B-A en el tema de la Novena de Beethoven: tres frases iguales y una distinta, vistas en el mapa antes de oírlas y señaladas mientras suenan.",
+    "vocabulario": [
+      "forma",
+      "frase",
+      "frase a",
+      "frase b",
+      "estructura",
+      "repetición",
+      "contraste",
+      "mapa"
+    ],
+    "agrupamiento": "Grupo clase con proyector",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Mirar el mapa sin sonido.",
+        "detalle": "Cuatro bloques: tres del mismo color y uno distinto. Antes de oír nada, ¿qué creéis que va a pasar? Que lo digan: la tercera parte será diferente."
+      },
+      {
+        "min": 2,
+        "titulo": "Escuchar siguiendo el cursor.",
+        "detalle": "Suena el tema entero, con el cursor recorriendo los bloques. Solo mirar. Al terminar, ¿era verdad lo que habían dicho?"
+      },
+      {
+        "min": 2,
+        "titulo": "Cantar la A.",
+        "detalle": "Cantad la primera frase con «la» o con los nombres: mi-mi-fa-sol, sol-fa-mi-re... Cuando vuelva a sonar la A, que la canten encima; en la B, que se callen y escuchen."
+      },
+      {
+        "min": 2,
+        "titulo": "La B.",
+        "detalle": "¿Qué hace la B distinto? Se va a otro sitio y luego vuelve a casa. Se escucha otra vez levantando la mano en la B y bajándola cuando vuelve la A."
+      },
+      {
+        "min": 2,
+        "titulo": "Señalar.",
+        "detalle": "Cuatro niños al frente, uno por bloque. Cada uno levanta el brazo cuando le toca su frase; el de la A tiene que estar atento tres veces."
+      },
+      {
+        "min": 1,
+        "titulo": "Cerrar.",
+        "detalle": "A-A-B-A: se repite, se repite, cambia, vuelve. Es de las formas más usadas que hay; la van a encontrar en muchas canciones."
+      }
+    ],
+    "enPantalla": "Cuatro bloques en fila: A, A, B, A. Los tres A son del mismo color y el B de otro, así que la forma se ve antes de sonar. Al empezar, suena el tema del Himno de la alegría con una marimba y un cursor recorre los bloques mientras avanza, cuatro compases por bloque. El niño no toca nada: mira dónde está la música. Al acabar vuelve a empezar, para seguirlo tantas vueltas como haga falta. No hay preguntas ni puntuación.",
+    "sinPantalla": "Dibuja en la pizarra cuatro cajas: tres azules con una A y una naranja con una B. Canta el tema o ponlo en una grabación y ve señalando la caja que suena. Después señala un niño. Con tarjetas: cada niño tiene una A y una B y levanta la que toca mientras suena. Y con el cuerpo: sentados en la A, de pie en la B; la clase se levanta una sola vez y ve la forma con las piernas.",
+    "masFacil": "Ponlo dos veces: la primera solo escuchando, sin mirar; la segunda con el mapa. Escuchar y seguir a la vez es una tarea doble. Si la B se les escapa, cántala tú aparte y que la reconozcan como «la que se va» antes de volver a oír el tema entero. Reduce la tarea a una sola cosa: levantar la mano cuando cambia.",
+    "masDificil": "Que sigan el mapa sin cursor, señalando por adelantado el bloque que va a empezar. Después, escuchar una grabación del final de la Novena con orquesta y coro y contar cuántas veces aparece el tema entero. Y que dibujen el mapa de una canción que conozcan: ¿tiene forma A-A-B-A, A-B-A-B u otra? Descubrir que casi todas se repiten es la lección.",
+    "variante": {
+      "titulo": "Cantar la forma",
+      "texto": "La clase se divide en dos: el grupo A canta las frases A con «la» y el grupo B canta la B. Suena el mapa proyectado como director: cada grupo entra cuando el cursor llega a su bloque. El grupo A canta tres veces y el B una; luego se cambian. Nadie canta la obra entera y la obra suena entera."
+    },
+    "ideas": [
+      "Buscar la forma en canciones populares del aula: escribir A o B en la pizarra por cada frase y ver qué dibujo sale.",
+      "Componer una pieza de percusión corporal con forma A-A-B-A: la A la inventa toda la clase y la B un grupo.",
+      "Contar que Beethoven escribió esta música cuando ya no oía, y escuchar el tema una vez más sabiéndolo."
+    ],
+    "loTiene": [
+      "Dice antes de oírlo que la tercera frase va a ser distinta, mirando los colores del mapa.",
+      "Levanta la mano en la B y la baja cuando vuelve la A, a tiempo.",
+      "Canta la frase A encima de la música cada vez que aparece."
+    ],
+    "errores": [
+      {
+        "error": "Levanta la mano en la segunda A porque la espera distinta",
+        "remedio": "cantar las dos primeras frases seguidas y notar que son iguales; la distinta es la tercera."
+      },
+      {
+        "error": "El dedo va detrás del cursor",
+        "remedio": "ir detrás es la primera fase; que cuente los cuatro compases de cada bloque con el pie para adelantarse."
+      },
+      {
+        "error": "Confunde el final de la B con el principio de la última A",
+        "remedio": "escuchar solo ese cruce dos veces y decir «casa» cuando la melodía vuelve a la A."
+      }
+    ],
+    "indicadores": [
+      "Ve la forma",
+      "Marca la B",
+      "Canta la A"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

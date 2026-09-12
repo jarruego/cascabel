@@ -237,6 +237,85 @@
     "actividad.c138.pista1",
     "actividad.c138.pista2"
   ],
+  "ficha": {
+    "aprende": "Tocar do, re y mi a tiempo siguiendo a Dora, Rex y Milo por su banda, y notar que «Au clair de la lune» se hace solo con esas tres notas.",
+    "vocabulario": [
+      "do",
+      "re",
+      "mi",
+      "dora",
+      "rex",
+      "milo",
+      "a tiempo",
+      "nota larga"
+    ],
+    "agrupamiento": "Por parejas en tablet, o grupo clase con proyector",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Tres personajes, tres notas.",
+        "detalle": "Presenta a Dora (do), Rex (re) y Milo (mi) y canta sus notas subiendo la mano: do abajo, re en medio, mi arriba. Que las canten con el nombre del personaje."
+      },
+      {
+        "min": 1,
+        "titulo": "Cantar la canción.",
+        "detalle": "Canta «Au clair de la lune» con los nombres: «Do-ra Do-ra Do-ra Rex, Mi-lo Rex, Do-ra Mi-lo Rex Rex, Do-ra». No hace falta el francés: la letra son los personajes."
+      },
+      {
+        "min": 1,
+        "titulo": "Colocar los dedos.",
+        "detalle": "Tres dedos, uno en cada pulsador, sin tocar. Se pone la app y solo se mira: ¿quién baja primero? ¿quién se queda un rato en la línea?"
+      },
+      {
+        "min": 2,
+        "titulo": "Tocar con la app.",
+        "detalle": "Primer ejercicio, tocando cuando cada personaje llega a la línea. Si alguno se despista, no pasa nada: se deja pasar y se entra en el siguiente do largo. Segundo ejercicio igual."
+      },
+      {
+        "min": 1,
+        "titulo": "Tercer ejercicio y cierre.",
+        "detalle": "El tercero empieza de nuevo la frase al final: hay que seguir. Después, cantar la canción sin la app tocando tres teclas imaginarias en la mesa."
+      }
+    ],
+    "enPantalla": "Tres bandas verticales, una por personaje: Dora (do), Rex (re) y Milo (mi), cada una con su pulsador abajo. La melodía de «Au clair de la lune» va bajando: cada nota es su personaje, que cae por su banda, y hay que tocar su pulsador cuando llega a la línea. Las notas largas —el mi y el re de «mon ami Pierrot», el do final— se ven largas: el personaje llega y se queda. Al tocar a tiempo, la nota se ilumina y suena. No hay marcador mientras se juega; al acabar cada ejercicio, un resumen de cómo ha ido. Son tres.",
+    "sinPantalla": "Canta la melodía con los nombres de los personajes y que los niños toquen tres teclas imaginarias en la mesa: la izquierda para Dora, la del medio para Rex, la derecha para Milo. O tres niños de pie, uno por nota, que dan un paso adelante cuando les toca cantar. En corro, con tres gestos: manos en las rodillas para do, en la cintura para re, en los hombros para mi, mientras se canta despacio.",
+    "masFacil": "Que toquen solo a Dora, el do, y dejen pasar a Rex y a Milo: el do abre la canción tres veces seguidas y la cierra con la nota larga, así que entrar en él ya es seguir la canción. Después, solo Milo, que es el más alto y baja pocas veces. Cantar los nombres mientras se toca ayuda a saber quién viene.",
+    "masDificil": "Cantar el nombre de cada nota a la vez que se toca, y después con la letra en francés («Au clair de la lune, mon ami Pierrot»). Tocar la melodía en un teclado o en un xilófono con solo tres láminas, do, re y mi, sin la app. Y por parejas: uno toca a Dora y otro a Rex y Milo, y hay que entrar cada uno en lo suyo.",
+    "variante": {
+      "titulo": "Con tres láminas",
+      "texto": "Se dejan en el xilófono solo do, re y mi y se quitan las demás. Se pone la app en el proyector y un niño toca en las láminas lo que baja, mientras otro toca los pulsadores. La clase canta con los nombres de los personajes. Cada vuelta, cambian los dos. Tres notas son pocas para equivocarse y muchas para que suene una canción."
+    },
+    "ideas": [
+      "Aprender la primera estrofa en francés y descubrir qué dice: alguien pide una pluma a su amigo Pierrot para escribir una carta.",
+      "Escribir la canción en la pizarra con tres alturas (tres rayas) y leerla señalando, sin nombres, solo por dónde va la línea.",
+      "Inventar una melodía nueva de ocho notas solo con Dora, Rex y Milo y tocarla en tres láminas."
+    ],
+    "loTiene": [
+      "Toca a Dora tres veces seguidas a tiempo en el arranque, sin adelantarse a Rex.",
+      "Espera en las notas largas de Milo y Rex sin tocar de más.",
+      "Canta la canción con los nombres de las tres notas sin la app."
+    ],
+    "errores": [
+      {
+        "error": "Toca los tres pulsadores a la vez cuando baja un personaje",
+        "remedio": "una vuelta solo mirando, con las manos en las rodillas, diciendo el nombre del que llega."
+      },
+      {
+        "error": "Da varios toques en la nota larga porque el personaje se queda en la línea",
+        "remedio": "cantar la nota larga en voz alta y contar «uno-dos» con la mano quieta."
+      },
+      {
+        "error": "Se despista a mitad y deja de tocar hasta el final",
+        "remedio": "esperar al do largo, que cierra la frase, y volver a entrar ahí."
+      }
+    ],
+    "indicadores": [
+      "Entra a tiempo",
+      "Nota larga",
+      "Canta con nombres"
+    ]
+  },
   "creditos": [
     {
       "obra": "«Au clair de la lune», primera parte",

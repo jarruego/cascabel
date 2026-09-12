@@ -78,6 +78,84 @@
   "pistas": [
     "actividad.c237.pista1"
   ],
+  "ficha": {
+    "aprende": "Distinguir de oído una voz sola de un coro, y un coro de adultos de un coro de niños, y decir por qué: una voz se entiende palabra a palabra, un coro suena ancho, los niños suenan más agudos.",
+    "vocabulario": [
+      "voz",
+      "solista",
+      "coro",
+      "coro infantil",
+      "agudo",
+      "grave",
+      "unísono"
+    ],
+    "agrupamiento": "Grupo clase con proyector",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Tres formas de cantar.",
+        "detalle": "Pregunta quién canta solo en casa y quién ha cantado en un coro. Pon las tres opciones en la pizarra: una voz, muchas voces de mayores, muchas voces de niños."
+      },
+      {
+        "min": 1,
+        "titulo": "Probarlo con la clase.",
+        "detalle": "Canta tú solo una frase de una canción conocida; luego la canta toda la clase. Que digan qué ha cambiado: se oye más ancho, se entiende menos la letra."
+      },
+      {
+        "min": 2,
+        "titulo": "Primera vuelta.",
+        "detalle": "Suena la grabación entera. Antes de tocar, que levanten un dedo si es una voz y la mano abierta si son muchas; luego, mayores o niños."
+      },
+      {
+        "min": 1,
+        "titulo": "Segunda vuelta, con motivo.",
+        "detalle": "Cada respuesta con un porqué: se entiende cada palabra, suena una habitación entera, son voces agudas como las nuestras."
+      },
+      {
+        "min": 1,
+        "titulo": "Cerrar.",
+        "detalle": "¿Cómo suena nuestra clase cuando canta? Como un coro infantil: lo mismo que acaban de oír."
+      }
+    ],
+    "enPantalla": "Suena una grabación de verdad —una soprano sola, un coro de adultos o un coro de niños— y el niño toca una de las tres opciones. Puede repetirla. Si toca una que no es, el personaje le da una pista: una voz sola se oye limpia y se entiende cada palabra; un coro suena ancho, como si cantara una habitación entera. Luego lo intenta de nuevo. Seis escuchas y termina sin puntuación. Uno de los coros de adultos es canto gregoriano: hombres cantando todos la misma melodía, que también es un coro.",
+    "sinPantalla": "Es la actividad que se hace con la propia clase. Un niño canta una frase conocida a solas; luego cinco niños; luego toda la clase. Los demás cierran los ojos y dicen si era uno o muchos. Para el coro de adultos, canta tú con otro maestro o con las familias si hay ocasión, o pon a los niños a cantar muy grave. Con los ojos cerrados se oye mejor: la anchura del sonido se nota en el aire.",
+    "masFacil": "Deja solo dos opciones: una voz o muchas. Es la diferencia más clara y se nota hasta con los ojos cerrados. Cuando salga, añade la tercera: mayores o niños, y ayúdales con una comparación cercana, los niños suenan como vosotros, los mayores como los profes. Pon la solista y el coro seguidos para oír el contraste.",
+    "masDificil": "Que digan también si las voces cantan todas lo mismo, como en el gregoriano, o cosas distintas a la vez, como en el coro a varias voces. Y que adivinen si la solista es mujer u hombre, o si el coro tiene hombres y mujeres. Después, que cuenten cuántas voces distintas creen que hay en el coro infantil: no hay respuesta exacta, hay escucha.",
+    "variante": {
+      "titulo": "Coro y solista en clase",
+      "texto": "Montad una versión con la clase: un niño canta la primera frase de una canción conocida como solista y el resto entra como coro en la segunda. Cambiad de solista en cada vuelta. Grabadlo con el móvil del maestro y escuchadlo después: ¿se distingue en la grabación cuándo canta uno y cuándo todos?"
+    },
+    "ideas": [
+      "Escuchar una canción con solista y coro que se alternan, y levantar la mano cuando entra el coro.",
+      "Visitar o invitar al coro del colegio o del pueblo si lo hay: ver de dónde sale el sonido ancho cambia la escucha.",
+      "Hablar de lo que puede hacer un coro que una voz sola no: cantar dos cosas a la vez, sonar muy fuerte sin gritar."
+    ],
+    "loTiene": [
+      "Distingue una voz de muchas con los ojos cerrados.",
+      "Dice que el coro de niños suena más agudo que el de mayores.",
+      "Reconoce el canto gregoriano como coro aunque suene distinto."
+    ],
+    "errores": [
+      {
+        "error": "Toma el gregoriano por una voz sola porque cantan todos lo mismo",
+        "remedio": "explicar que un coro puede cantar la misma melodía todos a la vez; escuchar cómo el sonido es ancho aunque haya una sola línea."
+      },
+      {
+        "error": "Confunde la soprano con el coro infantil por lo aguda",
+        "remedio": "fijarse en si se entiende cada palabra: una voz sola se entiende; muchas voces, aunque sean agudas, se mezclan."
+      },
+      {
+        "error": "Contesta antes de que acabe la grabación",
+        "remedio": "que cierre los ojos y espere al silencio del final; luego decide."
+      }
+    ],
+    "indicadores": [
+      "Una o muchas",
+      "Niños o mayores",
+      "Espera al final"
+    ]
+  },
   "creditos": [
     {
       "obra": "Banco de sonidos reales (ver content/sonidos.json y la pantalla de créditos)",

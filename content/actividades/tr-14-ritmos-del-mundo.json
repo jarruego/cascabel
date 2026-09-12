@@ -194,6 +194,66 @@
     ]
   },
   "enunciado": "actividad.tr14.enunciado",
+  "ficha": {
+    "aprende": "Contar encima de un ritmo que se repite, la clave cubana, el tresillo, la habanera, la campana africana o el swing, sacarlo con las palmas y decir de dónde viene.",
+    "vocabulario": [
+      "ritmo",
+      "clave",
+      "tresillo",
+      "habanera",
+      "campana",
+      "swing",
+      "pulso",
+      "repetir"
+    ],
+    "agrupamiento": "Toda la clase, de pie, con proyector y altavoz",
+    "material": "Altavoz. Opcional: claves, un cencerro y un mapamundi",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Proyectar y poner la clave cubana.",
+        "detalle": "Dejarla sonar en bucle. Solo escuchar y marcar el pulso con el pie. Contar «un, dos, tres, cuatro» encima, dos veces, sin palmear todavía."
+      },
+      {
+        "min": 2,
+        "titulo": "Sacarla con las palmas.",
+        "detalle": "Primero solo los tres golpes de la primera mitad, luego los dos de la segunda: tres y dos. Se oye con la percusión del kit y se palmea encima hasta que encaje."
+      },
+      {
+        "min": 2,
+        "titulo": "La habanera, con los muslos.",
+        "detalle": "Un golpe largo y luego cortos: «laaar-go, cor-to, cor-to». Balancearse mientras suena. Comparar con la clave: ¿cuál es más fácil de seguir?"
+      },
+      {
+        "min": 2,
+        "titulo": "La campana africana.",
+        "detalle": "Va de seis en seis y no de cuatro. Contar «un, dos, tres, cuatro, cinco, seis» encima y palmear en los golpes que suenen. Notar que el cuerpo se balancea distinto."
+      },
+      {
+        "min": 2,
+        "titulo": "Dos grupos.",
+        "detalle": "Un grupo palmea el pulso, el otro el ritmo del kit, y se cambian. Después, uno de los ritmos sin la pantalla, solo con claves y palmas."
+      },
+      {
+        "min": 1,
+        "titulo": "De dónde viene cada uno.",
+        "detalle": "Señalar en el mapamundi: Cuba, África, Estados Unidos. Los ritmos viajan, y por eso se parecen: la habanera nació en Cuba y llegó a España."
+      }
+    ],
+    "enPantalla": "Cinco ritmos que se repiten en músicas de medio mundo, cada uno con un botón que lo hace sonar en bucle con la percusión del kit, su nombre, de dónde viene y una línea que dice cómo va: la clave cubana en tres y dos, el tresillo, la habanera con su golpe largo, la campana africana de seis y el swing (PENDIENTE DE REVISIÓN PEDAGÓGICA). Hay buscador. No hay pregunta ni final: suena hasta que se para, para contar encima o sacarlo con las palmas.",
+    "sinPantalla": "El maestro toca el ritmo con claves o con un cencerro, en bucle, y marca el pulso con el pie; los niños entran con las palmas cuando lo tienen. Los ritmos se dicen antes con la boca: «pa, pa, pa, pa-pa» para la clave. Con dos instrumentos de aula, uno lleva el pulso y otro el ritmo, y el resto escucha con los ojos cerrados y dice cuál de los cinco es.",
+    "masFacil": "Solo la habanera, que es la que más se parece a caminar, y solo con los muslos. Ponerla despacio, decirla con la boca, «laaar-go, cor-to, cor-to», y después palmearla. Cuando salga, la clave, pero solo su primera mitad: tres golpes. La segunda mitad, otro día. Un ritmo bien metido en el cuerpo vale por los cinco.",
+    "masDificil": "Dos ritmos a la vez: un grupo la clave y otro la habanera, sobre el mismo pulso, y escuchar cómo encajan. Después, uno de los cinco sin la pantalla, de memoria, y que otro grupo diga cuál era. Y el swing: tres golpes por pulso con el del medio en silencio, que es el que más cuesta sentir, y buscar dónde se oye en una canción de jazz.",
+    "variante": {
+      "titulo": "Por el aula",
+      "texto": "Cada esquina del aula es un ritmo: clave, habanera, campana, swing. Suena uno y los niños caminan hacia su esquina. Al llegar, lo palmean. Se cambia de ritmo sin avisar. Reconocerlo caminando obliga a escuchar el ritmo entero, no solo el primer golpe."
+    },
+    "ideas": [
+      "Buscar una canción que lleve la clave cubana o la habanera y palmearla encima: los ritmos están en músicas que ya conocen.",
+      "Inventar un ritmo propio de cuatro pulsos con las palmas, darle un nombre y un país imaginario, y añadirlo a la lista de la clase.",
+      "Tocar los ritmos con objetos: lápices sobre la mesa, botes, el suelo. Cada grupo elige un ritmo y un objeto y los demás adivinan cuál es."
+    ]
+  },
   "personaje": "sol",
   "herramienta": true,
   "creditos": [

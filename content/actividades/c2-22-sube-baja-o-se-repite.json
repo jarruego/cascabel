@@ -163,6 +163,79 @@
   "pistas": [
     "actividad.c222.pista1"
   ],
+  "ficha": {
+    "aprende": "Oír una frase de cuatro o cinco notas y decir si sube, baja o repite la misma nota, siguiéndola con la mano en el aire.",
+    "vocabulario": [
+      "sube",
+      "baja",
+      "se repite",
+      "agudo",
+      "grave",
+      "melodía",
+      "dirección"
+    ],
+    "agrupamiento": "Grupo clase con proyector, después individual en tablet",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "La mano dibuja.",
+        "detalle": "Canta tú cinco notas subiendo, con la mano de la rodilla a la cabeza; luego bajando; luego la misma nota cinco veces, con la mano quieta. Todos con la mano, sin hablar."
+      },
+      {
+        "min": 1,
+        "titulo": "Los tres signos.",
+        "detalle": "Dibujar en la pizarra la flecha que sube, la que baja y el signo igual. Cantar una frase y que señalen el signo con la mano en el aire."
+      },
+      {
+        "min": 2,
+        "titulo": "Oír con el proyector.",
+        "detalle": "Suena la frase en un instrumento distinto cada vez (piano, flauta, violín, oboe…). La clase la sigue con la mano; un niño toca la flecha. Repetir con el botón si hace falta."
+      },
+      {
+        "min": 2,
+        "titulo": "Jugar en tablet,",
+        "detalle": "de uno en uno. La mano en el aire mientras suena, y después el botón. Si no es, el personaje da una pista y se vuelve a elegir. Diez frases y termina."
+      }
+    ],
+    "enPantalla": "Suena una frase de cuatro o cinco notas en un instrumento que cambia cada vez: piano, flauta, violín, clarinete, oboe o glockenspiel. Debajo hay tres botones grandes: la flecha que sube, la flecha que baja y el signo igual. El niño puede volver a oírla con el botón de repetir y toca uno. Si no es, el personaje le propone seguir la melodía con la mano en el aire y puede volver a elegir; si acierta, «¡bien!» y viene la siguiente. Termina al acabar las diez, sin puntuación.",
+    "sinPantalla": "Canta tú o toca en el xilófono frases de cinco notas que suban, bajen o repitan, y que respondan con el brazo: de abajo arriba, de arriba abajo o quieto en horizontal. Tres tarjetas en el suelo con la flecha arriba, la flecha abajo y el igual, y se pisa una. Con el xilófono puesto de pie, además, se ve la dirección de las baquetas.",
+    "masFacil": "Quédate en dos opciones: sube o baja, y deja lo de repetir para después. Frases muy claras: do-re-mi-fa-sol subiendo y sol-fa-mi-re-do bajando, siempre en el piano. Y cantarlas después de oírlas, con la mano: la voz sube o baja sin que haya que pensarlo.",
+    "masDificil": "Frases que suben y luego bajan (una montaña) o bajan y suben (un valle), y que las dibujen en el aire o en papel. O que la frase suba con saltos, de tres en tres notas, en vez de paso a paso. También que sean ellos quienes canten una frase para que la clase diga la dirección.",
+    "variante": {
+      "titulo": "Dibujar la melodía",
+      "texto": "Cada niño con un papel y un lápiz. Suena la frase y dibuja una línea que suba, baje o se quede recta, de izquierda a derecha, sin levantar el lápiz. Después se comparan los dibujos y se vuelve a oír. Es el primer paso para leer un pentagrama: la línea del papel es lo que hacen las notas en la pauta."
+    },
+    "ideas": [
+      "Buscar en una canción de la clase un trozo que suba y otro que baje, y cantarlos con el brazo.",
+      "Tocar en el xilófono frases que suban, bajen o repitan para que las adivine un compañero.",
+      "Dibujar en la pizarra la dirección de los primeros compases de una canción conocida y comprobar cantándola."
+    ],
+    "loTiene": [
+      "Sigue la frase con la mano mientras suena, en la dirección correcta.",
+      "Dice sube, baja o se repite tras oírla entera, sea cual sea el instrumento.",
+      "Canta una frase que suba o que baje cuando se le pide."
+    ],
+    "errores": [
+      {
+        "error": "Con la nota repetida mueve la mano y dice que sube",
+        "remedio": "cantar la frase con él: cinco veces la misma nota y la mano en la mesa; preguntar si ha cambiado algo."
+      },
+      {
+        "error": "Cambia de respuesta cuando cambia el instrumento",
+        "remedio": "oír la misma frase en dos instrumentos y preguntar qué es distinto y qué no: cambia el sonido, no la dirección."
+      },
+      {
+        "error": "Dice baja en las frases que suben con saltos grandes",
+        "remedio": "cantarla despacio nota a nota, con la mano subiendo un escalón en cada una."
+      }
+    ],
+    "indicadores": [
+      "Sigue con la mano",
+      "Sube, baja, repite",
+      "Lo canta"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

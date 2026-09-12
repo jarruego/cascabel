@@ -95,6 +95,85 @@
   "pistas": [
     "actividad.c203.pista1"
   ],
+  "ficha": {
+    "aprende": "Escuchar una melodía de seis notas y escribirla en una cuadrícula de cinco alturas fijándose en si cada nota sube, baja o se queda igual que la anterior.",
+    "vocabulario": [
+      "agudo",
+      "grave",
+      "sube",
+      "baja",
+      "se queda",
+      "dictado",
+      "melodía",
+      "casilla"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o parejas en tablet",
+    "material": "Ninguno. Para la parte sin pantalla, pizarra y gomets",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Cinco alturas con la mano.",
+        "detalle": "Toca las cinco filas de la cuadrícula de arriba abajo y que la mano de cada niño las siga: por encima de la cabeza la más aguda, en las rodillas la más grave. Son cinco escalones muy separados."
+      },
+      {
+        "min": 1,
+        "titulo": "Sube, baja o se queda.",
+        "detalle": "Suena la primera melodía dos veces. La clase la sigue con la mano y dice en voz alta, nota a nota: «sube», «baja», «igual». Eso es todo lo que hay que oír."
+      },
+      {
+        "min": 3,
+        "titulo": "Primer dictado.",
+        "detalle": "Un niño coloca la primera nota; a partir de ahí, cada casilla se decide por «sube, baja o igual». Se escucha en bucle y se compara. Si una nota no cuadra, se mueve solo esa."
+      },
+      {
+        "min": 2,
+        "titulo": "Segundo y tercer dictado.",
+        "detalle": "Otros niños. Antes de tocar, que canten la melodía con «la» siguiéndola con la mano; luego que la digan en «sube-baja-igual». Lo que se dice con la mano se puede escribir."
+      },
+      {
+        "min": 1,
+        "titulo": "Leer lo escrito.",
+        "detalle": "Cantar los tres dictados con «la» mirando solo la cuadrícula, con la mano, sin la app."
+      }
+    ],
+    "enPantalla": "Una cuadrícula de cinco filas y seis columnas: arriba lo más agudo, abajo lo más grave, y cada columna una nota. Suena una melodía de seis notas y el niño toca una casilla por columna, oyendo cada nota al tocarla. Puede escuchar en bucle lo que ha puesto y compararlo con el dictado. Si no coincide, el personaje sugiere escuchar si cada nota sube, baja o se queda igual que la anterior, y se cambia solo la casilla que haga falta. Al cuadrar, viene el siguiente. Son tres dictados con las mismas notas.",
+    "sinPantalla": "En la pizarra, cinco filas y seis columnas. Canta una melodía de seis notas con «la», con saltos grandes, dos veces, mientras la clase la sigue con la mano en cinco alturas. Salen seis niños, uno por columna, y pegan un gomet en la fila que creen. La clase canta lo que hay en la pizarra con la mano y lo compara con tu voz: donde la mano va a otro sitio, se mueve el gomet. Cambia la melodía para otros seis.",
+    "masFacil": "Dicta primero solo tres notas, y luego seis. Di tú en voz alta «sube» o «baja» la primera vez que suene. Deja colocada la primera casilla, que es la que más cuesta porque no hay nada con qué compararla. Y con solo tres filas, la de arriba, la del medio y la de abajo, si cinco son demasiadas.",
+    "masDificil": "Una escucha sin bucle y a colocar. Que digan cuánto sube o baja cada nota: «un poco» o «mucho», y cuenten filas. Que uno invente en la cuadrícula una melodía de seis notas que empiece y acabe en la misma fila y la cante para que otro la escriba en la pizarra.",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "Seis niños en fila son las seis notas, y las cinco alturas se hacen con el cuerpo: brazos arriba de puntillas, de pie, de rodillas, sentados, tumbados. Suena el dictado y cada uno se coloca; la clase canta la fila de izquierda a derecha con la mano y comprueba. Se cambian los seis para el siguiente dictado."
+    },
+    "ideas": [
+      "Dibujar melodías como líneas en la pizarra —una montaña, una escalera, un valle— y cantarlas con «la» siguiendo el dibujo.",
+      "Escuchar el principio de una canción conocida y decir solo con la mano si la melodía sube, baja o se queda, sin cantar.",
+      "Inventar una melodía de seis casillas en la cuadrícula que suene a pregunta (acaba arriba) y otra que suene a respuesta (acaba abajo)."
+    ],
+    "loTiene": [
+      "Sigue la melodía con la mano y dice «sube, baja, igual» nota a nota sin equivocarse de dirección.",
+      "Coloca una nota repetida en la misma fila que la anterior.",
+      "Escucha lo que ha puesto y mueve una sola casilla él solo."
+    ],
+    "errores": [
+      {
+        "error": "Oye que la nota cambia pero pone la casilla al revés: sube cuando baja",
+        "remedio": "cantar las dos notas seguidas con la mano, exagerando: la mano va a la cabeza o a las rodillas."
+      },
+      {
+        "error": "Coloca todas las notas en filas distintas aunque dos se repitan",
+        "remedio": "escuchar solo esas dos y preguntar: «¿se ha movido la mano?». Si no, misma fila."
+      },
+      {
+        "error": "Empieza a colocar sin haber escuchado la melodía entera",
+        "remedio": "una escucha completa con la mano antes de tocar la primera casilla."
+      }
+    ],
+    "indicadores": [
+      "Sube o baja",
+      "Nota repetida",
+      "Comprueba"
+    ]
+  },
   "etiquetas": [
     "dictado melódico",
     "cuadrícula",

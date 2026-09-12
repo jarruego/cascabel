@@ -187,6 +187,84 @@
     "actividad.c336.pista1",
     "actividad.c336.pista2"
   ],
+  "ficha": {
+    "aprende": "Contar de oído cuántas notas distintas suenan a la vez —una, dos o tres— y cantarlas por separado, de la más grave a la más aguda.",
+    "vocabulario": [
+      "acorde",
+      "nota",
+      "grave",
+      "agudo",
+      "a la vez",
+      "voces",
+      "sonido lleno"
+    ],
+    "agrupamiento": "Grupo clase con proyector; luego individual en tablet",
+    "material": "Ninguno (opcional: un teclado o metalófono)",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Una nota, y luego tres.",
+        "detalle": "Sin la app: toca o canta un mi solo y después do, mi y sol juntos, en el teclado o con tres niños. Preguntar qué cambia: la sola suena limpia; las tres, más anchas."
+      },
+      {
+        "min": 2,
+        "titulo": "Escuchar y cantar lo que se oye.",
+        "detalle": "Proyecta dos o tres ejemplos sin contestar. Tras cada uno, pedir que canten la nota más grave que han oído y luego la más aguda. Si salen dos distintas, ya son dos."
+      },
+      {
+        "min": 2,
+        "titulo": "Contestar en grupo.",
+        "detalle": "Una vuelta proyectada: se escucha, cada niño enseña con los dedos uno, dos o tres, y uno toca el botón. Si no es, se vuelve a oír y se canta antes de decidir."
+      },
+      {
+        "min": 1,
+        "titulo": "Solos en tablet.",
+        "detalle": "Cada niño hace una vuelta de cinco. Sin prisa: se puede repetir el sonido las veces que haga falta antes de tocar."
+      },
+      {
+        "min": 1,
+        "titulo": "Construirlo con voces.",
+        "detalle": "Tres niños cantan do, mi y sol y entran de uno en uno: la clase cuenta en voz alta cómo se va llenando el sonido. Se cierra con el acorde de los tres."
+      }
+    ],
+    "enPantalla": "Suena con el piano una nota sola, dos notas juntas o tres, y se mantienen dos pulsos. Abajo hay tres botones grandes: uno, dos y tres. El niño escucha, puede volver a oírlo con el botón de repetir, y toca su respuesta. Si no es, el personaje le anima a cantar cada nota que oye, de la grave a la aguda, y el acorde vuelve a sonar; si es, «¡bien!» y viene otro. Son doce sonidos en vueltas de cinco, sin tiempo ni puntuación; termina al acabar la vuelta.",
+    "sinPantalla": "Con un teclado o un metalófono: toca una nota sola (mi), dos (do y sol) o tres (do, mi y sol) y mantenlas. Los niños enseñan con los dedos cuántas oyen y luego cantan cada una, de la grave a la aguda, para comprobarlo. Sin instrumento, con voces: uno, dos o tres niños de espaldas a la clase cantan una nota cada uno a la vez, y la clase cuenta. Al girarse se ve la respuesta.",
+    "masFacil": "Quédate con uno y tres: la nota sola frente al acorde de do, mi y sol, que es la diferencia más clara. Deja las parejas para después. Antes de cada ejemplo, di en voz alta las opciones y enseña los dedos. Y que canten siempre la nota grave y la aguda antes de contestar: si son distintas, ya no es una.",
+    "masDificil": "Que lo produzcan ellos: un niño toca en el teclado una, dos o tres teclas a la vez y la clase cuenta. Después, dos parejas con la misma nota grave (do-mi y luego do-sol) para que oigan que lo que cambia es la de arriba. Y para quien va sobrado: cantar las tres notas del acorde de una en una, de la grave a la aguda, después de oírlo solo una vez.",
+    "variante": {
+      "titulo": "Acorde humano",
+      "texto": "Tres niños delante de la clase, cada uno con una nota: do, mi y sol. El maestro señala a uno, a dos o a los tres, cantan a la vez y la clase cuenta. Luego señala a un niño para que ordene el acorde: quién es el grave, quién el agudo. Se cambian los papeles hasta que todos hayan cantado."
+    },
+    "ideas": [
+      "Escuchar un fragmento coral o de cuerda y levantar tantos dedos como voces se distinguen; comparar lo que ha contado cada uno y volver a oírlo.",
+      "Construir acordes en el metalófono con tres láminas y quitar una: ¿cuál falta? Oír las dos que quedan y decir cuál se ha ido.",
+      "Cantar un canon a dos voces y parar a mitad: ¿cuántas notas están sonando en ese instante?"
+    ],
+    "loTiene": [
+      "Distingue una nota sola de un acorde de tres a la primera escucha.",
+      "Canta la nota grave y la aguda de una pareja antes de contestar.",
+      "Enseña con los dedos su respuesta sin mirar antes lo que hacen los demás."
+    ],
+    "errores": [
+      {
+        "error": "Contesta «tres» a todo lo que suena lleno, también a las parejas",
+        "remedio": "oír seguidos do-sol y do-mi-sol y cantar la nota del medio: si no la encuentra, eran dos."
+      },
+      {
+        "error": "Oye la quinta (do-sol) o la octava como una sola nota",
+        "remedio": "que cante primero la grave y luego la aguda, sin la app: son dos sitios distintos en la voz."
+      },
+      {
+        "error": "Contesta en el primer instante, sin cantar nada",
+        "remedio": "pedir que repita el sonido con el botón y cante al menos la nota grave antes de tocar."
+      }
+    ],
+    "indicadores": [
+      "Una o tres",
+      "Canta las notas",
+      "Decide solo"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

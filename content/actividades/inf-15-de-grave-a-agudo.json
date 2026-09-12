@@ -101,6 +101,80 @@
   "pistas": [
     "actividad.c103.pista1"
   ],
+  "ficha": {
+    "aprende": "Ordenar tres campanas de la más grave a la más aguda solo de oído, sin que el color diga nada, y comprobar el orden al acabar.",
+    "vocabulario": [
+      "grave",
+      "agudo",
+      "hondo",
+      "finito",
+      "campana",
+      "ordenar",
+      "primero",
+      "escuchar"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet",
+    "material": "Ninguno. Sin pantalla, tres láminas sueltas de metalófono o tres vasos con agua.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Hondo y finito con la voz.",
+        "detalle": "El maestro canta una nota honda, agachado, y una finita, de puntillas. Los niños imitan. Después una en medio, de pie: tres alturas, tres posturas."
+      },
+      {
+        "min": 1,
+        "titulo": "Primera ronda en la app.",
+        "detalle": "Tocar las tres campanas, las veces que haga falta, y decir cuál es la más honda antes de colocar nada. Después, campana y hueco: la grave a la izquierda, luego las otras dos."
+      },
+      {
+        "min": 1,
+        "titulo": "Segunda ronda y comprobar.",
+        "detalle": "Otras tres campanas. Con las tres puestas, escucharlas seguidas: ¿suben? Si no, se cambian de sitio sin más. Revisar antes de dar por bueno es lo que se aprende aquí."
+      },
+      {
+        "min": 1,
+        "titulo": "Con las láminas.",
+        "detalle": "Tres láminas de metalófono desordenadas sobre la mesa. Un niño las toca y las coloca de la más grave a la más aguda; la clase las toca en orden y dice si suben."
+      }
+    ],
+    "enPantalla": "Tres campanas de colores arriba y tres huecos abajo. Al tocar una campana suena; se pueden escuchar tantas veces como haga falta. El niño toca una campana y después el hueco donde va, empezando por la más grave a la izquierda. Nada dice cuál es cuál: el color no ayuda, solo el oído. Con las tres puestas, se escuchan seguidas: si suben de grave a agudo, bien; si no, se pueden volver a colocar sin que pase nada. Dos rondas con campanas distintas y termina.",
+    "sinPantalla": "Tres láminas sueltas de un metalófono, o tres vasos iguales con distinta cantidad de agua, desordenados sobre la mesa. Se tocan con una baqueta o una cucharilla y se colocan en fila de la más honda a la más finita. Después se tocan en orden para oír que suben. Con niños en vez de láminas: tres niños cantan una nota cada uno, honda, media y finita, y la clase los coloca en fila.",
+    "masFacil": "Solo dos campanas: ¿cuál suena más hondo? Esa va primero. Sin pantalla, deja ya colocada la más grave y que el niño ponga las otras dos; ordenar el medio es mucho más fácil que ordenar desde cero. Acompaña cada campana con el cuerpo: agachado para la grave, de puntillas para la aguda.",
+    "masDificil": "Cuatro o cinco láminas en vez de tres, y más juntas de altura, para que haya que escuchar dos veces. Ordenar al revés, de la más aguda a la más grave. O el juego a ciegas: un niño toca las tres campanas en un orden, y otro, sin haber visto nada, dice si iban subiendo, bajando o mezcladas.",
+    "variante": {
+      "titulo": "Tres niños, tres campanas",
+      "texto": "Tres niños de pie, cada uno con una lámina de metalófono distinta, tocan por turnos. La clase decide quién va a la izquierda, quién en medio y quién a la derecha, y los tres se mueven de sitio. Después tocan en fila y todos escuchan si la escalera sube. Ordenar con el cuerpo se entiende antes que ordenar con el dedo."
+    },
+    "ideas": [
+      "Hacer las campanas con botellas de cristal y agua: cambiar el agua hasta que salgan tres alturas claras y ordenarlas.",
+      "Ordenar las voces de la clase: tres niños dicen «hola» y se colocan del más hondo al más finito.",
+      "Dibujar tres campanas en escalera, la grave abajo y la aguda arriba, y cantarlas señalando el dibujo."
+    ],
+    "loTiene": [
+      "Escucha las tres campanas antes de colocar la primera.",
+      "Pone la más honda a la izquierda sin fijarse en el color.",
+      "Vuelve a tocarlas en orden al acabar para comprobar que suben."
+    ],
+    "errores": [
+      {
+        "error": "Ordena por el color y no escucha",
+        "remedio": "que cierre los ojos mientras el maestro toca las tres, y que diga cuál es la honda antes de abrirlos."
+      },
+      {
+        "error": "Coloca la primera campana que toca sin oír las demás",
+        "remedio": "regla de la mesa: se tocan las tres, se dice «esta es la más honda» y solo entonces se coloca."
+      },
+      {
+        "error": "Confunde grave con fuerte",
+        "remedio": "tocar la campana aguda muy fuerte y la grave muy flojito: lo hondo no depende de cuánto suene."
+      }
+    ],
+    "indicadores": [
+      "Escucha las tres",
+      "Grave a agudo",
+      "Comprueba"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

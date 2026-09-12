@@ -39,6 +39,84 @@
     "actividad.c314.pista1",
     "actividad.c314.pista2"
   ],
+  "ficha": {
+    "aprende": "Recordar un ritmo de hasta diez golpes que ha tocado un compañero y repetirlo entero, partiéndolo en dos mitades para acordarse.",
+    "vocabulario": [
+      "eco",
+      "golpe",
+      "mitad",
+      "memoria",
+      "parejas",
+      "más rápido",
+      "igual"
+    ],
+    "agrupamiento": "Por parejas, dos niños en la misma tablet",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Reglas del eco.",
+        "detalle": "Uno propone y el otro repite. El que repite escucha entero antes de empezar. Se puede volver a oír el modelo. Empezar más tarde no importa: lo que cuenta es la forma."
+      },
+      {
+        "min": 2,
+        "titulo": "Calentar con cuatro.",
+        "detalle": "Los primeros ecos, de cuatro golpes, para coger la caja china de la pantalla y el turno. Se cambian los papeles cada dos ecos."
+      },
+      {
+        "min": 4,
+        "titulo": "Hasta diez golpes.",
+        "detalle": "Ahora ritmos largos. El que repite parte el ritmo en dos mitades de cabeza: primero recuerda la primera, luego la segunda. Si la pantalla dice que es igual pero más rápido, es acierto."
+      },
+      {
+        "min": 3,
+        "titulo": "Escuchar el resultado.",
+        "detalle": "Después de cada eco, mirar juntos qué ha dicho la pantalla: igual, casi, o más rápido. Si no ha salido, se propone otra vez el mismo ritmo, no otro."
+      },
+      {
+        "min": 2,
+        "titulo": "Cadena en clase.",
+        "detalle": "Tres o cuatro parejas seguidas con palmas, sin pantalla: el que repitió propone al siguiente. Ver cómo llega el ritmo al final."
+      }
+    ],
+    "enPantalla": "Dos niños en la misma tablet, por turnos: uno toca un ritmo de hasta diez golpes en la caja china de la pantalla y el otro lo repite tocando el mismo botón. La pantalla compara las dos ejecuciones entre sí, no contra un modelo, y cada una se ancla a su primer golpe, así que empezar más tarde no importa. Si el ritmo es igual pero más rápido, lo dice y cuenta como acierto. Se puede volver a escuchar el modelo. El resultado es de la pareja, no de uno.",
+    "sinPantalla": "Eco de palmas por parejas o en corro: uno palmea hasta diez golpes y el otro lo repite. Con claves o cajas chinas del aula suena igual que en la pantalla. Lo que la pantalla añade, volver a oír el modelo, lo hace el que propone repitiéndolo si se lo piden. En corro, el ritmo pasa de uno a otro alrededor del círculo y se ve cómo cambia de mano en mano.",
+    "masFacil": "Bajar a cinco o seis golpes, y que quien propone los haga muy separados: con huecos largos, repetir es contar, y contar sí se puede. Que el que repite diga «ta» en cada golpe mientras escucha. Y que proponga primero el maestro, con ritmos que se puedan decir con palabras: «cho-co-la-te, cho-co-la-te, pan».",
+    "masDificil": "Diez golpes con silencios largos en medio, que son lo que más cuesta recordar. Repetir sin volver a oír el modelo. Y el eco al revés: el que repite lo hace más lento a propósito, manteniendo la forma, y la pantalla tiene que decir que es igual.",
+    "variante": {
+      "titulo": "Cadena de tres",
+      "texto": "Tres niños: el primero propone al segundo, y el segundo, sin volver a oír el original, propone al tercero lo que acaba de repetir. Se compara el ritmo del tercero con el del primero: casi siempre se ha deformado, y ver dónde es media lección sobre por qué se escribe la música."
+    },
+    "ideas": [
+      "Escribir el ritmo propuesto en la pizarra con puntos y rayas antes de repetirlo, y ver si escrito se recuerda mejor.",
+      "Ecos con palabras: palmear una frase de diez sílabas y que el otro adivine la frase solo por el ritmo.",
+      "Eco de timbres: el mismo ritmo, pero el que repite cambia de sonido corporal en la segunda mitad."
+    ],
+    "loTiene": [
+      "Espera a que el compañero acabe antes de empezar a repetir.",
+      "Repite entero un ritmo de ocho o diez golpes, aunque sea más rápido o más lento.",
+      "Dice en qué mitad se ha despistado cuando no sale, sin que se lo digan."
+    ],
+    "errores": [
+      {
+        "error": "Empieza a repetir antes de que el otro acabe",
+        "remedio": "que cuente en silencio dos pulsos después del último golpe antes de tocar: es de escucha, no de ritmo."
+      },
+      {
+        "error": "Repite bien la primera mitad y en la segunda inventa",
+        "remedio": "volver a oír el modelo y repetir solo la segunda mitad; después juntar las dos."
+      },
+      {
+        "error": "El que propone toca tan rápido que ni él mismo lo repetiría",
+        "remedio": "pedirle que lo diga con «ta» antes de tocarlo: si no lo puede decir, no lo puede proponer."
+      }
+    ],
+    "indicadores": [
+      "Escucha entero",
+      "Diez golpes",
+      "Sabe dónde"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

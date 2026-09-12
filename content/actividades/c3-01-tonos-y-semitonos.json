@@ -40,6 +40,89 @@
   "pistas": [
     "actividad.c301.pista1"
   ],
+  "ficha": {
+    "aprende": "Construir la escala de do mayor en el teclado siguiendo el patrón tono, tono, semitono, tono, tono, tono, semitono, y saber que los semitonos caen en mi-fa y si-do porque ahí no hay tecla negra.",
+    "vocabulario": [
+      "tono",
+      "semitono",
+      "escala",
+      "do mayor",
+      "tecla negra",
+      "patrón",
+      "tónica"
+    ],
+    "agrupamiento": "Grupo clase con proyector; después individual en tablet",
+    "material": "Ninguno. Un metalófono o un teclado del aula, si lo hay, para el paso final.",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Mirar el teclado.",
+        "detalle": "Proyecta el teclado y pregunta dónde hay teclas negras y dónde no: entre mi y fa no hay, entre si y do tampoco. Ahí está la lección entera; el resto es contar."
+      },
+      {
+        "min": 2,
+        "titulo": "Medir con la mano.",
+        "detalle": "Un semitono es la tecla de al lado, contando las negras. Un tono deja una en medio. Que lo señalen con dos dedos en el teclado proyectado: do-do sostenido es semitono, do-re es tono."
+      },
+      {
+        "min": 2,
+        "titulo": "El patrón en voz alta.",
+        "detalle": "Tono, tono, semitono, tono, tono, tono, semitono. Se dice a coro dando un golpe grande en «tono» y uno pequeño en «semitono», hasta que salga sin mirar."
+      },
+      {
+        "min": 5,
+        "titulo": "Construirla.",
+        "detalle": "Cada niño empieza en do y sigue el patrón. La pauta se escribe sola y entre nota y nota aparece si el paso fue tono o semitono. Si un paso no sigue el patrón, la app avisa y se vuelve a empezar en do: es información, no un juicio."
+      },
+      {
+        "min": 2,
+        "titulo": "Comprobar.",
+        "detalle": "Han salido todas blancas. ¿Dónde estaban los semitonos? En mi-fa y si-do, justo donde no hay negra. Que lo digan ellos."
+      },
+      {
+        "min": 2,
+        "titulo": "Tocarla en un instrumento.",
+        "detalle": "En un metalófono o teclado del aula, la escala de do subiendo y bajando, cantando los nombres. Lo que se ha construido, se toca."
+      }
+    ],
+    "enPantalla": "Un teclado de piano de dos octavas y una pauta vacía encima. El niño empieza en do y va tocando teclas: cada nota que sigue el patrón se escribe sola en la pauta, y entre una y otra aparece «tono» o «semitono». Si toca una tecla que no sigue el patrón de do mayor, suena igual, se ve el paso que ha dado y la app avisa de que se vuelve a empezar en do. No hay tiempo ni puntuación: termina cuando la escala llega al do de arriba con las ocho notas escritas.",
+    "sinPantalla": "Dibuja el teclado en la pizarra, con sus negras, y señala dónde no hay tecla negra: entre mi y fa, entre si y do. Con un metalófono, tapa con cinta las láminas que no son de do mayor y que suban la escala diciendo «tono» o «semitono» en cada paso. También con la clase de pie en fila: cada niño es una tecla, los de las negras un paso atrás, y se recorre la escala tocando el hombro de cada uno; donde no hay nadie atrás, el paso es un semitono.",
+    "masFacil": "Quédate en una octava y deja el patrón escrito en la pizarra, con los dos semitonos rodeados. Que digan el paso en voz alta antes de tocar la tecla: «tono», y buscan la tecla que deja una en medio. Si aun así se atascan en mi-fa, pon el dedo en el hueco del teclado donde no hay negra: la escala pasa por ahí sin saltar. Y construye tú la primera vez en el proyector, despacio, mientras ellos cantan el patrón.",
+    "masDificil": "La misma escala empezando en sol: al llegar al séptimo paso hace falta una negra, el fa sostenido, y ahí se descubre que es un patrón y no una lista de teclas blancas. Después en fa, donde hace falta el si bemol. Y que escriban en la pauta, sin teclado, dónde caen los semitonos de la escala de sol antes de comprobarlo tocando.",
+    "variante": {
+      "titulo": "Con los pies",
+      "texto": "Sin teclado, de pie: cada niño es una nota de la escala, en fila de do a do. Los que están a un tono del anterior dan un paso largo; los que están a un semitono, mi-fa y si-do, un paso corto, casi pegados. Se recorre la fila cantando y se ve la escala desigual: siete pasos y dos son más pequeños."
+    },
+    "ideas": [
+      "Buscar los semitonos de oído: tocar dos láminas seguidas en el metalófono y que digan si el paso es largo o corto antes de mirar.",
+      "Construir la escala de sol en la pizarra entre todos y descubrir por qué hace falta el fa sostenido.",
+      "Cantar la escala con los nombres subiendo y bajando cada mañana durante una semana, y al final cantarla sin instrumento y comprobar con el teclado si ha llegado al do de arriba."
+    ],
+    "loTiene": [
+      "Construye la escala de do sin que la app le avise ninguna vez.",
+      "Explica que mi-fa y si-do son semitonos porque no hay tecla negra entre ellas.",
+      "Dice el patrón entero de memoria, con los dos semitonos en su sitio."
+    ],
+    "errores": [
+      {
+        "error": "Toca la negra entre mi y fa porque cuenta siempre una tecla en medio",
+        "remedio": "mirar el teclado antes de tocar: entre mi y fa no hay negra, así que el paso corto va de blanca a blanca."
+      },
+      {
+        "error": "Cuenta por nombres, do-re-mi, sin mirar la distancia",
+        "remedio": "que ponga dos dedos en el teclado y mida cuántas teclas hay en medio en cada paso."
+      },
+      {
+        "error": "Se desanima al volver a empezar en do",
+        "remedio": "decirle que la app solo le enseña dónde estaba el paso; que cante el patrón hasta ese punto y siga."
+      }
+    ],
+    "indicadores": [
+      "Escala completa",
+      "Sabe dónde no hay negra",
+      "Patrón de memoria"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

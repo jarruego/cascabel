@@ -89,6 +89,84 @@
   "pistas": [
     "actividad.c202.pista1"
   ],
+  "ficha": {
+    "aprende": "Escuchar un ritmo de ocho pulsos y escribirlo en una cuadrícula contando «uno, dos, tres, cuatro» para saber en qué pulso cae cada golpe.",
+    "vocabulario": [
+      "pulso",
+      "golpe",
+      "silencio",
+      "dictado",
+      "casilla",
+      "contar",
+      "ocho pulsos"
+    ],
+    "agrupamiento": "Grupo clase con proyector, o parejas en tablet",
+    "material": "Ninguno. Para la parte sin pantalla, pizarra y gomets",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Ocho pulsos, dos veces cuatro.",
+        "detalle": "Todos marcan el pulso con el pie contando «uno, dos, tres, cuatro» dos veces. Explica que la cuadrícula tiene ocho columnas, una por pulso, y dos filas: sonido alto y sonido bajo."
+      },
+      {
+        "min": 1,
+        "titulo": "Palmear el dictado.",
+        "detalle": "Suena el primer ritmo dos veces. La clase lo palmea encima, contando con los dedos en qué pulsos cae golpe y en cuáles hay silencio."
+      },
+      {
+        "min": 2,
+        "titulo": "Colocarlo.",
+        "detalle": "Un niño toca las casillas donde cae golpe. Se escucha en bucle y se compara con el dictado: si sobra o falta un golpe, se cambia esa casilla. Contar en voz alta al escuchar."
+      },
+      {
+        "min": 1,
+        "titulo": "Segundo y tercer dictado.",
+        "detalle": "Otros niños. Cada dictado reparte los golpes de otra manera; que digan antes de tocar cuántos golpes han contado y en qué pulsos hay silencio."
+      },
+      {
+        "min": 1,
+        "titulo": "Leer lo escrito.",
+        "detalle": "Palmear los tres dictados mirando solo la cuadrícula, contando «uno, dos, tres, cuatro» y callando en los silencios."
+      }
+    ],
+    "enPantalla": "Una cuadrícula de ocho columnas, una por pulso, y dos filas, un sonido alto y otro bajo. Suena un ritmo de ocho pulsos y el niño toca las casillas donde cae cada golpe; cada casilla suena al tocarla. Puede oír en bucle lo que ha puesto y compararlo con el dictado. Si no coincide, el personaje sugiere contar los pulsos «uno, dos, tres, cuatro», y se añade o se quita la casilla que haga falta sin empezar de cero. Cuando cuadra, viene el siguiente. Son tres dictados, y cada uno reparte los golpes de otra forma.",
+    "sinPantalla": "En la pizarra, ocho casillas en fila numeradas del uno al ocho (o dos veces del uno al cuatro). Palmea un ritmo de ocho pulsos dos veces mientras la clase cuenta. Salen niños a pegar un gomet en las casillas donde han oído golpe. Después toda la clase lo palmea leyendo la pizarra y se compara con el tuyo. Si hay un golpe de más o de menos, se mueve el gomet y se vuelve a palmear.",
+    "masFacil": "Cuatro pulsos en lugar de ocho: dicta solo la primera mitad y que la coloquen; luego la segunda. Cuenta tú en voz alta mientras suena la app la primera vez. Y deja marcado el primer pulso, que casi siempre lleva golpe, para que sepan por dónde empezar.",
+    "masDificil": "Una sola escucha y a colocar, sin bucle. Que digan el ritmo con sílabas («ta» en cada golpe, «sh» en cada silencio) antes de tocar. Que uno invente un ritmo de ocho pulsos en la cuadrícula y lo palmee para que otro lo escriba en la pizarra. Y con las dos filas: un ritmo de palmas arriba y otro de pies abajo, a la vez.",
+    "variante": {
+      "titulo": "Con el cuerpo",
+      "texto": "Ocho niños en fila son los ocho pulsos. Suena el dictado y cada uno decide si en su pulso hay golpe (da una palmada y se queda de pie) o silencio (se agacha). La clase lee la fila de izquierda a derecha palmeando y contando. Después se cambian los ocho y se dicta otro ritmo."
+    },
+    "ideas": [
+      "Escribir el ritmo del nombre de cada niño en ocho casillas y palmearlo: «Ma-rí-a» son tres golpes seguidos y luego silencio.",
+      "Escribir un ritmo de ocho pulsos en la cuadrícula y tocarlo con instrumentos de aula: claves en la fila de arriba, pandero en la de abajo.",
+      "Dictado inverso: un niño palmea ocho pulsos y el maestro lo escribe en la pizarra; la clase dice si está bien."
+    ],
+    "loTiene": [
+      "Cuenta «uno, dos, tres, cuatro» mientras escucha y sabe en qué pulso ha caído cada golpe.",
+      "Deja vacías las casillas de silencio sin rellenarlas por inercia.",
+      "Escucha lo que ha puesto y quita o añade una casilla él solo."
+    ],
+    "errores": [
+      {
+        "error": "Pone un golpe en todas las casillas porque el pulso sigue sonando",
+        "remedio": "palmear el dictado con la boca cerrada en los golpes y «sh» en los silencios, y contar los «sh»."
+      },
+      {
+        "error": "Coloca los golpes bien pero corridos un pulso a la derecha",
+        "remedio": "tocar la primera casilla a la vez que empieza el dictado y contar desde ahí."
+      },
+      {
+        "error": "Cuenta los golpes pero no en qué pulso caen: sabe que son cinco y los reparte al azar",
+        "remedio": "escuchar con los dedos: levantar uno por pulso y cerrar los que llevan golpe."
+      }
+    ],
+    "indicadores": [
+      "Cuenta pulsos",
+      "Respeta silencios",
+      "Comprueba"
+    ]
+  },
   "etiquetas": [
     "dictado rítmico",
     "cuadrícula",

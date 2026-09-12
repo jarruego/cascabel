@@ -141,6 +141,79 @@
   "pistas": [
     "actividad.c232.pista1"
   ],
+  "ficha": {
+    "aprende": "Oír un pulso que no se queda quieto y decir si cada vez va más deprisa (accelerando) o cada vez más despacio (ritardando).",
+    "vocabulario": [
+      "tempo",
+      "acelera",
+      "frena",
+      "accelerando",
+      "ritardando",
+      "más deprisa",
+      "más despacio"
+    ],
+    "agrupamiento": "Toda la clase de pie, después individual en tablet",
+    "material": "Ninguno. Un pandero si se hace sin pantalla",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Andar al pulso.",
+        "detalle": "De pie, tú marcas el pulso con el pandero y ellos andan. Sin avisar, ve cada vez más deprisa hasta que casi corren; luego frena hasta que apenas se mueven. Preguntar qué ha pasado."
+      },
+      {
+        "min": 1,
+        "titulo": "Ponerle nombre.",
+        "detalle": "Cuando va cada vez más deprisa, acelera: los músicos escriben accelerando. Cuando va cada vez más despacio, frena: ritardando. Las dos palabras en la pizarra, con una flecha que se abre y otra que se cierra."
+      },
+      {
+        "min": 1,
+        "titulo": "Oír con el proyector.",
+        "detalle": "Suenan los clics y la clase anda al ritmo en el sitio. Se nota en los pies antes que en la cabeza. Un niño toca el botón."
+      },
+      {
+        "min": 2,
+        "titulo": "Jugar en tablet,",
+        "detalle": "de uno en uno. Marcar el pulso con el pie mientras suena y tocar después. Si no es, el personaje da una pista y se vuelve a elegir. Seis y termina."
+      }
+    ],
+    "enPantalla": "Suena un pulso de clics que no se queda quieto: unas veces cada clic llega antes que el anterior y acaba muy deprisa; otras, cada clic tarda más y acaba casi parado. Debajo hay dos botones grandes: acelera y frena. El niño puede volver a oírlo con el botón de repetir y toca uno. Si no es, el personaje le propone andar al ritmo de los clics y puede volver a elegir; si acierta, «¡bien!» y viene el siguiente. Empiezan a velocidades distintas: se escucha el cambio, no la salida. Seis y termina, sin puntuación.",
+    "sinPantalla": "Tú con el pandero: pulso que acelera o que frena, y ellos andan por el aula siguiéndolo. Al parar, levantan un brazo si ha acelerado y lo bajan si ha frenado. Con dos tarjetas en el suelo, la flecha que se abre y la que se cierra, se pisa una. Después que lo hagan ellos: un niño con el pandero decide y la clase anda; se ve enseguida si ha sido claro.",
+    "masFacil": "Exagera: un acelerando que acabe corriendo y un ritardando que acabe casi parado, y siempre desde la misma velocidad de salida. Andar siempre mientras suena, en el sitio si no hay espacio: las piernas lo notan. Y decir las dos opciones en voz alta antes de cada uno: «¿acelera o frena?».",
+    "masDificil": "Pulsos que cambian menos, casi sin notarse, y decidir con una sola escucha y sin moverse. O que canten una canción conocida acelerando poco a poco y luego frenando, dirigidos por un niño. También que escuchen el final de una pieza de verdad y levanten la mano cuando empiece a frenar: casi todas lo hacen.",
+    "variante": {
+      "titulo": "El tren",
+      "texto": "La clase en fila, como un tren, con las manos en los hombros del de delante. Tú marcas el pulso con el pandero: el tren arranca despacio y acelera hasta ir deprisa, luego frena hasta pararse en la estación. Nadie puede chocar ni soltarse: hay que escuchar el pandero, no al de delante. Se cambia de maquinista, y el maquinista decide cuándo acelera y cuándo frena."
+    },
+    "ideas": [
+      "Escuchar el final de una pieza y decir si frena antes de acabar; casi todas lo hacen, y ahora se puede oír.",
+      "Cantar una canción de corro empezando muy lento y acelerando hasta que no se puede más, y volver a empezar.",
+      "Dibujar un acelerando como puntos cada vez más juntos y un ritardando como puntos cada vez más separados."
+    ],
+    "loTiene": [
+      "Dice acelera o frena tras oír los clics enteros, sea cual sea la velocidad de salida.",
+      "Anda al ritmo y cambia de velocidad con los clics, sin adelantarse.",
+      "Usa las palabras accelerando y ritardando cuando se le pregunta."
+    ],
+    "errores": [
+      {
+        "error": "Dice acelera cuando los clics empiezan rápidos, aunque frenen",
+        "remedio": "oír dos rondas que empiecen igual y acaben distinto; fijarse en el final, no en el principio."
+      },
+      {
+        "error": "Se adelanta al pulso cuando acelera y llega antes que el clic",
+        "remedio": "andar solo cuando suena el clic, como si el suelo quemara entre uno y otro."
+      },
+      {
+        "error": "Toca antes de que los clics hayan cambiado",
+        "remedio": "contar con el pie hasta el último clic y decidir después; el cambio se nota al final."
+      }
+    ],
+    "indicadores": [
+      "Acelera o frena",
+      "Anda al pulso",
+      "Las palabras"
+    ]
+  },
   "creditos": [
     {
       "obra": "Iconos",

@@ -97,6 +97,84 @@
   "pistas": [
     "actividad.c310.pista1"
   ],
+  "ficha": {
+    "aprende": "Recordar y repetir con palmas un ritmo de doce pulsos partiéndolo en tres trozos de cuatro, con negras, corcheas, un silencio, una síncopa y un contratiempo.",
+    "vocabulario": [
+      "pulso",
+      "cuatro y cuatro y cuatro",
+      "síncopa",
+      "contratiempo",
+      "silencio",
+      "eco",
+      "memoria"
+    ],
+    "agrupamiento": "Toda la clase de pie; después individual en tablet",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "El pulso con el pie.",
+        "detalle": "De pie, pulso a 92 con la pantalla. Que lo lleven con el pie y cuenten en voz alta uno-dos-tres-cuatro tres veces seguidas: eso es un ritmo de doce, tres trozos de cuatro."
+      },
+      {
+        "min": 2,
+        "titulo": "Eco de cuatro.",
+        "detalle": "Palmea tú un trozo de cuatro pulsos y que lo repitan. Mete un silencio («sh») y una síncopa («ti-ta-ti»): cada trozo, dos veces."
+      },
+      {
+        "min": 3,
+        "titulo": "Primer ritmo en la pantalla.",
+        "detalle": "Suena el ritmo entero y se repite con palmas. Antes de palmear, que lo digan con las sílabas mirando los puntos: ta, ti-ti, ta, sh… Quien lo dice entero lo palmea entero."
+      },
+      {
+        "min": 3,
+        "titulo": "Segundo y tercero.",
+        "detalle": "Mismas figuras, otro orden. Que busquen dónde ha caído ahora la síncopa y dónde el silencio antes de repetir: lo que cambia es el sitio, no las figuras."
+      },
+      {
+        "min": 1,
+        "titulo": "Mirar el resumen.",
+        "detalle": "Ver dónde han entrado en verde. Si van todos un poco tarde, no es de ritmo: es de entrar. Se repite uno con el pie marcando desde antes."
+      }
+    ],
+    "enPantalla": "Suena un ritmo de doce pulsos, con negras, corcheas, un silencio, una síncopa y un contratiempo, y el niño lo repite con palmas ante el micrófono o tocando el botón grande. Cada golpe es un punto en fila; los que entran a tiempo se encienden en verde y los demás quedan en gris, nunca en rojo. Se puede volver a oír el modelo. Tres ritmos con las mismas figuras en otro orden, y al final un resumen que dice si se ha ido por delante o por detrás. Si el micrófono no va, se toca en la pantalla y vale igual.",
+    "sinPantalla": "Eco de palmas de doce pulsos: tú palmeas un ritmo con las sílabas en la boca (ta, ti-ti, sh, ti-ta-ti, sh-ti) y la clase lo repite. Primero de cuatro en cuatro, luego dos trozos seguidos, luego los tres. Un niño con claves lleva el pulso para todos. Y después, ellos proponen: cada uno un trozo de cuatro, y la clase repite los doce.",
+    "masFacil": "Repetir solo el primer trozo de cuatro, después el segundo, y solo cuando salen sueltos, dos seguidos. Bajar el tempo. Decir el ritmo con las sílabas antes de palmear: lo que no se puede decir no se puede tocar. El silencio se dice «sh» en voz alta hasta que se aguante callado.",
+    "masDificil": "Repetirlo con el pie llevando el pulso a la vez, o cambiar de sonido por trozo: uno con palmas, otro con muslos, otro con pies. Escucharlo una sola vez y repetirlo sin volver a oírlo. Y hacerlo de espaldas a la pantalla, solo de oído.",
+    "variante": {
+      "titulo": "En cadena",
+      "texto": "Tres niños, un trozo de cuatro cada uno: el primero palmea los cuatro primeros pulsos, el segundo sigue con los cuatro siguientes y el tercero acaba. La clase escucha si suena como uno solo. Después se cambian de trozo: quien tenía la síncopa pasa a tener el silencio."
+    },
+    "ideas": [
+      "Escribir el ritmo de doce en la pizarra con las figuras y que la clase lo lea y lo palmee antes de oírlo: leer primero, oír después.",
+      "Inventar por parejas un ritmo de doce con al menos un silencio y una síncopa, y que otra pareja lo repita.",
+      "Poner el ritmo de doce a una frase de doce sílabas inventada por la clase y decirla palmeando."
+    ],
+    "loTiene": [
+      "Repite los doce pulsos sin volver a escuchar el modelo.",
+      "Aguanta el silencio sin adelantar el golpe siguiente.",
+      "La síncopa le cae entre dos pulsos, no encima de uno."
+    ],
+    "errores": [
+      {
+        "error": "Repite bien el primer trozo y en el segundo se queda callado",
+        "remedio": "decir el ritmo con las sílabas de cuatro en cuatro, y palmear el segundo trozo solo hasta que salga."
+      },
+      {
+        "error": "Rellena el silencio con una palmada",
+        "remedio": "decir «sh» en voz alta en el silencio mientras las manos se quedan abiertas y quietas."
+      },
+      {
+        "error": "Entra siempre un poco tarde, con todos los golpes igual de tarde",
+        "remedio": "contar los cuatro pulsos antes en voz alta y levantar las manos en el cuatro: es de entrar, no de ritmo."
+      }
+    ],
+    "indicadores": [
+      "Los doce de memoria",
+      "Aguanta el silencio",
+      "Síncopa entre pulsos"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

@@ -315,6 +315,85 @@
     "actividad.c324.pista1",
     "actividad.c324.pista2"
   ],
+  "ficha": {
+    "aprende": "Reconocer siete melodías famosas tocadas al piano y decir quién las escribió: Beethoven, Mozart, Bach, Brahms, Grieg o Tárrega.",
+    "vocabulario": [
+      "compositor",
+      "melodía",
+      "himno de la alegría",
+      "para elisa",
+      "serenata",
+      "nana",
+      "preludio",
+      "arpegio"
+    ],
+    "agrupamiento": "Grupo clase con proyector; después por parejas en tablet",
+    "material": "Ninguno",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Presentar a los seis.",
+        "detalle": "Seis nombres en la pizarra con una palabra cada uno: Beethoven (el Himno, Para Elisa), Mozart (la serenata), Bach (arpegios), Brahms (la nana), Grieg (la mañana en el campo), Tárrega (guitarra, español)."
+      },
+      {
+        "min": 2,
+        "titulo": "Escuchar sin responder.",
+        "detalle": "Pon las melodías proyectadas una vez, solo para tararearlas. Preguntar cuáles han oído antes y dónde: dibujos, anuncios, el móvil."
+      },
+      {
+        "min": 3,
+        "titulo": "Adivinar en grupo.",
+        "detalle": "Vuelta proyectada: se escucha, se tararea con «la», y se vota levantando la mano antes de que uno toque el botón."
+      },
+      {
+        "min": 2,
+        "titulo": "Por parejas.",
+        "detalle": "En tablet, cada pareja hace una vuelta. El que toca tiene que decir el nombre del compositor en voz alta antes de tocar."
+      },
+      {
+        "min": 1,
+        "titulo": "Una para cantar.",
+        "detalle": "Cierra cantando el Himno de la alegría con «la», que es la que todos se llevan."
+      }
+    ],
+    "enPantalla": "Suena una melodía al piano, simplificada a una sola voz, y aparecen seis botones con los nombres: Beethoven, Mozart, Bach, Brahms, Grieg y Tárrega. El niño toca el que cree. Si no es, el personaje da una pista (el Himno de la alegría y Para Elisa son de Beethoven; la nana, de Brahms…) y la melodía vuelve a sonar para elegir otra vez; si es, «¡bien!» y viene otra. Se puede repetir la escucha siempre. Siete melodías en vueltas de cinco, sin tiempo ni puntuación.",
+    "sinPantalla": "Tararea tú o toca en el teclado el principio de cada melodía (bastan cuatro compases del Himno de la alegría, de Para Elisa, de la nana de Brahms) y pon en el suelo seis tarjetas con los nombres, o con el retrato. Los niños se colocan junto al compositor. Si no sabes tocarlas, sirve la propia voz con «la-la»: lo que se reconoce es el dibujo de la melodía, no el instrumento.",
+    "masFacil": "Quédate con tres compositores: Beethoven (el Himno y Para Elisa), Mozart (la serenata) y Brahms (la nana). Antes de cada escucha, di los tres nombres en voz alta y tararea el comienzo de cada una. Cuando las tres estén seguras, entran Grieg, Bach y Tárrega de uno en uno.",
+    "masDificil": "Toca o tararea tú solo las tres primeras notas y que digan la melodía y el compositor. O al revés: dar el nombre del compositor y que canten una melodía suya. Y pedir que expliquen por qué la del Preludio de Bach suena a arpegios y la de Tárrega a guitarra, aunque aquí las toque el piano.",
+    "variante": {
+      "titulo": "Concurso de tarareo",
+      "texto": "Por grupos: uno tararea una de las siete melodías y su grupo dice el título y el compositor. Todos los grupos pasan por todas; no se cuenta quién acierta más, se cuenta cuántas sabe la clase entera al final. Acaba cantando la que más ha gustado."
+    },
+    "ideas": [
+      "Escuchar cada melodía en su versión original (orquesta, piano, guitarra) y comparar con la del piano de la app: ¿se reconoce igual?",
+      "Situar a los seis compositores en la línea del tiempo del aula: Bach el primero, Grieg y Tárrega los últimos.",
+      "Aprender el Himno de la alegría con la flauta o el metalófono: usa solo cinco notas seguidas, de do a sol, y sale en dos sesiones."
+    ],
+    "loTiene": [
+      "Reconoce el Himno de la alegría y Para Elisa como de Beethoven en cuanto empiezan.",
+      "Tararea el comienzo de al menos tres melodías del juego con su compositor.",
+      "Escucha la melodía entera antes de tocar el nombre, aunque crea saberla."
+    ],
+    "errores": [
+      {
+        "error": "Toca un nombre en cuanto suena la primera nota, a ver si acierta",
+        "remedio": "que tararee la melodía entera con «la» antes de elegir; si no la puede tararear, que la repita."
+      },
+      {
+        "error": "Confunde a Bach y Mozart, que son los dos «antiguos»",
+        "remedio": "fijar el arpegio: si sube nota a nota como una escalera de acordes, es el Preludio de Bach."
+      },
+      {
+        "error": "Sabe la melodía pero no el nombre del compositor",
+        "remedio": "unir cada melodía a un retrato del compositor en la pizarra y tararearla señalándolo."
+      }
+    ],
+    "indicadores": [
+      "Reconoce",
+      "Tararea",
+      "Escucha entera"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

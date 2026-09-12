@@ -57,6 +57,66 @@
     "actividad.c303e.pista1",
     "actividad.c303e.pista2"
   ],
+  "ficha": {
+    "aprende": "Sirve para componer una melodía con la escala completa y llevársela como fichero MIDI o MusicXML, para abrirla en un editor de partituras y verla escrita con figuras.",
+    "vocabulario": [
+      "melodía",
+      "casilla",
+      "pulso",
+      "nota larga",
+      "escala",
+      "partitura",
+      "guardar",
+      "editor"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet u ordenador",
+    "material": "Ninguno. Para seguir después, un editor de partituras libre instalado en el ordenador del aula.",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Presentar la cuadrícula.",
+        "detalle": "Ocho filas, una por nota de do a do, y dieciséis casillas de tiempo. Enséñalo en el proyector: una casilla es una negra; dos seguidas en la misma fila son una nota larga, no dos iguales."
+      },
+      {
+        "min": 3,
+        "titulo": "Una regla antes de empezar.",
+        "detalle": "Pide una condición sencilla: que empiece y acabe en do, o que no haya dos notas iguales seguidas. Sin regla, una cuadrícula vacía es demasiado grande."
+      },
+      {
+        "min": 8,
+        "titulo": "Componer escuchando.",
+        "detalle": "Cada niño construye su melodía con el bucle sonando. Cambia una casilla, escucha la vuelta, decide. Que no llene todas las casillas: los huecos también son música."
+      },
+      {
+        "min": 3,
+        "titulo": "Escuchar las de los demás.",
+        "detalle": "Tres o cuatro voluntarios ponen la suya en el proyector. Se comenta qué hace: sube, repite, se para. Sin votar ni elegir la mejor."
+      },
+      {
+        "min": 2,
+        "titulo": "Guardarla.",
+        "detalle": "Toca guardar y elige MIDI o MusicXML. El fichero se queda en el dispositivo; no va a ningún sitio. Se puede abrir en un editor de partituras."
+      },
+      {
+        "min": 2,
+        "titulo": "Verla escrita.",
+        "detalle": "Si hay un editor en el ordenador del aula, abre una de las melodías y enséñala en el proyector: las casillas seguidas se han convertido en blancas y redondas."
+      }
+    ],
+    "enPantalla": "Una cuadrícula de ocho filas, una por nota de la escala de do a do, y dieciséis columnas de tiempo. El niño toca casillas para encenderlas; con el bucle en marcha suena todo seguido y cada cambio se oye en la vuelta siguiente. Dos o más casillas seguidas en la misma fila son una nota larga. No hay respuesta correcta ni final: es una herramienta. Un botón guarda la melodía como fichero MIDI o MusicXML en el propio dispositivo, para abrirla luego en un programa de partituras. No se envía a ningún sitio.",
+    "sinPantalla": "Cuadrícula en la pizarra: ocho filas con los nombres de las notas y dieciséis columnas. Cada niño pega un gomet por turno y la clase canta lo que hay, de izquierda a derecha, con el pulso de tu pie. Para llevársela, se copia en papel pautado: cada columna es una negra, dos gomets seguidos en la misma fila son una blanca. Es lo mismo que hace el fichero, hecho a mano.",
+    "masFacil": "Reduce a tres notas y cuatro columnas: que solo usen las filas de do, re y mi y las cuatro primeras casillas. Con la escala entera delante, quien no sabe por dónde empezar no empieza. Dale el principio hecho, dos casillas encendidas, y que él ponga las dos que faltan. Y que escuche cada cambio antes de hacer el siguiente.",
+    "masDificil": "Que la segunda mitad sea el espejo de la primera, o que la melodía tenga una pregunta que acaba arriba y una respuesta que acaba en do. Después, abrir el fichero en el editor de partituras del ordenador y añadirle lo que la cuadrícula no tiene: una letra, un título, un compás bien marcado. Y tocarla en la flauta o el metalófono leyéndola de la partitura impresa.",
+    "variante": {
+      "titulo": "Por parejas, en relevos",
+      "texto": "Dos niños, una tablet. El primero pone las ocho primeras casillas y el segundo continúa con las otras ocho sin borrar nada. Luego se escucha y cada uno cuenta qué ha querido hacer. Se guarda una sola melodía de los dos."
+    },
+    "ideas": [
+      "Imprimir las melodías desde el editor de partituras y montar un cancionero de la clase para tocar con la flauta.",
+      "Ponerle letra a una melodía guardada: una sílaba por casilla, y cantarla con la clase.",
+      "Abrir el fichero MIDI en el editor y cambiarle el instrumento: la misma melodía con flauta, piano y trompeta."
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

@@ -144,6 +144,85 @@
   "pistas": [
     "actividad.c123.pista1"
   ],
+  "ficha": {
+    "aprende": "Oír dos notas seguidas y decir si la segunda está pegada a la primera, un paso como subir un escalón, o mucho más arriba, un salto como brincar.",
+    "vocabulario": [
+      "paso",
+      "salto",
+      "escalón",
+      "pegada",
+      "lejos",
+      "subir",
+      "agudo",
+      "grave"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet; dos con proyector",
+    "material": "Ninguno. Opcional: xilófono o teclado de aula",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Con el cuerpo: escalón o brinco.",
+        "detalle": "Tú cantas do-re y subes un escalón imaginario; cantas do-do agudo y das un salto. La clase lo hace contigo: escalón pequeño en el paso, salto de verdad en el salto."
+      },
+      {
+        "min": 1,
+        "titulo": "Dos preguntas con proyector.",
+        "detalle": "Suena la flauta con do-re (paso) y luego el piano con do y el do de arriba (salto). Nadie toca: cada uno hace el gesto, escalón o brinco, y se compara. Enseña el botón de repetir."
+      },
+      {
+        "min": 2,
+        "titulo": "En tablet, a lo suyo.",
+        "detalle": "Ocho preguntas, cada una con un instrumento distinto: violín, clarinete, glockenspiel, trompeta, oboe, guitarra. Que las canten por dentro antes de tocar: si la segunda sale sola, es paso."
+      },
+      {
+        "min": 1,
+        "titulo": "Cantar los saltos.",
+        "detalle": "Vuelve a poner un salto (do-la, mi-si) y que intenten cantarlo con «uuu» subiendo. Cuesta llegar: eso es lo que se oye en un salto. Luego un paso, que sale sin esfuerzo."
+      },
+      {
+        "min": 1,
+        "titulo": "Lo hacen ellos.",
+        "detalle": "En el xilófono o con la voz, un niño toca dos notas pegadas o separadas y la clase responde con el gesto. Producir es más difícil que reconocer, y se ve quién lo tiene."
+      }
+    ],
+    "enPantalla": "Suenan dos notas, una tras otra, cada vez con un instrumento distinto: flauta, piano, violín, clarinete, glockenspiel, trompeta, oboe o guitarra. El niño toca uno de los dos botones grandes: paso o salto. Los pasos son notas vecinas (do-re, mi-fa, sol-la, la-si); los saltos van lejos (do y el do de arriba, re-la, mi-si, do-la). Si toca el otro, el personaje da una pista («cántalas por dentro») y se puede corregir al momento; al acertar, «¡bien!» y la siguiente. Botón de repetir a mano. Termina al acabar la vuelta.",
+    "sinPantalla": "Dos tarjetas en el suelo: un escalón y un niño saltando. Tú cantas o tocas en el xilófono dos notas: unas veces pegadas (do-re, mi-fa, sol-la) y otras lejos (do-sol, do-la, do y el do de arriba). Los niños van a la tarjeta que toca, o hacen el gesto en su sitio: escalón pequeño o brinco. Después, que sea un niño quien toque las dos notas en el xilófono: con las láminas a la vista, el paso son dos láminas vecinas y el salto se ve en la distancia entre ellas.",
+    "masFacil": "Exagera el contraste: quédate con do-re para el paso y do con el do de arriba para el salto, que es el más grande de todos, hasta que el gesto salga solo. Que canten las dos notas con «uuu» antes de contestar: en el paso la voz apenas se mueve, en el salto hay que estirarla. Si dudan siempre, nombra en voz alta lo que van a oír: «esto es un paso», y después que lo oigan sin nombre.",
+    "masDificil": "Que canten las dos notas después de oírlas, con el nombre si lo saben. Que digan además si el salto ha sido grande o pequeño: re-la es menos que do y el do de arriba. Después, tres notas: paso-paso, paso-salto, salto-paso, y que lo digan en orden. Y en el xilófono, que toquen un paso y un salto que empiecen en la misma nota y los canten.",
+    "variante": {
+      "titulo": "Escalera humana",
+      "texto": "Ocho niños de pie en fila, de más agachado a más estirado: son do, re, mi, fa, sol, la, si y el do de arriba. Tú cantas dos notas y los dos niños que son esas notas se levantan; la clase mira si están al lado (paso) o lejos (salto) y responde con el gesto. Después, un niño elige a dos de la fila, la clase canta sus notas y dice qué ha sido. Se ve la distancia con los ojos, y eso ayuda al oído."
+    },
+    "ideas": [
+      "Buscar en una canción que ya sepan un salto claro al principio y cantarla exagerando el brinco con la mano.",
+      "Dictado en papel: dos puntos, uno por nota, muy juntos si es paso y muy separados si es salto.",
+      "Inventar una melodía corta en el xilófono con solo pasos y otra con un salto en medio: ¿cuál suena más tranquila?"
+    ],
+    "loTiene": [
+      "Distingue paso y salto sea cual sea el instrumento que suene.",
+      "Canta por dentro las dos notas antes de tocar, y en el salto se le nota el esfuerzo.",
+      "Toca en el xilófono un paso y un salto cuando se le pide, sin buscar."
+    ],
+    "errores": [
+      {
+        "error": "Contesta salto siempre que la segunda nota sube",
+        "remedio": "cantar do-re con la mano: sube, sí, pero un solo escalón; el salto es cuando la mano tiene que ir lejos."
+      },
+      {
+        "error": "Se despista con el instrumento y contesta según le suene",
+        "remedio": "que oiga la pregunta dos veces y canten las dos notas con «uuu» antes de tocar; el instrumento no importa."
+      },
+      {
+        "error": "Toca antes de que suene la segunda nota",
+        "remedio": "manos sobre la mesa hasta que acaben las dos; solo entonces el gesto y el botón."
+      }
+    ],
+    "indicadores": [
+      "Paso o salto",
+      "Canta por dentro",
+      "Lo toca él"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

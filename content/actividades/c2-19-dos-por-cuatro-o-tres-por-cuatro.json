@@ -209,6 +209,80 @@
   "pistas": [
     "actividad.c219.pista1"
   ],
+  "ficha": {
+    "aprende": "Contar desde el clic fuerte hasta el siguiente fuerte y decir si los pulsos van de dos en dos (2/4) o de tres en tres (3/4).",
+    "vocabulario": [
+      "pulso",
+      "acento",
+      "fuerte",
+      "compás",
+      "dos por cuatro",
+      "tres por cuatro",
+      "binario",
+      "ternario"
+    ],
+    "agrupamiento": "Grupo clase con proyector, después individual en tablet",
+    "material": "Ninguno. Un pandero o la mesa para marcar el acento",
+    "pasos": [
+      {
+        "min": 2,
+        "titulo": "Sentir el acento con el cuerpo.",
+        "detalle": "De pie. Tú marcas el pulso con el pandero y das el primero más fuerte: en el fuerte, un pisotón; en los débiles, palmas suaves. Primero de dos en dos, después de tres en tres, sin decir aún cómo se llama."
+      },
+      {
+        "min": 1,
+        "titulo": "Ponerle nombre.",
+        "detalle": "Escribir 2/4 y 3/4 en la pizarra: el número de arriba dice cuántos pulsos hay desde un fuerte hasta el siguiente. Contar juntos «UNO, dos» y «UNO, dos, tres» con el pisotón en el uno."
+      },
+      {
+        "min": 2,
+        "titulo": "Oír uno con el proyector.",
+        "detalle": "Suenan los clics. Contar en voz alta desde el fuerte y señalar 2/4 o 3/4 con los dedos. Comprobar tocando la opción. Dos o tres veces entre todos, con velocidades distintas."
+      },
+      {
+        "min": 2,
+        "titulo": "Jugar en tablet,",
+        "detalle": "de uno en uno. Se puede repetir con el botón; si no es, el personaje da una pista y se vuelve a elegir. Contar con el pie, no solo con la cabeza."
+      }
+    ],
+    "enPantalla": "Suenan varios clics seguidos; uno de cada dos o de cada tres se oye más fuerte. Debajo hay dos botones grandes: 2/4 y 3/4. El niño puede volver a oír los clics con el botón de repetir y toca uno. Si no es, el personaje le recuerda que diga «UNO» en el fuerte y cuente hasta el siguiente, y puede volver a elegir; si acierta, «¡bien!» y viene el siguiente. Cada ronda cambia la velocidad, para que se cuente y no se adivine por lo deprisa que va. Termina al acabar los ocho, sin puntuación.",
+    "sinPantalla": "Con un pandero: pulsos iguales y uno más fuerte cada dos o cada tres. Los niños cuentan en voz baja desde el fuerte y levantan dos dedos o tres. Después sin contar en voz alta: andan por el aula y en cada fuerte dan un pisotón; se ve enseguida si van de dos en dos o de tres en tres. Cambia de velocidad entre una ronda y otra, para que cuenten y no calculen.",
+    "masFacil": "Exagera el acento: el fuerte con un golpe de pandero y los débiles casi sin sonar. Quédate en 2/4 varias veces seguidas hasta que lo cuenten sin dudar, y solo después mete el 3/4. Si cuentan mal, que cuenten contigo en voz alta: «UNO, dos, UNO, dos». Y el botón de repetir sin límite: no hay prisa.",
+    "masDificil": "Que contesten con una sola escucha y sin contar en voz alta, solo con el pie. O que anden al ritmo de los clics y cambien de dirección en cada fuerte: en 2/4 se gira muy a menudo, en 3/4 menos. También que sean ellos quienes toquen el pandero con un acento cada dos o cada tres y la clase lo diga.",
+    "variante": {
+      "titulo": "Con canciones",
+      "texto": "Canta una canción que la clase conozca y que busquen dónde cae el fuerte: «Cumpleaños feliz» va de tres en tres; muchas canciones de corro y de desfile van de dos. Se marca el fuerte con un pisotón y se cuenta hasta el siguiente. Al terminar, escribir 2/4 o 3/4 junto al título en la pizarra."
+    },
+    "ideas": [
+      "Dibujar los dos compases como cajas de dos huecos o de tres, y meter dentro negras y blancas que sumen justo.",
+      "Escuchar un vals y una marcha cortos y buscar el fuerte con el pie: ahí se ve para qué sirve saberlo.",
+      "Inventar una frase hablada que vaya de tres en tres («PAN con to-MA-te») y otra de dos, y decirlas marcando el acento."
+    ],
+    "loTiene": [
+      "Dice «UNO» en el clic fuerte y cuenta hasta el siguiente fuerte antes de tocar.",
+      "Acierta igual cuando los clics van deprisa que cuando van despacio.",
+      "Marca el fuerte con el pie mientras suena."
+    ],
+    "errores": [
+      {
+        "error": "Contesta 2/4 cuando los clics van rápido y 3/4 cuando van lentos",
+        "remedio": "oír dos rondas seguidas de distinta velocidad y el mismo compás, contando en voz alta desde el fuerte: lo que importa es cuántos, no lo deprisa que van."
+      },
+      {
+        "error": "Empieza a contar en cualquier clic y no en el fuerte",
+        "remedio": "esperar al fuerte con la mano levantada y bajarla justo ahí; solo entonces se empieza «UNO»."
+      },
+      {
+        "error": "Cuenta también el siguiente fuerte y llega a tres en 2/4",
+        "remedio": "el siguiente fuerte vuelve a ser «UNO»: contar juntos «UNO, dos, UNO, dos» con el pie."
+      }
+    ],
+    "indicadores": [
+      "Cuenta del fuerte",
+      "Con tempos",
+      "Marca el fuerte"
+    ]
+  },
   "creditos": [
     {
       "obra": "Iconos",

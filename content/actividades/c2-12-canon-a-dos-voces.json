@@ -61,6 +61,80 @@
     ]
   },
   "enunciado": "actividad.c212.enunciado",
+  "ficha": {
+    "aprende": "Cantar su parte del canon del campanero sin irse a la del otro grupo, y entrar dos compases después sin que el pulso se mueva.",
+    "vocabulario": [
+      "canon",
+      "entrada",
+      "dos voces",
+      "pulso",
+      "frase",
+      "grupo a",
+      "grupo b",
+      "compás"
+    ],
+    "agrupamiento": "Toda la clase en dos grupos, de pie y de cara",
+    "material": "Ninguno. La pantalla proyectada lleva el pulso a 96",
+    "pasos": [
+      {
+        "min": 8,
+        "titulo": "Aprender la melodía entre todos.",
+        "detalle": "Canta tú una frase y que la repitan: «Amanece, amanece», «¿oyes tú? ¿oyes tú?», «Suenan las campanas, suenan las campanas», «din, don, dan, din, don, dan». Hasta que salga sin dudar: si la melodía no está segura, el canon no se sostiene."
+      },
+      {
+        "min": 5,
+        "titulo": "Marcar el pulso mientras se canta.",
+        "detalle": "Palmadas en los muslos o andando por el aula, con el pulso de la pantalla a 96. El canon se cae por el pulso, no por la melodía: aquí es donde se gana. Que el «din, don, dan» caiga en pulsos, no en la prisa."
+      },
+      {
+        "min": 10,
+        "titulo": "Partir la clase en dos.",
+        "detalle": "El grupo A empieza; el B entra cuando A llega a «¿oyes tú?», dos compases después. Colócalos separados y de cara: mezclados, cada niño oye más al de al lado que a su grupo y se van los dos. Tú das la entrada a B con la mano."
+      },
+      {
+        "min": 7,
+        "titulo": "Cambiar los papeles y cerrar.",
+        "detalle": "Ahora entra primero B. Entrar segundo es más difícil, así que los dos grupos prueban las dos cosas. Para terminar, el grupo que va delante repite «din, don, dan» hasta que el otro le alcanza, y se acaba juntos."
+      }
+    ],
+    "enPantalla": "Es la pantalla del maestro, para proyectar. Lleva el pulso a 96 en compás de cuatro, con el uno marcado, y muestra los cuatro pasos de la sesión con su tiempo para que no tengas que recordar el orden. Marca dónde entra el segundo grupo: dos compases después del primero. Los niños no tocan nada: miran el pulso y cantan. No hay puntuación ni final: se termina cuando las dos voces llegan juntas al último «dan».",
+    "sinPantalla": "Es su forma natural. Marca tú el pulso con el pie o con un pandero, y da la entrada del grupo B con la mano abierta cuando el A llegue a «¿oyes tú?». Si hace falta, un niño de cada grupo se pone delante del suyo y hace de director con el brazo: así cada grupo mira a lo suyo y no al vecino.",
+    "masFacil": "Antes del canon, hacerlo como eco: tú cantas «amanece, amanece» y ellos lo repiten, frase a frase, con el pulso andando. Después el canon solo con las dos primeras frases, y parar. Si un grupo se va al otro, cántalo tú con el grupo que se cae, a su lado, hasta que aguante solo.",
+    "masDificil": "Tres grupos, y el tercero entra otros dos compases después: a tres voces la melodía sigue siendo la misma. O que cada grupo cante su parte a la vez que marca el pulso con palmas en los muslos en el «din, don, dan», sin dejar de cantar.",
+    "variante": {
+      "titulo": "Con instrumentos",
+      "texto": "El grupo que no canta acompaña con placas o triángulo solo en el «din, don, dan» final, en fa y do como en la melodía, cada vez que le llega. Así cada grupo canta y toca por turnos, y se oye claro dónde va cada voz."
+    },
+    "ideas": [
+      "Cantar el canon andando por el aula: cada grupo con su recorrido, y parar quietos en «din, don, dan». El cuerpo ayuda a no oír al otro grupo.",
+      "Escribir la letra en dos colores en la pizarra, con la del grupo B desplazada dos compases a la derecha, para ver por qué encajan.",
+      "Grabar el canon con el móvil del maestro y escucharlo: ¿se oyen dos voces distintas o una sola mezcla?"
+    ],
+    "loTiene": [
+      "Se mantiene en su voz cuando el otro grupo canta otra frase a la vez.",
+      "Entra en «¿oyes tú?» sin que nadie le avise al segundo intento.",
+      "Llega al «din, don, dan» final en el mismo pulso que su grupo."
+    ],
+    "errores": [
+      {
+        "error": "El grupo B se pasa a la frase del A a la mitad",
+        "remedio": "separarlos más, que se den la espalda una vuelta, y que un niño de B dirija a los suyos con el brazo."
+      },
+      {
+        "error": "El grupo A acelera cuando entra el B",
+        "remedio": "que A marque el pulso en los muslos mientras canta, y que tú cuentes «uno, dos, tres, cuatro» en alto en la entrada."
+      },
+      {
+        "error": "La entrada del segundo grupo llega tarde, después de «¿oyes tú?»",
+        "remedio": "ensayar solo la entrada: A canta la primera frase y B dice «amanece» en el pulso justo, sin seguir."
+      }
+    ],
+    "indicadores": [
+      "Mantiene su voz",
+      "Entra a tiempo",
+      "Acaba con su grupo"
+    ]
+  },
   "personaje": "doby",
   "creditos": [
     {

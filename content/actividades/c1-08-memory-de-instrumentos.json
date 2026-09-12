@@ -170,6 +170,80 @@
   "pistas": [
     "actividad.inf05.pista1"
   ],
+  "ficha": {
+    "aprende": "Reconocer de oído el tambor, el triángulo, la voz, el piano, la guitarra, el violín, las palmas y la kalimba, y unir cada sonido con su dibujo.",
+    "vocabulario": [
+      "timbre",
+      "tambor",
+      "triángulo",
+      "piano",
+      "guitarra",
+      "violín",
+      "kalimba",
+      "pareja"
+    ],
+    "agrupamiento": "Por parejas en tablet, o grupo clase con proyector",
+    "material": "Ninguno. Si los hay, un tambor y un triángulo de verdad para empezar",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Dos sonidos de verdad.",
+        "detalle": "Toca un tambor y un triángulo del aula, o palmea y canta una nota. Pregunta: ¿en qué se diferencian? Uno es seco y corto; el otro brilla y dura. Eso es el timbre, sin decir la palabra aún."
+      },
+      {
+        "min": 1,
+        "titulo": "Primer tablero, con proyector.",
+        "detalle": "Tambor, triángulo, voz y piano. Un niño toca un dibujo, otro busca el sonido. Antes de tocar, que diga en voz alta cuál cree que es."
+      },
+      {
+        "min": 2,
+        "titulo": "Segundo tablero, en parejas.",
+        "detalle": "Guitarra, violín, palmas y kalimba. Regla: escuchar los dos sonidos seguidos antes de unirlos. La kalimba es nueva para casi todos: dejar que la oigan varias veces."
+      },
+      {
+        "min": 1,
+        "titulo": "Sin mirar.",
+        "detalle": "Tapa los dibujos con la mano (o gira la tablet) y toca un sonido: ¿cuál es? Después se destapa y se comprueba."
+      }
+    ],
+    "enPantalla": "Dos columnas: dibujos de instrumentos a un lado y sonidos al otro. Se toca un dibujo y luego el sonido que le va; al tocar cada ficha suena, así que se puede escuchar todo antes de decidir. Si la pareja no encaja, no pasa nada: se vuelve a oír y se prueba otra. Las parejas hechas se quedan unidas con una línea y el tablero se va vaciando, así que la última siempre sale. Primer tablero: tambor, triángulo, voz y piano; segundo: guitarra, violín, palmas y kalimba.",
+    "sinPantalla": "Tarjetas con los ocho dibujos boca abajo sobre la mesa, en grupos de tres o cuatro. Tú, de espaldas o tras la pizarra, tocas o imitas un sonido (tambor, triángulo, palmas, voz, y con la boca el violín o la guitarra); el grupo levanta la tarjeta que cree. Con instrumentos de verdad es mejor: un niño toca detrás de un biombo y los demás señalan. Añade turnos, que es lo que la pantalla no da.",
+    "masFacil": "Empieza con dos parejas del primer tablero, tambor y triángulo, que son muy distintos: uno golpea seco y el otro tintinea. Sube a tres y a cuatro solo cuando esas dos salgan seguidas. Antes de tocar nada, nombra tú cada dibujo en voz alta: a veces lo que falta no es oído, es saber cómo se llama la kalimba.",
+    "masDificil": "Que emparejen solo de oído: se tapan los dibujos, suena uno, y el niño dice el nombre antes de destapar. Después, familias: ¿cuáles se golpean (tambor, palmas, kalimba, piano), cuáles se frotan o se pellizcan (violín, guitarra) y cuál no es un objeto (voz)? O que inventen una pareja nueva, un sonido de la clase y su dibujo, y la expliquen.",
+    "variante": {
+      "titulo": "Orquesta de gestos",
+      "texto": "Cada niño elige un instrumento del tablero y lo hace con mímica: tocar el violín, rasguear la guitarra, golpear el tambor, pellizcar la kalimba. Suena uno en la app y solo se mueven los que lo tienen. Al final, todos a la vez mientras tú vas tocando sonidos seguidos."
+    },
+    "ideas": [
+      "Grabar con el móvil del maestro cinco sonidos del cole (puerta, timbre, grifo, silla) y hacer un tablero propio con dibujos de los niños.",
+      "Traer a clase un instrumento de casa o construir uno y decidir a qué sonido del tablero se parece más.",
+      "Escuchar una pieza corta y levantar la tarjeta cuando suene el violín o el piano."
+    ],
+    "loTiene": [
+      "Une las cuatro parejas del segundo tablero sin probar al azar.",
+      "Nombra el instrumento al oírlo, antes de ver el dibujo.",
+      "Dice en qué se parecen dos sonidos y en qué no (seco o largo, se golpea o se frota)."
+    ],
+    "errores": [
+      {
+        "error": "Toca fichas seguidas sin escuchar, hasta que alguna encaja",
+        "remedio": "regla de los dos sonidos: oír el dibujo y el sonido seguidos, decir «sí» o «no» en voz alta, y solo entonces unir."
+      },
+      {
+        "error": "Confunde guitarra y violín",
+        "remedio": "enséñale el gesto: la guitarra se rasguea y suena a golpecitos; el violín se frota y la nota sigue sonando. Que lo haga con las manos mientras oye."
+      },
+      {
+        "error": "Reconoce el sonido pero no sabe qué dibujo es la kalimba",
+        "remedio": "nombrar los ocho dibujos antes de empezar el tablero y enseñar una foto o el instrumento."
+      }
+    ],
+    "indicadores": [
+      "Cuatro parejas",
+      "Nombra el sonido",
+      "Explica la diferencia"
+    ]
+  },
   "creditos": [
     {
       "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",

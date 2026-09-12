@@ -55,6 +55,84 @@
     ]
   },
   "enunciado": "actividad.c306.enunciado",
+  "ficha": {
+    "aprende": "Sentir que el 6/8 son seis pulsos agrupados de tres en tres: andar dos pasos por compás mientras se cuentan seis, con el acento en el 1 y en el 4.",
+    "vocabulario": [
+      "seis por ocho",
+      "pulso",
+      "compás",
+      "de tres en tres",
+      "acento",
+      "balanceo",
+      "subdivisión"
+    ],
+    "agrupamiento": "Toda la clase, de pie y con espacio para andar",
+    "material": "Ninguno. Un pandero para llevar el pulso cuando se apague la pantalla.",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "De pie y en círculo,",
+        "detalle": "con la pantalla proyectada y el pulso a 108 sonando. Que lo escuchen quietos una vuelta y lo marquen con la cabeza antes de contar nada."
+      },
+      {
+        "min": 4,
+        "titulo": "Contar seis.",
+        "detalle": "Seis pulsos por compás, todos iguales, en voz alta: uno-dos-tres-cuatro-cinco-seis. El uno se dice más fuerte. Primero solo con la voz; luego palmas en los seis, con la del uno más fuerte."
+      },
+      {
+        "min": 6,
+        "titulo": "Agrupar de tres en tres.",
+        "detalle": "Uno-dos-tres, cuatro-cinco-seis. Palma solo en el 1 y en el 4; los demás se cuentan con la boca o con los dedos. Se sienten dos partes, no seis: ese balanceo es el 6/8."
+      },
+      {
+        "min": 8,
+        "titulo": "Andar en dos y contar en seis.",
+        "detalle": "Un paso en el 1 y otro en el 4, contando seis en voz alta. Después la voz se calla y se cuenta por dentro; después la mitad anda y la otra mitad palmea los seis. Es lo que hace que el 6/8 se balancee."
+      },
+      {
+        "min": 1,
+        "titulo": "Cerrar sin pantalla.",
+        "detalle": "Se apaga el pulso y se anda una vuelta más con el pandero del maestro. Si el balanceo sigue sin la pantalla, está sentido."
+      }
+    ],
+    "enPantalla": "Es la pantalla del maestro, para proyectar: lleva el pulso a 108 con el 1 de cada seis marcado más fuerte y muestra el paso en el que está la sesión con su tiempo. Los niños no tocan nada: miran el pulso, cuentan y se mueven. Se puede parar, volver al paso anterior o bajar la velocidad. No hay respuesta correcta ni final: se acaba cuando la clase anda y cuenta a la vez.",
+    "sinPantalla": "Es su forma natural: tú llevas el pulso con un pandero o con el pie y dices los pasos. Cuenta seis en voz alta con el uno fuerte, después palmea solo el 1 y el 4, y al final anda dos pasos por compás mientras la clase cuenta seis. El pandero puede cambiar de manos: quien lo lleva es el reloj de los demás.",
+    "masFacil": "Quédate en los dos primeros pasos y baja el tempo: contar seis y palmear el 1 y el 4 ya es sentir el 6/8. Si el uno se les va, que lo digan gritando y los demás susurrando. Andar viene cuando el balanceo ya sale sentados.",
+    "masDificil": "Andar los dos pasos y palmear los seis a la vez, o al revés: andar seis pasitos y palmear solo en el 1 y el 4. Después, decir una palabra de tres sílabas en cada parte (pe-lo-ta, ca-mi-sa) mientras se anda: el 6/8 también se oye en el idioma.",
+    "variante": {
+      "titulo": "Sentados y balanceándose",
+      "texto": "Sentados en el suelo, balancear el cuerpo a la izquierda en el 1 y a la derecha en el 4, mientras los dedos cuentan seis sobre las rodillas. Cuando el balanceo sale solo, se pasa a andar. Vale también para un niño que no puede andar con el grupo: el 6/8 se siente igual desde la silla."
+    },
+    "ideas": [
+      "Buscar una canción que la clase conozca y decidir andando si va de dos en dos o de tres en tres: si los pasos caen en el 1 y el 4 y el cuerpo se balancea, es 6/8.",
+      "Escribir en la pizarra seis corcheas agrupadas en dos grupos de tres y ver que lo que se ha andado es lo que está dibujado.",
+      "Inventar por grupos un patrón de seis palmadas con dos golpes fuertes en el 1 y el 4, y hacerlo mientras el resto anda."
+    ],
+    "loTiene": [
+      "Anda dos pasos por compás sin acelerar mientras cuenta seis en voz alta.",
+      "El uno y el cuatro le salen más fuertes sin que nadie se lo recuerde.",
+      "Sigue balanceándose cuando se apaga la pantalla y solo queda el pandero."
+    ],
+    "errores": [
+      {
+        "error": "Palmea los seis pulsos iguales y no se oye dónde empieza el compás",
+        "remedio": "decir solo el uno en voz alta y los demás en silencio hasta que el acento se note."
+      },
+      {
+        "error": "Da tres pasos en cada parte en vez de uno",
+        "remedio": "sentarse, balancear el cuerpo a un lado en el 1 y al otro en el 4, y levantarse cuando el balanceo salga solo."
+      },
+      {
+        "error": "Acelera al andar y deja de cuadrar con el pulso",
+        "remedio": "bajar el tempo y andar cogidos de la mano en círculo: el grupo frena a quien corre."
+      }
+    ],
+    "indicadores": [
+      "Dos pasos por compás",
+      "Acento en 1 y 4",
+      "Sin pantalla"
+    ]
+  },
   "personaje": "sol",
   "creditos": [
     {

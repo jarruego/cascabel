@@ -147,6 +147,85 @@
     "actividad.c124.pista1",
     "actividad.c124.pista2"
   ],
+  "ficha": {
+    "aprende": "Oír un ritmo de cuatro pulsos con negras y corcheas, decirlo con ta y ti-ti, y elegir entre cuatro escrituras la que dice lo mismo.",
+    "vocabulario": [
+      "ta",
+      "ti-ti",
+      "negra",
+      "corcheas",
+      "pulso",
+      "dictado",
+      "escribir",
+      "leer"
+    ],
+    "agrupamiento": "Individual o por parejas, en tablet; el primero, proyectado",
+    "material": "Ninguno. Opcional: pizarra con los cuatro ritmos escritos",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Leer las cuatro opciones.",
+        "detalle": "Escribe en la pizarra los cuatro ritmos: ta ta ta ta; ti-ti ta ta ta; ta ta ti-ti ta; ti-ti ti-ti ta ta. La clase los dice con palmas, uno tras otro, con el pie de pulso."
+      },
+      {
+        "min": 1,
+        "titulo": "Dónde están los rápidos.",
+        "detalle": "Pregunta por cada opción: ¿el ti-ti va al principio, en medio, o no hay? Esa es la única cosa que hay que oír. Que lo señalen en la pizarra."
+      },
+      {
+        "min": 1,
+        "titulo": "Primera pregunta con proyector.",
+        "detalle": "Suena el pulso, un compás de entrada, y el ritmo. Nadie toca: cada uno lo dice con ta y ti-ti en voz baja mientras suena, y luego se decide entre todos cuál de los cuatro es."
+      },
+      {
+        "min": 3,
+        "titulo": "En tablet.",
+        "detalle": "Cada uno dice el ritmo en voz baja mientras suena y después toca el que ha dicho. Si duda, repetir: el botón está siempre en el mismo sitio. Ocho ritmos, y cada uno aparece dos veces."
+      },
+      {
+        "min": 1,
+        "titulo": "Lo dictan ellos.",
+        "detalle": "Un niño palmea uno de los cuatro ritmos de la pizarra sin decir cuál, con tu pie de pulso, y la clase lo señala. Dictar es más difícil que escribir y lo hacen encantados."
+      }
+    ],
+    "enPantalla": "Suena el pulso de fondo, un compás de entrada, y después un ritmo de cuatro pulsos con solo negras y corcheas: ta y ti-ti. En la pantalla hay cuatro ritmos escritos con figuras, y el niño toca el que ha sonado. Solo cambia dónde van los dos rápidos: al principio, en medio, dos veces, o ninguno. Si toca otro, el personaje da una pista («fíjate solo en dónde van los dos rápidos») y se puede corregir al momento; al acertar, «¡bien!» y viene el siguiente. Botón de repetir siempre visible. Termina al acabar la vuelta.",
+    "sinPantalla": "Los cuatro ritmos escritos en la pizarra con figuras y sílabas debajo, numerados. Tú marcas el pulso con el pie, cuentas un compás de entrada y palmeas uno de los cuatro. Los niños lo dicen en voz baja con ta y ti-ti y levantan tantos dedos como el número del ritmo, o van a una de cuatro tarjetas en el suelo. Después dicta un niño. Es la misma actividad; lo que añade la pantalla es que cada uno vaya a su ritmo y pueda repetir sin pedirlo.",
+    "masFacil": "Deja solo dos opciones en la pizarra, la de todo negras y la del ti-ti en medio, y dicta solo esas dos. Que lo digan en voz alta, no baja, mientras suena: si lo pueden decir, lo pueden encontrar. Si el ti-ti no se oye como dos en un pulso, que palmeen el ritmo encima del pulso antes de decidir. Y baja el tempo, o dicta tú más despacio que la app.",
+    "masDificil": "Que escriban el ritmo con figuras en papel antes de mirar las opciones, y luego comprueben. Que lo palmeen de memoria después de una sola escucha, sin repetir. Después dicta ritmos que no están entre los cuatro (ta ti-ti ti-ti ta, ta ti-ti ta ta) y que los escriban ellos. Y para acabar, que inventen un ritmo de cuatro pulsos con dos ti-ti y lo dicten a la clase.",
+    "variante": {
+      "titulo": "Con instrumentos",
+      "texto": "Los mismos cuatro ritmos, pero dictados con sonidos distintos: las negras en claves y las corcheas en maracas. Así el ti-ti se oye además con otro timbre, y los que todavía no distinguen bien lo rápido de lo lento tienen una segunda pista. Después se quita la maraca y todo va en claves: si siguen encontrando el ti-ti, ya lo oyen por duración y no por el sonido."
+    },
+    "ideas": [
+      "Dictado en papel con cuatro casillas: tú palmeas y ellos dibujan una raya en cada casilla, o dos rayitas si van rápidos.",
+      "Buscar los cuatro ritmos en palabras: «pan pan pan pan», «pera pan pan pan», y decir la lista de la compra al pulso.",
+      "Componer por parejas un ritmo de ocho pulsos juntando dos de los cuatro, escribirlo y que otra pareja lo lea con palmas."
+    ],
+    "loTiene": [
+      "Dice el ritmo con ta y ti-ti mientras suena, antes de tocar nada.",
+      "Sabe decir si el ti-ti va al principio, en medio o no hay.",
+      "Encuentra el ritmo que ha sonado a la primera, o tras repetirlo una vez."
+    ],
+    "errores": [
+      {
+        "error": "Elige siempre el de todo negras, oiga lo que oiga",
+        "remedio": "que palmee el ritmo encima del pulso: donde las manos van más rápido que el pie, ahí hay un ti-ti."
+      },
+      {
+        "error": "Oye el ti-ti pero no sabe en qué sitio va",
+        "remedio": "contar con los dedos «uno, dos, tres, cuatro» mientras suena y decir en qué número ha caído el rápido."
+      },
+      {
+        "error": "Toca sin escuchar entero, a ver si suena",
+        "remedio": "manos en la mesa hasta que acabe el ritmo, decirlo con sílabas, y entonces tocar."
+      }
+    ],
+    "indicadores": [
+      "Lo dice con sílabas",
+      "Sitúa el ti-ti",
+      "Acierta la escritura"
+    ]
+  },
   "creditos": [
     {
       "obra": "Iconos",
