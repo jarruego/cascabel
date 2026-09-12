@@ -653,13 +653,15 @@ p {
   outline: var(--foco);
   outline-offset: 3px;
 }
-.tarjeta--pulso { border-left-color: var(--eje-pulso); }
-.tarjeta--altura { border-left-color: var(--eje-altura); }
-.tarjeta--timbre { border-left-color: var(--eje-timbre); }
-.tarjeta--notacion { border-left-color: var(--eje-notacion); }
-.tarjeta--cuerpo { border-left-color: var(--eje-cuerpo); }
-.tarjeta--creacion { border-left-color: var(--eje-creacion); }
-.tarjeta--cultura { border-left-color: var(--eje-cultura); }
+/* El color del eje se guarda en una variable: lo usan el borde y el disco de la figura. */
+.tarjeta--pulso { --color-eje: var(--eje-pulso); }
+.tarjeta--altura { --color-eje: var(--eje-altura); }
+.tarjeta--timbre { --color-eje: var(--eje-timbre); }
+.tarjeta--notacion { --color-eje: var(--eje-notacion); }
+.tarjeta--cuerpo { --color-eje: var(--eje-cuerpo); }
+.tarjeta--creacion { --color-eje: var(--eje-creacion); }
+.tarjeta--cultura { --color-eje: var(--eje-cultura); }
+.tarjeta { border-left-color: var(--color-eje, var(--linea)); }
 .tarjeta__titulo { font-weight: 700; }
 /* El código corto de una actividad —tres cifras, ver `motor/codigo.ts`—: pequeño, con
    cifras tabulares y en una píldora, delante del título en todas partes. */
@@ -684,17 +686,31 @@ p {
 */
 .tarjeta__conFigura { display: grid; grid-template-columns: 1fr 30%; gap: var(--e-2); align-items: center; }
 .tarjeta__conFigura > .tarjeta__meta { min-width: 0; }
-.tarjeta__conFigura .personaje,
-.tarjeta__conFigura img { display: block; margin: 0 auto; max-width: 100%; height: auto; }
+/*
+  El disco de detrás de la figura: del color del eje, rebajado con la superficie igual que
+  el tic verde, y del mismo tamaño en todas las tarjetas. Un emoji con sombras, un signo en
+  negro y un personaje a color no se parecen en nada; sobre el mismo disco sí son una serie.
+*/
+.tarjeta__figura {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-eje, var(--linea)) 22%, var(--superficie));
+}
+.tarjeta__figura .personaje,
+.tarjeta__figura img { display: block; max-width: 100%; height: auto; }
 /* El signo, con Bravura y del tamaño del icono. Los glifos sobresalen de su caja por
    arriba y por abajo (la clave de sol, sobre todo): la altura de línea les deja sitio. */
 .tarjeta__glifo {
   display: block;
   text-align: center;
   font-family: var(--f-musica);
-  font-size: 2.4rem;
-  line-height: 1.8;
-  color: var(--tinta-2);
+  font-size: 2.1rem;
+  line-height: 1;
+  color: var(--tinta);
 }
 
 /* ── filtros del catálogo ──────────────────────────────────────────────────

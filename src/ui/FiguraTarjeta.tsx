@@ -1,3 +1,4 @@
+import type React from 'react';
 import type { Eje } from '@/motor/tipos';
 import { Icono } from './Icono';
 import { Personaje } from './Personaje';
@@ -36,17 +37,33 @@ interface Props {
   eje: Eje;
 }
 
+/** El disco de detrás: del color del eje, rebajado. Es lo que hace que un emoji, un signo
+ *  de Bravura y un personaje parezcan de la misma familia (lo pidió el autor el 2026-09-12). */
+function Disco({ children }: { children: React.ReactNode }) {
+  return <span className="tarjeta__figura">{children}</span>;
+}
+
 export function FiguraTarjeta({ figura, personaje, tipo, eje }: Props) {
   if (tipo === 'presentacion' && personaje) {
-    return <Personaje nombre={personaje} pose={poseAlAzar()} tamano={64} />;
+    return (
+      <Disco>
+        <Personaje nombre={personaje} pose={poseAlAzar()} tamano={56} />
+      </Disco>
+    );
   }
   const f = figura ?? POR_EJE[eje];
   if ('glifo' in f) {
     return (
-      <span className="tarjeta__glifo" aria-hidden="true">
-        {esGlifo(f.glifo) ? GLIFOS[f.glifo] : GLIFOS['clave-sol']}
-      </span>
+      <Disco>
+        <span className="tarjeta__glifo" aria-hidden="true">
+          {esGlifo(f.glifo) ? GLIFOS[f.glifo] : GLIFOS['clave-sol']}
+        </span>
+      </Disco>
     );
   }
-  return <Icono nombre={f.icono} tamano={64} />;
+  return (
+    <Disco>
+      <Icono nombre={f.icono} tamano={48} />
+    </Disco>
+  );
 }
