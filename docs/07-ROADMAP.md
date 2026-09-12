@@ -3043,7 +3043,10 @@ textos, niveles, camino, y la sección de instrumentos.
       tabla en la cara 2, 162 de 167 fichas se iban a tres páginas por el largo de sus
       textos (contado en caracteres, sin imprimir); sin ella casi todas caben en dos. Y cada
       cara mide una página entera en papel: el `tfoot` se repite pegado al final de lo que
-      ocupa la tabla en cada página, y con una cara corta el pie quedaba tras el contenido. Para comprobar
+      ocupa la tabla en cada página, y con una cara corta el pie quedaba tras el contenido.
+      **Comprobadas las 167 en PDF, por etapas, en un lote cada una: todas salen en dos
+      páginas exactas**, sin recortar ningún texto. Las marcas «(PENDIENTE DE REVISIÓN
+      PEDAGÓGICA)» se quedan en el JSON pero no se imprimen. Para comprobar
       una ficha: `chrome --headless --print-to-pdf` contra la build servida en local y
       `pypdfium2` para ver las páginas.
 - [x] **La ficha del maestro, en dos caras y sin paja** (2026-09-12): qué se aprende y su

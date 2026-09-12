@@ -73,10 +73,19 @@ interface FichaPropia {
 /** Las columnas de seguimiento cuando ni la actividad ni su tipo dicen otras. */
 const INDICADORES_DE_RESPALDO = ['ficha.ind1', 'ficha.ind2', 'ficha.ind3'] as const;
 
-/** Traduce si existe la clave; si no, devuelve el texto tal cual. */
+/**
+ * Las marcas de revisión pedagógica se quedan en el JSON —de ahí las recoge docs/13 para la
+ * profesora— pero no se imprimen: en el papel del maestro son ruido.
+ */
+const MARCA = /\s*\(PENDIENTE DE REVISI[OÓ]N PEDAG[OÓ]GICA\)/gi;
+function sinMarca(texto: string): string {
+  return texto.replace(MARCA, '');
+}
+
+/** Traduce si existe la clave; si no, devuelve el texto tal cual. Sin marcas de revisión. */
 function tr(clave: string | undefined): string {
   if (!clave) return '';
-  return existe(clave) ? t(clave) : clave;
+  return sinMarca(existe(clave) ? t(clave) : clave);
 }
 
 /** El texto de un campo: el propio de la actividad, o el de su tipo. */
@@ -160,7 +169,8 @@ export default function Ficha() {
   if (fallo) return <main className="ficha"><p role="alert">{t('actividad.noEncontrada')}</p></main>;
   if (!actividad) return <main className="ficha"><p>{t('catalogo.cargando')}</p></main>;
 
-  const f = (actividad.ficha ?? {}) as FichaPropia;
+  // La ficha, con las marcas de revisión quitadas de todos sus textos antes de pintar nada.
+  const f = JSON.parse(sinMarca(JSON.stringify(actividad.ficha ?? {}))) as FichaPropia;
   const c = actividad.contenido as Record<string, unknown>;
   const conMicrofono = actividad.entrada.modo.startsWith('microfono');
   const herramienta = Boolean(actividad.herramienta);
