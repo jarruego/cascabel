@@ -65,9 +65,11 @@
             "F4"
           ],
           "duraciones": [
-            3
+            5
           ],
-          "volumen": 0.4,
+          "tempo": 60,
+          "instrumento": "flauta",
+          "volumen": 0.5,
           "respuesta": ""
         }
       },
@@ -75,12 +77,7 @@
         "personaje": "fara",
         "pose": "busca",
         "titulo": "actividad.tr21.l6t",
-        "texto": "actividad.tr21.l6d",
-        "sonido": {
-          "audio": "sonidos/casa/lluvia.opus",
-          "volumen": 0.6,
-          "respuesta": ""
-        }
+        "texto": "actividad.tr21.l6d"
       },
       {
         "personaje": "fara",

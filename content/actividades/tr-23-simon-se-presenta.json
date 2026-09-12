@@ -43,23 +43,7 @@
         "personaje": "simon",
         "pose": "neutro",
         "titulo": "actividad.tr23.l3t",
-        "texto": "actividad.tr23.l3d",
-        "sonido": {
-          "notas": [
-            "E4",
-            "E4",
-            "E4",
-            "F4"
-          ],
-          "duraciones": [
-            1,
-            1,
-            1,
-            1
-          ],
-          "tempo": 72,
-          "respuesta": ""
-        }
+        "texto": "actividad.tr23.l3d"
       },
       {
         "personaje": "simon",
@@ -77,8 +61,10 @@
             "B4"
           ],
           "duraciones": [
-            2
+            4
           ],
+          "tempo": 60,
+          "instrumento": "flauta",
           "respuesta": ""
         }
       },
@@ -93,9 +79,11 @@
             "G4"
           ],
           "duraciones": [
-            1,
-            2
+            2,
+            3
           ],
+          "tempo": 60,
+          "instrumento": "flauta",
           "respuesta": ""
         }
       },
@@ -103,38 +91,13 @@
         "personaje": "simon",
         "pose": "palmea",
         "titulo": "actividad.tr23.l7t",
-        "texto": "actividad.tr23.l7d",
-        "sonido": {
-          "notas": [
-            "C4",
-            "C4"
-          ],
-          "duraciones": [
-            1,
-            1
-          ],
-          "volumenes": [
-            1,
-            0.25
-          ],
-          "respuesta": ""
-        }
+        "texto": "actividad.tr23.l7d"
       },
       {
         "personaje": "simon",
         "pose": "baila",
         "titulo": "actividad.tr23.l8t",
-        "texto": "actividad.tr23.l8d",
-        "sonido": {
-          "notas": [
-            "C4",
-            "D4",
-            "E4",
-            "F4",
-            "G4"
-          ],
-          "respuesta": ""
-        }
+        "texto": "actividad.tr23.l8d"
       },
       {
         "personaje": "simon",

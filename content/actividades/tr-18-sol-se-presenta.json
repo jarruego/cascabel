@@ -49,57 +49,27 @@
             1,
             1,
             1,
-            1,
-            1,
-            1,
-            1,
             1
           ],
           "tempo": 96,
+          "acentos": [
+            0
+          ],
           "respuesta": ""
-        }
+        },
+        "bucle": true
       },
       {
         "personaje": "sol",
         "pose": "palmea",
         "titulo": "actividad.tr18.l4t",
-        "texto": "actividad.tr18.l4d",
-        "sonido": {
-          "patron": [
-            "bombo",
-            "claves",
-            "bombo",
-            "claves",
-            "bombo",
-            "claves",
-            "claves",
-            "bombo",
-            "claves",
-            "claves"
-          ],
-          "tempo": 96,
-          "respuesta": ""
-        }
+        "texto": "actividad.tr18.l4d"
       },
       {
         "personaje": "sol",
         "pose": "escucha",
         "titulo": "actividad.tr18.l5t",
-        "texto": "actividad.tr18.l5d",
-        "sonido": {
-          "ritmo": [
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1
-          ],
-          "tempo": 150,
-          "respuesta": ""
-        }
+        "texto": "actividad.tr18.l5d"
       },
       {
         "personaje": "sol",
@@ -111,8 +81,10 @@
             "G4"
           ],
           "duraciones": [
-            2
+            4
           ],
+          "tempo": 60,
+          "instrumento": "flauta",
           "respuesta": ""
         }
       },

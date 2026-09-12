@@ -34,6 +34,8 @@ interface Lamina {
    * el 2026-09-12: «dicen escucha esta canción, busca el sonido…».
    */
   sonido?: Estimulo;
+  /** El sonido se repite hasta que se para: es lo que pide un pulso. */
+  bucle?: boolean;
 }
 
 export default function Presentacion({ actividad, alTerminar }: PropsActividad) {
@@ -90,7 +92,10 @@ export default function Presentacion({ actividad, alTerminar }: PropsActividad) 
   const [sonando, setSonando] = useState(false);
   const audio = useRef<HTMLAudioElement | null>(null);
   const fin = useRef<number | null>(null);
+  /** Mientras es verdad, un sonido en bucle vuelve a empezar al acabar. */
+  const activo = useRef(false);
   const parar = useCallback(() => {
+    activo.current = false;
     if (fin.current !== null) window.clearTimeout(fin.current);
     fin.current = null;
     audio.current?.pause();
@@ -99,26 +104,37 @@ export default function Presentacion({ actividad, alTerminar }: PropsActividad) 
     setSonando(false);
   }, []);
   useEffect(() => parar, [lamina, parar]);
-  const escuchar = useCallback(async (sonido: Estimulo) => {
+  const escuchar = useCallback(async (l: Lamina) => {
+    const sonido = l.sonido;
+    if (!sonido) return;
     parar();
+    activo.current = true;
     setSonando(true);
     if (sonido.audio) {
       const a = new Audio(`/audio/${sonido.audio}`);
       a.volume = Math.max(0, Math.min(1, sonido.volumen ?? 1));
+      a.loop = Boolean(l.bucle);
       a.onended = () => setSonando(false);
       audio.current = a;
       await a.play().catch(() => setSonando(false));
       return;
     }
-    const acaba = await sonarEstimulo(sonido, { tempo: sonido.tempo });
-    if (acaba === null) {
-      setSonando(false);
-      return;
-    }
-    fin.current = window.setTimeout(
-      () => setSonando(false),
-      Math.max(0, (acaba - obtenerContexto().currentTime) * 1000),
-    );
+    // Una vuelta; si la lámina pide bucle y nadie ha parado, otra, sin hueco.
+    const unaVuelta = async () => {
+      const acaba = await sonarEstimulo(sonido, { tempo: sonido.tempo });
+      if (acaba === null || !activo.current) {
+        setSonando(false);
+        return;
+      }
+      fin.current = window.setTimeout(
+        () => {
+          if (activo.current && l.bucle) void unaVuelta();
+          else setSonando(false);
+        },
+        Math.max(0, (acaba - obtenerContexto().currentTime) * 1000 - (l.bucle ? 500 : 0)),
+      );
+    };
+    await unaVuelta();
   }, [parar]);
 
   const l = contenido.laminas[lamina];
@@ -144,12 +160,14 @@ export default function Presentacion({ actividad, alTerminar }: PropsActividad) 
       </ol>
 
       <BarraAcciones>
+        {/* Siempre en la fila de arriba y del mismo ancho diga lo que diga: si cambiara de
+            sitio entre «escuchar» y «parar», el dedo no lo encontraría. */}
         {l.sonido && (
           <button
             type="button"
-            className="boton-repetir"
+            className="boton-repetir presentacion__escuchar"
             data-sonando={sonando || undefined}
-            onClick={() => (sonando ? parar() : void escuchar(l.sonido!))}
+            onClick={() => (sonando ? parar() : void escuchar(l))}
           >
             {sonando ? <IconoParar /> : <IconoTocar />}
             {sonando ? t('accion.parar') : t('accion.escuchar')}

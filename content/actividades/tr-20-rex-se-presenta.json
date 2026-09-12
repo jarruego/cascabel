@@ -63,8 +63,10 @@
           ],
           "duraciones": [
             1,
-            2
+            3
           ],
+          "tempo": 60,
+          "instrumento": "flauta",
           "respuesta": ""
         }
       },
@@ -77,11 +79,13 @@
           "patron": [
             "caja",
             "caja",
-            "caja"
+            "caja",
+            ""
           ],
           "tempo": 84,
           "respuesta": ""
-        }
+        },
+        "bucle": true
       },
       {
         "personaje": "rex",

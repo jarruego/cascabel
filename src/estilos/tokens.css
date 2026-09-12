@@ -2449,6 +2449,9 @@ p {
   color: var(--tinta-2);
   text-wrap: pretty;
 }
+/* El botón de escuchar ocupa él solo la fila de arriba de la botonera, centrado y con un
+   ancho fijo: «escuchar» y «parar» miden distinto y el botón no puede moverse. */
+.presentacion__escuchar { flex: 1 1 100%; justify-content: center; min-width: 11em; }
 .presentacion__puntos { display: flex; gap: var(--e-2); margin: var(--e-2) 0 0; padding: 0; list-style: none; }
 .presentacion__puntos li { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--tinta-2); }
 .presentacion__puntos li[data-actual] { background: var(--acento); border-color: var(--acento); }
