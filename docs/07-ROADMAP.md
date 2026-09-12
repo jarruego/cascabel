@@ -3038,7 +3038,10 @@ textos, niveles, camino, y la sección de instrumentos.
       partitura sin título ni autor y al 75 %; la letra no se repite en texto si la partitura
       ya la lleva; 9,5 pt en papel; la tabla de seguimiento (diez filas) no se parte. Lo ideal
       son dos páginas y la 137 sale en dos exactas; según el contenido pueden ser tres o
-      cuatro, y eso lo decide el contenido, no un ajuste a base de imprimir. Para comprobar
+      cuatro, y eso lo decide el contenido, no un ajuste a base de imprimir. **La hoja de
+      seguimiento es una tercera página opcional**, con una casilla antes de imprimir: con la
+      tabla en la cara 2, 162 de 167 fichas se iban a tres páginas por el largo de sus
+      textos (contado en caracteres, sin imprimir); sin ella casi todas caben en dos. Para comprobar
       una ficha: `chrome --headless --print-to-pdf` contra la build servida en local y
       `pypdfium2` para ver las páginas.
 - [x] **La ficha del maestro, en dos caras y sin paja** (2026-09-12): qué se aprende y su

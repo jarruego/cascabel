@@ -2201,6 +2201,8 @@ p {
   margin-bottom: var(--e-5);
 }
 .ficha__consejo { flex-basis: 100%; margin: 0; font-size: 0.9em; color: var(--tinta-2); }
+.ficha__opcion { display: inline-flex; align-items: center; gap: var(--e-1); font-size: 0.95em; }
+.ficha__opcion input { width: 22px; height: 22px; }
 
 /* La tabla que sostiene la ficha: cabecera y pie se repiten en cada página impresa. */
 .ficha__papel { width: 100%; border-collapse: collapse; }
@@ -2352,7 +2354,7 @@ p {
   .ficha__partitura { margin-bottom: 1mm; }
   .ficha__consigna { background: #eef3f2; }
   .ficha__seguimiento th { background: #f2f2f2; }
-  .ficha__seguimiento tbody td { height: 5.8mm; }
+  .ficha__seguimiento tbody td { height: 7mm; }
   .ficha__seguimiento th, .ficha__seguimiento td { padding: 1mm 2mm; }
 
   .ficha__marca { font-size: 7pt; color: #777; padding: 0; }

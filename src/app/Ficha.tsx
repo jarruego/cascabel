@@ -139,6 +139,13 @@ export default function Ficha() {
   const { id = '' } = useParams();
   const [actividad, setActividad] = useState<Actividad | null>(null);
   const [fallo, setFallo] = useState(false);
+  /*
+    La hoja de seguimiento va aparte, como tercera página, y solo si se pide. Con la tabla
+    en la cara 2, 162 de las 167 fichas se iban a tres páginas por el largo de sus textos;
+    sin ella, casi todas caben en dos, que es lo que el autor quiere imprimir a doble cara.
+    Quien va a anotar marca la casilla y le sale la hoja (2026-09-12).
+  */
+  const [conSeguimiento, setConSeguimiento] = useState(false);
 
   useEffect(() => {
     let vivo = true;
@@ -229,6 +236,16 @@ export default function Ficha() {
         <button type="button" className="boton-principal" onClick={() => window.print()}>
           <Icono nombre="lupa" tamano={24} /> {t('ficha.imprimir')}
         </button>
+        {!herramienta && (
+          <label className="ficha__opcion">
+            <input
+              type="checkbox"
+              checked={conSeguimiento}
+              onChange={(ev) => setConSeguimiento(ev.target.checked)}
+            />{' '}
+            {t('ficha.incluirSeguimiento')}
+          </label>
+        )}
         <p className="ficha__consejo">{t('ficha.consejo')}</p>
       </div>
 
@@ -456,7 +473,19 @@ export default function Ficha() {
           </dl>
         </section>
 
-        {!herramienta && (
+        <p className="ficha__nota ficha__pie">
+          {t('ficha.pie')}
+          {creditos ? ` ${creditos}.` : ''}
+        </p>
+      </article>
+      </td>
+      </tr>
+
+      {/* ───────────── Tercera página, solo si se pide: la hoja de seguimiento ───────────── */}
+      {!herramienta && conSeguimiento && (
+      <tr className="ficha__cara2">
+      <td>
+      <article className="ficha__hoja">
           <section>
             <h2>{t('ficha.seguimiento')}</h2>
             {/* Solo fecha y grupo: la app no recoge ninguno de los dos, se escriben a mano. */}
@@ -483,7 +512,7 @@ export default function Ficha() {
                 </tr>
               </thead>
               <tbody>
-                {Array.from({ length: 10 }, (_, i) => (
+                {Array.from({ length: 22 }, (_, i) => (
                   <tr key={i}>
                     <td />
                     <td />
@@ -495,16 +524,13 @@ export default function Ficha() {
               </tbody>
             </table>
           </section>
-        )}
-
         <p className="ficha__nota ficha__pie">
-          {!herramienta && `${t('ficha.leyenda')} `}
-          {t('ficha.pie')}
-          {creditos ? ` ${creditos}.` : ''}
+          {t('ficha.leyenda')} {t('ficha.pie')}
         </p>
       </article>
       </td>
       </tr>
+      )}
         </tbody>
       </table>
     </main>
