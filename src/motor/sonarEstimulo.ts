@@ -68,7 +68,10 @@ export async function sonarEstimulo(
     const necesitaSampler = eventos.some((ev) => ev.tipo === 'nota');
     const necesitaKit = eventos.some((ev) => ev.tipo === 'golpe');
     const [sampler, kit] = await Promise.all([
-      necesitaSampler ? samplerDe(opciones.instrumento) : null,
+      // El de la llamada manda; si no lo hay, el que lleve el estímulo. Sin esto, la nota
+      // de las presentaciones sonaba con el instrumento por defecto y no con la voz que
+      // pedía el JSON (2026-09-12).
+      necesitaSampler ? samplerDe(opciones.instrumento ?? e.instrumento) : null,
       necesitaKit ? kitDePercusion() : null,
     ]);
 

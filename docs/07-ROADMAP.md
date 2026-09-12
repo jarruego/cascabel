@@ -3120,7 +3120,10 @@ textos, niveles, camino, y la sección de instrumentos.
       (`sonido`, un estímulo como los de elección) con un botón de escuchar y parar, uno o
       dos por presentación y uno de ellos la nota del personaje, sola, con voz y dos segundos;
       los pulsos van en bucle hasta que se para, encadenados contra el reloj de audio
-      (`desde` en `sonarEstimulo`), que es lo que hace que no cojeen. El botón ocupa siempre la fila de arriba de
+      (`desde` en `sonarEstimulo`), que es lo que hace que no cojeen. Dos fallos vistos en
+      el móvil: la nota no sonaba con voz porque la presentación no pasaba el instrumento
+      de la lámina (ahora `sonarEstimulo` toma el del estímulo si la llamada no trae otro),
+      y en la última lámina el botón grande se apagaba en vez de cerrar. El botón ocupa siempre la fila de arriba de
       la botonera, con el mismo ancho diga «escuchar» o «parar».
 
 - [x] **La ficha se imprime igual en la impresora que en el PDF** (2026-09-12): en

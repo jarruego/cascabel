@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { obtenerContexto, pararTodo } from '@/audio/AudioEngine';
 import { BarraAcciones } from '@/ui/BarraAcciones';
-import { IconoAnterior, IconoParar, IconoSiguiente, IconoTocar } from '@/ui/Simbolos';
+import { IconoAnterior, IconoComprobar, IconoParar, IconoSiguiente, IconoTocar } from '@/ui/Simbolos';
 import { duracionDe, type Estimulo } from '../estimulo';
 import { sonarEstimulo } from '../sonarEstimulo';
 import { Personaje } from '@/ui/Personaje';
@@ -38,7 +38,7 @@ interface Lamina {
   bucle?: boolean;
 }
 
-export default function Presentacion({ actividad, alTerminar }: PropsActividad) {
+export default function Presentacion({ actividad, alTerminar, alSalir }: PropsActividad) {
   const contenido = actividad.contenido as { consigna: string; laminas: Lamina[] };
   const [lamina, setLamina] = useState(0);
   const total = contenido.laminas.length;
@@ -200,16 +200,24 @@ export default function Presentacion({ actividad, alTerminar }: PropsActividad) 
           <span className="acciones__valor" aria-live="polite">
             {lamina + 1}/{total}
           </span>
-          <button
-            type="button"
-            className="boton-principal"
-            aria-label={t('serie.siguiente')}
-            aria-disabled={lamina + 1 >= total || undefined}
-            onClick={siguiente}
-          >
-            <IconoSiguiente />
-            {t('serie.siguiente')}
-          </button>
+          {/* En la última lámina el botón no se apaga: cierra. Una presentación no tiene
+              final que celebrar, así que el mismo botón grande devuelve al catálogo. */}
+          {lamina + 1 < total ? (
+            <button
+              type="button"
+              className="boton-principal"
+              aria-label={t('serie.siguiente')}
+              onClick={siguiente}
+            >
+              <IconoSiguiente />
+              {t('serie.siguiente')}
+            </button>
+          ) : (
+            <button type="button" className="boton-principal" onClick={alSalir}>
+              <IconoComprobar />
+              {t('comun.cerrar')}
+            </button>
+          )}
         </div>
       </BarraAcciones>
     </section>
