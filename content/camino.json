@@ -11,24 +11,19 @@
           "titulo": "¿Suena o no suena?",
           "idea": "Lo primero que se aprende no es un sonido: es el silencio, y que se puede estar callado a propósito.",
           "actividades": [
-            "tr-17-milo-se-presenta",
-            "tr-18-sol-se-presenta",
+            "tr-19-dora-se-presenta",
             "inf-01-semaforo-del-sonido",
             "inf-02-largo-o-corto",
             "inf-20-rapido-o-despacio",
             "inf-21-fuerte-o-flojito",
-            "tr-19-dora-se-presenta",
-            "tr-20-rex-se-presenta",
-            "tr-21-fara-se-presenta",
-            "tr-22-laia-se-presenta",
-            "tr-23-simon-se-presenta",
-            "tr-24-doby-se-presenta"
+            "tr-21-fara-se-presenta"
           ]
         },
         {
           "titulo": "Grave y agudo",
           "idea": "El ratón y el elefante. Grave y agudo se entienden por el tamaño del animal mucho antes que por la palabra.",
           "actividades": [
+            "tr-23-simon-se-presenta",
             "inf-03-el-raton-y-el-elefante",
             "inf-04-el-pajaro-y-el-oso",
             "inf-15-de-grave-a-agudo"
@@ -38,6 +33,7 @@
           "titulo": "¿Quién ha sonado?",
           "idea": "Reconocer un instrumento con los ojos cerrados. Es la primera vez que escuchar es una tarea y no algo que pasa de fondo.",
           "actividades": [
+            "tr-20-rex-se-presenta",
             "inf-13-quien-ha-sonado",
             "inf-05-paisaje-sonoro",
             "inf-10-cajas-de-sonidos",
@@ -46,13 +42,15 @@
             "inf-25-los-animales-de-la-granja",
             "inf-26-que-suena-en-casa",
             "inf-27-que-tiempo-hace",
-            "inf-28-memory-de-animales"
+            "inf-28-memory-de-animales",
+            "tr-17-milo-se-presenta"
           ]
         },
         {
           "titulo": "El pulso está en el cuerpo",
           "idea": "El pulso no se explica, se camina. A esta edad va en los pies y en las manos, nunca en un dibujo.",
           "actividades": [
+            "tr-18-sol-se-presenta",
             "inf-09-eco-de-palmas",
             "inf-08-camina-corre-para",
             "inf-17-palmas-y-muslos",
@@ -64,6 +62,7 @@
           "titulo": "Sube y baja",
           "idea": "La melodía como una línea que sube y baja. Es la idea de la que saldrá el pentagrama dentro de dos años.",
           "actividades": [
+            "tr-24-doby-se-presenta",
             "inf-11-cancion-con-pictogramas",
             "inf-16-animales-que-bajan",
             "inf-19-el-piano-de-la-pandilla",
@@ -75,6 +74,7 @@
           "titulo": "Inventar",
           "idea": "Sin respuesta correcta y sin prisa. Aquí lo que se practica es atreverse.",
           "actividades": [
+            "tr-22-laia-se-presenta",
             "inf-06-dibuja-el-sonido",
             "inf-14-el-cuento-sonoro",
             "tr-03-caja-de-sonidos"

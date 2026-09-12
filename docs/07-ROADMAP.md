@@ -3112,7 +3112,10 @@ textos, niveles, camino, y la sección de instrumentos.
       como una estatua; todas sus láminas se hacen de pie. Y los otros seis (tr-19 a tr-24),
       cada uno con lo suyo y sin repetirse: Dora la base y la casa, Rex descubrir sonidos,
       Fara la calma y el silencio, Laia inventar, Simón distinguir dos sonidos que se parecen,
-      Doby hacerlo juntos. En el Taller, sus tarjetas llevan al personaje en pequeño, a la
+      Doby hacerlo juntos. En el camino de Infantil no van seguidas: cada una abre (o
+      cierra) el paso donde está lo suyo —Dora y Fara en «¿Suena o no suena?», Simón en
+      «Grave y agudo», Rex y Milo en «¿Quién ha sonado?», Sol en el pulso, Doby en «Sube y
+      baja», Laia en «Inventar»—. En el Taller, sus tarjetas llevan al personaje en pequeño, a la
       derecha, en una pose al azar. Y las láminas que piden escuchar algo lo llevan
       (`sonido`, un estímulo como los de elección) con un botón de escuchar y parar, uno o
       dos por presentación y uno de ellos la nota del personaje, sola, con voz y dos segundos;
