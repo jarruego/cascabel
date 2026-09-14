@@ -329,6 +329,15 @@ export default function Lienzo({ actividad, alTerminar }: PropsActividad) {
           dibujando.current = false;
           callar();
         }}
+        /*
+          Y la pulsación larga no saca el menú del navegador.
+
+          El CSS ya impide que se seleccione texto, pero el menú de contexto es otro camino
+          al mismo sitio: al mantener el dedo un rato, Android lo abre, se lleva el puntero y
+          la nota sostenida se corta. Aquí mantener pulsado **es** la forma de tocar una nota
+          larga, así que ese gesto es nuestro.
+        */
+        onContextMenu={(e) => e.preventDefault()}
       >
         {/* Franjas de altura: se ven, así que el niño sabe dónde está cada sonido antes
             de tocarlo. Sin ellas el lienzo sería una caja negra. */}

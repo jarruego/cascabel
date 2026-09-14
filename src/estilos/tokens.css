@@ -2102,9 +2102,42 @@ p {
   border: 4px solid var(--linea);
   border-radius: var(--r-l);
   overflow: hidden;
+  /*
+    Mantener el dedo quieto NO puede seleccionar nada.
+
+    `touch-action: none` ya evitaba que el navegador se quedara el gesto para desplazar, pero
+    faltaba lo otro: al dejar el dedo —o el ratón— pulsado un rato sobre el lienzo, el
+    navegador entendía que se estaba **seleccionando texto** y sacaba su selector. Eso roba el
+    puntero, dispara el `pointercancel`, y la nota que se estaba sosteniendo se cortaba en
+    seco: «se activa el selector de texto y se para la música» (el autor, 2026-09-15). En
+    móvil es peor todavía, porque la pulsación larga saca además el menú de contexto.
+
+    Es de las tres propiedades a la vez: `user-select` para la selección, el `-webkit-` para
+    los navegadores que aún lo piden, y `-webkit-touch-callout` para el bocadillo de iOS y
+    Android al mantener pulsado.
+  */
   touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
   cursor: crosshair;
 }
+/*
+  Lo mismo donde mantener pulsado también es tocar: las teclas del piano, los pads y las
+  bandas del karaoke. Ahí la nota no se sostiene, así que no se corta ningún sonido y el daño
+  es menor — pero un menú de contexto o un selector de texto saltando a mitad de actividad es
+  igual de malo, y a un niño de seis años lo saca de la pantalla sin que sepa qué ha hecho.
+*/
+.teclado__blanca,
+.teclado__negra,
+.pads__pad,
+.karaoke__banda,
+.karaoke__carril[data-tocable] {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
 .lienzo__franja {
   position: absolute;
   left: 0;

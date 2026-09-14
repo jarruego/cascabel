@@ -3703,6 +3703,30 @@ tienen quince. Se ha optado por catorce, alargando el último «miau», porque a
 línea. Y el tempo, 72: los cuatro semicorcheas de «ja-do-ma-ra» salen a 208 ms, lo más rápido
 que se le pide a un niño de 1.º en todo el catálogo.
 
+### Mantener el dedo cortaba la nota, 2026-09-15
+
+«En las actividades de lienzo, si mantengo una nota pulsada un rato sin levantar el dedo, se
+activa el selector de texto y se para la música.» El lienzo es justamente donde **mantener
+pulsado es tocar una nota larga**, así que el navegador se estaba quedando con el gesto
+principal de la actividad.
+
+- [x] **Faltaban tres propiedades, no una.** `touch-action: none` ya estaba —evita que el
+      gesto se lo lleve el desplazamiento— pero no impide que el navegador entienda que se
+      está **seleccionando texto**: su selector roba el puntero, dispara `pointercancel` y la
+      nota sostenida se corta en seco. Van las tres: `user-select`, su `-webkit-`, y
+      `-webkit-touch-callout` para el bocadillo de la pulsación larga en móvil.
+- [x] **Y el menú de contexto, que es el otro camino al mismo sitio.** En Android la pulsación
+      larga lo abre. `onContextMenu` con `preventDefault` en el lienzo: ahí ese gesto es
+      nuestro.
+- [x] **Aplicado también donde mantener pulsado es tocar**, aunque la nota no se sostenga: las
+      teclas del piano, los pads y las bandas del karaoke. No se corta ningún sonido, pero un
+      selector saltando a mitad de actividad saca de la pantalla a un niño de seis años sin
+      que sepa qué ha hecho.
+
+Sin test: jsdom no maqueta ni implementa la selección del navegador, y un test que no mide no
+vigila nada. **Hay que verlo en el aparato**, manteniendo el dedo quieto tres segundos sobre
+el lienzo con la flauta, que es donde se oía cortarse.
+
 ### T3.6 — Tipo `director`: tempo y volumen sobre una pieza `⚠️`
 
 **111 «El mando del director» no se puede usar.** Su ficha promete dos deslizadores —uno de
