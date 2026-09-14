@@ -696,8 +696,8 @@
     },
     {
       "id": "c1-19-adivina-quien-baja",
-      "titulo": "Adivina quién baja: negra, blanca y redonda",
-      "descripcion": "Bajan círculos vacíos, despacio y bien separados, y el animal solo aparece si tocas a tiempo. El nombre de cada animal tiene tantas sílabas como pulsos dura.",
+      "titulo": "Cada animal dura su nombre",
+      "descripcion": "Bajan animales con una cola tan larga como lo que duran, y al cruzar la línea se escribe su nombre una sílaba por pulso: e-le-fan-te.",
       "etapa": "primaria-c1",
       "eje": "pulso",
       "tipo": "karaoke",
@@ -723,7 +723,7 @@
       ],
       "personaje": "milo",
       "figura": {
-        "glifo": "redonda"
+        "icono": "elefante"
       },
       "practica": {
         "figuras": [

@@ -2,8 +2,8 @@
   "id": "c1-19-adivina-quien-baja",
   "version": 2,
   "tipo": "karaoke",
-  "titulo": "Adivina quién baja: negra, blanca y redonda",
-  "descripcion": "Bajan círculos vacíos, despacio y bien separados, y el animal solo aparece si tocas a tiempo. El nombre de cada animal tiene tantas sílabas como pulsos dura.",
+  "titulo": "Cada animal dura su nombre",
+  "descripcion": "Bajan animales con una cola tan larga como lo que duran, y al cruzar la línea se escribe su nombre una sílaba por pulso: e-le-fan-te.",
   "etapa": "primaria-c1",
   "eje": "pulso",
   "lugar": "pantalla",
@@ -335,26 +335,26 @@
     ],
     "enPantalla": "Bajan los animales hacia una línea, y cada uno arrastra una cola tan larga como dura: el pez apenas tiene, el elefante ocupa casi la pantalla entera. Al cruzar la línea, debajo se va escribiendo su nombre, una sílaba por pulso: «e», «e-le», «e-le-fan», «e-le-fan-te». Si se toca justo cuando el animal cruza, se ilumina; si se toca antes, el animal se apaga y ya no se recupera. A un pulso por segundo. Tres ejercicios y un resumen al final.",
     "sinPantalla": "Cinco tarjetas con los animales boca abajo en la pizarra. Tú marcas el pulso con el pie y dices un nombre repartiendo una sílaba por pulso: «pez», «o-so», «e-le-fan-te». Los niños dan una palmada en la primera sílaba y cuentan las demás con los dedos. Quien diga bien cuántos pulsos ha durado le da la vuelta a la tarjeta. Lo que se practica es lo mismo: entrar en el momento justo y aguantar el hueco.",
-    "masFacil": "Quédate en el primer ejercicio, donde todo dura dos pulsos: toca, di «o-so», toca. Di tú «ya» en cada línea la primera vuelta, para que el dedo tenga una señal. Si se les escapan círculos, que dejen pasar alguno y entren en el siguiente: acertar tres es mejor que perseguir seis. Y que digan el nombre en voz alta, no por dentro, hasta que el pie y la voz vayan juntos.",
-    "masDificil": "Que digan la figura al tocar: «negra», «blanca», «redonda». Que hagan dos cosas a la vez: el pie marca todos los pulsos y la mano solo toca los círculos. Después, el tercer ejercicio con los ojos cerrados la segunda mitad, diciendo los nombres: si el animal aparece, han contado bien. Y que inventen ellos más animales para cada figura: uno de una sílaba cuesta —«pez», «buey»—, de dos hay a montones y de cuatro están «ma-ri-po-sa» y «co-co-dri-lo».",
+    "masFacil": "Quédate en el primer ejercicio, donde todo dura dos pulsos: toca, di «o-so», toca. Di tú «ya» en cada línea la primera vuelta, para que el dedo tenga una señal. Si se les escapan animales, que dejen pasar alguno y entren en el siguiente: acertar tres es mejor que perseguir seis. Y que digan el nombre en voz alta, no por dentro, hasta que el pie y la voz vayan juntos.",
+    "masDificil": "Que digan la figura al tocar: «negra», «blanca», «redonda». Que hagan dos cosas a la vez: el pie marca todos los pulsos y la mano solo entra con cada animal. Después, el tercer ejercicio con los ojos cerrados la segunda mitad, diciendo los nombres: si el animal se ilumina, han contado bien. Y que inventen ellos más animales para cada figura: uno de una sílaba cuesta —«pez», «buey»—, de dos hay a montones y de cuatro están «ma-ri-po-sa» y «co-co-dri-lo».",
     "variante": {
       "titulo": "Animales de pie",
       "texto": "Cinco niños, uno por animal. La clase marca el pulso con palmas suaves. Tú señalas a uno y el niño dice su nombre repartiendo una sílaba en cada palmada, y se sienta al acabar: el pez apenas se levanta, el elefante tarda cuatro. Los demás comprueban contando. Después, que sea un niño quien señala, y al final que dos animales suenen seguidos sin que se pare el pulso."
     },
     "ideas": [
       "Buscar entre todos animales de una, dos y cuatro sílabas y hacer tres columnas en la pizarra: negras, blancas y redondas.",
-      "Inventar por parejas un ritmo con los cinco animales, escribirlo con círculos más o menos separados y que la otra pareja lo palmee.",
+      "Inventar por parejas un ritmo con los cinco animales, escribirlo con rayas más o menos largas y que la otra pareja lo palmee.",
       "Buscar en una canción que ya sepan una nota que dure mucho, y contar entre todos cuántos pulsos aguanta."
     ],
     "loTiene": [
-      "Toca cuando el círculo llega a la línea, ni al verlo arriba ni cuando ya ha pasado.",
+      "Toca cuando el animal llega a la línea, ni al verlo arriba ni cuando ya ha pasado.",
       "Aguanta el elefante sus cuatro pulsos sin tocar en medio, diciendo las cuatro sílabas.",
       "Dice cuántos pulsos dura un animal solo con contar las sílabas de su nombre."
     ],
     "errores": [
       {
-        "error": "Toca en cuanto ve el círculo aparecer arriba",
-        "remedio": "que mire solo la línea y vaya diciendo el nombre del animal; el círculo de arriba todavía no toca."
+        "error": "Toca en cuanto ve al animal aparecer arriba",
+        "remedio": "que mire solo la línea y vaya diciendo el nombre del animal; el de arriba todavía no toca."
       },
       {
         "error": "En el elefante toca dos o tres veces para asegurar",
@@ -396,6 +396,6 @@
     "pulso lento"
   ],
   "figura": {
-    "glifo": "redonda"
+    "icono": "elefante"
   }
 }

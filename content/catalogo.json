@@ -226,7 +226,7 @@
     },
     {
       "id": "C1-19",
-      "titulo": "Adivina quién baja: negra, blanca y redonda",
+      "titulo": "Cada animal dura su nombre",
       "etapa": "primaria-c1",
       "eje": "pulso",
       "lugar": "pantalla",
@@ -234,7 +234,7 @@
       "microfono": false,
       "esfuerzo": "M",
       "curriculo": "CE3 . crit. 3.1 . saber D",
-      "descripcion": "Bajan círculos vacíos y el animal solo aparece si lo tocas a tiempo. La misma actividad que la de Infantil, con una vuelta más.",
+      "descripcion": "Bajan animales con una cola tan larga como duran, y al cruzar la línea se escribe su nombre una sílaba por pulso. La misma actividad que la de Infantil, con una vuelta más.",
       "estado": "hecha"
     },
     {

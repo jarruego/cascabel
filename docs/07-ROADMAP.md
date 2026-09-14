@@ -3594,6 +3594,34 @@ clic fue multiplicar por tres el ritmo al que se llenaba el grafo, y así un fal
 volvió reproducible. Cuando algo «empieza a fallar hoy», conviene preguntarse si lo de hoy
 es la causa o solo el acelerador.
 
+### El título de la 119, y las quince fichas del karaoke, 2026-09-14 (cierre)
+
+«El título de la 119 no sé si cuadra mucho, no salen redondas, blancas ni negras.» Cierto, y
+tirando del hilo salieron más sitios donde la ficha ya no decía lo que hace la pantalla.
+
+- [x] **119 se llama «Cada animal dura su nombre».** El título anterior —«Adivina quién baja:
+      negra, blanca y redonda»— prometía figuras que ahí no se dibujan: lo que baja son
+      animales. Las figuras siguen declaradas en `practica`, que es donde van: son lo que se
+      practica, no lo que se ve. Y con el título se fueron el glifo de redonda de la tarjeta
+      (ahora el elefante), la entrada del catálogo y las tres cadenas de `i18n`.
+- [x] **Y su enunciado mentía desde por la mañana.** Decía «los círculos bajan vacíos, si
+      tocas a tiempo aparece el animal que llevaban dentro», que era verdad hasta que le
+      quitamos el `revelar`: ahora los animales se ven desde arriba. Cambiado, junto con la
+      pista y seis sitios de la ficha que hablaban de «círculos».
+- [x] **Las tres de duración dicen que hay cola.** 140, 215 y 349. En 215 la ficha ya decía
+      «cada figura ocupa el espacio de lo que dura» y era **falso** desde que se escribió —es
+      justo el fallo del `pulsos * 20`—; ahora es verdad y además se explica cómo se ve.
+- [x] **Las quince del karaoke dicen qué pasa al adelantarse.** Cinco no lo mencionaban y
+      cuatro afirmaban lo contrario: «si entra tarde o pronto, no pasa nada». Desde el arreglo
+      de aporrear sí pasa —la nota se apaga y no se recupera—, así que eran cuatro fichas
+      diciéndole al maestro justo lo contrario de lo que iba a ver.
+
+**Lo que queda por decidir, y es de criterio pedagógico**: en `inf-16` y `inf-29`, que son de
+Infantil, quemar la nota por adelantarse puede ser mucho. La regla de evaluación ya era ésa
+desde el 2026-09-10 —solo que antes no se veía hasta el resumen—, así que no es nuevo; pero
+ahora un niño de cuatro años ve apagarse lo que toca. Con la ventana de ±400 ms de su carril
+hace falta adelantarse bastante, y por eso se deja como está y se anota aquí.
+
 ### T3.6 — Tipo `director`: tempo y volumen sobre una pieza `⚠️`
 
 **111 «El mando del director» no se puede usar.** Su ficha promete dos deslizadores —uno de
