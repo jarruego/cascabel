@@ -3581,9 +3581,18 @@ va» —que son tres y solo una estaba tapada— salieron las otras dos. Ninguna
 - [x] **`nodos enchufados` en `/diagnostico`.** Sube al sonar y **tiene que volver a cero**.
       Es lo que convierte «parece que ya no pasa» en un número que se mira.
 
-**Cómo se comprueba, que es la parte que importa**: abrir la 119 tres o cuatro veces y mirar
+**Confirmado en el aparato el 2026-09-14**: con los tres cambios puestos, el sonido aguanta.
+
+Cómo se vuelve a comprobar si reaparece: abrir la 119 tres o cuatro veces y mirar
 `/diagnostico`. Si «nodos enchufados» no vuelve a cero, queda fuga. Si vuelve a cero y aun
 así no suena, mirar «estado contexto»: si dice `suspended`, es el camino de arriba.
+
+**Y la lección de la cacería**, que costó cuatro intentos: el detonante fue una línea de una
+tarde —un clic por cada toque, que antes no existía— pero **la avería llevaba ahí desde
+siempre**. Los nodos por nota no se desconectaban desde el primer día; lo único que hizo el
+clic fue multiplicar por tres el ritmo al que se llenaba el grafo, y así un fallo latente se
+volvió reproducible. Cuando algo «empieza a fallar hoy», conviene preguntarse si lo de hoy
+es la causa o solo el acelerador.
 
 ### T3.6 — Tipo `director`: tempo y volumen sobre una pieza `⚠️`
 
