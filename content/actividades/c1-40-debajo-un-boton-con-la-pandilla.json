@@ -1,9 +1,9 @@
 {
   "id": "c1-40-debajo-un-boton-con-la-pandilla",
-  "version": 1,
+  "version": 2,
   "tipo": "karaoke",
   "titulo": "Debajo un botón con la pandilla",
-  "descripcion": "«Debajo un botón» con un solo pulsador: cada nota baja con su personaje —Dora, Rex, Milo, Fara, Sol, Laia, Doby— y se toca a tiempo cuando llega a la línea.",
+  "descripcion": "«Debajo un botón» con la pandilla y un solo pulsador, y la letra debajo con la sílaba que suena resaltada, para cantarla mientras se toca.",
   "etapa": "primaria-c1",
   "eje": "pulso",
   "lugar": "pantalla",
@@ -23,7 +23,7 @@
     "modo": "toque"
   },
   "contenido": {
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el ritmo es el de las transcripciones (corchea con puntillo y semicorchea al empezar cada frase); a 72 los personajes iban muy juntos y el autor pidió bajar (2026-09-11): a 60, la semicorchea son 250 ms. Si aún cuesta, dar la pareja «De-ba» por un solo toque.",
+    "$comment": "La letra se enseña entera debajo del recuadro y se resalta la sílaba que suena: una por nota. **No está escrita de memoria**: se ha copiado sílaba a sílaba de C1-37 «Debajo un botón con el cuerpo», donde ya estaba cotejada contra las transcripciones de COAEM y Partyflauta, y antes de repartirla se ha comprobado que las veintiocho notas y las veintiocho figuras de las dos actividades coinciden exactamente (2026-09-14). La canción es tradicional anónima y así consta en las dos fuentes; CLAUDE.md §10 exige que una letra se verifique aparte de la melodía, porque una adaptación tiene derechos propios aunque el original sea de dominio público — es lo que dejó fuera la letra española de «Estrellita» en C1-36.",
     "consigna": "actividad.c140.consigna",
     "representacion": "personaje",
     "orientacion": "vertical",
@@ -35,59 +35,101 @@
         "notas": [
           {
             "nota": "C4",
-            "pulsos": 0.75
+            "pulsos": 0.75,
+            "palabra": [
+              "De"
+            ]
           },
           {
             "nota": "D4",
-            "pulsos": 0.25
+            "pulsos": 0.25,
+            "palabra": [
+              "ba"
+            ]
           },
           {
             "nota": "E4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "jo un"
+            ]
           },
           {
             "nota": "F4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "bo"
+            ]
           },
           {
             "nota": "G4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "tón"
+            ]
           },
           {
             "nota": "G4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "ton"
+            ]
           },
           {
             "nota": "G4",
-            "pulsos": 1
+            "pulsos": 1,
+            "palabra": [
+              "ton"
+            ]
           },
           {
             "nota": "A4",
-            "pulsos": 0.75
+            "pulsos": 0.75,
+            "palabra": [
+              "que en"
+            ]
           },
           {
             "nota": "A4",
-            "pulsos": 0.25
+            "pulsos": 0.25,
+            "palabra": [
+              "con"
+            ]
           },
           {
             "nota": "C5",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "tró"
+            ]
           },
           {
             "nota": "F4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "Mar"
+            ]
           },
           {
             "nota": "G4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "tín"
+            ]
           },
           {
             "nota": "G4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "tin"
+            ]
           },
           {
             "nota": "G4",
-            "pulsos": 1
+            "pulsos": 1,
+            "palabra": [
+              "tin"
+            ]
           }
         ]
       },
@@ -96,59 +138,101 @@
         "notas": [
           {
             "nota": "F4",
-            "pulsos": 0.75
+            "pulsos": 0.75,
+            "palabra": [
+              "ha"
+            ]
           },
           {
             "nota": "G4",
-            "pulsos": 0.25
+            "pulsos": 0.25,
+            "palabra": [
+              "bí"
+            ]
           },
           {
             "nota": "A4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "a un"
+            ]
           },
           {
             "nota": "F4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "ra"
+            ]
           },
           {
             "nota": "E4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "tón"
+            ]
           },
           {
             "nota": "E4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "ton"
+            ]
           },
           {
             "nota": "E4",
-            "pulsos": 1
+            "pulsos": 1,
+            "palabra": [
+              "ton"
+            ]
           },
           {
             "nota": "D4",
-            "pulsos": 0.75
+            "pulsos": 0.75,
+            "palabra": [
+              "ay"
+            ]
           },
           {
             "nota": "E4",
-            "pulsos": 0.25
+            "pulsos": 0.25,
+            "palabra": [
+              "qué"
+            ]
           },
           {
             "nota": "F4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "chi"
+            ]
           },
           {
             "nota": "D4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "qui"
+            ]
           },
           {
             "nota": "C4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "tín"
+            ]
           },
           {
             "nota": "C4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "tin"
+            ]
           },
           {
             "nota": "C4",
-            "pulsos": 1
+            "pulsos": 1,
+            "palabra": [
+              "tin"
+            ]
           }
         ]
       },
@@ -157,119 +241,204 @@
         "notas": [
           {
             "nota": "C4",
-            "pulsos": 0.75
+            "pulsos": 0.75,
+            "palabra": [
+              "De"
+            ]
           },
           {
             "nota": "D4",
-            "pulsos": 0.25
+            "pulsos": 0.25,
+            "palabra": [
+              "ba"
+            ]
           },
           {
             "nota": "E4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "jo un"
+            ]
           },
           {
             "nota": "F4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "bo"
+            ]
           },
           {
             "nota": "G4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "tón"
+            ]
           },
           {
             "nota": "G4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "ton"
+            ]
           },
           {
             "nota": "G4",
-            "pulsos": 1
+            "pulsos": 1,
+            "palabra": [
+              "ton"
+            ]
           },
           {
             "nota": "A4",
-            "pulsos": 0.75
+            "pulsos": 0.75,
+            "palabra": [
+              "que en"
+            ]
           },
           {
             "nota": "A4",
-            "pulsos": 0.25
+            "pulsos": 0.25,
+            "palabra": [
+              "con"
+            ]
           },
           {
             "nota": "C5",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "tró"
+            ]
           },
           {
             "nota": "F4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "Mar"
+            ]
           },
           {
             "nota": "G4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "tín"
+            ]
           },
           {
             "nota": "G4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "tin"
+            ]
           },
           {
             "nota": "G4",
-            "pulsos": 1
+            "pulsos": 1,
+            "palabra": [
+              "tin"
+            ]
           },
           {
             "nota": "F4",
-            "pulsos": 0.75
+            "pulsos": 0.75,
+            "palabra": [
+              "ha"
+            ]
           },
           {
             "nota": "G4",
-            "pulsos": 0.25
+            "pulsos": 0.25,
+            "palabra": [
+              "bí"
+            ]
           },
           {
             "nota": "A4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "a un"
+            ]
           },
           {
             "nota": "F4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "ra"
+            ]
           },
           {
             "nota": "E4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "tón"
+            ]
           },
           {
             "nota": "E4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "ton"
+            ]
           },
           {
             "nota": "E4",
-            "pulsos": 1
+            "pulsos": 1,
+            "palabra": [
+              "ton"
+            ]
           },
           {
             "nota": "D4",
-            "pulsos": 0.75
+            "pulsos": 0.75,
+            "palabra": [
+              "ay"
+            ]
           },
           {
             "nota": "E4",
-            "pulsos": 0.25
+            "pulsos": 0.25,
+            "palabra": [
+              "qué"
+            ]
           },
           {
             "nota": "F4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "chi"
+            ]
           },
           {
             "nota": "D4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "qui"
+            ]
           },
           {
             "nota": "C4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "tín"
+            ]
           },
           {
             "nota": "C4",
-            "pulsos": 0.5
+            "pulsos": 0.5,
+            "palabra": [
+              "tin"
+            ]
           },
           {
             "nota": "C4",
-            "pulsos": 1
+            "pulsos": 1,
+            "palabra": [
+              "tin"
+            ]
           }
         ]
       }
-    ]
+    ],
+    "letra": true
   },
   "evaluacion": {
     "autocorrectiva": true,
@@ -308,7 +477,7 @@
       {
         "min": 1,
         "titulo": "Un solo pulsador.",
-        "detalle": "Explica que cada nota baja con su personaje de la pandilla, pero solo hay un botón: da igual quién venga, se toca cuando llega a la línea. Se pone la app y solo se mira la primera frase."
+        "detalle": "Explica que cada nota baja con su personaje de la pandilla, pero solo hay un botón: da igual quién venga, se toca cuando llega a la línea. Y que abajo está la letra, con la sílaba que toca resaltada, para no perderse. Se pone la primera vez con el proyector."
       },
       {
         "min": 2,
@@ -323,10 +492,10 @@
       {
         "min": 1,
         "titulo": "Tercer ejercicio y cierre.",
-        "detalle": "La primera frase otra vez, más larga. Después, cantarla sin la app tocando la mesa con un dedo en cada sílaba."
+        "detalle": "La canción entera, más larga. Después, cantarla sin la app tocando la mesa con un dedo en cada sílaba: quien se sabe dónde cae cada una ya no necesita la letra de la pantalla."
       }
     ],
-    "enPantalla": "Los personajes de la pandilla —Dora, Rex, Milo, Fara, Sol, Laia, Doby— bajan uno detrás de otro, cada uno en la nota que le toca de «Debajo un botón», y abajo hay un solo pulsador. Hay que tocarlo cuando cada personaje llega a la línea, cantando la letra a la vez. Va despacio a propósito, para que el «de-ba» rápido se pueda seguir. A tiempo, la nota suena y se ilumina; adelantarse la apaga y pasarla no hace nada. Sin marcador mientras se juega, y un resumen al acabar. Son tres ejercicios.",
+    "enPantalla": "Los personajes de la pandilla bajan uno detrás de otro, cada uno en la nota que le toca de «Debajo un botón», y abajo hay un solo pulsador. Debajo del recuadro está la letra entera, una sílaba por nota, y se resalta la que suena: así se ve venir la siguiente y se puede cantar a la vez que se toca. Va despacio a propósito, para que el «de-ba» rápido se pueda seguir. A tiempo, la nota suena y se ilumina; adelantarse la apaga y pasarla no hace nada. Tres ejercicios y un resumen al acabar.",
     "sinPantalla": "Canta «Debajo un botón» despacio y que los niños den una palmada por sílaba, o toquen la mesa con un dedo. Marca el pulso con el pie. Para el «de-ba» rápido, dilo hablado varias veces antes de cantar: «de-ba-jo», con las dos primeras juntas. Para el eco, que lo hagan con los pies: «ton, ton» cortos y «ton» largo. En corro, una frase cada niño, y el eco lo hacen los demás.",
     "masFacil": "Dar «de-ba» por un solo toque: se toca en «de» y se deja pasar «ba». Después, tocar solo los ecos, «ton, ton, ton» y «tin, tin, tin», y cantar el resto sin tocar. Y cantar la letra en voz alta mientras se toca: la boca sabe cuándo viene cada sílaba antes que el dedo.",
     "masDificil": "Cantar el nombre del personaje que baja en lugar de la letra: «Do-ra, Rex, Mi-lo, Fa-ra, Sol, Sol, Sol». Por parejas: uno toca las palabras y el otro solo los ecos, y se cambian. Después, tocar la melodía en un xilófono siguiendo a los personajes, sin la app.",

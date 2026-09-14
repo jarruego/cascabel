@@ -134,6 +134,16 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
      * importa. Lo pidió el autor el 2026-09-14 después de verla en todas.
      */
     cola?: boolean;
+    /**
+     * Las `palabra` de las notas son **la letra de una canción**, no el nombre de cada figura.
+     *
+     * Cambia dónde se enseñan y cómo. Con el nombre de una figura —«e-le-fan-te» en una
+     * redonda— lo que importa es verlo construirse *dentro* de esa nota, así que se escribe
+     * junto a la línea y se borra al acabar. Con una letra es al revés: una sílaba por nota y
+     * **la frase entera a la vista**, porque leer por delante es exactamente para lo que
+     * sirve un karaoke. Quien no ve lo que viene no puede cantarlo.
+     */
+    letra?: boolean;
     /** Timbre. Ver `audio/instrumentos.ts`: hoy solo hay marimba. */
     instrumento?: string;
   };
@@ -161,6 +171,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
   const porCarril = (contenido.botonesPorCarril ?? false) && carriles.length > 1;
   const revelar = contenido.revelar ?? false;
   const conCola = contenido.cola ?? false;
+  const conLetra = contenido.letra ?? false;
   /*
     El aviso sigue a la representación salvo que se diga otra cosa. Es el mismo criterio que
     el resto del fichero: enseñar el nombre de la nota solo tiene sentido donde la altura es
@@ -548,7 +559,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
       const desde = ahora - tiempos[i]!;
       const duracion = n.pulsos * (60 / bpm);
       if (desde >= 0 && desde < duracion) {
-        return { silabas: n.palabra, dichas: silabasDichas(desde, duracion, n.palabra.length) };
+        return { indice: i, silabas: n.palabra, dichas: silabasDichas(desde, duracion, n.palabra.length) };
       }
     }
     return null;
@@ -758,7 +769,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
 
         {/* La palabra al pulso: una sílaba más cada vez que pasa un tramo de la nota. Solo
             las dichas, porque lo que enseña es verla crecer: «e», «e-le», «e-le-fan»... */}
-        {palabraEnCurso && (
+        {palabraEnCurso && !conLetra && (
           <span className="karaoke__palabra" aria-hidden="true">
             {palabraEnCurso.silabas.slice(0, palabraEnCurso.dichas).map((silaba, k) => (
               <span key={k} className="karaoke__silaba">{silaba}</span>
@@ -781,6 +792,37 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
           </span>
         ))}
       </div>
+
+      {/*
+        La letra, entera y **debajo del recuadro**, no dentro.
+
+        Dentro taparía justo la franja por la que las notas acaban de cruzar la línea, que es
+        donde hay que estar mirando. Y entera, no una sílaba cada vez: un karaoke sirve
+        porque se lee lo que viene, y quien no ve la sílaba siguiente no puede cantarla a
+        tiempo. La que suena va resaltada, las cantadas se apagan y las que faltan esperan.
+
+        No lleva `aria-hidden`: es texto y un lector de pantalla puede leerlo cuando quiera.
+        Lo que no lleva es región viva, que anunciaría una sílaba cada medio segundo.
+      */}
+      {conLetra && (
+        <p className="karaoke__letra">
+          {notas.map((n, i) =>
+            (n.palabra ?? []).map((silaba, k) => {
+              const dichas = palabraEnCurso?.indice === i ? palabraEnCurso.dichas : 0;
+              const estado =
+                palabraEnCurso === null || i > palabraEnCurso.indice ? 'porVenir' :
+                i < palabraEnCurso.indice ? 'dicha' :
+                k < dichas - 1 ? 'dicha' :
+                k === dichas - 1 ? 'ahora' : 'porVenir';
+              return (
+                <span key={`${i}-${k}`} className="karaoke__silabaLetra" data-estado={estado}>
+                  {silaba}
+                </span>
+              );
+            }),
+          )}
+        </p>
+      )}
 
       {/* El nombre también en texto vivo, para quien no puede ver la animación. */}
       <p className="visualmente-oculto" aria-live="polite">

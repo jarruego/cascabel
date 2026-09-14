@@ -3639,6 +3639,35 @@ desde el 2026-09-10 —solo que antes no se veía hasta el resumen—, así que 
 ahora un niño de cuatro años ve apagarse lo que toca. Con la ventana de ±400 ms de su carril
 hace falta adelantarse bastante, y por eso se deja como está y se anota aquí.
 
+### La letra en pantalla: un karaoke de verdad, 2026-09-14 (cierre 2)
+
+«¿El campo `palabra` serviría para hacer un karaoke?» El campo sí; la pantalla no, y por una
+razón que es la definición de lo que se pedía.
+
+- [x] **Una sílaba por nota, y la frase entera a la vista.** `palabra` nació para el nombre
+      de una figura —«e-le-fan-te» repartido *dentro* de una redonda—, y ahí lo que importa
+      es verlo construirse en la línea y que se borre al acabar. Una letra es al revés: una
+      sílaba por nota y **todas visibles**, porque un karaoke sirve exactamente porque se lee
+      lo que viene. Quien no ve la sílaba siguiente no puede cantarla a tiempo. Lo decide
+      `letra` en el contenido, y el mismo `silabasDichas()` dice cuál va resaltada.
+- [x] **Debajo del recuadro, no dentro.** Dentro taparía la franja por la que las notas acaban
+      de cruzar la línea, que es justo donde hay que mirar.
+- [x] **140 «Debajo un botón con la pandilla» la estrena.** Era la candidata clara: su ficha
+      ya pedía «cantando la letra a la vez» y la letra era lo único que no estaba en pantalla.
+
+**Y la letra no se ha escrito de memoria** (§10). Estaba ya en el repositorio, en C1-37
+«Debajo un botón con el cuerpo», cotejada contra las transcripciones de COAEM y Partyflauta.
+Antes de repartirla se comprobó que **las veintiocho notas y las veintiocho figuras de las
+dos actividades coinciden exactamente**, y eso es lo que hace legítimo el reparto. Hay test
+de las tres cosas: que las melodías coincidan, que las figuras coincidan y que las sílabas
+sean las mismas en los dos sitios — si un día divergen, el reparto deja de estar verificado y
+hay que rehacerlo, no ajustarlo.
+
+**Lo que NO se ha hecho, y es la parte delicada**: ninguna otra canción lleva letra. «Que la
+melodía sea de dominio público no hace que su letra lo sea» es la regla, y el precedente está
+en C1-36: la letra española de «Estrellita» se dejó fuera porque es una adaptación de autor
+desconocido y sin fecha comprobable. Cada letra se verifica aparte, una a una.
+
 ### T3.6 — Tipo `director`: tempo y volumen sobre una pieza `⚠️`
 
 **111 «El mando del director» no se puede usar.** Su ficha promete dos deslizadores —uno de

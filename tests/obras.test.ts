@@ -88,3 +88,43 @@ describe('las obras y canciones del contenido', () => {
     expect(malos).toEqual([]);
   });
 });
+
+/**
+ * La letra de «Debajo un botón» está escrita en dos sitios y **tiene que ser la misma**.
+ *
+ * En C1-37 es la de la percusión corporal, cotejada contra las transcripciones de COAEM y
+ * Partyflauta; en C1-40 es la que se lee en pantalla mientras se toca. Se copió de una a
+ * otra sílaba a sílaba a propósito (`CLAUDE.md` §10: una letra no se escribe de memoria), y
+ * sin este test nada impediría que alguien retocase una y dejase la otra diciendo otra cosa.
+ *
+ * Y de paso vigila lo que hace legítimo ese reparto: que las dos melodías coincidan nota por
+ * nota y figura por figura. Si un día dejan de coincidir, el reparto de sílabas de C1-40 deja
+ * de estar verificado y hay que rehacerlo, no ajustarlo.
+ */
+describe('la letra de «Debajo un botón», en sus dos actividades', () => {
+  const cuerpo = actividades.find((a) => a.id === 'c1-37-debajo-un-boton-con-el-cuerpo')!;
+  const karaoke = actividades.find((a) => a.id === 'c1-40-debajo-un-boton-con-la-pandilla')!;
+
+  const silabas = cuerpo.contenido.silabas as string[];
+  const melodia = cuerpo.contenido.melodia as string[];
+  const patron = (cuerpo.contenido.patron as Array<{ pulsos?: number }>).map((p) => p.pulsos ?? 1);
+  const entera = (karaoke.contenido.ejercicios as Array<{ notas: Array<Nota & { palabra?: string[] }> }>)
+    .find((e) => e.notas.length === silabas.length)!.notas;
+
+  it('las dos existen y tienen el mismo número de notas', () => {
+    expect(silabas).toHaveLength(melodia.length);
+    expect(entera).toHaveLength(melodia.length);
+  });
+
+  it('la melodía y las figuras coinciden nota por nota', () => {
+    expect(entera.map((n) => n.nota)).toEqual(melodia);
+    expect(entera.map((n) => n.pulsos)).toEqual(patron);
+  });
+
+  it('cada nota lleva su sílaba, y una sola', () => {
+    // Una sílaba por nota es lo que distingue una letra cantada del nombre de una figura,
+    // donde las sílabas se reparten DENTRO de una nota («e-le-fan-te» en una redonda).
+    expect(entera.map((n) => n.palabra)).toEqual(silabas.map((s) => [s]));
+  });
+});
+
