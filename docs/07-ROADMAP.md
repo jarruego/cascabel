@@ -3355,9 +3355,11 @@ escribieron.
       lo que hay, con el trabajo de verdad donde está —la guitarra y la regla en 309, el
       maestro preguntando en 113—.
 - [x] **207 tenía ocho franjas y la ficha decía cinco notas.** Sí eran la pentatónica —cinco
-      nombres repetidos en dos alturas—, pero eso no se deduce mirando. Se queda en seis:
-      do, re, mi, sol, la y otra vez el do, y la ficha lo dice con esas palabras. La octava
-      de arriba deja de ser una trampa y pasa a ser lo que se aprende.
+      nombres repetidos en dos alturas—, pero eso no se deduce mirando. El primer intento las
+      dejó en seis, con el do de arriba explicado en la ficha, y el autor lo devolvió: «hay
+      seis franjas y habla de cinco notas todo el rato». **Cinco franjas y cinco notas**, do,
+      re, mi, sol y la. Cuando la pantalla y el texto no cuadran, lo que sobra es la franja,
+      no la explicación.
 - [x] **119: el nombre del animal dice lo que dura.** Idea del autor. Antes «co-ne-jo» duraba
       un pulso y «o-so» cuatro, que es lo contrario de lo que sugiere el nombre. Ahora cada
       animal tiene **tantas sílabas como pulsos**: `pez` negra, `o-so`, `ra-na` y `ga-to`
