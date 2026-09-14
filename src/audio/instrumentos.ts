@@ -410,9 +410,26 @@ export function muestrasDe(nombre: string | undefined): Muestra[] {
 /**
  * El sampler de un instrumento, sabiendo si sostiene: es el único sitio donde se
  * construye uno, para que ningún tipo se olvide de decírselo (2026-09-12).
+ *
+ * **Y es uno por instrumento para toda la app**, no uno por actividad (2026-09-14). Cada
+ * componente creaba el suyo al montarse y volvía a descargar y decodificar las seis
+ * muestras; con dos o tres actividades seguidas eso son megas de `AudioBuffer` nuevos cada
+ * vez, para tener exactamente los mismos sonidos. Compartirlo lo convierte en una sola
+ * carga por instrumento y por sesión, y de paso la segunda actividad abre al instante.
+ *
+ * Se puede compartir porque un sampler **no guarda estado de lo que suena**: cada nota crea
+ * su propia fuente y su propia envolvente, y se sueltan solas al acabar.
  */
+const compartidos = new Map<string, Sampler>();
+
 export function samplerPara(nombre: string | undefined): Sampler {
-  return new Sampler(muestrasDe(nombre), sostiene(nombre));
+  const clave = nombre ?? 'marimba';
+  let sampler = compartidos.get(clave);
+  if (!sampler) {
+    sampler = new Sampler(muestrasDe(nombre), sostiene(nombre));
+    compartidos.set(clave, sampler);
+  }
+  return sampler;
 }
 
 /** Los nombres disponibles, para que una pantalla de ajustes pueda ofrecerlos. */

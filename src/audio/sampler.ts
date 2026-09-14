@@ -93,7 +93,30 @@ export class Sampler {
     private sostenido = false,
   ) {}
 
+  /**
+   * Las muestras se cargan **una sola vez**, aunque se pida mil.
+   *
+   * Antes cada actividad que se abría volvía a descargarlas y a decodificarlas: seis
+   * ficheros y, ya en memoria, un `AudioBuffer` de un cuarto de mega por muestra. Con los
+   * samplers compartidos por instrumento (`audio/instrumentos.ts`) esto se llama en cada
+   * montaje, así que sin memorizarlo la segunda actividad pagaría lo mismo que la primera.
+   *
+   * Si falla se olvida, para que el siguiente intento vuelva a probar: una descarga cortada
+   * no puede dejar un instrumento mudo para el resto de la sesión.
+   */
+  private cargando: Promise<void> | null = null;
+
   async cargar(): Promise<void> {
+    if (!this.cargando) {
+      this.cargando = this.cargarMuestras().catch((e: unknown) => {
+        this.cargando = null;
+        throw e;
+      });
+    }
+    return this.cargando;
+  }
+
+  private async cargarMuestras(): Promise<void> {
     const ctx = obtenerContexto();
     // Una sola salida para todos los samplers, compartida: ver `salidaDe`. Antes cada uno
     // creaba la suya y nadie la desconectaba, así que cada actividad dejaba un nodo colgado.

@@ -58,17 +58,27 @@ function parametro() {
 /** Todas las ganancias creadas, para contar cuántas se quedan enchufadas. */
 const ganancias: Array<NodoFalso & { gain: ReturnType<typeof parametro> }> = [];
 
+/** El último contexto creado, para mirarle el estado desde los tests. */
+let ultimoContexto: { state: string; reanudaciones: number } | null = null;
+
 function contextoFalso() {
   return class {
     currentTime = 10;
     state = 'running';
     destination = {};
+    reanudaciones = 0;
+    constructor() {
+      ultimoContexto = this as unknown as { state: string; reanudaciones: number };
+    }
     createGain() {
       const g = Object.assign(nodoFalso(), { gain: parametro() });
       ganancias.push(g);
       return g;
     }
-    resume = async () => {};
+    resume = async () => {
+      this.reanudaciones += 1;
+      this.state = 'running';
+    };
   };
 }
 
@@ -90,6 +100,7 @@ function fuenteFalsa() {
 
 beforeEach(() => {
   ganancias.length = 0;
+  ultimoContexto = null;
   vi.resetModules();
   vi.stubGlobal('AudioContext', contextoFalso());
 });
@@ -155,5 +166,82 @@ describe('la salida de cada familia es una sola', () => {
     const antes = motor.salidasVivas();
     for (let i = 0; i < 100; i += 1) motor.salidaDe('sampler', 0.8);
     expect(motor.salidasVivas()).toBe(antes + 1);
+  });
+});
+
+describe('el contador de nodos enchufados', () => {
+  it('sube al sonar y vuelve a cero al acabar', async () => {
+    // Es el número de `/diagnostico` que delata la fuga sin esperar a que muera el sonido.
+    const motor = await import('@/audio/AudioEngine');
+    motor.obtenerContexto();
+    expect(motor.nodosEnchufados()).toBe(0);
+
+    const fuentes = Array.from({ length: 40 }, () => fuenteFalsa());
+    for (const f of fuentes) motor.registrarFuente(f, motor.salidaDe('x', 1) as unknown as AudioNode);
+    expect(motor.nodosEnchufados()).toBe(80);
+
+    for (const f of fuentes) f.terminar();
+    expect(motor.nodosEnchufados()).toBe(0);
+  });
+
+  it('no descuenta dos veces si «ended» llega repetido', async () => {
+    const motor = await import('@/audio/AudioEngine');
+    motor.obtenerContexto();
+    const f = fuenteFalsa();
+    motor.registrarFuente(f);
+    f.terminar();
+    f.terminar();
+    expect(motor.nodosEnchufados()).toBe(0);
+  });
+});
+
+describe('el contexto se recupera solo si se suspende', () => {
+  it('un toque en la pantalla lo reanuda', async () => {
+    /*
+      En Android basta con que otra aplicación pida el foco de audio o que la pantalla se
+      bloquee: el contexto se queda suspendido y todo lo que se programe es silencio, sin
+      dar ni un error. Los dibujos siguen moviéndose, así que por fuera parece que la
+      actividad va y «no suena». Antes solo se arreglaba recargando.
+    */
+    const motor = await import('@/audio/AudioEngine');
+    motor.obtenerContexto();
+    expect(ultimoContexto).not.toBeNull();
+
+    ultimoContexto!.state = 'suspended';
+    document.dispatchEvent(new Event('pointerdown'));
+    expect(ultimoContexto!.reanudaciones).toBe(1);
+    expect(ultimoContexto!.state).toBe('running');
+  });
+
+  it('y no lo reanuda si ya estaba en marcha', async () => {
+    const motor = await import('@/audio/AudioEngine');
+    motor.obtenerContexto();
+    document.dispatchEvent(new Event('pointerdown'));
+    expect(ultimoContexto!.reanudaciones).toBe(0);
+  });
+
+  it('sirve más de una vez: se puede volver a suspender', async () => {
+    const motor = await import('@/audio/AudioEngine');
+    motor.obtenerContexto();
+    for (let i = 1; i <= 3; i += 1) {
+      ultimoContexto!.state = 'suspended';
+      document.dispatchEvent(new Event('pointerdown'));
+      expect(ultimoContexto!.reanudaciones).toBe(i);
+    }
+  });
+});
+
+describe('cada instrumento tiene un solo sampler', () => {
+  it('pedirlo en cien actividades devuelve el mismo', async () => {
+    const { samplerPara } = await import('@/audio/instrumentos');
+    const primero = samplerPara('marimba');
+    for (let i = 0; i < 100; i += 1) expect(samplerPara('marimba')).toBe(primero);
+    // Y el de por defecto es ése mismo: sin esto, «sin instrumento» abriría uno aparte.
+    expect(samplerPara(undefined)).toBe(primero);
+  });
+
+  it('instrumentos distintos, samplers distintos', async () => {
+    const { samplerPara } = await import('@/audio/instrumentos');
+    expect(samplerPara('piano')).not.toBe(samplerPara('marimba'));
   });
 });

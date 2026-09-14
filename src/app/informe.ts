@@ -4,6 +4,7 @@ import {
   calibracionActualMs,
   fuentesVivas,
   salidasVivas,
+  nodosEnchufados,
 } from '@/audio/AudioEngine';
 import { APP } from '@/config';
 import type { CosteNsdf } from '@/escucha/banco';
@@ -53,6 +54,7 @@ export interface Informe {
    */
   fuentesVivas: number;
   salidasVivas: number;
+  nodosEnchufados: number;
   microfono: EstadoMicrofono;
   /** Medido DENTRO del worklet. Null en todo navegador conocido: ninguno expone
    *  `performance` en el AudioWorkletGlobalScope. */
@@ -107,6 +109,7 @@ export function recoger(
     calibracionMs: calibracionActualMs(),
     fuentesVivas: fuentesVivas(),
     salidasVivas: salidasVivas(),
+    nodosEnchufados: nodosEnchufados(),
     microfono: micro,
     costeAnalisisMs,
     costeEstimado,
@@ -150,6 +153,7 @@ export function aTexto(i: Informe): string {
     `calibración        ${i.calibracionMs} ms`,
     `fuentes vivas      ${i.fuentesVivas}`,
     `salidas de audio   ${i.salidasVivas}`,
+    `nodos enchufados   ${i.nodosEnchufados}`,
     `coste del análisis ${i.costeAnalisisMs === null ? 'no medible' : `${i.costeAnalisisMs.toFixed(2)} ms`}`,
   ].join('\n');
 }

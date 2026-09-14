@@ -3550,6 +3550,41 @@ arreglaba, y por eso parecía intermitente.
 aparece donde está la causa. Aquí se manifestó como «la 118 no suena» y como «el karaoke
 falla», y no era de ninguno de los dos.
 
+### Y seguía sin sonar: los otros dos caminos al mismo silencio, 2026-09-14 (noche, 2)
+
+Cerradas las dos fugas de nodos, el autor volvió: «sigue pasando, analiza la 119, suele
+provocarse ahí». Repasando **todas** las formas de llegar a «no se oye nada y al reiniciar ya
+va» —que son tres y solo una estaba tapada— salieron las otras dos. Ninguna es del karaoke.
+
+- [x] **El contexto se suspende solo y nadie lo reanuda.** En Android basta con que otra
+      aplicación pida el foco de audio, que se bloquee la pantalla o que la app pase a
+      segundo plano un rato: el `AudioContext` se queda en `suspended` y **todo lo que se
+      programe a partir de ahí es silencio, sin dar ni un error**. Y los dibujos siguen
+      moviéndose, porque `requestAnimationFrame` no depende del audio, así que por fuera la
+      actividad parece que va y simplemente no suena. `despertarAudio()` solo se llama al
+      empezar una actividad, así que dentro de una ya empezada no había forma de volver.
+      Ahora el contexto se reanuda **en cualquier toque de pantalla**, para siempre y las
+      veces que haga falta: en una actividad el niño está tocando todo el rato, así que la
+      recuperación es inmediata y nadie se entera.
+- [x] **La salida maestra podía quedarse en cero.** `pararTodo()` la baja un instante y la
+      sube 60 ms después con un evento programado. Si entre medias el contexto se suspende
+      —el reloj de audio deja de avanzar y ese evento no llega— la salida se queda en 0,0001
+      **para el resto de la sesión**. Ahora `despertarAudio()` la fuerza a uno al empezar
+      cada actividad. Y las dos causas se juntaban: suspenderse dejaba el contexto mudo *y*
+      la salida baja.
+- [x] **Un sampler por instrumento, no uno por actividad.** Cada componente creaba el suyo al
+      montarse y volvía a descargar y decodificar las seis muestras: un `AudioBuffer` es un
+      cuarto de mega, y una actividad de la 119 son tres ejercicios. No mataba el sonido,
+      pero era presión de memoria gratuita en el peor sitio. Ahora se comparten —se puede,
+      porque un sampler no guarda estado de lo que suena— y `cargar()` está memorizado, así
+      que la segunda actividad además abre al instante.
+- [x] **`nodos enchufados` en `/diagnostico`.** Sube al sonar y **tiene que volver a cero**.
+      Es lo que convierte «parece que ya no pasa» en un número que se mira.
+
+**Cómo se comprueba, que es la parte que importa**: abrir la 119 tres o cuatro veces y mirar
+`/diagnostico`. Si «nodos enchufados» no vuelve a cero, queda fuga. Si vuelve a cero y aun
+así no suena, mirar «estado contexto»: si dice `suspended`, es el camino de arriba.
+
 ### T3.6 — Tipo `director`: tempo y volumen sobre una pieza `⚠️`
 
 **111 «El mando del director» no se puede usar.** Su ficha promete dos deslizadores —uno de

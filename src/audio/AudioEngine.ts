@@ -17,6 +17,7 @@ const CLAVE_CALIBRACION = 'cascabel.calibracion.ms';
 export function obtenerContexto(): AudioContext {
   if (!ctx) {
     ctx = new AudioContext({ latencyHint: 'interactive' });
+    vigilarElContexto(ctx);
     try {
       const guardada = localStorage.getItem(CLAVE_CALIBRACION);
       if (guardada) calibracionMs = Number(guardada) || 0;
@@ -25,6 +26,32 @@ export function obtenerContexto(): AudioContext {
     }
   }
   return ctx;
+}
+
+/**
+ * El contexto se puede suspender **solo**, y hay que reanudarlo en el toque siguiente.
+ *
+ * No es un caso raro ni un fallo nuestro: en Android basta con que otra aplicación pida el
+ * foco de audio, que el móvil se bloquee, o que la pestaña pase a segundo plano un rato.
+ * El `AudioContext` se queda en `suspended` o `interrupted` y **todo lo que se programe a
+ * partir de ahí es silencio**, sin dar ni un error. Los dibujos siguen moviéndose, porque
+ * `requestAnimationFrame` no depende del audio, así que por fuera parece que la actividad
+ * funciona y simplemente «no suena». Y solo se arreglaba recargando, porque eso construye
+ * un contexto nuevo.
+ *
+ * Un `resume()` hay que pedirlo desde un gesto del usuario, así que se engancha a los
+ * gestos: en una actividad el niño está tocando la pantalla todo el rato, de modo que la
+ * recuperación es inmediata y nadie se entera. Se queda puesto para siempre —no es de una
+ * sola vez— porque se puede volver a suspender las veces que haga falta.
+ */
+function vigilarElContexto(c: AudioContext): void {
+  if (typeof document === 'undefined') return;
+  const reanudar = () => {
+    if (c.state !== 'running') void c.resume().catch(() => {});
+  };
+  for (const evento of ['pointerdown', 'touchend', 'keydown']) {
+    document.addEventListener(evento, reanudar, { capture: true, passive: true });
+  }
 }
 
 /*
@@ -75,8 +102,15 @@ export function registrarFuente(
   ...encadenados: AudioNode[]
 ): void {
   fuentes.add(fuente);
+  enchufados += 1 + encadenados.length;
+  let soltados = false;
   fuente.addEventListener('ended', () => {
     fuentes.delete(fuente);
+    // Puede llegar dos veces —`pararTodo()` para la fuente y el navegador avisa igual—, y
+    // descontar dos veces dejaría el contador mintiendo justo donde se mira si hay fuga.
+    if (soltados) return;
+    soltados = true;
+    enchufados -= 1 + encadenados.length;
     for (const nodo of [fuente as AudioNode, ...encadenados]) {
       try {
         nodo.disconnect();
@@ -85,6 +119,19 @@ export function registrarFuente(
       }
     }
   });
+}
+
+/**
+ * Nodos que siguen enchufados al grafo por haber sonado algo.
+ *
+ * **Es el número que delata la fuga**, y sale en `/diagnostico`. Baja a cero en cuanto se
+ * acaba lo que está sonando; si sube y no vuelve a bajar, hay algo que no se desconecta y
+ * el sonido acabará muriendo. Sin esto hay que esperar a que se muera para enterarse.
+ */
+let enchufados = 0;
+
+export function nodosEnchufados(): number {
+  return enchufados;
 }
 
 /**
@@ -152,6 +199,20 @@ export function pararTodo(): void {
 export async function despertarAudio(): Promise<void> {
   const c = obtenerContexto();
   if (c.state !== 'running') await c.resume();
+  /*
+    Y la salida maestra, a tope.
+
+    `pararTodo()` la baja un instante y la sube 60 ms después con un evento programado. Si
+    entre medias pasa cualquier cosa que deje ese evento sin aplicar —el contexto se
+    suspende justo ahí y el reloj de audio deja de avanzar, o una segunda llamada cancela lo
+    programado en el momento exacto—, **la salida se queda en 0,0001 y no se oye nada en
+    toda la sesión**, que es uno de los dos caminos que llevaban a «no suena y al reiniciar
+    ya va». Aquí se fuerza al valor bueno al empezar cada actividad, que es gratis y cierra
+    el caso.
+  */
+  const m = salidaMaestra();
+  m.gain.cancelScheduledValues(c.currentTime);
+  m.gain.setValueAtTime(1, c.currentTime);
 }
 
 /** Latencia total a compensar, en milisegundos. */
