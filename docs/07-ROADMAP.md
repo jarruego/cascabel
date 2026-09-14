@@ -3471,6 +3471,28 @@ Sin test nuevo: la regla ya lo tiene en `tests/evaluacion.test.ts` —«aporrear
 huecos»— y lo que fallaba era que el karaoke no la llamaba. Lo que sí queda es la lección:
 **una regla de producto duplicada dentro de un componente se queda atrás en silencio**.
 
+### «¿Seguro que el largo es igual a la duración?», 2026-09-14 (noche)
+
+La aritmética sí lo era: `largoDe` y la distancia hasta la nota siguiente dan el **mismo
+número**, porque `instantesDe` separa las notas justo por lo que duran. Lo que no lo era era
+lo que se veía, y el autor tenía razón en desconfiar.
+
+- [x] **La cabeza se comía la cola.** Está centrada en su instante y mide medio centenar de
+      píxeles, así que se llevaba media cola por cada punta. Con los números de «Notas que
+      caen» (80 pulsos por minuto, recuadro de 420 px): la cola de una negra mide 77 px y la
+      cabeza 54, o sea que quedaban 23 visibles; la de una corchea mide 38 y **desaparecía
+      entera debajo de su propia figura**. Comparadas a ojo, una negra parecía infinitamente
+      más larga que una corchea en vez del doble. Ahora la cola es una **banda de todo el
+      ancho** del recuadro: la cabeza se apoya encima y los bordes se ven a los lados.
+- [x] **Y la última nota sí se cortaba de verdad.** El ejercicio terminaba 1,5 pulsos después
+      del ataque de la última, para no dejar la pantalla parada tras una blanca final. Con
+      una redonda de cuatro segundos eso la partía por la mitad: la cola y la palabra se
+      quedaban a medio hacer. Con cola, ahora se espera a que la última acabe; sin cola, nada
+      cambia.
+- [x] **La palabra, abajo del todo de la pista.** Lo pidió el autor. Ahí no tapa ninguna
+      figura, no compite con la línea y está siempre en el mismo sitio, que es lo que permite
+      mirarla de reojo sin perder la nota que viene.
+
 ### T3.6 — Tipo `director`: tempo y volumen sobre una pieza `⚠️`
 
 **111 «El mando del director» no se puede usar.** Su ficha promete dos deslizadores —uno de

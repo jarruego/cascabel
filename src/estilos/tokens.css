@@ -2886,27 +2886,37 @@ p {
 */
 .karaoke__cola {
   position: absolute;
-  border: 2px dashed var(--linea);
-  border-radius: var(--r-s);
-  background: var(--superficie);
-  opacity: 0.55;
+  background: color-mix(in srgb, currentColor 10%, transparent);
   pointer-events: none;
 }
+/*
+  Ocupa TODO el ancho del recuadro, y no una tira detrás de la cabeza.
+
+  La cuenta siempre fue exacta —el largo de una nota es la distancia hasta la siguiente—,
+  pero la cabeza está centrada en su instante y mide medio centenar de píxeles: se comía
+  media cola por cada punta, y a 80 pulsos por minuto una corchea desaparecía entera debajo
+  de su propia figura. Como banda se ve por los lados, y ahí sí se pueden comparar.
+
+  La raya sólida marca el ATAQUE: abajo cuando las figuras caen, a la izquierda cuando
+  vienen de la derecha. Es el borde que cruza la línea.
+*/
 .karaoke__cola[data-orientacion='vertical'] {
-  width: 26px;
-  transform: translateX(-50%);
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid currentColor;
 }
 .karaoke__cola[data-orientacion='horizontal'] {
-  height: 22px;
-  transform: translateY(-50%);
+  top: 0;
+  height: 100%;
+  border-left: 2px solid currentColor;
 }
 .karaoke__cola[data-acertada] {
-  opacity: 0.95;
-  border-style: solid;
+  background: color-mix(in srgb, var(--vivo-verde) 18%, transparent);
 }
 .karaoke__cola[data-apagada] {
+  background: transparent;
   border-color: var(--linea);
-  opacity: 0.3;
+  border-style: dashed;
 }
 
 /*
@@ -2918,10 +2928,16 @@ p {
   línea, se lee de izquierda a derecha y crece: «e», «e-le», «e-le-fan», «e-le-fan-te». Los
   cuatro pulsos de la redonda, contados sin contar.
 */
+/* Abajo del todo de la pista, centrada y en las dos orientaciones: lo pidió el autor el
+   2026-09-14. Ahí no tapa ninguna figura ni compite con la línea, y está siempre en el
+   mismo sitio, que es lo que permite mirarla de reojo sin perder la nota que viene. */
 .karaoke__palabra {
   position: absolute;
+  left: 50%;
+  bottom: var(--e-2);
+  transform: translateX(-50%);
   display: flex;
-  gap: 2px;
+  gap: 3px;
   padding: var(--e-1) var(--e-2);
   background: var(--superficie);
   border: 2px solid var(--linea);
@@ -2929,10 +2945,6 @@ p {
   white-space: nowrap;
   pointer-events: none;
 }
-/* Pegada a la línea por el lado que ya ha pasado: en vertical, justo debajo; en horizontal,
-   justo a la izquierda. Es donde está el hueco, y donde no tapa lo que viene. */
-.karaoke__palabra[data-orientacion='vertical'] { transform: translate(-50%, 10px); }
-.karaoke__palabra[data-orientacion='horizontal'] { transform: translate(calc(-100% - 10px), -50%); }
 
 /* Cada sílaba es la de un pulso. En tinta, no en verde: el verde es acertar, y decir una
    sílaba no es acertar nada. */

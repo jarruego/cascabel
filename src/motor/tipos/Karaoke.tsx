@@ -260,9 +260,16 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
     parada —«cuando acabas de tocar, está mucho rato sin pasar nada», dijo el autor—. Lo que
     hace falta es que quepa un golpe algo tardío en esa última nota: un pulso y medio.
   */
+  /*
+    Con cola, la última nota **tiene que acabar de pasar**. El recorte de arriba la cortaba:
+    una redonda a 60 dura cuatro segundos y el ejercicio se terminaba a los 1,5 pulsos de su
+    ataque, así que la cola del elefante y su palabra se quedaban a medias. Sin cola no
+    cambia nada, que es como estaba.
+  */
+  const colaFinal = conCola ? (notas[notas.length - 1]?.pulsos ?? 0) * (60 / bpm) : 0;
   const duracionTotal = Math.min(
     duracionDe(notas, bpm, ventanaS) + 2,
-    (tiempos[tiempos.length - 1] ?? 0) + (60 / bpm) * 1.5,
+    (tiempos[tiempos.length - 1] ?? 0) + Math.max((60 / bpm) * 1.5, colaFinal),
   );
 
   /**
@@ -636,6 +643,15 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
             pasar por la línea es justamente lo que todavía está sonando. La cabeza no cambia
             de tamaño ni de anclaje: sigue centrada en su instante, que es el punto que se
             mide, y moverla habría desplazado el momento de acertar en todas las actividades.
+
+            **Y ocupa todo el ancho del recuadro, no una tira detrás de la cabeza.** La
+            aritmética siempre fue exacta —el largo de una nota y la distancia hasta la
+            siguiente son el mismo número, porque `instantesDe` separa las notas justo por
+            lo que duran—, pero lo que se VEÍA no lo era: la cabeza está centrada en su
+            instante y mide medio centenar de píxeles, así que se comía la mitad de cada
+            cola por cada punta. A 80 pulsos por minuto la cola de una corchea medía 38 px y
+            la cabeza 54: desaparecía entera. Como banda, la cabeza se apoya encima y los
+            bordes se ven a los lados, que es lo que permite compararlas.
           */
           const largoPct = largoDe(n.pulsos, bpm, opciones);
           /*
@@ -657,8 +673,8 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
             avance más el largo.
           */
           const posicionCola = vertical
-            ? { top: `${100 - g.avance - largoPct}%`, left: g.cruce, height: `${largoPct}%` }
-            : { left: `${g.avance}%`, top: g.cruce, width: `${largoPct}%` };
+            ? { top: `${100 - g.avance - largoPct}%`, height: `${largoPct}%` }
+            : { left: `${g.avance}%`, width: `${largoPct}%` };
 
           return (
             <Fragment key={`${n.nota}-${i}`}>
@@ -668,10 +684,9 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
               data-orientacion={orientacion}
               data-acertada={acertadas.has(i) || undefined}
               data-apagada={apagada || undefined}
-              style={{
-                ...posicionCola,
-                borderColor: apagada ? undefined : colorDe(n.nota),
-              }}
+              // `color` y no `borderColor`: el CSS pinta con `currentColor` el borde de
+              // ataque y el relleno a la vez, así que con uno basta.
+              style={{ ...posicionCola, color: apagada ? undefined : colorDe(n.nota) }}
               aria-hidden="true"
             />
             )}
@@ -721,16 +736,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
         {/* La palabra al pulso: una sílaba más cada vez que pasa un tramo de la nota. Solo
             las dichas, porque lo que enseña es verla crecer: «e», «e-le», «e-le-fan»... */}
         {palabraEnCurso && (
-          <span
-            className="karaoke__palabra"
-            data-orientacion={orientacion}
-            style={
-              vertical
-                ? { top: `${100 - LINEA_PCT}%`, left: '50%' }
-                : { left: `${LINEA_PCT}%`, top: '50%' }
-            }
-            aria-hidden="true"
-          >
+          <span className="karaoke__palabra" aria-hidden="true">
             {palabraEnCurso.silabas.slice(0, palabraEnCurso.dichas).map((silaba, k) => (
               <span key={k} className="karaoke__silaba">{silaba}</span>
             ))}
