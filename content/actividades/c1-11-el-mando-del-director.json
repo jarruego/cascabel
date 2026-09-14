@@ -28,7 +28,8 @@
       "G4",
       "E4",
       "C4"
-    ]
+    ],
+    "$comment": "NO SE PUEDE USAR TODAVÍA: la ficha promete dos deslizadores —tempo y volumen— sobre una pieza, y el tipo `lienzo` que la ejecuta es un lienzo de dibujo con cinco notas. No es un fallo del JSON: el motor que hace falta no existe. Detectado el 2026-09-14 por el autor; la ficha se deja como está a propósito, porque describe la actividad que hay que construir. Ver la tarea del tipo `director` en docs/07-ROADMAP.md."
   },
   "evaluacion": {
     "autocorrectiva": false,

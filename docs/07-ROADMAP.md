@@ -3329,6 +3329,65 @@ tablero de emparejar quepa sin desplazar en un móvil en vertical con cuatro fil
 Las ideas de ampliación, con veredicto y con lo que NO conviene hacer, están en
 [`docs/12-IDEAS-Y-AMPLIACIONES.md`](12-IDEAS-Y-AMPLIACIONES.md).
 
+### La ficha decía una pantalla y había otra, 2026-09-14
+
+El autor repasó cinco actividades y salieron dos familias de fallo distintas: un **error de
+octava** que se repetía en cuatro JSON, y **fichas que describen una pantalla que no
+existe**. Las dos se ven leyendo, no ejecutando, y por eso llevaban ahí desde que se
+escribieron.
+
+- [x] **El do de arriba estaba dos octavas más arriba.** «Compón con toda la escala» (116)
+      decía «de do a do» y llevaba `C6` sobre un `C4`. Mismo fallo en el editor de melodías
+      (303), en «Compón una melodía larga» (311) y en el dictado melódico (203), que además
+      tenía un `F3` metido entre un `G4` y un `C4`. Las cuatro a `C5`. **La rejilla no lo
+      podía detectar**: para ella una fila es una fila, y la que suena dos octavas más arriba
+      suena igual de bien.
+- [x] **El fa de la serie armónica no era de la serie.** «La serie armónica» (309) tenía
+      `sol-mi-do-sol-do-fa`, y el fa no es armónico del do. Los seis primeros son
+      `do-do-sol-do-mi-sol`: el de abajo pasa a `C3`. Con eso se va el `PENDIENTE DE REVISIÓN
+      PEDAGÓGICA` que había en la ficha, que era exactamente esa duda. Y suena con
+      **guitarra**, que tiene muestras desde el do2: con la flauta de por defecto el do grave
+      era una flauta estirada una octava.
+- [x] **Cuatro fichas de tipo `lienzo` describían pantallas que no existen.** 309 prometía
+      «seis cuerdas de distinta longitud», 207 «un xilófono con las láminas de la
+      pentatónica» y 113 que «la app toca una frase corta y se calla». Lo que hay en las tres
+      es lo mismo: franjas de colores por las que se pasa el dedo. Reescritas para que digan
+      lo que hay, con el trabajo de verdad donde está —la guitarra y la regla en 309, el
+      maestro preguntando en 113—.
+- [x] **207 tenía ocho franjas y la ficha decía cinco notas.** Sí eran la pentatónica —cinco
+      nombres repetidos en dos alturas—, pero eso no se deduce mirando. Se queda en seis:
+      do, re, mi, sol, la y otra vez el do, y la ficha lo dice con esas palabras. La octava
+      de arriba deja de ser una trampa y pasa a ser lo que se aprende.
+- [x] **119: el nombre del animal dice lo que dura.** Idea del autor. Antes «co-ne-jo» duraba
+      un pulso y «o-so» cuatro, que es lo contrario de lo que sugiere el nombre. Ahora cada
+      animal tiene **tantas sílabas como pulsos**: `pez` negra, `o-so`, `ra-na` y `ga-to`
+      blancas, `e-le-fan-te` redonda; y la nota baja con el tamaño, así que lo grande es
+      grave y largo. De paso desaparecen las notas de tres pulsos, que eran una blanca con
+      puntillo que ni estaba declarada en `figuras` ni pinta nada en 1.º. Icono `pez` nuevo,
+      de Noto, que es el único animal de una sílaba que hay.
+
+**Lo que queda abierto.** En 119, decir «e-le-fan-te» a una sílaba por segundo es más
+despacio de lo que sale al hablar; la alternativa de manual es decirlo a velocidad normal y
+alargar la última sílaba. Está marcado en su `$comment` y sale en `docs/13`. Y en 203 la
+fila del fa no la usa ningún dictado: se ha corregido la octava y no el reparto de notas.
+
+### T3.6 — Tipo `director`: tempo y volumen sobre una pieza `⚠️`
+
+**111 «El mando del director» no se puede usar.** Su ficha promete dos deslizadores —uno de
+velocidad y otro de fuerza— sobre una pieza que suena, y el tipo que la ejecuta es `lienzo`:
+un lienzo de dibujo con cinco notas. No es un fallo del JSON que se arregle escribiendo; el
+motor no existe. Se deja marcada en su `$comment` y la ficha se queda como está **a
+propósito**, porque describe la actividad que hay que construir.
+
+- [ ] Melodía en bucle, de una de las que ya están cotejadas contra fuente de dominio
+      público (§10): «Au clair de la lune» o «Debajo un botón» valen
+- [ ] Deslizador de tempo, en vivo y sin cortar el sonido: el planificador ya programa vuelta
+      a vuelta, así que cambiar los pulsos por minuto entre vueltas no exige rehacer nada
+- [ ] Deslizador de volumen, sobre un `GainNode` del propio tipo, nunca sobre el maestro
+- [ ] Vía por teclado en los dos: son deslizadores nativos, así que sale sola si se usa
+      `<input type="range">` con su etiqueta
+- [ ] Sin evaluación y sin final, como todos los de creación libre
+
 ## Fase 3 — Crecer sin traicionarse (cuando alguien lo pida)
 
 - [ ] T3.1 — Configurador de actividades: un formulario que escribe el JSON

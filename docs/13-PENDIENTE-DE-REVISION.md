@@ -2,7 +2,7 @@
 
 > **Fichero generado.** Lo escribe `npm run docs:pendientes` leyendo las marcas que hay
 > repartidas por el código. No lo edites a mano: edita la marca, que está junto a la decisión
-> que la provocó. Generado el 2026-09-12.
+> que la provocó. Generado el 2026-09-14.
 
 Esto es lo que **decidió un desarrollador leyendo la convención documentada** y que hace falta
 que confirme alguien que sepa de música o de aula. Ninguna de estas decisiones está mal por
@@ -13,93 +13,93 @@ En cada una, lo que hace falta es una de tres respuestas: **vale**, **cámbialo 
 
 72 puntos esperando respuesta.
 
-## 1. `content/actividades/c1-26-vals-o-marcha.json` (línea 25)
+## 1. `content/actividades/c1-19-adivina-quien-baja.json` (línea 174)
+
+], "$comment": "El nombre de cada animal tiene tantas sílabas como pulsos dura, y se dice una sílaba por pulso: «pez» es una negra, «o-so», «ra-na» y «ga-to» blancas, y «e-le-fan-te» una redonda. Lo pidió el autor el 2026-09-14; antes «co-ne-jo» duraba un pulso y «o-so» cuatro, que es justo lo contrario de lo que el nombre sugiere. La nota baja con el tamaño del animal, así que lo grande es grave y largo y lo pequeño agudo y corto. PENDIENTE DE REVISIÓN PEDAGÓGICA: decir «e-le-fan-te» a una sílaba por segundo (el tempo es 60, lento a propósito) es más despacio de lo que sale al hablar. La alternativa de manual es decir el nombre a velocidad normal y alargar la última sílaba; hay que decidir cuál se pone en la ficha." },
+
+## 2. `content/actividades/c1-26-vals-o-marcha.json` (línea 25)
 
 "consigna": "actividad.c126.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el vals se hace sonar como bombo-caja-caja y la marcha como bombo-caja, que es la convención de manual para que el acento se oiga en el uno. Si en clase se enseña con otra fórmula, se cambia aquí.", "opciones": [
 
-## 2. `content/actividades/c1-36-estrellita-con-el-cuerpo.json` (línea 26)
+## 3. `content/actividades/c1-36-estrellita-con-el-cuerpo.json` (línea 26)
 
 "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: (1) la melodía es «Ah! vous dirai-je, maman», anónima del siglo XVIII y en dominio público; la letra en español —«Estrellita, ¿dónde estás?»— es la adaptación tradicional que circula como anónima, pero hay que confirmar su origen antes de dar por buena la primera estrofa (CLAUDE.md §10: todo repertorio se verifica contra una fuente de dominio público). (2) El reparto de zonas —palmas en las sílabas del arranque, muslos en las del medio y pies en la nota larga; chasquidos para abrir las frases del medio— es una propuesta de percusión corporal, no un arreglo canónico. (3) La melodía escrita es la de «Ah! vous dirai-je, maman» en do mayor, la de siempre; suena bajita con la flauta debajo de los golpes. (3) Melodía cotejada el 2026-09-10 con la partitura de «Twinkle, Twinkle, Little Star» de Wikipedia (Lilypond, do mayor): coincide nota por nota y figura por figura. (4) Investigado el 2026-09-11: la letra en español «Estrellita, ¿dónde estás?» es una adaptación de principios del siglo XX de autor desconocido (no consta en ninguna fuente consultada). Como una traducción tiene derechos propios y no se puede fechar la muerte del adaptador, la letra NO se incluye en la ficha; la melodía y la letra inglesa de Jane Taylor (1806) sí son de dominio público.", "consigna": "actividad.c136.consigna", "tempo": 92, "patron": [
 
-## 3. `content/actividades/c1-37-debajo-un-boton-con-el-cuerpo.json` (línea 26)
+## 4. `content/actividades/c1-37-debajo-un-boton-con-el-cuerpo.json` (línea 26)
 
 "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: (1) Ritmo y melodía tomados de dos transcripciones que coinciden nota por nota: la de COAEM (#músicaviral, «Debajo de un botón», instrumentos en do, Andante ♩=60) y la de Partyflauta nivel 2 (CEIP As Mercedes, Ourense). Do mayor, 2/4; cada frase es corchea con puntillo, semicorchea, corchea, corchea | corchea, corchea, negra. La canción es tradicional anónima y así consta en ambas; las transcripciones solo se han usado como referencia de una melodía de dominio público. (2) El tempo: las transcripciones dicen 60 y en el aula se canta más ligera; se ha puesto 72 y una maestra debe fijarlo. (3) La pareja «De-ba» (puntillo y semicorchea) se toca con dos palmadas rápidas, como se dice; si a los seis años cuesta, la alternativa es una sola palmada en «De» y cantar «ba». (4) El reparto de zonas es una propuesta: palabras con las manos, eco con pies o chasquidos. Se hizo en lugar de «La vaca lechera», que el autor pidió y que tiene autor y está protegida (CLAUDE.md §10).", "consigna": "actividad.c137.consigna", "tempo": 72, "patron": [
 
-## 4. `content/actividades/c1-38-au-clair-de-la-lune.json` (línea 26)
+## 5. `content/actividades/c1-38-au-clair-de-la-lune.json` (línea 26)
 
 "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: se usa solo la primera parte, que en la canción se canta dos veces seguidas, porque la segunda sube a la, si y sol grave y ya no son tres bandas. Confirmar el tempo. El compás original es 2/2; se escribe 4/4 porque el esquema no admite 2/2 y son los mismos cuatro tiempos de negra por compás.", "consigna": "actividad.c138.consigna", "representacion": "personaje", "orientacion": "vertical", "botonesPorCarril": true, "tempo": 92, "ejercicios": [
 
-## 5. `content/actividades/c1-39-el-pastel-de-sol-laia-milo-y-dora.json` (línea 32)
+## 6. `content/actividades/c1-39-el-pastel-de-sol-laia-milo-y-dora.json` (línea 32)
 
 "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: es una canción alemana que los niños no conocen: aquí vale por sus cuatro notas (sol, la, mi, do), que son justo las de la progresión vocal. Si la maestra tiene una española de cuatro notas con partitura fiable, se cambia. Se usa la primera estrofa: el final de la canción baja a re y sube a sol agudo. El compás original es 2/2; se escribe 4/4 porque el esquema no admite 2/2 y son los mismos cuatro tiempos de negra por compás.", "consigna": "actividad.c139.consigna", "representacion": "personaje", "orientacion": "vertical", "botonesPorCarril": true, "tempo": 100, "ejercicios": [
 
-## 6. `content/actividades/c1-40-debajo-un-boton-con-la-pandilla.json` (línea 26)
+## 7. `content/actividades/c1-40-debajo-un-boton-con-la-pandilla.json` (línea 26)
 
 "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el ritmo es el de las transcripciones (corchea con puntillo y semicorchea al empezar cada frase); a 72 los personajes iban muy juntos y el autor pidió bajar (2026-09-11): a 60, la semicorchea son 250 ms. Si aún cuesta, dar la pareja «De-ba» por un solo toque.", "consigna": "actividad.c140.consigna", "representacion": "personaje", "orientacion": "vertical", "botonesPorCarril": false, "tempo": 60, "ejercicios": [
 
-## 7. `content/actividades/c1-41-toda-la-pandilla-baja-la-escalera.json` (línea 26)
+## 8. `content/actividades/c1-41-toda-la-pandilla-baja-la-escalera.json` (línea 26)
 
 "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la melodía es la primera frase de «Joy to the World» (Händel/Lowell Mason, 1839, dominio público), cotejada con la partitura de Wikipedia en inglés (Lilypond, re mayor) y transportada a do: baja toda la escala de do' a do y vuelve a subir, y por eso salen los ocho personajes, Doby arriba y Dora abajo. La corchea con puntillo y semicorchea del primer compás se escriben como dos corcheas: una casilla de un cuarto de pulso no cabe. Es un villancico en inglés; aquí no lleva letra y vale por su escala. Confirmar tempo. La última nota se alarga a un compás entero para que el bucle cuadre: en la partitura vale tres corcheas y sigue con la anacrusa de la frase siguiente.", "consigna": "actividad.c141.consigna", "tempo": 84, "bucle": true, "bloques": [
 
-## 8. `content/actividades/c2-23-termina-o-se-queda-a-medias.json` (línea 25)
+## 9. `content/actividades/c2-23-termina-o-se-queda-a-medias.json` (línea 25)
 
 "consigna": "actividad.c223.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: las frases que «terminan» acaban en do (la tónica) y las que «se quedan a medias» acaban en sol (la dominante), que es la explicación convencional de antecedente y consecuente. Son melodías propias y no de repertorio.", "opciones": [
 
-## 9. `content/actividades/c2-23-termina-o-se-queda-a-medias.json` (línea 231)
+## 10. `content/actividades/c2-23-termina-o-se-queda-a-medias.json` (línea 231)
 
 ], "enPantalla": "Suena una frase corta al piano, de cinco o seis notas. Unas acaban en do, la nota de casa, y suenan a punto final; otras se paran en sol y suenan a pregunta. Debajo hay dos botones grandes: la bandera, si ha terminado, y la pausa, si se ha quedado a medias. El niño puede volver a oírla con el botón de repetir y toca uno. Si no es, el personaje le propone tararear la última nota y preguntarse si podría dejarlo ahí, y puede volver a elegir; si acierta, «¡bien!» y viene la siguiente. Ocho y termina, sin puntuación.", "sinPantalla": "Canta tú o toca en el xilófono frases que acaben en do y frases que se paren en sol. Los niños responden con el cuerpo: sentados en el suelo si ha terminado, de pie y con cara de pregunta si falta algo. Después por parejas de voz: uno canta una frase a medias y el otro tiene que cantar la que la acaba, bajando hasta do.", "masFacil": "Usa siempre las dos mismas frases: do-re-mi-fa-sol (a medias) y sol-fa-mi-re-do (termina), cantadas despacio y con la mano subiendo o bajando. Cuando esas dos estén claras, mete las demás. Y tararear siempre la última nota en voz alta antes de responder: la voz nota si se puede parar ahí.", "masDificil": "Que inventen la respuesta: tú cantas una frase que se queda a medias y ellos, en el xilófono con las placas do-re-mi-fa-sol, buscan una que la termine llegando a do (PENDIENTE DE REVISIÓN PEDAGÓGICA). O que busquen en una canción conocida dónde está la pregunta y dónde la respuesta, cantando solo hasta la mitad y parando.",
 
-## 10. `content/actividades/c2-24-familias-de-instrumentos.json` (línea 25)
+## 11. `content/actividades/c2-24-familias-de-instrumentos.json` (línea 25)
 
 "consigna": "actividad.c224.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el xilófono se cuenta como percusión (láminas golpeadas), que es la clasificación de aula; y el piano se deja fuera a propósito porque es cuerda percutida y confunde justo lo que se está enseñando.", "opciones": [
 
-## 11. `content/actividades/c2-28-vals-marcha-o-tango.json` (línea 25)
+## 12. `content/actividades/c2-28-vals-marcha-o-tango.json` (línea 25)
 
 "consigna": "actividad.c228.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el tango se representa con el ritmo de habanera (corchea con puntillo, semicorchea, corchea, corchea), que es su célula rítmica de manual; el vals como bombo-caja-caja y la marcha como bombo-caja.", "opciones": [
 
-## 12. `content/actividades/c2-28-vals-marcha-o-tango.json` (línea 280)
+## 13. `content/actividades/c2-28-vals-marcha-o-tango.json` (línea 280)
 
 ], "enPantalla": "Suena un ritmo de baile tocado con bombo y caja: el vals, con un bombo y dos cajas; la marcha, bombo y caja alternando; o el tango, con el ritmo de habanera, en que el segundo golpe llega un poco tarde y suena cojo. Debajo hay tres botones grandes: vals, marcha y tango. El niño puede volver a oírlo con el botón de repetir y toca uno. Si no es, el personaje le propone contar con el bombo y puede volver a elegir; si acierta, «¡bien!» y viene el siguiente. Termina al acabar los ocho, sin puntuación.", "sinPantalla": "Tú en el pandero o la mesa: vals BUM-cha-cha, marcha BUM-cha, y tango con el ritmo de habanera, «BUM-ba-bum-bum», largo-corto-igual-igual (PENDIENTE DE REVISIÓN PEDAGÓGICA). Tres tarjetas en el suelo y se pisa una; o mejor, se baila: balanceo de un pie a otro para el vals, desfile para la marcha y paso largo que se frena para el tango. Después que lo marquen ellos para la clase.", "masFacil": "Quédate en vals y marcha, que se distinguen contando: tres o dos. Deja el tango para cuando esas dos salgan solas. Antes de que suene, decir las dos cuentas en voz alta con el pandero. Y moverse siempre: el cuerpo balancea en el vals y desfila en la marcha antes de que la cabeza sepa el nombre.", "masDificil": "Escuchar trozos cortos de música de verdad (un vals de Strauss, una marcha, un tango) y decir cuál es sin bombo ni caja que ayuden. O que un niño marque uno de los tres ritmos en el pandero y la clase baile lo que corresponde. También que inventen un cuarto ritmo y le pongan nombre.",
 
-## 13. `content/actividades/c2-31-alegre-o-triste.json` (línea 25)
+## 14. `content/actividades/c2-31-alegre-o-triste.json` (línea 25)
 
 "consigna": "actividad.c231.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: «alegre» y «triste» es la lectura convencional del modo mayor y el menor en Primaria, y no es exacta —hay música en menor que no es triste—, pero es la puerta habitual. La única nota que cambia entre cada pareja es la tercera.", "opciones": [
 
-## 14. `content/actividades/c2-31-alegre-o-triste.json` (línea 273)
+## 15. `content/actividades/c2-31-alegre-o-triste.json` (línea 273)
 
 ], "enPantalla": "Suena una melodía corta al piano, y la misma vuelve a salir más adelante con una sola nota cambiada, la tercera: unas veces suena luminosa y alegre, otras oscura y un poco triste. Debajo hay dos botones grandes: el sol, para alegre, y la luna, para triste. El niño puede volver a oírla con el botón de repetir y toca uno. Si no es, el personaje le propone oírla dos veces fijándose en esa nota y puede volver a elegir; si acierta, «¡bien!» y viene la siguiente. Termina al acabar las ocho, sin puntuación.", "sinPantalla": "En el xilófono o el piano del aula: toca do-re-mi-re-do y después lo mismo con mi bemol en vez de mi (PENDIENTE DE REVISIÓN PEDAGÓGICA). La clase enseña la tarjeta del sol o de la luna, o pone la cara. Con la voz también sale: canta la misma frase dos veces, y en la segunda baja un poco esa nota. Después que digan qué canciones conocidas suenan a sol y cuáles a luna.", "masFacil": "Empieza siempre por la pareja: alegre y triste seguidas, con la misma melodía, para que se oiga el cambio y no haya que recordar. Pon caras y cuerpo: hombros arriba en mayor, hombros caídos en menor. Y deja las palabras «mayor» y «menor» para el final: primero sol y luna, que se entienden.", "masDificil": "Que canten una melodía conocida y la pasen a menor bajando la tercera, con tu ayuda en el xilófono. Escuchar trozos de música de verdad y decidir si es mayor o menor sin la pareja al lado. O buscar música en menor que no sea triste (hay mucha, y bailable) y hablar de por qué se dice alegre y triste si no siempre es así.",
 
-## 15. `content/actividades/c2-36-que-estilo-suena.json` (línea 25)
+## 16. `content/actividades/c2-36-que-estilo-suena.json` (línea 25)
 
 "consigna": "actividad.c236.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: los fragmentos de rock, vals y salsa son piezas de Kevin MacLeod (CC BY 3.0) compuestas «en el estilo de», y el rap es «Emazteen fabore» del proyecto Etxepare rap (CC BY-SA 4.0): un rap de verdad, con voz y base, en euskera, sobre un poema de 1545. El anterior era una base instrumental sin voz y el autor lo señaló el 2026-09-12: «no parece rap». Son ejemplos limpios de manual; no son grabaciones históricas de cada estilo.", "opciones": [
 
-## 16. `content/actividades/c2-37-quien-canta.json` (línea 25)
+## 17. `content/actividades/c2-37-quien-canta.json` (línea 25)
 
 "consigna": "actividad.c237.consigna", "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el canto gregoriano se cuenta como «coro», que es lo que es —voces de adultos al unísono—, aunque suene distinto de un coro a cuatro voces.", "opciones": [
 
-## 17. `content/actividades/c2-38-la-manana-de-grieg-con-la-pandilla.json` (línea 26)
+## 18. `content/actividades/c2-38-la-manana-de-grieg-con-la-pandilla.json` (línea 26)
 
 "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el pulso es la corchea (6/8) a 120, que son dos compases por frase; la apoyatura del compás 2 y la del 3 se han quitado y las dos semicorcheas del compás 2 se conservan. Confirmar tempo y si cinco pulsadores son muchos en 3.º.", "consigna": "actividad.c238.consigna", "representacion": "personaje", "orientacion": "vertical", "botonesPorCarril": true, "tempo": 120, "ejercicios": [
 
-## 18. `content/actividades/c2-39-la-nana-de-brahms-con-la-pandilla.json` (línea 26)
+## 19. `content/actividades/c2-39-la-nana-de-brahms-con-la-pandilla.json` (línea 26)
 
 "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la canción entera desde el 2026-09-11: la primera parte (Guten Abend, gut' Nacht…) y la segunda (Morgen früh…), las dos de la partitura de Wikipedia en inglés. Los silencios de negra se absorben en la nota anterior y la apoyatura del último compás se quita. Siete alturas distintas: un solo pulsador. Confirmar tempo. El ABC de la ficha lleva solo la primera mitad: la segunda arranca con un salto de octava (do4 a do5, «Deck: Morgen») que el validador no admite como cantable en 2.º ciclo, y aquí no se canta, se toca.", "consigna": "actividad.c239.consigna", "representacion": "personaje", "orientacion": "vertical", "botonesPorCarril": false, "tempo": 84, "ejercicios": [
 
-## 19. `content/actividades/c2-40-la-pequena-serenata-nocturna.json` (línea 26)
+## 20. `content/actividades/c2-40-la-pequena-serenata-nocturna.json` (línea 26)
 
 "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: el primer tema de la Serenata es una pregunta que sube por el acorde y una respuesta que baja, y eso es lo que se distingue: pregunta o respuesta. Seis estímulos: las dos frases en sol mayor, las dos en fa mayor y las dos en la mayor, con violín, para que no se aprenda la altura sino el gesto. Tema cotejado con la partitura de Wikipedia en inglés.", "consigna": "actividad.c240.consigna", "opciones": [
 
-## 20. `content/actividades/c2-41-el-cisne.json` (línea 26)
+## 21. `content/actividades/c2-41-el-cisne.json` (línea 26)
 
 "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA: la melodía entera (17 compases de 6/4, una nota por negra) sale de la partitura «Cygne saint saens fa majeur.svg» de Wikimedia Commons (CC0), la versión original de violonchelo en sol mayor transportada a fa mayor; las corcheas se reducen a la primera del par y los bemoles se escriben como sostenidos (si bemol = la sostenido, mi bemol = re sostenido) porque el motor solo escribe sostenidos. El compás es 6/4 y la ficha dice «libre» porque el esquema no lo admite. Las cuatro frases son las de la partitura; los nombres de los bloques son una lectura del autor. Suena con la marimba del motor: lo que se enseña es la forma, no el timbre.", "consigna": "actividad.c241.consigna", "tempo": 84, "bucle": true, "bloques": [
 
-## 21. `content/actividades/c3-04-mapa-de-una-obra.json` (línea 120)
+## 22. `content/actividades/c3-04-mapa-de-una-obra.json` (línea 120)
 
 ], "notas": [ "E4", "E4", "F4", "G4", "G4", "F4", "E4", "D4", "C4", "C4", "D4", "E4", "E4", "D4", "D4", null, "E4", "E4", "F4", "G4", "G4", "F4", "E4", "D4", "C4", "C4", "D4", "E4", "D4", "C4", "C4", null, "D4", "D4", "E4", "C4", "D4", "E4", "E4", "C4", "D4", "E4", "E4", "D4", "C4", "D4", "G3", null, "E4", "E4", "F4", "G4", "G4", "F4", "E4", "D4", "C4", "C4", "D4", "E4", "D4", "C4", "C4", null ], "bucle": true, "$comment": "Reescrito el 2026-09-10 con la partitura de «Ode to Joy» de Wikipedia (Lilypond, sol mayor) transportada a do: cuatro frases de cuatro compases de 4/4, una nota por negra. Antes había 30 notas para 32 pulsos y las frases no cuadraban con los bloques. Simplificaciones, una nota por pulso: la negra con puntillo y corchea del final de las frases A se escribe negra y negra; en la frase B, las parejas de corcheas (mi-fa) se escriben con su primera nota; la blanca final de cada frase es una nota y un silencio. La segunda frase A acaba en do y la primera en re, como en la partitura: el mapa las llama a las dos A porque es la misma frase con final distinto. PENDIENTE DE REVISIÓN PEDAGÓGICA: si la maestra prefiere A-A'-B-A'." }, "enunciado": "actividad.c304.enunciado", "personaje": "fara", "pistas": [ "actividad.c304.pista1", "actividad.c304.pista2" ],
-
-## 22. `content/actividades/c3-09-la-serie-armonica.json` (línea 82)
-
-], "enPantalla": "Seis cuerdas dibujadas de distinta longitud, de la más larga abajo a la más corta arriba, y cada una suena al tocarla: de abajo arriba van de grave a agudo, fa, do, sol, do, mi, sol (PENDIENTE DE REVISIÓN PEDAGÓGICA: confirmar cómo se presentan estas seis notas como los armónicos de una sola nota). No hay respuesta correcta ni final: se toca, se escucha y se compara. Cuanto más corta la cuerda, más agudo el sonido, y eso se ve y se oye a la vez.", "sinPantalla": "Con una guitarra o una goma tensa sobre una caja: cuerda entera, mitad, tercio y cuarto, apretando con el dedo y midiendo con la regla. Cada niño pasa a pulsar y la clase dice si sube o baja. Sin instrumento, seis botellas con agua a alturas distintas, golpeadas con una cuchara: la más llena suena más grave, igual que la cuerda larga.", "masFacil": "Solo dos cuerdas: la entera y la mitad. Que oigan que es «la misma nota, más alta» antes de meter la quinta ni la cuarta. Las fracciones se dejan para después: primero larga-grave y corta-aguda, con el cuerpo agachado para la larga y de puntillas para la corta.", "masDificil": "Que calculen qué longitud tendría la cuerda de la siguiente nota de la serie y la comprueben en la guitarra con la regla. Que canten las seis notas de abajo arriba con sus nombres. Y que busquen en el metalófono do, mi y sol y las toquen juntas: ese acorde está escondido dentro del do.",
 
 ## 23. `content/actividades/c3-18-escala-mayor-o-menor.json` (línea 25)
 

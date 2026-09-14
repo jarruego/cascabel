@@ -1,5 +1,5 @@
 {
-  "generado": "2026-09-12",
+  "generado": "2026-09-14",
   "total": 174,
   "actividades": [
     {
@@ -487,7 +487,7 @@
     {
       "id": "c1-13-pregunta-y-respuesta",
       "titulo": "Pregunta y respuesta",
-      "descripcion": "La app hace una frase rítmica y el niño inventa la respuesta.",
+      "descripcion": "La pregunta la hace el maestro; el niño inventa la respuesta en el lienzo, con cinco notas.",
       "etapa": "primaria-c1",
       "eje": "creacion",
       "tipo": "lienzo",
@@ -697,7 +697,7 @@
     {
       "id": "c1-19-adivina-quien-baja",
       "titulo": "Adivina quién baja: negra, blanca y redonda",
-      "descripcion": "Bajan círculos vacíos, despacio y bien separados, y el animal solo aparece si tocas a tiempo.",
+      "descripcion": "Bajan círculos vacíos, despacio y bien separados, y el animal solo aparece si tocas a tiempo. El nombre de cada animal tiene tantas sílabas como pulsos dura.",
       "etapa": "primaria-c1",
       "eje": "pulso",
       "tipo": "karaoke",
@@ -717,7 +717,7 @@
         "blanca",
         "redonda",
         "duración",
-        "a tiempo",
+        "sílabas",
         "animales",
         "pulso lento"
       ],
@@ -1854,7 +1854,7 @@
     {
       "id": "c2-07-improvisa-en-pentatonica",
       "titulo": "Improvisa en pentatónica",
-      "descripcion": "Cinco láminas sobre un bordón en bucle. Sin semitonos y sin tercera en la base: no hay nota que pueda sonar mal.",
+      "descripcion": "Cinco notas —do, re, mi, sol y la— sobre un bordón en bucle. Sin semitonos y sin tercera en la base: no hay nota que pueda sonar mal.",
       "etapa": "primaria-c2",
       "eje": "creacion",
       "tipo": "lienzo",
@@ -3586,7 +3586,7 @@
     {
       "id": "c3-09-la-serie-armonica",
       "titulo": "La serie armónica",
-      "descripcion": "Cuerdas de distinta longitud y proporciones 1:2, 2:3, 3:4. Conecta con fracciones.",
+      "descripcion": "Los seis primeros armónicos del do, para oírlos seguidos. Las proporciones 1:2, 2:3 y 3:4 se miden en una guitarra de verdad. Conecta con fracciones.",
       "etapa": "primaria-c3",
       "eje": "timbre",
       "tipo": "lienzo",

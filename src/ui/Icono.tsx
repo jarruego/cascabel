@@ -68,6 +68,9 @@ const DISPONIBLES = new Set([
   // Al repasar el contenido con la norma: el cisne, el banjo y el timbre tenían icono
   // propio y salían como pájaro, guitarra y campana.
   'cisne', 'banjo', 'timbre',
+  // El pez, el 2026-09-14: es el único animal de una sílaba que hay, y C1-19 lo necesita
+  // para que el nombre de cada animal tenga tantas sílabas como pulsos dura.
+  'pez',
 ]);
 
 /** Nombres antiguos que ya se usaban en los JSON de contenido. */
