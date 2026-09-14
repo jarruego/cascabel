@@ -2886,26 +2886,19 @@ p {
 */
 .karaoke__cola {
   position: absolute;
-  display: flex;
   border: 2px dashed var(--linea);
   border-radius: var(--r-s);
   background: var(--superficie);
   opacity: 0.55;
-  overflow: hidden;
   pointer-events: none;
 }
-/* En vertical la cola sube desde la cabeza y la palabra se lee de abajo arriba: la sílaba
-   que se dice primero es la que está más cerca de la línea. En horizontal, de izquierda a
-   derecha por la misma razón. */
 .karaoke__cola[data-orientacion='vertical'] {
-  width: 40px;
+  width: 26px;
   transform: translateX(-50%);
-  flex-direction: column-reverse;
 }
 .karaoke__cola[data-orientacion='horizontal'] {
-  height: 34px;
+  height: 22px;
   transform: translateY(-50%);
-  flex-direction: row;
 }
 .karaoke__cola[data-acertada] {
   opacity: 0.95;
@@ -2916,24 +2909,41 @@ p {
   opacity: 0.3;
 }
 
-/* Cada sílaba ocupa su parte de la duración. Se enciende cuando la línea llega a ella, así
-   que la palabra se construye al pulso mientras la nota pasa: «e-le-fan-te» son cuatro
-   pulsos y el niño los ha contado sin contarlos. No se pone en verde —el verde es acertar—
-   sino en tinta sobre papel: dicha, no correcta. */
-.karaoke__silaba {
-  flex: 1;
-  display: grid;
-  place-items: center;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--tinta-2);
-  opacity: 0.4;
+/*
+  La palabra, construyéndose al pulso junto a la línea.
+
+  Va AQUÍ y no repartida a lo largo de la cola, que fue el primer intento: detrás de la línea
+  solo queda el 22 % del recuadro —menos de un segundo de recorrido—, así que cada sílaba se
+  salía por el borde casi al encenderse y la palabra entera no se veía nunca. Quieta en la
+  línea, se lee de izquierda a derecha y crece: «e», «e-le», «e-le-fan», «e-le-fan-te». Los
+  cuatro pulsos de la redonda, contados sin contar.
+*/
+.karaoke__palabra {
+  position: absolute;
+  display: flex;
+  gap: 2px;
+  padding: var(--e-1) var(--e-2);
+  background: var(--superficie);
+  border: 2px solid var(--linea);
+  border-radius: var(--r-s);
+  white-space: nowrap;
+  pointer-events: none;
 }
-.karaoke__silaba[data-dicha] {
+/* Pegada a la línea por el lado que ya ha pasado: en vertical, justo debajo; en horizontal,
+   justo a la izquierda. Es donde está el hueco, y donde no tapa lo que viene. */
+.karaoke__palabra[data-orientacion='vertical'] { transform: translate(-50%, 10px); }
+.karaoke__palabra[data-orientacion='horizontal'] { transform: translate(calc(-100% - 10px), -50%); }
+
+/* Cada sílaba es la de un pulso. En tinta, no en verde: el verde es acertar, y decir una
+   sílaba no es acertar nada. */
+.karaoke__silaba {
+  padding: 1px 4px;
+  border-radius: var(--r-s);
   background: var(--tinta);
   color: var(--papel);
-  opacity: 1;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
 }
 
 .karaoke__figura {
@@ -3008,6 +3018,20 @@ p {
 /* Y el pulsador de la banda responde al dedo: su personaje da un botecito. */
 .karaoke__banda .personaje { transition: transform 120ms ease-out; }
 .karaoke__banda:active .personaje { transform: scale(1.18) translateY(-3px); }
+/* Casi: tocada dentro de la ventana ancha, pero fuera de lo que cuenta. Medio llena, para
+   que se distinga del verde por la FORMA y no solo por el color (§6), y sin crecer: crecer
+   es del acierto. Es la misma marca que usa «Toca a tiempo». */
+.karaoke__figura[data-casi] {
+  border-color: var(--vivo-amarillo);
+  background: linear-gradient(135deg, var(--vivo-amarillo) 50%, var(--superficie) 50%);
+}
+/* Quemada: tocada antes de tiempo. Gris como la que se pasó de largo y con la raya por en
+   medio que dice «ésta ya no». Nunca rojo, y nunca sonido de fallo: regla 4. */
+.karaoke__figura[data-quemada] {
+  border-style: dashed;
+  background: linear-gradient(135deg, transparent 45%, var(--linea) 45%, var(--linea) 55%, transparent 55%);
+}
+
 /* Y si se va sin tocarla, se apaga en gris. Nunca rojo: regla 4. */
 .karaoke__figura[data-apagada] {
   background: transparent;

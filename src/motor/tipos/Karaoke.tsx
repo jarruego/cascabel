@@ -6,7 +6,13 @@ import { despertarAudio, latenciaMs, obtenerContexto } from '@/audio/AudioEngine
 import { Sampler } from '@/audio/sampler';
 import { samplerPara } from '@/audio/instrumentos';
 import { TOLERANCIA_MS } from '@/config';
-import { bastanteBien, evaluarRitmo, type EvaluacionRitmica } from '../evaluacion';
+import {
+  bastanteBien,
+  evaluarRitmo,
+  marcaDeGolpe,
+  type EvaluacionRitmica,
+  type MarcaEnVivo,
+} from '../evaluacion';
 import { yDeLinea } from '../alturaEnPauta';
 import {
   carrilesDe,
@@ -64,12 +70,12 @@ type Fase = 'listo' | 'cuenta' | 'sonando' | 'resultado';
  * menos aviso que todas las demás**. Con dos segundos frente a una ventana de 3,2 nacía a un
  * tercio del camino: se notaba, y el autor lo notó.
  *
- * Que sea una sola constante y no dos que casualmente coinciden es lo que impide que alguien
- * las separe sin darse cuenta.
+ * Que sea una sola medida y no dos que casualmente coinciden es lo que impide que alguien
+ * las separe sin darse cuenta. Por eso `ventanaS`, que puede ensancharse para que quepa una
+ * nota muy larga, se usa **en los tres sitios a la vez**: anticipación, margen de entrada y
+ * geometría.
  */
 const VENTANA_S = 3.2;
-const ANTICIPACION_S = VENTANA_S;
-const ENTRADA_S = VENTANA_S;
 /** Dónde está la línea del presente, en porcentaje del ancho. */
 const LINEA_PCT = 22;
 /** Separación entre líneas del pentagrama, en píxeles. */
@@ -117,6 +123,16 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
      * más difícil la misma actividad sin tocar el tempo ni el número de figuras.
      */
     revelar?: boolean;
+    /**
+     * Dibujar detrás de cada figura una **cola tan larga como lo que dura**.
+     *
+     * **Apagada salvo que la actividad la pida**, y no por prudencia: la cola solo aporta
+     * donde la duración es lo que se está aprendiendo —las sílabas rítmicas, las figuras
+     * escritas—. En una canción por personajes o en una melodía sobre la pauta, lo que hay
+     * que mirar es la altura, y una barra detrás de cada nota es ruido en medio de lo que
+     * importa. Lo pidió el autor el 2026-09-14 después de verla en todas.
+     */
+    cola?: boolean;
     /** Timbre. Ver `audio/instrumentos.ts`: hoy solo hay marimba. */
     instrumento?: string;
   };
@@ -143,6 +159,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
   // con otro nombre.
   const porCarril = (contenido.botonesPorCarril ?? false) && carriles.length > 1;
   const revelar = contenido.revelar ?? false;
+  const conCola = contenido.cola ?? false;
   /*
     El aviso sigue a la representación salvo que se diga otra cosa. Es el mismo criterio que
     el resto del fichero: enseñar el nombre de la nota solo tiene sentido donde la altura es
@@ -162,6 +179,18 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
   /** Qué notas se han programado ya: cada una suena UNA vez, alta o baja. */
   const programadas = useRef<Set<number>>(new Set());
   const [pasadas, setPasadas] = useState<Set<number>>(new Set());
+  /** Tocadas dentro de la ventana ancha, pero fuera de lo que cuenta. */
+  const [casis, setCasis] = useState<Set<number>>(new Set());
+  /** Quemadas: golpeadas antes de tiempo. Ya no se pueden recuperar. */
+  const [quemadas, setQuemadas] = useState<Set<number>>(new Set());
+  /**
+   * Estado de cada nota mientras el niño responde, para `marcaDeGolpe`.
+   *
+   * Se lleva en un `ref` y no solo en el estado porque dos toques seguidos antes de que
+   * React repinte tienen que ver el segundo lo que hizo el primero. Es lo mismo que hace
+   * `TocarATiempo`.
+   */
+  const marcasRef = useRef<MarcaEnVivo[]>([]);
   const [evaluacion, setEvaluacion] = useState<EvaluacionRitmica | null>(null);
   /**
    * Nombres de nota que suben flotando al acertar. Se guardan con un id propio y no con el
@@ -205,8 +234,25 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
   const instantes = useRef<number[]>([]);
   const golpes = useRef<number[]>([]);
 
+  /**
+   * La ventana: cuántos segundos de música se ven por delante de la línea.
+   *
+   * Es `VENTANA_S` salvo que haya una nota **más larga que eso**, y entonces se ensancha
+   * hasta que quepa. Sin esto, la cola de una redonda a 60 pulsos por minuto mide cuatro
+   * segundos y el recorrido visible solo da para 3,2: se dibujaba cortada por arriba y no
+   * llegaba nunca a verse entera. Lo vio el autor el 2026-09-14.
+   *
+   * **Solo se ensancha si hay cola**, porque ensancharla cambia la velocidad a la que caen
+   * las figuras, y eso no se le hace a una actividad que no ha pedido nada.
+   */
+  const ventanaS = useMemo(() => {
+    if (!conCola) return VENTANA_S;
+    const masLarga = notas.reduce((m, n) => Math.max(m, n.pulsos * (60 / bpm)), 0);
+    return Math.max(VENTANA_S, masLarga);
+  }, [conCola, notas, bpm]);
+
   /** Instante de cada nota, en segundos desde el arranque. Incluye el margen de entrada. */
-  const tiempos = useMemo(() => instantesDe(notas, bpm, ENTRADA_S), [notas, bpm]);
+  const tiempos = useMemo(() => instantesDe(notas, bpm, ventanaS), [notas, bpm, ventanaS]);
 
   /*
     Se deja de escuchar poco después de la ÚLTIMA nota, no al final de su duración más dos
@@ -215,7 +261,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
     hace falta es que quepa un golpe algo tardío en esa última nota: un pulso y medio.
   */
   const duracionTotal = Math.min(
-    duracionDe(notas, bpm, ENTRADA_S) + 2,
+    duracionDe(notas, bpm, ventanaS) + 2,
     (tiempos[tiempos.length - 1] ?? 0) + (60 / bpm) * 1.5,
   );
 
@@ -258,12 +304,12 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
       orientacion,
       clave,
       lineaPct: LINEA_PCT,
-      anticipacionS: ANTICIPACION_S,
+      anticipacionS: ventanaS,
       transversalPx: TRANSVERSAL,
       separacion: SEP,
       margen: MARGEN_ARRIBA,
     }),
-    [representacion, orientacion, clave, TRANSVERSAL],
+    [representacion, orientacion, clave, TRANSVERSAL, ventanaS],
   );
 
   const parar = useCallback(() => {
@@ -292,6 +338,9 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
     golpes.current = [];
     setAcertadas(new Set());
     setPasadas(new Set());
+    setCasis(new Set());
+    setQuemadas(new Set());
+    marcasRef.current = notas.map(() => 'pendiente' as MarcaEnVivo);
     setEvaluacion(null);
 
     const segundosPorPulso = 60 / bpm;
@@ -364,18 +413,44 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
     const ms = obtenerContexto().currentTime * 1000;
     golpes.current.push(ms);
 
-    const limite = TOLERANCIA_MS[carril].casi;
-    let mejor = -1;
-    let mejorError = Infinity;
-    instantes.current.forEach((esperado, i) => {
-      if (banda !== null && carriles.indexOf(notas[i]!.nota) !== banda) return;
-      const error = Math.abs(ms - esperado);
-      if (error < mejorError && error <= limite) {
-        mejorError = error;
-        mejor = i;
-      }
-    });
-    if (mejor < 0) return;
+    /*
+      **La misma regla que la evaluación final**, en `marcaDeGolpe`.
+
+      Antes aquí había otra: «de todas las notas, la más cercana que caiga dentro de la
+      ventana». Con esa, aporrear la pantalla lo acertaba todo —entre tantos toques, siempre
+      había uno dentro de cada ventana—, y encima el verde en vivo no coincidía con el
+      resumen del final, que sí usaba la regla buena. Es exactamente el fallo que se corrigió
+      el 2026-09-10 en «Ritmo de ocho» y el 2026-09-12 en «Palmea el ritmo»; el karaoke se
+      quedó con su copia vieja hasta que el autor lo vio el 2026-09-14.
+
+      Ahora cada toque se compara con la PRIMERA nota que aún no ha pasado: si llega dentro
+      de la ventana, es suya; si llega antes de tiempo, la **quema** —se queda en gris y no
+      se recupera, y los toques que vengan detrás para esa misma nota sobran, que castigar
+      dos veces un solo adelanto no—; y si ya no queda nota por venir, sobra.
+    */
+    // Con bandas, un toque solo puede acertar notas de SU banda: se le pasa a la regla ese
+    // trozo del patrón y se traduce el índice de vuelta.
+    const indices = notas
+      .map((_, i) => i)
+      .filter((i) => banda === null || carriles.indexOf(notas[i]!.nota) === banda);
+    const resultado = marcaDeGolpe(
+      indices.map((i) => instantes.current[i]!),
+      indices.map((i) => marcasRef.current[i] ?? 'pendiente'),
+      ms,
+      carril,
+    );
+    if (!resultado) return;
+    const mejor = indices[resultado.indice]!;
+    marcasRef.current = marcasRef.current.map((m, i) => (i === mejor ? resultado.marca : m));
+
+    if (resultado.marca === 'quemado') {
+      setQuemadas((q) => new Set(q).add(mejor));
+      return;
+    }
+    if (resultado.marca === 'casi') {
+      setCasis((c) => new Set(c).add(mejor));
+      return;
+    }
     setAcertadas((a) => new Set(a).add(mejor));
     acertadasRef.current.add(mejor);
     // Si la nota aún no ha sonado, sonará fuerte cuando llegue; si el golpe llega un pelín
@@ -426,8 +501,31 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
     return () => window.removeEventListener('keydown', alPulsar);
   }, [fase, tocar, porCarril, carriles.length]);
 
+  /**
+   * La palabra de la nota que está sonando ahora mismo, y cuántas sílabas van dichas.
+   *
+   * **Se construye en la línea y no a lo largo de la cola**, que es donde estaba el primer
+   * intento. Detrás de la línea solo queda el 22 % del recuadro —menos de un segundo de
+   * recorrido—, así que las sílabas ya dichas se salían por el borde casi al encenderse y la
+   * palabra entera no llegaba a verse nunca. Aquí se queda quieta mientras la nota dura, que
+   * es exactamente lo que se pidió: que mientras la nota pasa por la línea se vaya
+   * construyendo la palabra al pulso.
+   */
+  const palabraEnCurso = useMemo(() => {
+    for (let i = notas.length - 1; i >= 0; i -= 1) {
+      const n = notas[i]!;
+      if (!n.palabra?.length) continue;
+      const desde = ahora - tiempos[i]!;
+      const duracion = n.pulsos * (60 / bpm);
+      if (desde >= 0 && desde < duracion) {
+        return { silabas: n.palabra, dichas: silabasDichas(desde, duracion, n.palabra.length) };
+      }
+    }
+    return null;
+  }, [notas, tiempos, ahora, bpm]);
+
   const total = notas.length;
-  const bien = bastanteBien(acertadas.size, total);
+  const bien = bastanteBien(acertadas.size, total, evaluacion?.sobrantes ?? 0);
 
   return (
     <section
@@ -519,10 +617,10 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
             cuatro segundos en terminar de cruzar la línea, y con el segundo y pico de antes
             el elefante se esfumaba a mitad de palabra. Se espera a que pase la cola entera.
           */
-          if (falta > ANTICIPACION_S || falta < -Math.max(1.2, duracionNota)) return null;
+          if (falta > ventanaS || falta < -Math.max(1.2, duracionNota)) return null;
           const indice = conAltura ? carriles.indexOf(n.nota) : 0;
           const g = geometriaDe(n, falta, indice, carriles.length, opciones);
-          const apagada = pasadas.has(i) && !acertadas.has(i);
+          const apagada = (pasadas.has(i) || quemadas.has(i)) && !acertadas.has(i) && !casis.has(i);
 
           // El avance es siempre «cuánto falta»; el eje al que se aplica es lo único que
           // cambia entre las dos orientaciones. En vertical se invierte para que lo que
@@ -540,7 +638,13 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
             mide, y moverla habría desplazado el momento de acertar en todas las actividades.
           */
           const largoPct = largoDe(n.pulsos, bpm, opciones);
-          const dichas = silabasDichas(-falta, duracionNota, n.palabra?.length ?? 0);
+          /*
+            Sin cola, la cabeza sigue creciendo con la duración como toda la vida: veinte
+            píxeles por pulso. No es proporcional al recorrido —de eso iba la cola—, pero es
+            lo que llevan viéndose las actividades que no han pedido nada, y cambiarlo de
+            oficio en todas fue justamente lo que el autor devolvió el 2026-09-14.
+          */
+          const largoCabeza = conCola ? null : Math.max(SEP, n.pulsos * 20);
           const contenidoFigura =
             representacion === 'silaba' ? (n.silaba ?? '') :
             representacion === 'figura' ? figuraDe(n.pulsos) :
@@ -558,6 +662,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
 
           return (
             <Fragment key={`${n.nota}-${i}`}>
+            {conCola && (
             <span
               className="karaoke__cola"
               data-orientacion={orientacion}
@@ -568,29 +673,21 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
                 borderColor: apagada ? undefined : colorDe(n.nota),
               }}
               aria-hidden="true"
-            >
-              {/* La palabra, repartida a lo largo de lo que dura la nota: una sílaba por
-                  tramo, y cada una se enciende cuando la línea llega a ella. Así la palabra
-                  se va construyendo al pulso mientras la nota pasa, que es lo que convierte
-                  «e-le-fan-te» en una redonda sin tener que contar nada. */}
-              {n.palabra?.map((silaba, k) => (
-                <span
-                  key={k}
-                  className="karaoke__silaba"
-                  data-dicha={k < dichas || undefined}
-                >
-                  {silaba}
-                </span>
-              ))}
-            </span>
+            />
+            )}
             <span
               className="karaoke__figura"
               data-forma={representacion}
               data-acertada={acertadas.has(i) || undefined}
+              data-casi={casis.has(i) || undefined}
+              data-quemada={quemadas.has(i) || undefined}
               data-apagada={apagada || undefined}
               data-oculta={revelar && !acertadas.has(i) || undefined}
               style={{
                 ...posicion,
+                ...(largoCabeza === null
+                  ? {}
+                  : vertical ? { height: largoCabeza } : { width: largoCabeza }),
                 ...(representacion === 'pentagrama' || representacion === 'color'
                   ? { background: apagada ? undefined : colorDe(n.nota) }
                   : { borderColor: apagada ? undefined : colorDe(n.nota) }),
@@ -620,6 +717,25 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
             </Fragment>
           );
         })}
+
+        {/* La palabra al pulso: una sílaba más cada vez que pasa un tramo de la nota. Solo
+            las dichas, porque lo que enseña es verla crecer: «e», «e-le», «e-le-fan»... */}
+        {palabraEnCurso && (
+          <span
+            className="karaoke__palabra"
+            data-orientacion={orientacion}
+            style={
+              vertical
+                ? { top: `${100 - LINEA_PCT}%`, left: '50%' }
+                : { left: `${LINEA_PCT}%`, top: '50%' }
+            }
+            aria-hidden="true"
+          >
+            {palabraEnCurso.silabas.slice(0, palabraEnCurso.dichas).map((silaba, k) => (
+              <span key={k} className="karaoke__silaba">{silaba}</span>
+            ))}
+          </span>
+        )}
 
         {avisos.map((a) => (
           <span

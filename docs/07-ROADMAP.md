@@ -3416,6 +3416,61 @@ notas de al lado en un móvil en vertical, que las sílabas se lean a 13 px en u
 aula, y que la cabeza de nota de pentagrama y color —que ya no crece con la duración— siga
 viéndose bien en las veinte actividades que la usan.
 
+### El karaoke, corregido: la cola se pide, la palabra va en la línea, 2026-09-14 (tarde)
+
+El autor devolvió el cambio anterior con cuatro cosas, y las cuatro tenían razón.
+
+- [x] **La cola no va en todas.** «El resto de actividades de karaoke no tienen por qué
+      dibujar su largo si no lo indico, por defecto se quedan como antes.» Campo `cola` en el
+      contenido, apagado salvo que se pida, y **la cabeza vuelve a crecer con `pulsos * 20`
+      cuando no hay cola**: no es proporcional al recorrido, pero es lo que llevan viéndose
+      las quince actividades que no han pedido nada. Encendida en las tres de duración —140
+      «Notas que caen», 215 «Lee las figuras» y 349 «La primavera con figuras»— y en la 119.
+- [x] **Fuera la voz de la 119.** Sostenía la redonda cuatro segundos de verdad, y no gustó.
+      Vuelve a la marimba. Se pierde que el sonido dure lo que dura la figura; lo dicen la
+      cola y la palabra, que es donde estaba el valor.
+- [x] **La cola se cortaba antes de acabar**, y no era un fallo de dibujo: la ventana son
+      3,2 s de recorrido y una redonda a 60 dura cuatro, así que no cabía. Ahora la ventana
+      se ensancha hasta que quepa la nota más larga —**solo cuando hay cola**, porque
+      ensancharla cambia la velocidad de caída y eso no se le hace a una actividad que no ha
+      pedido nada—. Y con ella se ensanchan a la vez la anticipación y el margen de entrada,
+      que siguen siendo la misma medida.
+- [x] **La palabra se construye en la línea, no a lo largo de la cola.** Era el error de la
+      primera versión y explica el resto: detrás de la línea solo queda el 22 % del recuadro,
+      menos de un segundo de recorrido, así que cada sílaba se salía por el borde casi al
+      encenderse y la palabra entera no se veía nunca. Quieta junto a la línea, crece: «e»,
+      «e-le», «e-le-fan», «e-le-fan-te». Que era literalmente lo que se había pedido.
+
+### Aporrear el karaoke lo acertaba todo, 2026-09-14 (tarde)
+
+«Si aprietas muy seguido, siempre aciertas; también hay que penalizar pulsar la nota
+demasiado pronto.» **El karaoke tenía su propia regla de acierto**, y era la vieja: «de todas
+las notas, la más cercana que caiga dentro de la ventana». Con esa, entre tantos toques
+siempre había uno dentro de cada ventana.
+
+Es el mismo fallo que se corrigió el 2026-09-10 en «Ritmo de ocho» y el 2026-09-12 en
+«Palmea el ritmo». Se corrigió **en `evaluacion.ts`**, con test, y el karaoke se quedó con su
+copia sin que nadie lo notara: el resumen del final usaba la regla buena y el verde de la
+pantalla la mala, así que además no coincidían.
+
+- [x] **`tocar()` usa `marcaDeGolpe`**, la misma regla que la evaluación final. Cada toque se
+      compara con la primera nota que aún no ha pasado: dentro de la ventana es suya; antes
+      de tiempo la **quema** —gris y con la raya por en medio, y no se recupera—; y si ya no
+      queda nota por venir, sobra. Aporrear deja de funcionar, y quemar una nota no quema la
+      siguiente: castigar dos veces un solo adelanto, no.
+- [x] **Con bandas, un toque solo alcanza a las notas de su banda.** Se le pasa a la regla
+      ese trozo del patrón y se traduce el índice de vuelta.
+- [x] **Aparece el «casi»**, que el karaoke no tenía: tocada dentro de la ventana ancha pero
+      fuera de lo que cuenta. Medio amarilla, sin crecer —crecer es del acierto—, la misma
+      marca que usa «Toca a tiempo». Antes esas notas se pintaban de verde y luego no
+      contaban en el resumen.
+- [x] **El «bien» del final cuenta los toques que sobraron**, que es lo que impide
+      felicitar a quien ha cogido ocho de diez aporreando veinte veces.
+
+Sin test nuevo: la regla ya lo tiene en `tests/evaluacion.test.ts` —«aporrear no rellena los
+huecos»— y lo que fallaba era que el karaoke no la llamaba. Lo que sí queda es la lección:
+**una regla de producto duplicada dentro de un componente se queda atrás en silencio**.
+
 ### T3.6 — Tipo `director`: tempo y volumen sobre una pieza `⚠️`
 
 **111 «El mando del director» no se puede usar.** Su ficha promete dos deslizadores —uno de

@@ -832,7 +832,8 @@
           }
         ]
       }
-    ]
+    ],
+    "cola": true
   },
   "evaluacion": {
     "autocorrectiva": true,
