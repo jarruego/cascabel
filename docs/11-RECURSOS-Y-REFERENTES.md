@@ -69,6 +69,14 @@ Kuchen» (de.wikipedia) y el «Wiegenlied» de Brahms (en.wikipedia). La de «Es
 principios del siglo XX de autor desconocido y **no entra**: una traducción tiene derechos
 propios aunque la melodía y el texto inglés de Jane Taylor (1806) sean libres.
 
+**El Fondo de Música Tradicional del CSIC** (`musicatradicional.imf.csic.es`) es el mejor
+hallazgo de todos para el repertorio español: transcripciones de las misiones folclóricas con
+**informante, lugar, recopilador y referencia de archivo**, y —lo que lo cambia todo— **fichero
+MusicXML descargable** por pieza. De ahí sale la melodía de C1-42: nada de leer alturas de un
+escaneo, que es donde se falla. Se cita con la fórmula que ellos mismos dan («How to cite»).
+La obra es tradicional anónima y de dominio público; de la transcripción no viaja nada, se usa
+para verificar lo que no se puede inventar.
+
 **Grabaciones cantadas libres.** Wikimedia Commons tiene el archivo de la **Fundación Joaquín
 Díaz** entero, en CC BY-SA 3.0: seis «Don Gato» y un «cucú cantaba la rana», entre muchísimas.
 Legalmente valen. **Se descartaron por sonido** (2026-09-15): son grabaciones de campo, y lo

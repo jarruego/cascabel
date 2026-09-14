@@ -3751,6 +3751,35 @@ que no se coman las notas que se apoyan en ellas— y el residuo se queda en **m
 que es justo la diferencia entre un la y un sol. Con eso no se escribe una melodía. Hace falta
 el fichero (MusicXML, MIDI o MuseScore) o los nombres de las notas en texto.
 
+### La 142 recupera su melodía: el archivo del CSIC, 2026-09-15
+
+El autor encontró lo que llevábamos toda la tarde buscando: el **Fondo de Música Tradicional
+IMF-CSIC**, con la pieza M35-0600 —«Estaba el señor Don Gato», recogida en Sevilla por Arcadio
+de Larrea Palacín a la informante Isabel Pozo Lozano, catalogada como canción de corro— **y su
+MusicXML descargable**.
+
+- [x] **Treinta y una notas con su altura, su figura y su sílaba**, leídas del fichero. Ni una
+      deducida. Es la diferencia entre tener una fuente y tener una foto de una fuente: las
+      alturas de un escaneo de siete píxeles entre líneas se me quedaban en medio espacio, que
+      es justo lo que separa un la de un sol.
+- [x] **La actividad se rehízo entera sobre esa única versión.** Antes iba sin melodía, con
+      todo en un sol, porque las tres transcripciones miradas eran variantes distintas y
+      mezclarlas habría dado una canción que no era ninguna. Ahora melodía, ritmo y letra
+      salen del mismo sitio y son coherentes entre sí por construcción.
+- [x] **Y estrena el `fondo`**: la flauta toca la canción entera por debajo y el niño la toca
+      encima con el piano, que era justo lo que faltaba — «solo son golpes y pierde la
+      melodía».
+- [x] **Una lista de notas que no cuadraba, descartada.** Antes de esto se probó con una lista
+      de nombres de nota: daba siete notas donde el ritmo cotejado tiene ocho ataques, empezaba
+      con anacrusa —que las partituras no tienen—, estaba en sol y no en do, y su estribillo
+      llevaba cuatro «miau» donde la letra del propio autor lleva tres. Cuatro desacuerdos: no
+      era la misma versión.
+
+**Pendiente, y está en su `$comment`**: el tempo (la fuente marca negra = 120 y aquí va a 76,
+porque cuatro semicorcheas a 120 son 125 ms y eso no se toca a los siete años); que esta
+versión sevillana dice «con el marra miau» donde la de los colegios dice «maramamiau»; y que
+el compás 10 es de 3/4 dentro de una pieza en 2/4, que es así en el original.
+
 ### T3.6 — Tipo `director`: tempo y volumen sobre una pieza `⚠️`
 
 **111 «El mando del director» no se puede usar.** Su ficha promete dos deslizadores —uno de

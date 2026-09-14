@@ -1,9 +1,9 @@
 {
   "id": "c1-42-marramamiau",
-  "version": 1,
+  "version": 2,
   "tipo": "karaoke",
-  "titulo": "Marramamiau: el ritmo de Don Gato",
-  "descripcion": "«Estaba el señor Don Gato» sílaba a sílaba: se toca el ritmo de la letra y se canta a la vez. Sin melodía, que aquí lo que manda es la palabra.",
+  "titulo": "Estaba el señor Don Gato",
+  "descripcion": "La canción entera, sílaba a sílaba: la flauta la va tocando por debajo y el niño la toca encima con el piano. Versión recogida en Sevilla en el archivo del CSIC.",
   "etapa": "primaria-c1",
   "eje": "pulso",
   "lugar": "pantalla",
@@ -17,12 +17,21 @@
   "practica": {
     "secuencia": "ninguna",
     "compas": "2/4",
-    "tempo": 72,
+    "tempo": 76,
     "figuras": [
       "semicorchea",
       "corchea",
       "negra",
       "blanca"
+    ],
+    "notas": [
+      "do",
+      "re",
+      "mi",
+      "fa",
+      "sol",
+      "la",
+      "si"
     ]
   },
   "entrada": {
@@ -32,7 +41,7 @@
     "consigna": "actividad.c142.consigna",
     "orientacion": "vertical",
     "representacion": "figura",
-    "tempo": 72,
+    "tempo": 76,
     "cola": true,
     "letra": true,
     "ejercicios": [
@@ -47,7 +56,7 @@
             ]
           },
           {
-            "nota": "G4",
+            "nota": "E4",
             "pulsos": 0.5,
             "palabra": [
               "ta"
@@ -61,7 +70,7 @@
             ]
           },
           {
-            "nota": "G4",
+            "nota": "E4",
             "pulsos": 0.5,
             "palabra": [
               "se"
@@ -75,22 +84,22 @@
             ]
           },
           {
-            "nota": "G4",
+            "nota": "E4",
             "pulsos": 0.5,
             "palabra": [
               "Don"
             ]
           },
           {
-            "nota": "G4",
-            "pulsos": 2,
+            "nota": "D4",
+            "pulsos": 2.0,
             "palabra": [
               "Ga"
             ]
           },
           {
-            "nota": "G4",
-            "pulsos": 2,
+            "nota": "C4",
+            "pulsos": 2.0,
             "palabra": [
               "to"
             ]
@@ -101,42 +110,42 @@
         "titulo": "actividad.c142.ej2",
         "notas": [
           {
-            "nota": "G4",
+            "nota": "A4",
             "pulsos": 0.5,
             "palabra": [
-              "Sen"
+              "sen"
             ]
           },
           {
-            "nota": "G4",
+            "nota": "F4",
             "pulsos": 0.5,
             "palabra": [
               "ta"
             ]
           },
           {
-            "nota": "G4",
+            "nota": "A4",
             "pulsos": 0.5,
             "palabra": [
               "di"
             ]
           },
           {
-            "nota": "G4",
+            "nota": "F4",
             "pulsos": 0.5,
             "palabra": [
               "to en"
             ]
           },
           {
-            "nota": "G4",
+            "nota": "A4",
             "pulsos": 1.5,
             "palabra": [
               "su"
             ]
           },
           {
-            "nota": "G4",
+            "nota": "B4",
             "pulsos": 0.5,
             "palabra": [
               "te"
@@ -160,53 +169,60 @@
             "nota": "G4",
             "pulsos": 0.25,
             "palabra": [
-              "ma"
+              "con"
             ]
           },
           {
-            "nota": "G4",
+            "nota": "F4",
             "pulsos": 0.25,
             "palabra": [
-              "ra"
+              "el"
             ]
           },
           {
-            "nota": "G4",
+            "nota": "E4",
             "pulsos": 0.5,
             "palabra": [
               "ma"
             ]
           },
           {
+            "nota": "F4",
+            "pulsos": 0.5,
+            "palabra": [
+              "rra"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1.0,
+            "palabra": [
+              "miau,"
+            ]
+          },
+          {
+            "nota": "A4",
+            "pulsos": 1.0,
+            "palabra": [
+              "miau,"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1.0,
+            "palabra": [
+              "miau,"
+            ]
+          },
+          {
             "nota": "G4",
             "pulsos": 0.5,
             "palabra": [
-              "miau"
+              "sen"
             ]
           },
           {
-            "nota": "G4",
-            "pulsos": 1,
-            "palabra": [
-              "miau"
-            ]
-          },
-          {
-            "nota": "G4",
-            "pulsos": 3,
-            "palabra": [
-              "miau"
-            ]
-          },
-          {
-            "nota": "G4",
-            "pulsos": 0.5,
-            "palabra": [
-              "Sen"
-            ]
-          },
-          {
-            "nota": "G4",
+            "nota": "A4",
             "pulsos": 0.5,
             "palabra": [
               "ta"
@@ -220,7 +236,7 @@
             ]
           },
           {
-            "nota": "G4",
+            "nota": "A4",
             "pulsos": 0.5,
             "palabra": [
               "to en"
@@ -234,24 +250,24 @@
             ]
           },
           {
-            "nota": "G4",
+            "nota": "E4",
             "pulsos": 0.5,
             "palabra": [
               "te"
             ]
           },
           {
-            "nota": "G4",
-            "pulsos": 2,
+            "nota": "D4",
+            "pulsos": 2.0,
             "palabra": [
               "ja"
             ]
           },
           {
-            "nota": "G4",
-            "pulsos": 2,
+            "nota": "C4",
+            "pulsos": 2.0,
             "palabra": [
-              "do"
+              "do."
             ]
           }
         ]
@@ -267,7 +283,7 @@
             ]
           },
           {
-            "nota": "G4",
+            "nota": "E4",
             "pulsos": 0.5,
             "palabra": [
               "ta"
@@ -281,7 +297,7 @@
             ]
           },
           {
-            "nota": "G4",
+            "nota": "E4",
             "pulsos": 0.5,
             "palabra": [
               "se"
@@ -295,63 +311,63 @@
             ]
           },
           {
-            "nota": "G4",
+            "nota": "E4",
             "pulsos": 0.5,
             "palabra": [
               "Don"
             ]
           },
           {
-            "nota": "G4",
-            "pulsos": 2,
+            "nota": "D4",
+            "pulsos": 2.0,
             "palabra": [
               "Ga"
             ]
           },
           {
-            "nota": "G4",
-            "pulsos": 2,
+            "nota": "C4",
+            "pulsos": 2.0,
             "palabra": [
               "to"
             ]
           },
           {
-            "nota": "G4",
+            "nota": "A4",
             "pulsos": 0.5,
             "palabra": [
-              "Sen"
+              "sen"
             ]
           },
           {
-            "nota": "G4",
+            "nota": "F4",
             "pulsos": 0.5,
             "palabra": [
               "ta"
             ]
           },
           {
-            "nota": "G4",
+            "nota": "A4",
             "pulsos": 0.5,
             "palabra": [
               "di"
             ]
           },
           {
-            "nota": "G4",
+            "nota": "F4",
             "pulsos": 0.5,
             "palabra": [
               "to en"
             ]
           },
           {
-            "nota": "G4",
+            "nota": "A4",
             "pulsos": 1.5,
             "palabra": [
               "su"
             ]
           },
           {
-            "nota": "G4",
+            "nota": "B4",
             "pulsos": 0.5,
             "palabra": [
               "te"
@@ -375,53 +391,60 @@
             "nota": "G4",
             "pulsos": 0.25,
             "palabra": [
-              "ma"
+              "con"
             ]
           },
           {
-            "nota": "G4",
+            "nota": "F4",
             "pulsos": 0.25,
             "palabra": [
-              "ra"
+              "el"
             ]
           },
           {
-            "nota": "G4",
+            "nota": "E4",
             "pulsos": 0.5,
             "palabra": [
               "ma"
             ]
           },
           {
+            "nota": "F4",
+            "pulsos": 0.5,
+            "palabra": [
+              "rra"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1.0,
+            "palabra": [
+              "miau,"
+            ]
+          },
+          {
+            "nota": "A4",
+            "pulsos": 1.0,
+            "palabra": [
+              "miau,"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1.0,
+            "palabra": [
+              "miau,"
+            ]
+          },
+          {
             "nota": "G4",
             "pulsos": 0.5,
             "palabra": [
-              "miau"
+              "sen"
             ]
           },
           {
-            "nota": "G4",
-            "pulsos": 1,
-            "palabra": [
-              "miau"
-            ]
-          },
-          {
-            "nota": "G4",
-            "pulsos": 3,
-            "palabra": [
-              "miau"
-            ]
-          },
-          {
-            "nota": "G4",
-            "pulsos": 0.5,
-            "palabra": [
-              "Sen"
-            ]
-          },
-          {
-            "nota": "G4",
+            "nota": "A4",
             "pulsos": 0.5,
             "palabra": [
               "ta"
@@ -435,7 +458,7 @@
             ]
           },
           {
-            "nota": "G4",
+            "nota": "A4",
             "pulsos": 0.5,
             "palabra": [
               "to en"
@@ -449,30 +472,32 @@
             ]
           },
           {
-            "nota": "G4",
+            "nota": "E4",
             "pulsos": 0.5,
             "palabra": [
               "te"
             ]
           },
           {
-            "nota": "G4",
-            "pulsos": 2,
+            "nota": "D4",
+            "pulsos": 2.0,
             "palabra": [
               "ja"
             ]
           },
           {
-            "nota": "G4",
-            "pulsos": 2,
+            "nota": "C4",
+            "pulsos": 2.0,
             "palabra": [
-              "do"
+              "do."
             ]
           }
         ]
       }
     ],
-    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA. (1) La canción es «Estaba el señor Don Gato», tradicional anónima y de dominio público; aquí van solo su RITMO y su LETRA, no la melodía: todas las sílabas caen en la misma altura porque lo que se practica es la palabra-ritmo. **No se reproduce ninguna transcripción ajena**: el JSON es propio y las partituras solo se han usado como referencia de una obra de dominio público, igual que en C1-37. (2) Ritmo cotejado el 2026-09-15 contra dos transcripciones independientes que coinciden entre sí —la de coletorremanzanas (vía partiturasmil) y una segunda que aportó el autor—, las dos en do mayor y 2/4, veintiséis compases, con forma A-B-A por estrofa. Única diferencia entre ellas, y es de escritura y no de música: el cuarto compás una lo escribe negra + silencio y la otra corchea + silencios. (3) El reparto de sílabas de la frase A —«Es·ta·ba el·se | ñor·Don | Ga | to», con «ñor» en la nota larga— se confirmó con el subtexto de una tercera fuente (Mama Lisa's World), que además demuestra que «ba el» es una sola corchea. (4) LO QUE HAY QUE CONFIRMAR CANTANDO: esa tercera fuente es otra variante —re mayor, con un compás de 3/4— y su estribillo tiene catorce ataques donde las nuestras tienen quince. Se ha optado por catorce, alargando el último «miau» sobre las dos últimas notas, porque así la sinalefa «to en» queda igual en la frase B y en la A, que es lo natural al cantarlo. La alternativa sería quince ataques con «en» cayendo en la negra con puntillo del compás 6. Si al cantarlo en clase suena la segunda, se cambia aquí. (5) El tempo, 72: los cuatro semicorcheas de «ja-do-ma-ra» salen a 208 ms, que es lo más rápido que se le pide a un niño de 1.º en todo el catálogo. Si cuesta, bajar a 66."
+    "$comment": "MELODÍA, RITMO Y LETRA DE UNA SOLA FUENTE, y documentada: el **Fondo de Música Tradicional IMF-CSIC**, pieza M35-0600, recogida en Sevilla por Arcadio de Larrea Palacín a la informante Isabel Pozo Lozano, catalogada como canción de corro. Se descargó su MusicXML y se leyeron de ahí las 31 notas con sus alturas, sus figuras y su sílaba: nada está escrito de memoria ni deducido. Cita: Óscar David Castillo Pérez, «Estaba el señor Don Gato», Fondo de Música Tradicional IMF-CSIC, ed. E. Ros-Fábregas, https://musicatradicional.imf.csic.es/piece/64973 (2026-09-15). **Lo que se publica es nuestro JSON**: la obra es tradicional anónima y de dominio público, y de la transcripción no viaja nada — se ha usado para verificar la melodía, que es lo que no se puede inventar. Antes de esto la actividad iba sin melodía, con todo en un sol, porque las tres transcripciones que se habían mirado eran variantes distintas y mezclarlas habría dado una canción que no era ninguna. Al aparecer una fuente con MusicXML, se rehízo entera. PENDIENTE DE REVISIÓN PEDAGÓGICA: (1) El tempo. La fuente marca negra = 120; aquí va a 76 porque las cuatro semicorcheas de «ja-do-con-el» a 120 son 125 ms y eso no se toca a los siete años. A 76 son 197 ms. (2) Esta versión sevillana dice «con el marra miau, miau, miau» donde la que circula por los colegios dice «maramamiau»; se respeta la de la fuente. Las otras estrofas de la ficha son de la versión común y se señalan como tales. (3) El compás 10 es de 3/4 en la fuente, dentro de una pieza en 2/4. Es así en el original y se ha respetado.",
+    "instrumento": "piano",
+    "fondo": "flauta"
   },
   "evaluacion": {
     "autocorrectiva": true,
@@ -570,7 +595,7 @@
       "texto": "En corro, una estrofa cada niño y el estribillo toda la clase. Quien canta su estrofa marca el pulso con el pie y los demás dan la palmada solo en «marramamiau, miau, miau». Al acabar, se cuenta la historia entre todos sin cantarla y se comprueba que no falta nada: un romance es un cuento que se canta, y así se ve."
     },
     "ideas": [
-      "Las estrofas que siguen, para cantarlas sin pantalla: «Ha recibido una carta, que si quiere ser casado» · «Con una gatita parda, sobrina de un gato pardo» · «Al recibir la noticia, se ha caído del tejado».",
+      "Las estrofas que siguen, en la versión que circula por los colegios —ésta es la sevillana del CSIC—: «Ha recibido una carta, que si quiere ser casado» · «Con una gatita parda, sobrina de un gato pardo» · «Al recibir la noticia, se ha caído del tejado».",
       "Y el final de la historia: «Se ha roto siete costillas, el espinazo y el rabo» · «Ya lo llevan a enterrar por la calle del pescado» · «Al olor de las sardinas, el gato ha resucitado».",
       "Y el cierre, que es de la propia canción: «Con razón dice la gente: siete vidas tiene un gato» · «Y aquí se acaba la copla de Don Gato enamorado».",
       "Contar las sílabas de cada verso: salen ocho siempre. Eso es un romance, que es la forma en que se cantaron los cuentos en español durante siglos. Y dibujar la historia en nueve viñetas, una por estrofa."

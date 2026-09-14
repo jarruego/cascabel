@@ -1613,8 +1613,8 @@
     },
     {
       "id": "c1-42-marramamiau",
-      "titulo": "Marramamiau: el ritmo de Don Gato",
-      "descripcion": "«Estaba el señor Don Gato» sílaba a sílaba: se toca el ritmo de la letra y se canta a la vez. Sin melodía, que aquí lo que manda es la palabra.",
+      "titulo": "Estaba el señor Don Gato",
+      "descripcion": "La canción entera, sílaba a sílaba: la flauta la va tocando por debajo y el niño la toca encima con el piano. Versión recogida en Sevilla en el archivo del CSIC.",
       "etapa": "primaria-c1",
       "eje": "pulso",
       "tipo": "karaoke",
@@ -1651,7 +1651,15 @@
         ],
         "compas": "2/4",
         "metodo": [],
-        "notas": [],
+        "notas": [
+          "do",
+          "re",
+          "mi",
+          "fa",
+          "sol",
+          "la",
+          "si"
+        ],
         "secuencia": "ninguna"
       }
     },
