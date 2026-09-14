@@ -144,6 +144,21 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
      * sirve un karaoke. Quien no ve lo que viene no puede cantarlo.
      */
     letra?: boolean;
+    /**
+     * Instrumento de la **melodía de fondo**, distinto del de los toques.
+     *
+     * Sin esto, cada nota suena una vez: bajita si no la has tocado y fuerte si sí, con el
+     * mismo timbre. Vale para casi todo, pero en una canción **deja de oírse la canción**:
+     * si el niño acierta poco, lo que suena son golpes sueltos (el autor, 2026-09-15, sobre
+     * C1-42).
+     *
+     * Con `fondo`, son dos cosas a la vez: la melodía suena **siempre** y entera con este
+     * timbre —una flauta por debajo, como el maestro tocando—, y encima el toque del niño
+     * suena con el suyo, fuerte y en el instante en que toca. Ya no es «tu nota suena más
+     * alta»: es que tú tocas **encima** de algo que ya va sonando, que es lo que hace un
+     * músico de verdad.
+     */
+    fondo?: string;
     /** Timbre. Ver `audio/instrumentos.ts`: hoy solo hay marimba. */
     instrumento?: string;
   };
@@ -172,6 +187,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
   const revelar = contenido.revelar ?? false;
   const conCola = contenido.cola ?? false;
   const conLetra = contenido.letra ?? false;
+  const instrumentoFondo = contenido.fondo;
   /*
     El aviso sigue a la representación salvo que se diga otra cosa. Es el mismo criterio que
     el resto del fichero: enseñar el nombre de la nota solo tiene sentido donde la altura es
@@ -224,6 +240,8 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
   const siguienteAviso = useRef(0);
 
   const sampler = useRef<Sampler | null>(null);
+  /** El de la melodía de fondo, si la actividad la pide. Ver `fondo`. */
+  const fondo = useRef<Sampler | null>(null);
   const rafId = useRef<number | null>(null);
 
   /*
@@ -358,6 +376,16 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
         // Sin muestras la melodía se ve avanzar igual: se pierde el sonido, no la actividad.
       }
     }
+    if (instrumentoFondo && !fondo.current) {
+      try {
+        const s = samplerPara(instrumentoFondo);
+        await s.cargar();
+        fondo.current = s;
+      } catch {
+        // Sin el fondo la actividad sigue entera: se queda como las demás, con la nota
+        // bajita de guía. Es un apoyo, no un requisito.
+      }
+    }
 
     const ctx = obtenerContexto();
     const t0 = ctx.currentTime + 0.4;
@@ -399,8 +427,20 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
         if (programadas.current.has(i) || t0 + s > ctxAhora + 0.12) return;
         programadas.current.add(i);
         const n = notas[i]!;
-        const fuerte = tocadasRef.current.has(i);
-        sampler.current?.tocar(n.nota, Math.max(t0 + s, ctxAhora), n.pulsos * (60 / bpm) * 0.9, fuerte ? 1 : VOLUMEN_GUIA);
+        const cuando = Math.max(t0 + s, ctxAhora);
+        const duracion = n.pulsos * (60 / bpm) * 0.9;
+        if (instrumentoFondo) {
+          /*
+            Con melodía de fondo son dos sonidos distintos y no uno más alto: la canción va
+            sonando entera por debajo, pase lo que pase, y el toque del niño suena aparte, con
+            su timbre y en el instante en que toca (ver `tocar`). Así no se queda en golpes
+            sueltos cuando falla, que es lo que pasaba.
+          */
+          fondo.current?.tocar(n.nota, cuando, duracion, VOLUMEN_GUIA);
+        } else {
+          const fuerte = tocadasRef.current.has(i);
+          sampler.current?.tocar(n.nota, cuando, duracion, fuerte ? 1 : VOLUMEN_GUIA);
+        }
       });
 
       // Una nota se apaga cuando su ventana se cierra del todo, no cuando cruza la línea.
@@ -427,7 +467,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
       rafId.current = requestAnimationFrame(bucle);
     };
     rafId.current = requestAnimationFrame(bucle);
-  }, [bpm, carril, notas, duracionTotal, parar, tiempos, contenido.instrumento]);
+  }, [bpm, carril, notas, duracionTotal, parar, tiempos, contenido.instrumento, instrumentoFondo]);
 
   /**
    * @param banda índice de la banda tocada, o `null` cuando hay un único botón.
@@ -489,6 +529,17 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
     }
     // Tocada: suena fuerte. Que cuente o no lo dice la marca, no el volumen.
     tocadasRef.current.add(mejor);
+    /*
+      Con fondo, el toque suena **aquí mismo** y no cuando el planificador llegue a la nota:
+      el niño está tocando encima de una melodía que ya va sonando, así que su golpe tiene
+      que oírse cuando lo da. Sin fondo se sigue haciendo como siempre —la nota suena una
+      sola vez, más alta— para no cambiarle el sonido a las quince actividades que no han
+      pedido nada.
+    */
+    if (instrumentoFondo) {
+      const n = notas[mejor]!;
+      sampler.current?.tocar(n.nota, undefined, Math.min(1.2, n.pulsos * (60 / bpm) * 0.9), 1);
+    }
     if (resultado.marca === 'casi') {
       setCasis((c) => new Set(c).add(mejor));
       return;
@@ -515,7 +566,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
       ]);
       window.setTimeout(() => setAvisos((p) => p.filter((a) => a.id !== id)), 1000);
     }
-  }, [fase, carril, notas, carriles, opciones, aviso]);
+  }, [fase, carril, notas, carriles, opciones, aviso, instrumentoFondo, bpm]);
 
   // La barra espaciadora vale como toque: en el ordenador del aula es lo natural, y de paso
   // deja la actividad accesible sin ratón.

@@ -3727,6 +3727,30 @@ Sin test: jsdom no maqueta ni implementa la selección del navegador, y un test 
 vigila nada. **Hay que verlo en el aparato**, manteniendo el dedo quieto tres segundos sobre
 el lienzo con la flauta, que es donde se oía cortarse.
 
+### Melodía de fondo y toque aparte: dos timbres en el karaoke, 2026-09-15
+
+«¿Se le puede poner la melodía de fondo a la 142? Solo son golpes y pierde la melodía.» Tiene
+razón y el diagnóstico es exacto: hasta ahora cada nota sonaba **una vez**, bajita si no la
+habías tocado y fuerte si sí, **con el mismo timbre**. En un ejercicio de ritmo da igual; en
+una canción, si el niño acierta poco, lo que suena son golpes sueltos y la canción desaparece.
+
+- [x] **Campo `fondo` en el contenido**: el instrumento de la melodía de fondo. Cuando está,
+      la melodía suena **siempre y entera** con ese timbre —una flauta por debajo, como el
+      maestro tocando— y el toque del niño suena aparte, con el suyo.
+- [x] **Y el toque suena en el instante en que toca**, no cuando el planificador llegue a la
+      nota. Deja de ser «tu nota suena más alta» y pasa a ser que tocas **encima** de algo que
+      ya va sonando, que es lo que hace un músico.
+- [x] **Sin `fondo` no cambia nada**, para no tocarle el sonido a las quince actividades que
+      no han pedido nada.
+
+**Pendiente, y es lo que bloquea la 142**: no tenemos su melodía. La actividad se hizo a
+propósito de ritmo y letra porque la melodía no estaba cotejada, y sin alturas de verdad el
+fondo sería una flauta repitiendo un sol. Se intentó sacarla de la partitura **midiendo** —se
+detectan las cinco líneas del pentagrama y las cabezas por programa, quitando las líneas para
+que no se coman las notas que se apoyan en ellas— y el residuo se queda en **medio espacio**,
+que es justo la diferencia entre un la y un sol. Con eso no se escribe una melodía. Hace falta
+el fichero (MusicXML, MIDI o MuseScore) o los nombres de las notas en texto.
+
 ### T3.6 — Tipo `director`: tempo y volumen sobre una pieza `⚠️`
 
 **111 «El mando del director» no se puede usar.** Su ficha promete dos deslizadores —uno de
