@@ -3627,6 +3627,12 @@ tirando del hilo salieron más sitios donde la ficha ya no decía lo que hace la
 **Lo que esto no dice** es que las fichas sean buena pedagogía: dice que no mienten sobre la
 pantalla. Lo otro sigue siendo de la profesora, y para eso está `docs/13`.
 
+**Descartado**: escribir `ta`, `ti-ti` y `ta-a` al pulso en 215 y 349, como se hace con los
+nombres de los animales en la 119. Se propuso y el autor dijo que no hace falta. La palabra
+al pulso se queda donde tiene sentido —donde el nombre *es* la duración—, y en las de leer
+figuras lo que hay que mirar es la figura. `palabra` sigue disponible para cualquier
+actividad que lo pida; no se le pone a ninguna más de oficio.
+
 **Lo que queda por decidir, y es de criterio pedagógico**: en `inf-16` y `inf-29`, que son de
 Infantil, quemar la nota por adelantarse puede ser mucho. La regla de evaluación ya era ésa
 desde el 2026-09-10 —solo que antes no se veía hasta el resumen—, así que no es nuevo; pero
