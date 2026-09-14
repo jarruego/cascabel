@@ -3615,6 +3615,17 @@ tirando del hilo salieron más sitios donde la ficha ya no decía lo que hace la
       cuatro afirmaban lo contrario: «si entra tarde o pronto, no pasa nada». Desde el arreglo
       de aporrear sí pasa —la nota se apaga y no se recupera—, así que eran cuatro fichas
       diciéndole al maestro justo lo contrario de lo que iba a ver.
+- [x] **Y repasadas por los catorce campos, no solo por `enPantalla`.** Lo preguntó el autor
+      —«¿y las fichas también están bien?»— y la primera pasada se había quedado corta: en
+      `inf-16` el paso 2 seguía diciendo «si se toca antes o después, no pasa nada». Los
+      demás «no pasa nada» hablan de dejar escapar una nota, que sí sigue siendo verdad. Los
+      siete de tipo `lienzo` no prometen ya xilófonos, láminas, cuerdas ni que la app
+      pregunte, y en las de rejilla el número de notas del JSON cuadra con el que dice la
+      ficha. **La 111 es la única excepción, y a propósito**: su ficha es la especificación
+      de T3.6.
+
+**Lo que esto no dice** es que las fichas sean buena pedagogía: dice que no mienten sobre la
+pantalla. Lo otro sigue siendo de la profesora, y para eso está `docs/13`.
 
 **Lo que queda por decidir, y es de criterio pedagógico**: en `inf-16` y `inf-29`, que son de
 Infantil, quemar la nota por adelantarse puede ser mucho. La regla de evaluación ya era ésa
