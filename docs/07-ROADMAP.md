@@ -3514,6 +3514,42 @@ tarde. Al separar el «casi» del acierto, se me fue con él el sonido.
 Tercera vez en dos días que el karaoke paga por tener su propia copia de algo que ya estaba
 resuelto en otro sitio: la regla de acierto, el «casi» y ahora el clic del golpe.
 
+### El sonido se moría a los cinco minutos: dos fugas en el grafo de audio, 2026-09-14 (noche)
+
+«Al ejecutar varias actividades de karaoke acaba fallando el sonido y no se oye nada;
+reinicio la app y ya se oye.» No era del karaoke ni de ninguna actividad: era **el grafo de
+Web Audio, que crecía y no bajaba nunca**.
+
+La causa de fondo es una que no se parece a nada de JavaScript: **un nodo de audio conectado
+a la salida no lo puede recoger el recolector de basura**, por muchas referencias que se
+suelten, porque sigue siendo alcanzable desde el destino. El motor lo recorre entero en cada
+bloque de muestras, así que la cuenta solo sube y el hilo de audio acaba sin dar abasto.
+Recargar la página tira el `AudioContext` y con él todo el grafo: por eso reiniciar lo
+arreglaba, y por eso parecía intermitente.
+
+- [x] **Un nodo por nota, y otro por golpe.** `Sampler.tocar` crea su envolvente, `clic` su
+      ganancia y `Percusion`/`Cuerpo` la suya por golpe, y **ninguno se desconectaba**. Un
+      karaoke de tres ejercicios son cuarenta notas, más un clic por toque. Ahora
+      `registrarFuente(fuente, ...encadenados)` los suelta en el `ended` de la fuente, que es
+      el único momento en que se sabe con certeza que ya no suenan. Un solo sitio, y vale
+      para los cuatro que crean sonido.
+- [x] **Un nodo de salida por cada `Sampler`, `Percusion` y `Cuerpo`.** Cada uno creaba el
+      suyo en `cargar()` y lo enchufaba a la maestra, y como nadie lo desconectaba, **cada
+      actividad que se abría dejaba uno o dos colgando para el resto de la sesión**. Ahora
+      hay `salidaDe(familia, volumen)`: una sola por familia, compartida, creada una vez.
+      Acotado para siempre y sin nada que soltar al salir, que es mejor que acordarse de
+      soltarlo en cada tipo de motor.
+- [x] **Test con un `AudioContext` fingido** (`tests/fugaDeNodos.test.ts`): que al terminar
+      una fuente se desconecta ella y su cadena, que desconectar dos veces no rompe, y que
+      pedir cien veces la salida de una familia no crea ni un nodo.
+- [x] **Y se ven en `/diagnostico`**: «fuentes vivas» y «salidas de audio». Ninguno de los
+      dos debe crecer con el uso. Es el instrumento que habría cazado esto sin esperar a que
+      el sonido se muriera.
+
+**La lección**: en Web Audio, todo lo que se conecta hay que desconectarlo, y el síntoma no
+aparece donde está la causa. Aquí se manifestó como «la 118 no suena» y como «el karaoke
+falla», y no era de ninguno de los dos.
+
 ### T3.6 — Tipo `director`: tempo y volumen sobre una pieza `⚠️`
 
 **111 «El mando del director» no se puede usar.** Su ficha promete dos deslizadores —uno de

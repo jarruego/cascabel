@@ -1,4 +1,4 @@
-import { obtenerContexto, registrarFuente, salidaMaestra } from './AudioEngine';
+import { obtenerContexto, registrarFuente, salidaDe } from './AudioEngine';
 import { cargarBinario } from '@/datos/cargar';
 
 /**
@@ -32,10 +32,9 @@ export class SonidosDelCuerpo {
 
   async cargar(): Promise<void> {
     const ctx = obtenerContexto();
-    this.salida = ctx.createGain();
     // Más bajo que un instrumento: esto acompaña a lo que hace el niño, no compite con ello.
-    this.salida.gain.value = 0.7;
-    this.salida.connect(salidaMaestra());
+    // Y es una sola para toda la app, compartida: ver `salidaDe`.
+    this.salida = salidaDe('cuerpo', 0.7);
 
     await Promise.all(
       ZONAS.map(async (zona) => {
@@ -67,7 +66,7 @@ export class SonidosDelCuerpo {
     const g = ctx.createGain();
     g.gain.value = Math.max(0, Math.min(1, volumen));
     fuente.connect(g).connect(this.salida);
-    registrarFuente(fuente);
+    registrarFuente(fuente, g);
     fuente.start(cuando ?? ctx.currentTime);
   }
 }

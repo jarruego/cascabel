@@ -54,15 +54,73 @@ export function salidaMaestra(): GainNode {
   return maestra;
 }
 
-/** Apunta una fuente para poder pararla. Se borra sola cuando termina. */
-export function registrarFuente(fuente: AudioScheduledSourceNode): void {
+/**
+ * Apunta una fuente para poder pararla, y **desconecta su cadena cuando termina**.
+ *
+ * Lo segundo no es limpieza opcional: es la diferencia entre que la app siga sonando o no
+ * al cabo de un rato. Un nodo de Web Audio que sigue **conectado** a la salida es alcanzable
+ * desde el destino, así que el recolector de basura no puede llevárselo por mucho que en
+ * JavaScript no queden referencias. Cada nota crea su nodo de envolvente y cada golpe su
+ * nodo de volumen; sin desconectarlos, el grafo crece nota a nota **para siempre**, el hilo
+ * de audio tiene que recorrerlo entero en cada bloque de muestras, y acaba sin dar abasto:
+ * el sonido se corta y solo vuelve recargando la app.
+ *
+ * Lo describió el autor el 2026-09-14: «al ejecutar varias actividades de karaoke acaba
+ * fallando el sonido y no se oye nada; reinicio la app y ya se oye».
+ *
+ * @param encadenados los nodos por los que pasa esa fuente, para soltarlos con ella.
+ */
+export function registrarFuente(
+  fuente: AudioScheduledSourceNode,
+  ...encadenados: AudioNode[]
+): void {
   fuentes.add(fuente);
-  fuente.addEventListener('ended', () => fuentes.delete(fuente));
+  fuente.addEventListener('ended', () => {
+    fuentes.delete(fuente);
+    for (const nodo of [fuente as AudioNode, ...encadenados]) {
+      try {
+        nodo.disconnect();
+      } catch {
+        // Ya desconectado: da igual, lo que importa es que no quede enganchado.
+      }
+    }
+  });
+}
+
+/**
+ * La salida de una familia de instrumentos: **una sola, compartida**.
+ *
+ * Antes cada `Sampler`, cada `Percusion` y cada `Cuerpo` creaba la suya en `cargar()` y la
+ * conectaba a la maestra. Como nadie la desconectaba nunca, **cada actividad que se abría
+ * dejaba uno o dos nodos colgando del grafo para el resto de la sesión**, y con ellos todo
+ * lo que tuvieran enganchado. Un nodo conectado al destino no lo puede recoger el
+ * recolector, así que la cuenta solo subía.
+ *
+ * Con una por familia el número está acotado para siempre y no hay nada que soltar al salir
+ * de una actividad, que es mejor que acordarse de soltarlo en cada tipo de motor.
+ */
+const salidas = new Map<string, GainNode>();
+
+export function salidaDe(familia: string, volumen: number): GainNode {
+  const c = obtenerContexto();
+  let nodo = salidas.get(familia);
+  if (!nodo) {
+    nodo = c.createGain();
+    nodo.gain.value = volumen;
+    nodo.connect(salidaMaestra());
+    salidas.set(familia, nodo);
+  }
+  return nodo;
 }
 
 /** Cuántas fuentes hay vivas o programadas. Para los tests y para el diagnóstico. */
 export function fuentesVivas(): number {
   return fuentes.size;
+}
+
+/** Cuántas salidas de familia hay. Nunca debería crecer con el uso: ver `salidaDe`. */
+export function salidasVivas(): number {
+  return salidas.size;
 }
 
 /**

@@ -1,4 +1,10 @@
-import { obtenerContexto, latenciaMs, calibracionActualMs } from '@/audio/AudioEngine';
+import {
+  obtenerContexto,
+  latenciaMs,
+  calibracionActualMs,
+  fuentesVivas,
+  salidasVivas,
+} from '@/audio/AudioEngine';
 import { APP } from '@/config';
 import type { CosteNsdf } from '@/escucha/banco';
 
@@ -37,6 +43,16 @@ export interface Informe {
   outputLatencyMs: number | null;
   latenciaTotalMs: number | null;
   calibracionMs: number;
+  /**
+   * Nodos del grafo de audio que siguen enchufados.
+   *
+   * Está aquí porque hubo una avería que **solo se veía después de un rato**: el sonido
+   * dejaba de oírse tras varias actividades y volvía al recargar. Eran nodos que nadie
+   * desconectaba, acumulándose. Estos dos números no deberían subir con el uso: las fuentes
+   * bajan a cero en cuanto se acaba lo que suena, y las salidas son una por familia.
+   */
+  fuentesVivas: number;
+  salidasVivas: number;
   microfono: EstadoMicrofono;
   /** Medido DENTRO del worklet. Null en todo navegador conocido: ninguno expone
    *  `performance` en el AudioWorkletGlobalScope. */
@@ -89,6 +105,8 @@ export function recoger(
     outputLatencyMs: ctx ? Math.round((ctx.outputLatency || 0) * 1000 * 100) / 100 : null,
     latenciaTotalMs: ctx ? Math.round(latenciaMs() * 100) / 100 : null,
     calibracionMs: calibracionActualMs(),
+    fuentesVivas: fuentesVivas(),
+    salidasVivas: salidasVivas(),
     microfono: micro,
     costeAnalisisMs,
     costeEstimado,
@@ -130,6 +148,8 @@ export function aTexto(i: Informe): string {
     `outputLatency      ${ms(i.outputLatencyMs)}`,
     `latencia total     ${ms(i.latenciaTotalMs)}`,
     `calibración        ${i.calibracionMs} ms`,
+    `fuentes vivas      ${i.fuentesVivas}`,
+    `salidas de audio   ${i.salidasVivas}`,
     `coste del análisis ${i.costeAnalisisMs === null ? 'no medible' : `${i.costeAnalisisMs.toFixed(2)} ms`}`,
   ].join('\n');
 }

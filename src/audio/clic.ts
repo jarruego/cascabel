@@ -28,7 +28,7 @@ export function clic(tiempo: number, acentuado = false, suave = false): void {
   gain.gain.exponentialRampToValueAtTime(suave ? 0.09 : acentuado ? 0.35 : 0.2, tiempo + 0.002);
   gain.gain.exponentialRampToValueAtTime(0.001, tiempo + 0.03);
   osc.connect(gain).connect(salidaMaestra());
-  registrarFuente(osc);
+  registrarFuente(osc, gain);
   osc.start(tiempo);
   osc.stop(tiempo + 0.04);
 }

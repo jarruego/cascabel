@@ -1,4 +1,4 @@
-import { obtenerContexto, registrarFuente, salidaMaestra } from './AudioEngine';
+import { obtenerContexto, registrarFuente, salidaDe } from './AudioEngine';
 import { cargarBinario } from '@/datos/cargar';
 
 /**
@@ -49,9 +49,7 @@ export class Percusion {
 
   async cargar(): Promise<void> {
     const ctx = obtenerContexto();
-    this.salida = ctx.createGain();
-    this.salida.gain.value = 0.85;
-    this.salida.connect(salidaMaestra());
+    this.salida = salidaDe('percusion', 0.85);
 
     await Promise.all(
       this.golpes.map(async (nombre) => {
@@ -94,7 +92,7 @@ export class Percusion {
     const g = ctx.createGain();
     g.gain.value = volumen;
     fuente.connect(g).connect(this.salida);
-    registrarFuente(fuente);
+    registrarFuente(fuente, g);
     fuente.start(cuando ?? ctx.currentTime);
   }
 }

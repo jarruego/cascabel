@@ -1,4 +1,4 @@
-import { obtenerContexto, registrarFuente, salidaMaestra } from './AudioEngine';
+import { obtenerContexto, registrarFuente, salidaDe } from './AudioEngine';
 import { cargarBinario } from '@/datos/cargar';
 
 /**
@@ -95,9 +95,9 @@ export class Sampler {
 
   async cargar(): Promise<void> {
     const ctx = obtenerContexto();
-    this.salida = ctx.createGain();
-    this.salida.gain.value = 0.8;
-    this.salida.connect(salidaMaestra());
+    // Una sola salida para todos los samplers, compartida: ver `salidaDe`. Antes cada uno
+    // creaba la suya y nadie la desconectaba, así que cada actividad dejaba un nodo colgado.
+    this.salida = salidaDe('sampler', 0.8);
 
     await Promise.all(
       this.muestras.map(async ({ nota, url }) => {
@@ -149,7 +149,7 @@ export class Sampler {
     env.gain.exponentialRampToValueAtTime(volumen, t + 0.02);
 
     fuente.connect(env).connect(this.salida);
-    registrarFuente(fuente);
+    registrarFuente(fuente, env);
     fuente.start(t);
 
     let soltada = false;
@@ -195,7 +195,7 @@ export class Sampler {
     env.gain.exponentialRampToValueAtTime(0.0001, t + duracion);
 
     fuente.connect(env).connect(this.salida);
-    registrarFuente(fuente);
+    registrarFuente(fuente, env);
     fuente.start(t);
     fuente.stop(t + duracion + 0.05);
   }
