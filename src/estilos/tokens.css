@@ -2872,6 +2872,70 @@ p {
   left: 0; right: 0; height: 4px; margin-top: -2px;
 }
 
+/*
+  La cola de la nota: lo que dura, dibujado a escala del recorrido.
+
+  Va DETRÁS de la cabeza —hacia donde vienen las figuras—, porque lo que todavía no ha
+  pasado por la línea es justamente lo que sigue sonando. Su largo lo calcula `largoDe` en
+  `motor/musicograma.ts` con la misma geometría que la posición, así que una redonda mide
+  exactamente el doble que una blanca y el cuádruple que una negra: es la duración, vista.
+
+  Va en punteado y a media opacidad a propósito: lo que hay que mirar para acertar es la
+  cabeza, y una cola tan sólida como ella competiría por la atención justo en el instante
+  que se está midiendo.
+*/
+.karaoke__cola {
+  position: absolute;
+  display: flex;
+  border: 2px dashed var(--linea);
+  border-radius: var(--r-s);
+  background: var(--superficie);
+  opacity: 0.55;
+  overflow: hidden;
+  pointer-events: none;
+}
+/* En vertical la cola sube desde la cabeza y la palabra se lee de abajo arriba: la sílaba
+   que se dice primero es la que está más cerca de la línea. En horizontal, de izquierda a
+   derecha por la misma razón. */
+.karaoke__cola[data-orientacion='vertical'] {
+  width: 40px;
+  transform: translateX(-50%);
+  flex-direction: column-reverse;
+}
+.karaoke__cola[data-orientacion='horizontal'] {
+  height: 34px;
+  transform: translateY(-50%);
+  flex-direction: row;
+}
+.karaoke__cola[data-acertada] {
+  opacity: 0.95;
+  border-style: solid;
+}
+.karaoke__cola[data-apagada] {
+  border-color: var(--linea);
+  opacity: 0.3;
+}
+
+/* Cada sílaba ocupa su parte de la duración. Se enciende cuando la línea llega a ella, así
+   que la palabra se construye al pulso mientras la nota pasa: «e-le-fan-te» son cuatro
+   pulsos y el niño los ha contado sin contarlos. No se pone en verde —el verde es acertar—
+   sino en tinta sobre papel: dicha, no correcta. */
+.karaoke__silaba {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--tinta-2);
+  opacity: 0.4;
+}
+.karaoke__silaba[data-dicha] {
+  background: var(--tinta);
+  color: var(--papel);
+  opacity: 1;
+}
+
 .karaoke__figura {
   position: absolute;
   display: grid;
@@ -2886,10 +2950,13 @@ p {
 /* En pentagrama y color la figura es una cabeza de nota: alargada en el eje del tiempo. */
 .karaoke__figura[data-forma='pentagrama'],
 .karaoke__figura[data-forma='color'] { border-radius: var(--r-s); }
+/* Tamaño fijo en los DOS ejes: el transversal es el grosor de la cabeza y el del tiempo es
+   la cabeza misma, que ya no crece con la duración porque de eso se encarga la cola. Sin
+   esta medida el `span` se quedaba sin contenido y sin ancho, o sea invisible. */
 [data-orientacion='horizontal'] .karaoke__figura[data-forma='pentagrama'],
-[data-orientacion='horizontal'] .karaoke__figura[data-forma='color'] { height: 14px; }
+[data-orientacion='horizontal'] .karaoke__figura[data-forma='color'] { height: 14px; width: 20px; }
 [data-orientacion='vertical'] .karaoke__figura[data-forma='pentagrama'],
-[data-orientacion='vertical'] .karaoke__figura[data-forma='color'] { width: 14px; }
+[data-orientacion='vertical'] .karaoke__figura[data-forma='color'] { width: 14px; height: 20px; }
 
 /* Sílaba, figura e icono llevan contenido dentro, así que necesitan caja. Fondo neutro y
    borde del color de la nota: el color acompaña, y lo que se lee es el símbolo. */

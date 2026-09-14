@@ -3373,6 +3373,49 @@ despacio de lo que sale al hablar; la alternativa de manual es decirlo a velocid
 alargar la última sílaba. Está marcado en su `$comment` y sale en `docs/13`. Y en 203 la
 fila del fa no la usa ningún dictado: se ha corregido la octava y no el reparto de notas.
 
+### La duración se ve, se oye y se dice, 2026-09-14
+
+Probando la 119 el autor vio tres cosas seguidas: «el dibujo de la nota no corresponde
+proporcionalmente a la duración, el sonido tampoco se alarga proporcionalmente, y estaría
+bien que mientras la nota pasa por la línea se fuera construyendo en pulso la palabra».
+Las tres son la misma: **una duración que no se percibe no se aprende**.
+
+- [x] **El sonido: la marimba no podía.** El motor ya pedía `pulsos × duración del pulso`,
+      pero 119 no declaraba instrumento y sonaba con marimba, que **no sostiene**: la muestra
+      se apaga sola en menos de un segundo pidas lo que pidas, así que la redonda sonaba
+      igual que la negra. Pasa a `voz`. No hizo falta tocar código, y eso es exactamente lo
+      que lo hacía difícil de ver.
+- [x] **El dibujo: `pulsos * 20` era un número inventado.** La cabeza de nota crecía veinte
+      píxeles por pulso, una constante sin relación con lo deprisa que viajan las figuras:
+      con la ventana de 3,2 s a 60 pulsos por minuto un pulso son casi cien píxeles de
+      recorrido, o sea que la redonda se dibujaba cinco veces más corta de lo que dura. Ahora
+      hay `largoDe()` en `motor/musicograma.ts`, sacado de la misma geometría que la
+      posición, **con test**. Cuadra solo con `instantesDe`: allí el hueco hasta la nota
+      siguiente **es** la duración de ésta, así que las colas se tocan y nunca se pisan.
+- [x] **La cabeza no se toca.** El largo se lo lleva una **cola** aparte, detrás de la
+      cabeza. Anclar la cabeza por su borde de ataque habría sido lo natural para una barra,
+      y habría desplazado el instante que se mide en las veinte actividades de karaoke: la
+      cabeza sigue centrada en su punto, que es lo que se evalúa, y la cola es la que dice
+      cuánto dura.
+- [x] **Y por detrás la ventana ya no es fija.** Una nota dejaba de dibujarse 1,2 s después
+      de cruzar; la cola de una redonda a 60 tarda cuatro segundos en terminar de pasar, así
+      que el elefante se esfumaba a mitad de palabra. Ahora se espera a que pase la cola.
+- [x] **La palabra se construye al pulso.** Campo `palabra` en la nota —`['e','le','fan','te']`,
+      que no es lo mismo que `silaba`, la de Kodály—, escrita a lo largo de la cola, una
+      sílaba por tramo, encendiéndose cuando la línea llega a ella. `silabasDichas()` decide
+      cuántas van, **con test**, y reparte por la duración y no por el pulso a secas para que
+      siga funcionando si alguna vez las sílabas no coinciden con los pulsos. En vertical la
+      primera es la que está pegada a la cabeza y la palabra crece hacia arriba: tiene que
+      ser así, porque la sílaba que cruza es la que suena.
+- [x] **119 pierde el `revelar`.** Con la cola a escala y el nombre escrito, esconder el
+      animal hasta acertarlo ya no engañaba a nadie y quitaba de la vista justo el recurso
+      que hay que aprender. Lo decidió el autor.
+
+**Pendiente de ver en el aparato**: que la cola de una redonda a tempo lento no tape las
+notas de al lado en un móvil en vertical, que las sílabas se lean a 13 px en una tablet de
+aula, y que la cabeza de nota de pentagrama y color —que ya no crece con la duración— siga
+viéndose bien en las veinte actividades que la usan.
+
 ### T3.6 — Tipo `director`: tempo y volumen sobre una pieza `⚠️`
 
 **111 «El mando del director» no se puede usar.** Su ficha promete dos deslizadores —uno de

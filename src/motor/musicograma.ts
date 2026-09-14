@@ -50,6 +50,16 @@ export interface NotaMusicograma {
   silaba?: string;
   /** Nombre de icono, para `representacion: 'icono'`. */
   icono?: string;
+  /**
+   * La palabra de la nota, **partida en sílabas**: `['e', 'le', 'fan', 'te']`.
+   *
+   * No es lo mismo que `silaba`, que es la sílaba rítmica de Kodály —«ta», «ti-ti»— y dice
+   * la figura. Ésta es la palabra que se dice mientras la nota dura, y se escribe a lo largo
+   * de su cola: una sílaba por tramo, encendiéndose según pasa la línea. Es el recurso de
+   * palabra-ritmo de cualquier manual, y sirve para que la duración no haya que contarla:
+   * se dice.
+   */
+  palabra?: string[];
 }
 
 /**
@@ -138,6 +148,50 @@ export function geometriaDe(
     avance,
     cruce: o.orientacion === 'vertical' ? desdeElGrave : o.transversalPx - desdeElGrave,
   };
+}
+
+/**
+ * Lo que mide una nota en el eje del tiempo, en porcentaje del recuadro.
+ *
+ * **Sale de la misma geometría que la posición, y ése es el asunto.** Antes el componente
+ * dibujaba `pulsos * 20` píxeles, un número que no tenía nada que ver con lo deprisa que
+ * viajan las figuras: con la ventana de 3,2 s a 60 pulsos por minuto un pulso son casi cien
+ * píxeles de recorrido, así que una redonda se dibujaba cinco veces más corta de lo que
+ * dura. Se veía —el autor lo vio el 2026-09-14— y encima enseñaba algo falso, porque lo que
+ * separa a una blanca de una redonda es exactamente el doble.
+ *
+ * El recorrido visible es `100 - lineaPct` por cada `anticipacionS` segundos, así que la
+ * regla de tres es directa. Y cuadra sola con `instantesDe`: allí el hueco hasta la nota
+ * siguiente **es** la duración de ésta, de modo que las colas se tocan y nunca se pisan.
+ */
+export function largoDe(
+  pulsos: number,
+  bpm: number,
+  o: Pick<OpcionesGeometria, 'lineaPct' | 'anticipacionS'>,
+): number {
+  const segundos = pulsos * (60 / bpm);
+  return (segundos / o.anticipacionS) * (100 - o.lineaPct);
+}
+
+/**
+ * Cuántas sílabas de la palabra se han dicho ya.
+ *
+ * La palabra se reparte por igual a lo largo de lo que dura la nota, así que en «e-le-fan-te»
+ * con cuatro pulsos cae una sílaba por pulso, que es la idea entera: quien dice el nombre
+ * del animal ha contado la figura sin saber que contaba.
+ *
+ * Se reparte por la **duración** y no por el pulso a secas para que siga funcionando si
+ * alguna vez las sílabas no coinciden con los pulsos: tres sílabas en dos pulsos se dicen
+ * más deprisa, que es lo que pasa al hablar.
+ *
+ * @param desdeElAtaqueS segundos desde que la nota cruzó la línea; negativo si aún no ha llegado
+ * @param duracionS      lo que dura la nota entera
+ */
+export function silabasDichas(desdeElAtaqueS: number, duracionS: number, total: number): number {
+  if (total <= 0 || duracionS <= 0) return 0;
+  if (desdeElAtaqueS < 0) return 0;
+  const porSilaba = duracionS / total;
+  return Math.min(total, Math.floor(desdeElAtaqueS / porSilaba) + 1);
 }
 
 /**

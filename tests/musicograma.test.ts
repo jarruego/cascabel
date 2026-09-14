@@ -3,7 +3,9 @@ import {
   carrilesDe,
   figuraDe,
   geometriaDe,
+  largoDe,
   representaAltura,
+  silabasDichas,
   type NotaMusicograma,
   type OpcionesGeometria,
   type Representacion, anchoDeBandas } from '@/motor/musicograma';
@@ -216,5 +218,76 @@ describe('el ancho de las bandas', () => {
 
   it('cero bandas no divide por cero', () => {
     expect(Number.isFinite(anchoDeBandas(0, 800, 48))).toBe(true);
+  });
+});
+
+describe('el largo de una nota es su duración, a escala del recorrido', () => {
+  // La ventana son 3,2 s de recorrido para el 78 % del recuadro que hay por delante de la
+  // línea. A 60 pulsos por minuto un pulso es un segundo, así que una negra ocupa
+  // 1 / 3,2 del recorrido: 24,375 %.
+  it('una negra a 60 ocupa lo que se recorre en un segundo', () => {
+    expect(largoDe(1, 60, BASE)).toBeCloseTo(24.375, 3);
+  });
+
+  it('una redonda mide exactamente el cuádruple que una negra', () => {
+    // Es la razón de ser de la función: antes eran `pulsos * 20` píxeles, un número que no
+    // tenía nada que ver con la velocidad de las figuras, y una redonda se dibujaba cinco
+    // veces más corta de lo que dura.
+    expect(largoDe(4, 60, BASE)).toBeCloseTo(4 * largoDe(1, 60, BASE), 6);
+    expect(largoDe(2, 60, BASE)).toBeCloseTo(2 * largoDe(1, 60, BASE), 6);
+  });
+
+  it('al doble de tempo, la misma figura ocupa la mitad', () => {
+    expect(largoDe(1, 120, BASE)).toBeCloseTo(largoDe(1, 60, BASE) / 2, 6);
+  });
+
+  it('una nota que dura toda la ventana llena el recorrido visible', () => {
+    // 3,2 s a 60 son 3,2 pulsos, y el recorrido visible es el 78 % del recuadro.
+    expect(largoDe(3.2, 60, BASE)).toBeCloseTo(100 - BASE.lineaPct, 6);
+  });
+});
+
+describe('la palabra se construye al pulso mientras la nota pasa', () => {
+  // «e-le-fan-te»: cuatro sílabas en los cuatro pulsos de una redonda a 60.
+  const DURACION = 4;
+  const TOTAL = 4;
+
+  it('antes de llegar a la línea no se ha dicho nada', () => {
+    expect(silabasDichas(-0.5, DURACION, TOTAL)).toBe(0);
+    expect(silabasDichas(-3, DURACION, TOTAL)).toBe(0);
+  });
+
+  it('al cruzar la línea se dice la primera', () => {
+    expect(silabasDichas(0, DURACION, TOTAL)).toBe(1);
+    expect(silabasDichas(0.99, DURACION, TOTAL)).toBe(1);
+  });
+
+  it('una por pulso, en su momento', () => {
+    expect(silabasDichas(1, DURACION, TOTAL)).toBe(2);
+    expect(silabasDichas(2, DURACION, TOTAL)).toBe(3);
+    expect(silabasDichas(3, DURACION, TOTAL)).toBe(4);
+  });
+
+  it('no pasa de la última aunque la nota se alargue', () => {
+    // Si se pasara, el componente pediría una sílaba que no existe.
+    expect(silabasDichas(9, DURACION, TOTAL)).toBe(4);
+  });
+
+  it('«pez» es una sola sílaba y se dice entera de golpe', () => {
+    expect(silabasDichas(-0.1, 1, 1)).toBe(0);
+    expect(silabasDichas(0, 1, 1)).toBe(1);
+    expect(silabasDichas(0.9, 1, 1)).toBe(1);
+  });
+
+  it('si las sílabas no coinciden con los pulsos, se reparten por la duración', () => {
+    // Tres sílabas en dos pulsos se dicen más deprisa, que es lo que pasa al hablar.
+    expect(silabasDichas(0, 2, 3)).toBe(1);
+    expect(silabasDichas(0.7, 2, 3)).toBe(2);
+    expect(silabasDichas(1.4, 2, 3)).toBe(3);
+  });
+
+  it('una nota sin palabra no enciende nada y no divide por cero', () => {
+    expect(silabasDichas(1, 2, 0)).toBe(0);
+    expect(silabasDichas(1, 0, 3)).toBe(0);
   });
 });

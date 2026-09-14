@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useCarril } from '@/app/preferencias';
 import { useInsinuarDesplazamiento } from '@/ui/insinuarDesplazamiento';
 import { OBJETIVO_TACTIL } from '@/config';
@@ -12,7 +12,9 @@ import {
   carrilesDe,
   figuraDe,
   geometriaDe,
+  largoDe,
   representaAltura,
+  silabasDichas,
   type NotaMusicograma,
   type Orientacion,
   type Representacion,
@@ -509,8 +511,15 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
 
         {notas.map((n, i) => {
           const falta = tiempos[i]! - ahora;
-          // Fuera de la ventana visible no se dibuja: no hay que animar treinta figuras.
-          if (falta > ANTICIPACION_S || falta < -1.2) return null;
+          const duracionNota = n.pulsos * (60 / bpm);
+          /*
+            Fuera de la ventana visible no se dibuja: no hay que animar treinta figuras.
+
+            Por detrás, el límite **no puede ser fijo**: la cola de una redonda a 60 tarda
+            cuatro segundos en terminar de cruzar la línea, y con el segundo y pico de antes
+            el elefante se esfumaba a mitad de palabra. Se espera a que pase la cola entera.
+          */
+          if (falta > ANTICIPACION_S || falta < -Math.max(1.2, duracionNota)) return null;
           const indice = conAltura ? carriles.indexOf(n.nota) : 0;
           const g = geometriaDe(n, falta, indice, carriles.length, opciones);
           const apagada = pasadas.has(i) && !acertadas.has(i);
@@ -522,15 +531,59 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
             ? { top: `${100 - g.avance}%`, left: g.cruce }
             : { left: `${g.avance}%`, top: g.cruce };
 
-          const largo = Math.max(SEP, n.pulsos * 20);
+          /*
+            La cola: lo que la nota dura, dibujado a escala del recorrido.
+
+            Va detrás de la cabeza —hacia donde vienen las figuras— porque lo que queda por
+            pasar por la línea es justamente lo que todavía está sonando. La cabeza no cambia
+            de tamaño ni de anclaje: sigue centrada en su instante, que es el punto que se
+            mide, y moverla habría desplazado el momento de acertar en todas las actividades.
+          */
+          const largoPct = largoDe(n.pulsos, bpm, opciones);
+          const dichas = silabasDichas(-falta, duracionNota, n.palabra?.length ?? 0);
           const contenidoFigura =
             representacion === 'silaba' ? (n.silaba ?? '') :
             representacion === 'figura' ? figuraDe(n.pulsos) :
             representacion === 'icono' ? null : null;
 
+          /*
+            Dónde empieza la cola. En vertical las figuras caen, así que lo que todavía no ha
+            pasado está ARRIBA y la cola crece hacia arriba desde la cabeza; en horizontal
+            vienen de la derecha y crece hacia la derecha. En las dos es el mismo número: el
+            avance más el largo.
+          */
+          const posicionCola = vertical
+            ? { top: `${100 - g.avance - largoPct}%`, left: g.cruce, height: `${largoPct}%` }
+            : { left: `${g.avance}%`, top: g.cruce, width: `${largoPct}%` };
+
           return (
+            <Fragment key={`${n.nota}-${i}`}>
             <span
-              key={`${n.nota}-${i}`}
+              className="karaoke__cola"
+              data-orientacion={orientacion}
+              data-acertada={acertadas.has(i) || undefined}
+              data-apagada={apagada || undefined}
+              style={{
+                ...posicionCola,
+                borderColor: apagada ? undefined : colorDe(n.nota),
+              }}
+              aria-hidden="true"
+            >
+              {/* La palabra, repartida a lo largo de lo que dura la nota: una sílaba por
+                  tramo, y cada una se enciende cuando la línea llega a ella. Así la palabra
+                  se va construyendo al pulso mientras la nota pasa, que es lo que convierte
+                  «e-le-fan-te» en una redonda sin tener que contar nada. */}
+              {n.palabra?.map((silaba, k) => (
+                <span
+                  key={k}
+                  className="karaoke__silaba"
+                  data-dicha={k < dichas || undefined}
+                >
+                  {silaba}
+                </span>
+              ))}
+            </span>
+            <span
               className="karaoke__figura"
               data-forma={representacion}
               data-acertada={acertadas.has(i) || undefined}
@@ -538,9 +591,6 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
               data-oculta={revelar && !acertadas.has(i) || undefined}
               style={{
                 ...posicion,
-                // La duración se ve como tamaño en el eje del tiempo: una nota que dura el
-                // doble ocupa el doble, que es exactamente lo que dice la notación.
-                ...(vertical ? { height: largo } : { width: largo }),
                 ...(representacion === 'pentagrama' || representacion === 'color'
                   ? { background: apagada ? undefined : colorDe(n.nota) }
                   : { borderColor: apagada ? undefined : colorDe(n.nota) }),
@@ -567,6 +617,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
                 </>
               )}
             </span>
+            </Fragment>
           );
         })}
 
