@@ -3,6 +3,7 @@ import { useCarril } from '@/app/preferencias';
 import { useInsinuarDesplazamiento } from '@/ui/insinuarDesplazamiento';
 import { OBJETIVO_TACTIL } from '@/config';
 import { despertarAudio, latenciaMs, obtenerContexto } from '@/audio/AudioEngine';
+import { clicYa } from '@/audio/clic';
 import { Sampler } from '@/audio/sampler';
 import { samplerPara } from '@/audio/instrumentos';
 import { TOLERANCIA_MS } from '@/config';
@@ -174,8 +175,17 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
   const [fase, setFase] = useState<Fase>('listo');
   const [ahora, setAhora] = useState(0);
   const [acertadas, setAcertadas] = useState<Set<number>>(new Set());
-  /** Las acertadas, para leerlas desde el planificador sin esperar al render. */
-  const acertadasRef = useRef<Set<number>>(new Set());
+  /**
+   * Las notas que el niño ha **tocado**, cuenten o no, para leerlas desde el planificador
+   * sin esperar al render.
+   *
+   * No son las acertadas, y la diferencia importa: lo que decide este conjunto es si la
+   * nota suena fuerte, y **una nota que has tocado suena, aunque caiga en la ventana ancha
+   * y no cuente**. Al separar el «casi» del acierto se quedaron mudas, y la actividad
+   * pasaba entera casi en silencio: «la 118 no suena» (el autor, 2026-09-14). Lo que
+   * distingue al acierto es la marca verde y el resumen, no que se le quite el sonido.
+   */
+  const tocadasRef = useRef<Set<number>>(new Set());
   /** Qué notas se han programado ya: cada una suena UNA vez, alta o baja. */
   const programadas = useRef<Set<number>>(new Set());
   const [pasadas, setPasadas] = useState<Set<number>>(new Set());
@@ -362,7 +372,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
     // lleguen, y así cada una suena una sola vez, alta si ya está acertada y baja si no.
     // Antes la guía baja iba programada de antemano y la acertada se tocaba encima, y las
     // dos se solapaban: «que sea solo una vez», pidió el autor el 2026-09-12.
-    acertadasRef.current = new Set();
+    tocadasRef.current = new Set();
     programadas.current = new Set();
     void segundosPorPulso;
 
@@ -378,7 +388,7 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
         if (programadas.current.has(i) || t0 + s > ctxAhora + 0.12) return;
         programadas.current.add(i);
         const n = notas[i]!;
-        const fuerte = acertadasRef.current.has(i);
+        const fuerte = tocadasRef.current.has(i);
         sampler.current?.tocar(n.nota, Math.max(t0 + s, ctxAhora), n.pulsos * (60 / bpm) * 0.9, fuerte ? 1 : VOLUMEN_GUIA);
       });
 
@@ -421,6 +431,18 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
     golpes.current.push(ms);
 
     /*
+      **Todo toque suena.**
+
+      Es la misma regla que en «Toca a tiempo», y aquí faltaba. Sin ella, desde que
+      adelantarse quema la nota, un niño que va sistemáticamente pronto quemaba una detrás
+      de otra y **no oía absolutamente nada**: ni su golpe, ni la nota. La actividad parecía
+      rota. El clic no es un sonido de fallo —los prohíbe la regla 4—: es oírse a uno mismo,
+      que es lo único que permite corregirse. Lo que distingue al acierto es que además
+      suena la nota, o sea *ganar* algo, nunca perderlo.
+    */
+    clicYa(false);
+
+    /*
       **La misma regla que la evaluación final**, en `marcaDeGolpe`.
 
       Antes aquí había otra: «de todas las notas, la más cercana que caiga dentro de la
@@ -454,12 +476,13 @@ export default function Karaoke({ actividad, alTerminar }: PropsActividad) {
       setQuemadas((q) => new Set(q).add(mejor));
       return;
     }
+    // Tocada: suena fuerte. Que cuente o no lo dice la marca, no el volumen.
+    tocadasRef.current.add(mejor);
     if (resultado.marca === 'casi') {
       setCasis((c) => new Set(c).add(mejor));
       return;
     }
     setAcertadas((a) => new Set(a).add(mejor));
-    acertadasRef.current.add(mejor);
     // Si la nota aún no ha sonado, sonará fuerte cuando llegue; si el golpe llega un pelín
     // tarde y ya sonó baja, no se repite: una sola vez, que si no se solapan.
 

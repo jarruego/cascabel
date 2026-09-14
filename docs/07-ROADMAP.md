@@ -3493,6 +3493,27 @@ lo que se veía, y el autor tenía razón en desconfiar.
       figura, no compite con la línea y está siempre en el mismo sitio, que es lo que permite
       mirarla de reojo sin perder la nota que viene.
 
+### «La 118 no suena», 2026-09-14 (noche)
+
+Y no era la 118: era **todo el karaoke**, y lo había roto el arreglo de aporrear de esa misma
+tarde. Al separar el «casi» del acierto, se me fue con él el sonido.
+
+- [x] **Una nota tocada suena, cuente o no.** El conjunto que decide si la nota suena fuerte
+      era «las acertadas», así que al aparecer el «casi» —tocada dentro de la ventana ancha
+      pero fuera de lo que cuenta— esas notas se quedaron mudas. A 76 pulsos por minuto y con
+      la ventana de 1.º (±180 ms para el «bien»), la mitad de los toques de un niño caen ahí.
+      Ahora el conjunto se llama `tocadasRef` y es lo que es: **lo que distingue al acierto es
+      la marca verde y el resumen, no que se le quite el sonido.**
+- [x] **Y todo toque hace clic.** Faltaba, y desde que adelantarse quema la nota se notaba
+      muchísimo: quien va sistemáticamente pronto quemaba una detrás de otra y **no oía
+      nada**, ni su golpe ni la nota. Es la regla que «Toca a tiempo» ya tenía escrita —«todo
+      golpe suena; el acierto suena MÁS»— y que el karaoke no había copiado. No es un sonido
+      de fallo, que los prohíbe la regla 4: es oírse a uno mismo, que es lo único que permite
+      corregirse.
+
+Tercera vez en dos días que el karaoke paga por tener su propia copia de algo que ya estaba
+resuelto en otro sitio: la regla de acierto, el «casi» y ahora el clic del golpe.
+
 ### T3.6 — Tipo `director`: tempo y volumen sobre una pieza `⚠️`
 
 **111 «El mando del director» no se puede usar.** Su ficha promete dos deslizadores —uno de
