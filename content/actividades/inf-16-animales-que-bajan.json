@@ -228,7 +228,7 @@
       {
         "min": 2,
         "titulo": "El principio, en la app.",
-        "detalle": "Primera ronda: oso, gato, conejo, oso, dos veces. Los animales bajan y se toca cuando llegan a la línea. Si se toca antes o después, no pasa nada: viene el siguiente igual."
+        "detalle": "Primera ronda: oso, gato, conejo, oso, dos veces. Los animales bajan y se toca cuando llegan a la línea. Si se les escapa uno, no pasa nada: viene el siguiente igual. Si tocan antes de tiempo, ese animal pasa sin iluminarse."
       },
       {
         "min": 1,
