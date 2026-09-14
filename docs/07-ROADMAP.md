@@ -3668,6 +3668,41 @@ melodía sea de dominio público no hace que su letra lo sea» es la regla, y el
 en C1-36: la letra española de «Estrellita» se dejó fuera porque es una adaptación de autor
 desconocido y sin fecha comprobable. Cada letra se verifica aparte, una a una.
 
+### La primera canción cantable en castellano: C1-42 «Marramamiau», 2026-09-15
+
+Detrás de «¿hay canciones cantadas libres de derechos para niños?», y de descartar dos caminos
+antes de acertar con el tercero.
+
+- [x] **Las grabaciones reales existen y son libres, y aun así no valen.** Wikimedia Commons
+      tiene el archivo de la **Fundación Joaquín Díaz** en CC BY-SA 3.0: seis «Don Gato» y un
+      «cucú cantaba la rana». El autor las escuchó: «muy sucios». Son grabaciones de campo, y
+      un aula de 1.º no las aguanta. Quedan apuntadas en `docs/11` por si algún día hace falta
+      una escucha etnográfica, que es para lo que sirven.
+- [x] **Y aunque valieran, el karaoke no las podría usar.** El motor es una rejilla
+      metronómica y una persona cantando no va al metrónomo. Haría falta otro tipo que
+      reproduzca audio y encienda sílabas por instantes absolutos, con la alineación marcada a
+      mano — y se perdería lo mejor del karaoke actual: que al acertar, la nota suena por el
+      niño. Con grabación fija, sus toques son decoración.
+- [x] **Así que ritmo y letra, sin melodía**, que fue lo que pidió el autor. Todas las sílabas
+      caen en la misma altura: lo que se practica es la **palabra-ritmo**, que es lo único que
+      teníamos verificado, y prometer una melodía sin cotejar habría sido justo lo que §10
+      prohíbe.
+- [x] **Tres fuentes, y dos de ellas de acuerdo.** El ritmo sale de dos transcripciones
+      independientes en do mayor y 2/4 que coinciden entre sí; el reparto de sílabas, del
+      subtexto de una tercera. **No viaja nada de ninguna**: el JSON es propio, y las tres
+      quedan en el `$comment` como rastro de verificación, no como licencia. La obra es
+      tradicional anónima y de dominio público, y eso es lo que se publica.
+- [x] **Y la aritmética lo confirmó sola**: la frase A tiene ocho ataques y «Estaba el señor
+      Don Gato» es un octosílabo, que es la forma del romance. Cuando los números cuadran solos
+      con el metro del texto, la lectura de la partitura es buena.
+
+**Lo que queda abierto, y está marcado en su `$comment`**: la tercera fuente es otra variante
+—re mayor, con un compás de 3/4— y su estribillo tiene catorce ataques donde las nuestras
+tienen quince. Se ha optado por catorce, alargando el último «miau», porque así la sinalefa
+«to en» queda igual en las dos frases. Si al cantarlo en clase suena la otra, se cambia una
+línea. Y el tempo, 72: los cuatro semicorcheas de «ja-do-ma-ra» salen a 208 ms, lo más rápido
+que se le pide a un niño de 1.º en todo el catálogo.
+
 ### T3.6 — Tipo `director`: tempo y volumen sobre una pieza `⚠️`
 
 **111 «El mando del director» no se puede usar.** Su ficha promete dos deslizadores —uno de

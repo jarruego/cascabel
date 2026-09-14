@@ -63,10 +63,17 @@ Lo que de verdad ha servido para comprobar nota por nota, en orden de preferenci
    fa majeur.svg» (CC0) con «El cisne» entero. Se leen ampliadas, como los PDF.
 
 **Letras.** Solo entran cotejadas y de dominio público: «Debajo un botón» (COAEM y
-Partyflauta), «Au clair de la lune» (fr.wikipedia), «Backe, backe Kuchen» (de.wikipedia) y el
-«Wiegenlied» de Brahms (en.wikipedia). La de «Estrellita» en español es una adaptación de
+Partyflauta), «Estaba el señor Don Gato» (coletorremanzanas, una segunda transcripción del
+autor y el subtexto de Mama Lisa's World), «Au clair de la lune» (fr.wikipedia), «Backe, backe
+Kuchen» (de.wikipedia) y el «Wiegenlied» de Brahms (en.wikipedia). La de «Estrellita» en español es una adaptación de
 principios del siglo XX de autor desconocido y **no entra**: una traducción tiene derechos
 propios aunque la melodía y el texto inglés de Jane Taylor (1806) sean libres.
+
+**Grabaciones cantadas libres.** Wikimedia Commons tiene el archivo de la **Fundación Joaquín
+Díaz** entero, en CC BY-SA 3.0: seis «Don Gato» y un «cucú cantaba la rana», entre muchísimas.
+Legalmente valen. **Se descartaron por sonido** (2026-09-15): son grabaciones de campo, y lo
+que se necesita en un aula de Infantil o de 1.º no las aguanta. Quedan apuntadas por si algún
+día hace falta una escucha etnográfica, que es para lo que sirven de verdad.
 
 Lo que esto ha destapado: «Debajo un botón» estaba escrita con cuatro corcheas iguales y son
 corchea con puntillo y semicorchea; a «Frère Jacques» le faltaba una nota; el mapa del Himno

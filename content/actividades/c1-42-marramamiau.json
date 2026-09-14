@@ -1,0 +1,603 @@
+{
+  "id": "c1-42-marramamiau",
+  "version": 1,
+  "tipo": "karaoke",
+  "titulo": "Marramamiau: el ritmo de Don Gato",
+  "descripcion": "«Estaba el señor Don Gato» sílaba a sílaba: se toca el ritmo de la letra y se canta a la vez. Sin melodía, que aquí lo que manda es la palabra.",
+  "etapa": "primaria-c1",
+  "eje": "pulso",
+  "lugar": "pantalla",
+  "duracion_min": 10,
+  "curriculo": {
+    "area": "Educación Artística",
+    "competencia": "CE3",
+    "criterio": "3.1",
+    "saber": "D. Lenguajes y práctica musical"
+  },
+  "practica": {
+    "secuencia": "ninguna",
+    "compas": "2/4",
+    "tempo": 72,
+    "figuras": [
+      "semicorchea",
+      "corchea",
+      "negra",
+      "blanca"
+    ]
+  },
+  "entrada": {
+    "modo": "toque"
+  },
+  "contenido": {
+    "consigna": "actividad.c142.consigna",
+    "orientacion": "vertical",
+    "representacion": "figura",
+    "tempo": 72,
+    "cola": true,
+    "letra": true,
+    "ejercicios": [
+      {
+        "titulo": "actividad.c142.ej1",
+        "notas": [
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "Es"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "ta"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "ba el"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "se"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1.5,
+            "palabra": [
+              "ñor"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "Don"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2,
+            "palabra": [
+              "Ga"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2,
+            "palabra": [
+              "to"
+            ]
+          }
+        ]
+      },
+      {
+        "titulo": "actividad.c142.ej2",
+        "notas": [
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "Sen"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "ta"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "di"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "to en"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1.5,
+            "palabra": [
+              "su"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "te"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.25,
+            "palabra": [
+              "ja"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.25,
+            "palabra": [
+              "do"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.25,
+            "palabra": [
+              "ma"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.25,
+            "palabra": [
+              "ra"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "ma"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "miau"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "palabra": [
+              "miau"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 3,
+            "palabra": [
+              "miau"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "Sen"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "ta"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "di"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "to en"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1.5,
+            "palabra": [
+              "su"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "te"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2,
+            "palabra": [
+              "ja"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2,
+            "palabra": [
+              "do"
+            ]
+          }
+        ]
+      },
+      {
+        "titulo": "actividad.c142.ej3",
+        "notas": [
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "Es"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "ta"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "ba el"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "se"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1.5,
+            "palabra": [
+              "ñor"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "Don"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2,
+            "palabra": [
+              "Ga"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2,
+            "palabra": [
+              "to"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "Sen"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "ta"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "di"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "to en"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1.5,
+            "palabra": [
+              "su"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "te"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.25,
+            "palabra": [
+              "ja"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.25,
+            "palabra": [
+              "do"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.25,
+            "palabra": [
+              "ma"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.25,
+            "palabra": [
+              "ra"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "ma"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "miau"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1,
+            "palabra": [
+              "miau"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 3,
+            "palabra": [
+              "miau"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "Sen"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "ta"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "di"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "to en"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 1.5,
+            "palabra": [
+              "su"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 0.5,
+            "palabra": [
+              "te"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2,
+            "palabra": [
+              "ja"
+            ]
+          },
+          {
+            "nota": "G4",
+            "pulsos": 2,
+            "palabra": [
+              "do"
+            ]
+          }
+        ]
+      }
+    ],
+    "$comment": "PENDIENTE DE REVISIÓN PEDAGÓGICA. (1) La canción es «Estaba el señor Don Gato», tradicional anónima y de dominio público; aquí van solo su RITMO y su LETRA, no la melodía: todas las sílabas caen en la misma altura porque lo que se practica es la palabra-ritmo. **No se reproduce ninguna transcripción ajena**: el JSON es propio y las partituras solo se han usado como referencia de una obra de dominio público, igual que en C1-37. (2) Ritmo cotejado el 2026-09-15 contra dos transcripciones independientes que coinciden entre sí —la de coletorremanzanas (vía partiturasmil) y una segunda que aportó el autor—, las dos en do mayor y 2/4, veintiséis compases, con forma A-B-A por estrofa. Única diferencia entre ellas, y es de escritura y no de música: el cuarto compás una lo escribe negra + silencio y la otra corchea + silencios. (3) El reparto de sílabas de la frase A —«Es·ta·ba el·se | ñor·Don | Ga | to», con «ñor» en la nota larga— se confirmó con el subtexto de una tercera fuente (Mama Lisa's World), que además demuestra que «ba el» es una sola corchea. (4) LO QUE HAY QUE CONFIRMAR CANTANDO: esa tercera fuente es otra variante —re mayor, con un compás de 3/4— y su estribillo tiene catorce ataques donde las nuestras tienen quince. Se ha optado por catorce, alargando el último «miau» sobre las dos últimas notas, porque así la sinalefa «to en» queda igual en la frase B y en la A, que es lo natural al cantarlo. La alternativa sería quince ataques con «en» cayendo en la negra con puntillo del compás 6. Si al cantarlo en clase suena la segunda, se cambia aquí. (5) El tempo, 72: los cuatro semicorcheas de «ja-do-ma-ra» salen a 208 ms, que es lo más rápido que se le pide a un niño de 1.º en todo el catálogo. Si cuesta, bajar a 66."
+  },
+  "evaluacion": {
+    "autocorrectiva": true,
+    "reporta": [
+      "completado",
+      "desvio_medio_con_signo",
+      "desviacion_tipica"
+    ]
+  },
+  "enunciado": "actividad.c142.enunciado",
+  "personaje": "sol",
+  "pistas": [
+    "actividad.c142.pista1",
+    "actividad.c142.pista2"
+  ],
+  "creditos": [
+    {
+      "obra": "«Estaba el señor Don Gato»",
+      "autor": "Tradicional anónima",
+      "fuente": "Canción popular española de dominio público",
+      "licencia": "Dominio público"
+    },
+    {
+      "obra": "Percusión, láminas, piano, arpa, flauta dulce, saxofón, armónica y órgano",
+      "autor": "Versilian Studios y colaboradores",
+      "fuente": "https://github.com/sgossner/VCSL",
+      "licencia": "CC0"
+    }
+  ],
+  "estado": "borrador",
+  "etiquetas": [
+    "don gato",
+    "canción tradicional",
+    "palabra-ritmo",
+    "letra",
+    "sílabas",
+    "lectura rítmica",
+    "romance"
+  ],
+  "figura": {
+    "icono": "gato"
+  },
+  "ficha": {
+    "aprende": "Tocar el ritmo de «Estaba el señor Don Gato» sílaba a sílaba y cantarlo a la vez, entrando a tiempo en el «ja-do-ma-ra» rápido del estribillo y aguantando las notas largas de «Ga-to».",
+    "vocabulario": [
+      "ritmo",
+      "sílaba",
+      "verso",
+      "estribillo",
+      "largo",
+      "corto",
+      "a tiempo",
+      "romance"
+    ],
+    "agrupamiento": "Grupo clase con proyector; luego por parejas en tablet",
+    "material": "Ninguno. La letra entera, en la ficha, para seguir cantando sin pantalla",
+    "pasos": [
+      {
+        "min": 1,
+        "titulo": "Decirla, sin cantar.",
+        "detalle": "La primera estrofa dicha al pulso, dando una palmada en cada sílaba. Que noten que «Ga-to» se alarga y que «ja-do-ma-rra» va disparado. Todavía no se toca nada."
+      },
+      {
+        "min": 1,
+        "titulo": "Lo largo y lo corto.",
+        "detalle": "Con el proyector, mirar sin tocar: cada sílaba baja con una cola tan larga como dura. Que digan cuál es la más larga de la estrofa y cuáles las más cortas, solo mirando."
+      },
+      {
+        "min": 2,
+        "titulo": "Primer ejercicio: el verso.",
+        "detalle": "«Estaba el señor Don Gato», ocho sílabas. Tocar y cantar a la vez. La letra va abajo y se enciende la sílaba que toca, así que se ve venir la siguiente."
+      },
+      {
+        "min": 2,
+        "titulo": "Segundo: el marramamiau.",
+        "detalle": "Es el difícil: «ja-do-ma-ra» son cuatro sílabas en un solo pulso. Primero decirlo despacio fuera de la app, luego tocarlo. Si se atasca, que toque solo los tres «miau» y cante el resto."
+      },
+      {
+        "min": 2,
+        "titulo": "Tercero: la estrofa entera.",
+        "detalle": "Los dos anteriores seguidos, más el verso repetido. Al acabar, mirar el resumen: si va tarde pero siempre igual, es entrada y no pulso."
+      },
+      {
+        "min": 2,
+        "titulo": "Y las otras ocho estrofas.",
+        "detalle": "Sin pantalla, cantando toda la historia: el gato se cae, se rompe el espinazo y resucita al oler las sardinas. La letra entera está abajo, en las ideas."
+      }
+    ],
+    "enPantalla": "Las figuras caen hacia una línea, cada una con una cola tan larga como dura: las de «Ga» y «to» ocupan un compás entero y las de «ja-do-ma-ra» son cuatro seguidas en un solo pulso. Debajo del recuadro está la letra completa, una sílaba por figura, y se resalta la que suena, así que se ve venir la siguiente y se puede cantar mientras se toca. A tiempo, la figura se ilumina; adelantarse la apaga y dejarla pasar no hace nada. Tres ejercicios: el verso, el estribillo y la estrofa entera.",
+    "sinPantalla": "La canción de siempre, en corro. Se dice la letra al pulso dando una palmada por sílaba, y cuando sale, se canta. Las notas largas —«Ga-to», «te-ja-do»— se marcan abriendo los brazos y aguantando; el «marramamiau» se dice muy rápido y de carrerilla. Cada estrofa la empieza un niño distinto y la clase contesta con el estribillo. Con instrumentos de aula, unos hacen el pulso y otros el ritmo de las palabras.",
+    "masFacil": "Quédate en el primer ejercicio, que no tiene ninguna sílaba rápida. Di tú la letra en voz alta mientras él toca, para que tenga la señal. Si el estribillo se le atraganta, regla de rescate: que toque solo los tres «miau» y cante lo demás sin tocar — se entra en el momento justo tres veces en vez de fallar catorce.",
+    "masDificil": "Que toque y cante a la vez las nueve estrofas, cambiando de letra sin perder el ritmo, que es siempre el mismo. Después, al revés: uno dice una estrofa cualquiera y los demás la palmean sin haberla visto, porque el ritmo ya se lo saben. Y que inventen una décima estrofa que respete el octosílabo y acabe en «-ado»: es la regla del romance.",
+    "variante": {
+      "titulo": "El romance por turnos",
+      "texto": "En corro, una estrofa cada niño y el estribillo toda la clase. Quien canta su estrofa marca el pulso con el pie y los demás dan la palmada solo en «marramamiau, miau, miau». Al acabar, se cuenta la historia entre todos sin cantarla y se comprueba que no falta nada: un romance es un cuento que se canta, y así se ve."
+    },
+    "ideas": [
+      "Las estrofas que siguen, para cantarlas sin pantalla: «Ha recibido una carta, que si quiere ser casado» · «Con una gatita parda, sobrina de un gato pardo» · «Al recibir la noticia, se ha caído del tejado».",
+      "Y el final de la historia: «Se ha roto siete costillas, el espinazo y el rabo» · «Ya lo llevan a enterrar por la calle del pescado» · «Al olor de las sardinas, el gato ha resucitado».",
+      "Y el cierre, que es de la propia canción: «Con razón dice la gente: siete vidas tiene un gato» · «Y aquí se acaba la copla de Don Gato enamorado».",
+      "Contar las sílabas de cada verso: salen ocho siempre. Eso es un romance, que es la forma en que se cantaron los cuentos en español durante siglos. Y dibujar la historia en nueve viñetas, una por estrofa."
+    ],
+    "loTiene": [
+      "Toca cada sílaba en su sitio, sin adelantarse a las largas de «Ga-to».",
+      "Dice el «ja-do-ma-ra» completo sin partirlo ni saltarse ninguna.",
+      "Canta y toca a la vez durante una estrofa entera."
+    ],
+    "errores": [
+      {
+        "error": "Toca una vez por palabra en vez de una por sílaba",
+        "remedio": "decirla primero dando una palmada por sílaba, sin la app: «Es-ta-ba-el-se-ñor-Don-Ga-to»."
+      },
+      {
+        "error": "En «Ga-to» toca varias veces porque son largas",
+        "remedio": "una sola entrada y aguantar; el pie sigue marcando el pulso y la mano no vuelve."
+      },
+      {
+        "error": "Se le atraganta el «marramamiau»",
+        "remedio": "que toque solo los tres «miau» y cante el resto; se vuelve a intentar entero al día siguiente."
+      }
+    ],
+    "indicadores": [
+      "Sílaba a sílaba",
+      "El marramamiau",
+      "Canta y toca"
+    ]
+  }
+}

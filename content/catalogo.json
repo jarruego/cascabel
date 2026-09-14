@@ -1,7 +1,7 @@
 {
   "$comment": "Backlog del catálogo. NO es contenido ejecutable: las actividades reales viven en content/actividades/*.json y validan contra el esquema. Los códigos son RESERVAS: tools/validar.py falla si una actividad se sienta sobre un código previsto para otra cosa, y también si usa un código que aquí no está. El hueco de C1-17 es intencionado: ese código nunca llegó a reservarse y los ids no se renumeran, porque un id puede estar dentro de una URL compartida.",
   "generado": "2026-09-10",
-  "total": 176,
+  "total": 177,
   "actividades": [
     {
       "id": "C1-01",
@@ -2107,6 +2107,19 @@
       "esfuerzo": "S",
       "curriculo": "CE3 · crit. 3.1 · saber D",
       "descripcion": "Los ocho personajes en fila; cada uno canta cuando le toca.",
+      "estado": "hecha"
+    },
+    {
+      "id": "C1-42",
+      "titulo": "Marramamiau: el ritmo de Don Gato",
+      "etapa": "primaria-c1",
+      "eje": "pulso",
+      "lugar": "pantalla",
+      "tipo": "karaoke",
+      "microfono": false,
+      "esfuerzo": "M",
+      "curriculo": "CE3 · crit. 3.1 · saber D",
+      "descripcion": "«Estaba el señor Don Gato» sílaba a sílaba, con la letra debajo. Ritmo y palabra, sin melodía.",
       "estado": "hecha"
     },
     {
