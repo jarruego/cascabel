@@ -699,12 +699,16 @@ dan identidad propia. Los personajes del proyecto siguen siendo decisión de pro
 
 
 
-- [x] Cloudflare Pages conectado a `main` de `github.com/jarruego/cascabel`
+- [ ] Despliegue automático desde `main`. **No existe**, aunque esta casilla estuvo
+      marcada: el 2026-10-17 el último despliegue era del 14-9, subido a mano, y un mes de
+      commits no estaba publicado. Hoy se publica con `npm run build && npx wrangler deploy`.
+      Para automatizarlo: Workers Builds en el panel del Worker, conectado al repositorio
 - [x] Dominio propio con HTTPS: **https://cascabel.cocomusic.es** (2026-10-17). Declarado
       en `wrangler.jsonc` como `custom_domain`, no en el panel. `workers.dev` y las URL de
       vista previa están **cerradas**: el progreso y la PWA instalada van atados al origen,
       y con dos direcciones las instalaciones se habrían repartido entre ellas
-- [ ] `public/_headers` aplicándose de verdad (compruébalo en la respuesta real)
+- [x] `public/_headers` aplicándose de verdad: comprobado con `curl -I` el 2026-10-17,
+      llegan la CSP con `connect-src 'self'` y el resto. Las rutas de la SPA dan 200
 - [ ] Analítica: Umami autoalojado o nada. **Nunca Google Analytics**
 
 ---
