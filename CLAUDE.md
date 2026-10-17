@@ -353,6 +353,23 @@ el método. Ver `docs/08-LEGAL.md`.
 ("La vaca lechera", Cri-Cri). El plazo español es 70 años, **pero 80 si el autor murió antes
 del 7-12-1987**. Y el fonograma es un derecho aparte: nunca se usa audio ajeno.
 
+### Lo que cocomusic lee de aquí: es un contrato
+
+cocomusic.es enlaza actividades sueltas y lee nuestro catálogo **al construir su web**. En
+tiempo de ejecución Cascabel no habla con cocomusic ni al revés: la regla 1 sigue intacta.
+Desde 2026-10-18, esto no se cambia sin avisar a cocomusic:
+
+- **El `id` de una actividad y la ruta `/actividad/:id`.** Hay enlaces publicados a
+  `https://cascabel.cocomusic.es/actividad/<id>`. Un `id` no se renombra ni se reutiliza
+  (el esquema ya lo dice). Si alguna vez no hay más remedio, el `id` viejo se queda con una
+  redirección 301 al nuevo; una actividad que se retira no deja un 404 mudo.
+- **`/content/indice.json`**: la URL y los campos `id`, `titulo`, `descripcion`, `etapa`,
+  `eje`, `tipo`, `personaje`, `etiquetas`, `estado` y `duracion_min`. Se pueden **añadir**
+  campos; quitar uno, cambiarle el nombre o cambiar el significado de sus valores rompe a
+  cocomusic. `generado` no forma parte del contrato.
+- **El vocabulario de `etapa`, `eje`, `personaje` y `estado`**, que es el de los `enum` de
+  `schemas/actividad.schema.json`. Un valor nuevo se le avisa a cocomusic antes de usarlo.
+
 ---
 
 ## 11. Cómo quiero que trabajes
