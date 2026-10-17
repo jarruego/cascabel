@@ -700,7 +700,10 @@ dan identidad propia. Los personajes del proyecto siguen siendo decisión de pro
 
 
 - [x] Cloudflare Pages conectado a `main` de `github.com/jarruego/cascabel`
-- [ ] Dominio propio con HTTPS
+- [x] Dominio propio con HTTPS: **https://cascabel.cocomusic.es** (2026-10-17). Declarado
+      en `wrangler.jsonc` como `custom_domain`, no en el panel. `workers.dev` y las URL de
+      vista previa están **cerradas**: el progreso y la PWA instalada van atados al origen,
+      y con dos direcciones las instalaciones se habrían repartido entre ellas
 - [ ] `public/_headers` aplicándose de verdad (compruébalo en la respuesta real)
 - [ ] Analítica: Umami autoalojado o nada. **Nunca Google Analytics**
 
