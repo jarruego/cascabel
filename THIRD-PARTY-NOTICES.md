@@ -45,8 +45,9 @@ que se sepa por qué está en `package.json`.
 | pitchy | MIT | El detector de tono **no la usa**. `public/worklets/tono-processor.js` implementa NSDF/McLeod directamente, porque un worklet se carga por URL y no por `import`. Ver abajo |
 
 **No se distribuye nunca**: las herramientas de desarrollo (Vite, `@vitejs/plugin-react`,
-ESLint, Prettier, Vitest, jsdom — MIT; TypeScript — Apache-2.0) y `music21` (BSD-3-Clause),
-que solo corre en `tools/`.
+ESLint, Prettier, Vitest, jsdom — MIT; TypeScript — Apache-2.0), `ajv` (MIT), que comprueba el
+esquema de las actividades al construir desde `tools/comprobar-esquema.mjs`, y `music21`
+(BSD-3-Clause), que solo corre en `tools/`.
 
 **Sobre pitchy y el algoritmo de McLeod.** Lo que el worklet implementa es el **NSDF**
 descrito en McLeod y Wyvill, *A Smarter Way to Find Pitch* (ICMC 2005). Un algoritmo publicado

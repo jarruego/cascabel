@@ -370,6 +370,31 @@ Desde 2026-10-18, esto no se cambia sin avisar a cocomusic:
 - **El vocabulario de `etapa`, `eje`, `personaje` y `estado`**, que es el de los `enum` de
   `schemas/actividad.schema.json`. Un valor nuevo se le avisa a cocomusic antes de usarlo.
 
+**El panel de cocomusic (`/admin/`) hace commits en `main`** que cambian el JSON de una
+actividad: su `estado` y las marcas pendientes. Cada commit se despliega solo, y
+`npm run build` comprueba antes el esquema (`tools/comprobar-esquema.mjs`) y regenera
+`content/indice.json`: un JSON que no cumple el esquema para el despliegue y no se publica.
+Lo que el build **no** mira es la música; eso sigue siendo `npm run contenido:validar`.
+
+### Marcas pendientes: dónde van y cómo se resuelven
+
+`PENDIENTE DE REVISIÓN PEDAGÓGICA` tiene dos formatos en las actividades, y el panel de
+cocomusic los lee los dos. No los cambies sin avisar:
+
+- En **`contenido.$comment`**: `…contexto. PENDIENTE DE REVISIÓN PEDAGÓGICA: la duda.` Como
+  mucho una por comentario; la duda va de los dos puntos al final.
+- En un **texto de la ficha** que ve el maestro: `frase dudosa (PENDIENTE DE REVISIÓN
+  PEDAGÓGICA)`, justo detrás de lo que se duda. `app/Ficha.tsx` quita el paréntesis antes
+  de enseñarlo.
+
+Se resuelven así, desde el panel o a mano, y luego `npm run docs:pendientes`:
+
+- **«Vale»**: se borra la marca. En `$comment` la duda se reescribe como decisión:
+  `Revisado y aceptado el AAAA-MM-DD: …`. En la ficha se quita el paréntesis y nada más.
+- **«Cámbialo»**: se cambia el contenido, y la marca solo se borra cuando el cambio está
+  hecho y aceptado. Una marca no desaparece por haber contestado; desaparece por estar
+  resuelta.
+
 ---
 
 ## 11. Cómo quiero que trabajes

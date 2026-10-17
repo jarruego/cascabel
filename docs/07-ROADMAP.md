@@ -706,6 +706,9 @@ dan identidad propia. Los personajes del proyecto siguen siendo decisión de pro
       se publica con `npm run build && npx wrangler deploy`. **Lección**: tras un push, mira
       que la versión desplegada cambie (`npx wrangler deployments list`); que el push entre
       no lo prueba
+- [x] El build comprueba el esquema y regenera el índice (2026-10-18). El panel de
+      cocomusic hace commits en `main` y el despliegue no pasa `npm run verificar`: un JSON
+      roto para el build en vez de publicarse. Ver `CLAUDE.md` §10
 - [x] Dominio propio con HTTPS: **https://cascabel.cocomusic.es** (2026-10-17). Declarado
       en `wrangler.jsonc` como `custom_domain`, no en el panel. `workers.dev` y las URL de
       vista previa están **cerradas**: el progreso y la PWA instalada van atados al origen,

@@ -54,8 +54,17 @@ for (const f of ficheros) {
 
 actividades.sort((a, b) => a.id.localeCompare(b.id, 'es'));
 
-await writeFile(
-  'content/indice.json',
-  JSON.stringify({ generado: new Date().toISOString().slice(0, 10), total: actividades.length, actividades }, null, 2) + '\n',
-);
-console.log(`indice.json: ${actividades.length} actividades`);
+// Desde el 2026-10-18 esto corre en cada `npm run build`, que es lo que mantiene el índice
+// al día cuando el panel de cocomusic cambia una actividad. Si no ha cambiado nada no se
+// reescribe: si no, cada build en local cambiaría la fecha y dejaría un diff sin contenido.
+const RUTA = 'content/indice.json';
+const anterior = await readFile(RUTA, 'utf8').then(JSON.parse, () => null);
+if (anterior && JSON.stringify(anterior.actividades) === JSON.stringify(actividades)) {
+  console.log(`indice.json: ${actividades.length} actividades, sin cambios`);
+} else {
+  await writeFile(
+    RUTA,
+    JSON.stringify({ generado: new Date().toISOString().slice(0, 10), total: actividades.length, actividades }, null, 2) + '\n',
+  );
+  console.log(`indice.json: ${actividades.length} actividades`);
+}
