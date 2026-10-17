@@ -699,12 +699,13 @@ dan identidad propia. Los personajes del proyecto siguen siendo decisión de pro
 
 
 
-- [ ] Despliegue automático desde `main` (Workers Builds). Está conectado, pero **el token
-      de build se borró o se renovó** y desde el 14-9 todas las construcciones fallaban al
-      arrancar sin que nadie lo viera: un mes de commits sin publicar. Se arregla en
-      Settings → Build → API token → crear uno nuevo, y Retry build. Hasta que vuelva a
-      funcionar, se publica a mano con `npm run build && npx wrangler deploy`. **Lección**:
-      tras un push, mira que la versión desplegada cambie; que el push entre no lo prueba
+- [x] Despliegue automático desde `main` (Workers Builds). **El token de build se borró o
+      se renovó** y desde el 14-9 todas las construcciones fallaban al arrancar sin que
+      nadie lo viera: un mes de commits sin publicar. Token nuevo el 2026-10-18, en
+      Settings → Build → API token, y vuelve a desplegar solo. Si se rompe otra vez, a mano
+      se publica con `npm run build && npx wrangler deploy`. **Lección**: tras un push, mira
+      que la versión desplegada cambie (`npx wrangler deployments list`); que el push entre
+      no lo prueba
 - [x] Dominio propio con HTTPS: **https://cascabel.cocomusic.es** (2026-10-17). Declarado
       en `wrangler.jsonc` como `custom_domain`, no en el panel. `workers.dev` y las URL de
       vista previa están **cerradas**: el progreso y la PWA instalada van atados al origen,
