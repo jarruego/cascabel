@@ -2394,7 +2394,8 @@ p {
 .ficha__colNombre { width: 28%; }
 .ficha__colNotas { width: 24%; }
 .ficha__pie { margin-top: var(--e-3); }
-.ficha__cocomusic a { overflow-wrap: anywhere; }
+/* Sin color propio, el enlace salía con el azul del navegador, ilegible en tema oscuro. */
+.ficha__cocomusic a { color: var(--acento-2); overflow-wrap: anywhere; }
 .actividad__ficha { color: var(--acento-2); font-size: 0.9em; }
 
 @media print {
