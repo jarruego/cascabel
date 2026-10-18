@@ -1,0 +1,1236 @@
+{
+  "base": "https://cocomusic.es",
+  "actividades": {
+    "c3-45-en-la-gruta-del-rey-de-la-montana": [
+      {
+        "titulo": "Musicograma de Halloween: En la gruta del rey de la montaña",
+        "tipo": "entrada",
+        "ruta": "/musicograma-halloween/"
+      },
+      {
+        "titulo": "Musicograma de Halloween: En la gruta del rey de la montaña",
+        "tipo": "ficha",
+        "ruta": "/ficha-musica/musicograma-halloween-rey-de-la-montana/"
+      }
+    ]
+  },
+  "paginas": [
+    {
+      "ruta": "/biografia-alba-rosa-vietor/",
+      "titulo": "Biografía de Alba Rosa Viëtor para niños",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/biografia-amy-beach/",
+      "titulo": "Biografía de Amy Beach para niños",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/biografia-bach-ninos/",
+      "titulo": "Biografía de Bach para niños",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/biografia-barbara-strozzi/",
+      "titulo": "Biografía de Bárbara Strozzi para niños",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/biografia-beethoven-ninos-primaria/",
+      "titulo": "Biografía de Beethoven para niños de Primaria",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/biografia-cecile-chaminade/",
+      "titulo": "Biografía de Cecile Chaminade para niños",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/biografia-clara-schumann/",
+      "titulo": "Biografía de Clara Wieck Schumann para niños",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/biografia-elisabeth-jacquet-de-la-guerre/",
+      "titulo": "Biografía de Elisabeth Jacquet de la Guerre para niños",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/biografia-elizabeth-maconchy/",
+      "titulo": "Biografía de Elizabeth Maconchy para niños",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/biografia-ethel-smyth/",
+      "titulo": "Biografía de Ethel Smyth para niños",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/biografia-fanny-mendelssohn/",
+      "titulo": "Biografía de Fanny Mendelssohn para niños",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/biografia-francesca-caccini/",
+      "titulo": "Biografía de Francesca Caccini para niños",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/biografia-lili-boulanger/",
+      "titulo": "Biografía de Lili Boulanger para niños",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/biografia-louise-farrenc/",
+      "titulo": "Biografía de Louise Farrenc para niños",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/biografia-maria-anna-mozart/",
+      "titulo": "Biografía de Maria Anna Mozart para niños",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/biografia-mozart-ninos-primaria/",
+      "titulo": "Biografía de Mozart para niños de Primaria",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/biografia-nadia-boulanger/",
+      "titulo": "Biografía de Nadia Boulanger para niños",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/biografia-rebecca-clarke/",
+      "titulo": "Biografía de Rebecca Clarke para niños",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/biografia-tchaikovsky-ninos/",
+      "titulo": "Biografía de Tchaikovsky para niños",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/biografia-vivaldi-ninos/",
+      "titulo": "Biografía de Vivaldi para niños",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/doodles-musicales-google/",
+      "titulo": "Doodles musicales de Google para jugar en clase de música",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/fantasma-opera-ninos/",
+      "titulo": "El Fantasma de la Opera",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/musicograma-halloween/",
+      "titulo": "Musicograma de Halloween: En la gruta del rey de la montaña",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/musicograma-estrellita-donde-estas-boomwhackers/",
+      "titulo": "Musicograma Estrellita ¿Dónde estás? - Boomwhackers",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/musicograma-jingle-bells/",
+      "titulo": "Musicograma Jingle Bells",
+      "tipo": "entrada"
+    },
+    {
+      "ruta": "/ficha-musica/acordes/",
+      "titulo": "Acordes",
+      "tipo": "ficha",
+      "edad_min": 9,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/adeste-fideles-flauta-dulce/",
+      "titulo": "Adeste fideles en flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 10,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/arbol-navidad-figuras-musicales/",
+      "titulo": "Árbol Navideño Musical",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/asturias-patria-querida-flauta-dulce/",
+      "titulo": "Asturias, patria querida, en flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 10,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/barras-compas/",
+      "titulo": "Barras de Compás",
+      "tipo": "ficha",
+      "edad_min": 6,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/cancion-de-cuna-brahms-flauta-dulce/",
+      "titulo": "Canción de cuna de Brahms, en flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 10,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/cancion-spooky-scary-skeletons/",
+      "titulo": "Canción Halloween - Spooky Scary Skeletons",
+      "tipo": "ficha",
+      "edad_min": 10,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/cancion-mi-novio-es-un-zombi/",
+      "titulo": "Canción Mi Novio es un Zombi",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/cancion-pinocho-fue-a-pescar/",
+      "titulo": "Canción Pinocho fue a Pescar",
+      "tipo": "ficha",
+      "edad_min": 3,
+      "edad_max": 6
+    },
+    {
+      "ruta": "/ficha-musica/clave-fa-4-linea/",
+      "titulo": "Clave de Fa en 4ª línea",
+      "tipo": "ficha",
+      "edad_min": 9,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/clave-sol-definicion/",
+      "titulo": "Clave de Sol",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/clave-sol-ejercicio/",
+      "titulo": "Clave de Sol (Ejercicio 1)",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/colorear-instrumentos/",
+      "titulo": "Colorea los Instrumentos",
+      "tipo": "ficha",
+      "edad_min": 3,
+      "edad_max": 6
+    },
+    {
+      "ruta": "/ficha-musica/calcetin-navidad-figuras-musicales/",
+      "titulo": "Colorear Calcetín Navideño",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/colorear-fantasma-opera/",
+      "titulo": "Colorear el Fantasma de la Ópera",
+      "tipo": "ficha",
+      "edad_min": 3,
+      "edad_max": 6
+    },
+    {
+      "ruta": "/ficha-musica/colorear-cascanueces-tchaikovski/",
+      "titulo": "Colorear los Cascanueces",
+      "tipo": "ficha",
+      "edad_min": 3,
+      "edad_max": 6
+    },
+    {
+      "ruta": "/ficha-musica/compas-2-ciclo/",
+      "titulo": "Compás (2º ciclo)",
+      "tipo": "ficha",
+      "edad_min": 7,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/compas-ciclo-3/",
+      "titulo": "Compás (3er ciclo)",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 11
+    },
+    {
+      "ruta": "/ficha-musica/cumpleanos-feliz-flauta-dulce/",
+      "titulo": "Cumpleaños feliz en flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 10,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/do-re-agudos-flauta-dulce/",
+      "titulo": "DO y RE agudos en la flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/doby-do-agudo/",
+      "titulo": "Doby y el DO agudo: presentación y cuento",
+      "tipo": "ficha",
+      "edad_min": 3,
+      "edad_max": 6
+    },
+    {
+      "ruta": "/ficha-musica/dora-nota-do/",
+      "titulo": "Dora y la nota DO: presentación y cuento",
+      "tipo": "ficha",
+      "edad_min": 3,
+      "edad_max": 6
+    },
+    {
+      "ruta": "/ficha-musica/dos-corcheas/",
+      "titulo": "Dos Corcheas",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/ejercicio-figuras-musicales-1/",
+      "titulo": "Ejercicio Figuras Musicales (I)",
+      "tipo": "ficha",
+      "edad_min": 7,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/ejercicio-nota-do/",
+      "titulo": "Ejercicio Nota DO",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/ejercicio-nota-fa/",
+      "titulo": "Ejercicio Nota FA",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/ejercicio-nota-la/",
+      "titulo": "Ejercicio Nota LA",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/ejercicio-nota-mi/",
+      "titulo": "Ejercicio Nota MI",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/ejercicio-nota-re/",
+      "titulo": "Ejercicio Nota RE",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/ejercicio-nota-si/",
+      "titulo": "Ejercicio Nota SI",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/ejercicio-nota-sol/",
+      "titulo": "Ejercicio Nota SOL",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/ejercicio-pequena-percusion-facil/",
+      "titulo": "Ejercicio Pequeña Percusión (I)",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/ejercicio-posiciones-flauta-dulce/",
+      "titulo": "Ejercicio: las posiciones de la flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/fa-flauta-dulce-barroca-alemana/",
+      "titulo": "El FA en la flauta dulce barroca o alemana",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/medio-pulgar-flauta-dulce/",
+      "titulo": "El medio pulgar y el MI agudo",
+      "tipo": "ficha",
+      "edad_min": 10,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/el-organo-de-bach/",
+      "titulo": "El Órgano de Bach",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/patio-de-mi-casa-flauta-dulce/",
+      "titulo": "El patio de mi casa, en flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/picado-flauta-dulce/",
+      "titulo": "El picado: tocar la flauta con «tu»",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/el-sonido-infantil/",
+      "titulo": "El Sonido",
+      "tipo": "ficha",
+      "edad_min": 2,
+      "edad_max": 4
+    },
+    {
+      "ruta": "/ficha-musica/timbre/",
+      "titulo": "El Timbre",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/viejo-macdonald-flauta-dulce/",
+      "titulo": "El viejo MacDonald tenía una granja, en flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/escala-musical/",
+      "titulo": "Escala Musical",
+      "tipo": "ficha",
+      "edad_min": 7,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/estrellita-flauta-dulce/",
+      "titulo": "Estrellita, ¿dónde estás? en flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/fa-sol-agudos-flauta-dulce/",
+      "titulo": "FA, FA# y SOL agudos en la flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 10,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/familias-instrumentos-relaciona/",
+      "titulo": "Familias de Instrumentos (Ejercicio)",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/familias-instrumentos/",
+      "titulo": "Familias de Instrumentos (I)",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/fantasma-opera-partitura/",
+      "titulo": "Fantasma de la Ópera - Partitura",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/fara-nota-fa/",
+      "titulo": "Fara y la nota FA: presentación y cuento",
+      "tipo": "ficha",
+      "edad_min": 3,
+      "edad_max": 6
+    },
+    {
+      "ruta": "/ficha-musica/figuras-musicales-teoria-1/",
+      "titulo": "Figuras musicales (I)",
+      "tipo": "ficha",
+      "edad_min": 7,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/teoria-figuras-musicales-2/",
+      "titulo": "Figuras Musicales (II)",
+      "tipo": "ficha",
+      "edad_min": 9,
+      "edad_max": 11
+    },
+    {
+      "ruta": "/ficha-musica/figuras-musicales-recortables/",
+      "titulo": "Figuras Musicales Recortables",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/himno-alegria-flauta-dulce/",
+      "titulo": "Himno de la alegría en flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/partitura-himno-alegria/",
+      "titulo": "Himno de la Alegría, Partitura",
+      "tipo": "ficha",
+      "edad_min": 6,
+      "edad_max": 11
+    },
+    {
+      "ruta": "/ficha-musica/instrumentos-navidenos/",
+      "titulo": "Instrumentos Navideños",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/intervalos/",
+      "titulo": "Intervalos",
+      "tipo": "ficha",
+      "edad_min": 9,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/jingle-bells-flauta-dulce/",
+      "titulo": "Jingle Bells en flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/blanca/",
+      "titulo": "La Blanca",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/blanca-ejercicio/",
+      "titulo": "La Blanca (Ejercicio)",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/corchea/",
+      "titulo": "La Corchea",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/corchea-ejercicio/",
+      "titulo": "La Corchea (Ejercicio)",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/la-cucaracha-flauta-dulce/",
+      "titulo": "La cucaracha en flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 10,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/partes-flauta-dulce/",
+      "titulo": "La flauta dulce: partes y cómo se coge",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/musica-amansa-fieras/",
+      "titulo": "La Música Amansa a las Fieras",
+      "tipo": "ficha",
+      "edad_min": 3,
+      "edad_max": 6
+    },
+    {
+      "ruta": "/ficha-musica/negra/",
+      "titulo": "La Negra",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/negra-ejercicio/",
+      "titulo": "La Negra (Ejercicio)",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/redonda/",
+      "titulo": "La Redonda",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/redonda-ejercicio/",
+      "titulo": "La Redonda (Ejercicio)",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/la-voz/",
+      "titulo": "La Voz",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/cubo-recortable-voz/",
+      "titulo": "La Voz. Cubo Recortable",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/laberinto-beethoven/",
+      "titulo": "Laberinto de Beethoven",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/laia-nota-la/",
+      "titulo": "Laia y la nota LA: presentación y cuento",
+      "tipo": "ficha",
+      "edad_min": 3,
+      "edad_max": 6
+    },
+    {
+      "ruta": "/ficha-musica/largo-nuevo-mundo-flauta-dulce/",
+      "titulo": "Largo de la Sinfonía del Nuevo Mundo, en flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 10,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/lineas-adicionales/",
+      "titulo": "Líneas Adicionales",
+      "tipo": "ficha",
+      "edad_min": 9,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/ejercicio-lineas-adicionales/",
+      "titulo": "Líneas Adicionales (Ejercicio)",
+      "tipo": "ficha",
+      "edad_min": 9,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/los-pollitos-dicen-flauta-dulce/",
+      "titulo": "Los pollitos dicen, en flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/voz-desafinada/",
+      "titulo": "Luciano Desafinado",
+      "tipo": "ficha",
+      "edad_min": 4,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/maria-tenia-un-corderito-flauta-dulce/",
+      "titulo": "María tenía un corderito, en flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/martinillo-flauta-dulce/",
+      "titulo": "Martinillo (Frère Jacques), en flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/matices-dinamicos/",
+      "titulo": "Matices Dinámicos",
+      "tipo": "ficha",
+      "edad_min": 7,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/matices-dinamicos-2/",
+      "titulo": "Matices Dinámicos (II)",
+      "tipo": "ficha",
+      "edad_min": 7,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/metronomo-ninos/",
+      "titulo": "Metrónomo",
+      "tipo": "ficha",
+      "edad_min": 7,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/mi-novio-es-un-zombi-partitura/",
+      "titulo": "Mi Novio es un Zombi - Partitura",
+      "tipo": "ficha",
+      "edad_min": 10,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/primera-cancion-flauta-dulce/",
+      "titulo": "Mi primera canción en la flauta: SI, LA, SOL",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/mi-re-do-graves-flauta-dulce/",
+      "titulo": "MI, RE y DO graves en la flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/milo-nota-mi/",
+      "titulo": "Milo y la nota MI: presentación y cuento",
+      "tipo": "ficha",
+      "edad_min": 3,
+      "edad_max": 6
+    },
+    {
+      "ruta": "/ficha-musica/minueto-en-sol-flauta-dulce/",
+      "titulo": "Minueto en sol, en flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 10,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/mozart-colorear/",
+      "titulo": "Mozart para colorear",
+      "tipo": "ficha",
+      "edad_min": 3,
+      "edad_max": 6
+    },
+    {
+      "ruta": "/ficha-musica/musicograma-halloween-rey-de-la-montana/",
+      "titulo": "Musicograma de Halloween: En la gruta del rey de la montaña",
+      "tipo": "ficha",
+      "edad_min": 10,
+      "edad_max": 14
+    },
+    {
+      "ruta": "/ficha-musica/noche-de-paz-flauta-dulce/",
+      "titulo": "Noche de paz en flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 10,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/nota-do/",
+      "titulo": "Nota DO",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/nota-fa/",
+      "titulo": "Nota FA",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/nota-la/",
+      "titulo": "Nota LA",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/nota-mi/",
+      "titulo": "Nota MI",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/nota-re/",
+      "titulo": "Nota RE",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/nota-si/",
+      "titulo": "Nota SI",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/nota-sol/",
+      "titulo": "Nota SOL",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/notas-flauta-dulce/",
+      "titulo": "Notas de la flauta dulce: las posiciones",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/notas-musicales/",
+      "titulo": "Notas Musicales (Ejercicio 1)",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/oh-susanna-flauta-dulce/",
+      "titulo": "Oh! Susanna, en flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/otono-vivaldi-colorear/",
+      "titulo": "Otoño de Vivaldi Colorear",
+      "tipo": "ficha",
+      "edad_min": 3,
+      "edad_max": 6
+    },
+    {
+      "ruta": "/ficha-musica/partitura-estrellita-donde-estas/",
+      "titulo": "Partitura Estrellita Dónde Estás",
+      "tipo": "ficha",
+      "edad_min": 6,
+      "edad_max": 11
+    },
+    {
+      "ruta": "/ficha-musica/pentagrama/",
+      "titulo": "Pentagrama",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/pequena-percusion/",
+      "titulo": "Pequeña Percusión",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/pequena-serenata-nocturna-flauta-dulce/",
+      "titulo": "Pequeña serenata nocturna de Mozart, en flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 10,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/percusion-corporal/",
+      "titulo": "Percusión Corporal",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/ejercicio-percusion-corporal/",
+      "titulo": "Percusión corporal (Ejercicio)",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/percusion-corporal-basica-estrellita/",
+      "titulo": "Percusión Corporal Básica. Estrellita Dónde Estás",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/percusion-corporal-media-estrellita-donde-estas/",
+      "titulo": "Percusión Corporal Media. Estrellita Dónde Estás",
+      "tipo": "ficha",
+      "edad_min": 6,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/notas-agudas-flauta-dulce/",
+      "titulo": "Posiciones de la flauta dulce hasta el SOL agudo",
+      "tipo": "ficha",
+      "edad_min": 10,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/pulso-musical/",
+      "titulo": "Pulso Musical",
+      "tipo": "ficha",
+      "edad_min": 7,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/respiracion-flauta-dulce/",
+      "titulo": "Respirar sin apretar: la respiración en la flauta",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/rex-nota-re/",
+      "titulo": "Rex y la nota RE: presentación y cuento",
+      "tipo": "ficha",
+      "edad_min": 3,
+      "edad_max": 6
+    },
+    {
+      "ruta": "/ficha-musica/juego-mari-mari-posa/",
+      "titulo": "Ritmo Mari Mari Po Sa",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/ritmo-musical-ejercicio-1/",
+      "titulo": "Ritmo Musical (Ejercicio 1)",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/ritmo-musical-1/",
+      "titulo": "Ritmo Musical (I)",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/ejercicio-ritmo-musical-2/",
+      "titulo": "Ritmo Musical (I) Ejercicio 2",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/pisada-palmada/",
+      "titulo": "Ritmo Pisada Palmada",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/si-la-sol-flauta-dulce/",
+      "titulo": "SI, LA y SOL: las tres primeras notas de la flauta",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/signos-prolongacion/",
+      "titulo": "Signos de Prolongación",
+      "tipo": "ficha",
+      "edad_min": 9,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/ficha-musica/silencio-negra/",
+      "titulo": "Silencio de Negra (Ejercicio 1)",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/simon-nota-si/",
+      "titulo": "Simón y la nota SI: presentación y cuento",
+      "tipo": "ficha",
+      "edad_min": 3,
+      "edad_max": 6
+    },
+    {
+      "ruta": "/ficha-musica/sol-nota-sol/",
+      "titulo": "Sol y la nota SOL: presentación y cuento",
+      "tipo": "ficha",
+      "edad_min": 3,
+      "edad_max": 6
+    },
+    {
+      "ruta": "/ficha-musica/sonido-agudo-grave-altura/",
+      "titulo": "Sonido Agudo y Grave. Altura",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/sonido-fuerte-debil/",
+      "titulo": "Sonido Fuerte y Débil (Teórico-Práctica)",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/sonido-largo-corto/",
+      "titulo": "Sonido Largo y Corto (Teórico-Práctica)",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/sonido-silencio-infantil/",
+      "titulo": "Sonido y Silencio",
+      "tipo": "ficha",
+      "edad_min": 3,
+      "edad_max": 4
+    },
+    {
+      "ruta": "/ficha-musica/sostenidos-bemoles-flauta-dulce/",
+      "titulo": "Sostenidos y bemoles en la flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/tempo-musical-basico/",
+      "titulo": "Tempo Musical (I)",
+      "tipo": "ficha",
+      "edad_min": 5,
+      "edad_max": 8
+    },
+    {
+      "ruta": "/ficha-musica/tengo-una-muneca-flauta-dulce/",
+      "titulo": "Tengo una muñeca vestida de azul, en flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 8,
+      "edad_max": 10
+    },
+    {
+      "ruta": "/ficha-musica/trazar-colorear-guitarra/",
+      "titulo": "Traza y colorea la guitarra",
+      "tipo": "ficha",
+      "edad_min": 3,
+      "edad_max": 6
+    },
+    {
+      "ruta": "/ficha-musica/when-the-saints-flauta-dulce/",
+      "titulo": "When the Saints Go Marching In, en flauta dulce",
+      "tipo": "ficha",
+      "edad_min": 10,
+      "edad_max": 12
+    },
+    {
+      "ruta": "/fichas/armonia/acordes/",
+      "titulo": "Acordes",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/armonia/alteraciones/",
+      "titulo": "Alteraciones",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/armonia/",
+      "titulo": "ARMONÍA",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/ritmo/barras-compas/",
+      "titulo": "Barras de Compás",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/recursos-musica/canciones/",
+      "titulo": "Canciones",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/forma/canon/",
+      "titulo": "Canon",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/melodia/claves/",
+      "titulo": "Claves",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/recursos-musica/colorear/",
+      "titulo": "Colorear",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/ritmo/compases/",
+      "titulo": "Compases",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/recursos-musica/compositores/",
+      "titulo": "Compositores",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/recursos-musica/cuentos-musicales/",
+      "titulo": "Cuentos musicales",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/melodia/escalas/",
+      "titulo": "Escalas",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/ritmo/figuras-silencios-musicales/",
+      "titulo": "Figuras y Silencios",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/recursos-musica/flauta-dulce/",
+      "titulo": "Flauta dulce para niños",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/forma/",
+      "titulo": "FORMA",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/recursos-musica/halloween/",
+      "titulo": "Halloween",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/forma/instrumentacion/",
+      "titulo": "Instrumentación",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/recursos-musica/instrumentos-musicales/",
+      "titulo": "Instrumentos musicales",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/armonia/intervalos/",
+      "titulo": "Intervalos",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/recursos-musica/juegos-musicales/",
+      "titulo": "Juegos musicales",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/melodia/",
+      "titulo": "MELODÍA",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/recursos-musica/navidad/",
+      "titulo": "Navidad",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/melodia/notas-musicales/",
+      "titulo": "Notas musicales",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/recursos-musica/partituras-primaria/",
+      "titulo": "Partituras",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/recursos-musica/flauta-dulce/partituras-flauta-dulce/",
+      "titulo": "Partituras para flauta dulce",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/melodia/pentagrama/",
+      "titulo": "Pentagrama",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/ritmo/percusion-corporal/",
+      "titulo": "Percusión Corporal",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/recursos-musica/",
+      "titulo": "Recursos",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/ritmo/",
+      "titulo": "RITMO",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/ritmo/signos-prolongacion/",
+      "titulo": "Signos de Prolongación",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/forma/signos-repeticion/",
+      "titulo": "Signos de repetición",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/melodia/sonidos/",
+      "titulo": "Sonidos",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/ritmo/tempo/",
+      "titulo": "Tempo",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/armonia/tonalidad/",
+      "titulo": "Tonalidad",
+      "tipo": "tematica"
+    },
+    {
+      "ruta": "/fichas/armonia/tonos-semitonos/",
+      "titulo": "Tonos y semitonos",
+      "tipo": "tematica"
+    }
+  ]
+}

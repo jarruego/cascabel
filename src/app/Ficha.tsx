@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router';
-import { cargarActividad } from '@/datos/cargar';
+import { cargarActividad, cargarCocomusic } from '@/datos/cargar';
+import { vinculosDe, type Vinculo } from '@/datos/cocomusic';
 import { duracionLegible } from '@/motor/duracion';
 import { codigoDe } from '@/motor/codigo';
 import { t, existe } from '@/i18n';
@@ -156,11 +157,17 @@ export default function Ficha() {
   */
   const [conSeguimiento, setConSeguimiento] = useState(false);
 
+  const [vinculos, setVinculos] = useState<Vinculo[]>([]);
+
   useEffect(() => {
     let vivo = true;
     cargarActividad(id)
       .then((a) => vivo && setActividad(a))
       .catch(() => vivo && setFallo(true));
+    // Si los vínculos no cargan, la ficha sale igual sin la sección: son un añadido.
+    cargarCocomusic()
+      .then((d) => vivo && setVinculos(vinculosDe(d, id)))
+      .catch(() => vivo && setVinculos([]));
     return () => {
       vivo = false;
     };
@@ -479,6 +486,22 @@ export default function Ficha() {
             )}
           </dl>
         </section>
+
+        {vinculos.length > 0 && (
+          <section className="ficha__cocomusic">
+            <h2>{t('ficha.cocomusic')}</h2>
+            <ul className="ficha__lista">
+              {vinculos.map((v) => (
+                <li key={v.url}>
+                  <a href={v.url} target="_blank" rel="noopener">
+                    {v.titulo}
+                  </a>
+                  {v.tipo && <span className="ficha__min"> · {t(`ficha.cocomusic.${v.tipo}`)}</span>}
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         <p className="ficha__nota ficha__pie">
           {t('ficha.pie')}

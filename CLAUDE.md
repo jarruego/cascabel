@@ -376,6 +376,18 @@ actividad: su `estado` y las marcas pendientes. Cada commit se despliega solo, y
 `content/indice.json`: un JSON que no cumple el esquema para el despliegue y no se publica.
 Lo que el build **no** mira es la música; eso sigue siendo `npm run contenido:validar`.
 
+**Y en sentido contrario, `content/cocomusic.json`**: qué páginas de cocomusic corresponden
+a cada actividad, aceptadas por su propietario. Lo publica cocomusic en
+`https://cocomusic.es/cascabel.json` y `tools/cocomusic.mjs` lo copia **al construir**; si
+cocomusic no responde, el build sigue con la copia de git. La ficha del maestro lo enseña
+como «La ficha para el aula, en cocomusic», solo enlaces con título: ni miniaturas (muchas
+llevan ilustraciones de Freepik, incompatibles con CC BY-SA) ni nada en la pantalla del
+niño. `datos/cocomusic.ts` filtra cada ruta antes de convertirla en `href`. La CSP no cambia.
+
+**Las issues «Panel · \<id\> · duda N»** las abre el panel cuando el propietario contesta
+«Cámbialo» a una marca pendiente. Son trabajo de esta sesión: se hace el cambio, se quita la
+marca según la convención de abajo y se cierra la issue con el commit.
+
 ### Marcas pendientes: dónde van y cómo se resuelven
 
 `PENDIENTE DE REVISIÓN PEDAGÓGICA` tiene dos formatos en las actividades, y el panel de

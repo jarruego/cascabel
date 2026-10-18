@@ -709,6 +709,9 @@ dan identidad propia. Los personajes del proyecto siguen siendo decisión de pro
 - [x] El build comprueba el esquema y regenera el índice (2026-10-18). El panel de
       cocomusic hace commits en `main` y el despliegue no pasa `npm run verificar`: un JSON
       roto para el build en vez de publicarse. Ver `CLAUDE.md` §10
+- [x] Vínculos con cocomusic (2026-10-18): el build copia `cocomusic.es/cascabel.json` en
+      `content/cocomusic.json` y la ficha del maestro enseña «La ficha para el aula, en
+      cocomusic», con enlaces de título. Si cocomusic no responde, se usa la copia de git
 - [x] Dominio propio con HTTPS: **https://cascabel.cocomusic.es** (2026-10-17). Declarado
       en `wrangler.jsonc` como `custom_domain`, no en el panel. `workers.dev` y las URL de
       vista previa están **cerradas**: el progreso y la PWA instalada van atados al origen,

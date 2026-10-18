@@ -1,5 +1,6 @@
 import { APP, type Etapa } from '@/config';
 import type { Actividad } from '@/motor/tipos';
+import type { DatosCocomusic } from '@/datos/cocomusic';
 
 /**
  * Único punto de la app que hace peticiones de red, y solo a nuestro propio origen.
@@ -63,6 +64,14 @@ export interface SonidoDelBanco {
 
 export function cargarSonidos() {
   return pedir<{ sonidos: SonidoDelBanco[] }>(`${APP.rutaContenido}/sonidos.json`);
+}
+
+/**
+ * Las páginas de cocomusic vinculadas a cada actividad. Es una copia que se hizo al
+ * construir (`tools/cocomusic.mjs`): se pide a nuestro origen, nunca a cocomusic.es.
+ */
+export function cargarCocomusic() {
+  return pedir<DatosCocomusic>(`${APP.rutaContenido}/cocomusic.json`);
 }
 
 export function cargarActividad(id: string) {

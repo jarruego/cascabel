@@ -2394,6 +2394,7 @@ p {
 .ficha__colNombre { width: 28%; }
 .ficha__colNotas { width: 24%; }
 .ficha__pie { margin-top: var(--e-3); }
+.ficha__cocomusic a { overflow-wrap: anywhere; }
 .actividad__ficha { color: var(--acento-2); font-size: 0.9em; }
 
 @media print {
@@ -2459,6 +2460,9 @@ p {
   /* Solo lo que no se puede partir: la partitura y las filas de la tabla. Partir una
      sección sí se puede, y no partirla era lo que abría cuatro páginas. */
   .ficha__partitura, .ficha__seguimiento { break-inside: avoid; }
+  /* En papel un enlace no se puede tocar: se escribe la dirección para teclearla. */
+  .ficha__cocomusic a { color: inherit; text-decoration: none; }
+  .ficha__cocomusic a::after { content: ' — ' attr(href); color: #555; font-size: 0.9em; }
 }
 
 /*
